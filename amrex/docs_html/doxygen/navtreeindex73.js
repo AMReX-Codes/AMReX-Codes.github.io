@@ -1,6 +1,5 @@
 var NAVTREEINDEX73 =
 {
-"namespaceamrex__ebcellflag__module.html#a042a1d5bee97b5d90c352a09ffc13956":[2,0,5,4],
 "namespaceamrex__ebcellflag__module.html#a2610316e2634c6510e9511a17e425c39":[2,0,5,23],
 "namespaceamrex__ebcellflag__module.html#a34d542ffa101be3b08b45ad08a1aa41e":[2,0,5,22],
 "namespaceamrex__ebcellflag__module.html#a4060baeae84dd42b4c8941cde84ceaee":[2,0,5,6],
@@ -166,8 +165,8 @@ var NAVTREEINDEX73 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func.html":[2,1,1,0],
+"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -207,8 +206,8 @@ var NAVTREEINDEX73 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX73 =
 "namespaceparticle__detail.html#ac6d9fbdd693695e41223a867d37d47c1":[2,0,20,3],
 "namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd":[2,0,20,9],
 "namespaces.html":[2,0],
-"namespacesdcquadrature__mod.html":[2,0,21]
+"namespacesdcquadrature__mod.html":[2,0,21],
+"namespacesdcquadrature__mod.html#a0ffbe7bf11e56b416c5631c0b38321b6":[2,0,21,5]
 };

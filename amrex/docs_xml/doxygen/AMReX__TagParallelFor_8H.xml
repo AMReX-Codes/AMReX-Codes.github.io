@@ -3293,7 +3293,7 @@
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a685ae8eab582f895ce964b6a99030ef2" kindref="member">amrex::launch</ref>(nblocks,<sp/>nthreads,<sp/><ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">Gpu::gpuStream</ref>(),</highlight></codeline>
 <codeline lineno="212"><highlight class="normal">#ifdef<sp/>AMREX_USE_SYCL</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(sycl::nd_item&lt;1&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>item)<sp/>noexcept</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>[[sycl::reqd_work_group_size(1,1,nthreads)]]</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>[[sycl::reqd_work_group_size(nthreads)]]</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>[[sycl::reqd_sub_group_size(<ref refid="classamrex_1_1Gpu_1_1Device_1a845f8e6eb448999a6e71574eeee55926" kindref="member">Gpu::Device::warp_size</ref>)]]</highlight></codeline>
 <codeline lineno="216"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>()<sp/>noexcept</highlight></codeline>

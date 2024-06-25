@@ -1,6 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"namespacesdcquadrature__mod.html#a0ffbe7bf11e56b416c5631c0b38321b6":[2,0,21,5],
 "namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837":[2,0,21,12],
 "namespacesdcquadrature__mod.html#a19abe9c6ef21541b666b72dd131373b3":[2,0,21,3],
 "namespacesdcquadrature__mod.html#a36963c5b419723010d58909d4528c0dc":[2,0,21,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX74 =
 "structamrex_1_1ArenaInfo.html#a961c961eb343a2fa091082a6f1717b16":[3,0,0,72,9],
 "structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0":[3,0,0,72,11],
 "structamrex_1_1ArenaInfo.html#aea2d408b112c9b365f345889eed6965f":[3,0,0,72,0],
-"structamrex_1_1ArenaWrapper.html":[3,0,0,164]
+"structamrex_1_1ArenaWrapper.html":[3,0,0,164],
+"structamrex_1_1ArenaWrapper.html#a448c39a6a2874b4fd7809d4a702bfa90":[3,0,0,164,0]
 };

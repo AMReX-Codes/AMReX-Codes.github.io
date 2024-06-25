@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8nolint_8H_sou
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">                amrex_i_h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(amrex_i_nthreads_total), \</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">                                                         sycl::range&lt;1&gt;(amrex_i_nthreads_per_block)), \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">                [=] (sycl::nd_item&lt;1&gt; amrex_i_item) \</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">                [[sycl::reqd_work_group_size(1,1,AMREX_GPU_MAX_THREADS)]] \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">                [[sycl::reqd_work_group_size(AMREX_GPU_MAX_THREADS)]] \</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]] \</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">                { \</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">                    for (auto const TI : amrex::Gpu::Range(amrex_i_tn,amrex_i_item.get_global_id(0),amrex_i_item.get_global_range(0))) { \</span></div>
@@ -367,7 +367,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8nolint_8H_sou
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">                amrex_i_h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(amrex_i_nthreads_total), \</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">                                                         sycl::range&lt;1&gt;(amrex_i_nthreads_per_block)), \</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">                [=] (sycl::nd_item&lt;1&gt; amrex_i_item) \</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">                [[sycl::reqd_work_group_size(1,1,AMREX_GPU_MAX_THREADS)]] \</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">                [[sycl::reqd_work_group_size(AMREX_GPU_MAX_THREADS)]] \</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]] \</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">                { \</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">                    for (auto const TI : amrex::Gpu::Range(amrex_i_tn,amrex_i_item.get_global_id(0),amrex_i_item.get_global_range(0))) { \</span></div>

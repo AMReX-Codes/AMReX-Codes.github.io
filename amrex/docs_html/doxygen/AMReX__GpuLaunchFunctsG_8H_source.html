@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                             sycl::range&lt;1&gt;(MT)),</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a7c64e1c30110b537ab4c7acbc9a3900a">f</a>(Gpu::Handler{&amp;item,shared_data.get_multi_ptr&lt;sycl::access::decorated::yes&gt;().<a class="code" href="namespaceamrex.html#a55b45d61c6e18c31d787042cf9169385">get</a>()});</div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                             sycl::range&lt;1&gt;(MT)),</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a7c64e1c30110b537ab4c7acbc9a3900a">f</a>(item);</div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> i : <a class="code" href="namespaceamrex_1_1Gpu.html#a5a7e65f26ef2a8d356ebef518f007aaf">Gpu::Range</a>(n,item.get_global_id(0),item.get_global_range(0))) {</div>
@@ -304,7 +304,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">for</span> (std::size_t i = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -321,7 +321,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                {</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <span class="keywordflow">for</span> (std::size_t i = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -353,7 +353,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    <span class="keywordflow">for</span> (std::uint64_t icell = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -371,7 +371,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keywordflow">for</span> (std::uint64_t icell = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -404,7 +404,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                {</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    <span class="keywordflow">for</span> (std::uint64_t icell = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -423,7 +423,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                 sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    <span class="keywordflow">for</span> (std::uint64_t icell = item.get_global_id(0), stride = item.get_global_range(0);</div>
@@ -454,7 +454,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            [[sycl::reqd_work_group_size(1,1,AMREX_GPU_MAX_THREADS)]]</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            [[sycl::reqd_work_group_size(AMREX_GPU_MAX_THREADS)]]</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            {</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> tid = item.get_global_id(0);</div>
@@ -488,7 +488,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            [[sycl::reqd_work_group_size(1,1,AMREX_GPU_MAX_THREADS)]]</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            [[sycl::reqd_work_group_size(AMREX_GPU_MAX_THREADS)]]</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            {</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> tid = item.get_global_id(0);</div>
@@ -524,7 +524,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            [[sycl::reqd_work_group_size(1,1,AMREX_GPU_MAX_THREADS)]]</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            [[sycl::reqd_work_group_size(AMREX_GPU_MAX_THREADS)]]</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            {</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> tid = item.get_global_id(0);</div>
@@ -561,7 +561,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> ncells = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(indexer1.numPts(), indexer2.numPts());</div>
@@ -601,7 +601,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            {</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> ncells = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>({indexer1.numPts(), indexer2.numPts(), indexer3.numPts()});</div>
@@ -646,7 +646,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            {</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> ncells = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(indexer1.numPts(), indexer2.numPts());</div>
@@ -694,7 +694,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchFunctsG_8H_source.html
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            h.parallel_for(sycl::nd_range&lt;1&gt;(sycl::range&lt;1&gt;(nthreads_total),</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                                             sycl::range&lt;1&gt;(nthreads_per_block)),</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            [=] (sycl::nd_item&lt;1&gt; item)</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            [[sycl::reqd_work_group_size(1,1,MT)]]</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            [[sycl::reqd_work_group_size(MT)]]</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            [[sycl::reqd_sub_group_size(Gpu::Device::warp_size)]]</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            {</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> ncells = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>({indexer1.numPts(), indexer2.numPts(), indexer3.numPts()});</div>

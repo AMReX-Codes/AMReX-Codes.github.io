@@ -312,7 +312,7 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;#ifdef AMREX_USE_SYCL</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (sycl::nd_item&lt;1&gt; <span class="keyword">const</span>&amp; item) noexcept</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    [[sycl::reqd_work_group_size(1,1,nthreads)]]</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    [[sycl::reqd_work_group_size(nthreads)]]</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    [[sycl::reqd_sub_group_size(<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>)]]</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;#<span class="keywordflow">else</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () noexcept</div>

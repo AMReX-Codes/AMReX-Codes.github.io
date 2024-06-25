@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"AMReX__MLNodeLap__2D__K_8H.html#a2cac2c8ce802cddafa55136e8ffcb31e":[4,0,0,6,0,56,25],
 "AMReX__MLNodeLap__2D__K_8H.html#a2da7299a6ccc42ab70c5b8173a5f1363":[4,0,0,6,0,56,44],
 "AMReX__MLNodeLap__2D__K_8H.html#a339f91a23a5b046654c2029e996cbd94":[4,0,0,6,0,56,26],
 "AMReX__MLNodeLap__2D__K_8H.html#a344bb80d4a06ecf958781bdef59b351d":[4,0,0,6,0,56,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "AMReX__MLTensor__2D__K_8H.html#a506e37aa50bae292445a1b892b61bf2c":[4,0,0,6,0,80,8],
 "AMReX__MLTensor__2D__K_8H.html#a5663d44c9283a75d4fc0a7077a0b7bf6":[4,0,0,6,0,80,5],
 "AMReX__MLTensor__2D__K_8H.html#a7030037af193bb2bf648e008000c57dd":[4,0,0,6,0,80,1],
-"AMReX__MLTensor__2D__K_8H.html#a8420e5daa7ea328100bbd5355c290f45":[4,0,0,6,0,80,7]
+"AMReX__MLTensor__2D__K_8H.html#a8420e5daa7ea328100bbd5355c290f45":[4,0,0,6,0,80,7],
+"AMReX__MLTensor__2D__K_8H.html#a95509f933f27bf95cd70b6064aaa4153":[4,0,0,6,0,80,0]
 };
