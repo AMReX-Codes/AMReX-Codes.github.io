@@ -2718,7 +2718,7 @@ var namespaceamrex =
     [ "TupleCat", "namespaceamrex.html#a241b30447206d0b8029fac3bd5c9d1c6", null ],
     [ "TupleSplit", "namespaceamrex.html#a578cd6446e7f5c2a1c47ea01cd2267a4", null ],
     [ "tupleToArray", "namespaceamrex.html#a04644ea7c1c675a7ea4d19c4435e4907", null ],
-    [ "tupleToArray", "namespaceamrex.html#a4a123217da9caf30ef3cf63f4125fd11", null ],
+    [ "tupleToArray", "namespaceamrex.html#aa56e578be45e0b9d7c0b071b3c68290a", null ],
     [ "ubound", "namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c", null ],
     [ "ubound", "namespaceamrex.html#aee1c8ddea8a977a982dbe39c4a9884a9", null ],
     [ "UniqueRandomSubset", "namespaceamrex.html#aa2c1209819cd8dd79499c2b9f088120e", null ],

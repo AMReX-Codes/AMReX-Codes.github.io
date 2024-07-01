@@ -46,5 +46,5 @@ var AMReX__Tuple_8H =
     [ "TupleSplit", "AMReX__Tuple_8H.html#a578cd6446e7f5c2a1c47ea01cd2267a4", null ],
     [ "TupleSplitImp", "AMReX__Tuple_8H.html#a71f402d1250f215a129e6a9950c9ad35", null ],
     [ "tupleToArray", "AMReX__Tuple_8H.html#a04644ea7c1c675a7ea4d19c4435e4907", null ],
-    [ "tupleToArray", "AMReX__Tuple_8H.html#a4a123217da9caf30ef3cf63f4125fd11", null ]
+    [ "tupleToArray", "AMReX__Tuple_8H.html#aa56e578be45e0b9d7c0b071b3c68290a", null ]
 ];
