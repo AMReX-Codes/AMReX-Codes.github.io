@@ -98,11 +98,11 @@
         <link refid="AMReX__IndexType_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
@@ -2134,8 +2134,8 @@
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(OrientationIter<sp/>it;<sp/>it;<sp/>++it)<sp/>{</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Orientation<sp/>face<sp/>=<sp/>it();</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>face.coordDir();</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/>t;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t.set(idim);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref><sp/>t;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t.<ref refid="classamrex_1_1IndexTypeND_1ae64a4970db9ff9cce67109ab80aea24e" kindref="member">set</ref>(idim);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1InterpFaceRegister_1ac51cac354d04dd9b8c7a93f4838966c9" kindref="member">m_fine_face_ba</ref>[face]<sp/>=<sp/>BoxArray(<ref refid="classamrex_1_1InterpFaceRegister_1ae7ed7c0d540fff5e91fa3dfd1f824f48" kindref="member">m_fine_ba</ref>,<sp/>BATransformer(face,t,0,0,0));</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1InterpFaceRegister_1a8bfe583f3e39b9b5130c1644c7af9a15" kindref="member">m_crse_face_ba</ref>[face]<sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(<ref refid="classamrex_1_1InterpFaceRegister_1ac51cac354d04dd9b8c7a93f4838966c9" kindref="member">m_fine_face_ba</ref>[face],<sp/><ref refid="classamrex_1_1InterpFaceRegister_1a899e3e1837760fbc015d572dc4218204" kindref="member">m_ref_ratio</ref>);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1InterpFaceRegister_1ac7a90d8875f7129236cd11202764022b" kindref="member">m_face_mask</ref>[face].define(<ref refid="classamrex_1_1InterpFaceRegister_1ac51cac354d04dd9b8c7a93f4838966c9" kindref="member">m_fine_face_ba</ref>[face],<sp/><ref refid="classamrex_1_1InterpFaceRegister_1a46c573f2892ec197ccd6f97d030b2fe4" kindref="member">m_fine_dm</ref>,<sp/>1,<sp/>0);</highlight></codeline>

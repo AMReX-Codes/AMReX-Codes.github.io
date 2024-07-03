@@ -140,11 +140,11 @@
         <link refid="AMReX__IndexType_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="50" relation="include">
         </childnode>
@@ -2491,9 +2491,9 @@
 <codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_struct(1,<sp/>blocklens,<sp/>disp,<sp/>types,<sp/>&amp;mpi_type_indextype)<sp/>);</highlight></codeline>
 <codeline lineno="1411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>lb,<sp/>extent;</highlight></codeline>
 <codeline lineno="1412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_get_extent(mpi_type_indextype,<sp/>&amp;lb,<sp/>&amp;extent)<sp/>);</highlight></codeline>
-<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(extent<sp/>!=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(extent<sp/>!=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexType</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1adf4ce151c5bdb0d3323d314ab596eab9" kindref="member">MPI_Datatype</ref><sp/>tmp<sp/>=<sp/>mpi_type_indextype;</highlight></codeline>
-<codeline lineno="1415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_resized(tmp,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>),<sp/>&amp;mpi_type_indextype)<sp/>);</highlight></codeline>
+<codeline lineno="1415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_resized(tmp,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexType</ref>),<sp/>&amp;mpi_type_indextype)<sp/>);</highlight></codeline>
 <codeline lineno="1416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_free(&amp;tmp)<sp/>);</highlight></codeline>
 <codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_indextype<sp/>)<sp/>);</highlight></codeline>

@@ -238,6 +238,10 @@ var hierarchy =
     [ "detail::CellAdd< T0, T1 >", "structdetail_1_1CellAdd.html", null ],
     [ "detail::CellAtomicAdd< T0, T1 >", "structdetail_1_1CellAtomicAdd.html", null ],
     [ "amrex::CellData< T >", "structamrex_1_1CellData.html", null ],
+    [ "amrex::CellIndexEnum", "structamrex_1_1CellIndexEnum.html", [
+      [ "amrex::IndexTypeND< AMREX_SPACEDIM >", "classamrex_1_1IndexTypeND.html", null ],
+      [ "amrex::IndexTypeND< dim >", "classamrex_1_1IndexTypeND.html", null ]
+    ] ],
     [ "detail::CellStore< T0, T1 >", "structdetail_1_1CellStore.html", null ],
     [ "amrex::FabArrayBase::CFinfo", "structamrex_1_1FabArrayBase_1_1CFinfo.html", null ],
     [ "amrex::EB2::ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", null ],
@@ -572,7 +576,6 @@ var hierarchy =
       [ "amrex::EB2::IndexSpaceImp< G >", "classamrex_1_1EB2_1_1IndexSpaceImp.html", null ],
       [ "amrex::EB2::IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html", null ]
     ] ],
-    [ "amrex::IndexType", "classamrex_1_1IndexType.html", null ],
     [ "amrex::Any::innards_base", "structamrex_1_1Any_1_1innards__base.html", [
       [ "amrex::Any::innards< MF >", "structamrex_1_1Any_1_1innards.html", null ]
     ] ],
@@ -1064,9 +1067,11 @@ var hierarchy =
     [ "amrex::detail::tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "std::tuple_element< s, amrex::IndexTypeND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "std::tuple_size< amrex::IndexTypeND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::is_base_of::type", null, [
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ]
@@ -1086,7 +1091,6 @@ var hierarchy =
       [ "amrex::Vector< amrex::WeightedBox >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< Real, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Array< std::unique_ptr< amrex::MultiFab >, 3 > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::IndexType >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::size_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< MultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Box >", "classamrex_1_1Vector.html", null ],
@@ -1126,6 +1130,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< amrex::MultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< MF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< MF > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::IndexTypeND >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< amrex::LayoutData< std::unique_ptr< amrex::PODVector< Real > > >, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::DistributionMapping > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BoxArray >", "classamrex_1_1Vector.html", null ],

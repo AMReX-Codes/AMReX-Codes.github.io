@@ -110,11 +110,11 @@
         <link refid="AMReX__IndexType_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
         <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="50" relation="include">
         </childnode>
@@ -2410,9 +2410,9 @@
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(std::is_same&lt;F,int&gt;::value,</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;CUDA<sp/>11.6<sp/>bug:<sp/>https://github.com/AMReX-Codes/amrex/issues/2607&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>().<ref refid="classamrex_1_1IndexType_1a8b2bbd96dc5aae2d9ae4da637a3f43d5" kindref="member">cellCentered</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>().<ref refid="classamrex_1_1IndexTypeND_1a047ad586e70fca59f0dee348096aba57" kindref="member">cellCentered</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccfcdoit(bx,dest,dcomp,numcomp,geom,time,bcr,bcomp,orig_comp,<sp/><ref refid="structamrex_1_1FilccCell" kindref="compound">FilccCell</ref>{});</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>().<ref refid="classamrex_1_1IndexType_1afd8588da9e95238a5294d33bae5f39ec" kindref="member">nodeCentered</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>().<ref refid="classamrex_1_1IndexTypeND_1a96a52aab7a8f49be3c8fdd82a6575e60" kindref="member">nodeCentered</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nddoit(bx,dest,dcomp,numcomp,geom,time,bcr,bcomp,orig_comp);</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccfcdoit(bx,dest,dcomp,numcomp,geom,time,bcr,bcomp,orig_comp,<sp/><ref refid="structamrex_1_1FilfcFace" kindref="compound">FilfcFace</ref>{});</highlight></codeline>
@@ -2553,7 +2553,7 @@
 <codeline lineno="361"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVect</ref>&amp;<sp/>len<sp/>=<sp/>bx.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>();</highlight></codeline>
 <codeline lineno="363"><highlight class="normal"></highlight></codeline>
-<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref><sp/>idxType<sp/>=<sp/>bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>();</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexType</ref><sp/>idxType<sp/>=<sp/>bx.<ref refid="classamrex_1_1Box_1a23dbfc6bba6b19b28a0d893bb760494c" kindref="member">ixType</ref>();</highlight></codeline>
 <codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>domain<sp/>=<sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(geom.<ref refid="classamrex_1_1Geometry_1a94f4ddb683e381201694d644be7566f1" kindref="member">Domain</ref>(),idxType);</highlight></codeline>
 <codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>gdomain<sp/>=<sp/>domain;</highlight></codeline>
 <codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>

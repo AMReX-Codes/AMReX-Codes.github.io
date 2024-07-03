@@ -135,11 +135,11 @@
         <link refid="AMReX__IndexType_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
         <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
@@ -3381,7 +3381,7 @@
 <codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrLevels<sp/><sp/>=<sp/>m_amrlevel-&gt;parent-&gt;getAmrLevels();</highlight></codeline>
 <codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AmrLevel&amp;<sp/><sp/><sp/>topLevel<sp/><sp/><sp/>=<sp/>*amrLevels[m_amrlevel-&gt;level];</highlight></codeline>
 <codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>topPDomain<sp/>=<sp/>topLevel.state[m_index].getDomain();</highlight></codeline>
-<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType&amp;<sp/><sp/>boxType<sp/><sp/><sp/><sp/>=<sp/>m_leveldata-&gt;boxArray().ixType();</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref>&amp;<sp/><sp/>boxType<sp/><sp/><sp/><sp/>=<sp/>m_leveldata-&gt;boxArray().<ref refid="classamrex_1_1IndexTypeND_1aaf1da8aada1297fd8fe20996221eec6c" kindref="member">ixType</ref>();</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extrap<sp/><sp/><sp/><sp/><sp/>=<sp/>AmrLevel::desc_lst[m_index].extrap();</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>that<sp/>the<sp/>interpolaters<sp/>are<sp/>identical.</highlight><highlight class="normal"></highlight></codeline>
@@ -3625,7 +3625,7 @@
 <codeline lineno="1008"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fabs.setDomainBndry(std::numeric_limits&lt;Real&gt;::quiet_NaN(),<sp/>geom);</highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType&amp;<sp/>boxType<sp/>=<sp/>m_leveldata-&gt;boxArray().ixType();</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref>&amp;<sp/>boxType<sp/>=<sp/>m_leveldata-&gt;boxArray().<ref refid="classamrex_1_1IndexTypeND_1aaf1da8aada1297fd8fe20996221eec6c" kindref="member">ixType</ref>();</highlight></codeline>
 <codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level<sp/>=<sp/>m_amrlevel-&gt;level;</highlight></codeline>
 <codeline lineno="1013"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>DComp<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>static_cast&lt;int&gt;(m_range.size());<sp/>i++)</highlight></codeline>
@@ -4890,7 +4890,7 @@
 <codeline lineno="2274"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2275"><highlight class="normal"><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></highlight></codeline>
 <codeline lineno="2276"><highlight class="normal">AmrLevel::ProperBlockingFactor<sp/>(AmrLevel<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>amr_level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boxGrow,</highlight></codeline>
-<codeline lineno="2277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxType,</highlight></codeline>
+<codeline lineno="2277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxType,</highlight></codeline>
 <codeline lineno="2278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDescriptor<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SComp)</highlight></codeline>
 <codeline lineno="2279"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2280"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>new_blocking_factor<sp/>=<sp/>amr_level.parent-&gt;blockingFactor(amr_level.level);</highlight></codeline>

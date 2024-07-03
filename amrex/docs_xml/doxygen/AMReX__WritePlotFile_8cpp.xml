@@ -106,11 +106,11 @@
         <link refid="AMReX__IndexType_8H"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
         <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
@@ -2183,14 +2183,14 @@
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>curTime<sp/>=<sp/>cumTime;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finestLevel<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;<sp/>Box<sp/>&gt;<sp/>domain(finestLevel+1);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType&amp;<sp/>ixType<sp/>=<sp/>mf.boxArray().ixType();</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ixType<sp/>!=<sp/><ref refid="classamrex_1_1IndexType_1ac1c886c163b3eabab06602c8649a5bd2" kindref="member">IndexType::TheCellType</ref>())</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref>&amp;<sp/>ixType<sp/>=<sp/>mf.boxArray().<ref refid="classamrex_1_1IndexTypeND_1aaf1da8aada1297fd8fe20996221eec6c" kindref="member">ixType</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ixType<sp/>!=<sp/><ref refid="classamrex_1_1IndexTypeND_1af1e47a88584b5afd97d5659bcec49a02" kindref="member">IndexType::TheCellType</ref>())</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;writePlotfile<sp/>unable<sp/>to<sp/>handle<sp/>non<sp/>cell-centered<sp/>data<sp/>for<sp/>now&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>tmpb<sp/>=<sp/>Box(geom.Domain()).convert(ixType);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>corr(<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d<sp/>=<sp/>0;<sp/>d<sp/>&lt;<sp/><ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>;<sp/>d++)</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corr[d]<sp/>=<sp/>(ixType.ixType(d)<sp/>==<sp/><ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1" kindref="member">IndexType::CELL</ref><sp/>?<sp/>1<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>corr[d]<sp/>=<sp/>(ixType.ixType(d)<sp/>==<sp/><ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439" kindref="member">IndexType::CELL</ref><sp/>?<sp/>1<sp/>:<sp/>0);</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>=<sp/>0;<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>&lt;<sp/>finestLevel;<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>++)</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

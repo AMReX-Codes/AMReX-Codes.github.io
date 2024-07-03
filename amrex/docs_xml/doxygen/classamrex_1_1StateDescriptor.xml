@@ -53,7 +53,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1StateDescriptor_1acb33de9ee20312affa72aa7cc80b8bdd" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+        <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
         <definition>IndexType amrex::StateDescriptor::type</definition>
         <argsstring></argsstring>
         <name>type</name>
@@ -321,7 +321,7 @@
         <argsstring>(IndexType btyp, TimeCenter ttyp, int ident, int nextra, int num_comp, InterpBase *interp, bool extrap=false, bool store_in_checkpoint=true)</argsstring>
         <name>StateDescriptor</name>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>btyp</declname>
         </param>
         <param>
@@ -435,7 +435,7 @@
         <argsstring>(IndexType btyp, TimeCenter ttyp, int ident, int nextra, int num_comp, InterpBase *interp, bool extrap=false, bool store_in_checkpoint=true)</argsstring>
         <name>define</name>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>btyp</declname>
         </param>
         <param>
@@ -987,12 +987,12 @@
         <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H" line="278" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.cpp" bodystart="385" bodyend="395"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1StateDescriptor_1ac5eb703c82d394b6736620116b12206e" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+        <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
         <definition>IndexType amrex::StateDescriptor::getType</definition>
         <argsstring>() const noexcept</argsstring>
         <name>getType</name>
         <briefdescription>
-<para>Returns the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>. </para>
+<para>Returns the IndexType. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1520,12 +1520,18 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
+      <node id="11">
         <label>amrex::InterpBase</label>
         <link refid="classamrex_1_1InterpBase"/>
       </node>
       <node id="4">
         <label>T</label>
+      </node>
+      <node id="9">
+        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1IndexTypeND"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="1">
         <label>amrex::StateDescriptor</label>
@@ -1549,10 +1555,10 @@
           <edgelabel>names</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
-          <edgelabel>mapper</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
           <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>mapper</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -1579,15 +1585,15 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
       <node id="8">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="10">
+        <label>amrex::CellIndexEnum</label>
+        <link refid="structamrex_1_1CellIndexEnum"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H" bodystart="33" bodyend="429"/>

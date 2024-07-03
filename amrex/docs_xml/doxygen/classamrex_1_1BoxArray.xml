@@ -993,7 +993,7 @@
         <argsstring>(IndexType typ)</argsstring>
         <name>convert</name>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -1180,7 +1180,7 @@
         <argsstring>() const</argsstring>
         <name>ok</name>
         <briefdescription>
-<para>Return true if <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> is valid and they all have the same <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>. Is true by default if the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is empty. </para>
+<para>Return true if <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> is valid and they all have the same IndexType. Is true by default if the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is empty. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1254,7 +1254,7 @@
           <defval><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)</defval>
         </param>
         <briefdescription>
-<para>True if the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> is contained in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>(+ng). The <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> must also have the same <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> as those in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>
+<para>True if the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> is contained in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>(+ng). The <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> must also have the same IndexType as those in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1359,7 +1359,7 @@
           <defval>0</defval>
         </param>
         <briefdescription>
-<para>True if the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> intersects with this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>(+ghostcells). The <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> must have the same <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> as those in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>
+<para>True if the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> intersects with this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>(+ghostcells). The <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> must have the same IndexType as those in this <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1625,7 +1625,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="809" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="809" bodyend="809"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1BoxArray_1a0005742d49b95bea045b6f46edb75714" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+        <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
         <definition>IndexType amrex::BoxArray::ixType</definition>
         <argsstring>() const noexcept</argsstring>
         <name>ixType</name>
@@ -1818,14 +1818,14 @@
 <para>It is a reference-counted concrete class, not a polymorphic one; i.e. you cannot use any of the List member functions with a <ref refid="classamrex_1_1BoxList" kindref="compound">BoxList</ref>. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="11">
+      <node id="12">
         <label>amrex::BATindexType</label>
         <link refid="structamrex_1_1BATindexType"/>
         <childnode refid="9" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="13">
+      <node id="14">
         <label>amrex::BATindexType_coarsenRatio</label>
         <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
         <childnode refid="7" relation="usage">
@@ -1835,9 +1835,15 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="12">
+      <node id="13">
         <label>amrex::BATnull</label>
         <link refid="structamrex_1_1BATnull"/>
+      </node>
+      <node id="9">
+        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1IndexTypeND"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="8">
         <label>amrex::Orientation</label>
@@ -1850,7 +1856,7 @@
           <edgelabel>m_op</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>amrex::BATcoarsenRatio</label>
         <link refid="structamrex_1_1BATcoarsenRatio"/>
         <childnode refid="7" relation="usage">
@@ -1863,16 +1869,16 @@
         <childnode refid="6" relation="usage">
           <edgelabel>m_bndryReg</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>m_coarsenRatio</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_indexType</edgelabel>
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>m_null</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_indexType_coarsenRatio</edgelabel>
         </childnode>
       </node>
@@ -1909,9 +1915,9 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="9">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
+      <node id="10">
+        <label>amrex::CellIndexEnum</label>
+        <link refid="structamrex_1_1CellIndexEnum"/>
       </node>
       <node id="3">
         <label>std::shared_ptr&lt; amrex::BoxList &gt;</label>

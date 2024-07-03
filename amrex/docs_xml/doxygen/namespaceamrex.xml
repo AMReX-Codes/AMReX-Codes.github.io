@@ -73,6 +73,7 @@
     <innerclass refid="classamrex_1_1FabArray" prot="public">amrex::FabArray</innerclass>
     <innerclass refid="classamrex_1_1LayoutData" prot="public">amrex::LayoutData</innerclass>
     <innerclass refid="classamrex_1_1IntVectND" prot="public">amrex::IntVectND</innerclass>
+    <innerclass refid="classamrex_1_1IndexTypeND" prot="public">amrex::IndexTypeND</innerclass>
     <innerclass refid="classamrex_1_1FabFactory" prot="public">amrex::FabFactory</innerclass>
     <innerclass refid="structamrex_1_1ParserExecutor" prot="public">amrex::ParserExecutor</innerclass>
     <innerclass refid="classamrex_1_1BCRec" prot="public">amrex::BCRec</innerclass>
@@ -170,7 +171,7 @@
     <innerclass refid="classamrex_1_1IFABio" prot="public">amrex::IFABio</innerclass>
     <innerclass refid="classamrex_1_1IArrayBox" prot="public">amrex::IArrayBox</innerclass>
     <innerclass refid="classamrex_1_1iMultiFab" prot="public">amrex::iMultiFab</innerclass>
-    <innerclass refid="classamrex_1_1IndexType" prot="public">amrex::IndexType</innerclass>
+    <innerclass refid="structamrex_1_1CellIndexEnum" prot="public">amrex::CellIndexEnum</innerclass>
     <innerclass refid="structamrex_1_1IntegratorOps" prot="public">amrex::IntegratorOps</innerclass>
     <innerclass refid="structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047" prot="public">amrex::IntegratorOps&lt; T, std::enable_if_t&lt; std::is_same_v&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt; &gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4" prot="public">amrex::IntegratorOps&lt; T, std::enable_if_t&lt; std::is_same_v&lt; amrex::MultiFab, T &gt; &gt; &gt;</innerclass>
@@ -3048,7 +3049,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="27" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="28" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1ad35342b486ef07ba6108169268169296" prot="public" static="no">
+        <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; AMREX_SPACEDIM &gt;</type>
+        <definition>typedef IndexTypeND&lt; AMREX_SPACEDIM &gt; amrex::IndexType</definition>
+        <argsstring></argsstring>
+        <name>IndexType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1af2ed2dc1168064ab4409c918ad0dfce6" prot="public" static="no">
         <type><ref refid="structamrex_1_1BATransformer" kindref="compound">BATransformer</ref></type>
@@ -5285,7 +5299,7 @@
           <declname>ngrow</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref> &amp;</type>
           <declname>boxType</declname>
         </param>
         <param>
@@ -14315,7 +14329,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref> &amp;</type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -14754,7 +14768,7 @@
           <declname>b2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -14906,9 +14920,9 @@
           <declname>k</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>typ</declname>
-          <defval><ref refid="classamrex_1_1IndexType_1ac1c886c163b3eabab06602c8649a5bd2" kindref="member">IndexType::TheCellType</ref>()</defval>
+          <defval><ref refid="classamrex_1_1IndexTypeND_1af1e47a88584b5afd97d5659bcec49a02" kindref="member">IndexType::TheCellType</ref>()</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -15089,7 +15103,7 @@
           <declname>ba</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -29298,49 +29312,280 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_iMultiFab.cpp" line="593" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_iMultiFab.cpp" bodystart="593" bodyend="667" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_iMultiFab.H" declline="536" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a73fb53c873d555a7a3cc7b33e88a5f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a249fa6ae3b11e46457ccf50adbfe5027" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::IndexTypeND</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;) -&gt; IndexTypeND&lt; dim &gt;</argsstring>
+        <name>IndexTypeND</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="243" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" declline="243" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa628a3790133afeee83102618fefc0f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsConvertible_v&lt; IndexType::CellIndex, Args... &gt;, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::IndexTypeND</definition>
+        <argsstring>(IndexType::CellIndex, Args...) -&gt; IndexTypeND&lt; sizeof...(Args)+1 &gt;</argsstring>
+        <name>IndexTypeND</name>
+        <param>
+          <type><ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3" kindref="member">IndexType::CellIndex</ref></type>
+        </param>
+        <param>
+          <type>Args...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="251" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" declline="251" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a62243a73d36d9f9261e7bc71efb35958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
         <type>std::ostream &amp;</type>
-        <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
-        <argsstring>(std::ostream &amp;os, const IndexType &amp;itype)</argsstring>
+        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const IndexTypeND&lt; dim &gt; &amp;it)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
           <type>std::ostream &amp;</type>
           <declname>os</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt; &amp;</type>
           <declname>it</declname>
         </param>
         <briefdescription>
-<para>Write an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> to an ostream in ASCII. </para>
+<para>Write an <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> to an ostream in ASCII. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" line="9" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" bodystart="10" bodyend="23" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" declline="141" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="274" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="274" bodyend="276"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab982b91919e6fa7eed439d20fc794c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae09b06c662f23c91ec5b359875ee085e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
         <type>std::istream &amp;</type>
-        <definition>std::istream &amp; amrex::operator&gt;&gt;</definition>
-        <argsstring>(std::istream &amp;is, IndexType &amp;itype)</argsstring>
+        <definition>std::istream&amp; amrex::operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;is, IndexTypeND&lt; dim &gt; &amp;it)</argsstring>
         <name>operator&gt;&gt;</name>
         <param>
           <type>std::istream &amp;</type>
           <declname>is</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt; &amp;</type>
           <declname>it</declname>
         </param>
         <briefdescription>
-<para>Read an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> from an istream. </para>
+<para>Read an <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> from an istream. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" bodystart="31" bodyend="50" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" declline="143" declcolumn="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="279" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="279" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a4bfb8a8d2ba2e2cf94a50de4541b9765" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>d</declname>
+            <defname>d</defname>
+          </param>
+          <param>
+            <type>int...</type>
+            <declname>dims</declname>
+            <defname>dims</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; <ref refid="namespaceamrex_1_1detail_1a7e41ce07653e68c00c8370a43ac2afed" kindref="member">detail::get_sum</ref>&lt; d, dims... &gt;)&gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IndexTypeND&lt;detail::get_sum&lt;d, dims...&gt;)&gt; amrex::IndexTypeCat</definition>
+        <argsstring>(const IndexTypeND&lt; d &gt; &amp;v, const IndexTypeND&lt; dims &gt; &amp;...vects) noexcept</argsstring>
+        <name>IndexTypeCat</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; d &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dims &gt; &amp;...</type>
+          <declname>vects</declname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> obtained by concatenating the input IndexTypeNDs. The dimension of the return value equals the sum of the dimensions of the inputted IndexTypeNDs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="290" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="290" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1adffc778b2c0d246adbb76698a86701c1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>d</declname>
+            <defname>d</defname>
+          </param>
+          <param>
+            <type>int...</type>
+            <declname>dims</declname>
+            <defname>dims</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; d &gt;, <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dims &gt;... &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE GpuTuple&lt;IndexTypeND&lt;d&gt;, IndexTypeND&lt;dims&gt;...&gt; amrex::IndexTypeSplit</definition>
+        <argsstring>(const IndexTypeND&lt; detail::get_sum&lt; d, dims... &gt;()&gt; &amp;v) noexcept</argsstring>
+        <name>IndexTypeSplit</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; <ref refid="namespaceamrex_1_1detail_1a7e41ce07653e68c00c8370a43ac2afed" kindref="member">detail::get_sum</ref>&lt; d, dims... &gt;()&gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Returns a tuple of <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> obtained by splitting the input <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> according to the dimensions specified by the template arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="310" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="310" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a9b313f012baa43b16932b21e72ebd40b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IndexTypeND&lt;new_dim&gt; amrex::IndexTypeShrink</definition>
+        <argsstring>(const IndexTypeND&lt; old_dim &gt; &amp;v) noexcept</argsstring>
+        <name>IndexTypeShrink</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> of size new_dim and assigns the first new_dim values of v to it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="324" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="324" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2fd1c8a4c4c635d42171135f7e50e2a6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IndexTypeND&lt;new_dim&gt; amrex::IndexTypeExpand</definition>
+        <argsstring>(const IndexTypeND&lt; old_dim &gt; &amp;v, IndexType::CellIndex fill_extra=IndexType::CellIndex::CELL) noexcept</argsstring>
+        <name>IndexTypeExpand</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3" kindref="member">IndexType::CellIndex</ref></type>
+          <declname>fill_extra</declname>
+          <defval>IndexType::CellIndex::CELL</defval>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> of size new_dim and assigns all values of iv to it and<nonbreakablespace/>fill_extra to the remaining elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="335" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa2ee922ccb0ac5f892bde44e598f77d8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IndexTypeND&lt;new_dim&gt; amrex::IndexTypeResize</definition>
+        <argsstring>(const IndexTypeND&lt; old_dim &gt; &amp;v, IndexType::CellIndex fill_extra=IndexType::CellIndex::CELL) noexcept</argsstring>
+        <name>IndexTypeResize</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3" kindref="member">IndexType::CellIndex</ref></type>
+          <declname>fill_extra</declname>
+          <defval>IndexType::CellIndex::CELL</defval>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref> of size new_dim by either shrinking or expanding iv. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" line="347" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.H" bodystart="347" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac25dfba1079e742467f752e4ee21450f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::int16_t</type>
@@ -31510,7 +31755,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>This version does average down for one direction. It uses the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> of MultiFabs to determine the direction. It is expected that one direction is cell-centered and the rest are nodal. </para>
+<para>This version does average down for one direction. It uses the IndexType of MultiFabs to determine the direction. It is expected that one direction is cell-centered and the rest are nodal. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -32482,7 +32727,7 @@
 <para>This version does average down for one face direction. </para>
         </briefdescription>
         <detaileddescription>
-<para>It uses the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> of MultiFabs to determine the direction. It is expected that one direction is nodal and the rest are cell-centered. </para>
+<para>It uses the IndexType of MultiFabs to determine the direction. It is expected that one direction is nodal and the rest are cell-centered. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -53939,7 +54184,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>face</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <type><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref></type>
           <declname>it</declname>
         </param>
         <param>
