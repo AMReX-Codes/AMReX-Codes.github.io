@@ -1,5 +1,6 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017":[3,0,0,5,19,2],
 "structamrex_1_1Gpu_1_1Handler.html":[3,0,0,5,40],
 "structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5":[3,0,0,5,40,2],
 "structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6":[3,0,0,5,40,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[3,0,0,180],
 "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,185],
 "structamrex_1_1IsStoreAtomic.html":[3,0,0,285],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,396],
-"structamrex_1_1LPInfo.html":[3,0,0,447]
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,396]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"dir_413f4e031a85da0d68269c6fd2f76e1c.html":[4,0,0],
 "dir_55eec958e272d6cfff0ea35b0f5787ca.html":[4,0,0,1],
 "dir_5d09622fde15ef324d9164e0f7b5b566.html":[4,0,0,5],
 "dir_678e78232f51bebdca12cae3de73223b.html":[4,0,0,7],
@@ -176,13 +177,13 @@ var NAVTREEINDEX59 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0],
 "globals.html":[4,1,0,0],
+"globals.html":[4,1,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6,0],
 "globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -205,8 +206,8 @@ var NAVTREEINDEX59 =
 "globals_enum.html":[4,1,4],
 "globals_eval.html":[4,1,5],
 "globals_f.html":[4,1,0,5],
-"globals_func.html":[4,1,1],
 "globals_func.html":[4,1,1,0],
+"globals_func.html":[4,1,1],
 "globals_func_b.html":[4,1,1,1],
 "globals_func_c.html":[4,1,1,2],
 "globals_func_d.html":[4,1,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
-"index.html":[]
+"index.html":[0]
 };
