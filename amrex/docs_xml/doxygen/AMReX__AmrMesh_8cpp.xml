@@ -2423,9 +2423,9 @@
 <codeline lineno="421"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="422"><highlight class="normal"></highlight></codeline>
 <codeline lineno="423"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="424"><highlight class="normal">AmrMesh::GetLevel<sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>domain)<sp/>noexcept</highlight></codeline>
+<codeline lineno="424"><highlight class="normal">AmrMesh::GetLevel<sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>domain)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="425"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>ccdomain<sp/>=<sp/><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(domain);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ccdomain<sp/>=<sp/><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(domain);</highlight></codeline>
 <codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>geom.size();<sp/>++lev)<sp/>{</highlight></codeline>
 <codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(geom[lev].Domain()<sp/>==<sp/>ccdomain)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lev;<sp/>}</highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2445,7 +2445,7 @@
 <codeline lineno="443"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="444"><highlight class="normal"></highlight></codeline>
 <codeline lineno="445"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="446"><highlight class="normal">AmrMesh::LevelDefined<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev)<sp/>noexcept</highlight></codeline>
+<codeline lineno="446"><highlight class="normal">AmrMesh::LevelDefined<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="447"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lev<sp/>&lt;=<sp/>max_level<sp/>&amp;&amp;<sp/>!grids[lev].empty()<sp/>&amp;&amp;<sp/>!dmap[lev].empty();</highlight></codeline>
 <codeline lineno="449"><highlight class="normal">}</highlight></codeline>
@@ -3218,8 +3218,8 @@
 <codeline lineno="1216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1217"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1218"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1219"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1220"><highlight class="normal">AmrMesh::CountCells<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1219"><highlight class="normal">Long</highlight></codeline>
+<codeline lineno="1220"><highlight class="normal">AmrMesh::CountCells<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="1221"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>grids[lev].numPts();</highlight></codeline>
 <codeline lineno="1223"><highlight class="normal">}</highlight></codeline>
