@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"dir_413f4e031a85da0d68269c6fd2f76e1c.html":[4,0,0],
+"dir_55eec958e272d6cfff0ea35b0f5787ca.html":[4,0,0,1],
+"dir_5d09622fde15ef324d9164e0f7b5b566.html":[4,0,0,5],
 "dir_678e78232f51bebdca12cae3de73223b.html":[4,0,0,7],
 "dir_818e0d91a034d8d4dd6c89556c0fcde9.html":[4,0,0,5,3],
 "dir_90921d4ecb565478cdefd18c8f0474ea.html":[4,0,0,5,0],
@@ -141,8 +144,8 @@ var NAVTREEINDEX59 =
 "functions_type_v.html":[3,3,3,16],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -179,8 +182,8 @@ var NAVTREEINDEX59 =
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6,0],
 "globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX59 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[],
-"index.html":[0],
-"index.html#Overview":[0,0,0],
-"index.html#amrex_explained":[0,0,4]
+"index.html":[0]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017":[3,0,0,5,19,2],
+"structamrex_1_1Gpu_1_1Handler.html":[3,0,0,5,40],
+"structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5":[3,0,0,5,40,2],
+"structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6":[3,0,0,5,40,0],
 "structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6":[3,0,0,5,40,1],
 "structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,5,8],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,5,11],
@@ -69,8 +73,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,263],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,269],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,268],
@@ -245,9 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[3,0,0,180],
 "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,185],
 "structamrex_1_1IsStoreAtomic.html":[3,0,0,285],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,396],
-"structamrex_1_1LPInfo.html":[3,0,0,447],
-"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[3,0,0,447,18],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[3,0,0,447,21],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[3,0,0,447,22]
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,396]
 };

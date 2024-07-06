@@ -1402,6 +1402,7 @@ var namespaceamrex =
     [ "convert", "namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6", null ],
     [ "convert", "namespaceamrex.html#a911442fbfdd591235baf90cac01d9856", null ],
     [ "convert", "namespaceamrex.html#af37f380f72af598af4865070235664c2", null ],
+    [ "convexify", "namespaceamrex.html#a39248910c4503df29ff96fc63539021d", null ],
     [ "Copy", "namespaceamrex.html#a094833951f442db9516e0741bd50f6aa", null ],
     [ "Copy", "namespaceamrex.html#a449d5cd7d3d778be0440141f9272d6bd", null ],
     [ "copyParticle", "namespaceamrex.html#af85a1b007332302df4cc844ba1781989", null ],

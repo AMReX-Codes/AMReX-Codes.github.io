@@ -1,5 +1,9 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1BATindexType__coarsenRatio.html#a018850ccf13a85871016078d42d47acb":[3,0,0,108,0],
+"structamrex_1_1BATindexType__coarsenRatio.html#a353060b217e05d5782a3e230f0f80f1e":[3,0,0,108,4],
+"structamrex_1_1BATindexType__coarsenRatio.html#a404878857e4062b52ad8b0f06ee5db54":[3,0,0,108,3],
+"structamrex_1_1BATindexType__coarsenRatio.html#a5478ed9c92ec36bda1e9d6ff6cbe903a":[3,0,0,108,6],
 "structamrex_1_1BATindexType__coarsenRatio.html#a596d52f9079ac3303ea362ba657f8bf0":[3,0,0,108,7],
 "structamrex_1_1BATindexType__coarsenRatio.html#a7c7e002b3dd2f7a43930dacef7a2d62d":[3,0,0,108,2],
 "structamrex_1_1BATindexType__coarsenRatio.html#a90bd569f67fe7881da5831e52d1c78c2":[3,0,0,108,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1DenseBinIteratorFactory.html#a484b45fe28140ce6f64c77687981ac81":[3,0,0,461,3],
 "structamrex_1_1DenseBinIteratorFactory.html#a86bd9751f73a297822528a06e967334a":[3,0,0,461,4],
 "structamrex_1_1DenseBinIteratorFactory.html#aee679b2caba1e5933d98f87d51ee2dbe":[3,0,0,461,1],
-"structamrex_1_1DenseBinIteratorFactory.html#af40598ebac6f1379f8c9364e0140cecf":[3,0,0,461,5],
-"structamrex_1_1DenseBinIteratorFactory.html#afde549427d2c1a8e6c85f5d363a32810":[3,0,0,461,0],
-"structamrex_1_1DeriveRec_1_1StateRange.html":[3,0,0,25,0],
-"structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b":[3,0,0,25,0,3],
-"structamrex_1_1DeriveRec_1_1StateRange.html#a8c9cad12b04e174fac89d2a548f34c96":[3,0,0,25,0,0]
+"structamrex_1_1DenseBinIteratorFactory.html#af40598ebac6f1379f8c9364e0140cecf":[3,0,0,461,5]
 };

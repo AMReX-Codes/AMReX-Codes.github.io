@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"AMReX__MLNodeLap__1D__K_8H.html#aee965ec1adf090525e207867611b1635":[4,0,0,6,0,55,43],
 "AMReX__MLNodeLap__1D__K_8H.html#af51f6f7831db55333f7f647ba71ab6d8":[4,0,0,6,0,55,33],
 "AMReX__MLNodeLap__1D__K_8H.html#af8d83b1b38a04709a774b310bed31684":[4,0,0,6,0,55,25],
 "AMReX__MLNodeLap__1D__K_8H_source.html":[4,0,0,6,0,55],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "AMReX__MLPoisson__K_8H_source.html":[4,0,0,6,0,78],
 "AMReX__MLTensorOp_8H.html":[4,0,0,6,0,84],
 "AMReX__MLTensorOp_8H_source.html":[4,0,0,6,0,84],
-"AMReX__MLTensorOp_8cpp.html":[4,0,0,6,0,83],
-"AMReX__MLTensorOp__grad_8cpp.html":[4,0,0,6,0,85]
+"AMReX__MLTensorOp_8cpp.html":[4,0,0,6,0,83]
 };

@@ -2117,7 +2117,7 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_ncomp;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tmp;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::getline(is,<sp/>tmp);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_var_names[i]<sp/>=<sp/><ref refid="namespaceamrex_1a1a8cddb9effe92e67b1ad49de145e901" kindref="member">amrex::trim</ref>(tmp);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_var_names[i]<sp/>=<sp/><ref refid="namespaceamrex_1a1a8cddb9effe92e67b1ad49de145e901" kindref="member">amrex::trim</ref>(std::move(tmp));</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_spacedim<sp/>&gt;&gt;<sp/>m_time<sp/>&gt;&gt;<sp/>m_finest_level;</highlight></codeline>
