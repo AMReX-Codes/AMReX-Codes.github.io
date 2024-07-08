@@ -242,7 +242,7 @@ Currently supported compression libraries include <a class="reference external" 
 <p>To enable HDF5 output, AMReX must be compiled and linked to an HDF5 library
 with parallel I/O support, by adding <code class="docutils literal notranslate"><span class="pre">USE_HDF5=TRUE</span></code> and
 <code class="docutils literal notranslate"><span class="pre">HDF5_HOME=/path/to/hdf5/install/dir</span></code> to the GNUMakefile.
-many HPC systems have an HDF5 module available that can be loaded with
+Many HPC systems have an HDF5 module available that can be loaded with
 <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">hdf5</span></code> or <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cray-hdf5-parallel</span></code>. To download
 and compile HDF5 from source code, please go to <a class="reference external" href="https://portal.hdfgroup.org/display/support/Downloads">HDF5 Download</a> webpage
 and follow the instructions (latest version is recommended and remember
@@ -277,11 +277,14 @@ such as VisIt and ParaView using their built-in Chombo reader plugin (see the
 chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>)</p>
 <section id="hdf5-plotfile-compression">
 <h2>HDF5 Plotfile Compression<a class="headerlink" href="#hdf5-plotfile-compression" title="Permalink to this heading"></a></h2>
-<p>To enable data compression on the HDF5 datasets, the corresponding compression
+<p>To enable SZ or ZFP data compression on the HDF5 datasets, the corresponding compression
 library and its HDF5 plugin must be available. To compile <a class="reference external" href="https://szcompressor.org">SZ</a> or <a class="reference external" href="https://zfp.llnl.gov">ZFP</a> plugin,
 please refer to their documentation: <a class="reference external" href="https://github.com/szcompressor/SZ/tree/master/hdf5-filter/H5Z-SZ">H5Z-SZ</a> and <a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">H5Z-ZFP</a>, and adding
 <code class="docutils literal notranslate"><span class="pre">USE_HDF5_SZ=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">SZ_HOME=</span></code>, or <code class="docutils literal notranslate"><span class="pre">USE_HDF5_ZFP=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">ZFP_HOME=</span></code>,
 <code class="docutils literal notranslate"><span class="pre">H5Z_HOME=</span></code> to the GNUMakefile.</p>
+<p>ZLIB compression is available without external libraries or other make flags.
+Different compression levels (at the cost of read/write time) can be used, just
+like GZIP.</p>
 <p>The string argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">compression</span><span class="w"></span></code> in the above two functions controls
 whether to enable data compression and its parameters. Currently supported
 options include:</p>
@@ -289,6 +292,13 @@ options include:</p>
 <li><dl class="simple">
 <dt>No compression</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">None&#64;0</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ZLIB compression</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZLIB&#64;compression_level</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -311,6 +321,9 @@ options include:</p>
 </dl>
 </li>
 </ul>
+<p>Using compression requires data to be stored in a chunked format. The size of these
+chunks can (and generally should) be configured by changing the <code class="docutils literal notranslate"><span class="pre">HDF5_CHUNK_SIZE</span></code>
+environment variable, with a default value of 1024 elements provided.</p>
 </section>
 <section id="hdf5-asynchronous-output">
 <h2>HDF5 Asynchronous Output<a class="headerlink" href="#hdf5-asynchronous-output" title="Permalink to this heading"></a></h2>
