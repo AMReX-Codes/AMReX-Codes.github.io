@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('AMReX_8H.html',''); initResizable(); }
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -112,10 +113,12 @@ $(document).ready(function(){initNavTree('AMReX_8H.html',''); initResizable(); }
 <code>#include &lt;<a class="el" href="AMReX__ccse-mpi_8H_source.html">AMReX_ccse-mpi.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Exception_8H_source.html">AMReX_Exception.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Extension_8H_source.html">AMReX_Extension.H</a>&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="AMReX_8H_source.html">Go to the source code of this file.</a></p>
@@ -138,6 +141,19 @@ Typedefs</h2></td></tr>
 <tr class="separator:a364202ccae0ac53c5c0d1440b8c06dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f45c130cacf67455811e9b4829f432"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af6f45c130cacf67455811e9b4829f432">amrex::ErrorHandler</a> = void(*)(const char *)</td></tr>
 <tr class="separator:af6f45c130cacf67455811e9b4829f432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a242c1fdf859dbcbdecd2794373ea0d2c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2c">amrex::FPExcept</a> : std::uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2ca334c4a4c42fdb79d7ebc3e73b517e6f8">amrex::none</a> = 0B0000
+, <a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cafedb2d84cafe20862cb4399751a8a7e3">amrex::invalid</a> = 0B0001
+, <a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cad02c4c4cde7ae76252540d116a40f23a">amrex::zero</a> = 0B0010
+, <a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2ca0bd9f6dd716003f3818d15d2e211ee73">amrex::overflow</a> = 0B0100
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2caa181a603769c1f98ad927e7367c7aa51">amrex::all</a> = 0B0111
+<br />
+ }</td></tr>
+<tr class="separator:a242c1fdf859dbcbdecd2794373ea0d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -209,6 +225,23 @@ Functions</h2></td></tr>
 <tr class="separator:a566544464dedd2d70fe9969fc79658cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0fa7afb6bbeb5e81b5570445599fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9d0fa7afb6bbeb5e81b5570445599fbf">amrex::GccPlacater</a> ()</td></tr>
 <tr class="separator:a9d0fa7afb6bbeb5e81b5570445599fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b385a670733e5570818f7007307e1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a60b385a670733e5570818f7007307e1c">amrex::any</a> (FPExcept a)</td></tr>
+<tr class="separator:a60b385a670733e5570818f7007307e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61941cdb68b6ca2b6bd0ccef3831019b"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a61941cdb68b6ca2b6bd0ccef3831019b">amrex::operator|</a> (FPExcept a, FPExcept b)</td></tr>
+<tr class="separator:a61941cdb68b6ca2b6bd0ccef3831019b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaadf207d66c9ffa15b672effdca6eab"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#acaadf207d66c9ffa15b672effdca6eab">amrex::operator&amp;</a> (FPExcept a, FPExcept b)</td></tr>
+<tr class="separator:acaadf207d66c9ffa15b672effdca6eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23d62d1c91ace8d10a35f15db80e780"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae23d62d1c91ace8d10a35f15db80e780">amrex::getFPExcept</a> ()</td></tr>
+<tr class="memdesc:ae23d62d1c91ace8d10a35f15db80e780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return currently enabled FP exceptions. Linux only.  <a href="namespaceamrex.html#ae23d62d1c91ace8d10a35f15db80e780">More...</a><br /></td></tr>
+<tr class="separator:ae23d62d1c91ace8d10a35f15db80e780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c3e0b7066802f4a1777e4384f004ac"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a78c3e0b7066802f4a1777e4384f004ac">amrex::setFPExcept</a> (FPExcept excepts)</td></tr>
+<tr class="separator:a78c3e0b7066802f4a1777e4384f004ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb028d29f68c1aea92c12903a8bfa262"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aeb028d29f68c1aea92c12903a8bfa262">amrex::disableFPExcept</a> (FPExcept excepts)</td></tr>
+<tr class="memdesc:aeb028d29f68c1aea92c12903a8bfa262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable FP exceptions. Linux Only.  <a href="namespaceamrex.html#aeb028d29f68c1aea92c12903a8bfa262">More...</a><br /></td></tr>
+<tr class="separator:aeb028d29f68c1aea92c12903a8bfa262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfde21396d2ff792d29469193f4853e"><td class="memItemLeft" align="right" valign="top">FPExcept&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aebfde21396d2ff792d29469193f4853e">amrex::enableFPExcept</a> (FPExcept excepts)</td></tr>
+<tr class="memdesc:aebfde21396d2ff792d29469193f4853e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable FP exceptions. Linux Only.  <a href="namespaceamrex.html#aebfde21396d2ff792d29469193f4853e">More...</a><br /></td></tr>
+<tr class="separator:aebfde21396d2ff792d29469193f4853e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
