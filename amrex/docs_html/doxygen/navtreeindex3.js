@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"AMReX__CommProfStats_8cpp.html#aa47c5b8f4f5bd6461d8e497d965742dd":[4,0,0,5,7,10,12],
 "AMReX__CommProfStats_8cpp.html#aafb2ddde567eb3472db5487e1baa09aa":[4,0,0,5,7,10,1],
 "AMReX__CommProfStats_8cpp.html#ad6e9a97e80532d3b7686c5096087c06e":[4,0,0,5,7,10,2],
 "AMReX__CommProfStats_8cpp.html#ae404b1aaff5433c3067ba025a8cffc52":[4,0,0,5,7,10,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "AMReX__EBDataCollection_8cpp.html":[4,0,0,4,75],
 "AMReX__EBFArrayBox_8H.html":[4,0,0,4,80],
 "AMReX__EBFArrayBox_8H.html#aa4a3bfe1c0cd2c7c8632d1f0ee21b2ec":[4,0,0,4,80,1],
-"AMReX__EBFArrayBox_8H_source.html":[4,0,0,4,80]
+"AMReX__EBFArrayBox_8H_source.html":[4,0,0,4,80],
+"AMReX__EBFArrayBox_8cpp.html":[4,0,0,4,79]
 };

@@ -9,6 +9,7 @@ var structamrex_1_1GpuArray =
     [ "end", "structamrex_1_1GpuArray.html#aeb622512186a795918ecff9ba9198f17", null ],
     [ "end", "structamrex_1_1GpuArray.html#a79159efea84c4002316373347f4c8327", null ],
     [ "fill", "structamrex_1_1GpuArray.html#a97ff8440a348593899d51c5996ded371", null ],
+    [ "operator+=", "structamrex_1_1GpuArray.html#aed190977f05e669996932a13d100844c", null ],
     [ "operator[]", "structamrex_1_1GpuArray.html#a855beb08e2de22f04d82e602524b65e3", null ],
     [ "operator[]", "structamrex_1_1GpuArray.html#aba9b0ae13a9b1f8cc6cd0a52ef7caf7d", null ],
     [ "product", "structamrex_1_1GpuArray.html#a1e93e85dc7082fbae16306f6218fda90", null ],

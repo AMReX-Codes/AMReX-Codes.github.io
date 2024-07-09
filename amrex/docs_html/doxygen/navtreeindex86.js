@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,35,1],
 "structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[3,0,35,0],
 "unionAMREX__IPARSERSTYPE.html":[3,0,13],
 "unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[3,0,13,3],
