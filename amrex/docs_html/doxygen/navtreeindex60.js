@@ -1,6 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"index.html":[],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX60 =
 "namespaceamrex.html#a0cef8b304e3c55a8d985c2a8907da9e4":[2,0,0,1728],
 "namespaceamrex.html#a0d15e184f35001014b0941ed211b16ad":[2,0,0,2299],
 "namespaceamrex.html#a0d50b358feee8de5a27ba594b7e2930a":[2,0,0,1774],
-"namespaceamrex.html#a0da5a9df42884946523174f2f4d79e00":[2,0,0,1390]
+"namespaceamrex.html#a0da5a9df42884946523174f2f4d79e00":[2,0,0,1390],
+"namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9":[2,0,0,1251]
 };
