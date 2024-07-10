@@ -1,6 +1,5 @@
 var NAVTREEINDEX85 =
 {
-"structamrex_1_1amrex__Vec.html":[3,0,0,423],
 "structamrex_1_1amrex__Vec.html#a29e1b205830804ee67abd7c0926214f3":[3,0,0,423,3],
 "structamrex_1_1amrex__Vec.html#ac480727670bb025eb2c56a44281074d1":[3,0,0,423,6],
 "structamrex_1_1amrex__Vec.html#ad38d422f084f24160e201de00bcc3fbe":[3,0,0,423,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX85 =
 "structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0":[3,0,34,3],
 "structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[3,0,34,0],
 "structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[3,0,34,9],
-"structyy__trans__info.html":[3,0,35]
+"structyy__trans__info.html":[3,0,35],
+"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,35,1]
 };

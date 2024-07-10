@@ -1,6 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[3,0,0,6,3,0],
 "structamrex_1_1InSituUtils_1_1orOp.html":[3,0,0,6,4],
 "structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0],
 "structamrex_1_1IntVectND_1_1shift__hasher.html":[3,0,0,91,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX80 =
 "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#a660708553dcc4fa4762baa42ed5d2b61":[3,0,0,467,5,4],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#a80afe2fb6fc06ed4930998382c71182e":[3,0,0,467,5,2],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#a9c0de4b09bf5398064924b22bc1ae654":[3,0,0,467,5,3],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#ac124f082ce98a9d25b4212b94b68a316":[3,0,0,467,5,0]
+"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#ac124f082ce98a9d25b4212b94b68a316":[3,0,0,467,5,0],
+"structamrex_1_1NeighborUnpackPolicy.html":[3,0,0,497]
 };
