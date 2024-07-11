@@ -66,6 +66,7 @@ var classamrex_1_1BaseFab =
     [ "dotmask", "classamrex_1_1BaseFab.html#ae238c88f700fceb3525dccccc6888135", null ],
     [ "dotmask", "classamrex_1_1BaseFab.html#a8b0abe9713e52fd03cfb469278dc223c", null ],
     [ "elixir", "classamrex_1_1BaseFab.html#ac5a36d719054f74a00bfc52e10ec9918", null ],
+    [ "fill_snan", "classamrex_1_1BaseFab.html#ab063c08278822a569d923d57d1e39dee", null ],
     [ "Finalize", "classamrex_1_1BaseFab.html#a4b42e2b61ac6d8050def0a5e9bde849f", null ],
     [ "getVal", "classamrex_1_1BaseFab.html#af8f8e7b8b678678f74f235b0ebdeed9f", null ],
     [ "getVal", "classamrex_1_1BaseFab.html#ac195a2bbff03a7f02e30788342473d18", null ],

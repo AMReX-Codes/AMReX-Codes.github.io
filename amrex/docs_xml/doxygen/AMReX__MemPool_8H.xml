@@ -3,31 +3,606 @@
   <compounddef id="AMReX__MemPool_8H" kind="file" language="C++">
     <compoundname>AMReX_MemPool.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
+    <includes refid="AMReX__GpuLaunch_8H" local="no">AMReX_GpuLaunch.H</includes>
     <includes refid="AMReX__REAL_8H" local="no">AMReX_REAL.H</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">type_traits</includes>
     <includedby refid="AMReX_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp</includedby>
     <includedby refid="AMReX__BaseFab_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFab.H</includedby>
     <includedby refid="AMReX__FArrayBox_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_FArrayBox.cpp</includedby>
     <includedby refid="AMReX__MemPool_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp</includedby>
     <includedby refid="AMReX__PArena_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PArena.cpp</includedby>
+    <includedby refid="AMReX__PODVector_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H</includedby>
     <incdepgraph>
-      <node id="5">
-        <label>float.h</label>
+      <node id="73">
+        <label>atomic</label>
       </node>
-      <node id="3">
-        <label>AMReX_REAL.H</label>
-        <link refid="AMReX__REAL_8H"/>
+      <node id="60">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>AMReX_GpuKernelInfo.H</label>
+        <link refid="AMReX__GpuKernelInfo_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>AMReX_OpenMP.H</label>
+        <link refid="AMReX__OpenMP_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>functional</label>
+      </node>
+      <node id="72">
+        <label>AMReX_ValLocPair.H</label>
+        <link refid="AMReX__ValLocPair_8H"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>limits</label>
+      </node>
+      <node id="70">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>AMReX_GpuLaunchMacrosG.nolint.H</label>
+        <link refid="AMReX__GpuLaunchMacrosG_8nolint_8H"/>
+      </node>
+      <node id="50">
+        <label>AMReX_Functional.H</label>
+        <link refid="AMReX__Functional_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>AMReX_BoxArray.H</label>
+        <link refid="AMReX__BoxArray_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>float.h</label>
+      </node>
+      <node id="100">
+        <label>AMReX_GpuLaunchFunctsG.H</label>
+        <link refid="AMReX__GpuLaunchFunctsG_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>AMReX_GpuAssert.H</label>
+        <link refid="AMReX__GpuAssert_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>cstdint</label>
+      </node>
+      <node id="11">
+        <label>AMReX_Utility.H</label>
+        <link refid="AMReX__Utility_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>AMReX_Loop.nolint.H</label>
+        <link refid="AMReX__Loop_8nolint_8H"/>
+      </node>
+      <node id="90">
+        <label>AMReX_GpuReduce.H</label>
+        <link refid="AMReX__GpuReduce_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>AMReX_Tuple.H</label>
+        <link refid="AMReX__Tuple_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>AMReX_CTOParallelForImpl.H</label>
+        <link refid="AMReX__CTOParallelForImpl_8H"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>AMReX_GpuTypes.H</label>
+        <link refid="AMReX__GpuTypes_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>cmath</label>
+      </node>
+      <node id="17">
+        <label>cassert</label>
+      </node>
+      <node id="28">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>stdexcept</label>
+      </node>
+      <node id="18">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>numeric</label>
+      </node>
+      <node id="71">
+        <label>AMReX_GpuComplex.H</label>
+        <link refid="AMReX__GpuComplex_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>string</label>
+      </node>
+      <node id="86">
+        <label>AMReX_GpuDevice.H</label>
+        <link refid="AMReX__GpuDevice_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>map</label>
+      </node>
+      <node id="64">
+        <label>AMReX_Demangle.H</label>
+        <link refid="AMReX__Demangle_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>AMReX_GpuError.H</label>
+        <link refid="AMReX__GpuError_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
       <node id="4">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>cfloat</label>
+      </node>
+      <node id="36">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>AMReX_BoxList.H</label>
+        <link refid="AMReX__BoxList_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>limits.h</label>
+      </node>
+      <node id="85">
+        <label>AMReX_GpuRange.H</label>
+        <link refid="AMReX__GpuRange_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>AMReX_Random.H</label>
+        <link refid="AMReX__Random_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="78">
+        <label>AMReX_RandomEngine.H</label>
+        <link refid="AMReX__RandomEngine_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>sys/types.h</label>
       </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H</label>
@@ -36,17 +611,561 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>typeinfo</label>
+      </node>
+      <node id="14">
+        <label>AMReX_GpuPrint.H</label>
+        <link refid="AMReX__GpuPrint_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>AMReX_Config.H</label>
       </node>
+      <node id="15">
+        <label>cstdio</label>
+      </node>
+      <node id="52">
+        <label>tuple</label>
+      </node>
+      <node id="65">
+        <label>AMReX_DistributionMapping.H</label>
+        <link refid="AMReX__DistributionMapping_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>AMReX_GpuLaunchGlobal.H</label>
+        <link refid="AMReX__GpuLaunchGlobal_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>stack</label>
+      </node>
+      <node id="27">
+        <label>vector</label>
+      </node>
+      <node id="95">
+        <label>AMReX_Loop.H</label>
+        <link refid="AMReX__Loop_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>utility</label>
+      </node>
+      <node id="46">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>array</label>
+      </node>
+      <node id="57">
+        <label>sstream</label>
+      </node>
+      <node id="30">
+        <label>AMReX_INT.H</label>
+        <link refid="AMReX__INT_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AMReX_GpuLaunch.H</label>
+        <link refid="AMReX__GpuLaunch_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>AMReX_GpuAtomic.H</label>
+        <link refid="AMReX__GpuAtomic_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>AMReX_GpuLaunchMacrosG.H</label>
+        <link refid="AMReX__GpuLaunchMacrosG_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>iosfwd</label>
+      </node>
+      <node id="39">
+        <label>cstdlib</label>
+      </node>
+      <node id="23">
+        <label>iostream</label>
+      </node>
+      <node id="33">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>cstddef</label>
+      </node>
+      <node id="92">
+        <label>AMReX_GpuUtility.H</label>
+        <link refid="AMReX__GpuUtility_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>unordered_map</label>
+      </node>
+      <node id="94">
+        <label>cuda.h</label>
+      </node>
+      <node id="48">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>climits</label>
+      </node>
+      <node id="84">
+        <label>chrono</label>
+      </node>
+      <node id="74">
+        <label>csignal</label>
+      </node>
+      <node id="37">
+        <label>AMReX_Math.H</label>
+        <link refid="AMReX__Math_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>AMReX_GpuMemory.H</label>
+        <link refid="AMReX__GpuMemory_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>type_traits</label>
+      </node>
+      <node id="40">
+        <label>algorithm</label>
+      </node>
+      <node id="81">
+        <label>AMReX_FileSystem.H</label>
+        <link refid="AMReX__FileSystem_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>curand.h</label>
+      </node>
+      <node id="93">
+        <label>cstring</label>
+      </node>
+      <node id="51">
+        <label>AMReX_TypeList.H</label>
+        <link refid="AMReX__TypeList_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>memory</label>
+      </node>
+      <node id="101">
+        <label>AMReX_GpuLaunch.nolint.H</label>
+        <link refid="AMReX__GpuLaunch_8nolint_8H"/>
+      </node>
+      <node id="31">
+        <label>inttypes.h</label>
+      </node>
+      <node id="45">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>curand_kernel.h</label>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="361">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Complement.H</label>
+        <link refid="AMReX__EB2__IF__Complement_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="84">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H</label>
         <link refid="AMReX__MLCurlCurl_8H"/>
         <childnode refid="85" relation="include">
         </childnode>
+      </node>
+      <node id="341">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.cpp</label>
+        <link refid="AMReX__CArena_8cpp"/>
       </node>
       <node id="250">
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_extrapolater_K.H</label>
@@ -88,9 +1207,19 @@
         <childnode refid="187" relation="include">
         </childnode>
       </node>
+      <node id="381">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H</label>
+        <link refid="AMReX__ParticleInterpolators_8H"/>
+      </node>
       <node id="27">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFab.cpp</label>
         <link refid="AMReX__BaseFab_8cpp"/>
+      </node>
+      <node id="372">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Scale.H</label>
+        <link refid="AMReX__EB2__IF__Scale_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
       </node>
       <node id="204">
         <label>/home/runner/work/amrex/amrex/Src/Extern/Conduit/AMReX_Conduit_Blueprint.H</label>
@@ -127,6 +1256,20 @@
       <node id="191">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp</label>
         <link refid="AMReX__EBFArrayBox_8cpp"/>
+      </node>
+      <node id="376">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Translation.H</label>
+        <link refid="AMReX__EB2__IF__Translation_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
+      <node id="351">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H</label>
+        <link refid="AMReX__ParIter_8H"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
       </node>
       <node id="73">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLTensorOp.cpp</label>
@@ -332,6 +1475,52 @@
         <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_BLProfStats.cpp</label>
         <link refid="AMReX__BLProfStats_8cpp"/>
       </node>
+      <node id="357">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Base.H</label>
+        <link refid="AMReX__EB2__IF__Base_8H"/>
+        <childnode refid="322" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
+        <childnode refid="362" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="364" relation="include">
+        </childnode>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="367" relation="include">
+        </childnode>
+        <childnode refid="368" relation="include">
+        </childnode>
+        <childnode refid="369" relation="include">
+        </childnode>
+        <childnode refid="370" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="374" relation="include">
+        </childnode>
+        <childnode refid="375" relation="include">
+        </childnode>
+        <childnode refid="376" relation="include">
+        </childnode>
+        <childnode refid="377" relation="include">
+        </childnode>
+      </node>
       <node id="57">
         <label>/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H</label>
         <link refid="AMReX__NVector__MultiFab_8H"/>
@@ -340,6 +1529,26 @@
         <childnode refid="59" relation="include">
         </childnode>
         <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="342">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="241" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="344" relation="include">
+        </childnode>
+        <childnode refid="352" relation="include">
+        </childnode>
+      </node>
+      <node id="371">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H</label>
+        <link refid="AMReX__EB2__IF__Rotation_8H"/>
+        <childnode refid="358" relation="include">
         </childnode>
       </node>
       <node id="194">
@@ -370,6 +1579,12 @@
         <childnode refid="123" relation="include">
         </childnode>
       </node>
+      <node id="365">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Extrusion.H</label>
+        <link refid="AMReX__EB2__IF__Extrusion_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="208">
         <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H</label>
         <link refid="AMReX__HypreIJIface_8H"/>
@@ -380,6 +1595,14 @@
         <childnode refid="55" relation="include">
         </childnode>
         <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="375">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Torus.H</label>
+        <link refid="AMReX__EB2__IF__Torus_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
         </childnode>
       </node>
       <node id="22">
@@ -428,6 +1651,12 @@
         <childnode refid="36" relation="include">
         </childnode>
       </node>
+      <node id="363">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Difference.H</label>
+        <link refid="AMReX__EB2__IF__Difference_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="248">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp</label>
         <link refid="AMReX__BoxArray_8cpp"/>
@@ -458,6 +1687,18 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCGSolver.H</label>
         <link refid="AMReX__MLCGSolver_8H"/>
         <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="348">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/SENSEI/AMReX_InSituUtils.H</label>
+        <link refid="AMReX__InSituUtils_8H"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="350" relation="include">
         </childnode>
       </node>
       <node id="259">
@@ -499,6 +1740,12 @@
       <node id="53">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMultiFabUtil.cpp</label>
         <link refid="AMReX__EBMultiFabUtil_8cpp"/>
+      </node>
+      <node id="367">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Lathe.H</label>
+        <link refid="AMReX__EB2__IF__Lathe_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
       </node>
       <node id="181">
         <label>/home/runner/work/amrex/amrex/Src/Extern/PETSc/AMReX_PETSc.H</label>
@@ -706,6 +1953,18 @@
         <label>/home/runner/work/amrex/amrex/Src/Extern/PETSc/AMReX_PETSc.cpp</label>
         <link refid="AMReX__PETSc_8cpp"/>
       </node>
+      <node id="356">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H</label>
+        <link refid="AMReX__DenseBins_8H"/>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="223" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
       <node id="297">
         <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H</label>
         <link refid="AMReX__Habec__K_8H"/>
@@ -866,6 +2125,14 @@
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</label>
         <link refid="AMReX__EBDataCollection_8cpp"/>
       </node>
+      <node id="379">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H</label>
+        <link refid="AMReX__BinIterator_8H"/>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="380" relation="include">
+        </childnode>
+      </node>
       <node id="94">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian_hypre.cpp</label>
         <link refid="AMReX__MLNodeLaplacian__hypre_8cpp"/>
@@ -886,6 +2153,14 @@
         <childnode refid="96" relation="include">
         </childnode>
         <childnode refid="97" relation="include">
+        </childnode>
+      </node>
+      <node id="364">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Ellipsoid.H</label>
+        <link refid="AMReX__EB2__IF__Ellipsoid_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
         </childnode>
       </node>
       <node id="87">
@@ -984,6 +2259,14 @@
         <childnode refid="155" relation="include">
         </childnode>
       </node>
+      <node id="360">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Box.H</label>
+        <link refid="AMReX__EB2__IF__Box_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="48">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp</label>
         <link refid="AMReX__EB__RedistributionApply_8cpp"/>
@@ -1001,6 +2284,10 @@
         <link refid="AMReX__RKIntegrator_8H"/>
         <childnode refid="151" relation="include">
         </childnode>
+      </node>
+      <node id="358">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF.H</label>
+        <link refid="AMReX__EB2__IF_8H"/>
       </node>
       <node id="71">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.cpp</label>
@@ -1107,6 +2394,10 @@
       <node id="141">
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp</label>
         <link refid="AMReX__StateData_8cpp"/>
+      </node>
+      <node id="349">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/SENSEI/AMReX_InSituUtils.cpp</label>
+        <link refid="AMReX__InSituUtils_8cpp"/>
       </node>
       <node id="311">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H</label>
@@ -1220,6 +2511,14 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALap_K.H</label>
         <link refid="AMReX__MLALap__K_8H"/>
         <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="373">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Sphere.H</label>
+        <link refid="AMReX__EB2__IF__Sphere_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
         </childnode>
       </node>
       <node id="275">
@@ -1362,6 +2661,12 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.cpp</label>
         <link refid="AMReX__OpenBC_8cpp"/>
       </node>
+      <node id="352">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelFor.H</label>
+        <link refid="AMReX__MFParallelFor_8H"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
       <node id="129">
         <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.H</label>
         <link refid="AMReX__HypreABecLap3_8H"/>
@@ -1423,6 +2728,18 @@
         </childnode>
         <childnode refid="334" relation="include">
         </childnode>
+        <childnode refid="335" relation="include">
+        </childnode>
+      </node>
+      <node id="345">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H</label>
+        <link refid="AMReX__Reduce_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="328" relation="include">
+        </childnode>
       </node>
       <node id="157">
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H</label>
@@ -1441,6 +2758,10 @@
       <node id="96">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian_sten.cpp</label>
         <link refid="AMReX__MLNodeLaplacian__sten_8cpp"/>
+      </node>
+      <node id="338">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp</label>
+        <link refid="AMReX__Arena_8cpp"/>
       </node>
       <node id="168">
         <label>/home/runner/work/amrex/amrex/Src/Boundary/AMReX_FabSet.H</label>
@@ -1590,6 +2911,36 @@
         <childnode refid="153" relation="include">
         </childnode>
       </node>
+      <node id="344">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+        <childnode refid="351" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+      </node>
       <node id="92">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian.cpp</label>
         <link refid="AMReX__MLNodeLaplacian_8cpp"/>
@@ -1610,6 +2961,22 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeABecLaplacian.cpp</label>
         <link refid="AMReX__MLNodeABecLaplacian_8cpp"/>
       </node>
+      <node id="355">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H</label>
+        <link refid="AMReX__Scan_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+      </node>
       <node id="167">
         <label>/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_PlotFileUtilHDF5.H</label>
         <link refid="AMReX__PlotFileUtilHDF5_8H"/>
@@ -1618,6 +2985,10 @@
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp</label>
         <link refid="AMReX__EB__Redistribution_8cpp"/>
       </node>
+      <node id="353">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Partition.H</label>
+        <link refid="AMReX__Partition_8H"/>
+      </node>
       <node id="203">
         <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_WritePlotFile.cpp</label>
         <link refid="AMReX__WritePlotFile_8cpp"/>
@@ -1625,6 +2996,10 @@
       <node id="270">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_FilCC_3D_C.H</label>
         <link refid="AMReX__FilCC__3D__C_8H"/>
+      </node>
+      <node id="347">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp</label>
+        <link refid="AMReX__Bittree_8cpp"/>
       </node>
       <node id="216">
         <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_RegionsProfStats.H</label>
@@ -1655,6 +3030,26 @@
       <node id="51">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp</label>
         <link refid="AMReX__EB__StateRedistUtils_8cpp"/>
+      </node>
+      <node id="336">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="382" relation="include">
+        </childnode>
       </node>
       <node id="327">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_3D_K.H</label>
@@ -1699,6 +3094,12 @@
       <node id="70">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.cpp</label>
         <link refid="AMReX__MLEBABecLap_8cpp"/>
+      </node>
+      <node id="370">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Polynomial.H</label>
+        <link refid="AMReX__EB2__IF__Polynomial_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
       </node>
       <node id="26">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBAmrUtil.cpp</label>
@@ -1746,6 +3147,36 @@
         <label>/home/runner/work/amrex/amrex/Src/Extern/SENSEI/AMReX_AmrDataAdaptor.cpp</label>
         <link refid="AMReX__AmrDataAdaptor_8cpp"/>
       </node>
+      <node id="377">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Union.H</label>
+        <link refid="AMReX__EB2__IF__Union_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
+      <node id="343">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_LayoutData.H</label>
+        <link refid="AMReX__LayoutData_8H"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
       <node id="310">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson_K.H</label>
         <link refid="AMReX__MLPoisson__K_8H"/>
@@ -1782,6 +3213,12 @@
         <childnode refid="222" relation="include">
         </childnode>
       </node>
+      <node id="366">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Intersection.H</label>
+        <link refid="AMReX__EB2__IF__Intersection_8H"/>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="278">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil_1D_C.H</label>
         <link refid="AMReX__MultiFabUtil__1D__C_8H"/>
@@ -1794,6 +3231,12 @@
         <childnode refid="130" relation="include">
         </childnode>
         <childnode refid="178" relation="include">
+        </childnode>
+      </node>
+      <node id="339">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BlockMutex.H</label>
+        <link refid="AMReX__BlockMutex_8H"/>
+        <childnode refid="340" relation="include">
         </childnode>
       </node>
       <node id="329">
@@ -1894,6 +3337,14 @@
         <childnode refid="202" relation="include">
         </childnode>
       </node>
+      <node id="368">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Parser.H</label>
+        <link refid="AMReX__EB2__IF__Parser_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="308">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_K.H</label>
         <link refid="AMReX__MLMG__K_8H"/>
@@ -1941,6 +3392,16 @@
       <node id="93">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian_eb.cpp</label>
         <link refid="AMReX__MLNodeLaplacian__eb_8cpp"/>
+      </node>
+      <node id="359">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_AllRegular.H</label>
+        <link refid="AMReX__EB2__IF__AllRegular_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
       </node>
       <node id="260">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_COORDSYS_1D_C.H</label>
@@ -2050,6 +3511,10 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBNodeFDLaplacian.cpp</label>
         <link refid="AMReX__MLEBNodeFDLaplacian_8cpp"/>
       </node>
+      <node id="354">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp</label>
+        <link refid="AMReX__Random_8cpp"/>
+      </node>
       <node id="66">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC_K.H</label>
         <link refid="AMReX__OpenBC__K_8H"/>
@@ -2075,6 +3540,10 @@
       <node id="122">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFabFactory.cpp</label>
         <link refid="AMReX__EBFabFactory_8cpp"/>
+      </node>
+      <node id="378">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp</label>
+        <link refid="AMReX__SUNMemory_8cpp"/>
       </node>
       <node id="69">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H</label>
@@ -2102,6 +3571,14 @@
         <childnode refid="233" relation="include">
         </childnode>
       </node>
+      <node id="380">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H</label>
+        <link refid="AMReX__SparseBins_8H"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
       <node id="328">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp</label>
         <link refid="AMReX__EBCellFlag_8cpp"/>
@@ -2118,6 +3595,10 @@
         <childnode refid="256" relation="include">
         </childnode>
       </node>
+      <node id="340">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BlockMutex.cpp</label>
+        <link refid="AMReX__BlockMutex_8cpp"/>
+      </node>
       <node id="233">
         <label>/home/runner/work/amrex/amrex/Src/SDC/AMReX_SDCstruct.cpp</label>
         <link refid="AMReX__SDCstruct_8cpp"/>
@@ -2125,6 +3606,14 @@
       <node id="234">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.cpp</label>
         <link refid="AMReX__VisMF_8cpp"/>
+      </node>
+      <node id="335">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H</label>
+        <link refid="AMReX__PODVector_8H"/>
+        <childnode refid="336" relation="include">
+        </childnode>
+        <childnode refid="383" relation="include">
+        </childnode>
       </node>
       <node id="198">
         <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp</label>
@@ -2230,6 +3719,10 @@
         <childnode refid="222" relation="include">
         </childnode>
       </node>
+      <node id="383">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.cpp</label>
+        <link refid="AMReX__PODVector_8cpp"/>
+      </node>
       <node id="80">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.H</label>
         <link refid="AMReX__MLLinOp_8H"/>
@@ -2292,6 +3785,74 @@
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.cpp</label>
         <link refid="AMReX__EB2__Level__STL_8cpp"/>
       </node>
+      <node id="337">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Gpu.H</label>
+        <link refid="AMReX__Gpu_8H"/>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+        <childnode refid="341" relation="include">
+        </childnode>
+        <childnode refid="260" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="342" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="353" relation="include">
+        </childnode>
+        <childnode refid="354" relation="include">
+        </childnode>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="357" relation="include">
+        </childnode>
+        <childnode refid="378" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="351" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="380" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+      </node>
       <node id="220">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H</label>
         <link refid="AMReX__ParticleCommunication_8H"/>
@@ -2332,6 +3893,16 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
+      <node id="382">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_StructOfArrays.H</label>
+        <link refid="AMReX__StructOfArrays_8H"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+      </node>
       <node id="184">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.H</label>
         <link refid="AMReX__algoim_8H"/>
@@ -2370,6 +3941,14 @@
         <childnode refid="67" relation="include">
         </childnode>
       </node>
+      <node id="369">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Plane.H</label>
+        <link refid="AMReX__EB2__IF__Plane_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="117">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_chkpt_file.cpp</label>
         <link refid="AMReX__EB2__IndexSpace__chkpt__file_8cpp"/>
@@ -2394,6 +3973,14 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBNodeFDLap_K.H</label>
         <link refid="AMReX__MLEBNodeFDLap__K_8H"/>
         <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="346">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_ParReduce.H</label>
+        <link refid="AMReX__ParReduce_8H"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="305">
@@ -2440,6 +4027,14 @@
         <childnode refid="115" relation="include">
         </childnode>
         <childnode refid="117" relation="include">
+        </childnode>
+      </node>
+      <node id="374">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Spline.H</label>
+        <link refid="AMReX__EB2__IF__Spline_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
         </childnode>
       </node>
       <node id="334">
@@ -2539,6 +4134,10 @@
         </childnode>
         <childnode refid="101" relation="include">
         </childnode>
+      </node>
+      <node id="350">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/SENSEI/AMReX_ParticleDataAdaptorI.H</label>
+        <link refid="AMReX__ParticleDataAdaptorI_8H"/>
       </node>
       <node id="230">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleIO.H</label>
@@ -2668,6 +4267,14 @@
         <childnode refid="325" relation="include">
         </childnode>
       </node>
+      <node id="362">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Cylinder.H</label>
+        <link refid="AMReX__EB2__IF__Cylinder_8H"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
       <node id="331">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBToPVD.H</label>
         <link refid="AMReX__EBToPVD_8H"/>
@@ -2767,6 +4374,7 @@
         </childnode>
       </node>
     </invincdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
       <sectiondef kind="func">
       <memberdef kind="function" id="AMReX__MemPool_8H_1a0c81aff9a077e415a6dba72b2b8b8e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2779,7 +4387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="8" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="36" bodyend="74" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="8" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="12" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="36" bodyend="74" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="12" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1a4dd49892147e767c1b44ffb5be366739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2792,7 +4400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="9" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="76" bodyend="80" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="9" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="13" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="76" bodyend="80" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="13" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1a8da0fbd10f09ba39873bef20e13909b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -2809,7 +4417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="10" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="82" bodyend="86" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="10" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="14" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="82" bodyend="86" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="14" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1a02550f5d3498f47d6ef88f13340bb20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2826,7 +4434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="11" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="88" bodyend="92" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="11" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="15" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="88" bodyend="92" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="15" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1a29cdf545f17f50c622ecaf176189d29f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2852,7 +4460,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="12" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="94" bodyend="108" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="12" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="16" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="94" bodyend="108" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="16" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1ac8b9eea3aaf3546e2d72f716c622b339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2873,7 +4481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="13" column="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="13" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="17" column="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="17" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__MemPool_8H_1a2018ca53f2071477df0913e3f5e1c5e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2894,7 +4502,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="14" column="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="14" declcolumn="11"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" line="18" column="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H" declline="18" declcolumn="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -2906,19 +4514,59 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_MEMPOOL_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a0c81aff9a077e415a6dba72b2b8b8e6a" kindref="member">amrex_mempool_init</ref><sp/>();</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a4dd49892147e767c1b44ffb5be366739" kindref="member">amrex_mempool_finalize</ref><sp/>();</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="AMReX__MemPool_8H_1a8da0fbd10f09ba39873bef20e13909b9" kindref="member">amrex_mempool_alloc</ref><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a02550f5d3498f47d6ef88f13340bb20b" kindref="member">amrex_mempool_free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a29cdf545f17f50c622ecaf176189d29f" kindref="member">amrex_mempool_get_stats</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_min,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_max,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_tot);<sp/><sp/></highlight></codeline>
-<codeline lineno="13" refid="AMReX__MemPool_8H_1ac8b9eea3aaf3546e2d72f716c622b339" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1ac8b9eea3aaf3546e2d72f716c622b339" kindref="member">amrex_real_array_init</ref><sp/>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems);</highlight></codeline>
-<codeline lineno="14" refid="AMReX__MemPool_8H_1a2018ca53f2071477df0913e3f5e1c5e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a2018ca53f2071477df0913e3f5e1c5e8" kindref="member">amrex_array_init_snan</ref><sp/>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__GpuLaunch_8H" kindref="compound">AMReX_GpuLaunch.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;type_traits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a0c81aff9a077e415a6dba72b2b8b8e6a" kindref="member">amrex_mempool_init</ref><sp/>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a4dd49892147e767c1b44ffb5be366739" kindref="member">amrex_mempool_finalize</ref><sp/>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="AMReX__MemPool_8H_1a8da0fbd10f09ba39873bef20e13909b9" kindref="member">amrex_mempool_alloc</ref><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a02550f5d3498f47d6ef88f13340bb20b" kindref="member">amrex_mempool_free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a29cdf545f17f50c622ecaf176189d29f" kindref="member">amrex_mempool_get_stats</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_min,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_max,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_tot);<sp/><sp/></highlight></codeline>
+<codeline lineno="17" refid="AMReX__MemPool_8H_1ac8b9eea3aaf3546e2d72f716c622b339" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1ac8b9eea3aaf3546e2d72f716c622b339" kindref="member">amrex_real_array_init</ref><sp/>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems);</highlight></codeline>
+<codeline lineno="18" refid="AMReX__MemPool_8H_1a2018ca53f2071477df0913e3f5e1c5e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="AMReX__MemPool_8H_1a2018ca53f2071477df0913e3f5e1c5e8" kindref="member">amrex_array_init_snan</ref><sp/>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref><sp/>run_on,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::enable_if_t&lt;std::is_same_v&lt;T,double&gt;<sp/>||<sp/>std::is_same_v&lt;T,float&gt;,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;<sp/>FOO<sp/>=<sp/>0&gt;</highlight></codeline>
+<codeline lineno="24" refid="namespaceamrex_1ad622d627e1fea988d361c48316ad9275" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad622d627e1fea988d361c48316ad9275" kindref="member">fill_snan</ref><sp/>(T*<sp/>p,<sp/>std::size_t<sp/>nelems)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>||<sp/>nelems<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/>run_on<sp/>==<sp/><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737" kindref="member">RunOn::Device</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(nelems,<sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(Long<sp/>i)<sp/>noexcept</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[i]<sp/>=<sp/>std::numeric_limits&lt;T&gt;::signaling_NaN();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(std::is_same_v&lt;T,float&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>UINT32_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>snan<sp/>=<sp/>UINT32_C(0x7fa00000);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t),<sp/></highlight><highlight class="stringliteral">&quot;MemPool:<sp/>sizeof<sp/>float<sp/>!=<sp/>sizeof<sp/>uint32_t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nelems;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a90ff215e828e9192dbd196a78cacf083" kindref="member">std::memcpy</ref>(p++,<sp/>&amp;snan,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(std::is_same_v&lt;T,double&gt;)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>UINT64_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>snan<sp/>=<sp/>UINT64_C(0x7ff0000080000001);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t),<sp/></highlight><highlight class="stringliteral">&quot;MemPool:<sp/>sizeof<sp/>double<sp/>!=<sp/>sizeof<sp/>uint64_t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nelems;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a90ff215e828e9192dbd196a78cacf083" kindref="member">std::memcpy</ref>(p++,<sp/>&amp;snan,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.H"/>
   </compounddef>

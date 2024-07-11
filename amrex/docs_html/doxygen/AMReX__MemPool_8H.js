@@ -6,5 +6,6 @@ var AMReX__MemPool_8H =
     [ "amrex_mempool_free", "AMReX__MemPool_8H.html#a02550f5d3498f47d6ef88f13340bb20b", null ],
     [ "amrex_mempool_get_stats", "AMReX__MemPool_8H.html#a29cdf545f17f50c622ecaf176189d29f", null ],
     [ "amrex_mempool_init", "AMReX__MemPool_8H.html#a0c81aff9a077e415a6dba72b2b8b8e6a", null ],
-    [ "amrex_real_array_init", "AMReX__MemPool_8H.html#ac8b9eea3aaf3546e2d72f716c622b339", null ]
+    [ "amrex_real_array_init", "AMReX__MemPool_8H.html#ac8b9eea3aaf3546e2d72f716c622b339", null ],
+    [ "fill_snan", "AMReX__MemPool_8H.html#ad622d627e1fea988d361c48316ad9275", null ]
 ];

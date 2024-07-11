@@ -1,5 +1,15 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30":[2,0,0,22,7],
+"namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900":[2,0,0,22,11],
+"namespaceamrex_1_1Math.html#a8f2602163bf297a5c5342e6b9425e626":[2,0,0,22,5],
+"namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27":[2,0,0,22,6],
+"namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d":[2,0,0,22,2],
+"namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7":[2,0,0,22,3],
+"namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5":[2,0,0,22,4],
+"namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5":[2,0,0,22,9],
+"namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a":[2,0,0,22,8],
+"namespaceamrex_1_1Math_1_1detail.html":[2,0,0,22,0],
 "namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6":[2,0,0,22,0,0],
 "namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39":[2,0,0,22,0,1],
 "namespaceamrex_1_1Morton.html":[2,0,0,25],
@@ -239,15 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1ParallelDescriptor.html#aae0327dea4fe1379f7b09210e8e6ebd2":[2,0,0,35,147],
 "namespaceamrex_1_1ParallelDescriptor.html#ab0ebfbe15f6ff892bd36ecba234fb4ea":[2,0,0,35,11],
 "namespaceamrex_1_1ParallelDescriptor.html#ab10f03093e521df6b76a4b2bcf15fb57":[2,0,0,35,125],
-"namespaceamrex_1_1ParallelDescriptor.html#ab1375009d4e5cd0730cada71e3f18c33":[2,0,0,35,51],
-"namespaceamrex_1_1ParallelDescriptor.html#ab3aa34d0c55755f52fccec7dd20dd9fb":[2,0,0,35,40],
-"namespaceamrex_1_1ParallelDescriptor.html#ab3cede7750fdc21c3c11c9bc62a174ac":[2,0,0,35,149],
-"namespaceamrex_1_1ParallelDescriptor.html#ab513eb7f98a3f225eda4e3dc0d2ec2b7":[2,0,0,35,31],
-"namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a":[2,0,0,35,46],
-"namespaceamrex_1_1ParallelDescriptor.html#ab7ca980624e045bdd5d349b6605adcbc":[2,0,0,35,112],
-"namespaceamrex_1_1ParallelDescriptor.html#ab86dba69cfd44465e773abcc8a4bcecf":[2,0,0,35,18],
-"namespaceamrex_1_1ParallelDescriptor.html#ab8d97816d7145428dcd6bf6d1a1b9a91":[2,0,0,35,66],
-"namespaceamrex_1_1ParallelDescriptor.html#ac0861548eabcd3f4b4c72a8826f83f8e":[2,0,0,35,16],
-"namespaceamrex_1_1ParallelDescriptor.html#ac28c7a40658a100cdc586086b19a3915":[2,0,0,35,175],
-"namespaceamrex_1_1ParallelDescriptor.html#ac28f369d555a5ea5f2aab2e6a64c2f08":[2,0,0,35,25]
+"namespaceamrex_1_1ParallelDescriptor.html#ab1375009d4e5cd0730cada71e3f18c33":[2,0,0,35,51]
 };

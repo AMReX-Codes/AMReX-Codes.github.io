@@ -14,6 +14,7 @@ var AMReX_8cpp =
     [ "handle_sigint", "AMReX_8cpp.html#ab2bbc5f6bf5d703bf0762b24b3c6f36e", null ],
     [ "handle_sigsegv", "AMReX_8cpp.html#a4702b3f550d0d533a0f2afffc700296e", null ],
     [ "handle_sigterm", "AMReX_8cpp.html#a836c83c423a648668af41b8498a0f413", null ],
+    [ "init_snan", "AMReX_8cpp.html#a21025fe27bc0254f3b270587556fbfa5", null ],
     [ "oserr", "AMReX_8cpp.html#a1ec641702551464f7feaa4f4f225f2d7", null ],
     [ "osout", "AMReX_8cpp.html#a94b8de2ec8af3b8975c7d280254f29cf", null ],
     [ "regtest_reduction", "AMReX_8cpp.html#a3eb118488c11fb1bd1c14334bfecc123", null ],

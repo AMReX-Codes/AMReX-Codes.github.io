@@ -1497,6 +1497,7 @@
     <member refid="classamrex_1_1BaseFab_1a3427e5ed98498ff54da5f75d22923f5f" kind="function"><name>operator()</name></member>
     <member refid="classamrex_1_1BaseFab_1ac195a2bbff03a7f02e30788342473d18" kind="function"><name>getVal</name></member>
     <member refid="classamrex_1_1BaseFab_1af8f8e7b8b678678f74f235b0ebdeed9f" kind="function"><name>getVal</name></member>
+    <member refid="classamrex_1_1BaseFab_1ab063c08278822a569d923d57d1e39dee" kind="function"><name>fill_snan</name></member>
     <member refid="classamrex_1_1BaseFab_1ab24f1f5f55a90b31121560df9c333fa7" kind="function"><name>setVal</name></member>
     <member refid="classamrex_1_1BaseFab_1acbfe1bff2de3daad93c1234eae1f0cf3" kind="function"><name>setVal</name></member>
     <member refid="classamrex_1_1BaseFab_1ad2b35980de651c0823ee08f5f20f642c" kind="function"><name>setVal</name></member>
@@ -10196,6 +10197,7 @@
     <member refid="classamrex_1_1PODVector_1a28a9b3abe95194c50e3e7bcdc069219b" kind="function"><name>UpdateDataPtr</name></member>
     <member refid="classamrex_1_1PODVector_1a5e58adad8e3a9824ae172c4beeaa3b76" kind="function"><name>AllocateBufferForPush</name></member>
     <member refid="classamrex_1_1PODVector_1af6fc3e8635c3829330db263343ab6f59" kind="function"><name>AllocateBufferForInsert</name></member>
+    <member refid="classamrex_1_1PODVector_1a0de3fd1db54cd0fb49dec4a4e3f21e59" kind="function"><name>resize_without_init_snan</name></member>
   </compound>
   <compound refid="structamrex_1_1FabArrayBase_1_1PolarB" kind="struct"><name>amrex::FabArrayBase::PolarB</name>
     <member refid="structamrex_1_1FabArrayBase_1_1PolarB_1ae7d84e3daa0f3502f2ce6369dcb42f60" kind="variable"><name>m_ngrow</name></member>
@@ -12441,6 +12443,8 @@
     <member refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kind="function"><name>ErrorStream</name></member>
     <member refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kind="function"><name>Verbose</name></member>
     <member refid="namespaceamrex_1a125dcbb8afa7e676566242972a5b7757" kind="function"><name>SetVerbose</name></member>
+    <member refid="namespaceamrex_1a48ee24ac226396b92932d8d533d68af1" kind="function"><name>InitSNaN</name></member>
+    <member refid="namespaceamrex_1ac250c5ca9b8aaa82a1fc020e6855ae07" kind="function"><name>SetInitSNaN</name></member>
     <member refid="namespaceamrex_1a0b2451baea738a8717530466c13f37fe" kind="function"><name>get_command</name></member>
     <member refid="namespaceamrex_1a0f3d8f755663a93f3953f7cda5590cac" kind="function"><name>command_argument_count</name></member>
     <member refid="namespaceamrex_1a566544464dedd2d70fe9969fc79658cd" kind="function"><name>get_command_argument</name></member>
@@ -12981,6 +12985,7 @@
     <member refid="namespaceamrex_1_1disabled_1a0d57b1b25d1b53052c080fe847e40acd" kind="function"><name>abs</name></member>
     <member refid="namespaceamrex_1_1disabled_1ae4f20d81eb8a87b5fdcfd50bfd6ef6ba" kind="function"><name>abs</name></member>
     <member refid="namespaceamrex_1_1disabled_1a8b565c4d58a622a606eb0db1276b6669" kind="function"><name>abs</name></member>
+    <member refid="namespaceamrex_1ad622d627e1fea988d361c48316ad9275" kind="function"><name>fill_snan</name></member>
     <member refid="namespaceamrex_1a92b62b2e393693e759cc2c4fec860c06" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1ac3c395681af12cfb805dd6eb440b68cf" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1a4b0d01afec5218e25096773af48821bb" kind="function"><name>InterpAddBox</name></member>
@@ -14206,6 +14211,7 @@
     <member refid="namespaceamrex_1_1detail_1ad4cc090e4556da716349ad4577feaff6" kind="function"><name>fillValuesImpl</name></member>
     <member refid="namespaceamrex_1_1detail_1a1e539d8b07d742d0950e675a66ce56b5" kind="function"><name>memCopyImpl</name></member>
     <member refid="namespaceamrex_1_1detail_1addbe75f994583dc4be7065e7a55940bf" kind="function"><name>memMoveImpl</name></member>
+    <member refid="namespaceamrex_1_1detail_1acaad82f4281e3a1b6691574774731430" kind="function"><name>maybe_init_snan</name></member>
     <member refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kind="function"><name>DefaultGpuSeed</name></member>
     <member refid="namespaceamrex_1_1detail_1aea7d44c9cd549d72b1f3fa48c6c627c9" kind="function"><name>make_table</name></member>
     <member refid="namespaceamrex_1_1detail_1a7cc30cb3974fb2a7e882c016a4b81e3c" kind="function"><name>make_table</name></member>
@@ -15150,6 +15156,7 @@
     <member refid="namespaceamrex_1_1system_1a94b8de2ec8af3b8975c7d280254f29cf" kind="variable"><name>osout</name></member>
     <member refid="namespaceamrex_1_1system_1a1ec641702551464f7feaa4f4f225f2d7" kind="variable"><name>oserr</name></member>
     <member refid="namespaceamrex_1_1system_1a2ba7b9cd7c50a0eccdb6d825cc026da3" kind="variable"><name>error_handler</name></member>
+    <member refid="namespaceamrex_1_1system_1a21025fe27bc0254f3b270587556fbfa5" kind="variable"><name>init_snan</name></member>
     <member refid="namespaceamrex_1_1system_1ae1d6711c50c87572893a9c863cbaa2e2" kind="variable"><name>NDebug</name></member>
     <member refid="namespaceamrex_1_1system_1aeb34e12844e5d37ee8582e569d702c95" kind="variable"><name>Debug</name></member>
   </compound>

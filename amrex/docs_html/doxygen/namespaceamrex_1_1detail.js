@@ -94,6 +94,7 @@ var namespaceamrex_1_1detail =
     [ "make_table", "namespaceamrex_1_1detail.html#acafe50ccedfa64e02c41ae675f646a53", null ],
     [ "make_table", "namespaceamrex_1_1detail.html#a951cc75933e6ea9338ea3365ec337fb2", null ],
     [ "make_tuple", "namespaceamrex_1_1detail.html#a1d441e7b18bae347c4ed240bcb0b4eaa", null ],
+    [ "maybe_init_snan", "namespaceamrex_1_1detail.html#acaad82f4281e3a1b6691574774731430", null ],
     [ "memCopyImpl", "namespaceamrex_1_1detail.html#a1e539d8b07d742d0950e675a66ce56b5", null ],
     [ "memMoveImpl", "namespaceamrex_1_1detail.html#addbe75f994583dc4be7065e7a55940bf", null ],
     [ "mf_set_domain_bndry", "namespaceamrex_1_1detail.html#a12a52d34749a2924b4dc8f3d82f7f94d", null ],

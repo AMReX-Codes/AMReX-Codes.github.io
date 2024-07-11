@@ -68,6 +68,7 @@ var classamrex_1_1PODVector =
     [ "reserve", "classamrex_1_1PODVector.html#a1acdad6998ff1a1464020b0b70b69e1f", null ],
     [ "resize", "classamrex_1_1PODVector.html#ac5114811535bc90b00c115260f83b20c", null ],
     [ "resize", "classamrex_1_1PODVector.html#ae77d9927b9cbf583c1c81e38ae11cb5d", null ],
+    [ "resize_without_init_snan", "classamrex_1_1PODVector.html#a0de3fd1db54cd0fb49dec4a4e3f21e59", null ],
     [ "shrink_to_fit", "classamrex_1_1PODVector.html#a3cff4b6aa7fd45c59b2225de7f72f979", null ],
     [ "size", "classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347", null ],
     [ "swap", "classamrex_1_1PODVector.html#a20b9cc552a434d343fd01e5c62b39ef2", null ],

@@ -279,6 +279,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af8f8e7b8b678678f74f235b0ebdeed9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#af8f8e7b8b678678f74f235b0ebdeed9f">getVal</a> (T *data, const <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> &amp;pos) const noexcept</td></tr>
 <tr class="memdesc:af8f8e7b8b678678f74f235b0ebdeed9f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as above, except that starts at component 0 and copies all comps.  <a href="classamrex_1_1BaseFab.html#af8f8e7b8b678678f74f235b0ebdeed9f">More...</a><br /></td></tr>
 <tr class="separator:af8f8e7b8b678678f74f235b0ebdeed9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab063c08278822a569d923d57d1e39dee"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on, class U  = T, std::enable_if_t&lt; std::is_same_v&lt; U, float &gt;||std::is_same_v&lt; U, double &gt;, int &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:ab063c08278822a569d923d57d1e39dee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ab063c08278822a569d923d57d1e39dee">fill_snan</a> () noexcept</td></tr>
+<tr class="separator:ab063c08278822a569d923d57d1e39dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24f1f5f55a90b31121560df9c333fa7"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on&gt; </td></tr>
 <tr class="memitem:ab24f1f5f55a90b31121560df9c333fa7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">setVal</a> (T const &amp;x, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp) noexcept</td></tr>
 <tr class="memdesc:ab24f1f5f55a90b31121560df9c333fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The setVal functions set sub-regions in the <a class="el" href="classamrex_1_1BaseFab.html" title="A FortranArrayBox(FAB)-like object.">BaseFab</a> to a constant value. This most general form specifies the sub-box, the starting component number, and the number of components to be set.  <a href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">More...</a><br /></td></tr>
@@ -3558,6 +3561,32 @@ template&lt;class U , std::enable_if_t&lt; std::is_trivially_destructible_v&lt; 
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1Gpu_1_1Elixir.html">Elixir</a> <a class="el" href="classamrex_1_1BaseFab.html">amrex::BaseFab</a>&lt; T &gt;::elixir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab063c08278822a569d923d57d1e39dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab063c08278822a569d923d57d1e39dee">&#9670;&nbsp;</a></span>fill_snan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;RunOn run_on, class U , std::enable_if_t&lt; std::is_same_v&lt; U, float &gt;||std::is_same_v&lt; U, double &gt;, int &gt; FOO&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1BaseFab.html">amrex::BaseFab</a>&lt; T &gt;::fill_snan</td>
         </tr>
       </table>
   </td>
