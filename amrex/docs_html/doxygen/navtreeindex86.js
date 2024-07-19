@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structyy__buffer__state.html#a0d25458e69eb22207fc633a1255d099d":[3,0,34,6],
 "structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307":[3,0,34,1],
 "structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[3,0,34,8],
 "structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4":[3,0,34,4],
@@ -57,6 +58,5 @@ var NAVTREEINDEX86 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };

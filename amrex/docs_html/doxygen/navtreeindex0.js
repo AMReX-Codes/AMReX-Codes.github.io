@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[2,0,22],
 "AMReX_8H.html":[4,0,0,2,2],
 "AMReX_8H.html#a023801a9417fb6bd2f74787e89124a8c":[4,0,0,2,2,25],
 "AMReX_8H.html#a03acb27c6c261b36754a5886f87170ab":[4,0,0,2,2,38],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea503682758a9652794035ca63ab96c560":[4,0,0,5,0,2,3,1],
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea6b4802e2429bba442dc07b4022a1d96c":[4,0,0,5,0,2,3,5],
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea70e198feec9ed63c2f25d181a5dc611e":[4,0,0,5,0,2,3,6],
-"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaab6fadb81d010967ae7f2188711d1648":[4,0,0,5,0,2,3,0],
-"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaba96691ea8224cc3ccf1b9b54dfff4b3":[4,0,0,5,0,2,3,3]
+"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaab6fadb81d010967ae7f2188711d1648":[4,0,0,5,0,2,3,0]
 };

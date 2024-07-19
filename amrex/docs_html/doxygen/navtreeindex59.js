@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"classhacc_1_1Distribution.html#af955d6c08b5ded766245f60828cdd039":[3,0,10,2,20],
 "classhacc_1_1Distribution.html#afb7db67a5cbe65d16e4df2ad3f3aa582":[3,0,10,2,4],
 "classhacc_1_1Distribution.html#afc72250908cb3a420de0e48180ba060f":[3,0,10,2,33],
 "classhacc_1_1Distribution.html#afe5148576a314c5e950c578b53cfc181":[3,0,10,2,35],
@@ -200,13 +201,13 @@ var NAVTREEINDEX59 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0,0],
 "globals.html":[4,1,0],
+"globals.html":[4,1,0,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6,0],
 "globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "globals_func_w.html":[4,1,1,15],
 "globals_func_x.html":[4,1,1,16],
 "globals_func_y.html":[4,1,1,17],
-"globals_func_z.html":[4,1,1,18],
-"globals_g.html":[4,1,0,6]
+"globals_func_z.html":[4,1,1,18]
 };
