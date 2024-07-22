@@ -1,12 +1,5 @@
 var NAVTREEINDEX86 =
 {
-"unionamrex_1_1BATransformer_1_1BATOp.html#a8a638320a3eff1eddadce618e107e535":[3,0,0,110,0,4],
-"unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[3,0,0,110,0,6],
-"unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[3,0,0,110,0,3],
-"unionamrex_1_1BlockMutex_1_1state__t.html":[3,0,0,98,0],
-"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[3,0,0,98,0,1],
-"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[3,0,0,98,0,2],
-"unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html":[3,0,0,19,0,2,0],
 "unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html#a64f91ae2c5358ccf46099d9e5d3fdd7b":[3,0,0,19,0,2,0,0],
 "unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html#a856736317ca9e27fa41f05d3d0b42cd6":[3,0,0,19,0,2,0,3],
 "unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html#a957055c6af7eabda76b98c1e01e75b58":[3,0,0,19,0,2,0,2],

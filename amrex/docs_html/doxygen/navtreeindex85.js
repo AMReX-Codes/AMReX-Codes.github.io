@@ -1,12 +1,5 @@
 var NAVTREEINDEX85 =
 {
-"structamrex_1_1detail_1_1IsConvertibleImp.html":[3,0,0,3,24],
-"structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html":[3,0,0,3,25],
-"structamrex_1_1detail_1_1Nonesuch.html":[3,0,0,3,21],
-"structamrex_1_1detail_1_1Nonesuch.html#a3dbacdafd791162c9474b934df093e5c":[3,0,0,3,21,4],
-"structamrex_1_1detail_1_1Nonesuch.html#a531b8aa2b7cb3140db64402b060c0406":[3,0,0,3,21,5],
-"structamrex_1_1detail_1_1Nonesuch.html#a5ab6a79913277546a5e11028e6e427ef":[3,0,0,3,21,2],
-"structamrex_1_1detail_1_1Nonesuch.html#a98dec8e1541181c79d10e63ba228f266":[3,0,0,3,21,3],
 "structamrex_1_1detail_1_1Nonesuch.html#ac0e729741324275e5bf39cc6dd143f4b":[3,0,0,3,21,1],
 "structamrex_1_1detail_1_1Nonesuch.html#ac31cc5ce552668f79bbc820c8d7998e0":[3,0,0,3,21,0],
 "structamrex_1_1detail_1_1SplitIndexList.html":[3,0,0,3,13],
@@ -249,5 +242,12 @@ var NAVTREEINDEX85 =
 "unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[3,0,0,110,0,2],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[3,0,0,110,0,9],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf":[3,0,0,110,0,5],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[3,0,0,110,0,8]
+"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[3,0,0,110,0,8],
+"unionamrex_1_1BATransformer_1_1BATOp.html#a8a638320a3eff1eddadce618e107e535":[3,0,0,110,0,4],
+"unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[3,0,0,110,0,6],
+"unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[3,0,0,110,0,3],
+"unionamrex_1_1BlockMutex_1_1state__t.html":[3,0,0,98,0],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[3,0,0,98,0,1],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[3,0,0,98,0,2],
+"unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html":[3,0,0,19,0,2,0]
 };

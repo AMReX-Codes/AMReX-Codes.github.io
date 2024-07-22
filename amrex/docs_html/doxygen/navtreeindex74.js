@@ -1,7 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"namespacemembers_vars.html":[2,1,2],
-"namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
 "namespacemembers_vars_e.html":[2,1,2,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX74 =
 "structamrex_1_1AmrInfo.html#ac92498a911f4e98692efdba9005f492f":[3,0,0,33,10],
 "structamrex_1_1AmrInfo.html#ad3142cf009fdd8667c2352c39fb2c522":[3,0,0,33,4],
 "structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163":[3,0,0,33,12],
-"structamrex_1_1AmrInfo.html#ae0c6a5189c216220bf4aab567206c362":[3,0,0,33,14]
+"structamrex_1_1AmrInfo.html#ae0c6a5189c216220bf4aab567206c362":[3,0,0,33,14],
+"structamrex_1_1AmrInfo.html#aec9f071fb0930efe09a4efe35edc4a2f":[3,0,0,33,0],
+"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html":[3,0,0,427,0]
 };

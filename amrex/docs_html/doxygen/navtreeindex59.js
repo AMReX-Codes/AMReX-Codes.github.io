@@ -1,6 +1,5 @@
 var NAVTREEINDEX59 =
 {
-"dir_997fa42af28f6d8af2a79275cfe7ca93.html":[4,0,0,8],
 "dir_a0554858aa64f06dec2e57d42cc05182.html":[4,0,0,5,4],
 "dir_a3d35c88284bcc9e68dd82330f2a8332.html":[4,0,0,2,0],
 "dir_a6a17b5120068f114fed93e39fc1db3f.html":[4,0,0,5,7],
@@ -117,8 +116,8 @@ var NAVTREEINDEX59 =
 "functions_rela.html":[3,3,6],
 "functions_s.html":[3,3,0,19],
 "functions_t.html":[3,3,0,20],
-"functions_type.html":[3,3,3,0],
 "functions_type.html":[3,3,3],
+"functions_type.html":[3,3,3,0],
 "functions_type_b.html":[3,3,3,1],
 "functions_type_c.html":[3,3,3,2],
 "functions_type_d.html":[3,3,3,3],
@@ -137,8 +136,8 @@ var NAVTREEINDEX59 =
 "functions_type_v.html":[3,3,3,16],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -170,13 +169,13 @@ var NAVTREEINDEX59 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0],
 "globals.html":[4,1,0,0],
+"globals.html":[4,1,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
+"globals_defs.html":[4,1,6],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX59 =
 "index.html#contribute":[0,0,2],
 "index.html#development":[0,0,1],
 "index.html#migration_from_boxlib":[0,0,5],
-"index.html#tutorials":[0,0,3]
+"index.html#tutorials":[0,0,3],
+"index.html#welcome_to_AMReX":[0,0]
 };

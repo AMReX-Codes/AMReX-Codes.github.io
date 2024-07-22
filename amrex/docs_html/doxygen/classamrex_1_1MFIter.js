@@ -18,6 +18,7 @@ var classamrex_1_1MFIter =
     [ "MFIter", "classamrex_1_1MFIter.html#a4c3f600ec834db18aba9266638ac436e", null ],
     [ "~MFIter", "classamrex_1_1MFIter.html#aac3223d243bff8f86cbd227b8f1af866", null ],
     [ "allowMultipleMFIters", "classamrex_1_1MFIter.html#a3a8a7a77b913c5ddc8b352f2610e9cd1", null ],
+    [ "currentDepth", "classamrex_1_1MFIter.html#acf586bc23e95b60798ffd924f1d31f0c", null ],
     [ "DistributionMap", "classamrex_1_1MFIter.html#a47d2e159ed2d66cd78498ea5bea35a17", null ],
     [ "fabbox", "classamrex_1_1MFIter.html#a3290eb14472377e0118842344967a44c", null ],
     [ "Finalize", "classamrex_1_1MFIter.html#a7f8343c78da4a5d341aae1e5aea752aa", null ],
