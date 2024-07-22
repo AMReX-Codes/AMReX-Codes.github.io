@@ -1,6 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"AMReX__distFcnElement_8H.html":[4,0,0,4,4],
 "AMReX__distFcnElement_8H_source.html":[4,0,0,4,4],
 "AMReX__distFcnElement_8cpp.html":[4,0,0,4,3],
 "AMReX__ebcellflag__mod_8F90.html":[4,0,0,4,74],
@@ -249,5 +248,6 @@ var NAVTREEINDEX22 =
 "DistributionC_8cpp.html#af3d40ecaadcb7a71ad8edd77ff4a5e51":[4,0,0,5,10,8,1],
 "Distribution_8H.html":[4,0,0,5,10,6],
 "Distribution_8H_source.html":[4,0,0,5,10,6],
-"Error_8h.html":[4,0,0,5,10,9]
+"Error_8h.html":[4,0,0,5,10,9],
+"Error_8h_source.html":[4,0,0,5,10,9]
 };
