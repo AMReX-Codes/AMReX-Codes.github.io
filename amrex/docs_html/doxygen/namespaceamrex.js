@@ -295,6 +295,7 @@ var namespaceamrex =
       [ "Invalid", "namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c", null ]
     ] ],
     [ "ParticleInterpolator", "namespaceamrex_1_1ParticleInterpolator.html", "namespaceamrex_1_1ParticleInterpolator" ],
+    [ "pp_detail", "namespaceamrex_1_1pp__detail.html", null ],
     [ "Reduce", "namespaceamrex_1_1Reduce.html", "namespaceamrex_1_1Reduce" ],
     [ "RungeKutta", "namespaceamrex_1_1RungeKutta.html", "namespaceamrex_1_1RungeKutta" ],
     [ "Scan", "namespaceamrex_1_1Scan.html", "namespaceamrex_1_1Scan" ],
