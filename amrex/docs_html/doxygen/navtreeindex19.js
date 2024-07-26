@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__Particle_8H.html#ab4ab9b3e6200e633cbf452f97880f267":[4,0,0,7,11,11],
+"AMReX__Particle_8H.html#ab612cdff7b506fd2884de82a842e95b8":[4,0,0,7,11,13],
 "AMReX__Particle_8H.html#ae79136bdcc97d46650c8098fe7c9334d":[4,0,0,7,11,18],
 "AMReX__Particle_8H_source.html":[4,0,0,7,11],
 "AMReX__Particle__mod__K_8H.html":[4,0,0,7,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__SDCquadrature_8F90.html#a19abe9c6ef21541b666b72dd131373b3":[4,0,0,8,0,3],
 "AMReX__SDCquadrature_8F90.html#a36963c5b419723010d58909d4528c0dc":[4,0,0,8,0,1],
 "AMReX__SDCquadrature_8F90.html#a3b6ebab50bdb3680467e36128f5e4f53":[4,0,0,8,0,16],
-"AMReX__SDCquadrature_8F90.html#a45feaecc2f3ca60142ec3cbdcc49c288":[4,0,0,8,0,11],
-"AMReX__SDCquadrature_8F90.html#a48ed5f48f95b69c47de925a1a865a89c":[4,0,0,8,0,9],
-"AMReX__SDCquadrature_8F90.html#a507876cf6308356bcab599968824c4a9":[4,0,0,8,0,4]
+"AMReX__SDCquadrature_8F90.html#a45feaecc2f3ca60142ec3cbdcc49c288":[4,0,0,8,0,11]
 };

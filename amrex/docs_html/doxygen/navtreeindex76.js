@@ -1,5 +1,8 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1BARef.html#aaa44a8c337df517114ccca6c8d4a2c11":[3,0,0,104,28],
+"structamrex_1_1BARef.html#aae9932a1a2b245c7a6a1b472cbd0b8ff":[3,0,0,104,16],
+"structamrex_1_1BARef.html#aba76fcc2eabe3ac7e99e4b5e52cf3f0f":[3,0,0,104,14],
 "structamrex_1_1BARef.html#ac35e7bcd2e6c974918c1d5e74a4bac3a":[3,0,0,104,17],
 "structamrex_1_1BARef.html#acc3f91bbfe28d183372eb8befe363972":[3,0,0,104,11],
 "structamrex_1_1BARef.html#ad04e340c23c29ecb2782dec327e0a773":[3,0,0,104,13],
@@ -180,8 +183,8 @@ var NAVTREEINDEX76 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[3,0,0,511,24],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[3,0,0,511,16],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[3,0,0,511,10],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,5],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,6],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,5],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[3,0,0,511,3],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[3,0,0,511,22],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[3,0,0,511,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd":[3,0,0,119,1],
 "structamrex_1_1DataAllocator.html#adcabda73bbd0120b08dbb2cda22a6427":[3,0,0,119,2],
 "structamrex_1_1DataDeleter.html":[3,0,0,120],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[3,0,0,120,0],
-"structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03":[3,0,0,120,3],
-"structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[3,0,0,120,1],
-"structamrex_1_1DataDeleter.html#a3daee94cbf63696956b6e349478448dc":[3,0,0,120,2]
+"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[3,0,0,120,0]
 };

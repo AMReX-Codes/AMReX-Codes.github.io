@@ -14,8 +14,9 @@ var AMReX__IParser__Y_8cpp =
     [ "iparser_ast_optimize", "AMReX__IParser__Y_8cpp.html#a86b9b9521f3dd1de76b9815dcdc7b9d0", null ],
     [ "iparser_ast_print", "AMReX__IParser__Y_8cpp.html#a2e832571b607617664a8a588c69a0dc4", null ],
     [ "iparser_ast_regvar", "AMReX__IParser__Y_8cpp.html#acaf77a8dc997257b02f28ac1bebe36e2", null ],
-    [ "iparser_ast_setconst", "AMReX__IParser__Y_8cpp.html#a3e859475342dc12d24219ccd9ff56ed0", null ],
+    [ "iparser_ast_setconst", "AMReX__IParser__Y_8cpp.html#a4ba5d2433690f81ff281ed886dd611e5", null ],
     [ "iparser_ast_size", "AMReX__IParser__Y_8cpp.html#a88284344fbc21e1fad73e0f2e4280394", null ],
+    [ "iparser_atoll", "AMReX__IParser__Y_8cpp.html#a40f6c7b60c5e5570a11407ad4fbe2e98", null ],
     [ "iparser_defexpr", "AMReX__IParser__Y_8cpp.html#ac7a5d02f651cdb8b30aa2a0de332d670", null ],
     [ "iparser_depth", "AMReX__IParser__Y_8cpp.html#acb6b901b917abe69e9bcc985016b7de6", null ],
     [ "iparser_dup", "AMReX__IParser__Y_8cpp.html#ad22cca51d4bfda06050d7f02e555131b", null ],
@@ -27,9 +28,9 @@ var AMReX__IParser__Y_8cpp =
     [ "iparser_newf3", "AMReX__IParser__Y_8cpp.html#a0b4c71ba95b7e107e4dedc3077c0c5ec", null ],
     [ "iparser_newlist", "AMReX__IParser__Y_8cpp.html#a8710f394abe007b53737084c8bbd3021", null ],
     [ "iparser_newnode", "AMReX__IParser__Y_8cpp.html#a68fd17a00f11528cc052eee4ffc80de8", null ],
-    [ "iparser_newnumber", "AMReX__IParser__Y_8cpp.html#a4ae13277786041d56a4c1e4bbf2e8702", null ],
+    [ "iparser_newnumber", "AMReX__IParser__Y_8cpp.html#a0ea6d15d76d75c8c72dd2b251ea4963e", null ],
     [ "iparser_newsymbol", "AMReX__IParser__Y_8cpp.html#ae9552f2b805ddfac6a62dba634f5bcb8", null ],
     [ "iparser_print", "AMReX__IParser__Y_8cpp.html#a28e7f8ece961d58ec22229b2396fbc65", null ],
     [ "iparser_regvar", "AMReX__IParser__Y_8cpp.html#aa6886a6d87a263d5db6152fe44c96c82", null ],
-    [ "iparser_setconst", "AMReX__IParser__Y_8cpp.html#a8352463db302787dc5251fbaac3ad1bd", null ]
+    [ "iparser_setconst", "AMReX__IParser__Y_8cpp.html#aac33f49e08b74b6c3f4fa773755f36e6", null ]
 ];

@@ -654,7 +654,11 @@ the constants set by <code class="code highlight cpp c++ docutils literal highli
 similarity, but floating point number specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>,
 <code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.) are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>.  In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose
 result truncates towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose
-result truncates towards negative infinity.</p>
+result truncates towards negative infinity. Single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> are allowed
+as a separator for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span><span class="w"></span></code> numbers just like C++ integer
+literals. Additionally, a floating point like number with a positive
+exponent may be accepted as an integer if it is reasonable to do so. For
+example, it’s okay to have <code class="docutils literal notranslate"><span class="pre">1.234e3</span></code>, but <code class="docutils literal notranslate"><span class="pre">1.234e2</span></code> is an error.</p>
 </section>
 <section id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this heading"></a></h1>

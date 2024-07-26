@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"dir_25d7822c1b649e6df029ec2b7597a2a5.html":[4,0,0,6,0],
+"dir_25f1d00fd66065d0aa2a8720d1ed1df5.html":[4,0,0,6],
 "dir_413f4e031a85da0d68269c6fd2f76e1c.html":[4,0,0],
 "dir_55eec958e272d6cfff0ea35b0f5787ca.html":[4,0,0,1],
 "dir_5d09622fde15ef324d9164e0f7b5b566.html":[4,0,0,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX59 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
-"index.html":[],
-"index.html#Overview":[0,0,0]
+"index.html":[]
 };
