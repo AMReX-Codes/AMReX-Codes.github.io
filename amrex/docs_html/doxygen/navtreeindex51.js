@@ -1,6 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"classamrex_1_1OpenBCSolver.html#af4f8bd2cd9315ff6b44f81cc1e4a2d6f":[3,0,0,458,31],
 "classamrex_1_1OrderedBoxes.html":[3,0,0,409],
 "classamrex_1_1OrderedBoxes.html#a02860f69200b013d9dd9710def7fbf44":[3,0,0,409,5],
 "classamrex_1_1OrderedBoxes.html#a5d5963f92aa5af837a70ee9031d7132a":[3,0,0,409,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX51 =
 "classamrex_1_1ParGDBBase.html#a76e1b4915e0fab0cf472ce392a5acbaa":[3,0,0,468,14],
 "classamrex_1_1ParGDBBase.html#a911edb448b3ad570aff7366aefe10089":[3,0,0,468,23],
 "classamrex_1_1ParGDBBase.html#a95b12fc3e2198540e1cd7bda9d78053f":[3,0,0,468,7],
-"classamrex_1_1ParGDBBase.html#a9f7d684223e77d4bf3162333a55c64d6":[3,0,0,468,12]
+"classamrex_1_1ParGDBBase.html#a9f7d684223e77d4bf3162333a55c64d6":[3,0,0,468,12],
+"classamrex_1_1ParGDBBase.html#aa7332b1c8959dba312c23e42e79046fb":[3,0,0,468,3]
 };

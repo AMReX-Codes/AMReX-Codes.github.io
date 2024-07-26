@@ -131,9 +131,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aced2cdbc76fae163594ea107e18fb8e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aced2cdbc76fae163594ea107e18fb8e4">ParmParse</a> (std::string prefix=std::string())</td></tr>
-<tr class="memdesc:aced2cdbc76fae163594ea107e18fb8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an additional <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object sharing the same internal table as any other such objects in existence. If prefix is specified, load this string as the code prefix for this particular <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object.  <a href="classamrex_1_1ParmParse.html#aced2cdbc76fae163594ea107e18fb8e4">More...</a><br /></td></tr>
-<tr class="separator:aced2cdbc76fae163594ea107e18fb8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc024f9fcd3a2e180a860412c3ad745"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aedc024f9fcd3a2e180a860412c3ad745">ParmParse</a> (std::string prefix=std::string(), std::string parser_prefix=std::string())</td></tr>
+<tr class="memdesc:aedc024f9fcd3a2e180a860412c3ad745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an additional <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object sharing the same internal table as any other such objects in existence. If prefix is specified, load this string as the code prefix for this particular <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object. If parser_prefix is specified, it will be used as prefixed in math expression evaluations.  <a href="classamrex_1_1ParmParse.html#aedc024f9fcd3a2e180a860412c3ad745">More...</a><br /></td></tr>
+<tr class="separator:aedc024f9fcd3a2e180a860412c3ad745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0998fb701a17bbba399ee68049848346"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a0998fb701a17bbba399ee68049848346">contains</a> (const char *name) const</td></tr>
 <tr class="memdesc:a0998fb701a17bbba399ee68049848346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if name is in table.  <a href="classamrex_1_1ParmParse.html#a0998fb701a17bbba399ee68049848346">More...</a><br /></td></tr>
 <tr class="separator:a0998fb701a17bbba399ee68049848346"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -421,9 +421,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aface68d73330646265cf631654dfd05f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aface68d73330646265cf631654dfd05f">queryAdd</a> (const char *name, std::array&lt; T, N &gt; &amp;ref)</td></tr>
 <tr class="memdesc:aface68d73330646265cf631654dfd05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <code>name</code> is found, the value in the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database will be stored in the <code>ref</code> argument. If not, the value in <code>ref</code> will be added to the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database. The return value indicates if it existed previously.  <a href="classamrex_1_1ParmParse.html#aface68d73330646265cf631654dfd05f">More...</a><br /></td></tr>
 <tr class="separator:aface68d73330646265cf631654dfd05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeca337d70d382eac6713629fe19cba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aaeca337d70d382eac6713629fe19cba9">queryWithParser</a> (const char *name, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;ref) const</td></tr>
+<tr class="memdesc:aaeca337d70d382eac6713629fe19cba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. The return value indicates whether it's found.  <a href="classamrex_1_1ParmParse.html#aaeca337d70d382eac6713629fe19cba9">More...</a><br /></td></tr>
+<tr class="separator:aaeca337d70d382eac6713629fe19cba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceee232cad65ad2d2060e7d12490b02d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aceee232cad65ad2d2060e7d12490b02d">queryWithParser</a> (const char *name, long &amp;ref) const</td></tr>
+<tr class="separator:aceee232cad65ad2d2060e7d12490b02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83dae580e475c698d1af8498f2e1727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aa83dae580e475c698d1af8498f2e1727">queryWithParser</a> (const char *name, long long &amp;ref) const</td></tr>
+<tr class="separator:aa83dae580e475c698d1af8498f2e1727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59ae2e9496bc7defa4bb88f7232ec38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ab59ae2e9496bc7defa4bb88f7232ec38">queryWithParser</a> (const char *name, float &amp;ref) const</td></tr>
+<tr class="separator:ab59ae2e9496bc7defa4bb88f7232ec38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdedd9feb166f0795fc49d8248e1d531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#abdedd9feb166f0795fc49d8248e1d531">queryWithParser</a> (const char *name, double &amp;ref) const</td></tr>
+<tr class="separator:abdedd9feb166f0795fc49d8248e1d531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae458cb55bb8229f48767c3ae1f581696"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, int &gt;||std::is_same_v&lt; T, long &gt;||std::is_same_v&lt; T, long long &gt;||std::is_same_v&lt; T, float &gt;||std::is_same_v&lt; T, double &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae458cb55bb8229f48767c3ae1f581696"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ae458cb55bb8229f48767c3ae1f581696">queryAddWithParser</a> (const char *name, T &amp;ref) const</td></tr>
+<tr class="memdesc:ae458cb55bb8229f48767c3ae1f581696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. If not, the value in <code>ref</code> will be added to the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database. The return value indicates whether it's found.  <a href="classamrex_1_1ParmParse.html#ae458cb55bb8229f48767c3ae1f581696">More...</a><br /></td></tr>
+<tr class="separator:ae458cb55bb8229f48767c3ae1f581696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f0fdc57c6d3d630b040d096a17afee"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, int &gt;||std::is_same_v&lt; T, long &gt;||std::is_same_v&lt; T, long long &gt;||std::is_same_v&lt; T, float &gt;||std::is_same_v&lt; T, double &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a65f0fdc57c6d3d630b040d096a17afee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a65f0fdc57c6d3d630b040d096a17afee">getWithParser</a> (const char *name, T &amp;ref) const</td></tr>
+<tr class="memdesc:a65f0fdc57c6d3d630b040d096a17afee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. If not, it's a runtime error.  <a href="classamrex_1_1ParmParse.html#a65f0fdc57c6d3d630b040d096a17afee">More...</a><br /></td></tr>
+<tr class="separator:a65f0fdc57c6d3d630b040d096a17afee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81">remove</a> (const char *name)</td></tr>
 <tr class="memdesc:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove given name from the table.  <a href="classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81">More...</a><br /></td></tr>
 <tr class="separator:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e28c45ee942f30c9f5c50f338e203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Parser.html">Parser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a6a0e28c45ee942f30c9f5c50f338e203">makeParser</a> (std::string const &amp;func, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;vars) const</td></tr>
+<tr class="separator:a6a0e28c45ee942f30c9f5c50f338e203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac8d3383aa70acfdd3cd22a8df79539"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IParser.html">IParser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#afac8d3383aa70acfdd3cd22a8df79539">makeIParser</a> (std::string const &amp;func, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;vars) const</td></tr>
+<tr class="separator:afac8d3383aa70acfdd3cd22a8df79539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f43a6024e50a1c5f9110d29ae42904"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1ParmParse.html#af823116cc58b501d9f158fa5635c1498">Table</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ab4f43a6024e50a1c5f9110d29ae42904">table</a> () const</td></tr>
 <tr class="separator:ab4f43a6024e50a1c5f9110d29ae42904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -435,6 +458,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9283fab7556352eeff908ca26cd440be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a9283fab7556352eeff908ca26cd440be">Finalize</a> ()</td></tr>
 <tr class="memdesc:a9283fab7556352eeff908ca26cd440be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. The internal static table will only be deleted if there are no other <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> objects in existence.  <a href="classamrex_1_1ParmParse.html#a9283fab7556352eeff908ca26cd440be">More...</a><br /></td></tr>
 <tr class="separator:a9283fab7556352eeff908ca26cd440be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1549749aa28417bed7bb7a9d5a99810"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aa1549749aa28417bed7bb7a9d5a99810">SetParserPrefix</a> (std::string a_prefix)</td></tr>
+<tr class="memdesc:aa1549749aa28417bed7bb7a9d5a99810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set prefix used by math expression <a class="el" href="classamrex_1_1Parser.html">Parser</a>.  <a href="classamrex_1_1ParmParse.html#aa1549749aa28417bed7bb7a9d5a99810">More...</a><br /></td></tr>
+<tr class="separator:aa1549749aa28417bed7bb7a9d5a99810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe2b9e6e5a2c039c7684f364a5c8bb2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a4fe2b9e6e5a2c039c7684f364a5c8bb2">Verbose</a> ()</td></tr>
 <tr class="separator:a4fe2b9e6e5a2c039c7684f364a5c8bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50ba1e91e9681699bf5c1a32be2814e6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a50ba1e91e9681699bf5c1a32be2814e6">SetVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
@@ -462,6 +488,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a44318f1c5a43d3c6ef6cd9f0fda99ea2"><td class="memItemLeft" align="right" valign="top">static std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a44318f1c5a43d3c6ef6cd9f0fda99ea2">FileKeyword</a> = &quot;FILE&quot;</td></tr>
 <tr class="memdesc:a44318f1c5a43d3c6ef6cd9f0fda99ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyword for files to load  <a href="classamrex_1_1ParmParse.html#a44318f1c5a43d3c6ef6cd9f0fda99ea2">More...</a><br /></td></tr>
 <tr class="separator:a44318f1c5a43d3c6ef6cd9f0fda99ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e18537921b1737edf7819d2a3b51f90"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a4e18537921b1737edf7819d2a3b51f90">ParserPrefix</a></td></tr>
+<tr class="separator:a4e18537921b1737edf7819d2a3b51f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -472,6 +500,8 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a941314412b0921ba802f4620404cf33c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a941314412b0921ba802f4620404cf33c">m_prefix</a></td></tr>
 <tr class="separator:a941314412b0921ba802f4620404cf33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d6405babd810179e1e69872b4075fb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ac6d6405babd810179e1e69872b4075fb">m_parser_prefix</a></td></tr>
+<tr class="separator:ac6d6405babd810179e1e69872b4075fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe4e8f257927686a878e5be81358b213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1ParmParse.html#af823116cc58b501d9f158fa5635c1498">Table</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#abe4e8f257927686a878e5be81358b213">m_table</a></td></tr>
 <tr class="separator:abe4e8f257927686a878e5be81358b213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -498,7 +528,12 @@ Protected Attributes</h2></td></tr>
 <p>FILE = prob_file</p>
 <p>Preprocessing of AMREX_SPACEDIM is supported. It supports <a class="el" href="amrex__parser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a>, #elif, #else, and #endif. The condition must be <code>AMREX_SPACEDIM op D</code>, where op is &gt;, &lt;, &gt;=, &lt;=, or ==, and D is 1, 2, or 3. The parentheses around the condition are optional. Some examples are shown below.</p>
 <p><a class="el" href="amrex__parser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a> (AMREX_SPACEDIM == 1) n_cell = 256 #elif (AMREX_SPACEDIM == 2) n_cell = 128 128 #else n_cell = 64 64 64 #endif</p>
-<p><a class="el" href="amrex__parser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a> AMREX_SPACEDIM &gt;= 2 t = 0.5 #else t = 1.5 #endif </p>
+<p><a class="el" href="amrex__parser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a> AMREX_SPACEDIM &gt;= 2 t = 0.5 #else t = 1.5 #endif</p>
+<p><a class="el" href="namespaceamrex_1_1Math.html">Math</a> expression is supported for integers and reals. For example</p>
+<p>n_cell = 128 amrex.n_cell = n_cell*2 8 16**2</p>
+<p>becomes</p>
+<p>n_cell = 128 amrex.n_cell = 256 8 256</p>
+<p>More details can be found at <a href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#parmparse">https://amrex-codes.github.io/amrex/docs_html/Basics.html#parmparse</a> </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af823116cc58b501d9f158fa5635c1498"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af823116cc58b501d9f158fa5635c1498">&#9670;&nbsp;</a></span>Table</h2>
@@ -535,8 +570,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aced2cdbc76fae163594ea107e18fb8e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aced2cdbc76fae163594ea107e18fb8e4">&#9670;&nbsp;</a></span>ParmParse()</h2>
+<a id="aedc024f9fcd3a2e180a860412c3ad745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc024f9fcd3a2e180a860412c3ad745">&#9670;&nbsp;</a></span>ParmParse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,8 +583,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">amrex::ParmParse::ParmParse </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>prefix</em> = <code>std::string()</code></td><td>)</td>
+          <td class="paramname"><em>prefix</em> = <code>std::string()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>parser_prefix</em> = <code>std::string()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -559,7 +604,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an additional <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object sharing the same internal table as any other such objects in existence. If prefix is specified, load this string as the code prefix for this particular <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object. </p>
+<p>Construct an additional <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object sharing the same internal table as any other such objects in existence. If prefix is specified, load this string as the code prefix for this particular <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object. If parser_prefix is specified, it will be used as prefixed in math expression evaluations. </p>
 
 </div>
 </div>
@@ -2753,6 +2798,46 @@ template&lt;typename T , std::size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a65f0fdc57c6d3d630b040d096a17afee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f0fdc57c6d3d630b040d096a17afee">&#9670;&nbsp;</a></span>getWithParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, int &gt;||std::is_same_v&lt; T, long &gt;||std::is_same_v&lt; T, long long &gt;||std::is_same_v&lt; T, float &gt;||std::is_same_v&lt; T, double &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::getWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. If not, it's a runtime error. </p>
+
+</div>
+</div>
 <a id="a65ec105f3594e14160a631083a1bce59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65ec105f3594e14160a631083a1bce59">&#9670;&nbsp;</a></span>hasUnusedInputs()</h2>
 
@@ -2822,6 +2907,64 @@ template&lt;typename T , std::size_t N&gt; </div>
 </div><div class="memdoc">
 
 <p>Construct an initial <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object from the argc and argv passed in to <a class="el" href="CheckDecomposition_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>. An error will be signalled if another <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> object currently exists. If parfile is specified, read the parameters in from that file first and then append those derived from argv to the table. </p>
+
+</div>
+</div>
+<a id="afac8d3383aa70acfdd3cd22a8df79539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac8d3383aa70acfdd3cd22a8df79539">&#9670;&nbsp;</a></span>makeIParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1IParser.html">IParser</a> amrex::ParmParse::makeIParser </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Make <a class="el" href="classamrex_1_1IParser.html">IParser</a> using given string <code>func</code> as function body and <code>vars</code> as variable names. Constants known to <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> will be set. It's a runtime error, if there are unknown symbols in <code>func</code>. </p>
+
+</div>
+</div>
+<a id="a6a0e28c45ee942f30c9f5c50f338e203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0e28c45ee942f30c9f5c50f338e203">&#9670;&nbsp;</a></span>makeParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Parser.html">Parser</a> amrex::ParmParse::makeParser </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Make <a class="el" href="classamrex_1_1Parser.html">Parser</a> using given string <code>func</code> as function body and <code>vars</code> as variable names. Constants known to <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> will be set. It's a runtime error, if there are unknown symbols in <code>func</code>. </p>
 
 </div>
 </div>
@@ -3413,6 +3556,46 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
 </div><div class="memdoc">
 
 <p>If <code>name</code> is found, the value in the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database will be stored in the <code>ref</code> argument. If not, the value in <code>ref</code> will be added to the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database. The return value indicates if it existed previously. </p>
+
+</div>
+</div>
+<a id="ae458cb55bb8229f48767c3ae1f581696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae458cb55bb8229f48767c3ae1f581696">&#9670;&nbsp;</a></span>queryAddWithParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, int &gt;||std::is_same_v&lt; T, long &gt;||std::is_same_v&lt; T, long long &gt;||std::is_same_v&lt; T, float &gt;||std::is_same_v&lt; T, double &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryAddWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. If not, the value in <code>ref</code> will be added to the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> database. The return value indicates whether it's found. </p>
 
 </div>
 </div>
@@ -4538,6 +4721,148 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
 
 </div>
 </div>
+<a id="abdedd9feb166f0795fc49d8248e1d531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdedd9feb166f0795fc49d8248e1d531">&#9670;&nbsp;</a></span>queryWithParser() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab59ae2e9496bc7defa4bb88f7232ec38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59ae2e9496bc7defa4bb88f7232ec38">&#9670;&nbsp;</a></span>queryWithParser() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaeca337d70d382eac6713629fe19cba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeca337d70d382eac6713629fe19cba9">&#9670;&nbsp;</a></span>queryWithParser() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query with <a class="el" href="classamrex_1_1Parser.html">Parser</a>. If <code>name</code> is found, this uses <a class="el" href="classamrex_1_1Parser.html">amrex::Parser</a> to parse the entire list of empty space separated values as a single scalar. The return value indicates whether it's found. </p>
+
+</div>
+</div>
+<a id="aceee232cad65ad2d2060e7d12490b02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceee232cad65ad2d2060e7d12490b02d">&#9670;&nbsp;</a></span>queryWithParser() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa83dae580e475c698d1af8498f2e1727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83dae580e475c698d1af8498f2e1727">&#9670;&nbsp;</a></span>queryWithParser() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryWithParser </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6657f8c789a5b37f79bc4219dd6e3a81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6657f8c789a5b37f79bc4219dd6e3a81">&#9670;&nbsp;</a></span>remove()</h2>
 
@@ -4555,6 +4880,34 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
 </div><div class="memdoc">
 
 <p>Remove given name from the table. </p>
+
+</div>
+</div>
+<a id="aa1549749aa28417bed7bb7a9d5a99810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1549749aa28417bed7bb7a9d5a99810">&#9670;&nbsp;</a></span>SetParserPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::SetParserPrefix </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>a_prefix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set prefix used by math expression <a class="el" href="classamrex_1_1Parser.html">Parser</a>. </p>
 
 </div>
 </div>
@@ -4659,6 +5012,28 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
 
 </div>
 </div>
+<a id="ac6d6405babd810179e1e69872b4075fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d6405babd810179e1e69872b4075fb">&#9670;&nbsp;</a></span>m_parser_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string amrex::ParmParse::m_parser_prefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a941314412b0921ba802f4620404cf33c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a941314412b0921ba802f4620404cf33c">&#9670;&nbsp;</a></span>m_prefix</h2>
 
@@ -4697,6 +5072,28 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e18537921b1737edf7819d2a3b51f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e18537921b1737edf7819d2a3b51f90">&#9670;&nbsp;</a></span>ParserPrefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string amrex::ParmParse::ParserPrefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

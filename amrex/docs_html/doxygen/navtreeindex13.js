@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"AMReX__MLNodeLap__1D__K_8H.html#af0803c690a8c05d9a7f023c28ee60614":[4,0,0,6,0,55,27],
 "AMReX__MLNodeLap__1D__K_8H.html#af51f6f7831db55333f7f647ba71ab6d8":[4,0,0,6,0,55,38],
 "AMReX__MLNodeLap__1D__K_8H.html#af8d83b1b38a04709a774b310bed31684":[4,0,0,6,0,55,30],
 "AMReX__MLNodeLap__1D__K_8H_source.html":[4,0,0,6,0,55],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "AMReX__MLPoisson__2D__K_8H_source.html":[4,0,0,6,0,76],
 "AMReX__MLPoisson__3D__K_8H.html":[4,0,0,6,0,77],
 "AMReX__MLPoisson__3D__K_8H.html#a1ace9918d421ae341c148190b63d0b81":[4,0,0,6,0,77,5],
-"AMReX__MLPoisson__3D__K_8H.html#a2ee7d90d5262f08f2c0356f20dd11212":[4,0,0,6,0,77,0]
+"AMReX__MLPoisson__3D__K_8H.html#a2ee7d90d5262f08f2c0356f20dd11212":[4,0,0,6,0,77,0],
+"AMReX__MLPoisson__3D__K_8H.html#a3171a013d5989b5e9851658aca2b7a15":[4,0,0,6,0,77,2]
 };

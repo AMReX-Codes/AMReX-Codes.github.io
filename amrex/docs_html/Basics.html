@@ -64,6 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#print">Print</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#inputs-file">Inputs File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#math-expressions">Math Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
@@ -335,8 +336,7 @@ command line sharing (see section <a class="reference internal" href="#sec-basic
 file is a series of
 definitions in the form of <code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">....</span></code> For each line,
 text after # are comments. Here is an example inputs file.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">100</span>               <span class="c1"># integer</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">100</span>               <span class="c1"># integer</span>
 <span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">1000</span>              <span class="c1"># nsteps appears a second time</span>
 <span class="n">dt</span>        <span class="o">=</span> <span class="mf">0.03</span>              <span class="c1"># floating point number</span>
 <span class="n">ncells</span>    <span class="o">=</span> <span class="mi">128</span> <span class="mi">64</span> <span class="mi">32</span>         <span class="c1"># a list of 3 ints</span>
@@ -345,7 +345,6 @@ text after # are comments. Here is an example inputs file.</p>
 <span class="n">hydro</span><span class="o">.</span><span class="n">cfl</span> <span class="o">=</span> <span class="mf">0.8</span>               <span class="c1"># with prefix, hydro</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>The following code shows how to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> to get/query the values.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span><span class="w"></span>
 
@@ -380,6 +379,126 @@ by default returns the last one. The difference between <code class="code highli
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span><span class="w"></span></code> should also be noted. It is a runtime error if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">get</span><span class="w"></span></code> fails to
 get the value, whereas <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">query</span><span class="w"></span></code> returns an error code without generating a
 runtime error that will abort the run.</p>
+</section>
+<section id="math-expressions">
+<h2>Math Expressions<a class="headerlink" href="#math-expressions" title="Permalink to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> supports math expressions for integers and floating point
+numbers. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># three numbers. whitespaces inside `&quot;&quot;` are okay.</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="mi">4</span>  <span class="mi">99</span>  <span class="s2">&quot;5 + 6&quot;</span>
+
+<span class="c1"># two numbers. `\` is for continuation</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">3.1</span><span class="o">+</span><span class="mf">4.1</span> \
+    <span class="mf">5.0</span><span class="o">+</span><span class="mf">6.6</span>
+
+<span class="c1"># two numbers unless using [query|get]WithParser</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">2</span>
+
+<span class="n">my_constants</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">5.</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+
+<span class="c1"># must use [query|get]WithParser</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">+</span> <span class="o">-</span><span class="n">amrex</span><span class="o">.</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+
+<span class="c1"># either [query|get] or [query|get]WithParser is okay</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">alpha</span><span class="o">+-</span><span class="n">amrex</span><span class="o">.</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">c</span><span class="o">^</span><span class="mi">2</span>
+
+<span class="n">geom</span><span class="o">.</span><span class="n">prob_lo</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="o">-</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># three numbers. `\` is for continuation</span>
+<span class="n">geom</span><span class="o">.</span><span class="n">prob_hi</span> <span class="o">=</span>  <span class="s2">&quot;2*sin(pi/4)/sqrt(2)&quot;</span> \
+                <span class="s2">&quot;sin(pi/2) + cos(pi/2)&quot;</span> \
+                <span class="o">-</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>can be processed by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="o">::</span><span class="n">SetParserPrefix</span><span class="p">(</span><span class="s">&quot;physical_constants&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="nf">pp</span><span class="p">(</span><span class="s">&quot;physical_constants&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">299792458.</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;pi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14159265358979323846</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">f0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; double f = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">queryarr</span><span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; int f[3] = {&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"></span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">queryarr</span><span class="p">(</span><span class="s">&quot;g&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; double g[] = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">w</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;w&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; w = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; with query</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">queryWithParser</span><span class="p">(</span><span class="s">&quot;w&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; w = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; with queryParser</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="nf">pp</span><span class="p">(</span><span class="s">&quot;amrex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_constants&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">getWithParser</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">foo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; foo = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, bar = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bar</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">,</span><span class="w"> </span><span class="n">prob_hi</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;geom.prob_lo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;geom.prob_hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prob_hi</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; double prob_lo[] = {&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"></span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_lo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;}</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; double prob_hi[] = {&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_hi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"></span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_hi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">prob_hi</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The results will be</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">double f = 7</span>
+<span class="go">int f[3] = {7, 99, 11}</span>
+<span class="go">double g[] = 7.2 11.6</span>
+<span class="go">w = 1 with query</span>
+<span class="go">w = -1 with queryParser</span>
+<span class="go">foo = 5, bar = 5</span>
+<span class="go">double prob_lo[] = {1, 1, 1}</span>
+<span class="go">double prob_hi[] = {1, 1, 1}</span>
+</pre></div>
+</div>
+<p>Note that the empty spaces are significant for math expressions unless they
+are inside a pair of <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> or explicitly parsed by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">queryWithParser</span><span class="w"></span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">getWithParser</span><span class="w"></span></code>. If the
+expression contains another variable, it will be looked up by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>’s constructor accepts an optional second
+argument, <code class="docutils literal notranslate"><span class="pre">parser_prefix</span></code>. When a variable in a math expression is being
+looked up, it will first try to find it by using the exact name of the
+variable. If this attempt fails and the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> object has a
+non-empty non-static member <code class="docutils literal notranslate"><span class="pre">parser_prefix</span></code>, it will try again, this time
+looking up the variable by prefixing its name with the value of
+<code class="docutils literal notranslate"><span class="pre">parser_prefix</span></code> followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>. If this attempt also fails and the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> class has a non-empty static member <code class="docutils literal notranslate"><span class="pre">ParserPrefix</span></code> (which
+can be set by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">SetParserPrefix</span><span class="w"></span></code>), it will try again, this
+time looking up the variable by prefixing its name with the value of
+<code class="docutils literal notranslate"><span class="pre">ParserPrefix</span></code> followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<p>The variables in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> math expressions are not evaluated until
+they are referenced. If a variable is defined multiple times, the last
+occurrence will override previous ones even if it appears after the variable
+has been referenced. This behavior is demonstrated in the following example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">foo</span><span class="o">.</span><span class="n">a</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>will become</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
 </section>
 <section id="overriding-parameters-with-command-line-arguments">
 <h2>Overriding Parameters with Command-Line Arguments<a class="headerlink" href="#overriding-parameters-with-command-line-arguments" title="Permalink to this heading"></a></h2>

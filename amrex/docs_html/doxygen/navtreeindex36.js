@@ -1,6 +1,5 @@
 var NAVTREEINDEX36 =
 {
-"classamrex_1_1EB2_1_1ComplementIF.html#ac114241000abc43b7c9d00e98603b6f9":[3,0,0,4,12,1],
 "classamrex_1_1EB2_1_1ComplementIF.html#ac758ba21928636afe1a6d8c0e5d44f98":[3,0,0,4,12,0],
 "classamrex_1_1EB2_1_1CylinderIF.html":[3,0,0,4,14],
 "classamrex_1_1EB2_1_1CylinderIF.html#a244ad749728c4876ed8cf43e93d292a5":[3,0,0,4,14,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX36 =
 "classamrex_1_1EB2_1_1PolyTerm.html":[3,0,0,4,28],
 "classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc":[3,0,0,4,28,0],
 "classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[3,0,0,4,28,1],
-"classamrex_1_1EB2_1_1PolynomialIF.html":[3,0,0,4,30]
+"classamrex_1_1EB2_1_1PolynomialIF.html":[3,0,0,4,30],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a18f10f3de6a91418664b73f1c86d7461":[3,0,0,4,30,3]
 };
