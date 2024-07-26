@@ -1,5 +1,10 @@
 var NAVTREEINDEX72 =
 {
+"namespaceamrex_1_1detail.html#a6ea7eeaafa369d6246da405045b73208":[2,0,0,6,58],
+"namespaceamrex_1_1detail.html#a71f402d1250f215a129e6a9950c9ad35":[2,0,0,6,109],
+"namespaceamrex_1_1detail.html#a759738bf4cd5871bbdf8f7317043dd90":[2,0,0,6,103],
+"namespaceamrex_1_1detail.html#a76f10e7b0bf11c2e90199e2ec1d964e6":[2,0,0,6,63],
+"namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af":[2,0,0,6,107],
 "namespaceamrex_1_1detail.html#a7cc30cb3974fb2a7e882c016a4b81e3c":[2,0,0,6,84],
 "namespaceamrex_1_1detail.html#a7df5de70f7ab58e32c467a66af4fdbd9":[2,0,0,6,37],
 "namespaceamrex_1_1detail.html#a7e41ce07653e68c00c8370a43ac2afed":[2,0,0,6,62],
@@ -50,14 +55,14 @@ var NAVTREEINDEX72 =
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,678],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,677],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,677],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,679],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,673],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
-"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,676],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,7,1],
+"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,676],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,680],
 "namespaceamrex_1_1experimental.html":[2,0,0,9],
@@ -244,10 +249,5 @@ var NAVTREEINDEX72 =
 "namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95":[2,0,0,47,2],
 "namespaceamrex_1_1tri__geom__ops.html":[2,0,0,48],
 "namespaceamrex_1_1tri__geom__ops.html#a2220cd5ad225611142968a7e52fce6b8":[2,0,0,48,8],
-"namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e":[2,0,0,48,7],
-"namespaceamrex_1_1tri__geom__ops.html#a3edc0f443bee6abb9c7d78a434156465":[2,0,0,48,2],
-"namespaceamrex_1_1tri__geom__ops.html#a63072500ceb751c5d908ebf2edf627e1":[2,0,0,48,0],
-"namespaceamrex_1_1tri__geom__ops.html#a70a3555a7869b306a0efd22a29fcb570":[2,0,0,48,11],
-"namespaceamrex_1_1tri__geom__ops.html#a713485f892bf13f6879fcd8a1ccf5b6e":[2,0,0,48,3],
-"namespaceamrex_1_1tri__geom__ops.html#a7a41ddf66699cf00d97df7994805137f":[2,0,0,48,4]
+"namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e":[2,0,0,48,7]
 };

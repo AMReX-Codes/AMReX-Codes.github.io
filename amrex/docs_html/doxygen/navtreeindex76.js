@@ -1,5 +1,10 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1BARef.html#a99abf80b40a6ebff2f6ac1e3e71a21da":[3,0,0,104,5],
+"structamrex_1_1BARef.html#a9c091cdb6183ee153e309231d68ef52b":[3,0,0,104,6],
+"structamrex_1_1BARef.html#aa4715d9e30ad640a00703a76b8b29f5d":[3,0,0,104,27],
+"structamrex_1_1BARef.html#aa7702554a15d6a73ffa7a16ee2e017bc":[3,0,0,104,22],
+"structamrex_1_1BARef.html#aaa1d0e47191bce43137f9aeecf529f64":[3,0,0,104,25],
 "structamrex_1_1BARef.html#aaa44a8c337df517114ccca6c8d4a2c11":[3,0,0,104,28],
 "structamrex_1_1BARef.html#aae9932a1a2b245c7a6a1b472cbd0b8ff":[3,0,0,104,16],
 "structamrex_1_1BARef.html#aba76fcc2eabe3ac7e99e4b5e52cf3f0f":[3,0,0,104,14],
@@ -183,8 +188,8 @@ var NAVTREEINDEX76 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[3,0,0,511,24],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[3,0,0,511,16],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[3,0,0,511,10],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,6],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,5],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,511,6],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[3,0,0,511,3],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[3,0,0,511,22],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[3,0,0,511,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1DataAllocator.html":[3,0,0,119],
 "structamrex_1_1DataAllocator.html#a37c4b92bbff76372bd67c006198e400f":[3,0,0,119,0],
 "structamrex_1_1DataAllocator.html#a477a75a5d73137b29f1a6ddf31af40f7":[3,0,0,119,3],
-"structamrex_1_1DataAllocator.html#a5fa328945c30133a9b9c7f93ccf6e78f":[3,0,0,119,4],
-"structamrex_1_1DataAllocator.html#a901b7f1e68950afc823ebc10c093cb94":[3,0,0,119,5],
-"structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd":[3,0,0,119,1],
-"structamrex_1_1DataAllocator.html#adcabda73bbd0120b08dbb2cda22a6427":[3,0,0,119,2],
-"structamrex_1_1DataDeleter.html":[3,0,0,120],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[3,0,0,120,0]
+"structamrex_1_1DataAllocator.html#a5fa328945c30133a9b9c7f93ccf6e78f":[3,0,0,119,4]
 };
