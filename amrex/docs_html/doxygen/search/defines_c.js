@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['pencil_19343',['PENCIL',['../distribution__c_8h.html#af9b3b05b3ffa6bbf7ca05cb71e02d000',1,'distribution_c.h']]],
-  ['printcs_19344',['PRINTCS',['../AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf',1,'AMReX_RegionsProfStats.cpp']]],
-  ['printcsnc_19345',['PRINTCSNC',['../AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12',1,'AMReX_RegionsProfStats.cpp']]],
-  ['printcstt_19346',['PRINTCSTT',['../AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3',1,'AMReX_RegionsProfStats.cpp']]],
-  ['putarray_19347',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
+  ['real_19299',['real',['../complex-type_8h.html#ab4cafb1ab351d520eb09a05ebd0a1e13',1,'complex-type.h']]],
+  ['real_5ft_19300',['REAL_T',['../AMReX__AVGDOWN__1D_8F.html#aad262b5311ae7d2166c3fcaa58d1834b',1,'REAL_T():&#160;AMReX_AVGDOWN_1D.F'],['../AMReX__AVGDOWN__2D_8F.html#aad262b5311ae7d2166c3fcaa58d1834b',1,'REAL_T():&#160;AMReX_AVGDOWN_2D.F'],['../AMReX__AVGDOWN__3D_8F.html#aad262b5311ae7d2166c3fcaa58d1834b',1,'REAL_T():&#160;AMReX_AVGDOWN_3D.F']]],
+  ['reject_19301',['REJECT',['../amrex__iparser_8lex_8nolint_8H.html#a835f10dd1ab4bf9a80c4cd80ee6e3058',1,'REJECT():&#160;amrex_iparser.lex.nolint.H'],['../amrex__parser_8lex_8nolint_8H.html#a835f10dd1ab4bf9a80c4cd80ee6e3058',1,'REJECT():&#160;amrex_parser.lex.nolint.H']]]
 ];

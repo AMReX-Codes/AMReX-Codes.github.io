@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['j_5fhi_19338',['J_HI',['../AMReX__MLMG__2D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_3D_K.H']]],
-  ['j_5flo_19339',['J_LO',['../AMReX__MLMG__2D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_3D_K.H']]]
+  ['k_5fhi_19291',['K_HI',['../AMReX__MLMG__3D__K_8H.html#a5fa1fd1d257bfaebf6b9cb744172b878',1,'AMReX_MLMG_3D_K.H']]],
+  ['k_5flo_19292',['K_LO',['../AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f',1,'AMReX_MLMG_3D_K.H']]]
 ];

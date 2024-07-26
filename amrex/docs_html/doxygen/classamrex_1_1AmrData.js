@@ -32,7 +32,6 @@ var classamrex_1_1AmrData =
     [ "GridLocHi", "classamrex_1_1AmrData.html#a06732eabff2d761d63404d048d57d130", null ],
     [ "GridLocLo", "classamrex_1_1AmrData.html#a26585c76f370219e547cc9c018faead7", null ],
     [ "HiNodeLoc", "classamrex_1_1AmrData.html#aa0c2291b475b15e34106f3ecf3b6a0e0", null ],
-    [ "Interp", "classamrex_1_1AmrData.html#a9b0be0d1fe433ea0a5c86db43e82cbcb", null ],
     [ "IntVectFromLocation", "classamrex_1_1AmrData.html#ab662246a334dad2696f3b8560c78de94", null ],
     [ "LevelSteps", "classamrex_1_1AmrData.html#ae438fc92d638f323795408735f2cebb8", null ],
     [ "ListDeriveFunc", "classamrex_1_1AmrData.html#a1335563a0cca7162b541f4bdf3d7b5a4", null ],

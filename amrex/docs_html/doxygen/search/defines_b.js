@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['one_19342',['one',['../AMReX__FABUTIL__1D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_FABUTIL_1D.F'],['../AMReX__FABUTIL__2D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_FABUTIL_2D.F'],['../AMReX__FABUTIL__3D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_FABUTIL_3D.F'],['../AMReX__AVGDOWN__1D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_AVGDOWN_1D.F'],['../AMReX__AVGDOWN__2D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_AVGDOWN_2D.F'],['../AMReX__AVGDOWN__3D_8F.html#a7cf126dbeb6f30c606e3b42fea65cfef',1,'one():&#160;AMReX_AVGDOWN_3D.F']]]
+  ['pencil_19294',['PENCIL',['../distribution__c_8h.html#af9b3b05b3ffa6bbf7ca05cb71e02d000',1,'distribution_c.h']]],
+  ['printcs_19295',['PRINTCS',['../AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcsnc_19296',['PRINTCSNC',['../AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcstt_19297',['PRINTCSTT',['../AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3',1,'AMReX_RegionsProfStats.cpp']]],
+  ['putarray_19298',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
 ];

@@ -9,9 +9,6 @@ var dir_90921d4ecb565478cdefd18c8f0474ea =
     [ "AMReX_DataServices.H", "AMReX__DataServices_8H.html", [
       [ "DataServices", "classamrex_1_1DataServices.html", "classamrex_1_1DataServices" ]
     ] ],
-    [ "AMReX_FABUTIL_1D.F", "AMReX__FABUTIL__1D_8F.html", "AMReX__FABUTIL__1D_8F" ],
-    [ "AMReX_FABUTIL_2D.F", "AMReX__FABUTIL__2D_8F.html", "AMReX__FABUTIL__2D_8F" ],
-    [ "AMReX_FABUTIL_3D.F", "AMReX__FABUTIL__3D_8F.html", "AMReX__FABUTIL__3D_8F" ],
     [ "AMReX_WritePlotFile.cpp", "AMReX__WritePlotFile_8cpp.html", "AMReX__WritePlotFile_8cpp" ],
     [ "AMReX_WritePlotFile.H", "AMReX__WritePlotFile_8H.html", "AMReX__WritePlotFile_8H" ],
     [ "AMReX_XYPlotDataList.cpp", "AMReX__XYPlotDataList_8cpp.html", null ],

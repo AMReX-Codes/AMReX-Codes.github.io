@@ -192,10 +192,8 @@ var NAVTREEINDEX0 =
 "AMReX__AmrData_8H.html":[4,0,0,5,0,1],
 "AMReX__AmrData_8H_source.html":[4,0,0,5,0,1],
 "AMReX__AmrData_8cpp.html":[4,0,0,5,0,0],
-"AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6":[4,0,0,5,0,0,2],
-"AMReX__AmrData_8cpp.html#a7478c4cc9dc12aa9abf4160447509e1b":[4,0,0,5,0,0,0],
-"AMReX__AmrData_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,0,0,1],
-"AMReX__AmrData_8cpp.html#ac88342f98247d3a0156e1d8ca93ab252":[4,0,0,5,0,0,3],
+"AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6":[4,0,0,5,0,0,1],
+"AMReX__AmrData_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,0,0,0],
 "AMReX__AmrFwd_8H.html":[4,0,0,0,2],
 "AMReX__AmrFwd_8H_source.html":[4,0,0,0,2],
 "AMReX__AmrInSituBridge_8H.html":[4,0,0,5,8,3],
@@ -237,8 +235,8 @@ var NAVTREEINDEX0 =
 "AMReX__Amr_8H.html":[4,0,0,0,1],
 "AMReX__Amr_8H_source.html":[4,0,0,0,1],
 "AMReX__Amr_8cpp.html":[4,0,0,0,0],
-"AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,0],
 "AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,1],
+"AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,0],
 "AMReX__AmrvisConstants_8H.html":[4,0,0,5,0,2],
 "AMReX__AmrvisConstants_8H.html#a04b5ba23c65119a12a4821f069115d45":[4,0,0,5,0,2,8],
 "AMReX__AmrvisConstants_8H.html#a166072d05a5e20994289f487f0e37c67":[4,0,0,5,0,2,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea503682758a9652794035ca63ab96c560":[4,0,0,5,0,2,3,1],
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea6b4802e2429bba442dc07b4022a1d96c":[4,0,0,5,0,2,3,5],
 "AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98ea70e198feec9ed63c2f25d181a5dc611e":[4,0,0,5,0,2,3,6],
-"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaab6fadb81d010967ae7f2188711d1648":[4,0,0,5,0,2,3,0]
+"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaab6fadb81d010967ae7f2188711d1648":[4,0,0,5,0,2,3,0],
+"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eaba96691ea8224cc3ccf1b9b54dfff4b3":[4,0,0,5,0,2,3,3],
+"AMReX__AmrvisConstants_8H.html#a215d738508df9f39360cdc84a844e98eac6c6458c687d1b60adee77a09a91bef5":[4,0,0,5,0,2,3,7]
 };

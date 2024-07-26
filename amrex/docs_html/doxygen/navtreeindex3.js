@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"AMReX__CommProfStats_8cpp.html#a82ff102a1952ad4ab549505b10f24456":[4,0,0,5,7,10,9],
-"AMReX__CommProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,7,10,0],
 "AMReX__CommProfStats_8cpp.html#a9eaad985fc3700bfc26c0ce411504f81":[4,0,0,5,7,10,10],
 "AMReX__CommProfStats_8cpp.html#aa47c5b8f4f5bd6461d8e497d965742dd":[4,0,0,5,7,10,12],
 "AMReX__CommProfStats_8cpp.html#aafb2ddde567eb3472db5487e1baa09aa":[4,0,0,5,7,10,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "AMReX__EBCellFlag_8cpp.html#ac45d936bf5764d4fc75c7d483c93afaa":[4,0,0,4,72,0],
 "AMReX__EBDataCollection_8H.html":[4,0,0,4,76],
 "AMReX__EBDataCollection_8H_source.html":[4,0,0,4,76],
-"AMReX__EBDataCollection_8cpp.html":[4,0,0,4,75]
+"AMReX__EBDataCollection_8cpp.html":[4,0,0,4,75],
+"AMReX__EBFArrayBox_8H.html":[4,0,0,4,80],
+"AMReX__EBFArrayBox_8H.html#aa4a3bfe1c0cd2c7c8632d1f0ee21b2ec":[4,0,0,4,80,1]
 };
