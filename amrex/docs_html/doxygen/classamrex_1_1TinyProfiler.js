@@ -31,7 +31,7 @@ var classamrex_1_1TinyProfiler =
     [ "StopRegion", "classamrex_1_1TinyProfiler.html#ac96b507c36165550f9a2bf115aedc5fb", null ],
     [ "all_memnames", "classamrex_1_1TinyProfiler.html#a4c5a66e30e341fc78c3e29f260fb7904", null ],
     [ "all_memstats", "classamrex_1_1TinyProfiler.html#adac60aa8448dcfb383a94e4f607dfc01", null ],
-    [ "device_synchronize_around_region", "classamrex_1_1TinyProfiler.html#ac2c4c05ecf95fbad73a0bb49012431ec", null ],
+    [ "device_synchronize_around_region", "classamrex_1_1TinyProfiler.html#a15ae68038b556fc6fa24170d5cb0d5b5", null ],
     [ "fname", "classamrex_1_1TinyProfiler.html#a8691b33b40a313ca7ffe01a287f57dff", null ],
     [ "global_depth", "classamrex_1_1TinyProfiler.html#ae7befef46d2ca9e3de4299f950647451", null ],
     [ "in_parallel_region", "classamrex_1_1TinyProfiler.html#a9949d2a62ee0e670c89942b622ef9ebb", null ],

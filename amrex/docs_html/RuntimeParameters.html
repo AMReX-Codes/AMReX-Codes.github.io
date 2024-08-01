@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runtime Parameters &mdash; amrex 24.09-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AMReX-based Profiling Tools" href="AMReX_Profiling_Tools_Chapter.html" />
+    <link rel="prev" title="Debugging" href="Debugging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+              <div class="version">
+                24.09-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Runtime Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#amr">AMR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#amrcore-class">AmrCore Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amr-class">Amr Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subcycling">Subcycling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regrid">Regrid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#i-o">I/O</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-controls">Basic Controls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distribution-mapping">Distribution Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedded-boundary">Embedded Boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extern">Extern</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hypre">Hypre</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#particles">Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tiling">Tiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tiny-profiler">Tiny Profiler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Governance.html">AMReX Governance</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Runtime Parameters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/RuntimeParameters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="runtime-parameters">
+<span id="chap-inputs"></span><h1>Runtime Parameters<a class="headerlink" href="#runtime-parameters" title="Permalink to this heading"></a></h1>
+<p>This chapter contains a list of AMReX <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> runtime parameters
+and their <strong>default</strong> values. They can be set by either including them in an
+inputs file, or specifying them at the command line, or passing a function
+to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="w"></span></code> and the function adds parameters to AMReX’s
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>’s parameter database. For more information on
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>, see <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>AMReX reserves the following prefixes in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+parameters: <code class="docutils literal notranslate"><span class="pre">amr</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex</span></code>, <code class="docutils literal notranslate"><span class="pre">blprofiler</span></code>, <code class="docutils literal notranslate"><span class="pre">device</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">eb2</span></code>, <code class="docutils literal notranslate"><span class="pre">fab</span></code>, <code class="docutils literal notranslate"><span class="pre">fabarray</span></code>,
+<code class="docutils literal notranslate"><span class="pre">geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">particles</span></code>, <code class="docutils literal notranslate"><span class="pre">tiny_profiler</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">vismf</span></code>.</p>
+</div>
+<section id="amr">
+<h2>AMR<a class="headerlink" href="#amr" title="Permalink to this heading"></a></h2>
+<p>AMReX applications with AMR use either <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code> or the more
+specialized <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code>. Since <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code> is derived from
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code>, the parameters for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> class also apply
+to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span><span class="w"></span></code> class. Additionally, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code> is derived from
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrMesh</span><span class="w"></span></code>, so <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="w"></span></code> member functions are also available
+to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span><span class="w"></span></code>.</p>
+<section id="amrcore-class">
+<h3>AmrCore Class<a class="headerlink" href="#amrcore-class" title="Permalink to this heading"></a></h3>
+<p>Below are a list of important <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters. However, AMReX
+applications can choose to avoid them entirely by use this <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRCore</span><span class="w"></span></code>
+constructor <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level_0_geom</span><span class="p">,</span><span class="w"> </span><span class="n">AmrInfo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"></span>
+<span class="n">amr_info</span><span class="p">)</span><span class="w"></span></code>, where <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">struct</span><span class="w"> </span><span class="nc">AmrInfo</span><span class="w"></span></code> contains all the information that
+can be set via <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.verbose">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#amr.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> functions.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_cell">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_cell</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.n_cell" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter is used only when <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> is not provided as an
+argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> constructors. It specifies the number of cells
+in each dimension on Level 0.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.max_level">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.max_level" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter is used only when <code class="docutils literal notranslate"><span class="pre">max_level</span></code> is not provided as an
+argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> constructors. It specifies the maximum level
+of refinement allowed. Note that the total number of levels, including
+the base level 0, is <code class="docutils literal notranslate"><span class="pre">max_level+1</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.ref_ratio">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">ref_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">...</span> <span class="pre">2</span></em><a class="headerlink" href="#amr.ref_ratio" title="Permalink to this definition"></a></dt>
+<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code>
+constructors and <a class="reference internal" href="#amr.ref_ratio_vect" title="amr.ref_ratio_vect"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.ref_ratio_vect</span></code></a> is not found in the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> database, this parameter will be used to set the
+refinement ratios between AMR levels. If there are more AMR levels than
+the size of the integer parameter array, the last integer will be used as
+the refinement ratio for the unspecified levels. For example, if
+<code class="docutils literal notranslate"><span class="pre">max_level</span></code> is 4 and the provided <code class="docutils literal notranslate"><span class="pre">amr.ref_ratio</span></code> parameter is <code class="docutils literal notranslate"><span class="pre">2</span>
+<span class="pre">4</span></code>, the refinement ratios are 2, 4, 4 and 4, for levels 0/1, 1/2, 2/3
+and 3/4, respectively.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.ref_ratio_vect">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">ref_ratio_vect</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.ref_ratio_vect" title="Permalink to this definition"></a></dt>
+<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code>
+constructors and <a class="reference internal" href="#amr.ref_ratio_vect" title="amr.ref_ratio_vect"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.ref_ratio_vect</span></code></a> is found in the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> database, it will be used to set the refinement ratios
+between AMR levels. It’s an error if the size of the integer array, if
+found, is less than <code class="docutils literal notranslate"><span class="pre">max_level*AMREX_SPACEDIM</span></code>. The first
+<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> numbers specify the refinement ratios in the
+<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> dimensions between levels 0 and 1, the next
+<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> numbers specify the ratios for levels 1 and 2, and so
+on.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.max_grid_size">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_grid_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amr.max_grid_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the maximum grid size on AMR levels, one value for each
+level. If the size of the integer array is less than the total number of
+levels, the last integer will be used for the unspecified levels. The
+default value is 128 for 1D and 2D runs. For 3D runs, the default value
+is 64 and 32, for GPU and CPU runs, respectively. Note that the user can
+also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetMaxGridSize</span><span class="w"></span></code> to set the maximum grid
+sizes. Additionally, the values set by this parameter can be overridden
+by <a class="reference internal" href="#amr.max_grid_size_x" title="amr.max_grid_size_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_x</span></code></a>, <a class="reference internal" href="#amr.max_grid_size_y" title="amr.max_grid_size_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_y</span></code></a> and
+<a class="reference internal" href="#amr.max_grid_size_z" title="amr.max_grid_size_z"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_z</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.max_grid_size_x">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_grid_size_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.max_grid_size_x" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the maximum grid size in the x-direction
+set by <a class="reference internal" href="#amr.max_grid_size" title="amr.max_grid_size"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size</span></code></a>. If the size of the integer array is
+less than the total number of levels, the last integer will be used for
+the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.max_grid_size_y">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_grid_size_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.max_grid_size_y" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the maximum grid size in the y-direction
+set by <a class="reference internal" href="#amr.max_grid_size" title="amr.max_grid_size"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size</span></code></a>. If the size of the integer array is
+less than the total number of levels, the last integer will be used for
+the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.max_grid_size_z">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_grid_size_z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.max_grid_size_z" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the maximum grid size in the z-direction
+set by <a class="reference internal" href="#amr.max_grid_size" title="amr.max_grid_size"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size</span></code></a>. If the size of the integer array is
+less than the total number of levels, the last integer will be used for
+the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.blocking_factor">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">blocking_factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amr.blocking_factor" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the blocking factor on AMR levels, one value for each
+level. If the size of the integer array is less than the total number of
+levels, the last integer will be used for the unspecified levels. The
+default value is 8. Note that the user can also call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetBlockingFactor</span><span class="w"></span></code> to set the blocking
+factors. Additionally, the values set by this parameter can be overridden
+by <a class="reference internal" href="#amr.blocking_factor_x" title="amr.blocking_factor_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_x</span></code></a>, <a class="reference internal" href="#amr.blocking_factor_y" title="amr.blocking_factor_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_y</span></code></a> and
+<a class="reference internal" href="#amr.blocking_factor_z" title="amr.blocking_factor_z"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_z</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.blocking_factor_x">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">blocking_factor_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.blocking_factor_x" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the blocking factor in the x-direction
+set by <a class="reference internal" href="#amr.blocking_factor" title="amr.blocking_factor"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor</span></code></a>. If the size of the integer array
+is less than the total number of levels, the last integer will be used
+for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.blocking_factor_y">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">blocking_factor_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.blocking_factor_y" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the blocking factor in the y-direction
+set by <a class="reference internal" href="#amr.blocking_factor" title="amr.blocking_factor"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor</span></code></a>. If the size of the integer array
+is less than the total number of levels, the last integer will be used
+for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.blocking_factor_z">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">blocking_factor_z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.blocking_factor_z" title="Permalink to this definition"></a></dt>
+<dd><p>If provided, this will override the blocking factor in the z-direction
+set by <a class="reference internal" href="#amr.blocking_factor" title="amr.blocking_factor"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor</span></code></a>. If the size of the integer array
+is less than the total number of levels, the last integer will be used
+for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_proper">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_proper</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#amr.n_proper" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls the proper nesting of grids on AMR levels. For
+example, if we have <code class="docutils literal notranslate"><span class="pre">blocking_factor</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">ref_ratio</span> <span class="pre">=</span> <span class="pre">2</span></code> and
+<code class="docutils literal notranslate"><span class="pre">n_proper</span> <span class="pre">=</span> <span class="pre">1</span></code>, there will be at least <code class="docutils literal notranslate"><span class="pre">8/2*1</span> <span class="pre">=</span> <span class="pre">4</span></code> coarse level cells
+outside the fine level grids except at the physical boundaries. Note that
+the user can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetNProper</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code> to set the proper
+nesting parameter.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.grid_eff">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">grid_eff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.7</span></em><a class="headerlink" href="#amr.grid_eff" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls the grid efficiency threshold during grid
+creation. While a higher value can enhance efficiency, it may negatively
+impact overall performance, especially for GPU runs, because it tends to
+create smaller grids. Note that the user can also call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetGridEff</span><span class="p">(</span><span class="n">Real</span><span class="p">)</span><span class="w"></span></code> to set the grid efficiency threshold.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_error_buf">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_error_buf</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">...</span> <span class="pre">1</span></em><a class="headerlink" href="#amr.n_error_buf" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls how many extra cells will be tagged around every
+tagged cell. For example, if <code class="docutils literal notranslate"><span class="pre">n_error_buf</span> <span class="pre">=</span> <span class="pre">2</span></code>, tagging cell
+<code class="docutils literal notranslate"><span class="pre">(i,j,k)</span></code> will result in the tagging of the region of from lower corner
+<code class="docutils literal notranslate"><span class="pre">(i-2,j-2,k-2)</span></code> to upper corner <code class="docutils literal notranslate"><span class="pre">(i+2,j+2,k+2)</span></code>. If the size of the
+integer array is less than the number of levels, the last integer will be
+used for the unspecified levels. Note that the values set by this
+parameter can be overridden by <a class="reference internal" href="#amr.n_error_buf_x" title="amr.n_error_buf_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.n_error_buf_x</span></code></a>,
+<a class="reference internal" href="#amr.n_error_buf_y" title="amr.n_error_buf_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.n_error_buf_y</span></code></a> and <a class="reference internal" href="#amr.n_error_buf_z" title="amr.n_error_buf_z"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.n_error_buf_z</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_error_buf_x">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_error_buf_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.n_error_buf_x" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls the error buffer size in the x-direction. If the
+size of the integer array is less than the number of levels, the last
+integer will be used for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_error_buf_y">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_error_buf_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.n_error_buf_y" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls the error buffer size in the y-direction. If the
+size of the integer array is less than the number of levels, the last
+integer will be used for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.n_error_buf_z">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_error_buf_z</span></span><a class="headerlink" href="#amr.n_error_buf_z" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls the error buffer size in the z-direction. If the
+size of the integer array is less than the number of levels, the last
+integer will be used for the unspecified levels.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.refine_grid_layout">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">refine_grid_layout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.refine_grid_layout" title="Permalink to this definition"></a></dt>
+<dd><p>If it’s true, AMReX will attempt to chop new grids into smaller chunks
+ensuring at least one grid per MPI process, provided this does not
+violate the blocking factor constraint.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.refine_grid_layout_x">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">refine_grid_layout_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.refine_grid_layout_x" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter, if found, will override the
+<code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.refine_grid_layout</span></code> parameter in the x-direction.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.refine_grid_layout_y">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">refine_grid_layout_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.refine_grid_layout_y" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter, if found, will override the
+<code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.refine_grid_layout</span></code> parameter in the y-direction.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.refine_grid_layout_z">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">refine_grid_layout_z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.refine_grid_layout_z" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter, if found, will override the
+<code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.refine_grid_layout</span></code> parameter in the z-direction.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.check_input">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_input</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.check_input" title="Permalink to this definition"></a></dt>
+<dd><p>If this is true, AMReX will check if the various parameters in
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="w"></span></code> are reasonable.</p>
+</dd></dl>
+
+</section>
+<section id="amr-class">
+<h3>Amr Class<a class="headerlink" href="#amr-class" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These parameters are specific to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code> based
+applications. If your application use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code>
+directly, they do not apply unless you have provided
+implementations for them.</p>
+</div>
+<section id="subcycling">
+<h4>Subcycling<a class="headerlink" href="#subcycling" title="Permalink to this heading"></a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.subcycling_mode">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">subcycling_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Auto</span></em><a class="headerlink" href="#amr.subcycling_mode" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the subcycling mode of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code>. Possible value
+are <code class="docutils literal notranslate"><span class="pre">None</span></code> for no subcycling, or <code class="docutils literal notranslate"><span class="pre">Auto</span></code> for subcycling.</p>
+</dd></dl>
+
+</section>
+<section id="regrid">
+<h4>Regrid<a class="headerlink" href="#regrid" title="Permalink to this heading"></a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.regrid_int">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">regrid_int</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">...</span> <span class="pre">1</span></em><a class="headerlink" href="#amr.regrid_int" title="Permalink to this definition"></a></dt>
+<dd><p>This controls how often we perform the regrid operation on AMR levels 0
+to <code class="docutils literal notranslate"><span class="pre">max_level-1</span></code>. If the parameter is a single value, it will be used
+on all levels. If the parameter is an array of more than one values, the
+size must be at least <code class="docutils literal notranslate"><span class="pre">max_level</span></code> and values after the first
+<code class="docutils literal notranslate"><span class="pre">max_level</span></code> elements are ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.regrid_on_restart">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">regrid_on_restart</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.regrid_on_restart" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether we perform regrid immediately after restart.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.force_regrid_level_zero">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">force_regrid_level_zero</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.force_regrid_level_zero" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether we perform regrid on level 0.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.compute_new_dt_on_regrid">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">compute_new_dt_on_regrid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.compute_new_dt_on_regrid" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether we re-compute <code class="docutils literal notranslate"><span class="pre">dt</span></code> after regrid.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.initial_grid_file">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">initial_grid_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.initial_grid_file" title="Permalink to this definition"></a></dt>
+<dd><p>If this is set, the initial grids will be read from the specified file.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.regrid_file">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">regrid_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.regrid_file" title="Permalink to this definition"></a></dt>
+<dd><p>If this is set, regrid will use the grids in the specified file.</p>
+</dd></dl>
+
+</section>
+<section id="i-o">
+<h4>I/O<a class="headerlink" href="#i-o" title="Permalink to this heading"></a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.restart">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">restart</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.restart" title="Permalink to this definition"></a></dt>
+<dd><p>If this is set, the simulation will restart from the specified checkpoint
+file.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plotfile_on_restart">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plotfile_on_restart</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amr.plotfile_on_restart" title="Permalink to this definition"></a></dt>
+<dd><p>If this is set to true, a plotfile will be written after restart.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.file_name_digits">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">file_name_digits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#amr.file_name_digits" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter specifies the minimum number of digits in checkpoint and
+plotfile names.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.checkpoint_files_output">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">checkpoint_files_output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.checkpoint_files_output" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether we write checkpoint files.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.check_file">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">chk</span></em><a class="headerlink" href="#amr.check_file" title="Permalink to this definition"></a></dt>
+<dd><p>This sets the “root” of checkpoint file names. For example, the
+checkpoint files are named <code class="docutils literal notranslate"><span class="pre">chk00000</span></code>, <code class="docutils literal notranslate"><span class="pre">chk001000</span></code>, etc. by default.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.check_int">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_int</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.check_int" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing checkpoint files, defined as the
+number of level 0 steps between each checkpoint. A value less than 1
+indicates no checkpoint files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.check_per">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.check_per" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing checkpoint files, defined as the
+time (not the wall time) elapsed between each checkpoint. A value less
+or equal to 0 indicates no checkpoint files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.checkpoint_nfiles">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">checkpoint_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#amr.checkpoint_nfiles" title="Permalink to this definition"></a></dt>
+<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> when
+writing checkpoint files.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_files_output">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_files_output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.plot_files_output" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether we write plot files.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_file">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">plt</span></em><a class="headerlink" href="#amr.plot_file" title="Permalink to this definition"></a></dt>
+<dd><p>This sets the “root” of plot file names. For example, the plot files are
+named <code class="docutils literal notranslate"><span class="pre">plt00000</span></code>, <code class="docutils literal notranslate"><span class="pre">plt001000</span></code>, etc. by default.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_int">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_int</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.plot_int" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing plot files, defined as the number
+of level 0 steps between each plot file. A value less than 1 indicates no
+plot files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_per">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.plot_per" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing plot files, defined as the time
+(not the wall time) elapsed between each plot file. A value less or equal
+to 0 indicates no plot files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_log_per">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_log_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.plot_log_per" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing plot files, defined as the
+<code class="docutils literal notranslate"><span class="pre">log10</span></code> time (not the wall time) elapsed between each plot file. A
+value less or equal to 0 indicates no plot files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_max_level">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_max_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">amr.max_level</span></em><a class="headerlink" href="#amr.plot_max_level" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the finest level in a plot file. For example, if the finest
+level in a run is 3, but this parameter is set to 1, only levels 0 and 1
+will be saved in a plot file.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_nfiles">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#amr.plot_nfiles" title="Permalink to this definition"></a></dt>
+<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> when
+writing plot files.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.plot_vars">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.plot_vars" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the variables specified in the string array
+will be the state variables saved in the plot files. The special values
+<code class="docutils literal notranslate"><span class="pre">ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">NONE</span></code> mean that all or none of the state variables will be
+saved. If this parameter is not set, all state variables will be saved.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.derive_plot_vars">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">derive_plot_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.derive_plot_vars" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the variables specified in the string array
+will be the derive variables saved in the plot files. The special values
+<code class="docutils literal notranslate"><span class="pre">ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">NONE</span></code> mean that all or none of the derive variables will
+be saved. If this parameter is not set, none of the derive variables will
+be saved.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.small_plot_file">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">small_plot_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">smallplt</span></em><a class="headerlink" href="#amr.small_plot_file" title="Permalink to this definition"></a></dt>
+<dd><p>This sets the “root” of small plot file names. For example, the small
+plot files are named <code class="docutils literal notranslate"><span class="pre">smallplt00000</span></code>, <code class="docutils literal notranslate"><span class="pre">smallplt001000</span></code>, etc. by
+default.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.small_plot_int">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">small_plot_int</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.small_plot_int" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing small plot files, defined as the
+number of level 0 steps between each small plot file. A value less than 1
+indicates no small plot files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.small_plot_per">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">small_plot_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.small_plot_per" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing small plot files, defined as the
+time (not the wall time) elapsed between each small plot file. A value
+less or equal to 0 indicates no small plot files will be written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.small_plot_log_per">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">small_plot_log_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#amr.small_plot_log_per" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of writing small plot files, defined as the
+<code class="docutils literal notranslate"><span class="pre">log10</span></code> time (not the wall time) elapsed between each small plot
+file. A value less or equal to 0 indicates no small plot files will be
+written.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.small_plot_vars">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">small_plot_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.small_plot_vars" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the variables specified in the string array
+will be the state variables saved in the small plot files. The special
+values <code class="docutils literal notranslate"><span class="pre">ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">NONE</span></code> mean that all or none of the state variables
+will be saved. If this parameter is not set, none of the state variables
+will be saved.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.derive_small_plot_vars">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">derive_small_plot_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.derive_small_plot_vars" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the variables specified in the string array
+will be the derive variables saved in the small plot files. The special
+values <code class="docutils literal notranslate"><span class="pre">ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">NONE</span></code> mean that all or none of the derive variables
+will be saved. If this parameter is not set, none of the derive variables
+will be saved.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.message_int">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">message_int</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#amr.message_int" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the interval of checking messages during a run, defined as
+the number of level 0 steps between checks. A value less than 1 indicates
+no checking will be performed. A message refers to a file created by the
+user on the disk, where only the file name is checked, not its
+content. If the file name matches one of the following predefined names,
+appropriate actions will be taken.</p>
+<dl class="simple">
+<dt>dump_and_continue</dt><dd><p>Make a checkpoint file and continue running the simulation.</p>
+</dd>
+<dt>stop_run</dt><dd><p>Stop the simulation.</p>
+</dd>
+<dt>dump_and_stop</dt><dd><p>Make a checkpoint file and stop the simulation.</p>
+</dd>
+<dt>plot_and_continue</dt><dd><p>Make a plot file and continue running the simulation.</p>
+</dd>
+<dt>small_plot_and_continue</dt><dd><p>Make a small plot file and continue running the simulation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.write_plotfile_with_checkpoint">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">write_plotfile_with_checkpoint</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.write_plotfile_with_checkpoint" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter is for the message action discussed in
+<a class="reference internal" href="#amr.message_int" title="amr.message_int"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.message_int</span></code></a>. It controls whether an action will make a
+plot file as well when asked to make a checkpoint file.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.run_log">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">run_log</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.run_log" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the run log will be enabled and this is the log
+file name.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.run_log_terse">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">run_log_terse</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.run_log_terse" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the terse run log will be enabled and this is
+the log file name.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.grid_log">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">grid_log</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.grid_log" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the grid log will be enabled and this is the
+log file name.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amr.data_log">
+<span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">data_log</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.data_log" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set, the data log will be enabled and this is the
+log file name.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+<section id="basic-controls">
+<h2>Basic Controls<a class="headerlink" href="#basic-controls" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.verbose">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#amrex.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the verbosity level of AMReX. Besides using
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>, you can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code> to set
+it.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.init_snan">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">init_snan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amrex.init_snan" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PODVectors</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>, etc. will be initialized to
+signaling NaNs at construction. The default value is true for debug
+builds. For non-debug builds, the default is false unless <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code>
+for GNU Make or <code class="docutils literal notranslate"><span class="pre">AMReX_TESTING</span></code> is enabled for CMake.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.abort_on_unused_inputs">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">abort_on_unused_inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.abort_on_unused_inputs" title="Permalink to this definition"></a></dt>
+<dd><p>If this is true and there are unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters, AMReX
+will abort during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="w"></span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.parmparse.verbose">
+<span class="sig-prename descclassname"><span class="pre">amrex.parmparse.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">amrex.verbose</span></em><a class="headerlink" href="#amrex.parmparse.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>If this is greater than zero, unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> variables will be
+printed out during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="w"></span></code> or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">QueryUnusedInputs</span><span class="w"></span></code>. The parameter can also be set by
+calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.device.verbose">
+<span class="sig-prename descclassname"><span class="pre">amrex.device.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#amrex.device.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether AMReX prints out GPU device properties such name,
+vendor, total memory size, etc. This is only relevant for GPU runs.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.max_gpu_streams">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">max_gpu_streams</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#amrex.max_gpu_streams" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the number of GPU streams used by AMReX. It’s only relevant
+for GPU runs.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.omp_threads">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">omp_threads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">system</span></em><a class="headerlink" href="#amrex.omp_threads" title="Permalink to this definition"></a></dt>
+<dd><p>If OpenMP is enabled, this can be used to set the default number of
+threads. Possible values are <code class="docutils literal notranslate"><span class="pre">system</span></code>, <code class="docutils literal notranslate"><span class="pre">nosmt</span></code>, or an integer
+string. The special value <code class="docutils literal notranslate"><span class="pre">nosmt</span></code> can be used to avoid using threads
+for virtual cores (aka Hyperthreading or SMT), as is default in OpenMP,
+and instead only spawns threads equal to the number of physical cores in
+the system.  For the values <code class="docutils literal notranslate"><span class="pre">system</span></code> and <code class="docutils literal notranslate"><span class="pre">nosmt</span></code>, the environment
+variable <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> takes precedence. If the string can be
+converted to an integer, <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> is ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.memory_log">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">memory_log</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">memlog</span></em><a class="headerlink" href="#amrex.memory_log" title="Permalink to this definition"></a></dt>
+<dd><p>This is the name of the memory log file when memory profiling is enabled.</p>
+</dd></dl>
+
+</section>
+<section id="communication">
+<h2>Communication<a class="headerlink" href="#communication" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.use_gpu_aware_mpi">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">use_gpu_aware_mpi</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.use_gpu_aware_mpi" title="Permalink to this definition"></a></dt>
+<dd><p>For GPU runs, this controls the memory type used for AMReX’s
+communication buffers. When this is true, AMReX uses GPU device memory
+for communication data in MPI function calls. When this is false, the
+data are placed in pinned memory. Note that this flag does not enable
+GPU-aware MPI by itself. Enabling GPU-aware MPI is system
+dependent. Users should consult their system’s documentation for
+instructions on setting up the environment and linking to GPU-aware MPI
+libraries.</p>
+</dd></dl>
+
+</section>
+<section id="distribution-mapping">
+<h2>Distribution Mapping<a class="headerlink" href="#distribution-mapping" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="DistributionMapping.verbose">
+<span class="sig-prename descclassname"><span class="pre">DistributionMapping.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#DistributionMapping.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code>
+functions.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="DistributionMapping.strategy">
+<span class="sig-prename descclassname"><span class="pre">DistributionMapping.</span></span><span class="sig-name descname"><span class="pre">strategy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">SFC</span></em><a class="headerlink" href="#DistributionMapping.strategy" title="Permalink to this definition"></a></dt>
+<dd><p>This is the default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code> strategy. Possible values
+are <code class="docutils literal notranslate"><span class="pre">SFC</span></code>, <code class="docutils literal notranslate"><span class="pre">KNAPSACK</span></code>, <code class="docutils literal notranslate"><span class="pre">ROUNDROBIN</span></code>, or <code class="docutils literal notranslate"><span class="pre">RRSFC</span></code>. Note that the
+default strategy can also be set by calling
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">strategy</span><span class="p">(</span><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">Strategy</span><span class="p">)</span><span class="w"></span></code>.</p>
+</dd></dl>
+
+</section>
+<section id="embedded-boundary">
+<h2>Embedded Boundary<a class="headerlink" href="#embedded-boundary" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.max_grid_size">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">max_grid_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#eb2.max_grid_size" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter specifies the maximum grid size in AMReX’s internal EB
+database, not the user’s data.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.extend_domain_face">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">extend_domain_face</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#eb2.extend_domain_face" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the behavior of the embedded boundary outside the
+domain. If this is true, the embedded boundary outside the domain is
+extended perpendicularly from the domain face. Otherwise, it’s generated
+with the user provided implicit function. Note that this parameter can be
+overridden by the user when calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"></span></code> with the
+optional parameter <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">extend_domain_face</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.num_coarsen_opt">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">num_coarsen_opt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#eb2.num_coarsen_opt" title="Permalink to this definition"></a></dt>
+<dd><p>If it is greater than 0, this parameter can speed up the EB
+generation. It indicates that the search for EB can be performed on grids
+coarsened by this factor and then the EB information details will be
+generated on the original grids. However, the user should be aware that
+setting this parameter too high could result in erroneous results. Also
+note that this parameter can be overridden by the user when calling
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"></span></code> with the optional parameter <code class="docutils literal notranslate"><span class="pre">int</span>
+<span class="pre">num_coarsen_opt</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.geom_type">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">geom_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#eb2.geom_type" title="Permalink to this definition"></a></dt>
+<dd><p>There are two versions of the <cite>amrex::EB2::Build</cite> function that can be
+used to build EB. One version is a function template that takes a user
+provided <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span><span class="w"></span></code>, while the other uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+parameters to build EB. For the latter version, this parameter specifies
+the type of the EB. Possible values include the following.</p>
+<dl class="simple">
+<dt>all_regular</dt><dd><p>The entire domain is regular without any EB objects.</p>
+</dd>
+<dt>parser</dt><dd><p>The embedded boundary is describe by <a class="reference internal" href="#eb2.parser_function" title="eb2.parser_function"><code class="xref py py-data docutils literal notranslate"><span class="pre">eb2.parser_function</span></code></a>.</p>
+</dd>
+<dt>stl</dt><dd><p>The embedded boundary will be built using an STL file specified by
+<a class="reference internal" href="#eb2.stl_file" title="eb2.stl_file"><code class="xref py py-data docutils literal notranslate"><span class="pre">eb2.stl_file</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.parser_function">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">parser_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#eb2.parser_function" title="Permalink to this definition"></a></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">parser</span></code>, this parameter is a parser function
+string that contains a math expression describing the surface of the EB.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Section <a class="reference internal" href="Basics.html#sec-basics-parser"><span class="std std-ref">Parser</span></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.stl_file">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">stl_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#eb2.stl_file" title="Permalink to this definition"></a></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">stl</span></code>, this is a required string parameter
+specifying the STL file name.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.stl_scale">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">stl_scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex:Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#eb2.stl_scale" title="Permalink to this definition"></a></dt>
+<dd><p>When building EB using STL, the triangles in the STL file will be scaled
+by the given value of this optional parameter.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.stl_center">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">stl_center</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span></em><a class="headerlink" href="#eb2.stl_center" title="Permalink to this definition"></a></dt>
+<dd><p>When building EB using STL, this optional parameter specifies the shifted
+center. The original coordinates in the STL file will be shifted by the
+provided values.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.stl_reverse_normal">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">stl_reverse_normal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#eb2.stl_reverse_normal" title="Permalink to this definition"></a></dt>
+<dd><p>When building EB using STL, the normal direction of the triangles in the
+STL file will be reversed if this optional parameter is set to true.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.small_volfrac">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">small_volfrac</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[depend</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">amrex::Real]</span></em><a class="headerlink" href="#eb2.small_volfrac" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter specifies the threshold for small cells that will be
+converted to covered cells. The default value is <code class="docutils literal notranslate"><span class="pre">1.e-14</span></code> if
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"></span></code> is <code class="docutils literal notranslate"><span class="pre">double</span></code>, or <code class="docutils literal notranslate"><span class="pre">1.e-5</span></code> if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"></span></code> is
+<code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.cover_multiple_cuts">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">cover_multiple_cuts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#eb2.cover_multiple_cuts" title="Permalink to this definition"></a></dt>
+<dd><p>If this parameter is set to true, multi-cut cells will be converted to
+covered cells.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Because AMReX currently does not support multi-cut cells, it
+would be a runtime error if multi-cut cells are left unfixed.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="eb2.maxiter">
+<span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">maxiter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#eb2.maxiter" title="Permalink to this definition"></a></dt>
+<dd><p>Fixing small and multi-cut cells is an iterative process. This parameter
+specifies the maximum number of iterations for the fix-up process.</p>
+</dd></dl>
+
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading"></a></h2>
+<p>By default AMReX installs a signal handler that will be run when a signal
+such as segfault is received. You can also enable floating point exception
+trapping. The signal handler will print out backtraces that can be useful
+for debugging.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Floating point exception trapping is not enabled by default,
+because compilers might generate optimized SIMD code that raises the
+exceptions.</p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.signal_handling">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">signal_handling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.signal_handling" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether AMReX should handle signals.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigsegv">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigsegv</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.handle_sigsegv" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGSEGV</span></code>
+will be handled by AMReX.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigterm">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigterm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.handle_sigterm" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>
+will be handled by AMReX. This flag is false by default because this
+could generate lots of backtrace files on some batch systems that issue
+<code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> for jobs running out of wall clock time.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigint">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigint</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.handle_sigint" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGINT</span></code>
+will be handled by AMReX.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigabrt">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigabrt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.handle_sigabrt" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGABGT</span></code>
+will be handled by AMReX.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigfpe">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigfpe</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.handle_sigfpe" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code>
+will be handled by AMReX.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Use <a class="reference internal" href="#amrex.fpe_trap_invalid" title="amrex.fpe_trap_invalid"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code></a>, <a class="reference internal" href="#amrex.fpe_trap_zero" title="amrex.fpe_trap_zero"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code></a>
+and <a class="reference internal" href="#amrex.fpe_trap_overflow" title="amrex.fpe_trap_overflow"><code class="xref py py-data docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code></a> to enable <code class="docutils literal notranslate"><span class="pre">FE_INVALID</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> and <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code> trapping, respectively.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.handle_sigill">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">handle_sigill</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.handle_sigill" title="Permalink to this definition"></a></dt>
+<dd><p>If both this flag and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> are true, <code class="docutils literal notranslate"><span class="pre">SIGILL</span></code>
+will be handled by AMReX.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.throw_exception">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">throw_exception</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.throw_exception" title="Permalink to this definition"></a></dt>
+<dd><p>If this flag is true and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> is false,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Error</span><span class="w"></span></code> will throw
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="w"></span></code> instead of aborting immediately. Note that
+according the C++ standard, if an exception is thrown and not caught,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">terminate</span><span class="w"></span></code> will be called.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.fpe_trap_invalid">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_invalid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.fpe_trap_invalid" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_INVALID</span></code>
+(e.g., <code class="docutils literal notranslate"><span class="pre">0/0</span></code>) trapping will be enabled. This flag has no effect on
+Windows.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.fpe_trap_zero">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_zero</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.fpe_trap_zero" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true,
+<code class="docutils literal notranslate"><span class="pre">FE_DIVBYZERO</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">1/0</span></code>) trapping will be enabled. This flag has
+no effect on Windows.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.fpe_trap_overflow">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">fpe_trap_overflow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.fpe_trap_overflow" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">SIGFPE</span></code> is handled by AMReX and this flag is true, <code class="docutils literal notranslate"><span class="pre">FE_OVERFLOW</span></code>
+(i.e., the result is too large to be representable) trapping will be
+enabled. This flag has no effect on Windows.</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="extern">
+<h2>Extern<a class="headerlink" href="#extern" title="Permalink to this heading"></a></h2>
+<section id="hypre">
+<h3>Hypre<a class="headerlink" href="#hypre" title="Permalink to this heading"></a></h3>
+<p>These parameters are relevant only when Hypre support is enabled.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.init_hypre">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">init_hypre</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.init_hypre" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether AMReX should call <code class="docutils literal notranslate"><span class="pre">HYPRE_Init()</span></code> during
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="w"></span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.hypre_spgemm_use_vendor">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">hypre_spgemm_use_vendor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.hypre_spgemm_use_vendor" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether HYPRE should use the vendor’s <code class="docutils literal notranslate"><span class="pre">SpGemm</span></code>
+functionality.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.hypre_spmv_use_vendor">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">hypre_spmv_use_vendor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.hypre_spmv_use_vendor" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether HYPRE should use the vendor’s <code class="docutils literal notranslate"><span class="pre">SpMV</span></code>
+functionality.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.hypre_sptrans_use_vendor">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">hypre_sptrans_use_vendor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.hypre_sptrans_use_vendor" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether HYPRE should use the vendor’s <code class="docutils literal notranslate"><span class="pre">SpTrans</span></code>
+functionality.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="geometry">
+<span id="sec-inputs-geom"></span><h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h2>
+<p>All these parameters are optional for constructing a <a class="reference internal" href="Basics.html#sec-basics-geom"><span class="std std-ref">Geometry</span></a>
+object. There are only used if the information is not provided via function
+arguments.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="geometry.coord_sys">
+<span class="sig-prename descclassname"><span class="pre">geometry.</span></span><span class="sig-name descname"><span class="pre">coord_sys</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#geometry.coord_sys" title="Permalink to this definition"></a></dt>
+<dd><p>This specifies the coordinate system type with valid values being 0
+(Cartesian), or 1 (cylindrical), or 2 (spherical).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geometry.prob_lo">
+<span class="sig-prename descclassname"><span class="pre">geometry.</span></span><span class="sig-name descname"><span class="pre">prob_lo</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span></em><a class="headerlink" href="#geometry.prob_lo" title="Permalink to this definition"></a></dt>
+<dd><p>This specifies the position of the lower corner of the physical domain.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geometry.prob_hi">
+<span class="sig-prename descclassname"><span class="pre">geometry.</span></span><span class="sig-name descname"><span class="pre">prob_hi</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#geometry.prob_hi" title="Permalink to this definition"></a></dt>
+<dd><p>This specifies the position of the upper corner of the physical
+domain. If this is provided, <a class="reference internal" href="#geometry.prob_extent" title="geometry.prob_extent"><code class="xref py py-data docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code></a> will be
+ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geometry.prob_extent">
+<span class="sig-prename descclassname"><span class="pre">geometry.</span></span><span class="sig-name descname"><span class="pre">prob_extent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#geometry.prob_extent" title="Permalink to this definition"></a></dt>
+<dd><p>This specifies the length of the physical domain. If
+<a class="reference internal" href="#geometry.prob_hi" title="geometry.prob_hi"><code class="xref py py-data docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code></a> is provided, this will be ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="geometry.is_periodic">
+<span class="sig-prename descclassname"><span class="pre">geometry.</span></span><span class="sig-name descname"><span class="pre">is_periodic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span></em><a class="headerlink" href="#geometry.is_periodic" title="Permalink to this definition"></a></dt>
+<dd><p>These integer parameters are boolean flags to indicate whether the domain
+is periodic in each direction. It’s considered true (i.e., periodic) if
+its value is non-zero, and false (i.e., non-periodic) if its value is
+zero.</p>
+</dd></dl>
+
+</section>
+<section id="id1">
+<h2>I/O<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.async_out">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">async_out</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.async_out" title="Permalink to this definition"></a></dt>
+<dd><p>If this is true, AMReX’s native mesh and particle plotfiles will be
+written asynchronously by a background thread.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.async_out_nfiles">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">async_out_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">into</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#amrex.async_out_nfiles" title="Permalink to this definition"></a></dt>
+<dd><p>This is the maximum number of binary files on each AMR level that will be
+used when AMReX writes a plotfile asynchronously.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vismf.verbose">
+<span class="sig-prename descclassname"><span class="pre">vismf.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#vismf.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">VisMF</span><span class="w"></span></code> functions.</p>
+</dd></dl>
+
+</section>
+<section id="memory">
+<h2>Memory<a class="headerlink" href="#memory" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_arena_init_size">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_arena_init_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[system</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amrex.the_arena_init_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the main memory arena’s initial size in bytes. For CPU
+runs, the default is 0, whereas for GPU runs, the default is set at run
+time to 3/4 of the system’s device memory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">amrex</span> <span class="pre">v24.08</span></code>, instead of
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=10000000000</span></code>, one can use
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=10'000'000'000</span></code> or
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=1e10</span></code> to set <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+integer parameters like this one.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_device_arena_init_size">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_device_arena_init_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8388608</span> <span class="pre">[8</span> <span class="pre">MB]</span></em><a class="headerlink" href="#amrex.the_device_arena_init_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the GPU device arena’s initial size in bytes. For CPU runs,
+this is ignored. If the main arena uses the device memory (as opposed to
+managed memory), this parameter is also ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_managed_arena_init_size">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_managed_arena_init_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8388608</span> <span class="pre">[8</span> <span class="pre">MB]</span></em><a class="headerlink" href="#amrex.the_managed_arena_init_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the managed device arena’s initial size in bytes. For CPU
+runs, this is ignored. If the main arena uses the managed memory (as
+opposed to device memory), this parameter is also ignored.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_pinned_arena_init_size">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_pinned_arena_init_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[system</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amrex.the_pinned_arena_init_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the pinned host memory arena’s initial size in bytes. The
+default is 8 MB for CPU runs. For GPU runs it’s set to half of the GPU
+device memory by default.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_comms_arena_init_size">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_comms_arena_init_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8388608</span> <span class="pre">[8</span> <span class="pre">MB]</span></em><a class="headerlink" href="#amrex.the_comms_arena_init_size" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the MPI communication memory arena’s initial size in bytes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the main arena.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_device_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_device_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_device_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the device arena.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_managed_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_managed_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_managed_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the managed arena.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_pinned_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_pinned_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_pinned_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the pinned arena.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_comms_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_comms_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_comms_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the communication arena.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_async_arena_release_threshold">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_async_arena_release_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">long</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">LONG_MAX</span></em><a class="headerlink" href="#amrex.the_async_arena_release_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the release threshold of the asynchronous arena. Note that
+this is only relevant for the CUDA (&gt;= 11.2) and HIP backends that
+support stream-ordered memory allocator.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.the_arena_is_managed">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">the_arena_is_managed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.the_arena_is_managed" title="Permalink to this definition"></a></dt>
+<dd><p>This controls if AMReX uses the managed memory for the main arena. This
+is only relevant for GPU runs.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.abort_on_out_of_gpu_memory">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">abort_on_out_of_gpu_memory</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.abort_on_out_of_gpu_memory" title="Permalink to this definition"></a></dt>
+<dd><p>This controls if AMReX should simply abort when the reported free device
+memory is less than the amount an arena is asked to allocate. Note that
+for managed memory it’s possible to allocate more than the amount of free
+device memory available. However, the code will be very slow. This
+parameter is only relevant for GPU runs.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.mf.alloc_single_chunk">
+<span class="sig-prename descclassname"><span class="pre">amrex.mf.</span></span><span class="sig-name descname"><span class="pre">alloc_single_chunk</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.mf.alloc_single_chunk" title="Permalink to this definition"></a></dt>
+<dd><p>This controls if all the data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="w"></span></code> (including
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>) are in a contiguous chunk of memory.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="amrex.vector_growth_factor">
+<span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">vector_growth_factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.5</span></em><a class="headerlink" href="#amrex.vector_growth_factor" title="Permalink to this definition"></a></dt>
+<dd><p>This controls the growth factor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">PODVector</span><span class="w"></span></code> and its
+derived classes such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="w"></span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span><span class="w"></span></code>, etc. A smaller value can avoid wasting
+memory, but it may result in a performance penalty during resizing.</p>
+</dd></dl>
+
+</section>
+<section id="particles">
+<h2>Particles<a class="headerlink" href="#particles" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.do_tiling">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">do_tiling</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#particles.do_tiling" title="Permalink to this definition"></a></dt>
+<dd><p>This controls whether tiling is enabled for particle containers.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.tile_size">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">tile_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024000</span> <span class="pre">8</span> <span class="pre">8</span></em><a class="headerlink" href="#particles.tile_size" title="Permalink to this definition"></a></dt>
+<dd><p>When tiling is enabled, this is the default tile size. Note that a big
+number like 1024000 effectively turns tiling off in that direction.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.do_mem_efficient_sort">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">do_mem_efficient_sort</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#particles.do_mem_efficient_sort" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter controls whether the more memory efficient method will be
+used for sorting particles.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="particles.particles_nfiles">
+<span class="sig-prename descclassname"><span class="pre">particles.</span></span><span class="sig-name descname"><span class="pre">particles_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#particles.particles_nfiles" title="Permalink to this definition"></a></dt>
+<dd><p>This is the maximum number of binary files per level for a particle
+container when writing checkpoint and plot files for particles. The
+special value of <code class="docutils literal notranslate"><span class="pre">-1</span></code> indicates one file per process.</p>
+</dd></dl>
+
+</section>
+<section id="tiling">
+<h2>Tiling<a class="headerlink" href="#tiling" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="fabarray.mfiter_tile_size">
+<span class="sig-prename descclassname"><span class="pre">fabarray.</span></span><span class="sig-name descname"><span class="pre">mfiter_tile_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#fabarray.mfiter_tile_size" title="Permalink to this definition"></a></dt>
+<dd><p>This is the default size for <a class="reference internal" href="Basics.html#sec-basics-mfiter"><span class="std std-ref">tiling</span></a>. For GPU
+runs, it is disabled by default. For CPU runs, it is disabled by default
+in 1D and 2D, but enabled in 3D with a tile size of 8 in the y and
+z-directions.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="fabarray.comm_tile_size">
+<span class="sig-prename descclassname"><span class="pre">fabarray.</span></span><span class="sig-name descname"><span class="pre">comm_tile_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#fabarray.comm_tile_size" title="Permalink to this definition"></a></dt>
+<dd><p>This is the default tiling size used in moving data in and out of the MPI
+communication buffer . It is disabled by default for GPU runs, but
+enabled for CPU runs with a tile size of 8 in the y and z-directions (if
+they exist).</p>
+</dd></dl>
+
+</section>
+<section id="tiny-profiler">
+<h2>Tiny Profiler<a class="headerlink" href="#tiny-profiler" title="Permalink to this heading"></a></h2>
+<p>These parameters are ignored unless profiling with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TinyProfiler</span><span class="w"></span></code> is
+enabled.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="tiny_profiler.verbose">
+<span class="sig-prename descclassname"><span class="pre">tiny_profiler.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#tiny_profiler.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>If this value is greater than 0, messages about entering or leaving
+profiled regions will be printed on the I/O process.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tiny_profiler.print_threshold">
+<span class="sig-prename descclassname"><span class="pre">tiny_profiler.</span></span><span class="sig-name descname"><span class="pre">print_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">double</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#tiny_profiler.print_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>In the profiling report, regions with very small run times are not listed
+individually. Instead, they are included in a section named “Other”. This
+parameter specifies the maximum inclusive run time that the “Other”
+section can take in percent relative to the total run time.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="tiny_profiler.device_synchronize_around_region">
+<span class="sig-prename descclassname"><span class="pre">tiny_profiler.</span></span><span class="sig-name descname"><span class="pre">device_synchronize_around_region</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#tiny_profiler.device_synchronize_around_region" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter is only relevant for GPU runs. If it is set to true, the
+current GPU stream is synchronized when entering and leaving a profiling
+region. Because GPU kernels are asynchronous, time measurements without
+synchronization could be misleading. Enabling this parameter can provide
+more accurate measurements. However, the added synchronization points,
+which are unnecessary for correctness, could potentially degrade the
+performance.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Debugging.html" class="btn btn-neutral float-left" title="Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AMReX_Profiling_Tools_Chapter.html" class="btn btn-neutral float-right" title="AMReX-based Profiling Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -104,7 +104,7 @@ var classamrex_1_1Amr =
     [ "restart", "classamrex_1_1Amr.html#a3070a179ad3daed519f8d41a2f2d6b3b", null ],
     [ "setBoundaryGeometry", "classamrex_1_1Amr.html#a90bf34103118043a594a3e827f9f5e8b", null ],
     [ "setBoundaryGeometry", "classamrex_1_1Amr.html#adfcea84d67ac5f1276111e2bb32007aa", null ],
-    [ "setComputeNewDtOnRegrid", "classamrex_1_1Amr.html#a5ab06f1b57ba4e63bacb37f8d394e744", null ],
+    [ "setComputeNewDtOnRegrid", "classamrex_1_1Amr.html#a764b896be65e37000e8974c62cd98032", null ],
     [ "setCumTime", "classamrex_1_1Amr.html#a8440e6564a766f2aa1cf0670450b8523", null ],
     [ "setDtLevel", "classamrex_1_1Amr.html#ae63754ca7b99b0ebc7dca496b4689bc4", null ],
     [ "setDtLevel", "classamrex_1_1Amr.html#a0a911dea6d732d72a00a493bd3205fe3", null ],
@@ -144,7 +144,7 @@ var classamrex_1_1Amr =
     [ "check_file_root", "classamrex_1_1Amr.html#a006c720b7d8ecf6e603785ab0b82bced", null ],
     [ "check_int", "classamrex_1_1Amr.html#aabf4b679fb946c492eecfe38be051333", null ],
     [ "check_per", "classamrex_1_1Amr.html#a9daa98984b300c7a3080d0752f233a0b", null ],
-    [ "compute_new_dt_on_regrid", "classamrex_1_1Amr.html#a9f1bea870dda8d846c53e5302e9d4941", null ],
+    [ "compute_new_dt_on_regrid", "classamrex_1_1Amr.html#a4193d925aa23ec75207f4a3735d27a6e", null ],
     [ "cumtime", "classamrex_1_1Amr.html#a9b46db71980158bc8f12c2f7eebede4a", null ],
     [ "datalog", "classamrex_1_1Amr.html#a34d4fd7a519716a0155f261ba210bd85", null ],
     [ "datalogname", "classamrex_1_1Amr.html#a2cbd53ff9ac71cac5e52e7311de0b2b8", null ],
@@ -202,5 +202,5 @@ var classamrex_1_1Amr =
     [ "sub_cycle", "classamrex_1_1Amr.html#a1fa04ad61e5931bab05e515255c447d1", null ],
     [ "subcycling_mode", "classamrex_1_1Amr.html#a746a85f8a72742a006a5c78de497c3f9", null ],
     [ "which_level_being_advanced", "classamrex_1_1Amr.html#a71368e4ccbd5ee723f8675ee9ba4abf5", null ],
-    [ "write_plotfile_with_checkpoint", "classamrex_1_1Amr.html#aa8e99beaed580c528d7f63268275d4a5", null ]
+    [ "write_plotfile_with_checkpoint", "classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244", null ]
 ];

@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"AMReX__BLWritePlotFile_8cpp.html#aa9dca52e8981b35caa7b00d00c8c6a8c":[4,0,0,5,7,8,2],
 "AMReX__BLWritePlotFile_8cpp.html#aec030b01162fc088d8de7dc493235430":[4,0,0,5,7,8,1],
 "AMReX__BLassert_8H.html":[4,0,0,2,28],
 "AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43":[4,0,0,2,28,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "AMReX__CommProfStats_8cpp.html#a5499430eba2a089dfb688e261d488394":[4,0,0,5,7,10,4],
 "AMReX__CommProfStats_8cpp.html#a61756f82d2fe93c1d6cc04bd635fc4c2":[4,0,0,5,7,10,5],
 "AMReX__CommProfStats_8cpp.html#a82ff102a1952ad4ab549505b10f24456":[4,0,0,5,7,10,9],
-"AMReX__CommProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,7,10,0]
+"AMReX__CommProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,7,10,0],
+"AMReX__CommProfStats_8cpp.html#a9eaad985fc3700bfc26c0ce411504f81":[4,0,0,5,7,10,10]
 };

@@ -105,5 +105,5 @@ var AMReX__ParallelDescriptor_8cpp =
     [ "m_rank_in_node", "AMReX__ParallelDescriptor_8cpp.html#ac28c7a40658a100cdc586086b19a3915", null ],
     [ "m_rank_in_processor", "AMReX__ParallelDescriptor_8cpp.html#a089c919e9ff83dd0697192ff37dabbce", null ],
     [ "m_Team", "AMReX__ParallelDescriptor_8cpp.html#a387acd4f26462ef60c5de9d87ef15c67", null ],
-    [ "use_gpu_aware_mpi", "AMReX__ParallelDescriptor_8cpp.html#a0157ac983f712e7d9bf90cb5f8fe95cb", null ]
+    [ "use_gpu_aware_mpi", "AMReX__ParallelDescriptor_8cpp.html#a95e4c6ac08c44a34028ade62e7fc3b13", null ]
 ];

@@ -122,7 +122,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RuntimeParameters.html">Runtime Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
@@ -382,6 +382,9 @@ runtime error that will abort the run.</p>
 </section>
 <section id="math-expressions">
 <h2>Math Expressions<a class="headerlink" href="#math-expressions" title="Permalink to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 24.08: </span>Math expression support in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>.</p>
+</div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> supports math expressions for integers and floating point
 numbers. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># three numbers. whitespaces inside `&quot;&quot;` are okay.</span>
@@ -659,6 +662,11 @@ as a separator for <code class="code highlight cpp c++ docutils literal highligh
 literals. Additionally, a floating point like number with a positive
 exponent may be accepted as an integer if it is reasonable to do so. For
 example, it’s okay to have <code class="docutils literal notranslate"><span class="pre">1.234e3</span></code>, but <code class="docutils literal notranslate"><span class="pre">1.234e2</span></code> is an error.</p>
+<blockquote>
+<div><div class="versionadded">
+<p><span class="versionmodified added">New in version 24.08: </span>Support for <code class="docutils literal notranslate"><span class="pre">'</span></code> and <code class="docutils literal notranslate"><span class="pre">e</span></code> in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IParser</span><span class="w"></span></code> integers.</p>
+</div>
+</div></blockquote>
 </section>
 <section id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this heading"></a></h1>
@@ -1000,7 +1008,7 @@ an <code class="code highlight cpp c++ docutils literal highlight-c++"><span cla
 given in the first constructor, AMReX  will construct one based on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters,
 <code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> / <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code> / <code class="docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code>,
 where each of the parameter is an array of <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> real numbers.
-See the section on <a class="reference internal" href="InputsProblemDefinition.html#sec-inputs-pd"><span class="std std-ref">Problem Definition</span></a> for more details about how to specify these.</p>
+See the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-geom"><span class="std std-ref">Geometry</span></a> for more details about how to specify these.</p>
 <p>The argument for coordinate system is an integer type with
 valid values being 0 (Cartesian), or 1 (cylindrical), or 2 (spherical). If it
 is invalid as in the case of the default argument value of the first constructor, AMReX will query the

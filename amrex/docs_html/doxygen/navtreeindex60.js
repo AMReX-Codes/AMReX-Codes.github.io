@@ -1,11 +1,12 @@
 var NAVTREEINDEX60 =
 {
+"globals_x.html":[4,1,0,21],
 "globals_y.html":[4,1,0,22],
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "namespaceamrex.html#a0b7407c69f5df5cb424eccddb336331b":[2,0,0,989],
 "namespaceamrex.html#a0c0dc9355722e150b88c6fc71422288e":[2,0,0,2247],
 "namespaceamrex.html#a0c65969b354bed7478ab5716942fdbad":[2,0,0,938],
-"namespaceamrex.html#a0ca24d0cad7a50b4e33d7e1cf2d62cf4":[2,0,0,948],
-"namespaceamrex.html#a0cccddb84fe8782da9ad7a41659db4a0":[2,0,0,1165]
+"namespaceamrex.html#a0ca24d0cad7a50b4e33d7e1cf2d62cf4":[2,0,0,948]
 };
