@@ -199,7 +199,7 @@
         <inbodydescription>
 <para>create a grown domain box containing valid + periodic cells</para>
 <para>if there are cells not in the valid + periodic grown box we need to fill them here</para>
-<para>Based on <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> for the domain, we need to make <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> for this <ref refid="classamrex_1_1Box" kindref="compound">Box</ref></para>
+<para>Based on <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> for the domain, we need to make <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> for this Box</para>
 <para>Note that we pass 0 as starting component of bcrs.</para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="149" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="149" bodyend="190"/>
@@ -247,28 +247,26 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="13">
+      <node id="10">
         <label>T</label>
       </node>
       <node id="4">
         <label>Real</label>
       </node>
       <node id="9">
-        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IndexTypeND"/>
-        <childnode refid="10" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="13" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="11">
+      <node id="7">
+        <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1BoxND"/>
+      </node>
+      <node id="8">
         <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
       <node id="6">
@@ -277,17 +275,6 @@
         <childnode refid="4" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="8" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>btype</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -302,10 +289,6 @@
       <node id="5">
         <label>amrex::GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
-      </node>
-      <node id="10">
-        <label>amrex::CellIndexEnum</label>
-        <link refid="structamrex_1_1CellIndexEnum"/>
       </node>
       <node id="2">
         <label>amrex::Geometry</label>
@@ -329,13 +312,9 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>m_bcr</edgelabel>
         </childnode>
-      </node>
-      <node id="8">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="128" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="129" bodyend="203"/>

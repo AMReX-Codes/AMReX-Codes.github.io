@@ -5652,7 +5652,7 @@
 <codeline lineno="260"></codeline>
 <codeline lineno="275" refid="structamrex_1_1Math_1_1FastDivmodU64" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">FastDivmodU64</ref></highlight></codeline>
 <codeline lineno="276"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="277" refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>;</highlight></codeline>
+<codeline lineno="277" refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_INT128_SUPPORTED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/>multiplier<sp/>=<sp/>1U;</highlight></codeline>
@@ -5672,7 +5672,7 @@
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"></highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1abdfbdb0c4abcf0304526080d9febbf42" kindref="member">FastDivmodU64</ref><sp/>(std::uint64_t<sp/>divisor_)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1af153f422ce6cbc50b12a7528b801aa7f" kindref="member">FastDivmodU64</ref><sp/>(std::uint64_t<sp/>divisor_)</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>(divisor_)</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>)<sp/>{</highlight></codeline>
@@ -5698,44 +5698,46 @@
 <codeline lineno="324"><highlight class="normal"></highlight></codeline>
 <codeline lineno="325"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="329" refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" kindref="member">divide</ref><sp/>(std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="330"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_INT128_SUPPORTED)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>dividend;</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(multiplier)<sp/>{</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>amrex::Math::umulhi(dividend<sp/>+<sp/>round_up,<sp/>multiplier);</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&gt;&gt;<sp/>shift_right);</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dividend<sp/>/<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>;</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="341"><highlight class="normal"></highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="344" refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" kindref="member">modulus</ref><sp/>(std::uint64_t<sp/>quotient,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="345"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dividend<sp/>-<sp/>quotient<sp/>*<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>;</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"></highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="351" refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" kindref="member">divmod</ref><sp/>(std::uint64_t<sp/>&amp;remainder,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="352"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>quotient<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" kindref="member">divide</ref>(dividend);</highlight></codeline>
-<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remainder<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" kindref="member">modulus</ref>(quotient,<sp/>dividend);</highlight></codeline>
-<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>quotient;</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="357"><highlight class="normal"></highlight></codeline>
-<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="361" refid="structamrex_1_1Math_1_1FastDivmodU64_1aaa477531586ad42032317fe1be5feb2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aaa477531586ad42032317fe1be5feb2d" kindref="member">operator() </ref>(std::uint64_t<sp/>&amp;quotient,<sp/>std::uint64_t<sp/>&amp;remainder,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="362"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quotient<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" kindref="member">divmod</ref>(remainder,<sp/>dividend);</highlight></codeline>
-<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="365"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="366"><highlight class="normal"></highlight></codeline>
-<codeline lineno="367"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="368"><highlight class="normal"></highlight></codeline>
-<codeline lineno="369"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="328" refid="structamrex_1_1Math_1_1FastDivmodU64_1af153f422ce6cbc50b12a7528b801aa7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1af153f422ce6cbc50b12a7528b801aa7f" kindref="member">FastDivmodU64</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="332" refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" kindref="member">divide</ref><sp/>(std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="333"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_INT128_SUPPORTED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>dividend;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(multiplier)<sp/>{</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>amrex::Math::umulhi(dividend<sp/>+<sp/>round_up,<sp/>multiplier);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&gt;&gt;<sp/>shift_right);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dividend<sp/>/<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="347" refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" kindref="member">modulus</ref><sp/>(std::uint64_t<sp/>quotient,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="348"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dividend<sp/>-<sp/>quotient<sp/>*<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a7959b6f2f90d3b613e82c6ae4a22477c" kindref="member">divisor</ref>;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="354" refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" kindref="member">divmod</ref><sp/>(std::uint64_t<sp/>&amp;remainder,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="355"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>quotient<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aabde614a5f0cb0b6d2b8aa8b4fe53b7d" kindref="member">divide</ref>(dividend);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remainder<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a332163d06c70c367f3238af4fb3dc6fd" kindref="member">modulus</ref>(quotient,<sp/>dividend);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>quotient;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="364" refid="structamrex_1_1Math_1_1FastDivmodU64_1aaa477531586ad42032317fe1be5feb2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1aaa477531586ad42032317fe1be5feb2d" kindref="member">operator() </ref>(std::uint64_t<sp/>&amp;quotient,<sp/>std::uint64_t<sp/>&amp;remainder,<sp/>std::uint64_t<sp/>dividend)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="365"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quotient<sp/>=<sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64_1a16dc01c31468084384ff41fcff7c2152" kindref="member">divmod</ref>(remainder,<sp/>dividend);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H"/>
   </compounddef>

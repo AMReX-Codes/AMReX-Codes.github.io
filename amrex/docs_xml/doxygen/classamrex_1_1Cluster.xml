@@ -5,7 +5,7 @@
     <includes refid="AMReX__Cluster_8H" local="no">AMReX_Cluster.H</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1Cluster_1a97e723c3499aedd07e910e30bbb1d51a" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
         <definition>Box amrex::Cluster::m_bx</definition>
         <argsstring></argsstring>
         <name>m_bx</name>
@@ -112,7 +112,7 @@
           <declname>c</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -220,7 +220,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Cluster.H" line="55" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Cluster_1af18b6017b49b6264c35c52028ee3c3b1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+        <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
         <definition>const Box&amp; amrex::Cluster::box</definition>
         <argsstring>() const noexcept</argsstring>
         <name>box</name>
@@ -267,11 +267,11 @@
         <argsstring>(const Box &amp;b) const noexcept</argsstring>
         <name>numTag</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
-<para>Return number of tagged points in intersection of cluster and <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> b. </para>
+<para>Return number of tagged points in intersection of cluster and Box b. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -395,30 +395,13 @@
 <para>Utility class for tagging error cells. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
-        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IndexTypeND"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
+        <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="6">
+      <node id="3">
         <label>amrex::IntVectND&lt; dim &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
-      </node>
-      <node id="5">
-        <label>amrex::CellIndexEnum</label>
-        <link refid="structamrex_1_1CellIndexEnum"/>
       </node>
       <node id="1">
         <label>amrex::Cluster</label>
@@ -426,13 +409,9 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_bx</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>m_ar</edgelabel>
         </childnode>
-      </node>
-      <node id="3">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Cluster.H" line="23" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Cluster.H" bodystart="24" bodyend="132"/>

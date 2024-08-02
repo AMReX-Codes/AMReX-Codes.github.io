@@ -1,0 +1,2289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classamrex_1_1BoxND" kind="class" language="C++" prot="public">
+    <compoundname>amrex::BoxND</compoundname>
+    <includes refid="AMReX__Box_8H" local="no">AMReX_Box.H</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>dim</declname>
+        <defname>dim</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1BoxND_1af5c898c7b3635a504124819032a025fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class BoxCommHelper</definition>
+        <argsstring></argsstring>
+        <name>BoxCommHelper</name>
+        <param>
+          <type><ref refid="classamrex_1_1BoxCommHelper" kindref="compound">BoxCommHelper</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="45" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1BoxND_1adccd37eeac931837d637545e8eba842e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__ccse-mpi_8H_1adf4ce151c5bdb0d3323d314ab596eab9" kindref="member">MPI_Datatype</ref></type>
+        <definition>MPI_Datatype ParallelDescriptor::Mpi_typemap</definition>
+        <argsstring>()</argsstring>
+        <name>ParallelDescriptor::Mpi_typemap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="44" column="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1BoxND_1a0cc8b0304a0f5c4b663f348a3b50bedf" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::smallend</definition>
+        <argsstring></argsstring>
+        <name>smallend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="840" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="840" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BoxND_1a822ca5acdd7847e703455af3b3cf9b05" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::bigend</definition>
+        <argsstring></argsstring>
+        <name>bigend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="841" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="841" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BoxND_1a1f32aecec416cfb1cae97aa816745455" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt;</type>
+        <definition>IndexTypeND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::btype</definition>
+        <argsstring></argsstring>
+        <name>btype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="842" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="842" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1BoxND_1acaf0d6969f24ab0e13a70d5b1a027a09" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>BoxND</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="54" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a430cd42a04bd540210483ad8989594d7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;small, const IntVectND&lt; dim &gt; &amp;big) noexcept</argsstring>
+        <name>BoxND</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>small</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>big</declname>
+        </param>
+        <briefdescription>
+<para>Construct cell-centered type <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="61" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2b61a267d60b4f6ed90cf41ebb98d8ff" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;small, const int *vec_len) noexcept</argsstring>
+        <name>BoxND</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>small</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>vec_len</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> with specified lengths. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="68" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa71102733d552e4830e6d73a2e4c6903" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;small, const IntVectND&lt; dim &gt; &amp;big, const IntVectND&lt; dim &gt; &amp;typ) noexcept</argsstring>
+        <name>BoxND</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>small</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>big</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>typ</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> with given type. small and big are expected to be consistent with given type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="78" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ab6fe7ec344f9f67d7977dfcab8c60be6" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;small, const IntVectND&lt; dim &gt; &amp;big, IndexTypeND&lt; dim &gt; t) noexcept</argsstring>
+        <name>BoxND</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>small</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>big</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Construct dimension specific Boxes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="88" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a9d51e4695d513c46f001af75b94de2de" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>Tdim</declname>
+            <defname>Tdim</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=Tdim &amp;&amp;Tdim&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::BoxND&lt; dim &gt;::BoxND</definition>
+        <argsstring>(Array4&lt; T &gt; const &amp;a) noexcept</argsstring>
+        <name>BoxND</name>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="96" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a15f722c5b9695444feacd94f34ad1fa5" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE const IntVectND&lt;dim&gt;&amp; amrex::BoxND&lt; dim &gt;::smallEnd</definition>
+        <argsstring>() const &amp;noexcept</argsstring>
+        <name>smallEnd</name>
+        <briefdescription>
+<para>Get the smallend of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="105" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="105" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a167d58943329d551b501194d8ffb830b" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        <definition>const IntVectND&lt;dim&gt;&amp; amrex::BoxND&lt; dim &gt;::smallEnd</definition>
+        <argsstring>() &amp;&amp;=delete</argsstring>
+        <name>smallEnd</name>
+        <briefdescription>
+<para>Get the smallend of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="108" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a857d0875f39ab735ab2b625569854d77" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::smallEnd</definition>
+        <argsstring>(int dir) const &amp;noexcept</argsstring>
+        <name>smallEnd</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns the coordinate of the low end in the given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="112" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a81683457b2969cbc698ac59a025d2a45" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE const IntVectND&lt;dim&gt;&amp; amrex::BoxND&lt; dim &gt;::bigEnd</definition>
+        <argsstring>() const &amp;noexcept</argsstring>
+        <name>bigEnd</name>
+        <briefdescription>
+<para>Get the bigend. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="116" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ae9ffa622e6ce535573e880f7bad91e96" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        <definition>const IntVectND&lt;dim&gt;&amp; amrex::BoxND&lt; dim &gt;::bigEnd</definition>
+        <argsstring>() &amp;&amp;=delete</argsstring>
+        <name>bigEnd</name>
+        <briefdescription>
+<para>Get the bigend. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="119" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a6c4856a591c427c7e00cb84251804d0a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::bigEnd</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>bigEnd</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns the coordinate of the high end in the given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="123" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a586a82f95599b265cf1589c4636c8e94" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE IndexTypeND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::ixType</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ixType</name>
+        <briefdescription>
+<para>Returns the indexing type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="127" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="127" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a6eab931d74122bdf8c752c1b7562f8c6" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE IntVectND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::type</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>Returns the indexing type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="131" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2a62036b4692730f254c0b734a3d6be2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3" kindref="member">IndexType::CellIndex</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE IndexType::CellIndex amrex::BoxND&lt; dim &gt;::type</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>type</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns the indexing type in the specified direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="135" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1accf3542e2ec3e8e80ea8173773987518" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE IntVectND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::size</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Return the length of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="139" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a8f49c67a6dc6bd404650be7118b7859b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE IntVectND&lt;dim&gt; amrex::BoxND&lt; dim &gt;::length</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>length</name>
+        <briefdescription>
+<para>Return the length of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="146" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2a4f32c677fa478bdceb0c142d192a02" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::length</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>length</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Return the length of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> in given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="153" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="153" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a116b4a3ed26bc9df2bd4dc91abb3b149" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE GpuArray&lt;int,3&gt; amrex::BoxND&lt; dim &gt;::length3d</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>length3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="157" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a06960facc10033196456e7d4de9d4ba2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE GpuArray&lt;int,3&gt; amrex::BoxND&lt; dim &gt;::loVect3d</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>loVect3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="164" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a8f7e0f98c67483a3ed15f86e256de563" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE GpuArray&lt;int,3&gt; amrex::BoxND&lt; dim &gt;::hiVect3d</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>hiVect3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="171" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aab95ab70091d76efb6d93a85a66c81ac" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <definition>AMREX_GPU_HOST_DEVICE const int* amrex::BoxND&lt; dim &gt;::loVect</definition>
+        <argsstring>() const &amp;noexcept</argsstring>
+        <name>loVect</name>
+        <briefdescription>
+<para>Returns a constant pointer the array of low end coordinates. Useful for calls to FORTRAN. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="178" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a375df1c70bc3ce84f7c07b64fc8cf160" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <definition>AMREX_GPU_HOST_DEVICE const int* amrex::BoxND&lt; dim &gt;::loVect</definition>
+        <argsstring>() &amp;&amp;=delete</argsstring>
+        <name>loVect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="180" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a639be49872c5fd479f80d656073d2dab" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <definition>AMREX_GPU_HOST_DEVICE const int* amrex::BoxND&lt; dim &gt;::hiVect</definition>
+        <argsstring>() const &amp;noexcept</argsstring>
+        <name>hiVect</name>
+        <briefdescription>
+<para>Returns a constant pointer the array of high end coordinates. Useful for calls to FORTRAN. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="183" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="183" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a7b5fe93055c06f5df957069e3fdba6ba" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <definition>AMREX_GPU_HOST_DEVICE const int* amrex::BoxND&lt; dim &gt;::hiVect</definition>
+        <argsstring>() &amp;&amp;=delete</argsstring>
+        <name>hiVect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="185" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa0b5be63833c38612f79a1542001789b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::operator[]</definition>
+        <argsstring>(Orientation face) const noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+<para>Returns the coordinate normal to given face. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="189" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a94dc3a2839dd3896f96db152b48a06de" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::isEmpty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+<para>Checks if it is an empty <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="196" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1acdd0f4552027ae85ea799fc1fe6c01b7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::ok</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ok</name>
+        <briefdescription>
+<para>Checks if it is a proper <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> (including a valid type). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="200" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="200" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1af53a02aea1a6ee01eab6d9e3f1f2c39a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::contains</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p) const noexcept</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="204" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="204" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aee97a14e3b75c0c0dea48c607b0dd579" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::contains</definition>
+        <argsstring>(const Dim3 &amp;p) const noexcept</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="211" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ad5df5ad153c8fe1d761a2cf8dd4dd1ee" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::contains</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>contains</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="219" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="219" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a42e87e088349e275ea31c8ecaf2db185" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::contains</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. It is an error if the Boxes have different types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="228" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="228" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a0b730b524c8770487179156ea6f8d338" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::strictly_contains</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p) const noexcept</argsstring>
+        <name>strictly_contains</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is strictly contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="236" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="236" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1acf0b7663f80b34f96683037920e4bdd8" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::strictly_contains</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>strictly_contains</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is strictly contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. It is an error if the Boxes have different types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="245" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="245" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a468750774828bc74d39fd2f65aec47bd" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::strictly_contains</definition>
+        <argsstring>(const Dim3 &amp;p) const noexcept</argsstring>
+        <name>strictly_contains</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is strictly contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="254" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a840815a4475eb805cf0beaae66ab2882" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::strictly_contains</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>strictly_contains</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if argument is strictly contained within <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="262" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="262" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a7c8087b4cf11df34f27779222958269e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::intersects</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if Boxes have non-null intersections. It is an error if the Boxes have different types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="272" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="272" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1adc6a4259fae6f193f9954fa357612a66" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::sameSize</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>sameSize</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true is Boxes same size, ie translates of each other,. It is an error if they have different types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="279" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="279" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a59ffa8c52ca74ba42267909ff5ede351" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::sameType</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>sameType</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if Boxes have same type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="286" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="286" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aeea4c86ca63ee5a3a6a482d38154b9c8" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator==</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if Boxes are identical (including type). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="290" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a96cae0de83b7700f9693d91df78b5b3c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator!=</definition>
+        <argsstring>(const BoxND &amp;b) const noexcept</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if Boxes differ (including type). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="294" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="294" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a327480b52e8f789192a279f85c922e64" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator&lt;</definition>
+        <argsstring>(const BoxND &amp;rhs) const noexcept</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="297" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="297" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ac3aed1c03fce71593507d52130527b01" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator&lt;=</definition>
+        <argsstring>(const BoxND &amp;rhs) const noexcept</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="305" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="305" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a0d13684f9d3b9bee2c17439f7051b011" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator&gt;</definition>
+        <argsstring>(const BoxND &amp;rhs) const noexcept</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="309" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="309" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a7ce549f0def1a5be24c9a21f57f5a3bd" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::operator&gt;=</definition>
+        <argsstring>(const BoxND &amp;rhs) const noexcept</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="313" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="313" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ae59caa4e100e92685e28ad65b6171b4b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::cellCentered</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>cellCentered</name>
+        <briefdescription>
+<para>Returns true if <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> is cell-centered in all indexing directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="319" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa3ed4f7c38c0e94d35f6db83fb24cca5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BoxND&lt; dim &gt;::checkOverflow</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>checkOverflow</name>
+        <briefdescription>
+<para>Assert that there are no int/Long overflows when calling length or numPts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="322" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="322" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aef3b99c4f131a12120b93bfbed5bc08e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Long</type>
+        <definition>AMREX_GPU_HOST_DEVICE Long amrex::BoxND&lt; dim &gt;::numPts</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>numPts</name>
+        <briefdescription>
+<para>Returns the number of points contained in the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="346" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="346" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a3df89d93218a05be7e4e0f175512dea9" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> double</type>
+        <definition>AMREX_GPU_HOST_DEVICE double amrex::BoxND&lt; dim &gt;::d_numPts</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>d_numPts</name>
+        <briefdescription>
+<para>Returns the number of points contained in the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. This is intended for use only in diagnostic messages. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="366" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="366" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a7633d0b8d59816eeb7a035908d31f1b4" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Long</type>
+        <definition>AMREX_GPU_HOST_DEVICE Long amrex::BoxND&lt; dim &gt;::volume</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>volume</name>
+        <briefdescription>
+<para>Return the volume, in indexing space, of region enclosed by this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. This is identical to <ref refid="classamrex_1_1BoxND_1aef3b99c4f131a12120b93bfbed5bc08e" kindref="member">numPts()</ref> for CELL centered <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>; otherwise, <ref refid="classamrex_1_1BoxND_1aef3b99c4f131a12120b93bfbed5bc08e" kindref="member">numPts()</ref> &gt; <ref refid="classamrex_1_1BoxND_1a7633d0b8d59816eeb7a035908d31f1b4" kindref="member">volume()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="384" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="384" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1acc15b41242be4621b2ad1236c5ef7f89" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::longside</definition>
+        <argsstring>(int &amp;dir) const noexcept</argsstring>
+        <name>longside</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns length of longest side. dir is modified to give direction with longest side: 0...dim-1. Ignores type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="401" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="401" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aedb1d0483a878228d55be74589117010" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::longside</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>longside</name>
+        <briefdescription>
+<para>Returns length of longest side. Ignores type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="417" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="417" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a282f2fcab95cf4712028d18879750b1b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::shortside</definition>
+        <argsstring>(int &amp;dir) const noexcept</argsstring>
+        <name>shortside</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns length of shortest side. dir is modified to give direction with shortest side: 0...dim-1. Ignores type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="427" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="427" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a33ac9526578098ef82fa22be71df97d4" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::BoxND&lt; dim &gt;::shortside</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>shortside</name>
+        <briefdescription>
+<para>Returns length of shortest side. Ignores type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="443" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="443" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a5e916aff07e51d3d3e473c7f6f4bfe68" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Long</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Long amrex::BoxND&lt; dim &gt;::index</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) const noexcept</argsstring>
+        <name>index</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Returns offset of point from smallend; i.e. index(smallend) -&gt; 0, bigend would return <ref refid="classamrex_1_1BoxND_1aef3b99c4f131a12120b93bfbed5bc08e" kindref="member">numPts()</ref>-1. Is used in accessing <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="454" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="993" bodyend="1003"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a1587a92eef1cb639221251dc0491ceb5" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt; dim &gt; amrex::BoxND&lt; dim &gt;::atOffset</definition>
+        <argsstring>(Long offset) const noexcept</argsstring>
+        <name>atOffset</name>
+        <param>
+          <type>Long</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>Given the offset, compute IntVectND&lt;dim&gt; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="458" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1009" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aefad9e3b6fd4f98b8199e2912981b621" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+            <defval>dim</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE GpuArray&lt;int,3&gt; amrex::BoxND&lt; dim &gt;::atOffset3d</definition>
+        <argsstring>(Long offset) const noexcept</argsstring>
+        <name>atOffset3d</name>
+        <param>
+          <type>Long</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="462" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa1f8df1b617d5efdd4980f854a7152fd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::setSmall</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;sm) noexcept</argsstring>
+        <name>setSmall</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>sm</declname>
+        </param>
+        <briefdescription>
+<para>Redefine the small end of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="466" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="466" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ae39093702f35bfa9b3f7179e9a37f54f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::setSmall</definition>
+        <argsstring>(int dir, int sm_index) noexcept</argsstring>
+        <name>setSmall</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>sm_index</declname>
+        </param>
+        <briefdescription>
+<para>Redefine the small end of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="470" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="470" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1af50989d55724bbbd60c177ff8e1430fa" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::setBig</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;bg) noexcept</argsstring>
+        <name>setBig</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>bg</declname>
+        </param>
+        <briefdescription>
+<para>Redefine the big end of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="474" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="474" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a035148dc316be034a22e4f8892cea4e8" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::setBig</definition>
+        <argsstring>(int dir, int bg_index) noexcept</argsstring>
+        <name>setBig</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>bg_index</declname>
+        </param>
+        <briefdescription>
+<para>Redefine the big end of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="478" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="478" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1afb5989f5a4e77392664002509b9f1649" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::setRange</definition>
+        <argsstring>(int dir, int sm_index, int n_cells=1) noexcept</argsstring>
+        <name>setRange</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>sm_index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cells</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Set the entire range in a given direction, starting at sm_index with length n_cells. NOTE: This will yield an illegal <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> if n_cells &lt;= 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="486" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1046" bodyend="1053"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a9959e30def3eba550b679e8ab41d6b33" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::setType</definition>
+        <argsstring>(const IndexTypeND&lt; dim &gt; &amp;t) noexcept</argsstring>
+        <name>setType</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt; &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set indexing type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="492" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="492" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2a35ad93e71d6072bec8d9d33892511a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::shift</definition>
+        <argsstring>(int dir, int nzones) noexcept</argsstring>
+        <name>shift</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>nzones</declname>
+        </param>
+        <briefdescription>
+<para>Shift this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> nzones indexing positions in coordinate direction dir. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="496" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="496" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ad481d6452a0776bb7128d752a2486d1b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::shift</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;iv) noexcept</argsstring>
+        <name>shift</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Equivalent to b.shift(0,iv[0]).shift(1,iv[1]) .... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="500" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="500" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2c7beffbdccef5a4cdc19d6bc4287933" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::shiftHalf</definition>
+        <argsstring>(int dir, int num_halfs) noexcept</argsstring>
+        <name>shiftHalf</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_halfs</declname>
+        </param>
+        <briefdescription>
+<para>This member shifts the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by &quot;half&quot; indices, thereby converting the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> from type CELL to NODE and visa-versa. b.shiftHalf(0,1) shifts b to the right by 1/2 cells. b.shiftHalf(1,-3) shifts b in the -j direction by 3/2 cells. NOTE: If num_halfs is EVEN the shift is num_halfs/2 full zones and hence will not change the type. This is: b.shifthalf(4) == b.shift(2). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="512" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1140" bodyend="1159"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a98d51e03bab4fb60543b6799b160cc1b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::shiftHalf</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;iv) noexcept</argsstring>
+        <name>shiftHalf</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Equivalent to b.shiftHalf(0,iv[0]).shiftHalf(1,iv[1]) ... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="516" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1165" bodyend="1171"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a6d2dbf26e12047889a1062cd059df639" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::convert</definition>
+        <argsstring>(IndexTypeND&lt; dim &gt; typ) noexcept</argsstring>
+        <name>convert</name>
+        <param>
+          <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; dim &gt;</type>
+          <declname>typ</declname>
+        </param>
+        <briefdescription>
+<para>Convert the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> from the current type into the argument type. This may change the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> coordinates: type CELL -&gt; NODE : increase coordinate by one on high end type NODE -&gt; CELL : reduce coordinate by one on high end other type mappings make no change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="526" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="912" bodyend="923"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a647af24f39610185d72a517601fbcf8c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::convert</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;typ) noexcept</argsstring>
+        <name>convert</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>typ</declname>
+        </param>
+        <briefdescription>
+<para>Convert the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> from the current type into the argument type. This may change the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> coordinates: type CELL -&gt; NODE : increase coordinate by one on high end type NODE -&gt; CELL : reduce coordinate by one on high end other type mappings make no change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="536" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="899" bodyend="906"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a04822e9d1dc61ddf3f0ca24ef7575189" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::surroundingNodes</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>surroundingNodes</name>
+        <briefdescription>
+<para>Convert to NODE type in all directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="540" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="946" bodyend="955"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aedce44e4054e2822f934e129b3b19a62" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::surroundingNodes</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>surroundingNodes</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Convert to NODE type in given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="544" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="929" bodyend="940"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a364a4a3af42da8b4fea98b071358f813" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::surroundingNodes</definition>
+        <argsstring>(Direction d) noexcept</argsstring>
+        <name>surroundingNodes</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref></type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="547" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="547" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a821a9d499c7795c593c3b5ebcaaf5ab0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::enclosedCells</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>enclosedCells</name>
+        <briefdescription>
+<para>Convert to CELL type in all directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="551" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="978" bodyend="987"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a9b5c6fc3bf92ac01341aa97dc3b4c4b9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::enclosedCells</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>enclosedCells</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Convert to CELL type in given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="555" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="961" bodyend="972"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ae42dcbee8907dc8b9c203c9ba7c5998f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::enclosedCells</definition>
+        <argsstring>(Direction d) noexcept</argsstring>
+        <name>enclosedCells</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref></type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="558" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="558" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a98b2fcdcd8afc6e93ff3b04ae889037b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND amrex::BoxND&lt; dim &gt;::operator&amp;</definition>
+        <argsstring>(const BoxND &amp;rhs) const noexcept</argsstring>
+        <name>operator&amp;</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Return <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> that is intersection of this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> and argument. The Boxes MUST be of same type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="565" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="565" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a7dee3377ab946ca00c84b990ba25e21b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::operator&amp;=</definition>
+        <argsstring>(const BoxND &amp;rhs) noexcept</argsstring>
+        <name>operator&amp;=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Intersect this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> with its argument. The Boxes MUST be of the same type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="569" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="569" bodyend="575"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a0f6fb20c287e7f4cee6acee7d8c1e827" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::minBox</definition>
+        <argsstring>(const BoxND &amp;b) noexcept</argsstring>
+        <name>minBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Modify <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> to that of the minimum <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> containing both the original <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> and the argument. Both Boxes must have identical type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="583" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="583" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2e903e177805f4134538d251ce392ce7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::operator+=</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) noexcept</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Shift <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> (relative) by given IntVectND&lt;dim&gt;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="593" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="593" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a77f3890c56c4665e7dd54aba583b7561" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND amrex::BoxND&lt; dim &gt;::operator+</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) const noexcept</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Shift <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> (relative) by given IntVectND&lt;dim&gt;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="597" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="597" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa662f86eeefe3a466e0b09773bc121cb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::operator-=</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) noexcept</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Shift <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> (relative) by given IntVectND&lt;dim&gt;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="601" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="601" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1af64ed1417e69976e259994aa4bf8f4cc" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND amrex::BoxND&lt; dim &gt;::operator-</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) const noexcept</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Shift <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> (relative) by given IntVectND&lt;dim&gt;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="605" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="605" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aeb1fdfc5eae78c55d1b1a333e9a65cb5" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&lt; dim &gt; amrex::BoxND&lt; dim &gt;::chop</definition>
+        <argsstring>(int dir, int chop_pnt) noexcept</argsstring>
+        <name>chop</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>chop_pnt</declname>
+        </param>
+        <briefdescription>
+<para>Chop the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> at the chop_pnt in the dir direction returns one <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>, modifies the object <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. The union of the two is the original <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. The modified <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> is the low end, the returned <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> is the high end. If type(dir) = CELL, the Boxes are disjoint with the chop_pnt included in the high end (new <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>). It is an ERROR if chop_pnt is the low end of the orig <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. If type(dir) = NODE, the chop_pnt is included in both Boxes but is the only point in common. It is also an error if the chop_pnt is an end node of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="620" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1103" bodyend="1134"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a4d8a9475fd2fca039a10a379f3fde8a6" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::grow</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>grow</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="627" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="627" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1afe62a688aa84f2386188eddbdbf0ff50" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::grow</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;v) noexcept</argsstring>
+        <name>grow</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Grow <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> in each direction by specified amount. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="631" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="631" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a84d50acaffa83ed0e44c9f545cb41b65" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::grow</definition>
+        <argsstring>(int idir, int n_cell) noexcept</argsstring>
+        <name>grow</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+        </param>
+        <briefdescription>
+<para>Grow the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> on the low and high end by n_cell cells in direction idir. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="638" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="638" bodyend="638"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a48cc78ecfdbb21357adbfaf484648ec5" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::grow</definition>
+        <argsstring>(Direction d, int n_cell) noexcept</argsstring>
+        <name>grow</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref></type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="641" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="641" bodyend="641"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aaca25d589db25bee8ad1c7777c886ae0" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::growLo</definition>
+        <argsstring>(int idir, int n_cell=1) noexcept</argsstring>
+        <name>growLo</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Grow the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> on the low end by n_cell cells in direction idir. NOTE: n_cell negative shrinks the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by that number of cells. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="648" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="648" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a9727fdfc20119daf9b9538fe2ddfb4f7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::growLo</definition>
+        <argsstring>(Direction d, int n_cell=1) noexcept</argsstring>
+        <name>growLo</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref></type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="651" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="651" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa333dc37d8970068d540d5eaece2165a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::growHi</definition>
+        <argsstring>(int idir, int n_cell=1) noexcept</argsstring>
+        <name>growHi</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idir</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Grow the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> on the high end by n_cell cells in direction idir. NOTE: n_cell negative shrinks the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by that number of cells. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="659" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="659" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ad9ebf4097f08f0f38330a4a2a8f8e17d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::growHi</definition>
+        <argsstring>(Direction d, int n_cell=1) noexcept</argsstring>
+        <name>growHi</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref></type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="662" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="662" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a2d5d2c437135f3bd1fc9bd2b9554349c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::grow</definition>
+        <argsstring>(Orientation face, int n_cell=1) noexcept</argsstring>
+        <name>grow</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_cell</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Grow in the direction of the given face. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="666" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="666" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a1e90e8f8ace148e5195c936ceeaeaa72" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::refine</definition>
+        <argsstring>(int ref_ratio) noexcept</argsstring>
+        <name>refine</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ref_ratio</declname>
+        </param>
+        <briefdescription>
+<para>Refine <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo*ratio and hi &lt;- (hi+1)*ratio - 1. NOTE: if type(dir) = NODE centered: lo &lt;- lo*ratio and hi &lt;- hi*ratio. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="684" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="684" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ae6833a17491a1a512ae638dc048edff0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::refine</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;ref_ratio) noexcept</argsstring>
+        <name>refine</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>ref_ratio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="696" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="849" bodyend="860"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ad13cf1a6d01305c56e75501df0142714" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::coarsen</definition>
+        <argsstring>(int ref_ratio) noexcept</argsstring>
+        <name>coarsen</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ref_ratio</declname>
+        </param>
+        <briefdescription>
+<para>Coarsen <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo/ratio and hi &lt;- hi/ratio. NOTE: if type(dir) = NODE centered: lo &lt;- lo/ratio and hi &lt;- hi/ratio + ((hiratio)==0 ? 0 : 1). That is, refinement of coarsened <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> must contain the original <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="708" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="708" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a8e243097e3b7b0bd0f7446779557f019" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; &amp; amrex::BoxND&lt; dim &gt;::coarsen</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;ref_ratio) noexcept</argsstring>
+        <name>coarsen</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>ref_ratio</declname>
+        </param>
+        <briefdescription>
+<para>Coarsen <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo/ratio and hi &lt;- hi/ratio. NOTE: if type(dir) = NODE centered: lo &lt;- lo/ratio and hi &lt;- hi/ratio + ((hiratio)==0 ? 0 : 1). That is, refinement of coarsened <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> must contain the original <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="722" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="866" bodyend="893"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a42288d3d8915ea8195d6645ae1a1659c" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::BoxND&lt; dim &gt;::next</definition>
+        <argsstring>(IntVectND&lt; dim &gt; &amp;) const noexcept</argsstring>
+        <name>next</name>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>Step through the rectangle. It is a runtime error to give a point not inside rectangle. Iteration may not be efficient. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="729" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1059" bodyend="1073"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a1f6333e5f4d0e6a1d3622f54422dad07" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::BoxND&lt; dim &gt;::isSquare</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>isSquare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="742" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1079" bodyend="1091"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aa6fa303a841feaa8f85374b5579dae60" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::coarsenable</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;refrat, const IntVectND&lt; dim &gt; &amp;min_width) const noexcept</argsstring>
+        <name>coarsenable</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>refrat</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>min_width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="745" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="745" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a78cb722ebe5b8165c1a5636980f47bfe" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::coarsenable</definition>
+        <argsstring>(int refrat, int min_width=1) const noexcept</argsstring>
+        <name>coarsenable</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>refrat</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>min_width</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="758" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="758" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a9739371d181375cb9180ff821c13fdcb" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::BoxND&lt; dim &gt;::coarsenable</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;refrat, int min_width=1) const noexcept</argsstring>
+        <name>coarsenable</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>refrat</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>min_width</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="763" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="763" bodyend="766"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a8d29a866e24596ba3b9df82ad36e22c3" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE void amrex::BoxND&lt; dim &gt;::normalize</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="769" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="769" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a6714b0c4918d42004dd7b46f70919862" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE BoxND&amp; amrex::BoxND&lt; dim &gt;::makeSlab</definition>
+        <argsstring>(int direction, int slab_index) noexcept</argsstring>
+        <name>makeSlab</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>slab_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="779" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="779" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a501147796c8e876353f01b5fd6b6feb7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt;new_dim&gt; amrex::BoxND&lt; dim &gt;::shrink</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>shrink</name>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> of dimension new_dim and assigns the first new_dim dimension of this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> to it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="802" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="802" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a72605b11a07738a066ad346c5c7f8d62" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt;new_dim&gt; amrex::BoxND&lt; dim &gt;::expand</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>expand</name>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> of size new_dim and assigns all values of this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> to it and (small=0, big=0, typ=CELL) to the remaining elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="817" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="817" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a081d12b584d167cf32bd8104be74e9d5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt;new_dim&gt; amrex::BoxND&lt; dim &gt;::resize</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>resize</name>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> of size new_dim by either shrinking or expanding this <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="831" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="831" bodyend="837"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1ac1881deb77a3b9fa10c635007cd071d9" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=N &amp;&amp;N&lt;=3), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuArray&lt;int,3&gt; amrex::BoxND&lt; dim &gt;::atOffset3d</definition>
+        <argsstring>(Long offset) const noexcept</argsstring>
+        <name>atOffset3d</name>
+        <param>
+          <type>Long</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="1036" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1036" bodyend="1040"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a196cc209b401c112d806f4b9ecdb5df8" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref></type>
+        <definition>static AMREX_GPU_HOST_DEVICE BoxND amrex::BoxND&lt; dim &gt;::TheUnitBox</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>TheUnitBox</name>
+        <briefdescription>
+<para>This static member function returns a constant reference to an object of type <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> representing the unit <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> in dim-dimensional space. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="737" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="737" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1aac734596ce59e27477ac7d7a462fe003" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::size_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE std::size_t amrex::BoxND&lt; dim &gt;::ndims</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>ndims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="787" column="34" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="787" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxND_1a766febf8d1e884bf1bfdee678629b96f" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE int amrex::BoxND&lt; dim &gt;::indims</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>indims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="792" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="792" bodyend="794"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A Rectangular Domain on an Integer Lattice. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> is an abstraction for defining discrete regions of dim indexing space. Boxes have an IndexType, which defines <ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439" kindref="member">IndexType::CELL</ref> or <ref refid="structamrex_1_1CellIndexEnum_1aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2" kindref="member">IndexType::NODE</ref> based points for each direction and a low and high INTVECT which defines the lower and upper corners of the <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>. Boxes can exist in positive and negative indexing space.</para>
+<para>Box is a dimension dependent alias to <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND&lt;AMREX_SPACEDIM&gt;</ref>, so AMREX_SPACEDIM must be defined as either 1, 2, or 3 when compiling. </para>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="43" bodyend="843"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1BoxND_1a1587a92eef1cb639221251dc0491ceb5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>atOffset</name></member>
+      <member refid="classamrex_1_1BoxND_1aefad9e3b6fd4f98b8199e2912981b621" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>atOffset3d</name></member>
+      <member refid="classamrex_1_1BoxND_1ac1881deb77a3b9fa10c635007cd071d9" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>atOffset3d</name></member>
+      <member refid="classamrex_1_1BoxND_1a822ca5acdd7847e703455af3b3cf9b05" prot="private" virt="non-virtual"><scope>amrex::BoxND</scope><name>bigend</name></member>
+      <member refid="classamrex_1_1BoxND_1a81683457b2969cbc698ac59a025d2a45" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>bigEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1ae9ffa622e6ce535573e880f7bad91e96" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>bigEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1a6c4856a591c427c7e00cb84251804d0a" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>bigEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1af5c898c7b3635a504124819032a025fe" prot="private" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxCommHelper</name></member>
+      <member refid="classamrex_1_1BoxND_1acaf0d6969f24ab0e13a70d5b1a027a09" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1a430cd42a04bd540210483ad8989594d7" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1a2b61a267d60b4f6ed90cf41ebb98d8ff" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1aa71102733d552e4830e6d73a2e4c6903" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1ab6fe7ec344f9f67d7977dfcab8c60be6" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1a9d51e4695d513c46f001af75b94de2de" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>BoxND</name></member>
+      <member refid="classamrex_1_1BoxND_1a1f32aecec416cfb1cae97aa816745455" prot="private" virt="non-virtual"><scope>amrex::BoxND</scope><name>btype</name></member>
+      <member refid="classamrex_1_1BoxND_1ae59caa4e100e92685e28ad65b6171b4b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>cellCentered</name></member>
+      <member refid="classamrex_1_1BoxND_1aa3ed4f7c38c0e94d35f6db83fb24cca5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>checkOverflow</name></member>
+      <member refid="classamrex_1_1BoxND_1aeb1fdfc5eae78c55d1b1a333e9a65cb5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>chop</name></member>
+      <member refid="classamrex_1_1BoxND_1ad13cf1a6d01305c56e75501df0142714" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>coarsen</name></member>
+      <member refid="classamrex_1_1BoxND_1a8e243097e3b7b0bd0f7446779557f019" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>coarsen</name></member>
+      <member refid="classamrex_1_1BoxND_1aa6fa303a841feaa8f85374b5579dae60" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>coarsenable</name></member>
+      <member refid="classamrex_1_1BoxND_1a78cb722ebe5b8165c1a5636980f47bfe" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>coarsenable</name></member>
+      <member refid="classamrex_1_1BoxND_1a9739371d181375cb9180ff821c13fdcb" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>coarsenable</name></member>
+      <member refid="classamrex_1_1BoxND_1af53a02aea1a6ee01eab6d9e3f1f2c39a" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>contains</name></member>
+      <member refid="classamrex_1_1BoxND_1aee97a14e3b75c0c0dea48c607b0dd579" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>contains</name></member>
+      <member refid="classamrex_1_1BoxND_1ad5df5ad153c8fe1d761a2cf8dd4dd1ee" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>contains</name></member>
+      <member refid="classamrex_1_1BoxND_1a42e87e088349e275ea31c8ecaf2db185" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>contains</name></member>
+      <member refid="classamrex_1_1BoxND_1a6d2dbf26e12047889a1062cd059df639" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>convert</name></member>
+      <member refid="classamrex_1_1BoxND_1a647af24f39610185d72a517601fbcf8c" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>convert</name></member>
+      <member refid="classamrex_1_1BoxND_1a3df89d93218a05be7e4e0f175512dea9" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>d_numPts</name></member>
+      <member refid="classamrex_1_1BoxND_1a821a9d499c7795c593c3b5ebcaaf5ab0" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>enclosedCells</name></member>
+      <member refid="classamrex_1_1BoxND_1a9b5c6fc3bf92ac01341aa97dc3b4c4b9" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>enclosedCells</name></member>
+      <member refid="classamrex_1_1BoxND_1ae42dcbee8907dc8b9c203c9ba7c5998f" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>enclosedCells</name></member>
+      <member refid="classamrex_1_1BoxND_1a72605b11a07738a066ad346c5c7f8d62" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>expand</name></member>
+      <member refid="classamrex_1_1BoxND_1a4d8a9475fd2fca039a10a379f3fde8a6" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>grow</name></member>
+      <member refid="classamrex_1_1BoxND_1afe62a688aa84f2386188eddbdbf0ff50" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>grow</name></member>
+      <member refid="classamrex_1_1BoxND_1a84d50acaffa83ed0e44c9f545cb41b65" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>grow</name></member>
+      <member refid="classamrex_1_1BoxND_1a48cc78ecfdbb21357adbfaf484648ec5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>grow</name></member>
+      <member refid="classamrex_1_1BoxND_1a2d5d2c437135f3bd1fc9bd2b9554349c" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>grow</name></member>
+      <member refid="classamrex_1_1BoxND_1aa333dc37d8970068d540d5eaece2165a" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>growHi</name></member>
+      <member refid="classamrex_1_1BoxND_1ad9ebf4097f08f0f38330a4a2a8f8e17d" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>growHi</name></member>
+      <member refid="classamrex_1_1BoxND_1aaca25d589db25bee8ad1c7777c886ae0" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>growLo</name></member>
+      <member refid="classamrex_1_1BoxND_1a9727fdfc20119daf9b9538fe2ddfb4f7" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>growLo</name></member>
+      <member refid="classamrex_1_1BoxND_1a639be49872c5fd479f80d656073d2dab" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>hiVect</name></member>
+      <member refid="classamrex_1_1BoxND_1a7b5fe93055c06f5df957069e3fdba6ba" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>hiVect</name></member>
+      <member refid="classamrex_1_1BoxND_1a8f7e0f98c67483a3ed15f86e256de563" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>hiVect3d</name></member>
+      <member refid="classamrex_1_1BoxND_1a5e916aff07e51d3d3e473c7f6f4bfe68" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>index</name></member>
+      <member refid="classamrex_1_1BoxND_1a766febf8d1e884bf1bfdee678629b96f" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>indims</name></member>
+      <member refid="classamrex_1_1BoxND_1a7c8087b4cf11df34f27779222958269e" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>intersects</name></member>
+      <member refid="classamrex_1_1BoxND_1a94dc3a2839dd3896f96db152b48a06de" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>isEmpty</name></member>
+      <member refid="classamrex_1_1BoxND_1a1f6333e5f4d0e6a1d3622f54422dad07" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>isSquare</name></member>
+      <member refid="classamrex_1_1BoxND_1a586a82f95599b265cf1589c4636c8e94" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>ixType</name></member>
+      <member refid="classamrex_1_1BoxND_1a8f49c67a6dc6bd404650be7118b7859b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>length</name></member>
+      <member refid="classamrex_1_1BoxND_1a2a4f32c677fa478bdceb0c142d192a02" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>length</name></member>
+      <member refid="classamrex_1_1BoxND_1a116b4a3ed26bc9df2bd4dc91abb3b149" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>length3d</name></member>
+      <member refid="classamrex_1_1BoxND_1acc15b41242be4621b2ad1236c5ef7f89" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>longside</name></member>
+      <member refid="classamrex_1_1BoxND_1aedb1d0483a878228d55be74589117010" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>longside</name></member>
+      <member refid="classamrex_1_1BoxND_1aab95ab70091d76efb6d93a85a66c81ac" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>loVect</name></member>
+      <member refid="classamrex_1_1BoxND_1a375df1c70bc3ce84f7c07b64fc8cf160" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>loVect</name></member>
+      <member refid="classamrex_1_1BoxND_1a06960facc10033196456e7d4de9d4ba2" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>loVect3d</name></member>
+      <member refid="classamrex_1_1BoxND_1a6714b0c4918d42004dd7b46f70919862" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>makeSlab</name></member>
+      <member refid="classamrex_1_1BoxND_1a0f6fb20c287e7f4cee6acee7d8c1e827" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>minBox</name></member>
+      <member refid="classamrex_1_1BoxND_1aac734596ce59e27477ac7d7a462fe003" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>ndims</name></member>
+      <member refid="classamrex_1_1BoxND_1a42288d3d8915ea8195d6645ae1a1659c" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>next</name></member>
+      <member refid="classamrex_1_1BoxND_1a8d29a866e24596ba3b9df82ad36e22c3" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>normalize</name></member>
+      <member refid="classamrex_1_1BoxND_1aef3b99c4f131a12120b93bfbed5bc08e" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>numPts</name></member>
+      <member refid="classamrex_1_1BoxND_1acdd0f4552027ae85ea799fc1fe6c01b7" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>ok</name></member>
+      <member refid="classamrex_1_1BoxND_1a96cae0de83b7700f9693d91df78b5b3c" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator!=</name></member>
+      <member refid="classamrex_1_1BoxND_1a98b2fcdcd8afc6e93ff3b04ae889037b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&amp;</name></member>
+      <member refid="classamrex_1_1BoxND_1a7dee3377ab946ca00c84b990ba25e21b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&amp;=</name></member>
+      <member refid="classamrex_1_1BoxND_1a77f3890c56c4665e7dd54aba583b7561" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator+</name></member>
+      <member refid="classamrex_1_1BoxND_1a2e903e177805f4134538d251ce392ce7" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator+=</name></member>
+      <member refid="classamrex_1_1BoxND_1af64ed1417e69976e259994aa4bf8f4cc" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator-</name></member>
+      <member refid="classamrex_1_1BoxND_1aa662f86eeefe3a466e0b09773bc121cb" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator-=</name></member>
+      <member refid="classamrex_1_1BoxND_1a327480b52e8f789192a279f85c922e64" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&lt;</name></member>
+      <member refid="classamrex_1_1BoxND_1ac3aed1c03fce71593507d52130527b01" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&lt;=</name></member>
+      <member refid="classamrex_1_1BoxND_1aeea4c86ca63ee5a3a6a482d38154b9c8" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator==</name></member>
+      <member refid="classamrex_1_1BoxND_1a0d13684f9d3b9bee2c17439f7051b011" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&gt;</name></member>
+      <member refid="classamrex_1_1BoxND_1a7ce549f0def1a5be24c9a21f57f5a3bd" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator&gt;=</name></member>
+      <member refid="classamrex_1_1BoxND_1aa0b5be63833c38612f79a1542001789b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1BoxND_1adccd37eeac931837d637545e8eba842e" prot="private" virt="non-virtual"><scope>amrex::BoxND</scope><name>ParallelDescriptor::Mpi_typemap</name></member>
+      <member refid="classamrex_1_1BoxND_1a1e90e8f8ace148e5195c936ceeaeaa72" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>refine</name></member>
+      <member refid="classamrex_1_1BoxND_1ae6833a17491a1a512ae638dc048edff0" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>refine</name></member>
+      <member refid="classamrex_1_1BoxND_1a081d12b584d167cf32bd8104be74e9d5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>resize</name></member>
+      <member refid="classamrex_1_1BoxND_1adc6a4259fae6f193f9954fa357612a66" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>sameSize</name></member>
+      <member refid="classamrex_1_1BoxND_1a59ffa8c52ca74ba42267909ff5ede351" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>sameType</name></member>
+      <member refid="classamrex_1_1BoxND_1af50989d55724bbbd60c177ff8e1430fa" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setBig</name></member>
+      <member refid="classamrex_1_1BoxND_1a035148dc316be034a22e4f8892cea4e8" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setBig</name></member>
+      <member refid="classamrex_1_1BoxND_1afb5989f5a4e77392664002509b9f1649" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setRange</name></member>
+      <member refid="classamrex_1_1BoxND_1aa1f8df1b617d5efdd4980f854a7152fd" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setSmall</name></member>
+      <member refid="classamrex_1_1BoxND_1ae39093702f35bfa9b3f7179e9a37f54f" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setSmall</name></member>
+      <member refid="classamrex_1_1BoxND_1a9959e30def3eba550b679e8ab41d6b33" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>setType</name></member>
+      <member refid="classamrex_1_1BoxND_1a2a35ad93e71d6072bec8d9d33892511a" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shift</name></member>
+      <member refid="classamrex_1_1BoxND_1ad481d6452a0776bb7128d752a2486d1b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shift</name></member>
+      <member refid="classamrex_1_1BoxND_1a2c7beffbdccef5a4cdc19d6bc4287933" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shiftHalf</name></member>
+      <member refid="classamrex_1_1BoxND_1a98d51e03bab4fb60543b6799b160cc1b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shiftHalf</name></member>
+      <member refid="classamrex_1_1BoxND_1a282f2fcab95cf4712028d18879750b1b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shortside</name></member>
+      <member refid="classamrex_1_1BoxND_1a33ac9526578098ef82fa22be71df97d4" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shortside</name></member>
+      <member refid="classamrex_1_1BoxND_1a501147796c8e876353f01b5fd6b6feb7" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>shrink</name></member>
+      <member refid="classamrex_1_1BoxND_1accf3542e2ec3e8e80ea8173773987518" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>size</name></member>
+      <member refid="classamrex_1_1BoxND_1a15f722c5b9695444feacd94f34ad1fa5" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>smallEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1a167d58943329d551b501194d8ffb830b" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>smallEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1a857d0875f39ab735ab2b625569854d77" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>smallEnd</name></member>
+      <member refid="classamrex_1_1BoxND_1a0cc8b0304a0f5c4b663f348a3b50bedf" prot="private" virt="non-virtual"><scope>amrex::BoxND</scope><name>smallend</name></member>
+      <member refid="classamrex_1_1BoxND_1a0b730b524c8770487179156ea6f8d338" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>strictly_contains</name></member>
+      <member refid="classamrex_1_1BoxND_1acf0b7663f80b34f96683037920e4bdd8" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>strictly_contains</name></member>
+      <member refid="classamrex_1_1BoxND_1a468750774828bc74d39fd2f65aec47bd" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>strictly_contains</name></member>
+      <member refid="classamrex_1_1BoxND_1a840815a4475eb805cf0beaae66ab2882" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>strictly_contains</name></member>
+      <member refid="classamrex_1_1BoxND_1a04822e9d1dc61ddf3f0ca24ef7575189" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>surroundingNodes</name></member>
+      <member refid="classamrex_1_1BoxND_1aedce44e4054e2822f934e129b3b19a62" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>surroundingNodes</name></member>
+      <member refid="classamrex_1_1BoxND_1a364a4a3af42da8b4fea98b071358f813" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>surroundingNodes</name></member>
+      <member refid="classamrex_1_1BoxND_1a196cc209b401c112d806f4b9ecdb5df8" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>TheUnitBox</name></member>
+      <member refid="classamrex_1_1BoxND_1a6eab931d74122bdf8c752c1b7562f8c6" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>type</name></member>
+      <member refid="classamrex_1_1BoxND_1a2a62036b4692730f254c0b734a3d6be2" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>type</name></member>
+      <member refid="classamrex_1_1BoxND_1a7633d0b8d59816eeb7a035908d31f1b4" prot="public" virt="non-virtual"><scope>amrex::BoxND</scope><name>volume</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

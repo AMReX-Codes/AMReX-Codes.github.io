@@ -21,7 +21,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="351" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="351" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EBCellFlagFab_1a914a481cd7a1365cd6e02ebdf629131d" prot="private" static="no" mutable="yes">
-        <type>std::map&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>, <ref refid="structamrex_1_1EBCellFlagFab_1_1NumCells" kindref="compound">NumCells</ref> &gt;</type>
+        <type>std::map&lt; <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref>, <ref refid="structamrex_1_1EBCellFlagFab_1_1NumCells" kindref="compound">NumCells</ref> &gt;</type>
         <definition>std::map&lt;Box,NumCells&gt; amrex::EBCellFlagFab::m_typemap</definition>
         <argsstring></argsstring>
         <name>m_typemap</name>
@@ -58,7 +58,7 @@
         <argsstring>(const Box &amp;b, int ncomp, Arena *ar)</argsstring>
         <name>EBCellFlagFab</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>b</declname>
         </param>
         <param>
@@ -83,7 +83,7 @@
         <argsstring>(const Box &amp;b, int ncomp=1, bool alloc=true, bool shared=false, Arena *ar=nullptr)</argsstring>
         <name>EBCellFlagFab</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>b</declname>
         </param>
         <param>
@@ -254,11 +254,11 @@
         <argsstring>(const Box &amp;bx) const noexcept</argsstring>
         <name>getType</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <briefdescription>
-<para>Returns FabType in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> of this <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>. </para>
+<para>Returns FabType in the given Box of this <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -290,11 +290,11 @@
         <argsstring>(const Box &amp;bx) const noexcept</argsstring>
         <name>getNumRegularCells</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <briefdescription>
-<para>Returns the number of regular cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+<para>Returns the number of regular cells in the given Box. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -308,11 +308,11 @@
         <argsstring>(const Box &amp;bx) const noexcept</argsstring>
         <name>getNumCutCells</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <briefdescription>
-<para>Returns the number of cut cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+<para>Returns the number of cut cells in the given Box. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -326,11 +326,11 @@
         <argsstring>(const Box &amp;bx) const noexcept</argsstring>
         <name>getNumCoveredCells</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <briefdescription>
-<para>Returns the number of covered cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+<para>Returns the number of covered cells in the given Box. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -379,17 +379,20 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="6">
+        <label>std::map&lt; amrex::BoxND, amrex::EBCellFlagFab::NumCells &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="5">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="10">
-        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IndexTypeND"/>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
+      <node id="8">
         <label>amrex::EBCellFlagFab::NumCells</label>
         <link refid="structamrex_1_1EBCellFlagFab_1_1NumCells"/>
       </node>
@@ -407,29 +410,9 @@
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="8">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
-      </node>
-      <node id="6">
-        <label>std::map&lt; amrex::Box, amrex::EBCellFlagFab::NumCells &gt;</label>
-        <childnode refid="7" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>amrex::CellIndexEnum</label>
-        <link refid="structamrex_1_1CellIndexEnum"/>
+      <node id="7">
+        <label>amrex::BoxND&lt; dim &gt;</label>
+        <link refid="classamrex_1_1BoxND"/>
       </node>
       <node id="1">
         <label>amrex::EBCellFlagFab</label>
@@ -445,10 +428,6 @@
         <link refid="classamrex_1_1BaseFab"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="9">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="285" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="287" bodyend="353"/>

@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FabSetT.html',''); initR
 </div><!--header-->
 <div class="contents">
 
-<p>A FabSet is a group of <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>'s. The grouping is designed specifically to represent regions along the boundary of <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a>'s, and are used to implement boundary conditions to discretized partial differential equations.  
+<p>A FabSet is a group of <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>'s. The grouping is designed specifically to represent regions along the boundary of Box's, and are used to implement boundary conditions to discretized partial differential equations.  
  <a href="classamrex_1_1FabSetT.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__FabSet_8H_source.html">AMReX_FabSet.H</a>&gt;</code></p>
@@ -166,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6794fe7d234843b75b56f224f2492d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46811f4dbfb739f8bdb85b466e5256b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1MultiArray4.html">MultiArray4</a>&lt; <a class="el" href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">value_type</a> const  &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabSetT.html#a46811f4dbfb739f8bdb85b466e5256b2">const_arrays</a> () const noexcept</td></tr>
 <tr class="separator:a46811f4dbfb739f8bdb85b466e5256b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a713e5ea61895380c2c6c036297ecc865"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabSetT.html#a713e5ea61895380c2c6c036297ecc865">fabbox</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> K) const noexcept</td></tr>
+<tr class="memitem:a713e5ea61895380c2c6c036297ecc865"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabSetT.html#a713e5ea61895380c2c6c036297ecc865">fabbox</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> K) const noexcept</td></tr>
 <tr class="separator:a713e5ea61895380c2c6c036297ecc865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac701dad264a80003de6f61480b98a869"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabSetT.html#ac701dad264a80003de6f61480b98a869">size</a> () const noexcept</td></tr>
 <tr class="separator:ac701dad264a80003de6f61480b98a869"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +232,7 @@ Friends</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename MF&gt;<br />
 class amrex::FabSetT&lt; MF &gt;</h3>
 
-<p>A FabSet is a group of <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>'s. The grouping is designed specifically to represent regions along the boundary of <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a>'s, and are used to implement boundary conditions to discretized partial differential equations. </p>
+<p>A FabSet is a group of <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a>'s. The grouping is designed specifically to represent regions along the boundary of Box's, and are used to implement boundary conditions to discretized partial differential equations. </p>
 <p>A FabSet is an array of pointers to FABs. The standard FAB operators, however, have been modified to be more useful for maintaining boundary conditions for partial differential equations discretized on boxes. Under normal circumstances, a FAB will be created for each face of a box. For a group of boxes, a FabSet will be the group of FABs at a particular orientation (ie. the lo-i side of each grid in a list).</p>
 <p>Since a FabSet FAB will likely be used to bound a grid box, <a class="el" href="classamrex_1_1FArrayBox.html#ae32a072e143825062dac1ee2e9c24f79" title="For debugging purposes we hide BaseFab version and do some extra work.">FArrayBox::resize()</a> operations are disallowed. Also, to preserve flexibility in applicable boundary scenarios, intersecting FABs in the FabSet are not guaranteed to contain identical data&ndash;thus copy operations from a FabSet to any FAB-like structure may be order-dependent.</p>
 <p>FabSets are used primarily as a data storage mechanism, and are manipulated by more sophisticated control classes. </p>
@@ -989,7 +989,7 @@ template&lt;typename MF &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Box.html">Box</a> <a class="el" href="classamrex_1_1FabSetT.html">amrex::FabSetT</a>&lt; MF &gt;::fabbox </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <a class="el" href="classamrex_1_1FabSetT.html">amrex::FabSetT</a>&lt; MF &gt;::fabbox </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>K</em></td><td>)</td>

@@ -24,6 +24,7 @@ var classamrex_1_1IntVectND =
     [ "coarsen", "classamrex_1_1IntVectND.html#a36a4aa5954d396d6ce76dd3464afcd73", null ],
     [ "diagShift", "classamrex_1_1IntVectND.html#a7934d8299e20ea299c825262eb492a75", null ],
     [ "dim3", "classamrex_1_1IntVectND.html#a3fe31f318679574937ea583ed603f856", null ],
+    [ "dim3", "classamrex_1_1IntVectND.html#af57a892ca15f17778889299183a03111", null ],
     [ "end", "classamrex_1_1IntVectND.html#a87cbb704d6b807701ea727b783cf0d40", null ],
     [ "end", "classamrex_1_1IntVectND.html#a0c709240ec4bb148609ce350efd2faa2", null ],
     [ "expand", "classamrex_1_1IntVectND.html#ad9709a1183dce4b5bc038dc4aac65db7", null ],

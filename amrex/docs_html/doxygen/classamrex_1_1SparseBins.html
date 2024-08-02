@@ -126,7 +126,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf01a3502124d40b6f58035020394573"><td class="memTemplParams" colspan="2">template&lt;typename N , typename F &gt; </td></tr>
-<tr class="memitem:acf01a3502124d40b6f58035020394573"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SparseBins.html#acf01a3502124d40b6f58035020394573">build</a> (N nitems, <a class="el" href="classamrex_1_1SparseBins.html#ab753f27ad971425c4ecece259e8fa6f1">const_pointer_input_type</a> v, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, F const &amp;f)</td></tr>
+<tr class="memitem:acf01a3502124d40b6f58035020394573"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1SparseBins.html#acf01a3502124d40b6f58035020394573">build</a> (N nitems, <a class="el" href="classamrex_1_1SparseBins.html#ab753f27ad971425c4ecece259e8fa6f1">const_pointer_input_type</a> v, const <a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> &amp;bx, F const &amp;f)</td></tr>
 <tr class="memdesc:acf01a3502124d40b6f58035020394573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <a href="classamrex_1_1SparseBins.html#acf01a3502124d40b6f58035020394573">More...</a><br /></td></tr>
 <tr class="separator:acf01a3502124d40b6f58035020394573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88234f341b867559fe25f8a25cc53ebb"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SparseBins.html#a88234f341b867559fe25f8a25cc53ebb">numItems</a> () const noexcept</td></tr>
@@ -174,7 +174,7 @@ class amrex::SparseBins&lt; T &gt;</h3>
 
 <p>A container for storing items in a set of bins using "sparse" storage. </p>
 <p>The underlying data structure consists of three arrays. The first is a sorted array of bin numbers with a size equal to the number of non-zero bins. The second is an array of size nitems defining a permutation of the items in the container that puts them in bin-sorted order. Finally, there is an offsets array that stores, for each non-zero bin, the offsets into the permutation array where each bin starts.</p>
-<p>The storage for the bins is "sparse" in the sense that users pass in a <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> that defines the space over which the bins will be defined, and empty bins will still take up space.</p>
+<p>The storage for the bins is "sparse" in the sense that users pass in a Box that defines the space over which the bins will be defined, and empty bins will still take up space.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">The</td><td>type of items we hold </td></tr>
@@ -291,7 +291,7 @@ template&lt;typename N , typename F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
         </tr>
         <tr>
@@ -325,7 +325,7 @@ template&lt;typename N , typename F &gt; </div>
   <table class="params">
     <tr><td class="paramname">nitems</td><td>the number of items to put in the bins </td></tr>
     <tr><td class="paramname">v</td><td>pointer to the start of the items </td></tr>
-    <tr><td class="paramname">bx</td><td>the <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> that defines the space over which the bins will be defined </td></tr>
+    <tr><td class="paramname">bx</td><td>the Box that defines the space over which the bins will be defined </td></tr>
     <tr><td class="paramname">f</td><td>a function object that maps items to bins </td></tr>
   </table>
   </dd>

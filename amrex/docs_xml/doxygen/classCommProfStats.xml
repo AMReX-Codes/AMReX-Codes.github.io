@@ -261,7 +261,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="254" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="254" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classCommProfStats_1abaab22e72988e0a65438fde205822073" prot="private" static="yes" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt;</type>
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">amrex::Box</ref> &gt;</type>
         <definition>Vector&lt; Box &gt; CommProfStats::probDomain</definition>
         <argsstring></argsstring>
         <name>probDomain</name>
@@ -606,7 +606,7 @@
           <declname>timelineFAB</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">amrex::Box</ref> &amp;</type>
           <declname>probDomain</declname>
         </param>
         <param>
@@ -1194,7 +1194,7 @@
           <declname>lev</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">amrex::Box</ref> &amp;</type>
           <declname>pd</declname>
         </param>
         <briefdescription>
@@ -1211,7 +1211,7 @@
         <argsstring>(const amrex::Vector&lt; amrex::Box &gt; &amp;pd)</argsstring>
         <name>SetProbDomain</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">amrex::Box</ref> &gt; &amp;</type>
           <declname>pd</declname>
         </param>
         <briefdescription>
@@ -1223,7 +1223,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="220" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="220" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classCommProfStats_1a435b519763bcc16d9e49b73801870d27" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt; &amp;</type>
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">amrex::Box</ref> &gt; &amp;</type>
         <definition>const amrex::Vector&lt;amrex::Box&gt;&amp; CommProfStats::GetProbDomain</definition>
         <argsstring>() const</argsstring>
         <name>GetProbDomain</name>
@@ -1747,6 +1747,9 @@
           <edgelabel>glMap</edgelabel>
         </childnode>
         <childnode refid="22" relation="usage">
+          <edgelabel>probDomain</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
           <edgelabel>proxFromRank</edgelabel>
           <edgelabel>rankFromProx</edgelabel>
         </childnode>
@@ -1754,9 +1757,6 @@
           <edgelabel>barrierNames</edgelabel>
           <edgelabel>commHeaderFileNames</edgelabel>
           <edgelabel>nameTagNames</edgelabel>
-        </childnode>
-        <childnode refid="23" relation="usage">
-          <edgelabel>probDomain</edgelabel>
         </childnode>
         <childnode refid="13" relation="usage">
           <edgelabel>commDataStreams</edgelabel>
@@ -1795,7 +1795,7 @@
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="22">
+      <node id="23">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="7" relation="public-inheritance">
@@ -1840,6 +1840,12 @@
       <node id="21">
         <label>std::map&lt; int, long &gt;</label>
       </node>
+      <node id="22">
+        <label>amrex::Vector&lt; amrex::BoxND &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="11">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
@@ -1865,12 +1871,6 @@
         <label>std::map&lt; std::string, int &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>keys</edgelabel>
-        </childnode>
-      </node>
-      <node id="23">
-        <label>amrex::Vector&lt; amrex::Box &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">

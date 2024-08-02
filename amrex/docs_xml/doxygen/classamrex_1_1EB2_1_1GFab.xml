@@ -21,7 +21,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1ae472b90af10b7b39bc9b15f9b3ae9563" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
         <definition>Box amrex::EB2::GFab::m_validbox</definition>
         <argsstring></argsstring>
         <name>m_validbox</name>
@@ -93,7 +93,7 @@
         <argsstring>(const Box &amp;vbx)</argsstring>
         <name>define</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>vbx</declname>
         </param>
         <briefdescription>
@@ -105,7 +105,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="21" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="21" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a06370be1805b070ebf8964b57b5957e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
         <definition>Box amrex::EB2::GFab::validbox</definition>
         <argsstring>() const</argsstring>
         <name>validbox</name>
@@ -218,95 +218,74 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
+      <node id="3">
         <label>amrex::BaseFab&lt; Real &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
-        <childnode refid="3" relation="public-inheritance">
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="13">
+      <node id="10">
         <label>T</label>
       </node>
-      <node id="8">
-        <label>amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IndexTypeND"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="9">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="13" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
-      <node id="11">
+      <node id="8">
         <label>amrex::Vector&lt; Vertex &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1BoxND"/>
       </node>
       <node id="1">
         <label>amrex::EB2::GFab</label>
         <link refid="classamrex_1_1EB2_1_1GFab"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>m_levelset</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
           <edgelabel>m_validbox</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_levelset</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
           <edgelabel>m_graph</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="7" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
-      </node>
-      <node id="14">
+      <node id="11">
         <label>amrex::IntVectND&lt; dim &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
-      <node id="9">
-        <label>amrex::CellIndexEnum</label>
-        <link refid="structamrex_1_1CellIndexEnum"/>
-      </node>
-      <node id="10">
+      <node id="7">
         <label>std::unordered_map&lt; IntVect, Vector&lt; Vertex &gt;, IntVect::hasher &gt;</label>
-        <childnode refid="11" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="14" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-      </node>
-      <node id="7">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="14" bodyend="61"/>
