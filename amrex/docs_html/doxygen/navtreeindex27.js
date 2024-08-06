@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"amrex__parser_8tab_8nolint_8H.html#aa6c7a65b580c214b2ea832fd7bdd472e":[4,0,0,2,0,19,19],
 "amrex__parser_8tab_8nolint_8H.html#aa73e0c1ca0d85df7ad7b6851321fc331":[4,0,0,2,0,19,72],
 "amrex__parser_8tab_8nolint_8H.html#aab7dffbc643ba6d9fc13103dba1e4a79":[4,0,0,2,0,19,70],
 "amrex__parser_8tab_8nolint_8H.html#aad19ee88e33c02c4e720b28f78249bd7":[4,0,0,2,0,19,73],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "classRegionsProfStats.html#a2df08e98c81c9d8bc1fd71defa327d4d":[3,0,29,39],
 "classRegionsProfStats.html#a380d3166c3f88a1fc49a53ff62499594":[3,0,29,45],
 "classRegionsProfStats.html#a395ae220780e06011681a86a4bd08d98":[3,0,29,1],
-"classRegionsProfStats.html#a3dab65709f631d62643d8e5fad2692bd":[3,0,29,34]
+"classRegionsProfStats.html#a3dab65709f631d62643d8e5fad2692bd":[3,0,29,34],
+"classRegionsProfStats.html#a409ca89dc56939d0cbc9155ef274d8dc":[3,0,29,7]
 };

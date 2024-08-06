@@ -1,7 +1,7 @@
 var structamrex_1_1DenseBinIteratorFactory =
 [
     [ "const_pointer_type", "structamrex_1_1DenseBinIteratorFactory.html#afde549427d2c1a8e6c85f5d363a32810", null ],
-    [ "index_type", "structamrex_1_1DenseBinIteratorFactory.html#aee679b2caba1e5933d98f87d51ee2dbe", null ],
+    [ "index_type", "structamrex_1_1DenseBinIteratorFactory.html#a223f66550fa407ec108387b2cd8d61b2", null ],
     [ "DenseBinIteratorFactory", "structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625", null ],
     [ "getBinIterator", "structamrex_1_1DenseBinIteratorFactory.html#a484b45fe28140ce6f64c77687981ac81", null ],
     [ "m_items", "structamrex_1_1DenseBinIteratorFactory.html#a86bd9751f73a297822528a06e967334a", null ],

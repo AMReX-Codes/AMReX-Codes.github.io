@@ -411,8 +411,8 @@ $(document).ready(function(){initNavTree('AMReX__NeighborList_8H_source.html',''
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="classamrex_1_1NeighborList.html#a9d4e86f7dc2ff83b23bcd1d0a3d04413">m_pstruct</a> = aos().dataPtr();</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">auto</span>* <span class="keyword">const</span> pstruct_ptr = aos().dataPtr();</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> np_total = aos.size();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> np_real  = src_tile.numRealParticles();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> np_total = aos.size();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> np_real  = src_tile.numRealParticles();</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>* off_bins_p = off_bins_v.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>();</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>* dxi_p      = dxi_v.data();</div>
@@ -434,7 +434,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborList_8H_source.html',''
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// First pass: count the number of neighbors for each particle</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">//---------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> np_size  = (num_bin_types &gt; 1) ? np_total : np_real;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> np_size  = (num_bin_types &gt; 1) ? np_total : np_real;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="classamrex_1_1NeighborList.html#a1de2b2bb7b0bb67975ada3971cbdeb5c">m_nbor_counts</a>.resize( np_size+1, 0);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="classamrex_1_1NeighborList.html#aa4802374875adf70531e733654308316">m_nbor_offsets</a>.resize(np_size+1);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
