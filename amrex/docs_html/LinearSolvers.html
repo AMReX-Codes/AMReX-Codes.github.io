@@ -533,6 +533,17 @@ residual correction form of the original problem. To build Hypre, follow the nex
 <span class="go">    HYPRE_DIR=/hypre_path/hypre/src/hypre</span>
 </pre></div>
 </div>
+<p>To use Hypre with CUDA, nvcc compiler is needed along with all other requirements for CPU (e.g. gcc, mpicc). It is very important that the GPU architecture for Hypre matches with that of AMReX. By default, Hypre assumes its architecture number to be 70 and it is best to build Hypre for multiple architectures by specifying multiple compute capability numbers (e.g. 80 and 90).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/hypre-space/hypre.git</span>
+<span class="go">2.- cd hypre/src</span>
+<span class="go">3.- ./configure --with-cuda -—with-gpu-arch=’80 90&#39;</span>
+<span class="go">    (you can figure out the gpu arch from command line using</span>
+<span class="go">    nvidia-smi --query-gpu=compute_cap --format=csv, if it gives 9.0, gpu-arch is 90)</span>
+<span class="go">4.- make install</span>
+<span class="go">5.- Create an environment variable with the HYPRE directory --</span>
+<span class="go">    HYPRE_DIR=/hypre_path/hypre/src/hypre</span>
+</pre></div>
+</div>
 <p>To use hypre, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
 For examples of using hypre, we refer the reader to
 <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">ABecLaplacian</a> or <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">NodeTensorLap</a>.</p>
