@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,7,13,3],
 "AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,7,13,4],
 "AMReX__RegionsProfStats_8cpp.html#adf40b37aa3d31187890635b3b571403c":[4,0,0,5,7,13,0],
 "AMReX__RungeKutta_8H.html":[4,0,0,2,240],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__Utility_8H.html#a93b4a56e5a8af340d43839230b94843c":[4,0,0,2,255,2],
 "AMReX__Utility_8H.html#aa60205e03d594df934b5b3afd723c764":[4,0,0,2,255,8],
 "AMReX__Utility_8H.html#ab6136b169776e667910d5505dca32259":[4,0,0,2,255,5],
-"AMReX__Utility_8H.html#ac55f6d6246ea70d74588e5f06fd92e99":[4,0,0,2,255,26],
-"AMReX__Utility_8H.html#adce3325c7a4208e21f4cecc984bfb8b9":[4,0,0,2,255,17]
+"AMReX__Utility_8H.html#ac55f6d6246ea70d74588e5f06fd92e99":[4,0,0,2,255,26]
 };
