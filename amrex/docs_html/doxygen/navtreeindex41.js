@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"classamrex_1_1FillPatcher.html#ad106fffa846cdb025aee4f0f8e43c582":[3,0,0,44,15],
 "classamrex_1_1FillPatcher.html#ad5c0afcb0f98eda5ed211fa3e232d6ad":[3,0,0,44,4],
 "classamrex_1_1FillPatcher.html#aeef4e08d1768a02cae4c25c4c5cfd1d5":[3,0,0,44,12],
 "classamrex_1_1FillPatcher.html#af190f9e264e08dd6fec696c4ff84c53b":[3,0,0,44,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "classamrex_1_1Gpu_1_1AsyncArray.html#ac6b94ba54d0f143f579690a55fd1150a":[3,0,0,5,1,10],
 "classamrex_1_1Gpu_1_1AsyncArray.html#ad3151b13ffc1cc951122dcf7365b7b37":[3,0,0,5,1,2],
 "classamrex_1_1Gpu_1_1AsyncArray.html#ae5fa0653fa0f802d97db317490b06f08":[3,0,0,5,1,3],
-"classamrex_1_1Gpu_1_1AsyncArray.html#ae70344e048d89311ae808a9485fd8b8f":[3,0,0,5,1,9],
-"classamrex_1_1Gpu_1_1AsyncArray.html#afe7f9b519cf72113b64dbcd946a75c76":[3,0,0,5,1,8]
+"classamrex_1_1Gpu_1_1AsyncArray.html#ae70344e048d89311ae808a9485fd8b8f":[3,0,0,5,1,9]
 };
