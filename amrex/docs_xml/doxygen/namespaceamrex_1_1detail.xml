@@ -793,7 +793,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuComplex.H" line="432" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuComplex.H" bodystart="432" bodyend="445"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1aca3a36a75e09011d483bcaaa6f9ee7f5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1aa004283e3920e413c389c093161cad79" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -802,10 +802,10 @@
             <type>typename N</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_scalar_handler</definition>
         <argsstring>(F const &amp;f, N i) noexcept -&gt; decltype(f(0))</argsstring>
-        <name>call_f</name>
+        <name>call_f_scalar_handler</name>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
@@ -820,33 +820,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="10" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="10" bodyend="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="13" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="13" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ac02794506750edcf0d39acedf4ddb19d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ade8d882f6ba75270a6ea576d8bba3577" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
           </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
-        <argsstring>(F const &amp;f, int i, int j, int k) noexcept -&gt; decltype(f(0, 0, 0))</argsstring>
-        <name>call_f</name>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; 1 &gt; iv, Args...args) noexcept -&gt; decltype(f(0, 0, 0, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 1 &gt;</type>
+          <declname>iv</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
+          <type>Args...</type>
+          <declname>args</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -854,9 +863,166 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="26" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="26" bodyend="30"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="31" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="31" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a58cd3a1197191b66f72a97cbd1d11544" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a64ebcc6c0abdb545a519a9d378dca174" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; 2 &gt; iv, Args...args) noexcept -&gt; decltype(f(0, 0, 0, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 2 &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="39" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a36c4819d0af66858bf09a3dd588fca74" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; dim &gt; iv, Args...args) noexcept -&gt; decltype(f(iv, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1abf33e4589ea5adab841f76cf4ba8fec2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_engine</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, RandomEngine engine) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, engine))</argsstring>
+        <name>call_f_intvect_engine</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref></type>
+          <declname>engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="65" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a046cf7f7c280ba419ad77e7d97f61d88" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_handler</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv))</argsstring>
+        <name>call_f_intvect_handler</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="75" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1acdccebd8d9e6a4c1db19363438a5cba2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -864,26 +1030,65 @@
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
-        <argsstring>(F const &amp;f, int i, int j, int k, T n) noexcept -&gt; decltype(f(0, 0, 0, 0))</argsstring>
-        <name>call_f</name>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_ncomp_engine</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, T n, RandomEngine engine) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, n, engine))</argsstring>
+        <name>call_f_intvect_ncomp_engine</name>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
+          <type>T</type>
+          <declname>n</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref></type>
+          <declname>engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="93" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a1d5d1924885f09d0c057d56268dfb895" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_ncomp_handler</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, T n) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, n))</argsstring>
+        <name>call_f_intvect_ncomp_handler</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
         </param>
         <param>
           <type>T</type>
@@ -895,9 +1100,294 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="42" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="42" bodyend="46"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="103" bodyend="107"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1aae1e047337d0583692f4ffb1ccbc536d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a3fed1f766f2a246764a7880eecc640c8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::For_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv) noexcept</argsstring>
+        <name>For_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="195" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="195" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1abbcccb7a439192126cc04a4980052d70" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::ParallelFor_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv) noexcept</argsstring>
+        <name>ParallelFor_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="255" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="255" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1af64c8e0dcca83824d84b736217db75a6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::For_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv, T n) noexcept</argsstring>
+        <name>For_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="318" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="318" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a9806a4f60e5ec27fadcda28a97df3806" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::ParallelFor_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv, T n) noexcept</argsstring>
+        <name>ParallelFor_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="380" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="380" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1aa9178db9a47be24aee36f3c72d0ed274" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::ParallelForRNG_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv) noexcept</argsstring>
+        <name>ParallelForRNG_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="1232" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="1232" bodyend="1254"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a80bc7ba0eaf66754172d9d1d172eeacc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>idim</declname>
+            <defname>idim</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_FORCE_INLINE void amrex::detail::ParallelForRNG_impND</definition>
+        <argsstring>(L const &amp;f, IntVectND&lt; dim &gt; const lo, IntVectND&lt; dim &gt; const hi, IntVectND&lt; dim &gt; iv, T n) noexcept</argsstring>
+        <name>ParallelForRNG_impND</name>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="1258" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="1258" bodyend="1280"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a90aaa100d2d55f47c63bf669ba307022" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -906,10 +1396,10 @@
             <type>typename N</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
-        <argsstring>(F const &amp;f, N i, std::uint64_t) noexcept -&gt; decltype(f(0))</argsstring>
-        <name>call_f</name>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_scalar_handler</definition>
+        <argsstring>(F const &amp;f, N i, Gpu::Handler const &amp;) noexcept -&gt; decltype(f(0))</argsstring>
+        <name>call_f_scalar_handler</name>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
@@ -919,8 +1409,8 @@
           <declname>i</declname>
         </param>
         <param>
-          <type>std::uint64_t</type>
-          <defname>nleft</defname>
+          <type><ref refid="structamrex_1_1Gpu_1_1Handler" kindref="compound">Gpu::Handler</ref> const &amp;</type>
+          <defname>handler</defname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -928,37 +1418,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="689" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="689" bodyend="693"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="13" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="13" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ae67b803561d441f9b803ddb57302e0b6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a1e5d59f318e4a3288329abfc2327ad9d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
           </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
-        <argsstring>(F const &amp;f, int i, int j, int k, std::uint64_t) noexcept -&gt; decltype(f(0, 0, 0))</argsstring>
-        <name>call_f</name>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; 1 &gt; iv, Args...args) noexcept -&gt; decltype(f(0, 0, 0, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 1 &gt;</type>
+          <declname>iv</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
-        </param>
-        <param>
-          <type>std::uint64_t</type>
-          <defname>nleft</defname>
+          <type>Args...</type>
+          <declname>args</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -966,9 +1461,201 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="705" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="705" bodyend="709"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="31" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="31" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad188be33eb630c46ce878d8d84f9af84" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a7b0378fbfb01165d7ca8e1e379c43f81" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; 2 &gt; iv, Args...args) noexcept -&gt; decltype(f(0, 0, 0, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 2 &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="39" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a5c97e24447d9887bed04b8e7ecf13cc8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Ns</declname>
+            <defname>Ns</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_inner</definition>
+        <argsstring>(std::index_sequence&lt; Ns... &gt;, F const &amp;f, IntVectND&lt; dim &gt; iv, Args...args) noexcept -&gt; decltype(f(iv, args...))</argsstring>
+        <name>call_f_intvect_inner</name>
+        <param>
+          <type>std::index_sequence&lt; Ns... &gt;</type>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1aa05aeb114ce9ecd66760d831ae2471f8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv))</argsstring>
+        <name>call_f_intvect</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="65" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1acd22cc8e7edfa53f2cf129c76d8745ea" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_engine</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, RandomEngine engine) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, engine))</argsstring>
+        <name>call_f_intvect_engine</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref></type>
+          <declname>engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="75" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a405f588558bf5afc228a55ebe21303a1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_handler</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, Gpu::Handler const &amp;) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv))</argsstring>
+        <name>call_f_intvect_handler</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1Handler" kindref="compound">Gpu::Handler</ref> const &amp;</type>
+          <defname>handler</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="85" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a9724b4915ce5a6c9e9766a4e0a221723" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -976,34 +1663,27 @@
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> auto</type>
-        <definition>AMREX_GPU_DEVICE auto amrex::detail::call_f</definition>
-        <argsstring>(F const &amp;f, int i, int j, int k, T ncomp, std::uint64_t) noexcept -&gt; decltype(f(0, 0, 0, 0))</argsstring>
-        <name>call_f</name>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_ncomp</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, T ncomp) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, 0))</argsstring>
+        <name>call_f_intvect_ncomp</name>
         <param>
           <type>F const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
         </param>
         <param>
           <type>T</type>
           <declname>ncomp</declname>
-        </param>
-        <param>
-          <type>std::uint64_t</type>
-          <defname>nleft</defname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -1011,7 +1691,91 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="721" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="721" bodyend="725"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="103" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1af281321d89351c33fe9ac9804527741a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_ncomp_engine</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, T ncomp, RandomEngine engine) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, 0, engine))</argsstring>
+        <name>call_f_intvect_ncomp_engine</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref></type>
+          <declname>engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="115" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="115" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a2c5b6087ddf712ba78b4adb8a1baea78" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::detail::call_f_intvect_ncomp_handler</definition>
+        <argsstring>(F const &amp;f, IntVectND&lt; dim &gt; iv, T ncomp, Gpu::Handler const &amp;) noexcept -&gt; decltype(call_f_intvect_inner(std::make_index_sequence&lt; dim &gt;(), f, iv, 0))</argsstring>
+        <name>call_f_intvect_ncomp_handler</name>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1Handler" kindref="compound">Gpu::Handler</ref> const &amp;</type>
+          <defname>handler</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="127" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="127" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1ab00f37e64a03e8049a6890215b22817a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
