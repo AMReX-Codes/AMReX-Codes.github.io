@@ -3,7 +3,7 @@ var AMReX__GpuLaunch_8nolint_8H =
     [ "AMREX_FOR_1D", "AMReX__GpuLaunch_8nolint_8H.html#a39a4c246c2c105435c9df228aa98c2a6", null ],
     [ "AMREX_FOR_3D", "AMReX__GpuLaunch_8nolint_8H.html#a1a2a3f6095bcdeb590ee81b4329c350d", null ],
     [ "AMREX_FOR_4D", "AMReX__GpuLaunch_8nolint_8H.html#ac9a8d7b0c7a78713e4fdd55ee2e4fb83", null ],
-    [ "AMREX_GET_MACRO", "AMReX__GpuLaunch_8nolint_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a", null ],
+    [ "AMREX_GET_LAUNCH_MACRO", "AMReX__GpuLaunch_8nolint_8H.html#a3c80c2509f081f5d3c1cc7579076dae8", null ],
     [ "AMREX_HOST_DEVICE_FOR_1D", "AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92", null ],
     [ "AMREX_HOST_DEVICE_FOR_1D_FLAG", "AMReX__GpuLaunch_8nolint_8H.html#afd9e772ffd425c7e87ff315cab8afa6c", null ],
     [ "AMREX_HOST_DEVICE_FOR_3D", "AMReX__GpuLaunch_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84", null ],
@@ -27,6 +27,5 @@ var AMReX__GpuLaunch_8nolint_8H =
     [ "AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_FLAG", "AMReX__GpuLaunch_8nolint_8H.html#a2d0e306c518e1c8054055541e60bebd8", null ],
     [ "AMREX_PARALLEL_FOR_1D", "AMReX__GpuLaunch_8nolint_8H.html#a775a21da7a0872eb04e5d779d8c3e579", null ],
     [ "AMREX_PARALLEL_FOR_3D", "AMReX__GpuLaunch_8nolint_8H.html#a5276700f57c62c88725cd2015e45c304", null ],
-    [ "AMREX_PARALLEL_FOR_4D", "AMReX__GpuLaunch_8nolint_8H.html#a47b94de342e3db50339d953446f1b469", null ],
-    [ "AMREX_WRONG_NUM_ARGS", "AMReX__GpuLaunch_8nolint_8H.html#a23987d1e81da6d4c71acf5f460eed8ef", null ]
+    [ "AMREX_PARALLEL_FOR_4D", "AMReX__GpuLaunch_8nolint_8H.html#a47b94de342e3db50339d953446f1b469", null ]
 ];

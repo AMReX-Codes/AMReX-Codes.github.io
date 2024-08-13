@@ -165,7 +165,25 @@ $(document).ready(function(){initNavTree('AMReX__GpuQualifiers_8H_source.html','
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"># include &lt;sycl/sycl.hpp&gt;</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">   67</a></span>&#160;<span class="preprocessor">#define AMREX_WRONG_NUM_ARGS(...) static_assert(false,&quot;Wrong number of arguments to macro&quot;</span>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a51ecb13e4b34c26bf0f9090d2b235e8a">   69</a></span>&#160;<span class="preprocessor">#define AMREX_GET_DGV_MACRO(_1,_2,_3,NAME,...) NAME</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a65d5fa378e06a40d708386f6b3e8deb6">   70</a></span>&#160;<span class="preprocessor">#define AMREX_DEVICE_GLOBAL_VARIABLE(...) AMREX_GET_DGV_MACRO(__VA_ARGS__,\</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">                                              AMREX_DGVARR, AMREX_DGV,\</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">                                              AMREX_WRONG_NUM_ARGS)(__VA_ARGS__)</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"># define AMREX_DGV(type,name) SYCL_EXTERNAL sycl::ext::oneapi::experimental::device_global&lt;type&gt; name</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"># define AMREX_DGVARR(type,num,name) SYCL_EXTERNAL sycl::ext::oneapi::experimental::device_global&lt;type[num]&gt; name</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aaa8730dd43d28199737c94c6cb0facc8">   78</a></span>&#160;<span class="preprocessor"># define AMREX_DGV(type,name) __device__ type name</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#ae79908de1dec11bf9eba6377a98fcc16">   79</a></span>&#160;<span class="preprocessor"># define AMREX_DGVARR(type,num,name) __device__ type name[num]</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"># define AMREX_DGV(type,name) type name</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"># define AMREX_DGVARR(type,num,name) type name[num]</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

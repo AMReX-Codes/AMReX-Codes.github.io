@@ -1,5 +1,11 @@
 var NAVTREEINDEX60 =
 {
+"globals_d.html":[4,1,0,3],
+"globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
+"globals_defs_b.html":[4,1,6,1],
+"globals_defs_c.html":[4,1,6,2],
+"globals_defs_d.html":[4,1,6,3],
 "globals_defs_e.html":[4,1,6,4],
 "globals_defs_f.html":[4,1,6,5],
 "globals_defs_g.html":[4,1,6,6],
@@ -60,8 +66,8 @@ var NAVTREEINDEX60 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX60 =
 "namespaceamrex.html#a00bf121938de056ff99b07c9a5ac892d":[2,0,0,1677],
 "namespaceamrex.html#a00f22a6e30b96fc1eb9c1bb71c1b3c18":[2,0,0,1733],
 "namespaceamrex.html#a01095cb6a015bfd16cca1c163987890e":[2,0,0,1193],
-"namespaceamrex.html#a01a43d1a99e96ce0f348dc5659029a6e":[2,0,0,2270],
-"namespaceamrex.html#a01d310d8cbb95e1ea1af03ef92c82895":[2,0,0,1828],
-"namespaceamrex.html#a021dc84969e65c184034f112eec3b887":[2,0,0,2355],
-"namespaceamrex.html#a022123f91218b914a5c94f972669cb57":[2,0,0,2303],
-"namespaceamrex.html#a023801a9417fb6bd2f74787e89124a8c":[2,0,0,1235],
-"namespaceamrex.html#a025e5b59bd3848fc86899a836d0800f2":[2,0,0,1772],
-"namespaceamrex.html#a02764a19b02ad5aa59766eaba8cde224":[2,0,0,735]
+"namespaceamrex.html#a01a43d1a99e96ce0f348dc5659029a6e":[2,0,0,2270]
 };

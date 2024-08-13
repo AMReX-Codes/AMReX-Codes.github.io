@@ -1,5 +1,13 @@
 var NAVTREEINDEX71 =
 {
+"namespaceamrex_1_1ParallelDescriptor.html#a2efa14fb9d9ac2f6288d17e6890132ac":[2,0,0,36,173],
+"namespaceamrex_1_1ParallelDescriptor.html#a307e6fc3b7df510cca76aff2fda29435":[2,0,0,36,163],
+"namespaceamrex_1_1ParallelDescriptor.html#a31842e0bf333c7f85c31e6f227055716":[2,0,0,36,92],
+"namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29":[2,0,0,36,55],
+"namespaceamrex_1_1ParallelDescriptor.html#a3441f492fc784719d2b872f7a6da54ac":[2,0,0,36,87],
+"namespaceamrex_1_1ParallelDescriptor.html#a3461c9bae69de0e75d147ae431f938d4":[2,0,0,36,171],
+"namespaceamrex_1_1ParallelDescriptor.html#a3557c1b3ec791b8bf6f9e9cab5c6b0d8":[2,0,0,36,53],
+"namespaceamrex_1_1ParallelDescriptor.html#a3661303172f9bd5b139c1c19adbd93f8":[2,0,0,36,103],
 "namespaceamrex_1_1ParallelDescriptor.html#a387acd4f26462ef60c5de9d87ef15c67":[2,0,0,36,177],
 "namespaceamrex_1_1ParallelDescriptor.html#a38b3712843db6ceb3877ab59bd4df4f0":[2,0,0,36,174],
 "namespaceamrex_1_1ParallelDescriptor.html#a39256068b3bc99d6219b39739053461d":[2,0,0,36,139],
@@ -241,13 +249,5 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14":[2,0,0,51,5],
 "namespaceamrex_1_1VectorGrowthStrategy.html#a41878a0e62c1df914fba3fda248ea56d":[2,0,0,51,6],
 "namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa":[2,0,0,51,1],
-"namespaceamrex_1_1VectorGrowthStrategy.html#ae40903e99ce2fa70dfcfbc71e8e1f9d1":[2,0,0,51,3],
-"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html":[2,0,0,51,0],
-"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html#a55450ed37c6677fb96a9f9c724553739":[2,0,0,51,0,0],
-"namespaceamrex_1_1algoim.html":[2,0,0,0],
-"namespaceamrex_1_1algoim.html#a01c402173effc1376e1e121633ff5f40":[2,0,0,0,19],
-"namespaceamrex_1_1algoim.html#a028434e66d37788b7c7aa354d73ed4b3":[2,0,0,0,39],
-"namespaceamrex_1_1algoim.html#a035ca724de0232c06fb8f932f48dfb5b":[2,0,0,0,38],
-"namespaceamrex_1_1algoim.html#a05434c8a13201e8af0f5dab5420e33d2":[2,0,0,0,12],
-"namespaceamrex_1_1algoim.html#a07474818cba158a836bada961168c817":[2,0,0,0,24]
+"namespaceamrex_1_1VectorGrowthStrategy.html#ae40903e99ce2fa70dfcfbc71e8e1f9d1":[2,0,0,51,3]
 };

@@ -108,6 +108,8 @@ var namespaceamrex_1_1Gpu =
     [ "makeExecutionConfig", "namespaceamrex_1_1Gpu.html#a96329917c7544347d421e3a216fb58a1", null ],
     [ "makeExecutionConfig", "namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4", null ],
     [ "memcpy", "namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083", null ],
+    [ "memcpy_from_device_global_to_host_async", "namespaceamrex_1_1Gpu.html#a7c0024e0db9fbe3a6522df0047bc581b", null ],
+    [ "memcpy_from_host_to_device_global_async", "namespaceamrex_1_1Gpu.html#acd480232c63b6e866c02e40561f9f635", null ],
     [ "notInGraphRegion", "namespaceamrex_1_1Gpu.html#a73a7f12036e7cda0332aec8185d4c330", null ],
     [ "notInLaunchRegion", "namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603", null ],
     [ "numGpuStreams", "namespaceamrex_1_1Gpu.html#a920dd19f186b2276d9bbdb14d117565c", null ],

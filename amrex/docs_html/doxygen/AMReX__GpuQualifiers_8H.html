@@ -137,6 +137,16 @@ Macros</h2></td></tr>
 <tr class="separator:a2240a2bbfffe9904f04e11e37d5d3cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3db6d2559ac1bb79c7f2a6dfe25917c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(CODE)&#160;&#160;&#160;  { <a class="el" href="AMReX__GpuQualifiers_8H.html#af7dba2756f65b1f41c7b64c56d9e986b">AMREX_IMPL_STRIP_PARENS</a>(CODE) }</td></tr>
 <tr class="separator:a3db6d2559ac1bb79c7f2a6dfe25917c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23987d1e81da6d4c71acf5f460eed8ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>(...)&#160;&#160;&#160;static_assert(false,&quot;Wrong number of arguments to macro&quot;)</td></tr>
+<tr class="separator:a23987d1e81da6d4c71acf5f460eed8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ecb13e4b34c26bf0f9090d2b235e8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#a51ecb13e4b34c26bf0f9090d2b235e8a">AMREX_GET_DGV_MACRO</a>(_1,  _2,  _3,  NAME, ...)&#160;&#160;&#160;NAME</td></tr>
+<tr class="separator:a51ecb13e4b34c26bf0f9090d2b235e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d5fa378e06a40d708386f6b3e8deb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#a65d5fa378e06a40d708386f6b3e8deb6">AMREX_DEVICE_GLOBAL_VARIABLE</a>(...)</td></tr>
+<tr class="separator:a65d5fa378e06a40d708386f6b3e8deb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8730dd43d28199737c94c6cb0facc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#aaa8730dd43d28199737c94c6cb0facc8">AMREX_DGV</a>(type,  name)&#160;&#160;&#160;__device__ type name</td></tr>
+<tr class="separator:aaa8730dd43d28199737c94c6cb0facc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79908de1dec11bf9eba6377a98fcc16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuQualifiers_8H.html#ae79908de1dec11bf9eba6377a98fcc16">AMREX_DGVARR</a>(type,  num,  name)&#160;&#160;&#160;__device__ type name[num]</td></tr>
+<tr class="separator:ae79908de1dec11bf9eba6377a98fcc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a57609a8d4ed3ca830395e1198e3730af"></a>
@@ -147,6 +157,139 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define AMREX_DEVICE_COMPILE&#160;&#160;&#160;(__CUDA_ARCH__ || __HIP_DEVICE_COMPILE__ || __SYCL_DEVICE_ONLY__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65d5fa378e06a40d708386f6b3e8deb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d5fa378e06a40d708386f6b3e8deb6">&#9670;&nbsp;</a></span>AMREX_DEVICE_GLOBAL_VARIABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_DEVICE_GLOBAL_VARIABLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                              <a class="code" href="AMReX__GpuQualifiers_8H.html#a51ecb13e4b34c26bf0f9090d2b235e8a">AMREX_GET_DGV_MACRO</a>(__VA_ARGS__,\</div>
+<div class="line">                                              <a class="code" href="AMReX__GpuQualifiers_8H.html#ae79908de1dec11bf9eba6377a98fcc16">AMREX_DGVARR</a>, <a class="code" href="AMReX__GpuQualifiers_8H.html#aaa8730dd43d28199737c94c6cb0facc8">AMREX_DGV</a>,\</div>
+<div class="line">                                              <a class="code" href="AMReX__GpuQualifiers_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>)(__VA_ARGS__)</div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a23987d1e81da6d4c71acf5f460eed8ef"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a></div><div class="ttdeci">#define AMREX_WRONG_NUM_ARGS(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:67</div></div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a51ecb13e4b34c26bf0f9090d2b235e8a"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a51ecb13e4b34c26bf0f9090d2b235e8a">AMREX_GET_DGV_MACRO</a></div><div class="ttdeci">#define AMREX_GET_DGV_MACRO(_1, _2, _3, NAME,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:69</div></div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aaa8730dd43d28199737c94c6cb0facc8"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aaa8730dd43d28199737c94c6cb0facc8">AMREX_DGV</a></div><div class="ttdeci">#define AMREX_DGV(type, name)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:78</div></div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_ae79908de1dec11bf9eba6377a98fcc16"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#ae79908de1dec11bf9eba6377a98fcc16">AMREX_DGVARR</a></div><div class="ttdeci">#define AMREX_DGVARR(type, num, name)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:79</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa8730dd43d28199737c94c6cb0facc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8730dd43d28199737c94c6cb0facc8">&#9670;&nbsp;</a></span>AMREX_DGV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_DGV</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;__device__ type name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae79908de1dec11bf9eba6377a98fcc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79908de1dec11bf9eba6377a98fcc16">&#9670;&nbsp;</a></span>AMREX_DGVARR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_DGVARR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">num, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;__device__ type name[num]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51ecb13e4b34c26bf0f9090d2b235e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ecb13e4b34c26bf0f9090d2b235e8a">&#9670;&nbsp;</a></span>AMREX_GET_DGV_MACRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_GET_DGV_MACRO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_3, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;NAME</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,6 +510,24 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define AMREX_IMPL_VAN_AMREX_IMPL_ISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23987d1e81da6d4c71acf5f460eed8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23987d1e81da6d4c71acf5f460eed8ef">&#9670;&nbsp;</a></span>AMREX_WRONG_NUM_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_WRONG_NUM_ARGS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;static_assert(false,&quot;Wrong number of arguments to macro&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

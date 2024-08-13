@@ -315,6 +315,12 @@ Functions</h2></td></tr>
 <tr class="separator:aa443a27f05e81db793b131d3fc0b101c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab695bddeb3cc727225d95a1826472ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ab695bddeb3cc727225d95a1826472ae4">dtod_memcpy</a> (void *p_d_dst, const void *p_d_src, const std::size_t sz) noexcept</td></tr>
 <tr class="separator:ab695bddeb3cc727225d95a1826472ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd480232c63b6e866c02e40561f9f635"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acd480232c63b6e866c02e40561f9f635"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#acd480232c63b6e866c02e40561f9f635">memcpy_from_host_to_device_global_async</a> (T &amp;dg, const void *src, std::size_t nbytes, std::size_t <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>=0)</td></tr>
+<tr class="separator:acd480232c63b6e866c02e40561f9f635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0024e0db9fbe3a6522df0047bc581b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7c0024e0db9fbe3a6522df0047bc581b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a7c0024e0db9fbe3a6522df0047bc581b">memcpy_from_device_global_to_host_async</a> (void *dst, T const &amp;dg, std::size_t nbytes, std::size_t <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>=0)</td></tr>
+<tr class="separator:a7c0024e0db9fbe3a6522df0047bc581b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e72d3661b320758c41e4a548b80beec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8e72d3661b320758c41e4a548b80beec">ErrorCheck</a> (const char *file, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> line) noexcept</td></tr>
 <tr class="separator:a8e72d3661b320758c41e4a548b80beec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d3039071c1009b16e08b63b63013db"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a99d3039071c1009b16e08b63b63013db">numThreadsPerBlockParallelFor</a> ()</td></tr>
@@ -2617,6 +2623,92 @@ template&lt;int MT&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c0024e0db9fbe3a6522df0047bc581b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0024e0db9fbe3a6522df0047bc581b">&#9670;&nbsp;</a></span>memcpy_from_device_global_to_host_async()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::memcpy_from_device_global_to_host_async </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>dg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy <code>nbytes</code> bytes from device global variable to host. <code>offset</code> is the offset in bytes from the start of the device global variable. </p>
+
+</div>
+</div>
+<a id="acd480232c63b6e866c02e40561f9f635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd480232c63b6e866c02e40561f9f635">&#9670;&nbsp;</a></span>memcpy_from_host_to_device_global_async()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::memcpy_from_host_to_device_global_async </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>dg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy <code>nbytes</code> bytes from host to device global variable. <code>offset</code> is the offset in bytes from the start of the device global variable. </p>
 
 </div>
 </div>

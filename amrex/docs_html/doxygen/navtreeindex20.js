@@ -1,5 +1,11 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__RealVect_8H.html#ab2f47c183037880adec6de44fcbb0344":[4,0,0,2,237,3],
+"AMReX__RealVect_8H.html#ae04516f228abbaedeb3e57c4acd79a47":[4,0,0,2,237,8],
+"AMReX__RealVect_8H.html#af8def61d771b914af3de1bf3095d30d8":[4,0,0,2,237,11],
+"AMReX__RealVect_8H_source.html":[4,0,0,2,237],
+"AMReX__RealVect_8cpp.html":[4,0,0,2,236],
+"AMReX__RealVect_8cpp.html#a89d1ab126c05c2eac37ba679a7415a9b":[4,0,0,2,236,1],
 "AMReX__RealVect_8cpp.html#ab7f948f87bc8aa58451aa8b78e9c883a":[4,0,0,2,236,0],
 "AMReX__Reduce_8H.html":[4,0,0,2,238],
 "AMReX__Reduce_8H.html#a055961d372c3be97281e3a40c7f6bf25":[4,0,0,2,238,19],
@@ -243,11 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__TypeList_8H_source.html":[4,0,0,2,252],
 "AMReX__TypeTraits_8H.html":[4,0,0,2,253],
 "AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[4,0,0,2,253,35],
-"AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[4,0,0,2,253,43],
-"AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515":[4,0,0,2,253,47],
-"AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa":[4,0,0,2,253,42],
-"AMReX__TypeTraits_8H.html#a49e77dfdb351e7ec62381480eb764922":[4,0,0,2,253,44],
-"AMReX__TypeTraits_8H.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce":[4,0,0,2,253,48],
-"AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f":[4,0,0,2,253,37],
-"AMReX__TypeTraits_8H.html#a6c0ad9de6dc5e0ca9324f19210bd62b9":[4,0,0,2,253,46]
+"AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[4,0,0,2,253,43]
 };
