@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
 "globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "namespaceamrex.html#a008867a6f88e4144e28dfb6a738f5549":[2,0,0,567],
 "namespaceamrex.html#a00bf121938de056ff99b07c9a5ac892d":[2,0,0,1677],
 "namespaceamrex.html#a00f22a6e30b96fc1eb9c1bb71c1b3c18":[2,0,0,1733],
-"namespaceamrex.html#a01095cb6a015bfd16cca1c163987890e":[2,0,0,1193],
-"namespaceamrex.html#a01a43d1a99e96ce0f348dc5659029a6e":[2,0,0,2270]
+"namespaceamrex.html#a01095cb6a015bfd16cca1c163987890e":[2,0,0,1193]
 };

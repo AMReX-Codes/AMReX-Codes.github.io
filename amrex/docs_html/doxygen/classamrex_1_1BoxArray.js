@@ -68,6 +68,7 @@ var classamrex_1_1BoxArray =
     [ "maxSize", "classamrex_1_1BoxArray.html#aebefb23ed05e76ffc8ec0c3af718652e", null ],
     [ "minimalBox", "classamrex_1_1BoxArray.html#a6c5052b75daf4b8fad5f6bd0c65da9a0", null ],
     [ "minimalBox", "classamrex_1_1BoxArray.html#adc6fda292fafd7aa9e93227271842a56", null ],
+    [ "minmaxSize", "classamrex_1_1BoxArray.html#a6dda265eaf3fda5d6255cbe2cd91e09a", null ],
     [ "numPts", "classamrex_1_1BoxArray.html#a5f25bd92e654851319f55a17ee276723", null ],
     [ "ok", "classamrex_1_1BoxArray.html#adab47a68f8e82d7161ca4951db618a95", null ],
     [ "operator!=", "classamrex_1_1BoxArray.html#a5856751adc0f5194829d3c3920bc2717", null ],
