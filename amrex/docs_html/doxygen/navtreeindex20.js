@@ -1,6 +1,5 @@
 var NAVTREEINDEX20 =
 {
-"AMReX__RealVect_8H.html#ab2f47c183037880adec6de44fcbb0344":[4,0,0,2,237,3],
 "AMReX__RealVect_8H.html#ae04516f228abbaedeb3e57c4acd79a47":[4,0,0,2,237,8],
 "AMReX__RealVect_8H.html#af8def61d771b914af3de1bf3095d30d8":[4,0,0,2,237,11],
 "AMReX__RealVect_8H_source.html":[4,0,0,2,237],
@@ -249,5 +248,6 @@ var NAVTREEINDEX20 =
 "AMReX__TypeList_8H_source.html":[4,0,0,2,252],
 "AMReX__TypeTraits_8H.html":[4,0,0,2,253],
 "AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[4,0,0,2,253,35],
-"AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[4,0,0,2,253,43]
+"AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[4,0,0,2,253,43],
+"AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515":[4,0,0,2,253,47]
 };
