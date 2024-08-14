@@ -65,6 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#inputs-file">Inputs File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#math-expressions">Math Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enum-class">Enum Class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
@@ -500,6 +501,44 @@ has been referenced. This behavior is demonstrated in the following example.</p>
 <p>will become</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">foo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="enum-class">
+<h2>Enum Class<a class="headerlink" href="#enum-class" title="Permalink to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 24.09: </span>Enum class support in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>.</p>
+</div>
+<p>AMReX provides a macro <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_ENUM</span><span class="w"></span></code> for defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"></span></code> that
+supports reflection. For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_ENUM</span><span class="p">(</span><span class="n">MyColor</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">MyColor</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnum</span><span class="o">&lt;</span><span class="n">MyColor</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// MyColor::red</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnumNameString</span><span class="p">(</span><span class="n">MyColor</span><span class="o">::</span><span class="n">blue</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;blue&quot;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnumNameStrings</span><span class="o">&lt;</span><span class="n">MyColor</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// names = {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">class_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">getEnumClassName</span><span class="o">&lt;</span><span class="n">MyColor</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// &quot;MyColor&quot;</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This allows us to read <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters into enum class objects.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">color1</span> <span class="o">=</span> <span class="n">red</span>
+<span class="n">color2</span> <span class="o">=</span> <span class="n">BLue</span>
+</pre></div>
+</div>
+<p>The following code shows how to query the enumerators.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_ENUM</span><span class="p">(</span><span class="n">MyColor</span><span class="p">,</span><span class="w"> </span><span class="n">none</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="n">MyColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">MyColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;color1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">);</span><span class="w"> </span><span class="c1">// c1 becomes MyColor::red</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query_enum_case_insensitive</span><span class="p">(</span><span class="s">&quot;color2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">);</span><span class="w"> </span><span class="c1">// c2 becomes MyColor::blue</span>
+<span class="w">    </span><span class="n">MyColor</span><span class="w"> </span><span class="n">default_color</span><span class="p">;</span><span class="w"> </span><span class="c1">// MyColor::none</span>
+<span class="w">    </span><span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;color3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default_color</span><span class="p">);</span><span class="w"> </span><span class="c1">// Still MyColor::none</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

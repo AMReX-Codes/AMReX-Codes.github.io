@@ -1,5 +1,13 @@
 var NAVTREEINDEX13 =
 {
+"AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f":[4,0,0,6,0,46,5],
+"AMReX__MLMG__3D__K_8H.html#ac6796e6b7599e56ab974042839b25efc":[4,0,0,6,0,46,9],
+"AMReX__MLMG__3D__K_8H_source.html":[4,0,0,6,0,46],
+"AMReX__MLMG__K_8H.html":[4,0,0,6,0,47],
+"AMReX__MLMG__K_8H_source.html":[4,0,0,6,0,47],
+"AMReX__MLNodeABecLap__1D__K_8H.html":[4,0,0,6,0,49],
+"AMReX__MLNodeABecLap__1D__K_8H.html#a837670516410d8578c3f4a463f00b086":[4,0,0,6,0,49,1],
+"AMReX__MLNodeABecLap__1D__K_8H.html#a9a0eaa19c8deff131ec61b7734f45e32":[4,0,0,6,0,49,0],
 "AMReX__MLNodeABecLap__1D__K_8H_source.html":[4,0,0,6,0,49],
 "AMReX__MLNodeABecLap__2D__K_8H.html":[4,0,0,6,0,50],
 "AMReX__MLNodeABecLap__2D__K_8H.html#a837670516410d8578c3f4a463f00b086":[4,0,0,6,0,50,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX13 =
 "AMReX__MLNodeLaplacian__eb_8cpp.html":[4,0,0,6,0,61],
 "AMReX__MLNodeLaplacian__hypre_8cpp.html":[4,0,0,6,0,62],
 "AMReX__MLNodeLaplacian__misc_8cpp.html":[4,0,0,6,0,63],
-"AMReX__MLNodeLaplacian__sten_8cpp.html":[4,0,0,6,0,64],
-"AMReX__MLNodeLaplacian__sync_8cpp.html":[4,0,0,6,0,65],
-"AMReX__MLNodeLinOp_8H.html":[4,0,0,6,0,67],
-"AMReX__MLNodeLinOp_8H_source.html":[4,0,0,6,0,67],
-"AMReX__MLNodeLinOp_8cpp.html":[4,0,0,6,0,66],
-"AMReX__MLNodeTensorLap__1D__K_8H.html":[4,0,0,6,0,68],
-"AMReX__MLNodeTensorLap__1D__K_8H.html#aaf2d6988f0f9e6bcbbf860bdbe33cd87":[4,0,0,6,0,68,1],
-"AMReX__MLNodeTensorLap__1D__K_8H.html#ac7e03fbccf0d29fad0597554a3abf2a2":[4,0,0,6,0,68,0],
-"AMReX__MLNodeTensorLap__1D__K_8H_source.html":[4,0,0,6,0,68]
+"AMReX__MLNodeLaplacian__sten_8cpp.html":[4,0,0,6,0,64]
 };
