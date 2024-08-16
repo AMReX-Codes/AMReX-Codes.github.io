@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"functions_vars_k.html":[3,3,2,11],
+"functions_vars_l.html":[3,3,2,12],
 "functions_vars_m.html":[3,3,2,13],
 "functions_vars_n.html":[3,3,2,14],
 "functions_vars_o.html":[3,3,2,15],
@@ -19,13 +21,13 @@ var NAVTREEINDEX60 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0,0],
 "globals.html":[4,1,0],
+"globals.html":[4,1,0,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6,0],
 "globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -47,8 +49,8 @@ var NAVTREEINDEX60 =
 "globals_enum.html":[4,1,4],
 "globals_eval.html":[4,1,5],
 "globals_f.html":[4,1,0,5],
-"globals_func.html":[4,1,1,0],
 "globals_func.html":[4,1,1],
+"globals_func.html":[4,1,1,0],
 "globals_func_b.html":[4,1,1,1],
 "globals_func_c.html":[4,1,1,2],
 "globals_func_d.html":[4,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[3,0,11,0,0],
 "modules.html":[1],
 "namespaceamrex.html":[2,0,0],
-"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2260],
-"namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8":[2,0,0,622],
-"namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4":[2,0,0,1325]
+"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2261]
 };

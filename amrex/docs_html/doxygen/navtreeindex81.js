@@ -1,5 +1,8 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,158,0],
+"structamrex_1_1LogicalOr.html":[3,0,0,159],
+"structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240":[3,0,0,159,0],
 "structamrex_1_1MFInfo.html":[3,0,0,127],
 "structamrex_1_1MFInfo.html#a09865d39fb552bb0fa800934f1b1fa6d":[3,0,0,127,6],
 "structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2":[3,0,0,127,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a07bee095114ca505ad4c3a70de926628":[3,0,0,11,3,0],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a1042d4cd1351ac30f6584b8fcc454b8b":[3,0,0,11,3,2],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[3,0,0,11,3,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[3,0,0,11,2],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a2b43db01447bc941d865e495da9c568f":[3,0,0,11,2,3],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b":[3,0,0,11,2,6],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a57d71866cb674a85f1cc645bfdc0bd06":[3,0,0,11,2,4]
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[3,0,0,11,2]
 };

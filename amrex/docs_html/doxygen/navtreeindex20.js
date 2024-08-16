@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__RealVect_8H.html#a01d310d8cbb95e1ea1af03ef92c82895":[4,0,0,2,238,10],
+"AMReX__RealVect_8H.html#a133d9cc5152d06db5db552037d7ee486":[4,0,0,2,238,1],
 "AMReX__RealVect_8H.html#a195022a2bf1f86de6f3f454ad1d586b7":[4,0,0,2,238,5],
 "AMReX__RealVect_8H.html#a26f254d668dd872d470d231a1058eaac":[4,0,0,2,238,12],
 "AMReX__RealVect_8H.html#a57e5b11414b29e5aeaf30c5e301e8f34":[4,0,0,2,238,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__Tuple_8H.html#aca8ebce069c1d3ef5f89482a9e96bb6d":[4,0,0,2,254,21],
 "AMReX__Tuple_8H.html#ad8cc1e47b11f22cfe944555f6e833cc8":[4,0,0,2,254,24],
 "AMReX__Tuple_8H.html#af2cf176de6238efb234749dec71b4a0f":[4,0,0,2,254,41],
-"AMReX__Tuple_8H.html#af2dd4ad4f928e269d1bc2dce24f48b92":[4,0,0,2,254,32],
-"AMReX__Tuple_8H.html#af2e078bf57389f3da2ad75a53aca0771":[4,0,0,2,254,27],
-"AMReX__Tuple_8H.html#afdc7b3879a8b9ccc7982c0781deb74ea":[4,0,0,2,254,40]
+"AMReX__Tuple_8H.html#af2dd4ad4f928e269d1bc2dce24f48b92":[4,0,0,2,254,32]
 };

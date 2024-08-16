@@ -1,5 +1,8 @@
 var NAVTREEINDEX74 =
 {
+"namespaceamrex__ebcellflag__module.html#adb0a0516e63c6b90231902627fd51da1":[2,0,5,21],
+"namespaceamrex__ebcellflag__module.html#ae273e014cf970934c7683d5b8ab34c08":[2,0,5,20],
+"namespaceamrex__ebcellflag__module.html#af1a98ee57e3c07abebae3e337d7895e7":[2,0,5,16],
 "namespaceamrex__ebcellflag__module.html#afe2a626f0efaee2b68a1c1b08225638e":[2,0,5,14],
 "namespaceamrex__error__module.html":[2,0,6],
 "namespaceamrex__error__module.html#a1a83328a0c70eaabd8ab9e1f041e581a":[2,0,6,5],
@@ -133,8 +136,8 @@ var NAVTREEINDEX74 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0],
 "namespacemembers.html":[2,1,0,0],
+"namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -143,8 +146,8 @@ var NAVTREEINDEX74 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func.html":[2,1,1,0],
+"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX74 =
 "namespacesdcquadrature__mod.html#aa7cccac0d6dc3b28a4dc2a329214a698":[2,0,21,20],
 "namespacesdcquadrature__mod.html#aac87ed7a643061e124406a48d5ac55c1":[2,0,21,24],
 "namespacesdcquadrature__mod.html#ab0462ece2c230549e39bb8d8b7cd205c":[2,0,21,18],
-"namespacesdcquadrature__mod.html#ac65c67a741f829888ad21000351c137b":[2,0,21,7],
-"namespacesdcquadrature__mod.html#aca3c8a3144793139f180db29ce39153c":[2,0,21,17],
-"namespacesdcquadrature__mod.html#aca9a2cd134b3750fabf403d738255f79":[2,0,21,8],
-"namespacesdcquadrature__mod.html#ae2185088b6449f7811b072576236dabd":[2,0,21,2]
+"namespacesdcquadrature__mod.html#ac65c67a741f829888ad21000351c137b":[2,0,21,7]
 };
