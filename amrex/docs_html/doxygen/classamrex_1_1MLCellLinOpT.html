@@ -190,6 +190,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4482485699afcfc64adb1f8179714636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">update</a> () override</td></tr>
 <tr class="memdesc:a4482485699afcfc64adb1f8179714636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update for reuse.  <a href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">More...</a><br /></td></tr>
 <tr class="separator:a4482485699afcfc64adb1f8179714636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910678e8eb5a82aaa5550910cb4ac3fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a910678e8eb5a82aaa5550910cb4ac3fb">setGaussSeidel</a> (bool flag) noexcept</td></tr>
+<tr class="separator:a910678e8eb5a82aaa5550910cb4ac3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fbf6add2bd954f6fb9a17f89adebf8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a69fbf6add2bd954f6fb9a17f89adebf8">isCrossStencil</a> () const</td></tr>
 <tr class="separator:a69fbf6add2bd954f6fb9a17f89adebf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0589f189ee2d39dadca3a308e3df9b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#aae0589f189ee2d39dadca3a308e3df9b">isTensorOp</a> () const</td></tr>
@@ -429,6 +431,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:af29ed070015666e58d890685cb491900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22cdf5d6b191ab3c883b7167e9f94ebe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1YAFluxRegisterT.html">YAFluxRegisterT</a>&lt; MF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a22cdf5d6b191ab3c883b7167e9f94ebe">m_fluxreg</a></td></tr>
 <tr class="separator:a22cdf5d6b191ab3c883b7167e9f94ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add77293caacd09584aa8b5f0fd7f923a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#add77293caacd09584aa8b5f0fd7f923a">m_use_gauss_seidel</a> = true</td></tr>
+<tr class="separator:add77293caacd09584aa8b5f0fd7f923a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MLLinOpT"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MLLinOpT')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:ad0412f399e1e29e200a2451b371b0133 inherit pro_attribs_classamrex_1_1MLLinOpT"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ad0412f399e1e29e200a2451b371b0133">info</a></td></tr>
 <tr class="separator:ad0412f399e1e29e200a2451b371b0133 inherit pro_attribs_classamrex_1_1MLLinOpT"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2449,6 +2453,34 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="a910678e8eb5a82aaa5550910cb4ac3fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a910678e8eb5a82aaa5550910cb4ac3fb">&#9670;&nbsp;</a></span>setGaussSeidel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::setGaussSeidel </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afaf162a4471fc9b3a7121d9579fea518"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afaf162a4471fc9b3a7121d9579fea518">&#9670;&nbsp;</a></span>setLevelBC()</h2>
 
@@ -3123,6 +3155,30 @@ template&lt;typename MF &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add77293caacd09584aa8b5f0fd7f923a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add77293caacd09584aa8b5f0fd7f923a">&#9670;&nbsp;</a></span>m_use_gauss_seidel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::m_use_gauss_seidel = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -2,7 +2,9 @@ var AMReX__MLABecLap__3D__K_8H =
 [
     [ "abec_gsrb", "AMReX__MLABecLap__3D__K_8H.html#abe6757d03f25c7b211b9302f19fe4509", null ],
     [ "abec_gsrb_os", "AMReX__MLABecLap__3D__K_8H.html#a12de598979f095f4505cd0d3b762d2ee", null ],
-    [ "abec_gsrb_with_line_solve", "AMReX__MLABecLap__3D__K_8H.html#aba0888eaff393ce0a7ed9270c20e7c55", null ],
+    [ "abec_gsrb_with_line_solve", "AMReX__MLABecLap__3D__K_8H.html#ad973a1096effadd80305ff9654d11d80", null ],
+    [ "abec_jacobi", "AMReX__MLABecLap__3D__K_8H.html#ad7c32e63bc4e19259e777911174348a6", null ],
+    [ "abec_jacobi_os", "AMReX__MLABecLap__3D__K_8H.html#a96d871d7335ff9e044d6623476c77023", null ],
     [ "mlabeclap_adotx", "AMReX__MLABecLap__3D__K_8H.html#a3ad3209fe0274b23d9085603eed318f3", null ],
     [ "mlabeclap_adotx_os", "AMReX__MLABecLap__3D__K_8H.html#a6b7d999a8e5ec81f38432f0b1ca8880a", null ],
     [ "mlabeclap_flux_x", "AMReX__MLABecLap__3D__K_8H.html#a4a0821339541d218cee0577a42279d6d", null ],
@@ -15,5 +17,5 @@ var AMReX__MLABecLap__3D__K_8H =
     [ "overset_rescale_bcoef_x", "AMReX__MLABecLap__3D__K_8H.html#a040b31bdb9951876d8277049591cfe51", null ],
     [ "overset_rescale_bcoef_y", "AMReX__MLABecLap__3D__K_8H.html#a756bd05a03228632b5dfc9323d9440fa", null ],
     [ "overset_rescale_bcoef_z", "AMReX__MLABecLap__3D__K_8H.html#ae6346740764334df2fdcaca7e48a9313", null ],
-    [ "tridiagonal_solve", "AMReX__MLABecLap__3D__K_8H.html#a11ff46aab2851af1b7d8dc12bb1a7b9f", null ]
+    [ "tridiagonal_solve", "AMReX__MLABecLap__3D__K_8H.html#af22ee7ef618f1af46c92ad6e759715b0", null ]
 ];

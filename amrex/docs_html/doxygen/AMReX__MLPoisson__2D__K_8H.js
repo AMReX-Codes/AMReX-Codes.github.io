@@ -14,5 +14,8 @@ var AMReX__MLPoisson__2D__K_8H =
     [ "mlpoisson_gsrb", "AMReX__MLPoisson__2D__K_8H.html#a7916b6c7ad2dbac059e35c081772b450", null ],
     [ "mlpoisson_gsrb_m", "AMReX__MLPoisson__2D__K_8H.html#aabea771325d11e0a08b63f235b7be80a", null ],
     [ "mlpoisson_gsrb_os", "AMReX__MLPoisson__2D__K_8H.html#a987c939b4effecdac441a9211d1979e9", null ],
+    [ "mlpoisson_jacobi", "AMReX__MLPoisson__2D__K_8H.html#a00aaf32e50aff60cd2e80f66b4a19d14", null ],
+    [ "mlpoisson_jacobi_m", "AMReX__MLPoisson__2D__K_8H.html#aca03eebd2b1b1daa918cd31e3eb335d0", null ],
+    [ "mlpoisson_jacobi_os", "AMReX__MLPoisson__2D__K_8H.html#a0dd4ee0043f9d4bb6dcc135c32f9732b", null ],
     [ "mlpoisson_normalize", "AMReX__MLPoisson__2D__K_8H.html#a42e901e88111cafb3b84f39d0032e0a0", null ]
 ];

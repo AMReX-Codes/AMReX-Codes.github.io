@@ -2,7 +2,9 @@ var AMReX__MLABecLap__2D__K_8H =
 [
     [ "abec_gsrb", "AMReX__MLABecLap__2D__K_8H.html#ae675a0a53c78b668bb47177e044badc5", null ],
     [ "abec_gsrb_os", "AMReX__MLABecLap__2D__K_8H.html#a49f9066a9cfe5af5ae7b757267fb685c", null ],
-    [ "abec_gsrb_with_line_solve", "AMReX__MLABecLap__2D__K_8H.html#ab087527f179fe3f044522d9a0f0d4bba", null ],
+    [ "abec_gsrb_with_line_solve", "AMReX__MLABecLap__2D__K_8H.html#aef4c3c38c161202b38fa33aaae28cff2", null ],
+    [ "abec_jacobi", "AMReX__MLABecLap__2D__K_8H.html#a7773f864e34c49038dd8fadcbd41cd36", null ],
+    [ "abec_jacobi_os", "AMReX__MLABecLap__2D__K_8H.html#a69d802515c95f3e9ae4c4e54f39ceb71", null ],
     [ "mlabeclap_adotx", "AMReX__MLABecLap__2D__K_8H.html#a59a261f7b528ad613dd7de3d14f7aca6", null ],
     [ "mlabeclap_adotx_os", "AMReX__MLABecLap__2D__K_8H.html#ab51910c6124009c280b7d033be029d9a", null ],
     [ "mlabeclap_flux_x", "AMReX__MLABecLap__2D__K_8H.html#a4a0821339541d218cee0577a42279d6d", null ],

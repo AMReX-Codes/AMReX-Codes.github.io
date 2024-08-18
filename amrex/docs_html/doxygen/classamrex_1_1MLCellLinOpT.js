@@ -47,6 +47,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "prepareForSolve", "classamrex_1_1MLCellLinOpT.html#a8201ce95349a35448ba37366eabc518b", null ],
     [ "reflux", "classamrex_1_1MLCellLinOpT.html#a35158f8a8bd840468c4dedb08d6726ff", null ],
     [ "restriction", "classamrex_1_1MLCellLinOpT.html#ab4713a678d7c2ac9e1a9c5b027f965c5", null ],
+    [ "setGaussSeidel", "classamrex_1_1MLCellLinOpT.html#a910678e8eb5a82aaa5550910cb4ac3fb", null ],
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518", null ],
     [ "smooth", "classamrex_1_1MLCellLinOpT.html#a04486888c630dc3e4a5258a0e174345c", null ],
     [ "solutionResidual", "classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316", null ],
@@ -67,5 +68,6 @@ var classamrex_1_1MLCellLinOpT =
     [ "m_norm_fine_mask", "classamrex_1_1MLCellLinOpT.html#af29ed070015666e58d890685cb491900", null ],
     [ "m_robin_bcval", "classamrex_1_1MLCellLinOpT.html#a95a0dd3f6700b3da5b020a66ef726dff", null ],
     [ "m_undrrelxr", "classamrex_1_1MLCellLinOpT.html#ab50c53ea7ff9c53bf37ac816e0663406", null ],
+    [ "m_use_gauss_seidel", "classamrex_1_1MLCellLinOpT.html#add77293caacd09584aa8b5f0fd7f923a", null ],
     [ "m_volinv", "classamrex_1_1MLCellLinOpT.html#ad73d9eed28e8d9d32cf54327e21c5225", null ]
 ];

@@ -7273,6 +7273,7 @@
     <member refid="classamrex_1_1MLCellLinOpT_1a9c470f145301b98fe0938ac6241284eb" kind="variable"><name>m_maskvals</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1af29ed070015666e58d890685cb491900" kind="variable"><name>m_norm_fine_mask</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a22cdf5d6b191ab3c883b7167e9f94ebe" kind="variable"><name>m_fluxreg</name></member>
+    <member refid="classamrex_1_1MLCellLinOpT_1add77293caacd09584aa8b5f0fd7f923a" kind="variable"><name>m_use_gauss_seidel</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ad73d9eed28e8d9d32cf54327e21c5225" kind="variable"><name>m_volinv</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ab5b6c73fee0004ac732f74350cc72bab" kind="variable"><name>m_interpbndry_halfwidth</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ab6bc4d82971ae75fc206df8d00d15ef6" kind="function"><name>MLCellLinOpT</name></member>
@@ -7285,6 +7286,7 @@
     <member refid="classamrex_1_1MLCellLinOpT_1afaf162a4471fc9b3a7121d9579fea518" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1afb2f8218dcad4df69508e7ea795c2aaf" kind="function"><name>needsUpdate</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a4482485699afcfc64adb1f8179714636" kind="function"><name>update</name></member>
+    <member refid="classamrex_1_1MLCellLinOpT_1a910678e8eb5a82aaa5550910cb4ac3fb" kind="function"><name>setGaussSeidel</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a69fbf6add2bd954f6fb9a17f89adebf8" kind="function"><name>isCrossStencil</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1aae0589f189ee2d39dadca3a308e3df9b" kind="function"><name>isTensorOp</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a28d4c00dc8448c2c8f10dc519a42ae0f" kind="function"><name>updateSolBC</name></member>
@@ -13552,7 +13554,9 @@
     <member refid="namespaceamrex_1ae570ee85491660ea9f36bcc0791e999f" kind="function"><name>mlabeclap_flux_xface</name></member>
     <member refid="namespaceamrex_1a8ec73e9321cbfd5d28374107ef24d4a5" kind="function"><name>abec_gsrb</name></member>
     <member refid="namespaceamrex_1a69bee84824fdeec94ff8ae48596594f6" kind="function"><name>abec_gsrb_os</name></member>
-    <member refid="namespaceamrex_1a87228025264a2ecce51b2645576a432b" kind="function"><name>abec_gsrb_with_line_solve</name></member>
+    <member refid="namespaceamrex_1a85465b1083b6521e51b67fb06c4622cd" kind="function"><name>abec_jacobi</name></member>
+    <member refid="namespaceamrex_1adff3bf1b976b26dc72dff5a4f175f61d" kind="function"><name>abec_jacobi_os</name></member>
+    <member refid="namespaceamrex_1a92c05a647ef5ca2febfea878ac7237c0" kind="function"><name>abec_gsrb_with_line_solve</name></member>
     <member refid="namespaceamrex_1a040b31bdb9951876d8277049591cfe51" kind="function"><name>overset_rescale_bcoef_x</name></member>
     <member refid="namespaceamrex_1a59a261f7b528ad613dd7de3d14f7aca6" kind="function"><name>mlabeclap_adotx</name></member>
     <member refid="namespaceamrex_1ab51910c6124009c280b7d033be029d9a" kind="function"><name>mlabeclap_adotx_os</name></member>
@@ -13561,7 +13565,9 @@
     <member refid="namespaceamrex_1ac6918b5f6341c2be9032719f0f065ed4" kind="function"><name>mlabeclap_flux_yface</name></member>
     <member refid="namespaceamrex_1ae675a0a53c78b668bb47177e044badc5" kind="function"><name>abec_gsrb</name></member>
     <member refid="namespaceamrex_1a49f9066a9cfe5af5ae7b757267fb685c" kind="function"><name>abec_gsrb_os</name></member>
-    <member refid="namespaceamrex_1ab087527f179fe3f044522d9a0f0d4bba" kind="function"><name>abec_gsrb_with_line_solve</name></member>
+    <member refid="namespaceamrex_1a7773f864e34c49038dd8fadcbd41cd36" kind="function"><name>abec_jacobi</name></member>
+    <member refid="namespaceamrex_1a69d802515c95f3e9ae4c4e54f39ceb71" kind="function"><name>abec_jacobi_os</name></member>
+    <member refid="namespaceamrex_1aef4c3c38c161202b38fa33aaae28cff2" kind="function"><name>abec_gsrb_with_line_solve</name></member>
     <member refid="namespaceamrex_1a756bd05a03228632b5dfc9323d9440fa" kind="function"><name>overset_rescale_bcoef_y</name></member>
     <member refid="namespaceamrex_1a3ad3209fe0274b23d9085603eed318f3" kind="function"><name>mlabeclap_adotx</name></member>
     <member refid="namespaceamrex_1a6b7d999a8e5ec81f38432f0b1ca8880a" kind="function"><name>mlabeclap_adotx_os</name></member>
@@ -13570,8 +13576,10 @@
     <member refid="namespaceamrex_1ada7495e288a74399fbf81b08f1499629" kind="function"><name>mlabeclap_flux_zface</name></member>
     <member refid="namespaceamrex_1abe6757d03f25c7b211b9302f19fe4509" kind="function"><name>abec_gsrb</name></member>
     <member refid="namespaceamrex_1a12de598979f095f4505cd0d3b762d2ee" kind="function"><name>abec_gsrb_os</name></member>
-    <member refid="namespaceamrex_1a11ff46aab2851af1b7d8dc12bb1a7b9f" kind="function"><name>tridiagonal_solve</name></member>
-    <member refid="namespaceamrex_1aba0888eaff393ce0a7ed9270c20e7c55" kind="function"><name>abec_gsrb_with_line_solve</name></member>
+    <member refid="namespaceamrex_1ad7c32e63bc4e19259e777911174348a6" kind="function"><name>abec_jacobi</name></member>
+    <member refid="namespaceamrex_1a96d871d7335ff9e044d6623476c77023" kind="function"><name>abec_jacobi_os</name></member>
+    <member refid="namespaceamrex_1af22ee7ef618f1af46c92ad6e759715b0" kind="function"><name>tridiagonal_solve</name></member>
+    <member refid="namespaceamrex_1ad973a1096effadd80305ff9654d11d80" kind="function"><name>abec_gsrb_with_line_solve</name></member>
     <member refid="namespaceamrex_1ae6346740764334df2fdcaca7e48a9313" kind="function"><name>overset_rescale_bcoef_z</name></member>
     <member refid="namespaceamrex_1a5e15c48d007c4719b69721908ec1d0c7" kind="function"><name>mlalap_adotx</name></member>
     <member refid="namespaceamrex_1a41eccb4f00e6cb720abc8eddc7b3544d" kind="function"><name>mlalap_adotx_m</name></member>
@@ -13867,6 +13875,9 @@
     <member refid="namespaceamrex_1a670237d9b46bcf40be36d5bff4a63a42" kind="function"><name>mlpoisson_gsrb</name></member>
     <member refid="namespaceamrex_1abb5a0b21c1cc3caa854e66476df82c36" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1a27345dc98593d14eb2b32570007ef86f" kind="function"><name>mlpoisson_gsrb_m</name></member>
+    <member refid="namespaceamrex_1a1c7c171e4a5f64d198924e64809d3200" kind="function"><name>mlpoisson_jacobi</name></member>
+    <member refid="namespaceamrex_1a5a728a88fbd4eec48f370c6617be34b9" kind="function"><name>mlpoisson_jacobi_os</name></member>
+    <member refid="namespaceamrex_1affc72a76f87a51121fb4f876828b1299" kind="function"><name>mlpoisson_jacobi_m</name></member>
     <member refid="namespaceamrex_1a9eaf0679e7d5af988ed7ff805e89f2d2" kind="function"><name>mlpoisson_normalize</name></member>
     <member refid="namespaceamrex_1a2ee7d90d5262f08f2c0356f20dd11212" kind="function"><name>mlpoisson_adotx</name></member>
     <member refid="namespaceamrex_1a76127d2a544317b8685dc766003d82f2" kind="function"><name>mlpoisson_adotx_os</name></member>
@@ -13876,6 +13887,8 @@
     <member refid="namespaceamrex_1acfd998d0d3429948b0a7e68291d6a264" kind="function"><name>mlpoisson_flux_zface</name></member>
     <member refid="namespaceamrex_1af35078e515133d4f3b9734d13ad54d22" kind="function"><name>mlpoisson_gsrb</name></member>
     <member refid="namespaceamrex_1a45a91e8cc49f5cd2430328b7ee08ef57" kind="function"><name>mlpoisson_gsrb_os</name></member>
+    <member refid="namespaceamrex_1adf8cb942b6afb8baf8ed5fd0bbe010fa" kind="function"><name>mlpoisson_jacobi</name></member>
+    <member refid="namespaceamrex_1a0169ed7f3d8bf7427ec0fd3d733006bb" kind="function"><name>mlpoisson_jacobi_os</name></member>
     <member refid="namespaceamrex_1abf7a8ee97af68566dd8f4172055054a9" kind="function"><name>mltensor_fill_corners</name></member>
     <member refid="namespaceamrex_1a7030037af193bb2bf648e008000c57dd" kind="function"><name>mltensor_cross_terms_fx</name></member>
     <member refid="namespaceamrex_1aff33f49d1494120e79df850eaa87201e" kind="function"><name>mltensor_cross_terms_fy</name></member>
@@ -15300,6 +15313,9 @@
     <member refid="namespaceamrex_1_1TwoD_1a7916b6c7ad2dbac059e35c081772b450" kind="function"><name>mlpoisson_gsrb</name></member>
     <member refid="namespaceamrex_1_1TwoD_1a987c939b4effecdac441a9211d1979e9" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1_1TwoD_1aabea771325d11e0a08b63f235b7be80a" kind="function"><name>mlpoisson_gsrb_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a00aaf32e50aff60cd2e80f66b4a19d14" kind="function"><name>mlpoisson_jacobi</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a0dd4ee0043f9d4bb6dcc135c32f9732b" kind="function"><name>mlpoisson_jacobi_os</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1aca03eebd2b1b1daa918cd31e3eb335d0" kind="function"><name>mlpoisson_jacobi_m</name></member>
     <member refid="namespaceamrex_1_1TwoD_1a42e901e88111cafb3b84f39d0032e0a0" kind="function"><name>mlpoisson_normalize</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1VectorGrowthStrategy" kind="namespace"><name>amrex::VectorGrowthStrategy</name>
