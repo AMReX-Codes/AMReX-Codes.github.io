@@ -1,5 +1,12 @@
 var NAVTREEINDEX74 =
 {
+"namespaceamrex__ebcellflag__module.html#a8b548f4c7a7bf3d667af5b6059fb6255":[2,0,5,13],
+"namespaceamrex__ebcellflag__module.html#a94fd726efde06cd88152ae586400d5ec":[2,0,5,9],
+"namespaceamrex__ebcellflag__module.html#aa1f07716bba711910bffed1b9d861155":[2,0,5,7],
+"namespaceamrex__ebcellflag__module.html#aa93549be8be197b8f44bf7918636c9f0":[2,0,5,15],
+"namespaceamrex__ebcellflag__module.html#ac1b245f048fe2b31717a124049739d02":[2,0,5,8],
+"namespaceamrex__ebcellflag__module.html#aca7539805fceab9d25e2b15de2c1529e":[2,0,5,19],
+"namespaceamrex__ebcellflag__module.html#ad0031001816fff176a885f73100062a8":[2,0,5,18],
 "namespaceamrex__ebcellflag__module.html#adb0a0516e63c6b90231902627fd51da1":[2,0,5,21],
 "namespaceamrex__ebcellflag__module.html#ae273e014cf970934c7683d5b8ab34c08":[2,0,5,20],
 "namespaceamrex__ebcellflag__module.html#af1a98ee57e3c07abebae3e337d7895e7":[2,0,5,16],
@@ -136,8 +143,8 @@ var NAVTREEINDEX74 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0,0],
 "namespacemembers.html":[2,1,0],
+"namespacemembers.html":[2,1,0,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX74 =
 "namespacesdcquadrature__mod.html#a62cfff98d5899c5934e7b29264eaaeef":[2,0,21,19],
 "namespacesdcquadrature__mod.html#a7b8799c586d6a5def7cb8f3c517b5e7b":[2,0,21,21],
 "namespacesdcquadrature__mod.html#a857950373cee003a6d5ead3236e70584":[2,0,21,13],
-"namespacesdcquadrature__mod.html#a874a5cd63196132c18272439ac22d430":[2,0,21,6],
-"namespacesdcquadrature__mod.html#a8926569834e03ad73326955f04c8f3eb":[2,0,21,23],
-"namespacesdcquadrature__mod.html#a8e53936d3fd7c9e7c1870a499156cd87":[2,0,21,14],
-"namespacesdcquadrature__mod.html#a95aa940d0fc9d580c3facf460de23d21":[2,0,21,22],
-"namespacesdcquadrature__mod.html#aa7cccac0d6dc3b28a4dc2a329214a698":[2,0,21,20],
-"namespacesdcquadrature__mod.html#aac87ed7a643061e124406a48d5ac55c1":[2,0,21,24],
-"namespacesdcquadrature__mod.html#ab0462ece2c230549e39bb8d8b7cd205c":[2,0,21,18],
-"namespacesdcquadrature__mod.html#ac65c67a741f829888ad21000351c137b":[2,0,21,7]
+"namespacesdcquadrature__mod.html#a874a5cd63196132c18272439ac22d430":[2,0,21,6]
 };

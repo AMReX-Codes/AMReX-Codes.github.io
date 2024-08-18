@@ -258,6 +258,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c4d498e615acd98b90da20eaee2a529"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a4c4d498e615acd98b90da20eaee2a529">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;resid, MF &amp;x, const MF &amp;b, const MF *crse_bcdata=nullptr)=0</td></tr>
 <tr class="memdesc:a4c4d498e615acd98b90da20eaee2a529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for solution.  <a href="classamrex_1_1MLLinOpT.html#a4c4d498e615acd98b90da20eaee2a529">More...</a><br /></td></tr>
 <tr class="separator:a4c4d498e615acd98b90da20eaee2a529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae101fd3f33bbd0f0085d668b196cb527"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ae101fd3f33bbd0f0085d668b196cb527">prepareForFluxes</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const MF *=nullptr)</td></tr>
+<tr class="separator:ae101fd3f33bbd0f0085d668b196cb527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f18465de0228f8ec4609e9e45367e5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a6f18465de0228f8ec4609e9e45367e5d">correctionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;resid, MF &amp;x, const MF &amp;b, <a class="el" href="structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627">BCMode</a> bc_mode, const MF *crse_bcdata=nullptr)=0</td></tr>
 <tr class="memdesc:a6f18465de0228f8ec4609e9e45367e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for the residual-correction form, resid = b - L(x)  <a href="classamrex_1_1MLLinOpT.html#a6f18465de0228f8ec4609e9e45367e5d">More...</a><br /></td></tr>
 <tr class="separator:a6f18465de0228f8ec4609e9e45367e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3606,6 +3608,46 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae101fd3f33bbd0f0085d668b196cb527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae101fd3f33bbd0f0085d668b196cb527">&#9670;&nbsp;</a></span>prepareForFluxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::prepareForFluxes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MF *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>

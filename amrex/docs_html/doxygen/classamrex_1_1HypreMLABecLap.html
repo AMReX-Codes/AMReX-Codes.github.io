@@ -126,6 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5e66262b6c3958c576c2f3cd6c3a08e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eca9fbfceb38d605125d13abdf96b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a2eca9fbfceb38d605125d13abdf96b44">setMaxIter</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
 <tr class="separator:a2eca9fbfceb38d605125d13abdf96b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9742734763060b16ce1f99bc43de3bef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a9742734763060b16ce1f99bc43de3bef">setIsSingular</a> (bool v)</td></tr>
+<tr class="separator:a9742734763060b16ce1f99bc43de3bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb5bbeb49ef28654739d90718147285c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#abb5bbeb49ef28654739d90718147285c">setup</a> (Real a_ascalar, Real a_bscalar, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; const &amp;a_acoefs, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, AMREX_SPACEDIM &gt;&gt; const &amp;a_bcoefs, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;a_lobc, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;a_hibc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; const &amp;a_levelbcdata, std::pair&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *, <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> &gt; const &amp;a_coarse_bc={nullptr, <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0)})</td></tr>
 <tr class="separator:abb5bbeb49ef28654739d90718147285c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25842c55bb17593f8f71cacd5d79b5a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a25842c55bb17593f8f71cacd5d79b5a9">solve</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; const &amp;a_sol, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; const &amp;a_rhs, Real a_reltol, Real a_abstol)</td></tr>
@@ -152,6 +154,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a98523c0ee725e9b867ac7d056430a98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe4c13918588f999571c9b8ff61458eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#afe4c13918588f999571c9b8ff61458eb">m_maxiter</a> = 200</td></tr>
 <tr class="separator:afe4c13918588f999571c9b8ff61458eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713db21288dfddc11241dba5a6c317fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a713db21288dfddc11241dba5a6c317fa">m_is_singular</a> = false</td></tr>
+<tr class="separator:a713db21288dfddc11241dba5a6c317fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6642b5952fc1a28a72c7fbed7a5a540"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#aa6642b5952fc1a28a72c7fbed7a5a540">m_geom</a></td></tr>
 <tr class="separator:aa6642b5952fc1a28a72c7fbed7a5a540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad777b3fad5c1f17ebcd1419f66f3c672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#ad777b3fad5c1f17ebcd1419f66f3c672">m_grids</a></td></tr>
@@ -180,6 +184,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1f047d4669c1be7925f1e95315129858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22af9473b24ca2b90cc6f930f7ab7df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#af22af9473b24ca2b90cc6f930f7ab7df">m_fine_masks</a></td></tr>
 <tr class="separator:af22af9473b24ca2b90cc6f930f7ab7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec5d013b8c958a21fa9db1db5b613a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a6ec5d013b8c958a21fa9db1db5b613a9">m_crse_masks</a></td></tr>
+<tr class="separator:a6ec5d013b8c958a21fa9db1db5b613a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4617f3ef7bf223a44b7f2730609138af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a4617f3ef7bf223a44b7f2730609138af">m_c2f_offset_from</a></td></tr>
 <tr class="separator:a4617f3ef7bf223a44b7f2730609138af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ecee59c4f754dd88bd3d9d524b9a7cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreMLABecLap.html#a7ecee59c4f754dd88bd3d9d524b9a7cd">m_c2f_total_from</a></td></tr>
@@ -502,6 +508,32 @@ template&lt;class T &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9742734763060b16ce1f99bc43de3bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9742734763060b16ce1f99bc43de3bef">&#9670;&nbsp;</a></span>setIsSingular()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::HypreMLABecLap::setIsSingular </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -907,6 +939,28 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a6ec5d013b8c958a21fa9db1db5b613a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec5d013b8c958a21fa9db1db5b613a9">&#9670;&nbsp;</a></span>m_crse_masks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a>&gt; amrex::HypreMLABecLap::m_crse_masks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a521405f480fb9aade08961ffa6198870"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a521405f480fb9aade08961ffa6198870">&#9670;&nbsp;</a></span>m_dmap</h2>
 
@@ -1164,6 +1218,28 @@ template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eb">HypreSolverID</a> amrex::HypreMLABecLap::m_hypre_solver_id = <a class="el" href="namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eba811f4c4b8bd73ca4249517d43fc1bfac">HypreSolverID::BoomerAMG</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a713db21288dfddc11241dba5a6c317fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a713db21288dfddc11241dba5a6c317fa">&#9670;&nbsp;</a></span>m_is_singular</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::HypreMLABecLap::m_is_singular = false</td>
         </tr>
       </table>
   </td>

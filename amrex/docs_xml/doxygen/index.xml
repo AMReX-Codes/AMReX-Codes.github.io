@@ -5697,6 +5697,7 @@
     <member refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" kind="typedef"><name>HostVector</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a98523c0ee725e9b867ac7d056430a98e" kind="variable"><name>m_verbose</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1afe4c13918588f999571c9b8ff61458eb" kind="variable"><name>m_maxiter</name></member>
+    <member refid="classamrex_1_1HypreMLABecLap_1a713db21288dfddc11241dba5a6c317fa" kind="variable"><name>m_is_singular</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1aa6642b5952fc1a28a72c7fbed7a5a540" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1ad777b3fad5c1f17ebcd1419f66f3c672" kind="variable"><name>m_grids</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a521405f480fb9aade08961ffa6198870" kind="variable"><name>m_dmap</name></member>
@@ -5711,6 +5712,7 @@
     <member refid="classamrex_1_1HypreMLABecLap_1a6aa5787a3fc3a0c58eb3453158f99123" kind="variable"><name>m_bndry</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a1f047d4669c1be7925f1e95315129858" kind="variable"><name>m_bndry_rhs</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1af22af9473b24ca2b90cc6f930f7ab7df" kind="variable"><name>m_fine_masks</name></member>
+    <member refid="classamrex_1_1HypreMLABecLap_1a6ec5d013b8c958a21fa9db1db5b613a9" kind="variable"><name>m_crse_masks</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a4617f3ef7bf223a44b7f2730609138af" kind="variable"><name>m_c2f_offset_from</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a7ecee59c4f754dd88bd3d9d524b9a7cd" kind="variable"><name>m_c2f_total_from</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1ae35db1670d830f2b1f8bd8b60152d291" kind="variable"><name>m_c2f_nentries</name></member>
@@ -5742,6 +5744,7 @@
     <member refid="classamrex_1_1HypreMLABecLap_1a66105677b66e5acc22e81f49c1fbf640" kind="function"><name>~HypreMLABecLap</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a5e66262b6c3958c576c2f3cd6c3a08e3" kind="function"><name>setVerbose</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a2eca9fbfceb38d605125d13abdf96b44" kind="function"><name>setMaxIter</name></member>
+    <member refid="classamrex_1_1HypreMLABecLap_1a9742734763060b16ce1f99bc43de3bef" kind="function"><name>setIsSingular</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1abb5bbeb49ef28654739d90718147285c" kind="function"><name>setup</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1a25842c55bb17593f8f71cacd5d79b5a9" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1HypreMLABecLap_1aa13ba9175919d4b934c7da2830c70921" kind="function"><name>commBCoefs</name></member>
@@ -7271,6 +7274,7 @@
     <member refid="classamrex_1_1MLCellLinOpT_1af29ed070015666e58d890685cb491900" kind="variable"><name>m_norm_fine_mask</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a22cdf5d6b191ab3c883b7167e9f94ebe" kind="variable"><name>m_fluxreg</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ad73d9eed28e8d9d32cf54327e21c5225" kind="variable"><name>m_volinv</name></member>
+    <member refid="classamrex_1_1MLCellLinOpT_1ab5b6c73fee0004ac732f74350cc72bab" kind="variable"><name>m_interpbndry_halfwidth</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ab6bc4d82971ae75fc206df8d00d15ef6" kind="function"><name>MLCellLinOpT</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1aaa89b0307d84d1687ece7880403c5689" kind="function"><name>~MLCellLinOpT</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a54558ff60dc7b62ac803e8dd8a5c1816" kind="function"><name>MLCellLinOpT</name></member>
@@ -7295,6 +7299,7 @@
     <member refid="classamrex_1_1MLCellLinOpT_1a8755fe1a7a09db77e7d810dd9dfdb107" kind="function"><name>apply</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a04486888c630dc3e4a5258a0e174345c" kind="function"><name>smooth</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ad6684ea6b055170aad353ee9a4dcc316" kind="function"><name>solutionResidual</name></member>
+    <member refid="classamrex_1_1MLCellLinOpT_1acfbbd0bc16c6143b970276cb3db30a03" kind="function"><name>prepareForFluxes</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a51480d2022ad9346d6eb11f3cbfd631a" kind="function"><name>correctionResidual</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1a35158f8a8bd840468c4dedb08d6726ff" kind="function"><name>reflux</name></member>
     <member refid="classamrex_1_1MLCellLinOpT_1ae7f32e1b953ea4ef5643501e91560d32" kind="function"><name>compFlux</name></member>
@@ -7635,6 +7640,7 @@
     <member refid="classamrex_1_1MLLinOpT_1a03189718c2f8cd40c34158bb4ddf6120" kind="function"><name>smooth</name></member>
     <member refid="classamrex_1_1MLLinOpT_1aaa66bfea39287ead35be91ec940d0bb1" kind="function"><name>normalize</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a4c4d498e615acd98b90da20eaee2a529" kind="function"><name>solutionResidual</name></member>
+    <member refid="classamrex_1_1MLLinOpT_1ae101fd3f33bbd0f0085d668b196cb527" kind="function"><name>prepareForFluxes</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a6f18465de0228f8ec4609e9e45367e5d" kind="function"><name>correctionResidual</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a8b1c71665134af1b1ceccc4d17df2615" kind="function"><name>reflux</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a6f26e44f0e91bdfd3f6e9830c71a2ec6" kind="function"><name>compFlux</name></member>
@@ -7850,6 +7856,7 @@
     <member refid="classamrex_1_1MLMGT_1ad2c6df179eb4acd5061de72341881c63" kind="function"><name>numAMRLevels</name></member>
     <member refid="classamrex_1_1MLMGT_1a309402aeb490c7011bbdc724dfb20e98" kind="function"><name>setNSolve</name></member>
     <member refid="classamrex_1_1MLMGT_1a52db13d6134d518279dce357d082ed35" kind="function"><name>setNSolveGridSize</name></member>
+    <member refid="classamrex_1_1MLMGT_1a000e69affa33aed71511df8fa232aae2" kind="function"><name>prepareForFluxes</name></member>
     <member refid="classamrex_1_1MLMGT_1a99e382a66a897864e0c3b4dffe9e1cd9" kind="function"><name>prepareForSolve</name></member>
     <member refid="classamrex_1_1MLMGT_1a69cb002038ef5460b92042d6921396b1" kind="function"><name>prepareForNSolve</name></member>
     <member refid="classamrex_1_1MLMGT_1a929a91b1f9969e79f186bb7a1a073f69" kind="function"><name>prepareLinOp</name></member>
@@ -13508,9 +13515,9 @@
     <member refid="namespaceamrex_1abebd70eafbd522c54911f746d423884f" kind="function"><name>habec_cols</name></member>
     <member refid="namespaceamrex_1af5a050719637ed453c73af4d4ca48c8d" kind="function"><name>makeHypre</name></member>
     <member refid="namespaceamrex_1abb8b44e8d365f59bb8a07c0656996621" kind="function"><name>hypmlabeclap_f2c_set_values</name></member>
-    <member refid="namespaceamrex_1a73f46b40f3067508b56f20bdf56901ff" kind="function"><name>hypmlabeclap_c2f</name></member>
-    <member refid="namespaceamrex_1a6d551c1420bc538dd69a51fcb2588e37" kind="function"><name>hypmlabeclap_c2f</name></member>
-    <member refid="namespaceamrex_1ade1a82c5ad126664aa13ec77fc5262e3" kind="function"><name>hypmlabeclap_mat</name></member>
+    <member refid="namespaceamrex_1a33931a93ecf75b2103812f964e628eb6" kind="function"><name>hypmlabeclap_c2f</name></member>
+    <member refid="namespaceamrex_1a640f26f4a269e0222e478b21fd6751c1" kind="function"><name>hypmlabeclap_c2f</name></member>
+    <member refid="namespaceamrex_1afac8e91b56ecece55a98b2332debbffb" kind="function"><name>hypmlabeclap_mat</name></member>
     <member refid="namespaceamrex_1a521683c9d457c13174b9ee3cab8922ae" kind="function"><name>hypmlabeclap_rhs</name></member>
     <member refid="namespaceamrex_1abbd0e7692c28626659b75637c2c63528" kind="function"><name>makePetsc</name></member>
     <member refid="namespaceamrex_1a41265e28034440c2aaa8fb38d3cd38c5" kind="function"><name>SanitizeName</name></member>

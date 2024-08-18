@@ -226,6 +226,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6684ea6b055170aad353ee9a4dcc316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, MF &amp;resid, MF &amp;x, const MF &amp;b, const MF *crse_bcdata=nullptr) override</td></tr>
 <tr class="memdesc:ad6684ea6b055170aad353ee9a4dcc316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for solution.  <a href="classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316">More...</a><br /></td></tr>
 <tr class="separator:ad6684ea6b055170aad353ee9a4dcc316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfbbd0bc16c6143b970276cb3db30a03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#acfbbd0bc16c6143b970276cb3db30a03">prepareForFluxes</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const MF *crse_bcdata=nullptr) override</td></tr>
+<tr class="separator:acfbbd0bc16c6143b970276cb3db30a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51480d2022ad9346d6eb11f3cbfd631a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">correctionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;resid, MF &amp;x, const MF &amp;b, <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96">BCMode</a> bc_mode, const MF *crse_bcdata=nullptr) final</td></tr>
 <tr class="memdesc:a51480d2022ad9346d6eb11f3cbfd631a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute residual for the residual-correction form, resid = b - L(x)  <a href="classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a">More...</a><br /></td></tr>
 <tr class="separator:a51480d2022ad9346d6eb11f3cbfd631a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -501,6 +503,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad73d9eed28e8d9d32cf54327e21c5225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOpT.html#a4cd7bb9cadbccdb52688ef33ddfd8d5c">RT</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ad73d9eed28e8d9d32cf54327e21c5225">m_volinv</a></td></tr>
 <tr class="separator:ad73d9eed28e8d9d32cf54327e21c5225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b6c73fee0004ac732f74350cc72bab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOpT.html#ab5b6c73fee0004ac732f74350cc72bab">m_interpbndry_halfwidth</a> = 2</td></tr>
+<tr class="separator:ab5b6c73fee0004ac732f74350cc72bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -2230,6 +2234,46 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="acfbbd0bc16c6143b970276cb3db30a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfbbd0bc16c6143b970276cb3db30a03">&#9670;&nbsp;</a></span>prepareForFluxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::prepareForFluxes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MF *&#160;</td>
+          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOpT.html#ae101fd3f33bbd0f0085d668b196cb527">amrex::MLLinOpT&lt; MF &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a8201ce95349a35448ba37366eabc518b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8201ce95349a35448ba37366eabc518b">&#9670;&nbsp;</a></span>prepareForSolve()</h2>
 
@@ -2967,6 +3011,30 @@ template&lt;typename MF &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5b6c73fee0004ac732f74350cc72bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b6c73fee0004ac732f74350cc72bab">&#9670;&nbsp;</a></span>m_interpbndry_halfwidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1MLCellLinOpT.html">amrex::MLCellLinOpT</a>&lt; MF &gt;::m_interpbndry_halfwidth = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

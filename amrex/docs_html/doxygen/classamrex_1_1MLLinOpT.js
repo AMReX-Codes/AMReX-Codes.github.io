@@ -86,6 +86,7 @@ var classamrex_1_1MLLinOpT =
     [ "operator=", "classamrex_1_1MLLinOpT.html#aba8d3e06373e96ddac7da02928522796", null ],
     [ "operator=", "classamrex_1_1MLLinOpT.html#a9399276c8cadba0d0e513200ab8758c9", null ],
     [ "postSolve", "classamrex_1_1MLLinOpT.html#a7766bf3ef48ac5508865ef5aa3ef49be", null ],
+    [ "prepareForFluxes", "classamrex_1_1MLLinOpT.html#ae101fd3f33bbd0f0085d668b196cb527", null ],
     [ "prepareForGMRES", "classamrex_1_1MLLinOpT.html#af79ba1ae9377062bdcdfc68884529865", null ],
     [ "prepareForSolve", "classamrex_1_1MLLinOpT.html#af8740f5bcf25e80b3e074a99be681c47", null ],
     [ "reflux", "classamrex_1_1MLLinOpT.html#a8b1c71665134af1b1ceccc4d17df2615", null ],

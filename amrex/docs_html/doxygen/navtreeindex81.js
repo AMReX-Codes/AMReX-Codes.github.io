@@ -1,5 +1,12 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627ae9990b3a39151b6f2175caa7621e0c4b":[3,0,0,449,0,1],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4":[3,0,0,449,1],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4a7dfdce1e88bc91f46ae0d30f856f7ca9":[3,0,0,449,1,3],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4a91efbc33209256821c57a53ef9ddbc51":[3,0,0,449,1,1],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4ad1a130e88790663b2124d7dbd3e9f81e":[3,0,0,449,1,0],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4af5c101b5f19e97166e7531ffa1c706c4":[3,0,0,449,1,2],
+"structamrex_1_1LogicalAnd.html":[3,0,0,158],
 "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,158,0],
 "structamrex_1_1LogicalOr.html":[3,0,0,159],
 "structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240":[3,0,0,159,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[3,0,0,11,4],
 "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[3,0,0,11,1],
 "structamrex_1_1NonLocalBC_1_1MapComponents.html":[3,0,0,11,6],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[3,0,0,11,6,1],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a368643b0ca2dfd8221c8ce8252b2fc4a":[3,0,0,11,6,0],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a63f351d445a8afb6fc893af63fa1d851":[3,0,0,11,6,2],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html":[3,0,0,11,3],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a07bee095114ca505ad4c3a70de926628":[3,0,0,11,3,0],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a1042d4cd1351ac30f6584b8fcc454b8b":[3,0,0,11,3,2],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[3,0,0,11,3,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[3,0,0,11,2]
+"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[3,0,0,11,6,1]
 };
