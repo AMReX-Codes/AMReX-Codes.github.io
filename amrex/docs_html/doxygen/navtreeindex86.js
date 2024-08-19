@@ -1,11 +1,5 @@
 var NAVTREEINDEX86 =
 {
-"structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],
-"structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,4],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a173fd40f6e1643b310b699177737307f":[3,0,0,3,4,2],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a22c363abb743a01c6fe3a000cb31a915":[3,0,0,3,4,0],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a33dfcf0ade1a0d7f43ce7a1249a48c54":[3,0,0,3,4,3],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a92871fbadc5d83cf854ac97d12ec1399":[3,0,0,3,4,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl.html":[3,0,0,3,5],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html":[3,0,0,3,6],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a52514ef1d14b3467dd51e98568305acf":[3,0,0,3,6,1],
@@ -249,5 +243,8 @@ var NAVTREEINDEX86 =
 "unionyyalloc.html#abff9f2574620ec19335937522ea27580":[3,0,36,0],
 "verbosity_8cpp.html":[4,0,0,5,10,11],
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
-"verbosity_8h.html":[4,0,0,5,10,12]
+"verbosity_8h.html":[4,0,0,5,10,12],
+"verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
+"verbosity_8h_source.html":[4,0,0,5,10,12],
+"":[2,0,22]
 };
