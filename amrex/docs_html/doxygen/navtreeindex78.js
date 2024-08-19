@@ -1,5 +1,6 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1DeviceArenaWrapper.html#a79326bc9b3b123fe8e90a4b32aef0d00":[3,0,0,167,0],
 "structamrex_1_1Dim3.html":[3,0,0,122],
 "structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1":[3,0,0,122,0],
 "structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90":[3,0,0,122,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1FabArrayBase_1_1ParForInfo.html#afbef7a6e6ec6924b7ea37855908c0524":[3,0,0,132,11,6],
 "structamrex_1_1FabArrayBase_1_1ParForInfo.html#afc603c5935ba128b01935f5ab94491ad":[3,0,0,132,11,10],
 "structamrex_1_1FabArrayBase_1_1PolarB.html":[3,0,0,132,12],
-"structamrex_1_1FabArrayBase_1_1PolarB.html#a12e01cdb22ecb858691ad5a17517eb62":[3,0,0,132,12,1],
-"structamrex_1_1FabArrayBase_1_1PolarB.html#a4728c08d238e8a553b30e672643776a2":[3,0,0,132,12,2]
+"structamrex_1_1FabArrayBase_1_1PolarB.html#a12e01cdb22ecb858691ad5a17517eb62":[3,0,0,132,12,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1detail_1_1gpu__tuple__element.html#a92871fbadc5d83cf854ac97d12ec1399":[3,0,0,3,4,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl.html":[3,0,0,3,5],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html":[3,0,0,3,6],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a52514ef1d14b3467dd51e98568305acf":[3,0,0,3,6,1],
@@ -245,6 +246,5 @@ var NAVTREEINDEX86 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };
