@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],
 "structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,4],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a173fd40f6e1643b310b699177737307f":[3,0,0,3,4,2],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a22c363abb743a01c6fe3a000cb31a915":[3,0,0,3,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX86 =
 "unionyyalloc.html#abff9f2574620ec19335937522ea27580":[3,0,36,0],
 "verbosity_8cpp.html":[4,0,0,5,10,11],
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
-"verbosity_8h.html":[4,0,0,5,10,12],
-"verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0]
+"verbosity_8h.html":[4,0,0,5,10,12]
 };

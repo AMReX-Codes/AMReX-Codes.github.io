@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"functions_type_l.html":[3,3,3,8],
 "functions_type_m.html":[3,3,3,9],
 "functions_type_n.html":[3,3,3,10],
 "functions_type_o.html":[3,3,3,11],
@@ -10,8 +11,8 @@ var NAVTREEINDEX60 =
 "functions_type_v.html":[3,3,3,16],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -43,8 +44,8 @@ var NAVTREEINDEX60 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0,0],
 "globals.html":[4,1,0],
+"globals.html":[4,1,0,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
@@ -71,8 +72,8 @@ var NAVTREEINDEX60 =
 "globals_enum.html":[4,1,4],
 "globals_eval.html":[4,1,5],
 "globals_f.html":[4,1,0,5],
-"globals_func.html":[4,1,1],
 "globals_func.html":[4,1,1,0],
+"globals_func.html":[4,1,1],
 "globals_func_b.html":[4,1,1,1],
 "globals_func_c.html":[4,1,1,2],
 "globals_func_d.html":[4,1,1,3],
@@ -113,8 +114,8 @@ var NAVTREEINDEX60 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html#a8b8d54bfcfee670480bf6a8479318ace":[3,0,7,3,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__int.html":[3,0,7,4],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__int.html#add6de89cf61130c870ea8f36112da3af":[3,0,7,4,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__intarr.html":[3,0,7,9],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__intarr.html#a16f4eeb60412dbdb36591e9b021dfa2e":[3,0,7,9,0]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__intarr.html":[3,0,7,9]
 };
