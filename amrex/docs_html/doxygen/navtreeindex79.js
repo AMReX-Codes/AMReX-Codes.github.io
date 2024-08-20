@@ -1,5 +1,13 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#aa6a101ddf89df501b82f6fcc9e91ebd7":[3,0,0,132,11,14],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#ab8a2eebe5390786a4fd677cae1cb498f":[3,0,0,132,11,13],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#ac7f708582ac16f85339579a6b67776de":[3,0,0,132,11,7],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#ad1cd3540aa647e1a370450d70fac6176":[3,0,0,132,11,11],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#aecad54aa11e76f8bd774ca2d2c4580c7":[3,0,0,132,11,0],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#afbef7a6e6ec6924b7ea37855908c0524":[3,0,0,132,11,6],
+"structamrex_1_1FabArrayBase_1_1ParForInfo.html#afc603c5935ba128b01935f5ab94491ad":[3,0,0,132,11,10],
+"structamrex_1_1FabArrayBase_1_1PolarB.html":[3,0,0,132,12],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#a12e01cdb22ecb858691ad5a17517eb62":[3,0,0,132,12,1],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#a4728c08d238e8a553b30e672643776a2":[3,0,0,132,12,2],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#ad805ea2e85456aeee7173714da9e0167":[3,0,0,132,12,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1Gpu_1_1GraphSafeGuard.html#a982a397f67b04e0cbf321b1e9ed77ea6":[3,0,0,5,12,0],
 "structamrex_1_1Gpu_1_1GridSize.html":[3,0,0,5,19],
 "structamrex_1_1Gpu_1_1GridSize.html#a34ceb81cdda9c8d6009bc86cfbd7581f":[3,0,0,5,19,0],
-"structamrex_1_1Gpu_1_1GridSize.html#a6c6f30d2bbabe2960fa682d624e70659":[3,0,0,5,19,1],
-"structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017":[3,0,0,5,19,2],
-"structamrex_1_1Gpu_1_1Handler.html":[3,0,0,5,40],
-"structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5":[3,0,0,5,40,2],
-"structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6":[3,0,0,5,40,0],
-"structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6":[3,0,0,5,40,1],
-"structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,5,8],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,5,11],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,5,11,0]
+"structamrex_1_1Gpu_1_1GridSize.html#a6c6f30d2bbabe2960fa682d624e70659":[3,0,0,5,19,1]
 };

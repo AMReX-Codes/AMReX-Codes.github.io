@@ -1,5 +1,13 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017":[3,0,0,5,19,2],
+"structamrex_1_1Gpu_1_1Handler.html":[3,0,0,5,40],
+"structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5":[3,0,0,5,40,2],
+"structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6":[3,0,0,5,40,0],
+"structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6":[3,0,0,5,40,1],
+"structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,5,8],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,5,11],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,5,11,0],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,5,11,2],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,5,11,1],
 "structamrex_1_1Gpu_1_1Managed.html":[3,0,0,5,21],
@@ -65,8 +73,8 @@ var NAVTREEINDEX80 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,264],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,270],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,269],
@@ -241,13 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[3,0,0,181],
 "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,186],
 "structamrex_1_1IsStoreAtomic.html":[3,0,0,286],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,397],
-"structamrex_1_1LPInfo.html":[3,0,0,448],
-"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[3,0,0,448,18],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[3,0,0,448,21],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[3,0,0,448,22],
-"structamrex_1_1LPInfo.html#a2adef9e34d1e183d6fe240d63ac5e62a":[3,0,0,448,4],
-"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[3,0,0,448,25],
-"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad":[3,0,0,448,2],
-"structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[3,0,0,448,13]
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,397]
 };

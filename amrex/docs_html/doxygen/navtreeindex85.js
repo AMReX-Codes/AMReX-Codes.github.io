@@ -1,5 +1,13 @@
 var NAVTREEINDEX85 =
 {
+"structamrex_1_1Table4D.html":[3,0,0,237],
+"structamrex_1_1Table4D.html#a0084b4eab04a94241c76c5fc15c6e30a":[3,0,0,237,13],
+"structamrex_1_1Table4D.html#a1213dce4015d38c64724f1ed12a8589a":[3,0,0,237,1],
+"structamrex_1_1Table4D.html#a24f8a04409c92b85616e68e23ed0cb15":[3,0,0,237,4],
+"structamrex_1_1Table4D.html#a264e4a4265aee9986c1da7486a96a747":[3,0,0,237,0],
+"structamrex_1_1Table4D.html#a346a4f218664dc863f9082a7f1a13f6b":[3,0,0,237,5],
+"structamrex_1_1Table4D.html#a3668191c352566d1d1c5835102b69e8c":[3,0,0,237,3],
+"structamrex_1_1Table4D.html#a57bde5d86b817e2779189949f8b589c5":[3,0,0,237,12],
 "structamrex_1_1Table4D.html#a5bdb603ccb81078e1f7ce2b5430ae76e":[3,0,0,237,6],
 "structamrex_1_1Table4D.html#a9f61817deacaa878d06ec111526eb676":[3,0,0,237,11],
 "structamrex_1_1Table4D.html#ab7617880b0a8e8e71b7e6ff3a0e9aae0":[3,0,0,237,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX85 =
 "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,20],
 "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[3,0,0,3,20,0],
 "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,19],
-"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,16],
-"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,17],
-"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ab5002bf857e08f44d3cf3b47f40324b7":[3,0,0,3,17,0],
-"structamrex_1_1detail_1_1clz__tag.html":[3,0,0,3,2],
-"structamrex_1_1detail_1_1clzl__tag.html":[3,0,0,3,1],
-"structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],
-"structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,4],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a173fd40f6e1643b310b699177737307f":[3,0,0,3,4,2],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a22c363abb743a01c6fe3a000cb31a915":[3,0,0,3,4,0]
+"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,16]
 };
