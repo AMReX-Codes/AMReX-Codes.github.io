@@ -54,6 +54,8 @@ var classamrex_1_1Geometry =
     [ "ResetDefaultCoord", "classamrex_1_1Geometry.html#afacf607bf05ea6d4588954f09b391d37", null ],
     [ "ResetDefaultPeriodicity", "classamrex_1_1Geometry.html#af726da4deb561adeecf94bc4eefbf89b", null ],
     [ "ResetDefaultProbDomain", "classamrex_1_1Geometry.html#a4de5799760ae5f5831c719af01a33531", null ],
+    [ "RoundOffHi", "classamrex_1_1Geometry.html#acdb7c93325edf9673f3410304dbf50a6", null ],
+    [ "RoundOffLo", "classamrex_1_1Geometry.html#a08e08573113d868662151363fa899851", null ],
     [ "setPeriodicity", "classamrex_1_1Geometry.html#a07025080452434734ae74c23e9f97224", null ],
     [ "Setup", "classamrex_1_1Geometry.html#a9b691763a32026e16671e3213068f745", null ],
     [ "Volume", "classamrex_1_1Geometry.html#a26f93383859ece5c7349633cc9f50948", null ],

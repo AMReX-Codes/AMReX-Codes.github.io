@@ -1,5 +1,7 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[3,0,0,448,10],
+"structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[3,0,0,448,6],
 "structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[3,0,0,448,3],
 "structamrex_1_1LPInfo.html#a5fc5c419284399b3b4536bab8a917f28":[3,0,0,448,17],
 "structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[3,0,0,448,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html":[3,0,0,11,15],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a86713118d056b9b6aecf7c588915b7a4":[3,0,0,11,15,0],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a961b07dcb0ecaf46a06c9e792f6e451f":[3,0,0,11,15,1],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[3,0,0,11,15,3],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7":[3,0,0,11,15,2],
-"structamrex_1_1NonLocalBC_1_1CommData.html":[3,0,0,11,11]
+"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[3,0,0,11,15,3]
 };
