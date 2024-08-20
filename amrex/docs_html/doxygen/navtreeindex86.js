@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,16],
 "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,17],
 "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ab5002bf857e08f44d3cf3b47f40324b7":[3,0,0,3,17,0],
 "structamrex_1_1detail_1_1clz__tag.html":[3,0,0,3,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX86 =
 "unionamrex_1_1iparser__nvp.html#a7ec2e1e3902040026a88936d1bbe7368":[3,0,0,329,2],
 "unionamrex_1_1iparser__nvp.html#a9a65297834ae0a934ca195f70b3f44cc":[3,0,0,329,1],
 "unionamrex_1_1iparser__nvp.html#aadd9aea37f3fba909e3801d2520a038f":[3,0,0,329,0],
-"unionyyalloc.html":[3,0,36],
-"unionyyalloc.html#a9326f4fdc6f737a929444427836d8928":[3,0,36,1]
+"unionyyalloc.html":[3,0,36]
 };

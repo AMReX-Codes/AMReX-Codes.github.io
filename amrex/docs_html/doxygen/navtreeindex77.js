@@ -1,5 +1,6 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1BATindexType__coarsenRatio.html#ae45a6ecaa6463cf76c6ea2edb046319f":[3,0,0,109,8],
 "structamrex_1_1BATnull.html":[3,0,0,106],
 "structamrex_1_1BATnull.html#a05b686d85856493be2f058af8cb5317f":[3,0,0,106,0],
 "structamrex_1_1BATnull.html#a32b3bfb809dceced0d08a737413919f6":[3,0,0,106,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1DenseBinIteratorFactory.html#a223f66550fa407ec108387b2cd8d61b2":[3,0,0,462,1],
 "structamrex_1_1DenseBinIteratorFactory.html#a484b45fe28140ce6f64c77687981ac81":[3,0,0,462,3],
 "structamrex_1_1DenseBinIteratorFactory.html#a86bd9751f73a297822528a06e967334a":[3,0,0,462,4],
-"structamrex_1_1DenseBinIteratorFactory.html#af40598ebac6f1379f8c9364e0140cecf":[3,0,0,462,5],
-"structamrex_1_1DenseBinIteratorFactory.html#afde549427d2c1a8e6c85f5d363a32810":[3,0,0,462,0]
+"structamrex_1_1DenseBinIteratorFactory.html#af40598ebac6f1379f8c9364e0140cecf":[3,0,0,462,5]
 };

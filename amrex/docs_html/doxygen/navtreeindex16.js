@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"AMReX__NeighborParticles_8H_source.html":[4,0,0,7,5],
 "AMReX__NonLocalBCImpl_8H.html":[4,0,0,2,197],
 "AMReX__NonLocalBCImpl_8H_source.html":[4,0,0,2,197],
 "AMReX__NonLocalBC_8H.html":[4,0,0,2,196],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "AMReX__ParallelDescriptor_8H.html#a76e33bbc9645091e5f01d305da73960a":[4,0,0,2,206,111],
 "AMReX__ParallelDescriptor_8H.html#a7ae5a5af4ccc5fa61d017ef297455291":[4,0,0,2,206,98],
 "AMReX__ParallelDescriptor_8H.html#a7eb4a01321f954b8f6936ca59547c7d4":[4,0,0,2,206,86],
-"AMReX__ParallelDescriptor_8H.html#a7fe765fcc8bfc4c409483424a83fccf8":[4,0,0,2,206,53],
-"AMReX__ParallelDescriptor_8H.html#a818763835d911ca86537be4604cc10ce":[4,0,0,2,206,21]
+"AMReX__ParallelDescriptor_8H.html#a7fe765fcc8bfc4c409483424a83fccf8":[4,0,0,2,206,53]
 };
