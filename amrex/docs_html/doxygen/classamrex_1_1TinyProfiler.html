@@ -179,10 +179,10 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a1931e426fc1808e089917c1667f80adc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a1931e426fc1808e089917c1667f80adc">PrintStats</a> (std::map&lt; std::string, <a class="el" href="structamrex_1_1TinyProfiler_1_1Stats.html">Stats</a> &gt; &amp;regstats, double dt_max)</td></tr>
-<tr class="separator:a1931e426fc1808e089917c1667f80adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d820a89ad5496d880091c25c2bae5da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a3d820a89ad5496d880091c25c2bae5da">PrintMemStats</a> (std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats, std::string const &amp;memname, double dt_max, double t_final)</td></tr>
-<tr class="separator:a3d820a89ad5496d880091c25c2bae5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77843e1433ce6bede350d2dd35eb02a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a77843e1433ce6bede350d2dd35eb02a3">PrintStats</a> (std::map&lt; std::string, <a class="el" href="structamrex_1_1TinyProfiler_1_1Stats.html">Stats</a> &gt; &amp;regstats, double dt_max, std::ostream *os)</td></tr>
+<tr class="separator:a77843e1433ce6bede350d2dd35eb02a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a5eb16b85aa8cc252a58b24a6ac763"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a18a5eb16b85aa8cc252a58b24a6ac763">PrintMemStats</a> (std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats, std::string const &amp;memname, double dt_max, double t_final, std::ostream *os)</td></tr>
+<tr class="separator:a18a5eb16b85aa8cc252a58b24a6ac763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -219,6 +219,12 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a42fc975e27a744624c255b0fad3f8cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de3ee9387602dc09ef0f134c9826c13"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a4de3ee9387602dc09ef0f134c9826c13">print_threshold</a> = 1.</td></tr>
 <tr class="separator:a4de3ee9387602dc09ef0f134c9826c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282b4e789e0c442305b8348d40b3a9e5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a282b4e789e0c442305b8348d40b3a9e5">enabled</a> = true</td></tr>
+<tr class="separator:a282b4e789e0c442305b8348d40b3a9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03fe25c86d7dbbb990a00595040557cc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a03fe25c86d7dbbb990a00595040557cc">memprof_enabled</a> = true</td></tr>
+<tr class="separator:a03fe25c86d7dbbb990a00595040557cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af042a12f3b873d678126ac7aae488106"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#af042a12f3b873d678126ac7aae488106">output_file</a></td></tr>
+<tr class="separator:af042a12f3b873d678126ac7aae488106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A simple profiler that returns basic performance information (e.g. min, max, and average running time) </p>
@@ -745,8 +751,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3d820a89ad5496d880091c25c2bae5da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d820a89ad5496d880091c25c2bae5da">&#9670;&nbsp;</a></span>PrintMemStats()</h2>
+<a id="a18a5eb16b85aa8cc252a58b24a6ac763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a5eb16b85aa8cc252a58b24a6ac763">&#9670;&nbsp;</a></span>PrintMemStats()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -776,7 +782,13 @@ Static Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t_final</em>&#160;</td>
+          <td class="paramname"><em>t_final</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>os</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -793,8 +805,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1931e426fc1808e089917c1667f80adc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1931e426fc1808e089917c1667f80adc">&#9670;&nbsp;</a></span>PrintStats()</h2>
+<a id="a77843e1433ce6bede350d2dd35eb02a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77843e1433ce6bede350d2dd35eb02a3">&#9670;&nbsp;</a></span>PrintStats()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -812,7 +824,13 @@ Static Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dt_max</em>&#160;</td>
+          <td class="paramname"><em>dt_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>os</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1034,6 +1052,28 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a282b4e789e0c442305b8348d40b3a9e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282b4e789e0c442305b8348d40b3a9e5">&#9670;&nbsp;</a></span>enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::TinyProfiler::enabled = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8691b33b40a313ca7ffe01a287f57dff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8691b33b40a313ca7ffe01a287f57dff">&#9670;&nbsp;</a></span>fname</h2>
 
@@ -1122,6 +1162,28 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a03fe25c86d7dbbb990a00595040557cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03fe25c86d7dbbb990a00595040557cc">&#9670;&nbsp;</a></span>memprof_enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::TinyProfiler::memprof_enabled = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af5020b8e813ceea3418f07d2529ae2cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5020b8e813ceea3418f07d2529ae2cd">&#9670;&nbsp;</a></span>n_print_tabs</h2>
 
@@ -1133,6 +1195,28 @@ Static Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::TinyProfiler::n_print_tabs = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af042a12f3b873d678126ac7aae488106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af042a12f3b873d678126ac7aae488106">&#9670;&nbsp;</a></span>output_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string amrex::TinyProfiler::output_file</td>
         </tr>
       </table>
   </td>
