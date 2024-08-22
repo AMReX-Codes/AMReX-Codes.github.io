@@ -2533,7 +2533,7 @@
 <codeline lineno="345"><highlight class="normal"></highlight></codeline>
 <codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"></highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect(ng_dst);</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight></codeline>
 <codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>send_tags<sp/>=<sp/>*m_SndTags;</highlight></codeline>
 <codeline lineno="351"><highlight class="normal"></highlight></codeline>
@@ -2860,7 +2860,7 @@
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>ng_ng<sp/>=nghost<sp/>-<sp/>1;</highlight></codeline>
 <codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
 <codeline lineno="674"><highlight class="normal"></highlight></codeline>
-<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>period.shiftIntVect();</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>period.shiftIntVect(nghost);</highlight></codeline>
 <codeline lineno="676"><highlight class="normal"></highlight></codeline>
 <codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>send_tags<sp/>=<sp/>*cmd.m_SndTags;</highlight></codeline>
 <codeline lineno="678"><highlight class="normal"></highlight></codeline>
@@ -3089,7 +3089,7 @@
 <codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad35342b486ef07ba6108169268169296" kindref="member">IndexType</ref>&amp;<sp/>typ<sp/>=<sp/>ba.<ref refid="classamrex_1_1IndexTypeND_1aaf1da8aada1297fd8fe20996221eec6c" kindref="member">ixType</ref>();</highlight></codeline>
 <codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
 <codeline lineno="903"><highlight class="normal"></highlight></codeline>
-<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect();</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect(ng);</highlight></codeline>
 <codeline lineno="905"><highlight class="normal"></highlight></codeline>
 <codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>send_tags<sp/>=<sp/>*m_SndTags;</highlight></codeline>
 <codeline lineno="907"><highlight class="normal"></highlight></codeline>
@@ -3241,7 +3241,7 @@
 <codeline lineno="1053"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1054"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects2;</highlight></codeline>
 <codeline lineno="1055"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::tuple&lt;int,Box,IntVect&gt;<sp/>&gt;<sp/>isects3;</highlight></codeline>
-<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect();</highlight></codeline>
+<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect(m_ngrow);</highlight></codeline>
 <codeline lineno="1057"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>shft:<sp/>pshifts)<sp/>{</highlight></codeline>
 <codeline lineno="1058"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.intersections(gbx+shft,<sp/>isects2);</highlight></codeline>
 <codeline lineno="1059"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>is2<sp/>:<sp/>isects2)<sp/>{</highlight></codeline>
@@ -3332,7 +3332,7 @@
 <codeline lineno="1144"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1145"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>()<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect();</highlight></codeline>
+<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>m_period.shiftIntVect(m_ngrow);</highlight></codeline>
 <codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
 <codeline lineno="1149"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::set&lt;int&gt;<sp/>my_receiver;</highlight></codeline>
