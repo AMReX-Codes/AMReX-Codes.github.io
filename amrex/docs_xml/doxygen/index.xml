@@ -7372,6 +7372,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1a5e1b51f776e54426d9a92e0101b75066" kind="variable"><name>m_dotmask</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a194ba25b27e4f357966eb10f008566d2" kind="variable"><name>m_lusolver</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a5ffc86d6c741f71d676a5834deba92a6" kind="variable"><name>m_bcoefs</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a90caeb3665770814375e6ab7108e7536" kind="variable"><name>m_use_pcg</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a85d721f72de7a13036fb1ce5bc77d452" kind="variable"><name>m_ncomp</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a890a339d109993f9e6b102a61af0a2da" kind="function"><name>MLCurlCurl</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1ad41266ab9f9d45383b54320911ac53fe" kind="function"><name>MLCurlCurl</name></member>
@@ -7381,6 +7382,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1acbc4efc38bffb2ceab5d5bf004cf6dc6" kind="function"><name>prepareRHS</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a1e1cf60387fbaec37d15c01e9f074ee5" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a90ed4bd36cb7bb9fc00d6080ff823d64" kind="function"><name>name</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1ab5ad6803cca78078368567c0c4ee1ed0" kind="function"><name>setUsePCG</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a06eca5d2d85df13a44bec68fb491e02d" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a169c302d0fe1a37135eb60b015b25c95" kind="function"><name>restriction</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a259409e41902c718a2c04c81d91648c4" kind="function"><name>interpolation</name></member>
@@ -13610,8 +13612,8 @@
     <member refid="namespaceamrex_1acfd5c8bd3612ac3d3079dc0189308d6f" kind="function"><name>mlcurlcurl_adotx_x</name></member>
     <member refid="namespaceamrex_1a806290e2106cf167ce88e28aa9fb2daf" kind="function"><name>mlcurlcurl_adotx_y</name></member>
     <member refid="namespaceamrex_1aa37948c1ee6507a42652fe71d9e8d262" kind="function"><name>mlcurlcurl_adotx_z</name></member>
-    <member refid="namespaceamrex_1a89a933e8c38b0aabf604401542acabc6" kind="function"><name>mlcurlcurl_gs4</name></member>
-    <member refid="namespaceamrex_1a406ce9623715d0b18657c4cfe60cf747" kind="function"><name>mlcurlcurl_gs4</name></member>
+    <member refid="namespaceamrex_1aea70efcc203fa153e1a0ca3dec2a25bf" kind="function"><name>mlcurlcurl_gs4_lu</name></member>
+    <member refid="namespaceamrex_1a3a6481589212aff73bf24374d2c89df4" kind="function"><name>mlcurlcurl_gs4</name></member>
     <member refid="namespaceamrex_1a46f754596e0c0d977d970818bbec1dd2" kind="function"><name>mlcurlcurl_interpadd</name></member>
     <member refid="namespaceamrex_1aeb03681c5a1705809b2f860ece2cad66" kind="function"><name>mlcurlcurl_restriction</name></member>
     <member refid="namespaceamrex_1a95c9cd2dabd9a907c9d7124f9a4ae0f9" kind="function"><name>mlcurlcurl_bc_symmetry</name></member>
@@ -13941,6 +13943,7 @@
     <member refid="namespaceamrex_1a19ff7b7195571fcdacb29c1c6d4c0665" kind="function"><name>mltensor_dx_on_yface</name></member>
     <member refid="namespaceamrex_1a0b625a06eff5f521a23e7a462c1218a8" kind="function"><name>mltensor_dy_on_xface</name></member>
     <member refid="namespaceamrex_1a1a721b95ca12909fdd1f2b0b733ff504" kind="function"><name>mltensor_dx_on_yface</name></member>
+    <member refid="namespaceamrex_1a82e276db8e18ead0c45086336f342338" kind="function"><name>pcg_solve</name></member>
     <member refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kind="function"><name>IsParticleTileData</name></member>
     <member refid="namespaceamrex_1a69911bccde2f992eb93a426d24557e11" kind="function"><name>IsParticleTileData</name></member>
     <member refid="namespaceamrex_1aa47fc757d0d25899f61d37329d2d5769" kind="function"><name>isSame</name></member>
@@ -18646,6 +18649,8 @@
   <compound refid="AMReX__MLTensorOp_8H" kind="file"><name>AMReX_MLTensorOp.H</name>
   </compound>
   <compound refid="AMReX__MLTensorOp__grad_8cpp" kind="file"><name>AMReX_MLTensorOp_grad.cpp</name>
+  </compound>
+  <compound refid="AMReX__PCGSolver_8H" kind="file"><name>AMReX_PCGSolver.H</name>
   </compound>
   <compound refid="AMReX__OpenBC_8cpp" kind="file"><name>AMReX_OpenBC.cpp</name>
   </compound>

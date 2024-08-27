@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keepvalidfilter_10132',['KeepValidFilter',['../structKeepValidFilter.html',1,'']]],
-  ['kernelinfo_10133',['KernelInfo',['../classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]]
+  ['keepvalidfilter_10119',['KeepValidFilter',['../structKeepValidFilter.html',1,'']]],
+  ['kernelinfo_10120',['KernelInfo',['../classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]]
 ];

@@ -1,5 +1,12 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1Neighbors_1_1const__iterator.html#aa66fe114af5887c4e2a679627c687bf7":[3,0,0,464,0,1],
+"structamrex_1_1Neighbors_1_1const__iterator.html#ab5b57f7c904cde9efcc725b982dcfbf3":[3,0,0,464,0,5],
+"structamrex_1_1Neighbors_1_1const__iterator.html#ac281e48bd349f0ba8f42b9373eaf0915":[3,0,0,464,0,7],
+"structamrex_1_1Neighbors_1_1const__iterator.html#aec0fa511077c6d8567764d722c243bc4":[3,0,0,464,0,3],
+"structamrex_1_1Neighbors_1_1const__iterator.html#afb37122d2345a3ca3023c1b8c043ebe2":[3,0,0,464,0,4],
+"structamrex_1_1Neighbors_1_1iterator.html":[3,0,0,464,1],
+"structamrex_1_1Neighbors_1_1iterator.html#a20b39fd43ff39609db949fa3ef3f7926":[3,0,0,464,1,6],
 "structamrex_1_1Neighbors_1_1iterator.html#a50ad515a24bf46fd0ab349c0f24e88c8":[3,0,0,464,1,0],
 "structamrex_1_1Neighbors_1_1iterator.html#a557c95eb717280427b11fa5404f4724a":[3,0,0,464,1,7],
 "structamrex_1_1Neighbors_1_1iterator.html#a60e15a72d1935e19d3a9912f232c9c0d":[3,0,0,464,1,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX82 =
 "structamrex_1_1Parser_1_1Data.html#a863a707fe492216d36ff882e0fbee9e9":[3,0,0,338,0,11],
 "structamrex_1_1Parser_1_1Data.html#a94d23586af302f978d96c232930c18a6":[3,0,0,338,0,3],
 "structamrex_1_1Parser_1_1Data.html#a952263602baabb188b5f915266b95dc0":[3,0,0,338,0,7],
-"structamrex_1_1Parser_1_1Data.html#aa66c8c8b35c991bb5487665b509eecdc":[3,0,0,338,0,5],
-"structamrex_1_1Parser_1_1Data.html#aaef798272fb28c2f79185f6be424a717":[3,0,0,338,0,12],
-"structamrex_1_1Parser_1_1Data.html#abac6e2284d98331984ef3d8967877219":[3,0,0,338,0,13],
-"structamrex_1_1Parser_1_1Data.html#ac4c2abe9d502dbbdbebf5a60af138db5":[3,0,0,338,0,8],
-"structamrex_1_1Parser_1_1Data.html#ac88392e0c4583be81220ff8349b20efe":[3,0,0,338,0,2],
-"structamrex_1_1Parser_1_1Data.html#aca1f9ad0544614004789f38c2ee3e659":[3,0,0,338,0,10],
-"structamrex_1_1Parser_1_1Data.html#ad41fcfcb360640fde45500a1580c522a":[3,0,0,338,0,9],
-"structamrex_1_1Parser_1_1Data.html#ad7b795cb104ac74095c7bbd71745e111":[3,0,0,338,0,6]
+"structamrex_1_1Parser_1_1Data.html#aa66c8c8b35c991bb5487665b509eecdc":[3,0,0,338,0,5]
 };

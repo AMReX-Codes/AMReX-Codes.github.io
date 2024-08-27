@@ -1,5 +1,12 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[3,0,0,107,4],
+"structamrex_1_1BATindexType__coarsenRatio.html":[3,0,0,109],
+"structamrex_1_1BATindexType__coarsenRatio.html#a018850ccf13a85871016078d42d47acb":[3,0,0,109,0],
+"structamrex_1_1BATindexType__coarsenRatio.html#a353060b217e05d5782a3e230f0f80f1e":[3,0,0,109,4],
+"structamrex_1_1BATindexType__coarsenRatio.html#a404878857e4062b52ad8b0f06ee5db54":[3,0,0,109,3],
+"structamrex_1_1BATindexType__coarsenRatio.html#a5478ed9c92ec36bda1e9d6ff6cbe903a":[3,0,0,109,6],
+"structamrex_1_1BATindexType__coarsenRatio.html#a596d52f9079ac3303ea362ba657f8bf0":[3,0,0,109,7],
 "structamrex_1_1BATindexType__coarsenRatio.html#a7c7e002b3dd2f7a43930dacef7a2d62d":[3,0,0,109,2],
 "structamrex_1_1BATindexType__coarsenRatio.html#a90bd569f67fe7881da5831e52d1c78c2":[3,0,0,109,5],
 "structamrex_1_1BATindexType__coarsenRatio.html#ad9115882b3c25773e8e036054da8f75b":[3,0,0,109,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aa06193aa48e202c1d61b1c00b5cb5f13":[3,0,0,492,7],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aac6b529d04666c7ab12e389631ddc1e0":[3,0,0,492,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ab1aeeebdc685a58e0b7442c5530421ed":[3,0,0,492,8],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#af7f46ef2c49dac17167364472e5edcef":[3,0,0,492,6],
-"structamrex_1_1DefaultAssignor.html":[3,0,0,519],
-"structamrex_1_1DefaultAssignor.html#a045213828ba94399e0ae088919d31c4c":[3,0,0,519,0],
-"structamrex_1_1DefinitelyNotHostRunnable.html":[3,0,0,274],
-"structamrex_1_1DenseBinIteratorFactory.html":[3,0,0,462],
-"structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625":[3,0,0,462,2],
-"structamrex_1_1DenseBinIteratorFactory.html#a08f5000a813c49c45a7f7c7476360106":[3,0,0,462,6],
-"structamrex_1_1DenseBinIteratorFactory.html#a223f66550fa407ec108387b2cd8d61b2":[3,0,0,462,1]
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#af7f46ef2c49dac17167364472e5edcef":[3,0,0,492,6]
 };

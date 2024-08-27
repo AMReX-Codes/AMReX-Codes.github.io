@@ -103,5 +103,6 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLTensorOp.H", "AMReX__MLTensorOp_8H.html", [
       [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ]
     ] ],
-    [ "AMReX_MLTensorOp_grad.cpp", "AMReX__MLTensorOp__grad_8cpp.html", null ]
+    [ "AMReX_MLTensorOp_grad.cpp", "AMReX__MLTensorOp__grad_8cpp.html", null ],
+    [ "AMReX_PCGSolver.H", "AMReX__PCGSolver_8H.html", "AMReX__PCGSolver_8H" ]
 ];

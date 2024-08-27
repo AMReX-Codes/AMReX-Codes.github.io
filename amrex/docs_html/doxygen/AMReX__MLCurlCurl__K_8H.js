@@ -11,8 +11,8 @@ var AMReX__MLCurlCurl__K_8H =
     [ "mlcurlcurl_adotx_y", "AMReX__MLCurlCurl__K_8H.html#a806290e2106cf167ce88e28aa9fb2daf", null ],
     [ "mlcurlcurl_adotx_z", "AMReX__MLCurlCurl__K_8H.html#aa37948c1ee6507a42652fe71d9e8d262", null ],
     [ "mlcurlcurl_bc_symmetry", "AMReX__MLCurlCurl__K_8H.html#a95c9cd2dabd9a907c9d7124f9a4ae0f9", null ],
-    [ "mlcurlcurl_gs4", "AMReX__MLCurlCurl__K_8H.html#a406ce9623715d0b18657c4cfe60cf747", null ],
-    [ "mlcurlcurl_gs4", "AMReX__MLCurlCurl__K_8H.html#a89a933e8c38b0aabf604401542acabc6", null ],
+    [ "mlcurlcurl_gs4", "AMReX__MLCurlCurl__K_8H.html#a3a6481589212aff73bf24374d2c89df4", null ],
+    [ "mlcurlcurl_gs4_lu", "AMReX__MLCurlCurl__K_8H.html#aea70efcc203fa153e1a0ca3dec2a25bf", null ],
     [ "mlcurlcurl_interpadd", "AMReX__MLCurlCurl__K_8H.html#a46f754596e0c0d977d970818bbec1dd2", null ],
     [ "mlcurlcurl_restriction", "AMReX__MLCurlCurl__K_8H.html#aeb03681c5a1705809b2f860ece2cad66", null ]
 ];
