@@ -1,5 +1,7 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1Neighbors.html#a42794840b7f30c436e3f1a6616d2e28b":[3,0,0,464,3],
+"structamrex_1_1Neighbors.html#a4b3fbe9ad7a9534399391d67b192eed1":[3,0,0,464,12],
 "structamrex_1_1Neighbors.html#a5e4fbd0434728a17409c80f498acb9af":[3,0,0,464,9],
 "structamrex_1_1Neighbors.html#a78add4fa0c929801818ea1db168eb81c":[3,0,0,464,2],
 "structamrex_1_1Neighbors.html#a7a63898f3093bbbdecb31a1c7ad5955e":[3,0,0,464,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX82 =
 "structamrex_1_1ParserExecutor.html#a4ec94c9ff56d57926d2743b89abb9819":[3,0,0,96,4],
 "structamrex_1_1ParserExecutor.html#a5f007a74d83f9bdcb198458404414118":[3,0,0,96,1],
 "structamrex_1_1ParserExecutor.html#a93e1ada56a461feae37abad6fa8483ad":[3,0,0,96,0],
-"structamrex_1_1ParserExecutor.html#af5431722ed3970aed878c59a4e0df166":[3,0,0,96,3],
-"structamrex_1_1ParserStack.html":[3,0,0,371],
-"structamrex_1_1ParserStack.html#a0fb2101660c9e5211fb65297ffd99292":[3,0,0,371,1]
+"structamrex_1_1ParserExecutor.html#af5431722ed3970aed878c59a4e0df166":[3,0,0,96,3]
 };

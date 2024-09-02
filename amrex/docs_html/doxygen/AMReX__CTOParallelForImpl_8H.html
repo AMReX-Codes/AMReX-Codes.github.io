@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('AMReX__CTOParallelForImpl_8H.html','')
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__BLassert_8H_source.html">AMReX_BLassert.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Box_8H_source.html">AMReX_Box.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__Tuple_8H_source.html">AMReX_Tuple.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__TypeList_8H_source.html">AMReX_TypeList.H</a>&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 </div>
@@ -123,27 +123,31 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:add9c441e051b2f701d97e5e505556fa3"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , class F , typename... CTOs&gt; </td></tr>
-<tr class="memitem:add9c441e051b2f701d97e5e505556fa3"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</td></tr>
-<tr class="separator:add9c441e051b2f701d97e5e505556fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8ef78b0668a4a000d853b5cc52170ef"><td class="memTemplParams" colspan="2">template&lt;int MT, class F , typename... CTOs&gt; </td></tr>
-<tr class="memitem:af8ef78b0668a4a000d853b5cc52170ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af8ef78b0668a4a000d853b5cc52170ef">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, Box const &amp;box, F &amp;&amp;f)</td></tr>
-<tr class="separator:af8ef78b0668a4a000d853b5cc52170ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e05ed632badf5af8c6402411043f313"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , class F , typename... CTOs&gt; </td></tr>
-<tr class="memitem:a8e05ed632badf5af8c6402411043f313"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8e05ed632badf5af8c6402411043f313">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, Box const &amp;box, T ncomp, F &amp;&amp;f)</td></tr>
-<tr class="separator:a8e05ed632badf5af8c6402411043f313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40b61403bc62e482b82aa83e7a5a1d8"><td class="memTemplParams" colspan="2">template&lt;class L , class F , typename... CTOs&gt; </td></tr>
+<tr class="memitem:aa40b61403bc62e482b82aa83e7a5a1d8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa40b61403bc62e482b82aa83e7a5a1d8">amrex::AnyCTO</a> ([[maybe_unused]] TypeList&lt; CTOs... &gt; list_of_compile_time_options, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, L &amp;&amp;l, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:aa40b61403bc62e482b82aa83e7a5a1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#aa40b61403bc62e482b82aa83e7a5a1d8">More...</a><br /></td></tr>
+<tr class="separator:aa40b61403bc62e482b82aa83e7a5a1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065a5b50b590d116df9bec2d115b75dc"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , class F , typename... CTOs&gt; </td></tr>
+<tr class="memitem:a065a5b50b590d116df9bec2d115b75dc"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a065a5b50b590d116df9bec2d115b75dc">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</td></tr>
+<tr class="separator:a065a5b50b590d116df9bec2d115b75dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a94af0fa091bf7fe84c64000abbfb9"><td class="memTemplParams" colspan="2">template&lt;int MT, class F , int dim, typename... CTOs&gt; </td></tr>
+<tr class="memitem:a97a94af0fa091bf7fe84c64000abbfb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a97a94af0fa091bf7fe84c64000abbfb9">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, BoxND&lt; dim &gt; const &amp;box, F &amp;&amp;f)</td></tr>
+<tr class="separator:a97a94af0fa091bf7fe84c64000abbfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98ea0824a9945d3633f96429036b758"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , class F , int dim, typename... CTOs&gt; </td></tr>
+<tr class="memitem:af98ea0824a9945d3633f96429036b758"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af98ea0824a9945d3633f96429036b758">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, BoxND&lt; dim &gt; const &amp;box, T ncomp, F &amp;&amp;f)</td></tr>
+<tr class="separator:af98ea0824a9945d3633f96429036b758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad43a39ea3d49f287b326ae8409bdceba"><td class="memTemplParams" colspan="2">template&lt;typename T , class F , typename... CTOs&gt; </td></tr>
 <tr class="memitem:ad43a39ea3d49f287b326ae8409bdceba"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad43a39ea3d49f287b326ae8409bdceba">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, T N, F &amp;&amp;f)</td></tr>
 <tr class="memdesc:ad43a39ea3d49f287b326ae8409bdceba"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor with compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#ad43a39ea3d49f287b326ae8409bdceba">More...</a><br /></td></tr>
 <tr class="separator:ad43a39ea3d49f287b326ae8409bdceba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bcd0763fa57d502f90cd74ff93ba547"><td class="memTemplParams" colspan="2">template&lt;class F , typename... CTOs&gt; </td></tr>
-<tr class="memitem:a7bcd0763fa57d502f90cd74ff93ba547"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7bcd0763fa57d502f90cd74ff93ba547">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, Box const &amp;box, F &amp;&amp;f)</td></tr>
-<tr class="memdesc:a7bcd0763fa57d502f90cd74ff93ba547"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor with compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#a7bcd0763fa57d502f90cd74ff93ba547">More...</a><br /></td></tr>
-<tr class="separator:a7bcd0763fa57d502f90cd74ff93ba547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a582faa381a614c23d6110d7ee0560108"><td class="memTemplParams" colspan="2">template&lt;typename T , class F , typename... CTOs&gt; </td></tr>
-<tr class="memitem:a582faa381a614c23d6110d7ee0560108"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a582faa381a614c23d6110d7ee0560108">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, Box const &amp;box, T ncomp, F &amp;&amp;f)</td></tr>
-<tr class="memdesc:a582faa381a614c23d6110d7ee0560108"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor with compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#a582faa381a614c23d6110d7ee0560108">More...</a><br /></td></tr>
-<tr class="separator:a582faa381a614c23d6110d7ee0560108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7383cd8901b18ae39e85e5817cb9e3"><td class="memTemplParams" colspan="2">template&lt;class F , int dim, typename... CTOs&gt; </td></tr>
+<tr class="memitem:aba7383cd8901b18ae39e85e5817cb9e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aba7383cd8901b18ae39e85e5817cb9e3">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, BoxND&lt; dim &gt; const &amp;box, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:aba7383cd8901b18ae39e85e5817cb9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor with compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#aba7383cd8901b18ae39e85e5817cb9e3">More...</a><br /></td></tr>
+<tr class="separator:aba7383cd8901b18ae39e85e5817cb9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c3a69b65f21d8039644fa0480cb88d"><td class="memTemplParams" colspan="2">template&lt;typename T , class F , int dim, typename... CTOs&gt; </td></tr>
+<tr class="memitem:af9c3a69b65f21d8039644fa0480cb88d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af9c3a69b65f21d8039644fa0480cb88d">amrex::ParallelFor</a> (TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, BoxND&lt; dim &gt; const &amp;box, T ncomp, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:af9c3a69b65f21d8039644fa0480cb88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParallelFor with compile time optimization of kernels with run time options.  <a href="namespaceamrex.html#af9c3a69b65f21d8039644fa0480cb88d">More...</a><br /></td></tr>
+<tr class="separator:af9c3a69b65f21d8039644fa0480cb88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

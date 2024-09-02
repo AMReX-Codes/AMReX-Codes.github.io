@@ -1,5 +1,7 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1IntegratorOps.html":[3,0,0,192],
+"structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html":[3,0,0,194],
 "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#a3351ed5aa40298f6eabb05de52e6290b":[3,0,0,194,1],
 "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#a8ee342eb7ac3a9d13cc4ec493dce493d":[3,0,0,194,2],
 "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#aa0111c78830d99c298eb3adae9f7029f":[3,0,0,194,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1NeighborUnpackPolicy.html":[3,0,0,498],
 "structamrex_1_1NeighborUnpackPolicy.html#a11a020cd1f085ecbf8bb084ba1770723":[3,0,0,498,0],
 "structamrex_1_1Neighbors.html":[3,0,0,464],
-"structamrex_1_1Neighbors.html#a2d37e953b78d6106dbd29c8cb8775270":[3,0,0,464,8],
-"structamrex_1_1Neighbors.html#a42794840b7f30c436e3f1a6616d2e28b":[3,0,0,464,3],
-"structamrex_1_1Neighbors.html#a4b3fbe9ad7a9534399391d67b192eed1":[3,0,0,464,12]
+"structamrex_1_1Neighbors.html#a2d37e953b78d6106dbd29c8cb8775270":[3,0,0,464,8]
 };
