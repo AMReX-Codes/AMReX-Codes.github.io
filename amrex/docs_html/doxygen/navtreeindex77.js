@@ -1,5 +1,6 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[3,0,0,107,4],
 "structamrex_1_1BATindexType__coarsenRatio.html":[3,0,0,109],
 "structamrex_1_1BATindexType__coarsenRatio.html#a018850ccf13a85871016078d42d47acb":[3,0,0,109,0],
 "structamrex_1_1BATindexType__coarsenRatio.html#a353060b217e05d5782a3e230f0f80f1e":[3,0,0,109,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aa06193aa48e202c1d61b1c00b5cb5f13":[3,0,0,492,7],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aac6b529d04666c7ab12e389631ddc1e0":[3,0,0,492,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ab1aeeebdc685a58e0b7442c5530421ed":[3,0,0,492,8],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#af7f46ef2c49dac17167364472e5edcef":[3,0,0,492,6],
-"structamrex_1_1DefaultAssignor.html":[3,0,0,519]
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#af7f46ef2c49dac17167364472e5edcef":[3,0,0,492,6]
 };

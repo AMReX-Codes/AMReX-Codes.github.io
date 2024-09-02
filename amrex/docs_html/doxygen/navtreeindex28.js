@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"classCommProfStats.html#a6b95f5cdfd2548a030caf55a28f66a44":[3,0,17,31],
 "classCommProfStats.html#a6fa096e58f6defb29bb83ac4e68643b8":[3,0,17,6],
 "classCommProfStats.html#a7157e096127303084fbae1e6c5929e01":[3,0,17,72],
 "classCommProfStats.html#a71a0a4c9fbfae52c4da448c6ac832319":[3,0,17,70],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "classamrex_1_1Amr.html#a534b06b1181277637fae2a4caf17e8c1":[3,0,0,21,68],
 "classamrex_1_1Amr.html#a55fb651c5355f362017c26f4f02cc127":[3,0,0,21,191],
 "classamrex_1_1Amr.html#a566aa710514e53eb2193e7bbd4e5ff8d":[3,0,0,21,45],
-"classamrex_1_1Amr.html#a5858409b6a0c53ac8e09fd9601a44dcd":[3,0,0,21,80],
-"classamrex_1_1Amr.html#a5a16c64d38a92425d131ed14624d3fd8":[3,0,0,21,6]
+"classamrex_1_1Amr.html#a5858409b6a0c53ac8e09fd9601a44dcd":[3,0,0,21,80]
 };
