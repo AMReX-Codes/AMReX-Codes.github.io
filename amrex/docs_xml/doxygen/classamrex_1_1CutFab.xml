@@ -391,11 +391,11 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="13">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="8">
+      <node id="15">
         <label>Real</label>
       </node>
       <node id="4">
@@ -409,8 +409,30 @@
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
         <childnode refid="6" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
+      </node>
+      <node id="12">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="6">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
       <node id="1">
         <label>amrex::CutFab</label>
@@ -418,7 +440,14 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
+        <label>std::mutex</label>
+      </node>
+      <node id="10">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+      </node>
+      <node id="14">
         <label>amrex::FABio</label>
         <link refid="classamrex_1_1FABio"/>
       </node>
@@ -427,11 +456,25 @@
         <link refid="classamrex_1_1FArrayBox"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>fabio</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>initval</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::string</label>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>keys</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

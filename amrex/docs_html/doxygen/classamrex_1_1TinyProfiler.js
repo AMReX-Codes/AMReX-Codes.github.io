@@ -24,7 +24,7 @@ var classamrex_1_1TinyProfiler =
     [ "PrintCallStack", "classamrex_1_1TinyProfiler.html#a8a14bcc37603ec472c17a644428d3686", null ],
     [ "PrintMemStats", "classamrex_1_1TinyProfiler.html#a18a5eb16b85aa8cc252a58b24a6ac763", null ],
     [ "PrintStats", "classamrex_1_1TinyProfiler.html#a77843e1433ce6bede350d2dd35eb02a3", null ],
-    [ "RegisterArena", "classamrex_1_1TinyProfiler.html#acf3b7bc8c1643be36ccc4d41df0dbec7", null ],
+    [ "RegisterArena", "classamrex_1_1TinyProfiler.html#a0ee76d52f5f79b4295db066f8145bea1", null ],
     [ "start", "classamrex_1_1TinyProfiler.html#aa79d79de0a3a1e592808ea80448e1637", null ],
     [ "StartRegion", "classamrex_1_1TinyProfiler.html#abf8db78796b24b46b0483e5b61ed1d84", null ],
     [ "stop", "classamrex_1_1TinyProfiler.html#a84199c5f792b3e60b33f6e7ea0fc5568", null ],

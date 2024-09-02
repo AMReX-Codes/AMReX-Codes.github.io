@@ -128,6 +128,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", null ],
+    [ "amrex::Arena::ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", null ],
     [ "amrex::ArenaWrapper", "structamrex_1_1ArenaWrapper.html", null ],
     [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", null ],
     [ "amrex::Array1D< int, 0, N-1 >", "structamrex_1_1Array1D.html", null ],

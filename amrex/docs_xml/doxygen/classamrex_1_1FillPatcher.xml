@@ -1033,7 +1033,7 @@
         <label>amrex::FabArrayBase::FabArrayStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
       </node>
-      <node id="66">
+      <node id="71">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
@@ -1044,7 +1044,7 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="68">
+      <node id="73">
         <label>std::unique_ptr&lt; amrex::FBData&lt; FArrayBox &gt; &gt;</label>
       </node>
       <node id="8">
@@ -1070,7 +1070,7 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="75">
+      <node id="80">
         <label>amrex::InterpBase</label>
         <link refid="classamrex_1_1InterpBase"/>
       </node>
@@ -1088,7 +1088,7 @@
         <label>amrex::Math::FastDivmodU64</label>
         <link refid="structamrex_1_1Math_1_1FastDivmodU64"/>
       </node>
-      <node id="70">
+      <node id="75">
         <label>std::unique_ptr&lt; amrex::FabArray&lt; FArrayBox &gt; &gt;</label>
       </node>
       <node id="4">
@@ -1106,7 +1106,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="73">
+      <node id="78">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
       </node>
@@ -1143,6 +1143,9 @@
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
         <childnode refid="66" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
@@ -1202,7 +1205,7 @@
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
       </node>
-      <node id="72">
+      <node id="77">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
@@ -1231,6 +1234,22 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
+      <node id="66">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
       <node id="53">
         <label>std::multimap&lt; K, T &gt;</label>
         <childnode refid="20" relation="usage">
@@ -1258,6 +1277,9 @@
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="10" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="68">
+        <label>std::mutex</label>
       </node>
       <node id="54">
         <label>std::vector&lt; std::string &gt;</label>
@@ -1289,11 +1311,11 @@
         <childnode refid="16" relation="usage">
           <edgelabel>m_sfine</edgelabel>
         </childnode>
-        <childnode refid="74" relation="usage">
+        <childnode refid="79" relation="usage">
           <edgelabel>m_cf_crse_data_tmp</edgelabel>
           <edgelabel>m_cf_fine_data</edgelabel>
         </childnode>
-        <childnode refid="75" relation="usage">
+        <childnode refid="80" relation="usage">
           <edgelabel>m_interp</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
@@ -1312,7 +1334,7 @@
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="74">
+      <node id="79">
         <label>std::unique_ptr&lt; MultiFab &gt;</label>
       </node>
       <node id="9">
@@ -1321,7 +1343,7 @@
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="69">
+      <node id="74">
         <label>std::unique_ptr&lt; amrex::detail::SingleChunkArena &gt;</label>
       </node>
       <node id="60">
@@ -1396,13 +1418,17 @@
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="71">
+      <node id="76">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="67">
+      <node id="70">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+      </node>
+      <node id="72">
         <label>amrex::FABio</label>
         <link refid="classamrex_1_1FABio"/>
       </node>
@@ -1482,7 +1508,7 @@
         <link refid="classamrex_1_1FArrayBox"/>
         <childnode refid="63" relation="public-inheritance">
         </childnode>
-        <childnode refid="67" relation="usage">
+        <childnode refid="72" relation="usage">
           <edgelabel>fabio</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
@@ -1506,25 +1532,25 @@
         <childnode refid="61" relation="usage">
           <edgelabel>m_fabs_v</edgelabel>
         </childnode>
-        <childnode refid="68" relation="usage">
+        <childnode refid="73" relation="usage">
           <edgelabel>fbd</edgelabel>
         </childnode>
         <childnode refid="64" relation="usage">
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
-        <childnode refid="69" relation="usage">
+        <childnode refid="74" relation="usage">
           <edgelabel>m_single_chunk_arena</edgelabel>
         </childnode>
-        <childnode refid="70" relation="usage">
+        <childnode refid="75" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
-        <childnode refid="71" relation="usage">
+        <childnode refid="76" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="72" relation="usage">
+        <childnode refid="77" relation="usage">
           <edgelabel>shmem</edgelabel>
         </childnode>
-        <childnode refid="73" relation="usage">
+        <childnode refid="78" relation="usage">
           <edgelabel>m_arrays</edgelabel>
         </childnode>
       </node>
@@ -1611,6 +1637,15 @@
       <node id="47">
         <label>std::string</label>
         <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="70" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>keys</edgelabel>
         </childnode>
       </node>
       <node id="15">

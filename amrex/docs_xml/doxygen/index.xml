@@ -1043,6 +1043,7 @@
   <compound refid="classamrex_1_1Arena" kind="class"><name>amrex::Arena</name>
     <member refid="classamrex_1_1Arena_1a4b2f3b31e81e52426aef615cb2aaa7b7" kind="variable"><name>align_size</name></member>
     <member refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kind="variable"><name>arena_info</name></member>
+    <member refid="classamrex_1_1Arena_1ad136b691382e7a7d8fba158837416b98" kind="variable"><name>m_profiler</name></member>
     <member refid="classamrex_1_1Arena_1a327e7541e6291ce735c03392b21931b6" kind="function"><name>~Arena</name></member>
     <member refid="classamrex_1_1Arena_1a2e2407d56d1710a0029928c776b27682" kind="function"><name>Arena</name></member>
     <member refid="classamrex_1_1Arena_1a57de8f5ef86cceadc9f1c00bc7ea7790" kind="function"><name>Arena</name></member>
@@ -1099,6 +1100,20 @@
     <member refid="structamrex_1_1ArenaInfo_1a8e8c57c71dcb35c394ddcd580388169f" kind="function"><name>SetPreferred</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a76a736ea531b11031bc4742c16ebfa67" kind="function"><name>SetHostAlloc</name></member>
     <member refid="structamrex_1_1ArenaInfo_1aea2d408b112c9b365f345889eed6965f" kind="function"><name>SetCpuMemory</name></member>
+  </compound>
+  <compound refid="structamrex_1_1Arena_1_1ArenaProfiler" kind="struct"><name>amrex::Arena::ArenaProfiler</name>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a95e91e069e1ea8873693839d0bbc72e7" kind="variable"><name>m_do_profiling</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1ad9b1a5dabdae06286027285177730012" kind="variable"><name>m_arena_profiler_mutex</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a086e99739e74b91a474479e2507a7b2c" kind="variable"><name>m_profiling_stats</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a697d3803d72aec0fda55351e1efede2c" kind="variable"><name>m_currently_allocated</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" kind="function"><name>~ArenaProfiler</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1af3a54b7b95ca1c509e4ba59e0614f2d9" kind="function"><name>ArenaProfiler</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1aeb520f6b20549099093cd9b76b39473c" kind="function"><name>ArenaProfiler</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1abdb5590787c65171e1a5e9e77a42706e" kind="function"><name>ArenaProfiler</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a8444487b7e58d1bc8042b9eae27ea452" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0fb352f73b4f59fb7e916f9c562ace45" kind="function"><name>operator=</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a1e55000cfd16be61fe81115bf0a2c44f" kind="function"><name>profile_alloc</name></member>
+    <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a616c70790fe756cef244e970f95be468" kind="function"><name>profile_free</name></member>
   </compound>
   <compound refid="structamrex_1_1ArenaWrapper" kind="struct"><name>amrex::ArenaWrapper</name>
     <member refid="structamrex_1_1ArenaWrapper_1a448c39a6a2874b4fd7809d4a702bfa90" kind="function"><name>arena</name></member>
@@ -2581,8 +2596,6 @@
     <member refid="classamrex_1_1CArena_1a7bbf66f41bc3167185236bdcd6fe67a1" kind="variable"><name>m_hunk</name></member>
     <member refid="classamrex_1_1CArena_1a7ec2fcdaa0d06d1fceb739d0e1661751" kind="variable"><name>m_used</name></member>
     <member refid="classamrex_1_1CArena_1af3edc78581fb20c7273fbf74494e0c48" kind="variable"><name>m_actually_used</name></member>
-    <member refid="classamrex_1_1CArena_1abe3cf9ae992eb7a9450eb11500b11f13" kind="variable"><name>m_do_profiling</name></member>
-    <member refid="classamrex_1_1CArena_1a92c55c16fad7194ada541a5645340a03" kind="variable"><name>m_profiling_stats</name></member>
     <member refid="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" kind="variable"><name>carena_mutex</name></member>
     <member refid="classamrex_1_1CArena_1a43a76cc08d37a6c6174a05989d0bc60e" kind="function"><name>CArena</name></member>
     <member refid="classamrex_1_1CArena_1a1dc0400df161a7395380b6156678918a" kind="function"><name>CArena</name></member>
@@ -2596,7 +2609,6 @@
     <member refid="classamrex_1_1CArena_1a92c318e660a559a2c8d4dc75ba2bc658" kind="function"><name>free</name></member>
     <member refid="classamrex_1_1CArena_1a7e9429cce47c95ae5f8d8d379ffe6184" kind="function"><name>freeUnused</name></member>
     <member refid="classamrex_1_1CArena_1ac778bcf5399be4884d6a2cf35cc5c9f3" kind="function"><name>hasFreeDeviceMemory</name></member>
-    <member refid="classamrex_1_1CArena_1abe6d024bf682144256ad7fe52e5b36ae" kind="function"><name>registerForProfiling</name></member>
     <member refid="classamrex_1_1CArena_1a5f5de3e5518c0f5bcc71a6a2b4076a3f" kind="function"><name>heap_space_used</name></member>
     <member refid="classamrex_1_1CArena_1a52c8024bd12299f84f2362c0547c533d" kind="function"><name>heap_space_actually_used</name></member>
     <member refid="classamrex_1_1CArena_1a1aefcfca2b595c0f7ddac3e351f6e8a3" kind="function"><name>sizeOf</name></member>
@@ -11574,7 +11586,7 @@
     <member refid="classamrex_1_1TinyProfiler_1a2344d0f82665ec2e7efe266b015d163c" kind="function"><name>Finalize</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a106fc3c7abfb4df3cc62527b62c2aff4" kind="function"><name>MemoryInitialize</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a28131b0e3240b1df559a63c255fc6d72" kind="function"><name>MemoryFinalize</name></member>
-    <member refid="classamrex_1_1TinyProfiler_1acf3b7bc8c1643be36ccc4d41df0dbec7" kind="function"><name>RegisterArena</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a0ee76d52f5f79b4295db066f8145bea1" kind="function"><name>RegisterArena</name></member>
     <member refid="classamrex_1_1TinyProfiler_1af7c89134a317d3c1cb595a236bdaeff0" kind="function"><name>DeregisterArena</name></member>
     <member refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kind="function"><name>StartRegion</name></member>
     <member refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kind="function"><name>StopRegion</name></member>

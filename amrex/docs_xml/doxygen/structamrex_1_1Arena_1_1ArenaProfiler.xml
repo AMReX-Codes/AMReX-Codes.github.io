@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structamrex_1_1Arena_1_1ArenaProfiler" kind="struct" language="C++" prot="protected">
+    <compoundname>amrex::Arena::ArenaProfiler</compoundname>
+    <includes refid="AMReX__Arena_8H" local="no">AMReX_Arena.H</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structamrex_1_1Arena_1_1ArenaProfiler_1a95e91e069e1ea8873693839d0bbc72e7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::Arena::ArenaProfiler::m_do_profiling</definition>
+        <argsstring></argsstring>
+        <name>m_do_profiling</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If this arena is profiled by <ref refid="classamrex_1_1TinyProfiler" kindref="compound">TinyProfiler</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="217" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1Arena_1_1ArenaProfiler_1ad9b1a5dabdae06286027285177730012" prot="public" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex amrex::Arena::ArenaProfiler::m_arena_profiler_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_arena_profiler_mutex</name>
+        <briefdescription>
+<para>Mutex for the profiling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="219" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1Arena_1_1ArenaProfiler_1a086e99739e74b91a474479e2507a7b2c" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> &gt;</type>
+        <definition>std::map&lt;std::string, MemStat&gt; amrex::Arena::ArenaProfiler::m_profiling_stats</definition>
+        <argsstring></argsstring>
+        <name>m_profiling_stats</name>
+        <briefdescription>
+<para>Data structure used for profiling with <ref refid="classamrex_1_1TinyProfiler" kindref="compound">TinyProfiler</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="221" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1Arena_1_1ArenaProfiler_1a697d3803d72aec0fda55351e1efede2c" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; void *, std::pair&lt; <ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> *, std::size_t &gt; &gt;</type>
+        <definition>std::unordered_map&lt;void*, std::pair&lt;MemStat*, std::size_t&gt; &gt; amrex::Arena::ArenaProfiler::m_currently_allocated</definition>
+        <argsstring></argsstring>
+        <name>m_currently_allocated</name>
+        <briefdescription>
+<para>Track the currently allocated memory, not used by <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="223" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Arena::ArenaProfiler::~ArenaProfiler</definition>
+        <argsstring>()</argsstring>
+        <name>~ArenaProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="225" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="663" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1af3a54b7b95ca1c509e4ba59e0614f2d9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Arena::ArenaProfiler::ArenaProfiler</definition>
+        <argsstring>() noexcept=default</argsstring>
+        <name>ArenaProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="226" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1aeb520f6b20549099093cd9b76b39473c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Arena::ArenaProfiler::ArenaProfiler</definition>
+        <argsstring>(const ArenaProfiler &amp;rhs)=delete</argsstring>
+        <name>ArenaProfiler</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="227" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1abdb5590787c65171e1a5e9e77a42706e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Arena::ArenaProfiler::ArenaProfiler</definition>
+        <argsstring>(ArenaProfiler &amp;&amp;rhs)=delete</argsstring>
+        <name>ArenaProfiler</name>
+        <param>
+          <type><ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="228" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1a8444487b7e58d1bc8042b9eae27ea452" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;</type>
+        <definition>ArenaProfiler&amp; amrex::Arena::ArenaProfiler::operator=</definition>
+        <argsstring>(const ArenaProfiler &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="229" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1a0fb352f73b4f59fb7e916f9c562ace45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;</type>
+        <definition>ArenaProfiler&amp; amrex::Arena::ArenaProfiler::operator=</definition>
+        <argsstring>(ArenaProfiler &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structamrex_1_1Arena_1_1ArenaProfiler" kindref="compound">ArenaProfiler</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="230" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1a1e55000cfd16be61fe81115bf0a2c44f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Arena::ArenaProfiler::profile_alloc</definition>
+        <argsstring>(void *ptr, std::size_t nbytes)</argsstring>
+        <name>profile_alloc</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>nbytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="232" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="671" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Arena_1_1ArenaProfiler_1a616c70790fe756cef244e970f95be468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Arena::ArenaProfiler::profile_free</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>profile_free</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="234" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp" bodystart="684" bodyend="696"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::mutex</label>
+      </node>
+      <node id="5">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" line="215" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.H" bodystart="215" bodyend="236"/>
+    <listofallmembers>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1af3a54b7b95ca1c509e4ba59e0614f2d9" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>ArenaProfiler</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1aeb520f6b20549099093cd9b76b39473c" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>ArenaProfiler</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1abdb5590787c65171e1a5e9e77a42706e" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>ArenaProfiler</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1ad9b1a5dabdae06286027285177730012" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>m_arena_profiler_mutex</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a697d3803d72aec0fda55351e1efede2c" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>m_currently_allocated</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a95e91e069e1ea8873693839d0bbc72e7" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>m_do_profiling</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a086e99739e74b91a474479e2507a7b2c" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>m_profiling_stats</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a8444487b7e58d1bc8042b9eae27ea452" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0fb352f73b4f59fb7e916f9c562ace45" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a1e55000cfd16be61fe81115bf0a2c44f" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>profile_alloc</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a616c70790fe756cef244e970f95be468" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>profile_free</name></member>
+      <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" prot="public" virt="non-virtual"><scope>amrex::Arena::ArenaProfiler</scope><name>~ArenaProfiler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,5 +1,16 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1amrex__parser.html#afc9a6bd1b3b65c88f2ff997308922b16":[3,0,0,379,0],
+"structamrex_1_1detail_1_1Detector.html":[3,0,0,3,22],
+"structamrex_1_1detail_1_1Detector.html#a5a2159bb93f523660e17cfa0cda89054":[3,0,0,3,22,1],
+"structamrex_1_1detail_1_1Detector.html#a9a3f9ffd7c901fad20e8fae84feb5eb0":[3,0,0,3,22,0],
+"structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html":[3,0,0,3,23],
+"structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#a4714bed5510035711488467ea4927ad8":[3,0,0,3,23,1],
+"structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#afaec2ae94e980097c6c81764725820f2":[3,0,0,3,23,0],
+"structamrex_1_1detail_1_1IsConvertibleImp.html":[3,0,0,3,24],
+"structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html":[3,0,0,3,25],
+"structamrex_1_1detail_1_1Nonesuch.html":[3,0,0,3,21],
+"structamrex_1_1detail_1_1Nonesuch.html#a3dbacdafd791162c9474b934df093e5c":[3,0,0,3,21,4],
 "structamrex_1_1detail_1_1Nonesuch.html#a531b8aa2b7cb3140db64402b060c0406":[3,0,0,3,21,5],
 "structamrex_1_1detail_1_1Nonesuch.html#a5ab6a79913277546a5e11028e6e427ef":[3,0,0,3,21,2],
 "structamrex_1_1detail_1_1Nonesuch.html#a98dec8e1541181c79d10e63ba228f266":[3,0,0,3,21,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX86 =
 "unionAMREX__PARSERSTYPE.html#ab225ec03a4bab39df7f50dbb3928842e":[3,0,14,4],
 "unionAMREX__PARSERSTYPE.html#acbb8a4de3b0dd43de372b6c1070c6d2b":[3,0,14,2],
 "unionAMREX__PARSERSTYPE.html#ae4b2f9e1858ec2244f20bb23fae6da2b":[3,0,14,1],
-"unionamrex_1_1BATransformer_1_1BATOp.html":[3,0,0,111,0],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a":[3,0,0,111,0,7],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[3,0,0,111,0,1],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a221948cf931ebf7ae97fd6cbc80a7d61":[3,0,0,111,0,0],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[3,0,0,111,0,2],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[3,0,0,111,0,9],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf":[3,0,0,111,0,5],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[3,0,0,111,0,8],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a8a638320a3eff1eddadce618e107e535":[3,0,0,111,0,4],
-"unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[3,0,0,111,0,6],
-"unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[3,0,0,111,0,3],
-"unionamrex_1_1BlockMutex_1_1state__t.html":[3,0,0,99,0]
+"unionamrex_1_1BATransformer_1_1BATOp.html":[3,0,0,112,0]
 };

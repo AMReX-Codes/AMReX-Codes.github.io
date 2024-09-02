@@ -19,7 +19,6 @@ var classamrex_1_1CArena =
     [ "operator=", "classamrex_1_1CArena.html#ae491fc24a9163b864bc798acc7518852", null ],
     [ "PrintUsage", "classamrex_1_1CArena.html#a220453b0ec3b2de0df5cd94cb08dab03", null ],
     [ "PrintUsage", "classamrex_1_1CArena.html#aa73ded7161a0649ccd1103491034632a", null ],
-    [ "registerForProfiling", "classamrex_1_1CArena.html#abe6d024bf682144256ad7fe52e5b36ae", null ],
     [ "shrink_in_place", "classamrex_1_1CArena.html#a39b6596c9fb986503f9e782ff67ecd40", null ],
     [ "sizeOf", "classamrex_1_1CArena.html#a1aefcfca2b595c0f7ddac3e351f6e8a3", null ],
     [ "operator<<", "classamrex_1_1CArena.html#a272c0e9556a11c521a28625bd64fb588", null ],
@@ -28,9 +27,7 @@ var classamrex_1_1CArena =
     [ "m_actually_used", "classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48", null ],
     [ "m_alloc", "classamrex_1_1CArena.html#ad1b240a0437cfcaee6788096d93a1674", null ],
     [ "m_busylist", "classamrex_1_1CArena.html#a88823438ee0e89721d65131d87d2f687", null ],
-    [ "m_do_profiling", "classamrex_1_1CArena.html#abe3cf9ae992eb7a9450eb11500b11f13", null ],
     [ "m_freelist", "classamrex_1_1CArena.html#a000d9e231672c9a28a72a05abec379fb", null ],
     [ "m_hunk", "classamrex_1_1CArena.html#a7bbf66f41bc3167185236bdcd6fe67a1", null ],
-    [ "m_profiling_stats", "classamrex_1_1CArena.html#a92c55c16fad7194ada541a5645340a03", null ],
     [ "m_used", "classamrex_1_1CArena.html#a7ec2fcdaa0d06d1fceb739d0e1661751", null ]
 ];

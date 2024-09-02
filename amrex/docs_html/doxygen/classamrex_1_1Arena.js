@@ -1,5 +1,6 @@
 var classamrex_1_1Arena =
 [
+    [ "ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", "structamrex_1_1Arena_1_1ArenaProfiler" ],
     [ "~Arena", "classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6", null ],
     [ "Arena", "classamrex_1_1Arena.html#a2e2407d56d1710a0029928c776b27682", null ],
     [ "Arena", "classamrex_1_1Arena.html#a57de8f5ef86cceadc9f1c00bc7ea7790", null ],
@@ -29,5 +30,6 @@ var classamrex_1_1Arena =
     [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],
     [ "shrink_in_place", "classamrex_1_1Arena.html#a1fec80ed73e43de305a5e232e0b551a6", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
-    [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ]
+    [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ],
+    [ "m_profiler", "classamrex_1_1Arena.html#ad136b691382e7a7d8fba158837416b98", null ]
 ];

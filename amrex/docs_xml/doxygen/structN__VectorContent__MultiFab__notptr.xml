@@ -66,7 +66,7 @@
         <label>amrex::FabArrayBase::FabArrayStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
       </node>
-      <node id="58">
+      <node id="63">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
@@ -77,7 +77,7 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="61">
+      <node id="66">
         <label>std::unique_ptr&lt; amrex::FBData&lt; FArrayBox &gt; &gt;</label>
       </node>
       <node id="44">
@@ -110,10 +110,10 @@
         <label>amrex::Math::FastDivmodU64</label>
         <link refid="structamrex_1_1Math_1_1FastDivmodU64"/>
       </node>
-      <node id="63">
+      <node id="68">
         <label>std::unique_ptr&lt; amrex::FabArray&lt; FArrayBox &gt; &gt;</label>
       </node>
-      <node id="60">
+      <node id="65">
         <label>Real</label>
       </node>
       <node id="17">
@@ -128,7 +128,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="66">
+      <node id="71">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
       </node>
@@ -165,6 +165,9 @@
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
         <childnode refid="58" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
@@ -224,7 +227,7 @@
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
       </node>
-      <node id="65">
+      <node id="70">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
@@ -253,6 +256,22 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
+      <node id="58">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
       <node id="45">
         <label>std::multimap&lt; K, T &gt;</label>
         <childnode refid="6" relation="usage">
@@ -275,13 +294,16 @@
           <edgelabel>m_bat</edgelabel>
         </childnode>
       </node>
+      <node id="60">
+        <label>std::mutex</label>
+      </node>
       <node id="46">
         <label>std::vector&lt; std::string &gt;</label>
         <childnode refid="37" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="62">
+      <node id="67">
         <label>std::unique_ptr&lt; amrex::detail::SingleChunkArena &gt;</label>
       </node>
       <node id="52">
@@ -347,11 +369,15 @@
         <childnode refid="27" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="64">
+      <node id="69">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="27" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="62">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
       </node>
       <node id="1">
         <label>N_VectorContent_MultiFab_notptr</label>
@@ -360,7 +386,7 @@
           <edgelabel>mf</edgelabel>
         </childnode>
       </node>
-      <node id="59">
+      <node id="64">
         <label>amrex::FABio</label>
         <link refid="classamrex_1_1FABio"/>
       </node>
@@ -420,10 +446,10 @@
         <link refid="classamrex_1_1FArrayBox"/>
         <childnode refid="55" relation="public-inheritance">
         </childnode>
-        <childnode refid="59" relation="usage">
+        <childnode refid="64" relation="usage">
           <edgelabel>fabio</edgelabel>
         </childnode>
-        <childnode refid="60" relation="usage">
+        <childnode refid="65" relation="usage">
           <edgelabel>initval</edgelabel>
         </childnode>
       </node>
@@ -444,25 +470,25 @@
         <childnode refid="53" relation="usage">
           <edgelabel>m_fabs_v</edgelabel>
         </childnode>
-        <childnode refid="61" relation="usage">
+        <childnode refid="66" relation="usage">
           <edgelabel>fbd</edgelabel>
         </childnode>
         <childnode refid="56" relation="usage">
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
-        <childnode refid="62" relation="usage">
+        <childnode refid="67" relation="usage">
           <edgelabel>m_single_chunk_arena</edgelabel>
         </childnode>
-        <childnode refid="63" relation="usage">
+        <childnode refid="68" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
-        <childnode refid="64" relation="usage">
+        <childnode refid="69" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="65" relation="usage">
+        <childnode refid="70" relation="usage">
           <edgelabel>shmem</edgelabel>
         </childnode>
-        <childnode refid="66" relation="usage">
+        <childnode refid="71" relation="usage">
           <edgelabel>m_arrays</edgelabel>
         </childnode>
       </node>
@@ -549,6 +575,15 @@
       <node id="37">
         <label>std::string</label>
         <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="62" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>keys</edgelabel>
         </childnode>
       </node>
       <node id="10">
