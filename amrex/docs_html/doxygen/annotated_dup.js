@@ -802,7 +802,8 @@ var annotated_dup =
       [ "amrex_parmparse_add_string", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__string.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__string" ],
       [ "amrex_parmparse_add_intarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__intarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__intarr" ],
       [ "amrex_parmparse_add_realarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__realarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__realarr" ],
-      [ "amrex_parmparse_add_stringarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr" ]
+      [ "amrex_parmparse_add_stringarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr" ],
+      [ "amrex_parmparse_destroy", "interfaceamrex__parmparse__module_1_1amrex__parmparse__destroy.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__destroy" ]
     ] ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", [
       [ "amrex_string", "structamrex__string__module_1_1amrex__string.html", "structamrex__string__module_1_1amrex__string" ]

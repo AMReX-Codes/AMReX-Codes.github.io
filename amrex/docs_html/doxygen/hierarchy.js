@@ -58,6 +58,7 @@ var hierarchy =
     [ "amrex_parmparse_module::amrex_parmparse_add_string", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__string.html", null ],
     [ "amrex_parmparse_module::amrex_parmparse_add_stringarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html", null ],
     [ "amrex_parmparse_module::amrex_parmparse_delete_cp_char", "interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html", null ],
+    [ "amrex_parmparse_module::amrex_parmparse_destroy", "interfaceamrex__parmparse__module_1_1amrex__parmparse__destroy.html", null ],
     [ "amrex_parmparse_module::amrex_parmparse_get_bool", "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html", null ],
     [ "amrex_parmparse_module::amrex_parmparse_get_counts", "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html", null ],
     [ "amrex_parmparse_module::amrex_parmparse_get_int", "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__int.html", null ],

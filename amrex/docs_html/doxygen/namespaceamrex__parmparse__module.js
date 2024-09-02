@@ -23,6 +23,7 @@ var namespaceamrex__parmparse__module =
     [ "amrex_parmparse_add_intarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__intarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__intarr" ],
     [ "amrex_parmparse_add_realarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__realarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__realarr" ],
     [ "amrex_parmparse_add_stringarr", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr" ],
+    [ "amrex_parmparse_destroy", "interfaceamrex__parmparse__module_1_1amrex__parmparse__destroy.html", "interfaceamrex__parmparse__module_1_1amrex__parmparse__destroy" ],
     [ "add_int", "namespaceamrex__parmparse__module.html#ad1323834ed5f154750a5c048591417d4", null ],
     [ "add_intarr", "namespaceamrex__parmparse__module.html#a0e75dfabca3b63134005a6f0ddd250cd", null ],
     [ "add_logical", "namespaceamrex__parmparse__module.html#ab19ca0a4f0bea4114b9a25f29e0b0eac", null ],
