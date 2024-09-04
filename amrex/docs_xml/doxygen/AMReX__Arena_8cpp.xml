@@ -2341,42 +2341,49 @@
 <codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="661"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="662"><highlight class="normal"></highlight></codeline>
-<codeline lineno="663"><highlight class="normal"><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" kindref="member">Arena::ArenaProfiler::~ArenaProfiler</ref><sp/>()<sp/>{</highlight></codeline>
-<codeline lineno="664"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
-<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1af7c89134a317d3c1cb595a236bdaeff0" kindref="member">TinyProfiler::DeregisterArena</ref>(m_profiling_stats);</highlight></codeline>
-<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="668"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="669"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="670"><highlight class="normal"></highlight></codeline>
-<codeline lineno="671"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a1e55000cfd16be61fe81115bf0a2c44f" kindref="member">Arena::ArenaProfiler::profile_alloc</ref><sp/>([[maybe_unused]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr,</highlight></codeline>
-<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[maybe_unused]]<sp/>std::size_t<sp/>nbytes)<sp/>{</highlight></codeline>
-<codeline lineno="673"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
-<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(m_arena_profiler_mutex);</highlight></codeline>
-<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MemStat*<sp/>stat<sp/>=<sp/><ref refid="classamrex_1_1TinyProfiler_1a7973da4e33568c937969b5eec423e21e" kindref="member">TinyProfiler::memory_alloc</ref>(nbytes,<sp/>m_profiling_stats);</highlight></codeline>
-<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stat)<sp/>{</highlight></codeline>
-<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currently_allocated.insert({ptr,<sp/>{stat,<sp/>nbytes}});</highlight></codeline>
-<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="681"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="682"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="683"><highlight class="normal"></highlight></codeline>
-<codeline lineno="684"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a616c70790fe756cef244e970f95be468" kindref="member">Arena::ArenaProfiler::profile_free</ref><sp/>([[maybe_unused]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr)<sp/>{</highlight></codeline>
-<codeline lineno="685"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
-<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(m_arena_profiler_mutex);</highlight></codeline>
-<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_currently_allocated.find(ptr);</highlight></codeline>
-<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>m_currently_allocated.end())<sp/>{</highlight></codeline>
-<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>[stat,<sp/>nbytes]<sp/>=<sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1acf44a0af5564add5abbde50e6b9aa570" kindref="member">TinyProfiler::memory_free</ref>(nbytes,<sp/>stat);</highlight></codeline>
-<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currently_allocated.erase(it);</highlight></codeline>
-<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="695"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="696"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"></highlight></codeline>
-<codeline lineno="698"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" kindref="member">Arena::ArenaProfiler::~ArenaProfiler</ref><sp/>()</highlight></codeline>
+<codeline lineno="666"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1af7c89134a317d3c1cb595a236bdaeff0" kindref="member">TinyProfiler::DeregisterArena</ref>(m_profiling_stats);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="670"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="671"><highlight class="normal"></highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="normal"></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a0251164b3e2b6fb69f47c149834e862f" kindref="member">Arena::ArenaProfiler::~ArenaProfiler</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"></highlight></codeline>
+<codeline lineno="676"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="677"><highlight class="normal"></highlight></codeline>
+<codeline lineno="678"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a1e55000cfd16be61fe81115bf0a2c44f" kindref="member">Arena::ArenaProfiler::profile_alloc</ref><sp/>([[maybe_unused]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr,</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[maybe_unused]]<sp/>std::size_t<sp/>nbytes)<sp/>{</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(m_arena_profiler_mutex);</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MemStat*<sp/>stat<sp/>=<sp/><ref refid="classamrex_1_1TinyProfiler_1a7973da4e33568c937969b5eec423e21e" kindref="member">TinyProfiler::memory_alloc</ref>(nbytes,<sp/>m_profiling_stats);</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stat)<sp/>{</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currently_allocated.insert({ptr,<sp/>{stat,<sp/>nbytes}});</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Arena_1_1ArenaProfiler_1a616c70790fe756cef244e970f95be468" kindref="member">Arena::ArenaProfiler::profile_free</ref><sp/>([[maybe_unused]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr)<sp/>{</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_TINY_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_do_profiling)<sp/>{</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(m_arena_profiler_mutex);</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_currently_allocated.find(ptr);</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>m_currently_allocated.end())<sp/>{</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>[stat,<sp/>nbytes]<sp/>=<sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1acf44a0af5564add5abbde50e6b9aa570" kindref="member">TinyProfiler::memory_free</ref>(nbytes,<sp/>stat);</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currently_allocated.erase(it);</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="703"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"></highlight></codeline>
+<codeline lineno="705"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Arena.cpp"/>
   </compounddef>
