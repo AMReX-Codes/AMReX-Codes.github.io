@@ -12,6 +12,7 @@ var classamrex_1_1TinyProfiler =
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#aee36686bda9cf58b62055dca5818af46", null ],
     [ "DeregisterArena", "classamrex_1_1TinyProfiler.html#af7c89134a317d3c1cb595a236bdaeff0", null ],
     [ "Finalize", "classamrex_1_1TinyProfiler.html#a2344d0f82665ec2e7efe266b015d163c", null ],
+    [ "get_output_file", "classamrex_1_1TinyProfiler.html#a179ed9477bf3c19ddd7678a6277230c1", null ],
     [ "Initialize", "classamrex_1_1TinyProfiler.html#ae63aac3a7741cc60cb66504da479b50a", null ],
     [ "memory_alloc", "classamrex_1_1TinyProfiler.html#a7973da4e33568c937969b5eec423e21e", null ],
     [ "memory_free", "classamrex_1_1TinyProfiler.html#acf44a0af5564add5abbde50e6b9aa570", null ],
