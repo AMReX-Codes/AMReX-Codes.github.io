@@ -156,7 +156,7 @@ var classamrex_1_1MLLinOpT =
     [ "mg_box_min_width", "classamrex_1_1MLLinOpT.html#a958be92529c763a85a81c3fc03e1e5af", null ],
     [ "mg_coarsen_ratio", "classamrex_1_1MLLinOpT.html#a4ab72cdcf8c7d1746bd1e03fac99d808", null ],
     [ "mg_coarsen_ratio_vec", "classamrex_1_1MLLinOpT.html#abf470fae49c59ccd4cbc058ebfdab2a2", null ],
-    [ "mg_domain_min_width", "classamrex_1_1MLLinOpT.html#adb9b30d3eda7f6dd1d77740f58674c84", null ],
+    [ "mg_domain_min_width", "classamrex_1_1MLLinOpT.html#a2c3fc7b84d860915b7aa6bb06417800f", null ],
     [ "robin_a_raii", "classamrex_1_1MLLinOpT.html#afdb609a7a4b9ea229e7b9cc89a8751f7", null ],
     [ "robin_b_raii", "classamrex_1_1MLLinOpT.html#a90e6517d0ff6dee31c92101a9249de67", null ],
     [ "robin_f_raii", "classamrex_1_1MLLinOpT.html#a451681732629cb75f6a4a9ba29799f44", null ],

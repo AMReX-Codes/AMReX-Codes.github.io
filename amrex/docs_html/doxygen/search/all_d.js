@@ -1037,7 +1037,7 @@ var searchData=
   ['mg_5fbox_5fmin_5fwidth_5851',['mg_box_min_width',['../classamrex_1_1MLLinOpT.html#a958be92529c763a85a81c3fc03e1e5af',1,'amrex::MLLinOpT']]],
   ['mg_5fcoarsen_5fratio_5852',['mg_coarsen_ratio',['../classamrex_1_1MLLinOpT.html#a4ab72cdcf8c7d1746bd1e03fac99d808',1,'amrex::MLLinOpT']]],
   ['mg_5fcoarsen_5fratio_5fvec_5853',['mg_coarsen_ratio_vec',['../classamrex_1_1MLLinOpT.html#abf470fae49c59ccd4cbc058ebfdab2a2',1,'amrex::MLLinOpT']]],
-  ['mg_5fdomain_5fmin_5fwidth_5854',['mg_domain_min_width',['../classamrex_1_1MLLinOpT.html#adb9b30d3eda7f6dd1d77740f58674c84',1,'amrex::MLLinOpT']]],
+  ['mg_5fdomain_5fmin_5fwidth_5854',['mg_domain_min_width',['../classamrex_1_1MLLinOpT.html#a2c3fc7b84d860915b7aa6bb06417800f',1,'amrex::MLLinOpT']]],
   ['mgfcycle_5855',['mgFcycle',['../classamrex_1_1MLMGT.html#adac59879a785f3b492262e29249a66ae',1,'amrex::MLMGT']]],
   ['mglev_5856',['mglev',['../classamrex_1_1MLCGSolverT.html#a3210f3ff9e55a7746a24d849cf9c39b2',1,'amrex::MLCGSolverT']]],
   ['mgvcycle_5857',['mgVcycle',['../classamrex_1_1MLMGT.html#a66029bb749136c53cc6fabe82b6b2783',1,'amrex::MLMGT']]],
