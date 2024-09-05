@@ -159,6 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a2a37f4066af411d73b297946a62a34"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1iMultiFab.html#a2a2a37f4066af411d73b297946a62a34">sum</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0, bool local=false) const</td></tr>
 <tr class="memdesc:a2a2a37f4066af411d73b297946a62a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum in component comp.  <a href="classamrex_1_1iMultiFab.html#a2a2a37f4066af411d73b297946a62a34">More...</a><br /></td></tr>
 <tr class="separator:a2a2a37f4066af411d73b297946a62a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a441103d0ab07713e21521a7189e193ce"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1iMultiFab.html#a441103d0ab07713e21521a7189e193ce">sum</a> (<a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> const &amp;region, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp=0, bool local=false) const</td></tr>
+<tr class="memdesc:a441103d0ab07713e21521a7189e193ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp" in the given "region". &ndash; no ghost cells are included.  <a href="classamrex_1_1iMultiFab.html#a441103d0ab07713e21521a7189e193ce">More...</a><br /></td></tr>
+<tr class="separator:a441103d0ab07713e21521a7189e193ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0fd430ccad60b7771778c64a7d928b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1iMultiFab.html#ab0fd430ccad60b7771778c64a7d928b5">plus</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> val, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0)</td></tr>
 <tr class="memdesc:ab0fd430ccad60b7771778c64a7d928b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the scalar value val to the value of each cell in the specified subregion of the <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a>. The subregion consists of the num_comp components starting at component comp. The value of nghost specifies the number of cells in the boundary region of each <a class="el" href="classamrex_1_1IArrayBox.html" title="A Fortran Array of ints.">IArrayBox</a> in the subregion that should be modified.  <a href="classamrex_1_1iMultiFab.html#ab0fd430ccad60b7771778c64a7d928b5">More...</a><br /></td></tr>
 <tr class="separator:ab0fd430ccad60b7771778c64a7d928b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2863,8 +2866,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a441103d0ab07713e21521a7189e193ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441103d0ab07713e21521a7189e193ce">&#9670;&nbsp;</a></span>sum() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Long amrex::iMultiFab::sum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the sum of component "comp" in the given "region". &ndash; no ghost cells are included. </p>
+
+</div>
+</div>
 <a id="a2a2a37f4066af411d73b297946a62a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a2a37f4066af411d73b297946a62a34">&#9670;&nbsp;</a></span>sum()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2a37f4066af411d73b297946a62a34">&#9670;&nbsp;</a></span>sum() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

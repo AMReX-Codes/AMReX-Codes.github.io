@@ -42,5 +42,6 @@ var classamrex_1_1iMultiFab =
     [ "plus", "classamrex_1_1iMultiFab.html#ab0fd430ccad60b7771778c64a7d928b5", null ],
     [ "plus", "classamrex_1_1iMultiFab.html#af56a10b8407c86226901dc0b5ba070c7", null ],
     [ "Subtract", "classamrex_1_1iMultiFab.html#a66a3302f803afd696dff628cf4c61e3b", null ],
+    [ "sum", "classamrex_1_1iMultiFab.html#a441103d0ab07713e21521a7189e193ce", null ],
     [ "sum", "classamrex_1_1iMultiFab.html#a2a2a37f4066af411d73b297946a62a34", null ]
 ];

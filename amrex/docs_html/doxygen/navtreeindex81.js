@@ -1,5 +1,6 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1IntVectND_1_1shift__hasher.html#a25646bb346892b03e5142c5179d82efa":[3,0,0,93,0,0],
 "structamrex_1_1IntegratorOps.html":[3,0,0,192],
 "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html":[3,0,0,194],
 "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#a3351ed5aa40298f6eabb05de52e6290b":[3,0,0,194,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#ac124f082ce98a9d25b4212b94b68a316":[3,0,0,468,5,0],
 "structamrex_1_1NeighborUnpackPolicy.html":[3,0,0,498],
 "structamrex_1_1NeighborUnpackPolicy.html#a11a020cd1f085ecbf8bb084ba1770723":[3,0,0,498,0],
-"structamrex_1_1Neighbors.html":[3,0,0,464],
-"structamrex_1_1Neighbors.html#a2d37e953b78d6106dbd29c8cb8775270":[3,0,0,464,8]
+"structamrex_1_1Neighbors.html":[3,0,0,464]
 };
