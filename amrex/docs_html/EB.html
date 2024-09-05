@@ -331,6 +331,12 @@ following data:</p>
 <span class="c1">// embedded boundary centroid</span>
 <span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryCent</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
+<span class="c1">// embedded boundary normal direction</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryNormal</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// embedded boundary surface area</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryArea</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+
 <span class="c1">// area fractions</span>
 <span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getAreaFrac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
@@ -350,6 +356,15 @@ cell’s local coordinates with respect to the regular cell’s center.</p></li>
 <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.  Each component
 of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on each
 cell’s local coordinates with respect to the regular cell’s center.</p></li>
+<li><p><strong>Boundary normal</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>
+components representing the unit vector pointing toward the covered part.</p></li>
+<li><p><strong>Boundary area</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with a single component
+representing the dimensionless boundary area. When the cell is isotropic
+(i.e., <span class="math notranslate nohighlight">\(\Delta x = \Delta y = \Delta z\)</span>), it’s trivial to convert it
+to physical units. If the cell size is anisotropic, the conversion
+requires multiplying by a factor of <span class="math notranslate nohighlight">\(\sqrt{(n_x \Delta y \Delta
+z)^2 + (n_y \Delta x \Delta z)^2 + (n_z \Delta x \Delta y)^2}\)</span>, where
+<span class="math notranslate nohighlight">\(n\)</span> is the boundary normal vector.</p></li>
 <li><p><strong>Face centroid</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.
 Each component of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on
 each cell’s local coordinates with respect to the embedded boundary.</p></li>
