@@ -1,6 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"structamrex_1_1Gpu_1_1DeviceScalar.html#a09ce14e97aa618c00bcc778e9337fd4f":[3,0,0,5,24,8],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[3,0,0,5,24,7],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[3,0,0,5,24,9],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[3,0,0,5,24,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX80 =
 "structamrex_1_1InSituUtils_1_1assignOp.html":[3,0,0,6,3],
 "structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[3,0,0,6,3,0],
 "structamrex_1_1InSituUtils_1_1orOp.html":[3,0,0,6,4],
-"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0]
+"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0],
+"structamrex_1_1IntVectND_1_1shift__hasher.html":[3,0,0,93,0]
 };
