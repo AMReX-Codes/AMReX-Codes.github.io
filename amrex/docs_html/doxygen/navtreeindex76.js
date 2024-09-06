@@ -1,5 +1,6 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a835100974c4782de657f7f852cb8d2c3":[3,0,0,428,0,3],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a93efc600bd13297ea7536362a1181858":[3,0,0,428,0,0],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#abe1c7c360d280567e6b307120f51a7ae":[3,0,0,428,0,4],
 "structamrex_1_1Any_1_1innards.html":[3,0,0,71,0],
@@ -75,14 +76,14 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Array2D.html#a6c11e88a9c5d43efdbfc6f1acef6397d":[3,0,0,77,3],
 "structamrex_1_1Array2D.html#a7ed97ce5a43fa5616d9d89171c05c286":[3,0,0,77,14],
 "structamrex_1_1Array2D.html#a85acd12849153eb0faca0f5c22f84d3d":[3,0,0,77,12],
-"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[3,0,0,77,6],
 "structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[3,0,0,77,7],
+"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[3,0,0,77,6],
 "structamrex_1_1Array2D.html#aa8de85adf5367a972d5da3c2562530f9":[3,0,0,77,18],
 "structamrex_1_1Array2D.html#ac3b0f0863090dfd120326dccff60fb81":[3,0,0,77,10],
 "structamrex_1_1Array2D.html#ad663a1d8bd1165b26303ff63b0cfafbe":[3,0,0,77,19],
 "structamrex_1_1Array2D.html#aedd8fdf9c40df37ea0f9f74e8c2417d4":[3,0,0,77,2],
-"structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[3,0,0,77,5],
 "structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[3,0,0,77,4],
+"structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[3,0,0,77,5],
 "structamrex_1_1Array2D.html#afd8b853ff1742083599a018e439274ac":[3,0,0,77,9],
 "structamrex_1_1Array3D.html":[3,0,0,78],
 "structamrex_1_1Array3D.html#a1cc1a081cc2f368f2f262e27ab2ce0c6":[3,0,0,78,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1BATbndryReg.html#ad8ea19edcbf549f67753ecdcd6a2f32e":[3,0,0,111,9],
 "structamrex_1_1BATbndryReg.html#ae30ce7aef9fb1c29ea4b1a2708ae19eb":[3,0,0,111,12],
 "structamrex_1_1BATbndryReg.html#ae3b0deb00e514295c1a38e8a1cd20506":[3,0,0,111,10],
-"structamrex_1_1BATbndryReg.html#afb3c670e0176df666a804c831a941f89":[3,0,0,111,8],
-"structamrex_1_1BATcoarsenRatio.html":[3,0,0,109]
+"structamrex_1_1BATbndryReg.html#afb3c670e0176df666a804c831a941f89":[3,0,0,111,8]
 };
