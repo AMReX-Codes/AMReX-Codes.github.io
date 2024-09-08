@@ -32,7 +32,6 @@ var AMReX__Parser__Exe_8H =
     [ "ParserExePOWI", "structamrex_1_1ParserExePOWI.html", "structamrex_1_1ParserExePOWI" ],
     [ "ParserExeIF", "structamrex_1_1ParserExeIF.html", "structamrex_1_1ParserExeIF" ],
     [ "ParserExeJUMP", "structamrex_1_1ParserExeJUMP.html", "structamrex_1_1ParserExeJUMP" ],
-    [ "ParserStack", "structamrex_1_1ParserStack.html", "structamrex_1_1ParserStack" ],
     [ "AMREX_PARSER_GET_DATA", "AMReX__Parser__Exe_8H.html#a7478a6b2c1f097effb3b8788ebf49726", null ],
     [ "AMREX_PARSER_LOCAL_IDX0", "AMReX__Parser__Exe_8H.html#a13e00db49c0c59dd2772385306e84f9a", null ],
     [ "AMREX_PARSER_STACK_SIZE", "AMReX__Parser__Exe_8H.html#a17ce5ea3b6e40fa1da429fca8b07406e", null ],

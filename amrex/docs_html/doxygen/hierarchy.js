@@ -677,7 +677,6 @@ var hierarchy =
     [ "amrex::IParserExeSUB_VN", "structamrex_1_1IParserExeSUB__VN.html", null ],
     [ "amrex::IParserExeSUB_VP", "structamrex_1_1IParserExeSUB__VP.html", null ],
     [ "amrex::IParserExeSymbol", "structamrex_1_1IParserExeSymbol.html", null ],
-    [ "amrex::IParserStack< N >", "structamrex_1_1IParserStack.html", null ],
     [ "amrex::IsConvertible< T, Args >", "structamrex_1_1IsConvertible.html", null ],
     [ "IsDetected", null, [
       [ "amrex::IsCallable< T, Args >", "structamrex_1_1IsCallable.html", null ]
@@ -865,7 +864,6 @@ var hierarchy =
     [ "amrex::ParserExeSUB_VN", "structamrex_1_1ParserExeSUB__VN.html", null ],
     [ "amrex::ParserExeSUB_VP", "structamrex_1_1ParserExeSUB__VP.html", null ],
     [ "amrex::ParserExeSymbol", "structamrex_1_1ParserExeSymbol.html", null ],
-    [ "amrex::ParserStack< N >", "structamrex_1_1ParserStack.html", null ],
     [ "amrex::ParticleArray< ContainerType, ParticleType, DataLayoutTag >", "structamrex_1_1ParticleArray.html", null ],
     [ "amrex::ParticleArrayAccessor< ParticleType, DataLayoutTag >", "structamrex_1_1ParticleArrayAccessor.html", null ],
     [ "amrex::ParticleBase< T, NReal, NInt >", "structamrex_1_1ParticleBase.html", null ],
@@ -983,6 +981,7 @@ var hierarchy =
     [ "amrex::EB2::SplineIF", "classamrex_1_1EB2_1_1SplineIF.html", null ],
     [ "amrex::detail::SplitIndexList< Is >", "structamrex_1_1detail_1_1SplitIndexList.html", null ],
     [ "amrex::SrcComp", "structamrex_1_1SrcComp.html", null ],
+    [ "amrex::Stack< T, N >", "structamrex_1_1Stack.html", null ],
     [ "amrex::BlockMutex::state_t", "unionamrex_1_1BlockMutex_1_1state__t.html", null ],
     [ "amrex::StateData", "classamrex_1_1StateData.html", null ],
     [ "amrex::StateDataPhysBCFunct", "classamrex_1_1StateDataPhysBCFunct.html", null ],

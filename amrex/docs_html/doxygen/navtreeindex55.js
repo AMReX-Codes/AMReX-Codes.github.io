@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"classamrex_1_1PlotFileDataImpl.html#a98409ca4924677464a16e11b2eeb7928":[3,0,0,216,16],
+"classamrex_1_1PlotFileDataImpl.html#a9e669b9161d30f743ddee143bff88dc2":[3,0,0,216,11],
 "classamrex_1_1PlotFileDataImpl.html#aa3ede8e016bea208be71cb1362edf3f7":[3,0,0,216,36],
 "classamrex_1_1PlotFileDataImpl.html#aa8ed71c19d3021e1f6be45fbae836870":[3,0,0,216,38],
 "classamrex_1_1PlotFileDataImpl.html#aade963d47f72015f6e2438ae21f45e12":[3,0,0,216,18],
@@ -237,17 +239,15 @@ var NAVTREEINDEX55 =
 "classamrex_1_1ReduceOps.html#aa9f7ed138e607372624eb46fb43e9c85":[3,0,0,231,6],
 "classamrex_1_1ReduceOps.html#ab6d0e3293d5341c89aad5b8acc8abd47":[3,0,0,231,3],
 "classamrex_1_1ReduceOps.html#acf76d5c7c3027a29928d07b2572475a8":[3,0,0,231,4],
-"classamrex_1_1STLtools.html":[3,0,0,395],
-"classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534":[3,0,0,395,14],
-"classamrex_1_1STLtools.html#a071a8fb28babb5af263c2aa74a0d979b":[3,0,0,395,12],
-"classamrex_1_1STLtools.html#a135d25559bca9a4ec5dca07f1d08378b":[3,0,0,395,15],
-"classamrex_1_1STLtools.html#a137269ba305483a92bf01d19ec1fd07c":[3,0,0,395,6],
-"classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70":[3,0,0,395,3],
-"classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b":[3,0,0,395,1],
-"classamrex_1_1STLtools.html#aa4f438da64a6ea3b7520112aac9f8fd3":[3,0,0,395,7],
-"classamrex_1_1STLtools.html#ab287060a4866170710f23abb884afe91":[3,0,0,395,17],
-"classamrex_1_1STLtools.html#abde98e341a2edf239bfa987ce47ed2be":[3,0,0,395,9],
-"classamrex_1_1STLtools.html#aca6050ea96a310625fe20e9f9594680a":[3,0,0,395,8],
-"classamrex_1_1STLtools.html#accd39d6fb1aca77a857b0a4ad1e51ce4":[3,0,0,395,18],
-"classamrex_1_1STLtools.html#ad0e62c6693f9f0100b33547ddef29fa2":[3,0,0,395,21]
+"classamrex_1_1STLtools.html":[3,0,0,394],
+"classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534":[3,0,0,394,14],
+"classamrex_1_1STLtools.html#a071a8fb28babb5af263c2aa74a0d979b":[3,0,0,394,12],
+"classamrex_1_1STLtools.html#a135d25559bca9a4ec5dca07f1d08378b":[3,0,0,394,15],
+"classamrex_1_1STLtools.html#a137269ba305483a92bf01d19ec1fd07c":[3,0,0,394,6],
+"classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70":[3,0,0,394,3],
+"classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b":[3,0,0,394,1],
+"classamrex_1_1STLtools.html#aa4f438da64a6ea3b7520112aac9f8fd3":[3,0,0,394,7],
+"classamrex_1_1STLtools.html#ab287060a4866170710f23abb884afe91":[3,0,0,394,17],
+"classamrex_1_1STLtools.html#abde98e341a2edf239bfa987ce47ed2be":[3,0,0,394,9],
+"classamrex_1_1STLtools.html#aca6050ea96a310625fe20e9f9594680a":[3,0,0,394,8]
 };

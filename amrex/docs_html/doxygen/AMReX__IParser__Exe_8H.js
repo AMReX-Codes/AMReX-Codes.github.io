@@ -33,7 +33,6 @@ var AMReX__IParser__Exe_8H =
     [ "IParserExeDIV_PN", "structamrex_1_1IParserExeDIV__PN.html", "structamrex_1_1IParserExeDIV__PN" ],
     [ "IParserExeIF", "structamrex_1_1IParserExeIF.html", "structamrex_1_1IParserExeIF" ],
     [ "IParserExeJUMP", "structamrex_1_1IParserExeJUMP.html", "structamrex_1_1IParserExeJUMP" ],
-    [ "IParserStack", "structamrex_1_1IParserStack.html", "structamrex_1_1IParserStack" ],
     [ "AMREX_IPARSER_GET_DATA", "AMReX__IParser__Exe_8H.html#a61fa2bb03331564059b5b39defe8cdfc", null ],
     [ "AMREX_IPARSER_LOCAL_IDX0", "AMReX__IParser__Exe_8H.html#af8b43b0ad341a9c3f5155881e77f36df", null ],
     [ "AMREX_IPARSER_STACK_SIZE", "AMReX__IParser__Exe_8H.html#a94d3004345954d5c360a46201394df0f", null ],
