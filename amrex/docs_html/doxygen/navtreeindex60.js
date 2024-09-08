@@ -1,6 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"functions_func_t.html":[3,3,1,19],
 "functions_func_u.html":[3,3,1,20],
 "functions_func_v.html":[3,3,1,21],
 "functions_func_w.html":[3,3,1,22],
@@ -104,8 +103,8 @@ var NAVTREEINDEX60 =
 "globals_enum.html":[4,1,4],
 "globals_eval.html":[4,1,5],
 "globals_f.html":[4,1,0,5],
-"globals_func.html":[4,1,1],
 "globals_func.html":[4,1,1,0],
+"globals_func.html":[4,1,1],
 "globals_func_b.html":[4,1,1,1],
 "globals_func_c.html":[4,1,1,2],
 "globals_func_d.html":[4,1,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX60 =
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html":[3,0,6,1],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html#a522ade5dba9e7fc6f1942c44bfc0c9e1":[3,0,6,1,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html":[3,0,6,5],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html#a0e54240aedd2202434b50c5b107a41ed":[3,0,6,5,0]
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html#a0e54240aedd2202434b50c5b107a41ed":[3,0,6,5,0],
+"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html":[3,0,6,6]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"AMReX__Morton_8H.html#ae3e56c34dacdffe240410a3f6a7a9252":[4,0,0,2,181,2],
 "AMReX__Morton_8H_source.html":[4,0,0,2,181],
 "AMReX__MultiCutFab_8H.html":[4,0,0,4,100],
 "AMReX__MultiCutFab_8H_source.html":[4,0,0,4,100],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "AMReX__NeighborParticlesCPUImpl_8H_source.html":[4,0,0,7,6],
 "AMReX__NeighborParticlesGPUImpl_8H.html":[4,0,0,7,7],
 "AMReX__NeighborParticlesGPUImpl_8H.html#afbc4fb91adabe79223cea83ef23e4020":[4,0,0,7,7,0],
-"AMReX__NeighborParticlesGPUImpl_8H_source.html":[4,0,0,7,7]
+"AMReX__NeighborParticlesGPUImpl_8H_source.html":[4,0,0,7,7],
+"AMReX__NeighborParticlesI_8H.html":[4,0,0,7,8]
 };
