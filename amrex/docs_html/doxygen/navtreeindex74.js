@@ -1,5 +1,6 @@
 var NAVTREEINDEX74 =
 {
+"namespaceamrex__bc__types__module.html#a9ae2283563f4728746b18faad04f94be":[2,0,2,16],
 "namespaceamrex__bc__types__module.html#a9d2b71633a4a976a151e486636ad5e32":[2,0,2,17],
 "namespaceamrex__bc__types__module.html#ab480fd31227317f2aa8691adfece03ae":[2,0,2,0],
 "namespaceamrex__bc__types__module.html#ac1c3de7d685d0c5cc937edf5f33b710e":[2,0,2,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX74 =
 "namespacemembers_i.html":[2,1,0,9],
 "namespacemembers_k.html":[2,1,0,10],
 "namespacemembers_l.html":[2,1,0,11],
-"namespacemembers_m.html":[2,1,0,12],
-"namespacemembers_n.html":[2,1,0,13]
+"namespacemembers_m.html":[2,1,0,12]
 };

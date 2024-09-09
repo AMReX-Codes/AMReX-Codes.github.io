@@ -25,6 +25,7 @@ var classamrex_1_1ParmParse =
     [ "countname", "classamrex_1_1ParmParse.html#a941bdb12544ce537066604b716f8950c", null ],
     [ "countval", "classamrex_1_1ParmParse.html#ac6d9a4fda6c8de819a90ba19c327dfe4", null ],
     [ "dumpTable", "classamrex_1_1ParmParse.html#ad5376a2e65027c356b38efbef3180c28", null ],
+    [ "eval", "classamrex_1_1ParmParse.html#a85725ada8b311feda5f7c55611e7c3ed", null ],
     [ "Finalize", "classamrex_1_1ParmParse.html#a9283fab7556352eeff908ca26cd440be", null ],
     [ "get", "classamrex_1_1ParmParse.html#a24db67f875cbc2a56406c66f48d60b8a", null ],
     [ "get", "classamrex_1_1ParmParse.html#ac246c039fd27b9a2bdccfc99d68062a6", null ],
