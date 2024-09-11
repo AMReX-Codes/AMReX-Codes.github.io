@@ -1676,6 +1676,7 @@ var namespaceamrex =
     [ "getCell", "namespaceamrex.html#a59e63c9be1ed732c3d40ade52d151335", null ],
     [ "getEBCellFlagFab", "namespaceamrex.html#aa4a3bfe1c0cd2c7c8632d1f0ee21b2ec", null ],
     [ "getEnum", "namespaceamrex.html#a7d635bdb718c30952079c43671149a5d", null ],
+    [ "getEnumCaseInsensitive", "namespaceamrex.html#ab3ae8b43aca87a0f9b7c66250c04a316", null ],
     [ "getEnumClassName", "namespaceamrex.html#a045ff5fa344cfaa38699087003062fcb", null ],
     [ "getEnumNameString", "namespaceamrex.html#a2690baa171c059a8cb8e7131989be2e6", null ],
     [ "getEnumNameStrings", "namespaceamrex.html#a9e74312d8181efb0840367305cdbaa84", null ],
