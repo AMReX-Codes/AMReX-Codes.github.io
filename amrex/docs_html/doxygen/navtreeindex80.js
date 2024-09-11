@@ -1,5 +1,8 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#aa7a55672d011b43d9986ba29665e298e":[3,0,0,258,0],
+"structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,257],
+"structamrex_1_1GpuTupleSize.html":[3,0,0,254],
 "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,255],
 "structamrex_1_1Gpu_1_1AtomicAdd.html":[3,0,0,5,2],
 "structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[3,0,0,5,2,0],
@@ -122,8 +125,8 @@ var NAVTREEINDEX80 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,266],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,272],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,271],
@@ -246,8 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1IParserExecutor.html#af52158bd45ec9f15cff8cbfa9806b449":[3,0,0,295,3],
 "structamrex_1_1IParser_1_1Data.html":[3,0,0,296,0],
 "structamrex_1_1IParser_1_1Data.html#a1c4d044550c8a47002f221aeead2c6a4":[3,0,0,296,0,7],
-"structamrex_1_1IParser_1_1Data.html#a2e9b325c1dff6d61148fc39ac8e05be9":[3,0,0,296,0,3],
-"structamrex_1_1IParser_1_1Data.html#a3a7c71fc152cee485f33789b17cfc208":[3,0,0,296,0,0],
-"structamrex_1_1IParser_1_1Data.html#a676502acc05b77e3154b305f6880a0c0":[3,0,0,296,0,4],
-"structamrex_1_1IParser_1_1Data.html#a7ba706756f6d9f4806511c613a16596f":[3,0,0,296,0,1]
+"structamrex_1_1IParser_1_1Data.html#a2e9b325c1dff6d61148fc39ac8e05be9":[3,0,0,296,0,3]
 };

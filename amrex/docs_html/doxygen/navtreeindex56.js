@@ -1,5 +1,8 @@
 var NAVTREEINDEX56 =
 {
+"classamrex_1_1ReduceOps.html#a00463980dfb637a0c8f867ed55fa99b8":[3,0,0,232,2],
+"classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434":[3,0,0,232,7],
+"classamrex_1_1ReduceOps.html#a4e60cd020808a640d7de13b866728202":[3,0,0,232,8],
 "classamrex_1_1ReduceOps.html#a58753cc90f873de11316249189d438ca":[3,0,0,232,1],
 "classamrex_1_1ReduceOps.html#a6ee0df1c765e4839d3e453159681baf8":[3,0,0,232,5],
 "classamrex_1_1ReduceOps.html#a705e92f33933692615787d722642c37c":[3,0,0,232,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX56 =
 "classamrex_1_1SundialsIntegrator.html#a4c6f053d91e5d6298255b2730fdc66f6":[3,0,0,432,6],
 "classamrex_1_1SundialsIntegrator.html#a4d5f9d59a1de4f0cb97ae4984a7c6b03":[3,0,0,432,12],
 "classamrex_1_1SundialsIntegrator.html#a547f6f56d9f99ce08d08fce19b1aee7e":[3,0,0,432,26],
-"classamrex_1_1SundialsIntegrator.html#a5517e10d207516410fc8c47821199574":[3,0,0,432,19],
-"classamrex_1_1SundialsIntegrator.html#a5940fbfb66e109c7f943bb3b4f5ea92c":[3,0,0,432,27],
-"classamrex_1_1SundialsIntegrator.html#a5cfec966ca58dd33ed8e74a008e20544":[3,0,0,432,21],
-"classamrex_1_1SundialsIntegrator.html#a5db76fd7e2cd637504a4addd0d3f4a88":[3,0,0,432,4]
+"classamrex_1_1SundialsIntegrator.html#a5517e10d207516410fc8c47821199574":[3,0,0,432,19]
 };

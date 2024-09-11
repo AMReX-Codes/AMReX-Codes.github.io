@@ -505,6 +505,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc366069f0743f56cbadb53dfe9968e2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#abc366069f0743f56cbadb53dfe9968e2">get_enum_case_insensitive</a> (const char *name, T &amp;ref, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ival=<a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const</td></tr>
 <tr class="memdesc:abc366069f0743f56cbadb53dfe9968e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">. Get enum value using given name.  <a href="classamrex_1_1ParmParse.html#abc366069f0743f56cbadb53dfe9968e2">More...</a><br /></td></tr>
 <tr class="separator:abc366069f0743f56cbadb53dfe9968e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586f659260a22fed130a45bd0f4b34b3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_if_t&lt; ET::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a586f659260a22fed130a45bd0f4b34b3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a586f659260a22fed130a45bd0f4b34b3">query_enum_sloppy</a> (const char *name, T &amp;ref, std::string_view const &amp;ignores, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ival=<a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const</td></tr>
+<tr class="memdesc:a586f659260a22fed130a45bd0f4b34b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">. Query enum value using given name.  <a href="classamrex_1_1ParmParse.html#a586f659260a22fed130a45bd0f4b34b3">More...</a><br /></td></tr>
+<tr class="separator:a586f659260a22fed130a45bd0f4b34b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb64e745c395abcc8381b289d7bd9653"><td class="memTemplParams" colspan="2">template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_if_t&lt; ET::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aeb64e745c395abcc8381b289d7bd9653"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aeb64e745c395abcc8381b289d7bd9653">get_enum_sloppy</a> (const char *name, T &amp;ref, std::string_view const &amp;ignores, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ival=<a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const</td></tr>
+<tr class="memdesc:aeb64e745c395abcc8381b289d7bd9653"><td class="mdescLeft">&#160;</td><td class="mdescRight">. Get enum value using given name.  <a href="classamrex_1_1ParmParse.html#aeb64e745c395abcc8381b289d7bd9653">More...</a><br /></td></tr>
+<tr class="separator:aeb64e745c395abcc8381b289d7bd9653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81">remove</a> (const char *name)</td></tr>
 <tr class="memdesc:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove given name from the table.  <a href="classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81">More...</a><br /></td></tr>
 <tr class="separator:a6657f8c789a5b37f79bc4219dd6e3a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1874,6 +1882,59 @@ template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_
 
 <p>. Get enum value using given name. </p>
 <p>Here T is an enum class defined by AMREX_ENUM. It's a runtime error, if <code>name</code> is not found. An exception is thrown, if the found string associated with the name cannot be case-insensitively converted to an enumerator (i.e., the found string, not <code>name</code>, does not case-insensitively match any names in the definition of T). If there are multiple matches, the first one is used. </p>
+
+</div>
+</div>
+<a id="aeb64e745c395abcc8381b289d7bd9653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb64e745c395abcc8381b289d7bd9653">&#9670;&nbsp;</a></span>get_enum_sloppy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_if_t&lt; ET::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::get_enum_sloppy </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view const &amp;&#160;</td>
+          <td class="paramname"><em>ignores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>. Get enum value using given name. </p>
+<p>Here T is an enum class defined by AMREX_ENUM. It's a runtime error, if <code>name</code> is not found. An exception is thrown, if the found string associated with the name cannot be case-insensitively converted to an enumerator (i.e., the found string, not <code>name</code>, does not case-insensitively match any names in the definition of T). If there are multiple matches, the first one is used. Characters in <code>ignores</code> will be ignored as if they don't exist in the value part of ParamParse entries (e.g., <code>name = value</code>). </p>
 
 </div>
 </div>
@@ -3945,6 +4006,59 @@ template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_
 
 <p>. Query enum value using given name. </p>
 <p>Here T is an enum class defined by AMREX_ENUM. The return value indicates if <code>name</code> is found. An exception is thrown, if the found string associated with the name cannot be case-insensitively converted to an enumerator (i.e., the found string, not <code>name</code>, does not case-insensitively match any names in the definition of T). If there are multiple matches, the first one is used. </p>
+
+</div>
+</div>
+<a id="a586f659260a22fed130a45bd0f4b34b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586f659260a22fed130a45bd0f4b34b3">&#9670;&nbsp;</a></span>query_enum_sloppy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename ET  = amrex_enum_traits&lt;T&gt;, std::enable_if_t&lt; ET::value, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::query_enum_sloppy </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view const &amp;&#160;</td>
+          <td class="paramname"><em>ignores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>. Query enum value using given name. </p>
+<p>Here T is an enum class defined by AMREX_ENUM. The return value indicates if <code>name</code> is found. An exception is thrown, if the found string associated with the name cannot be case-insensitively converted to an enumerator (i.e., the found string, not <code>name</code>, does not case-insensitively match any names in the definition of T). If there are multiple matches, the first one is used. Characters in <code>ignores</code> will be ignored as if they don't exist in the value part of ParamParse entries (e.g., <code>name = value</code>). </p>
 
 </div>
 </div>

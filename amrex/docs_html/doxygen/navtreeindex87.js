@@ -1,5 +1,8 @@
 var NAVTREEINDEX87 =
 {
+"structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199":[3,0,34,2],
+"structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0":[3,0,34,3],
+"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[3,0,34,0],
 "structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[3,0,34,9],
 "structyy__trans__info.html":[3,0,35],
 "structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,35,1],
@@ -48,6 +51,5 @@ var NAVTREEINDEX87 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };
