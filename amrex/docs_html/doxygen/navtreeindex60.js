@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"functions_func_r.html":[3,3,1,17],
+"functions_func_s.html":[3,3,1,18],
 "functions_func_t.html":[3,3,1,19],
 "functions_func_u.html":[3,3,1,20],
 "functions_func_v.html":[3,3,1,21],
@@ -23,8 +25,8 @@ var NAVTREEINDEX60 =
 "functions_rela.html":[3,3,6],
 "functions_s.html":[3,3,0,19],
 "functions_t.html":[3,3,0,20],
-"functions_type.html":[3,3,3],
 "functions_type.html":[3,3,3,0],
+"functions_type.html":[3,3,3],
 "functions_type_b.html":[3,3,3,1],
 "functions_type_c.html":[3,3,3,2],
 "functions_type_d.html":[3,3,3,3],
@@ -43,8 +45,8 @@ var NAVTREEINDEX60 =
 "functions_type_v.html":[3,3,3,16],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html":[3,0,6,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html#a02957b84a9c8ca00e591712627aa6ea3":[3,0,6,0,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html":[3,0,6,1],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html#a522ade5dba9e7fc6f1942c44bfc0c9e1":[3,0,6,1,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html":[3,0,6,5],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html#a0e54240aedd2202434b50c5b107a41ed":[3,0,6,5,0]
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html#a522ade5dba9e7fc6f1942c44bfc0c9e1":[3,0,6,1,0]
 };

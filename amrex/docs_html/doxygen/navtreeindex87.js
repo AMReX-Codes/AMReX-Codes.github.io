@@ -1,5 +1,8 @@
 var NAVTREEINDEX87 =
 {
+"structyy__trans__info.html":[3,0,35],
+"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,35,1],
+"structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[3,0,35,0],
 "unionAMREX__IPARSERSTYPE.html":[3,0,13],
 "unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[3,0,13,3],
 "unionAMREX__IPARSERSTYPE.html#a8105da3c7746493ffd665cd25bb19ca8":[3,0,13,5],
@@ -44,6 +47,5 @@ var NAVTREEINDEX87 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };

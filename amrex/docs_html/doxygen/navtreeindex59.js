@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"classamrex_1_1sundials_1_1MemoryHelper.html#a9f609c8c314f0c1e45a4c03cc6f1dc58":[3,0,0,20,0,7],
+"classamrex_1_1sundials_1_1MemoryHelper.html#aa60f43d3f72e938bb62327ce8b750ca4":[3,0,0,20,0,8],
 "classamrex_1_1sundials_1_1MemoryHelper.html#ac93fe349524feb542323ce4507856d52":[3,0,0,20,0,10],
 "classamrex_1_1sundials_1_1MemoryHelper.html#ad691bb80cc43d136dae5cc96ba372e44":[3,0,0,20,0,2],
 "classamrex_1_1sundials_1_1MemoryHelper.html#afaca15a1f386d11c48a96ce6dc37c0dc":[3,0,0,20,0,4],
@@ -220,8 +222,8 @@ var NAVTREEINDEX59 =
 "distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345":[4,0,0,5,10,7,8],
 "distribution__c_8h_source.html":[4,0,0,5,10,7],
 "files.html":[4,0],
-"functions.html":[3,3,0,0],
 "functions.html":[3,3,0],
+"functions.html":[3,3,0,0],
 "functions_a.html":[3,3,0,1],
 "functions_b.html":[3,3,0,2],
 "functions_c.html":[3,3,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX59 =
 "functions_func_n.html":[3,3,1,13],
 "functions_func_o.html":[3,3,1,14],
 "functions_func_p.html":[3,3,1,15],
-"functions_func_q.html":[3,3,1,16],
-"functions_func_r.html":[3,3,1,17],
-"functions_func_s.html":[3,3,1,18]
+"functions_func_q.html":[3,3,1,16]
 };
