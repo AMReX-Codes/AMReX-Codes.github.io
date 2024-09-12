@@ -2139,106 +2139,107 @@
 <codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(allstatsstr.size()<sp/>==<sp/>1<sp/>||<sp/>!os)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"></highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>IOFormatSaver<sp/>iofmtsaver(*os);</highlight></codeline>
-<codeline lineno="884"><highlight class="normal"></highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lenhline<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>:<sp/>maxlen)<sp/>{</highlight></codeline>
-<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lenhline<sp/>+=<sp/>i;</highlight></codeline>
-<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>hline(lenhline,<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="890"><highlight class="normal"></highlight></codeline>
-<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>memname<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Usage:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i=0;<sp/>i&lt;allstatsstr.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>std::left<sp/>&lt;&lt;<sp/>std::setw(maxlen[0])<sp/>&lt;&lt;<sp/>allstatsstr[i][0];</highlight></codeline>
-<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>j=1;<sp/>j&lt;maxlen.size();<sp/>++j)<sp/>{</highlight></codeline>
-<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>std::right<sp/>&lt;&lt;<sp/>std::setw(maxlen[j])<sp/>&lt;&lt;<sp/>allstatsstr[i][j];</highlight></codeline>
-<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i==0)<sp/>{</highlight></codeline>
-<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="904"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="905"><highlight class="normal"></highlight></codeline>
-<codeline lineno="906"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="907"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref><sp/>(std::string<sp/>regname)<sp/>noexcept</highlight></codeline>
-<codeline lineno="908"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!enabled)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="910"><highlight class="normal"></highlight></codeline>
-<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::find(regionstack.begin(),<sp/>regionstack.end(),<sp/>regname)<sp/>==<sp/>regionstack.end())<sp/>{</highlight></codeline>
-<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionstack.emplace_back(std::move(regname));</highlight></codeline>
-<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="914"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="915"><highlight class="normal"></highlight></codeline>
-<codeline lineno="916"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="917"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kindref="member">TinyProfiler::StopRegion</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>regname)<sp/>noexcept</highlight></codeline>
-<codeline lineno="918"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!enabled)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="920"><highlight class="normal"></highlight></codeline>
-<codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(regname<sp/>==<sp/>regionstack.back())<sp/>{</highlight></codeline>
-<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionstack.pop_back();</highlight></codeline>
-<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="924"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="925"><highlight class="normal"></highlight></codeline>
-<codeline lineno="926"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1ab3d0ffc7c7067f4bec983d85ee3262f2" kindref="member">TinyProfileRegion::TinyProfileRegion</ref><sp/>(std::string<sp/>a_regname)<sp/>noexcept</highlight></codeline>
-<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>regname(std::move(a_regname)),</highlight></codeline>
-<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tprof(std::string(</highlight><highlight class="stringliteral">&quot;REG::&quot;</highlight><highlight class="normal">)+regname,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="929"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref>(regname);</highlight></codeline>
-<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/>tprof.start();</highlight></codeline>
-<codeline lineno="932"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="933"><highlight class="normal"></highlight></codeline>
-<codeline lineno="934"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1ab3d0ffc7c7067f4bec983d85ee3262f2" kindref="member">TinyProfileRegion::TinyProfileRegion</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>a_regname)<sp/>noexcept</highlight></codeline>
-<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>regname(a_regname),</highlight></codeline>
-<codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tprof(std::string(</highlight><highlight class="stringliteral">&quot;REG::&quot;</highlight><highlight class="normal">)+std::string(a_regname),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="937"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref>(a_regname);</highlight></codeline>
-<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/>tprof.start();</highlight></codeline>
-<codeline lineno="940"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="941"><highlight class="normal"></highlight></codeline>
-<codeline lineno="942"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1a529634d28a0589df7b0e0fd5f7294834" kindref="member">TinyProfileRegion::~TinyProfileRegion</ref><sp/>()</highlight></codeline>
-<codeline lineno="943"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfileRegion_1af05c972ffb11a5d0230dc3903fc0a33f" kindref="member">tprof</ref>.<ref refid="classamrex_1_1TinyProfiler_1a84199c5f792b3e60b33f6e7ea0fc5568" kindref="member">stop</ref>();</highlight></codeline>
-<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kindref="member">TinyProfiler::StopRegion</ref>(<ref refid="classamrex_1_1TinyProfileRegion_1ae8f1674b3d50716ce74d4d05074c5551" kindref="member">regname</ref>);</highlight></codeline>
-<codeline lineno="946"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="947"><highlight class="normal"></highlight></codeline>
-<codeline lineno="948"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="949"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1a8a14bcc37603ec472c17a644428d3686" kindref="member">TinyProfiler::PrintCallStack</ref><sp/>(std::ostream&amp;<sp/>os)</highlight></codeline>
-<codeline lineno="950"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1TinyProfiler_1a282b4e789e0c442305b8348d40b3a9e5" kindref="member">enabled</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="952"><highlight class="normal"></highlight></codeline>
-<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;=====<sp/>TinyProfilers<sp/>======\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/><ref refid="classamrex_1_1TinyProfiler_1a55b136d8859480b76a1311cff89009a0" kindref="member">ttstack</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>*(std::get&lt;2&gt;(x))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="957"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="958"><highlight class="normal"></highlight></codeline>
-<codeline lineno="959"><highlight class="normal">std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
-<codeline lineno="960"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1a179ed9477bf3c19ddd7678a6277230c1" kindref="member">TinyProfiler::get_output_file</ref><sp/>()</highlight></codeline>
-<codeline lineno="961"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="962"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Instead<sp/>of<sp/>reading<sp/>it<sp/>only<sp/>once,<sp/>we<sp/>could<sp/>try<sp/>to<sp/>read<sp/>the<sp/>parameter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>every<sp/>time.<sp/>But<sp/>I<sp/>am<sp/>not<sp/>sure<sp/>how<sp/>useful<sp/>that<sp/>might<sp/>be.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="965"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(first)<sp/>{</highlight></codeline>
-<codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="967"><highlight class="normal"></highlight></codeline>
-<codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParmParse" kindref="compound">amrex::ParmParse</ref><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;tiny_profiler&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;output_file&quot;</highlight><highlight class="normal">,<sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>);</highlight></codeline>
-<codeline lineno="970"><highlight class="normal"></highlight></codeline>
-<codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>.empty()<sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref><sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;/dev/null&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1FileSystem_1afee9c962b3446b2d10724c21add85f8c" kindref="member">FileSystem::Exists</ref>(<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>))<sp/>{</highlight></codeline>
-<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1FileSystem_1a1887698566ebd58596be3b1a96ad2e9a" kindref="member">FileSystem::Remove</ref>(<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>);</highlight></codeline>
-<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="979"><highlight class="normal"></highlight></codeline>
-<codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>;</highlight></codeline>
-<codeline lineno="981"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="982"><highlight class="normal"></highlight></codeline>
-<codeline lineno="983"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>std::setfill(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"></highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lenhline<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>:<sp/>maxlen)<sp/>{</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lenhline<sp/>+=<sp/>i;</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>hline(lenhline,<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>memname<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Usage:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i=0;<sp/>i&lt;allstatsstr.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>std::left<sp/>&lt;&lt;<sp/>std::setw(maxlen[0])<sp/>&lt;&lt;<sp/>allstatsstr[i][0];</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>j=1;<sp/>j&lt;maxlen.size();<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>std::right<sp/>&lt;&lt;<sp/>std::setw(maxlen[j])<sp/>&lt;&lt;<sp/>allstatsstr[i][j];</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i==0)<sp/>{</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/>*os<sp/>&lt;&lt;<sp/>hline<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="905"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"></highlight></codeline>
+<codeline lineno="907"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref><sp/>(std::string<sp/>regname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="909"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!enabled)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"></highlight></codeline>
+<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::find(regionstack.begin(),<sp/>regionstack.end(),<sp/>regname)<sp/>==<sp/>regionstack.end())<sp/>{</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionstack.emplace_back(std::move(regname));</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="915"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"></highlight></codeline>
+<codeline lineno="917"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kindref="member">TinyProfiler::StopRegion</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>regname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="919"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!enabled)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"></highlight></codeline>
+<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(regname<sp/>==<sp/>regionstack.back())<sp/>{</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionstack.pop_back();</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="925"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"></highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1ab3d0ffc7c7067f4bec983d85ee3262f2" kindref="member">TinyProfileRegion::TinyProfileRegion</ref><sp/>(std::string<sp/>a_regname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>regname(std::move(a_regname)),</highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tprof(std::string(</highlight><highlight class="stringliteral">&quot;REG::&quot;</highlight><highlight class="normal">)+regname,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="930"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref>(regname);</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/>tprof.start();</highlight></codeline>
+<codeline lineno="933"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="934"><highlight class="normal"></highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1ab3d0ffc7c7067f4bec983d85ee3262f2" kindref="member">TinyProfileRegion::TinyProfileRegion</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>a_regname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>regname(a_regname),</highlight></codeline>
+<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tprof(std::string(</highlight><highlight class="stringliteral">&quot;REG::&quot;</highlight><highlight class="normal">)+std::string(a_regname),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="938"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kindref="member">TinyProfiler::StartRegion</ref>(a_regname);</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/>tprof.start();</highlight></codeline>
+<codeline lineno="941"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="942"><highlight class="normal"></highlight></codeline>
+<codeline lineno="943"><highlight class="normal"><ref refid="classamrex_1_1TinyProfileRegion_1a529634d28a0589df7b0e0fd5f7294834" kindref="member">TinyProfileRegion::~TinyProfileRegion</ref><sp/>()</highlight></codeline>
+<codeline lineno="944"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfileRegion_1af05c972ffb11a5d0230dc3903fc0a33f" kindref="member">tprof</ref>.<ref refid="classamrex_1_1TinyProfiler_1a84199c5f792b3e60b33f6e7ea0fc5568" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kindref="member">TinyProfiler::StopRegion</ref>(<ref refid="classamrex_1_1TinyProfileRegion_1ae8f1674b3d50716ce74d4d05074c5551" kindref="member">regname</ref>);</highlight></codeline>
+<codeline lineno="947"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="948"><highlight class="normal"></highlight></codeline>
+<codeline lineno="949"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1a8a14bcc37603ec472c17a644428d3686" kindref="member">TinyProfiler::PrintCallStack</ref><sp/>(std::ostream&amp;<sp/>os)</highlight></codeline>
+<codeline lineno="951"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1TinyProfiler_1a282b4e789e0c442305b8348d40b3a9e5" kindref="member">enabled</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"></highlight></codeline>
+<codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;=====<sp/>TinyProfilers<sp/>======\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/><ref refid="classamrex_1_1TinyProfiler_1a55b136d8859480b76a1311cff89009a0" kindref="member">ttstack</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>*(std::get&lt;2&gt;(x))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="958"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="959"><highlight class="normal"></highlight></codeline>
+<codeline lineno="960"><highlight class="normal">std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
+<codeline lineno="961"><highlight class="normal"><ref refid="classamrex_1_1TinyProfiler_1a179ed9477bf3c19ddd7678a6277230c1" kindref="member">TinyProfiler::get_output_file</ref><sp/>()</highlight></codeline>
+<codeline lineno="962"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Instead<sp/>of<sp/>reading<sp/>it<sp/>only<sp/>once,<sp/>we<sp/>could<sp/>try<sp/>to<sp/>read<sp/>the<sp/>parameter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>every<sp/>time.<sp/>But<sp/>I<sp/>am<sp/>not<sp/>sure<sp/>how<sp/>useful<sp/>that<sp/>might<sp/>be.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="965"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(first)<sp/>{</highlight></codeline>
+<codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="968"><highlight class="normal"></highlight></codeline>
+<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParmParse" kindref="compound">amrex::ParmParse</ref><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;tiny_profiler&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;output_file&quot;</highlight><highlight class="normal">,<sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>);</highlight></codeline>
+<codeline lineno="971"><highlight class="normal"></highlight></codeline>
+<codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>.empty()<sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref><sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;/dev/null&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1FileSystem_1afee9c962b3446b2d10724c21add85f8c" kindref="member">FileSystem::Exists</ref>(<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1FileSystem_1a1887698566ebd58596be3b1a96ad2e9a" kindref="member">FileSystem::Remove</ref>(<ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>);</highlight></codeline>
+<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="980"><highlight class="normal"></highlight></codeline>
+<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1TinyProfiler_1af042a12f3b873d678126ac7aae488106" kindref="member">output_file</ref>;</highlight></codeline>
+<codeline lineno="982"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"></highlight></codeline>
+<codeline lineno="984"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.cpp"/>
   </compounddef>
