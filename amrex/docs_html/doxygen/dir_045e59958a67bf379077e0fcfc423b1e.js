@@ -319,10 +319,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "PArena", "classamrex_1_1PArena.html", "classamrex_1_1PArena" ]
     ] ],
     [ "AMReX_ParmParse.cpp", "AMReX__ParmParse_8cpp.html", "AMReX__ParmParse_8cpp" ],
-    [ "AMReX_ParmParse.H", "AMReX__ParmParse_8H.html", [
-      [ "ParmParse", "classamrex_1_1ParmParse.html", "classamrex_1_1ParmParse" ],
-      [ "PP_entry", "structamrex_1_1ParmParse_1_1PP__entry.html", "structamrex_1_1ParmParse_1_1PP__entry" ]
-    ] ],
+    [ "AMReX_ParmParse.H", "AMReX__ParmParse_8H.html", "AMReX__ParmParse_8H" ],
     [ "AMReX_parmparse_fi.cpp", "AMReX__parmparse__fi_8cpp.html", "AMReX__parmparse__fi_8cpp" ],
     [ "AMReX_parmparse_mod.F90", "AMReX__parmparse__mod_8F90.html", "AMReX__parmparse__mod_8F90" ],
     [ "AMReX_ParReduce.H", "AMReX__ParReduce_8H.html", "AMReX__ParReduce_8H" ],

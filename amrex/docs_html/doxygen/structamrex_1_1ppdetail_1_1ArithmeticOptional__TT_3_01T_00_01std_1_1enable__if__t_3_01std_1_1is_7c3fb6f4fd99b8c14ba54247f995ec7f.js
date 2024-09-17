@@ -1,0 +1,4 @@
+var structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f =
+[
+    [ "value_type", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html#ad5f4be4f8f332c042dcbfc34fc1b1f6d", null ]
+];

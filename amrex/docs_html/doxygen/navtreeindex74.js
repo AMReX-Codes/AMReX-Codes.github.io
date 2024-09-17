@@ -1,5 +1,10 @@
 var NAVTREEINDEX74 =
 {
+"namespaceamrex__acc__module.html":[2,0,1],
+"namespaceamrex__acc__module.html#a7537721c18f228fca42f0db3e75a4470":[2,0,1,0],
+"namespaceamrex__acc__module.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[2,0,1,1],
+"namespaceamrex__acc__module.html#aafbf079c34c708eb6c38b72a05c77249":[2,0,1,3],
+"namespaceamrex__acc__module.html#ae6e5f688f216b146a2cc609ec638a462":[2,0,1,2],
 "namespaceamrex__bc__types__module.html":[2,0,2],
 "namespaceamrex__bc__types__module.html#a07483ec0c0dfe550ae285951efd6e408":[2,0,2,1],
 "namespaceamrex__bc__types__module.html#a20bfec4cecd51e1c95967ecb1be2eff4":[2,0,2,9],
@@ -230,8 +235,8 @@ var NAVTREEINDEX74 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func.html":[2,1,1],
+"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX74 =
 "namespacemembers_func_l.html":[2,1,1,10],
 "namespacemembers_func_m.html":[2,1,1,11],
 "namespacemembers_func_n.html":[2,1,1,12],
-"namespacemembers_func_o.html":[2,1,1,13],
-"namespacemembers_func_p.html":[2,1,1,14],
-"namespacemembers_func_q.html":[2,1,1,15],
-"namespacemembers_func_r.html":[2,1,1,16],
-"namespacemembers_func_s.html":[2,1,1,17],
-"namespacemembers_func_t.html":[2,1,1,18]
+"namespacemembers_func_o.html":[2,1,1,13]
 };

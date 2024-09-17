@@ -468,7 +468,8 @@ var hierarchy =
       [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ],
-      [ "amrex::detail::IsConvertibleImp< T, U, Enable >", "structamrex_1_1detail_1_1IsConvertibleImp.html", null ]
+      [ "amrex::detail::IsConvertibleImp< T, U, Enable >", "structamrex_1_1detail_1_1IsConvertibleImp.html", null ],
+      [ "amrex::ppdetail::ArithmeticOptional_TT< T, Enable >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT.html", null ]
     ] ],
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr< T >", "structamrex_1_1FatPtr.html", null ],
@@ -1063,7 +1064,9 @@ var hierarchy =
       [ "amrex::RunOnGpu< AsyncArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
-      [ "amrex::detail::IsConvertibleImp< T, U, std::enable_if_t< is_convertible< T >(U{})> >", "structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html", null ]
+      [ "amrex::detail::IsConvertibleImp< T, U, std::enable_if_t< is_convertible< T >(U{})> >", "structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html", null ],
+      [ "amrex::ppdetail::ArithmeticOptional_TT< T, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html", null ],
+      [ "amrex::ppdetail::ArithmeticOptional_TT< std::optional< T >, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html", null ]
     ] ],
     [ "amrex::detail::tuple_cat_result<... >", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", null ],

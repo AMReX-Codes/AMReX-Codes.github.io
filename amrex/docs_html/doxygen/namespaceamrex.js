@@ -316,6 +316,7 @@ var namespaceamrex =
     ] ],
     [ "ParticleInterpolator", "namespaceamrex_1_1ParticleInterpolator.html", "namespaceamrex_1_1ParticleInterpolator" ],
     [ "pp_detail", "namespaceamrex_1_1pp__detail.html", null ],
+    [ "ppdetail", "namespaceamrex_1_1ppdetail.html", "namespaceamrex_1_1ppdetail" ],
     [ "Reduce", "namespaceamrex_1_1Reduce.html", "namespaceamrex_1_1Reduce" ],
     [ "RungeKutta", "namespaceamrex_1_1RungeKutta.html", "namespaceamrex_1_1RungeKutta" ],
     [ "Scan", "namespaceamrex_1_1Scan.html", "namespaceamrex_1_1Scan" ],

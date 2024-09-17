@@ -214,6 +214,11 @@ var annotated_dup =
         [ "Nearest", "structamrex_1_1ParticleInterpolator_1_1Nearest.html", "structamrex_1_1ParticleInterpolator_1_1Nearest" ],
         [ "Linear", "structamrex_1_1ParticleInterpolator_1_1Linear.html", "structamrex_1_1ParticleInterpolator_1_1Linear" ]
       ] ],
+      [ "ppdetail", "namespaceamrex_1_1ppdetail.html", [
+        [ "ArithmeticOptional_TT", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT.html", null ],
+        [ "ArithmeticOptional_TT< T, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f" ],
+        [ "ArithmeticOptional_TT< std::optional< T >, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac" ]
+      ] ],
       [ "Reduce", "namespaceamrex_1_1Reduce.html", [
         [ "detail", "namespaceamrex_1_1Reduce_1_1detail.html", [
           [ "iterate_box", "structamrex_1_1Reduce_1_1detail_1_1iterate__box.html", null ],
