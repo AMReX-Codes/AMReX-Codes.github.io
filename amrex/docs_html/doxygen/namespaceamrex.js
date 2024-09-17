@@ -1845,6 +1845,7 @@ var namespaceamrex =
     [ "InterpFillFab", "namespaceamrex.html#aabdb646a3159210a31ec8dc806eaf7bb", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#a665aff71f29d05e954c3cb414b5e9349", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#abed62fa77c3def575a20c8c9efa33805", null ],
+    [ "InterpFromCoarseLevel", "namespaceamrex.html#a2cf3e3c2ef0f9235ee6c6fee34821f74", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#aa081e015e8252796d1f7675189020446", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506", null ],
     [ "intersect", "namespaceamrex.html#a3fb0e9220f2aa85a365f7ec254f2e3d7", null ],

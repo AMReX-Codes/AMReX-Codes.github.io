@@ -1,5 +1,8 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex_1_1FGColor.html":[2,0,0,11],
+"namespaceamrex_1_1FGColor.html#a06499b8d0da3f3ab7bd99745820f6f33":[2,0,0,11,9],
+"namespaceamrex_1_1FGColor.html#a080b20c9b78c553919c4563ddd75ff1e":[2,0,0,11,16],
 "namespaceamrex_1_1FGColor.html#a0bbabb809ceded7de390c1c4e36e80c8":[2,0,0,11,7],
 "namespaceamrex_1_1FGColor.html#a0dce94ed22641c85f1e89efc2993b01c":[2,0,0,11,3],
 "namespaceamrex_1_1FGColor.html#a124ac344d6f1b292c285b82cfbeab201":[2,0,0,11,10],
@@ -246,8 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1NonLocalBC.html#a62685cb385ba3363c973d758cbb7cde8":[2,0,0,29,52],
 "namespaceamrex_1_1NonLocalBC.html#a72f58b54718389e636ab3b07295eebac":[2,0,0,29,27],
 "namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d":[2,0,0,29,51],
-"namespaceamrex_1_1NonLocalBC.html#a7f43ddf52003ccef3fd4189be4b4e26a":[2,0,0,29,33],
-"namespaceamrex_1_1NonLocalBC.html#a7f46a71c7807b33fa3fac96c36e8d09b":[2,0,0,29,48],
-"namespaceamrex_1_1NonLocalBC.html#a9c2fff17888a770c492a1c014fee2b73":[2,0,0,29,46],
-"namespaceamrex_1_1NonLocalBC.html#a9dad3936d4a2ede70ac57d5d2d3b6e2e":[2,0,0,29,64]
+"namespaceamrex_1_1NonLocalBC.html#a7f43ddf52003ccef3fd4189be4b4e26a":[2,0,0,29,33]
 };
