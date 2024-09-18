@@ -7,6 +7,8 @@ var AMReX__Math_8H =
     [ "abs", "AMReX__Math_8H.html#a06556adef1343823eb8f3add01f1dc96", null ],
     [ "abs", "AMReX__Math_8H.html#a8b565c4d58a622a606eb0db1276b6669", null ],
     [ "abs", "AMReX__Math_8H.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba", null ],
+    [ "comp_ellint_1", "AMReX__Math_8H.html#a01a50f01bdffee6800b64090e421f47f", null ],
+    [ "comp_ellint_2", "AMReX__Math_8H.html#a64d6ba33500bba8603dd6fba3588ac3c", null ],
     [ "cospi", "AMReX__Math_8H.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
     [ "cospi", "AMReX__Math_8H.html#adbc23685ea37023206db656ff45973f7", null ],
     [ "pi", "AMReX__Math_8H.html#ae119edbc36d72d7e0287e015330974c5", null ],

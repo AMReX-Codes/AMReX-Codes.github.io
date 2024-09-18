@@ -1,5 +1,9 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1GpuComplex.html#a2db95eb3b93c7d19e60e220d3c61fa74":[3,0,0,188,8],
+"structamrex_1_1GpuComplex.html#a2fa2ed5a6027135dafd7c96e64628153":[3,0,0,188,7],
+"structamrex_1_1GpuComplex.html#a33b76e08a00922aa6e92853e71dca58e":[3,0,0,188,3],
+"structamrex_1_1GpuComplex.html#a3b27edee0d47b21f23f1d8640dbaa2e6":[3,0,0,188,12],
 "structamrex_1_1GpuComplex.html#a50e77be424412b0789610d627520c151":[3,0,0,188,13],
 "structamrex_1_1GpuComplex.html#a7903cf4d3b219578d8fe6d4981d25c8b":[3,0,0,188,9],
 "structamrex_1_1GpuComplex.html#a901c79bd919c5c61745c980b480a9422":[3,0,0,188,0],
@@ -136,8 +140,8 @@ var NAVTREEINDEX80 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,267],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,273],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,272],
@@ -245,9 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1IParserExeSUB__VN.html#a1461b3f0be67f1c388e23a7b7f6e5349":[3,0,0,321,1],
 "structamrex_1_1IParserExeSUB__VN.html#aa2bb2bb1dd70a300b6f252c374b80c28":[3,0,0,321,0],
 "structamrex_1_1IParserExeSUB__VP.html":[3,0,0,311],
-"structamrex_1_1IParserExeSUB__VP.html#a73b906eae2b2eed729873c1c97d2a9da":[3,0,0,311,2],
-"structamrex_1_1IParserExeSUB__VP.html#a966257aaecf0f2636c83519c448fec6f":[3,0,0,311,1],
-"structamrex_1_1IParserExeSUB__VP.html#ad9bb9a64729c932a1099c21275870135":[3,0,0,311,0],
-"structamrex_1_1IParserExeSymbol.html":[3,0,0,300],
-"structamrex_1_1IParserExeSymbol.html#a77a8c69fe7be49888aa242f357be0b1e":[3,0,0,300,0]
+"structamrex_1_1IParserExeSUB__VP.html#a73b906eae2b2eed729873c1c97d2a9da":[3,0,0,311,2]
 };

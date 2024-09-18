@@ -1,5 +1,9 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[3,0,0,0,1,0,0],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[3,0,0,0,1,0,3],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[3,0,0,0,1,0,2],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,1,0,1],
 "structamrex_1_1amrex__KSP.html":[3,0,0,423],
 "structamrex_1_1amrex__KSP.html#a68cac9efc3dadb1e51c33b9d726916e8":[3,0,0,423,5],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[3,0,0,423,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX86 =
 "structprocess__topology__t.html#adba2e61f59319e9965761531fd4e9535":[3,0,28,0],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html":[3,0,12,6],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#aa81b6bfc580e14436f13d70e9a5d5f15":[3,0,12,6,0],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,12,1],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html#a8f8553ba1c088a8bb37141c49735b461":[3,0,12,1,0],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,12,3],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a36a3da6780ccd990b74e1e1ceb07f606":[3,0,12,3,0],
-"structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html":[3,0,12,5]
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,12,1]
 };

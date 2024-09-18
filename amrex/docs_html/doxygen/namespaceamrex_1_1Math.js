@@ -5,6 +5,8 @@ var namespaceamrex_1_1Math =
       [ "sincosf", "namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39", null ]
     ] ],
     [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
+    [ "comp_ellint_1", "namespaceamrex_1_1Math.html#a01a50f01bdffee6800b64090e421f47f", null ],
+    [ "comp_ellint_2", "namespaceamrex_1_1Math.html#a64d6ba33500bba8603dd6fba3588ac3c", null ],
     [ "cospi", "namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
     [ "cospi", "namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7", null ],
     [ "pi", "namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5", null ],
