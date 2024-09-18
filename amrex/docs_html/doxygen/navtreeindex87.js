@@ -1,5 +1,6 @@
 var NAVTREEINDEX87 =
 {
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,12,1],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html#a8f8553ba1c088a8bb37141c49735b461":[3,0,12,1,0],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,12,3],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a36a3da6780ccd990b74e1e1ceb07f606":[3,0,12,3,0],
@@ -71,6 +72,5 @@ var NAVTREEINDEX87 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };

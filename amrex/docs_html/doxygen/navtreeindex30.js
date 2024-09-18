@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"classamrex_1_1AmrData.html#acd91c393bc58c4eabbffcd3f8790b74b":[3,0,0,409,11],
 "classamrex_1_1AmrData.html#acf28800ea1c047a973e104f20c05fa4d":[3,0,0,409,75],
 "classamrex_1_1AmrData.html#ad096b226eb7958f5d2bbd63449b077d2":[3,0,0,409,37],
 "classamrex_1_1AmrData.html#ad21c6566676a74569438fc34998a9874":[3,0,0,409,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "classamrex_1_1AmrMeshDataAdaptor.html#a2343c3cec45162fdd013661122a5ed0f":[3,0,0,429,1],
 "classamrex_1_1AmrMeshDataAdaptor.html#a239d7e100aa5e50e2fa73180fd7649ea":[3,0,0,429,18],
 "classamrex_1_1AmrMeshDataAdaptor.html#a5b94d5fbab0e48ed81b6edb7db19e0aa":[3,0,0,429,15],
-"classamrex_1_1AmrMeshDataAdaptor.html#a6134a52852c8b59d0377a1f255990f85":[3,0,0,429,6],
-"classamrex_1_1AmrMeshDataAdaptor.html#a799e8484ecd0ce48d5a84dd634b01ee1":[3,0,0,429,12]
+"classamrex_1_1AmrMeshDataAdaptor.html#a6134a52852c8b59d0377a1f255990f85":[3,0,0,429,6]
 };

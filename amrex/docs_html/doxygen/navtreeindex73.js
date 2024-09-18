@@ -1,5 +1,6 @@
 var NAVTREEINDEX73 =
 {
+"namespaceamrex_1_1detail.html#ac058d02c07c2b74e83e50b33b90197e5":[2,0,0,6,77],
 "namespaceamrex_1_1detail.html#ac21ab25e49c31a58b678ab25626397d3":[2,0,0,6,32],
 "namespaceamrex_1_1detail.html#ac4854f7e5c0443cfadeb4a652286a18f":[2,0,0,6,120],
 "namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676":[2,0,0,6,34],
@@ -29,16 +30,16 @@ var NAVTREEINDEX73 =
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,689],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,688],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
-"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,688],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,690],
+"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,684],
-"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,687],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,7,1],
-"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,691],
+"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,687],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
+"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,691],
 "namespaceamrex_1_1experimental.html":[2,0,0,9],
 "namespaceamrex_1_1experimental.html#a0057b5ee6f8da3859c3b1c74b38c7537":[2,0,0,9,10],
 "namespaceamrex_1_1experimental.html#a0de1a6f8c5b59164435a7c9eb908d225":[2,0,0,9,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX73 =
 "namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e":[2,0,0,50,7],
 "namespaceamrex_1_1tri__geom__ops.html#a3edc0f443bee6abb9c7d78a434156465":[2,0,0,50,2],
 "namespaceamrex_1_1tri__geom__ops.html#a63072500ceb751c5d908ebf2edf627e1":[2,0,0,50,0],
-"namespaceamrex_1_1tri__geom__ops.html#a70a3555a7869b306a0efd22a29fcb570":[2,0,0,50,11],
-"namespaceamrex_1_1tri__geom__ops.html#a713485f892bf13f6879fcd8a1ccf5b6e":[2,0,0,50,3]
+"namespaceamrex_1_1tri__geom__ops.html#a70a3555a7869b306a0efd22a29fcb570":[2,0,0,50,11]
 };

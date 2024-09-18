@@ -1,5 +1,6 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[3,0,0,0,1,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[3,0,0,0,1,0,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[3,0,0,0,1,0,3],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[3,0,0,0,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX86 =
 "structprocess__topology__t.html#ad76559fb8c453075eeb9fa02032160b3":[3,0,28,3],
 "structprocess__topology__t.html#adba2e61f59319e9965761531fd4e9535":[3,0,28,0],
 "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html":[3,0,12,6],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#aa81b6bfc580e14436f13d70e9a5d5f15":[3,0,12,6,0],
-"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,12,1]
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#aa81b6bfc580e14436f13d70e9a5d5f15":[3,0,12,6,0]
 };
