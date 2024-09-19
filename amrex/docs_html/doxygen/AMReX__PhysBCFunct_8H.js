@@ -5,6 +5,7 @@ var AMReX__PhysBCFunct_8H =
     [ "FabFillNoOp", "structamrex_1_1FabFillNoOp.html", "structamrex_1_1FabFillNoOp" ],
     [ "CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", "classamrex_1_1CpuBndryFuncFab" ],
     [ "PhysBCFunctNoOp", "classamrex_1_1PhysBCFunctNoOp.html", "classamrex_1_1PhysBCFunctNoOp" ],
+    [ "PhysBCFunctUseCoarseGhost", "classamrex_1_1PhysBCFunctUseCoarseGhost.html", "classamrex_1_1PhysBCFunctUseCoarseGhost" ],
     [ "PhysBCFunct", "classamrex_1_1PhysBCFunct.html", "classamrex_1_1PhysBCFunct" ],
     [ "BndryFunc3DDefault", "AMReX__PhysBCFunct_8H.html#a5e4a902f699c144a9823d30d6dbb7236", null ],
     [ "BndryFuncDefault", "AMReX__PhysBCFunct_8H.html#a8b7e34da6fddd1312471a5962bf774cd", null ],

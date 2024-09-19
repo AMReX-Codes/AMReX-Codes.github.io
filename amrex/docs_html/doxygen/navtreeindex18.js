@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"AMReX__ParallelReduce_8H.html#ab75655a29ac29049cb6b1fafbd12a7f7":[4,0,0,2,209,28],
+"AMReX__ParallelReduce_8H.html#abc654239660dfc6eb557813ef5314650":[4,0,0,2,209,14],
+"AMReX__ParallelReduce_8H.html#abe2f46b96ea5d1752c49cfb8a44b55b9":[4,0,0,2,209,34],
+"AMReX__ParallelReduce_8H.html#ac02b81de9041c274cd81061b7c66c189":[4,0,0,2,209,17],
 "AMReX__ParallelReduce_8H.html#ac500e0120b76d32a349a73f8ebfd36b2":[4,0,0,2,209,6],
 "AMReX__ParallelReduce_8H.html#ac6513212c95687334df1e0ee67cc96a2":[4,0,0,2,209,16],
 "AMReX__ParallelReduce_8H.html#accad75ceb30d24dd985037a1dddb72fa":[4,0,0,2,209,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "AMReX__ParticleInSituBridge_8H.html":[4,0,0,5,8,20],
 "AMReX__ParticleInSituBridge_8H_source.html":[4,0,0,5,8,20],
 "AMReX__ParticleInit_8H.html":[4,0,0,7,22],
-"AMReX__ParticleInit_8H_source.html":[4,0,0,7,22],
-"AMReX__ParticleInterpolators_8H.html":[4,0,0,7,23],
-"AMReX__ParticleInterpolators_8H_source.html":[4,0,0,7,23],
-"AMReX__ParticleLocator_8H.html":[4,0,0,7,25],
-"AMReX__ParticleLocator_8H_source.html":[4,0,0,7,25]
+"AMReX__ParticleInit_8H_source.html":[4,0,0,7,22]
 };

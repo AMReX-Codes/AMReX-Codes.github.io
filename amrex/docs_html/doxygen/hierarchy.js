@@ -904,6 +904,7 @@ var hierarchy =
     [ "amrex::PETScABecLap", "classamrex_1_1PETScABecLap.html", null ],
     [ "amrex::PhysBCFunct< F >", "classamrex_1_1PhysBCFunct.html", null ],
     [ "amrex::PhysBCFunctNoOp", "classamrex_1_1PhysBCFunctNoOp.html", null ],
+    [ "amrex::PhysBCFunctUseCoarseGhost", "classamrex_1_1PhysBCFunctUseCoarseGhost.html", null ],
     [ "amrex::Gpu::Pinned", "structamrex_1_1Gpu_1_1Pinned.html", null ],
     [ "amrex::PinnedArenaWrapper", "structamrex_1_1PinnedArenaWrapper.html", null ],
     [ "amrex::PlotFileData", "classamrex_1_1PlotFileData.html", null ],
