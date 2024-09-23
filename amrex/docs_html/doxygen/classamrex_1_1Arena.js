@@ -11,6 +11,7 @@ var classamrex_1_1Arena =
     [ "allocate_system", "classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb", null ],
     [ "arenaInfo", "classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b", null ],
     [ "deallocate_system", "classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694", null ],
+    [ "deregisterFromProfiling", "classamrex_1_1Arena.html#a76f2f99b3aa712fe5da7b00610c07385", null ],
     [ "Finalize", "classamrex_1_1Arena.html#a06dd6197d2081d7dd4c1bed308edd387", null ],
     [ "free", "classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515", null ],
     [ "freeUnused", "classamrex_1_1Arena.html#ae58dbb9ab6bb4e8d980b384b0d8804e5", null ],
