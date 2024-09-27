@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a5cbb1cc5e62175b992f4399df8fab631":[4,0,0,2,0,7,81,40],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a5cbb1cc5e62175b992f4399df8fab631":[4,0,0,2,0,19,81,40],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a62c842e981567758b43cce379bec383f":[4,0,0,2,0,7,81,53],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a62c842e981567758b43cce379bec383f":[4,0,0,2,0,19,81,53],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "classCommProfStats.html#a199bfb0dca140f601d5aa32d3b08e23e":[3,0,17,59],
 "classCommProfStats.html#a22cbc931b34ba5a5f9823ea4b8fb0c40":[3,0,17,25],
 "classCommProfStats.html#a2b9a45f7bb2aa14db0f2c0c5ec7b6877":[3,0,17,73],
-"classCommProfStats.html#a2c70598493fad7c2700a509ddaf65584":[3,0,17,17]
+"classCommProfStats.html#a2c70598493fad7c2700a509ddaf65584":[3,0,17,17],
+"classCommProfStats.html#a2df08e98c81c9d8bc1fd71defa327d4d":[3,0,17,66]
 };

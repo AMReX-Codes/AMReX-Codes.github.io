@@ -1,6 +1,5 @@
 var NAVTREEINDEX85 =
 {
-"structamrex_1_1StateData_1_1TimeInterval.html#add8128cb7af0fe0a981329a09e5fee37":[3,0,0,29,0,1],
 "structamrex_1_1StructOfArrays.html":[3,0,0,524],
 "structamrex_1_1StructOfArrays.html#a017be53b64346d557da975c2a473a5a3":[3,0,0,524,29],
 "structamrex_1_1StructOfArrays.html#a06cb98e187a840616cfd0c681f596ab2":[3,0,0,524,26],
@@ -249,5 +248,6 @@ var NAVTREEINDEX85 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa84aea4f19fd97919030c7bc2b2bce52":[3,0,0,0,5,12],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac95794690d4fb50c8e149a55ade09fb8":[3,0,0,0,5,3],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[3,0,0,0,5,4],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[3,0,0,0,5,10]
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[3,0,0,0,5,10],
+"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html":[3,0,0,0,6]
 };

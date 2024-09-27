@@ -1,6 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"AMReX__MLNodeLap__K_8H.html#a7cb50f4b12990e43c67ce3f6e40960b9":[4,0,0,6,0,58,15],
 "AMReX__MLNodeLap__K_8H.html#a880fe3ab900c3cb4d906ff3bdb91e643":[4,0,0,6,0,58,10],
 "AMReX__MLNodeLap__K_8H.html#a92ac78510ed74b78c4c22749ba236cc7":[4,0,0,6,0,58,12],
 "AMReX__MLNodeLap__K_8H.html#a94b1c5a72bfa9bc02bc7ed6d2c2394f5":[4,0,0,6,0,58,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX14 =
 "AMReX__MemPool_8cpp.html#a3c075e31a22dc6c15e7da22613154e74":[4,0,0,2,169,6],
 "AMReX__MemPool_8cpp.html#a4dd49892147e767c1b44ffb5be366739":[4,0,0,2,169,2],
 "AMReX__MemPool_8cpp.html#a4e1a0005e248ebe6c6005d8344ebc7a2":[4,0,0,2,169,1],
-"AMReX__MemPool_8cpp.html#ac5945e956f410432b6b174d888dd6dce":[4,0,0,2,169,0]
+"AMReX__MemPool_8cpp.html#ac5945e956f410432b6b174d888dd6dce":[4,0,0,2,169,0],
+"AMReX__MemProfiler_8H.html":[4,0,0,2,173]
 };
