@@ -133,7 +133,7 @@ var hierarchy =
     [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", null ],
     [ "amrex::Array1D< int, 0, N-1 >", "structamrex_1_1Array1D.html", null ],
     [ "amrex::Array2D< T, XLO, XHI, YLO, YHI, ORDER >", "structamrex_1_1Array2D.html", null ],
-    [ "amrex::Array2D< T, 0, N-1, 0, N-1, amrex::Order::C >", "structamrex_1_1Array2D.html", null ],
+    [ "amrex::Array2D< T, 0, N-1, 0, N-1, Order::C >", "structamrex_1_1Array2D.html", null ],
     [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", null ],
     [ "amrex::Array4< T >", "structamrex_1_1Array4.html", [
       [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
@@ -235,7 +235,6 @@ var hierarchy =
     [ "amrex::Gpu::Buffer< T, >", "classamrex_1_1Gpu_1_1Buffer.html", null ],
     [ "amrex::MemProfiler::Builds", "structamrex_1_1MemProfiler_1_1Builds.html", null ],
     [ "amrex::MemProfiler::Bytes", "structamrex_1_1MemProfiler_1_1Bytes.html", null ],
-    [ "amrex::Order::C", "structamrex_1_1Order_1_1C.html", null ],
     [ "amrex::FabArrayBase::CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html", null ],
     [ "BLProfStats::CallTreeNode", "structBLProfStats_1_1CallTreeNode.html", null ],
     [ "amrex::EB2::Cell", "structamrex_1_1EB2_1_1Cell.html", null ],
@@ -380,7 +379,6 @@ var hierarchy =
     [ "amrex::Gpu::ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", null ],
     [ "amrex::expect", "classamrex_1_1expect.html", null ],
     [ "amrex::EB2::ExtrusionIF< F >", "classamrex_1_1EB2_1_1ExtrusionIF.html", null ],
-    [ "amrex::Order::F", "structamrex_1_1Order_1_1F.html", null ],
     [ "amrex::FabArrayBase", "classamrex_1_1FabArrayBase.html", [
       [ "amrex::FabArray< amrex::BaseFab< AtomicInt > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< TagBox >", "classamrex_1_1FabArray.html", [
@@ -975,6 +973,7 @@ var hierarchy =
     [ "amrex::IntVectND< dim >::shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
+    [ "amrex::SmallMatrix< T, NRows, NCols, ORDER >", "structamrex_1_1SmallMatrix.html", null ],
     [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", [
       [ "amrex::ConstSoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1ConstSoAParticle.html", null ],
       [ "amrex::SoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1SoAParticle.html", null ]

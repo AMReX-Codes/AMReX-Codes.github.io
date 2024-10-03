@@ -71,6 +71,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_ccse-mpi.H", "AMReX__ccse-mpi_8H.html", "AMReX__ccse-mpi_8H" ],
     [ "AMReX_CONSTANTS.H", "AMReX__CONSTANTS_8H.html", null ],
     [ "AMReX_constants_mod.f90", "AMReX__constants__mod_8f90.html", "AMReX__constants__mod_8f90" ],
+    [ "AMReX_ConstexprFor.H", "AMReX__ConstexprFor_8H.html", "AMReX__ConstexprFor_8H" ],
     [ "AMReX_CoordSys.cpp", "AMReX__CoordSys_8cpp.html", "AMReX__CoordSys_8cpp" ],
     [ "AMReX_CoordSys.H", "AMReX__CoordSys_8H.html", [
       [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ]
@@ -355,6 +356,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_RungeKutta.H", "AMReX__RungeKutta_8H.html", "AMReX__RungeKutta_8H" ],
     [ "AMReX_Scan.H", "AMReX__Scan_8H.html", "AMReX__Scan_8H" ],
     [ "AMReX_Slopes_K.H", "AMReX__Slopes__K_8H.html", "AMReX__Slopes__K_8H" ],
+    [ "AMReX_SmallMatrix.H", "AMReX__SmallMatrix_8H.html", "AMReX__SmallMatrix_8H" ],
     [ "AMReX_SPACE.H", "AMReX__SPACE_8H.html", "AMReX__SPACE_8H" ],
     [ "AMReX_Stack.H", "AMReX__Stack_8H.html", [
       [ "Stack", "structamrex_1_1Stack.html", "structamrex_1_1Stack" ]

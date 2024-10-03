@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"AMReX__MLCellABecLap_8H.html":[4,0,0,6,0,10],
+"AMReX__MLCellABecLap_8H.html#a2116fd8f117dd8ebb01e6a3b99c7947e":[4,0,0,6,0,10,1],
 "AMReX__MLCellABecLap_8H_source.html":[4,0,0,6,0,10],
 "AMReX__MLCellABecLap__1D__K_8H.html":[4,0,0,6,0,11],
 "AMReX__MLCellABecLap__1D__K_8H.html#a078658f433f21a921eaee99b9bb2423f":[4,0,0,6,0,11,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "AMReX__MLMG__1D__K_8H.html#a249a580ecbb9cf9c62a5c8398e2e650a":[4,0,0,6,0,44,0],
 "AMReX__MLMG__1D__K_8H.html#a42c1936a2addff0a513ce0fee0e97e79":[4,0,0,6,0,44,1],
 "AMReX__MLMG__1D__K_8H.html#aad9cfa8c0b510db0ea1d728564a6a34c":[4,0,0,6,0,44,2],
-"AMReX__MLMG__1D__K_8H.html#ac6796e6b7599e56ab974042839b25efc":[4,0,0,6,0,44,3],
-"AMReX__MLMG__1D__K_8H_source.html":[4,0,0,6,0,44],
-"AMReX__MLMG__2D__K_8H.html":[4,0,0,6,0,45]
+"AMReX__MLMG__1D__K_8H.html#ac6796e6b7599e56ab974042839b25efc":[4,0,0,6,0,44,3]
 };

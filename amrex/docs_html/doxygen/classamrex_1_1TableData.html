@@ -200,7 +200,7 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a629989dacadbcb7af5a95b3c5e4aa23a"><td class="memTemplParams" colspan="2">template&lt;class U , int M, class O &gt; </td></tr>
+<tr class="memitem:a629989dacadbcb7af5a95b3c5e4aa23a"><td class="memTemplParams" colspan="2">template&lt;class U , int M, Order O&gt; </td></tr>
 <tr class="memitem:a629989dacadbcb7af5a95b3c5e4aa23a"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a">TableData</a></td></tr>
 <tr class="separator:a629989dacadbcb7af5a95b3c5e4aa23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -211,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a901b7f1e68950afc823ebc10c093cb94 inherit pub_attribs_structamrex_1_1DataAllocator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, int N, typename ORDER = Order::F&gt;<br />
+<div class="textblock"><h3>template&lt;typename T, int N, Order ORDER = Order::F&gt;<br />
 class amrex::TableData&lt; T, N, ORDER &gt;</h3>
 
 <p>Multi-dimensional array class. </p>
@@ -238,7 +238,7 @@ class amrex::TableData&lt; T, N, ORDER &gt;</h3>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="classamrex_1_1TableData.html#afeffb10e16b9f5ef9e1f806bb5940796">table</a> = table_data.const_table(); <span class="comment">// const makes it read only</span></div>
 <div class="line">    <span class="comment">// We can now use table in device lambda.</span></div>
-<div class="ttc" id="aclassamrex_1_1TableData_html_afeffb10e16b9f5ef9e1f806bb5940796"><div class="ttname"><a href="classamrex_1_1TableData.html#afeffb10e16b9f5ef9e1f806bb5940796">amrex::TableData::table</a></div><div class="ttdeci">table_type table() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_TableData.H:597</div></div>
+<div class="ttc" id="aclassamrex_1_1TableData_html_afeffb10e16b9f5ef9e1f806bb5940796"><div class="ttname"><a href="classamrex_1_1TableData.html#afeffb10e16b9f5ef9e1f806bb5940796">amrex::TableData::table</a></div><div class="ttdeci">table_type table() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_TableData.H:588</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:237</div></div>
 <div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.cpp:649</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -248,7 +248,7 @@ class amrex::TableData&lt; T, N, ORDER &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classamrex_1_1TableData.html">amrex::TableData</a>&lt; T, N, ORDER &gt;::<a class="el" href="classamrex_1_1TableData.html#a929878dbf8cc2587f3cd18ba3e5c1e85">const_table_type</a> =  std::conditional_t&lt;N==1, <a class="el" href="structamrex_1_1Table1D.html">Table1D</a>&lt;T const&gt;, std::conditional_t&lt;N==2, <a class="el" href="structamrex_1_1Table2D.html">Table2D</a>&lt;T const, ORDER&gt;, std::conditional_t&lt;N==3, <a class="el" href="structamrex_1_1Table3D.html">Table3D</a>&lt;T const, ORDER&gt;, <a class="el" href="structamrex_1_1Table4D.html">Table4D</a>&lt;T const, ORDER&gt; &gt; &gt; &gt;</td>
@@ -264,7 +264,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classamrex_1_1TableData.html">amrex::TableData</a>&lt; T, N, ORDER &gt;::<a class="el" href="classamrex_1_1TableData.html#a222e815d3c06ca047ebae80835044dc4">table_type</a> =  std::conditional_t&lt;N==1, <a class="el" href="structamrex_1_1Table1D.html">Table1D</a>&lt;T&gt;, std::conditional_t&lt;N==2, <a class="el" href="structamrex_1_1Table2D.html">Table2D</a>&lt;T, ORDER&gt;, std::conditional_t&lt;N==3, <a class="el" href="structamrex_1_1Table3D.html">Table3D</a>&lt;T, ORDER&gt;, <a class="el" href="structamrex_1_1Table4D.html">Table4D</a>&lt;T, ORDER&gt; &gt; &gt; &gt;</td>
@@ -280,7 +280,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classamrex_1_1TableData.html">amrex::TableData</a>&lt; T, N, ORDER &gt;::<a class="el" href="classamrex_1_1TableData.html#ad82ea827b5b1999cc86a3b075c7a3659">value_type</a> =  T</td>
@@ -297,7 +297,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -324,7 +324,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -352,7 +352,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1TableData.html">amrex::TableData</a>&lt; T, N, ORDER &gt;::<a class="el" href="classamrex_1_1TableData.html">TableData</a> </td>
@@ -388,7 +388,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -416,7 +416,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -444,7 +444,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -469,7 +469,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -493,7 +493,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -517,7 +517,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -545,7 +545,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -569,7 +569,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -596,7 +596,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -623,7 +623,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -650,7 +650,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -678,7 +678,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -706,7 +706,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1TableData.html">amrex::TableData</a>&lt; T, N, ORDER &gt;::resize </td>
@@ -742,7 +742,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -766,7 +766,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -790,7 +790,7 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER &gt; </div>
+template&lt;typename T , int N, Order ORDER&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -815,9 +815,9 @@ template&lt;typename T , int N, typename ORDER &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <div class="memtemplate">
-template&lt;class U , int M, class O &gt; </div>
+template&lt;class U , int M, Order O&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -842,7 +842,7 @@ template&lt;class U , int M, class O &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -866,7 +866,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -890,7 +890,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -914,7 +914,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -938,7 +938,7 @@ template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , int N, typename ORDER  = Order::F&gt; </div>
+template&lt;typename T , int N, Order ORDER = Order::F&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

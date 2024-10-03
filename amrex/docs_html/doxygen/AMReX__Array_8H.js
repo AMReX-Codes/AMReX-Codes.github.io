@@ -1,8 +1,6 @@
 var AMReX__Array_8H =
 [
     [ "GpuArray", "structamrex_1_1GpuArray.html", "structamrex_1_1GpuArray" ],
-    [ "C", "structamrex_1_1Order_1_1C.html", null ],
-    [ "F", "structamrex_1_1Order_1_1F.html", null ],
     [ "Array1D", "structamrex_1_1Array1D.html", "structamrex_1_1Array1D" ],
     [ "Array2D", "structamrex_1_1Array2D.html", "structamrex_1_1Array2D" ],
     [ "Array3D", "structamrex_1_1Array3D.html", "structamrex_1_1Array3D" ],

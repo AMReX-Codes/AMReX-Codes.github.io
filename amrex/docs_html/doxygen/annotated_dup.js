@@ -195,10 +195,6 @@ var annotated_dup =
         [ "Moments", "structamrex_1_1openbc_1_1Moments.html", "structamrex_1_1openbc_1_1Moments" ],
         [ "MomTag", "structamrex_1_1openbc_1_1MomTag.html", "structamrex_1_1openbc_1_1MomTag" ]
       ] ],
-      [ "Order", "namespaceamrex_1_1Order.html", [
-        [ "C", "structamrex_1_1Order_1_1C.html", null ],
-        [ "F", "structamrex_1_1Order_1_1F.html", null ]
-      ] ],
       [ "ParallelContext", "namespaceamrex_1_1ParallelContext.html", [
         [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html", "classamrex_1_1ParallelContext_1_1Frame" ]
       ] ],
@@ -459,6 +455,7 @@ var annotated_dup =
       [ "ReduceOps", "classamrex_1_1ReduceOps.html", "classamrex_1_1ReduceOps" ],
       [ "ReduceData", "classamrex_1_1ReduceData.html", "classamrex_1_1ReduceData" ],
       [ "RKIntegrator", "classamrex_1_1RKIntegrator.html", "classamrex_1_1RKIntegrator" ],
+      [ "SmallMatrix", "structamrex_1_1SmallMatrix.html", "structamrex_1_1SmallMatrix" ],
       [ "Stack", "structamrex_1_1Stack.html", "structamrex_1_1Stack" ],
       [ "Table1D", "structamrex_1_1Table1D.html", "structamrex_1_1Table1D" ],
       [ "Table2D", "structamrex_1_1Table2D.html", "structamrex_1_1Table2D" ],

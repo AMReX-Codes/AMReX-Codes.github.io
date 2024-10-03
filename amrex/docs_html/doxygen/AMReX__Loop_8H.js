@@ -10,7 +10,6 @@ var AMReX__Loop_8H =
     [ "call_f_intvect_inner_cpu", "AMReX__Loop_8H.html#a154e136915988b195cf06eece0749933", null ],
     [ "call_f_intvect_ncomp", "AMReX__Loop_8H.html#a9975e6fa70fb91cb56b62b1c34436662", null ],
     [ "call_f_intvect_ncomp_cpu", "AMReX__Loop_8H.html#ae922667b0d850b2bb5603749f8864438", null ],
-    [ "constexpr_for", "AMReX__Loop_8H.html#a0aa649267e39623753c8193411badeb2", null ],
     [ "Loop", "AMReX__Loop_8H.html#a6be13ce19c854e2261ed9ac662c84fae", null ],
     [ "Loop", "AMReX__Loop_8H.html#a614341eb1f669411a7ae80905a563432", null ],
     [ "Loop", "AMReX__Loop_8H.html#afee414511118e5074a62b89cb88f0f5a", null ],

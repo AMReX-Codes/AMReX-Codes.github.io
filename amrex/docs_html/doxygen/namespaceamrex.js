@@ -261,7 +261,6 @@ var namespaceamrex =
       [ "in_parallel", "namespaceamrex_1_1OpenMP.html#ac4d826cf1b5dd7b16d2e1d54a73ff935", null ],
       [ "set_num_threads", "namespaceamrex_1_1OpenMP.html#aaeee8e96a1a1222c5fe65bf996f4b840", null ]
     ] ],
-    [ "Order", "namespaceamrex_1_1Order.html", "namespaceamrex_1_1Order" ],
     [ "ParallelAllGather", "namespaceamrex_1_1ParallelAllGather.html", [
       [ "AllGather", "namespaceamrex_1_1ParallelAllGather.html#a1ea9d029b1a0e862f2cf90ee0679ab65", null ],
       [ "AllGather", "namespaceamrex_1_1ParallelAllGather.html#aaeea1cff72579eabfe1778d22f0c5b35", null ]
@@ -620,6 +619,7 @@ var namespaceamrex =
     [ "ReduceOps", "classamrex_1_1ReduceOps.html", "classamrex_1_1ReduceOps" ],
     [ "ReduceData", "classamrex_1_1ReduceData.html", "classamrex_1_1ReduceData" ],
     [ "RKIntegrator", "classamrex_1_1RKIntegrator.html", "classamrex_1_1RKIntegrator" ],
+    [ "SmallMatrix", "structamrex_1_1SmallMatrix.html", "structamrex_1_1SmallMatrix" ],
     [ "Stack", "structamrex_1_1Stack.html", "structamrex_1_1Stack" ],
     [ "Table1D", "structamrex_1_1Table1D.html", "structamrex_1_1Table1D" ],
     [ "Table2D", "structamrex_1_1Table2D.html", "structamrex_1_1Table2D" ],
@@ -974,6 +974,8 @@ var namespaceamrex =
     [ "randState_t", "namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124", null ],
     [ "RealArray", "namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f", null ],
     [ "RuntimeError", "namespaceamrex.html#ac3aaf3d47b0fc6e69f9405fcebcdc4fe", null ],
+    [ "SmallRowVector", "namespaceamrex.html#a15786f0b9fa2272586c5bb6542f2afc5", null ],
+    [ "SmallVector", "namespaceamrex.html#ac4aab3db011caf76570ff09526d6528c", null ],
     [ "TheFaArenaPointer", "namespaceamrex.html#a2081a3d338ad899832ab632c44a12eb5", null ],
     [ "TracerParIter", "namespaceamrex.html#a2172ed493dfadbd34d5cdb72995f96af", null ],
     [ "Tuple", "namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8", null ],
@@ -1131,6 +1133,12 @@ var namespaceamrex =
     [ "MakeType", "namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6", [
       [ "make_alias", "namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba", null ],
       [ "make_deep_copy", "namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a0a2bb4bcb2051ae3a06f94b5c1768e90", null ]
+    ] ],
+    [ "Order", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20", [
+      [ "C", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257", null ],
+      [ "F", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012", null ],
+      [ "RowMajor", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20abba47a7c03289a67ca347baa3f55be2f", null ],
+      [ "ColumnMajor", "namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20af695e73139b1c1d06d77655104370f00", null ]
     ] ],
     [ "parser_exe_t", "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49", [
       [ "PARSER_EXE_NULL", "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad164042843bc5d3219c38304422dda7f", null ],
@@ -2411,6 +2419,7 @@ var namespaceamrex =
     [ "operator*", "namespaceamrex.html#a49f574fffa24f9734a8e405d2a299bd0", null ],
     [ "operator*", "namespaceamrex.html#a79754df2fe2ff8642af6d3a015518866", null ],
     [ "operator*", "namespaceamrex.html#a195022a2bf1f86de6f3f454ad1d586b7", null ],
+    [ "operator*", "namespaceamrex.html#a080ad3922c72e8eb3bfb71b29ffb62a2", null ],
     [ "operator+", "namespaceamrex.html#adf062698516fbd51a09bead1a35275d1", null ],
     [ "operator+", "namespaceamrex.html#a9e456bdbe9114f2b3d9c74990577bd91", null ],
     [ "operator+", "namespaceamrex.html#a99c5fbfd6053c7ac2f9e43b3e5eb25d7", null ],
@@ -2470,6 +2479,7 @@ var namespaceamrex =
     [ "operator<<", "namespaceamrex.html#aadb6da61ab59ea2923bdf326e791654a", null ],
     [ "operator<<", "namespaceamrex.html#af58b88f2bf12a834f4885dcf327fbeba", null ],
     [ "operator<<", "namespaceamrex.html#a1637e435aecce22da819f6df77982d2f", null ],
+    [ "operator<<", "namespaceamrex.html#a76c567c22f1b0875f1b2d8c89475354b", null ],
     [ "operator<<", "namespaceamrex.html#ab7f948f87bc8aa58451aa8b78e9c883a", null ],
     [ "operator<<", "namespaceamrex.html#af924e08c1b1c132575c3627b47c65695", null ],
     [ "operator==", "namespaceamrex.html#aa92fe9cc159271081f5d93db53a531f6", null ],
