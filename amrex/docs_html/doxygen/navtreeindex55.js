@@ -1,6 +1,5 @@
 var NAVTREEINDEX55 =
 {
-"classamrex_1_1PhysBCFunctUseCoarseGhost.html#a7bbf5fc4329d330d49fc85d259725202":[3,0,0,216,2],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#ab825421f1e03196f392fef2e60ba0421":[3,0,0,216,7],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#ac18bba8715a858535bfef42b967c8fa5":[3,0,0,216,5],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#ac4606069ff51762825e7c8c42f7d1c42":[3,0,0,216,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX55 =
 "classamrex_1_1RealVect.html#ab33793196d0917f9e4b69d8e84412430":[3,0,0,227,54],
 "classamrex_1_1RealVect.html#ab64ddfe8e473503acf9a5f7103467b13":[3,0,0,227,65],
 "classamrex_1_1RealVect.html#ab83bde52e73520cc1375d513030374df":[3,0,0,227,42],
-"classamrex_1_1RealVect.html#ac0469b60807117dc2419785ce1168b84":[3,0,0,227,58]
+"classamrex_1_1RealVect.html#ac0469b60807117dc2419785ce1168b84":[3,0,0,227,58],
+"classamrex_1_1RealVect.html#ac279e83bbbad84c9218d6673bf75fe65":[3,0,0,227,38]
 };

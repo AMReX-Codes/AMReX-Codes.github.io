@@ -1,6 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"AMReX__TinyProfiler_8cpp.html":[4,0,0,2,256],
 "AMReX__TracerParticle__mod__K_8H.html":[4,0,0,7,37],
 "AMReX__TracerParticle__mod__K_8H.html#a047ddeeac5cfd57caf201dd5c654d249":[4,0,0,7,37,3],
 "AMReX__TracerParticle__mod__K_8H.html#a0dfc6d3b63fda10491506e29ce5da0fe":[4,0,0,7,37,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX21 =
 "AMReX__acc__mod_8F90.html":[4,0,0,2,3],
 "AMReX__acc__mod_8F90.html#a7537721c18f228fca42f0db3e75a4470":[4,0,0,2,3,0],
 "AMReX__acc__mod_8F90.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[4,0,0,2,3,1],
-"AMReX__acc__mod_8F90.html#aafbf079c34c708eb6c38b72a05c77249":[4,0,0,2,3,3]
+"AMReX__acc__mod_8F90.html#aafbf079c34c708eb6c38b72a05c77249":[4,0,0,2,3,3],
+"AMReX__acc__mod_8F90.html#ae6e5f688f216b146a2cc609ec638a462":[4,0,0,2,3,2]
 };

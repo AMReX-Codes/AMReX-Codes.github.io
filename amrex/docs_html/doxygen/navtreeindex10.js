@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"AMReX__IParser__Y_8cpp.html#a567a24c4c29c021c5f2d852c55fdb6db":[4,0,0,2,0,10,3],
 "AMReX__IParser__Y_8cpp.html#a68fd17a00f11528cc052eee4ffc80de8":[4,0,0,2,0,10,27],
 "AMReX__IParser__Y_8cpp.html#a6d20135c80c410cae70ceca17c5fd7bf":[4,0,0,2,0,10,9],
 "AMReX__IParser__Y_8cpp.html#a79e084d7248e50fe5cd9f6037db2b2e1":[4,0,0,2,0,10,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "AMReX__LUSolver_8H.html":[4,0,0,2,165],
 "AMReX__LUSolver_8H_source.html":[4,0,0,2,165],
 "AMReX__LayoutData_8H.html":[4,0,0,2,160],
-"AMReX__LayoutData_8H_source.html":[4,0,0,2,160]
+"AMReX__LayoutData_8H_source.html":[4,0,0,2,160],
+"AMReX__Lazy_8H.html":[4,0,0,2,162]
 };

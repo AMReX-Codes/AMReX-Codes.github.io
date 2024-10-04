@@ -1,6 +1,5 @@
 var NAVTREEINDEX86 =
 {
-"structamrex_1_1VisMF_1_1PersistentIFStream.html#a85eca5ae503569f1b40b8d4bac373997":[3,0,0,295,3,6],
 "structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1215d1effdf6c549d4d06a61004880d":[3,0,0,295,3,9],
 "structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1ecab1d0722305f0a0257611aeb1bde":[3,0,0,295,3,8],
 "structamrex_1_1VisMF_1_1PersistentIFStream.html#ac51ac75b9acd3f6dbba89e7b73dfda1d":[3,0,0,295,3,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX86 =
 "structamrex_1_1parser__symbol.html":[3,0,0,376],
 "structamrex_1_1parser__symbol.html#a36d42d12dc34e9e1a3321c27539bb34d":[3,0,0,376,1],
 "structamrex_1_1parser__symbol.html#a8b935e5014acf16b10e6b98c79de3054":[3,0,0,376,2],
-"structamrex_1_1parser__symbol.html#a99f7da0f4633b6fc68df7cf4f0d9d398":[3,0,0,376,0]
+"structamrex_1_1parser__symbol.html#a99f7da0f4633b6fc68df7cf4f0d9d398":[3,0,0,376,0],
+"structamrex_1_1ppdetail_1_1ArithmeticOptional__TT.html":[3,0,0,16,0]
 };

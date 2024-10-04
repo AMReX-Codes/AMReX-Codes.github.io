@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"AMReX__FabArrayUtility_8H.html#afcc5c0728f0b86970e242947cef7e93a":[4,0,0,2,78,96],
 "AMReX__FabArrayUtility_8H.html#afeebec2f58b85bfde5b88b30810cd82d":[4,0,0,2,78,108],
 "AMReX__FabArrayUtility_8H.html#aff9cc4b21a84dbb1def69e24fa575064":[4,0,0,2,78,34],
 "AMReX__FabArrayUtility_8H_source.html":[4,0,0,2,78],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "AMReX__GpuBuffer_8H.html":[4,0,0,2,118],
 "AMReX__GpuBuffer_8H_source.html":[4,0,0,2,118],
 "AMReX__GpuComplex_8H.html":[4,0,0,2,119],
-"AMReX__GpuComplex_8H.html#a0d50b358feee8de5a27ba594b7e2930a":[4,0,0,2,119,18]
+"AMReX__GpuComplex_8H.html#a0d50b358feee8de5a27ba594b7e2930a":[4,0,0,2,119,18],
+"AMReX__GpuComplex_8H.html#a106de2ebd5839c06d9ddc1286fc87958":[4,0,0,2,119,19]
 };

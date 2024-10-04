@@ -1,6 +1,5 @@
 var NAVTREEINDEX82 =
 {
-"structamrex_1_1MemStat.html#a9d6dfbc5efa557f55251adda530dcf4a":[3,0,0,72,4],
 "structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165":[3,0,0,72,0],
 "structamrex_1_1Minimum.html":[3,0,0,156],
 "structamrex_1_1Minimum.html#ac1323c5ec139871b4306cf2225acf5af":[3,0,0,156,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX82 =
 "structamrex_1_1ParserExeDIV__VP.html#a3b3d6e22362dc0df987b0457a574298d":[3,0,0,357,2],
 "structamrex_1_1ParserExeDIV__VP.html#a44b2a80319993ff7d80bae168243baba":[3,0,0,357,0],
 "structamrex_1_1ParserExeDIV__VP.html#a91a71da9f691a66c9f2e71804dafe02f":[3,0,0,357,1],
-"structamrex_1_1ParserExeF1.html":[3,0,0,351]
+"structamrex_1_1ParserExeF1.html":[3,0,0,351],
+"structamrex_1_1ParserExeF1.html#a4836ce4c26c643a2da9d8c8efbc0ae02":[3,0,0,351,0]
 };

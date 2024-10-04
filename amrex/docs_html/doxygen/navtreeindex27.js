@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a372de49bc29aec17b02543357815ff7b":[4,0,0,2,0,19,81,50],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a3969eee4c6f66d8fcd47acb3d217390d":[4,0,0,2,0,7,81,38],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a3969eee4c6f66d8fcd47acb3d217390d":[4,0,0,2,0,19,81,38],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a3e60e9c8fbcbc309932fccb4773a65f1":[4,0,0,2,0,7,81,49],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "classBLProfStats.html#ae3e98ce74ad3d01e423149655526d44c":[3,0,16,6],
 "classBLProfStats.html#ae4254a166bcebf1c002d16e350167508":[3,0,16,31],
 "classBLProfStats.html#ae52d1496a02ab9f40df9ae0ece20fc51":[3,0,16,94],
-"classBLProfStats.html#ae8e90faa9bed63294da831786b2e181f":[3,0,16,89]
+"classBLProfStats.html#ae8e90faa9bed63294da831786b2e181f":[3,0,16,89],
+"classBLProfStats.html#af986d8aadba05d068b2bdc3aa554d946":[3,0,16,75]
 };
