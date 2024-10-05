@@ -1,19 +1,5 @@
 var NAVTREEINDEX87 =
 {
-"structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html":[3,0,0,16,1],
-"structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html#ad5f4be4f8f332c042dcbfc34fc1b1f6d":[3,0,0,16,1,0],
-"structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html":[3,0,0,16,2],
-"structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html#a84722f62be0d703ae6fa578093431728":[3,0,0,16,2,0],
-"structamrex__parmparse__module_1_1amrex__parmparse.html":[3,0,7,0],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a00b3414ab27018ecee235594b89ee675":[3,0,7,0,0],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0546d6b0c985419b4c1f4db2df4238cc":[3,0,7,0,18],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0c550ea9b94a0f755aad8d4b82eb7c49":[3,0,7,0,17],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0fe403153388ffa22847e362231c0db3":[3,0,7,0,16],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a184eeffd6ff61b5148958083446b81a9":[3,0,7,0,1],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1b8984787dd6a07f9a79bbae19c51316":[3,0,7,0,29],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a341e69f6e3bc1c30de317f47b67b67c0":[3,0,7,0,21],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a382f89d2f2f2d88e292677472eb44312":[3,0,7,0,23],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a49000c613ca825c9a110712f80d846f3":[3,0,7,0,26],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a4a92e6cbf9b620c1eebc0b5d81615c75":[3,0,7,0,5],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a4e9428e27996d192ffbb496cb009abd3":[3,0,7,0,20],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a50c2401baa8b23657d0cea5a280bfcac":[3,0,7,0,7],
@@ -145,6 +131,5 @@ var NAVTREEINDEX87 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };

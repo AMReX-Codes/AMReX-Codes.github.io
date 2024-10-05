@@ -52,7 +52,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_BLutil_F.F90", "AMReX__BLutil__F_8F90.html", "AMReX__BLutil__F_8F90" ],
     [ "AMReX_Box.cpp", "AMReX__Box_8cpp.html", "AMReX__Box_8cpp" ],
     [ "AMReX_Box.H", "AMReX__Box_8H.html", "AMReX__Box_8H" ],
-    [ "AMReX_BoxArray.cpp", "AMReX__BoxArray_8cpp.html", "AMReX__BoxArray_8cpp" ],
+    [ "AMReX_BoxArray.cpp", "AMReX__BoxArray_8cpp.html", null ],
     [ "AMReX_BoxArray.H", "AMReX__BoxArray_8H.html", "AMReX__BoxArray_8H" ],
     [ "AMReX_BoxDomain.cpp", "AMReX__BoxDomain_8cpp.html", "AMReX__BoxDomain_8cpp" ],
     [ "AMReX_BoxDomain.H", "AMReX__BoxDomain_8H.html", "AMReX__BoxDomain_8H" ],
