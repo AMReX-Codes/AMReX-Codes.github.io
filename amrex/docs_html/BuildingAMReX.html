@@ -507,303 +507,6 @@ are assigned a value of <code class="docutils literal notranslate"><span class="
 if they are assigned a value of <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">OFF</span></code>, <code class="docutils literal notranslate"><span class="pre">NO</span></code>, <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code>.
 Boolean configuration variables are case-insensitive.
 The list of available options is reported in the <a class="reference internal" href="#tab-cmakevar"><span class="std std-ref">table</span></a> below.</p>
-<span id="tab-cmakevar"></span><table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">AMReX build options (refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a> for GPU-related options).</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Default</p></th>
-<th class="head"><p>Possible values</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>CMAKE_Fortran_COMPILER</p></td>
-<td><p>User-defined Fortran compiler</p></td>
-<td></td>
-<td><p>user-defined</p></td>
-</tr>
-<tr class="row-odd"><td><p>CMAKE_CXX_COMPILER</p></td>
-<td><p>User-defined C++ compiler</p></td>
-<td></td>
-<td><p>user-defined</p></td>
-</tr>
-<tr class="row-even"><td><p>CMAKE_Fortran_FLAGS</p></td>
-<td><p>User-defined Fortran flags</p></td>
-<td></td>
-<td><p>user-defined</p></td>
-</tr>
-<tr class="row-odd"><td><p>CMAKE_CXX_FLAGS</p></td>
-<td><p>User-defined C++ flags</p></td>
-<td></td>
-<td><p>user-defined</p></td>
-</tr>
-<tr class="row-even"><td><p>CMAKE_CXX_STANDARD</p></td>
-<td><p>C++ standard</p></td>
-<td><p>compiler/17</p></td>
-<td><p>17, 20</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_SPACEDIM</p></td>
-<td><p>Dimension of AMReX build</p></td>
-<td><p>3 <code class="docutils literal notranslate"><span class="pre">;</span></code>-separated list</p></td>
-<td><p>“1;2;3”</p></td>
-</tr>
-<tr class="row-even"><td><p>USE_XSDK_DEFAULTS</p></td>
-<td><p>Use xSDK defaults settings</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_BUILD_SHARED_LIBS</p></td>
-<td><p>Build as shared C++ library</p></td>
-<td><p>NO (unless xSDK)</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_FORTRAN</p></td>
-<td><p>Enable Fortran language</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_PRECISION</p></td>
-<td><p>Set the precision of reals</p></td>
-<td><p>DOUBLE</p></td>
-<td><p>DOUBLE, SINGLE</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_PIC</p></td>
-<td><p>Build Position Independent Code</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_IPO</p></td>
-<td><p>Interprocedural optimization (IPO/LTO)</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_MPI</p></td>
-<td><p>Build with MPI support</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_OMP</p></td>
-<td><p>Build with OpenMP support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_GPU_BACKEND</p></td>
-<td><p>Build with on-node, accelerated GPU backend</p></td>
-<td><p>NONE</p></td>
-<td><p>NONE, SYCL, HIP, CUDA</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_GPU_RDC</p></td>
-<td><p>Build with Relocatable Device Code support</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_FORTRAN_INTERFACES</p></td>
-<td><p>Build Fortran API</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS</p></td>
-<td><p>Build AMReX linear solvers</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_AMRDATA</p></td>
-<td><p>Build data services</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_AMRLEVEL</p></td>
-<td><p>Build AmrLevel class</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_EB</p></td>
-<td><p>Build Embedded Boundary support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_PARTICLES</p></td>
-<td><p>Build particle classes</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_PARTICLES_PRECISION</p></td>
-<td><p>Set reals precision in particle classes</p></td>
-<td><p>Same as AMReX_PRECISION</p></td>
-<td><p>DOUBLE, SINGLE</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_BASE_PROFILE</p></td>
-<td><p>Build with basic profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_TINY_PROFILE</p></td>
-<td><p>Build with tiny profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_TRACE_PROFILE</p></td>
-<td><p>Build with trace-profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_COMM_PROFILE</p></td>
-<td><p>Build with comm-profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_MEM_PROFILE</p></td>
-<td><p>Build with memory-profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_TP_PROFILE</p></td>
-<td><p>Third-party profiling options</p></td>
-<td><p>IGNORE</p></td>
-<td><p>CRAYPAT,FORGE,VTUNE</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_TESTING</p></td>
-<td><p>Build for testing –sets MultiFab initial data
-to NaN</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_MPI_THREAD_MULTIPLE</p></td>
-<td><p>Concurrent MPI calls from multiple threads</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_PROFPARSER</p></td>
-<td><p>Build with profile parser support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_ROCTX</p></td>
-<td><p>Build with roctx markup profiling support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_FPE</p></td>
-<td><p>Build with Floating Point Exceptions checks</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_ASSERTIONS</p></td>
-<td><p>Build with assertions turned on</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_BOUND_CHECK</p></td>
-<td><p>Enable bound checking in Array4 class</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_EXPORT_DYNAMIC</p></td>
-<td><p>Enable backtrace on macOS</p></td>
-<td><p>NO (unless Darwin)</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_SENSEI</p></td>
-<td><p>Enable the SENSEI in situ infrastructure</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_NO_SENSEI_AMR_INST</p></td>
-<td><p>Disables the instrumentation in amrex::Amr</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_CONDUIT</p></td>
-<td><p>Enable Conduit support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_CATALYST</p></td>
-<td><p>Enable Catalyst support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_ASCENT</p></td>
-<td><p>Enable Ascent support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_HYPRE</p></td>
-<td><p>Enable HYPRE interfaces</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_PETSC</p></td>
-<td><p>Enable PETSc interfaces</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_SUNDIALS</p></td>
-<td><p>Enable SUNDIALS interfaces</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_HDF5</p></td>
-<td><p>Enable HDF5-based I/O</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_HDF5_ZFP</p></td>
-<td><p>Enable compression with ZFP in HDF5-based I/O</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_PLOTFILE_TOOLS</p></td>
-<td><p>Build and install plotfile postprocessing tools</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_ENABLE_TESTS</p></td>
-<td><p>Enable CTest suite</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_TEST_TYPE</p></td>
-<td><p>Test type – affects the number of tests</p></td>
-<td><p>All</p></td>
-<td><p>All, Small</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
-<td><p>Allow an app to use a different compiler</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_INSTALL</p></td>
-<td><p>Generate Install Targets</p></td>
-<td><p>YES</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_PROBINIT</p></td>
-<td><p>Enable support for probin file</p></td>
-<td><p>Platform dependent</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_FLATTEN_FOR</p></td>
-<td><p>Enable flattening of ParallelFor and similar
-functions for host code</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_COMPILER_DEFAULT_INLINE</p></td>
-<td><p>Use default inline behavior of compiler,
-so far relevant for GCC Only</p></td>
-<td><p>NO for GCC
-YES otherwise</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>AMReX_INLINE_LIMIT</p></td>
-<td><p>Inline limit. Relevant only when
-AMReX_COMPILER_DEFAULT_INLINE is NO.</p></td>
-<td><p>43210</p></td>
-<td><p>Non-negative number</p></td>
-</tr>
-</tbody>
-</table>
 <p>The option <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE=Debug</span></code> implies <code class="docutils literal notranslate"><span class="pre">AMReX_ASSERTIONS=YES</span></code>. In order to turn off
 assertions in debug mode, <code class="docutils literal notranslate"><span class="pre">AMReX_ASSERTIONS=NO</span></code> must be set explicitly while
 invoking CMake.</p>
@@ -843,8 +546,8 @@ the following line in the appropriate CMakeLists.txt file:</p>
 </pre></div>
 </div>
 <p>In the above snippet, <code class="docutils literal notranslate"><span class="pre">&lt;amrex-target-name&gt;</span></code> is any of the targets listed in the table below.</p>
-<span id="tab-cmaketargets"></span><table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">AMReX targets available for import.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<span id="tab-cmaketargets"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">AMReX targets available for import.</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Target name</p></th>
 <th class="head"><p>Description</p></th>
@@ -884,8 +587,8 @@ Your CMake project can check which component is included in the AMReX library vi
 <p>The keyword <code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code> in the snippet above will cause a fatal error if AMReX is not found, or
 if it is found but the components listed in <code class="docutils literal notranslate"><span class="pre">&lt;components-list&gt;</span></code> are not include in the installation.
 A list of AMReX component names and related configure options are shown in the table below.</p>
-<span id="tab-cmakecomponents"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">AMReX components.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<span id="tab-cmakecomponents"></span><table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">AMReX components.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Option</p></th>
 <th class="head"><p>Component</p></th>
@@ -918,6 +621,12 @@ A list of AMReX component names and related configure options are shown in the t
 </tr>
 <tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS</p></td>
 <td><p>LSOLVERS</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS_INCFLO</p></td>
+<td><p>LSOLVERS_INCFLO</p></td>
+</tr>
+<tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS_EM</p></td>
+<td><p>LSOLVERS_EM</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_AMRDATA</p></td>
 <td><p>AMRDATA</p></td>

@@ -167,10 +167,6 @@ var annotated_dup =
       [ "MPMD", "namespaceamrex_1_1MPMD.html", [
         [ "Copier", "classamrex_1_1MPMD_1_1Copier.html", "classamrex_1_1MPMD_1_1Copier" ]
       ] ],
-      [ "nodelap_detail", "namespaceamrex_1_1nodelap__detail.html", [
-        [ "GetNode", "structamrex_1_1nodelap__detail_1_1GetNode.html", "structamrex_1_1nodelap__detail_1_1GetNode" ],
-        [ "GetNode2", "structamrex_1_1nodelap__detail_1_1GetNode2.html", "structamrex_1_1nodelap__detail_1_1GetNode2" ]
-      ] ],
       [ "NonLocalBC", "namespaceamrex_1_1NonLocalBC.html", [
         [ "HasInverseMemFn", "structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html", null ],
         [ "IsIndexMapping", "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html", null ],

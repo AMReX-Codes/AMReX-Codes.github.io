@@ -1,12 +1,18 @@
 var NAVTREEINDEX75 =
 {
+"namespaceamrex__string__module.html#a624a8f56ebfb3afaeb6658ef1c343616":[2,0,17,5],
+"namespaceamrex__string__module.html#a8661803d88bd3264e542f0f1362406e1":[2,0,17,1],
+"namespaceamrex__string__module.html#a959bc74ecd938061a024fb0d210facad":[2,0,17,2],
+"namespacedetail.html":[2,0,18],
+"namespacedetail.html#a57582f00e55a4d632cb774c1c04b8e4e":[2,0,18,7],
+"namespacedetail.html#a64fb439cf906e12eddb15e737070a293":[2,0,18,4],
 "namespacedetail.html#a6fd0b0eaa86bb8985f5471f13b76ce44":[2,0,18,3],
 "namespacedetail.html#ab1edc85caabaea9ac0a3b1e5cf851f17":[2,0,18,5],
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0,0],
 "namespacemembers.html":[2,1,0],
+"namespacemembers.html":[2,1,0,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -15,8 +21,8 @@ var NAVTREEINDEX75 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func.html":[2,1,1,0],
+"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX75 =
 "structRegionsProfStats_1_1DataBlock.html#a40b142a9ce325e063b6f8003c5d3cc9d":[3,0,29,0,12],
 "structRegionsProfStats_1_1DataBlock.html#a69a7603f195974cae55c552c05b3ba32":[3,0,29,0,2],
 "structRegionsProfStats_1_1DataBlock.html#a71050a34ed68d57b9659601e7c9ee9da":[3,0,29,0,7],
-"structRegionsProfStats_1_1DataBlock.html#a782fccabcc5cfc65934945eb51502963":[3,0,29,0,10],
-"structRegionsProfStats_1_1DataBlock.html#a83422209e5d067d4a9f8dbce49722689":[3,0,29,0,0],
-"structRegionsProfStats_1_1DataBlock.html#a996907faa09768de3ab8d976fe3f8a54":[3,0,29,0,6],
-"structRegionsProfStats_1_1DataBlock.html#aa2586f28fd5fe3fd9c02b79004433b30":[3,0,29,0,4],
-"structRegionsProfStats_1_1DataBlock.html#aab47f1d42db988febeb4e2d0f2349f63":[3,0,29,0,5],
-"structRegionsProfStats_1_1DataBlock.html#abb82343828610d370167b0392caea97e":[3,0,29,0,9],
-"structRegionsProfStats_1_1DataBlock.html#acbca0639ad8b69e1f647d223eefc11da":[3,0,29,0,11]
+"structRegionsProfStats_1_1DataBlock.html#a782fccabcc5cfc65934945eb51502963":[3,0,29,0,10]
 };

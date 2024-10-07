@@ -2990,9 +2990,18 @@
 <codeline lineno="1053"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1054"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1055"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1056"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1056"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1057"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1058"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1058"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1059"><highlight class="normal">Real<sp/>get_dx_eb<sp/>(Real<sp/>kappa)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1060"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(Real(0.3),(kappa*kappa-Real(0.25))/(Real(2.0)*kappa));</highlight></codeline>
+<codeline lineno="1061"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1064"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1065"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1066"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1067"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_K.H"/>
   </compounddef>

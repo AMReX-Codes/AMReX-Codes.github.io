@@ -3,7 +3,7 @@
   <compounddef id="AMReX__MLNodeTensorLaplacian_8cpp" kind="file" language="C++">
     <compoundname>AMReX_MLNodeTensorLaplacian.cpp</compoundname>
     <includes refid="AMReX__MLNodeTensorLaplacian_8H" local="no">AMReX_MLNodeTensorLaplacian.H</includes>
-    <includes refid="AMReX__MLNodeLap__K_8H" local="no">AMReX_MLNodeLap_K.H</includes>
+    <includes refid="AMReX__MLNodeLinOp__K_8H" local="no">AMReX_MLNodeLinOp_K.H</includes>
     <includes refid="AMReX__MLNodeTensorLap__K_8H" local="no">AMReX_MLNodeTensorLap_K.H</includes>
     <includes refid="AMReX__MultiFabUtil_8H" local="no">AMReX_MultiFabUtil.H</includes>
     <incdepgraph>
@@ -547,12 +547,6 @@
       <node id="96">
         <label>numeric</label>
       </node>
-      <node id="191">
-        <label>AMReX_MLNodeLap_1D_K.H</label>
-        <link refid="AMReX__MLNodeLap__1D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="92">
         <label>AMReX_GpuComplex.H</label>
         <link refid="AMReX__GpuComplex_8H"/>
@@ -658,6 +652,12 @@
         <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>AMReX_MLNodeLinOp_1D_K.H</label>
+        <link refid="AMReX__MLNodeLinOp__1D__K_8H"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="67">
@@ -1917,6 +1917,16 @@
         <childnode refid="181" relation="include">
         </childnode>
       </node>
+      <node id="190">
+        <label>AMReX_MLNodeLinOp_K.H</label>
+        <link refid="AMReX__MLNodeLinOp__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+      </node>
       <node id="77">
         <label>mutex</label>
       </node>
@@ -2340,18 +2350,6 @@
         <childnode refid="52" relation="include">
         </childnode>
       </node>
-      <node id="190">
-        <label>AMReX_MLNodeLap_K.H</label>
-        <link refid="AMReX__MLNodeLap__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="146" relation="include">
-        </childnode>
-        <childnode refid="172" relation="include">
-        </childnode>
-        <childnode refid="191" relation="include">
-        </childnode>
-      </node>
       <node id="156">
         <label>AMReX_BaseFabUtility.H</label>
         <link refid="AMReX__BaseFabUtility_8H"/>
@@ -2485,7 +2483,7 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MLNodeTensorLaplacian_8H" kindref="compound">AMReX_MLNodeTensorLaplacian.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MLNodeLap__K_8H" kindref="compound">AMReX_MLNodeLap_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MLNodeLinOp__K_8H" kindref="compound">AMReX_MLNodeLinOp_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MLNodeTensorLap__K_8H" kindref="compound">AMReX_MLNodeTensorLap_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFabUtil_8H" kindref="compound">AMReX_MultiFabUtil.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>

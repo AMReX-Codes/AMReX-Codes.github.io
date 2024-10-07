@@ -1,5 +1,12 @@
 var NAVTREEINDEX16 =
 {
+"AMReX__NeighborParticlesGPUImpl_8H.html":[4,0,0,7,7],
+"AMReX__NeighborParticlesGPUImpl_8H.html#afbc4fb91adabe79223cea83ef23e4020":[4,0,0,7,7,0],
+"AMReX__NeighborParticlesGPUImpl_8H_source.html":[4,0,0,7,7],
+"AMReX__NeighborParticlesI_8H.html":[4,0,0,7,8],
+"AMReX__NeighborParticlesI_8H_source.html":[4,0,0,7,8],
+"AMReX__NeighborParticles_8H.html":[4,0,0,7,5],
+"AMReX__NeighborParticles_8H_source.html":[4,0,0,7,5],
 "AMReX__NonLocalBCImpl_8H.html":[4,0,0,2,199],
 "AMReX__NonLocalBCImpl_8H_source.html":[4,0,0,2,199],
 "AMReX__NonLocalBC_8H.html":[4,0,0,2,198],
@@ -96,9 +103,9 @@ var NAVTREEINDEX16 =
 "AMReX__PArena_8H.html":[4,0,0,2,212],
 "AMReX__PArena_8H_source.html":[4,0,0,2,212],
 "AMReX__PArena_8cpp.html":[4,0,0,2,211],
-"AMReX__PCGSolver_8H.html":[4,0,0,6,0,86],
-"AMReX__PCGSolver_8H.html#a82e276db8e18ead0c45086336f342338":[4,0,0,6,0,86,0],
-"AMReX__PCGSolver_8H_source.html":[4,0,0,6,0,86],
+"AMReX__PCGSolver_8H.html":[4,0,0,6,0,90],
+"AMReX__PCGSolver_8H.html#a82e276db8e18ead0c45086336f342338":[4,0,0,6,0,90,0],
+"AMReX__PCGSolver_8H_source.html":[4,0,0,6,0,90],
 "AMReX__PCI_8H.html":[4,0,0,2,221],
 "AMReX__PCI_8H_source.html":[4,0,0,2,221],
 "AMReX__PETSc_8H.html":[4,0,0,5,6,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX16 =
 "AMReX__ParallelDescriptor_8H.html#a66f0d2e88581a3502c3d617a7b20249c":[4,0,0,2,208,82],
 "AMReX__ParallelDescriptor_8H.html#a687dc008cc6ce7831496af1f8bbfff96":[4,0,0,2,208,50],
 "AMReX__ParallelDescriptor_8H.html#a69e9f409844f19f30203ffe423541cc3":[4,0,0,2,208,12],
-"AMReX__ParallelDescriptor_8H.html#a6a675ddfa6ba286e367461bdca0de992":[4,0,0,2,208,22],
-"AMReX__ParallelDescriptor_8H.html#a7008a294874001b3b8e5372ff45ebf64":[4,0,0,2,208,104],
-"AMReX__ParallelDescriptor_8H.html#a705e1be005fbada39a2ca69f6dae9b88":[4,0,0,2,208,41],
-"AMReX__ParallelDescriptor_8H.html#a709e52679c5ca426b23c887ffe1b4ab9":[4,0,0,2,208,66],
-"AMReX__ParallelDescriptor_8H.html#a72761a0aff0775f8f6943062a34fca31":[4,0,0,2,208,90],
-"AMReX__ParallelDescriptor_8H.html#a753035868de2acca4a9ffb1aaa150c2a":[4,0,0,2,208,94],
-"AMReX__ParallelDescriptor_8H.html#a76e33bbc9645091e5f01d305da73960a":[4,0,0,2,208,111],
-"AMReX__ParallelDescriptor_8H.html#a7ae5a5af4ccc5fa61d017ef297455291":[4,0,0,2,208,98]
+"AMReX__ParallelDescriptor_8H.html#a6a675ddfa6ba286e367461bdca0de992":[4,0,0,2,208,22]
 };

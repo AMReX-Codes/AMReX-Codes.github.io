@@ -82,6 +82,10 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLNodeLinOp.H", "AMReX__MLNodeLinOp_8H.html", [
       [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", "classamrex_1_1MLNodeLinOp" ]
     ] ],
+    [ "AMReX_MLNodeLinOp_1D_K.H", "AMReX__MLNodeLinOp__1D__K_8H.html", "AMReX__MLNodeLinOp__1D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_2D_K.H", "AMReX__MLNodeLinOp__2D__K_8H.html", "AMReX__MLNodeLinOp__2D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_3D_K.H", "AMReX__MLNodeLinOp__3D__K_8H.html", "AMReX__MLNodeLinOp__3D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_K.H", "AMReX__MLNodeLinOp__K_8H.html", "AMReX__MLNodeLinOp__K_8H" ],
     [ "AMReX_MLNodeTensorLap_1D_K.H", "AMReX__MLNodeTensorLap__1D__K_8H.html", "AMReX__MLNodeTensorLap__1D__K_8H" ],
     [ "AMReX_MLNodeTensorLap_2D_K.H", "AMReX__MLNodeTensorLap__2D__K_8H.html", "AMReX__MLNodeTensorLap__2D__K_8H" ],
     [ "AMReX_MLNodeTensorLap_3D_K.H", "AMReX__MLNodeTensorLap__3D__K_8H.html", "AMReX__MLNodeTensorLap__3D__K_8H" ],
