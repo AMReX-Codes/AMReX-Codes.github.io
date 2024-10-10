@@ -1,5 +1,6 @@
 var NAVTREEINDEX76 =
 {
+"structKeepValidFilter.html#af4bf053d8e8024c447f42ee722e08eb5":[3,0,23,0],
 "structMPI__Status.html":[3,0,26],
 "structN__VectorContent__MultiFab__notptr.html":[3,0,27],
 "structN__VectorContent__MultiFab__notptr.html#a1af6ce9e83db0135a45c4b2bc7afc31b":[3,0,27,2],
@@ -185,8 +186,8 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Array3D.html#ace0391dec6f0b2c90c125db136ad86b0":[3,0,0,77,18],
 "structamrex_1_1Array3D.html#adfb237ca22c5441c5f708a1f8470ba5b":[3,0,0,77,21],
 "structamrex_1_1Array3D.html#ae7c4e83776aa2f4f136bd43d5e7ba4f5":[3,0,0,77,11],
-"structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,4],
 "structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,5],
+"structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,4],
 "structamrex_1_1Array3D.html#afb7b8e1395bf02084ad9013d41ac4148":[3,0,0,77,15],
 "structamrex_1_1Array4.html":[3,0,0,79],
 "structamrex_1_1Array4.html#a0951dd1a1e6d5b4f5a41c4cae335f6f1":[3,0,0,79,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Array4CopyTag.html#af477c205e500424a3a19cd52166f7812":[3,0,0,243,1],
 "structamrex_1_1Array4MaskCopyTag.html":[3,0,0,244],
 "structamrex_1_1Array4MaskCopyTag.html#a0b949943b991add5625ddf74d593451e":[3,0,0,244,0],
-"structamrex_1_1Array4MaskCopyTag.html#a22f5b5b57123479d8d24eb3967a67241":[3,0,0,244,4],
-"structamrex_1_1Array4MaskCopyTag.html#a6d56fc074e8fc78fa6d8334abe8fd66d":[3,0,0,244,1]
+"structamrex_1_1Array4MaskCopyTag.html#a22f5b5b57123479d8d24eb3967a67241":[3,0,0,244,4]
 };

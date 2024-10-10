@@ -1,5 +1,8 @@
 var NAVTREEINDEX87 =
 {
+"structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[3,0,0,374,1],
+"structamrex_1_1parser__number.html#ab186dabf87779fb9b65fe0edc854e46c":[3,0,0,374,0],
+"structamrex_1_1parser__symbol.html":[3,0,0,375],
 "structamrex_1_1parser__symbol.html#a36d42d12dc34e9e1a3321c27539bb34d":[3,0,0,375,1],
 "structamrex_1_1parser__symbol.html#a8b935e5014acf16b10e6b98c79de3054":[3,0,0,375,2],
 "structamrex_1_1parser__symbol.html#a99f7da0f4633b6fc68df7cf4f0d9d398":[3,0,0,375,0],
@@ -149,6 +152,5 @@ var NAVTREEINDEX87 =
 "verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,11,0],
 "verbosity_8h.html":[4,0,0,5,10,12],
 "verbosity_8h.html#ae37c5205501d8800e493a60c7f701ac7":[4,0,0,5,10,12,0],
-"verbosity_8h_source.html":[4,0,0,5,10,12],
-"":[2,0,22]
+"verbosity_8h_source.html":[4,0,0,5,10,12]
 };
