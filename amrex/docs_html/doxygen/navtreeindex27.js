@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a50fb500a73a71eb51d0cad8b8e60d39a":[4,0,0,2,0,7,81,44],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a50fb500a73a71eb51d0cad8b8e60d39a":[4,0,0,2,0,19,81,44],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a5537563f60bc97f48ba2bd915ec95a27":[4,0,0,2,0,7,81,66],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a5537563f60bc97f48ba2bd915ec95a27":[4,0,0,2,0,19,81,66],
@@ -14,12 +13,12 @@ var NAVTREEINDEX27 =
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a6f63ad469ecac1fd86b15aa45677be01":[4,0,0,2,0,19,81,64],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a71c50e4bdfa7822a981fe00a85a6ec33":[4,0,0,2,0,19,81,48],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a71c50e4bdfa7822a981fe00a85a6ec33":[4,0,0,2,0,7,81,48],
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a79207ab77de3f847ccbd19f81cc03301":[4,0,0,2,0,19,81,63],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a79207ab77de3f847ccbd19f81cc03301":[4,0,0,2,0,7,81,63],
+"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a79207ab77de3f847ccbd19f81cc03301":[4,0,0,2,0,19,81,63],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a7af21d079a9d8eaed5eaf8c2b66e656d":[4,0,0,2,0,7,81,52],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a7af21d079a9d8eaed5eaf8c2b66e656d":[4,0,0,2,0,19,81,52],
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a7db8da6726077b81c7444a0bf14fc82e":[4,0,0,2,0,7,81,58],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a7db8da6726077b81c7444a0bf14fc82e":[4,0,0,2,0,19,81,58],
+"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a7db8da6726077b81c7444a0bf14fc82e":[4,0,0,2,0,7,81,58],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a85bfb6f659f7856a4b42d70e5c353958":[4,0,0,2,0,7,81,57],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a85bfb6f659f7856a4b42d70e5c353958":[4,0,0,2,0,19,81,57],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5a96c87c48817e6dfc68735f2425d0ab9c":[4,0,0,2,0,19,81,55],
@@ -38,10 +37,10 @@ var NAVTREEINDEX27 =
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5ab725bc01508bc07772a3b1951d38f491":[4,0,0,2,0,19,81,60],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abae1143ba84f95c06898deb2b78f935b":[4,0,0,2,0,19,81,37],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abae1143ba84f95c06898deb2b78f935b":[4,0,0,2,0,7,81,37],
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf6aa884ce21c74b920efaa114d69290":[4,0,0,2,0,7,81,59],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf6aa884ce21c74b920efaa114d69290":[4,0,0,2,0,19,81,59],
-"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf77724caf95f61267d5e6e45f5bea8e":[4,0,0,2,0,19,81,61],
+"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf6aa884ce21c74b920efaa114d69290":[4,0,0,2,0,7,81,59],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf77724caf95f61267d5e6e45f5bea8e":[4,0,0,2,0,7,81,61],
+"amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5abf77724caf95f61267d5e6e45f5bea8e":[4,0,0,2,0,19,81,61],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5ac6d5ff4f8c67ab03a845a51edbc94219":[4,0,0,2,0,7,81,69],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5ac6d5ff4f8c67ab03a845a51edbc94219":[4,0,0,2,0,19,81,69],
 "amrex__parser_8tab_8nolint_8H.html#a20a769e9b8f129abf35d03d3904ec0e5ad800db300c50056778ac571ac922e993":[4,0,0,2,0,7,81,36],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "classCommProfStats.html":[3,0,17],
 "classCommProfStats.html#a0cab8d7c366a08ed7c4ea33d10be5607":[3,0,17,34],
 "classCommProfStats.html#a0e56e7a8c3e51ab493d8a9b55472d761":[3,0,17,39],
-"classCommProfStats.html#a0eb157fb50325c32f5c9781851363302":[3,0,17,32]
+"classCommProfStats.html#a0eb157fb50325c32f5c9781851363302":[3,0,17,32],
+"classCommProfStats.html#a176ee76d60863bf10f9b663c21c00a38":[3,0,17,87]
 };

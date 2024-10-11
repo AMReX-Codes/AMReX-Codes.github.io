@@ -971,7 +971,7 @@ var hierarchy =
     [ "amrex::IntVectND< dim >::shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
-    [ "amrex::SmallMatrix< T, NRows, NCols, ORDER >", "structamrex_1_1SmallMatrix.html", null ],
+    [ "amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex >", "structamrex_1_1SmallMatrix.html", null ],
     [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", [
       [ "amrex::ConstSoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1ConstSoAParticle.html", null ],
       [ "amrex::SoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1SoAParticle.html", null ]
