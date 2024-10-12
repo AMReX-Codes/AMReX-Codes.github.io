@@ -586,7 +586,8 @@ var hierarchy =
     [ "amrex::IntDescriptor", "classamrex_1_1IntDescriptor.html", null ],
     [ "std::integral_constant", null, [
       [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
-      [ "is_soa_particle< T >", "structis__soa__particle.html", null ]
+      [ "is_soa_particle< T >", "structis__soa__particle.html", null ],
+      [ "std::tuple_size< amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex > >", "structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html", null ]
     ] ],
     [ "amrex::IntegratorBase< T >", "classamrex_1_1IntegratorBase.html", [
       [ "amrex::FEIntegrator< T >", "classamrex_1_1FEIntegrator.html", null ],
@@ -1069,6 +1070,7 @@ var hierarchy =
     [ "amrex::detail::tuple_cat_result<... >", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "std::tuple_element< N, amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex > >", "structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::IndexTypeND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],

@@ -10,6 +10,8 @@ var structamrex_1_1SmallMatrix =
     [ "dot", "structamrex_1_1SmallMatrix.html#ab33b02d8b9779eb2d2058a44e521c6fb", null ],
     [ "end", "structamrex_1_1SmallMatrix.html#af533cd98f5319af02e7726fd3686d87b", null ],
     [ "end", "structamrex_1_1SmallMatrix.html#ae5a13282bd3098baac80cc37f92046b7", null ],
+    [ "get", "structamrex_1_1SmallMatrix.html#ad3dae747e9a603a07ec62394b9a5fe22", null ],
+    [ "get", "structamrex_1_1SmallMatrix.html#aaa0f41bbbdb296585eeb451868e8d600", null ],
     [ "Identity", "structamrex_1_1SmallMatrix.html#a1a26e204ba90af6ebd4a18fc977b79bf", null ],
     [ "operator()", "structamrex_1_1SmallMatrix.html#ad2b40de1bae7e060191100c515d9cad5", null ],
     [ "operator()", "structamrex_1_1SmallMatrix.html#a74b7837da7a19f9d4b537db7d00e5622", null ],
