@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forkjoin &mdash; amrex 24.11-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=c413f8cb"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c413f8cb"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,9 +35,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                24.11-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -124,7 +119,8 @@ an independent task to compute in parallel with each other.
 After all of the forked child tasks complete, they synchronize
 (i.e. <cite>join</cite>), and the parent task continues execution as before.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/fork_join_tasks.png"><img alt="Fork-Join Tasks" src="_images/fork_join_tasks.png" style="width: 420.8px; height: 469.6px;" /></a>
+<a class="reference internal image-reference" href="_images/fork_join_tasks.png"><img alt="Fork-Join Tasks" src="_images/fork_join_tasks.png" style="width: 420.8px; height: 469.6px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of a fork-join operation where the parent task’s MPI processes (ranks) are
 split into two independent child tasks that execute in parallel and
@@ -138,7 +134,8 @@ This approach enables heterogeneous computation and reduces the strong
 scaling penalty for operations with less inherent parallelism or with
 large communication overheads.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/nested_fork_join_tasks.png"><img alt="Nested Fork-Join Tasks" src="_images/nested_fork_join_tasks.png" style="width: 436.8px; height: 589.6px;" /></a>
+<a class="reference internal image-reference" href="_images/nested_fork_join_tasks.png"><img alt="Nested Fork-Join Tasks" src="_images/nested_fork_join_tasks.png" style="width: 436.8px; height: 589.6px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of nested fork-join operations where a child task is further
 split into more subtasks.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
@@ -187,7 +184,8 @@ Intent describes whether the data is an input and/or output to the
 forked subtasks, and controls whether the data is copied in and/or out
 of the subtask from the calling task.</p>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="_images/mf_remap_hires.png"><img alt="Examples of how to register MultiFabs" src="_images/mf_remap_hires.png" style="width: 840.0000000000001px; height: 350.07000000000005px;" /></a>
+<a class="reference internal image-reference" href="_images/mf_remap_hires.png"><img alt="Examples of how to register MultiFabs" src="_images/mf_remap_hires.png" style="width: 840.0000000000001px; height: 350.07000000000005px;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of how a MultiFab can be registered for a fork-join operation
 with varying Strategy and Intent.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
