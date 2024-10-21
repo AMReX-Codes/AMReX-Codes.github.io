@@ -1,5 +1,13 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1BinIterator_1_1iterator.html#a4dacf767fe235d9ee43292d67bec16c3":[3,0,0,463,0,3],
+"structamrex_1_1BinIterator_1_1iterator.html#a9ad7e9287daf81892de3268ed3085663":[3,0,0,463,0,0],
+"structamrex_1_1BinIterator_1_1iterator.html#aa2320d69f38d0da741e0c0c063a56c26":[3,0,0,463,0,2],
+"structamrex_1_1BinIterator_1_1iterator.html#aabe787e78944c662b6e4288f23c5eafb":[3,0,0,463,0,6],
+"structamrex_1_1BinIterator_1_1iterator.html#afba47c1927bd537e97033eb5f5a6bdab":[3,0,0,463,0,4],
+"structamrex_1_1BinMapper.html":[3,0,0,519],
+"structamrex_1_1BinMapper.html#a09e1a7b318d980843013d446fe2c5d4f":[3,0,0,519,4],
+"structamrex_1_1BinMapper.html#a0c3ffb962a03c3307030e52e384688ef":[3,0,0,519,5],
 "structamrex_1_1BinMapper.html#a2fc716ebcdf02dabc5c00fbc19419155":[3,0,0,519,0],
 "structamrex_1_1BinMapper.html#a32a3a6e1b23801796736f10c13fe0600":[3,0,0,519,2],
 "structamrex_1_1BinMapper.html#a6112736395d0049cf00285ae69353608":[3,0,0,519,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1EB2_1_1Cell.html#a1ce6b16223431af66f51f32e63757950":[3,0,0,4,3,0],
 "structamrex_1_1EB2_1_1Edge.html":[3,0,0,4,5],
 "structamrex_1_1EB2_1_1Edge.html#a2cd960ffa980858f414420f76ffc25d9":[3,0,0,4,5,1],
-"structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f":[3,0,0,4,5,0],
-"structamrex_1_1EB2_1_1Face.html":[3,0,0,4,4],
-"structamrex_1_1EB2_1_1Face.html#a0229df77d862af6df91705d19b2264e6":[3,0,0,4,4,1],
-"structamrex_1_1EB2_1_1Face.html#ad57b1101b621679c1fb014db5c6beb43":[3,0,0,4,4,0],
-"structamrex_1_1EB2_1_1IsGPUable.html":[3,0,0,4,9],
-"structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUae5a3ecdbbe2872ad1fcb116fcced2fba.html":[3,0,0,4,13],
-"structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html":[3,0,0,4,10],
-"structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01std_1_1enable__if__t_3_0b8f5d460277f1d91a5423c29613f5d25.html":[3,0,0,4,17],
-"structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUabf062b6fd2701f97c86146ed02bddaa9e.html":[3,0,0,4,20]
+"structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f":[3,0,0,4,5,0]
 };

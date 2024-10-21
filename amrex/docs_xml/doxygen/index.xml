@@ -2565,6 +2565,14 @@
     <member refid="structamrex_1_1MemProfiler_1_1Builds_1a2756a5fbf45d016bd03416184543526b" kind="variable"><name>mn</name></member>
     <member refid="structamrex_1_1MemProfiler_1_1Builds_1a2c94315722d15392846ab3b77a58c3d0" kind="variable"><name>mx</name></member>
   </compound>
+  <compound refid="structamrex_1_1STLtools_1_1BVHNodeT" kind="struct"><name>amrex::STLtools::BVHNodeT</name>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1afedcf4cbd58fed7598dafa2483f69905" kind="variable"><name>boundingbox</name></member>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1aee4a2045cc3858c3cc5c7f82f35349f5" kind="variable"><name>triangles</name></member>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1a110a22c1f81b1fe90fa172b8c546e1a8" kind="variable"><name>trinorm</name></member>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1ac57e3851be16e28df7cfe153a7193ddd" kind="variable"><name>children</name></member>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1aed11c38d0992ea72953ff0034c04e0b7" kind="variable"><name>ntriangles</name></member>
+    <member refid="structamrex_1_1STLtools_1_1BVHNodeT_1ac6b0ec19f7dadcf39c48b32703863922" kind="variable"><name>nchildren</name></member>
+  </compound>
   <compound refid="structamrex_1_1MemProfiler_1_1Bytes" kind="struct"><name>amrex::MemProfiler::Bytes</name>
     <member refid="structamrex_1_1MemProfiler_1_1Bytes_1af005129839d5b950c0e09b1e38a6a751" kind="variable"><name>mn</name></member>
     <member refid="structamrex_1_1MemProfiler_1_1Bytes_1ae97a8af2e85ff53fc98d90d294693657" kind="variable"><name>mx</name></member>
@@ -6015,7 +6023,7 @@
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a60957b371c1e6c775ebb2e18bbbc2c99" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kind="variable"><name>m_domain</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ad9db2e06c6728146ed5d6a2cf2fc956c" kind="variable"><name>m_ngrow</name></member>
-    <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1abe85200c4d1b12e00b1c39640553f064" kind="function"><name>IndexSpaceSTL</name></member>
+    <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ae531b8586503ec67f4d3ddf8ae4397d4" kind="function"><name>IndexSpaceSTL</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1accce0356b6e62b40a6fa8bb0cf1a9402" kind="function"><name>IndexSpaceSTL</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1adc0c4857ce013433b350e51cfb2f1b47" kind="function"><name>IndexSpaceSTL</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a2e26fd180cf15b5ee489da10269d950d" kind="function"><name>operator=</name></member>
@@ -11349,27 +11357,35 @@
     <member refid="classamrex_1_1EB2_1_1STLLevel_1a2c8f60e6045903c262446da9d98ffac9" kind="function"><name>STLLevel</name></member>
   </compound>
   <compound refid="classamrex_1_1STLtools" kind="class"><name>amrex::STLtools</name>
+    <member refid="classamrex_1_1STLtools_1a5e4b2f7bb8d632ea0128bcddfddb6dc0" kind="typedef"><name>Node</name></member>
+    <member refid="classamrex_1_1STLtools_1a2e7418a1e57f61cf7154c966f5ced655" kind="variable"><name>m_bvh_max_size</name></member>
+    <member refid="classamrex_1_1STLtools_1a401996bf07e630652925eb7478369d04" kind="variable"><name>m_bvh_max_splits</name></member>
+    <member refid="classamrex_1_1STLtools_1a07f80cd69640a2e642f686cc4ac99b46" kind="variable"><name>m_bvh_max_stack_size</name></member>
     <member refid="classamrex_1_1STLtools_1a071a8fb28babb5af263c2aa74a0d979b" kind="variable"><name>allregular</name></member>
     <member refid="classamrex_1_1STLtools_1ad0e62c6693f9f0100b33547ddef29fa2" kind="variable"><name>mixedcells</name></member>
     <member refid="classamrex_1_1STLtools_1ad56ce2bf01da43520e270f2ae570f29a" kind="variable"><name>allcovered</name></member>
-    <member refid="classamrex_1_1STLtools_1aee7f90ddbeb003f7aac15f3b448c4a87" kind="variable"><name>m_tri_pts_h</name></member>
+    <member refid="classamrex_1_1STLtools_1a7fc4e4a3a6c2b96639d17a9d97f7483e" kind="variable"><name>m_bvh_optimization</name></member>
     <member refid="classamrex_1_1STLtools_1afe0f0661535402979c4c346235b957fc" kind="variable"><name>m_tri_pts_d</name></member>
     <member refid="classamrex_1_1STLtools_1accd39d6fb1aca77a857b0a4ad1e51ce4" kind="variable"><name>m_tri_normals_d</name></member>
+    <member refid="classamrex_1_1STLtools_1a4d33bde9a9fb3ecd32f19faf74c6e36f" kind="variable"><name>m_bvh_nodes</name></member>
     <member refid="classamrex_1_1STLtools_1a02713b3bdf5197301486a78cca290534" kind="variable"><name>m_num_tri</name></member>
     <member refid="classamrex_1_1STLtools_1aeeee47c9bfc52a2c01f6b6ad38043b49" kind="variable"><name>m_ptmin</name></member>
     <member refid="classamrex_1_1STLtools_1a135d25559bca9a4ec5dca07f1d08378b" kind="variable"><name>m_ptmax</name></member>
     <member refid="classamrex_1_1STLtools_1ab287060a4866170710f23abb884afe91" kind="variable"><name>m_ptref</name></member>
     <member refid="classamrex_1_1STLtools_1ae50a6d985147b0ae607e688e120f2935" kind="variable"><name>m_boundry_is_outside</name></member>
-    <member refid="classamrex_1_1STLtools_1aa4f438da64a6ea3b7520112aac9f8fd3" kind="function"><name>read_ascii_stl_file</name></member>
-    <member refid="classamrex_1_1STLtools_1aca6050ea96a310625fe20e9f9594680a" kind="function"><name>read_binary_stl_file</name></member>
-    <member refid="classamrex_1_1STLtools_1a137269ba305483a92bf01d19ec1fd07c" kind="function"><name>prepare</name></member>
+    <member refid="classamrex_1_1STLtools_1abfa10179458910f9d08c44c9385c03ad" kind="function"><name>setBVHOptimization</name></member>
     <member refid="classamrex_1_1STLtools_1abde98e341a2edf239bfa987ce47ed2be" kind="function"><name>read_stl_file</name></member>
     <member refid="classamrex_1_1STLtools_1a84b77230eb00f0ebb682f6751fc5184b" kind="function"><name>fill</name></member>
     <member refid="classamrex_1_1STLtools_1a6f8e64bd2b4c7935903ce0d5daa44f70" kind="function"><name>getBoxType</name></member>
     <member refid="classamrex_1_1STLtools_1aefcdeb44ca0770702422b5f7eb289234" kind="function"><name>fillFab</name></member>
     <member refid="classamrex_1_1STLtools_1addae911a258f776f2bf862da19290953" kind="function"><name>getIntercept</name></member>
+    <member refid="classamrex_1_1STLtools_1a8036d07cde7c16212fb98e08c1408a85" kind="function"><name>prepare</name></member>
     <member refid="classamrex_1_1STLtools_1ad1e74ed017c04e4c073999b1ab577858" kind="function"><name>isGPUable</name></member>
     <member refid="classamrex_1_1STLtools_1ade00ed9461b4c9782dd363cb75dc84ae" kind="function"><name>updateIntercept</name></member>
+    <member refid="classamrex_1_1STLtools_1addf47db1e1abc59b6ac84e8042ac5f9d" kind="function"><name>read_ascii_stl_file</name></member>
+    <member refid="classamrex_1_1STLtools_1aa230c243869c15b3c0b42c2b424e6fd6" kind="function"><name>read_binary_stl_file</name></member>
+    <member refid="classamrex_1_1STLtools_1afcec3c63f5854b95aa657693322a8643" kind="function"><name>build_bvh</name></member>
+    <member refid="classamrex_1_1STLtools_1a0473b066498d4c0df39749018a3babcd" kind="function"><name>bvh_size</name></member>
   </compound>
   <compound refid="classamrex_1_1Gpu_1_1StreamIter" kind="class"><name>amrex::Gpu::StreamIter</name>
     <member refid="classamrex_1_1Gpu_1_1StreamIter_1a52a24ab365296e0cb90e053580751fb1" kind="variable"><name>m_n</name></member>
@@ -11826,6 +11842,8 @@
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a55b9d3099133f345ecb5d650727c793b" kind="variable"><name>v1</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a6b301a1c15117340fbb999bfee7dd5a2" kind="variable"><name>v2</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1ab4af12af8d6c359d4870d0d93a9d07b5" kind="variable"><name>v3</name></member>
+    <member refid="structamrex_1_1STLtools_1_1Triangle_1a249d1f707576eea8b5647219df853b25" kind="function"><name>cent</name></member>
+    <member refid="structamrex_1_1STLtools_1_1Triangle_1a0a9f056e452eea0281c7ab183e6fb08e" kind="function"><name>minmax</name></member>
   </compound>
   <compound refid="structamrex_1_1detail_1_1tuple__cat__result" kind="struct"><name>amrex::detail::tuple_cat_result</name>
   </compound>
@@ -15517,11 +15535,11 @@
     <member refid="namespaceamrex_1_1tri__geom__ops_1ac4a987e664e5b08e291676b2ba5802c7" kind="function"><name>getunitvec</name></member>
     <member refid="namespaceamrex_1_1tri__geom__ops_1a63072500ceb751c5d908ebf2edf627e1" kind="function"><name>CrossProd</name></member>
     <member refid="namespaceamrex_1_1tri__geom__ops_1a7a41ddf66699cf00d97df7994805137f" kind="function"><name>get_plucker_coords</name></member>
-    <member refid="namespaceamrex_1_1tri__geom__ops_1aae5e185d12b364ca4a81628b175432bb" kind="function"><name>side_op3</name></member>
-    <member refid="namespaceamrex_1_1tri__geom__ops_1ac418863153dc7bdeb127001e47877175" kind="function"><name>tri_n</name></member>
-    <member refid="namespaceamrex_1_1tri__geom__ops_1a70a3555a7869b306a0efd22a29fcb570" kind="function"><name>triangle_area</name></member>
-    <member refid="namespaceamrex_1_1tri__geom__ops_1a713485f892bf13f6879fcd8a1ccf5b6e" kind="function"><name>find_intersection_point</name></member>
-    <member refid="namespaceamrex_1_1tri__geom__ops_1a3ab1370ee2778b840c9976bec576a66e" kind="function"><name>lineseg_tri_intersect</name></member>
+    <member refid="namespaceamrex_1_1tri__geom__ops_1a8f6037bf9bf231fb58b86d19a6820a45" kind="function"><name>side_op3</name></member>
+    <member refid="namespaceamrex_1_1tri__geom__ops_1ac8acae9ecfa92d2e555047add95768ee" kind="function"><name>tri_n</name></member>
+    <member refid="namespaceamrex_1_1tri__geom__ops_1ae67839e41416d0b659af14db8a721900" kind="function"><name>triangle_area</name></member>
+    <member refid="namespaceamrex_1_1tri__geom__ops_1afc30456f7d2f5aec898c79f1870c244a" kind="function"><name>find_intersection_point</name></member>
+    <member refid="namespaceamrex_1_1tri__geom__ops_1a5784106b2c626b2c4e1c538abe1ea821" kind="function"><name>lineseg_tri_intersect</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1TwoD" kind="namespace"><name>amrex::TwoD</name>
     <member refid="namespaceamrex_1_1TwoD_1a77c02f2de1c3a36afa5fc415631ba1b9" kind="function"><name>mlalap_adotx</name></member>

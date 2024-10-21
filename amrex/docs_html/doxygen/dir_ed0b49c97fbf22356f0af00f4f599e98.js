@@ -116,7 +116,8 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EB_STL_utils.cpp", "AMReX__EB__STL__utils_8cpp.html", null ],
     [ "AMReX_EB_STL_utils.H", "AMReX__EB__STL__utils_8H.html", [
       [ "STLtools", "classamrex_1_1STLtools.html", "classamrex_1_1STLtools" ],
-      [ "Triangle", "structamrex_1_1STLtools_1_1Triangle.html", "structamrex_1_1STLtools_1_1Triangle" ]
+      [ "Triangle", "structamrex_1_1STLtools_1_1Triangle.html", "structamrex_1_1STLtools_1_1Triangle" ],
+      [ "BVHNodeT", "structamrex_1_1STLtools_1_1BVHNodeT.html", "structamrex_1_1STLtools_1_1BVHNodeT" ]
     ] ],
     [ "AMReX_EB_triGeomOps_K.H", "AMReX__EB__triGeomOps__K_8H.html", "AMReX__EB__triGeomOps__K_8H" ],
     [ "AMReX_EB_utils.cpp", "AMReX__EB__utils_8cpp.html", "AMReX__EB__utils_8cpp" ],
