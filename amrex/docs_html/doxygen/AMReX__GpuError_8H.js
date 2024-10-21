@@ -1,6 +1,7 @@
 var AMReX__GpuError_8H =
 [
     [ "AMREX_CUDA_SAFE_CALL", "AMReX__GpuError_8H.html#a6a8e9294d731b70d00a258e8a9d6d222", null ],
+    [ "AMREX_CUFFT_SAFE_CALL", "AMReX__GpuError_8H.html#a5930ea84dbfe31747a5bb25a291bfad9", null ],
     [ "AMREX_CURAND_SAFE_CALL", "AMReX__GpuError_8H.html#aa4b54260d06f5eb0f1fe5f7862962c4a", null ],
     [ "AMREX_GPU_ERROR_CHECK", "AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1", null ],
     [ "AMREX_GPU_SAFE_CALL", "AMReX__GpuError_8H.html#af0d8b69cc9585ca09e00607a8ead0f31", null ],

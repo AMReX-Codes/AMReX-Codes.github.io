@@ -8,6 +8,7 @@ var AMReX__FabArray_8H =
     [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
     [ "FABType", "structamrex_1_1FabArray_1_1FABType.html", "structamrex_1_1FabArray_1_1FABType" ],
     [ "ShMem", "structamrex_1_1FabArray_1_1ShMem.html", "structamrex_1_1FabArray_1_1ShMem" ],
+    [ "cMultiFab", "AMReX__FabArray_8H.html#a4289ef331ecdec2063953232e045534a", null ],
     [ "TheFaArenaPointer", "AMReX__FabArray_8H.html#a2081a3d338ad899832ab632c44a12eb5", null ],
     [ "Add", "AMReX__FabArray_8H.html#ae53cc004fbab26533ec33294445a4d5c", null ],
     [ "Add", "AMReX__FabArray_8H.html#ab72e53672887ede3d7ddc5f65002700e", null ],

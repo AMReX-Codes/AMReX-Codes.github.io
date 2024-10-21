@@ -101,6 +101,12 @@ var annotated_dup =
         [ "MultiGFab", "classamrex_1_1EB2_1_1MultiGFab.html", "classamrex_1_1EB2_1_1MultiGFab" ],
         [ "ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", "classamrex_1_1EB2_1_1ChkptFile" ]
       ] ],
+      [ "FFT", "namespaceamrex_1_1FFT.html", [
+        [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
+        [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
+        [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html", "classamrex_1_1FFT_1_1Poisson" ],
+        [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ]
+      ] ],
       [ "Gpu", "namespaceamrex_1_1Gpu.html", [
         [ "range_detail", "namespaceamrex_1_1Gpu_1_1range__detail.html", [
           [ "range_impl", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl" ]

@@ -100,6 +100,7 @@ var namespaceamrex =
       [ "interior", "namespaceamrex_1_1Extrapolater.html#aebff89225c72118eaf711ad96da1217a", null ],
       [ "physbnd", "namespaceamrex_1_1Extrapolater.html#a38f2083124f56b276e74ec1112306ed1", null ]
     ] ],
+    [ "FFT", "namespaceamrex_1_1FFT.html", "namespaceamrex_1_1FFT" ],
     [ "FGColor", "namespaceamrex_1_1FGColor.html", [
       [ "Black", "namespaceamrex_1_1FGColor.html#afca8013d5b489e37aa5c257ad3073aab", null ],
       [ "Blue", "namespaceamrex_1_1FGColor.html#a213df80a0aed4781ce7582ee2394f426", null ],
@@ -938,6 +939,7 @@ var namespaceamrex =
     [ "BndryRegister", "namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168", null ],
     [ "Box", "namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186", null ],
     [ "BoxIndexer", "namespaceamrex.html#aac7253360db8634d12242f7237ff2af1", null ],
+    [ "cMultiFab", "namespaceamrex.html#a4289ef331ecdec2063953232e045534a", null ],
     [ "DefaultAllocator", "namespaceamrex.html#a179fafc569924202b166896b608cd5c2", null ],
     [ "DeriveFunc", "namespaceamrex.html#ac7d6bf4b6824f474320123285acc5065", null ],
     [ "DeriveFunc3D", "namespaceamrex.html#a008867a6f88e4144e28dfb6a738f5549", null ],
