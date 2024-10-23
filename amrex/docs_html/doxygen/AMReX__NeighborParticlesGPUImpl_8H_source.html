@@ -356,60 +356,66 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesGPUImpl_8H_sou
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    clearNeighbors();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">packBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_op, neighbor_copy_plan, snd_buffer);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6">ParallelDescriptor::UseGpuAwareMpi</a>())</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, rcv_buffer);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="namespaceamrex.html#af15f18636fe4b15834eac2c9b303fcbd">unpackBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">communicateParticlesFinish</a>(neighbor_copy_plan);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <a class="code" href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">unpackRemotes</a>(*<span class="keyword">this</span>, neighbor_copy_plan, rcv_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> (snd_buffer.arena()-&gt;isPinned()) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, pinned_rcv_buffer);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            pinned_snd_buffer.resize(snd_buffer.size());</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(pinned_snd_buffer.dataPtr(), snd_buffer.dataPtr(), snd_buffer.size());</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6">ParallelDescriptor::UseGpuAwareMpi</a>()) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        snd_buffer.setArena(<a class="code" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        rcv_buffer.setArena(<a class="code" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">packBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_op, neighbor_copy_plan, snd_buffer);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6">ParallelDescriptor::UseGpuAwareMpi</a>())</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, rcv_buffer);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="namespaceamrex.html#af15f18636fe4b15834eac2c9b303fcbd">unpackBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">communicateParticlesFinish</a>(neighbor_copy_plan);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">unpackRemotes</a>(*<span class="keyword">this</span>, neighbor_copy_plan, rcv_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">if</span> (snd_buffer.arena()-&gt;isPinned()) {</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, pinned_snd_buffer, pinned_rcv_buffer);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        rcv_buffer.resize(pinned_rcv_buffer.size());</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="namespaceamrex.html#af15f18636fe4b15834eac2c9b303fcbd">unpackBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">communicateParticlesFinish</a>(neighbor_copy_plan);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(rcv_buffer.dataPtr(), pinned_rcv_buffer.dataPtr(), pinned_rcv_buffer.size());</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">unpackRemotes</a>(*<span class="keyword">this</span>, neighbor_copy_plan, rcv_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#acfd5f04cd8c4ccc1624a2800908ab823">  294</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html">clearNeighborsGPU</a>()</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;{</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;NeighborParticleContainer::clearNeighborsGPU&quot;</span>);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    this-&gt;reserveData();</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    this-&gt;resizeData();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; this-&gt;numLevels(); ++lev)</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi = this-&gt;MakeMFIter(lev); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keyword">auto</span>&amp; ptile = this-&gt;DefineAndReturnParticleTile(lev, mfi);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            ptile.setNumNeighbors(0);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, pinned_rcv_buffer);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            pinned_snd_buffer.resize(snd_buffer.size());</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(pinned_snd_buffer.dataPtr(), snd_buffer.dataPtr(), snd_buffer.size());</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">communicateParticlesStart</a>(*<span class="keyword">this</span>, neighbor_copy_plan, pinned_snd_buffer, pinned_rcv_buffer);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        rcv_buffer.resize(pinned_rcv_buffer.size());</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="namespaceamrex.html#af15f18636fe4b15834eac2c9b303fcbd">unpackBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_plan, snd_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">communicateParticlesFinish</a>(neighbor_copy_plan);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(rcv_buffer.dataPtr(), pinned_rcv_buffer.dataPtr(), pinned_rcv_buffer.size());</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">unpackRemotes</a>(*<span class="keyword">this</span>, neighbor_copy_plan, rcv_buffer, <a class="code" href="structamrex_1_1NeighborUnpackPolicy.html">NeighborUnpackPolicy</a>());</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#acfd5f04cd8c4ccc1624a2800908ab823">  300</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html">clearNeighborsGPU</a>()</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;NeighborParticleContainer::clearNeighborsGPU&quot;</span>);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    this-&gt;reserveData();</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    this-&gt;resizeData();</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; this-&gt;numLevels(); ++lev)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi = this-&gt;MakeMFIter(lev); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keyword">auto</span>&amp; ptile = this-&gt;DefineAndReturnParticleTile(lev, mfi);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            ptile.setNumNeighbors(0);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a8013eb3b1fc596632383f1bb7c40e92c"><div class="ttname"><a href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:37</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
@@ -453,6 +459,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesGPUImpl_8H_sou
 <div class="ttc" id="anamespaceamrex_html_a2930ae07976c9845d80d458c323eff2b"><div class="ttname"><a href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">amrex::unpackRemotes</a></div><div class="ttdeci">void unpackRemotes(PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, UnpackPolicy const &amp;policy)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleCommunication.H:558</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3462ea852eeb4664ba7e66c63933916c"><div class="ttname"><a href="namespaceamrex.html#a3462ea852eeb4664ba7e66c63933916c">amrex::adjCellHi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; adjCellHi(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</div><div class="ttdoc">Similar to adjCellLo but builds an adjacent BoxND on the high end.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1612</div></div>
 <div class="ttc" id="anamespaceamrex_html_a814322d519ae32014737504164a0516b"><div class="ttname"><a href="namespaceamrex.html#a814322d519ae32014737504164a0516b">amrex::communicateParticlesFinish</a></div><div class="ttdeci">void communicateParticlesFinish(const ParticleCopyPlan &amp;plan)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleCommunication.cpp:371</div></div>
+<div class="ttc" id="anamespaceamrex_html_a867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.cpp:669</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8792201c856a367dda275e09047daa33"><div class="ttname"><a href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; AMREX_SPACEDIM &gt; IntVect</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFwd.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_acad483c5f0e30f9cd471ad05e1920320"><div class="ttname"><a href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">amrex::numParticlesOutOfRange</a></div><div class="ttdeci">int numParticlesOutOfRange(Iterator const &amp;pti, int nGrow)</div><div class="ttdoc">Returns the number of particles that are more than nGrow cells from the box correspond to the input i...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:34</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc731523d4241d981e7279b29c5d7a6d"><div class="ttname"><a href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a></div><div class="ttdeci">void RemoveDuplicates(Vector&lt; T &gt; &amp;vec)</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:190</div></div>
