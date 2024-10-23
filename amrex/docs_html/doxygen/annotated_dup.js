@@ -131,6 +131,7 @@ var annotated_dup =
         [ "ComponentBox", "structamrex_1_1Gpu_1_1ComponentBox.html", "structamrex_1_1Gpu_1_1ComponentBox" ],
         [ "GridSize", "structamrex_1_1Gpu_1_1GridSize.html", "structamrex_1_1Gpu_1_1GridSize" ],
         [ "ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", "structamrex_1_1Gpu_1_1ExecutionConfig" ],
+        [ "ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", "structamrex_1_1Gpu_1_1ExecConfig" ],
         [ "Managed", "structamrex_1_1Gpu_1_1Managed.html", "structamrex_1_1Gpu_1_1Managed" ],
         [ "Pinned", "structamrex_1_1Gpu_1_1Pinned.html", "structamrex_1_1Gpu_1_1Pinned" ],
         [ "Deleter", "structamrex_1_1Gpu_1_1Deleter.html", "structamrex_1_1Gpu_1_1Deleter" ],

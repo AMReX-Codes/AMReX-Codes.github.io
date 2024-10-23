@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sdcquadrature_5fmod_10926',['sdcquadrature_mod',['../namespacesdcquadrature__mod.html',1,'']]]
+  ['sdcquadrature_5fmod_10940',['sdcquadrature_mod',['../namespacesdcquadrature__mod.html',1,'']]]
 ];

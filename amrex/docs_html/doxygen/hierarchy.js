@@ -380,6 +380,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "amrex::Scan::Type::Exclusive", "structamrex_1_1Scan_1_1Type_1_1Exclusive.html", null ],
+    [ "amrex::Gpu::ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", null ],
     [ "amrex::Gpu::ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", null ],
     [ "amrex::expect", "classamrex_1_1expect.html", null ],
     [ "amrex::EB2::ExtrusionIF< F >", "classamrex_1_1EB2_1_1ExtrusionIF.html", null ],

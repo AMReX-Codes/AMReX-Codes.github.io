@@ -1,5 +1,8 @@
 var NAVTREEINDEX53 =
 {
+"classamrex_1_1ParIterBase__impl.html#a7baf75176f06182c85c9bc71b02f7bf1":[3,0,0,476,12],
+"classamrex_1_1ParIterBase__impl.html#a834ac60b04b724999383f3b28253b90c":[3,0,0,476,20],
+"classamrex_1_1ParIterBase__impl.html#a96e44e978a98c0c67291b8271061c94f":[3,0,0,476,13],
 "classamrex_1_1ParIterBase__impl.html#a9eb90934f537a8f10811e014520cc116":[3,0,0,476,10],
 "classamrex_1_1ParIterBase__impl.html#aa75db5075753c9accd5e3445b474bad0":[3,0,0,476,27],
 "classamrex_1_1ParIterBase__impl.html#abe3648d60d09f07210ff0fa5efef4ea0":[3,0,0,476,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX53 =
 "classamrex_1_1ParticleBufferMap.html":[3,0,0,499],
 "classamrex_1_1ParticleBufferMap.html#a22ef66dc732fb28117376c5a3cf60c9a":[3,0,0,499,17],
 "classamrex_1_1ParticleBufferMap.html#a30c143c9bfbc1260a3a2bab45e30465a":[3,0,0,499,9],
-"classamrex_1_1ParticleBufferMap.html#a33351037aaa2977e86fa377eaeb0a67e":[3,0,0,499,22],
-"classamrex_1_1ParticleBufferMap.html#a49a5c4338ca4f54619acb1f4890df2fa":[3,0,0,499,14],
-"classamrex_1_1ParticleBufferMap.html#a4d6a055510febbd0115e3cc4fcb77e71":[3,0,0,499,18],
-"classamrex_1_1ParticleBufferMap.html#a5cd8c986f822086a092ee8159373a0b4":[3,0,0,499,11]
+"classamrex_1_1ParticleBufferMap.html#a33351037aaa2977e86fa377eaeb0a67e":[3,0,0,499,22]
 };

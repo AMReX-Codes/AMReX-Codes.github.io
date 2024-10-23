@@ -1,5 +1,14 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1LPInfo.html#ac63fdecd955455e1608496793c45e578":[3,0,0,450,0],
+"structamrex_1_1LPInfo.html#ac70c612644339e1f9c5072fc9825b986":[3,0,0,450,8],
+"structamrex_1_1LPInfo.html#acbd4630a533152de976660cbd0c16310":[3,0,0,450,23],
+"structamrex_1_1LPInfo.html#ad52d1c9d3214bf62a03f3a41ca82a34c":[3,0,0,450,12],
+"structamrex_1_1LPInfo.html#adbc91f7b18c419f5e1be642d15a28e5e":[3,0,0,450,14],
+"structamrex_1_1LPInfo.html#ae8917bb5cf009969d7edf32ab9960056":[3,0,0,450,7],
+"structamrex_1_1LPInfo.html#af940b94437ae9286df0f551aa28c8119":[3,0,0,450,26],
+"structamrex_1_1LinOpEnumType.html":[3,0,0,451],
+"structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8":[3,0,0,451,2],
 "structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8a49b21ad0d38942f635877e7bbc5d7a1e":[3,0,0,451,2,0],
 "structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8a8e42c4bdb2369a1c5b19f6f120737334":[3,0,0,451,2,1],
 "structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627":[3,0,0,451,0],
@@ -240,14 +249,5 @@ var NAVTREEINDEX82 =
 "structamrex_1_1NonLocalBC_1_1CommData.html#adacc0eb8f4427cd400d829a713149d17":[3,0,0,11,11,2],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html":[3,0,0,11,12],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#a18b34e7c60c895b063c694f7745190ae":[3,0,0,11,12,2],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[3,0,0,11,12,0],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[3,0,0,11,12,1],
-"structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[3,0,0,11,17],
-"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[3,0,0,11,0],
-"structamrex_1_1NonLocalBC_1_1Identity.html":[3,0,0,11,5],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a0a03a9cf27f2ed969f918c7946e68659":[3,0,0,11,5,2],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a2be194ea3baaf9a996c82b946bf54803":[3,0,0,11,5,1],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a3319c4ea6b55bcbf4790af653e33257a":[3,0,0,11,5,3],
-"structamrex_1_1NonLocalBC_1_1Identity.html#ae33cb7ae2726115f3cd480dc088a44b7":[3,0,0,11,5,0],
-"structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[3,0,0,11,13]
+"structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[3,0,0,11,12,0]
 };
