@@ -1,6 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"AMReX__TagParallelFor_8H_source.html":[4,0,0,2,253],
 "AMReX__ThirdPartyProfiling_8H.html":[4,0,0,2,254],
 "AMReX__ThirdPartyProfiling_8H_source.html":[4,0,0,2,254],
 "AMReX__TimeIntegrator_8H.html":[4,0,0,2,255],
@@ -249,5 +248,6 @@ var NAVTREEINDEX21 =
 "AMReX__YAFluxRegister__2D__K_8H.html#a8e5424db64aba9748df778a60884c7b9":[4,0,0,3,23,1],
 "AMReX__YAFluxRegister__2D__K_8H_source.html":[4,0,0,3,23],
 "AMReX__YAFluxRegister__3D__K_8H.html":[4,0,0,3,24],
-"AMReX__YAFluxRegister__3D__K_8H.html#a0b1d07ca28efdd9ea5b1ef56ad6e2778":[4,0,0,3,24,0]
+"AMReX__YAFluxRegister__3D__K_8H.html#a0b1d07ca28efdd9ea5b1ef56ad6e2778":[4,0,0,3,24,0],
+"AMReX__YAFluxRegister__3D__K_8H.html#a8e5424db64aba9748df778a60884c7b9":[4,0,0,3,24,1]
 };

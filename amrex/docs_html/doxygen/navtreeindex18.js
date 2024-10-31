@@ -1,6 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"AMReX__ParallelReduce_8H.html#a83b6af463895bccfbf4ae0606041cd33":[4,0,0,2,210,38],
 "AMReX__ParallelReduce_8H.html#a84377e96c4ecb57c17fe8e83aea0e04e":[4,0,0,2,210,36],
 "AMReX__ParallelReduce_8H.html#a8f0fba40aa737060c0ac09832c9bf877":[4,0,0,2,210,35],
 "AMReX__ParallelReduce_8H.html#a936c783bdaf304f8b6761ad1f58c63a3":[4,0,0,2,210,25],
@@ -249,5 +248,6 @@ var NAVTREEINDEX18 =
 "AMReX__ParticleContainer_8H.html":[4,0,0,8,18],
 "AMReX__ParticleContainer_8H.html#adf16cda543680572b2d60a5518b7fb55":[4,0,0,8,18,4],
 "AMReX__ParticleContainer_8H_source.html":[4,0,0,8,18],
-"AMReX__ParticleDataAdaptorI_8H.html":[4,0,0,5,8,19]
+"AMReX__ParticleDataAdaptorI_8H.html":[4,0,0,5,8,19],
+"AMReX__ParticleDataAdaptorI_8H_source.html":[4,0,0,5,8,19]
 };
