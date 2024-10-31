@@ -1,5 +1,9 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1FabArrayBase_1_1RB180.html":[3,0,0,132,13],
+"structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[3,0,0,132,13,1],
+"structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[3,0,0,132,13,3],
+"structamrex_1_1FabArrayBase_1_1RB180.html#a68398d2292a320dfdb73768136091c68":[3,0,0,132,13,2],
 "structamrex_1_1FabArrayBase_1_1RB180.html#abd8ce363a9dbaaf0072c5ca833c6487e":[3,0,0,132,13,0],
 "structamrex_1_1FabArrayBase_1_1RB90.html":[3,0,0,132,14],
 "structamrex_1_1FabArrayBase_1_1RB90.html#a1edfeca1f60abef9a9f56b0c4e8e64a4":[3,0,0,132,14,0],
@@ -82,9 +86,9 @@ var NAVTREEINDEX80 =
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,150,1],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,150,0],
 "structamrex_1_1FilfcFace.html":[3,0,0,151],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,151,1],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,151,2],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,151,0],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,151,2],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,151,1],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html":[3,0,0,152,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[3,0,0,152,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a5fc429dc522fa17e291bbdd8d8e42f89":[3,0,0,152,0,0],
@@ -123,9 +127,9 @@ var NAVTREEINDEX80 =
 "structamrex_1_1GeometryData.html#aee36e84e322a0ca0025338dcca8475d1":[3,0,0,162,13],
 "structamrex_1_1GeometryData.html#afc75128d9d4bafa048122bb09b2adf35":[3,0,0,162,5],
 "structamrex_1_1GetBucket.html":[3,0,0,498],
+"structamrex_1_1GetBucket.html#a28f535384fb503222f9c49d33e6988bc":[3,0,0,498,0],
 "structamrex_1_1GetBucket.html#a470e41f4257b381e33ce814969d74a49":[3,0,0,498,3],
 "structamrex_1_1GetBucket.html#aaa894d51240ca3994d613ac9819b94cf":[3,0,0,498,2],
-"structamrex_1_1GetBucket.html#abcbeeafe88c66d539a5264e67ff6679d":[3,0,0,498,0],
 "structamrex_1_1GetBucket.html#ad2772cab77f44e3555523f450c60a270":[3,0,0,498,1],
 "structamrex_1_1GetPID.html":[3,0,0,497],
 "structamrex_1_1GetPID.html#a12b53b1f0f8833c2701601cf404e74ad":[3,0,0,497,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,6,8],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,6,11],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,6,11,0],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,6,11,2],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,6,11,1],
-"structamrex_1_1Gpu_1_1Managed.html":[3,0,0,6,22],
-"structamrex_1_1Gpu_1_1Managed.html#ac55c26882c245ab3d4b27a99142407fe":[3,0,0,6,22,1],
-"structamrex_1_1Gpu_1_1Managed.html#ad7d60ecb610a604829583ba6bed29731":[3,0,0,6,22,0]
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,6,11,2]
 };

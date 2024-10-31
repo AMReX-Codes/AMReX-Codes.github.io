@@ -9,6 +9,7 @@ var classamrex_1_1ParticleBufferMap =
     [ "define", "classamrex_1_1ParticleBufferMap.html#afefd85941605fff4b4d91bae8a97efa7", null ],
     [ "firstBucketOnProc", "classamrex_1_1ParticleBufferMap.html#aab3da03c66b146dacb70168328d0873b", null ],
     [ "getBucketFunctor", "classamrex_1_1ParticleBufferMap.html#acbab95785a1dc1149ece86210d59e858", null ],
+    [ "getHostBucketFunctor", "classamrex_1_1ParticleBufferMap.html#ae4fbadf7ea8bf6b11b0bb1a0eb605d54", null ],
     [ "getPIDFunctor", "classamrex_1_1ParticleBufferMap.html#a30c143c9bfbc1260a3a2bab45e30465a", null ],
     [ "gridAndLevToBucket", "classamrex_1_1ParticleBufferMap.html#af07f598d8788010a800af8bdcf33adf7", null ],
     [ "isValid", "classamrex_1_1ParticleBufferMap.html#a5cd8c986f822086a092ee8159373a0b4", null ],

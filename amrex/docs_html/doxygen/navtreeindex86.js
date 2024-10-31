@@ -1,5 +1,9 @@
 var NAVTREEINDEX86 =
 {
+"structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13":[3,0,0,433,3],
+"structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa":[3,0,0,433,4],
+"structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb":[3,0,0,433,7],
+"structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0":[3,0,0,433,0],
 "structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b":[3,0,0,433,6],
 "structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930":[3,0,0,433,2],
 "structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21":[3,0,0,433,5],
@@ -198,8 +202,8 @@ var NAVTREEINDEX86 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a0e3b87a075c020bc4e0347b49b41a638":[3,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a0e7a8b9c74fc7b5929496e081dff2e8a":[3,0,0,0,5,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a149f5f335aa384fea60572300241de10":[3,0,0,0,5,9],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[3,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[3,0,0,0,5,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a9352b5694ad95664dce6d6214668eb05":[3,0,0,0,5,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX86 =
 "structamrex_1_1amrex__Mat.html#a4fd5b63c1e51beed0579d6d15ca1006e":[3,0,0,425,6],
 "structamrex_1_1amrex__Mat.html#a781cc06ce703efa959aec101c847e2ed":[3,0,0,425,1],
 "structamrex_1_1amrex__Mat.html#aa65ab5c3310ce450125302554816002a":[3,0,0,425,5],
-"structamrex_1_1amrex__Mat.html#ae605c1439b1b88e367a6757b46e78c9e":[3,0,0,425,3],
-"structamrex_1_1amrex__Vec.html":[3,0,0,426],
-"structamrex_1_1amrex__Vec.html#a29e1b205830804ee67abd7c0926214f3":[3,0,0,426,3],
-"structamrex_1_1amrex__Vec.html#ac480727670bb025eb2c56a44281074d1":[3,0,0,426,6],
-"structamrex_1_1amrex__Vec.html#ad38d422f084f24160e201de00bcc3fbe":[3,0,0,426,4]
+"structamrex_1_1amrex__Mat.html#ae605c1439b1b88e367a6757b46e78c9e":[3,0,0,425,3]
 };
