@@ -2,10 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespaceamrex_1_1FFT" kind="namespace" language="C++">
     <compoundname>amrex::FFT</compoundname>
-    <innerclass refid="classamrex_1_1FFT_1_1R2C" prot="public">amrex::FFT::R2C</innerclass>
     <innerclass refid="structamrex_1_1FFT_1_1Info" prot="public">amrex::FFT::Info</innerclass>
+    <innerclass refid="structamrex_1_1FFT_1_1Plan" prot="public">amrex::FFT::Plan</innerclass>
+    <innerclass refid="structamrex_1_1FFT_1_1Swap01" prot="public">amrex::FFT::Swap01</innerclass>
+    <innerclass refid="structamrex_1_1FFT_1_1Swap02" prot="public">amrex::FFT::Swap02</innerclass>
+    <innerclass refid="structamrex_1_1FFT_1_1RotateFwd" prot="public">amrex::FFT::RotateFwd</innerclass>
+    <innerclass refid="structamrex_1_1FFT_1_1RotateBwd" prot="public">amrex::FFT::RotateBwd</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1Poisson" prot="public">amrex::FFT::Poisson</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1PoissonHybrid" prot="public">amrex::FFT::PoissonHybrid</innerclass>
+    <innerclass refid="classamrex_1_1FFT_1_1R2C" prot="public">amrex::FFT::R2C</innerclass>
+    <innerclass refid="classamrex_1_1FFT_1_1R2X" prot="public">amrex::FFT::R2X</innerclass>
     <innernamespace refid="namespaceamrex_1_1FFT_1_1detail">amrex::FFT::detail</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" prot="public" static="no" strong="yes">
@@ -32,19 +38,141 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8" prot="public">
+          <name>none</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="10" bodyend="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="44" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Kind</name>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a334c4a4c42fdb79d7ebc3e73b517e6f8" prot="public">
+          <name>none</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926" prot="public">
+          <name>r2c_f</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a24a343c7d6d96b256606a5732323f940" prot="public">
+          <name>r2c_b</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70ac70bb61e81cea6f173b53118b81b8777" prot="public">
+          <name>c2c_f</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70ae61120a0b13890f759569a04b035054a" prot="public">
+          <name>c2c_b</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a08684868ab90a6df469801dc0e1e3247" prot="public">
+          <name>r2r_ee_f</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a8110ba0472c63dad7d639b5519e4fb8a" prot="public">
+          <name>r2r_ee_b</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70aa7b3a6b9c1e8987fadada8253bb03b11" prot="public">
+          <name>r2r_oo_f</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a1fdfc79a761ab9439d9e340839e1a2f9" prot="public">
+          <name>r2r_oo_b</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334" prot="public">
+          <name>r2r_eo</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b" prot="public">
+          <name>r2r_oe</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="48" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="48" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1FFT_1a5f62bdef4ab3baa40ccac7c6ab58a4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FFT::AMREX_ENUM</definition>
+        <argsstring>(Boundary, periodic, even, odd)</argsstring>
+        <name>AMREX_ENUM</name>
+        <param>
+          <type>Boundary</type>
+        </param>
+        <param>
+          <type>periodic</type>
+        </param>
+        <param>
+          <type>even</type>
+        </param>
+        <param>
+          <type>odd</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="46" column="1" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="46" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="4" column="1"/>
+    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="3" column="1"/>
   </compounddef>
 </doxygen>

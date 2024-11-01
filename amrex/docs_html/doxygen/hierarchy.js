@@ -310,7 +310,6 @@ var hierarchy =
       [ "amrex::BaseFab< char >", "classamrex_1_1BaseFab.html", [
         [ "amrex::TagBox", "classamrex_1_1TagBox.html", null ]
       ] ],
-      [ "amrex::BaseFab< GpuComplex< typename MF::value_type > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< Real >", "classamrex_1_1BaseFab.html", [
         [ "amrex::FArrayBox", "classamrex_1_1FArrayBox.html", [
           [ "amrex::CutFab", "classamrex_1_1CutFab.html", null ],
@@ -389,7 +388,6 @@ var hierarchy =
       [ "amrex::FabArray< amrex::EBCellFlagFab >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::Mask >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::BaseFab< HYPRE_Int > >", "classamrex_1_1FabArray.html", null ],
-      [ "amrex::FabArray< BaseFab< GpuComplex< typename MF::value_type > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< FArrayBox >", "classamrex_1_1FabArray.html", [
         [ "amrex::MultiFab", "classamrex_1_1MultiFab.html", null ]
       ] ],
@@ -907,8 +905,8 @@ var hierarchy =
     [ "amrex::PhysBCFunctUseCoarseGhost", "classamrex_1_1PhysBCFunctUseCoarseGhost.html", null ],
     [ "amrex::Gpu::Pinned", "structamrex_1_1Gpu_1_1Pinned.html", null ],
     [ "amrex::PinnedArenaWrapper", "structamrex_1_1PinnedArenaWrapper.html", null ],
-    [ "amrex::FFT::R2C< T, D >::Plan", "structamrex_1_1FFT_1_1R2C_1_1Plan.html", null ],
-    [ "amrex::FFT::R2C< T, D >::Plan2", "structamrex_1_1FFT_1_1R2C_1_1Plan2.html", null ],
+    [ "amrex::FFT::Plan< T >", "structamrex_1_1FFT_1_1Plan.html", null ],
+    [ "amrex::FFT::Plan< Real >", "structamrex_1_1FFT_1_1Plan.html", null ],
     [ "amrex::PlotFileData", "classamrex_1_1PlotFileData.html", null ],
     [ "amrex::PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html", null ],
     [ "amrex::Plus< T >", "structamrex_1_1Plus.html", null ],
@@ -932,6 +930,8 @@ var hierarchy =
     [ "amrex::algoim::QuadratureRule", "structamrex_1_1algoim_1_1QuadratureRule.html", null ],
     [ "amrex::FFT::R2C< T, D >", "classamrex_1_1FFT_1_1R2C.html", null ],
     [ "amrex::FFT::R2C< typename MF::value_type, Direction::both >", "classamrex_1_1FFT_1_1R2C.html", null ],
+    [ "amrex::FFT::R2X< T >", "classamrex_1_1FFT_1_1R2X.html", null ],
+    [ "amrex::FFT::R2X< typename MF::value_type >", "classamrex_1_1FFT_1_1R2X.html", null ],
     [ "amrex::RandomEngine", "structamrex_1_1RandomEngine.html", null ],
     [ "amrex::Gpu::range_detail::range_impl< T >", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", null ],
     [ "amrex::RealBox", "classamrex_1_1RealBox.html", null ],
@@ -952,8 +952,8 @@ var hierarchy =
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
-    [ "amrex::FFT::R2C< T, D >::RotateBwd", "structamrex_1_1FFT_1_1R2C_1_1RotateBwd.html", null ],
-    [ "amrex::FFT::R2C< T, D >::RotateFwd", "structamrex_1_1FFT_1_1R2C_1_1RotateFwd.html", null ],
+    [ "amrex::FFT::RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", null ],
+    [ "amrex::FFT::RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", null ],
     [ "amrex::EB2::RotationIF< F >", "classamrex_1_1EB2_1_1RotationIF.html", null ],
     [ "amrex::Same< T, U1, Us >", "structamrex_1_1Same.html", null ],
     [ "amrex::Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", null ],
@@ -1010,8 +1010,8 @@ var hierarchy =
     [ "amrex::Scan::detail::STVA< T >", "structamrex_1_1Scan_1_1detail_1_1STVA.html", null ],
     [ "amrex::Scan::detail::STVA< U >", "structamrex_1_1Scan_1_1detail_1_1STVA.html", null ],
     [ "amrex::SundialsUserData", "structamrex_1_1SundialsUserData.html", null ],
-    [ "amrex::FFT::R2C< T, D >::Swap01", "structamrex_1_1FFT_1_1R2C_1_1Swap01.html", null ],
-    [ "amrex::FFT::R2C< T, D >::Swap02", "structamrex_1_1FFT_1_1R2C_1_1Swap02.html", null ],
+    [ "amrex::FFT::Swap01", "structamrex_1_1FFT_1_1Swap01.html", null ],
+    [ "amrex::FFT::Swap02", "structamrex_1_1FFT_1_1Swap02.html", null ],
     [ "amrex::NonLocalBC::SwapComponents< I, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", null ],
     [ "amrex::NonLocalBC::SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", null ],
     [ "amrex::NonLocalBC::SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", null ],

@@ -111,6 +111,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1Poisson.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a6940278e517f9ee27e6af0836e6ce9bc"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a6940278e517f9ee27e6af0836e6ce9bc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a6940278e517f9ee27e6af0836e6ce9bc">Poisson</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt; const &amp;bc)</td></tr>
+<tr class="separator:a6940278e517f9ee27e6af0836e6ce9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91c77091e895ff146f47e1885ae96236"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a91c77091e895ff146f47e1885ae96236"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a91c77091e895ff146f47e1885ae96236">Poisson</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom)</td></tr>
 <tr class="separator:a91c77091e895ff146f47e1885ae96236"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,22 +124,64 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a74d60bcb276f03fdbb5aa5ac87fff1af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a74d60bcb276f03fdbb5aa5ac87fff1af">m_geom</a></td></tr>
 <tr class="separator:a74d60bcb276f03fdbb5aa5ac87fff1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff4b88857447c34e67cfda7c0620dce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt; typename MF::value_type, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a0ff4b88857447c34e67cfda7c0620dce">m_r2c</a></td></tr>
-<tr class="separator:a0ff4b88857447c34e67cfda7c0620dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877e3e72db72d557255009217bc15862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a877e3e72db72d557255009217bc15862">m_bc</a></td></tr>
+<tr class="separator:a877e3e72db72d557255009217bc15862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ce761371c0a912fb4c650dd313e842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FFT_1_1R2X.html">R2X</a>&lt; typename MF::value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a67ce761371c0a912fb4c650dd313e842">m_r2x</a></td></tr>
+<tr class="separator:a67ce761371c0a912fb4c650dd313e842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename MF&gt;<br />
+<div class="textblock"><h3>template&lt;typename MF = MultiFab&gt;<br />
 class amrex::FFT::Poisson&lt; MF &gt;</h3>
 
 <p><a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for all periodic boundaries using FFT.">Poisson</a> solver for all periodic boundaries using <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a91c77091e895ff146f47e1885ae96236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91c77091e895ff146f47e1885ae96236">&#9670;&nbsp;</a></span>Poisson()</h2>
+<a id="a6940278e517f9ee27e6af0836e6ce9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6940278e517f9ee27e6af0836e6ce9bc">&#9670;&nbsp;</a></span>Poisson() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MF &gt; </div>
+template&lt;typename MF  = MultiFab&gt; </div>
+<div class="memtemplate">
+template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1FFT_1_1Poisson.html">Poisson</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91c77091e895ff146f47e1885ae96236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c77091e895ff146f47e1885ae96236">&#9670;&nbsp;</a></span>Poisson() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
 <div class="memtemplate">
 template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
@@ -192,13 +237,37 @@ template&lt;typename MF &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a877e3e72db72d557255009217bc15862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a877e3e72db72d557255009217bc15862">&#9670;&nbsp;</a></span>m_bc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;std::pair&lt;Boundary,Boundary&gt;,AMREX_SPACEDIM&gt; <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::m_bc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a74d60bcb276f03fdbb5aa5ac87fff1af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74d60bcb276f03fdbb5aa5ac87fff1af">&#9670;&nbsp;</a></span>m_geom</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MF &gt; </div>
+template&lt;typename MF  = MultiFab&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -216,19 +285,19 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
-<a id="a0ff4b88857447c34e67cfda7c0620dce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff4b88857447c34e67cfda7c0620dce">&#9670;&nbsp;</a></span>m_r2c</h2>
+<a id="a67ce761371c0a912fb4c650dd313e842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ce761371c0a912fb4c650dd313e842">&#9670;&nbsp;</a></span>m_r2x</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MF &gt; </div>
+template&lt;typename MF  = MultiFab&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt;typename MF::value_type, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>&gt; <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::m_r2c</td>
+          <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1R2X.html">R2X</a>&lt;typename MF::value_type&gt; <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::m_r2x</td>
         </tr>
       </table>
   </td>

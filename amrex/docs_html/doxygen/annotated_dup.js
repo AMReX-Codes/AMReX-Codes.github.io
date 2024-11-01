@@ -102,10 +102,16 @@ var annotated_dup =
         [ "ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", "classamrex_1_1EB2_1_1ChkptFile" ]
       ] ],
       [ "FFT", "namespaceamrex_1_1FFT.html", [
-        [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
         [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
+        [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],
+        [ "Swap01", "structamrex_1_1FFT_1_1Swap01.html", "structamrex_1_1FFT_1_1Swap01" ],
+        [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ],
+        [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
+        [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
         [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html", "classamrex_1_1FFT_1_1Poisson" ],
-        [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ]
+        [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
+        [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
+        [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ]
       ] ],
       [ "Gpu", "namespaceamrex_1_1Gpu.html", [
         [ "range_detail", "namespaceamrex_1_1Gpu_1_1range__detail.html", [

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['order_18628',['Order',['../namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20',1,'amrex']]],
-  ['ordering_18629',['Ordering',['../classamrex_1_1IntDescriptor.html#a330214b8c0c3e224aecd2d2d95c0a839',1,'amrex::IntDescriptor::Ordering()'],['../classamrex_1_1FABio.html#adbdc54b2ed6a4fa2d0cfd19076e5cc39',1,'amrex::FABio::Ordering()']]]
+  ['maketype_18710',['MakeType',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
+  ['maskval_18711',['MaskVal',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846',1,'amrex::BndryDataT']]],
+  ['minmaxrangetype_18712',['MinMaxRangeType',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98e',1,'amrex::Amrvis']]],
+  ['minmaxrangetypeforbuttons_18713',['MinMaxRangeTypeForButtons',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9',1,'amrex::Amrvis']]]
 ];

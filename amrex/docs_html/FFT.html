@@ -143,7 +143,9 @@ sizes of the real array and the division is rounded down.</p>
 <span class="w">        </span><span class="n">sp</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">scaling</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">});</span><span class="w"></span>
 
-<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">cmf</span><span class="p">(...);</span><span class="w"></span>
+<span class="c1">// Use R2C provided spectral data layout.</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span><span class="w"></span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">cmf</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
 <span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">forward</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c_forward</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span><span class="w"></span>
 <span class="n">r2c_forward</span><span class="p">(</span><span class="n">mfin</span><span class="p">,</span><span class="w"> </span><span class="n">cmf</span><span class="p">);</span><span class="w"></span>
 
@@ -153,17 +155,53 @@ sizes of the real array and the division is rounded down.</p>
 </div>
 <p>Note that using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">forwardThenBackward</span><span class="w"></span></code> is expected to be more efficient
 than separate calls to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">forward</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">backward</span><span class="w"></span></code> because some
-parallel communication can be avoided. It should also be noted that a lot of
+parallel communication can be avoided. For the spectral data, the example
+above builds <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cMultiFab</span><span class="w"></span></code> using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code> provided layout. You can
+also use your own <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code>, but it
+might result in extra communication. It should also be noted that a lot of
 preparation works are done in the construction of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code>
-object. Therefore, one should cache it for reuse if possible.</p>
+object. Therefore, one should cache it for reuse if possible. Although
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code> does not have a default constructor, one could always use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"></span></code> to store an object in one’s class.</p>
 </section>
 <section id="poisson-solver">
 <h1>Poisson Solver<a class="headerlink" href="#poisson-solver" title="Permalink to this heading"></a></h1>
-<p>AMReX provides FFT based Poisson solvers. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"></span></code> supports all
-periodic boundaries using purely FFT. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span><span class="w"></span></code> is a 3D only
-solver that supports periodic boundaries in the first two dimensions and
-Neumann boundary in the last dimension. Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code>, the
-Poisson solvers should be cached for reuse.</p>
+<p>AMReX provides FFT based Poisson solvers. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"></span></code> supports
+periodic (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="w"></span></code>), homogeneous Neumann
+(<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="w"></span></code>), and homogeneous Dirichlet
+(<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="w"></span></code>) boundaries using FFT. Below is an example of
+using the solver.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">soln</span><span class="p">(...);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(...);</span><span class="w"></span>
+
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">&gt;</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">{...};</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">first</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">second</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Shift rhs so that its sum is zero.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">rhosum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">rhs</span><span class="p">.</span><span class="n">plus</span><span class="p">(</span><span class="o">-</span><span class="n">rhosum</span><span class="o">/</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">().</span><span class="n">d_numPts</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"> </span><span class="n">fft_poisson</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">fft_bc</span><span class="p">);</span><span class="w"></span>
+<span class="n">fft_poisson</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span><span class="w"></span></code> is a 3D only solver that supports periodic
+boundaries in the first two dimensions and Neumann boundary in the last
+dimension. The last dimension is solved with a tridiagonal solver that can
+support non-uniform cell size in the z-direction. For most applications,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"></span></code> should be used.</p>
+<p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code>, the Poisson solvers should be cached for reuse,
+and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span><span class="w"></span></code>
+because there is no default constructor.</p>
 </section>
 
 

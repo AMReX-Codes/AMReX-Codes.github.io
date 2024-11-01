@@ -105,13 +105,37 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H.html',''); initR
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX_8H_source.html">AMReX.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__BLProfiler_8H_source.html">AMReX_BLProfiler.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__DataAllocator_8H_source.html">AMReX_DataAllocator.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__DistributionMapping_8H_source.html">AMReX_DistributionMapping.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Enum_8H_source.html">AMReX_Enum.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Gpu_8H_source.html">AMReX_Gpu.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuComplex_8H_source.html">AMReX_GpuComplex.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Math_8H_source.html">AMReX_Math.H</a>&gt;</code><br />
+<code>#include &lt;cufft.h&gt;</code><br />
+<code>#include &lt;cuComplex.h&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;complex&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
 </div>
 <p><a href="AMReX__FFT__Helper_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1Info.html">amrex::FFT::Info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">amrex::FFT::Plan&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1Swap01.html">amrex::FFT::Swap01</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1Swap02.html">amrex::FFT::Swap02</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1RotateFwd.html">amrex::FFT::RotateFwd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FFT_1_1RotateBwd.html">amrex::FFT::RotateBwd</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -128,13 +152,39 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a28c4d0ce41c89d0d14f83d98b45375c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">amrex::FFT::Direction</a> { <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">amrex::FFT::forward</a>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502">amrex::FFT::backward</a>
 , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">amrex::FFT::both</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8">amrex::FFT::none</a>
  }</td></tr>
 <tr class="separator:a28c4d0ce41c89d0d14f83d98b45375c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab68145bf2931040e7ebba7ac2b15f70"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70">amrex::FFT::Kind</a> { <br />
+&#160;&#160;<a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a334c4a4c42fdb79d7ebc3e73b517e6f8">amrex::FFT::none</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926">amrex::FFT::r2c_f</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a24a343c7d6d96b256606a5732323f940">amrex::FFT::r2c_b</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70ac70bb61e81cea6f173b53118b81b8777">amrex::FFT::c2c_f</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70ae61120a0b13890f759569a04b035054a">amrex::FFT::c2c_b</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a08684868ab90a6df469801dc0e1e3247">amrex::FFT::r2r_ee_f</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a8110ba0472c63dad7d639b5519e4fb8a">amrex::FFT::r2r_ee_b</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70aa7b3a6b9c1e8987fadada8253bb03b11">amrex::FFT::r2r_oo_f</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a1fdfc79a761ab9439d9e340839e1a2f9">amrex::FFT::r2r_oo_b</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334">amrex::FFT::r2r_eo</a>
+, <a class="el" href="namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b">amrex::FFT::r2r_oe</a>
+<br />
+ }</td></tr>
+<tr class="separator:aab68145bf2931040e7ebba7ac2b15f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5f62bdef4ab3baa40ccac7c6ab58a4d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a5f62bdef4ab3baa40ccac7c6ab58a4d1">amrex::FFT::AMREX_ENUM</a> (Boundary, periodic, even, odd)</td></tr>
+<tr class="separator:a5f62bdef4ab3baa40ccac7c6ab58a4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40f1092f78a0a8f53357a35ddeab89c"><td class="memItemLeft" align="right" valign="top">DistributionMapping&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c">amrex::FFT::detail::make_iota_distromap</a> (Long n)</td></tr>
 <tr class="separator:ae40f1092f78a0a8f53357a35ddeab89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ade0d84620e8faa51f7bac69806a0d8"><td class="memTemplParams" colspan="2">template&lt;typename FA &gt; </td></tr>
+<tr class="memitem:a1ade0d84620e8faa51f7bac69806a0d8"><td class="memTemplItemLeft" align="right" valign="top">FA::FABType::value_type *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">amrex::FFT::detail::get_fab</a> (FA &amp;fa)</td></tr>
+<tr class="separator:a1ade0d84620e8faa51f7bac69806a0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dca0b1e5eace20e02c83566c93a69b1"><td class="memTemplParams" colspan="2">template&lt;typename FA1 , typename FA2 &gt; </td></tr>
+<tr class="memitem:a6dca0b1e5eace20e02c83566c93a69b1"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; char, DataDeleter &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1">amrex::FFT::detail::make_mfs_share</a> (FA1 &amp;fa1, FA2 &amp;fa2)</td></tr>
+<tr class="separator:a6dca0b1e5eace20e02c83566c93a69b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
