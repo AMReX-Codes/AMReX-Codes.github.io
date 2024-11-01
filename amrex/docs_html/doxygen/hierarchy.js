@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "hacc::AlignedAllocator< T, N >", "classhacc_1_1AlignedAllocator.html", null ],
     [ "std::allocator< T >", null, [
       [ "amrex::PODVector< amrex::STLtools::Triangle >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< std::size_t >", "classamrex_1_1PODVector.html", null ],
@@ -349,15 +348,12 @@ var hierarchy =
     [ "amrex::MFIter::DeviceSync", "structamrex_1_1MFIter_1_1DeviceSync.html", null ],
     [ "amrex::Gpu::DeviceToDevice", "structamrex_1_1Gpu_1_1DeviceToDevice.html", null ],
     [ "amrex::Gpu::DeviceToHost", "structamrex_1_1Gpu_1_1DeviceToHost.html", null ],
-    [ "hacc::Dfft", "classhacc_1_1Dfft.html", null ],
     [ "amrex::EB2::DifferenceIF< F, G >", "classamrex_1_1EB2_1_1DifferenceIF.html", null ],
     [ "amrex::Dim3", "structamrex_1_1Dim3.html", null ],
     [ "amrex::distFcnElement2d", "classamrex_1_1distFcnElement2d.html", [
       [ "amrex::LineDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html", null ],
       [ "amrex::SplineDistFcnElement2d", "classamrex_1_1SplineDistFcnElement2d.html", null ]
     ] ],
-    [ "hacc::Distribution", "classhacc_1_1Distribution.html", null ],
-    [ "distribution_t", "structdistribution__t.html", null ],
     [ "amrex::DistributionMapping", "classamrex_1_1DistributionMapping.html", null ],
     [ "amrex::Divides< T >", "structamrex_1_1Divides.html", null ],
     [ "amrex::NonLocalBC::DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
@@ -369,7 +365,6 @@ var hierarchy =
     [ "amrex::EB2::Edge", "structamrex_1_1EB2_1_1Edge.html", null ],
     [ "amrex::EdgeFluxRegister", "classamrex_1_1EdgeFluxRegister.html", null ],
     [ "amrex::Gpu::Elixir", "classamrex_1_1Gpu_1_1Elixir.html", null ],
-    [ "hacc::Error", "classhacc_1_1Error.html", null ],
     [ "amrex::ErrorRec::ErrorFunc", "classamrex_1_1ErrorRec_1_1ErrorFunc.html", null ],
     [ "amrex::ErrorRec::ErrorFunc2", "classamrex_1_1ErrorRec_1_1ErrorFunc2.html", null ],
     [ "amrex::ErrorList", "classamrex_1_1ErrorList.html", null ],
@@ -931,7 +926,6 @@ var hierarchy =
     [ "amrex::PrintToFile", "classamrex_1_1PrintToFile.html", [
       [ "amrex::AllPrintToFile", "classamrex_1_1AllPrintToFile.html", null ]
     ] ],
-    [ "process_topology_t", "structprocess__topology__t.html", null ],
     [ "amrex::ParallelDescriptor::ProcessTeam", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html", null ],
     [ "amrex::TinyProfiler::ProcStats", "structamrex_1_1TinyProfiler_1_1ProcStats.html", null ],
     [ "amrex::algoim::PsiCode< N >", "structamrex_1_1algoim_1_1PsiCode.html", null ],
@@ -943,7 +937,6 @@ var hierarchy =
     [ "amrex::RealBox", "classamrex_1_1RealBox.html", null ],
     [ "amrex::RealDescriptor", "classamrex_1_1RealDescriptor.html", null ],
     [ "amrex::RealVect", "classamrex_1_1RealVect.html", null ],
-    [ "hacc::AlignedAllocator< T, N >::rebind< U >", "structhacc_1_1AlignedAllocator_1_1rebind.html", null ],
     [ "amrex::RedistributeUnpackPolicy", "structamrex_1_1RedistributeUnpackPolicy.html", null ],
     [ "amrex::ReduceData< Ts >", "classamrex_1_1ReduceData.html", null ],
     [ "amrex::ReduceOpLogicalAnd", "structamrex_1_1ReduceOpLogicalAnd.html", null ],

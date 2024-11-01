@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['pencil_19791',['PENCIL',['../distribution__c_8h.html#af9b3b05b3ffa6bbf7ca05cb71e02d000',1,'distribution_c.h']]],
-  ['printcs_19792',['PRINTCS',['../AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf',1,'AMReX_RegionsProfStats.cpp']]],
-  ['printcsnc_19793',['PRINTCSNC',['../AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12',1,'AMReX_RegionsProfStats.cpp']]],
-  ['printcstt_19794',['PRINTCSTT',['../AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3',1,'AMReX_RegionsProfStats.cpp']]],
-  ['putarray_19795',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
+  ['sdim_19456',['SDIM',['../AMReX__AVGDOWN__1D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_1D.F'],['../AMReX__AVGDOWN__2D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_2D.F'],['../AMReX__AVGDOWN__3D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_3D.F']]],
+  ['showval_19457',['SHOWVAL',['../AMReX__AmrData_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_AmrData.cpp'],['../AMReX__BLProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_BLProfStats.cpp'],['../AMReX__BLProfUtilities_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_BLProfUtilities.cpp'],['../AMReX__CommProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_CommProfStats.cpp'],['../AMReX__ProfParserBatch_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_ProfParserBatch.cpp'],['../AMReX__RegionsProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_RegionsProfStats.cpp']]],
+  ['size_5fmax_19458',['SIZE_MAX',['../amrex__iparser_8lex_8h.html#a3c75bb398badb69c7577b21486f9963f',1,'SIZE_MAX():&#160;amrex_iparser.lex.h'],['../amrex__iparser_8lex_8nolint_8H.html#a3c75bb398badb69c7577b21486f9963f',1,'SIZE_MAX():&#160;amrex_iparser.lex.nolint.H'],['../amrex__parser_8lex_8h.html#a3c75bb398badb69c7577b21486f9963f',1,'SIZE_MAX():&#160;amrex_parser.lex.h'],['../amrex__parser_8lex_8nolint_8H.html#a3c75bb398badb69c7577b21486f9963f',1,'SIZE_MAX():&#160;amrex_parser.lex.nolint.H']]],
+  ['strip_19459',['STRIP',['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP():&#160;AMReX_Amr.cpp'],['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP():&#160;AMReX_Amr.cpp']]]
 ];

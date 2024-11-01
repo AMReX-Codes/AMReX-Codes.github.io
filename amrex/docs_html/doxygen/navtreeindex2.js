@@ -1,6 +1,6 @@
 var NAVTREEINDEX2 =
 {
-"AMReX__BLWritePlotFile_8cpp.html#aec030b01162fc088d8de7dc493235430":[4,0,0,5,7,8,1],
+"AMReX__BLWritePlotFile_8cpp.html#aec030b01162fc088d8de7dc493235430":[4,0,0,5,6,8,1],
 "AMReX__BLassert_8H.html":[4,0,0,2,28],
 "AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43":[4,0,0,2,28,1],
 "AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e":[4,0,0,2,28,5],
@@ -242,12 +242,12 @@ var NAVTREEINDEX2 =
 "AMReX__Cluster_8cpp.html#a702cf23ecfb91d369b2cbe6ef9998c57":[4,0,0,1,7,1],
 "AMReX__Cluster_8cpp.html#ad1bc6d45fa336c9ae08741100fe5f401":[4,0,0,1,7,0],
 "AMReX__Cluster_8cpp.html#af2f77eb4cb49eea0b3272ac65d4ff73f":[4,0,0,1,7,2],
-"AMReX__CommProfStats_8H.html":[4,0,0,5,7,11],
-"AMReX__CommProfStats_8H.html#a0558403f16fa49e0033c74e50d353b40":[4,0,0,5,7,11,7],
-"AMReX__CommProfStats_8H_source.html":[4,0,0,5,7,11],
-"AMReX__CommProfStats_8cpp.html":[4,0,0,5,7,10],
-"AMReX__CommProfStats_8cpp.html#a0558403f16fa49e0033c74e50d353b40":[4,0,0,5,7,10,6],
-"AMReX__CommProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[4,0,0,5,7,10,8],
-"AMReX__CommProfStats_8cpp.html#a1d82677f3cfb77d191834b8c0c6e350e":[4,0,0,5,7,10,11],
-"AMReX__CommProfStats_8cpp.html#a5499430eba2a089dfb688e261d488394":[4,0,0,5,7,10,4]
+"AMReX__CommProfStats_8H.html":[4,0,0,5,6,11],
+"AMReX__CommProfStats_8H.html#a0558403f16fa49e0033c74e50d353b40":[4,0,0,5,6,11,7],
+"AMReX__CommProfStats_8H_source.html":[4,0,0,5,6,11],
+"AMReX__CommProfStats_8cpp.html":[4,0,0,5,6,10],
+"AMReX__CommProfStats_8cpp.html#a0558403f16fa49e0033c74e50d353b40":[4,0,0,5,6,10,6],
+"AMReX__CommProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[4,0,0,5,6,10,8],
+"AMReX__CommProfStats_8cpp.html#a1d82677f3cfb77d191834b8c0c6e350e":[4,0,0,5,6,10,11],
+"AMReX__CommProfStats_8cpp.html#a5499430eba2a089dfb688e261d488394":[4,0,0,5,6,10,4]
 };

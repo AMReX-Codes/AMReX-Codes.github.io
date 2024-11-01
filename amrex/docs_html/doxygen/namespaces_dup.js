@@ -120,7 +120,6 @@ var namespaces_dup =
     [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", "namespaceamrex__parmparse__module" ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", "namespaceamrex__string__module" ],
     [ "detail", "namespacedetail.html", "namespacedetail" ],
-    [ "hacc", "namespacehacc.html", "namespacehacc" ],
     [ "particle_detail", "namespaceparticle__detail.html", [
       [ "countFlags", "namespaceparticle__detail.html#ab03ce227854d1babaf5747264c7895a7", null ],
       [ "countFlags", "namespaceparticle__detail.html#a7857fe2157c0bbcd736ec5ff69b25bc5", null ],

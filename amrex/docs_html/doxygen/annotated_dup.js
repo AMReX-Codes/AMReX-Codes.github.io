@@ -819,12 +819,6 @@ var annotated_dup =
       [ "CellAdd", "structdetail_1_1CellAdd.html", "structdetail_1_1CellAdd" ],
       [ "CellAtomicAdd", "structdetail_1_1CellAtomicAdd.html", "structdetail_1_1CellAtomicAdd" ]
     ] ],
-    [ "hacc", "namespacehacc.html", [
-      [ "AlignedAllocator", "classhacc_1_1AlignedAllocator.html", "classhacc_1_1AlignedAllocator" ],
-      [ "Dfft", "classhacc_1_1Dfft.html", "classhacc_1_1Dfft" ],
-      [ "Distribution", "classhacc_1_1Distribution.html", "classhacc_1_1Distribution" ],
-      [ "Error", "classhacc_1_1Error.html", "classhacc_1_1Error" ]
-    ] ],
     [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", [
       [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ]
     ] ],
@@ -844,7 +838,6 @@ var annotated_dup =
     [ "AssignGridFilter", "structAssignGridFilter.html", "structAssignGridFilter" ],
     [ "BLProfStats", "classBLProfStats.html", "classBLProfStats" ],
     [ "CommProfStats", "classCommProfStats.html", "classCommProfStats" ],
-    [ "distribution_t", "structdistribution__t.html", "structdistribution__t" ],
     [ "FabCopyTag", "structFabCopyTag.html", "structFabCopyTag" ],
     [ "FilterPositiveID", "structFilterPositiveID.html", "structFilterPositiveID" ],
     [ "FilterVirt", "structFilterVirt.html", "structFilterVirt" ],
@@ -854,7 +847,6 @@ var annotated_dup =
     [ "make_particle< T_ParticleType, std::enable_if_t< is_soa_particle< T_ParticleType >::value > >", "structmake__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particle_3_01T__1f90e92c71ca21b280b67400a4dbce7d.html", "structmake__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particle_3_01T__1f90e92c71ca21b280b67400a4dbce7d" ],
     [ "MPI_Status", "structMPI__Status.html", null ],
     [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", "structN__VectorContent__MultiFab__notptr" ],
-    [ "process_topology_t", "structprocess__topology__t.html", "structprocess__topology__t" ],
     [ "RegionsProfStats", "classRegionsProfStats.html", "classRegionsProfStats" ],
     [ "SDCstruct", "classSDCstruct.html", "classSDCstruct" ],
     [ "TransformerGhost", "structTransformerGhost.html", "structTransformerGhost" ],

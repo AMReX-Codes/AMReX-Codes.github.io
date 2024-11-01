@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['k_5fhi_19788',['K_HI',['../AMReX__MLMG__3D__K_8H.html#a5fa1fd1d257bfaebf6b9cb744172b878',1,'AMReX_MLMG_3D_K.H']]],
-  ['k_5flo_19789',['K_LO',['../AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f',1,'AMReX_MLMG_3D_K.H']]]
+  ['printcs_19450',['PRINTCS',['../AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcsnc_19451',['PRINTCSNC',['../AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcstt_19452',['PRINTCSTT',['../AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3',1,'AMReX_RegionsProfStats.cpp']]],
+  ['putarray_19453',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
 ];
