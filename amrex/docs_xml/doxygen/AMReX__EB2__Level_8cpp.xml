@@ -3411,7 +3411,7 @@
 <codeline lineno="880"><highlight class="normal"><ref refid="classamrex_1_1EB2_1_1Level_1a3d89b2bcea4e9cbf88291dba6cd8fc7c" kindref="member">Level::fillLevelSet</ref><sp/>(MultiFab&amp;<sp/>levelset,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="881"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/>levelset.setVal(-1.0);</highlight></codeline>
-<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>levelset.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a999ca961f5c742f5d61cbace2d88535d" kindref="member">m_levelset</ref>,0,0,1,0,0);</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>levelset.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a999ca961f5c742f5d61cbace2d88535d" kindref="member">m_levelset</ref>,0,0,1,<ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0),levelset.nGrowVect(),geom.periodicity());</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>geom.periodicity().shiftIntVect();</highlight></codeline>
 <codeline lineno="886"><highlight class="normal"></highlight></codeline>
