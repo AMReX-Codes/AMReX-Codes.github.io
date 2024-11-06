@@ -2814,20 +2814,20 @@
 <codeline lineno="302"><highlight class="normal"></highlight></codeline>
 <codeline lineno="303"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="304"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stack&lt;amrex::PTR_TO_VOID_FUNC&gt;<sp/>The_Finalize_Function_Stack;</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stack&lt;amrex::PTR_TO_VOID_FUNC&gt;<sp/>The_Initialize_Function_Stack;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stack&lt;std::function&lt;void()&gt;&gt;<sp/>The_Finalize_Function_Stack;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stack&lt;std::function&lt;void()&gt;&gt;<sp/>The_Initialize_Function_Stack;</highlight></codeline>
 <codeline lineno="307"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"></highlight></codeline>
 <codeline lineno="309"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">amrex::ExecOnFinalize</ref><sp/>(<ref refid="namespaceamrex_1a364202ccae0ac53c5c0d1440b8c06dd2" kindref="member">PTR_TO_VOID_FUNC</ref><sp/>fp)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><ref refid="namespaceamrex_1ad321a3965621a748d4c08e80c42b7af3" kindref="member">amrex::ExecOnFinalize</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>)</highlight></codeline>
 <codeline lineno="311"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>The_Finalize_Function_Stack.push(fp);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>The_Finalize_Function_Stack.push(std::move(<ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>));</highlight></codeline>
 <codeline lineno="313"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="315"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><ref refid="namespaceamrex_1a6911748ceb0d88bf5b6bf7f3f0402e97" kindref="member">amrex::ExecOnInitialize</ref><sp/>(<ref refid="namespaceamrex_1a364202ccae0ac53c5c0d1440b8c06dd2" kindref="member">PTR_TO_VOID_FUNC</ref><sp/>fp)</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><ref refid="namespaceamrex_1a3087256f5c6ac4e3c89eb62111603d44" kindref="member">amrex::ExecOnInitialize</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>)</highlight></codeline>
 <codeline lineno="317"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>The_Initialize_Function_Stack.push(fp);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>The_Initialize_Function_Stack.push(std::move(<ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>));</highlight></codeline>
 <codeline lineno="319"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"></highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><ref refid="classamrex_1_1AMReX" kindref="compound">amrex::AMReX</ref>*</highlight></codeline>
@@ -2903,7 +2903,7 @@
 <codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>registered<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*The_Initialize_Function_Stack.top())();</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The_Initialize_Function_Stack.top()();</highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>And<sp/>then<sp/>remove<sp/>it<sp/>from<sp/>the<sp/>stack.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
@@ -3268,7 +3268,7 @@
 <codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>registered<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*The_Finalize_Function_Stack.top())();</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The_Finalize_Function_Stack.top()();</highlight></codeline>
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>And<sp/>then<sp/>remove<sp/>it<sp/>from<sp/>the<sp/>stack.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
