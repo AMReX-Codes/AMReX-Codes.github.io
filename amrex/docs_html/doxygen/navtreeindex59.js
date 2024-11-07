@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"classamrex_1_1XYPlotDataListLink.html#aeca338f52ea471822af412f4169ad387":[3,0,0,413,5],
 "classamrex_1_1XYPlotDataListLink.html#aedc6b302ba8a41a7b0860a54f93eac00":[3,0,0,413,10],
 "classamrex_1_1YAFluxRegisterT.html":[3,0,0,392],
 "classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb":[3,0,0,392,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "functions_type_m.html":[3,3,3,9],
 "functions_type_n.html":[3,3,3,10],
 "functions_type_p.html":[3,3,3,11],
-"functions_type_r.html":[3,3,3,12],
-"functions_type_s.html":[3,3,3,13]
+"functions_type_r.html":[3,3,3,12]
 };
