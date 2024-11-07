@@ -1,12 +1,11 @@
 var NAVTREEINDEX60 =
 {
-"functions_type_s.html":[3,3,3,13],
 "functions_type_t.html":[3,3,3,14],
 "functions_type_v.html":[3,3,3,15],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2,0],
 "functions_vars.html":[3,3,2],
+"functions_vars.html":[3,3,2,0],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -104,8 +103,8 @@ var NAVTREEINDEX60 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX60 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__realarr.html#ae2b704ac422486a51e530a62849a119d":[3,0,7,10,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__string.html":[3,0,7,7],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__string.html#ab44ff1b1fa681f3b10a9b9b8c194365b":[3,0,7,7,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__stringarr.html":[3,0,7,11]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__stringarr.html":[3,0,7,11],
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__stringarr.html#a61fe4caeb4e56c80853d6f1b780b7107":[3,0,7,11,0]
 };

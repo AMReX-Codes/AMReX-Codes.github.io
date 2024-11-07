@@ -1,6 +1,5 @@
 var NAVTREEINDEX58 =
 {
-"classamrex_1_1TimeIntegrator.html#a3d73596da85ccd3dbc7b5046533dc3f2":[3,0,0,252,25],
 "classamrex_1_1TimeIntegrator.html#a4d0707cf54102788e27bbd70e3d4e6c0":[3,0,0,252,19],
 "classamrex_1_1TimeIntegrator.html#a5aec68476188bb41118352fe8c2c947e":[3,0,0,252,0],
 "classamrex_1_1TimeIntegrator.html#a63b4a8514fe939f9639442f7ff8d527b":[3,0,0,252,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX58 =
 "classamrex_1_1XYPlotDataListLink.html#a9ae8cb01838a70159d4fc0443bf9ff14":[3,0,0,413,3],
 "classamrex_1_1XYPlotDataListLink.html#ad2c424b10d115a46d3aa576f9e08e1f7":[3,0,0,413,1],
 "classamrex_1_1XYPlotDataListLink.html#adcd3ff299e5e5dae315e50299729ff46":[3,0,0,413,0],
-"classamrex_1_1XYPlotDataListLink.html#ae8c16dcec1c3fa6651a2d328c61eb47c":[3,0,0,413,2]
+"classamrex_1_1XYPlotDataListLink.html#ae8c16dcec1c3fa6651a2d328c61eb47c":[3,0,0,413,2],
+"classamrex_1_1XYPlotDataListLink.html#aeca338f52ea471822af412f4169ad387":[3,0,0,413,5]
 };
