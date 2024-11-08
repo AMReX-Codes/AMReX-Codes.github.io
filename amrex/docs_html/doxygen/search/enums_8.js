@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kind_18708',['Kind',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70',1,'amrex::FFT']]]
+  ['kind_18701',['Kind',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70',1,'amrex::FFT']]]
 ];

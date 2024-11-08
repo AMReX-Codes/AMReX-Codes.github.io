@@ -777,7 +777,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    {</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <span class="keyword">auto</span>&amp; scan_tile_state = <span class="keyword">const_cast&lt;</span>ScanTileState&amp;<span class="keyword">&gt;</span>(tile_state);</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        <span class="keyword">auto</span>&amp; scan_bid = <span class="keyword">const_cast&lt;</span>OrderedBlockId&amp;<span class="keyword">&gt;</span>(ordered_block_id);</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> gid = blockIdx.x*blockDim.x + threadIdx.x;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> gid = blockIdx.x*nthreads + threadIdx.x;</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <span class="keywordflow">if</span> (gid == 0) { scan_bid.reset(); }</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        scan_tile_state.initialize_prefix(gid, nblocks);</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    });</div>
@@ -856,7 +856,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                                           rocprim::plus&lt;T&gt;());</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            }</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            <span class="keywordflow">if</span> (totalsum_p) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordflow">if</span> (iend == n &amp;&amp; threadIdx.x == blockDim.x-1) { <span class="comment">// last thread of last block</span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordflow">if</span> (iend == n &amp;&amp; threadIdx.x == nthreads-1) { <span class="comment">// last thread of last block</span></div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    T tsum = data[nelms_per_thread-1];</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                    <a class="code" href="AMReX__Extension_8H.html#aa0f4a2c9f3e72f1f692913e93372d318">AMREX_IF_CONSTEXPR</a>(is_exclusive) { tsum += last; }</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                    *totalsum_p = tsum;</div>
@@ -869,7 +869,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        BlockExchange().blocked_to_striped(data, data, temp_storage.exchange);</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nelms_per_thread; ++i) {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + i*blockDim.x + threadIdx.x;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + i*nthreads + threadIdx.x;</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> &lt; iend) { fout(<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, data[i]); }</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        }</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    });</div>
@@ -989,7 +989,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                BlockScan(temp_storage.scan_storeage.scan).InclusiveSum(data, data, prefix_op);</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            }</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <span class="keywordflow">if</span> (totalsum_p) {</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                <span class="keywordflow">if</span> (iend == n &amp;&amp; threadIdx.x == blockDim.x-1) { <span class="comment">// last thread of last block</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                <span class="keywordflow">if</span> (iend == n &amp;&amp; threadIdx.x == nthreads-1) { <span class="comment">// last thread of last block</span></div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                    T tsum = data[nelms_per_thread-1];</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                    <a class="code" href="AMReX__Extension_8H.html#aa0f4a2c9f3e72f1f692913e93372d318">AMREX_IF_CONSTEXPR</a>(is_exclusive) { tsum += last; }</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                    *totalsum_p = tsum;</div>
@@ -1002,7 +1002,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        BlockExchange(temp_storage.exchange).BlockedToStriped(data);</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
 <div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nelms_per_thread; ++i) {</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + i*blockDim.x + threadIdx.x;</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + i*nthreads + threadIdx.x;</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> &lt; iend) { fout(<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, data[i]); }</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;        }</div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    });</div>
@@ -1063,7 +1063,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    {</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        <span class="keywordtype">int</span> lane = threadIdx.x % <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        <span class="keywordtype">int</span> warp = threadIdx.x / <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        <span class="keywordtype">int</span> nwarps = blockDim.x / <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        <span class="keywordtype">int</span> nwarps = nthreads / <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160; </div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;        <a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html">amrex::Gpu::SharedMemory&lt;T&gt;</a> gsm;</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        T* shared = gsm.<a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">dataPtr</a>();</div>
@@ -1100,7 +1100,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        T sum_prev_chunk = 0; <span class="comment">// inclusive sum from previous chunks.</span></div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        T tmp_out[nchunks]; <span class="comment">// block-wide inclusive sum for chunks</span></div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ichunk = 0; ichunk &lt; nchunks; ++ichunk) {</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*blockDim.x;</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;            N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*nthreads;</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> &gt;= iend) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160; </div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;            <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> += threadIdx.x;</div>
@@ -1175,7 +1175,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160; </div>
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;        <span class="keywordflow">if</span> (virtual_block_id == 0) {</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ichunk = 0; ichunk &lt; nchunks; ++ichunk) {</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;                N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*blockDim.x + threadIdx.x;</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;                N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*nthreads + threadIdx.x;</div>
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> &gt;= iend) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;                fout(<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, tmp_out[ichunk]);</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> == n-1) {</div>
@@ -1237,7 +1237,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;            T exclusive_prefix = shared[0];</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160; </div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ichunk = 0; ichunk &lt; nchunks; ++ichunk) {</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*blockDim.x + threadIdx.x;</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                N <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = ibegin + ichunk*nthreads + threadIdx.x;</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> &gt;= iend) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;                T t = tmp_out[ichunk] + exclusive_prefix;</div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;                fout(<a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>, t);</div>

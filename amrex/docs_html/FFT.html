@@ -19,6 +19,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -166,9 +167,11 @@ object. Therefore, one should cache it for reuse if possible. Although
 </section>
 <section id="poisson-solver">
 <h1>Poisson Solver<a class="headerlink" href="#poisson-solver" title="Permalink to this heading"></a></h1>
-<p>AMReX provides FFT based Poisson solvers. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"></span></code> supports
-periodic (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="w"></span></code>), homogeneous Neumann
-(<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="w"></span></code>), and homogeneous Dirichlet
+<p>AMReX provides FFT based Poisson solvers. Here, Poisson’s equation is</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \phi = \rho.\]</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"></span></code> supports periodic (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span><span class="w"></span></code>),
+homogeneous Neumann (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span><span class="w"></span></code>), and homogeneous Dirichlet
 (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="w"></span></code>) boundaries using FFT. Below is an example of
 using the solver.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w"></span>
@@ -192,6 +195,23 @@ using the solver.</p>
 
 <span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"> </span><span class="n">fft_poisson</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">fft_bc</span><span class="p">);</span><span class="w"></span>
 <span class="n">fft_poisson</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span><span class="w"></span></code> is a 3D only solver that supports open
+boundaries. Its implementation utilizes <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">OpenBCSolver</span><span class="w"></span></code>, which can
+be used for implementing convolution based solvers with a user provided
+Green’s function. If users want to extend the open BC solver to 2D or other
+types of Green’s function, they could use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span><span class="w"></span></code> as an
+example. Below is an example of solving Poisson’s equation with open
+boundaries.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">soln</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// soln can be either nodal or cell-centered.</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(...);</span><span class="w">  </span><span class="c1">// rhs must have the same index type as soln.</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span><span class="c1">// ng can be non-zero, if we want to compute potential</span>
+<span class="w">              </span><span class="c1">// outside the domain.</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span><span class="w"> </span><span class="nf">openbc_solver</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">soln</span><span class="p">.</span><span class="n">ixType</span><span class="p">(),</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="n">ng</span><span class="p">));</span><span class="w"></span>
+<span class="n">openbc_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span><span class="w"></span></code> is a 3D only solver that supports periodic

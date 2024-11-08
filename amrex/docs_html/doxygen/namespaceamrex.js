@@ -1498,7 +1498,7 @@ var namespaceamrex =
     [ "DeallocateRandomSeedDevArray", "namespaceamrex.html#abce0125a244f443854b1c4a2709c5990", null ],
     [ "decomp_chol_np10", "namespaceamrex.html#af8df67014fdc9e1eaa206102b115bfd3", null ],
     [ "decomp_chol_np6", "namespaceamrex.html#a32d409e89c5f589f2e729130898b6d8b", null ],
-    [ "decompose", "namespaceamrex.html#a38c542756e60808ad461a8a429cb6aff", null ],
+    [ "decompose", "namespaceamrex.html#ac7f7fea917bba027d5b81f23003b7c56", null ],
     [ "DefaultGeometry", "namespaceamrex.html#acb7e4e52bb38ce342af7e2edf41293be", null ],
     [ "demangle", "namespaceamrex.html#ae6ff944334fa82f4315eb44b3dd08dae", null ],
     [ "diagShift", "namespaceamrex.html#a93a8be24c79571d43593ab6b4cb1b9a9", null ],
