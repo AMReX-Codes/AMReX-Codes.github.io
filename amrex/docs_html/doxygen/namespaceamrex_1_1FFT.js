@@ -22,6 +22,10 @@ var namespaceamrex_1_1FFT =
       [ "both", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f", null ],
       [ "none", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8", null ]
     ] ],
+    [ "DomainStrategy", "namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845", [
+      [ "slab", "namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387", null ],
+      [ "pencil", "namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba", null ]
+    ] ],
     [ "Kind", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70", [
       [ "none", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
       [ "r2c_f", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926", null ],

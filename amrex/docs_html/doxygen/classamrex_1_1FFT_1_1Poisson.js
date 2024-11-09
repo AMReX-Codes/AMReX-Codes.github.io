@@ -5,5 +5,6 @@ var classamrex_1_1FFT_1_1Poisson =
     [ "solve", "classamrex_1_1FFT_1_1Poisson.html#abf154307aa5c83ed024f730adafda922", null ],
     [ "m_bc", "classamrex_1_1FFT_1_1Poisson.html#a877e3e72db72d557255009217bc15862", null ],
     [ "m_geom", "classamrex_1_1FFT_1_1Poisson.html#a74d60bcb276f03fdbb5aa5ac87fff1af", null ],
-    [ "m_r2x", "classamrex_1_1FFT_1_1Poisson.html#a67ce761371c0a912fb4c650dd313e842", null ]
+    [ "m_r2c", "classamrex_1_1FFT_1_1Poisson.html#ac887c105db5790f11b0ec57d81e80763", null ],
+    [ "m_r2x", "classamrex_1_1FFT_1_1Poisson.html#a70ea6eea812e4bb1bf4a56938604916f", null ]
 ];

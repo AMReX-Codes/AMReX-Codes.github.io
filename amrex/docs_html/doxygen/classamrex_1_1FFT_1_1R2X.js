@@ -2,7 +2,7 @@ var classamrex_1_1FFT_1_1R2X =
 [
     [ "cMF", "classamrex_1_1FFT_1_1R2X.html#a7e4e49f640cc8ed6a25bd508ea203b9b", null ],
     [ "MF", "classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799", null ],
-    [ "R2X", "classamrex_1_1FFT_1_1R2X.html#ae67cf25ecfad7bf6b9add123deedbdd5", null ],
+    [ "R2X", "classamrex_1_1FFT_1_1R2X.html#aa90769e6040397e5961a9b5b0f427ff5", null ],
     [ "~R2X", "classamrex_1_1FFT_1_1R2X.html#a20d96f9f255e81d0f91fe81a0c941993", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#aa593960df39fbf225ed9adf5fd0bf695", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#a7f68b261a7ff4df360a4b2376dd39703", null ],
@@ -42,6 +42,7 @@ var classamrex_1_1FFT_1_1R2X =
     [ "m_fft_fwd_x", "classamrex_1_1FFT_1_1R2X.html#aa6d454efba2b7a022e543e25619464e4", null ],
     [ "m_fft_fwd_y", "classamrex_1_1FFT_1_1R2X.html#a50404912b51cc6757b53b31c96671448", null ],
     [ "m_fft_fwd_z", "classamrex_1_1FFT_1_1R2X.html#ac3e038154cb7e2d984a37a8832f17cd5", null ],
+    [ "m_info", "classamrex_1_1FFT_1_1R2X.html#a3489fa8aaaef3759125b166421ca9688", null ],
     [ "m_rx", "classamrex_1_1FFT_1_1R2X.html#a60899f9c10b3016144b21d9a53ff9068", null ],
     [ "m_ry", "classamrex_1_1FFT_1_1R2X.html#a1bf4368cd11c3a846b61f8f155699618", null ],
     [ "m_rz", "classamrex_1_1FFT_1_1R2X.html#a014c83c9ba3183db8501b44c93023255", null ]

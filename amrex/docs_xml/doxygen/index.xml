@@ -5930,7 +5930,9 @@
   </compound>
   <compound refid="structamrex_1_1FFT_1_1Info" kind="struct"><name>amrex::FFT::Info</name>
     <member refid="structamrex_1_1FFT_1_1Info_1a7b525db9e23d007bf069ca7a2e420523" kind="variable"><name>batch_mode</name></member>
+    <member refid="structamrex_1_1FFT_1_1Info_1ad5f4264ae4f5dad78b49e35d187156c7" kind="variable"><name>nprocs</name></member>
     <member refid="structamrex_1_1FFT_1_1Info_1a82ac8440a8e838f50ec0e950c1747f77" kind="function"><name>setBatchMode</name></member>
+    <member refid="structamrex_1_1FFT_1_1Info_1af849ec481362b01110c9cd97e5ba4c75" kind="function"><name>setNumProcs</name></member>
   </compound>
   <compound refid="structamrex_1_1Any_1_1innards" kind="struct"><name>amrex::Any::innards</name>
     <member refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" kind="variable"><name>m_mf</name></member>
@@ -8622,12 +8624,15 @@
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a198bbf163fe0dc2eea190a0892e14e94" kind="typedef"><name>MF</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a8d98406d48ab4df7be623d138af4fb05" kind="typedef"><name>cMF</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a8961dd957a931fed1d7d5094f0cf833c" kind="variable"><name>m_domain</name></member>
+    <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a0762dc5c169f42d109d67d5f6fea70d2" kind="variable"><name>m_info</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a3774832791f31a1b764c1ea09725940b" kind="variable"><name>m_r2c</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a12b1c457c83f11197cbb28013845a0d2" kind="variable"><name>m_G_fft</name></member>
-    <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a83f6d4d0e1d53c77690c1d2a5504286e" kind="function"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1aaab752813163c505fbd131f18d1b5c78" kind="variable"><name>m_r2c_green</name></member>
+    <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1ab2103845433bc9ebfa7dd6ab40a48fad" kind="function"><name>OpenBCSolver</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a4473041097a7c465260bf1c28950457b" kind="function"><name>setGreensFunction</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1a2c7e99165d9c0407123ed74b333a3568" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1ae717df8cd0a4c8b5831f4bee098875f9" kind="function"><name>Domain</name></member>
+    <member refid="classamrex_1_1FFT_1_1OpenBCSolver_1aac4281b54a4e4e6fd41777af349fe74b" kind="function"><name>make_grown_domain</name></member>
   </compound>
   <compound refid="classamrex_1_1OpenBCSolver" kind="class"><name>amrex::OpenBCSolver</name>
     <member refid="classamrex_1_1OpenBCSolver_1a0ca647ecd06b85d8b1ae579ae02895d5" kind="variable"><name>m_verbose</name></member>
@@ -10006,7 +10011,7 @@
     <member refid="structamrex_1_1FFT_1_1Plan_1aa7b9f4e5058b59101009f12ee378106b" kind="variable"><name>pb</name></member>
     <member refid="structamrex_1_1FFT_1_1Plan_1a7b72606945fc2cad12394ca702e06dcf" kind="variable"><name>work_size</name></member>
     <member refid="structamrex_1_1FFT_1_1Plan_1a40a75d3378402a322324040d4e87d1cd" kind="function"><name>destroy</name></member>
-    <member refid="structamrex_1_1FFT_1_1Plan_1a6dc1d3cf56d3696c8b9aa89539655efe" kind="function"><name>init_r2c</name></member>
+    <member refid="structamrex_1_1FFT_1_1Plan_1a1ea03e72ce621749746c17bf77ce32d5" kind="function"><name>init_r2c</name></member>
     <member refid="structamrex_1_1FFT_1_1Plan_1afd82f8ec70a9e827145a72ea7189280d" kind="function"><name>init_c2c</name></member>
     <member refid="structamrex_1_1FFT_1_1Plan_1a7a5c175b18e78fc83a2d368e2c26ec4a" kind="function"><name>get_r2r_kind</name></member>
     <member refid="structamrex_1_1FFT_1_1Plan_1ae52ff37c3e0c286e399ccba42f9d0af0" kind="function"><name>init_r2r</name></member>
@@ -10179,7 +10184,8 @@
   <compound refid="classamrex_1_1FFT_1_1Poisson" kind="class"><name>amrex::FFT::Poisson</name>
     <member refid="classamrex_1_1FFT_1_1Poisson_1a74d60bcb276f03fdbb5aa5ac87fff1af" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1FFT_1_1Poisson_1a877e3e72db72d557255009217bc15862" kind="variable"><name>m_bc</name></member>
-    <member refid="classamrex_1_1FFT_1_1Poisson_1a67ce761371c0a912fb4c650dd313e842" kind="variable"><name>m_r2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1Poisson_1a70ea6eea812e4bb1bf4a56938604916f" kind="variable"><name>m_r2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1Poisson_1ac887c105db5790f11b0ec57d81e80763" kind="variable"><name>m_r2c</name></member>
     <member refid="classamrex_1_1FFT_1_1Poisson_1a6940278e517f9ee27e6af0836e6ce9bc" kind="function"><name>Poisson</name></member>
     <member refid="classamrex_1_1FFT_1_1Poisson_1a91c77091e895ff146f47e1885ae96236" kind="function"><name>Poisson</name></member>
     <member refid="classamrex_1_1FFT_1_1Poisson_1abf154307aa5c83ed024f730adafda922" kind="function"><name>solve</name></member>
@@ -10335,51 +10341,57 @@
     <member refid="structamrex_1_1algoim_1_1QuadratureRule_1a93e5266e3de3f1d636f081e118526ea2" kind="function"><name>evalIntegrand</name></member>
   </compound>
   <compound refid="classamrex_1_1FFT_1_1R2C" kind="class"><name>amrex::FFT::R2C</name>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kind="typedef"><name>MF</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kind="typedef"><name>cMF</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aa078479f5563108a286fc9f2c34589cb" kind="typedef"><name>MF</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ad56d4d40fdb0248b81b76e3a7658e18b" kind="typedef"><name>cMF</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1afd3d509858e88e5f3a1efe7cb494baf4" kind="friend"><name>OpenBCSolver</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a78cddf3146e625a91a5dc10bc5332ad1" kind="variable"><name>m_fft_fwd_x</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a81259ebdf85454dd36d69ac5b8651464" kind="variable"><name>m_fft_bwd_x</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1af78cc401304f9754401ffa0341d76c9e" kind="variable"><name>m_fft_fwd_y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a8ffa52eeedd78ef92a1912ee19af49d8" kind="variable"><name>m_fft_bwd_y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a36b270190a680b05ff06132fef3c9e56" kind="variable"><name>m_fft_fwd_z</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a3c1daadd2ea94f4613bb02bcfe7c9859" kind="variable"><name>m_fft_bwd_z</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a918477cde28824f702acc29c93426141" kind="variable"><name>m_cmd_x2y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ad3a1611b1ca933d17e99ac17cf88ea62" kind="variable"><name>m_cmd_y2x</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ab75dc0f07a97bcf1aa07bf867036d7c6" kind="variable"><name>m_cmd_y2z</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a82bc17cf6f48651e7cbdedb5d828c5af" kind="variable"><name>m_cmd_z2y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ae171b394ef7e5387eb9f7ae417bba2f4" kind="variable"><name>m_dtos_x2y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a9c2aab94da1f64fb53a37dfc80efc592" kind="variable"><name>m_dtos_y2x</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a04530da756c11fca01063d574565cd69" kind="variable"><name>m_dtos_y2z</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a0b83890e9dcc1a178bc7efddbda05595" kind="variable"><name>m_dtos_z2y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a550a73dbe3b3401569be56cbe7fb1366" kind="variable"><name>m_rx</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a432916244b0cdaf0faaf4a9307373551" kind="variable"><name>m_cx</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a142653e23cb3ff5a6d6b78ce9fabbc11" kind="variable"><name>m_cy</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aa5b77ddebb8cd7ca2198aa74a752171d" kind="variable"><name>m_cz</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a14b89d6d89be4ada3edce8ac44e6606a" kind="variable"><name>m_data_rx_cy</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a2c30dd5c16b49f41aa21f3f88415f79d" kind="variable"><name>m_data_cx_cz</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ab61c759c9b1dc4f010f36c3ea5f52a1f" kind="variable"><name>m_real_domain</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a08e5528a477e63f9bd0d29d5bf27a989" kind="variable"><name>m_spectral_domain_x</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a5858e781b78f84455eb1ee4bc4a8d1cc" kind="variable"><name>m_spectral_domain_y</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a0feaf7887ae84686028a8eed6ceb0625" kind="variable"><name>m_spectral_domain_z</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a66718d5c702b86a495b1355b4800a234" kind="variable"><name>m_info</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aedae67822f8809e38b2a7c5378efb8bf" kind="function"><name>R2C</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ad45dde36a7f97978a78fc37119b6f4a4" kind="function"><name>~R2C</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a7a7c7479e45148841ed112fa7bd246d5" kind="function"><name>R2C</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aa7b45fd640aae7eb89f38cd3516052f4" kind="function"><name>R2C</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a63f4e11b4c00677537f4baf17bf75c61" kind="function"><name>operator=</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a9f1023c20a7778b3ffa972c1198a6b91" kind="function"><name>operator=</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aed8fb73920e06ef16ab6423d94095e3d" kind="function"><name>forwardThenBackward</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1aaf3df431ab47c82b617db0bbaa3df065" kind="function"><name>forward</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a4480edfaddeb5887f3f342cf7dbc4ab0" kind="function"><name>forward</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1af6207a324a63a3fb280fd7cd92654608" kind="function"><name>backward</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ad18a94fe497cd36ca1a79664087b1137" kind="function"><name>backward</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ab005c3b824df79da71c729d1d068f6e3" kind="function"><name>getSpectralData</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a4ed4bec5d0b509eafe6ed59243f9b147" kind="function"><name>getSpectralDataLayout</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a8474794974265fa33e66cc7f6a964fcb" kind="function"><name>post_forward_doit</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a7fa4d604aa9263da0656e2e516c71c6f" kind="function"><name>getSpectralData</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a76ef813837042b3f806d603e0ccf0226" kind="function"><name>make_c2c_plans</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ad11ed7861a2f30959c20b1359938d382" kind="function"><name>backward_doit</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a3e8a5fa22798bc7055e23c03d8ad9e58" kind="variable"><name>m_fft_fwd_x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a56cfcb34e692ac749aa2afb45c54873c" kind="variable"><name>m_fft_bwd_x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aa265126e8170d6036d1b58826a975d95" kind="variable"><name>m_fft_fwd_y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a18c21ee0e1f5fd623815cd8827bac072" kind="variable"><name>m_fft_bwd_y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ac75a018d4bd06f5592003700945af2f2" kind="variable"><name>m_fft_fwd_z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a6b7ffff2c4ecb6d1b5e86fc5b19cd10f" kind="variable"><name>m_fft_bwd_z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a4e458acb1274d2fc4a8db2d1a7c544b1" kind="variable"><name>m_cmd_x2y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aa480de56fa85818fe4e644e37c1c27f5" kind="variable"><name>m_cmd_y2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a976332adaab397631e96f7f279ea4064" kind="variable"><name>m_cmd_y2z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a54542dbdd142352d554f0314947c8ecf" kind="variable"><name>m_cmd_z2y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1af44d954790f7199a839117d19f9c59a7" kind="variable"><name>m_cmd_x2z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a9c45539a48cc18ef08c9bf2c75b5bc5e" kind="variable"><name>m_cmd_z2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a13a17b3574521d8bba67a1f96d0d3834" kind="variable"><name>m_dtos_x2y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ae5725df08a907d5837a6e38b285edac2" kind="variable"><name>m_dtos_y2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a4a5d878dde86135d2dfc69795e58a9b2" kind="variable"><name>m_dtos_y2z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1acbf7f80d9b889ecc188c910634bb85f0" kind="variable"><name>m_dtos_z2y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a0b640983961d6ee3de50af47956bd472" kind="variable"><name>m_dtos_x2z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a7f91644663dfc7cdf2b82c06e1dbd164" kind="variable"><name>m_dtos_z2x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1acfc80c1525302f1b84118071676e0ef6" kind="variable"><name>m_rx</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a7416e69585877283b79273ad1780c6d7" kind="variable"><name>m_cx</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ae87f0e1dc9a56aa10374db6ff32bf982" kind="variable"><name>m_cy</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a6458b98d0175ae86b2352388541c72a1" kind="variable"><name>m_cz</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ae6d4f256e3f702c45e28d7a6d7b9699a" kind="variable"><name>m_data_1</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aca7da24dcb68f1019dcba1064fa90c55" kind="variable"><name>m_data_2</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a20d4f09c9c3a568d8a8a3b3c55094706" kind="variable"><name>m_real_domain</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ad4a0ae04ab3f733030acbe23e267334e" kind="variable"><name>m_spectral_domain_x</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a7525c698494154a2b82ceb38f728984b" kind="variable"><name>m_spectral_domain_y</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a99d977d07c448dcc222e6ee291b1a1f6" kind="variable"><name>m_spectral_domain_z</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a8a77fbe2b8f2ac15afca8d615d4d81ff" kind="variable"><name>m_info</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a72cb54c1b686bcab0a8436dafd9167aa" kind="variable"><name>m_slab_decomp</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aa36162bdb5e89c7dd8fcbb54d669c952" kind="function"><name>R2C</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1aed73adc1ab4d3489b8c3eced0ed7a6e0" kind="function"><name>~R2C</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a0336152a901505bb39e4e41ecef5ee35" kind="function"><name>R2C</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a5c9d8e7b1937f8543b2e0ad889980dfd" kind="function"><name>R2C</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1acf1ae92475a5c6273f3e52c8e0a82593" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a556d3956e146ae16242feb1a64afdccf" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1afc918ae6250fc9b61e18463a0f4c6e25" kind="function"><name>forwardThenBackward</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1af2ab788ee9323ca2fcc29faed326c1e9" kind="function"><name>forward</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a60149ed3e177d55569d1ad4becfe0648" kind="function"><name>forward</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a7473313a03c345dbebba617208e567b7" kind="function"><name>backward</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1af125aee2864013003fea6c9c8ec57d65" kind="function"><name>backward</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a04cc7a979415fd93a0f97ffe2a469638" kind="function"><name>scalingFactor</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a09c3cd786098785470197484da6d65c8" kind="function"><name>getSpectralData</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a8148fe0560b7de83296159d75b9ad396" kind="function"><name>getSpectralDataLayout</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ab18f4105f6b6342d1490b85ee7f949f5" kind="function"><name>post_forward_doit</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a6dcbfe3322a919097f59b18802134626" kind="function"><name>getSpectralData</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a1c9b286f2c655d17b48d8d1e6a6b264f" kind="function"><name>make_c2c_plans</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1ad27b7957b1cbbce2fa64cbff8dab70dc" kind="function"><name>backward_doit</name></member>
   </compound>
   <compound refid="classamrex_1_1FFT_1_1R2X" kind="class"><name>amrex::FFT::R2X</name>
     <member refid="classamrex_1_1FFT_1_1R2X_1a1ad8b2010b2dd7e6107786d468665799" kind="typedef"><name>MF</name></member>
@@ -10418,7 +10430,8 @@
     <member refid="classamrex_1_1FFT_1_1R2X_1afa37355cc0ab0027d82b0cd99794400b" kind="variable"><name>m_dom_cx</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a7e554d7041c0aebed0fa949fcb1bead0" kind="variable"><name>m_dom_cy</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a1d2511e2ef30f244f52f60277d05684e" kind="variable"><name>m_dom_cz</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2X_1ae67cf25ecfad7bf6b9add123deedbdd5" kind="function"><name>R2X</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2X_1a3489fa8aaaef3759125b166421ca9688" kind="variable"><name>m_info</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2X_1aa90769e6040397e5961a9b5b0f427ff5" kind="function"><name>R2X</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a20d96f9f255e81d0f91fe81a0c941993" kind="function"><name>~R2X</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1aa593960df39fbf225ed9adf5fd0bf695" kind="function"><name>R2X</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a7f68b261a7ff4df360a4b2376dd39703" kind="function"><name>R2X</name></member>
@@ -14633,6 +14646,9 @@
     <member refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502" kind="enumvalue"><name>backward</name></member>
     <member refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f" kind="enumvalue"><name>both</name></member>
     <member refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
+    <member refid="namespaceamrex_1_1FFT_1a5e1db35696b96f6c8dcd2308027ce845" kind="enum"><name>DomainStrategy</name></member>
+    <member refid="namespaceamrex_1_1FFT_1a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387" kind="enumvalue"><name>slab</name></member>
+    <member refid="namespaceamrex_1_1FFT_1a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba" kind="enumvalue"><name>pencil</name></member>
     <member refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" kind="enum"><name>Kind</name></member>
     <member refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
     <member refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70a4f386fa3c431c45fe1b2c7c254cbb926" kind="enumvalue"><name>r2c_f</name></member>

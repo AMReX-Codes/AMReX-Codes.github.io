@@ -10,7 +10,7 @@ var structamrex_1_1FFT_1_1Plan =
     [ "free_scratch_space", "structamrex_1_1FFT_1_1Plan.html#a77c84431716c58741f7938208b075136", null ],
     [ "get_r2r_kind", "structamrex_1_1FFT_1_1Plan.html#a7a5c175b18e78fc83a2d368e2c26ec4a", null ],
     [ "init_c2c", "structamrex_1_1FFT_1_1Plan.html#afd82f8ec70a9e827145a72ea7189280d", null ],
-    [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#a6dc1d3cf56d3696c8b9aa89539655efe", null ],
+    [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#a1ea03e72ce621749746c17bf77ce32d5", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e", null ],
     [ "pack_r2r_buffer", "structamrex_1_1FFT_1_1Plan.html#a6290c31392b5e57ad4487d10ba742a2a", null ],

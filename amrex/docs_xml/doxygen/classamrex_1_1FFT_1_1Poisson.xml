@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="39" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="39" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="54" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1FFT_1_1Poisson_1a877e3e72db72d557255009217bc15862" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt;</type>
@@ -34,11 +34,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="40" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="40" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="55" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="55" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1Poisson_1a67ce761371c0a912fb4c650dd313e842" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1FFT_1_1R2X" kindref="compound">R2X</ref>&lt; typename MF::value_type &gt;</type>
-        <definition>R2X&lt;typename MF::value_type&gt; amrex::FFT::Poisson&lt; MF &gt;::m_r2x</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1Poisson_1a70ea6eea812e4bb1bf4a56938604916f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1FFT_1_1R2X" kindref="compound">R2X</ref>&lt; typename MF::value_type &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;R2X&lt;typename MF::value_type&gt; &gt; amrex::FFT::Poisson&lt; MF &gt;::m_r2x</definition>
         <argsstring></argsstring>
         <name>m_r2x</name>
         <briefdescription>
@@ -47,7 +47,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="41" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="41" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="56" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1Poisson_1ac887c105db5790f11b0ec57d81e80763" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref>&lt; typename MF::value_type &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;R2C&lt;typename MF::value_type&gt; &gt; amrex::FFT::Poisson&lt; MF &gt;::m_r2c</definition>
+        <argsstring></argsstring>
+        <name>m_r2c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="57" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="57" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -80,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="20" bodyend="23"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="20" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1FFT_1_1Poisson_1a91c77091e895ff146f47e1885ae96236" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -107,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="26" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="26" bodyend="34"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="38" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="38" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1FFT_1_1Poisson_1abf154307aa5c83ed024f730adafda922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -128,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="98" bodyend="151"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="51" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="114" bodyend="172"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -137,70 +150,76 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
+      <node id="9">
+        <label>std::unique_ptr&lt; amrex::FFT::R2X&lt; typename MF::value_type &gt; &gt;</label>
+      </node>
+      <node id="5">
         <label>Real</label>
       </node>
       <node id="1">
         <label>amrex::FFT::Poisson&lt; MF &gt;</label>
         <link refid="classamrex_1_1FFT_1_1Poisson"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>m_r2c</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>m_r2x</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="2">
+        <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; typename MF::value_type &gt; &gt;</label>
+      </node>
+      <node id="8">
         <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="6">
+      <node id="7">
         <label>amrex::RealBox</label>
         <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="8">
-        <label>amrex::FFT::R2X&lt; typename MF::value_type &gt;</label>
-        <link refid="classamrex_1_1FFT_1_1R2X"/>
-      </node>
-      <node id="3">
+      <node id="4">
         <label>amrex::CoordSys</label>
         <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>dx</edgelabel>
           <edgelabel>inv_dx</edgelabel>
           <edgelabel>offset</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>amrex::GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
       </node>
-      <node id="2">
+      <node id="3">
         <label>amrex::Geometry</label>
         <link refid="classamrex_1_1Geometry"/>
-        <childnode refid="3" relation="public-inheritance">
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>roundoff_hi</edgelabel>
           <edgelabel>roundoff_lo</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>prob_domain</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="16" bodyend="42"/>
+    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Poisson.H" bodystart="16" bodyend="58"/>
     <listofallmembers>
       <member refid="classamrex_1_1FFT_1_1Poisson_1a877e3e72db72d557255009217bc15862" prot="private" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>m_bc</name></member>
       <member refid="classamrex_1_1FFT_1_1Poisson_1a74d60bcb276f03fdbb5aa5ac87fff1af" prot="private" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>m_geom</name></member>
-      <member refid="classamrex_1_1FFT_1_1Poisson_1a67ce761371c0a912fb4c650dd313e842" prot="private" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>m_r2x</name></member>
+      <member refid="classamrex_1_1FFT_1_1Poisson_1ac887c105db5790f11b0ec57d81e80763" prot="private" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>m_r2c</name></member>
+      <member refid="classamrex_1_1FFT_1_1Poisson_1a70ea6eea812e4bb1bf4a56938604916f" prot="private" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>m_r2x</name></member>
       <member refid="classamrex_1_1FFT_1_1Poisson_1a6940278e517f9ee27e6af0836e6ce9bc" prot="public" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>Poisson</name></member>
       <member refid="classamrex_1_1FFT_1_1Poisson_1a91c77091e895ff146f47e1885ae96236" prot="public" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>Poisson</name></member>
       <member refid="classamrex_1_1FFT_1_1Poisson_1abf154307aa5c83ed024f730adafda922" prot="public" virt="non-virtual"><scope>amrex::FFT::Poisson</scope><name>solve</name></member>
