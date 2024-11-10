@@ -7,13 +7,16 @@ var structamrex_1_1FFT_1_1Plan =
     [ "compute_r2c", "structamrex_1_1FFT_1_1Plan.html#ad4f3391872b14cacc0e2e3cca2f5a548", null ],
     [ "compute_r2r", "structamrex_1_1FFT_1_1Plan.html#ac01681d91fc3c3b78d3b0bc83f728422", null ],
     [ "destroy", "structamrex_1_1FFT_1_1Plan.html#a40a75d3378402a322324040d4e87d1cd", null ],
+    [ "destroy_vendor_plan", "structamrex_1_1FFT_1_1Plan.html#a791bb445961d41e01bb43afa0bd07b3c", null ],
     [ "free_scratch_space", "structamrex_1_1FFT_1_1Plan.html#a77c84431716c58741f7938208b075136", null ],
     [ "get_r2r_kind", "structamrex_1_1FFT_1_1Plan.html#a7a5c175b18e78fc83a2d368e2c26ec4a", null ],
     [ "init_c2c", "structamrex_1_1FFT_1_1Plan.html#afd82f8ec70a9e827145a72ea7189280d", null ],
     [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#a1ea03e72ce621749746c17bf77ce32d5", null ],
+    [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#a997e4f63840251adf2338f692c71c933", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e", null ],
     [ "pack_r2r_buffer", "structamrex_1_1FFT_1_1Plan.html#a6290c31392b5e57ad4487d10ba742a2a", null ],
+    [ "set_ptrs", "structamrex_1_1FFT_1_1Plan.html#ae0328039c31339c8e6d522bafa448c43", null ],
     [ "unpack_r2r_buffer", "structamrex_1_1FFT_1_1Plan.html#a28a8099234f1d2adf12743efe3efff7e", null ],
     [ "defined", "structamrex_1_1FFT_1_1Plan.html#adcb6a055c0d510ef07b9dbb7da1621a4", null ],
     [ "defined2", "structamrex_1_1FFT_1_1Plan.html#a4fccdeff1f411720917139f2bb045197", null ],
@@ -24,6 +27,5 @@ var structamrex_1_1FFT_1_1Plan =
     [ "pf", "structamrex_1_1FFT_1_1Plan.html#a1345bafb389a68bbb0569712f44a25d7", null ],
     [ "plan", "structamrex_1_1FFT_1_1Plan.html#ad4f253204db5955887d78cf793f6d02f", null ],
     [ "plan2", "structamrex_1_1FFT_1_1Plan.html#a30af3871ac8a1d0c955e492de9c3b891", null ],
-    [ "r2r_data_is_complex", "structamrex_1_1FFT_1_1Plan.html#acb5c971f2fa4d4d4d244d65f2df703ce", null ],
-    [ "work_size", "structamrex_1_1FFT_1_1Plan.html#a7b72606945fc2cad12394ca702e06dcf", null ]
+    [ "r2r_data_is_complex", "structamrex_1_1FFT_1_1Plan.html#acb5c971f2fa4d4d4d244d65f2df703ce", null ]
 ];

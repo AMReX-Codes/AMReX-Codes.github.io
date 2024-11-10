@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H.html',''); initR
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -119,6 +120,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H.html',''); initR
 <code>#include &lt;complex&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
 </div>
@@ -147,6 +149,15 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamrex_1_1FFT_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html">amrex::FFT::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a07ebd4aab8904819a3bbc7009e06ce97"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a07ebd4aab8904819a3bbc7009e06ce97">amrex::FFT::Key</a> = std::tuple&lt; IntVectND&lt; 3 &gt;, Direction, Kind &gt;</td></tr>
+<tr class="separator:a07ebd4aab8904819a3bbc7009e06ce97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fad3db3b9fe3b85174dc3a4ba8330e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a65fad3db3b9fe3b85174dc3a4ba8330e">amrex::FFT::PlanD</a> = typename Plan&lt; double &gt;::VendorPlan</td></tr>
+<tr class="separator:a65fad3db3b9fe3b85174dc3a4ba8330e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2fe5e29b662f9d24d3a4b769acde11"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a5e2fe5e29b662f9d24d3a4b769acde11">amrex::FFT::PlanF</a> = typename Plan&lt; float &gt;::VendorPlan</td></tr>
+<tr class="separator:a5e2fe5e29b662f9d24d3a4b769acde11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -182,6 +193,14 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a5f62bdef4ab3baa40ccac7c6ab58a4d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a5f62bdef4ab3baa40ccac7c6ab58a4d1">amrex::FFT::AMREX_ENUM</a> (Boundary, periodic, even, odd)</td></tr>
 <tr class="separator:a5f62bdef4ab3baa40ccac7c6ab58a4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4353cee9c5e67d665ae0ce48d26a16"><td class="memItemLeft" align="right" valign="top">PlanD *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#aef4353cee9c5e67d665ae0ce48d26a16">amrex::FFT::get_vendor_plan_d</a> (Key const &amp;key)</td></tr>
+<tr class="separator:aef4353cee9c5e67d665ae0ce48d26a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9840e2620314d60691e6438e5b8bde3"><td class="memItemLeft" align="right" valign="top">PlanF *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#ab9840e2620314d60691e6438e5b8bde3">amrex::FFT::get_vendor_plan_f</a> (Key const &amp;key)</td></tr>
+<tr class="separator:ab9840e2620314d60691e6438e5b8bde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb9d5c30fd6357eb758299f3abd61d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a6cb9d5c30fd6357eb758299f3abd61d2">amrex::FFT::add_vendor_plan_d</a> (Key const &amp;key, PlanD plan)</td></tr>
+<tr class="separator:a6cb9d5c30fd6357eb758299f3abd61d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e01f27497fe7be2f0826c2d2aaa40e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT.html#a59e01f27497fe7be2f0826c2d2aaa40e">amrex::FFT::add_vendor_plan_f</a> (Key const &amp;key, PlanF plan)</td></tr>
+<tr class="separator:a59e01f27497fe7be2f0826c2d2aaa40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40f1092f78a0a8f53357a35ddeab89c"><td class="memItemLeft" align="right" valign="top">DistributionMapping&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c">amrex::FFT::detail::make_iota_distromap</a> (Long n)</td></tr>
 <tr class="separator:ae40f1092f78a0a8f53357a35ddeab89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ade0d84620e8faa51f7bac69806a0d8"><td class="memTemplParams" colspan="2">template&lt;typename FA &gt; </td></tr>

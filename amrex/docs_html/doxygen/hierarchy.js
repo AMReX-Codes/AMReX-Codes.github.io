@@ -710,6 +710,7 @@ var hierarchy =
     [ "amrex::LinOpEnumType", "structamrex_1_1LinOpEnumType.html", null ],
     [ "amrex::DistributionMapping::LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", null ],
     [ "amrex::DistributionMapping::LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", null ],
+    [ "amrex::FFT::LocalR2C< T, D, M >", "classamrex_1_1FFT_1_1LocalR2C.html", null ],
     [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", null ],
     [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", null ],
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", null ],

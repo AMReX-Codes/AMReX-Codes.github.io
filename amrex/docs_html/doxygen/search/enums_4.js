@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ebsupport_18725',['EBSupport',['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc',1,'amrex']]],
-  ['errortype_18726',['ErrorType',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872d',1,'amrex::ErrorRec']]]
+  ['ebsupport_18797',['EBSupport',['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc',1,'amrex']]],
+  ['errortype_18798',['ErrorType',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872d',1,'amrex::ErrorRec']]]
 ];

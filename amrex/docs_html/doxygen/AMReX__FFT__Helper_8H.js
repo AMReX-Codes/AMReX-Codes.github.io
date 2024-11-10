@@ -6,6 +6,9 @@ var AMReX__FFT__Helper_8H =
     [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ],
     [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
     [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
+    [ "Key", "AMReX__FFT__Helper_8H.html#a07ebd4aab8904819a3bbc7009e06ce97", null ],
+    [ "PlanD", "AMReX__FFT__Helper_8H.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
+    [ "PlanF", "AMReX__FFT__Helper_8H.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],
     [ "Direction", "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0", [
       [ "forward", "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8", null ],
       [ "backward", "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502", null ],
@@ -29,8 +32,12 @@ var AMReX__FFT__Helper_8H =
       [ "r2r_eo", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
+    [ "add_vendor_plan_d", "AMReX__FFT__Helper_8H.html#a6cb9d5c30fd6357eb758299f3abd61d2", null ],
+    [ "add_vendor_plan_f", "AMReX__FFT__Helper_8H.html#a59e01f27497fe7be2f0826c2d2aaa40e", null ],
     [ "AMREX_ENUM", "AMReX__FFT__Helper_8H.html#a5f62bdef4ab3baa40ccac7c6ab58a4d1", null ],
     [ "get_fab", "AMReX__FFT__Helper_8H.html#a1ade0d84620e8faa51f7bac69806a0d8", null ],
+    [ "get_vendor_plan_d", "AMReX__FFT__Helper_8H.html#aef4353cee9c5e67d665ae0ce48d26a16", null ],
+    [ "get_vendor_plan_f", "AMReX__FFT__Helper_8H.html#ab9840e2620314d60691e6438e5b8bde3", null ],
     [ "make_iota_distromap", "AMReX__FFT__Helper_8H.html#ae40f1092f78a0a8f53357a35ddeab89c", null ],
     [ "make_mfs_share", "AMReX__FFT__Helper_8H.html#a6dca0b1e5eace20e02c83566c93a69b1", null ]
 ];

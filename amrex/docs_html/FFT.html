@@ -67,6 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">FFT::R2C Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fft-localr2c-class">FFT::LocalR2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#poisson-solver">Poisson Solver</a></li>
 </ul>
 </li>
@@ -112,18 +113,17 @@
   <section id="fft-r2c-class">
 <span id="sec-fft-r2c"></span><h1>FFT::R2C Class<a class="headerlink" href="#fft-r2c-class" title="Permalink to this heading"></a></h1>
 <p>Class template <cite>FFT::R2C</cite> supports discrete Fourier transforms between real
-and complex data. The name R2C indicates that the forward transform converts
-real data to complex data, while the backward transform converts complex
-data to real data. It should be noted that both directions of transformation
-are supported, not just from real to complex.</p>
+and complex data across MPI processes. The name R2C indicates that the
+forward transform converts real data to complex data, while the backward
+transform converts complex data to real data. It should be noted that both
+directions of transformation are supported, not just from real to complex.</p>
 <p>The implementation utilizes cuFFT, rocFFT, oneMKL and FFTW, for CUDA, HIP,
 SYCL and CPU builds, respectively. Because the parallel communication is
 handled by AMReX, it does not need the parallel version of
 FFTW. Furthermore, there is no constraint on the domain decomposition such
 as one Box per process. This class performs parallel FFT on AMReX’s parallel
 data containers (e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> and
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">ComplexData</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;&gt;</span><span class="w"></span></code>. For local FFT, the users can
-use FFTW, cuFFT, rocFFT, or oneMKL directly.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">ComplexData</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;&gt;</span><span class="w"></span></code>.</p>
 <p>Other than using column-majored order, AMReX follows the convention of
 FFTW. Applying the forward transform followed by the backward transform
 scales the original data by the size of the input array. The layout of the
@@ -164,6 +164,24 @@ preparation works are done in the construction of an <code class="code highlight
 object. Therefore, one should cache it for reuse if possible. Although
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"></span></code> does not have a default constructor, one could always use
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span><span class="w"></span></code> to store an object in one’s class.</p>
+</section>
+<section id="fft-localr2c-class">
+<span id="sec-fft-localr2c"></span><h1>FFT::LocalR2C Class<a class="headerlink" href="#fft-localr2c-class" title="Permalink to this heading"></a></h1>
+<p>Class template <cite>FFT::LocalR2C</cite> supports local discrete Fourier transforms
+between real and complex data. The name R2C indicates that the forward
+transform converts real data to complex data, while the backward transform
+converts complex data to real data. It should be noted that both directions
+of transformation are supported, not just from real to complex.</p>
+<p>Below is an example of using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">LocalR2C</span><span class="w"></span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span><span class="w"></span>
+<span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">cfab</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">FFT</span><span class="o">::</span><span class="n">LocalR2C</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">mfi</span><span class="p">.</span><span class="n">fabbox</span><span class="p">().</span><span class="n">length</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">cfab</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">fft</span><span class="p">.</span><span class="n">spectralSize</span><span class="p">()</span><span class="mi">-1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">fft</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">mf</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span><span class="w"> </span><span class="n">cfab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 </section>
 <section id="poisson-solver">
 <h1>Poisson Solver<a class="headerlink" href="#poisson-solver" title="Permalink to this heading"></a></h1>
