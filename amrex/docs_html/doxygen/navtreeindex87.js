@@ -1,5 +1,6 @@
 var NAVTREEINDEX87 =
 {
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html":[3,0,0,3,7],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[3,0,0,3,7,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a2a0e1d6ab3b7c9ea94631a06b23a3f12":[3,0,0,3,7,2],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a4f76c22f32d585f22f2a80704c97b693":[3,0,0,3,7,0],
@@ -217,6 +218,5 @@ var NAVTREEINDEX87 =
 "unionamrex_1_1iparser__nvp.html#aadd9aea37f3fba909e3801d2520a038f":[3,0,0,332,0],
 "unionyyalloc.html":[3,0,33],
 "unionyyalloc.html#a9326f4fdc6f737a929444427836d8928":[3,0,33,1],
-"unionyyalloc.html#abff9f2574620ec19335937522ea27580":[3,0,33,0],
-"":[2,0,21]
+"unionyyalloc.html#abff9f2574620ec19335937522ea27580":[3,0,33,0]
 };

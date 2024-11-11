@@ -1348,202 +1348,205 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
 <div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* FFTW */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;    <span class="keywordflow">if</span> (pf == <span class="keyword">nullptr</span> || pb == <span class="keyword">nullptr</span>) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160; </div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;    <span class="keywordtype">int</span> size_for_row_major[<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>];</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; <a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>; ++idim) {</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        size_for_row_major[idim] = fft_size[<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>-1-idim];</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;    }</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;float,T&gt;) {</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        <span class="keywordflow">if</span> constexpr (D == <a class="code" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>) {</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;            plan = fftwf_plan_dft_r2c</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (<span class="keywordtype">float</span>*)pf, (fftwf_complex*)pb,</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;                 FFTW_ESTIMATE);</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;            plan = fftwf_plan_dft_c2r</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (fftwf_complex*)pb, (<span class="keywordtype">float</span>*)pf,</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                 FFTW_ESTIMATE);</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;        }</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        <span class="keywordflow">if</span> constexpr (D == <a class="code" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>) {</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;            plan = fftw_plan_dft_r2c</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (<span class="keywordtype">double</span>*)pf, (fftw_complex*)pb,</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;                 FFTW_ESTIMATE);</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;            plan = fftw_plan_dft_c2r</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (fftw_complex*)pb, (<span class="keywordtype">double</span>*)pf,</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;                 FFTW_ESTIMATE);</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;        }</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    }</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160; </div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;    <span class="keywordflow">if</span> (cache) {</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;        <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;float,T&gt;) {</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;            <a class="code" href="namespaceamrex_1_1FFT.html#a59e01f27497fe7be2f0826c2d2aaa40e">add_vendor_plan_f</a>(key, plan);</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;            <a class="code" href="namespaceamrex_1_1FFT.html#a6cb9d5c30fd6357eb758299f3abd61d2">add_vendor_plan_d</a>(key, plan);</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;        }</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;    }</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;}</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;{</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c">make_iota_distromap</a> (Long n);</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160; </div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA&gt;</div>
-<div class="line"><a name="l01300"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8"> 1300</a></span>&#160;    <span class="keyword">typename</span> FA::FABType::value_type * <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">get_fab</a> (FA&amp; fa)</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    {</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;        <span class="keyword">auto</span> myproc = <a class="code" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>();</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        <span class="keywordflow">if</span> (myproc &lt; fa.size()) {</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;            <span class="keywordflow">return</span> fa.fabPtr(myproc);</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;        }</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;    }</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160; </div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA1, <span class="keyword">typename</span> FA2&gt;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1"> 1311</a></span>&#160;    std::unique_ptr&lt;char,DataDeleter&gt; <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1">make_mfs_share</a> (FA1&amp; fa1, FA2&amp; fa2)</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;    {</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;        <span class="keywordtype">bool</span> not_same_fa = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;        <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;FA1,FA2&gt;) {</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            not_same_fa = (&amp;fa1 != &amp;fa2);</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;        }</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;        <span class="keyword">using</span> FAB1 = <span class="keyword">typename</span> FA1::FABType::value_type;</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;        <span class="keyword">using</span> FAB2 = <span class="keyword">typename</span> FA2::FABType::value_type;</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;        <span class="keyword">using</span> T1 = <span class="keyword">typename</span> FAB1::value_type;</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;        <span class="keyword">using</span> T2 = <span class="keyword">typename</span> FAB2::value_type;</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;        <span class="keyword">auto</span> myproc = <a class="code" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>();</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;        <span class="keywordtype">bool</span> alloc_1 = (myproc &lt; fa1.size());</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        <span class="keywordtype">bool</span> alloc_2 = (myproc &lt; fa2.size()) &amp;&amp; not_same_fa;</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;        <span class="keywordtype">void</span>* p = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        <span class="keywordflow">if</span> (alloc_1 &amp;&amp; alloc_2) {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box1 = fa1.fabbox(myproc);</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box2 = fa2.fabbox(myproc);</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;            <span class="keywordtype">int</span> ncomp1 = fa1.nComp();</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;            <span class="keywordtype">int</span> ncomp2 = fa2.nComp();</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(<span class="keyword">sizeof</span>(T1)*box1.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp1,</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                                            <span class="keyword">sizeof</span>(T2)*box2.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp2));</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            fa1.setFab(myproc, FAB1(box1, ncomp1, (T1*)p));</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            fa2.setFab(myproc, FAB2(box2, ncomp2, (T2*)p));</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alloc_1) {</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box1 = fa1.fabbox(myproc);</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;            <span class="keywordtype">int</span> ncomp1 = fa1.nComp();</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<span class="keyword">sizeof</span>(T1)*box1.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp1);</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;            fa1.setFab(myproc, FAB1(box1, ncomp1, (T1*)p));</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alloc_2) {</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box2 = fa2.fabbox(myproc);</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            <span class="keywordtype">int</span> ncomp2 = fa2.nComp();</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<span class="keyword">sizeof</span>(T2)*box2.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp2);</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;            fa2.setFab(myproc, FAB2(box2, ncomp2, (T2*)p));</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;        }</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;        <span class="keywordflow">return</span> std::unique_ptr&lt;char,DataDeleter&gt;((<span class="keywordtype">char</span>*)p, <a class="code" href="structamrex_1_1DataDeleter.html">DataDeleter</a>{<a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()});</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    }</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;}</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160; </div>
-<div class="line"><a name="l01351"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html"> 1351</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1Swap01.html">Swap01</a></div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;{</div>
-<div class="line"><a name="l01353"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b"> 1353</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    {</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.x, i.z};</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    }</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
-<div class="line"><a name="l01358"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce"> 1358</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    {</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>};</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    }</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
-<div class="line"><a name="l01363"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#ab85e142ffcf4f5a9c25bf0110279f99e"> 1363</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    {</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    }</div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160; </div>
-<div class="line"><a name="l01368"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d"> 1368</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    {</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    }</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;};</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160; </div>
-<div class="line"><a name="l01374"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html"> 1374</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1Swap02.html">Swap02</a></div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;{</div>
-<div class="line"><a name="l01376"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667"> 1376</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    {</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.y, i.x};</div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    }</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160; </div>
-<div class="line"><a name="l01381"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d"> 1381</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    {</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>};</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    }</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160; </div>
-<div class="line"><a name="l01386"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a472456e03c8de1b349b80b4d474a603a"> 1386</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    {</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    }</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160; </div>
-<div class="line"><a name="l01391"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086"> 1391</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    {</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;    }</div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;};</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160; </div>
-<div class="line"><a name="l01397"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html"> 1397</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html">RotateFwd</a></div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;{</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    <span class="comment">// dest -&gt; src: (x,y,z) -&gt; (y,z,x)</span></div>
-<div class="line"><a name="l01400"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8"> 1400</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;    {</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.z, i.x};</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;    }</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160; </div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;    <span class="comment">// src -&gt; dest: (x,y,z) -&gt; (z,x,y)</span></div>
-<div class="line"><a name="l01406"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0"> 1406</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    {</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>};</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    }</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160; </div>
-<div class="line"><a name="l01411"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#abd75c1020c9f40ef57c222a85d9554c1"> 1411</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    {</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    }</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160; </div>
-<div class="line"><a name="l01416"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482"> 1416</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    {</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    }</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;};</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160; </div>
-<div class="line"><a name="l01422"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html"> 1422</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html">RotateBwd</a></div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;{</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    <span class="comment">// dest -&gt; src: (x,y,z) -&gt; (z,x,y)</span></div>
-<div class="line"><a name="l01425"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a"> 1425</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    {</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.x, i.y};</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;    }</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160; </div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <span class="comment">// src -&gt; dest: (x,y,z) -&gt; (y,z,x)</span></div>
-<div class="line"><a name="l01431"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb"> 1431</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    {</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>};</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    }</div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160; </div>
-<div class="line"><a name="l01436"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#a13635cf5aa3da627c17c74c9677c2eb5"> 1436</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    {</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    }</div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160; </div>
-<div class="line"><a name="l01441"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2"> 1441</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    {</div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;    }</div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;};</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160; </div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;}</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160; </div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;    <span class="keywordflow">if</span> (pf == <span class="keyword">nullptr</span> || pb == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;        defined = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;    }</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160; </div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;    <span class="keywordtype">int</span> size_for_row_major[<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>];</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; <a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>; ++idim) {</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        size_for_row_major[idim] = fft_size[<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>-1-idim];</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    }</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160; </div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;float,T&gt;) {</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">if</span> constexpr (D == <a class="code" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>) {</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            plan = fftwf_plan_dft_r2c</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (<span class="keywordtype">float</span>*)pf, (fftwf_complex*)pb,</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;                 FFTW_ESTIMATE);</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            plan = fftwf_plan_dft_c2r</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (fftwf_complex*)pb, (<span class="keywordtype">float</span>*)pf,</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;                 FFTW_ESTIMATE);</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        }</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;        <span class="keywordflow">if</span> constexpr (D == <a class="code" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>) {</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;            plan = fftw_plan_dft_r2c</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (<span class="keywordtype">double</span>*)pf, (fftw_complex*)pb,</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;                 FFTW_ESTIMATE);</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;            plan = fftw_plan_dft_c2r</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                (<a class="code" href="namespaceamrex_1_1openbc.html#a80221e673408a11d8a35e40f5d819c0f">M</a>, size_for_row_major, (fftw_complex*)pb, (<span class="keywordtype">double</span>*)pf,</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;                 FFTW_ESTIMATE);</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;        }</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;    }</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;    <span class="keywordflow">if</span> (cache) {</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;        <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;float,T&gt;) {</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            <a class="code" href="namespaceamrex_1_1FFT.html#a59e01f27497fe7be2f0826c2d2aaa40e">add_vendor_plan_f</a>(key, plan);</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;            <a class="code" href="namespaceamrex_1_1FFT.html#a6cb9d5c30fd6357eb758299f3abd61d2">add_vendor_plan_d</a>(key, plan);</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;        }</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;    }</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;}</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a></div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;{</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c">make_iota_distromap</a> (Long n);</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA&gt;</div>
+<div class="line"><a name="l01303"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8"> 1303</a></span>&#160;    <span class="keyword">typename</span> FA::FABType::value_type * <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">get_fab</a> (FA&amp; fa)</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    {</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        <span class="keyword">auto</span> myproc = <a class="code" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>();</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        <span class="keywordflow">if</span> (myproc &lt; fa.size()) {</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;            <span class="keywordflow">return</span> fa.fabPtr(myproc);</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;        }</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;    }</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160; </div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA1, <span class="keyword">typename</span> FA2&gt;</div>
+<div class="line"><a name="l01314"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1"> 1314</a></span>&#160;    std::unique_ptr&lt;char,DataDeleter&gt; <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1">make_mfs_share</a> (FA1&amp; fa1, FA2&amp; fa2)</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    {</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;        <span class="keywordtype">bool</span> not_same_fa = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;        <span class="keywordflow">if</span> constexpr (std::is_same_v&lt;FA1,FA2&gt;) {</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;            not_same_fa = (&amp;fa1 != &amp;fa2);</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;        }</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;        <span class="keyword">using</span> FAB1 = <span class="keyword">typename</span> FA1::FABType::value_type;</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;        <span class="keyword">using</span> FAB2 = <span class="keyword">typename</span> FA2::FABType::value_type;</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;        <span class="keyword">using</span> T1 = <span class="keyword">typename</span> FAB1::value_type;</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        <span class="keyword">using</span> T2 = <span class="keyword">typename</span> FAB2::value_type;</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;        <span class="keyword">auto</span> myproc = <a class="code" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>();</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        <span class="keywordtype">bool</span> alloc_1 = (myproc &lt; fa1.size());</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;        <span class="keywordtype">bool</span> alloc_2 = (myproc &lt; fa2.size()) &amp;&amp; not_same_fa;</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;        <span class="keywordtype">void</span>* p = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;        <span class="keywordflow">if</span> (alloc_1 &amp;&amp; alloc_2) {</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box1 = fa1.fabbox(myproc);</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box2 = fa2.fabbox(myproc);</div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;            <span class="keywordtype">int</span> ncomp1 = fa1.nComp();</div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            <span class="keywordtype">int</span> ncomp2 = fa2.nComp();</div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(<span class="keyword">sizeof</span>(T1)*box1.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp1,</div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                                            <span class="keyword">sizeof</span>(T2)*box2.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp2));</div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;            fa1.setFab(myproc, FAB1(box1, ncomp1, (T1*)p));</div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;            fa2.setFab(myproc, FAB2(box2, ncomp2, (T2*)p));</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alloc_1) {</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box1 = fa1.fabbox(myproc);</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;            <span class="keywordtype">int</span> ncomp1 = fa1.nComp();</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<span class="keyword">sizeof</span>(T1)*box1.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp1);</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            fa1.setFab(myproc, FAB1(box1, ncomp1, (T1*)p));</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alloc_2) {</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box2 = fa2.fabbox(myproc);</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;            <span class="keywordtype">int</span> ncomp2 = fa2.nComp();</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;            p = <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(<span class="keyword">sizeof</span>(T2)*box2.<a class="code" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*ncomp2);</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;            fa2.setFab(myproc, FAB2(box2, ncomp2, (T2*)p));</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        }</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;        <span class="keywordflow">return</span> std::unique_ptr&lt;char,DataDeleter&gt;((<span class="keywordtype">char</span>*)p, <a class="code" href="structamrex_1_1DataDeleter.html">DataDeleter</a>{<a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()});</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    }</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;}</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
+<div class="line"><a name="l01354"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html"> 1354</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1Swap01.html">Swap01</a></div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;{</div>
+<div class="line"><a name="l01356"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b"> 1356</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    {</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.x, i.z};</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    }</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160; </div>
+<div class="line"><a name="l01361"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce"> 1361</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    {</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>};</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    }</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160; </div>
+<div class="line"><a name="l01366"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#ab85e142ffcf4f5a9c25bf0110279f99e"> 1366</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    {</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    }</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160; </div>
+<div class="line"><a name="l01371"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d"> 1371</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    {</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    }</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;};</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160; </div>
+<div class="line"><a name="l01377"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html"> 1377</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1Swap02.html">Swap02</a></div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;{</div>
+<div class="line"><a name="l01379"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667"> 1379</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    {</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.y, i.x};</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    }</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
+<div class="line"><a name="l01384"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d"> 1384</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    {</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>};</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    }</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160; </div>
+<div class="line"><a name="l01389"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a472456e03c8de1b349b80b4d474a603a"> 1389</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    {</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    }</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160; </div>
+<div class="line"><a name="l01394"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086"> 1394</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;    {</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    }</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;};</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160; </div>
+<div class="line"><a name="l01400"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html"> 1400</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html">RotateFwd</a></div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;{</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;    <span class="comment">// dest -&gt; src: (x,y,z) -&gt; (y,z,x)</span></div>
+<div class="line"><a name="l01403"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8"> 1403</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    {</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.z, i.x};</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;    }</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160; </div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    <span class="comment">// src -&gt; dest: (x,y,z) -&gt; (z,x,y)</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0"> 1409</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    {</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>};</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    }</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
+<div class="line"><a name="l01414"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#abd75c1020c9f40ef57c222a85d9554c1"> 1414</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    {</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    }</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160; </div>
+<div class="line"><a name="l01419"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482"> 1419</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    {</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    }</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;};</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160; </div>
+<div class="line"><a name="l01425"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html"> 1425</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html">RotateBwd</a></div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;{</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    <span class="comment">// dest -&gt; src: (x,y,z) -&gt; (z,x,y)</span></div>
+<div class="line"><a name="l01428"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a"> 1428</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">operator() </a>(<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    {</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.x, i.y};</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    }</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160; </div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;    <span class="comment">// src -&gt; dest: (x,y,z) -&gt; (y,z,x)</span></div>
+<div class="line"><a name="l01434"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb"> 1434</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb">Inverse</a> (<a class="code" href="structamrex_1_1Dim3.html">Dim3</a> i)</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;    {</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;        <span class="keywordflow">return</span> {i.<a class="code" href="structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, i.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>};</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    }</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160; </div>
+<div class="line"><a name="l01439"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#a13635cf5aa3da627c17c74c9677c2eb5"> 1439</a></span>&#160;    [[nodiscard]] constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">operator() </a>(<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;    {</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    }</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160; </div>
+<div class="line"><a name="l01444"></a><span class="lineno"><a class="line" href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2"> 1444</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> <a class="code" href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2">Inverse</a> (<a class="code" href="classamrex_1_1IndexTypeND.html">IndexType</a> it)</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;    {</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;        <span class="keywordflow">return</span> it;</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    }</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;};</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160; </div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;}</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160; </div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html"><div class="ttname"><a href="AMReX__BLProfiler_8H.html">AMReX_BLProfiler.H</a></div></div>
 <div class="ttc" id="aAMReX__DataAllocator_8H_html"><div class="ttname"><a href="AMReX__DataAllocator_8H.html">AMReX_DataAllocator.H</a></div></div>
@@ -1565,8 +1568,8 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="ttc" id="aclassamrex_1_1DistributionMapping_html"><div class="ttname"><a href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a></div><div class="ttdoc">Calculates the distribution of FABs to MPI processes.</div><div class="ttdef"><b>Definition:</b> AMReX_DistributionMapping.H:41</div></div>
 <div class="ttc" id="aclassamrex_1_1IndexTypeND_html"><div class="ttname"><a href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND&lt; AMREX_SPACEDIM &gt;</a></div></div>
 <div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND</a></div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:48</div></div>
-<div class="ttc" id="anamespaceamrex_1_1FFT_1_1detail_html_a1ade0d84620e8faa51f7bac69806a0d8"><div class="ttname"><a href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">amrex::FFT::detail::get_fab</a></div><div class="ttdeci">FA::FABType::value_type * get_fab(FA &amp;fa)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1300</div></div>
-<div class="ttc" id="anamespaceamrex_1_1FFT_1_1detail_html_a6dca0b1e5eace20e02c83566c93a69b1"><div class="ttname"><a href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1">amrex::FFT::detail::make_mfs_share</a></div><div class="ttdeci">std::unique_ptr&lt; char, DataDeleter &gt; make_mfs_share(FA1 &amp;fa1, FA2 &amp;fa2)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1311</div></div>
+<div class="ttc" id="anamespaceamrex_1_1FFT_1_1detail_html_a1ade0d84620e8faa51f7bac69806a0d8"><div class="ttname"><a href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">amrex::FFT::detail::get_fab</a></div><div class="ttdeci">FA::FABType::value_type * get_fab(FA &amp;fa)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1303</div></div>
+<div class="ttc" id="anamespaceamrex_1_1FFT_1_1detail_html_a6dca0b1e5eace20e02c83566c93a69b1"><div class="ttname"><a href="namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1">amrex::FFT::detail::make_mfs_share</a></div><div class="ttdeci">std::unique_ptr&lt; char, DataDeleter &gt; make_mfs_share(FA1 &amp;fa1, FA2 &amp;fa2)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1314</div></div>
 <div class="ttc" id="anamespaceamrex_1_1FFT_1_1detail_html_ae40f1092f78a0a8f53357a35ddeab89c"><div class="ttname"><a href="namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c">amrex::FFT::detail::make_iota_distromap</a></div><div class="ttdeci">DistributionMapping make_iota_distromap(Long n)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT.cpp:88</div></div>
 <div class="ttc" id="anamespaceamrex_1_1FFT_html"><div class="ttname"><a href="namespaceamrex_1_1FFT.html">amrex::FFT</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT.cpp:7</div></div>
 <div class="ttc" id="anamespaceamrex_1_1FFT_html_a07ebd4aab8904819a3bbc7009e06ce97"><div class="ttname"><a href="namespaceamrex_1_1FFT.html#a07ebd4aab8904819a3bbc7009e06ce97">amrex::FFT::Key</a></div><div class="ttdeci">std::tuple&lt; IntVectND&lt; 3 &gt;, Direction, Kind &gt; Key</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1132</div></div>
@@ -1653,22 +1656,22 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="ttc" id="astructamrex_1_1FFT_1_1Plan_html_ae0328039c31339c8e6d522bafa448c43"><div class="ttname"><a href="structamrex_1_1FFT_1_1Plan.html#ae0328039c31339c8e6d522bafa448c43">amrex::FFT::Plan::set_ptrs</a></div><div class="ttdeci">void set_ptrs(void *p0, void *p1)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:150</div></div>
 <div class="ttc" id="astructamrex_1_1FFT_1_1Plan_html_ae52ff37c3e0c286e399ccba42f9d0af0"><div class="ttname"><a href="structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0">amrex::FFT::Plan::init_r2r</a></div><div class="ttdeci">void init_r2r(Box const &amp;box, T *p, std::pair&lt; Boundary, Boundary &gt; const &amp;bc, int howmany_initval=1)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:435</div></div>
 <div class="ttc" id="astructamrex_1_1FFT_1_1Plan_html_afd82f8ec70a9e827145a72ea7189280d"><div class="ttname"><a href="structamrex_1_1FFT_1_1Plan.html#afd82f8ec70a9e827145a72ea7189280d">amrex::FFT::Plan::init_c2c</a></div><div class="ttdeci">void init_c2c(Box const &amp;box, VendorComplex *p)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:297</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html">amrex::FFT::RotateBwd</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1423</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_a3d8eeef2a3049040ae07c13a90015d0a"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">amrex::FFT::RotateBwd::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1425</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_ac943831a558952a10ba7facdb7b93ae2"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2">amrex::FFT::RotateBwd::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1441</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_ae3fbc9b6ef608adde77ff6fff59caffb"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb">amrex::FFT::RotateBwd::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1431</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html">amrex::FFT::RotateFwd</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1398</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_a615a384468064899d1f6a7b6d583e482"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482">amrex::FFT::RotateFwd::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1416</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_ace5b5fa89aeb7953b1528f4cab48d2d8"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">amrex::FFT::RotateFwd::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1400</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_ada89bf4acab79c8ad3b5e58328813dd0"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0">amrex::FFT::RotateFwd::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1406</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html">amrex::FFT::Swap01</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1352</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_a0a536d5bfa1ac509cbf01ff4ca0f3f4b"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">amrex::FFT::Swap01::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1353</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_a5b00bf96c996a819da96bb809582c55d"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d">amrex::FFT::Swap01::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1368</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_af9e0994967edc7bcab68d885b10f90ce"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce">amrex::FFT::Swap01::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1358</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html">amrex::FFT::Swap02</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1375</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_a4b564f1e8a70ecc5ed0b9c187809061d"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d">amrex::FFT::Swap02::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1381</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_a6f4aa4043dbb0fa532b49f8210dbf086"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086">amrex::FFT::Swap02::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1391</div></div>
-<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_af7b2878898854c645101b62453e78667"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">amrex::FFT::Swap02::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1376</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html">amrex::FFT::RotateBwd</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1426</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_a3d8eeef2a3049040ae07c13a90015d0a"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#a3d8eeef2a3049040ae07c13a90015d0a">amrex::FFT::RotateBwd::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1428</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_ac943831a558952a10ba7facdb7b93ae2"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#ac943831a558952a10ba7facdb7b93ae2">amrex::FFT::RotateBwd::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1444</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateBwd_html_ae3fbc9b6ef608adde77ff6fff59caffb"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateBwd.html#ae3fbc9b6ef608adde77ff6fff59caffb">amrex::FFT::RotateBwd::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1434</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html">amrex::FFT::RotateFwd</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1401</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_a615a384468064899d1f6a7b6d583e482"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#a615a384468064899d1f6a7b6d583e482">amrex::FFT::RotateFwd::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1419</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_ace5b5fa89aeb7953b1528f4cab48d2d8"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#ace5b5fa89aeb7953b1528f4cab48d2d8">amrex::FFT::RotateFwd::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1403</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1RotateFwd_html_ada89bf4acab79c8ad3b5e58328813dd0"><div class="ttname"><a href="structamrex_1_1FFT_1_1RotateFwd.html#ada89bf4acab79c8ad3b5e58328813dd0">amrex::FFT::RotateFwd::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1409</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html">amrex::FFT::Swap01</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1355</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_a0a536d5bfa1ac509cbf01ff4ca0f3f4b"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#a0a536d5bfa1ac509cbf01ff4ca0f3f4b">amrex::FFT::Swap01::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1356</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_a5b00bf96c996a819da96bb809582c55d"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#a5b00bf96c996a819da96bb809582c55d">amrex::FFT::Swap01::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1371</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap01_html_af9e0994967edc7bcab68d885b10f90ce"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap01.html#af9e0994967edc7bcab68d885b10f90ce">amrex::FFT::Swap01::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1361</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html">amrex::FFT::Swap02</a></div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1378</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_a4b564f1e8a70ecc5ed0b9c187809061d"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#a4b564f1e8a70ecc5ed0b9c187809061d">amrex::FFT::Swap02::Inverse</a></div><div class="ttdeci">static constexpr Dim3 Inverse(Dim3 i)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1384</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_a6f4aa4043dbb0fa532b49f8210dbf086"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#a6f4aa4043dbb0fa532b49f8210dbf086">amrex::FFT::Swap02::Inverse</a></div><div class="ttdeci">static constexpr IndexType Inverse(IndexType it)</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1394</div></div>
+<div class="ttc" id="astructamrex_1_1FFT_1_1Swap02_html_af7b2878898854c645101b62453e78667"><div class="ttname"><a href="structamrex_1_1FFT_1_1Swap02.html#af7b2878898854c645101b62453e78667">amrex::FFT::Swap02::operator()</a></div><div class="ttdeci">constexpr Dim3 operator()(Dim3 i) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FFT_Helper.H:1379</div></div>
 <div class="ttc" id="astructamrex_1_1GpuComplex_html"><div class="ttname"><a href="structamrex_1_1GpuComplex.html">amrex::GpuComplex</a></div><div class="ttdoc">A host / device complex number type, because std::complex doesn't work in device code with Cuda yet.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuComplex.H:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
