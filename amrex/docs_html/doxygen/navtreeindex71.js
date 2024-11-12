@@ -1,6 +1,5 @@
 var NAVTREEINDEX71 =
 {
-"namespaceamrex_1_1LongParticleIds.html#ae79136bdcc97d46650c8098fe7c9334d":[2,0,0,21,2],
 "namespaceamrex_1_1MFUtil.html":[2,0,0,25],
 "namespaceamrex_1_1MFUtil.html#a0d2b028d5b4be5e38a0e4f8fc778c523":[2,0,0,25,5],
 "namespaceamrex_1_1MFUtil.html#a69b29ecaacdc25da8869a005da585ef2":[2,0,0,25,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1ParallelDescriptor.html#a95eed49d43cbcd3d04dd6afcfc1c5935":[2,0,0,36,127],
 "namespaceamrex_1_1ParallelDescriptor.html#a967ee2806a6203f8fee9dfa5b7cbc3a1":[2,0,0,36,26],
 "namespaceamrex_1_1ParallelDescriptor.html#a9854dea7eb2ee59093ed0bd80af9063e":[2,0,0,36,158],
-"namespaceamrex_1_1ParallelDescriptor.html#a98c9e67e17bd55e681d9e790611a1289":[2,0,0,36,113]
+"namespaceamrex_1_1ParallelDescriptor.html#a98c9e67e17bd55e681d9e790611a1289":[2,0,0,36,113],
+"namespaceamrex_1_1ParallelDescriptor.html#a990d0a17b08dcd68a0d77a7b35cfebaf":[2,0,0,36,34]
 };
