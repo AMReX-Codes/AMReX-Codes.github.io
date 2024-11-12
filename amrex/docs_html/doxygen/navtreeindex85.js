@@ -1,5 +1,6 @@
 var NAVTREEINDEX85 =
 {
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html":[3,0,0,17,0,1],
 "structamrex_1_1RunOnGpu.html":[3,0,0,178],
 "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,182],
 "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,185],
@@ -248,6 +249,5 @@ var NAVTREEINDEX85 =
 "structamrex_1_1Table4D.html#acc728a4ffcef48eef5ef2ebe9b0a3ed6":[3,0,0,241,8],
 "structamrex_1_1Table4D.html#ad91320085ac8e7599dd38d7b067fa1b4":[3,0,0,241,7],
 "structamrex_1_1Table4D.html#aee1a2d8e68a6221b68959f46f2bfad58":[3,0,0,241,9],
-"structamrex_1_1Table4D.html#afc8bd190f06737a0bb3dbc412cb74d0c":[3,0,0,241,10],
-"structamrex_1_1TheFaArenaDeleter.html":[3,0,0,128]
+"structamrex_1_1Table4D.html#afc8bd190f06737a0bb3dbc412cb74d0c":[3,0,0,241,10]
 };

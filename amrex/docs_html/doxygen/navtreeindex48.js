@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1MLEBNodeFDLaplacian.html#aac77fee4af067d987c117ae62a73d9ce":[3,0,0,448,25],
 "classamrex_1_1MLEBNodeFDLaplacian.html#ab81f654708d4756a07160c7eaa343d48":[3,0,0,448,22],
 "classamrex_1_1MLEBNodeFDLaplacian.html#ab93f943cc0e03e4f1d5966700f3edf85":[3,0,0,448,14],
 "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb":[3,0,0,448,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1MLMGT.html#a262150be12f270d4328ceff545f0afd6":[3,0,0,452,99],
 "classamrex_1_1MLMGT.html#a295166a3e3f2f9ec07aeffbb4a8a68ed":[3,0,0,452,43],
 "classamrex_1_1MLMGT.html#a2b20154bea5f4c9076bc6d50529a44b2":[3,0,0,452,127],
-"classamrex_1_1MLMGT.html#a2b2614ccc7faa12ee28a1428f5cd03d0":[3,0,0,452,87],
-"classamrex_1_1MLMGT.html#a2c1e8d8df826c5071a81e63e3aae54b4":[3,0,0,452,66]
+"classamrex_1_1MLMGT.html#a2b2614ccc7faa12ee28a1428f5cd03d0":[3,0,0,452,87]
 };

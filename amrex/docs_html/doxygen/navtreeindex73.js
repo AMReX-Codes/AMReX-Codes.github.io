@@ -1,5 +1,6 @@
 var NAVTREEINDEX73 =
 {
+"namespaceamrex_1_1detail.html#a23e1d95e3ebccd77fdb4d988b280c0cd":[2,0,0,6,36],
 "namespaceamrex_1_1detail.html#a2744dcaf73a87a1ef2d0cbd5b3a95857":[2,0,0,6,91],
 "namespaceamrex_1_1detail.html#a291f4a64951d7b0faabda32ef45084f0":[2,0,0,6,35],
 "namespaceamrex_1_1detail.html#a2b92d0ed9f799213702e12a02f9585d7":[2,0,0,6,98],
@@ -90,16 +91,16 @@ var NAVTREEINDEX73 =
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,695],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,694],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,694],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,696],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,690],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,7,1],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,693],
-"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,697],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
+"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,697],
 "namespaceamrex_1_1experimental.html":[2,0,0,9],
 "namespaceamrex_1_1experimental.html#a0057b5ee6f8da3859c3b1c74b38c7537":[2,0,0,9,10],
 "namespaceamrex_1_1experimental.html#a0de1a6f8c5b59164435a7c9eb908d225":[2,0,0,9,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX73 =
 "namespaceamrex_1_1sundials.html#a1125a7cc24f97393b216d5afb6b0416c":[2,0,0,47,11],
 "namespaceamrex_1_1sundials.html#a1ca520b2e907a435625fdb9c78e78d33":[2,0,0,47,7],
 "namespaceamrex_1_1sundials.html#a25656fdc3baa82f76e32e6ccd3f97e2a":[2,0,0,47,10],
-"namespaceamrex_1_1sundials.html#a2e8955698d384f25c4019a0e22060caf":[2,0,0,47,18],
-"namespaceamrex_1_1sundials.html#a3a01eaa5b7064ea2a584a244a1579de2":[2,0,0,47,33]
+"namespaceamrex_1_1sundials.html#a2e8955698d384f25c4019a0e22060caf":[2,0,0,47,18]
 };

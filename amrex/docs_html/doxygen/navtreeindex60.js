@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"functions.html":[3,3,0],
 "functions_a.html":[3,3,0,1],
 "functions_b.html":[3,3,0,2],
 "functions_c.html":[3,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a882dff48549ea8febf0e9e1ef59f2e89":[3,0,5,2,2],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#ad65c591d777654a3b5803f488b8c4a83":[3,0,5,2,14],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#adaed8e70771d6f1185066689ca109122":[3,0,5,2,0],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#ae1abd02d5d261da4945874f34fcc7968":[3,0,5,2,7],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#ae6b8abff9ca4bed0746d2df4e2bd277f":[3,0,5,2,9]
+"interfaceamrex__mempool__module_1_1bl__allocate.html#ae1abd02d5d261da4945874f34fcc7968":[3,0,5,2,7]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Array4BoxOrientationTag.html#ab7f1f2e37f5bd1405f40d0133ff588d3":[3,0,0,249,0],
 "structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[3,0,0,249,3],
 "structamrex_1_1Array4BoxTag.html":[3,0,0,247],
 "structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4":[3,0,0,247,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2":[3,0,0,191,0,1],
 "structamrex_1_1CompileTimeOptions.html":[3,0,0,119],
 "structamrex_1_1CompileTimeOptions.html#ade5844430b8549754df043e3cf4d870d":[3,0,0,119,0],
-"structamrex_1_1Conjunction.html":[3,0,0,283],
-"structamrex_1_1Conjunction_3_01B1_00_01Bn_8_8_8_01_4.html":[3,0,0,285]
+"structamrex_1_1Conjunction.html":[3,0,0,283]
 };

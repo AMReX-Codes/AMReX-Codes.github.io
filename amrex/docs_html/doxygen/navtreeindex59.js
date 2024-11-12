@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"classamrex_1_1VisMFBuffer.html#a18fe5085940077f84917d957455078ab":[3,0,0,296,3],
 "classamrex_1_1VisMFBuffer.html#a1b2038a46c20c406d77023b6cdc956c0":[3,0,0,296,0],
 "classamrex_1_1VisMFBuffer.html#a49a155dcc41cf64677c1b57df5dcfcb2":[3,0,0,296,1],
 "classamrex_1_1VisMFBuffer.html#a6408b3042dc48515b0c3722c43826f03":[3,0,0,296,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "dir_f9e66c8b738777acbc48d7c0a63416f3.html":[4,0,0,3],
 "dir_ff6ba31e3d9b9a1f9a0b82367f037326.html":[4,0,0,0],
 "files.html":[4,0],
-"functions.html":[3,3,0,0],
-"functions.html":[3,3,0]
+"functions.html":[3,3,0,0]
 };
