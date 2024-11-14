@@ -357,6 +357,7 @@ var hierarchy =
     [ "amrex::Divides< T >", "structamrex_1_1Divides.html", null ],
     [ "amrex::NonLocalBC::DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
     [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", null ],
+    [ "amrex::FFT::fft_poisson_detail::DZ< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ.html", null ],
     [ "amrex::EBCellFlag", "classamrex_1_1EBCellFlag.html", null ],
     [ "amrex::EBDataCollection", "classamrex_1_1EBDataCollection.html", null ],
     [ "amrex::algoim::EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", null ],

@@ -5,6 +5,7 @@ var namespaceamrex_1_1FFT =
       [ "make_iota_distromap", "namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c", null ],
       [ "make_mfs_share", "namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1", null ]
     ] ],
+    [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", "namespaceamrex_1_1FFT_1_1fft__poisson__detail" ],
     [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],
     [ "Swap01", "structamrex_1_1FFT_1_1Swap01.html", "structamrex_1_1FFT_1_1Swap01" ],

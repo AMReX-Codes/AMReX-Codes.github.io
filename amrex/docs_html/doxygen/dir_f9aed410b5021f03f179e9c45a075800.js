@@ -11,7 +11,8 @@ var dir_f9aed410b5021f03f179e9c45a075800 =
     ] ],
     [ "AMReX_FFT_Poisson.H", "AMReX__FFT__Poisson_8H.html", [
       [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html", "classamrex_1_1FFT_1_1Poisson" ],
-      [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ]
+      [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
+      [ "DZ", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ" ]
     ] ],
     [ "AMReX_FFT_R2C.H", "AMReX__FFT__R2C_8H.html", [
       [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ]

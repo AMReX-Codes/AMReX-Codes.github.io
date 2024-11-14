@@ -351,10 +351,10 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        strides.push_back(1);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_MKL_DFTI_2024</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES, strides);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::BWD_STRIDES, strides);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// Do not set BWD_STRIDES</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES, strides.data());</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::BWD_STRIDES, strides.data());</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// Do not set BWD_STRIDES</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::WORKSPACE,</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                      oneapi::mkl::dft::config_value::WORKSPACE_EXTERNAL);</div>
@@ -1336,7 +1336,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160; </div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_MKL_DFTI_2024</span></div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;    <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES, strides);</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;    <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::BWD_STRIDES, strides);</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;    <span class="comment">// Do not set BWD_STRIDES</span></div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES, strides.data());</div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    <span class="comment">// Do not set BWD_STRIDES</span></div>

@@ -1,5 +1,13 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Array4BoxOffsetTag.html":[3,0,0,250],
+"structamrex_1_1Array4BoxOffsetTag.html#a2754c8e7cbd174d92c5d0ec4bd58583c":[3,0,0,250,1],
+"structamrex_1_1Array4BoxOffsetTag.html#a4b6ca8c08233ae7d5f9168c8e603dc96":[3,0,0,250,2],
+"structamrex_1_1Array4BoxOffsetTag.html#a99cb5993e1573b609e2d93659b6a2fd9":[3,0,0,250,0],
+"structamrex_1_1Array4BoxOffsetTag.html#af5878f0f6935800abc18aaffe34e50d6":[3,0,0,250,3],
+"structamrex_1_1Array4BoxOrientationTag.html":[3,0,0,249],
+"structamrex_1_1Array4BoxOrientationTag.html#a0c8b2a3bc498849b8dae53d94f86a685":[3,0,0,249,2],
+"structamrex_1_1Array4BoxOrientationTag.html#a983b146fa22d1ed852dc07bfd52f2158":[3,0,0,249,1],
 "structamrex_1_1Array4BoxOrientationTag.html#ab7f1f2e37f5bd1405f40d0133ff588d3":[3,0,0,249,0],
 "structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[3,0,0,249,3],
 "structamrex_1_1Array4BoxTag.html":[3,0,0,247],
@@ -241,13 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1CellData.html#a47ea706bedc5e03c2a5556da50801cf3":[3,0,0,79,2],
 "structamrex_1_1CellData.html#a558850bcec731c7cbd3f93138606388e":[3,0,0,79,4],
 "structamrex_1_1CellData.html#a96af7ce615384f42e11db33a16e36b05":[3,0,0,79,1],
-"structamrex_1_1CellData.html#aa2bef3d69fa1dc344b5208eb2f9a0b55":[3,0,0,79,6],
-"structamrex_1_1CellData.html#accb987397fdc10a704d4e42d4e5c5d31":[3,0,0,79,0],
-"structamrex_1_1CellIndexEnum.html":[3,0,0,191],
-"structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3":[3,0,0,191,0],
-"structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439":[3,0,0,191,0,0],
-"structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3ad501679fc1b23174fe28a86d24d2e1e2":[3,0,0,191,0,1],
-"structamrex_1_1CompileTimeOptions.html":[3,0,0,119],
-"structamrex_1_1CompileTimeOptions.html#ade5844430b8549754df043e3cf4d870d":[3,0,0,119,0],
-"structamrex_1_1Conjunction.html":[3,0,0,283]
+"structamrex_1_1CellData.html#aa2bef3d69fa1dc344b5208eb2f9a0b55":[3,0,0,79,6]
 };
