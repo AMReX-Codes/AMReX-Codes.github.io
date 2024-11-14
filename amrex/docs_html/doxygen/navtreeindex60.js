@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"dir_aac9a2acf9a30450da7853201b48e1ac.html":[4,0,0,5,1],
+"dir_e8b57d0b2c30c109375c9a2f3bc5765b.html":[4,0,0,5,5],
 "dir_ec3321dc65bacf9068b9f722dcf8a841.html":[4,0,0,7,1],
 "dir_ed0b49c97fbf22356f0af00f4f599e98.html":[4,0,0,4],
 "dir_f9aed410b5021f03f179e9c45a075800.html":[4,0,0,6],
@@ -16,8 +18,8 @@ var NAVTREEINDEX60 =
 "functions_enum.html":[3,3,4],
 "functions_eval.html":[3,3,5],
 "functions_f.html":[3,3,0,6],
-"functions_func.html":[3,3,1,0],
 "functions_func.html":[3,3,1],
+"functions_func.html":[3,3,1,0],
 "functions_func_b.html":[3,3,1,1],
 "functions_func_c.html":[3,3,1,2],
 "functions_func_d.html":[3,3,1,3],
@@ -116,8 +118,8 @@ var NAVTREEINDEX60 =
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6,0],
 "globals_defs.html":[4,1,6],
+"globals_defs.html":[4,1,6,0],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_e.html":[4,1,6,2],
 "globals_defs_f.html":[4,1,6,3],
@@ -177,8 +179,8 @@ var NAVTREEINDEX60 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a1b10764ffdbc27f785230c38110f515f":[3,0,5,2,11],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a2d50549e4b4739326733c60cb1ceae67":[3,0,5,2,8],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a483da24e5876535560d6bde44de2d3cd":[3,0,5,2,12],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a4f4a275401f9fab0feba1a172b517ec6":[3,0,5,2,6],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a5073ed867b16ca13523a3eb3af711009":[3,0,5,2,4],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a5b7d388e96d5dfb7b4e2551c51b9cd87":[3,0,5,2,3]
+"interfaceamrex__mempool__module_1_1bl__allocate.html#a4f4a275401f9fab0feba1a172b517ec6":[3,0,5,2,6]
 };

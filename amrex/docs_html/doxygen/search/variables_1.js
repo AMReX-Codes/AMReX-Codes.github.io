@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['a_16128',['a',['../structamrex_1_1amrex__Mat.html#a4fd5b63c1e51beed0579d6d15ca1006e',1,'amrex::amrex_Mat::a()'],['../structamrex_1_1amrex__KSP.html#af771c8008f6416c6155ae99f73c77362',1,'amrex::amrex_KSP::a()']]],
-  ['a_16129',['A',['../classamrex_1_1PETScABecLap.html#a4f7ec9016da8bda82d240ef488851938',1,'amrex::PETScABecLap::A()'],['../classamrex_1_1HypreNodeLap.html#a84f23ccfc81e4068d4b59ff219dfdd17',1,'amrex::HypreNodeLap::A()'],['../classamrex_1_1HypreABecLap3.html#a3094f9b4df6d8bc23577d00b40087587',1,'amrex::HypreABecLap3::A()'],['../classamrex_1_1HypreABecLap.html#ad3c53ab64813b12ce11cfa8419d452c3',1,'amrex::HypreABecLap::A()']]],
-  ['a_16130',['a',['../structamrex_1_1amrex__Vec.html#ac480727670bb025eb2c56a44281074d1',1,'amrex::amrex_Vec']]],
-  ['a_16131',['A',['../classamrex_1_1HypreABecLap2.html#a310e397f9861ad8f2c09e7e6b0023c8f',1,'amrex::HypreABecLap2']]],
+  ['a_16129',['A',['../classamrex_1_1HypreABecLap2.html#a310e397f9861ad8f2c09e7e6b0023c8f',1,'amrex::HypreABecLap2::A()'],['../classamrex_1_1HypreABecLap.html#ad3c53ab64813b12ce11cfa8419d452c3',1,'amrex::HypreABecLap::A()']]],
+  ['a_16130',['a',['../structamrex_1_1amrex__Vec.html#ac480727670bb025eb2c56a44281074d1',1,'amrex::amrex_Vec::a()'],['../structamrex_1_1amrex__Mat.html#a4fd5b63c1e51beed0579d6d15ca1006e',1,'amrex::amrex_Mat::a()'],['../structamrex_1_1amrex__KSP.html#af771c8008f6416c6155ae99f73c77362',1,'amrex::amrex_KSP::a()']]],
+  ['a_16131',['A',['../classamrex_1_1HypreNodeLap.html#a84f23ccfc81e4068d4b59ff219dfdd17',1,'amrex::HypreNodeLap::A()'],['../classamrex_1_1HypreABecLap3.html#a3094f9b4df6d8bc23577d00b40087587',1,'amrex::HypreABecLap3::A()'],['../classamrex_1_1PETScABecLap.html#a4f7ec9016da8bda82d240ef488851938',1,'amrex::PETScABecLap::A()']]],
   ['abort_5fon_5fstream_5fretry_5ffailure_16132',['abort_on_stream_retry_failure',['../classamrex_1_1Amr.html#a98d00dad9a4ef2a681aaafdf2a59cb0b',1,'amrex::Amr']]],
   ['abort_5fon_5funused_5finputs_16133',['abort_on_unused_inputs',['../namespaceamrex_1_1system.html#a331ca3fb48cd543ebe283ea5b5f4f1e0',1,'amrex::system']]],
   ['abortonretryfailure_16134',['abortOnRetryFailure',['../classamrex_1_1StreamRetry.html#a9154d1ecaab301550b3114d253b7c0cf',1,'amrex::StreamRetry']]],

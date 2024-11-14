@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"classamrex_1_1PlotFileDataImpl.html#af2a7f57c4c0eba9dbf8e38dd84572eb2":[3,0,0,218,9],
+"classamrex_1_1PolymorphicArenaAllocator.html":[3,0,0,177],
 "classamrex_1_1PolymorphicArenaAllocator.html#a6cc91f415f75d3cbe8f2cd97a96b8e30":[3,0,0,177,2],
 "classamrex_1_1PolymorphicArenaAllocator.html#a7e37e0451471fcf02dbfb376f2804145":[3,0,0,177,1],
 "classamrex_1_1PolymorphicArenaAllocator.html#abd49730f61493b4c7b5d596ed7ffa547":[3,0,0,177,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858":[3,0,0,397,9],
 "classamrex_1_1STLtools.html#ad56ce2bf01da43520e270f2ae570f29a":[3,0,0,397,16],
 "classamrex_1_1STLtools.html#addae911a258f776f2bf862da19290953":[3,0,0,397,8],
-"classamrex_1_1STLtools.html#addf47db1e1abc59b6ac84e8042ac5f9d":[3,0,0,397,11],
-"classamrex_1_1STLtools.html#ade00ed9461b4c9782dd363cb75dc84ae":[3,0,0,397,15],
-"classamrex_1_1STLtools.html#ae50a6d985147b0ae607e688e120f2935":[3,0,0,397,18]
+"classamrex_1_1STLtools.html#addf47db1e1abc59b6ac84e8042ac5f9d":[3,0,0,397,11]
 };

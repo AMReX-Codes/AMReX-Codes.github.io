@@ -167,6 +167,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab18f4105f6b6342d1490b85ee7f949f5"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:ab18f4105f6b6342d1490b85ee7f949f5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#ab18f4105f6b6342d1490b85ee7f949f5">post_forward_doit</a> (F const &amp;post_forward)</td></tr>
 <tr class="separator:ab18f4105f6b6342d1490b85ee7f949f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05acedd3c18cddb2e808273e33ada318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a05acedd3c18cddb2e808273e33ada318">prepare_openbc</a> ()</td></tr>
+<tr class="separator:a05acedd3c18cddb2e808273e33ada318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dcbfe3322a919097f59b18802134626"><td class="memTemplParams" colspan="2">template&lt;Direction DIR, std::enable_if_t&lt; DIR==Direction::forward||DIR==Direction::both, int &gt; &gt; </td></tr>
 <tr class="memitem:a6dcbfe3322a919097f59b18802134626"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; typename <a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt; T, D, S &gt;::<a class="el" href="classamrex_1_1FFT_1_1R2C.html#ad56d4d40fdb0248b81b76e3a7658e18b">cMF</a> *, <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a6dcbfe3322a919097f59b18802134626">getSpectralData</a> ()</td></tr>
 <tr class="separator:a6dcbfe3322a919097f59b18802134626"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +197,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac75a018d4bd06f5592003700945af2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b7ffff2c4ecb6d1b5e86fc5b19cd10f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a6b7ffff2c4ecb6d1b5e86fc5b19cd10f">m_fft_bwd_z</a> {}</td></tr>
 <tr class="separator:a6b7ffff2c4ecb6d1b5e86fc5b19cd10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373893ae1d4b5fcb263b5dfe46be9e68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a373893ae1d4b5fcb263b5dfe46be9e68">m_fft_fwd_x_half</a> {}</td></tr>
+<tr class="separator:a373893ae1d4b5fcb263b5dfe46be9e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732a438db3b92c9118bfb1492b960c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a732a438db3b92c9118bfb1492b960c7a">m_fft_bwd_x_half</a> {}</td></tr>
+<tr class="separator:a732a438db3b92c9118bfb1492b960c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e458acb1274d2fc4a8db2d1a7c544b1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html">MultiBlockCommMetaData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a4e458acb1274d2fc4a8db2d1a7c544b1">m_cmd_x2y</a></td></tr>
 <tr class="separator:a4e458acb1274d2fc4a8db2d1a7c544b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa480de56fa85818fe4e644e37c1c27f5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html">MultiBlockCommMetaData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#aa480de56fa85818fe4e644e37c1c27f5">m_cmd_y2x</a></td></tr>
@@ -828,6 +834,22 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
+<a id="a05acedd3c18cddb2e808273e33ada318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05acedd3c18cddb2e808273e33ada318">&#9670;&nbsp;</a></span>prepare_openbc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , Direction D, DomainStrategy S&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1R2C.html">amrex::FFT::R2C</a>&lt; T, D, S &gt;::prepare_openbc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a04cc7a979415fd93a0f97ffe2a469638"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04cc7a979415fd93a0f97ffe2a469638">&#9670;&nbsp;</a></span>scalingFactor()</h2>
 
@@ -1353,6 +1375,30 @@ template&lt;typename T  = Real, FFT::Direction D = FFT::Direction::both, FFT::Do
 
 </div>
 </div>
+<a id="a732a438db3b92c9118bfb1492b960c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a732a438db3b92c9118bfb1492b960c7a">&#9670;&nbsp;</a></span>m_fft_bwd_x_half</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = Real, FFT::Direction D = FFT::Direction::both, FFT::DomainStrategy  = FFT::DomainStrategy::slab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt;T&gt; <a class="el" href="classamrex_1_1FFT_1_1R2C.html">amrex::FFT::R2C</a>&lt; T, D, <a class="el" href="namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845">DomainStrategy</a> &gt;::m_fft_bwd_x_half {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a18c21ee0e1f5fd623815cd8827bac072"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18c21ee0e1f5fd623815cd8827bac072">&#9670;&nbsp;</a></span>m_fft_bwd_y</h2>
 
@@ -1414,6 +1460,30 @@ template&lt;typename T  = Real, FFT::Direction D = FFT::Direction::both, FFT::Do
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt;T&gt; <a class="el" href="classamrex_1_1FFT_1_1R2C.html">amrex::FFT::R2C</a>&lt; T, D, <a class="el" href="namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845">DomainStrategy</a> &gt;::m_fft_fwd_x {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a373893ae1d4b5fcb263b5dfe46be9e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373893ae1d4b5fcb263b5dfe46be9e68">&#9670;&nbsp;</a></span>m_fft_fwd_x_half</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = Real, FFT::Direction D = FFT::Direction::both, FFT::DomainStrategy  = FFT::DomainStrategy::slab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1FFT_1_1Plan.html">Plan</a>&lt;T&gt; <a class="el" href="classamrex_1_1FFT_1_1R2C.html">amrex::FFT::R2C</a>&lt; T, D, <a class="el" href="namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845">DomainStrategy</a> &gt;::m_fft_fwd_x_half {}</td>
         </tr>
       </table>
   </td>

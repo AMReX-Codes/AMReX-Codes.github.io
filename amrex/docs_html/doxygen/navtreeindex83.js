@@ -1,5 +1,7 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html#aa952c0160cc709f5bf2dc7183c9b25b5":[3,0,0,11,9,0],
+"structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html#af0de73dc01cde0d016257305cd549250":[3,0,0,11,9,1],
 "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html":[3,0,0,11,8],
 "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html#ab372b7b522321fc1945703f182df8e33":[3,0,0,11,8,1],
 "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html#ad93f4a373b80177a48be382269f0830b":[3,0,0,11,8,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX83 =
 "structamrex_1_1ParticleBase_3_01T_00_01NReal_00_010_01_4.html#a1fb1e5ea06a345e33563fe09729a8ee7":[3,0,0,485,2],
 "structamrex_1_1ParticleBase_3_01T_00_01NReal_00_010_01_4.html#a51427d204fb68f910c4a707da1ee5d0b":[3,0,0,485,0],
 "structamrex_1_1ParticleBase_3_01T_00_01NReal_00_010_01_4.html#aa9f0b1bb9d369e5c204d1b6b6f7f6d67":[3,0,0,485,1],
-"structamrex_1_1ParticleCPUWrapper.html":[3,0,0,480],
-"structamrex_1_1ParticleCPUWrapper.html#a0cbf3e03c4cabd9a0fe9f6e2b1b584d2":[3,0,0,480,3],
-"structamrex_1_1ParticleCPUWrapper.html#a2afbf23a1587460b48f40077dccf41cc":[3,0,0,480,0]
+"structamrex_1_1ParticleCPUWrapper.html":[3,0,0,480]
 };

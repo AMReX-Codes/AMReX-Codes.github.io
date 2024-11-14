@@ -1,5 +1,7 @@
 var NAVTREEINDEX75 =
 {
+"namespaceamrex__omp__module.html#ad65feb81483b21194d98cfba40c0b8bb":[2,0,14,3],
+"namespaceamrex__paralleldescriptor__module.html":[2,0,15],
 "namespaceamrex__paralleldescriptor__module.html#a0b4f88406790fe12faee067b036014bb":[2,0,15,10],
 "namespaceamrex__paralleldescriptor__module.html#a13e70e6cf4cfe72233e9a28ca14245e0":[2,0,15,11],
 "namespaceamrex__paralleldescriptor__module.html#a159c62d36c55a038f9a058400c25cddf":[2,0,15,8],
@@ -60,8 +62,8 @@ var NAVTREEINDEX75 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func.html":[2,1,1,0],
+"namespacemembers_func.html":[2,1,1],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -101,8 +103,8 @@ var NAVTREEINDEX75 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2,0],
 "namespacemembers_vars.html":[2,1,2],
+"namespacemembers_vars.html":[2,1,2,0],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX75 =
 "structCommProfStats_1_1ReductionEntry.html#a7d0d09150f2cd432ef20826516728351":[3,0,16,3,1],
 "structCommProfStats_1_1ReductionEntry.html#ac141bc923704f3a33d9074e1954b4115":[3,0,16,3,0],
 "structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[3,0,16,3,2],
-"structCommProfStats_1_1SendRecvPair.html":[3,0,16,4],
-"structCommProfStats_1_1SendRecvPair.html#a0990a7f5e9b6aa52a2ff77aa94e318b5":[3,0,16,4,0],
-"structCommProfStats_1_1SendRecvPair.html#a0abec33396042409e9f415189c688a9a":[3,0,16,4,6]
+"structCommProfStats_1_1SendRecvPair.html":[3,0,16,4]
 };
