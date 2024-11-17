@@ -1,5 +1,12 @@
 var NAVTREEINDEX60 =
 {
+"dir_678e78232f51bebdca12cae3de73223b.html":[4,0,0,8],
+"dir_818e0d91a034d8d4dd6c89556c0fcde9.html":[4,0,0,5,3],
+"dir_90921d4ecb565478cdefd18c8f0474ea.html":[4,0,0,5,0],
+"dir_9181264258de91461eb210f766c47479.html":[4,0,0,5,8],
+"dir_997fa42af28f6d8af2a79275cfe7ca93.html":[4,0,0,9],
+"dir_a3d35c88284bcc9e68dd82330f2a8332.html":[4,0,0,2,0],
+"dir_a6a17b5120068f114fed93e39fc1db3f.html":[4,0,0,5,6],
 "dir_aac9a2acf9a30450da7853201b48e1ac.html":[4,0,0,5,1],
 "dir_e8b57d0b2c30c109375c9a2f3bc5765b.html":[4,0,0,5,5],
 "dir_ec3321dc65bacf9068b9f722dcf8a841.html":[4,0,0,7,1],
@@ -18,8 +25,8 @@ var NAVTREEINDEX60 =
 "functions_enum.html":[3,3,4],
 "functions_eval.html":[3,3,5],
 "functions_f.html":[3,3,0,6],
-"functions_func.html":[3,3,1],
 "functions_func.html":[3,3,1,0],
+"functions_func.html":[3,3,1],
 "functions_func_b.html":[3,3,1,1],
 "functions_func_c.html":[3,3,1,2],
 "functions_func_d.html":[3,3,1,3],
@@ -118,8 +125,8 @@ var NAVTREEINDEX60 =
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
+"globals_defs.html":[4,1,6],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_e.html":[4,1,6,2],
 "globals_defs_f.html":[4,1,6,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__mempool__module_1_1amrex__mempool__alloc.html":[3,0,5,4],
 "interfaceamrex__mempool__module_1_1amrex__mempool__alloc.html#adb2b65dfc1aec59150d1a8ed47e40fb4":[3,0,5,4,0],
 "interfaceamrex__mempool__module_1_1amrex__mempool__free.html":[3,0,5,5],
-"interfaceamrex__mempool__module_1_1amrex__mempool__free.html#a8f6d10e93389b7a67a277c72cb1632e4":[3,0,5,5,0],
-"interfaceamrex__mempool__module_1_1amrex__real__array__init.html":[3,0,5,6],
-"interfaceamrex__mempool__module_1_1amrex__real__array__init.html#ae554aa5f1988218666af9ecf97875026":[3,0,5,6,0],
-"interfaceamrex__mempool__module_1_1bl__allocate.html":[3,0,5,2],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a1b10764ffdbc27f785230c38110f515f":[3,0,5,2,11],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a2d50549e4b4739326733c60cb1ceae67":[3,0,5,2,8],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a483da24e5876535560d6bde44de2d3cd":[3,0,5,2,12],
-"interfaceamrex__mempool__module_1_1bl__allocate.html#a4f4a275401f9fab0feba1a172b517ec6":[3,0,5,2,6]
+"interfaceamrex__mempool__module_1_1amrex__mempool__free.html#a8f6d10e93389b7a67a277c72cb1632e4":[3,0,5,5,0]
 };

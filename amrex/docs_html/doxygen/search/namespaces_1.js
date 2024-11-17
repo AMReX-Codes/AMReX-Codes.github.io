@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['detail_10879',['detail',['../namespacedetail.html',1,'']]]
+  ['detail_10867',['detail',['../namespacedetail.html',1,'']]]
 ];

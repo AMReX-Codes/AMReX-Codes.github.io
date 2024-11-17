@@ -947,6 +947,7 @@ var namespaceamrex =
     [ "DeriveFuncMF", "namespaceamrex.html#a2b6a7802e7f7b0f631825a2f669d0093", null ],
     [ "Detected_t", "namespaceamrex.html#a4c98b791b1f6442671e5cfa546a3df4f", null ],
     [ "DetectedOr", "namespaceamrex.html#abe72f840d81a1ce49a3811fe8295b222", null ],
+    [ "DMRef", "namespaceamrex.html#a8ea864a3a9595a340c24658e4bfa24a9", null ],
     [ "EnableIf_t", "namespaceamrex.html#ae456dccc30b99d38aeeecd21adc7acfe", null ],
     [ "ErrorFunc2Default", "namespaceamrex.html#a42bd26e7d0da54d65837c31f4d03576f", null ],
     [ "ErrorFunc3DDefault", "namespaceamrex.html#ac3ef56858a7952a309061d5ddef6f86b", null ],

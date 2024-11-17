@@ -1,5 +1,13 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Array4.html#ad07666c3b8f4d68bee194c329fed0d02":[3,0,0,80,12],
+"structamrex_1_1Array4.html#addc632464912cc3a4db197cb3eb831b1":[3,0,0,80,4],
+"structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9":[3,0,0,80,26],
+"structamrex_1_1Array4.html#ae42098cbe246650094884bee0aa75c84":[3,0,0,80,14],
+"structamrex_1_1Array4.html#ae71e941fe0aaf1a422e09ac5aa031a4c":[3,0,0,80,11],
+"structamrex_1_1Array4.html#af169992bc482ac1cd44d5a5a034ab23a":[3,0,0,80,5],
+"structamrex_1_1Array4.html#af34de268f8d40135be4374144dd2b34a":[3,0,0,80,30],
+"structamrex_1_1Array4.html#afc65a955f06b484f0ff95fa6ca5579e8":[3,0,0,80,31],
 "structamrex_1_1Array4.html#afd133fb01abbd5a62b447d3d18672d10":[3,0,0,80,1],
 "structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49":[3,0,0,80,7],
 "structamrex_1_1Array4BoxOffsetTag.html":[3,0,0,250],
@@ -241,13 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1BoxIndexerND_3_011_01_4.html#a5520d0eb57f16ca5f98f5c85bcc310b8":[3,0,0,105,2],
 "structamrex_1_1BoxIndexerND_3_011_01_4.html#a5bc70c52fae0fe8f54d3acd2b1338808":[3,0,0,105,5],
 "structamrex_1_1BoxIndexerND_3_011_01_4.html#a82efa297d09d0a5982985ae3296a40c9":[3,0,0,105,1],
-"structamrex_1_1BoxIndexerND_3_011_01_4.html#aeab54119b31480eb83ee6a68b19dcdca":[3,0,0,105,4],
-"structamrex_1_1CArena_1_1Node_1_1hash.html":[3,0,0,117,0,0],
-"structamrex_1_1CArena_1_1Node_1_1hash.html#a8259627d5c6e1faa50ef4c9134875684":[3,0,0,117,0,0,0],
-"structamrex_1_1CellData.html":[3,0,0,79],
-"structamrex_1_1CellData.html#a327facaefaef9c16772d8b9f5647848e":[3,0,0,79,5],
-"structamrex_1_1CellData.html#a379f80fbf920e73f6b6f19c7c659da35":[3,0,0,79,3],
-"structamrex_1_1CellData.html#a43b1a4e88127b9fe9ec9c37c5623d5ed":[3,0,0,79,7],
-"structamrex_1_1CellData.html#a47ea706bedc5e03c2a5556da50801cf3":[3,0,0,79,2],
-"structamrex_1_1CellData.html#a558850bcec731c7cbd3f93138606388e":[3,0,0,79,4]
+"structamrex_1_1BoxIndexerND_3_011_01_4.html#aeab54119b31480eb83ee6a68b19dcdca":[3,0,0,105,4]
 };

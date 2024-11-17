@@ -1,5 +1,12 @@
 var NAVTREEINDEX87 =
 {
+"structamrex_1_1detail_1_1TypeListGet.html":[3,0,0,3,18],
+"structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,20],
+"structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[3,0,0,3,20,0],
+"structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,19],
+"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,16],
+"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,17],
+"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ab5002bf857e08f44d3cf3b47f40324b7":[3,0,0,3,17,0],
 "structamrex_1_1detail_1_1clz__tag.html":[3,0,0,3,2],
 "structamrex_1_1detail_1_1clzl__tag.html":[3,0,0,3,1],
 "structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],

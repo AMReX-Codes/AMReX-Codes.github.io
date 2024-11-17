@@ -1,5 +1,13 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex_1_1EB2.html#ab93166de851db0edebb5ae2569b88cc1":[2,0,0,8,68],
+"namespaceamrex_1_1EB2.html#acb02398d0c8b02dae840acf4f35b886c":[2,0,0,8,90],
+"namespaceamrex_1_1EB2.html#aceb9b2336e3a1251dca7ab15420dbfcd":[2,0,0,8,71],
+"namespaceamrex_1_1EB2.html#ad4baf361d00889173d59e758d4db781a":[2,0,0,8,67],
+"namespaceamrex_1_1EB2.html#ad5118c9d34449d5fcba10d141751b0d6":[2,0,0,8,57],
+"namespaceamrex_1_1EB2.html#ad7f55d0b557cb48b84323df22a77d9d0":[2,0,0,8,99],
+"namespaceamrex_1_1EB2.html#add8130de592e85defb18fdd76e152c6d":[2,0,0,8,92],
+"namespaceamrex_1_1EB2.html#adff5192ea72864d2b1e61df927b1563b":[2,0,0,8,93],
 "namespaceamrex_1_1EB2.html#ae3a379167092afad59e2ece6617e7e46":[2,0,0,8,75],
 "namespaceamrex_1_1EB2.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc":[2,0,0,8,64],
 "namespaceamrex_1_1EB2.html#ae7b5e27dc8055f12190c10f05ad8c95a":[2,0,0,8,88],
@@ -241,13 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a73c2a5939fde880dfb3256a3ea552d0f":[2,0,0,18,6,4],
 "namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530aa193ff323f29029e1e37eacda443d808":[2,0,0,18,6,0],
 "namespaceamrex_1_1InSituUtils.html#a8cf7bdb752f3479f85a203dc2181e27e":[2,0,0,18,12],
-"namespaceamrex_1_1InSituUtils.html#aa55a8198c3168709333964b78c796a6a":[2,0,0,18,14],
-"namespaceamrex_1_1InSituUtils.html#ad3ac3134f4a39a0f979b1e491849fa3a":[2,0,0,18,7],
-"namespaceamrex_1_1InSituUtils.html#ad3ac3134f4a39a0f979b1e491849fa3aa447a8b1040c94692e04c089e4634dac1":[2,0,0,18,7,1],
-"namespaceamrex_1_1InSituUtils.html#ad3ac3134f4a39a0f979b1e491849fa3aa75247ce651a3068b41ed2029e5cc7f1e":[2,0,0,18,7,0],
-"namespaceamrex_1_1InSituUtils.html#ad3f478913c1ee3d9bfed093be0301b6e":[2,0,0,18,10],
-"namespaceamrex_1_1InSituUtils.html#adcc32bbfdc881b55d739ac448f1d5d85":[2,0,0,18,8],
-"namespaceamrex_1_1InSituUtils.html#aea93d9dae530ab0650826726ebba0dfb":[2,0,0,18,9],
-"namespaceamrex_1_1Lazy.html":[2,0,0,20],
-"namespaceamrex_1_1Lazy.html#a01ac7d4ed0bfab3839b45995cf260a05":[2,0,0,20,3]
+"namespaceamrex_1_1InSituUtils.html#aa55a8198c3168709333964b78c796a6a":[2,0,0,18,14]
 };

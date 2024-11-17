@@ -35,6 +35,7 @@ var classamrex_1_1FFT_1_1R2C =
     [ "m_cz", "classamrex_1_1FFT_1_1R2C.html#a6458b98d0175ae86b2352388541c72a1", null ],
     [ "m_data_1", "classamrex_1_1FFT_1_1R2C.html#ae6d4f256e3f702c45e28d7a6d7b9699a", null ],
     [ "m_data_2", "classamrex_1_1FFT_1_1R2C.html#aca7da24dcb68f1019dcba1064fa90c55", null ],
+    [ "m_do_alld_fft", "classamrex_1_1FFT_1_1R2C.html#a41268ca359cbd688968574e7fd092aba", null ],
     [ "m_dtos_x2y", "classamrex_1_1FFT_1_1R2C.html#a13a17b3574521d8bba67a1f96d0d3834", null ],
     [ "m_dtos_x2z", "classamrex_1_1FFT_1_1R2C.html#a0b640983961d6ee3de50af47956bd472", null ],
     [ "m_dtos_y2x", "classamrex_1_1FFT_1_1R2C.html#ae5725df08a907d5837a6e38b285edac2", null ],
