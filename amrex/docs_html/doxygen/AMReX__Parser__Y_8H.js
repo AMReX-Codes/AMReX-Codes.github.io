@@ -45,6 +45,7 @@ var AMReX__Parser__Y_8H =
       [ "PARSER_OR", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bca3b65381fef1e4a480813955566ac6224", null ],
       [ "PARSER_HEAVISIDE", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcacb0b84f852fe36fbb6ffafd2455f9644", null ],
       [ "PARSER_JN", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcaace05cc3a245149a82643a976e7e139a", null ],
+      [ "PARSER_YN", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bca54ca5d1224b56477f77d07fdeccd8469", null ],
       [ "PARSER_MIN", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcab15097a6b28d7658374164aa5eabf155", null ],
       [ "PARSER_MAX", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcabc0c26e39e66ba16b2fa97b76c9dae35", null ],
       [ "PARSER_FMOD", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcac75e51f4689c58f1e203db343bf3fdd8", null ]
@@ -107,6 +108,7 @@ var AMReX__Parser__Y_8H =
     [ "parser_math_sinh", "AMReX__Parser__Y_8H.html#a249f102bab7043232da73dcc4d33612e", null ],
     [ "parser_math_tan", "AMReX__Parser__Y_8H.html#a62570906aab0550c65f8a971dff0e58a", null ],
     [ "parser_math_tanh", "AMReX__Parser__Y_8H.html#aa087ffc694106cd11e7196bdb42b72a6", null ],
+    [ "parser_math_yn", "AMReX__Parser__Y_8H.html#a26bac8801872289d22edb3ba2b35077c", null ],
     [ "parser_newassign", "AMReX__Parser__Y_8H.html#a63cdcee7f7165d07558abfd490a3cf8f", null ],
     [ "parser_newf1", "AMReX__Parser__Y_8H.html#af7520cc9fa8b9a8de8e845d02b75db77", null ],
     [ "parser_newf2", "AMReX__Parser__Y_8H.html#a1a35a66f1f45aa77d0be9afe8def5501", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__PlotFileUtil_8H_source.html":[4,0,0,2,229],
+"AMReX__PlotFileUtil_8cpp.html":[4,0,0,2,228],
 "AMReX__PlotFileUtil_8cpp.html#a438b71d250fb65fd385716c745be94ad":[4,0,0,2,228,0],
 "AMReX__PlotFileUtil_8cpp.html#a6e1c541c50331b9a3c005b80b4503f85":[4,0,0,2,228,1],
 "AMReX__PlotFileUtil_8cpp.html#a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1":[4,0,0,2,228,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__String_8H.html#ae905d147b84a78af7a2ccf7620bdf9b1":[4,0,0,2,250,1],
 "AMReX__String_8H.html#afb53573f5330e4753ad1b562e5dd95ce":[4,0,0,2,250,3],
 "AMReX__String_8H_source.html":[4,0,0,2,250],
-"AMReX__String_8cpp.html":[4,0,0,2,249],
-"AMReX__String_8cpp.html#a3171bdd61dc2e905052d3396dcc93970":[4,0,0,2,249,4],
-"AMReX__String_8cpp.html#a67bf98d88c814ab458018afd16e64aa8":[4,0,0,2,249,2]
+"AMReX__String_8cpp.html":[4,0,0,2,249]
 };
