@@ -1,5 +1,6 @@
 var NAVTREEINDEX75 =
 {
+"namespaceamrex__mempool__module.html#ab7ef2ee373d559cbf4aad8474d130184":[2,0,12,12],
 "namespaceamrex__mempool__module.html#abdc190f8793840926895d5926e3b0270":[2,0,12,30],
 "namespaceamrex__mempool__module.html#abf42bbe6fd69ab7fd5f42295f37511f6":[2,0,12,13],
 "namespaceamrex__mempool__module.html#ac54b332ae65afbcd1863fa9ae4174cc2":[2,0,12,31],
@@ -120,8 +121,8 @@ var NAVTREEINDEX75 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX75 =
 "structCommProfStats_1_1DataBlock.html#a27353154e5e772a6fbde00aa9ccda88a":[3,0,16,1,10],
 "structCommProfStats_1_1DataBlock.html#a3e1dfbc9a0536493de4e0668b3955d15":[3,0,16,1,16],
 "structCommProfStats_1_1DataBlock.html#a3e58e93a3d918f8f890135351e95840c":[3,0,16,1,4],
-"structCommProfStats_1_1DataBlock.html#a66216fd698908253eacbda7152cd1277":[3,0,16,1,5],
-"structCommProfStats_1_1DataBlock.html#a6cb3119f2c4606f258828506fb579d22":[3,0,16,1,9]
+"structCommProfStats_1_1DataBlock.html#a66216fd698908253eacbda7152cd1277":[3,0,16,1,5]
 };

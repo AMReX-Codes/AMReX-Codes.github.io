@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"dir_0dfd235debda79f3e8c0c39fed516f8c.html":[4,0,0,5,2],
 "dir_25d7822c1b649e6df029ec2b7597a2a5.html":[4,0,0,7,0],
 "dir_25f1d00fd66065d0aa2a8720d1ed1df5.html":[4,0,0,7],
 "dir_413f4e031a85da0d68269c6fd2f76e1c.html":[4,0,0],
@@ -20,8 +21,8 @@ var NAVTREEINDEX60 =
 "dir_f9e66c8b738777acbc48d7c0a63416f3.html":[4,0,0,3],
 "dir_ff6ba31e3d9b9a1f9a0b82367f037326.html":[4,0,0,0],
 "files.html":[4,0],
-"functions.html":[3,3,0,0],
 "functions.html":[3,3,0],
+"functions.html":[3,3,0,0],
 "functions_a.html":[3,3,0,1],
 "functions_b.html":[3,3,0,2],
 "functions_c.html":[3,3,0,3],
@@ -92,8 +93,8 @@ var NAVTREEINDEX60 =
 "functions_type_v.html":[3,3,3,15],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2],
 "functions_vars.html":[3,3,2,0],
+"functions_vars.html":[3,3,2],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -125,8 +126,8 @@ var NAVTREEINDEX60 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0],
 "globals.html":[4,1,0,0],
+"globals.html":[4,1,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
@@ -191,8 +192,8 @@ var NAVTREEINDEX60 =
 "globals_z.html":[4,1,0,23],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a7d734565739c8ecaab264c90cbd189bc":[3,0,5,1,0],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a838877fb568c97e993ab5d0a0d61ff54":[3,0,5,1,6],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#acf5c362213b78718bb7c0d884168b879":[3,0,5,1,2],
-"interfaceamrex__mempool__module_1_1amrex__deallocate.html#adf8cd7d3386ee5d25007d25cad5b2123":[3,0,5,1,4],
-"interfaceamrex__mempool__module_1_1amrex__deallocate.html#ae67f5eef086a5077920094d8bc0c076f":[3,0,5,1,8]
+"interfaceamrex__mempool__module_1_1amrex__deallocate.html#adf8cd7d3386ee5d25007d25cad5b2123":[3,0,5,1,4]
 };

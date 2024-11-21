@@ -13,5 +13,6 @@ var structamrex_1_1Parser_1_1Data =
     [ "m_locals", "structamrex_1_1Parser_1_1Data.html#aca1f9ad0544614004789f38c2ee3e659", null ],
     [ "m_max_stack_size", "structamrex_1_1Parser_1_1Data.html#a863a707fe492216d36ff882e0fbee9e9", null ],
     [ "m_nvars", "structamrex_1_1Parser_1_1Data.html#aaef798272fb28c2f79185f6be424a717", null ],
-    [ "m_parser", "structamrex_1_1Parser_1_1Data.html#abac6e2284d98331984ef3d8967877219", null ]
+    [ "m_parser", "structamrex_1_1Parser_1_1Data.html#abac6e2284d98331984ef3d8967877219", null ],
+    [ "m_use_arena", "structamrex_1_1Parser_1_1Data.html#a87cc9ea24a8d3396671deb0139f50b12", null ]
 ];

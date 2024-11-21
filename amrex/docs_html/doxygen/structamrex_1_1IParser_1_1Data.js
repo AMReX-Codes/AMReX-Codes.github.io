@@ -12,5 +12,6 @@ var structamrex_1_1IParser_1_1Data =
     [ "m_host_executor", "structamrex_1_1IParser_1_1Data.html#ad58fe278866bfbcb5cb3390140b72344", null ],
     [ "m_iparser", "structamrex_1_1IParser_1_1Data.html#ae2e79afe3f2835ee854cfbe074879d97", null ],
     [ "m_max_stack_size", "structamrex_1_1IParser_1_1Data.html#a8f3166649cf29c5c3292bfb4eee475ec", null ],
-    [ "m_nvars", "structamrex_1_1IParser_1_1Data.html#a8f941db726ad3f6a2e60a4e4bed8229a", null ]
+    [ "m_nvars", "structamrex_1_1IParser_1_1Data.html#a8f941db726ad3f6a2e60a4e4bed8229a", null ],
+    [ "m_use_arena", "structamrex_1_1IParser_1_1Data.html#aed041d9f2b9278682b308ebd8963e49e", null ]
 ];

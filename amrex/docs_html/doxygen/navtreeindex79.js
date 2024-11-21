@@ -1,5 +1,6 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1EB2_1_1Vertex.html#aa6351251f6a541b7405e78821225617a":[3,0,0,4,7,2],
 "structamrex_1_1EB2_1_1Vertex.html#ac91b64f531bb3c5cf456af74b4000dd8":[3,0,0,4,7,1],
 "structamrex_1_1EBCellFlagFab_1_1NumCells.html":[3,0,0,400,0],
 "structamrex_1_1EBCellFlagFab_1_1NumCells.html#a6f140513c6cfce17da967533d3582fed":[3,0,0,400,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1FabArrayBase_1_1TileArray.html#a6dfaf13cb2e2e2c8e57d0ef3451e6b84":[3,0,0,132,16,0],
 "structamrex_1_1FabArrayBase_1_1TileArray.html#a77df041121016e402a0b5df46a8fe7e6":[3,0,0,132,16,3],
 "structamrex_1_1FabArrayBase_1_1TileArray.html#a830d98c3be0b8b1f0eb88118f7a1f35c":[3,0,0,132,16,4],
-"structamrex_1_1FabArrayBase_1_1TileArray.html#a9bc4e65bc502d4951afe43a1904b48bf":[3,0,0,132,16,5],
-"structamrex_1_1FabArrayBase_1_1TileArray.html#ae96f9cf0f9ad68ea664c018a6a4baa78":[3,0,0,132,16,6]
+"structamrex_1_1FabArrayBase_1_1TileArray.html#a9bc4e65bc502d4951afe43a1904b48bf":[3,0,0,132,16,5]
 };

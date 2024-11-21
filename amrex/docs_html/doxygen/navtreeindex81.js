@@ -1,5 +1,6 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html#a6498967b3ecefd257bff40a52fe6affb":[3,0,0,6,30,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html":[3,0,0,6,44],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html#aca108787de55ebdc311eb28d421a6fd9":[3,0,0,6,44,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4.html":[3,0,0,6,32],
@@ -37,8 +38,8 @@ var NAVTREEINDEX81 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,6,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,6,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,6,40],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,1],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,268],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,274],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,273],
@@ -172,6 +173,7 @@ var NAVTREEINDEX81 =
 "structamrex_1_1IParser_1_1Data.html#ad58fe278866bfbcb5cb3390140b72344":[3,0,0,298,0,9],
 "structamrex_1_1IParser_1_1Data.html#adaa4647da1bb1c2ca10dd948bb6fe43f":[3,0,0,298,0,2],
 "structamrex_1_1IParser_1_1Data.html#ae2e79afe3f2835ee854cfbe074879d97":[3,0,0,298,0,10],
+"structamrex_1_1IParser_1_1Data.html#aed041d9f2b9278682b308ebd8963e49e":[3,0,0,298,0,13],
 "structamrex_1_1IParser_1_1Data.html#af818dd603aeab55c75fd4caab36606e4":[3,0,0,298,0,5],
 "structamrex_1_1InSituUtils_1_1amrex__tt.html":[3,0,0,7,2],
 "structamrex_1_1InSituUtils_1_1assignOp.html":[3,0,0,7,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4ad1a130e88790663b2124d7dbd3e9f81e":[3,0,0,451,1,0],
 "structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4af5c101b5f19e97166e7531ffa1c706c4":[3,0,0,451,1,2],
 "structamrex_1_1LogicalAnd.html":[3,0,0,158],
-"structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,158,0],
-"structamrex_1_1LogicalOr.html":[3,0,0,159],
-"structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240":[3,0,0,159,0]
+"structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,158,0]
 };

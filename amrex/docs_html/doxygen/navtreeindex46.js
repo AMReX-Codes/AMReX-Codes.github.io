@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"classamrex_1_1InterpolaterBoxCoarsener.html#a38dd7e762f41ec784b5dfd70109bb3a8":[3,0,0,47,4],
 "classamrex_1_1InterpolaterBoxCoarsener.html#a3b2dee7384a3427ecb8dc33e76dd0eb1":[3,0,0,47,2],
 "classamrex_1_1InterpolaterBoxCoarsener.html#a7a3935064f298f7c3c75c3f693a2d349":[3,0,0,47,1],
 "classamrex_1_1InterpolaterBoxCoarsener.html#ad3e56481c923c022bd9cfca822473ea6":[3,0,0,47,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1":[3,0,0,443,20],
 "classamrex_1_1MLCGSolverT.html#a3180b6fc90c59d409dd729364cac7423":[3,0,0,443,10],
 "classamrex_1_1MLCGSolverT.html#a3210f3ff9e55a7746a24d849cf9c39b2":[3,0,0,443,29],
-"classamrex_1_1MLCGSolverT.html#a3389add6565681ffce22be42b4101fe2":[3,0,0,443,30],
-"classamrex_1_1MLCGSolverT.html#a566d8e16eab81e003fdf43b18112836b":[3,0,0,443,11]
+"classamrex_1_1MLCGSolverT.html#a3389add6565681ffce22be42b4101fe2":[3,0,0,443,30]
 };
