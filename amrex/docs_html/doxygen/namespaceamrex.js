@@ -2704,6 +2704,8 @@ var namespaceamrex =
     [ "Random_int", "namespaceamrex.html#a20796a80df81ee204983811cc8a1b705", null ],
     [ "Random_int", "namespaceamrex.html#a3768023f2b8cf90a47c693514b97d579", null ],
     [ "Random_long", "namespaceamrex.html#a83b723afb07da54500bc1dc47a43f636", null ],
+    [ "RandomGamma", "namespaceamrex.html#ae9fcb4226a23365794ca117f5d901243", null ],
+    [ "RandomGamma", "namespaceamrex.html#ad5a1aeb316a9d9d1d7b3e5cba92dac7b", null ],
     [ "RandomNormal", "namespaceamrex.html#a6a4ed5dc1eeb3e5b409eb8975c9e829b", null ],
     [ "RandomNormal", "namespaceamrex.html#a10f7574cba3e496a27f09204cce8aa6f", null ],
     [ "RandomPoisson", "namespaceamrex.html#aadec079fd8e2cdca36f7f49355e33864", null ],

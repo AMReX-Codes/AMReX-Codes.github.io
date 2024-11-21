@@ -9,6 +9,7 @@ var AMReX__Random_8cpp =
     [ "Random", "AMReX__Random_8cpp.html#a384bf7a8791d85fe1ae4153eee61d71e", null ],
     [ "Random_int", "AMReX__Random_8cpp.html#a20796a80df81ee204983811cc8a1b705", null ],
     [ "Random_long", "AMReX__Random_8cpp.html#a83b723afb07da54500bc1dc47a43f636", null ],
+    [ "RandomGamma", "AMReX__Random_8cpp.html#ae9fcb4226a23365794ca117f5d901243", null ],
     [ "RandomNormal", "AMReX__Random_8cpp.html#a6a4ed5dc1eeb3e5b409eb8975c9e829b", null ],
     [ "RandomPoisson", "AMReX__Random_8cpp.html#aadec079fd8e2cdca36f7f49355e33864", null ],
     [ "ResetRandomSeed", "AMReX__Random_8cpp.html#a609b6464779180bb47c23d308d6c1a95", null ],

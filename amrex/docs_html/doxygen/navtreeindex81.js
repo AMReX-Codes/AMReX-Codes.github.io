@@ -1,5 +1,10 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html":[3,0,0,6,44],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html#aca108787de55ebdc311eb28d421a6fd9":[3,0,0,6,44,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4.html":[3,0,0,6,32],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4.html#a1264c2471c53840fa6e825ba28978223":[3,0,0,6,32,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4.html":[3,0,0,6,38],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4.html#a68a042455ff9934b7ce73c0d3f49ada6":[3,0,0,6,38,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html":[3,0,0,6,36],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html#a4252dceff71117c5b4cd47319a5984d9":[3,0,0,6,36,0],
@@ -32,8 +37,8 @@ var NAVTREEINDEX81 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,6,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,6,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,6,40],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,0],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,1],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,40,0],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,268],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,274],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,273],
@@ -244,10 +249,5 @@ var NAVTREEINDEX81 =
 "structamrex_1_1LogicalAnd.html":[3,0,0,158],
 "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,158,0],
 "structamrex_1_1LogicalOr.html":[3,0,0,159],
-"structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240":[3,0,0,159,0],
-"structamrex_1_1MFInfo.html":[3,0,0,127],
-"structamrex_1_1MFInfo.html#a09865d39fb552bb0fa800934f1b1fa6d":[3,0,0,127,6],
-"structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2":[3,0,0,127,9],
-"structamrex_1_1MFInfo.html#a61ae5fd154086ea2849fe236e1dce794":[3,0,0,127,7],
-"structamrex_1_1MFInfo.html#a810a0fb9b39d3a0d313f44d2b4d09ef2":[3,0,0,127,3]
+"structamrex_1_1LogicalOr.html#a2c58f13f24e524ecceb55f0baabff240":[3,0,0,159,0]
 };
