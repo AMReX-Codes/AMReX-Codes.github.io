@@ -213,27 +213,29 @@ class amrex::GMRES&lt; V, M &gt;</h3>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">V</td><td>linear algebra vector. It must be default constructible, move constructible, and move assignable. </td></tr>
-    <tr><td class="paramname">M</td><td>linear operator. A list of required member functions for M is shown below. Here RT (typename V::value_type) is either double or float.<ul>
-<li>void apply(V&amp; lhs, V const&amp; rhs)<br  />
- lhs = L(rhs), where L is the linear operator performing matrix vector product.</li>
-<li>void assign(V&amp; lhs, V const&amp; rhs)<br  />
- lhs = rhs.</li>
-<li>RT dotProduct(V const&amp; v1, V const&amp; v2)<br  />
- returns v1 * v2.</li>
-<li>void increment(V&amp; lhs, V const&amp; rhs, RT a)<br  />
- lhs += a * rhs.</li>
-<li>void linComb(V&amp; lhs, RT a, V const&amp; rhs_a, RT b, V const&amp; rhs_b)<br  />
- lhs = a * rhs_a + b * rhs_b.</li>
-<li>V makeVecRHS()<br  />
- returns a V object that is suitable as RHS in M x = b. The reason we distinguish between LHS and RHS is M might need the distinction for efficiency. For example, if V is <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>, we might need the x in the LHS of M x = b to have ghost cells for efficiency, whereas no ghost cells are needed for the RHS (i.e., b).</li>
-<li>V makeVecLHS()<br  />
- returns a V object that is suitable as LHS in M x = b. See the description for makeVecRHS for more details.</li>
-<li>RT norm2(V const&amp; v)<br  />
- returns the 2-norm of v.</li>
-<li>void precond(V&amp; lhs, V const&amp; rhs)<br  />
+    <tr><td class="paramname">M</td><td>linear operator. A list of required member functions for M is shown below. Here RT (<code>typename M::RT</code>) is either double or float. Examples of implementation for V being a single-component <code><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a></code> are also given below.<ul>
+<li><code>void apply(V&amp; Ax, V const&amp; x)</code><br  />
+ Ax = A(x), where A is the linear operator performing matrix vector product. Here x is made with the makeVecLHS function. Therefore, it may have ghost cells and it's safe to cast it with const_cast&lt;V&amp;&gt;(x) and do ghost cell exchange, if necessary.</li>
+<li><code>void assign(V&amp; lhs, V const&amp; rhs)</code><br  />
+ lhs = rhs. For example, <code>MultiFab::Copy(lhs,rhs,0,0,1,0)</code>.</li>
+<li><code>RT dotProduct(V const&amp; v1, V const&amp; v2)</code><br  />
+ returns v1 * v2. For example, <code>MultiFab::Dot(v1,0,v2,0,1,0)</code>.</li>
+<li><code>void increment(V&amp; lhs, V const&amp; rhs, RT a)</code><br  />
+ lhs += a * rhs. For example, <code>MultiFab::Saxpy(lhs,a,rhs,0,0,1,0)</code>.</li>
+<li><code>void linComb(V&amp; lhs, RT a, V const&amp; rhs_a, RT b, V const&amp; rhs_b)</code><br  />
+ lhs = a * rhs_a + b * rhs_b. For example, <code>MultiFab::LinComb(lhs,a,rhs_a,0,b,rhs_b,0,0,1,0)</code>.</li>
+<li><code>V makeVecRHS()</code><br  />
+ returns a V object that is suitable as RHS in M x = b. The reason we distinguish between LHS and RHS is M might need the distinction for efficiency. For example, if V is <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>, we might need the x in the LHS of M x = b to have ghost cells for efficiency, whereas no ghost cells are needed for the RHS (i.e., b). An example of the implementation might be <code>return MultiFab(grids,dmap,1,0)</code>.</li>
+<li><code>V makeVecLHS()</code><br  />
+ returns a V object that is suitable as LHS in M x = b. See the description for makeVecRHS for more details. An example of the implementation might be <code>return MultiFab(grids,dmap,1,1)</code>.</li>
+<li><code>RT norm2(V const&amp; v)</code><br  />
+ returns the 2-norm of v. For example, <code>return v.norm2()</code>.</li>
+<li><code>void precond(V&amp; lhs, V const&amp; rhs)</code><br  />
  applies preconditioner to rhs. If there is no preconditioner, this function should do lhs = rhs.</li>
-<li>void setToZero(V&amp; v)<br  />
- v = 0. </li>
+<li><code>void scale(V&amp; v, RT fac)</code><br  />
+ scales v by fac. For example, <code>v.mult(fac)</code>.</li>
+<li><code>void setToZero(V&amp; v)</code><br  />
+ v = 0. For example, <code>v.setVal(0)</code>. </li>
 </ul>
 </td></tr>
   </table>
