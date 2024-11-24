@@ -473,6 +473,7 @@ var hierarchy =
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr< T >", "structamrex_1_1FatPtr.html", null ],
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", null ],
+    [ "amrex::FFT::detail::FFTPhysBCTag< T >", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag.html", null ],
     [ "amrex::FilccCell", "structamrex_1_1FilccCell.html", null ],
     [ "amrex::FilfcFace", "structamrex_1_1FilfcFace.html", null ],
     [ "amrex::FillBoxId", "classamrex_1_1FillBoxId.html", null ],

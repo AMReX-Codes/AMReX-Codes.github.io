@@ -1,10 +1,6 @@
 var namespaceamrex_1_1FFT =
 [
-    [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", [
-      [ "get_fab", "namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8", null ],
-      [ "make_iota_distromap", "namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c", null ],
-      [ "make_mfs_share", "namespaceamrex_1_1FFT_1_1detail.html#a6dca0b1e5eace20e02c83566c93a69b1", null ]
-    ] ],
+    [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", "namespaceamrex_1_1FFT_1_1detail" ],
     [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", "namespaceamrex_1_1FFT_1_1fft__poisson__detail" ],
     [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],

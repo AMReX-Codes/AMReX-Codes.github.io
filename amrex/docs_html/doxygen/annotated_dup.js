@@ -102,6 +102,9 @@ var annotated_dup =
         [ "ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", "classamrex_1_1EB2_1_1ChkptFile" ]
       ] ],
       [ "FFT", "namespaceamrex_1_1FFT.html", [
+        [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", [
+          [ "FFTPhysBCTag", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag.html", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag" ]
+        ] ],
         [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", [
           [ "DZ", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ" ]
         ] ],

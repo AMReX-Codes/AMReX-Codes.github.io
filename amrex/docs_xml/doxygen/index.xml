@@ -4772,6 +4772,13 @@
     <member refid="classamrex_1_1FEIntegrator_1ac0b9633fedee03bd638f87514a952720" kind="function"><name>time_interpolate</name></member>
     <member refid="classamrex_1_1FEIntegrator_1acd01b4dfae6f5cbd84d2ed940355fd0c" kind="function"><name>map_data</name></member>
   </compound>
+  <compound refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag" kind="struct"><name>amrex::FFT::detail::FFTPhysBCTag</name>
+    <member refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag_1a5e192db174dcfda2d154a813e393cfcb" kind="variable"><name>dfab</name></member>
+    <member refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag_1a80ddd8e4a0c2e7bdd6bb8df9a243562e" kind="variable"><name>dbox</name></member>
+    <member refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag_1a5a880a15e06e1f1539af618ec58593c4" kind="variable"><name>bc</name></member>
+    <member refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag_1a00fd686ba49fafbf2e385581ef0b523e" kind="variable"><name>face</name></member>
+    <member refid="structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag_1af2a8cb6caa53567ca2a2d0053f308899" kind="function"><name>box</name></member>
+  </compound>
   <compound refid="structamrex_1_1FilccCell" kind="struct"><name>amrex::FilccCell</name>
     <member refid="structamrex_1_1FilccCell_1a61e51420f94e3f8dcd17cf8fc6ad5543" kind="function"><name>operator()</name></member>
     <member refid="structamrex_1_1FilccCell_1a61e51420f94e3f8dcd17cf8fc6ad5543" kind="function"><name>operator()</name></member>
@@ -10382,6 +10389,8 @@
     <member refid="classamrex_1_1FFT_1_1R2C_1aa078479f5563108a286fc9f2c34589cb" kind="typedef"><name>MF</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1ad56d4d40fdb0248b81b76e3a7658e18b" kind="typedef"><name>cMF</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1afd3d509858e88e5f3a1efe7cb494baf4" kind="friend"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a1be460f58e5e6b3d1fc4ddecc08e522b" kind="friend"><name>Poisson</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1abf6a97cc1f486d7ad995037461ecb49a" kind="friend"><name>PoissonHybrid</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1a3e8a5fa22798bc7055e23c03d8ad9e58" kind="variable"><name>m_fft_fwd_x</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1a56cfcb34e692ac749aa2afb45c54873c" kind="variable"><name>m_fft_bwd_x</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1aa265126e8170d6036d1b58826a975d95" kind="variable"><name>m_fft_fwd_y</name></member>
@@ -10433,14 +10442,17 @@
     <member refid="classamrex_1_1FFT_1_1R2C_1a09c3cd786098785470197484da6d65c8" kind="function"><name>getSpectralData</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1a8148fe0560b7de83296159d75b9ad396" kind="function"><name>getSpectralDataLayout</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1ab18f4105f6b6342d1490b85ee7f949f5" kind="function"><name>post_forward_doit</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1a05acedd3c18cddb2e808273e33ada318" kind="function"><name>prepare_openbc</name></member>
-    <member refid="classamrex_1_1FFT_1_1R2C_1ad27b7957b1cbbce2fa64cbff8dab70dc" kind="function"><name>backward_doit</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1a6dcbfe3322a919097f59b18802134626" kind="function"><name>getSpectralData</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a05acedd3c18cddb2e808273e33ada318" kind="function"><name>prepare_openbc</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a9a6a492451049b9753b447c5397c38c1" kind="function"><name>backward_doit</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2C_1a1c37dfa155bff8eaa65d97034d3c8458" kind="function"><name>backward_doit</name></member>
     <member refid="classamrex_1_1FFT_1_1R2C_1a1c9b286f2c655d17b48d8d1e6a6b264f" kind="function"><name>make_c2c_plans</name></member>
   </compound>
   <compound refid="classamrex_1_1FFT_1_1R2X" kind="class"><name>amrex::FFT::R2X</name>
     <member refid="classamrex_1_1FFT_1_1R2X_1a1ad8b2010b2dd7e6107786d468665799" kind="typedef"><name>MF</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a7e4e49f640cc8ed6a25bd508ea203b9b" kind="typedef"><name>cMF</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2X_1a1be460f58e5e6b3d1fc4ddecc08e522b" kind="friend"><name>Poisson</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2X_1abf6a97cc1f486d7ad995037461ecb49a" kind="friend"><name>PoissonHybrid</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1abd47117da546a7b7ed412b3f27ae8964" kind="variable"><name>m_dom_0</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a02ae354abda27b438eaef76040597332" kind="variable"><name>m_bc</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1aa6d454efba2b7a022e543e25619464e4" kind="variable"><name>m_fft_fwd_x</name></member>
@@ -10485,6 +10497,7 @@
     <member refid="classamrex_1_1FFT_1_1R2X_1a890e63d01d4c8139875361556458a834" kind="function"><name>scalingFactor</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a2e78cfce8e9b69a447c046c981120f65" kind="function"><name>forwardThenBackward</name></member>
     <member refid="classamrex_1_1FFT_1_1R2X_1a036c3be80e75d7d3bdb8f7fa6c2b2730" kind="function"><name>post_forward_doit</name></member>
+    <member refid="classamrex_1_1FFT_1_1R2X_1aa13278f2ecdece165c36f0a234345936" kind="function"><name>forwardThenBackward_doit</name></member>
   </compound>
   <compound refid="structamrex_1_1RandomEngine" kind="struct"><name>amrex::RandomEngine</name>
     <member refid="structamrex_1_1RandomEngine_1a75f184559414049b78efd270fdb60b3c" kind="variable"><name>rand_state</name></member>
@@ -14728,6 +14741,7 @@
     <member refid="namespaceamrex_1_1FFT_1_1detail_1ae40f1092f78a0a8f53357a35ddeab89c" kind="function"><name>make_iota_distromap</name></member>
     <member refid="namespaceamrex_1_1FFT_1_1detail_1a1ade0d84620e8faa51f7bac69806a0d8" kind="function"><name>get_fab</name></member>
     <member refid="namespaceamrex_1_1FFT_1_1detail_1a6dca0b1e5eace20e02c83566c93a69b1" kind="function"><name>make_mfs_share</name></member>
+    <member refid="namespaceamrex_1_1FFT_1_1detail_1a995b1b061a4b76ab820758880fb3ab30" kind="function"><name>fill_physbc</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1FFT_1_1fft__poisson__detail" kind="namespace"><name>amrex::FFT::fft_poisson_detail</name>
   </compound>

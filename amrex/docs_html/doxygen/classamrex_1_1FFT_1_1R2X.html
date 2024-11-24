@@ -98,7 +98,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1R2X.html',''); in
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1FFT_1_1R2X-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">amrex::FFT::R2X&lt; T &gt; Class Template Reference</div>  </div>
@@ -139,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a036c3be80e75d7d3bdb8f7fa6c2b2730"><td class="memTemplParams" colspan="2">template&lt;int dim, typename FAB , typename F &gt; </td></tr>
 <tr class="memitem:a036c3be80e75d7d3bdb8f7fa6c2b2730"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#a036c3be80e75d7d3bdb8f7fa6c2b2730">post_forward_doit</a> (FAB *fab, F const &amp;f)</td></tr>
 <tr class="separator:a036c3be80e75d7d3bdb8f7fa6c2b2730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa13278f2ecdece165c36f0a234345936"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aa13278f2ecdece165c36f0a234345936"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#aa13278f2ecdece165c36f0a234345936">forwardThenBackward_doit</a> (<a class="el" href="classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799">MF</a> const &amp;inmf, <a class="el" href="classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799">MF</a> &amp;outmf, F const &amp;post_forward, <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> const &amp;ngout=<a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0), <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> const &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
+<tr class="separator:aa13278f2ecdece165c36f0a234345936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -212,6 +220,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1d2511e2ef30f244f52f60277d05684e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3489fa8aaaef3759125b166421ca9688"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1FFT_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#a3489fa8aaaef3759125b166421ca9688">m_info</a></td></tr>
 <tr class="separator:a3489fa8aaaef3759125b166421ca9688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a1be460f58e5e6b3d1fc4ddecc08e522b"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a1be460f58e5e6b3d1fc4ddecc08e522b"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#a1be460f58e5e6b3d1fc4ddecc08e522b">Poisson</a></td></tr>
+<tr class="separator:a1be460f58e5e6b3d1fc4ddecc08e522b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6a97cc1f486d7ad995037461ecb49a"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:abf6a97cc1f486d7ad995037461ecb49a"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#abf6a97cc1f486d7ad995037461ecb49a">PoissonHybrid</a></td></tr>
+<tr class="separator:abf6a97cc1f486d7ad995037461ecb49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T = Real&gt;<br />
@@ -400,6 +417,64 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
+<a id="aa13278f2ecdece165c36f0a234345936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13278f2ecdece165c36f0a234345936">&#9670;&nbsp;</a></span>forwardThenBackward_doit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1R2X.html">amrex::FFT::R2X</a>&lt; T &gt;::forwardThenBackward_doit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799">MF</a> const &amp;&#160;</td>
+          <td class="paramname"><em>inmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799">MF</a> &amp;&#160;</td>
+          <td class="paramname"><em>outmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F const &amp;&#160;</td>
+          <td class="paramname"><em>post_forward</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ngout</em> = <code><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> const &amp;&#160;</td>
+          <td class="paramname"><em>period</em> = <code><a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adefe97ae9fa06f7856c39c30d6c1a3a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adefe97ae9fa06f7856c39c30d6c1a3a3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -500,6 +575,59 @@ template&lt;typename T &gt; </div>
           <td class="memname">T <a class="el" href="classamrex_1_1FFT_1_1R2X.html">amrex::FFT::R2X</a>&lt; T &gt;::scalingFactor</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a1be460f58e5e6b3d1fc4ddecc08e522b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be460f58e5e6b3d1fc4ddecc08e522b">&#9670;&nbsp;</a></span>Poisson</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = Real&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">Poisson</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf6a97cc1f486d7ad995037461ecb49a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6a97cc1f486d7ad995037461ecb49a">&#9670;&nbsp;</a></span>PoissonHybrid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = Real&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">PoissonHybrid</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
