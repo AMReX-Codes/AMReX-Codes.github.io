@@ -307,6 +307,7 @@ var hierarchy =
       ] ],
       [ "amrex::BaseFab< GpuComplex< Real > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< PetscInt >", "classamrex_1_1BaseFab.html", null ],
+      [ "amrex::BaseFab< amrex::GpuComplex< T > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< char >", "classamrex_1_1BaseFab.html", [
         [ "amrex::TagBox", "classamrex_1_1TagBox.html", null ]
       ] ],
@@ -389,6 +390,7 @@ var hierarchy =
       [ "amrex::FabArray< amrex::EBCellFlagFab >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::Mask >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::BaseFab< HYPRE_Int > >", "classamrex_1_1FabArray.html", null ],
+      [ "amrex::FabArray< amrex::BaseFab< amrex::GpuComplex< T > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< FArrayBox >", "classamrex_1_1FabArray.html", [
         [ "amrex::MultiFab", "classamrex_1_1MultiFab.html", null ]
       ] ],
@@ -934,7 +936,6 @@ var hierarchy =
     [ "amrex::algoim::QuadratureRule", "structamrex_1_1algoim_1_1QuadratureRule.html", null ],
     [ "amrex::FFT::R2C< T, D, DomainStrategy >", "classamrex_1_1FFT_1_1R2C.html", null ],
     [ "amrex::FFT::R2C< Real >", "classamrex_1_1FFT_1_1R2C.html", null ],
-    [ "amrex::FFT::R2C< typename MF::value_type, Direction::both >", "classamrex_1_1FFT_1_1R2C.html", null ],
     [ "amrex::FFT::R2X< T >", "classamrex_1_1FFT_1_1R2X.html", null ],
     [ "amrex::RandomEngine", "structamrex_1_1RandomEngine.html", null ],
     [ "amrex::Gpu::range_detail::range_impl< T >", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", null ],

@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1PoissonHybrid.htm
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1FFT_1_1PoissonHybrid-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -105,7 +106,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1PoissonHybrid.htm
 </div><!--header-->
 <div class="contents">
 
-<p>3D <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver for periodic boundaries in the first two dimensions and Neumann in the last dimension.  
+<p>3D <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver for periodic, Dirichlet &amp; Neumann boundaries in the first two dimensions, and Neumann in the last dimension. The last dimension could have non-uniform mesh.  
  <a href="classamrex_1_1FFT_1_1PoissonHybrid.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__FFT__Poisson_8H_source.html">AMReX_FFT_Poisson.H</a>&gt;</code></p>
@@ -117,6 +118,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aad43d1246d480986946e7ca9af9be08e"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aad43d1246d480986946e7ca9af9be08e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#aad43d1246d480986946e7ca9af9be08e">PoissonHybrid</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt; const &amp;bc)</td></tr>
+<tr class="separator:aad43d1246d480986946e7ca9af9be08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f24509dd3bd6e8f03afff454e3028d"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ae8f24509dd3bd6e8f03afff454e3028d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#ae8f24509dd3bd6e8f03afff454e3028d">PoissonHybrid</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom)</td></tr>
 <tr class="separator:ae8f24509dd3bd6e8f03afff454e3028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,6 +130,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a54c5afb3d3cfb477c4e1a4af9f617d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cc527d14f63df793f99183d7ed11b3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a8cc527d14f63df793f99183d7ed11b3c">solve</a> (MF &amp;soln, MF const &amp;rhs, <a class="el" href="namespaceamrex_1_1Gpu.html#a99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> &gt; const &amp;dz)</td></tr>
 <tr class="separator:a8cc527d14f63df793f99183d7ed11b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1348328a7ad7ed7998bf0e23321c0c"><td class="memTemplParams" colspan="2">template&lt;typename FA , typename DZ &gt; </td></tr>
+<tr class="memitem:a2a1348328a7ad7ed7998bf0e23321c0c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a2a1348328a7ad7ed7998bf0e23321c0c">solve_z</a> (FA &amp;spmf, DZ const &amp;dz)</td></tr>
+<tr class="separator:a2a1348328a7ad7ed7998bf0e23321c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:ae09ab63ea53439b247573d191517ac4b"><td class="memTemplParams" colspan="2">template&lt;typename DZ &gt; </td></tr>
 <tr class="memitem:ae09ab63ea53439b247573d191517ac4b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#ae09ab63ea53439b247573d191517ac4b">solve_doit</a> (MF &amp;soln, MF const &amp;rhs, DZ const &amp;dz)</td></tr>
 <tr class="separator:ae09ab63ea53439b247573d191517ac4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,14 +144,22 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a8d00481a7a9beb695d73b4e3b30cbf7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a8d00481a7a9beb695d73b4e3b30cbf7e">m_geom</a></td></tr>
 <tr class="separator:a8d00481a7a9beb695d73b4e3b30cbf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a82df76742f3b937434d63a57f0c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt; typename MF::value_type, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#ae0a82df76742f3b937434d63a57f0c68">m_r2c</a></td></tr>
-<tr class="separator:ae0a82df76742f3b937434d63a57f0c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed31a34afe2c01c13ec1c0a51acd335"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a2ed31a34afe2c01c13ec1c0a51acd335">m_bc</a></td></tr>
+<tr class="separator:a2ed31a34afe2c01c13ec1c0a51acd335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85af199fa6bd6600a3f4477784abe5c5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1FFT_1_1R2X.html">R2X</a>&lt; typename MF::value_type &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a85af199fa6bd6600a3f4477784abe5c5">m_r2x</a></td></tr>
+<tr class="separator:a85af199fa6bd6600a3f4477784abe5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129a411567b3c0569b3a98f010691789"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt; typename MF::value_type &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a129a411567b3c0569b3a98f010691789">m_r2c</a></td></tr>
+<tr class="separator:a129a411567b3c0569b3a98f010691789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687da643e57b535bff7dc60764256b76"><td class="memItemLeft" align="right" valign="top">MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a687da643e57b535bff7dc60764256b76">m_spmf_r</a></td></tr>
+<tr class="separator:a687da643e57b535bff7dc60764256b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9129cd924f3d4866936e226d4f1492"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a4b9129cd924f3d4866936e226d4f1492">m_spmf_c</a></td></tr>
+<tr class="separator:a4b9129cd924f3d4866936e226d4f1492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename MF = MultiFab&gt;<br />
 class amrex::FFT::PoissonHybrid&lt; MF &gt;</h3>
 
-<p>3D <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver for periodic boundaries in the first two dimensions and Neumann in the last dimension. </p>
+<p>3D <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> solver for periodic, Dirichlet &amp; Neumann boundaries in the first two dimensions, and Neumann in the last dimension. The last dimension could have non-uniform mesh. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1c72e7324b595ececc540e36ca612e22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c72e7324b595ececc540e36ca612e22">&#9670;&nbsp;</a></span>T</h2>
@@ -160,8 +178,48 @@ template&lt;typename MF  = MultiFab&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aad43d1246d480986946e7ca9af9be08e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad43d1246d480986946e7ca9af9be08e">&#9670;&nbsp;</a></span>PoissonHybrid() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<div class="memtemplate">
+template&lt;typename FA  = MF, std::enable_if_t&lt; IsFabArray_v&lt; FA &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">PoissonHybrid</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae8f24509dd3bd6e8f03afff454e3028d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8f24509dd3bd6e8f03afff454e3028d">&#9670;&nbsp;</a></span>PoissonHybrid()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f24509dd3bd6e8f03afff454e3028d">&#9670;&nbsp;</a></span>PoissonHybrid() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -302,6 +360,9 @@ template&lt;typename MF &gt; </div>
 template&lt;typename MF &gt; </div>
 <div class="memtemplate">
 template&lt;typename DZ &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::solve_doit </td>
@@ -327,11 +388,72 @@ template&lt;typename DZ &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a1348328a7ad7ed7998bf0e23321c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1348328a7ad7ed7998bf0e23321c0c">&#9670;&nbsp;</a></span>solve_z()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<div class="memtemplate">
+template&lt;typename FA , typename DZ &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::solve_z </td>
+          <td>(</td>
+          <td class="paramtype">FA &amp;&#160;</td>
+          <td class="paramname"><em>spmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DZ const &amp;&#160;</td>
+          <td class="paramname"><em>dz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2ed31a34afe2c01c13ec1c0a51acd335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ed31a34afe2c01c13ec1c0a51acd335">&#9670;&nbsp;</a></span>m_bc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;std::pair&lt;Boundary,Boundary&gt;,AMREX_SPACEDIM&gt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_bc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8d00481a7a9beb695d73b4e3b30cbf7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d00481a7a9beb695d73b4e3b30cbf7e">&#9670;&nbsp;</a></span>m_geom</h2>
 
@@ -356,8 +478,8 @@ template&lt;typename MF  = MultiFab&gt; </div>
 
 </div>
 </div>
-<a id="ae0a82df76742f3b937434d63a57f0c68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0a82df76742f3b937434d63a57f0c68">&#9670;&nbsp;</a></span>m_r2c</h2>
+<a id="a129a411567b3c0569b3a98f010691789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129a411567b3c0569b3a98f010691789">&#9670;&nbsp;</a></span>m_r2c</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,7 +490,79 @@ template&lt;typename MF  = MultiFab&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt;typename MF::value_type, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>&gt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_r2c</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt;typename MF::value_type&gt; &gt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_r2c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85af199fa6bd6600a3f4477784abe5c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85af199fa6bd6600a3f4477784abe5c5">&#9670;&nbsp;</a></span>m_r2x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classamrex_1_1FFT_1_1R2X.html">R2X</a>&lt;typename MF::value_type&gt; &gt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_r2x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b9129cd924f3d4866936e226d4f1492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9129cd924f3d4866936e226d4f1492">&#9670;&nbsp;</a></span>m_spmf_c</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt;<a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt;<a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt;<a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>&gt; &gt; &gt; <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_spmf_c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a687da643e57b535bff7dc60764256b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a687da643e57b535bff7dc60764256b76">&#9670;&nbsp;</a></span>m_spmf_r</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MF <a class="el" href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a>&lt; MF &gt;::m_spmf_r</td>
         </tr>
       </table>
   </td>
