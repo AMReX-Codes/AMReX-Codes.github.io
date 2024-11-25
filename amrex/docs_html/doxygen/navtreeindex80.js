@@ -1,6 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"structamrex_1_1FabArrayBase_1_1RB180.html":[3,0,0,132,13],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[3,0,0,132,13,1],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[3,0,0,132,13,3],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a68398d2292a320dfdb73768136091c68":[3,0,0,132,13,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX80 =
 "structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,6,8],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,6,11],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,6,11,0],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,6,11,2]
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,6,11,2],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,6,11,1]
 };
