@@ -307,7 +307,6 @@ var hierarchy =
       ] ],
       [ "amrex::BaseFab< GpuComplex< Real > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< PetscInt >", "classamrex_1_1BaseFab.html", null ],
-      [ "amrex::BaseFab< amrex::GpuComplex< T > >", "classamrex_1_1BaseFab.html", null ],
       [ "amrex::BaseFab< char >", "classamrex_1_1BaseFab.html", [
         [ "amrex::TagBox", "classamrex_1_1TagBox.html", null ]
       ] ],
@@ -358,7 +357,6 @@ var hierarchy =
     [ "amrex::Divides< T >", "structamrex_1_1Divides.html", null ],
     [ "amrex::NonLocalBC::DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
     [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", null ],
-    [ "amrex::FFT::fft_poisson_detail::DZ< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ.html", null ],
     [ "amrex::EBCellFlag", "classamrex_1_1EBCellFlag.html", null ],
     [ "amrex::EBDataCollection", "classamrex_1_1EBDataCollection.html", null ],
     [ "amrex::algoim::EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", null ],
@@ -390,7 +388,6 @@ var hierarchy =
       [ "amrex::FabArray< amrex::EBCellFlagFab >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::Mask >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< amrex::BaseFab< HYPRE_Int > >", "classamrex_1_1FabArray.html", null ],
-      [ "amrex::FabArray< amrex::BaseFab< amrex::GpuComplex< T > > >", "classamrex_1_1FabArray.html", null ],
       [ "amrex::FabArray< FArrayBox >", "classamrex_1_1FabArray.html", [
         [ "amrex::MultiFab", "classamrex_1_1MultiFab.html", null ]
       ] ],
@@ -1041,7 +1038,10 @@ var hierarchy =
     [ "TransformerGhost", "structTransformerGhost.html", null ],
     [ "TransformerVirt", "structTransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
+    [ "amrex::FFT::fft_poisson_detail::Tri_Uniform< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform.html", null ],
+    [ "amrex::FFT::fft_poisson_detail::TriA< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA.html", null ],
     [ "amrex::STLtools::Triangle", "structamrex_1_1STLtools_1_1Triangle.html", null ],
+    [ "amrex::FFT::fft_poisson_detail::TriC< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC.html", null ],
     [ "std::true_type", null, [
       [ "amrex::Conjunction< IsCallableR< Dim3, IndexMap &, const Dim3 & >, HasInverseMemFn< const IndexMap & > >", "structamrex_1_1Conjunction.html", [
         [ "amrex::NonLocalBC::IsIndexMapping< IndexMap >", "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html", null ]

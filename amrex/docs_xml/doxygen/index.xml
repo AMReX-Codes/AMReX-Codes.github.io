@@ -3689,10 +3689,6 @@
     <member refid="structamrex_1_1DynamicTiling_1ada6090f6c7ce7cb692304ca36611204e" kind="variable"><name>dynamic</name></member>
     <member refid="structamrex_1_1DynamicTiling_1a9b6c938ca6b52d48ecf4baba551ecc64" kind="function"><name>DynamicTiling</name></member>
   </compound>
-  <compound refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ" kind="struct"><name>amrex::FFT::fft_poisson_detail::DZ</name>
-    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ_1aef3579ea23769131b4dc2708d414b3bd" kind="variable"><name>m_delz</name></member>
-    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ_1af8ccce6eb62cf34ddb0be2fdbdddcd70" kind="function"><name>operator[]</name></member>
-  </compound>
   <compound refid="classamrex_1_1EBCellConservativeLinear" kind="class"><name>amrex::EBCellConservativeLinear</name>
     <member refid="classamrex_1_1EBCellConservativeLinear_1a1973ad32936dfb82245776b45e4247db" kind="function"><name>interp</name></member>
     <member refid="classamrex_1_1EBCellConservativeLinear_1a47aef6594f54746b09c4230b68f4e978" kind="function"><name>CellConservativeLinear</name></member>
@@ -10233,19 +10229,22 @@
   </compound>
   <compound refid="classamrex_1_1FFT_1_1PoissonHybrid" kind="class"><name>amrex::FFT::PoissonHybrid</name>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a1c72e7324b595ececc540e36ca612e22" kind="typedef"><name>T</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a4745eb15ce739c7abe21edadc545c3d8" kind="typedef"><name>cMF</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a8d00481a7a9beb695d73b4e3b30cbf7e" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a2ed31a34afe2c01c13ec1c0a51acd335" kind="variable"><name>m_bc</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a85af199fa6bd6600a3f4477784abe5c5" kind="variable"><name>m_r2x</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a129a411567b3c0569b3a98f010691789" kind="variable"><name>m_r2c</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a687da643e57b535bff7dc60764256b76" kind="variable"><name>m_spmf_r</name></member>
-    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a4b9129cd924f3d4866936e226d4f1492" kind="variable"><name>m_spmf_c</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a493d6d57f13a505999d404d7b5740857" kind="variable"><name>m_spmf_c</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1aad43d1246d480986946e7ca9af9be08e" kind="function"><name>PoissonHybrid</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1ae8f24509dd3bd6e8f03afff454e3028d" kind="function"><name>PoissonHybrid</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a0ad120ac18bd4b1cbf654104a98f7bf3" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a54c5afb3d3cfb477c4e1a4af9f617d94" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a8cc527d14f63df793f99183d7ed11b3c" kind="function"><name>solve</name></member>
-    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a2a1348328a7ad7ed7998bf0e23321c0c" kind="function"><name>solve_z</name></member>
-    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1ae09ab63ea53439b247573d191517ac4b" kind="function"><name>solve_doit</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a08f379c2b6cf0ce293fae2e232c16be1" kind="function"><name>solve</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1a59789376a5d13f7c3622d6c2a55aeeb3" kind="function"><name>solve_z</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1aa19276c7ba2708349c81a5660ffdbcc5" kind="function"><name>getSpectralDataLayout</name></member>
+    <member refid="classamrex_1_1FFT_1_1PoissonHybrid_1adcfdf3eac0529bf89a7f5debcb9335c8" kind="function"><name>build_spmf</name></member>
   </compound>
   <compound refid="structamrex_1_1FabArrayBase_1_1PolarB" kind="struct"><name>amrex::FabArrayBase::PolarB</name>
     <member refid="structamrex_1_1FabArrayBase_1_1PolarB_1ae7d84e3daa0f3502f2ce6369dcb42f60" kind="variable"><name>m_ngrow</name></member>
@@ -11845,12 +11844,24 @@
     <member refid="classamrex_1_1EB2_1_1TranslationIF_1a7fd15d74b4e540bd29e7eca133b78354" kind="function"><name>operator()</name></member>
     <member refid="classamrex_1_1EB2_1_1TranslationIF_1a5e944ef6c2a7af72086a20fc8068a54a" kind="function"><name>operator()</name></member>
   </compound>
+  <compound refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform" kind="struct"><name>amrex::FFT::fft_poisson_detail::Tri_Uniform</name>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform_1a1ffe2c2ad975a87dfa4a4b6c7ffb16a9" kind="variable"><name>m_dz2inv</name></member>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform_1a20e603e6e9f21b8f801a500d4adc8c16" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA" kind="struct"><name>amrex::FFT::fft_poisson_detail::TriA</name>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA_1ab5ccae3445c49cce5aa8fb4e413ccbbc" kind="variable"><name>m_dz</name></member>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA_1afc263a9cc53224be75274655a0c7b612" kind="function"><name>operator()</name></member>
+  </compound>
   <compound refid="structamrex_1_1STLtools_1_1Triangle" kind="struct"><name>amrex::STLtools::Triangle</name>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a55b9d3099133f345ecb5d650727c793b" kind="variable"><name>v1</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a6b301a1c15117340fbb999bfee7dd5a2" kind="variable"><name>v2</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1ab4af12af8d6c359d4870d0d93a9d07b5" kind="variable"><name>v3</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a249d1f707576eea8b5647219df853b25" kind="function"><name>cent</name></member>
     <member refid="structamrex_1_1STLtools_1_1Triangle_1a0a9f056e452eea0281c7ab183e6fb08e" kind="function"><name>minmax</name></member>
+  </compound>
+  <compound refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC" kind="struct"><name>amrex::FFT::fft_poisson_detail::TriC</name>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC_1ad19a5ecb7a130a87bba33303f954d3a0" kind="variable"><name>m_dz</name></member>
+    <member refid="structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC_1a6b22e66de64dcf48bad1f9cd24209387" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="structamrex_1_1detail_1_1tuple__cat__result" kind="struct"><name>amrex::detail::tuple_cat_result</name>
   </compound>

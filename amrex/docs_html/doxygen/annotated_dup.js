@@ -106,7 +106,9 @@ var annotated_dup =
           [ "FFTPhysBCTag", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag.html", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag" ]
         ] ],
         [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", [
-          [ "DZ", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1DZ" ]
+          [ "Tri_Uniform", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform" ],
+          [ "TriA", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA" ],
+          [ "TriC", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC" ]
         ] ],
         [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
         [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],

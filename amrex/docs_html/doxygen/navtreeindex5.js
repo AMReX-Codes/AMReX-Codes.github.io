@@ -160,7 +160,7 @@ var NAVTREEINDEX5 =
 "AMReX__FFT__OpenBCSolver_8H.html":[4,0,0,6,4],
 "AMReX__FFT__OpenBCSolver_8H_source.html":[4,0,0,6,4],
 "AMReX__FFT__Poisson_8H.html":[4,0,0,6,5],
-"AMReX__FFT__Poisson_8H.html#a995b1b061a4b76ab820758880fb3ab30":[4,0,0,6,5,4],
+"AMReX__FFT__Poisson_8H.html#a995b1b061a4b76ab820758880fb3ab30":[4,0,0,6,5,6],
 "AMReX__FFT__Poisson_8H_source.html":[4,0,0,6,5],
 "AMReX__FFT__R2C_8H.html":[4,0,0,6,6],
 "AMReX__FFT__R2C_8H_source.html":[4,0,0,6,6],
