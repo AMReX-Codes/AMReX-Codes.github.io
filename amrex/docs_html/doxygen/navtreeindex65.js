@@ -131,7 +131,7 @@ var NAVTREEINDEX65 =
 "namespaceamrex.html#a80066f45a8d531eb9934497f057ab7b6":[2,0,0,1627],
 "namespaceamrex.html#a802f1aac35a7d1a1f9445612feaba9ec":[2,0,0,1570],
 "namespaceamrex.html#a805938fae1e017c24d596bc5c95406df":[2,0,0,1183],
-"namespaceamrex.html#a806290e2106cf167ce88e28aa9fb2daf":[2,0,0,1486],
+"namespaceamrex.html#a806290e2106cf167ce88e28aa9fb2daf":[2,0,0,1488],
 "namespaceamrex.html#a806c4106b25aa520cedc66fcbb10fff7":[2,0,0,2214],
 "namespaceamrex.html#a807142d1b418c981e41164718f1a5f1a":[2,0,0,1161],
 "namespaceamrex.html#a807d001969408582d355a731cedac987":[2,0,0,998],
