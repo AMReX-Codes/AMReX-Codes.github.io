@@ -231,7 +231,7 @@ class amrex::GMRES&lt; V, M &gt;</h3>
 <li><code>RT norm2(V const&amp; v)</code><br  />
  returns the 2-norm of v. For example, <code>return v.norm2()</code>.</li>
 <li><code>void precond(V&amp; lhs, V const&amp; rhs)</code><br  />
- applies preconditioner to rhs. If there is no preconditioner, this function should do lhs = rhs.</li>
+ applies right-preconditioning, i.e., solve P(lhs) = rhs, where P is an approximation to A If there is no preconditioner, P = I and thus this function should do lhs = rhs.</li>
 <li><code>void scale(V&amp; v, RT fac)</code><br  />
  scales v by fac. For example, <code>v.mult(fac)</code>.</li>
 <li><code>void setToZero(V&amp; v)</code><br  />
