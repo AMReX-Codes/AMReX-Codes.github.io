@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = infab-&gt;array();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">auto</span> box = infab-&gt;box();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> nimages{1,1,1};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> ndims = m_info.batch_mode ? AMREX_SPACEDIM : AMREX_SPACEDIM-1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> ndims = m_info.batch_mode ? AMREX_SPACEDIM-1 : AMREX_SPACEDIM;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; ndims; ++idim) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (box.smallEnd(idim) == lo[idim] &amp;&amp; box.length(idim) == 2*len[idim]) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                box.growHi(idim, -len[idim]+1); <span class="comment">// +1 to include the middle plane</span></div>
@@ -253,9 +253,9 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FFT::OpenBCSolver: how did this happen&quot;</span>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    m_r2c.prepare_openbc();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        m_r2c.prepare_openbc();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -267,7 +267,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    inmf.setVal(T(0));</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    inmf.ParallelCopy(rho, 0, 0, 1);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    m_r2c.m_openbc_half = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    m_r2c.m_openbc_half = !m_info.batch_mode;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    m_r2c.forward(inmf);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
@@ -305,7 +305,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__OpenBCSolver_8H_source.htm
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    m_r2c.m_openbc_half = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    m_r2c.m_openbc_half = !m_info.batch_mode;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    m_r2c.backward_doit(phi, phi.nGrowVect());</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    m_r2c.m_openbc_half = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>

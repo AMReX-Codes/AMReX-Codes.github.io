@@ -1,6 +1,5 @@
 var NAVTREEINDEX35 =
 {
-"classamrex_1_1Cluster.html#a9e4256a40033c7f410b78dd175236308":[3,0,0,38,4],
 "classamrex_1_1Cluster.html#aa47a0fcba1b6084cfc319bf1e64267bb":[3,0,0,38,8],
 "classamrex_1_1Cluster.html#aaed7b54ca160992ed7fa68179a7e1302":[3,0,0,38,3],
 "classamrex_1_1Cluster.html#ac8a9f248c2372b402e8556fb35471c57":[3,0,0,38,15],
@@ -249,5 +248,6 @@ var NAVTREEINDEX35 =
 "classamrex_1_1DeriveRec.html#a3efcbfca10808d1a81e899f4d3448501":[3,0,0,25,2],
 "classamrex_1_1DeriveRec.html#a4290c1d0e6abe9448df6e449432de5d1":[3,0,0,25,21],
 "classamrex_1_1DeriveRec.html#a4a7a159ef9c9f44bea0e5ed912473b69":[3,0,0,25,24],
-"classamrex_1_1DeriveRec.html#a4cc703ca266623995fc8245ddd618ce3":[3,0,0,25,18]
+"classamrex_1_1DeriveRec.html#a4cc703ca266623995fc8245ddd618ce3":[3,0,0,25,18],
+"classamrex_1_1DeriveRec.html#a540136f9f500bb35628b3e034161bd51":[3,0,0,25,43]
 };
