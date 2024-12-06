@@ -17,6 +17,7 @@ var hierarchy =
       [ "amrex::PODVector< amrex::NeighborCode >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< index_type >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::openbc::MomTag >", "classamrex_1_1PODVector.html", null ],
+      [ "amrex::PODVector< amrex::Array4< Real const > >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< const ParticleReal * >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< T, Allocator >", "classamrex_1_1PODVector.html", null ]
     ] ],
@@ -138,6 +139,7 @@ var hierarchy =
     [ "amrex::Array4< T >", "structamrex_1_1Array4.html", [
       [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
     ] ],
+    [ "amrex::Array4< amrex::EBCellFlag const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< int >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< int const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< Real const >", "structamrex_1_1Array4.html", null ],
@@ -358,6 +360,7 @@ var hierarchy =
     [ "amrex::NonLocalBC::DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
     [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", null ],
     [ "amrex::EBCellFlag", "classamrex_1_1EBCellFlag.html", null ],
+    [ "amrex::EBData", "structamrex_1_1EBData.html", null ],
     [ "amrex::EBDataCollection", "classamrex_1_1EBDataCollection.html", null ],
     [ "amrex::algoim::EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", null ],
     [ "amrex::EBToPVD", "classamrex_1_1EBToPVD.html", null ],

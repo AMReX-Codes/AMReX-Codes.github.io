@@ -18,6 +18,7 @@ var classamrex_1_1EBDataCollection =
     [ "getVolFrac", "classamrex_1_1EBDataCollection.html#a9cfca800c4df32f884205e7b0cfa5b4f", null ],
     [ "operator=", "classamrex_1_1EBDataCollection.html#aab5a65341ff21329cc732af1bfb4f004", null ],
     [ "operator=", "classamrex_1_1EBDataCollection.html#ab9f91f646f1ca0f33d5d2d3e14ffec77", null ],
+    [ "EBFArrayBoxFactory", "classamrex_1_1EBDataCollection.html#add1cd92ef1acf80b7731a873ba626923", null ],
     [ "m_areafrac", "classamrex_1_1EBDataCollection.html#aca26ce33e69ffb0b4314fc8df4074d80", null ],
     [ "m_bndryarea", "classamrex_1_1EBDataCollection.html#a8d677f5c06ce1520cd23addf9d22d5ef", null ],
     [ "m_bndrycent", "classamrex_1_1EBDataCollection.html#a8a3dfc8b1b1cf5d19c7538d630a4b44b", null ],

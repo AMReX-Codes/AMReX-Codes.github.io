@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['defaultallocator_18574',['DefaultAllocator',['../namespaceamrex.html#a179fafc569924202b166896b608cd5c2',1,'amrex']]],
-  ['deriveboxmap_18575',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#a7f8f64bd1d7de66c8300def033e45fb9',1,'amrex::DeriveRec']]],
-  ['derivefunc_18576',['DeriveFunc',['../namespaceamrex.html#ac7d6bf4b6824f474320123285acc5065',1,'amrex']]],
-  ['derivefunc3d_18577',['DeriveFunc3D',['../namespaceamrex.html#a008867a6f88e4144e28dfb6a738f5549',1,'amrex']]],
-  ['derivefuncfab_18578',['DeriveFuncFab',['../namespaceamrex.html#a7f6a90da175c5d3eb9612d6934849087',1,'amrex']]],
-  ['derivefuncmf_18579',['DeriveFuncMF',['../namespaceamrex.html#a2b6a7802e7f7b0f631825a2f669d0093',1,'amrex']]],
-  ['detected_5ft_18580',['Detected_t',['../namespaceamrex.html#a4c98b791b1f6442671e5cfa546a3df4f',1,'amrex']]],
-  ['detectedor_18581',['DetectedOr',['../namespaceamrex.html#abe72f840d81a1ce49a3811fe8295b222',1,'amrex']]],
-  ['devicevector_18582',['DeviceVector',['../namespaceamrex_1_1Gpu.html#a99e1f048890efc1c275606cb9bdc41c7',1,'amrex::Gpu']]],
-  ['difference_5ftype_18583',['difference_type',['../classamrex_1_1PODVector.html#aea40df219b90fb5d86fa4fb3b8f270c3',1,'amrex::PODVector']]],
-  ['dmref_18584',['DMRef',['../namespaceamrex.html#a8ea864a3a9595a340c24658e4bfa24a9',1,'amrex']]],
-  ['dynamicswapcomponents_18585',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6',1,'amrex::NonLocalBC']]]
+  ['defaultallocator_18625',['DefaultAllocator',['../namespaceamrex.html#a179fafc569924202b166896b608cd5c2',1,'amrex']]],
+  ['deriveboxmap_18626',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#a7f8f64bd1d7de66c8300def033e45fb9',1,'amrex::DeriveRec']]],
+  ['derivefunc_18627',['DeriveFunc',['../namespaceamrex.html#ac7d6bf4b6824f474320123285acc5065',1,'amrex']]],
+  ['derivefunc3d_18628',['DeriveFunc3D',['../namespaceamrex.html#a008867a6f88e4144e28dfb6a738f5549',1,'amrex']]],
+  ['derivefuncfab_18629',['DeriveFuncFab',['../namespaceamrex.html#a7f6a90da175c5d3eb9612d6934849087',1,'amrex']]],
+  ['derivefuncmf_18630',['DeriveFuncMF',['../namespaceamrex.html#a2b6a7802e7f7b0f631825a2f669d0093',1,'amrex']]],
+  ['detected_5ft_18631',['Detected_t',['../namespaceamrex.html#a4c98b791b1f6442671e5cfa546a3df4f',1,'amrex']]],
+  ['detectedor_18632',['DetectedOr',['../namespaceamrex.html#abe72f840d81a1ce49a3811fe8295b222',1,'amrex']]],
+  ['devicevector_18633',['DeviceVector',['../namespaceamrex_1_1Gpu.html#a99e1f048890efc1c275606cb9bdc41c7',1,'amrex::Gpu']]],
+  ['difference_5ftype_18634',['difference_type',['../classamrex_1_1PODVector.html#aea40df219b90fb5d86fa4fb3b8f270c3',1,'amrex::PODVector']]],
+  ['dmref_18635',['DMRef',['../namespaceamrex.html#a8ea864a3a9595a340c24658e4bfa24a9',1,'amrex']]],
+  ['dynamicswapcomponents_18636',['DynamicSwapComponents',['../namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6',1,'amrex::NonLocalBC']]]
 ];

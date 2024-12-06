@@ -3766,7 +3766,16 @@
     <member refid="classamrex_1_1EBCellFlagFab_1accfba3397c54fc70f5355fe72e53aef5" kind="function"><name>getNumCoveredCells</name></member>
     <member refid="classamrex_1_1EBCellFlagFab_1a57d4f25c01e84b842b1456dee7985600" kind="function"><name>setType</name></member>
   </compound>
+  <compound refid="structamrex_1_1EBData" kind="struct"><name>amrex::EBData</name>
+    <member refid="structamrex_1_1EBData_1aa9983fdf5d6a7a2b4383eb011a564bb1" kind="variable"><name>real_data_size</name></member>
+    <member refid="structamrex_1_1EBData_1a8054ae8edba7f3b9c1b871920442882e" kind="variable"><name>m_cell_flag</name></member>
+    <member refid="structamrex_1_1EBData_1ad64cb588e3291f80f02113ce7dc7c6ce" kind="variable"><name>m_real_data</name></member>
+    <member refid="structamrex_1_1EBData_1abf91d175338f6c7db149219d56c3ac48" kind="function"><name>get</name></member>
+    <member refid="structamrex_1_1EBData_1af677454494acc572554a3a3ef6d1f0f8" kind="function"><name>get</name></member>
+    <member refid="structamrex_1_1EBData_1aa7c54d4a9b3460cac84c1f68fea2343f" kind="function"><name>randomPointOnEB</name></member>
+  </compound>
   <compound refid="classamrex_1_1EBDataCollection" kind="class"><name>amrex::EBDataCollection</name>
+    <member refid="classamrex_1_1EBDataCollection_1add1cd92ef1acf80b7731a873ba626923" kind="friend"><name>EBFArrayBoxFactory</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a8c1e66f34abde299d2379f0261cfcb53" kind="variable"><name>m_ngrow</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a9d7fc23809662b01ce10290962d272e8" kind="variable"><name>m_support</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a4e9d5ca2618309d4445ac8fa75fafc1f" kind="variable"><name>m_geom</name></member>
@@ -3829,6 +3838,7 @@
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a0dece5de11da52cba439675d6f632976" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a0495e6651f6bc2531a88c903354da409" kind="variable"><name>m_ebdc</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a9077580d8ff605511c26c67b023364e8" kind="variable"><name>m_parent</name></member>
+    <member refid="classamrex_1_1EBFArrayBoxFactory_1ac2f3df308dba2c5d7d8a6443c56db3da" kind="variable"><name>m_eb_data</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1ae76b4a906830e7b5094edc438e6cc9b9" kind="function"><name>EBFArrayBoxFactory</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1acc29524f4cabd3655de95618b8744ef7" kind="function"><name>~EBFArrayBoxFactory</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1aff3ee653b5be6f3b58ec1c34ae2f461f" kind="function"><name>EBFArrayBoxFactory</name></member>
@@ -3859,6 +3869,7 @@
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a699118eee56fc9250d4ae940fff8cf18" kind="function"><name>Geom</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1ac605571d4b1f88b7a1993dca18017f53" kind="function"><name>hasEBInfo</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a5691e8d50f28f584e9d3b3c47cacd3d4" kind="function"><name>getCutCellMask</name></member>
+    <member refid="classamrex_1_1EBFArrayBoxFactory_1a73baf6d203d9a2f7ebc09adcb0073cf3" kind="function"><name>getEBData</name></member>
   </compound>
   <compound refid="classamrex_1_1EBFluxRegister" kind="class"><name>amrex::EBFluxRegister</name>
     <member refid="classamrex_1_1EBFluxRegister_1ae202afe28157891442668596f24fe460" kind="variable"><name>m_cfp_inside_mask</name></member>
@@ -12232,11 +12243,11 @@
   </compound>
   <compound refid="namespace_0d420" kind="namespace"><name>@420</name>
   </compound>
-  <compound refid="namespace_0d465" kind="namespace"><name>@465</name>
+  <compound refid="namespace_0d466" kind="namespace"><name>@466</name>
   </compound>
-  <compound refid="namespace_0d516" kind="namespace"><name>@516</name>
+  <compound refid="namespace_0d517" kind="namespace"><name>@517</name>
   </compound>
-  <compound refid="namespace_0d523" kind="namespace"><name>@523</name>
+  <compound refid="namespace_0d524" kind="namespace"><name>@524</name>
   </compound>
   <compound refid="namespace_0d66" kind="namespace"><name>@66</name>
   </compound>
@@ -12447,6 +12458,17 @@
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883addb390004a66cd17993db3c37d2ab248" kind="enumvalue"><name>PARSER_F3</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ac0862fc2f508fb56ae7cae7fc86a282c" kind="enumvalue"><name>PARSER_ASSIGN</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a705f34196073afbdc27635fcf758a5b7" kind="enumvalue"><name>PARSER_LIST</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7" kind="enum"><name>EBData_t</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e" kind="enumvalue"><name>levelset</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a11d0adae08a2e6c695a438fb7f060c2d" kind="enumvalue"><name>volfrac</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f" kind="enumvalue"><name>centroid</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b" kind="enumvalue"><name>bndrycent</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1" kind="enumvalue"><name>bndrynorm</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2" kind="enumvalue"><name>bndryarea</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd" kind="enumvalue"><name>AMREX_D_DECL</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd" kind="enumvalue"><name>AMREX_D_DECL</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd" kind="enumvalue"><name>AMREX_D_DECL</name></member>
+    <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f" kind="enumvalue"><name>cellflag</name></member>
     <member refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebc" kind="enum"><name>EBSupport</name></member>
     <member refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebca334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
     <member refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2" kind="enumvalue"><name>basic</name></member>
@@ -13879,7 +13901,7 @@
     <member refid="namespaceamrex_1a43d8afe61435d9bd570425c4ff63056a" kind="function"><name>mlebabeclap_adotx_centroid</name></member>
     <member refid="namespaceamrex_1a4b562b00cd47b22ceabc8f4f68251cde" kind="function"><name>mlebabeclap_adotx</name></member>
     <member refid="namespaceamrex_1adaf35cd6ed336b8c439985415ea0b20f" kind="function"><name>mlebabeclap_ebflux</name></member>
-    <member refid="namespaceamrex_1aa87f7cec5c72e10c9bf450a39648b6ab" kind="function"><name>mlebabeclap_gsrb</name></member>
+    <member refid="namespaceamrex_1a5d4b142ac177637c7bdeec8c36512e04" kind="function"><name>mlebabeclap_gsrb</name></member>
     <member refid="namespaceamrex_1aa4047a599fca09d24c83a32f79561ba2" kind="function"><name>mlebabeclap_flux_x</name></member>
     <member refid="namespaceamrex_1af822987d7c096263dbeda2c40fbc231f" kind="function"><name>mlebabeclap_flux_y</name></member>
     <member refid="namespaceamrex_1a5535836b58895eb3be42a2e5ce2d85d4" kind="function"><name>mlebabeclap_flux_x_0</name></member>
@@ -13892,7 +13914,7 @@
     <member refid="namespaceamrex_1a6afaf2de82292fd543d209306a1cfd75" kind="function"><name>mlebabeclap_adotx_centroid</name></member>
     <member refid="namespaceamrex_1aff3db9e0a6ad08f9e98ff966faeb1244" kind="function"><name>mlebabeclap_adotx</name></member>
     <member refid="namespaceamrex_1a4031141e7aabd2031592fa381a024c4b" kind="function"><name>mlebabeclap_ebflux</name></member>
-    <member refid="namespaceamrex_1a73330382fb4300bec24c2b2249f212d1" kind="function"><name>mlebabeclap_gsrb</name></member>
+    <member refid="namespaceamrex_1ae5f066e128502eafafa1c6bd37e21cda" kind="function"><name>mlebabeclap_gsrb</name></member>
     <member refid="namespaceamrex_1ae619936d28f3a608099b8f6eb1f8536a" kind="function"><name>mlebabeclap_flux_z</name></member>
     <member refid="namespaceamrex_1a83cc47a5490605c957d9ba463e0df6dd" kind="function"><name>mlebabeclap_flux_z_0</name></member>
     <member refid="namespaceamrex_1a6c71d5d77d11bf52377d6870f104d345" kind="function"><name>mlebabeclap_grad_z</name></member>
@@ -14335,19 +14357,19 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d442" kind="namespace"><name>amrex::@442</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d471" kind="namespace"><name>amrex::@471</name>
+  <compound refid="namespaceamrex_1_1_0d472" kind="namespace"><name>amrex::@472</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d502" kind="namespace"><name>amrex::@502</name>
+  <compound refid="namespaceamrex_1_1_0d503" kind="namespace"><name>amrex::@503</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d504" kind="namespace"><name>amrex::@504</name>
+  <compound refid="namespaceamrex_1_1_0d505" kind="namespace"><name>amrex::@505</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d54" kind="namespace"><name>amrex::@54</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d600" kind="namespace"><name>amrex::@600</name>
+  <compound refid="namespaceamrex_1_1_0d601" kind="namespace"><name>amrex::@601</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d630" kind="namespace"><name>amrex::@630</name>
+  <compound refid="namespaceamrex_1_1_0d631" kind="namespace"><name>amrex::@631</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d651" kind="namespace"><name>amrex::@651</name>
+  <compound refid="namespaceamrex_1_1_0d652" kind="namespace"><name>amrex::@652</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d71" kind="namespace"><name>amrex::@71</name>
   </compound>
@@ -14756,7 +14778,7 @@
     <member refid="namespaceamrex_1_1FFT_1a59e01f27497fe7be2f0826c2d2aaa40e" kind="function"><name>add_vendor_plan_f</name></member>
     <member refid="namespaceamrex_1_1FFT_1a5f62bdef4ab3baa40ccac7c6ab58a4d1" kind="function"><name>AMREX_ENUM</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1FFT_1_1_0d555" kind="namespace"><name>amrex::FFT::@555</name>
+  <compound refid="namespaceamrex_1_1FFT_1_1_0d556" kind="namespace"><name>amrex::FFT::@556</name>
   </compound>
   <compound refid="namespaceamrex_1_1FFT_1_1detail" kind="namespace"><name>amrex::FFT::detail</name>
     <member refid="namespaceamrex_1_1FFT_1_1detail_1ae40f1092f78a0a8f53357a35ddeab89c" kind="function"><name>make_iota_distromap</name></member>
@@ -15550,9 +15572,9 @@
     <member refid="namespaceamrex_1_1sundials_1a554007ca9e4f3ad73d03e6daa5d1b9c7" kind="function"><name>The_SUNMemory_Helper</name></member>
     <member refid="namespaceamrex_1_1sundials_1aca92acd84720e0709ffdc3ccb2ead240" kind="function"><name>getArena</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1sundials_1_1_0d550" kind="namespace"><name>amrex::sundials::@550</name>
+  <compound refid="namespaceamrex_1_1sundials_1_1_0d551" kind="namespace"><name>amrex::sundials::@551</name>
   </compound>
-  <compound refid="namespaceamrex_1_1sundials_1_1_0d553" kind="namespace"><name>amrex::sundials::@553</name>
+  <compound refid="namespaceamrex_1_1sundials_1_1_0d554" kind="namespace"><name>amrex::sundials::@554</name>
   </compound>
   <compound refid="namespaceamrex_1_1SundialsUserFun" kind="namespace"><name>amrex::SundialsUserFun</name>
     <member refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kind="function"><name>f</name></member>
@@ -18282,6 +18304,8 @@
   <compound refid="AMReX__EBCellFlag_8H" kind="file"><name>AMReX_EBCellFlag.H</name>
   </compound>
   <compound refid="AMReX__ebcellflag__mod_8F90" kind="file"><name>AMReX_ebcellflag_mod.F90</name>
+  </compound>
+  <compound refid="AMReX__EBData_8H" kind="file"><name>AMReX_EBData.H</name>
   </compound>
   <compound refid="AMReX__EBDataCollection_8cpp" kind="file"><name>AMReX_EBDataCollection.cpp</name>
   </compound>

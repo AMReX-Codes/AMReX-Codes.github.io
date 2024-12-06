@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tabledata_19342',['TableData',['../classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a',1,'amrex::TableData']]]
+  ['scale_19401',['scale',['../classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef',1,'amrex::RealVect']]],
+  ['statedataphysbcfunct_19402',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
 ];

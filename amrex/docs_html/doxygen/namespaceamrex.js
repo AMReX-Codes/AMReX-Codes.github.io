@@ -804,6 +804,7 @@ var namespaceamrex =
     [ "EBCellFlag", "classamrex_1_1EBCellFlag.html", "classamrex_1_1EBCellFlag" ],
     [ "IsStoreAtomic< EBCellFlag >", "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html", null ],
     [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html", "classamrex_1_1EBCellFlagFab" ],
+    [ "EBData", "structamrex_1_1EBData.html", "structamrex_1_1EBData" ],
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html", "classamrex_1_1EBDataCollection" ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html", "classamrex_1_1EBFArrayBoxFactory" ],
     [ "EBFArrayBox", "classamrex_1_1EBFArrayBox.html", "classamrex_1_1EBFArrayBox" ],
@@ -1034,6 +1035,18 @@ var namespaceamrex =
     ] ],
     [ "Direction", "namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69", [
       [ "AMREX_D_DECL", "namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd", null ]
+    ] ],
+    [ "EBData_t", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7", [
+      [ "levelset", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e", null ],
+      [ "volfrac", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a11d0adae08a2e6c695a438fb7f060c2d", null ],
+      [ "centroid", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f", null ],
+      [ "bndrycent", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b", null ],
+      [ "bndrynorm", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1", null ],
+      [ "bndryarea", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a07d03b0eb123c4f4a66a95320855bef2", null ],
+      [ "AMREX_D_DECL", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd", null ],
+      [ "AMREX_D_DECL", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd", null ],
+      [ "AMREX_D_DECL", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd", null ],
+      [ "cellflag", "namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f", null ]
     ] ],
     [ "EBSupport", "namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc", [
       [ "none", "namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
@@ -2115,8 +2128,8 @@ var namespaceamrex =
     [ "mlebabeclap_grad_y_0", "namespaceamrex.html#a2213da36fad54c31b7ae0ad45af6e507", null ],
     [ "mlebabeclap_grad_z", "namespaceamrex.html#a6c71d5d77d11bf52377d6870f104d345", null ],
     [ "mlebabeclap_grad_z_0", "namespaceamrex.html#a906c729b79191fe3198b461187b58068", null ],
-    [ "mlebabeclap_gsrb", "namespaceamrex.html#aa87f7cec5c72e10c9bf450a39648b6ab", null ],
-    [ "mlebabeclap_gsrb", "namespaceamrex.html#a73330382fb4300bec24c2b2249f212d1", null ],
+    [ "mlebabeclap_gsrb", "namespaceamrex.html#a5d4b142ac177637c7bdeec8c36512e04", null ],
+    [ "mlebabeclap_gsrb", "namespaceamrex.html#ae5f066e128502eafafa1c6bd37e21cda", null ],
     [ "mlebabeclap_normalize", "namespaceamrex.html#adb92024145a44a0d2f56b0e024d274f3", null ],
     [ "mlebabeclap_normalize", "namespaceamrex.html#a19b14155b9c1a4a1a3f73cc08d1d0c66", null ],
     [ "mlebndfdlap_adotx", "namespaceamrex.html#a91e9157204259b13b72b493e055e1153", null ],

@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['max_19316',['max',['../classamrex_1_1RealVect.html#a2c15c7a018202ae522e0777c120fa109',1,'amrex::RealVect']]],
-  ['mfiter_19317',['MFIter',['../classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57',1,'amrex::FabArrayBase']]],
-  ['min_19318',['min',['../classamrex_1_1RealVect.html#a0450ba685d7fa9c493158ec2a005f792',1,'amrex::RealVect']]],
-  ['mlabeclaplaciant_19319',['MLABecLaplacianT',['../classamrex_1_1MLLinOpT.html#aae889d9617524451e9e7daeb85f6d22c',1,'amrex::MLLinOpT']]],
-  ['mlcgsolvert_19320',['MLCGSolverT',['../classamrex_1_1MLLinOpT.html#a7d74bb864e0e5e676d689302876b3da3',1,'amrex::MLLinOpT::MLCGSolverT()'],['../classamrex_1_1MLMGT.html#a7d74bb864e0e5e676d689302876b3da3',1,'amrex::MLMGT::MLCGSolverT()']]],
-  ['mlmgt_19321',['MLMGT',['../classamrex_1_1MLLinOpT.html#ad167454adc7ef3f671c1c51aa863f5d1',1,'amrex::MLLinOpT']]],
-  ['mlpoissont_19322',['MLPoissonT',['../classamrex_1_1MLLinOpT.html#a4314fcd3e8cf089757c3c88e923f9a2b',1,'amrex::MLLinOpT']]],
-  ['multimaskiter_19323',['MultiMaskIter',['../classamrex_1_1MultiMask.html#a543302181bedff3235f600544f96197f',1,'amrex::MultiMask']]]
+  ['ifabio_19376',['IFABio',['../classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd',1,'amrex::IArrayBox']]]
 ];
