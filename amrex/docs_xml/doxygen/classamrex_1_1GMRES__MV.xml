@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classamrex_1_1GMRES__MV" kind="class" language="C++" prot="public">
+    <compoundname>amrex::GMRES_MV</compoundname>
+    <includes refid="AMReX__GMRES__MV_8H" local="no">AMReX_GMRES_MV.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classamrex_1_1GMRES__MV_1aa26927a380d30f38e4911f60830d0c7e" prot="public" static="no">
+        <type>Real</type>
+        <definition>using amrex::GMRES_MV&lt; T &gt;::RT =  Real</definition>
+        <argsstring></argsstring>
+        <name>RT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" prot="public" static="no">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::GMRES_MV&lt; T &gt;::VEC =  AlgVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>VEC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="16" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1GMRES__MV_1ab602ed172f36a35ddcfd4bc8f6def8e4" prot="public" static="no">
+        <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T &gt;</type>
+        <definition>using amrex::GMRES_MV&lt; T &gt;::MAT =  SpMatrix&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>MAT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="17" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1GMRES__MV_1a7ab353ad5a281894a27822bd244f0ed5" prot="public" static="no">
+        <type><ref refid="classamrex_1_1GMRES" kindref="compound">amrex::GMRES</ref>&lt; <ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref>, <ref refid="classamrex_1_1GMRES__MV" kindref="compound">GMRES_MV</ref>&lt; T &gt; &gt;</type>
+        <definition>using amrex::GMRES_MV&lt; T &gt;::GM =  amrex::GMRES&lt;VEC,GMRES_MV&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>GM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="18" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1GMRES__MV_1a21b430cc5077f80d80468f89653cb562" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;, <ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const  &amp;)&gt;</type>
+        <definition>using amrex::GMRES_MV&lt; T &gt;::PC =  std::function&lt;void(VEC&amp;,VEC const&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="19" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1GMRES__MV_1adcf264633423cdffddff341539f4bd69" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1GMRES__MV_1a7ab353ad5a281894a27822bd244f0ed5" kindref="member">GM</ref></type>
+        <definition>GM amrex::GMRES_MV&lt; T &gt;::m_gmres</definition>
+        <argsstring></argsstring>
+        <name>m_gmres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="71" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1GMRES__MV_1ae9996d59ae66b9a5771451bd817cbf1f" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1GMRES__MV_1ab602ed172f36a35ddcfd4bc8f6def8e4" kindref="member">MAT</ref> const  *</type>
+        <definition>MAT const* amrex::GMRES_MV&lt; T &gt;::m_mat</definition>
+        <argsstring></argsstring>
+        <name>m_mat</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="72" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1GMRES__MV_1a183670877bcc214fc83609afd448dce6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1GMRES__MV_1a21b430cc5077f80d80468f89653cb562" kindref="member">PC</ref></type>
+        <definition>PC amrex::GMRES_MV&lt; T &gt;::m_pc</definition>
+        <argsstring></argsstring>
+        <name>m_pc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="73" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1ae404fbc571eb365987ddb8a9bf0d6c2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::GMRES_MV&lt; T &gt;::GMRES_MV</definition>
+        <argsstring>(MAT const *a_mat)</argsstring>
+        <name>GMRES_MV</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1ab602ed172f36a35ddcfd4bc8f6def8e4" kindref="member">MAT</ref> const *</type>
+          <declname>a_mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="21" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1aff5dcd4e78bd5e241c44569af7f87318" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::setPrecond</definition>
+        <argsstring>(PC a_pc)</argsstring>
+        <name>setPrecond</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a21b430cc5077f80d80468f89653cb562" kindref="member">PC</ref></type>
+          <declname>a_pc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="23" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a97faded45dc40096429df41d9fb78889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::solve</definition>
+        <argsstring>(VEC &amp;a_sol, VEC const &amp;a_rhs, T a_tol_rel, T a_tol_abs)</argsstring>
+        <name>solve</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>a_sol</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>a_rhs</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a_tol_rel</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a_tol_abs</declname>
+        </param>
+        <briefdescription>
+<para>Solve the linear system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_sol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unknowns, i.e., x in A x = b. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RHS, i.e., b in A x = b. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_tol_rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relative tolerance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_tol_abs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>absolute tolerance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="33" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a435604aac5c43aef49984b414f0ace89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::setVerbose</definition>
+        <argsstring>(int v)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Sets verbosity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a8181a83d4c8d3b7ad5020af3bf21d332" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRES__MV_1a7ab353ad5a281894a27822bd244f0ed5" kindref="member">GM</ref> &amp;</type>
+        <definition>GM&amp; amrex::GMRES_MV&lt; T &gt;::getGMRES</definition>
+        <argsstring>()</argsstring>
+        <name>getGMRES</name>
+        <briefdescription>
+<para>Get the <ref refid="classamrex_1_1GMRES" kindref="compound">GMRES</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="39" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1aee9181d5fcd08e302aa20840b1f1ec51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref></type>
+        <definition>auto amrex::GMRES_MV&lt; T &gt;::makeVecRHS</definition>
+        <argsstring>() const</argsstring>
+        <name>makeVecRHS</name>
+        <briefdescription>
+<para>Make <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> without ghost cells. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="42" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a515ead34c663eca98ee25df8e08c70ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref></type>
+        <definition>auto amrex::GMRES_MV&lt; T &gt;::makeVecLHS</definition>
+        <argsstring>() const</argsstring>
+        <name>makeVecLHS</name>
+        <briefdescription>
+<para>Make <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with ghost cells and set ghost cells to zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="45" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a710e9f7b8703fe6939cbef9dedd8ba94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::apply</definition>
+        <argsstring>(VEC &amp;lhs, VEC &amp;rhs) const</argsstring>
+        <name>apply</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>lhs = L(rhs) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="66" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1ad2b68689d2ff3c1565b2d91d63bdb171" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::precond</definition>
+        <argsstring>(VEC &amp;lhs, VEC const &amp;rhs) const</argsstring>
+        <name>precond</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="68" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="150" bodyend="157"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a350530f8498a9b39762008daf6b90467" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T amrex::GMRES_MV&lt; T &gt;::norm2</definition>
+        <argsstring>(VEC const &amp;vec)</argsstring>
+        <name>norm2</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="47" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a856955440b084e03c3c63354f034aac4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::scale</definition>
+        <argsstring>(VEC &amp;vec, T scale_factor)</argsstring>
+        <name>scale</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>scale_factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="49" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1ae61a914567a18dd936d06aab8dc28b5a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T amrex::GMRES_MV&lt; T &gt;::dotProduct</definition>
+        <argsstring>(VEC const &amp;vec1, VEC const &amp;vec2)</argsstring>
+        <name>dotProduct</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>vec1</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>vec2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="51" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1ab86646b279c7a86ac36dda28de740f2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::setToZero</definition>
+        <argsstring>(VEC &amp;lhs)</argsstring>
+        <name>setToZero</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <briefdescription>
+<para>lhs = 0 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="54" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a09744f18b0feb9507546ba2e18485d0d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::assign</definition>
+        <argsstring>(VEC &amp;lhs, VEC const &amp;rhs)</argsstring>
+        <name>assign</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>lhs = rhs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="57" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1ac381bf5db27b170489f4a5a7c56a3e84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::increment</definition>
+        <argsstring>(VEC &amp;lhs, VEC const &amp;rhs, T a)</argsstring>
+        <name>increment</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>lhs += a*rhs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="60" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRES__MV_1a9cf5f17a151771501ff4da4d4ea78810" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRES_MV&lt; T &gt;::linComb</definition>
+        <argsstring>(VEC &amp;lhs, T a, VEC const &amp;rhs_a, T b, VEC const &amp;rhs_b)</argsstring>
+        <name>linComb</name>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>rhs_a</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" kindref="member">VEC</ref> const &amp;</type>
+          <declname>rhs_b</declname>
+        </param>
+        <briefdescription>
+<para>lhs = a*rhs_a + b*rhs_b </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="63" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="138" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>T</label>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::SpMatrix&lt; T, Allocator &gt;::CSR&lt; amrex::PODVector &gt;</label>
+        <link refid="structamrex_1_1SpMatrix_1_1CSR"/>
+      </node>
+      <node id="2">
+        <label>amrex::SpMatrix&lt; T, Allocator &gt;</label>
+        <link refid="classamrex_1_1SpMatrix"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_data</edgelabel>
+          <edgelabel>m_data_remote</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_recv_counts</edgelabel>
+          <edgelabel>m_recv_from</edgelabel>
+          <edgelabel>m_send_counts</edgelabel>
+          <edgelabel>m_send_to</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_partition</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_remote_cols</edgelabel>
+          <edgelabel>m_rtol</edgelabel>
+          <edgelabel>m_send_indices</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_recv_reqs</edgelabel>
+          <edgelabel>m_send_reqs</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>amrex::GMRES&lt; VEC, GMRES_MV&lt; T &gt; &gt;</label>
+        <link refid="classamrex_1_1GMRES"/>
+      </node>
+      <node id="1">
+        <label>amrex::GMRES_MV&lt; T &gt;</label>
+        <link refid="classamrex_1_1GMRES__MV"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_mat</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_gmres</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::shared_ptr&lt; amrex::AlgPartition::Ref &gt;</label>
+      </node>
+      <node id="10">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>amrex::AlgPartition</label>
+        <link refid="classamrex_1_1AlgPartition"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_ref</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>amrex::PODVector&lt; Long &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H" bodystart="13" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1GMRES__MV_1a710e9f7b8703fe6939cbef9dedd8ba94" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>apply</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a09744f18b0feb9507546ba2e18485d0d" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>assign</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ae61a914567a18dd936d06aab8dc28b5a" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>dotProduct</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a8181a83d4c8d3b7ad5020af3bf21d332" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>getGMRES</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a7ab353ad5a281894a27822bd244f0ed5" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>GM</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ae404fbc571eb365987ddb8a9bf0d6c2b" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>GMRES_MV</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ac381bf5db27b170489f4a5a7c56a3e84" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>increment</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a9cf5f17a151771501ff4da4d4ea78810" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1adcf264633423cdffddff341539f4bd69" prot="private" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>m_gmres</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ae9996d59ae66b9a5771451bd817cbf1f" prot="private" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>m_mat</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a183670877bcc214fc83609afd448dce6" prot="private" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>m_pc</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a515ead34c663eca98ee25df8e08c70ab" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>makeVecLHS</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1aee9181d5fcd08e302aa20840b1f1ec51" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>makeVecRHS</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ab602ed172f36a35ddcfd4bc8f6def8e4" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>MAT</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a350530f8498a9b39762008daf6b90467" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>norm2</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a21b430cc5077f80d80468f89653cb562" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>PC</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ad2b68689d2ff3c1565b2d91d63bdb171" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>precond</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1aa26927a380d30f38e4911f60830d0c7e" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>RT</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a856955440b084e03c3c63354f034aac4" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>scale</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1aff5dcd4e78bd5e241c44569af7f87318" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>setPrecond</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1ab86646b279c7a86ac36dda28de740f2d" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>setToZero</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a435604aac5c43aef49984b414f0ace89" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>setVerbose</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a97faded45dc40096429df41d9fb78889" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>solve</name></member>
+      <member refid="classamrex_1_1GMRES__MV_1a5ed47359ac5c07d84942f391299c0ec2" prot="public" virt="non-virtual"><scope>amrex::GMRES_MV</scope><name>VEC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

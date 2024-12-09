@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classamrex_1_1AlgVector" kind="class" language="C++" prot="public">
+    <compoundname>amrex::AlgVector</compoundname>
+    <includes refid="AMReX__AlgVector_8H" local="no">AMReX_AlgVector.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename Allocator</type>
+        <defval><ref refid="namespaceamrex_1a179fafc569924202b166896b608cd5c2" kindref="member">DefaultAllocator</ref>&lt;T&gt;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classamrex_1_1AlgVector_1af5cc4b0af10d2fafea6e159f380294e0" prot="public" static="no">
+        <type>T</type>
+        <definition>using amrex::AlgVector&lt; T, Allocator &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="21" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1AlgVector_1ade33050d5ddf5444dd6d54f9dcb96fd9" prot="public" static="no">
+        <type>Allocator</type>
+        <definition>using amrex::AlgVector&lt; T, Allocator &gt;::allocator_type =  Allocator</definition>
+        <argsstring></argsstring>
+        <name>allocator_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="22" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1AlgVector_1ac6dc9512d8d02b209a03c4bb190deb69" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T, Allocator &gt;</type>
+        <definition>using amrex::AlgVector&lt; T, Allocator &gt;::Vec =  PODVector&lt;T,Allocator&gt;</definition>
+        <argsstring></argsstring>
+        <name>Vec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="24" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1AlgVector_1a5b73dcd9fc1ccfe460d2d10e8baa112e" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+        <definition>AlgPartition amrex::AlgVector&lt; T, Allocator &gt;::m_partition</definition>
+        <argsstring></argsstring>
+        <name>m_partition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="101" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1AlgVector_1a7acd190663efe93f298681d0c54c7fbf" prot="private" static="no" mutable="no">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::m_begin</definition>
+        <argsstring></argsstring>
+        <name>m_begin</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1AlgVector_1a7ef4e1eaac74c4823d7c25633cf44f92" prot="private" static="no" mutable="no">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::m_end</definition>
+        <argsstring></argsstring>
+        <name>m_end</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1AlgVector_1abeb51e51652929d674c92eeae1544e83" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1AlgVector_1ac6dc9512d8d02b209a03c4bb190deb69" kindref="member">Vec</ref></type>
+        <definition>Vec amrex::AlgVector&lt; T, Allocator &gt;::m_data</definition>
+        <argsstring></argsstring>
+        <name>m_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="104" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a9343f7f8b2d14128e2d3c9ffc891305b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::AlgVector</definition>
+        <argsstring>()=default</argsstring>
+        <name>AlgVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="26" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a81eba36c0b815bb7a962b3cbe1592477" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::AlgVector</definition>
+        <argsstring>(Long global_size)</argsstring>
+        <name>AlgVector</name>
+        <param>
+          <type>Long</type>
+          <declname>global_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="27" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a53b73094b3f795bbd4cb046e0bd72b31" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::AlgVector</definition>
+        <argsstring>(AlgPartition partition)</argsstring>
+        <name>AlgVector</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="28" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="118" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1ac494068c2fda65a150df083fafcfcae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::AlgVector</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; const &amp;)=delete</argsstring>
+        <name>AlgVector</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="30" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a83ecab197992fbe1ebf10c4843204a3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref> &amp;</type>
+        <definition>AlgVector&amp; amrex::AlgVector&lt; T, Allocator &gt;::operator=</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="31" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a5b95d3bfee0de88b24cb17e3aeb4e00f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::AlgVector</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; &amp;&amp;) noexcept=default</argsstring>
+        <name>AlgVector</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="33" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a38d9dddc5acdc0e562a4d45bff292341" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref> &amp;</type>
+        <definition>AlgVector&amp; amrex::AlgVector&lt; T, Allocator &gt;::operator=</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="34" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a5718d37c61976892ea9a8b84d2cd388b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::AlgVector&lt; T, Allocator &gt;::~AlgVector</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AlgVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1aa693a1acf21935272470a94827dcc63d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::define</definition>
+        <argsstring>(Long global_size)</argsstring>
+        <name>define</name>
+        <param>
+          <type>Long</type>
+          <declname>global_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="38" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="128" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a2182f16bdb04900257f0f0b589fafa38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::define</definition>
+        <argsstring>(AlgPartition partition)</argsstring>
+        <name>define</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="39" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="137" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a42cd0d8b6efced5dcbbe92bd34582c15" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::AlgVector&lt; T, Allocator &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="41" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a130ab48da0a058eecc5751bcc7c8904b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const  &amp;</type>
+        <definition>AlgPartition const&amp; amrex::AlgVector&lt; T, Allocator &gt;::partition</definition>
+        <argsstring>() const</argsstring>
+        <name>partition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="43" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a0811750a723b5146fafd5fec5e03b246" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::numLocalRows</definition>
+        <argsstring>() const</argsstring>
+        <name>numLocalRows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="45" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a89a278be19d37f23829ceef3d56fe27f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::numGlobalRows</definition>
+        <argsstring>() const</argsstring>
+        <name>numGlobalRows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="46" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a3a9320615b13bf3b8297668ec8fc8655" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::globalBegin</definition>
+        <argsstring>() const</argsstring>
+        <name>globalBegin</name>
+        <briefdescription>
+<para>Inclusive global index begin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="49" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a86fe34179a1bf0cc312ba8a61e5ba728" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Long</type>
+        <definition>Long amrex::AlgVector&lt; T, Allocator &gt;::globalEnd</definition>
+        <argsstring>() const</argsstring>
+        <name>globalEnd</name>
+        <briefdescription>
+<para>Exclusive global index end. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="51" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1aa34be587eebacc6ab7dd59693cf42967" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T const  *</type>
+        <definition>T const* amrex::AlgVector&lt; T, Allocator &gt;::data</definition>
+        <argsstring>() const</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="53" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a91047e914c1dd1f286cc489e62614ce0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* amrex::AlgVector&lt; T, Allocator &gt;::data</definition>
+        <argsstring>()</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="54" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1add8d493e5526b5808cb13cbce9b7edd4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Table1D" kindref="compound">Table1D</ref>&lt; T const, Long &gt;</type>
+        <definition>AMREX_FORCE_INLINE Table1D&lt;T const, Long&gt; amrex::AlgVector&lt; T, Allocator &gt;::view</definition>
+        <argsstring>() const</argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="57" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1ad5abd8b890a9c8edd332a06d6e68c769" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Table1D" kindref="compound">Table1D</ref>&lt; T const, Long &gt;</type>
+        <definition>AMREX_FORCE_INLINE Table1D&lt;T const, Long&gt; amrex::AlgVector&lt; T, Allocator &gt;::const_view</definition>
+        <argsstring>() const</argsstring>
+        <name>const_view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="62" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a3792dddd6927f8d40cf276e31c006b27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Table1D" kindref="compound">Table1D</ref>&lt; T, Long &gt;</type>
+        <definition>AMREX_FORCE_INLINE Table1D&lt;T, Long&gt; amrex::AlgVector&lt; T, Allocator &gt;::view</definition>
+        <argsstring>()</argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="67" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::setVal</definition>
+        <argsstring>(T val)</argsstring>
+        <name>setVal</name>
+        <param>
+          <type>T</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="71" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="146" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a2c76b64b1e2a8f6a5d890c49e51bc497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::setValAsync</definition>
+        <argsstring>(T val)</argsstring>
+        <name>setValAsync</name>
+        <param>
+          <type>T</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="72" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="153" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a846f59b80f60b59aa5d44bd197ea4ff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::copy</definition>
+        <argsstring>(AlgVector&lt; T &gt; const &amp;rhs)</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="74" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="161" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1aeec33e48498ffb35bddc813a3b5637c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::copyAsync</definition>
+        <argsstring>(AlgVector&lt; T &gt; const &amp;rhs)</argsstring>
+        <name>copyAsync</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="75" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="168" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a4b359421e3b45e6f5b94be28d9d8f523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::plus</definition>
+        <argsstring>(AlgVector&lt; T &gt; const &amp;rhs)</argsstring>
+        <name>plus</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="77" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="182" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a8b078df9ccec709ce5a238e447636f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::plusAsync</definition>
+        <argsstring>(AlgVector&lt; T &gt; const &amp;rhs)</argsstring>
+        <name>plusAsync</name>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="189" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a811f9d8a2d7c97f44b6d0ffa77c0de80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::scale</definition>
+        <argsstring>(T scale_factor)</argsstring>
+        <name>scale</name>
+        <param>
+          <type>T</type>
+          <declname>scale_factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="199" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1ab35a958ac4c7db4dd9bf23d1e47a4d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::scaleAsync</definition>
+        <argsstring>(T scale_factor)</argsstring>
+        <name>scaleAsync</name>
+        <param>
+          <type>T</type>
+          <declname>scale_factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="81" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="206" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1ad2ffc656a21514e67aa52a446ae31549" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T amrex::AlgVector&lt; T, Allocator &gt;::sum</definition>
+        <argsstring>(bool local=false) const</argsstring>
+        <name>sum</name>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="83" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="214" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a0f45ddc6cc0d196854c00d3525701f3a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T amrex::AlgVector&lt; T, Allocator &gt;::norminf</definition>
+        <argsstring>(bool local=false) const</argsstring>
+        <name>norminf</name>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="85" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="229" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a971568b54a27d655ce491e6f2649407d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T amrex::AlgVector&lt; T, Allocator &gt;::norm2</definition>
+        <argsstring>(bool local=false) const</argsstring>
+        <name>norm2</name>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="86" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="244" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1a874ac94c8d73706493c87e5eea050c85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">amrex::IsBaseFab</ref>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::copyFrom</definition>
+        <argsstring>(FabArray&lt; FAB &gt; const &amp;fa)</argsstring>
+        <name>copyFrom</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; const &amp;</type>
+          <declname>fa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="91" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="261" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1ae0be467d4d194c2d4477ba3e2eaf8d08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">amrex::IsBaseFab</ref>&lt; FAB &gt;::value &amp;&amp;std::is_same_v&lt; T, typename FAB::value_type &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::copyTo</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;fa) const</argsstring>
+        <name>copyTo</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>fa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="96" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="283" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AlgVector_1af91092d4fe7cbf9bed09b7ebafae797a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::AlgVector&lt; T, Allocator &gt;::printToFile</definition>
+        <argsstring>(std::string const &amp;file) const</argsstring>
+        <name>printToFile</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="303" bodyend="318"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</label>
+        <link refid="structamrex_1_1ArenaAllocatorBase"/>
+      </node>
+      <node id="6">
+        <label>std::shared_ptr&lt; amrex::AlgPartition::Ref &gt;</label>
+      </node>
+      <node id="3">
+        <label>DefaultAllocator&lt; T &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::PODVector&lt; T, DefaultAllocator&lt; T &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::AlgPartition</label>
+        <link refid="classamrex_1_1AlgPartition"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_ref</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::AlgVector&lt; T, Allocator &gt;</label>
+        <link refid="classamrex_1_1AlgVector"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_partition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="19" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1AlgVector_1a9343f7f8b2d14128e2d3c9ffc891305b" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>AlgVector</name></member>
+      <member refid="classamrex_1_1AlgVector_1a81eba36c0b815bb7a962b3cbe1592477" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>AlgVector</name></member>
+      <member refid="classamrex_1_1AlgVector_1a53b73094b3f795bbd4cb046e0bd72b31" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>AlgVector</name></member>
+      <member refid="classamrex_1_1AlgVector_1ac494068c2fda65a150df083fafcfcae2" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>AlgVector</name></member>
+      <member refid="classamrex_1_1AlgVector_1a5b95d3bfee0de88b24cb17e3aeb4e00f" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>AlgVector</name></member>
+      <member refid="classamrex_1_1AlgVector_1ade33050d5ddf5444dd6d54f9dcb96fd9" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>allocator_type</name></member>
+      <member refid="classamrex_1_1AlgVector_1ad5abd8b890a9c8edd332a06d6e68c769" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>const_view</name></member>
+      <member refid="classamrex_1_1AlgVector_1a846f59b80f60b59aa5d44bd197ea4ff5" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>copy</name></member>
+      <member refid="classamrex_1_1AlgVector_1aeec33e48498ffb35bddc813a3b5637c5" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>copyAsync</name></member>
+      <member refid="classamrex_1_1AlgVector_1a874ac94c8d73706493c87e5eea050c85" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>copyFrom</name></member>
+      <member refid="classamrex_1_1AlgVector_1ae0be467d4d194c2d4477ba3e2eaf8d08" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>copyTo</name></member>
+      <member refid="classamrex_1_1AlgVector_1aa34be587eebacc6ab7dd59693cf42967" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>data</name></member>
+      <member refid="classamrex_1_1AlgVector_1a91047e914c1dd1f286cc489e62614ce0" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>data</name></member>
+      <member refid="classamrex_1_1AlgVector_1aa693a1acf21935272470a94827dcc63d" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>define</name></member>
+      <member refid="classamrex_1_1AlgVector_1a2182f16bdb04900257f0f0b589fafa38" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>define</name></member>
+      <member refid="classamrex_1_1AlgVector_1a42cd0d8b6efced5dcbbe92bd34582c15" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>empty</name></member>
+      <member refid="classamrex_1_1AlgVector_1a3a9320615b13bf3b8297668ec8fc8655" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>globalBegin</name></member>
+      <member refid="classamrex_1_1AlgVector_1a86fe34179a1bf0cc312ba8a61e5ba728" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>globalEnd</name></member>
+      <member refid="classamrex_1_1AlgVector_1a7acd190663efe93f298681d0c54c7fbf" prot="private" virt="non-virtual"><scope>amrex::AlgVector</scope><name>m_begin</name></member>
+      <member refid="classamrex_1_1AlgVector_1abeb51e51652929d674c92eeae1544e83" prot="private" virt="non-virtual"><scope>amrex::AlgVector</scope><name>m_data</name></member>
+      <member refid="classamrex_1_1AlgVector_1a7ef4e1eaac74c4823d7c25633cf44f92" prot="private" virt="non-virtual"><scope>amrex::AlgVector</scope><name>m_end</name></member>
+      <member refid="classamrex_1_1AlgVector_1a5b73dcd9fc1ccfe460d2d10e8baa112e" prot="private" virt="non-virtual"><scope>amrex::AlgVector</scope><name>m_partition</name></member>
+      <member refid="classamrex_1_1AlgVector_1a971568b54a27d655ce491e6f2649407d" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>norm2</name></member>
+      <member refid="classamrex_1_1AlgVector_1a0f45ddc6cc0d196854c00d3525701f3a" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>norminf</name></member>
+      <member refid="classamrex_1_1AlgVector_1a89a278be19d37f23829ceef3d56fe27f" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>numGlobalRows</name></member>
+      <member refid="classamrex_1_1AlgVector_1a0811750a723b5146fafd5fec5e03b246" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>numLocalRows</name></member>
+      <member refid="classamrex_1_1AlgVector_1a83ecab197992fbe1ebf10c4843204a3c" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1AlgVector_1a38d9dddc5acdc0e562a4d45bff292341" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1AlgVector_1a130ab48da0a058eecc5751bcc7c8904b" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>partition</name></member>
+      <member refid="classamrex_1_1AlgVector_1a4b359421e3b45e6f5b94be28d9d8f523" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>plus</name></member>
+      <member refid="classamrex_1_1AlgVector_1a8b078df9ccec709ce5a238e447636f75" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>plusAsync</name></member>
+      <member refid="classamrex_1_1AlgVector_1af91092d4fe7cbf9bed09b7ebafae797a" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>printToFile</name></member>
+      <member refid="classamrex_1_1AlgVector_1a811f9d8a2d7c97f44b6d0ffa77c0de80" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>scale</name></member>
+      <member refid="classamrex_1_1AlgVector_1ab35a958ac4c7db4dd9bf23d1e47a4d1f" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>scaleAsync</name></member>
+      <member refid="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1AlgVector_1a2c76b64b1e2a8f6a5d890c49e51bc497" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>setValAsync</name></member>
+      <member refid="classamrex_1_1AlgVector_1ad2ffc656a21514e67aa52a446ae31549" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>sum</name></member>
+      <member refid="classamrex_1_1AlgVector_1af5cc4b0af10d2fafea6e159f380294e0" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>value_type</name></member>
+      <member refid="classamrex_1_1AlgVector_1ac6dc9512d8d02b209a03c4bb190deb69" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>Vec</name></member>
+      <member refid="classamrex_1_1AlgVector_1add8d493e5526b5808cb13cbce9b7edd4" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>view</name></member>
+      <member refid="classamrex_1_1AlgVector_1a3792dddd6927f8d40cf276e31c006b27" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>view</name></member>
+      <member refid="classamrex_1_1AlgVector_1a5718d37c61976892ea9a8b84d2cd388b" prot="public" virt="non-virtual"><scope>amrex::AlgVector</scope><name>~AlgVector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

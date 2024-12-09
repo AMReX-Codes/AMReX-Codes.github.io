@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::Table1D&lt; T &gt; Struct Template Reference</title-->
+<!--title>AMReX: amrex::Table1D&lt; T, IDX &gt; Struct Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('structamrex_1_1Table1D.html',''); init
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structamrex_1_1Table1D-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amrex::Table1D&lt; T &gt; Struct Template Reference</div>  </div>
+<div class="title">amrex::Table1D&lt; T, IDX &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -108,42 +108,42 @@ $(document).ready(function(){initNavTree('structamrex_1_1Table1D.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae57c577c6f51911b887e7f736c8a83dd"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#ae57c577c6f51911b887e7f736c8a83dd">Table1D</a> () noexcept=default</td></tr>
-<tr class="separator:ae57c577c6f51911b887e7f736c8a83dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5cc99cdb1ebd55b6df669892343009"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aab5cc99cdb1ebd55b6df669892343009"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#aab5cc99cdb1ebd55b6df669892343009">Table1D</a> (<a class="el" href="structamrex_1_1Table1D.html">Table1D</a>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</td></tr>
-<tr class="separator:aab5cc99cdb1ebd55b6df669892343009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e33e283ae88a75cf4b1d9cd99323a7"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#ad9e33e283ae88a75cf4b1d9cd99323a7">Table1D</a> (T *a_p, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_begin, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_end) noexcept</td></tr>
-<tr class="separator:ad9e33e283ae88a75cf4b1d9cd99323a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb5e426687a441d87eb00628cdcc2706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#aeb5e426687a441d87eb00628cdcc2706">operator bool</a> () const noexcept</td></tr>
-<tr class="separator:aeb5e426687a441d87eb00628cdcc2706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d8ba7fa9408d591083cf1c27205b2ef"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a4d8ba7fa9408d591083cf1c27205b2ef"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#a4d8ba7fa9408d591083cf1c27205b2ef">operator()</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
-<tr class="separator:a4d8ba7fa9408d591083cf1c27205b2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25b4232acfe98753043509f04b449ca"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#ad25b4232acfe98753043509f04b449ca">Table1D</a> () noexcept=default</td></tr>
+<tr class="separator:ad25b4232acfe98753043509f04b449ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f6a5bf44488d68bab798863e68a2265"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a7f6a5bf44488d68bab798863e68a2265"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#a7f6a5bf44488d68bab798863e68a2265">Table1D</a> (<a class="el" href="structamrex_1_1Table1D.html">Table1D</a>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</td></tr>
+<tr class="separator:a7f6a5bf44488d68bab798863e68a2265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdf080cd6d8ca6ea5ecd28906fa80d1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#abfdf080cd6d8ca6ea5ecd28906fa80d1">Table1D</a> (T *a_p, IDX a_begin, IDX a_end) noexcept</td></tr>
+<tr class="separator:abfdf080cd6d8ca6ea5ecd28906fa80d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48ae43d8c4d4caef49dd8b4efecac13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#aa48ae43d8c4d4caef49dd8b4efecac13">operator bool</a> () const noexcept</td></tr>
+<tr class="separator:aa48ae43d8c4d4caef49dd8b4efecac13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fc50c77de4117adee35bdb49b33684"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:af6fc50c77de4117adee35bdb49b33684"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#af6fc50c77de4117adee35bdb49b33684">operator()</a> (IDX i) const noexcept</td></tr>
+<tr class="separator:af6fc50c77de4117adee35bdb49b33684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aeb3e8d430cfc35fd36cca7b37d5d6287"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#aeb3e8d430cfc35fd36cca7b37d5d6287">p</a> = nullptr</td></tr>
-<tr class="separator:aeb3e8d430cfc35fd36cca7b37d5d6287"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b493bd89c1d953f72b18dbfb82fc311"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#a1b493bd89c1d953f72b18dbfb82fc311">begin</a> = 1</td></tr>
-<tr class="separator:a1b493bd89c1d953f72b18dbfb82fc311"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4fc4d78377e9818d74517d365f21113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#ac4fc4d78377e9818d74517d365f21113">end</a> = 0</td></tr>
-<tr class="separator:ac4fc4d78377e9818d74517d365f21113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2d5829baad9e96710708eae3e4c4a9"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#a5b2d5829baad9e96710708eae3e4c4a9">p</a> = nullptr</td></tr>
+<tr class="separator:a5b2d5829baad9e96710708eae3e4c4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06af5cf12031ffd738020537760de9c9"><td class="memItemLeft" align="right" valign="top">IDX&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#a06af5cf12031ffd738020537760de9c9">begin</a> = 1</td></tr>
+<tr class="separator:a06af5cf12031ffd738020537760de9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accabc1f0f0d39d05a414c9bdc9edaf7f"><td class="memItemLeft" align="right" valign="top">IDX&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Table1D.html#accabc1f0f0d39d05a414c9bdc9edaf7f">end</a> = 0</td></tr>
+<tr class="separator:accabc1f0f0d39d05a414c9bdc9edaf7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae57c577c6f51911b887e7f736c8a83dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae57c577c6f51911b887e7f736c8a83dd">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[1/3]</span></h2>
+<a id="ad25b4232acfe98753043509f04b449ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25b4232acfe98753043509f04b449ca">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
+          <td class="memname">constexpr <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,13 +158,13 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aab5cc99cdb1ebd55b6df669892343009"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab5cc99cdb1ebd55b6df669892343009">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[2/3]</span></h2>
+<a id="a7f6a5bf44488d68bab798863e68a2265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f6a5bf44488d68bab798863e68a2265">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
 <div class="memtemplate">
 template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
@@ -172,7 +172,7 @@ template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
+          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Table1D.html">Table1D</a>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
@@ -188,19 +188,19 @@ template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &
 
 </div>
 </div>
-<a id="ad9e33e283ae88a75cf4b1d9cd99323a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9e33e283ae88a75cf4b1d9cd99323a7">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[3/3]</span></h2>
+<a id="abfdf080cd6d8ca6ea5ecd28906fa80d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdf080cd6d8ca6ea5ecd28906fa80d1">&#9670;&nbsp;</a></span>Table1D() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
+          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::<a class="el" href="structamrex_1_1Table1D.html">Table1D</a> </td>
           <td>(</td>
           <td class="paramtype">T *&#160;</td>
           <td class="paramname"><em>a_p</em>, </td>
@@ -208,13 +208,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramtype">IDX&#160;</td>
           <td class="paramname"><em>a_begin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramtype">IDX&#160;</td>
           <td class="paramname"><em>a_end</em>&#160;</td>
         </tr>
         <tr>
@@ -233,19 +233,19 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aeb5e426687a441d87eb00628cdcc2706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb5e426687a441d87eb00628cdcc2706">&#9670;&nbsp;</a></span>operator bool()</h2>
+<a id="aa48ae43d8c4d4caef49dd8b4efecac13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48ae43d8c4d4caef49dd8b4efecac13">&#9670;&nbsp;</a></span>operator bool()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::operator bool </td>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::operator bool </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -260,13 +260,13 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a4d8ba7fa9408d591083cf1c27205b2ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d8ba7fa9408d591083cf1c27205b2ef">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="af6fc50c77de4117adee35bdb49b33684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6fc50c77de4117adee35bdb49b33684">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
 <div class="memtemplate">
 template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
@@ -274,9 +274,9 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &g
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> U&amp; <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::operator() </td>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> U&amp; <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramtype">IDX&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -291,48 +291,48 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &g
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1b493bd89c1d953f72b18dbfb82fc311"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b493bd89c1d953f72b18dbfb82fc311">&#9670;&nbsp;</a></span>begin</h2>
+<a id="a06af5cf12031ffd738020537760de9c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06af5cf12031ffd738020537760de9c9">&#9670;&nbsp;</a></span>begin</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::begin = 1</td>
+          <td class="memname">IDX <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::begin = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac4fc4d78377e9818d74517d365f21113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4fc4d78377e9818d74517d365f21113">&#9670;&nbsp;</a></span>end</h2>
+<a id="accabc1f0f0d39d05a414c9bdc9edaf7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accabc1f0f0d39d05a414c9bdc9edaf7f">&#9670;&nbsp;</a></span>end</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::end = 0</td>
+          <td class="memname">IDX <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::end = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aeb3e8d430cfc35fd36cca7b37d5d6287"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb3e8d430cfc35fd36cca7b37d5d6287">&#9670;&nbsp;</a></span>p</h2>
+<a id="a5b2d5829baad9e96710708eae3e4c4a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2d5829baad9e96710708eae3e4c4a9">&#9670;&nbsp;</a></span>p</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , typename IDX  = int&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T &gt;::p = nullptr</td>
+          <td class="memname">T* <a class="el" href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a> <a class="el" href="structamrex_1_1Table1D.html">amrex::Table1D</a>&lt; T, IDX &gt;::p = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">

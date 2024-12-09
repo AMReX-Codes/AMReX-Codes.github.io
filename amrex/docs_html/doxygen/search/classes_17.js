@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['yafluxregistert_10818',['YAFluxRegisterT',['../classamrex_1_1YAFluxRegisterT.html',1,'amrex']]],
-  ['yy_5fbuffer_5fstate_10819',['yy_buffer_state',['../structyy__buffer__state.html',1,'']]],
-  ['yy_5ftrans_5finfo_10820',['yy_trans_info',['../structyy__trans__info.html',1,'']]],
-  ['yyalloc_10821',['yyalloc',['../unionyyalloc.html',1,'']]]
+  ['xdim3_10913',['XDim3',['../structamrex_1_1XDim3.html',1,'amrex']]],
+  ['xyplotdatalist_10914',['XYPlotDataList',['../classamrex_1_1XYPlotDataList.html',1,'amrex']]],
+  ['xyplotdatalistlink_10915',['XYPlotDataListLink',['../classamrex_1_1XYPlotDataListLink.html',1,'amrex']]]
 ];
