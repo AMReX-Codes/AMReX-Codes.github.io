@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"classamrex_1_1XYPlotDataList.html#a2ac6b3210b4469651372ff30444258cd":[3,0,0,415,6],
 "classamrex_1_1XYPlotDataList.html#a3bfcf78a8127217941d34f3970937b19":[3,0,0,415,33],
 "classamrex_1_1XYPlotDataList.html#a3cb0318159ef8ea32335512140c1e0d3":[3,0,0,415,9],
 "classamrex_1_1XYPlotDataList.html#a3d289d346e68eb126c040ca8a41a5c37":[3,0,0,415,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "functions_func_i.html":[3,3,1,8],
 "functions_func_j.html":[3,3,1,9],
 "functions_func_k.html":[3,3,1,10],
-"functions_func_l.html":[3,3,1,11],
-"functions_func_m.html":[3,3,1,12]
+"functions_func_l.html":[3,3,1,11]
 };

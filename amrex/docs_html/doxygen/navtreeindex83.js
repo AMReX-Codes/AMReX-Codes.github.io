@@ -1,5 +1,6 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627ae9990b3a39151b6f2175caa7621e0c4b":[3,0,0,459,0,1],
 "structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4":[3,0,0,459,1],
 "structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4a7dfdce1e88bc91f46ae0d30f856f7ca9":[3,0,0,459,1,3],
 "structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4a91efbc33209256821c57a53ef9ddbc51":[3,0,0,459,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX83 =
 "structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[3,0,0,11,4],
 "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[3,0,0,11,1],
 "structamrex_1_1NonLocalBC_1_1MapComponents.html":[3,0,0,11,6],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[3,0,0,11,6,1],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a368643b0ca2dfd8221c8ce8252b2fc4a":[3,0,0,11,6,0]
+"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[3,0,0,11,6,1]
 };
