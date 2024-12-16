@@ -103,6 +103,7 @@ var annotated_dup =
       ] ],
       [ "FFT", "namespaceamrex_1_1FFT.html", [
         [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", [
+          [ "SubHelper", "structamrex_1_1FFT_1_1detail_1_1SubHelper.html", "structamrex_1_1FFT_1_1detail_1_1SubHelper" ],
           [ "FFTPhysBCTag", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag.html", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag" ]
         ] ],
         [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", [

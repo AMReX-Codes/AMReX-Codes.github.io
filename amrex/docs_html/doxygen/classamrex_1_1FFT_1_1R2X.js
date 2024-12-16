@@ -13,7 +13,7 @@ var classamrex_1_1FFT_1_1R2X =
     [ "forward", "classamrex_1_1FFT_1_1R2X.html#a59813938eb3b7845d5759b38db647af7", null ],
     [ "forward", "classamrex_1_1FFT_1_1R2X.html#a21ed336925c8a355cbf6cdd968bcc228", null ],
     [ "forwardThenBackward", "classamrex_1_1FFT_1_1R2X.html#a2e78cfce8e9b69a447c046c981120f65", null ],
-    [ "forwardThenBackward_doit", "classamrex_1_1FFT_1_1R2X.html#aa13278f2ecdece165c36f0a234345936", null ],
+    [ "forwardThenBackward_doit", "classamrex_1_1FFT_1_1R2X.html#a8930f1dd2211572b69186a6e2f87381f", null ],
     [ "operator=", "classamrex_1_1FFT_1_1R2X.html#adefe97ae9fa06f7856c39c30d6c1a3a3", null ],
     [ "operator=", "classamrex_1_1FFT_1_1R2X.html#af3cadc72800beca22f83070a249e653a", null ],
     [ "post_forward_doit", "classamrex_1_1FFT_1_1R2X.html#a036c3be80e75d7d3bdb8f7fa6c2b2730", null ],
@@ -52,7 +52,9 @@ var classamrex_1_1FFT_1_1R2X =
     [ "m_fft_fwd_y", "classamrex_1_1FFT_1_1R2X.html#a50404912b51cc6757b53b31c96671448", null ],
     [ "m_fft_fwd_z", "classamrex_1_1FFT_1_1R2X.html#ac3e038154cb7e2d984a37a8832f17cd5", null ],
     [ "m_info", "classamrex_1_1FFT_1_1R2X.html#a3489fa8aaaef3759125b166421ca9688", null ],
+    [ "m_r2x_sub", "classamrex_1_1FFT_1_1R2X.html#aaaa840820b7e75145bd8a44688ccfc74", null ],
     [ "m_rx", "classamrex_1_1FFT_1_1R2X.html#a60899f9c10b3016144b21d9a53ff9068", null ],
     [ "m_ry", "classamrex_1_1FFT_1_1R2X.html#a1bf4368cd11c3a846b61f8f155699618", null ],
-    [ "m_rz", "classamrex_1_1FFT_1_1R2X.html#a014c83c9ba3183db8501b44c93023255", null ]
+    [ "m_rz", "classamrex_1_1FFT_1_1R2X.html#a014c83c9ba3183db8501b44c93023255", null ],
+    [ "m_sub_helper", "classamrex_1_1FFT_1_1R2X.html#a2df2637c0d55cb6d5df5810e95837889", null ]
 ];

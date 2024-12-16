@@ -1,5 +1,11 @@
 var NAVTREEINDEX76 =
 {
+"namespaceamrex__omp__module.html#a88c4536a09e2cc9d9edff5cd040814db":[2,0,14,0],
+"namespaceamrex__omp__module.html#ad65feb81483b21194d98cfba40c0b8bb":[2,0,14,3],
+"namespaceamrex__paralleldescriptor__module.html":[2,0,15],
+"namespaceamrex__paralleldescriptor__module.html#a0b4f88406790fe12faee067b036014bb":[2,0,15,10],
+"namespaceamrex__paralleldescriptor__module.html#a13e70e6cf4cfe72233e9a28ca14245e0":[2,0,15,11],
+"namespaceamrex__paralleldescriptor__module.html#a159c62d36c55a038f9a058400c25cddf":[2,0,15,8],
 "namespaceamrex__paralleldescriptor__module.html#a263268abdd1d3bb2d859542bfd03251d":[2,0,15,14],
 "namespaceamrex__paralleldescriptor__module.html#a2fa55a14c84d0e1da19ba1cf9b8c0c72":[2,0,15,15],
 "namespaceamrex__paralleldescriptor__module.html#a340f780bf33f6f266f684d916bc7d71a":[2,0,15,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX76 =
 "structCommProfStats_1_1ReductionEntry.html":[3,0,16,3],
 "structCommProfStats_1_1ReductionEntry.html#a7d0d09150f2cd432ef20826516728351":[3,0,16,3,1],
 "structCommProfStats_1_1ReductionEntry.html#ac141bc923704f3a33d9074e1954b4115":[3,0,16,3,0],
-"structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[3,0,16,3,2],
-"structCommProfStats_1_1SendRecvPair.html":[3,0,16,4],
-"structCommProfStats_1_1SendRecvPair.html#a0990a7f5e9b6aa52a2ff77aa94e318b5":[3,0,16,4,0],
-"structCommProfStats_1_1SendRecvPair.html#a0abec33396042409e9f415189c688a9a":[3,0,16,4,6],
-"structCommProfStats_1_1SendRecvPair.html#a532ce884eade8499d8db3c56c3ec66a7":[3,0,16,4,7],
-"structCommProfStats_1_1SendRecvPair.html#a58928d12d77da3b14cc846d527c70cc7":[3,0,16,4,3],
-"structCommProfStats_1_1SendRecvPair.html#a90d32c59e4f098252339903fa293d8f6":[3,0,16,4,9]
+"structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[3,0,16,3,2]
 };

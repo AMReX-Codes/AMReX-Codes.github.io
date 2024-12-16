@@ -6,6 +6,7 @@ var AMReX__FFT__Helper_8H =
     [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ],
     [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
     [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
+    [ "SubHelper", "structamrex_1_1FFT_1_1detail_1_1SubHelper.html", "structamrex_1_1FFT_1_1detail_1_1SubHelper" ],
     [ "Key", "AMReX__FFT__Helper_8H.html#a07ebd4aab8904819a3bbc7009e06ce97", null ],
     [ "PlanD", "AMReX__FFT__Helper_8H.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
     [ "PlanF", "AMReX__FFT__Helper_8H.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],
