@@ -1,6 +1,5 @@
 var NAVTREEINDEX20 =
 {
-"AMReX__PlotFileDataImpl_8cpp.html":[4,0,0,2,226],
 "AMReX__PlotFileUtilHDF5_8H.html":[4,0,0,5,3,4],
 "AMReX__PlotFileUtilHDF5_8H.html#a0aca4b49cf7b2929efe25b9bd590a49e":[4,0,0,5,3,4,0],
 "AMReX__PlotFileUtilHDF5_8H.html#a12a28b501fcf51d721c9bfdb141a0fd5":[4,0,0,5,3,4,1],
@@ -169,8 +168,8 @@ var NAVTREEINDEX20 =
 "AMReX__RegionsProfStats_8cpp.html":[4,0,0,5,6,13],
 "AMReX__RegionsProfStats_8cpp.html#a02b76a92a17338752cdd29335caaa60d":[4,0,0,5,6,13,9],
 "AMReX__RegionsProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[4,0,0,5,6,13,10],
-"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,2],
 "AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,1],
+"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,2],
 "AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3":[4,0,0,5,6,13,7],
 "AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf":[4,0,0,5,6,13,5],
 "AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12":[4,0,0,5,6,13,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX20 =
 "AMReX__Slopes__K_8H.html":[4,0,0,2,245],
 "AMReX__Slopes__K_8H.html#a147f251f83a5f9c022d66a1595f7cb0b":[4,0,0,2,245,3],
 "AMReX__Slopes__K_8H.html#a43724c1f3c9745b893de6823b5bfef51":[4,0,0,2,245,2],
-"AMReX__Slopes__K_8H.html#a89f81b000b34e7c57e481ba09a2f77eb":[4,0,0,2,245,1]
+"AMReX__Slopes__K_8H.html#a89f81b000b34e7c57e481ba09a2f77eb":[4,0,0,2,245,1],
+"AMReX__Slopes__K_8H.html#aba62b0734dec9b69bdc82781f4e87151":[4,0,0,2,245,0]
 };

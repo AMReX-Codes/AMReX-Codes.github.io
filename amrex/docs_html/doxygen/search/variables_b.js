@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['k1d_16984',['K1D',['../namespaceamrex.html#acfd78a9847de43f2e6f42da9cbd459d9',1,'amrex']]],
-  ['k2d_16985',['K2D',['../namespaceamrex.html#a24827d300a5ebf26327786454aa95788',1,'amrex']]],
-  ['k3d_16986',['K3D',['../namespaceamrex.html#aa38894f5177d4e0302afa30ab13c8c26',1,'amrex']]],
-  ['kind_16987',['kind',['../structamrex_1_1FFT_1_1Plan.html#a894dbb501149b21ecebeabf30aa68f23',1,'amrex::FFT::Plan']]],
-  ['kstride_16988',['kstride',['../structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e',1,'amrex::Array4']]]
+  ['k1d_16981',['K1D',['../namespaceamrex.html#acfd78a9847de43f2e6f42da9cbd459d9',1,'amrex']]],
+  ['k2d_16982',['K2D',['../namespaceamrex.html#a24827d300a5ebf26327786454aa95788',1,'amrex']]],
+  ['k3d_16983',['K3D',['../namespaceamrex.html#aa38894f5177d4e0302afa30ab13c8c26',1,'amrex']]],
+  ['kind_16984',['kind',['../structamrex_1_1FFT_1_1Plan.html#a894dbb501149b21ecebeabf30aa68f23',1,'amrex::FFT::Plan']]],
+  ['kstride_16985',['kstride',['../structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e',1,'amrex::Array4']]]
 ];
