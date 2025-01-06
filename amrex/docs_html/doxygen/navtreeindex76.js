@@ -1,6 +1,5 @@
 var NAVTREEINDEX76 =
 {
-"namespaceamrex__omp__module.html#a88c4536a09e2cc9d9edff5cd040814db":[2,0,14,0],
 "namespaceamrex__omp__module.html#ad65feb81483b21194d98cfba40c0b8bb":[2,0,14,3],
 "namespaceamrex__paralleldescriptor__module.html":[2,0,15],
 "namespaceamrex__paralleldescriptor__module.html#a0b4f88406790fe12faee067b036014bb":[2,0,15,10],
@@ -249,5 +248,6 @@ var NAVTREEINDEX76 =
 "structCommProfStats_1_1ReductionEntry.html":[3,0,16,3],
 "structCommProfStats_1_1ReductionEntry.html#a7d0d09150f2cd432ef20826516728351":[3,0,16,3,1],
 "structCommProfStats_1_1ReductionEntry.html#ac141bc923704f3a33d9074e1954b4115":[3,0,16,3,0],
-"structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[3,0,16,3,2]
+"structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[3,0,16,3,2],
+"structCommProfStats_1_1SendRecvPair.html":[3,0,16,4]
 };

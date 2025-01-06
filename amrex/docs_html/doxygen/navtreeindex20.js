@@ -1,6 +1,5 @@
 var NAVTREEINDEX20 =
 {
-"AMReX__PlotFileDataImpl_8cpp.html":[4,0,0,2,226],
 "AMReX__PlotFileUtilHDF5_8H.html":[4,0,0,5,3,4],
 "AMReX__PlotFileUtilHDF5_8H.html#a0aca4b49cf7b2929efe25b9bd590a49e":[4,0,0,5,3,4,0],
 "AMReX__PlotFileUtilHDF5_8H.html#a12a28b501fcf51d721c9bfdb141a0fd5":[4,0,0,5,3,4,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX20 =
 "AMReX__Slopes__K_8H.html":[4,0,0,2,245],
 "AMReX__Slopes__K_8H.html#a147f251f83a5f9c022d66a1595f7cb0b":[4,0,0,2,245,3],
 "AMReX__Slopes__K_8H.html#a43724c1f3c9745b893de6823b5bfef51":[4,0,0,2,245,2],
-"AMReX__Slopes__K_8H.html#a89f81b000b34e7c57e481ba09a2f77eb":[4,0,0,2,245,1]
+"AMReX__Slopes__K_8H.html#a89f81b000b34e7c57e481ba09a2f77eb":[4,0,0,2,245,1],
+"AMReX__Slopes__K_8H.html#aba62b0734dec9b69bdc82781f4e87151":[4,0,0,2,245,0]
 };

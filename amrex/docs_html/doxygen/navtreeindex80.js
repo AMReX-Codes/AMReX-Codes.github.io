@@ -1,6 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"structamrex_1_1EBCellFlagFab_1_1NumCells.html#ae58c0b7189a097d963bb36dfff3a88f6":[3,0,0,400,0,2],
 "structamrex_1_1EBData.html":[3,0,0,401],
 "structamrex_1_1EBData.html#a8054ae8edba7f3b9c1b871920442882e":[3,0,0,401,3],
 "structamrex_1_1EBData.html#aa7c54d4a9b3460cac84c1f68fea2343f":[3,0,0,401,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX80 =
 "structamrex_1_1FabArrayBase_1_1PolarB.html#ad805ea2e85456aeee7173714da9e0167":[3,0,0,132,12,0],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#ae7d84e3daa0f3502f2ce6369dcb42f60":[3,0,0,132,12,3],
 "structamrex_1_1FabArrayBase_1_1RB180.html":[3,0,0,132,13],
-"structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[3,0,0,132,13,1]
+"structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[3,0,0,132,13,1],
+"structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[3,0,0,132,13,3]
 };
