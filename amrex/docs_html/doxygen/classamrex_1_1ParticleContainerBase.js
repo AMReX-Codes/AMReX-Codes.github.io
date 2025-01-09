@@ -64,5 +64,6 @@ var classamrex_1_1ParticleContainerBase =
     [ "neighbor_procs", "classamrex_1_1ParticleContainerBase.html#a0e1a0dcc5bf3f405f40ad020f18389bc", null ],
     [ "redistribute_mask_nghost", "classamrex_1_1ParticleContainerBase.html#ac6b4b306d8f0399657b3884f51ea569e", null ],
     [ "redistribute_mask_ptr", "classamrex_1_1ParticleContainerBase.html#a18183e85d5ae22c27721996b3c5bfead", null ],
-    [ "tile_size", "classamrex_1_1ParticleContainerBase.html#adb03167dec6a952cfa60beb45a514dfa", null ]
+    [ "tile_size", "classamrex_1_1ParticleContainerBase.html#adb03167dec6a952cfa60beb45a514dfa", null ],
+    [ "use_comms_arena", "classamrex_1_1ParticleContainerBase.html#a4073b2af36b94a658c11cd6bd7aab7a4", null ]
 ];
