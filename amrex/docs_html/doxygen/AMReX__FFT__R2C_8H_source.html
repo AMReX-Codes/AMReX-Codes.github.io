@@ -481,7 +481,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__R2C_8H_source.html',''); i
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">if</span> (m_do_alld_fft) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">if</span> (m_slab_decomp) {</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">if</span> (m_slab_decomp &amp;&amp; ! m_fft_fwd_x_half.defined) {</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keyword">auto</span>* fab = <a class="code" href="namespaceamrex_1_1FFT_1_1detail.html#a1ade0d84620e8faa51f7bac69806a0d8">detail::get_fab</a>(m_rx);</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <span class="keywordflow">if</span> (fab) {</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <a class="code" href="classamrex_1_1BoxND.html">Box</a> bottom_half = m_real_domain;</div>
