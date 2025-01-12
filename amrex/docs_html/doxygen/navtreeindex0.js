@@ -1,6 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[2,0,21],
 "AMReX_8H.html":[4,0,0,2,2],
 "AMReX_8H.html#a023801a9417fb6bd2f74787e89124a8c":[4,0,0,2,2,25],
 "AMReX_8H.html#a03acb27c6c261b36754a5886f87170ab":[4,0,0,2,2,38],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "AMReX__AmrParticles_8H_source.html":[4,0,0,1,6],
 "AMReX__Amr_8H.html":[4,0,0,0,1],
 "AMReX__Amr_8H_source.html":[4,0,0,0,1],
-"AMReX__Amr_8cpp.html":[4,0,0,0,0]
+"AMReX__Amr_8cpp.html":[4,0,0,0,0],
+"AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,0]
 };
