@@ -265,10 +265,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a495d805bcf68681c718d5316bac80c07"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a495d805bcf68681c718d5316bac80c07"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a495d805bcf68681c718d5316bac80c07">AddIntComp</a> (T communicate=true)</td></tr>
 <tr class="separator:a495d805bcf68681c718d5316bac80c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dadb49a29f4ad711fb369db84b2eb54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a1dadb49a29f4ad711fb369db84b2eb54">Redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0)</td></tr>
-<tr class="separator:a1dadb49a29f4ad711fb369db84b2eb54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a098b72559cacc3ab8b2455a36137fd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a098b72559cacc3ab8b2455a36137fd06">RedistributeLocal</a> ()</td></tr>
-<tr class="separator:a098b72559cacc3ab8b2455a36137fd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace50f0cb60f7340d8f38d1fb7cc5be88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#ace50f0cb60f7340d8f38d1fb7cc5be88">Redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0, bool remove_negative=true)</td></tr>
+<tr class="separator:ace50f0cb60f7340d8f38d1fb7cc5be88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87eefb7672630057e6c862494d12bff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a87eefb7672630057e6c862494d12bff9">RedistributeLocal</a> (bool remove_negative=true)</td></tr>
+<tr class="separator:a87eefb7672630057e6c862494d12bff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbc10fb057262215b756a2b4289b33c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a4dbc10fb057262215b756a2b4289b33c">fillNeighborsGPU</a> ()</td></tr>
 <tr class="separator:a4dbc10fb057262215b756a2b4289b33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f70a3eeb349ea4d713b581c5beebc82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1NeighborParticleContainer.html#a0f70a3eeb349ea4d713b581c5beebc82">updateNeighborsGPU</a> (bool boundary_neighbors_only=false)</td></tr>
@@ -2443,8 +2443,8 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal = 0, int NArrayInt =
 
 </div>
 </div>
-<a id="a1dadb49a29f4ad711fb369db84b2eb54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dadb49a29f4ad711fb369db84b2eb54">&#9670;&nbsp;</a></span>Redistribute()</h2>
+<a id="ace50f0cb60f7340d8f38d1fb7cc5be88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace50f0cb60f7340d8f38d1fb7cc5be88">&#9670;&nbsp;</a></span>Redistribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2476,7 +2476,13 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal = 0, int NArrayInt =
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>local</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>local</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>remove_negative</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2493,8 +2499,8 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal = 0, int NArrayInt =
 
 </div>
 </div>
-<a id="a098b72559cacc3ab8b2455a36137fd06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a098b72559cacc3ab8b2455a36137fd06">&#9670;&nbsp;</a></span>RedistributeLocal()</h2>
+<a id="a87eefb7672630057e6c862494d12bff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87eefb7672630057e6c862494d12bff9">&#9670;&nbsp;</a></span>RedistributeLocal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2507,7 +2513,8 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal = 0, int NArrayInt =
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1NeighborParticleContainer.html">amrex::NeighborParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aa7617bd59325bac568183d9bbcf32ee3">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a591fb654644bfe6f3b18e63547e1079f">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a> &gt;::RedistributeLocal </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>remove_negative</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
