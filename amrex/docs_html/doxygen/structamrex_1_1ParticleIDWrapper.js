@@ -8,8 +8,8 @@ var structamrex_1_1ParticleIDWrapper =
     [ "make_invalid", "structamrex_1_1ParticleIDWrapper.html#af21bcbc4ede1afe42beb3ce0667e56be", null ],
     [ "make_valid", "structamrex_1_1ParticleIDWrapper.html#a932035c8f264cf9e16c6568842bdd2ce", null ],
     [ "operator Long", "structamrex_1_1ParticleIDWrapper.html#a3cdec68611dbd36c124a37200d6eb516", null ],
-    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a822b71d351b9a073d243639441c544bc", null ],
-    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a9fa4a9ab82a49b53fce7c12cf1a2c108", null ],
-    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a4d2982f670339f79e2fd37622f27b3c4", null ],
+    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a23172db027e66159f5cc82bfaa65d7ae", null ],
+    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a4a59ba259fcfe89a74b11f58565a26d7", null ],
+    [ "operator=", "structamrex_1_1ParticleIDWrapper.html#a68a2a5ae8b56d41e9be78efa09ce54f6", null ],
     [ "m_idata", "structamrex_1_1ParticleIDWrapper.html#a2b585340461a43c8bed49aefc535f060", null ]
 ];

@@ -1,6 +1,6 @@
 var AMReX_8H =
 [
-    [ "AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
+    [ "amrex::AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
     [ "ErrorHandler", "AMReX_8H.html#af6f45c130cacf67455811e9b4829f432", null ],
     [ "PTR_TO_VOID_FUNC", "AMReX_8H.html#a364202ccae0ac53c5c0d1440b8c06dd2", null ],
     [ "FPExcept", "AMReX_8H.html#a242c1fdf859dbcbdecd2794373ea0d2c", [

@@ -1,6 +1,6 @@
 var AMReX__AsyncOut_8H =
 [
-    [ "WriteInfo", "structamrex_1_1AsyncOut_1_1WriteInfo.html", "structamrex_1_1AsyncOut_1_1WriteInfo" ],
+    [ "amrex::AsyncOut::WriteInfo", "structamrex_1_1AsyncOut_1_1WriteInfo.html", "structamrex_1_1AsyncOut_1_1WriteInfo" ],
     [ "Finalize", "AMReX__AsyncOut_8H.html#a2040a56976bffbbfac29f5e01800ea3c", null ],
     [ "Finish", "AMReX__AsyncOut_8H.html#aee3a42cfdf4c23b913fe7b42f8a22185", null ],
     [ "GetWriteInfo", "AMReX__AsyncOut_8H.html#a2a9d5d76aba34e026f1d33404c6bfe00", null ],

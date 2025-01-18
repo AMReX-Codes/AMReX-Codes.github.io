@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1ReduceOps" kind="class" language="C++" prot="public">
     <compoundname>amrex::ReduceOps</compoundname>
     <includes refid="AMReX__Reduce_8H" local="no">AMReX_Reduce.H</includes>
@@ -10,12 +10,13 @@
         <defname>Ps</defname>
       </param>
     </templateparamlist>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1ReduceOps_1a4e60cd020808a640d7de13b866728202" prot="private" static="no" mutable="no">
         <type>bool</type>
         <definition>bool amrex::ReduceOps&lt; Ps &gt;::m_result_is_ready</definition>
         <argsstring></argsstring>
         <name>m_result_is_ready</name>
+        <qualifiedname>amrex::ReduceOps::m_result_is_ready</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
@@ -25,8 +26,8 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="745" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="745" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1ReduceOps_1a6ee0df1c765e4839d3e453159681baf8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -39,13 +40,14 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::ReduceOps&lt; Ps &gt;::eval_mf</definition>
         <argsstring>(I, MF const &amp;mf, IntVect const &amp;nghost, int ncomp, D &amp;reduce_data, F const &amp;f)</argsstring>
         <name>eval_mf</name>
+        <qualifiedname>amrex::ReduceOps::eval_mf</qualifiedname>
         <param>
           <type>I</type>
         </param>
@@ -66,7 +68,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -77,7 +79,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="369" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="369" bodyend="433"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ReduceOps_1a76c9c4a303db128f0e416889bc54aef6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -86,13 +88,14 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
-        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">value</ref> &gt;</type>
-        <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &gt; amrex::ReduceOps&lt; Ps &gt;::eval</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">::value</ref> &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::ReduceOps&lt; Ps &gt;::eval</definition>
         <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, D &amp;reduce_data, F &amp;&amp;f)</argsstring>
         <name>eval</name>
+        <qualifiedname>amrex::ReduceOps::eval</qualifiedname>
         <param>
           <type>MF const &amp;</type>
           <declname>mf</declname>
@@ -106,7 +109,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -117,7 +120,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="441" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="441" bodyend="461"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ReduceOps_1ab6d0e3293d5341c89aad5b8acc8abd47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ReduceOps_1abd087f77766eb9d1ce66bebe0d32c28a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -126,13 +129,14 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
-        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">value</ref> &gt;</type>
-        <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &gt; amrex::ReduceOps&lt; Ps &gt;::eval</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">::value</ref> &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::ReduceOps&lt; Ps &gt;::eval</definition>
         <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, D &amp;reduce_data, F &amp;&amp;f)</argsstring>
         <name>eval</name>
+        <qualifiedname>amrex::ReduceOps::eval</qualifiedname>
         <param>
           <type>MF const &amp;</type>
           <declname>mf</declname>
@@ -150,7 +154,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -167,13 +171,14 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::ReduceOps&lt; Ps &gt;::eval</definition>
         <argsstring>(Box const &amp;box, D &amp;reduce_data, F const &amp;f)</argsstring>
         <name>eval</name>
+        <qualifiedname>amrex::ReduceOps::eval</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
           <declname>box</declname>
@@ -183,7 +188,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -203,17 +208,18 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
           <param>
             <type>typename M</type>
-            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">value</ref>&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">::value</ref>&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::ReduceOps&lt; Ps &gt;::eval</definition>
         <argsstring>(Box const &amp;box, N ncomp, D &amp;reduce_data, F const &amp;f)</argsstring>
         <name>eval</name>
+        <qualifiedname>amrex::ReduceOps::eval</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
           <declname>box</declname>
@@ -227,7 +233,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -247,17 +253,18 @@
             <type>typename D</type>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
           <param>
             <type>typename M</type>
-            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">value</ref>&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;<ref refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kindref="member">::value</ref>&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::ReduceOps&lt; Ps &gt;::eval</definition>
         <argsstring>(N n, D &amp;reduce_data, F const &amp;f)</argsstring>
         <name>eval</name>
+        <qualifiedname>amrex::ReduceOps::eval</qualifiedname>
         <param>
           <type>N</type>
           <declname>n</declname>
@@ -267,7 +274,7 @@
           <declname>reduce_data</declname>
         </param>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -288,6 +295,7 @@
         <definition>D::Type amrex::ReduceOps&lt; Ps &gt;::value</definition>
         <argsstring>(D &amp;reduce_data)</argsstring>
         <name>value</name>
+        <qualifiedname>amrex::ReduceOps::value</qualifiedname>
         <param>
           <type>D &amp;</type>
           <declname>reduce_data</declname>
@@ -305,6 +313,7 @@
         <definition>void amrex::ReduceOps&lt; Ps &gt;::resetResultReadiness</definition>
         <argsstring>()</argsstring>
         <name>resetResultReadiness</name>
+        <qualifiedname>amrex::ReduceOps::resetResultReadiness</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -313,15 +322,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="748" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="748" bodyend="748"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="363" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="364" bodyend="749"/>
     <listofallmembers>
-      <member refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
-      <member refid="classamrex_1_1ReduceOps_1ab6d0e3293d5341c89aad5b8acc8abd47" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
+      <member refid="classamrex_1_1ReduceOps_1a76c9c4a303db128f0e416889bc54aef6" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
+      <member refid="classamrex_1_1ReduceOps_1abd087f77766eb9d1ce66bebe0d32c28a" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
       <member refid="classamrex_1_1ReduceOps_1a705e92f33933692615787d722642c37c" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
       <member refid="classamrex_1_1ReduceOps_1a58753cc90f873de11316249189d438ca" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>
       <member refid="classamrex_1_1ReduceOps_1acf76d5c7c3027a29928d07b2572475a8" prot="public" virt="non-virtual"><scope>amrex::ReduceOps</scope><name>eval</name></member>

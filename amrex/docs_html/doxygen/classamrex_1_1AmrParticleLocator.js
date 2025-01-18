@@ -6,7 +6,7 @@ var classamrex_1_1AmrParticleLocator =
     [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html#a06d216fc9cf978fc5c842675468b2ca5", null ],
     [ "build", "classamrex_1_1AmrParticleLocator.html#a0545b0fdaadd8f5deedff78cbb39d41f", null ],
     [ "build", "classamrex_1_1AmrParticleLocator.html#ae011b6cbdfd2ef54b6a2d32af9b98d73", null ],
-    [ "getGridAssignor", "classamrex_1_1AmrParticleLocator.html#abd5f11521215d7eb8477770dbff30816", null ],
+    [ "getGridAssignor", "classamrex_1_1AmrParticleLocator.html#a4a717dad5c9ce9b8653e99830fc4cb61", null ],
     [ "isValid", "classamrex_1_1AmrParticleLocator.html#ad954d4298fca06d4702dd2e0b97db95f", null ],
     [ "isValid", "classamrex_1_1AmrParticleLocator.html#ac8dc82560e4b24adc9e5490f8f03e068", null ],
     [ "setGeometry", "classamrex_1_1AmrParticleLocator.html#ad0aae403343af35030ffeae40a77b82d", null ],

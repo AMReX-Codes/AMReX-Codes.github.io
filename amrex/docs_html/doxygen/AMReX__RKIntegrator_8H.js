@@ -1,6 +1,6 @@
 var AMReX__RKIntegrator_8H =
 [
-    [ "RKIntegrator", "classamrex_1_1RKIntegrator.html", "classamrex_1_1RKIntegrator" ],
+    [ "amrex::RKIntegrator< T >", "classamrex_1_1RKIntegrator.html", "classamrex_1_1RKIntegrator" ],
     [ "ButcherTableauTypes", "AMReX__RKIntegrator_8H.html#afa67f210f2e6c338d52553562f72c564", [
       [ "User", "AMReX__RKIntegrator_8H.html#afa67f210f2e6c338d52553562f72c564a8f9bfe9d1345237cb3b2b205864da075", null ],
       [ "ForwardEuler", "AMReX__RKIntegrator_8H.html#afa67f210f2e6c338d52553562f72c564a779b3131986acb907c287cdaf371d578", null ],

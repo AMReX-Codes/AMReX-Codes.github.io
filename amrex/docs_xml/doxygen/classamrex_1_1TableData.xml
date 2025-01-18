@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1TableData" kind="class" language="C++" prot="public">
     <compoundname>amrex::TableData</compoundname>
     <basecompoundref refid="structamrex_1_1DataAllocator" prot="public" virt="non-virtual">amrex::DataAllocator</basecompoundref>
@@ -20,12 +20,13 @@
         <defval><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">Order::F</ref></defval>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-type">
+    <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classamrex_1_1TableData_1ad82ea827b5b1999cc86a3b075c7a3659" prot="public" static="no">
         <type>T</type>
         <definition>using amrex::TableData&lt; T, N, ORDER &gt;::value_type =  T</definition>
         <argsstring></argsstring>
         <name>value_type</name>
+        <qualifiedname>amrex::TableData::value_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -39,6 +40,7 @@
         <definition>using amrex::TableData&lt; T, N, ORDER &gt;::table_type =  std::conditional_t&lt;N==1, Table1D&lt;T&gt;, std::conditional_t&lt;N==2, Table2D&lt;T, ORDER&gt;, std::conditional_t&lt;N==3, Table3D&lt;T, ORDER&gt;, Table4D&lt;T, ORDER&gt; &gt; &gt; &gt;</definition>
         <argsstring></argsstring>
         <name>table_type</name>
+        <qualifiedname>amrex::TableData::table_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -52,6 +54,7 @@
         <definition>using amrex::TableData&lt; T, N, ORDER &gt;::const_table_type =  std::conditional_t&lt;N==1, Table1D&lt;T const&gt;, std::conditional_t&lt;N==2, Table2D&lt;T const, ORDER&gt;, std::conditional_t&lt;N==3, Table3D&lt;T const, ORDER&gt;, Table4D&lt;T const, ORDER&gt; &gt; &gt; &gt;</definition>
         <argsstring></argsstring>
         <name>const_table_type</name>
+        <qualifiedname>amrex::TableData::const_table_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,8 +63,8 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="424" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="427" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="friend">
+    </sectiondef>
+    <sectiondef kind="friend">
       <memberdef kind="friend" id="classamrex_1_1TableData_1a629989dacadbcb7af5a95b3c5e4aa23a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -82,6 +85,7 @@
         <definition>friend class TableData</definition>
         <argsstring></argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref></type>
         </param>
@@ -91,15 +95,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="418" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="418" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="418" column="34" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="418" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1TableData_1afdf4938ce386a4308e372944a4b5a394" prot="private" static="no" mutable="no">
         <type>T *</type>
         <definition>T* amrex::TableData&lt; T, N, ORDER &gt;::m_dptr</definition>
         <argsstring></argsstring>
         <name>m_dptr</name>
+        <qualifiedname>amrex::TableData::m_dptr</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -114,6 +119,7 @@
         <definition>Array&lt;int,N&gt; amrex::TableData&lt; T, N, ORDER &gt;::m_lo</definition>
         <argsstring></argsstring>
         <name>m_lo</name>
+        <qualifiedname>amrex::TableData::m_lo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -127,6 +133,7 @@
         <definition>Array&lt;int,N&gt; amrex::TableData&lt; T, N, ORDER &gt;::m_hi</definition>
         <argsstring></argsstring>
         <name>m_hi</name>
+        <qualifiedname>amrex::TableData::m_hi</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -140,6 +147,7 @@
         <definition>Long amrex::TableData&lt; T, N, ORDER &gt;::m_truesize</definition>
         <argsstring></argsstring>
         <name>m_truesize</name>
+        <qualifiedname>amrex::TableData::m_truesize</qualifiedname>
         <initializer>= 0L</initializer>
         <briefdescription>
         </briefdescription>
@@ -154,6 +162,7 @@
         <definition>bool amrex::TableData&lt; T, N, ORDER &gt;::m_ptr_owner</definition>
         <argsstring></argsstring>
         <name>m_ptr_owner</name>
+        <qualifiedname>amrex::TableData::m_ptr_owner</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
@@ -163,13 +172,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="469" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="469" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1TableData_1a4239d08dc7ad7096ca5def06693b4558" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::TableData</definition>
         <argsstring>() noexcept=default</argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -183,6 +193,7 @@
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::TableData</definition>
         <argsstring>(Arena *ar) noexcept</argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
           <declname>ar</declname>
@@ -200,6 +211,7 @@
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::TableData</definition>
         <argsstring>(Array&lt; int, N &gt; const &amp;lo, Array&lt; int, N &gt; const &amp;hi, Arena *ar=nullptr)</argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const &amp;</type>
           <declname>lo</declname>
@@ -226,6 +238,7 @@
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::TableData</definition>
         <argsstring>(TableData&lt; T, N, ORDER &gt; const &amp;)=delete</argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; const &amp;</type>
         </param>
@@ -237,11 +250,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="435" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1TableData_1acfa4c240bedc25768cb4a29f31a01e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1TableData_1af59afe9b83bda28dfb07ab4744028aaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; &amp;</type>
-        <definition>TableData&lt;T,N,ORDER&gt;&amp; amrex::TableData&lt; T, N, ORDER &gt;::operator=</definition>
+        <definition>TableData&lt; T, N, ORDER &gt; &amp; amrex::TableData&lt; T, N, ORDER &gt;::operator=</definition>
         <argsstring>(TableData&lt; T, N, ORDER &gt; const &amp;)=delete</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::TableData::operator=</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; const &amp;</type>
         </param>
@@ -258,6 +272,7 @@
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::TableData</definition>
         <argsstring>(TableData&lt; T, N, ORDER &gt; &amp;&amp;rhs) noexcept</argsstring>
         <name>TableData</name>
+        <qualifiedname>amrex::TableData::TableData</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; &amp;&amp;</type>
           <declname>rhs</declname>
@@ -275,6 +290,7 @@
         <definition>TableData&lt; T, N, ORDER &gt; &amp; amrex::TableData&lt; T, N, ORDER &gt;::operator=</definition>
         <argsstring>(TableData&lt; T, N, ORDER &gt; &amp;&amp;rhs) noexcept</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::TableData::operator=</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; &amp;&amp;</type>
           <declname>rhs</declname>
@@ -292,6 +308,7 @@
         <definition>amrex::TableData&lt; T, N, ORDER &gt;::~TableData</definition>
         <argsstring>() noexcept</argsstring>
         <name>~TableData</name>
+        <qualifiedname>amrex::TableData::~TableData</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -305,6 +322,7 @@
         <definition>constexpr int amrex::TableData&lt; T, N, ORDER &gt;::dim</definition>
         <argsstring>() const noexcept</argsstring>
         <name>dim</name>
+        <qualifiedname>amrex::TableData::dim</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -318,6 +336,7 @@
         <definition>void amrex::TableData&lt; T, N, ORDER &gt;::resize</definition>
         <argsstring>(Array&lt; int, N &gt; const &amp;lo, Array&lt; int, N &gt; const &amp;hi, Arena *ar=nullptr)</argsstring>
         <name>resize</name>
+        <qualifiedname>amrex::TableData::resize</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const &amp;</type>
           <declname>lo</declname>
@@ -344,6 +363,7 @@
         <definition>Long amrex::TableData&lt; T, N, ORDER &gt;::size</definition>
         <argsstring>() const noexcept</argsstring>
         <name>size</name>
+        <qualifiedname>amrex::TableData::size</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -352,11 +372,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="447" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="547" bodyend="554"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1TableData_1af44163f840ea676ad8d51f6dd9d65998" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const  &amp;</type>
-        <definition>Array&lt;int,N&gt; const&amp; amrex::TableData&lt; T, N, ORDER &gt;::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1TableData_1ab3f6dd0ef38c029fa67f4253fe0cd319" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const &amp;</type>
+        <definition>Array&lt; int, N &gt; const  &amp; amrex::TableData&lt; T, N, ORDER &gt;::lo</definition>
         <argsstring>() const noexcept</argsstring>
         <name>lo</name>
+        <qualifiedname>amrex::TableData::lo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -365,11 +386,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="449" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="449" bodyend="449"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1TableData_1af4093a6730c7f7f4c45dae665b1ee35a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const  &amp;</type>
-        <definition>Array&lt;int,N&gt; const&amp; amrex::TableData&lt; T, N, ORDER &gt;::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1TableData_1a5496be34e7f80cfaed8ae45c38463aba" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, N &gt; const &amp;</type>
+        <definition>Array&lt; int, N &gt; const  &amp; amrex::TableData&lt; T, N, ORDER &gt;::hi</definition>
         <argsstring>() const noexcept</argsstring>
         <name>hi</name>
+        <qualifiedname>amrex::TableData::hi</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -383,6 +405,7 @@
         <definition>void amrex::TableData&lt; T, N, ORDER &gt;::clear</definition>
         <argsstring>() noexcept</argsstring>
         <name>clear</name>
+        <qualifiedname>amrex::TableData::clear</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -396,6 +419,7 @@
         <definition>void amrex::TableData&lt; T, N, ORDER &gt;::copy</definition>
         <argsstring>(TableData&lt; T, N, ORDER &gt; const &amp;rhs) noexcept</argsstring>
         <name>copy</name>
+        <qualifiedname>amrex::TableData::copy</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1TableData" kindref="compound">TableData</ref>&lt; T, N, ORDER &gt; const &amp;</type>
           <declname>rhs</declname>
@@ -413,6 +437,7 @@
         <definition>TableData&lt; T, N, ORDER &gt;::table_type amrex::TableData&lt; T, N, ORDER &gt;::table</definition>
         <argsstring>() noexcept</argsstring>
         <name>table</name>
+        <qualifiedname>amrex::TableData::table</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -426,6 +451,7 @@
         <definition>TableData&lt; T, N, ORDER &gt;::const_table_type amrex::TableData&lt; T, N, ORDER &gt;::table</definition>
         <argsstring>() const noexcept</argsstring>
         <name>table</name>
+        <qualifiedname>amrex::TableData::table</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -439,6 +465,7 @@
         <definition>TableData&lt; T, N, ORDER &gt;::const_table_type amrex::TableData&lt; T, N, ORDER &gt;::const_table</definition>
         <argsstring>() const noexcept</argsstring>
         <name>const_table</name>
+        <qualifiedname>amrex::TableData::const_table</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -447,13 +474,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="459" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="618" bodyend="621"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
+    </sectiondef>
+    <sectiondef kind="private-func">
       <memberdef kind="function" id="classamrex_1_1TableData_1a980519b19e7ba7540cafbb896cc92484" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::TableData&lt; T, N, ORDER &gt;::define</definition>
         <argsstring>()</argsstring>
         <name>define</name>
+        <qualifiedname>amrex::TableData::define</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -462,34 +490,34 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="463" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="571" bodyend="581"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Multi-dimensional array class. </para>
     </briefdescription>
     <detaileddescription>
 <para>This class is somewhat similar to FArrayBox/BaseFab. The main difference is the dimension of the array in this class can be 1, 2, 3, or 4, whereas the dimension of FArrayBox/BaseFab is the spatial dimension (AMREX_SPACEDIM) plus a component dimension. Another difference is that this class supports both column-major order (i.e., Fortran order) and row-major order (i.e., C order), whereas FArrayBox/BaseFab is always column-major. Below is an example of using it to store a 3D table of data that is initialized on CPU and is read-only by all GPU threads on the device.</para>
-<para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;int,3&gt;<sp/>tlo{0,0,0};<sp/>//<sp/>lower<sp/>bounds</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;int,3&gt;<sp/>thi{100,100,100};<sp/>//<sp/>upper<sp/>bounds</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;int,3&gt;<sp/>tlo{0,0,0};<sp/></highlight><highlight class="comment">//<sp/>lower<sp/>bounds</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;int,3&gt;<sp/>thi{100,100,100};<sp/></highlight><highlight class="comment">//<sp/>upper<sp/>bounds</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TableData&lt;Real,3&gt;<sp/>table_data(tlo,<sp/>thi);</highlight></codeline>
-<codeline><highlight class="normal">#ifdef<sp/>AMREX_USE_GPU</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TableData&lt;Real,3&gt;<sp/>h_table_data(tlo,<sp/>thi,<sp/>The_Pinned_Arena());</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>h_table<sp/>=<sp/>h_table_data.table();</highlight></codeline>
-<codeline><highlight class="normal">#else</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>h_table<sp/>=<sp/>table_data.table();</highlight></codeline>
-<codeline><highlight class="normal">#endif</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>data<sp/>on<sp/>the<sp/>host</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>k<sp/>=<sp/>tlo[0];<sp/>k<sp/>&lt;=<sp/>thi[0];<sp/>++k)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>j<sp/>=<sp/>tlo[1];<sp/>j<sp/>&lt;=<sp/>thi[1];<sp/>++j)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>tlo[2];<sp/>i<sp/>&lt;=<sp/>thi[2];<sp/>++i)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TableData&lt;Real,3&gt;<sp/>h_table_data(tlo,<sp/>thi,<sp/><ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h_table<sp/>=<sp/>h_table_data.table();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h_table<sp/>=<sp/>table_data.table();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>data<sp/>on<sp/>the<sp/>host</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>tlo[0];<sp/>k<sp/>&lt;=<sp/>thi[0];<sp/>++k)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>tlo[1];<sp/>j<sp/>&lt;=<sp/>thi[1];<sp/>++j)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>tlo[2];<sp/>i<sp/>&lt;=<sp/>thi[2];<sp/>++i)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h_table(i,j,k)<sp/>=<sp/>i<sp/>+<sp/>1.e3*j<sp/>+<sp/>1.e6*k;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
-<codeline><highlight class="normal">#ifdef<sp/>AMREX_USE_GPU</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Copy<sp/>data<sp/>to<sp/>GPU<sp/>memory</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>data<sp/>to<sp/>GPU<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>table_data.copy(h_table_data);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::streamSynchronize();<sp/><sp/>//<sp/>not<sp/>needed<sp/>if<sp/>the<sp/>kernel<sp/>using<sp/>it<sp/>is<sp/>on<sp/>the<sp/>same<sp/>stream</highlight></codeline>
-<codeline><highlight class="normal">#endif</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>table<sp/>=<sp/>table_data.const_table();<sp/>//<sp/>const<sp/>makes<sp/>it<sp/>read<sp/>only</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>We<sp/>can<sp/>now<sp/>use<sp/>table<sp/>in<sp/>device<sp/>lambda.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>not<sp/>needed<sp/>if<sp/>the<sp/>kernel<sp/>using<sp/>it<sp/>is<sp/>on<sp/>the<sp/>same<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="classamrex_1_1TableData_1afeffb10e16b9f5ef9e1f806bb5940796" kindref="member">table</ref><sp/>=<sp/>table_data.const_table();<sp/></highlight><highlight class="comment">//<sp/>const<sp/>makes<sp/>it<sp/>read<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>now<sp/>use<sp/>table<sp/>in<sp/>device<sp/>lambda.</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
     <inheritancegraph>
@@ -505,7 +533,30 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="11">
+      <node id="3">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
@@ -516,67 +567,44 @@
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
+      <node id="10">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+      </node>
       <node id="1">
         <label>amrex::TableData&lt; T, N, ORDER &gt;</label>
         <link refid="classamrex_1_1TableData"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::Arena</label>
-        <link refid="classamrex_1_1Arena"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_profiler</edgelabel>
+      <node id="7">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
-          <edgelabel>arena_info</edgelabel>
+        <childnode refid="10" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>std::basic_string&lt; Char &gt;</label>
-      </node>
-      <node id="4">
-        <label>amrex::Arena::ArenaProfiler</label>
-        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
-        <childnode refid="5" relation="usage">
-          <edgelabel>m_currently_allocated</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>m_arena_profiler_mutex</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_profiling_stats</edgelabel>
-        </childnode>
-      </node>
-      <node id="5">
-        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
       <node id="6">
         <label>std::mutex</label>
       </node>
       <node id="8">
-        <label>amrex::MemStat</label>
-        <link refid="structamrex_1_1MemStat"/>
-      </node>
-      <node id="9">
         <label>std::string</label>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
-        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
+      <node id="11">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="413" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="415" bodyend="470"/>
     <listofallmembers>
-      <member refid="structamrex_1_1DataAllocator_1adcabda73bbd0120b08dbb2cda22a6427" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>alloc</name></member>
-      <member refid="structamrex_1_1DataAllocator_1a477a75a5d73137b29f1a6ddf31af40f7" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>arena</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a0c987f41d3ff0191aba42b9e6dcbf1aa" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>alloc</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a55d255b149754a9123fc10eb1d79c88a" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>arena</name></member>
       <member refid="classamrex_1_1TableData_1afc56cd7ec5f96ca6966a277ea67e5641" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>clear</name></member>
       <member refid="classamrex_1_1TableData_1a47894641211c75ff39ae19d25f894848" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>const_table</name></member>
       <member refid="classamrex_1_1TableData_1a929878dbf8cc2587f3cd18ba3e5c1e85" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>const_table_type</name></member>
@@ -586,15 +614,15 @@
       <member refid="classamrex_1_1TableData_1a980519b19e7ba7540cafbb896cc92484" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>define</name></member>
       <member refid="classamrex_1_1TableData_1a78d40ceae2fb38ee7ca043a081231556" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>dim</name></member>
       <member refid="structamrex_1_1DataAllocator_1a5fa328945c30133a9b9c7f93ccf6e78f" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>free</name></member>
-      <member refid="classamrex_1_1TableData_1af4093a6730c7f7f4c45dae665b1ee35a" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>hi</name></member>
-      <member refid="classamrex_1_1TableData_1af44163f840ea676ad8d51f6dd9d65998" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>lo</name></member>
+      <member refid="classamrex_1_1TableData_1a5496be34e7f80cfaed8ae45c38463aba" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>hi</name></member>
+      <member refid="classamrex_1_1TableData_1ab3f6dd0ef38c029fa67f4253fe0cd319" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>lo</name></member>
       <member refid="structamrex_1_1DataAllocator_1a901b7f1e68950afc823ebc10c093cb94" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>m_arena</name></member>
       <member refid="classamrex_1_1TableData_1afdf4938ce386a4308e372944a4b5a394" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>m_dptr</name></member>
       <member refid="classamrex_1_1TableData_1a418711dcd50105d05161524f9137bb5d" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>m_hi</name></member>
       <member refid="classamrex_1_1TableData_1ad4346ff5843f027fe798ba9dfa0ebe51" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>m_lo</name></member>
       <member refid="classamrex_1_1TableData_1a343632bf7caa49187def50cae53bf757" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>m_ptr_owner</name></member>
       <member refid="classamrex_1_1TableData_1afe2cef7f8d8260130dc5640520f4062b" prot="private" virt="non-virtual"><scope>amrex::TableData</scope><name>m_truesize</name></member>
-      <member refid="classamrex_1_1TableData_1acfa4c240bedc25768cb4a29f31a01e53" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1TableData_1af59afe9b83bda28dfb07ab4744028aaa" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>operator=</name></member>
       <member refid="classamrex_1_1TableData_1ada3e19980c8c8664eca2bab1ddd46d71" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>operator=</name></member>
       <member refid="classamrex_1_1TableData_1a4fef621654e63850b94f6a969d14ed04" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>resize</name></member>
       <member refid="classamrex_1_1TableData_1a95cfb01202068efe699062fad7263bb6" prot="public" virt="non-virtual"><scope>amrex::TableData</scope><name>size</name></member>

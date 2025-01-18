@@ -1,7 +1,7 @@
 var AMReX__MLCurlCurl__K_8H =
 [
-    [ "CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", "structamrex_1_1CurlCurlDirichletInfo" ],
-    [ "CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", "structamrex_1_1CurlCurlSymmetryInfo" ],
+    [ "amrex::CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", "structamrex_1_1CurlCurlDirichletInfo" ],
+    [ "amrex::CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", "structamrex_1_1CurlCurlSymmetryInfo" ],
     [ "CurlCurlStateType", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3", [
       [ "x", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6", null ],
       [ "b", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f", null ],

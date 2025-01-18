@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1CArena" kind="class" language="C++" prot="public">
     <compoundname>amrex::CArena</compoundname>
     <basecompoundref refid="classamrex_1_1Arena" prot="public" virt="non-virtual">amrex::Arena</basecompoundref>
     <includes refid="AMReX__CArena_8H" local="no">AMReX_CArena.H</includes>
     <innerclass refid="classamrex_1_1CArena_1_1Node" prot="protected">amrex::CArena::Node</innerclass>
-      <sectiondef kind="protected-type">
+    <sectiondef kind="protected-type">
       <memberdef kind="typedef" id="classamrex_1_1CArena_1a7b2f9d1dc98c8e92648e3785f297e13f" prot="protected" static="no">
         <type>std::set&lt; <ref refid="classamrex_1_1CArena_1_1Node" kindref="compound">Node</ref> &gt;</type>
         <definition>using amrex::CArena::NL =  std::set&lt;Node&gt;</definition>
         <argsstring></argsstring>
         <name>NL</name>
+        <qualifiedname>amrex::CArena::NL</qualifiedname>
         <briefdescription>
 <para>The type of our freelist and blocklist. We use a set sorted from lo to hi memory addresses. </para>
         </briefdescription>
@@ -20,13 +21,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="166" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="166" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="classamrex_1_1CArena_1a5f71cae39f7456982cea4f81395a4e69" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr static std::size_t</type>
-        <definition>constexpr static std::size_t amrex::CArena::DefaultHunkSize</definition>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a3025f965a6401b591a232fe52fe2c878" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::size_t</type>
+        <definition>constexpr std::size_t amrex::CArena::DefaultHunkSize</definition>
         <argsstring></argsstring>
         <name>DefaultHunkSize</name>
+        <qualifiedname>amrex::CArena::DefaultHunkSize</qualifiedname>
         <initializer>= 1024*1024*8</initializer>
         <briefdescription>
 <para>The default memory hunk size to grab from the heap. </para>
@@ -37,13 +39,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="90" column="34" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="90" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-attrib">
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" prot="protected" static="no" mutable="no">
         <type>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</type>
         <definition>std::vector&lt;std::pair&lt;void*,std::size_t&gt; &gt; amrex::CArena::m_alloc</definition>
         <argsstring></argsstring>
         <name>m_alloc</name>
+        <qualifiedname>amrex::CArena::m_alloc</qualifiedname>
         <briefdescription>
 <para>The list of blocks allocated via ::operator new(). </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>NL amrex::CArena::m_freelist</definition>
         <argsstring></argsstring>
         <name>m_freelist</name>
+        <qualifiedname>amrex::CArena::m_freelist</qualifiedname>
         <briefdescription>
 <para>The free list of allocated but not currently used blocks. Maintained in lo to hi memory sorted order. </para>
         </briefdescription>
@@ -72,6 +76,7 @@
         <definition>std::unordered_set&lt;Node, Node::hash&gt; amrex::CArena::m_busylist</definition>
         <argsstring></argsstring>
         <name>m_busylist</name>
+        <qualifiedname>amrex::CArena::m_busylist</qualifiedname>
         <briefdescription>
 <para>The list of busy blocks. A block is either on the freelist or on the blocklist, but not on both. </para>
         </briefdescription>
@@ -86,6 +91,7 @@
         <definition>std::size_t amrex::CArena::m_hunk</definition>
         <argsstring></argsstring>
         <name>m_hunk</name>
+        <qualifiedname>amrex::CArena::m_hunk</qualifiedname>
         <briefdescription>
 <para>The minimal size of hunks to request from system. </para>
         </briefdescription>
@@ -100,6 +106,7 @@
         <definition>std::size_t amrex::CArena::m_used</definition>
         <argsstring></argsstring>
         <name>m_used</name>
+        <qualifiedname>amrex::CArena::m_used</qualifiedname>
         <initializer>{0}</initializer>
         <briefdescription>
 <para>The amount of heap space currently allocated. </para>
@@ -108,13 +115,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="183" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="183" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="183" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="183" bodyend="183"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1CArena_1af3edc78581fb20c7273fbf74494e0c48" prot="protected" static="no" mutable="no">
         <type>std::size_t</type>
         <definition>std::size_t amrex::CArena::m_actually_used</definition>
         <argsstring></argsstring>
         <name>m_actually_used</name>
+        <qualifiedname>amrex::CArena::m_actually_used</qualifiedname>
         <initializer>{0}</initializer>
         <briefdescription>
 <para>The amount of memory given out via <ref refid="classamrex_1_1CArena_1a8d55773acd31606b385f0a524587bd1d" kindref="member">alloc()</ref>. </para>
@@ -123,13 +131,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="185" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="185" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="185" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="185" bodyend="185"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" prot="protected" static="no" mutable="no">
         <type>std::mutex</type>
         <definition>std::mutex amrex::CArena::carena_mutex</definition>
         <argsstring></argsstring>
         <name>carena_mutex</name>
+        <qualifiedname>amrex::CArena::carena_mutex</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -138,13 +147,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="188" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="188" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1CArena_1a43a76cc08d37a6c6174a05989d0bc60e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::CArena::CArena</definition>
         <argsstring>(std::size_t hunk_size=0, ArenaInfo info=ArenaInfo())</argsstring>
         <name>CArena</name>
+        <qualifiedname>amrex::CArena::CArena</qualifiedname>
         <param>
           <type>std::size_t</type>
           <declname>hunk_size</declname>
@@ -169,6 +179,7 @@
         <definition>amrex::CArena::CArena</definition>
         <argsstring>(const CArena &amp;rhs)=delete</argsstring>
         <name>CArena</name>
+        <qualifiedname>amrex::CArena::CArena</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
           <declname>rhs</declname>
@@ -186,6 +197,7 @@
         <definition>amrex::CArena::CArena</definition>
         <argsstring>(CArena &amp;&amp;rhs)=delete</argsstring>
         <name>CArena</name>
+        <qualifiedname>amrex::CArena::CArena</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;&amp;</type>
           <declname>rhs</declname>
@@ -198,11 +210,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="38" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CArena_1ae491fc24a9163b864bc798acc7518852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1CArena_1a6c8c5b70d150c0ecbbd6e8f39386a6a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
-        <definition>CArena&amp; amrex::CArena::operator=</definition>
+        <definition>CArena &amp; amrex::CArena::operator=</definition>
         <argsstring>(const CArena &amp;rhs)=delete</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::CArena::operator=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
           <declname>rhs</declname>
@@ -215,11 +228,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="39" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CArena_1abe72f06fc733fc056ed20fbd7cc4d76a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1CArena_1a15235cb370bfe20dffaf7cd7edb4d0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
-        <definition>CArena&amp; amrex::CArena::operator=</definition>
+        <definition>CArena &amp; amrex::CArena::operator=</definition>
         <argsstring>(CArena &amp;&amp;rhs)=delete</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::CArena::operator=</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;&amp;</type>
           <declname>rhs</declname>
@@ -237,6 +251,7 @@
         <definition>amrex::CArena::~CArena</definition>
         <argsstring>() override</argsstring>
         <name>~CArena</name>
+        <qualifiedname>amrex::CArena::~CArena</qualifiedname>
         <briefdescription>
 <para>The destructor. </para>
         </briefdescription>
@@ -251,7 +266,8 @@
         <definition>void * amrex::CArena::alloc</definition>
         <argsstring>(std::size_t nbytes) final</argsstring>
         <name>alloc</name>
-        <reimplements refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e">alloc</reimplements>
+        <qualifiedname>amrex::CArena::alloc</qualifiedname>
+        <reimplements refid="classamrex_1_1Arena_1a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</reimplements>
         <param>
           <type>std::size_t</type>
           <declname>nbytes</declname>
@@ -270,7 +286,8 @@
         <definition>std::pair&lt; void *, std::size_t &gt; amrex::CArena::alloc_in_place</definition>
         <argsstring>(void *pt, std::size_t szmin, std::size_t szmax) final</argsstring>
         <name>alloc_in_place</name>
-        <reimplements refid="classamrex_1_1Arena_1aabdec69d9448201fc6c85635ea6f18b7">alloc_in_place</reimplements>
+        <qualifiedname>amrex::CArena::alloc_in_place</qualifiedname>
+        <reimplements refid="classamrex_1_1Arena_1a872ba01b7389ba36beb402641df3f2b9">alloc_in_place</reimplements>
         <param>
           <type>void *</type>
           <declname>pt</declname>
@@ -297,7 +314,8 @@
         <definition>void * amrex::CArena::shrink_in_place</definition>
         <argsstring>(void *pt, std::size_t new_size) final</argsstring>
         <name>shrink_in_place</name>
-        <reimplements refid="classamrex_1_1Arena_1a1fec80ed73e43de305a5e232e0b551a6">shrink_in_place</reimplements>
+        <qualifiedname>amrex::CArena::shrink_in_place</qualifiedname>
+        <reimplements refid="classamrex_1_1Arena_1aceacbbe5395a8671cc571063d51ee7e2">shrink_in_place</reimplements>
         <param>
           <type>void *</type>
           <declname>pt</declname>
@@ -320,6 +338,7 @@
         <definition>void amrex::CArena::free</definition>
         <argsstring>(void *vp) final</argsstring>
         <name>free</name>
+        <qualifiedname>amrex::CArena::free</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515">free</reimplements>
         <param>
           <type>void *</type>
@@ -339,6 +358,7 @@
         <definition>std::size_t amrex::CArena::freeUnused</definition>
         <argsstring>() final</argsstring>
         <name>freeUnused</name>
+        <qualifiedname>amrex::CArena::freeUnused</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1ae58dbb9ab6bb4e8d980b384b0d8804e5">freeUnused</reimplements>
         <briefdescription>
 <para>Free unused memory back to the system. Return value is the amount memory freed. </para>
@@ -354,6 +374,7 @@
         <definition>bool amrex::CArena::hasFreeDeviceMemory</definition>
         <argsstring>(std::size_t sz) final</argsstring>
         <name>hasFreeDeviceMemory</name>
+        <qualifiedname>amrex::CArena::hasFreeDeviceMemory</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1abd6b026129f35157aa2b3945a37bdbd3">hasFreeDeviceMemory</reimplements>
         <param>
           <type>std::size_t</type>
@@ -373,6 +394,7 @@
         <definition>std::size_t amrex::CArena::heap_space_used</definition>
         <argsstring>() const noexcept</argsstring>
         <name>heap_space_used</name>
+        <qualifiedname>amrex::CArena::heap_space_used</qualifiedname>
         <briefdescription>
 <para>The current amount of heap space used by the <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> object. </para>
         </briefdescription>
@@ -387,6 +409,7 @@
         <definition>std::size_t amrex::CArena::heap_space_actually_used</definition>
         <argsstring>() const noexcept</argsstring>
         <name>heap_space_actually_used</name>
+        <qualifiedname>amrex::CArena::heap_space_actually_used</qualifiedname>
         <briefdescription>
 <para>Return the total amount of memory given out via alloc. </para>
         </briefdescription>
@@ -401,6 +424,7 @@
         <definition>std::size_t amrex::CArena::sizeOf</definition>
         <argsstring>(void *p) const noexcept</argsstring>
         <name>sizeOf</name>
+        <qualifiedname>amrex::CArena::sizeOf</qualifiedname>
         <param>
           <type>void *</type>
           <declname>p</declname>
@@ -419,6 +443,7 @@
         <definition>void amrex::CArena::PrintUsage</definition>
         <argsstring>(std::string const &amp;name) const</argsstring>
         <name>PrintUsage</name>
+        <qualifiedname>amrex::CArena::PrintUsage</qualifiedname>
         <param>
           <type>std::string const &amp;</type>
           <declname>name</declname>
@@ -436,6 +461,7 @@
         <definition>void amrex::CArena::PrintUsage</definition>
         <argsstring>(std::ostream &amp;os, std::string const &amp;name, std::string const &amp;space) const</argsstring>
         <name>PrintUsage</name>
+        <qualifiedname>amrex::CArena::PrintUsage</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
           <declname>os</declname>
@@ -456,13 +482,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="87" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.cpp" bodystart="471" bodyend="479"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
+    </sectiondef>
+    <sectiondef kind="protected-func">
       <memberdef kind="function" id="classamrex_1_1CArena_1acb20836b76ef5e5c0fb002637132c442" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
         <definition>void * amrex::CArena::alloc_protected</definition>
         <argsstring>(std::size_t nbytes)</argsstring>
         <name>alloc_protected</name>
+        <qualifiedname>amrex::CArena::alloc_protected</qualifiedname>
         <param>
           <type>std::size_t</type>
           <declname>nbytes</declname>
@@ -480,6 +507,7 @@
         <definition>std::size_t amrex::CArena::freeUnused_protected</definition>
         <argsstring>() final</argsstring>
         <name>freeUnused_protected</name>
+        <qualifiedname>amrex::CArena::freeUnused_protected</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a881f97d5676c4784f52d6f4c702da696">freeUnused_protected</reimplements>
         <briefdescription>
         </briefdescription>
@@ -489,13 +517,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="96" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.cpp" bodystart="353" bodyend="376"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="friend">
-      <memberdef kind="friend" id="classamrex_1_1CArena_1a272c0e9556a11c521a28625bd64fb588" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1CArena_1a75784310504f825670140f90e334f7b5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;os, const CArena &amp;arena)</argsstring>
         <name>operator&lt;&lt;</name>
+        <qualifiedname>amrex::CArena::operator&lt;&lt;</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
           <declname>os</declname>
@@ -512,7 +541,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="190" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.cpp" bodystart="481" bodyend="518"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager. It allocates (possibly) large chunks of heap space and apportions it out as requested. It merges together neighboring chunks on each <ref refid="classamrex_1_1CArena_1a92c318e660a559a2c8d4dc75ba2bc658" kindref="member">free()</ref>. </para>
     </briefdescription>
@@ -531,67 +560,32 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="10">
-        <label>amrex::ArenaInfo</label>
-        <link refid="structamrex_1_1ArenaInfo"/>
-      </node>
       <node id="2">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
         <childnode refid="3" relation="usage">
-          <edgelabel>m_profiler</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
-      </node>
-      <node id="9">
-        <label>std::basic_string&lt; Char &gt;</label>
-      </node>
-      <node id="12">
-        <label>std::set&lt; Node &gt;</label>
-        <childnode refid="13" relation="usage">
-          <edgelabel>keys</edgelabel>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>amrex::Arena::ArenaProfiler</label>
         <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_currently_allocated</edgelabel>
-        </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>m_arena_profiler_mutex</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
           <edgelabel>m_profiling_stats</edgelabel>
         </childnode>
-      </node>
-      <node id="4">
-        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
-      </node>
-      <node id="5">
-        <label>std::mutex</label>
-      </node>
-      <node id="13">
-        <label>amrex::CArena::Node</label>
-        <link refid="classamrex_1_1CArena_1_1Node"/>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_stat</edgelabel>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
         </childnode>
       </node>
-      <node id="11">
-        <label>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</label>
-      </node>
-      <node id="7">
-        <label>amrex::MemStat</label>
-        <link refid="structamrex_1_1MemStat"/>
-      </node>
-      <node id="14">
-        <label>std::unordered_set&lt; amrex::CArena::Node, amrex::CArena::Node::hash &gt;</label>
-        <childnode refid="13" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
+      <node id="3">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
       </node>
       <node id="1">
         <label>amrex::CArena</label>
@@ -601,29 +595,64 @@
         <childnode refid="11" relation="usage">
           <edgelabel>m_alloc</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>carena_mutex</edgelabel>
-        </childnode>
         <childnode refid="12" relation="usage">
           <edgelabel>m_freelist</edgelabel>
         </childnode>
         <childnode refid="14" relation="usage">
           <edgelabel>m_busylist</edgelabel>
         </childnode>
-      </node>
-      <node id="8">
-        <label>std::string</label>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="5" relation="usage">
+          <edgelabel>carena_mutex</edgelabel>
         </childnode>
+      </node>
+      <node id="13">
+        <label>amrex::CArena::Node</label>
+        <link refid="classamrex_1_1CArena_1_1Node"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_stat</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
       </node>
       <node id="6">
         <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
         <childnode refid="7" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::set&lt; Node &gt;</label>
+        <childnode refid="13" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::mutex</label>
+      </node>
+      <node id="7">
+        <label>std::string</label>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
+      <node id="14">
+        <label>std::unordered_set&lt; amrex::CArena::Node, amrex::CArena::Node::hash &gt;</label>
+        <childnode refid="13" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="28" bodyend="191"/>
@@ -638,13 +667,13 @@
       <member refid="classamrex_1_1Arena_1a57de8f5ef86cceadc9f1c00bc7ea7790" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>Arena</name></member>
       <member refid="classamrex_1_1Arena_1a3e2c87e60ea734fe6be6e49d124d5a76" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>Arena</name></member>
       <member refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>arena_info</name></member>
-      <member refid="classamrex_1_1Arena_1a1af72a36a13904de0715917915db1f6b" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>arenaInfo</name></member>
+      <member refid="classamrex_1_1Arena_1a6cf1a7926c2ee38d82fab5fadef8e4d0" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>arenaInfo</name></member>
       <member refid="classamrex_1_1CArena_1a43a76cc08d37a6c6174a05989d0bc60e" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>CArena</name></member>
       <member refid="classamrex_1_1CArena_1a1dc0400df161a7395380b6156678918a" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>CArena</name></member>
       <member refid="classamrex_1_1CArena_1a8df362670d9202352afc131bfc421c28" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>CArena</name></member>
       <member refid="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>carena_mutex</name></member>
       <member refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>deallocate_system</name></member>
-      <member refid="classamrex_1_1CArena_1a5f71cae39f7456982cea4f81395a4e69" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>DefaultHunkSize</name></member>
+      <member refid="classamrex_1_1CArena_1a3025f965a6401b591a232fe52fe2c878" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>DefaultHunkSize</name></member>
       <member refid="classamrex_1_1Arena_1a76f2f99b3aa712fe5da7b00610c07385" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>deregisterFromProfiling</name></member>
       <member refid="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>Finalize</name></member>
       <member refid="classamrex_1_1CArena_1a92c318e660a559a2c8d4dc75ba2bc658" prot="public" virt="virtual"><scope>amrex::CArena</scope><name>free</name></member>
@@ -668,11 +697,11 @@
       <member refid="classamrex_1_1Arena_1ad136b691382e7a7d8fba158837416b98" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_profiler</name></member>
       <member refid="classamrex_1_1CArena_1a7ec2fcdaa0d06d1fceb739d0e1661751" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_used</name></member>
       <member refid="classamrex_1_1CArena_1a7b2f9d1dc98c8e92648e3785f297e13f" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>NL</name></member>
-      <member refid="classamrex_1_1CArena_1a272c0e9556a11c521a28625bd64fb588" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classamrex_1_1CArena_1ae491fc24a9163b864bc798acc7518852" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1CArena_1abe72f06fc733fc056ed20fbd7cc4d76a" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1Arena_1ab5c2f212500abb488cf4d14245c29aee" prot="public" virt="non-virtual" ambiguityscope="amrex::Arena::"><scope>amrex::CArena</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1Arena_1a36dd09d6200de89dd8bb25b1cd223cb5" prot="public" virt="non-virtual" ambiguityscope="amrex::Arena::"><scope>amrex::CArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1CArena_1a75784310504f825670140f90e334f7b5" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1CArena_1a6c8c5b70d150c0ecbbd6e8f39386a6a3" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1CArena_1a15235cb370bfe20dffaf7cd7edb4d0a5" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Arena_1a79c958fa2bc911b683c1bb312b54ef13" prot="public" virt="non-virtual" ambiguityscope="amrex::Arena::"><scope>amrex::CArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Arena_1a23c2b2614dcafe7437bdba8ac8cbe163" prot="public" virt="non-virtual" ambiguityscope="amrex::Arena::"><scope>amrex::CArena</scope><name>operator=</name></member>
       <member refid="classamrex_1_1CArena_1aa73ded7161a0649ccd1103491034632a" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>PrintUsage</name></member>
       <member refid="classamrex_1_1CArena_1a220453b0ec3b2de0df5cd94cb08dab03" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>PrintUsage</name></member>
       <member refid="classamrex_1_1Arena_1a506a68384da30629323d0839f13812c2" prot="public" virt="non-virtual" ambiguityscope="amrex::Arena::"><scope>amrex::CArena</scope><name>PrintUsage</name></member>

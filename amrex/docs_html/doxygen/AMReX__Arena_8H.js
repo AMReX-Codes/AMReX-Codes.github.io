@@ -1,9 +1,9 @@
 var AMReX__Arena_8H =
 [
-    [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
-    [ "ArenaInfo", "structamrex_1_1ArenaInfo.html", "structamrex_1_1ArenaInfo" ],
-    [ "Arena", "classamrex_1_1Arena.html", "classamrex_1_1Arena" ],
-    [ "ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", "structamrex_1_1Arena_1_1ArenaProfiler" ],
+    [ "amrex::MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
+    [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", "structamrex_1_1ArenaInfo" ],
+    [ "amrex::Arena", "classamrex_1_1Arena.html", "classamrex_1_1Arena" ],
+    [ "amrex::Arena::ArenaProfiler", "structamrex_1_1Arena_1_1ArenaProfiler.html", "structamrex_1_1Arena_1_1ArenaProfiler" ],
     [ "aligned_size", "AMReX__Arena_8H.html#ad7bef6630afa8a2109d2a242cc2d7591", null ],
     [ "is_aligned", "AMReX__Arena_8H.html#a73309828f34cc814833092699bdbc241", null ],
     [ "The_Arena", "AMReX__Arena_8H.html#ae3d1414946b992f39ca41f135f12a0d1", null ],

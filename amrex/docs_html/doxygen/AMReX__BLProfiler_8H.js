@@ -1,6 +1,6 @@
 var AMReX__BLProfiler_8H =
 [
-    [ "BLProfiler", "classamrex_1_1BLProfiler.html", "classamrex_1_1BLProfiler" ],
+    [ "amrex::BLProfiler", "classamrex_1_1BLProfiler.html", "classamrex_1_1BLProfiler" ],
     [ "BL_COMM_PROFILE", "AMReX__BLProfiler_8H.html#a5e661a1af9130dd8449e7f730864271c", null ],
     [ "BL_COMM_PROFILE_ALLREDUCE", "AMReX__BLProfiler_8H.html#a6a2a794768fcb8da0ad76d1b9034f5f0", null ],
     [ "BL_COMM_PROFILE_BARRIER", "AMReX__BLProfiler_8H.html#ad5a1613a4e6d571c8cf82d33cfbe2a50", null ],

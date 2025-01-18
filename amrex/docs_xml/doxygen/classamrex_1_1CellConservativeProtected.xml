@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1CellConservativeProtected" kind="class" language="C++" prot="public">
     <compoundname>amrex::CellConservativeProtected</compoundname>
     <basecompoundref refid="classamrex_1_1CellConservativeLinear" prot="public" virt="non-virtual">amrex::CellConservativeLinear</basecompoundref>
     <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1aced526a1e706c7fce0c1b715639f2270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::CellConservativeProtected::CellConservativeProtected</definition>
         <argsstring>()</argsstring>
         <name>CellConservativeProtected</name>
+        <qualifiedname>amrex::CellConservativeProtected::CellConservativeProtected</qualifiedname>
         <briefdescription>
 <para>The constructor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>void amrex::CellConservativeProtected::protect</definition>
         <argsstring>(const FArrayBox &amp;crse, int crse_comp, FArrayBox &amp;fine, int fine_comp, FArrayBox &amp;fine_state, int state_comp, int ncomp, const Box &amp;fine_region, const IntVect &amp;ratio, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, Vector&lt; BCRec &gt; &amp;bcr, RunOn runon) override</argsstring>
         <name>protect</name>
+        <qualifiedname>amrex::CellConservativeProtected::protect</qualifiedname>
         <reimplements refid="classamrex_1_1Interpolater_1aee6fb8b99ca4282e5f9e9122b9b37cf1">protect</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
@@ -184,7 +186,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="370" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="1099" bodyend="1178"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Lin. cons. interp. on cc data with protection against under/over-shoots. </para>
     </briefdescription>
@@ -192,6 +194,12 @@
 <para>Linear conservative interpolation on cell centered data but with protection against undershoots or overshoots. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>amrex::CellConservativeLinear</label>
+        <link refid="classamrex_1_1CellConservativeLinear"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::CellConservativeProtected</label>
         <link refid="classamrex_1_1CellConservativeProtected"/>
@@ -206,16 +214,16 @@
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
         <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::CellConservativeLinear</label>
-        <link refid="classamrex_1_1CellConservativeLinear"/>
-        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>amrex::CellConservativeLinear</label>
+        <link refid="classamrex_1_1CellConservativeLinear"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::CellConservativeProtected</label>
         <link refid="classamrex_1_1CellConservativeProtected"/>
@@ -230,12 +238,6 @@
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
         <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::CellConservativeLinear</label>
-        <link refid="classamrex_1_1CellConservativeLinear"/>
-        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -254,8 +256,8 @@
       <member refid="classamrex_1_1InterpBase_1aee63caed578fc06fb37257394ac4a62d" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1InterpBase_1a021bb62c902497ccc17f9debb5fc10cc" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1InterpBase_1a2f6b67e875b76f7bcaa9151a1c6de2a6" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>InterpBase</name></member>
-      <member refid="classamrex_1_1InterpBase_1a5753abe4eb1e3ac6d8747a0864533373" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1InterpBase_1a448200184ccdeced8fd7a609dd43fa71" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a9579ddf64adb4946cd65d7d931840b26" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a49faa298cde718a31582f53f26f0a4e7" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>operator=</name></member>
       <member refid="classamrex_1_1CellConservativeProtected_1aa6ed48dc9ce058bd1d1804c800ea0691" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>protect</name></member>
       <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~InterpBase</name></member>
     </listofallmembers>

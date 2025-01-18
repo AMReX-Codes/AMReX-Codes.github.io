@@ -8,6 +8,6 @@ var classamrex_1_1InterpBase =
     [ "CoarseBox", "classamrex_1_1InterpBase.html#a684e90cd5708cc5746e653c6decc75d1", null ],
     [ "CoarseBox", "classamrex_1_1InterpBase.html#a7120153e965f22098f7cd888274f5c6b", null ],
     [ "GetBCArray", "classamrex_1_1InterpBase.html#ad9523dae9903f59fc43bb7df17e2250e", null ],
-    [ "operator=", "classamrex_1_1InterpBase.html#a448200184ccdeced8fd7a609dd43fa71", null ],
-    [ "operator=", "classamrex_1_1InterpBase.html#a5753abe4eb1e3ac6d8747a0864533373", null ]
+    [ "operator=", "classamrex_1_1InterpBase.html#a49faa298cde718a31582f53f26f0a4e7", null ],
+    [ "operator=", "classamrex_1_1InterpBase.html#a9579ddf64adb4946cd65d7d931840b26", null ]
 ];

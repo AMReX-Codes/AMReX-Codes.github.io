@@ -1,6 +1,6 @@
 var AMReX__PlotFileUtil_8H =
 [
-    [ "PlotFileData", "classamrex_1_1PlotFileData.html", "classamrex_1_1PlotFileData" ],
+    [ "amrex::PlotFileData", "classamrex_1_1PlotFileData.html", "classamrex_1_1PlotFileData" ],
     [ "LevelFullPath", "AMReX__PlotFileUtil_8H.html#a438b71d250fb65fd385716c745be94ad", null ],
     [ "LevelPath", "AMReX__PlotFileUtil_8H.html#a6e1c541c50331b9a3c005b80b4503f85", null ],
     [ "MultiFabFileFullPrefix", "AMReX__PlotFileUtil_8H.html#a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1", null ],

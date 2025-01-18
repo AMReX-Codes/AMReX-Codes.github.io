@@ -1,8 +1,8 @@
 var AMReX__ParticleUtil_8H =
 [
-    [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
-    [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
-    [ "DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
+    [ "amrex::BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
+    [ "amrex::GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
+    [ "amrex::DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
     [ "clearEmptyEntries", "AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ],
     [ "computeNeighborProcs", "AMReX__ParticleUtil_8H.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeRefFac", "AMReX__ParticleUtil_8H.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],

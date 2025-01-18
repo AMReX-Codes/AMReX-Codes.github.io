@@ -6,7 +6,7 @@ var classamrex_1_1XYPlotDataListLink =
     [ "operator<", "classamrex_1_1XYPlotDataListLink.html#a9ae8cb01838a70159d4fc0443bf9ff14", null ],
     [ "StartXi", "classamrex_1_1XYPlotDataListLink.html#a8bacfc0ada0a500d952e78fd38a317f8", null ],
     [ "XYDPLLength", "classamrex_1_1XYPlotDataListLink.html#aeca338f52ea471822af412f4169ad387", null ],
-    [ "XYPDLLData", "classamrex_1_1XYPlotDataListLink.html#a7c975c3cbae9c4c9b96448eda0810cc9", null ],
+    [ "XYPDLLData", "classamrex_1_1XYPlotDataListLink.html#a7c1e2028497b1b83b794bb6ab5d2e153", null ],
     [ "endXi", "classamrex_1_1XYPlotDataListLink.html#a27c1524c9b6b2bbad9e9186e909830fa", null ],
     [ "startXi", "classamrex_1_1XYPlotDataListLink.html#a2c1253f78f993bd3c632364c7e8aca1e", null ],
     [ "xypdllData", "classamrex_1_1XYPlotDataListLink.html#a13d8f8d382df6f1caae0eb061304b7be", null ],

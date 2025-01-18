@@ -5,8 +5,8 @@ var structamrex_1_1ParticleCPUWrapper =
     [ "ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html#ad13d555c23dc09a19f05fa10518807e6", null ],
     [ "ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html#a0cbf3e03c4cabd9a0fe9f6e2b1b584d2", null ],
     [ "operator int", "structamrex_1_1ParticleCPUWrapper.html#af9ef300a76f9e5e44bb0fbb67b0d715d", null ],
-    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#a82053d445bf2ea2e6055e1d4755c5cb7", null ],
-    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#aee3e19031ec6e1adbaaaf08c5da52186", null ],
-    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#a8f5cecc58007e61c57172600f66d911d", null ],
+    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#ae35ee838698f89a142c6e9f93a7332c9", null ],
+    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#a6b59f3f87cc6e99b9ffee0d297a957b0", null ],
+    [ "operator=", "structamrex_1_1ParticleCPUWrapper.html#a4fc96c15aa0bc7a56dcd61068165378f", null ],
     [ "m_idata", "structamrex_1_1ParticleCPUWrapper.html#a9da7d4371d02e10cd184a772ecfaa82a", null ]
 ];

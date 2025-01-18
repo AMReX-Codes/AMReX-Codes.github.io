@@ -1,7 +1,7 @@
 var AMReX__ccse_mpi_8H =
 [
     [ "MPI_Status", "structMPI__Status.html", null ],
-    [ "Mpi_typemap", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap" ],
+    [ "amrex::ParallelDescriptor::Mpi_typemap< T >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap" ],
     [ "MPI_Comm", "AMReX__ccse-mpi_8H.html#a161d2f0d69c09838316e4ea9a74f02d7", null ],
     [ "MPI_Datatype", "AMReX__ccse-mpi_8H.html#adf4ce151c5bdb0d3323d314ab596eab9", null ],
     [ "MPI_Group", "AMReX__ccse-mpi_8H.html#a3bb76afe62d9b415f238c21a9a15aa51", null ],

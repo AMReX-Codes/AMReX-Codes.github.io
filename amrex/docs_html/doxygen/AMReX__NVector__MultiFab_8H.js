@@ -15,7 +15,7 @@ var AMReX__NVector__MultiFab_8H =
     [ "N_VGetContent_MultiFab", "AMReX__NVector__MultiFab_8H.html#a782b175e4d69fa934dbc70bfc0d0a5b5", null ],
     [ "N_VGetLength_MultiFab", "AMReX__NVector__MultiFab_8H.html#ab487da921f382c8a63e52c65978b3110", null ],
     [ "N_VGetOwnMF_MultiFab", "AMReX__NVector__MultiFab_8H.html#adb42a96803b3467ba1c753387d272319", null ],
-    [ "N_VGetVectorPointer_MultiFab", "AMReX__NVector__MultiFab_8H.html#ae2dd6c3d5b5c5c37c440f2a301fce207", null ],
+    [ "N_VGetVectorPointer_MultiFab", "AMReX__NVector__MultiFab_8H.html#a57e16eb39a44f0aa1ababc7121d8069c", null ],
     [ "N_VInv_MultiFab", "AMReX__NVector__MultiFab_8H.html#adbd6de4b373d153564d12f2fab2b0cfb", null ],
     [ "N_VInvTest_MultiFab", "AMReX__NVector__MultiFab_8H.html#abf28468a780d336ac92b493b890a035b", null ],
     [ "N_VL1Norm_MultiFab", "AMReX__NVector__MultiFab_8H.html#a9a590aea1a611cad7971cea77d3a7260", null ],

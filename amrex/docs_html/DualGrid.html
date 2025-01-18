@@ -115,11 +115,11 @@
 the mesh work and particle work have very different requirements for load balancing.</p>
 <p>Rather than using a combined work estimate to create the same grids for mesh and particle
 data, we have the option to pursue a “dual grid” approach.</p>
-<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span><span class="w"></span></code>) data
-are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span><span class="w"></span></code>.</p>
+<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>) data
+are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span></code>.</p>
 <p>This enables separate load balancing strategies to be used for the mesh and particle work.</p>
 <p>The cost of this strategy, of course, is the need to copy mesh data onto temporary
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> when mesh-particle communication
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> when mesh-particle communication
 is required.</p>
 </section>
 

@@ -7,7 +7,7 @@ var classamrex_1_1GMRESMLMGT =
     [ "apply", "classamrex_1_1GMRESMLMGT.html#a69ba35dbecc64670348ed8611260dfd9", null ],
     [ "assign", "classamrex_1_1GMRESMLMGT.html#a3c36428a18730eb564b0b11000f5088d", null ],
     [ "dotProduct", "classamrex_1_1GMRESMLMGT.html#a3784c11ec581a1ab5edb0e2d2308e86f", null ],
-    [ "getGMRES", "classamrex_1_1GMRESMLMGT.html#a501781e1e1e7c61244eed962066f1419", null ],
+    [ "getGMRES", "classamrex_1_1GMRESMLMGT.html#a471867142fafd2cbdacd862756bb7be6", null ],
     [ "getNumIters", "classamrex_1_1GMRESMLMGT.html#a3584e996a150386dbf8ee7b731ee3ffa", null ],
     [ "getResidualNorm", "classamrex_1_1GMRESMLMGT.html#aca83734d854ed846c8c16e8cba18ab0a", null ],
     [ "increment", "classamrex_1_1GMRESMLMGT.html#a334579fbf27c137837e3860305636d65", null ],

@@ -1,6 +1,6 @@
 var AMReX__string__mod_8F90 =
 [
-    [ "amrex_string", "structamrex__string__module_1_1amrex__string.html", "structamrex__string__module_1_1amrex__string" ],
+    [ "amrex_string_module::amrex_string", "structamrex__string__module_1_1amrex__string.html", "structamrex__string__module_1_1amrex__string" ],
     [ "amrex_string_build", "AMReX__string__mod_8F90.html#a8661803d88bd3264e542f0f1362406e1", null ],
     [ "amrex_string_c_to_f", "AMReX__string__mod_8F90.html#a959bc74ecd938061a024fb0d210facad", null ],
     [ "amrex_string_f_to_c", "AMReX__string__mod_8F90.html#a0bf8f20010cb63d36d70475cce439c7d", null ],

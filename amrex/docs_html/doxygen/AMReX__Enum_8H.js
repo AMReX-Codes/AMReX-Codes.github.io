@@ -6,6 +6,6 @@ var AMReX__Enum_8H =
     [ "getEnumCaseInsensitive", "AMReX__Enum_8H.html#ab3ae8b43aca87a0f9b7c66250c04a316", null ],
     [ "getEnumClassName", "AMReX__Enum_8H.html#a045ff5fa344cfaa38699087003062fcb", null ],
     [ "getEnumNameString", "AMReX__Enum_8H.html#a2690baa171c059a8cb8e7131989be2e6", null ],
-    [ "getEnumNameStrings", "AMReX__Enum_8H.html#a9e74312d8181efb0840367305cdbaa84", null ],
-    [ "getEnumNameValuePairs", "AMReX__Enum_8H.html#af25f8a486aa78651b7556c266543bc1b", null ]
+    [ "getEnumNameStrings", "AMReX__Enum_8H.html#ad291f7c70d02dbbb3cc58228d4d7f4e2", null ],
+    [ "getEnumNameValuePairs", "AMReX__Enum_8H.html#aec1258e3b05a0d2b41c348dce3dd8e2f", null ]
 ];

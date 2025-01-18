@@ -9,12 +9,12 @@ var namespaceamrex_1_1Math =
     [ "comp_ellint_2", "namespaceamrex_1_1Math.html#a64d6ba33500bba8603dd6fba3588ac3c", null ],
     [ "cospi", "namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
     [ "cospi", "namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7", null ],
-    [ "pi", "namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5", null ],
-    [ "powi", "namespaceamrex_1_1Math.html#a8f2602163bf297a5c5342e6b9425e626", null ],
-    [ "sincos", "namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27", null ],
-    [ "sincos", "namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30", null ],
-    [ "sincospi", "namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a", null ],
-    [ "sincospi", "namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5", null ],
+    [ "pi", "namespaceamrex_1_1Math.html#a2d522eb2d366ecb5383529269e417457", null ],
+    [ "powi", "namespaceamrex_1_1Math.html#af57cfa83af1c7e36c3f085932cd2febf", null ],
+    [ "sincos", "namespaceamrex_1_1Math.html#aee28834d16062daea8a662475e7e0cfb", null ],
+    [ "sincos", "namespaceamrex_1_1Math.html#aa542bc5820b3ba938395d567218d5e97", null ],
+    [ "sincospi", "namespaceamrex_1_1Math.html#aa2324143a5cc4e6674866bc613736b77", null ],
+    [ "sincospi", "namespaceamrex_1_1Math.html#a12c47d586651da076ab3c82f07b5445a", null ],
     [ "sinpi", "namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585", null ],
     [ "sinpi", "namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900", null ]
 ];

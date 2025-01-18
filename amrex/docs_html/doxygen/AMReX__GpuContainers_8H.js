@@ -1,8 +1,8 @@
 var AMReX__GpuContainers_8H =
 [
-    [ "HostToDevice", "structamrex_1_1Gpu_1_1HostToDevice.html", null ],
-    [ "DeviceToHost", "structamrex_1_1Gpu_1_1DeviceToHost.html", null ],
-    [ "DeviceToDevice", "structamrex_1_1Gpu_1_1DeviceToDevice.html", null ],
+    [ "amrex::Gpu::HostToDevice", "structamrex_1_1Gpu_1_1HostToDevice.html", null ],
+    [ "amrex::Gpu::DeviceToHost", "structamrex_1_1Gpu_1_1DeviceToHost.html", null ],
+    [ "amrex::Gpu::DeviceToDevice", "structamrex_1_1Gpu_1_1DeviceToDevice.html", null ],
     [ "AsyncVector", "AMReX__GpuContainers_8H.html#af0ed55b80609bd8e66da4d0c435894d0", null ],
     [ "DeviceVector", "AMReX__GpuContainers_8H.html#a99e1f048890efc1c275606cb9bdc41c7", null ],
     [ "HostVector", "AMReX__GpuContainers_8H.html#a337aceb06d1f93486e6593ff058c0a93", null ],

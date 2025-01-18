@@ -1,10 +1,10 @@
 var AMReX__EB2__Graph_8H =
 [
-    [ "Cell", "structamrex_1_1EB2_1_1Cell.html", "structamrex_1_1EB2_1_1Cell" ],
-    [ "Face", "structamrex_1_1EB2_1_1Face.html", "structamrex_1_1EB2_1_1Face" ],
-    [ "Edge", "structamrex_1_1EB2_1_1Edge.html", "structamrex_1_1EB2_1_1Edge" ],
-    [ "Neighbor", "structamrex_1_1EB2_1_1Neighbor.html", "structamrex_1_1EB2_1_1Neighbor" ],
-    [ "Vertex", "structamrex_1_1EB2_1_1Vertex.html", "structamrex_1_1EB2_1_1Vertex" ],
+    [ "amrex::EB2::Cell", "structamrex_1_1EB2_1_1Cell.html", "structamrex_1_1EB2_1_1Cell" ],
+    [ "amrex::EB2::Face", "structamrex_1_1EB2_1_1Face.html", "structamrex_1_1EB2_1_1Face" ],
+    [ "amrex::EB2::Edge", "structamrex_1_1EB2_1_1Edge.html", "structamrex_1_1EB2_1_1Edge" ],
+    [ "amrex::EB2::Neighbor", "structamrex_1_1EB2_1_1Neighbor.html", "structamrex_1_1EB2_1_1Neighbor" ],
+    [ "amrex::EB2::Vertex", "structamrex_1_1EB2_1_1Vertex.html", "structamrex_1_1EB2_1_1Vertex" ],
     [ "Graph", "AMReX__EB2__Graph_8H.html#a0838e8d3d2f11703bb21ebb6bddbb1b1", null ],
     [ "Type_t", "AMReX__EB2__Graph_8H.html#ad5118c9d34449d5fcba10d141751b0d6", null ],
     [ "VertexID", "AMReX__EB2__Graph_8H.html#a853647130b0422fbb57870513c44b89b", null ],

@@ -1,6 +1,6 @@
 var AMReX__SDCquadrature_8F90 =
 [
-    [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ],
+    [ "sdcquadrature_mod::poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ],
     [ "not_proper", "AMReX__SDCquadrature_8F90.html#a36963c5b419723010d58909d4528c0dc", null ],
     [ "poly_diff", "AMReX__SDCquadrature_8F90.html#ae2185088b6449f7811b072576236dabd", null ],
     [ "poly_eval", "AMReX__SDCquadrature_8F90.html#a19abe9c6ef21541b666b72dd131373b3", null ],

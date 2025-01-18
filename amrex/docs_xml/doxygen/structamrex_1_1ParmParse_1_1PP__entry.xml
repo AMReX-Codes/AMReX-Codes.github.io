@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1ParmParse_1_1PP__entry" kind="struct" language="C++" prot="public">
     <compoundname>amrex::ParmParse::PP_entry</compoundname>
     <includes refid="AMReX__ParmParse_8H" local="no">AMReX_ParmParse.H</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1ParmParse_1_1PP__entry_1a735a0d1d9af362200a39ed6eeb6dca1b" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::vector&lt; std::string &gt; &gt;</type>
         <definition>std::vector&lt;std::vector&lt;std::string&gt; &gt; amrex::ParmParse::PP_entry::m_vals</definition>
         <argsstring></argsstring>
         <name>m_vals</name>
+        <qualifiedname>amrex::ParmParse::PP_entry::m_vals</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>Long amrex::ParmParse::PP_entry::m_count</definition>
         <argsstring></argsstring>
         <name>m_count</name>
+        <qualifiedname>amrex::ParmParse::PP_entry::m_count</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -31,20 +33,37 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="1614" column="47" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="1614" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
-        <label>std::vector&lt; std::vector&lt; std::string &gt; &gt;</label>
-      </node>
       <node id="1">
         <label>amrex::ParmParse::PP_entry</label>
         <link refid="structamrex_1_1ParmParse_1_1PP__entry"/>
         <childnode refid="2" relation="usage">
           <edgelabel>m_vals</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; std::vector&lt; std::string &gt; &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

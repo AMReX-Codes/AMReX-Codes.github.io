@@ -1,23 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="AMReX__AVGDOWN__2D_8F" kind="file" language="Fortran">
     <compoundname>AMReX_AVGDOWN_2D.F</compoundname>
     <includes refid="AMReX__REAL_8H" local="yes">AMReX_REAL.H</includes>
     <includes refid="AMReX__AVGDOWN__F_8H" local="yes">AMReX_AVGDOWN_F.H</includes>
     <includes refid="AMReX__ArrayLim_8H" local="yes">AMReX_ArrayLim.H</includes>
     <incdepgraph>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F</label>
-        <link refid="AMReX__AVGDOWN__2D_8F"/>
+      <node id="7">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
       </node>
-      <node id="5">
-        <label>float.h</label>
+      <node id="4">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>AMReX_REAL.H</label>
@@ -29,6 +30,16 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F</label>
+        <link refid="AMReX__AVGDOWN__2D_8F"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
       <node id="6">
         <label>AMReX_AVGDOWN_F.H</label>
         <link refid="AMReX__AVGDOWN__F_8H"/>
@@ -37,25 +48,14 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>AMReX_Extension.H</label>
-        <link refid="AMReX__Extension_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
-      <node id="7">
-        <label>AMReX_ArrayLim.H</label>
-        <link refid="AMReX__ArrayLim_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
+      <node id="5">
+        <label>float.h</label>
       </node>
     </incdepgraph>
-      <sectiondef kind="define">
+    <sectiondef kind="define">
       <memberdef kind="define" id="AMReX__AVGDOWN__2D_8F_1ab91418f29b92ee3b2e8b4ffc0d3da419" prot="public" static="no">
         <name>BL_LANG_FORT</name>
         <briefdescription>
@@ -110,8 +110,8 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F" line="20" column="9"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="AMReX__AVGDOWN__2D_8F_1a75aaf029aff7d6ead0bae5181e06b46c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine fort_maxval_avgdown</definition>
@@ -122,23 +122,23 @@
           <defname>crse</defname>
         </param>
         <param>
-          <type>crse_l1</type>
+          <type>integer</type>
           <defname>crse_l1</defname>
         </param>
         <param>
-          <type>crse_l2</type>
+          <type>integer</type>
           <defname>crse_l2</defname>
         </param>
         <param>
-          <type>crse_h1</type>
+          <type>integer</type>
           <defname>crse_h1</defname>
         </param>
         <param>
-          <type>crse_h2</type>
+          <type>integer</type>
           <defname>crse_h2</defname>
         </param>
         <param>
-          <type>nvar</type>
+          <type>integer</type>
           <defname>nvar</defname>
         </param>
         <param>
@@ -146,31 +146,31 @@
           <defname>fine</defname>
         </param>
         <param>
-          <type>fine_l1</type>
+          <type>integer</type>
           <defname>fine_l1</defname>
         </param>
         <param>
-          <type>fine_l2</type>
+          <type>integer</type>
           <defname>fine_l2</defname>
         </param>
         <param>
-          <type>fine_h1</type>
+          <type>integer</type>
           <defname>fine_h1</defname>
         </param>
         <param>
-          <type>fine_h2</type>
+          <type>integer</type>
           <defname>fine_h2</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(sdim)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(sdim)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>ratios</type>
+          <type>integer, dimension(sdim)</type>
           <defname>ratios</defname>
         </param>
         <briefdescription>
@@ -191,23 +191,23 @@
           <defname>crse</defname>
         </param>
         <param>
-          <type>crse_l1</type>
+          <type>integer</type>
           <defname>crse_l1</defname>
         </param>
         <param>
-          <type>crse_l2</type>
+          <type>integer</type>
           <defname>crse_l2</defname>
         </param>
         <param>
-          <type>crse_h1</type>
+          <type>integer</type>
           <defname>crse_h1</defname>
         </param>
         <param>
-          <type>crse_h2</type>
+          <type>integer</type>
           <defname>crse_h2</defname>
         </param>
         <param>
-          <type>nvar</type>
+          <type>integer</type>
           <defname>nvar</defname>
         </param>
         <param>
@@ -215,31 +215,31 @@
           <defname>fine</defname>
         </param>
         <param>
-          <type>fine_l1</type>
+          <type>integer</type>
           <defname>fine_l1</defname>
         </param>
         <param>
-          <type>fine_l2</type>
+          <type>integer</type>
           <defname>fine_l2</defname>
         </param>
         <param>
-          <type>fine_h1</type>
+          <type>integer</type>
           <defname>fine_h1</defname>
         </param>
         <param>
-          <type>fine_h2</type>
+          <type>integer</type>
           <defname>fine_h2</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(sdim)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(sdim)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>ratios</type>
+          <type>integer, dimension(sdim)</type>
           <defname>ratios</defname>
         </param>
         <briefdescription>
@@ -256,7 +256,7 @@
         <argsstring>(nodal_dir, crse, crse_l1, crse_l2, crse_h1, crse_h2, nvar, fine, fine_l1, fine_l2, fine_h1, fine_h2, lo, hi, ratios)</argsstring>
         <name>fort_cv_avgdown_stag</name>
         <param>
-          <type>nodal_dir</type>
+          <type>integer</type>
           <defname>nodal_dir</defname>
         </param>
         <param>
@@ -264,23 +264,23 @@
           <defname>crse</defname>
         </param>
         <param>
-          <type>crse_l1</type>
+          <type>integer</type>
           <defname>crse_l1</defname>
         </param>
         <param>
-          <type>crse_l2</type>
+          <type>integer</type>
           <defname>crse_l2</defname>
         </param>
         <param>
-          <type>crse_h1</type>
+          <type>integer</type>
           <defname>crse_h1</defname>
         </param>
         <param>
-          <type>crse_h2</type>
+          <type>integer</type>
           <defname>crse_h2</defname>
         </param>
         <param>
-          <type>nvar</type>
+          <type>integer</type>
           <defname>nvar</defname>
         </param>
         <param>
@@ -288,31 +288,31 @@
           <defname>fine</defname>
         </param>
         <param>
-          <type>fine_l1</type>
+          <type>integer</type>
           <defname>fine_l1</defname>
         </param>
         <param>
-          <type>fine_l2</type>
+          <type>integer</type>
           <defname>fine_l2</defname>
         </param>
         <param>
-          <type>fine_h1</type>
+          <type>integer</type>
           <defname>fine_h1</defname>
         </param>
         <param>
-          <type>fine_h2</type>
+          <type>integer</type>
           <defname>fine_h2</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(sdim)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(sdim)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>ratios</type>
+          <type>integer, dimension(sdim)</type>
           <defname>ratios</defname>
         </param>
         <briefdescription>
@@ -333,23 +333,23 @@
           <defname>crse</defname>
         </param>
         <param>
-          <type>crse_l1</type>
+          <type>integer</type>
           <defname>crse_l1</defname>
         </param>
         <param>
-          <type>crse_l2</type>
+          <type>integer</type>
           <defname>crse_l2</defname>
         </param>
         <param>
-          <type>crse_h1</type>
+          <type>integer</type>
           <defname>crse_h1</defname>
         </param>
         <param>
-          <type>crse_h2</type>
+          <type>integer</type>
           <defname>crse_h2</defname>
         </param>
         <param>
-          <type>nvar</type>
+          <type>integer</type>
           <defname>nvar</defname>
         </param>
         <param>
@@ -357,19 +357,19 @@
           <defname>fine</defname>
         </param>
         <param>
-          <type>fine_l1</type>
+          <type>integer</type>
           <defname>fine_l1</defname>
         </param>
         <param>
-          <type>fine_l2</type>
+          <type>integer</type>
           <defname>fine_l2</defname>
         </param>
         <param>
-          <type>fine_h1</type>
+          <type>integer</type>
           <defname>fine_h1</defname>
         </param>
         <param>
-          <type>fine_h2</type>
+          <type>integer</type>
           <defname>fine_h2</defname>
         </param>
         <param>
@@ -377,19 +377,19 @@
           <defname>cv</defname>
         </param>
         <param>
-          <type>cv_l1</type>
+          <type>integer</type>
           <defname>cv_l1</defname>
         </param>
         <param>
-          <type>cv_l2</type>
+          <type>integer</type>
           <defname>cv_l2</defname>
         </param>
         <param>
-          <type>cv_h1</type>
+          <type>integer</type>
           <defname>cv_h1</defname>
         </param>
         <param>
-          <type>cv_h2</type>
+          <type>integer</type>
           <defname>cv_h2</defname>
         </param>
         <param>
@@ -397,31 +397,31 @@
           <defname>fv</defname>
         </param>
         <param>
-          <type>fv_l1</type>
+          <type>integer</type>
           <defname>fv_l1</defname>
         </param>
         <param>
-          <type>fv_l2</type>
+          <type>integer</type>
           <defname>fv_l2</defname>
         </param>
         <param>
-          <type>fv_h1</type>
+          <type>integer</type>
           <defname>fv_h1</defname>
         </param>
         <param>
-          <type>fv_h2</type>
+          <type>integer</type>
           <defname>fv_h2</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(sdim)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(sdim)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>ratios</type>
+          <type>integer, dimension(sdim)</type>
           <defname>ratios</defname>
         </param>
         <briefdescription>
@@ -432,7 +432,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F" line="232" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F" bodystart="238" bodyend="302"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

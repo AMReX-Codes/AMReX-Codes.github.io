@@ -1,11 +1,7 @@
 var dir_a3d35c88284bcc9e68dd82330f2a8332 =
 [
     [ "AMReX_IParser.cpp", "AMReX__IParser_8cpp.html", null ],
-    [ "AMReX_IParser.H", "AMReX__IParser_8H.html", [
-      [ "IParserExecutor", "structamrex_1_1IParserExecutor.html", "structamrex_1_1IParserExecutor" ],
-      [ "IParser", "classamrex_1_1IParser.html", "classamrex_1_1IParser" ],
-      [ "Data", "structamrex_1_1IParser_1_1Data.html", "structamrex_1_1IParser_1_1Data" ]
-    ] ],
+    [ "AMReX_IParser.H", "AMReX__IParser_8H.html", "AMReX__IParser_8H" ],
     [ "amrex_iparser.lex.cpp", "amrex__iparser_8lex_8cpp.html", null ],
     [ "amrex_iparser.lex.h", "amrex__iparser_8lex_8h.html", "amrex__iparser_8lex_8h" ],
     [ "amrex_iparser.lex.nolint.H", "amrex__iparser_8lex_8nolint_8H.html", "amrex__iparser_8lex_8nolint_8H" ],
@@ -17,11 +13,7 @@ var dir_a3d35c88284bcc9e68dd82330f2a8332 =
     [ "AMReX_IParser_Y.cpp", "AMReX__IParser__Y_8cpp.html", "AMReX__IParser__Y_8cpp" ],
     [ "AMReX_IParser_Y.H", "AMReX__IParser__Y_8H.html", "AMReX__IParser__Y_8H" ],
     [ "AMReX_Parser.cpp", "AMReX__Parser_8cpp.html", null ],
-    [ "AMReX_Parser.H", "AMReX__Parser_8H.html", [
-      [ "ParserExecutor", "structamrex_1_1ParserExecutor.html", "structamrex_1_1ParserExecutor" ],
-      [ "Parser", "classamrex_1_1Parser.html", "classamrex_1_1Parser" ],
-      [ "Data", "structamrex_1_1Parser_1_1Data.html", "structamrex_1_1Parser_1_1Data" ]
-    ] ],
+    [ "AMReX_Parser.H", "AMReX__Parser_8H.html", "AMReX__Parser_8H" ],
     [ "amrex_parser.lex.cpp", "amrex__parser_8lex_8cpp.html", null ],
     [ "amrex_parser.lex.h", "amrex__parser_8lex_8h.html", "amrex__parser_8lex_8h" ],
     [ "amrex_parser.lex.nolint.H", "amrex__parser_8lex_8nolint_8H.html", "amrex__parser_8lex_8nolint_8H" ],

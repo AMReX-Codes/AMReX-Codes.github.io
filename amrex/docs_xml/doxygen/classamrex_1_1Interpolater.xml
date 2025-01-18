@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1Interpolater" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::Interpolater</compoundname>
     <basecompoundref refid="classamrex_1_1InterpBase" prot="public" virt="non-virtual">amrex::InterpBase</basecompoundref>
@@ -14,12 +14,13 @@
     <derivedcompoundref refid="classamrex_1_1NodeBilinear" prot="public" virt="non-virtual">amrex::NodeBilinear</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1PCInterp" prot="public" virt="non-virtual">amrex::PCInterp</derivedcompoundref>
     <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1Interpolater_1acfb408607036aa3f76da0478bba4855d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void amrex::Interpolater::interp</definition>
         <argsstring>(const FArrayBox &amp;crse, int crse_comp, FArrayBox &amp;fine, int fine_comp, int ncomp, const Box &amp;fine_region, const IntVect &amp;ratio, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, Vector&lt; BCRec &gt; const &amp;bcr, int actual_comp, int actual_state, RunOn runon)=0</argsstring>
         <name>interp</name>
+        <qualifiedname>amrex::Interpolater::interp</qualifiedname>
         <reimplementedby refid="classamrex_1_1NodeBilinear_1ae952aa577171cdaf6a5e11f442ef9744">interp</reimplementedby>
         <reimplementedby refid="classamrex_1_1CellBilinear_1af74e1e283a35fbabfdae0b880d431f7a">interp</reimplementedby>
         <reimplementedby refid="classamrex_1_1CellQuadratic_1adab6249f593300b3e2dc48f0a57c6c6b">interp</reimplementedby>
@@ -195,6 +196,7 @@
         <definition>virtual void amrex::Interpolater::interp_face</definition>
         <argsstring>(const FArrayBox &amp;, const int, FArrayBox &amp;, const int, const int, const Box &amp;, const IntVect &amp;, const IArrayBox &amp;, const Geometry &amp;, const Geometry &amp;, Vector&lt; BCRec &gt; const &amp;, const int, RunOn)</argsstring>
         <name>interp_face</name>
+        <qualifiedname>amrex::Interpolater::interp_face</qualifiedname>
         <reimplementedby refid="classamrex_1_1FaceLinear_1a2b8013cf1c27cb27f02b916b16c2043f">interp_face</reimplementedby>
         <reimplementedby refid="classamrex_1_1FaceConservativeLinear_1a0181ab06dea6f0c924ead18e666872af">interp_face</reimplementedby>
         <param>
@@ -364,6 +366,7 @@
         <definition>virtual void amrex::Interpolater::interp_arr</definition>
         <argsstring>(Array&lt; FArrayBox *, AMREX_SPACEDIM &gt; const &amp;, const int, Array&lt; FArrayBox *, AMREX_SPACEDIM &gt; const &amp;, const int, const int, const Box &amp;, const IntVect &amp;, Array&lt; IArrayBox *, AMREX_SPACEDIM &gt; const &amp;, const Geometry &amp;, const Geometry &amp;, Vector&lt; Array&lt; BCRec, AMREX_SPACEDIM &gt; &gt; const &amp;, const int, const int, const RunOn)</argsstring>
         <name>interp_arr</name>
+        <qualifiedname>amrex::Interpolater::interp_arr</qualifiedname>
         <reimplementedby refid="classamrex_1_1FaceLinear_1a1335c7ebf1da118df6be8fa54a6e4007">interp_arr</reimplementedby>
         <reimplementedby refid="classamrex_1_1FaceConservativeLinear_1a7b6f2a09b57e95b750785a7c631c1353">interp_arr</reimplementedby>
         <reimplementedby refid="classamrex_1_1FaceDivFree_1af3e2052a76426fa4bec0ca2ae6faaa76">interp_arr</reimplementedby>
@@ -407,8 +410,7 @@
           <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         </param>
         <param>
-          <type>const</type>
-          <declname>RunOn</declname>
+          <type>const <ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
         </param>
         <briefdescription>
 <para>Coarse to fine interpolation in space. Takes an Array of FArrayBox*s. </para>
@@ -538,6 +540,7 @@
         <definition>virtual void amrex::Interpolater::protect</definition>
         <argsstring>(const FArrayBox &amp;, int, FArrayBox &amp;, int, FArrayBox &amp;, int, int, const Box &amp;, const IntVect &amp;, const Geometry &amp;, const Geometry &amp;, Vector&lt; BCRec &gt; &amp;, RunOn)</argsstring>
         <name>protect</name>
+        <qualifiedname>amrex::Interpolater::protect</qualifiedname>
         <reimplementedby refid="classamrex_1_1CellConservativeProtected_1aa6ed48dc9ce058bd1d1804c800ea0691">protect</reimplementedby>
         <param>
           <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
@@ -685,7 +688,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="141" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="141" bodyend="153"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Virtual base class for interpolaters. </para>
     </briefdescription>
@@ -693,44 +696,34 @@
 <para>Specifies interpolater interface for coarse-to-fine interpolation in space. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5">
-        <label>amrex::CellConservativeProtected</label>
-        <link refid="classamrex_1_1CellConservativeProtected"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::InterpBase</label>
-        <link refid="classamrex_1_1InterpBase"/>
-      </node>
-      <node id="8">
-        <label>amrex::CellQuadratic</label>
-        <link refid="classamrex_1_1CellQuadratic"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>amrex::FaceLinear</label>
-        <link refid="classamrex_1_1FaceLinear"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>amrex::NodeBilinear</label>
-        <link refid="classamrex_1_1NodeBilinear"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>amrex::CellBilinear</label>
         <link refid="classamrex_1_1CellBilinear"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>amrex::Interpolater</label>
-        <link refid="classamrex_1_1Interpolater"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="4">
+        <label>amrex::CellConservativeLinear</label>
+        <link refid="classamrex_1_1CellConservativeLinear"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::CellConservativeProtected</label>
+        <link refid="classamrex_1_1CellConservativeProtected"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>amrex::CellConservativeQuartic</label>
+        <link refid="classamrex_1_1CellConservativeQuartic"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>amrex::CellQuadratic</label>
+        <link refid="classamrex_1_1CellQuadratic"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
@@ -745,33 +738,43 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>amrex::CellConservativeLinear</label>
-        <link refid="classamrex_1_1CellConservativeLinear"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>amrex::CellConservativeQuartic</label>
-        <link refid="classamrex_1_1CellConservativeQuartic"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="10">
         <label>amrex::FaceConservativeLinear</label>
         <link refid="classamrex_1_1FaceConservativeLinear"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
-        <label>amrex::PCInterp</label>
-        <link refid="classamrex_1_1PCInterp"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="11">
         <label>amrex::FaceDivFree</label>
         <link refid="classamrex_1_1FaceDivFree"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>amrex::FaceLinear</label>
+        <link refid="classamrex_1_1FaceLinear"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
+      <node id="1">
+        <label>amrex::Interpolater</label>
+        <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>amrex::NodeBilinear</label>
+        <link refid="classamrex_1_1NodeBilinear"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::PCInterp</label>
+        <link refid="classamrex_1_1PCInterp"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -800,8 +803,8 @@
       <member refid="classamrex_1_1InterpBase_1aee63caed578fc06fb37257394ac4a62d" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1InterpBase_1a021bb62c902497ccc17f9debb5fc10cc" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1InterpBase_1a2f6b67e875b76f7bcaa9151a1c6de2a6" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>InterpBase</name></member>
-      <member refid="classamrex_1_1InterpBase_1a5753abe4eb1e3ac6d8747a0864533373" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1InterpBase_1a448200184ccdeced8fd7a609dd43fa71" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a9579ddf64adb4946cd65d7d931840b26" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a49faa298cde718a31582f53f26f0a4e7" prot="public" virt="non-virtual"><scope>amrex::Interpolater</scope><name>operator=</name></member>
       <member refid="classamrex_1_1Interpolater_1aee6fb8b99ca4282e5f9e9122b9b37cf1" prot="public" virt="virtual"><scope>amrex::Interpolater</scope><name>protect</name></member>
       <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::Interpolater</scope><name>~InterpBase</name></member>
     </listofallmembers>

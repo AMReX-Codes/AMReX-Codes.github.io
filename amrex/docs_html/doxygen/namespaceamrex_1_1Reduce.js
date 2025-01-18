@@ -7,8 +7,8 @@ var namespaceamrex_1_1Reduce =
     [ "Max", "namespaceamrex_1_1Reduce.html#a7ac8075282193aef5024b3a7092a0f3c", null ],
     [ "Min", "namespaceamrex_1_1Reduce.html#a8e8a5dd1862e4f8c8eb70e4601edd281", null ],
     [ "Min", "namespaceamrex_1_1Reduce.html#a07365bcdfaa9fe246330e8d91f71ecc0", null ],
-    [ "MinMax", "namespaceamrex_1_1Reduce.html#ab71d74aeff9051d0f8e079c94b3fe5cc", null ],
-    [ "MinMax", "namespaceamrex_1_1Reduce.html#a17b6d6ef1df2c2803c3f460b51ddd012", null ],
+    [ "MinMax", "namespaceamrex_1_1Reduce.html#ac1dab3efd41294be3534dceac0c145b7", null ],
+    [ "MinMax", "namespaceamrex_1_1Reduce.html#adae163b6d167d018ba6ec7cf821b97a8", null ],
     [ "Sum", "namespaceamrex_1_1Reduce.html#ae179b14741cc532f08816fceabea24f5", null ],
     [ "Sum", "namespaceamrex_1_1Reduce.html#afac1250d786b98bab8d8d2cf5c06411e", null ]
 ];

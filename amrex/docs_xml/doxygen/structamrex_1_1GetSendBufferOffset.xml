@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1GetSendBufferOffset" kind="struct" language="C++" prot="public">
     <compoundname>amrex::GetSendBufferOffset</compoundname>
     <includes refid="AMReX__ParticleCommunication_8H" local="no">AMReX_ParticleCommunication.H</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1GetSendBufferOffset_1a0ed01f542a7575b5a8d300c751d962b2" prot="public" static="no" mutable="no">
         <type>const unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
         <definition>const unsigned int* amrex::GetSendBufferOffset::m_box_offsets</definition>
         <argsstring></argsstring>
         <name>m_box_offsets</name>
+        <qualifiedname>amrex::GetSendBufferOffset::m_box_offsets</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>const std::size_t* amrex::GetSendBufferOffset::m_pad_correction</definition>
         <argsstring></argsstring>
         <name>m_pad_correction</name>
+        <qualifiedname>amrex::GetSendBufferOffset::m_pad_correction</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -35,6 +37,7 @@
         <definition>GetPID amrex::GetSendBufferOffset::m_get_pid</definition>
         <argsstring></argsstring>
         <name>m_get_pid</name>
+        <qualifiedname>amrex::GetSendBufferOffset::m_get_pid</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -48,6 +51,7 @@
         <definition>GetBucket amrex::GetSendBufferOffset::m_get_bucket</definition>
         <argsstring></argsstring>
         <name>m_get_bucket</name>
+        <qualifiedname>amrex::GetSendBufferOffset::m_get_bucket</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -56,13 +60,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="309" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="309" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structamrex_1_1GetSendBufferOffset_1ae0bd21edb636525d7e8011db403b9fca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::GetSendBufferOffset::GetSendBufferOffset</definition>
         <argsstring>(const ParticleCopyPlan &amp;plan, const ParticleBufferMap &amp;map)</argsstring>
         <name>GetSendBufferOffset</name>
+        <qualifiedname>amrex::GetSendBufferOffset::GetSendBufferOffset</qualifiedname>
         <param>
           <type>const <ref refid="structamrex_1_1ParticleCopyPlan" kindref="compound">ParticleCopyPlan</ref> &amp;</type>
           <declname>plan</declname>
@@ -84,6 +89,7 @@
         <definition>AMREX_FORCE_INLINE AMREX_GPU_DEVICE Long amrex::GetSendBufferOffset::operator()</definition>
         <argsstring>(int dst_box, int dst_lev, std::size_t psize, int i) const</argsstring>
         <name>operator()</name>
+        <qualifiedname>amrex::GetSendBufferOffset::operator()</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>dst_box</declname>
@@ -108,13 +114,17 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="319" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="319" bodyend="325"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
       <node id="3">
+        <label>amrex::GetBucket</label>
+        <link refid="structamrex_1_1GetBucket"/>
+      </node>
+      <node id="2">
         <label>amrex::GetPID</label>
         <link refid="structamrex_1_1GetPID"/>
       </node>
@@ -122,15 +132,11 @@
         <label>amrex::GetSendBufferOffset</label>
         <link refid="structamrex_1_1GetSendBufferOffset"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>m_get_bucket</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
           <edgelabel>m_get_pid</edgelabel>
         </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::GetBucket</label>
-        <link refid="structamrex_1_1GetBucket"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_get_bucket</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="303" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="304" bodyend="326"/>

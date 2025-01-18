@@ -14,7 +14,7 @@ var classamrex_1_1AmrCore =
     [ "MakeNewLevelFromCoarse", "classamrex_1_1AmrCore.html#af472acf05bea1145b67f7022de16a664", null ],
     [ "MakeNewLevelFromScratch", "classamrex_1_1AmrCore.html#a2612f7a3cf58e16e8f9ddd27e81e9a8c", null ],
     [ "operator=", "classamrex_1_1AmrCore.html#a79139224be139375a51b79dd477bcb42", null ],
-    [ "operator=", "classamrex_1_1AmrCore.html#acf424d1fa598d256d7285e7fc6f20a73", null ],
+    [ "operator=", "classamrex_1_1AmrCore.html#a4919540168fd2498efa2795e6a7af9c4", null ],
     [ "printGridSummary", "classamrex_1_1AmrCore.html#a4f3c144db8f986764324e9ba788666b3", null ],
     [ "regrid", "classamrex_1_1AmrCore.html#ae80fa713b669de0f235d3ef0792e7200", null ],
     [ "RemakeLevel", "classamrex_1_1AmrCore.html#a89b690a6f834d76bf96f8f1facc356c4", null ]

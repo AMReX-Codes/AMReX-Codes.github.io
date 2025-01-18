@@ -234,15 +234,15 @@ machine is unknown</p></td>
 </table>
 <p>At the beginning of <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile</span></code>,
 <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> is set to the path to the top directory of AMReX.  Note that in
-the example <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">?=</span><span class="w"></span></code> is a conditional variable assignment operator that only
+the example <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">?=</span></code> is a conditional variable assignment operator that only
 has an effect if <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> has not been defined (including in the
 environment). One can also set <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> as an environment variable. For
 example in bash, one can set</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">AMREX_HOME</span><span class="o">=</span>/path/to/amrex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">AMREX_HOME</span><span class="o">=</span>/path/to/amrex
 </pre></div>
 </div>
 <p>alternatively, in tcsh one can set</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv AMREX_HOME /path/to/amrex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv<span class="w"> </span>AMREX_HOME<span class="w"> </span>/path/to/amrex
 </pre></div>
 </div>
 <p>Note: when setting <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> in the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>, be aware that <code class="docutils literal notranslate"><span class="pre">~</span></code> does
@@ -310,8 +310,8 @@ Fortran files will go through preprocessing.</p>
 directory that is already in the build system’s search path. If this example
 has files in a subdirectory (e.g., <code class="docutils literal notranslate"><span class="pre">mysrcdir</span></code>), you will then need to add the
 following to <code class="docutils literal notranslate"><span class="pre">Make.package</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">VPATH_LOCATIONS</span> <span class="o">+=</span> mysrcdir
-<span class="nv">INCLUDE_LOCATIONS</span> <span class="o">+=</span> mysrcdir
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">VPATH_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>mysrcdir
+<span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>mysrcdir
 </pre></div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">VPATH_LOCATIONS</span></code> and <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are the search path for
@@ -352,16 +352,16 @@ variables. See <code class="docutils literal notranslate"><span class="pre">amre
 how to customize the build process.</p>
 <p>If you need to pass macro definitions to the preprocessor, you can add
 them to your make file as follows,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEFINES</span> <span class="o">+=</span> -Dmyname1 -Dmyname2<span class="o">=</span>mydefinition
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEFINES</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Dmyname1<span class="w"> </span>-Dmyname2<span class="o">=</span>mydefinition
 </pre></div>
 </div>
 <p>To link to an additional library say <code class="docutils literal notranslate"><span class="pre">foo</span></code> with headers located at
 <code class="docutils literal notranslate"><span class="pre">foopath/include</span></code> and library at <code class="docutils literal notranslate"><span class="pre">foopath/lib</span></code>, you can add the
 following to your make file before the line that includes AMReX’s
 <code class="docutils literal notranslate"><span class="pre">Make.defs</span></code>,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">INCLUDE_LOCATIONS</span> <span class="o">+=</span> foopath/include
-<span class="nv">LIBRARY_LOCATIONS</span> <span class="o">+=</span> foopath/lib
-<span class="nv">LIBRARIES</span> <span class="o">+=</span> -lfoo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>foopath/include
+<span class="nv">LIBRARY_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>foopath/lib
+<span class="nv">LIBRARIES</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-lfoo
 </pre></div>
 </div>
 </section>
@@ -375,16 +375,16 @@ commands.</p>
 using a specific compiler (in this case <code class="docutils literal notranslate"><span class="pre">gcc-8</span></code>) without MPI. Whenever
 <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code>  is true, this configuration defaults to the appropriate
 <code class="docutils literal notranslate"><span class="pre">mpixxx</span></code> command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifeq <span class="o">(</span><span class="k">$(</span>USE_MPI<span class="k">)</span>,TRUE<span class="o">)</span>
-  <span class="nv">CXX</span> <span class="o">=</span> mpicxx
-  <span class="nv">CC</span>  <span class="o">=</span> mpicc
-  <span class="nv">FC</span>  <span class="o">=</span> mpif90
-  <span class="nv">F90</span> <span class="o">=</span> mpif90
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>USE_MPI<span class="k">)</span>,TRUE<span class="o">)</span>
+<span class="w">  </span><span class="nv">CXX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpicxx
+<span class="w">  </span><span class="nv">CC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>mpicc
+<span class="w">  </span><span class="nv">FC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>mpif90
+<span class="w">  </span><span class="nv">F90</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpif90
 <span class="k">else</span>
-  <span class="nv">CXX</span> <span class="o">=</span> g++-8
-  <span class="nv">CC</span>  <span class="o">=</span> gcc-8
-  <span class="nv">FC</span>  <span class="o">=</span> gfortran-8
-  <span class="nv">F90</span> <span class="o">=</span> gfortran-8
+<span class="w">  </span><span class="nv">CXX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>g++-8
+<span class="w">  </span><span class="nv">CC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>gcc-8
+<span class="w">  </span><span class="nv">FC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>gfortran-8
+<span class="w">  </span><span class="nv">F90</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gfortran-8
 endif
 </pre></div>
 </div>
@@ -403,12 +403,12 @@ install GCC using the <a class="reference external" href="https://brew.sh">homeb
 GCC 8.2 is installed, homebrew installs it as <code class="docutils literal notranslate"><span class="pre">gcc-8</span></code>. AMReX can be built
 using <code class="docutils literal notranslate"><span class="pre">gcc-8</span></code> (with and without MPI) by using the following
 <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/Make.local</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CXX</span> <span class="o">=</span> g++-8
-<span class="nv">CC</span>  <span class="o">=</span> gcc-8
-<span class="nv">FC</span>  <span class="o">=</span> gfortran-8
-<span class="nv">F90</span> <span class="o">=</span> gfortran-8
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CXX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>g++-8
+<span class="nv">CC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>gcc-8
+<span class="nv">FC</span><span class="w">  </span><span class="o">=</span><span class="w"> </span>gfortran-8
+<span class="nv">F90</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gfortran-8
 
-<span class="nv">INCLUDE_LOCATIONS</span> <span class="o">+=</span> /usr/local/include
+<span class="nv">INCLUDE_LOCATIONS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>/usr/local/include
 </pre></div>
 </div>
 <p>The additional <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are installed using homebrew also. Note
@@ -435,7 +435,7 @@ runs <code class="docutils literal notranslate"><span class="pre">./configure</s
 Other make options include <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distclean</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">uninstall</span></code>.  In the top
 AMReX directory, one can run <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">-h</span></code> to show the various options for
 the configure script. In particular, one can specify the installation path for the AMReX library using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure --prefix<span class="o">=[</span>AMReX library path<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure<span class="w"> </span>--prefix<span class="o">=[</span>AMReX<span class="w"> </span>library<span class="w"> </span>path<span class="o">]</span>
 </pre></div>
 </div>
 <p>This approach is built on the AMReX GNU Make system. Thus
@@ -452,19 +452,19 @@ library and include entries.</p>
 <p>The following sample GNU Makefile will compile a <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> source
 file against an external AMReX library, using the C++ flags and
 library paths used to build AMReX:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AMREX_LIBRARY_HOME ?<span class="o">=</span> <span class="o">[</span>AMReX library path<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AMREX_LIBRARY_HOME<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="o">[</span>AMReX<span class="w"> </span>library<span class="w"> </span>path<span class="o">]</span>
 
-LIBDIR :<span class="o">=</span> <span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/lib
-INCDIR :<span class="o">=</span> <span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/include
+LIBDIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/lib
+INCDIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>AMREX_LIBRARY_HOME<span class="k">)</span>/include
 
-COMPILE_CPP_FLAGS ?<span class="o">=</span> <span class="k">$(</span>shell awk <span class="s1">&#39;/Cflags:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span> <span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
-COMPILE_LIB_FLAGS ?<span class="o">=</span> <span class="k">$(</span>shell awk <span class="s1">&#39;/Libs:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span> <span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
+COMPILE_CPP_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/Cflags:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
+COMPILE_LIB_FLAGS<span class="w"> </span>?<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/Libs:/ {$$1=$$2=&quot;&quot;; print $$0}&#39;</span><span class="w"> </span><span class="k">$(</span>LIBDIR<span class="k">)</span>/pkgconfig/amrex.pc<span class="k">)</span>
 
-CFLAGS :<span class="o">=</span> -I<span class="k">$(</span>INCDIR<span class="k">)</span> <span class="k">$(</span>COMPILE_CPP_FLAGS<span class="k">)</span>
-LFLAGS :<span class="o">=</span> -L<span class="k">$(</span>LIBDIR<span class="k">)</span> <span class="k">$(</span>COMPILE_LIB_FLAGS<span class="k">)</span>
+CFLAGS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCDIR<span class="k">)</span><span class="w"> </span><span class="k">$(</span>COMPILE_CPP_FLAGS<span class="k">)</span>
+LFLAGS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>-L<span class="k">$(</span>LIBDIR<span class="k">)</span><span class="w"> </span><span class="k">$(</span>COMPILE_LIB_FLAGS<span class="k">)</span>
 
 all:
-        g++ -o main.exe main.cpp <span class="k">$(</span>CFLAGS<span class="k">)</span> <span class="k">$(</span>LFLAGS<span class="k">)</span>
+<span class="w">        </span>g++<span class="w"> </span>-o<span class="w"> </span>main.exe<span class="w"> </span>main.cpp<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>LFLAGS<span class="k">)</span>
 </pre></div>
 </div>
 </section>
@@ -725,19 +725,19 @@ and environments. To learn more about Spack visit <a class="reference external" 
 installation instructions please see <a class="reference external" href="https://spack.readthedocs.io/">https://spack.readthedocs.io/</a>.</p>
 <p>Once Spack has been downloaded and the Spack environment enabled, AMReX can be
 installed with the command,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install amrex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>install<span class="w"> </span>amrex
 </pre></div>
 </div>
 <p>This will install the latest release of AMReX and required dependencies if needed.</p>
 <p>AMReX can be built in several combinations of versions and configurations. Available options can
 be viewed by typing,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack info amrex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>info<span class="w"> </span>amrex
 </pre></div>
 </div>
 <p>For example, suppose we want to install the development version of AMReX for a two dimensional
 simulation with Cuda support for Cuda Architecture <code class="docutils literal notranslate"><span class="pre">sm_60</span></code>. Then we would
 use the install commands,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install amrex@develop <span class="nv">dimensions</span><span class="o">=</span><span class="m">2</span> +cuda <span class="nv">cuda_arch</span><span class="o">=</span><span class="m">60</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack<span class="w"> </span>install<span class="w"> </span>amrex@develop<span class="w"> </span><span class="nv">dimensions</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>+cuda<span class="w"> </span><span class="nv">cuda_arch</span><span class="o">=</span><span class="m">60</span>
 </pre></div>
 </div>
 </section>

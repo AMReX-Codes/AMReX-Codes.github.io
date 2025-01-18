@@ -3,7 +3,7 @@ var classamrex_1_1ParticleLocator =
     [ "BinIteratorFactory", "classamrex_1_1ParticleLocator.html#aa04241c5ac3af03cc7e1d985fa591e45", null ],
     [ "ParticleLocator", "classamrex_1_1ParticleLocator.html#a051687b9db644bfff24f5452abf5624c", null ],
     [ "build", "classamrex_1_1ParticleLocator.html#afe37a8c51ff96b002a2cedb2e9255fa4", null ],
-    [ "getGridAssignor", "classamrex_1_1ParticleLocator.html#ac1dbedf587229a97793b03cffa340c5d", null ],
+    [ "getGridAssignor", "classamrex_1_1ParticleLocator.html#a8ae313adb46654adfd1b171c0578624e", null ],
     [ "isValid", "classamrex_1_1ParticleLocator.html#accd95862af234b5b13b8eccf3cf2966d", null ],
     [ "setGeometry", "classamrex_1_1ParticleLocator.html#afad5b72230c1ac0b5cc0874cad8d0f86", null ],
     [ "m_ba", "classamrex_1_1ParticleLocator.html#a398bff4255e23b17afdbb21529343b0f", null ],

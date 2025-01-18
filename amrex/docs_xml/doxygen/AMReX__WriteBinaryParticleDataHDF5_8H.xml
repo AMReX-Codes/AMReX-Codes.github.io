@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="AMReX__WriteBinaryParticleDataHDF5_8H" kind="file" language="C++">
     <compoundname>AMReX_WriteBinaryParticleDataHDF5.H</compoundname>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="AMReX__WriteBinaryParticleDataHDF5_8H_1a13f3233ca46385427245008f434493fc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>static int CreateWriteHDF5Attr</definition>
@@ -178,7 +178,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" line="115" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" bodystart="115" bodyend="477"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -305,7 +305,7 @@
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>compression,</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_checkpoint)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F&amp;&amp;<sp/>f,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_checkpoint)</highlight></codeline>
 <codeline lineno="123"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;WriteHDF5ParticleDataSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(pc.OK());</highlight></codeline>
@@ -313,11 +313,11 @@
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::ParticleType::RealType)<sp/>==<sp/>4<sp/>||</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::ParticleType::RealType)<sp/>==<sp/>8);</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal<sp/>=<sp/>PC::NStructReal;</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt<sp/><sp/>=<sp/>PC::NStructInt;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal<sp/>=<sp/>PC::NStructReal;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt<sp/><sp/>=<sp/>PC::NStructInt;</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IOProcNumber<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NProcs<sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IOProcNumber<sp/>=<sp/>ParallelDescriptor::IOProcessorNumber();</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(real_comp_names.size()<sp/>==<sp/>pc.NumRealComps()<sp/>+<sp/>NStructReal);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(<sp/>int_comp_names.size()<sp/>==<sp/>pc.NumIntComps()<sp/>+<sp/>NStructInt);</highlight></codeline>
@@ -327,7 +327,7 @@
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(es_par_g<sp/>!=<sp/>0)</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>async_vol_es_wait_particle();</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad321a3965621a748d4c08e80c42b7af3" kindref="member">ExecOnFinalize</ref>(async_vol_es_wait_close_particle);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExecOnFinalize(async_vol_es_wait_close_particle);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>es_par_g<sp/>=<sp/>H5EScreate();</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -337,14 +337,14 @@
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>pdir<sp/>+=<sp/>name;</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>pc.GetLevelDirectoriesCreated())<sp/>{</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::IOProcessor())</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/><ref refid="namespaceamrex_1a913fd7ccf7cab45bc7d8e2a09ddd2824" kindref="member">amrex::UtilCreateDirectory</ref>(pdir,<sp/>0755))</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a894a812531d6362ce4ac5065c3224699" kindref="member">amrex::CreateDirectoryFailed</ref>(pdir);</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Barrier();</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>std::ofstream<sp/>HdrFile;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -377,17 +377,17 @@
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>evaluate<sp/>f<sp/>for<sp/>every<sp/>particle<sp/>to<sp/>determine<sp/>which<sp/>ones<sp/>to<sp/>output</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::map&lt;std::pair&lt;int,<sp/>int&gt;,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::IntVector<sp/>&gt;<sp/>&gt;</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>particle_io_flags(pc.GetParticles().size());</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>pc.GetParticles().<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/><sp/>lev++)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>pc.GetParticles().size();<sp/><sp/>lev++)</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>pc.GetParticles(lev);</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>kv<sp/>:<sp/>pmap)</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>flags<sp/>=<sp/>particle_io_flags[lev][kv.first];</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceparticle__detail_1a1180158d9e9623e55d3d94563e5d078e" kindref="member">particle_detail::fillFlags</ref>(flags,<sp/>kv.second,<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceparticle__detail_1a434bf78e655d4760c37d1a0a03a546dd" kindref="member">particle_detail::fillFlags</ref>(flags,<sp/>kv.second,<sp/>f);</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::streamSynchronize();</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.GetUsePrePost())</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -396,11 +396,11 @@
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nparticles<sp/>=<sp/><ref refid="namespaceparticle__detail_1a70c1557a3408750fc36e511153e30df9" kindref="member">particle_detail::countFlags</ref>(particle_io_flags,<sp/>pc);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nparticles<sp/>=<sp/><ref refid="namespaceparticle__detail_1aa7150d951cdc6e8f930ade02d9f39339" kindref="member">particle_detail::countFlags</ref>(particle_io_flags,<sp/>pc);</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxnextid<sp/><sp/>=<sp/>PC::ParticleType::NextID();</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(nparticles,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceLongSum(nparticles,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PC::ParticleType::NextID(maxnextid);</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a72761a0aff0775f8f6943062a34fca31" kindref="member">ParallelDescriptor::ReduceLongMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceLongMax(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>HDF5FileName<sp/>=<sp/>pdir;</highlight></codeline>
@@ -413,7 +413,7 @@
 <codeline lineno="227"><highlight class="normal"></highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1aa23714eb98f31ba71d565390dae2a7d2" kindref="member">BL_PROFILE_VAR</ref>(</highlight><highlight class="stringliteral">&quot;H5FileCreate&quot;</highlight><highlight class="normal">,<sp/>h5fg);</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::IOProcessor())</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>set_stripe<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>setstripe[1024];</highlight></codeline>
@@ -541,7 +541,7 @@
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>mfs_dset=<sp/>H5Dcreate(grp,<sp/></highlight><highlight class="stringliteral">&quot;boxes&quot;</highlight><highlight class="normal">,<sp/>comp_dtype,<sp/>mfs_dset_space,<sp/>H5P_DEFAULT,<sp/>dcpl_id,<sp/>H5P_DEFAULT);</highlight></codeline>
 <codeline lineno="356"><highlight class="normal"></highlight></codeline>
 <codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>vbox(ngrids<sp/>*<sp/>mfs_size);</highlight></codeline>
-<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>pc.ParticleBoxArray(lev).<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>pc.ParticleBoxArray(lev).size();<sp/>++j)<sp/>{</highlight></codeline>
 <codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].smallEnd(i);</highlight></codeline>
 <codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i<sp/>+<sp/>AMREX_SPACEDIM]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].bigEnd(i);</highlight></codeline>
@@ -563,7 +563,7 @@
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Fclose(fid);</highlight></codeline>
 <codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"></highlight></codeline>
-<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Barrier();</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a82c334c787872a6bbacabe9a38389224" kindref="member">BL_PROFILE_VAR_STOP</ref>(h5fg);</highlight></codeline>
 <codeline lineno="382"><highlight class="normal"></highlight></codeline>
 <codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>want<sp/>to<sp/>write<sp/>the<sp/>data<sp/>out<sp/>in<sp/>parallel.</highlight><highlight class="normal"></highlight></codeline>
@@ -572,13 +572,13 @@
 <codeline lineno="386"><highlight class="normal"></highlight></codeline>
 <codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse<sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;particles&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;particles_nfiles&quot;</highlight><highlight class="normal">,nOutFiles);</highlight></codeline>
-<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nOutFiles<sp/>==<sp/>-1)<sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nOutFiles<sp/>==<sp/>-1)<sp/>nOutFiles<sp/>=<sp/>NProcs;</highlight></codeline>
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nOutFiles,NProcs));<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>pc.nOutFilesPrePost<sp/>=<sp/>nOutFiles;</highlight></codeline>
 <codeline lineno="392"><highlight class="normal"></highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
 <codeline lineno="394"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/>ParallelDescriptor::Communicator());</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -589,7 +589,7 @@
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen(HDF5FileName.c_str(),<sp/>H5F_ACC_RDWR,<sp/>fapl);</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fid<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0dc9fca5d8d1322524d13793f5b663d0" kindref="member">FileOpenFailed</ref>(HDF5FileName.c_str());</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FileOpenFailed(HDF5FileName.c_str());</highlight></codeline>
 <codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"></highlight></codeline>
 <codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>level_name[64];</highlight></codeline>
@@ -637,9 +637,9 @@
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.countPrePost[lev]<sp/>=<sp/>count;</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.wherePrePost[lev]<sp/>=<sp/>where;</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(which.dataPtr(),<sp/>which.size(),<sp/>IOProcNumber);</highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(count.dataPtr(),<sp/>count.size(),<sp/>IOProcNumber);</highlight></codeline>
-<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(where.dataPtr(),<sp/>where.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceIntSum<sp/>(which.dataPtr(),<sp/>which.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceIntSum<sp/>(count.dataPtr(),<sp/>count.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceLongSum(where.dataPtr(),<sp/>where.size(),<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="459"><highlight class="normal"></highlight></codeline>

@@ -1,13 +1,13 @@
 var AMReX__Parser__Y_8H =
 [
-    [ "parser_node", "structamrex_1_1parser__node.html", "structamrex_1_1parser__node" ],
-    [ "parser_number", "structamrex_1_1parser__number.html", "structamrex_1_1parser__number" ],
-    [ "parser_symbol", "structamrex_1_1parser__symbol.html", "structamrex_1_1parser__symbol" ],
-    [ "parser_f1", "structamrex_1_1parser__f1.html", "structamrex_1_1parser__f1" ],
-    [ "parser_f2", "structamrex_1_1parser__f2.html", "structamrex_1_1parser__f2" ],
-    [ "parser_f3", "structamrex_1_1parser__f3.html", "structamrex_1_1parser__f3" ],
-    [ "parser_assign", "structamrex_1_1parser__assign.html", "structamrex_1_1parser__assign" ],
-    [ "amrex_parser", "structamrex_1_1amrex__parser.html", "structamrex_1_1amrex__parser" ],
+    [ "amrex::parser_node", "structamrex_1_1parser__node.html", "structamrex_1_1parser__node" ],
+    [ "amrex::parser_number", "structamrex_1_1parser__number.html", "structamrex_1_1parser__number" ],
+    [ "amrex::parser_symbol", "structamrex_1_1parser__symbol.html", "structamrex_1_1parser__symbol" ],
+    [ "amrex::parser_f1", "structamrex_1_1parser__f1.html", "structamrex_1_1parser__f1" ],
+    [ "amrex::parser_f2", "structamrex_1_1parser__f2.html", "structamrex_1_1parser__f2" ],
+    [ "amrex::parser_f3", "structamrex_1_1parser__f3.html", "structamrex_1_1parser__f3" ],
+    [ "amrex::parser_assign", "structamrex_1_1parser__assign.html", "structamrex_1_1parser__assign" ],
+    [ "amrex::amrex_parser", "structamrex_1_1amrex__parser.html", "structamrex_1_1amrex__parser" ],
     [ "parser_f1_t", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589", [
       [ "PARSER_SQRT", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a3fb34ef0b3bf8980039c8b7938964511", null ],
       [ "PARSER_EXP", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a5659297c786f4248f15bf8990826f06c", null ],

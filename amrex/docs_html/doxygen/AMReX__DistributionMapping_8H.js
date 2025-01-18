@@ -1,10 +1,10 @@
 var AMReX__DistributionMapping_8H =
 [
-    [ "DistributionMapping", "classamrex_1_1DistributionMapping.html", "classamrex_1_1DistributionMapping" ],
-    [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", "structamrex_1_1DistributionMapping_1_1Ref" ],
-    [ "LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", "structamrex_1_1DistributionMapping_1_1LIpairLT" ],
-    [ "LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", "structamrex_1_1DistributionMapping_1_1LIpairGT" ],
-    [ "RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", "structamrex_1_1DistributionMapping_1_1RefID" ],
+    [ "amrex::DistributionMapping", "classamrex_1_1DistributionMapping.html", "classamrex_1_1DistributionMapping" ],
+    [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", "structamrex_1_1DistributionMapping_1_1Ref" ],
+    [ "amrex::DistributionMapping::LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", "structamrex_1_1DistributionMapping_1_1LIpairLT" ],
+    [ "amrex::DistributionMapping::LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", "structamrex_1_1DistributionMapping_1_1LIpairGT" ],
+    [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", "structamrex_1_1DistributionMapping_1_1RefID" ],
     [ "DMRef", "AMReX__DistributionMapping_8H.html#a8ea864a3a9595a340c24658e4bfa24a9", null ],
     [ "MakeSimilarDM", "AMReX__DistributionMapping_8H.html#adc0569d3487d998596b2a11392bddaca", null ],
     [ "MakeSimilarDM", "AMReX__DistributionMapping_8H.html#aca8ca3ed7e01a5c954d6c70cae7b94a0", null ],

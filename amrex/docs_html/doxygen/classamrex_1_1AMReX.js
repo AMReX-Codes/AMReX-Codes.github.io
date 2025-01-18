@@ -6,12 +6,12 @@ var classamrex_1_1AMReX =
     [ "AMReX", "classamrex_1_1AMReX.html#ad8198c112ee47aabbd7239cbcf054427", null ],
     [ "empty", "classamrex_1_1AMReX.html#a25710d2c2fdeae4c7b7b36ca2a1e5b90", null ],
     [ "erase", "classamrex_1_1AMReX.html#a745d2d5f1157d1c3cb6b620f5544e01d", null ],
-    [ "getDefaultGeometry", "classamrex_1_1AMReX.html#a58a5a186a18bfb36f2631db4a1c2a665", null ],
-    [ "operator=", "classamrex_1_1AMReX.html#a77b2c8844d06a8456a0532c7ec154884", null ],
-    [ "operator=", "classamrex_1_1AMReX.html#a4f4386d3cc3282acbafb5f961a30f04f", null ],
+    [ "getDefaultGeometry", "classamrex_1_1AMReX.html#a8173ea20d63fda8d977057c3da32e268", null ],
+    [ "operator=", "classamrex_1_1AMReX.html#a0ce08ec3f506e57a0c8786367ae23b7d", null ],
+    [ "operator=", "classamrex_1_1AMReX.html#af607b0f085bd129d4c76cbbd54715a04", null ],
     [ "push", "classamrex_1_1AMReX.html#aacd757c228bab84f39dc148cc5777624", null ],
     [ "size", "classamrex_1_1AMReX.html#a42bc947424343bc3814de983a6218d26", null ],
-    [ "top", "classamrex_1_1AMReX.html#a961f4d4e88be70b0f922d93122c5f0ca", null ],
+    [ "top", "classamrex_1_1AMReX.html#af6f68e16ede4b981b1649a3d222a24c7", null ],
     [ "m_geom", "classamrex_1_1AMReX.html#a723c404098736351072f4a99daf9bddb", null ],
     [ "m_instance", "classamrex_1_1AMReX.html#ad7909bf4e2448edc26489e346cb367ac", null ]
 ];

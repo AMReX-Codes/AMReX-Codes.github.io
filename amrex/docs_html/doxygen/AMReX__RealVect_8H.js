@@ -1,6 +1,6 @@
 var AMReX__RealVect_8H =
 [
-    [ "RealVect", "classamrex_1_1RealVect.html", "classamrex_1_1RealVect" ],
+    [ "amrex::RealVect", "classamrex_1_1RealVect.html", "classamrex_1_1RealVect" ],
     [ "BASISREALV", "AMReX__RealVect_8H.html#a133d9cc5152d06db5db552037d7ee486", null ],
     [ "max", "AMReX__RealVect_8H.html#a57e5b11414b29e5aeaf30c5e301e8f34", null ],
     [ "min", "AMReX__RealVect_8H.html#ab2f47c183037880adec6de44fcbb0344", null ],

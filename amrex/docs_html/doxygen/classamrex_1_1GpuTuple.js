@@ -1,6 +1,6 @@
 var classamrex_1_1GpuTuple =
 [
-    [ "GpuTuple", "classamrex_1_1GpuTuple.html#af067ea86f5cbc6b718a934e6be193538", null ],
+    [ "GpuTuple", "classamrex_1_1GpuTuple.html#a1e0cda17ca7c62bb167aafe4fa91fba9", null ],
     [ "GpuTuple", "classamrex_1_1GpuTuple.html#aaa9ed202ceb2122e08523b1b17e68b2a", null ],
     [ "GpuTuple", "classamrex_1_1GpuTuple.html#a4fbb6462763e67abd37e85e9dd3a00ab", null ],
     [ "operator=", "classamrex_1_1GpuTuple.html#a98cd15de0552b07aa6cceda354b8b604", null ],

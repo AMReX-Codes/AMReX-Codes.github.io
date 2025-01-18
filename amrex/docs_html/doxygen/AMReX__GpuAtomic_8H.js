@@ -1,10 +1,10 @@
 var AMReX__GpuAtomic_8H =
 [
-    [ "AtomicAdd", "structamrex_1_1Gpu_1_1AtomicAdd.html", "structamrex_1_1Gpu_1_1AtomicAdd" ],
-    [ "AtomicMin", "structamrex_1_1Gpu_1_1AtomicMin.html", "structamrex_1_1Gpu_1_1AtomicMin" ],
-    [ "AtomicMax", "structamrex_1_1Gpu_1_1AtomicMax.html", "structamrex_1_1Gpu_1_1AtomicMax" ],
-    [ "AtomicLogicalAnd", "structamrex_1_1Gpu_1_1AtomicLogicalAnd.html", "structamrex_1_1Gpu_1_1AtomicLogicalAnd" ],
-    [ "AtomicLogicalOr", "structamrex_1_1Gpu_1_1AtomicLogicalOr.html", "structamrex_1_1Gpu_1_1AtomicLogicalOr" ],
+    [ "amrex::Gpu::AtomicAdd< T >", "structamrex_1_1Gpu_1_1AtomicAdd.html", "structamrex_1_1Gpu_1_1AtomicAdd" ],
+    [ "amrex::Gpu::AtomicMin< T >", "structamrex_1_1Gpu_1_1AtomicMin.html", "structamrex_1_1Gpu_1_1AtomicMin" ],
+    [ "amrex::Gpu::AtomicMax< T >", "structamrex_1_1Gpu_1_1AtomicMax.html", "structamrex_1_1Gpu_1_1AtomicMax" ],
+    [ "amrex::Gpu::AtomicLogicalAnd< T >", "structamrex_1_1Gpu_1_1AtomicLogicalAnd.html", "structamrex_1_1Gpu_1_1AtomicLogicalAnd" ],
+    [ "amrex::Gpu::AtomicLogicalOr< T >", "structamrex_1_1Gpu_1_1AtomicLogicalOr.html", "structamrex_1_1Gpu_1_1AtomicLogicalOr" ],
     [ "Add", "AMReX__GpuAtomic_8H.html#a6336b6721a9f233f3bc0eb0cacba47c0", null ],
     [ "Add", "AMReX__GpuAtomic_8H.html#a428330a4e7622c16d943003ad97e54a0", null ],
     [ "Add_device", "AMReX__GpuAtomic_8H.html#a629c38eebdf637b06b26049acae626c8", null ],

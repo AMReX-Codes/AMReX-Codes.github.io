@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1ParticleInitType" kind="struct" language="C++" prot="public">
     <compoundname>amrex::ParticleInitType</compoundname>
     <includes refid="AMReX__ParticleContainer_8H" local="no">AMReX_ParticleContainer.H</includes>
@@ -25,12 +25,13 @@
         <defname>NArrayInt</defname>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1ParticleInitType_1abd631e1af076d148e6b578ce70236e6f" prot="public" static="no" mutable="no">
         <type>std::array&lt; double, NStructReal &gt;</type>
         <definition>std::array&lt;double, NStructReal&gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::real_struct_data</definition>
         <argsstring></argsstring>
         <name>real_struct_data</name>
+        <qualifiedname>amrex::ParticleInitType::real_struct_data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -44,6 +45,7 @@
         <definition>std::array&lt;int, NStructInt &gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::int_struct_data</definition>
         <argsstring></argsstring>
         <name>int_struct_data</name>
+        <qualifiedname>amrex::ParticleInitType::int_struct_data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -57,6 +59,7 @@
         <definition>std::array&lt;double, NArrayReal &gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::real_array_data</definition>
         <argsstring></argsstring>
         <name>real_array_data</name>
+        <qualifiedname>amrex::ParticleInitType::real_array_data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -70,6 +73,7 @@
         <definition>std::array&lt;int, NArrayInt &gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::int_array_data</definition>
         <argsstring></argsstring>
         <name>int_array_data</name>
+        <qualifiedname>amrex::ParticleInitType::int_array_data</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -78,7 +82,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="120" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="120" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>A struct used to pass initial data into the various Init methods. This struct is used to pass initial data into the various Init methods of the particle container. That data should be initialized in the order real struct data, int struct data, real array data, int array data. If fewer components are specified than the template parameters specify for, a given component, then the extra values will be set to zero. If more components are specified, it is a compile-time error. </para>
     </briefdescription>
@@ -87,33 +91,33 @@
 </verbatim> </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
-        <label>std::array&lt; int, NArrayInt &gt;</label>
-      </node>
-      <node id="3">
-        <label>std::array&lt; double, NArrayReal &gt;</label>
-      </node>
       <node id="1">
         <label>amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
         <link refid="structamrex_1_1ParticleInitType"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>int_struct_data</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>real_array_data</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>int_array_data</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
           <edgelabel>real_struct_data</edgelabel>
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>int_struct_data</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>real_array_data</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>int_array_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::array&lt; double, NArrayReal &gt;</label>
       </node>
       <node id="2">
-        <label>std::array&lt; int, NStructInt &gt;</label>
+        <label>std::array&lt; double, NStructReal &gt;</label>
       </node>
       <node id="5">
-        <label>std::array&lt; double, NStructReal &gt;</label>
+        <label>std::array&lt; int, NArrayInt &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::array&lt; int, NStructInt &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="115" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="116" bodyend="121"/>

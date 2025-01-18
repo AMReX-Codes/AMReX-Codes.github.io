@@ -1,11 +1,11 @@
 var AMReX__CTOParallelForImpl_8H =
 [
-    [ "CompileTimeOptions", "structamrex_1_1CompileTimeOptions.html", "structamrex_1_1CompileTimeOptions" ],
-    [ "AnyCTO", "AMReX__CTOParallelForImpl_8H.html#a820fe7f4b24ef2fb26162e20cbd2fc6c", null ],
+    [ "amrex::CompileTimeOptions< ctr >", "structamrex_1_1CompileTimeOptions.html", "structamrex_1_1CompileTimeOptions" ],
+    [ "AnyCTO", "AMReX__CTOParallelForImpl_8H.html#a38a7ba8943c52193488c28b3b6a94822", null ],
     [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#aba7383cd8901b18ae39e85e5817cb9e3", null ],
-    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#af9c3a69b65f21d8039644fa0480cb88d", null ],
-    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#ad43a39ea3d49f287b326ae8409bdceba", null ],
+    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a28129b3b643f84b1b81e80d220281ca3", null ],
+    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a202fe419e606d52e38bfa0a2ff5348d6", null ],
     [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a97a94af0fa091bf7fe84c64000abbfb9", null ],
-    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#af98ea0824a9945d3633f96429036b758", null ],
-    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a065a5b50b590d116df9bec2d115b75dc", null ]
+    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a0701946897169892c662a898e6523224", null ],
+    [ "ParallelFor", "AMReX__CTOParallelForImpl_8H.html#a1f15630874d45aeb722ca649e6c4c3a9", null ]
 ];

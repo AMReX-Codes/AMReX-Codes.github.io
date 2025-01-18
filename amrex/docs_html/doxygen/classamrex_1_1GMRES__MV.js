@@ -9,7 +9,7 @@ var classamrex_1_1GMRES__MV =
     [ "apply", "classamrex_1_1GMRES__MV.html#a710e9f7b8703fe6939cbef9dedd8ba94", null ],
     [ "assign", "classamrex_1_1GMRES__MV.html#a09744f18b0feb9507546ba2e18485d0d", null ],
     [ "dotProduct", "classamrex_1_1GMRES__MV.html#ae61a914567a18dd936d06aab8dc28b5a", null ],
-    [ "getGMRES", "classamrex_1_1GMRES__MV.html#a8181a83d4c8d3b7ad5020af3bf21d332", null ],
+    [ "getGMRES", "classamrex_1_1GMRES__MV.html#a0293a17a315009a3bd4d8a9878c16736", null ],
     [ "increment", "classamrex_1_1GMRES__MV.html#ac381bf5db27b170489f4a5a7c56a3e84", null ],
     [ "linComb", "classamrex_1_1GMRES__MV.html#a9cf5f17a151771501ff4da4d4ea78810", null ],
     [ "makeVecLHS", "classamrex_1_1GMRES__MV.html#a515ead34c663eca98ee25df8e08c70ab", null ],

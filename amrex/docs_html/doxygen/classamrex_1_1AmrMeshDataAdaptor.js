@@ -13,10 +13,10 @@ var classamrex_1_1AmrMeshDataAdaptor =
     [ "GetMeshName", "classamrex_1_1AmrMeshDataAdaptor.html#aed8264f802b43842e82fbe41a3ecb283", null ],
     [ "GetNumberOfArrays", "classamrex_1_1AmrMeshDataAdaptor.html#a81e26add150ac206d12a042169b1f993", null ],
     [ "GetNumberOfMeshes", "classamrex_1_1AmrMeshDataAdaptor.html#a799e8484ecd0ce48d5a84dd634b01ee1", null ],
-    [ "New", "classamrex_1_1AmrMeshDataAdaptor.html#a85eaea376d002e3fdfaa2082cd2a30cf", null ],
+    [ "New", "classamrex_1_1AmrMeshDataAdaptor.html#aea9f83521617e4dc39abba7425fe025b", null ],
     [ "ReleaseData", "classamrex_1_1AmrMeshDataAdaptor.html#a9aa101ee90b944010548ed7461cb7a8a", null ],
     [ "senseiTypeMacro", "classamrex_1_1AmrMeshDataAdaptor.html#a5b94d5fbab0e48ed81b6edb7db19e0aa", null ],
-    [ "SetDataSource", "classamrex_1_1AmrMeshDataAdaptor.html#ae3854a759cdf938fcc037efa9ceee3b0", null ],
+    [ "SetDataSource", "classamrex_1_1AmrMeshDataAdaptor.html#a010289ba770e13418b0397047a099467", null ],
     [ "SetPinMesh", "classamrex_1_1AmrMeshDataAdaptor.html#af95203532e6b05769deed97d8015911b", null ],
     [ "Internals", "classamrex_1_1AmrMeshDataAdaptor.html#a239d7e100aa5e50e2fa73180fd7649ea", null ]
 ];

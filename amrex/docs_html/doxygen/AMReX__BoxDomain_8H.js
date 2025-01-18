@@ -1,6 +1,6 @@
 var AMReX__BoxDomain_8H =
 [
-    [ "BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
+    [ "amrex::BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
     [ "accrete", "AMReX__BoxDomain_8H.html#a15969b1b7e5e1431ce9aea3b513ec98a", null ],
     [ "coarsen", "AMReX__BoxDomain_8H.html#aa7fdcd82c18fdf6c33f4194da8e7da46", null ],
     [ "complementIn", "AMReX__BoxDomain_8H.html#a417fa2fe3545ffe81b848760bbe1bcd9", null ],

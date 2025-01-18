@@ -1,6 +1,6 @@
 var AMReX__ebcellflag__mod_8F90 =
 [
-    [ "get_neighbor_cells", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells" ],
+    [ "amrex_ebcellflag_module::get_neighbor_cells", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells" ],
     [ "clear_allneighbors", "AMReX__ebcellflag__mod_8F90.html#a81e54bd33c97780b54376e8b462612c6", null ],
     [ "clear_neighbor", "AMReX__ebcellflag__mod_8F90.html#a7d30f95878f595d82cb984b91bd3a766", null ],
     [ "get_cell_type", "AMReX__ebcellflag__mod_8F90.html#a4e837dbfa10cc1075d4c603eddcda32a", null ],

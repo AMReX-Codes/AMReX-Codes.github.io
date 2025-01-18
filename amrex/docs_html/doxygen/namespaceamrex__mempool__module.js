@@ -2,11 +2,11 @@ var namespaceamrex__mempool__module =
 [
     [ "amrex_allocate", "interfaceamrex__mempool__module_1_1amrex__allocate.html", "interfaceamrex__mempool__module_1_1amrex__allocate" ],
     [ "amrex_deallocate", "interfaceamrex__mempool__module_1_1amrex__deallocate.html", "interfaceamrex__mempool__module_1_1amrex__deallocate" ],
-    [ "bl_allocate", "interfaceamrex__mempool__module_1_1bl__allocate.html", "interfaceamrex__mempool__module_1_1bl__allocate" ],
-    [ "bl_deallocate", "interfaceamrex__mempool__module_1_1bl__deallocate.html", "interfaceamrex__mempool__module_1_1bl__deallocate" ],
     [ "amrex_mempool_alloc", "interfaceamrex__mempool__module_1_1amrex__mempool__alloc.html", "interfaceamrex__mempool__module_1_1amrex__mempool__alloc" ],
     [ "amrex_mempool_free", "interfaceamrex__mempool__module_1_1amrex__mempool__free.html", "interfaceamrex__mempool__module_1_1amrex__mempool__free" ],
     [ "amrex_real_array_init", "interfaceamrex__mempool__module_1_1amrex__real__array__init.html", "interfaceamrex__mempool__module_1_1amrex__real__array__init" ],
+    [ "bl_allocate", "interfaceamrex__mempool__module_1_1bl__allocate.html", "interfaceamrex__mempool__module_1_1bl__allocate" ],
+    [ "bl_deallocate", "interfaceamrex__mempool__module_1_1bl__deallocate.html", "interfaceamrex__mempool__module_1_1bl__deallocate" ],
     [ "bl_allocate_i1", "namespaceamrex__mempool__module.html#a47590a2b614ca1a020c77a019a93253d", null ],
     [ "bl_allocate_i2", "namespaceamrex__mempool__module.html#aa71f81465fb7c20c4b6925bd21e4d36e", null ],
     [ "bl_allocate_i3", "namespaceamrex__mempool__module.html#aad2bcb4576ef3a75d7e2c985621fd852", null ],

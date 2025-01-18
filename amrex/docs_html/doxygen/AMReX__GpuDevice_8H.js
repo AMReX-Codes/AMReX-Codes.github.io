@@ -1,6 +1,6 @@
 var AMReX__GpuDevice_8H =
 [
-    [ "Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
+    [ "amrex::Gpu::Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
     [ "AMREX_GPU_MAX_STREAMS", "AMReX__GpuDevice_8H.html#a81556578d460ebcebf8baf3163a36949", null ],
     [ "gpuDeviceProp_t", "AMReX__GpuDevice_8H.html#a2235406f46755fe4275db8b042b0da92", null ],
     [ "dtod_memcpy", "AMReX__GpuDevice_8H.html#ab695bddeb3cc727225d95a1826472ae4", null ],

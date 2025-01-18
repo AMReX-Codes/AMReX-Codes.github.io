@@ -137,26 +137,26 @@ information see the <a class="reference internal" href="BuildingAMReX.html#sec-b
 <h1>Example: Hello World<a class="headerlink" href="#example-hello-world" title="Permalink to this heading"></a></h1>
 <p>The source code of this example is at <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/</span></code>
 and is also shown below.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX.H&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_Print.H&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX.H&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_Print.H&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world from AMReX version &quot;</span><span class="w"></span>
-<span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Version</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world from AMReX version &quot;</span>
+<span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Version</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The main body of this short example contains three statements.  Usually the
-first and last statements for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(...)</span><span class="w"></span></code> function of every
-program should be calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="w"></span></code>,
-respectively. The second statement calls <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="w"></span></code> to print out a
-string that includes the AMReX version returned by the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Version</span><span class="w"></span></code>
+first and last statements for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(...)</span></code> function of every
+program should be calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code>,
+respectively. The second statement calls <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Print</span></code> to print out a
+string that includes the AMReX version returned by the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Version</span></code>
 function. The example code includes two AMReX header files. Note that the name
 of all AMReX header files starts with <code class="docutils literal notranslate"><span class="pre">AMReX_</span></code> (or just AMReX in the case of
-AMReX.H). All AMReX C++ functions are in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="w"></span></code> namespace.</p>
+AMReX.H). All AMReX C++ functions are in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span></code> namespace.</p>
 <section id="building-the-code">
 <h2>Building the Code<a class="headerlink" href="#building-the-code" title="Permalink to this heading"></a></h2>
 <p>You build the code in the <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/</span></code> directory.

@@ -1,11 +1,11 @@
 var AMReX__FillPatchUtil_8H =
 [
-    [ "NullInterpHook", "structamrex_1_1NullInterpHook.html", "structamrex_1_1NullInterpHook" ],
+    [ "amrex::NullInterpHook< MFFAB >", "structamrex_1_1NullInterpHook.html", "structamrex_1_1NullInterpHook" ],
     [ "InterpEM_t", "AMReX__FillPatchUtil_8H.html#a2f30e076962c1c148d279b63851d80df", [
       [ "InterpE", "AMReX__FillPatchUtil_8H.html#a2f30e076962c1c148d279b63851d80dfaea241117e55edc2764d31a18a4740ff3", null ],
       [ "InterpB", "AMReX__FillPatchUtil_8H.html#a2f30e076962c1c148d279b63851d80dfa9d55599aaee42c677bcd175e50bebbca", null ]
     ] ],
-    [ "FillPatchNLevels", "AMReX__FillPatchUtil_8H.html#a886f36aeb28a74726d439caf38872073", null ],
+    [ "FillPatchNLevels", "AMReX__FillPatchUtil_8H.html#a32e7df23157daf632a48f41ebd9c8ace", null ],
     [ "FillPatchSingleLevel", "AMReX__FillPatchUtil_8H.html#a3cf973090fa613c635340a08df7ecd38", null ],
     [ "FillPatchSingleLevel", "AMReX__FillPatchUtil_8H.html#aee597ed9a498322591bb42a475f66ddb", null ],
     [ "FillPatchSingleLevel", "AMReX__FillPatchUtil_8H.html#a05934ee478017afcd9908667de64a79c", null ],

@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1InterpolaterBoxCoarsener" kind="class" language="C++" prot="public" final="yes">
     <compoundname>amrex::InterpolaterBoxCoarsener</compoundname>
     <basecompoundref refid="classamrex_1_1BoxConverter" prot="public" virt="non-virtual">amrex::BoxConverter</basecompoundref>
     <includes refid="AMReX__InterpBase_8H" local="no">AMReX_InterpBase.H</includes>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1InterpolaterBoxCoarsener_1ad3e56481c923c022bd9cfca822473ea6" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1InterpBase" kindref="compound">InterpBase</ref> *</type>
         <definition>InterpBase* amrex::InterpolaterBoxCoarsener::mapper</definition>
         <argsstring></argsstring>
         <name>mapper</name>
+        <qualifiedname>amrex::InterpolaterBoxCoarsener::mapper</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>IntVect amrex::InterpolaterBoxCoarsener::ratio</definition>
         <argsstring></argsstring>
         <name>ratio</name>
+        <qualifiedname>amrex::InterpolaterBoxCoarsener::ratio</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -31,13 +33,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="22" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" bodystart="22" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1ae476a5ba50fe4213159eb44a6796a2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::InterpolaterBoxCoarsener::InterpolaterBoxCoarsener</definition>
         <argsstring>(InterpBase *mapper_, const IntVect &amp;ratio_)</argsstring>
         <name>InterpolaterBoxCoarsener</name>
+        <qualifiedname>amrex::InterpolaterBoxCoarsener::InterpolaterBoxCoarsener</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1InterpBase" kindref="compound">InterpBase</ref> *</type>
           <declname>mapper_</declname>
@@ -59,6 +62,7 @@
         <definition>Box amrex::InterpolaterBoxCoarsener::doit</definition>
         <argsstring>(const Box &amp;fine) const override</argsstring>
         <name>doit</name>
+        <qualifiedname>amrex::InterpolaterBoxCoarsener::doit</qualifiedname>
         <reimplements refid="classamrex_1_1BoxConverter_1a43c58d145a800ea3c476b5ad319c158b">doit</reimplements>
         <param>
           <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
@@ -77,7 +81,8 @@
         <definition>BoxConverter * amrex::InterpolaterBoxCoarsener::clone</definition>
         <argsstring>() const override</argsstring>
         <name>clone</name>
-        <reimplements refid="classamrex_1_1BoxConverter_1aed3d3be23cc06aa4ea17151bd48dc245">clone</reimplements>
+        <qualifiedname>amrex::InterpolaterBoxCoarsener::clone</qualifiedname>
+        <reimplements refid="classamrex_1_1BoxConverter_1af49d1cc6b5e2223e9943c0dafd6f3f00">clone</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -86,7 +91,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="19" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp" bodystart="16" bodyend="19"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -105,12 +110,16 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="4">
-        <label>amrex::InterpBase</label>
-        <link refid="classamrex_1_1InterpBase"/>
+        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="2">
         <label>amrex::BoxConverter</label>
         <link refid="classamrex_1_1BoxConverter"/>
+      </node>
+      <node id="3">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
       </node>
       <node id="1">
         <label>amrex::InterpolaterBoxCoarsener</label>
@@ -118,15 +127,11 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>ratio</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
           <edgelabel>mapper</edgelabel>
         </childnode>
-      </node>
-      <node id="3">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ratio</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" bodystart="15" bodyend="23"/>

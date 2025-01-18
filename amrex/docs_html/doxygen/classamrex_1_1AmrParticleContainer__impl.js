@@ -7,6 +7,6 @@ var classamrex_1_1AmrParticleContainer__impl =
     [ "~AmrParticleContainer_impl", "classamrex_1_1AmrParticleContainer__impl.html#a92e5a548f299b572e6b0d3628875f06b", null ],
     [ "AmrParticleContainer_impl", "classamrex_1_1AmrParticleContainer__impl.html#a38165bb180432ccb33f55994387fbfcf", null ],
     [ "AmrParticleContainer_impl", "classamrex_1_1AmrParticleContainer__impl.html#aa45d393b71a8d7087903259612c4896f", null ],
-    [ "operator=", "classamrex_1_1AmrParticleContainer__impl.html#a8859832e7fb2fdca041be6b456b607df", null ],
-    [ "operator=", "classamrex_1_1AmrParticleContainer__impl.html#a8542c6c51308ffa6c5d0e78a7a8e87c3", null ]
+    [ "operator=", "classamrex_1_1AmrParticleContainer__impl.html#a8d14698befe6c2e74b98fb97396866b7", null ],
+    [ "operator=", "classamrex_1_1AmrParticleContainer__impl.html#a67a9778ac7828b1f5fa9ac6d69ce4523", null ]
 ];

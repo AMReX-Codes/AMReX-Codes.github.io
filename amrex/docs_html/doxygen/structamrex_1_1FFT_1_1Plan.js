@@ -2,7 +2,7 @@ var structamrex_1_1FFT_1_1Plan =
 [
     [ "VendorComplex", "structamrex_1_1FFT_1_1Plan.html#a2a026d88ec3180994854f7774696fc29", null ],
     [ "VendorPlan", "structamrex_1_1FFT_1_1Plan.html#a81677e60d5121be0895d57b2483902a4", null ],
-    [ "alloc_scratch_space", "structamrex_1_1FFT_1_1Plan.html#ab4fa12e6f5024740e2b3abe466339d10", null ],
+    [ "alloc_scratch_space", "structamrex_1_1FFT_1_1Plan.html#acf9983cf90ff0dd8d773191c58f64bb6", null ],
     [ "compute_c2c", "structamrex_1_1FFT_1_1Plan.html#acad6002c4399f55c70311f005ccf711a", null ],
     [ "compute_r2c", "structamrex_1_1FFT_1_1Plan.html#ad4f3391872b14cacc0e2e3cca2f5a548", null ],
     [ "compute_r2r", "structamrex_1_1FFT_1_1Plan.html#ac01681d91fc3c3b78d3b0bc83f728422", null ],

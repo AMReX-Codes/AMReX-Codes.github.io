@@ -13,7 +13,7 @@ var classamrex_1_1TagBoxArray =
     [ "local_collate_cpu", "classamrex_1_1TagBoxArray.html#a62994a11c6b9211c7d459571caf99d56", null ],
     [ "local_collate_gpu", "classamrex_1_1TagBoxArray.html#ae151c3feb479bcc695e279915e2a068c", null ],
     [ "mapPeriodicRemoveDuplicates", "classamrex_1_1TagBoxArray.html#a3173610e281bd7542514a433a704cd9a", null ],
-    [ "operator=", "classamrex_1_1TagBoxArray.html#a1b2dcd181de443438540b7b107aadd04", null ],
-    [ "operator=", "classamrex_1_1TagBoxArray.html#a1eb204c4fb9cbe4d9660d642a7a0ee13", null ],
+    [ "operator=", "classamrex_1_1TagBoxArray.html#a65e949b041efaa08a0eb4abdedf4554c", null ],
+    [ "operator=", "classamrex_1_1TagBoxArray.html#a2ef1e43b1c7c2effddddd0e1c036e977", null ],
     [ "setVal", "classamrex_1_1TagBoxArray.html#a6c6aeca9f57fbbdab3eb907b9b495bd4", null ]
 ];

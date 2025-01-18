@@ -5,7 +5,7 @@ var classamrex_1_1AlgPartition =
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#a2d89af6c0da1b862c1a71a69b5e218ad", null ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#afba6c38742af762699b08ce4db35d01e", null ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#a54501c9112ed630f56c9934bd8513432", null ],
-    [ "dataVector", "classamrex_1_1AlgPartition.html#a8ff121c55ade4d2ae79becc948b98e2f", null ],
+    [ "dataVector", "classamrex_1_1AlgPartition.html#a92217d5d86f2431d832aab6dd2d3088b", null ],
     [ "define", "classamrex_1_1AlgPartition.html#a9b3a156ee6253024e7c53fc692695bac", null ],
     [ "define", "classamrex_1_1AlgPartition.html#ac4ec0ea36010d33cf936d2e4191449f8", null ],
     [ "define", "classamrex_1_1AlgPartition.html#af6b96592fbbf0df1211c1598356fe5d8", null ],

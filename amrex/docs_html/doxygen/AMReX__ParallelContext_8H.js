@@ -1,6 +1,6 @@
 var AMReX__ParallelContext_8H =
 [
-    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html", "classamrex_1_1ParallelContext_1_1Frame" ],
+    [ "amrex::ParallelContext::Frame", "classamrex_1_1ParallelContext_1_1Frame.html", "classamrex_1_1ParallelContext_1_1Frame" ],
     [ "BarrierAll", "AMReX__ParallelContext_8H.html#aaeeaf782f50e27058a857cd86febcdd3", null ],
     [ "BarrierSub", "AMReX__ParallelContext_8H.html#a1ceab6de8572b3cfd10ddba48f266863", null ],
     [ "CommunicatorAll", "AMReX__ParallelContext_8H.html#ae11490aa2420222dcbb8b57cf115bb1b", null ],
@@ -20,8 +20,8 @@ var AMReX__ParallelContext_8H =
     [ "MyProcSub", "AMReX__ParallelContext_8H.html#a5f6737315bff6905419103b17acf3d06", null ],
     [ "NProcsAll", "AMReX__ParallelContext_8H.html#a60d5e1f262d2f29ca794f9df65429c25", null ],
     [ "NProcsSub", "AMReX__ParallelContext_8H.html#aa7f481a6be5e8f2eefbe9448135a3843", null ],
-    [ "OFSPtrAll", "AMReX__ParallelContext_8H.html#ac04bcd8b609bbf10cc25ef7d60f6a94c", null ],
-    [ "OFSPtrSub", "AMReX__ParallelContext_8H.html#aab852af3b175c95e5bdd8e0de563e9d7", null ],
+    [ "OFSPtrAll", "AMReX__ParallelContext_8H.html#a1cf787d04cd343c542c01f978d071781", null ],
+    [ "OFSPtrSub", "AMReX__ParallelContext_8H.html#aa04fd8de43ceca29bfec858be234572d", null ],
     [ "pop", "AMReX__ParallelContext_8H.html#a6bdab1c75756fa491add5ace4c59550f", null ],
     [ "push", "AMReX__ParallelContext_8H.html#a09cb92f4a123081a62f72e26a4e3c2a3", null ],
     [ "push", "AMReX__ParallelContext_8H.html#a8c562ca41b2d74fcd48dc76cc2acb6b4", null ],

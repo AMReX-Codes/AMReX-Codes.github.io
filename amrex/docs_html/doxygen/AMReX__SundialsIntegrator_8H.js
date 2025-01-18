@@ -1,7 +1,7 @@
 var AMReX__SundialsIntegrator_8H =
 [
-    [ "SundialsUserData", "structamrex_1_1SundialsUserData.html", "structamrex_1_1SundialsUserData" ],
-    [ "SundialsIntegrator", "classamrex_1_1SundialsIntegrator.html", "classamrex_1_1SundialsIntegrator" ],
+    [ "amrex::SundialsUserData", "structamrex_1_1SundialsUserData.html", "structamrex_1_1SundialsUserData" ],
+    [ "amrex::SundialsIntegrator< T >", "classamrex_1_1SundialsIntegrator.html", "classamrex_1_1SundialsIntegrator" ],
     [ "f", "AMReX__SundialsIntegrator_8H.html#a7c64e1c30110b537ab4c7acbc9a3900a", null ],
     [ "fe", "AMReX__SundialsIntegrator_8H.html#a02348b7a96859e23b5351689a19934cc", null ],
     [ "ff", "AMReX__SundialsIntegrator_8H.html#ad1d78ede572643bbe56e2def255268c1", null ],

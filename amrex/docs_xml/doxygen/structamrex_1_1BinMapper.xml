@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1BinMapper" kind="struct" language="C++" prot="public">
     <compoundname>amrex::BinMapper</compoundname>
     <includes refid="AMReX__ParticleUtil_8H" local="no">AMReX_ParticleUtil.H</includes>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="structamrex_1_1BinMapper_1a64387b045d204383bf43d1daf728d4a2" prot="private" static="no" mutable="no">
         <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
         <definition>const int* amrex::BinMapper::m_off_bins_p</definition>
         <argsstring></argsstring>
         <name>m_off_bins_p</name>
+        <qualifiedname>amrex::BinMapper::m_off_bins_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>const GpuArray&lt;Real,AMREX_SPACEDIM&gt;* amrex::BinMapper::m_dxi_p</definition>
         <argsstring></argsstring>
         <name>m_dxi_p</name>
+        <qualifiedname>amrex::BinMapper::m_dxi_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -35,6 +37,7 @@
         <definition>const GpuArray&lt;Real,AMREX_SPACEDIM&gt;* amrex::BinMapper::m_plo_p</definition>
         <argsstring></argsstring>
         <name>m_plo_p</name>
+        <qualifiedname>amrex::BinMapper::m_plo_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -48,6 +51,7 @@
         <definition>const Dim3* amrex::BinMapper::m_lo_p</definition>
         <argsstring></argsstring>
         <name>m_lo_p</name>
+        <qualifiedname>amrex::BinMapper::m_lo_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -61,6 +65,7 @@
         <definition>const Dim3* amrex::BinMapper::m_hi_p</definition>
         <argsstring></argsstring>
         <name>m_hi_p</name>
+        <qualifiedname>amrex::BinMapper::m_hi_p</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -74,6 +79,7 @@
         <definition>int* amrex::BinMapper::m_bin_type_array</definition>
         <argsstring></argsstring>
         <name>m_bin_type_array</name>
+        <qualifiedname>amrex::BinMapper::m_bin_type_array</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -82,13 +88,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="337" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="337" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structamrex_1_1BinMapper_1a2fc716ebcdf02dabc5c00fbc19419155" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::BinMapper::BinMapper</definition>
         <argsstring>(const int *off_bins_p, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; *dxi_p, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; *plo_p, const Dim3 *lo_p, const Dim3 *hi_p, int *bin_type_array=nullptr)</argsstring>
         <name>BinMapper</name>
+        <qualifiedname>amrex::BinMapper::BinMapper</qualifiedname>
         <param>
           <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
           <declname>off_bins_p</declname>
@@ -132,6 +139,7 @@
         <definition>AMREX_GPU_HOST_DEVICE unsigned int amrex::BinMapper::operator()</definition>
         <argsstring>(const T &amp;ptd, int i) const</argsstring>
         <name>operator()</name>
+        <qualifiedname>amrex::BinMapper::operator()</qualifiedname>
         <param>
           <type>const T &amp;</type>
           <declname>ptd</declname>
@@ -148,31 +156,37 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="308" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="308" bodyend="329"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
       <node id="2">
-        <label>amrex::Dim3</label>
-        <link refid="structamrex_1_1Dim3"/>
-      </node>
-      <node id="3">
         <label>amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>amrex::BinMapper</label>
         <link refid="structamrex_1_1BinMapper"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>m_hi_p</edgelabel>
-          <edgelabel>m_lo_p</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
           <edgelabel>m_dxi_p</edgelabel>
           <edgelabel>m_plo_p</edgelabel>
         </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_hi_p</edgelabel>
+          <edgelabel>m_lo_p</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::Dim3</label>
+        <link refid="structamrex_1_1Dim3"/>
+      </node>
+      <node id="3">
+        <label>Real</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="295" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="296" bodyend="338"/>
