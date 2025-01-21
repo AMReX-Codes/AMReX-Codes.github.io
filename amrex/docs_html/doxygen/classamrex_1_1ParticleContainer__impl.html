@@ -494,6 +494,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7f203918278faf984e759498878417e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac480e891b8153fb8cdc696e5c1e9c62e" id="r_ac480e891b8153fb8cdc696e5c1e9c62e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#ac480e891b8153fb8cdc696e5c1e9c62e">GetIntSoANames</a> () const</td></tr>
 <tr class="separator:ac480e891b8153fb8cdc696e5c1e9c62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a737df7682867859b12cad6dbd78fac18" id="r_a737df7682867859b12cad6dbd78fac18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a737df7682867859b12cad6dbd78fac18">HasRealComp</a> (std::string const &amp;name)</td></tr>
+<tr class="separator:a737df7682867859b12cad6dbd78fac18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d47b82ba0c9e003b386367f69b42862" id="r_a6d47b82ba0c9e003b386367f69b42862"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a6d47b82ba0c9e003b386367f69b42862">HasIntComp</a> (std::string const &amp;name)</td></tr>
+<tr class="separator:a6d47b82ba0c9e003b386367f69b42862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f964332f510a47a2874b38be679b375" id="r_a8f964332f510a47a2874b38be679b375"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a8f964332f510a47a2874b38be679b375">GetRealCompIndex</a> (std::string const &amp;name)</td></tr>
+<tr class="separator:a8f964332f510a47a2874b38be679b375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e915048499a300bd9e91657d975e362" id="r_a6e915048499a300bd9e91657d975e362"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a6e915048499a300bd9e91657d975e362">GetIntCompIndex</a> (std::string const &amp;name)</td></tr>
+<tr class="separator:a6e915048499a300bd9e91657d975e362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6231e20371e520643fb269cf5f646ca" id="r_ae6231e20371e520643fb269cf5f646ca"><td class="memTemplParams" colspan="2">template&lt;typename P , typename Assignor &gt; </td></tr>
 <tr class="memitem:ae6231e20371e520643fb269cf5f646ca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#ae6231e20371e520643fb269cf5f646ca">Index</a> (const P &amp;p, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev) const</td></tr>
 <tr class="separator:ae6231e20371e520643fb269cf5f646ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3072,6 +3080,35 @@ template&lt;typename P &gt; </div>
 
 </div>
 </div>
+<a id="a6e915048499a300bd9e91657d975e362" name="a6e915048499a300bd9e91657d975e362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e915048499a300bd9e91657d975e362">&#9670;&#160;</a></span>GetIntCompIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ParticleContainer_impl::GetIntCompIndex </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the Integer SoA index of a component</p>
+<p>This throws a runtime exception if the component does not exist.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>component name to query index for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zero-based index </dd></dl>
+
+</div>
+</div>
 <a id="ac480e891b8153fb8cdc696e5c1e9c62e" name="ac480e891b8153fb8cdc696e5c1e9c62e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac480e891b8153fb8cdc696e5c1e9c62e">&#9670;&#160;</a></span>GetIntSoANames()</h2>
 
@@ -3317,6 +3354,35 @@ template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad
 </pre> 
 </div>
 </div>
+<a id="a8f964332f510a47a2874b38be679b375" name="a8f964332f510a47a2874b38be679b375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f964332f510a47a2874b38be679b375">&#9670;&#160;</a></span>GetRealCompIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ParticleContainer_impl::GetRealCompIndex </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the ParticleReal SoA index of a component</p>
+<p>This throws a runtime exception if the component does not exist.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>component name to query index for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>zero-based index </dd></dl>
+
+</div>
+</div>
 <a id="a7f203918278faf984e759498878417e4" name="a7f203918278faf984e759498878417e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f203918278faf984e759498878417e4">&#9670;&#160;</a></span>GetRealSoANames()</h2>
 
@@ -3396,6 +3462,62 @@ template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d47b82ba0c9e003b386367f69b42862" name="a6d47b82ba0c9e003b386367f69b42862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d47b82ba0c9e003b386367f69b42862">&#9670;&#160;</a></span>HasIntComp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ParticleContainer_impl::HasIntComp </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if a container has an Integer component</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>component name to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if found, else false </dd></dl>
+
+</div>
+</div>
+<a id="a737df7682867859b12cad6dbd78fac18" name="a737df7682867859b12cad6dbd78fac18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a737df7682867859b12cad6dbd78fac18">&#9670;&#160;</a></span>HasRealComp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ParticleContainer_impl::HasRealComp </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if a container has a ParticleReal component</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>component name to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if found, else false </dd></dl>
 
 </div>
 </div>
