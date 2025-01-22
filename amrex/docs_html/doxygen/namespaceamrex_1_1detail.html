@@ -120,6 +120,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1clzll__tag.html">clzll_tag</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1CTOWrapper.html">CTOWrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1detail_1_1CutFabFactory.html">CutFabFactory</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1Detector.html">Detector</a></td></tr>
@@ -229,6 +231,12 @@ Functions</h2></td></tr>
 <tr class="memitem:afba677c6302c38a725150f1a80736fff" id="r_afba677c6302c38a725150f1a80736fff"><td class="memTemplParams" colspan="2">template&lt;std::size_t... Ns, class T , class U &gt; </td></tr>
 <tr class="memitem:afba677c6302c38a725150f1a80736fff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#afba677c6302c38a725150f1a80736fff">BoxSplit_imp</a> (std::index_sequence&lt; Ns... &gt;, const T &amp;lo, const T &amp;hi, const U &amp;typ) noexcept</td></tr>
 <tr class="separator:afba677c6302c38a725150f1a80736fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6471ac95c2027491ef2aef47e2e988" id="r_a8a6471ac95c2027491ef2aef47e2e988"><td class="memTemplParams" colspan="2">template&lt;class L , typename... As, class... Fs&gt; </td></tr>
+<tr class="memitem:a8a6471ac95c2027491ef2aef47e2e988"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a8a6471ac95c2027491ef2aef47e2e988">AnyCTO_helper2</a> (const L &amp;l, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; As... &gt;, std::array&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, sizeof...(As)&gt; const &amp;runtime_options, const Fs &amp;...cto_functs)</td></tr>
+<tr class="separator:a8a6471ac95c2027491ef2aef47e2e988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a095902c599d3f8b4683acf1fc2dc43ca" id="r_a095902c599d3f8b4683acf1fc2dc43ca"><td class="memTemplParams" colspan="2">template&lt;class L , typename... PPs, typename RO , class... Fs&gt; </td></tr>
+<tr class="memitem:a095902c599d3f8b4683acf1fc2dc43ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a095902c599d3f8b4683acf1fc2dc43ca">AnyCTO_helper1</a> (const L &amp;l, <a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; PPs... &gt;, RO const &amp;runtime_options, const Fs &amp;...cto_functs)</td></tr>
+<tr class="separator:a095902c599d3f8b4683acf1fc2dc43ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83312fbf7153a7a17dd3edd3a1952734" id="r_a83312fbf7153a7a17dd3edd3a1952734"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a83312fbf7153a7a17dd3edd3a1952734"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a83312fbf7153a7a17dd3edd3a1952734">complex_pow_unsigned</a> (<a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt; a_z, unsigned a_n)</td></tr>
 <tr class="separator:a83312fbf7153a7a17dd3edd3a1952734"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -655,6 +663,90 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a095902c599d3f8b4683acf1fc2dc43ca" name="a095902c599d3f8b4683acf1fc2dc43ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095902c599d3f8b4683acf1fc2dc43ca">&#9670;&#160;</a></span>AnyCTO_helper1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class L , typename... PPs, typename RO , class... Fs&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::AnyCTO_helper1 </td>
+          <td>(</td>
+          <td class="paramtype">const L &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; PPs... &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RO const &amp;&#160;</td>
+          <td class="paramname"><em>runtime_options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Fs &amp;...&#160;</td>
+          <td class="paramname"><em>cto_functs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a6471ac95c2027491ef2aef47e2e988" name="a8a6471ac95c2027491ef2aef47e2e988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6471ac95c2027491ef2aef47e2e988">&#9670;&#160;</a></span>AnyCTO_helper2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class L , typename... As, class... Fs&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::detail::AnyCTO_helper2 </td>
+          <td>(</td>
+          <td class="paramtype">const L &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1TypeList.html">TypeList</a>&lt; As... &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, sizeof...(As)&gt; const &amp;&#160;</td>
+          <td class="paramname"><em>runtime_options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Fs &amp;...&#160;</td>
+          <td class="paramname"><em>cto_functs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -304,6 +304,7 @@ var hierarchy =
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
     [ "amrex::SpMatrix< T, Allocator >::CSR< V >", "structamrex_1_1SpMatrix_1_1CSR.html", null ],
     [ "amrex::SpMatrix< T, Allocator >::CSR< amrex::PODVector >", "structamrex_1_1SpMatrix_1_1CSR.html", null ],
+    [ "amrex::detail::CTOWrapper< F, ctr >", "structamrex_1_1detail_1_1CTOWrapper.html", null ],
     [ "amrex::CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", null ],
     [ "amrex::CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", null ],
     [ "amrex::IParser::Data", "structamrex_1_1IParser_1_1Data.html", null ],

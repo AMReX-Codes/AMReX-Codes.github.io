@@ -616,7 +616,7 @@ any parameters and the application code may then parse the command line and
 handle those cases. Several built in functions are available to help do this.
 They are briefly introduced in the table below.</p>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">AMReX functions for parsing the command line.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">AMReX functions for parsing the command line.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
 <th class="head"><p>Type</p></th>
@@ -1789,7 +1789,7 @@ also requires only two minor changes.</p>
 <p>The kernels functions like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f1</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f2</span></code> in the two examples here
 usually require very little changes.</p>
 <span id="fig-basics-cc-comparison"></span><table class="docutils align-center" id="id4">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Comparison of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> with (right) and without (left) tiling.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Comparison of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> with (right) and without (left) tiling.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/cc_validbox.png"><img alt="a" src="_images/cc_validbox.png" style="width: 90%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/cc_tilebox.png"><img alt="b" src="_images/cc_tilebox.png" style="width: 90%;" /></a></p></td>
@@ -1809,7 +1809,7 @@ usually require very little changes.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig-basics-cc-comparison"><span class="std std-numref">Table 5</span></a> shows an example of the difference between
+<p><a class="reference internal" href="#fig-basics-cc-comparison"><span class="std std-numref">Table 6</span></a> shows an example of the difference between
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">validbox</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span></code>. In this example, there are two grids of
 cell-centered index type. The function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">validbox</span></code> always returns a
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> for the valid region of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> no matter whether or not
@@ -1841,7 +1841,7 @@ no tiling in 2D. This is used when tile size is not explicitly set but the
 tiling flag is on. One can change the default size using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
 (section <a class="reference internal" href="#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>) parameter <code class="docutils literal notranslate"><span class="pre">fabarray.mfiter_tile_size.</span></code></p>
 <span id="fig-basics-ec-comparison"></span><table class="docutils align-center" id="id5">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Comparison of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> with (right) and without (left) tiling, for face-centered nodal indexing.</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Comparison of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> with (right) and without (left) tiling, for face-centered nodal indexing.</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/ec_validbox.png"><img alt="c" src="_images/ec_validbox.png" style="width: 90%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/ec_tilebox.png"><img alt="d" src="_images/ec_tilebox.png" style="width: 90%;" /></a></p></td>
@@ -1912,7 +1912,7 @@ example, <code class="code highlight cpp c++ docutils literal highlight-c++"><sp
 <span class="math notranslate nohighlight">\(x\)</span>-direction and cell in other directions. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="o">::</span><span class="n">validbox</span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span></code> functions return Boxes of the same type as the
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> used in defining the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">F</span></code> in this example).
-<a class="reference internal" href="#fig-basics-ec-comparison"><span class="std std-numref">Table 6</span></a> illustrates an example of non-cell-centered
+<a class="reference internal" href="#fig-basics-ec-comparison"><span class="std std-numref">Table 7</span></a> illustrates an example of non-cell-centered
 valid and tile boxes. Besides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">validbox</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>
 has a number of functions returning various Boxes.  Examples include,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span><span class="w"> </span><span class="nf">fabbox</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w">       </span><span class="c1">// Return the Box of the FArrayBox</span>
@@ -1935,7 +1935,7 @@ tiling functions. Tiling is a way of domain decomposition for work sharing.
 Overlapping tiles is undesirable because work would be wasted and for
 multi-threaded codes race conditions could occur.</p>
 <span id="fig-basics-growbox-comparison"></span><table class="docutils align-center" id="id6">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">Comparing growing cell-type and face-type tile boxes.</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Comparing growing cell-type and face-type tile boxes.</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/cc_growbox.png"><img alt="e" src="_images/cc_growbox.png" style="width: 90%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/ec_growbox.png"><img alt="f" src="_images/ec_growbox.png" style="width: 90%;" /></a></p></td>
@@ -1959,7 +1959,7 @@ multi-threaded codes race conditions could occur.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig-basics-growbox-comparison"><span class="std std-numref">Table 7</span></a> illustrates an example of
+<p><a class="reference internal" href="#fig-basics-growbox-comparison"><span class="std std-numref">Table 8</span></a> illustrates an example of
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">growntilebox</span></code>. These functions in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> return <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> by
 value. There are three ways of using these functions.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span><span class="w">  </span><span class="c1">// const&amp; to temporary object is legal</span>

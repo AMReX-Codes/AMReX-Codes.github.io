@@ -6,7 +6,7 @@ var searchData=
   ['habec_5fcols_3',['habec_cols',['../namespaceamrex.html#abebd70eafbd522c54911f746d423884f',1,'amrex']]],
   ['habec_5fijmat_4',['habec_ijmat',['../namespaceamrex.html#a26d70e1b51526ead26433b0583ffe6fd',1,'amrex']]],
   ['habec_5fmat_5',['habec_mat',['../namespaceamrex.html#ae6eab02ca0a088733102a27a1b57321a',1,'amrex']]],
-  ['handler_6',['handler',['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()'],['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()']]],
+  ['handler_6',['handler',['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()'],['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()']]],
   ['hasbc_7',['hasBC',['../classamrex_1_1MLLinOpT.html#a647cd4352c3719aa23545a8e0f88b562',1,'amrex::MLLinOpT']]],
   ['hasbndryfuncfab_8',['hasBndryFuncFab',['../classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960',1,'amrex::StateDescriptor']]],
   ['hasebfabfactory_9',['hasEBFabFactory',['../classamrex_1_1FabArray.html#ac696f139b6cf56e02828264b09a48636',1,'amrex::FabArray']]],

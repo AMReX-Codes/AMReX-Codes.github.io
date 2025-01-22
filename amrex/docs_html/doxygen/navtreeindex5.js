@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"AMReX__EB__Slopes__2D__K_8H.html#a52bf9b80b0ae26e3f5cada3b642e119a":[4,0,0,4,58,7],
+"AMReX__EB__Slopes__2D__K_8H.html#a6b6dc44889caf2905a4bca287ed5fde0":[4,0,0,4,58,10],
 "AMReX__EB__Slopes__2D__K_8H.html#a8e528f7d9cfd03e5d00a1c9293a5c149":[4,0,0,4,58,4],
 "AMReX__EB__Slopes__2D__K_8H.html#a9ac4e96f72afecfa70d3e8faa4769387":[4,0,0,4,58,5],
 "AMReX__EB__Slopes__2D__K_8H.html#aa11b6a1719689d61fe7d92029b7146d4":[4,0,0,4,58,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "AMReX__FabArrayUtility_8H.html#a5612349cebde1e13831e6bac02758b79":[4,0,0,2,78,77],
 "AMReX__FabArrayUtility_8H.html#a580c267bdc2ecf41ead1889d77b287c5":[4,0,0,2,78,90],
 "AMReX__FabArrayUtility_8H.html#a5821b989454c54f92dd1f2312e95b5b6":[4,0,0,2,78,24],
-"AMReX__FabArrayUtility_8H.html#a59fef824d8d33f68205b7b5d23f79fb3":[4,0,0,2,78,41],
-"AMReX__FabArrayUtility_8H.html#a5cbfdb6c3a840887695c62047d93245c":[4,0,0,2,78,58],
-"AMReX__FabArrayUtility_8H.html#a5d4bda0c0a2f7c24261f7380b1c3ab91":[4,0,0,2,78,46]
+"AMReX__FabArrayUtility_8H.html#a59fef824d8d33f68205b7b5d23f79fb3":[4,0,0,2,78,41]
 };

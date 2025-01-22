@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"AMReX__FabArrayUtility_8H.html#a5cbfdb6c3a840887695c62047d93245c":[4,0,0,2,78,58],
+"AMReX__FabArrayUtility_8H.html#a5d4bda0c0a2f7c24261f7380b1c3ab91":[4,0,0,2,78,46],
 "AMReX__FabArrayUtility_8H.html#a5e32d93cb04b6557dcf30553793aeb92":[4,0,0,2,78,86],
 "AMReX__FabArrayUtility_8H.html#a6042241ebb563135e52211fdd10c5ee3":[4,0,0,2,78,51],
 "AMReX__FabArrayUtility_8H.html#a62d868c2f2a1a91e893e40ac781b3900":[4,0,0,2,78,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "AMReX__FluxReg__3D__C_8H.html#a75205bf4e5cf11c750d36643d869651e":[4,0,0,1,21,1],
 "AMReX__FluxReg__3D__C_8H.html#a7c97748d6aef1a9d510523f3c374b63f":[4,0,0,1,21,2],
 "AMReX__FluxReg__3D__C_8H_source.html":[4,0,0,1,21],
-"AMReX__FluxReg__C_8H.html":[4,0,0,1,22],
-"AMReX__FluxReg__C_8H_source.html":[4,0,0,1,22],
-"AMReX__FluxRegister_8H.html":[4,0,0,1,24]
+"AMReX__FluxReg__C_8H.html":[4,0,0,1,22]
 };

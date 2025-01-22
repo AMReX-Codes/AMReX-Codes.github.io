@@ -24,6 +24,7 @@ var annotated_dup =
         [ "clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ],
         [ "clzl_tag", "structamrex_1_1detail_1_1clzl__tag.html", null ],
         [ "clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", null ],
+        [ "CTOWrapper", "structamrex_1_1detail_1_1CTOWrapper.html", "structamrex_1_1detail_1_1CTOWrapper" ],
         [ "CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", "classamrex_1_1detail_1_1CutFabFactory" ],
         [ "Detector", "structamrex_1_1detail_1_1Detector.html", "structamrex_1_1detail_1_1Detector" ],
         [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ],
