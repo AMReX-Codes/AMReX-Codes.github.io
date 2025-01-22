@@ -16,7 +16,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ParticleArray.H", "AMReX__ParticleArray_8H.html", "AMReX__ParticleArray_8H" ],
     [ "AMReX_ParticleBufferMap.cpp", "AMReX__ParticleBufferMap_8cpp.html", null ],
     [ "AMReX_ParticleBufferMap.H", "AMReX__ParticleBufferMap_8H.html", "AMReX__ParticleBufferMap_8H" ],
-    [ "AMReX_ParticleCommunication.cpp", "AMReX__ParticleCommunication_8cpp.html", null ],
+    [ "AMReX_ParticleCommunication.cpp", "AMReX__ParticleCommunication_8cpp.html", "AMReX__ParticleCommunication_8cpp" ],
     [ "AMReX_ParticleCommunication.H", "AMReX__ParticleCommunication_8H.html", "AMReX__ParticleCommunication_8H" ],
     [ "AMReX_ParticleContainer.H", "AMReX__ParticleContainer_8H.html", "AMReX__ParticleContainer_8H" ],
     [ "AMReX_ParticleContainerBase.cpp", "AMReX__ParticleContainerBase_8cpp.html", null ],

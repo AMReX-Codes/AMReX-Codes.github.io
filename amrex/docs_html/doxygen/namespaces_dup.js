@@ -120,17 +120,5 @@ var namespaces_dup =
     [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", "namespaceamrex__parmparse__module" ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", "namespaceamrex__string__module" ],
     [ "detail", "namespacedetail.html", "namespacedetail" ],
-    [ "particle_detail", "namespaceparticle__detail.html", [
-      [ "countFlags", "namespaceparticle__detail.html#ad0f9f7baba3e8ee0bb915f2f39ddfb00", null ],
-      [ "countFlags", "namespaceparticle__detail.html#a46cf3f99f8cd6664f211ab82eb30ba5d", null ],
-      [ "countFlags", "namespaceparticle__detail.html#aa7150d951cdc6e8f930ade02d9f39339", null ],
-      [ "countFlags", "namespaceparticle__detail.html#ac19caa98c68d8d3bd29714d38bd08b86", null ],
-      [ "fillFlags", "namespaceparticle__detail.html#a434bf78e655d4760c37d1a0a03a546dd", null ],
-      [ "fillFlags", "namespaceparticle__detail.html#af2c418888fce5fff1b051c871b8100c1", null ],
-      [ "packIOData", "namespaceparticle__detail.html#a0bf8ee8601513b770f183edebd598679", null ],
-      [ "packIOData", "namespaceparticle__detail.html#aaa996cdd179d246d691bf0a3a23faa28", null ],
-      [ "packParticleIDs", "namespaceparticle__detail.html#a30a6f3594be5d404180737352c8c375d", null ],
-      [ "PSizeInFile", "namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd", null ]
-    ] ],
     [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ]
 ];

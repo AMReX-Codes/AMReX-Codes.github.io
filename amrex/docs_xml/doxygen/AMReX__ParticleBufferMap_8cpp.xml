@@ -2094,6 +2094,7 @@
         <label>vector</label>
       </node>
     </incdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -2101,28 +2102,28 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParticleBufferMap_8H" kindref="compound">AMReX_ParticleBufferMap.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><ref refid="classamrex_1_1ParticleBufferMap_1ae38964fdc9eb2687b154f6d476b84053" kindref="member">ParticleBufferMap::ParticleBufferMap</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParGDBBase" kindref="compound">ParGDBBase</ref>*<sp/>a_gdb)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="classamrex_1_1ParticleBufferMap_1ae38964fdc9eb2687b154f6d476b84053" kindref="member">ParticleBufferMap::ParticleBufferMap</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParGDBBase*<sp/>a_gdb)</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1afefd85941605fff4b4d91bae8a97efa7" kindref="member">define</ref>(a_gdb);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a4c093fb6fadb50a2de3a9f1661f71fb7" kindref="member">define</ref>(a_gdb);</highlight></codeline>
 <codeline lineno="8"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParticleBufferMap_1afefd85941605fff4b4d91bae8a97efa7" kindref="member">ParticleBufferMap::define</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParGDBBase" kindref="compound">ParGDBBase</ref>*<sp/>a_gdb)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a4c093fb6fadb50a2de3a9f1661f71fb7" kindref="member">ParticleBufferMap::define</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParGDBBase*<sp/>a_gdb)</highlight></codeline>
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleBufferMap::define&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1add127c532a232ec6ffde039f284dcf98" kindref="member">m_defined</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_levels<sp/>=<sp/>a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1ac1fa02ba52840aba7e4ef263cb1415a8" kindref="member">finestLevel</ref>()+1;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_levels<sp/>=<sp/>a_gdb-&gt;finestLevel()+1;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>.resize(0);</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a990b67e8bf90b3e0a7c137bb67eee236" kindref="member">m_dm</ref>.resize(0);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>.resize(num_levels);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a990b67e8bf90b3e0a7c137bb67eee236" kindref="member">m_dm</ref>.resize(num_levels);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>num_levels;<sp/>++lev)</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>[lev]<sp/>=<sp/>a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1a78a51cce4c9f421d865d886f7ba04162" kindref="member">ParticleBoxArray</ref>(lev);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a990b67e8bf90b3e0a7c137bb67eee236" kindref="member">m_dm</ref>[lev]<sp/>=<sp/>a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1a589c7accab8b770a261129d3aada9e46" kindref="member">ParticleDistributionMap</ref>(lev);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>[lev]<sp/>=<sp/>a_gdb-&gt;ParticleBoxArray(lev);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a990b67e8bf90b3e0a7c137bb67eee236" kindref="member">m_dm</ref>[lev]<sp/>=<sp/>a_gdb-&gt;ParticleDistributionMap(lev);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParticleBufferMap_1ab5443e45483c897f9d54a9f63e8d4e20" kindref="member">m_lev_offsets</ref>.resize(0);</highlight></codeline>
@@ -2213,24 +2214,26 @@
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="113"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParticleBufferMap_1a5cd8c986f822086a092ee8159373a0b4" kindref="member">ParticleBufferMap::isValid</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParGDBBase" kindref="compound">ParGDBBase</ref>*<sp/>a_gdb)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ParticleBufferMap::isValid<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParGDBBase*<sp/>a_gdb)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="116"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1ParticleBufferMap_1add127c532a232ec6ffde039f284dcf98" kindref="member">m_defined</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_defined)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_levs<sp/>=<sp/>a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1ac1fa02ba52840aba7e4ef263cb1415a8" kindref="member">finestLevel</ref>()<sp/>+<sp/>1;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_levs<sp/>!=<sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>.size())<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_levs<sp/>=<sp/>a_gdb-&gt;finestLevel()<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_levs<sp/>!=<sp/>m_ba.size())<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>num_levs;<sp/>++lev)</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>same_ba<sp/>=<sp/><ref refid="classamrex_1_1BoxArray_1a93718ee84062758c5256a2792939c6f7" kindref="member">BoxArray::SameRefs</ref>(a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1a78a51cce4c9f421d865d886f7ba04162" kindref="member">ParticleBoxArray</ref>(lev),<sp/><ref refid="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" kindref="member">m_ba</ref>[lev]);</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>same_dm<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a1c20460d2e7b2eaec474e933113575d9" kindref="member">DistributionMapping::SameRefs</ref>(a_gdb-&gt;<ref refid="classamrex_1_1ParGDBBase_1a589c7accab8b770a261129d3aada9e46" kindref="member">ParticleDistributionMap</ref>(lev),<sp/><ref refid="classamrex_1_1ParticleBufferMap_1a990b67e8bf90b3e0a7c137bb67eee236" kindref="member">m_dm</ref>[lev]);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>same_ba<sp/>=<sp/>BoxArray::SameRefs(a_gdb-&gt;ParticleBoxArray(lev),<sp/>m_ba[lev]);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>same_dm<sp/>=<sp/>DistributionMapping::SameRefs(a_gdb-&gt;ParticleDistributionMap(lev),<sp/>m_dm[lev]);</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>level_valid<sp/>=<sp/>same_ba<sp/>&amp;&amp;<sp/>same_dm;</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid<sp/>=<sp/>valid<sp/>&amp;&amp;<sp/>level_valid;</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>valid;</highlight></codeline>
 <codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.cpp"/>
   </compounddef>

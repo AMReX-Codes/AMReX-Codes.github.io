@@ -80,7 +80,7 @@ var searchData=
   ['iparserexesub_5fvn_77',['IParserExeSUB_VN',['../structamrex_1_1IParserExeSUB__VN.html',1,'amrex']]],
   ['iparserexesub_5fvp_78',['IParserExeSUB_VP',['../structamrex_1_1IParserExeSUB__VP.html',1,'amrex']]],
   ['iparserexesymbol_79',['IParserExeSymbol',['../structamrex_1_1IParserExeSymbol.html',1,'amrex']]],
-  ['is_5fsoa_5fparticle_80',['is_soa_particle',['../structis__soa__particle.html',1,'']]],
+  ['is_5fsoa_5fparticle_80',['is_soa_particle',['../structamrex_1_1is__soa__particle.html',1,'amrex']]],
   ['isalgvector_81',['IsAlgVector',['../structamrex_1_1IsAlgVector.html',1,'amrex']]],
   ['isalgvector_3c_20v_2c_20std_3a_3aenable_5fif_5ft_3c_20std_3a_3ais_5fsame_5fv_3c_20algvector_3c_20typename_20v_3a_3avalue_5ftype_2c_20typename_20v_3a_3aallocator_5ftype_20_3e_2c_20v_20_3e_20_3e_20_3e_82',['IsAlgVector&lt; V, std::enable_if_t&lt; std::is_same_v&lt; AlgVector&lt; typename V::value_type, typename V::allocator_type &gt;, V &gt; &gt; &gt;',['../structamrex_1_1IsAlgVector_3_01V_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01AlgVector_b40b2816d789aedc6f50e789de689e7c.html',1,'amrex']]],
   ['isarenaallocator_83',['IsArenaAllocator',['../structamrex_1_1IsArenaAllocator.html',1,'amrex']]],

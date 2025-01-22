@@ -70,6 +70,7 @@ var NAVTREEINDEX19 =
 "AMReX__ParticleCommunication_8H.html#af4c8c19cb812cdbcc34bc408577bb25c":[4,0,0,8,17,7],
 "AMReX__ParticleCommunication_8H_source.html":[4,0,0,8,17],
 "AMReX__ParticleCommunication_8cpp.html":[4,0,0,8,16],
+"AMReX__ParticleCommunication_8cpp.html#a814322d519ae32014737504164a0516b":[4,0,0,8,16,0],
 "AMReX__ParticleContainerBase_8H.html":[4,0,0,8,20],
 "AMReX__ParticleContainerBase_8H_source.html":[4,0,0,8,20],
 "AMReX__ParticleContainerBase_8cpp.html":[4,0,0,8,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__PhysBCFunct_8H.html#a88781af4a5d3f8271de2b3129cc49393":[4,0,0,2,225,9],
 "AMReX__PhysBCFunct_8H.html#a8b7e34da6fddd1312471a5962bf774cd":[4,0,0,2,225,8],
 "AMReX__PhysBCFunct_8H_source.html":[4,0,0,2,225],
-"AMReX__PhysBCFunct_8cpp.html":[4,0,0,2,224],
-"AMReX__PlotFileDataImpl_8H.html":[4,0,0,2,227]
+"AMReX__PhysBCFunct_8cpp.html":[4,0,0,2,224]
 };

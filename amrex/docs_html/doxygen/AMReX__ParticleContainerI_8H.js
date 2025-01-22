@@ -1,7 +1,7 @@
 var AMReX__ParticleContainerI_8H =
 [
-    [ "FilterVirt", "structFilterVirt.html", "structFilterVirt" ],
-    [ "TransformerVirt", "structTransformerVirt.html", "structTransformerVirt" ],
-    [ "AssignGridFilter", "structAssignGridFilter.html", "structAssignGridFilter" ],
-    [ "TransformerGhost", "structTransformerGhost.html", "structTransformerGhost" ]
+    [ "amrex::FilterVirt", "structamrex_1_1FilterVirt.html", "structamrex_1_1FilterVirt" ],
+    [ "amrex::TransformerVirt", "structamrex_1_1TransformerVirt.html", "structamrex_1_1TransformerVirt" ],
+    [ "amrex::AssignGridFilter", "structamrex_1_1AssignGridFilter.html", "structamrex_1_1AssignGridFilter" ],
+    [ "amrex::TransformerGhost", "structamrex_1_1TransformerGhost.html", "structamrex_1_1TransformerGhost" ]
 ];

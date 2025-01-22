@@ -84,7 +84,7 @@ var searchData=
   ['totalcellsallocatedinfabs_81',['TotalCellsAllocatedInFabs',['../namespaceamrex.html#aa9ed510cedd140658efd18542d9479c7',1,'amrex']]],
   ['totalcellsallocatedinfabshwm_82',['TotalCellsAllocatedInFabsHWM',['../namespaceamrex.html#aa85143ea71ce835e3a64ce8551b726b4',1,'amrex']]],
   ['totalglobalmem_83',['totalGlobalMem',['../classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a',1,'amrex::Gpu::Device']]],
-  ['totalnumberofparticles_84',['TotalNumberOfParticles',['../classamrex_1_1ParticleContainer__impl.html#a627963d5fe08303ba6da357ffb3e9cb0',1,'amrex::ParticleContainer_impl']]],
+  ['totalnumberofparticles_84',['TotalNumberOfParticles',['../classamrex_1_1ParticleContainer__impl.html#af2d2b1e86982b739cd6fc6b2549c9de0',1,'amrex::ParticleContainer_impl']]],
   ['touint10_85',['toUInt10',['../namespaceamrex_1_1Morton.html#ae3e56c34dacdffe240410a3f6a7a9252',1,'amrex::Morton']]],
   ['touint16_86',['toUInt16',['../namespaceamrex_1_1Morton.html#a9b7572e0a75bb2c5274809e9e1edffba',1,'amrex::Morton']]],
   ['touint32_87',['toUInt32',['../namespaceamrex_1_1Morton.html#a16988bc3300f11fdee381c8ef8bc80f6',1,'amrex::Morton']]],

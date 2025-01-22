@@ -126,7 +126,7 @@ var searchData=
   ['arrayofstructs_123',['ArrayOfStructs',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['assigngrid_124',['AssignGrid',['../structamrex_1_1AssignGrid.html',1,'amrex']]],
   ['assigngrid_3c_20amrex_3a_3adensebiniteratorfactory_3c_20amrex_3a_3aboxnd_20_3e_20_3e_125',['AssignGrid&lt; amrex::DenseBinIteratorFactory&lt; amrex::BoxND &gt; &gt;',['../structamrex_1_1AssignGrid.html',1,'amrex']]],
-  ['assigngridfilter_126',['AssignGridFilter',['../structAssignGridFilter.html',1,'']]],
+  ['assigngridfilter_126',['AssignGridFilter',['../structamrex_1_1AssignGridFilter.html',1,'amrex']]],
   ['assignop_127',['assignOp',['../structamrex_1_1InSituUtils_1_1assignOp.html',1,'amrex::InSituUtils']]],
   ['asymmetricghost_128',['AsymmetricGhost',['../structamrex_1_1MFUtil_1_1AsymmetricGhost.html',1,'amrex::MFUtil']]],
   ['asyncarenaallocator_129',['AsyncArenaAllocator',['../classamrex_1_1AsyncArenaAllocator.html',1,'amrex']]],

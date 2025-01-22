@@ -1,4 +1,4 @@
 var AMReX__NeighborParticlesGPUImpl_8H =
 [
-    [ "getBoundaryBoxes", "AMReX__NeighborParticlesGPUImpl_8H.html#a19676c2d37166ec9614ff1c382544617", null ]
+    [ "getBoundaryBoxes", "AMReX__NeighborParticlesGPUImpl_8H.html#a01f595a1caf92d3d2db64fe8916e0011", null ]
 ];

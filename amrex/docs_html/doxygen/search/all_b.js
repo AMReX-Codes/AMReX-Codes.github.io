@@ -5,7 +5,7 @@ var searchData=
   ['k3d_2',['K3D',['../namespaceamrex.html#aa38894f5177d4e0302afa30ab13c8c26',1,'amrex']]],
   ['k_5fhi_3',['K_HI',['../AMReX__MLMG__3D__K_8H.html#a5fa1fd1d257bfaebf6b9cb744172b878',1,'AMReX_MLMG_3D_K.H']]],
   ['k_5flo_4',['K_LO',['../AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f',1,'AMReX_MLMG_3D_K.H']]],
-  ['keepvalidfilter_5',['KeepValidFilter',['../structKeepValidFilter.html',1,'']]],
+  ['keepvalidfilter_5',['KeepValidFilter',['../structamrex_1_1KeepValidFilter.html',1,'amrex']]],
   ['kernelinfo_6',['KernelInfo',['../classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]],
   ['key_7',['Key',['../namespaceamrex_1_1FFT.html#a07ebd4aab8904819a3bbc7009e06ce97',1,'amrex::FFT']]],
   ['keyvaluepair_8',['KeyValuePair',['../namespaceamrex.html#a7dd6d3577db87cc950337b856e57f1f9',1,'amrex']]],
