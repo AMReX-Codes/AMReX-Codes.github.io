@@ -2467,11 +2467,11 @@
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVect</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ng<sp/>=<sp/><ref refid="namespaceamrex_1a51139df558496604faa8b49ab7f8223d" kindref="member">amrex::elemwiseMin</ref>(soln.nGrowVect(),<sp/><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVect</ref>(1));</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_r2x)<sp/>{</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2x-&gt;template<sp/>forwardThenBackward_doit&lt;0&gt;(rhs,<sp/>soln,<sp/>f,<sp/>ng,<sp/>m_geom.periodicity());</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2x-&gt;forwardThenBackward_doit_0(rhs,<sp/>soln,<sp/>f,<sp/>ng,<sp/>m_geom.periodicity());</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1FFT_1_1detail_1a995b1b061a4b76ab820758880fb3ab30" kindref="member">detail::fill_physbc</ref>(soln,<sp/>m_geom,<sp/>m_bc);</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2c-&gt;forward(rhs);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2c-&gt;template<sp/>post_forward_doit&lt;0&gt;(f);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2c-&gt;post_forward_doit_0(f);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_r2c-&gt;backward_doit(soln,<sp/>ng,<sp/>m_geom.periodicity());</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="262"><highlight class="normal">}</highlight></codeline>

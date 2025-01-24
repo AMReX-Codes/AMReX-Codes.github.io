@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keyword">auto</span> <span class="keyword">const</span> srcfab =   src.<a class="code hl_function" href="classamrex_1_1FabSetT.html#ac85c49243693f5d1d577235745b3591d">array</a>(fsi);</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keyword">auto</span>       dstfab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            {</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                dstfab(i,j,k,n+dcomp) = srcfab(i,j,k,n+scomp);</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            });</div>
@@ -299,7 +299,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keyword">auto</span> <span class="keyword">const</span> srcfab =   src.<a class="code hl_function" href="classamrex_1_1FabSetT.html#ac85c49243693f5d1d577235745b3591d">array</a>(fsi);</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keyword">auto</span>       dstfab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            {</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                dstfab(i,j,k,n+dcomp) += srcfab(i,j,k,n+scomp);</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            });</div>
@@ -357,7 +357,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(*<span class="keyword">this</span>); fsi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi) {</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keyword">auto</span> fab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        {</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            fab(i,j,k,n) = val;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        });</div>
@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(*<span class="keyword">this</span>); fsi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi) {</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keyword">auto</span> fab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, num_comp, i, j, k, n,</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, num_comp, i, j, k, n,</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        {</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            fab(i,j,k,n+comp) = val;</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        });</div>
@@ -402,7 +402,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keyword">auto</span> <span class="keyword">const</span> srcfab =   src.<a class="code hl_function" href="classamrex_1_1FabSetT.html#ac85c49243693f5d1d577235745b3591d">array</a>(fsi);</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keyword">auto</span>       dstfab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        {</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            dstfab(i,j,k,n+dcomp) = a*dstfab(i,j,k,n+dcomp) + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*srcfab(i,j,k,n+scomp);</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        });</div>
@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = mfi.validbox();</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <span class="keyword">auto</span> afab = bdrya.array(mfi);</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keyword">auto</span> bfab = bdryb.array(mfi);</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        {</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            afab(i,j,k,n) = huge;</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            bfab(i,j,k,n) = huge;</div>
@@ -457,7 +457,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="keyword">auto</span> <span class="keyword">const</span> afab = bdrya.array(fsi);</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="keyword">auto</span> <span class="keyword">const</span> bfab = bdryb.array(fsi);</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="keyword">auto</span>       dfab = this-&gt;array(fsi);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        {</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            dfab(i,j,k,n+dcomp) = a*afab(i,j,k,n) + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*bfab(i,j,k,n);</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        });</div>
@@ -507,7 +507,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; bx = fsi.validbox();</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        <span class="keyword">auto</span> <span class="keyword">const</span> srcfab = src.<a class="code hl_function" href="classamrex_1_1FabSetT.html#ac85c49243693f5d1d577235745b3591d">array</a>(fsi);</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        <span class="keyword">auto</span>       dstfab = dst.<a class="code hl_function" href="classamrex_1_1FabSetT.html#ac85c49243693f5d1d577235745b3591d">array</a>(fsi);</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <a class="code hl_define" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <a class="code hl_define" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        {</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            dstfab(i,j,k,n) = srcfab(i,j,k,n);</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        });</div>
@@ -525,7 +525,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:39</div></div>
 <div class="ttc" id="aAMReX__FabDataType_8H_html"><div class="ttname"><a href="AMReX__FabDataType_8H.html">AMReX_FabDataType.H</a></div></div>
-<div class="ttc" id="aAMReX__GpuLaunch_8nolint_8H_html_afd60f7bb161794f08fe97f8f36e1f52d"><div class="ttname"><a href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_PARALLEL_FOR_4D(...)</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.nolint.H:55</div></div>
+<div class="ttc" id="aAMReX__GpuLaunchMacrosC_8nolint_8H_html_afd60f7bb161794f08fe97f8f36e1f52d"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_PARALLEL_FOR_4D(...)</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchMacrosC.nolint.H:111</div></div>
 <div class="ttc" id="aAMReX__MultiFab_8H_html"><div class="ttname"><a href="AMReX__MultiFab_8H.html">AMReX_MultiFab.H</a></div></div>
 <div class="ttc" id="aAMReX__ParallelDescriptor_8H_html"><div class="ttname"><a href="AMReX__ParallelDescriptor_8H.html">AMReX_ParallelDescriptor.H</a></div></div>
 <div class="ttc" id="aAMReX__VisMF_8H_html"><div class="ttname"><a href="AMReX__VisMF_8H.html">AMReX_VisMF.H</a></div></div>

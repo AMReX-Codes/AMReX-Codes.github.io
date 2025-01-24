@@ -163,8 +163,8 @@ $(document).ready(function(){initNavTree('AMReX__EBFluxRegister__3D__C_8H_source
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a32656425b2bbf662685c783f61a98d76">   59</a></span>Real <a class="code hl_function" href="namespaceamrex.html#a579bc771ad42deaba49bd875435ec349">eb_flux_reg_cvol</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <a class="code hl_struct" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                       <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> <span class="keyword">const</span>&amp; ratio, Real small) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespaceamrex.html#adca2565d84971ad932ed41d85eb68060">   59</a></span>Real <a class="code hl_function" href="namespaceamrex.html#a579bc771ad42deaba49bd875435ec349">eb_flux_reg_cvol</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <a class="code hl_struct" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                       <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> <span class="keyword">const</span>&amp; ratio, Real sml) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Real cvol = Real(0.0);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> kk = k*ratio.z; kk &lt; (k+1)*ratio.z; ++kk) {</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('AMReX__EBFluxRegister__3D__C_8H_source
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            }</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> (cvol &gt; small) ? Real(1.0)/cvol : Real(0.0);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> (cvol &gt; sml) ? Real(1.0)/cvol : Real(0.0);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>

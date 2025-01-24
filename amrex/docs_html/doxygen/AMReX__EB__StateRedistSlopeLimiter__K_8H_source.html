@@ -118,12 +118,12 @@ $(document).ready(function(){initNavTree('AMReX__EB__StateRedistSlopeLimiter__K_
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">constexpr</span> Real epsilon = 1.e-12;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> Real small = epsilon*<a class="code hl_function" href="namespaceamrex.html#ac96e89dbbf05063f32d1ef7860f6a4ea">amrex::max</a>(amrex::Math::abs(q_max),amrex::Math::abs(q_min));</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> Real sml = epsilon*<a class="code hl_function" href="namespaceamrex.html#ac96e89dbbf05063f32d1ef7860f6a4ea">amrex::max</a>(amrex::Math::abs(q_max),amrex::Math::abs(q_min));</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Real alpha;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> ((q_hat-state) &gt; small) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> ((q_hat-state) &gt; sml) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        alpha = <a class="code hl_function" href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a>(1.0_rt,(q_max-state)/(q_hat-state));</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((q_hat-state) &lt; -small) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((q_hat-state) &lt; -sml) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        alpha = <a class="code hl_function" href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a>(1.0_rt,(q_min-state)/(q_hat-state));</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        alpha = 1.0_rt;</div>

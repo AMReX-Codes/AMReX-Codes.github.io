@@ -3442,11 +3442,11 @@
 <codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">amrex::literals;</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"></highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>alpha_temp<sp/>=<sp/>amrex::Real(0.0);</highlight></codeline>
-<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>small<sp/><sp/>=<sp/>amrex::Real(1.0e-13);</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sml<sp/><sp/>=<sp/>amrex::Real(1.0e-13);</highlight></codeline>
 <codeline lineno="812"><highlight class="normal"></highlight></codeline>
-<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((q_hat-state)<sp/>&gt;<sp/>small)<sp/>{</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((q_hat-state)<sp/>&gt;<sp/>sml)<sp/>{</highlight></codeline>
 <codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>alpha_temp<sp/>=<sp/><ref refid="namespaceamrex_1a4963180ac09020e51a2077bf2ebdb323" kindref="member">amrex::min</ref>(1.0_rt,(q_max-state)/(q_hat-state));</highlight></codeline>
-<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((q_hat-state)<sp/>&lt;<sp/>-small)<sp/>{</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((q_hat-state)<sp/>&lt;<sp/>-sml)<sp/>{</highlight></codeline>
 <codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>alpha_temp<sp/>=<sp/><ref refid="namespaceamrex_1a4963180ac09020e51a2077bf2ebdb323" kindref="member">amrex::min</ref>(1.0_rt,(q_min-state)/(q_hat-state));</highlight></codeline>
 <codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>alpha_temp<sp/>=<sp/>1.0_rt;</highlight></codeline>

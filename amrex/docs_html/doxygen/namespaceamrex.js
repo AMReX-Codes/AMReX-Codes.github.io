@@ -1583,7 +1583,7 @@ var namespaceamrex =
     [ "eb_flux_reg_crseadd_va", "namespaceamrex.html#ae0bbc58f6b9468fa1aded42eff20dcd5", null ],
     [ "eb_flux_reg_crseadd_va", "namespaceamrex.html#ad65a167177bb171c3ac5fbd726a3d0c1", null ],
     [ "eb_flux_reg_cvol", "namespaceamrex.html#a579bc771ad42deaba49bd875435ec349", null ],
-    [ "eb_flux_reg_cvol", "namespaceamrex.html#a32656425b2bbf662685c783f61a98d76", null ],
+    [ "eb_flux_reg_cvol", "namespaceamrex.html#adca2565d84971ad932ed41d85eb68060", null ],
     [ "eb_flux_reg_fineadd_dm", "namespaceamrex.html#a5c2977ac92fe83060eb9443dde71cdd5", null ],
     [ "eb_flux_reg_fineadd_va_xhi", "namespaceamrex.html#abd990a563d63d022c9b09433c621015f", null ],
     [ "eb_flux_reg_fineadd_va_xlo", "namespaceamrex.html#a15dc2901e84865ab7ca819e913967f1d", null ],

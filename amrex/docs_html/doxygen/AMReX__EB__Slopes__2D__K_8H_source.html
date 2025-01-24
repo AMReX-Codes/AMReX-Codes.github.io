@@ -787,11 +787,11 @@ $(document).ready(function(){initNavTree('AMReX__EB__Slopes__2D__K_8H_source.htm
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <span class="keyword">using namespace </span>amrex::literals;</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    <span class="keyword">auto</span> alpha_temp = 0.0_rt;</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <span class="keyword">auto</span> small  = 1.0e-13_rt;</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <span class="keyword">auto</span> sml  = 1.0e-13_rt;</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keywordflow">if</span> ((q_hat-state) &gt; small) {</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keywordflow">if</span> ((q_hat-state) &gt; sml) {</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        alpha_temp = <a class="code hl_function" href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a>(1.0_rt,(q_max-state)/(q_hat-state));</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((q_hat-state) &lt; -small) {</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((q_hat-state) &lt; -sml) {</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>        alpha_temp = <a class="code hl_function" href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a>(1.0_rt,(q_min-state)/(q_hat-state));</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        alpha_temp = 1.0_rt;</div>
