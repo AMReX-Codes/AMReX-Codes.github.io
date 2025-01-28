@@ -1,7 +1,5 @@
 var NAVTREEINDEX72 =
 {
-"classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d":[2,0,0,397,17],
-"classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d":[3,0,0,365,17],
 "classamrex_1_1MLNodeLinOp.html#a51345471274acc0bdd0b5477285d4db1":[2,0,0,397,43],
 "classamrex_1_1MLNodeLinOp.html#a51345471274acc0bdd0b5477285d4db1":[3,0,0,365,43],
 "classamrex_1_1MLNodeLinOp.html#a5686c143c41d8e57733f9ec99cc733de":[2,0,0,397,24],
@@ -249,5 +247,7 @@ var NAVTREEINDEX72 =
 "classamrex_1_1MLTensorOp.html#af6d48bd951e581c0766cec582a9c85a3":[3,0,0,368,24],
 "classamrex_1_1MLTensorOp.html#af6d48bd951e581c0766cec582a9c85a3":[2,0,0,400,24],
 "classamrex_1_1MLTensorOp.html#afd1fbd89d6fdbe0014a9efeaf4e6ce06":[3,0,0,368,7],
-"classamrex_1_1MLTensorOp.html#afd1fbd89d6fdbe0014a9efeaf4e6ce06":[2,0,0,400,7]
+"classamrex_1_1MLTensorOp.html#afd1fbd89d6fdbe0014a9efeaf4e6ce06":[2,0,0,400,7],
+"classamrex_1_1MPMD_1_1Copier.html":[2,0,0,28,0],
+"classamrex_1_1MPMD_1_1Copier.html":[3,0,0,10,0]
 };

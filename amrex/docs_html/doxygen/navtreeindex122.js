@@ -1,9 +1,5 @@
 var NAVTREEINDEX122 =
 {
-"structamrex_1_1MemStat.html":[2,0,0,369],
-"structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[3,0,0,337,1],
-"structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[2,0,0,369,1],
-"structamrex_1_1MemStat.html#a4871062a2ac188af29295f1cf7721669":[2,0,0,369,2],
 "structamrex_1_1MemStat.html#a4871062a2ac188af29295f1cf7721669":[3,0,0,337,2],
 "structamrex_1_1MemStat.html#a59e766bfe21e1f505dee3649c10037b4":[2,0,0,369,3],
 "structamrex_1_1MemStat.html#a59e766bfe21e1f505dee3649c10037b4":[3,0,0,337,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX122 =
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,30,3,1],
 "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[2,0,0,30,4],
 "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[3,0,0,11,3],
-"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[3,0,0,11,4]
+"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[3,0,0,11,4],
+"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[2,0,0,30,5],
+"structamrex_1_1NonLocalBC_1_1Identity.html":[2,0,0,30,6],
+"structamrex_1_1NonLocalBC_1_1Identity.html":[3,0,0,11,5],
+"structamrex_1_1NonLocalBC_1_1Identity.html#a0a03a9cf27f2ed969f918c7946e68659":[2,0,0,30,6,2]
 };

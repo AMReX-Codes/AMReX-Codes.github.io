@@ -1,9 +1,5 @@
 var NAVTREEINDEX133 =
 {
-"unionAMREX__PARSERSTYPE.html#ae4b2f9e1858ec2244f20bb23fae6da2b":[3,0,13,1],
-"unionamrex_1_1BATransformer_1_1BATOp.html":[3,0,0,80,0],
-"unionamrex_1_1BATransformer_1_1BATOp.html":[2,0,0,112,0],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a":[3,0,0,80,0,7],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a":[2,0,0,112,0,7],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[2,0,0,112,0,1],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[3,0,0,80,0,1],

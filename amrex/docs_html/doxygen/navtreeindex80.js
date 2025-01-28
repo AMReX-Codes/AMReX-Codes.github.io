@@ -1,7 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"classamrex_1_1ParmParse.html#a65f0fdc57c6d3d630b040d096a17afee":[2,0,0,428,75],
-"classamrex_1_1ParmParse.html#a65f0fdc57c6d3d630b040d096a17afee":[3,0,0,396,75],
 "classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81":[3,0,0,396,144],
 "classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81":[2,0,0,428,144],
 "classamrex_1_1ParmParse.html#a69c311ca977470146f9151f1d7ca3a6e":[2,0,0,428,126],
@@ -249,5 +247,7 @@ var NAVTREEINDEX80 =
 "classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15":[2,0,0,477,17],
 "classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15":[3,0,0,445,17],
 "classamrex_1_1ParticleBufferMap.html#aab3da03c66b146dacb70168328d0873b":[3,0,0,445,7],
-"classamrex_1_1ParticleBufferMap.html#aab3da03c66b146dacb70168328d0873b":[2,0,0,477,7]
+"classamrex_1_1ParticleBufferMap.html#aab3da03c66b146dacb70168328d0873b":[2,0,0,477,7],
+"classamrex_1_1ParticleBufferMap.html#ab5443e45483c897f9d54a9f63e8d4e20":[2,0,0,477,27],
+"classamrex_1_1ParticleBufferMap.html#ab5443e45483c897f9d54a9f63e8d4e20":[3,0,0,445,27]
 };
