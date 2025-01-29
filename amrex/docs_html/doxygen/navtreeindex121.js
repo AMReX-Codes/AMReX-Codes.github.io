@@ -1,5 +1,7 @@
 var NAVTREEINDEX121 =
 {
+"structamrex_1_1LPInfo.html#adfcdb18793c93b6a8e96a35b2b3a5f70":[2,0,0,358,4],
+"structamrex_1_1LPInfo.html#ae829a3bb0485c833b206469099bbba49":[3,0,0,326,10],
 "structamrex_1_1LPInfo.html#ae829a3bb0485c833b206469099bbba49":[2,0,0,358,10],
 "structamrex_1_1LPInfo.html#af13ee7c53079a48d87691f5770c162fe":[3,0,0,326,3],
 "structamrex_1_1LPInfo.html#af13ee7c53079a48d87691f5770c162fe":[2,0,0,358,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX121 =
 "structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5":[3,0,0,336,3,1],
 "structamrex_1_1MemStat.html":[3,0,0,337],
 "structamrex_1_1MemStat.html":[2,0,0,369],
-"structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[3,0,0,337,1],
-"structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[2,0,0,369,1],
-"structamrex_1_1MemStat.html#a4871062a2ac188af29295f1cf7721669":[2,0,0,369,2]
+"structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[3,0,0,337,1]
 };

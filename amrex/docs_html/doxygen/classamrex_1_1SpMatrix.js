@@ -13,6 +13,7 @@ var classamrex_1_1SpMatrix =
     [ "data", "classamrex_1_1SpMatrix.html#a36e171c21efca4157d3715d884d88f53", null ],
     [ "data", "classamrex_1_1SpMatrix.html#a62845ddfac08ad330daeb71e09f769fe", null ],
     [ "define", "classamrex_1_1SpMatrix.html#a2aadf47e5ee2adb0eb4bce51d3e40286", null ],
+    [ "define", "classamrex_1_1SpMatrix.html#a9f2ed7ae22b0ddca998ffbed80ec2141", null ],
     [ "define_doit", "classamrex_1_1SpMatrix.html#af1eac58242d09a806cb7acb361f8c979", null ],
     [ "diagonalVector", "classamrex_1_1SpMatrix.html#adca4ae46a4f355c74288a283a60d6889", null ],
     [ "finishComm", "classamrex_1_1SpMatrix.html#a8970740015b6a25988e1b85ba324e1bb", null ],
