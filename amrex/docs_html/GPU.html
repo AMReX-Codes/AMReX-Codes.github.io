@@ -1564,7 +1564,7 @@ examples of these features in use, please see <code class="code highlight cpp c+
 platforms. This includes <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Redistribute</span><span class="p">()</span></code>, which moves particles back to the proper grids after their positions
 have changed, as well as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">fillNeighbors</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">updateNeighbors</span><span class="p">()</span></code>, which are used to exchange halo particles.
 As with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> data, these have been designed to minimize host / device traffic as much as possible, and can
-take advantage of the Cuda-aware MPI implementations available on platforms such as ORNL’s Summit.</p>
+take advantage of the GPU-aware MPI implementations available on platforms such as ORNL’s Frontier.</p>
 </section>
 <section id="profiling-with-gpus">
 <h1>Profiling with GPUs<a class="headerlink" href="#profiling-with-gpus" title="Permalink to this heading"></a></h1>
@@ -1653,10 +1653,11 @@ by “amrex” in your <code class="code highlight cpp c++ docutils literal high
 <tr class="row-even"><td><p>use_gpu_aware_mpi</p></td>
 <td><p>Whether to use GPU memory for communication buffers during MPI calls.
 If true, the buffers will use device memory. If false (i.e., 0), they
-will use pinned memory. In practice, we find it is not always worth
-it to use GPU aware MPI.</p></td>
+will use pinned memory. It will be activated if AMReX detects that
+GPU-aware MPI is supported by the MPI library (MPICH, OpenMPI, and
+derivative implementations).</p></td>
 <td><p>Bool</p></td>
-<td><p>0</p></td>
+<td><p>MPI-dependent</p></td>
 </tr>
 <tr class="row-odd"><td><p>abort_on_out_of_gpu_memory</p></td>
 <td><p>If the size of free memory on the GPU is less than the size of a
