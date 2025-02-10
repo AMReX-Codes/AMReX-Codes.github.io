@@ -1,5 +1,7 @@
 var NAVTREEINDEX108 =
 {
+"namespaceamrex__lo__bctypes__module.html#a2a3913e1bdf84ec1e4ae0bf2b1468b15":[2,0,10,2],
+"namespaceamrex__lo__bctypes__module.html#a4784276d4f8804fc020fa185cb8f3e8c":[2,0,10,5],
 "namespaceamrex__lo__bctypes__module.html#a561d8bd51bf23bc8b3cc34b0061e4375":[2,0,10,3],
 "namespaceamrex__lo__bctypes__module.html#a8ccfcd48862f934880fae54a1b361808":[2,0,10,4],
 "namespaceamrex__lo__bctypes__module.html#aace6b018ab12cf7950ce9fa43315264f":[2,0,10,7],
@@ -93,8 +95,8 @@ var NAVTREEINDEX108 =
 "namespacedetail.html#a6fd0b0eaa86bb8985f5471f13b76ce44":[2,0,18,3],
 "namespacedetail.html#ab1edc85caabaea9ac0a3b1e5cf851f17":[2,0,18,5],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
-"namespacemembers.html":[2,1,0],
 "namespacemembers.html":[2,1,0,0],
+"namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -103,8 +105,8 @@ var NAVTREEINDEX108 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func.html":[2,1,1],
+"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX108 =
 "structCommProfStats_1_1DataBlock.html":[3,0,15,1],
 "structCommProfStats_1_1DataBlock.html#a0e6da7295f52dca99d4abf096c1bed81":[3,0,15,1,15],
 "structCommProfStats_1_1DataBlock.html#a13d897811c92d1e7088cb5d11623f636":[3,0,15,1,13],
-"structCommProfStats_1_1DataBlock.html#a15a7c9b713844d961e224cec1e1b07cf":[3,0,15,1,12],
-"structCommProfStats_1_1DataBlock.html#a20f26cad91bc22e7f5509e046bfe8369":[3,0,15,1,3],
-"structCommProfStats_1_1DataBlock.html#a2616da0635b25290247f80c3cfb6ee32":[3,0,15,1,17]
+"structCommProfStats_1_1DataBlock.html#a15a7c9b713844d961e224cec1e1b07cf":[3,0,15,1,12]
 };

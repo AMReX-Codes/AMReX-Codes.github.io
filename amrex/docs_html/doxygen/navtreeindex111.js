@@ -1,5 +1,7 @@
 var NAVTREEINDEX111 =
 {
+"structamrex_1_1Array4BoxTag.html":[3,0,0,60],
+"structamrex_1_1Array4BoxTag.html":[2,0,0,93],
 "structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4":[3,0,0,60,2],
 "structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4":[2,0,0,93,2],
 "structamrex_1_1Array4BoxTag.html#a4c4df08fc041f92cfcdfe9952d6f0843":[2,0,0,93,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX111 =
 "structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[2,0,0,110,4],
 "structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[3,0,0,77,4],
 "structamrex_1_1BATindexType__coarsenRatio.html":[2,0,0,111],
-"structamrex_1_1BATindexType__coarsenRatio.html":[3,0,0,78],
-"structamrex_1_1BATindexType__coarsenRatio.html#a018850ccf13a85871016078d42d47acb":[2,0,0,111,0],
-"structamrex_1_1BATindexType__coarsenRatio.html#a018850ccf13a85871016078d42d47acb":[3,0,0,78,0]
+"structamrex_1_1BATindexType__coarsenRatio.html":[3,0,0,78]
 };

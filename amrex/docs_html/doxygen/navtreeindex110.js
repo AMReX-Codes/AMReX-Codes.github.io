@@ -1,5 +1,7 @@
 var NAVTREEINDEX110 =
 {
+"structamrex_1_1ArenaInfo.html#a19a88b4c7779799600ae4553a968e1fd":[2,0,0,85,5],
+"structamrex_1_1ArenaInfo.html#a19a88b4c7779799600ae4553a968e1fd":[3,0,0,52,5],
 "structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc":[2,0,0,85,10],
 "structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc":[3,0,0,52,10],
 "structamrex_1_1ArenaInfo.html#a6b75c734811ee56f34b0a865d3f541f6":[2,0,0,85,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX110 =
 "structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[2,0,0,92,0],
 "structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[3,0,0,59,0],
 "structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[3,0,0,59,3],
-"structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[2,0,0,92,3],
-"structamrex_1_1Array4BoxTag.html":[3,0,0,60],
-"structamrex_1_1Array4BoxTag.html":[2,0,0,93]
+"structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[2,0,0,92,3]
 };

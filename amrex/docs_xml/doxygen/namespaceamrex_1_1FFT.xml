@@ -61,6 +61,13 @@
         <type></type>
         <name>DomainStrategy</name>
         <qualifiedname>amrex::FFT::DomainStrategy</qualifiedname>
+        <enumvalue id="namespaceamrex_1_1FFT_1a5e1db35696b96f6c8dcd2308027ce845a2bd9c0ed00116be1258e0cc66617d7c8" prot="public">
+          <name>automatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="namespaceamrex_1_1FFT_1a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387" prot="public">
           <name>slab</name>
           <briefdescription>
@@ -174,9 +181,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespaceamrex_1_1FFT_1a07ebd4aab8904819a3bbc7009e06ce97" prot="public" static="no">
-        <type>std::tuple&lt; <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 3 &gt;, <ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref>, <ref refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" kindref="member">Kind</ref> &gt;</type>
-        <definition>using amrex::FFT::Key = typedef std::tuple&lt;IntVectND&lt;3&gt;,Direction,Kind&gt;</definition>
+      <memberdef kind="typedef" id="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" prot="public" static="no">
+        <type>std::tuple&lt; <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 3 &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref>, <ref refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" kindref="member">Kind</ref> &gt;</type>
+        <definition>using amrex::FFT::Key = typedef std::tuple&lt;IntVectND&lt;3&gt;,int,Direction,Kind&gt;</definition>
         <argsstring></argsstring>
         <name>Key</name>
         <qualifiedname>amrex::FFT::Key</qualifiedname>
@@ -186,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1134" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1134" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1149" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1_1FFT_1a65fad3db3b9fe3b85174dc3a4ba8330e" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; double &gt;::VendorPlan</type>
@@ -200,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1135" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1135" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1150" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1150" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1_1FFT_1a5e2fe5e29b662f9d24d3a4b769acde11" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; float &gt;::VendorPlan</type>
@@ -214,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1136" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1136" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="1151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="1151" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -267,7 +274,7 @@
         <name>get_vendor_plan_d</name>
         <qualifiedname>amrex::FFT::get_vendor_plan_d</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1_1FFT_1a07ebd4aab8904819a3bbc7009e06ce97" kindref="member">Key</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" kindref="member">Key</ref> const &amp;</type>
           <declname>key</declname>
         </param>
         <briefdescription>
@@ -276,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="55" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="55" bodyend="62" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1138" declcolumn="7"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="55" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="55" bodyend="62" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1153" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1FFT_1ab9840e2620314d60691e6438e5b8bde3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1_1FFT_1a5e2fe5e29b662f9d24d3a4b769acde11" kindref="member">PlanF</ref> *</type>
@@ -285,7 +292,7 @@
         <name>get_vendor_plan_f</name>
         <qualifiedname>amrex::FFT::get_vendor_plan_f</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1_1FFT_1a07ebd4aab8904819a3bbc7009e06ce97" kindref="member">Key</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" kindref="member">Key</ref> const &amp;</type>
           <declname>key</declname>
         </param>
         <briefdescription>
@@ -294,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="64" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="64" bodyend="71" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1139" declcolumn="7"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="64" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="64" bodyend="71" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1154" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1FFT_1a6cb9d5c30fd6357eb758299f3abd61d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -303,7 +310,7 @@
         <name>add_vendor_plan_d</name>
         <qualifiedname>amrex::FFT::add_vendor_plan_d</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1_1FFT_1a07ebd4aab8904819a3bbc7009e06ce97" kindref="member">Key</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" kindref="member">Key</ref> const &amp;</type>
           <declname>key</declname>
         </param>
         <param>
@@ -316,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="73" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="73" bodyend="76" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1141" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="73" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="73" bodyend="76" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1156" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1FFT_1a59e01f27497fe7be2f0826c2d2aaa40e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -325,7 +332,7 @@
         <name>add_vendor_plan_f</name>
         <qualifiedname>amrex::FFT::add_vendor_plan_f</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1_1FFT_1a07ebd4aab8904819a3bbc7009e06ce97" kindref="member">Key</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" kindref="member">Key</ref> const &amp;</type>
           <declname>key</declname>
         </param>
         <param>
@@ -338,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="78" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="78" bodyend="81" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1142" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="78" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="78" bodyend="81" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1157" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1FFT_1a5f62bdef4ab3baa40ccac7c6ab58a4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>

@@ -164,6 +164,28 @@ preparation works are done in the construction of an <code class="code highlight
 object. Therefore, one should cache it for reuse if possible. Although
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code> does not have a default constructor, one could always use
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span></code> to store an object in one’s class.</p>
+<p>Class template <cite>FFT::R2C</cite> also supports batched FFTs. The batch size is set
+in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span></code> object passed to the constructor of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>. Below is an example.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">batch_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">batch_size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="w"> </span><span class="n">info</span><span class="p">{};</span>
+<span class="n">info</span><span class="p">.</span><span class="n">setBatchSize</span><span class="p">(</span><span class="n">batch_size</span><span class="p">));</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">(),</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">cmf</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="n">batch_size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">cmf</span><span class="p">);</span>
+
+<span class="c1">// Do work on cmf.</span>
+<span class="c1">// Function forwardThenBackward is not yet supported for a batched FFT.</span>
+
+<span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">cmf</span><span class="p">,</span><span class="w"> </span><span class="n">mf</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 <section id="fft-localr2c-class">
 <span id="sec-fft-localr2c"></span><h1>FFT::LocalR2C Class<a class="headerlink" href="#fft-localr2c-class" title="Permalink to this heading"></a></h1>

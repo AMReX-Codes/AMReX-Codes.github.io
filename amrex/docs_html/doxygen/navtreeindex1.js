@@ -1,6 +1,6 @@
 var NAVTREEINDEX1 =
 {
-"AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,1],
+"AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672":[4,0,0,0,0,0],
 "AMReX__AmrvisConstants_8H.html":[4,0,0,5,0,2],
 "AMReX__AmrvisConstants_8H.html#a04b5ba23c65119a12a4821f069115d45":[4,0,0,5,0,2,8],
 "AMReX__AmrvisConstants_8H.html#a166072d05a5e20994289f487f0e37c67":[4,0,0,5,0,2,6],

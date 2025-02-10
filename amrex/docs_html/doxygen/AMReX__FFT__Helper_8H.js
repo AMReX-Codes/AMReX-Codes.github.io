@@ -7,7 +7,7 @@ var AMReX__FFT__Helper_8H =
     [ "amrex::FFT::RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
     [ "amrex::FFT::RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
     [ "amrex::FFT::detail::SubHelper", "structamrex_1_1FFT_1_1detail_1_1SubHelper.html", "structamrex_1_1FFT_1_1detail_1_1SubHelper" ],
-    [ "Key", "AMReX__FFT__Helper_8H.html#a07ebd4aab8904819a3bbc7009e06ce97", null ],
+    [ "Key", "AMReX__FFT__Helper_8H.html#af2da8d3e9633d475da772b0769ce3b81", null ],
     [ "PlanD", "AMReX__FFT__Helper_8H.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
     [ "PlanF", "AMReX__FFT__Helper_8H.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],
     [ "Direction", "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0", [
@@ -17,6 +17,7 @@ var AMReX__FFT__Helper_8H =
       [ "none", "AMReX__FFT__Helper_8H.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8", null ]
     ] ],
     [ "DomainStrategy", "AMReX__FFT__Helper_8H.html#a5e1db35696b96f6c8dcd2308027ce845", [
+      [ "automatic", "AMReX__FFT__Helper_8H.html#a5e1db35696b96f6c8dcd2308027ce845a2bd9c0ed00116be1258e0cc66617d7c8", null ],
       [ "slab", "AMReX__FFT__Helper_8H.html#a5e1db35696b96f6c8dcd2308027ce845ae52ce0141772cd5abea43f36ab85f387", null ],
       [ "pencil", "AMReX__FFT__Helper_8H.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba", null ]
     ] ],
