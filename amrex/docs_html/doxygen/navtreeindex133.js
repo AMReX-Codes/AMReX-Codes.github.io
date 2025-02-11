@@ -1,5 +1,13 @@
 var NAVTREEINDEX133 =
 {
+"structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c":[3,0,22,5],
+"structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[3,0,22,10],
+"structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199":[3,0,22,2],
+"structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0":[3,0,22,3],
+"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[3,0,22,0],
+"structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[3,0,22,9],
+"structyy__trans__info.html":[3,0,23],
+"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,23,1],
 "structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[3,0,23,0],
 "topics.html":[1],
 "unionAMREX__IPARSERSTYPE.html":[3,0,12],

@@ -1,5 +1,13 @@
 var NAVTREEINDEX109 =
 {
+"structCommProfStats_1_1BarrierEntry.html#a8323a9d1128d230d3cd3ec5d448f7577":[3,0,15,0,1],
+"structCommProfStats_1_1BarrierEntry.html#aa4edfb42a1c77e953234b83e0f87ce6f":[3,0,15,0,4],
+"structCommProfStats_1_1BarrierEntry.html#ab15687c13dfc4641ab7ce30d42d8c560":[3,0,15,0,6],
+"structCommProfStats_1_1BarrierEntry.html#ac26275b15424e584ebe7f5a89c23e4c7":[3,0,15,0,2],
+"structCommProfStats_1_1DataBlock.html":[3,0,15,1],
+"structCommProfStats_1_1DataBlock.html#a0e6da7295f52dca99d4abf096c1bed81":[3,0,15,1,15],
+"structCommProfStats_1_1DataBlock.html#a13d897811c92d1e7088cb5d11623f636":[3,0,15,1,13],
+"structCommProfStats_1_1DataBlock.html#a15a7c9b713844d961e224cec1e1b07cf":[3,0,15,1,12],
 "structCommProfStats_1_1DataBlock.html#a20f26cad91bc22e7f5509e046bfe8369":[3,0,15,1,3],
 "structCommProfStats_1_1DataBlock.html#a2616da0635b25290247f80c3cfb6ee32":[3,0,15,1,17],
 "structCommProfStats_1_1DataBlock.html#a27353154e5e772a6fbde00aa9ccda88a":[3,0,15,1,10],
@@ -241,13 +249,5 @@ var NAVTREEINDEX109 =
 "structamrex_1_1ArenaAllocatorBase.html#aff48c37eec55fef7a4e4013dd98cb1bc":[2,0,0,84,7],
 "structamrex_1_1ArenaAllocatorBase.html#aff48c37eec55fef7a4e4013dd98cb1bc":[3,0,0,51,7],
 "structamrex_1_1ArenaInfo.html":[3,0,0,52],
-"structamrex_1_1ArenaInfo.html":[2,0,0,85],
-"structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[2,0,0,85,4],
-"structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[3,0,0,52,4],
-"structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[3,0,0,52,6],
-"structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[2,0,0,85,6],
-"structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917":[3,0,0,52,7],
-"structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917":[2,0,0,85,7],
-"structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81":[2,0,0,85,8],
-"structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81":[3,0,0,52,8]
+"structamrex_1_1ArenaInfo.html":[2,0,0,85]
 };

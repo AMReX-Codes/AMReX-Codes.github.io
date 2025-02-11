@@ -14,6 +14,7 @@ var namespaceamrex_1_1FFT =
     [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
     [ "Swap01", "structamrex_1_1FFT_1_1Swap01.html", "structamrex_1_1FFT_1_1Swap01" ],
     [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ],
+    [ "C2C", "namespaceamrex_1_1FFT.html#a7ea6b8813a6e8c5f457601900d8d2ae8", null ],
     [ "Key", "namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81", null ],
     [ "PlanD", "namespaceamrex_1_1FFT.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
     [ "PlanF", "namespaceamrex_1_1FFT.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],

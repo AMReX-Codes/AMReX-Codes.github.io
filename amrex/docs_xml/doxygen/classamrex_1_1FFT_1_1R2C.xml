@@ -14,25 +14,17 @@
         <defname>D</defname>
         <defval><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f" kindref="member">FFT::Direction::both</ref></defval>
       </param>
+      <param>
+        <type>bool</type>
+        <declname>C</declname>
+        <defname>C</defname>
+        <defval>false</defval>
+      </param>
     </templateparamlist>
     <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" prot="public" static="no">
-        <type>std::conditional_t&lt; std::is_same_v&lt; T, Real &gt;, <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; T &gt; &gt; &gt;</type>
-        <definition>using amrex::FFT::R2C&lt; T, D &gt;::MF =  std::conditional_t&lt;std::is_same_v&lt;T,Real&gt;, MultiFab, FabArray&lt;BaseFab&lt;T&gt; &gt; &gt;</definition>
-        <argsstring></argsstring>
-        <name>MF</name>
-        <qualifiedname>amrex::FFT::R2C::MF</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="36" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="37" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" prot="public" static="no">
+      <memberdef kind="typedef" id="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" prot="public" static="no">
         <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="structamrex_1_1GpuComplex" kindref="compound">GpuComplex</ref>&lt; T &gt; &gt; &gt;</type>
-        <definition>using amrex::FFT::R2C&lt; T, D &gt;::cMF =  FabArray&lt;BaseFab&lt;GpuComplex&lt;T&gt; &gt; &gt;</definition>
+        <definition>using amrex::FFT::R2C&lt; T, D, C &gt;::cMF =  FabArray&lt;BaseFab&lt;GpuComplex&lt;T&gt; &gt; &gt;</definition>
         <argsstring></argsstring>
         <name>cMF</name>
         <qualifiedname>amrex::FFT::R2C::cMF</qualifiedname>
@@ -42,7 +34,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="38" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="38" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="36" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref>, <ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref>, std::conditional_t&lt; std::is_same_v&lt; T, Real &gt;, <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; T &gt; &gt; &gt; &gt;</type>
+        <definition>using amrex::FFT::R2C&lt; T, D, C &gt;::MF =  std::conditional_t &lt;C, cMF, std::conditional_t&lt;std::is_same_v&lt;T,Real&gt;, MultiFab, FabArray&lt;BaseFab&lt;T&gt; &gt; &gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>MF</name>
+        <qualifiedname>amrex::FFT::R2C::MF</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="37" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="39" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="friend">
@@ -66,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="40" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="40" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="41" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1FFT_1_1R2C_1a1be460f58e5e6b3d1fc4ddecc08e522b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -88,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="41" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="41" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="42" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1FFT_1_1R2C_1abf6a97cc1f486d7ad995037461ecb49a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -110,13 +116,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="42" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="42" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="43" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="43" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a78cddf3146e625a91a5dc10bc5332ad1" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af4b15671810f5a84ab6715bbd56f7b58" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_fwd_x</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_fwd_x</definition>
         <argsstring></argsstring>
         <name>m_fft_fwd_x</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_fwd_x</qualifiedname>
@@ -127,11 +133,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="188" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="188" bodyend="188"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="234" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="234" bodyend="234"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a81259ebdf85454dd36d69ac5b8651464" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a4a6a9395c021e96d1e17832b40f8841b" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_bwd_x</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_bwd_x</definition>
         <argsstring></argsstring>
         <name>m_fft_bwd_x</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_bwd_x</qualifiedname>
@@ -142,11 +148,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="189" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="189" bodyend="189"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="235" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="235" bodyend="235"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af78cc401304f9754401ffa0341d76c9e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a1cf1e47a956e17a2a921406ac14162c6" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_fwd_y</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_fwd_y</definition>
         <argsstring></argsstring>
         <name>m_fft_fwd_y</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_fwd_y</qualifiedname>
@@ -157,11 +163,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="190" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="190" bodyend="190"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="236" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="236" bodyend="236"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a8ffa52eeedd78ef92a1912ee19af49d8" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af1a6e36c635a82881b800c971ab48e3f" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_bwd_y</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_bwd_y</definition>
         <argsstring></argsstring>
         <name>m_fft_bwd_y</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_bwd_y</qualifiedname>
@@ -172,11 +178,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="191" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="191" bodyend="191"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="237" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="237" bodyend="237"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a36b270190a680b05ff06132fef3c9e56" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a210fd009cc8ceee6b10715f51a6b6d7b" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_fwd_z</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_fwd_z</definition>
         <argsstring></argsstring>
         <name>m_fft_fwd_z</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_fwd_z</qualifiedname>
@@ -187,11 +193,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="192" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="192" bodyend="192"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="238" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="238" bodyend="238"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a3c1daadd2ea94f4613bb02bcfe7c9859" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ac9c5dfc35d226c7f855ffc3c1442359b" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_bwd_z</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_bwd_z</definition>
         <argsstring></argsstring>
         <name>m_fft_bwd_z</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_bwd_z</qualifiedname>
@@ -202,11 +208,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="193" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="193" bodyend="193"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="239" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="239" bodyend="239"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a9658054d64d9e5366aaacabe3d9c3218" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ac9ee1ebd7b1be12422791eba4a9a1846" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_fwd_x_half</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_fwd_x_half</definition>
         <argsstring></argsstring>
         <name>m_fft_fwd_x_half</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_fwd_x_half</qualifiedname>
@@ -217,11 +223,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="194" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="194" bodyend="194"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="240" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="240" bodyend="240"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a4753bc911f228b8ed3202a94e8541b50" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a7824471971d16b9e694be9096a26d8a5" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;</type>
-        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D &gt;::m_fft_bwd_x_half</definition>
+        <definition>Plan&lt;T&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_fft_bwd_x_half</definition>
         <argsstring></argsstring>
         <name>m_fft_bwd_x_half</name>
         <qualifiedname>amrex::FFT::R2C::m_fft_bwd_x_half</qualifiedname>
@@ -232,11 +238,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="195" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="195" bodyend="195"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="241" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="241" bodyend="241"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a918477cde28824f702acc29c93426141" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a39be847a73cc6b5bf68f2def672ae6e6" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_x2y</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_x2y</definition>
         <argsstring></argsstring>
         <name>m_cmd_x2y</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_x2y</qualifiedname>
@@ -246,11 +252,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="200" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="200" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="246" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="246" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ad3a1611b1ca933d17e99ac17cf88ea62" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ae957062e754bcadaf0991957af0841a9" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_y2x</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_y2x</definition>
         <argsstring></argsstring>
         <name>m_cmd_y2x</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_y2x</qualifiedname>
@@ -260,11 +266,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="201" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="201" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="247" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="247" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ab75dc0f07a97bcf1aa07bf867036d7c6" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a766a6f52cfa383cbd406ad24c64e32a8" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_y2z</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_y2z</definition>
         <argsstring></argsstring>
         <name>m_cmd_y2z</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_y2z</qualifiedname>
@@ -274,11 +280,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="202" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="202" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="248" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="248" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a82bc17cf6f48651e7cbdedb5d828c5af" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a8cdcf8557e057ee155e8d2bb728328d4" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_z2y</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_z2y</definition>
         <argsstring></argsstring>
         <name>m_cmd_z2y</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_z2y</qualifiedname>
@@ -288,11 +294,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="203" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="203" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="249" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="249" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a3f29f86329cce624bac21599ff1b7339" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a7187c1efc4385db3d5585bc96f8b3f98" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_x2z</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_x2z</definition>
         <argsstring></argsstring>
         <name>m_cmd_x2z</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_x2z</qualifiedname>
@@ -302,11 +308,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="204" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="204" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="250" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="250" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a5df357ca623a22fd3f0f862b7bef2c2e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1acbdc1e4e80e70872762588bd61d26b05" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_z2x</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_z2x</definition>
         <argsstring></argsstring>
         <name>m_cmd_z2x</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_z2x</qualifiedname>
@@ -316,11 +322,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="205" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="205" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="251" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="251" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a2366035e59f29a839d7be6e80e225b08" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a0043e0489b5a6bff456bb0b5127514d5" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_x2z_half</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_x2z_half</definition>
         <argsstring></argsstring>
         <name>m_cmd_x2z_half</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_x2z_half</qualifiedname>
@@ -330,11 +336,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="206" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="206" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="252" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="252" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1afe8fac4c43c25e1666144235aad8d1e3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a34a80ebcde2dfacb2c257baa399e3607" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D &gt;::m_cmd_z2x_half</definition>
+        <definition>std::unique_ptr&lt;MultiBlockCommMetaData&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_cmd_z2x_half</definition>
         <argsstring></argsstring>
         <name>m_cmd_z2x_half</name>
         <qualifiedname>amrex::FFT::R2C::m_cmd_z2x_half</qualifiedname>
@@ -344,11 +350,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="207" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="207" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="253" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="253" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ae171b394ef7e5387eb9f7ae417bba2f4" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a70799a81ad2650ed880b2a6d371f51a5" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Swap01" kindref="compound">Swap01</ref></type>
-        <definition>Swap01 amrex::FFT::R2C&lt; T, D &gt;::m_dtos_x2y</definition>
+        <definition>Swap01 amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_x2y</definition>
         <argsstring></argsstring>
         <name>m_dtos_x2y</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_x2y</qualifiedname>
@@ -359,11 +365,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="208" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="208" bodyend="208"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="254" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="254" bodyend="254"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a9c2aab94da1f64fb53a37dfc80efc592" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a9fa340233592c6f0f95dee9a45ac127b" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Swap01" kindref="compound">Swap01</ref></type>
-        <definition>Swap01 amrex::FFT::R2C&lt; T, D &gt;::m_dtos_y2x</definition>
+        <definition>Swap01 amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_y2x</definition>
         <argsstring></argsstring>
         <name>m_dtos_y2x</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_y2x</qualifiedname>
@@ -374,11 +380,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="209" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="209" bodyend="209"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="255" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="255" bodyend="255"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a04530da756c11fca01063d574565cd69" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a5f20208891d3fba8faf0a6e2c56852ea" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Swap02" kindref="compound">Swap02</ref></type>
-        <definition>Swap02 amrex::FFT::R2C&lt; T, D &gt;::m_dtos_y2z</definition>
+        <definition>Swap02 amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_y2z</definition>
         <argsstring></argsstring>
         <name>m_dtos_y2z</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_y2z</qualifiedname>
@@ -389,11 +395,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="210" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="210" bodyend="210"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="256" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="256" bodyend="256"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a0b83890e9dcc1a178bc7efddbda05595" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1afcd87a98af06bb71eef53b52a8d77400" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Swap02" kindref="compound">Swap02</ref></type>
-        <definition>Swap02 amrex::FFT::R2C&lt; T, D &gt;::m_dtos_z2y</definition>
+        <definition>Swap02 amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_z2y</definition>
         <argsstring></argsstring>
         <name>m_dtos_z2y</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_z2y</qualifiedname>
@@ -404,11 +410,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="211" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="211" bodyend="211"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="257" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="257" bodyend="257"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ad95a3d9d0f3c79c2503f874cb30c55da" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a733dfe4be995af1d172e89ca392c519c" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1RotateFwd" kindref="compound">RotateFwd</ref></type>
-        <definition>RotateFwd amrex::FFT::R2C&lt; T, D &gt;::m_dtos_x2z</definition>
+        <definition>RotateFwd amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_x2z</definition>
         <argsstring></argsstring>
         <name>m_dtos_x2z</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_x2z</qualifiedname>
@@ -419,11 +425,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="212" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="212" bodyend="212"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="258" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="258" bodyend="258"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a9528ee784035cd8e431213d5153db200" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af868711216f1ed131c9257ac14bd9156" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1RotateBwd" kindref="compound">RotateBwd</ref></type>
-        <definition>RotateBwd amrex::FFT::R2C&lt; T, D &gt;::m_dtos_z2x</definition>
+        <definition>RotateBwd amrex::FFT::R2C&lt; T, D, C &gt;::m_dtos_z2x</definition>
         <argsstring></argsstring>
         <name>m_dtos_z2x</name>
         <qualifiedname>amrex::FFT::R2C::m_dtos_z2x</qualifiedname>
@@ -434,11 +440,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="213" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="213" bodyend="213"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="259" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="259" bodyend="259"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a550a73dbe3b3401569be56cbe7fb1366" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref></type>
-        <definition>MF amrex::FFT::R2C&lt; T, D &gt;::m_rx</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1aebe08a2844357de336689cdba54a9804" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref></type>
+        <definition>MF amrex::FFT::R2C&lt; T, D, C &gt;::m_rx</definition>
         <argsstring></argsstring>
         <name>m_rx</name>
         <qualifiedname>amrex::FFT::R2C::m_rx</qualifiedname>
@@ -448,11 +454,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="215" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="215" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="261" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="261" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a432916244b0cdaf0faaf4a9307373551" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref></type>
-        <definition>cMF amrex::FFT::R2C&lt; T, D &gt;::m_cx</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a49201032c814a83b504752d388ec846e" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref></type>
+        <definition>cMF amrex::FFT::R2C&lt; T, D, C &gt;::m_cx</definition>
         <argsstring></argsstring>
         <name>m_cx</name>
         <qualifiedname>amrex::FFT::R2C::m_cx</qualifiedname>
@@ -462,11 +468,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="216" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="216" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="262" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="262" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a142653e23cb3ff5a6d6b78ce9fabbc11" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref></type>
-        <definition>cMF amrex::FFT::R2C&lt; T, D &gt;::m_cy</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a1487a1cb3c9c99eb2c97e2be25f9a85e" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref></type>
+        <definition>cMF amrex::FFT::R2C&lt; T, D, C &gt;::m_cy</definition>
         <argsstring></argsstring>
         <name>m_cy</name>
         <qualifiedname>amrex::FFT::R2C::m_cy</qualifiedname>
@@ -476,11 +482,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="217" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="217" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="263" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="263" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1aa5b77ddebb8cd7ca2198aa74a752171d" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref></type>
-        <definition>cMF amrex::FFT::R2C&lt; T, D &gt;::m_cz</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a87ec1eefd998a8351288407362b87a50" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref></type>
+        <definition>cMF amrex::FFT::R2C&lt; T, D, C &gt;::m_cz</definition>
         <argsstring></argsstring>
         <name>m_cz</name>
         <qualifiedname>amrex::FFT::R2C::m_cz</qualifiedname>
@@ -490,11 +496,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="218" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="218" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="264" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="264" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af6a5a67e73d8371d523cc403d3277960" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1af2a37855637a647e63430415af0a709f" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; char, <ref refid="structamrex_1_1DataDeleter" kindref="compound">DataDeleter</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;char,DataDeleter&gt; amrex::FFT::R2C&lt; T, D &gt;::m_data_1</definition>
+        <definition>std::unique_ptr&lt;char,DataDeleter&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_data_1</definition>
         <argsstring></argsstring>
         <name>m_data_1</name>
         <qualifiedname>amrex::FFT::R2C::m_data_1</qualifiedname>
@@ -504,11 +510,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="220" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="220" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="266" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="266" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a8c643500e1cb8ccc7d1d396173bbd81f" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a4aec372e4342615252409bc4c50ba954" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; char, <ref refid="structamrex_1_1DataDeleter" kindref="compound">DataDeleter</ref> &gt;</type>
-        <definition>std::unique_ptr&lt;char,DataDeleter&gt; amrex::FFT::R2C&lt; T, D &gt;::m_data_2</definition>
+        <definition>std::unique_ptr&lt;char,DataDeleter&gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_data_2</definition>
         <argsstring></argsstring>
         <name>m_data_2</name>
         <qualifiedname>amrex::FFT::R2C::m_data_2</qualifiedname>
@@ -518,11 +524,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="221" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="221" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="267" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="267" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ab61c759c9b1dc4f010f36c3ea5f52a1f" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ae96748bea1d4af0ec1f04bef5c96f6c8" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
-        <definition>Box amrex::FFT::R2C&lt; T, D &gt;::m_real_domain</definition>
+        <definition>Box amrex::FFT::R2C&lt; T, D, C &gt;::m_real_domain</definition>
         <argsstring></argsstring>
         <name>m_real_domain</name>
         <qualifiedname>amrex::FFT::R2C::m_real_domain</qualifiedname>
@@ -532,11 +538,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="223" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="223" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="269" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="269" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a08e5528a477e63f9bd0d29d5bf27a989" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a40052f2e65b465812d23393edbf35054" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
-        <definition>Box amrex::FFT::R2C&lt; T, D &gt;::m_spectral_domain_x</definition>
+        <definition>Box amrex::FFT::R2C&lt; T, D, C &gt;::m_spectral_domain_x</definition>
         <argsstring></argsstring>
         <name>m_spectral_domain_x</name>
         <qualifiedname>amrex::FFT::R2C::m_spectral_domain_x</qualifiedname>
@@ -546,11 +552,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="224" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="224" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="270" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="270" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a5858e781b78f84455eb1ee4bc4a8d1cc" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a1149c63ebb5db402f30556b717950a16" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
-        <definition>Box amrex::FFT::R2C&lt; T, D &gt;::m_spectral_domain_y</definition>
+        <definition>Box amrex::FFT::R2C&lt; T, D, C &gt;::m_spectral_domain_y</definition>
         <argsstring></argsstring>
         <name>m_spectral_domain_y</name>
         <qualifiedname>amrex::FFT::R2C::m_spectral_domain_y</qualifiedname>
@@ -560,11 +566,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="225" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="225" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="271" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="271" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a0feaf7887ae84686028a8eed6ceb0625" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a8386420723e4c174f28488a46e30e2fa" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
-        <definition>Box amrex::FFT::R2C&lt; T, D &gt;::m_spectral_domain_z</definition>
+        <definition>Box amrex::FFT::R2C&lt; T, D, C &gt;::m_spectral_domain_z</definition>
         <argsstring></argsstring>
         <name>m_spectral_domain_z</name>
         <qualifiedname>amrex::FFT::R2C::m_spectral_domain_z</qualifiedname>
@@ -574,11 +580,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="226" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="226" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="272" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="272" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1abca5aecbc7ab72d5dcb5188176c831fa" prot="private" static="no" mutable="no">
-        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref>&lt; T, D &gt; &gt;</type>
-        <definition>std::unique_ptr&lt;R2C&lt;T,D&gt; &gt; amrex::FFT::R2C&lt; T, D &gt;::m_r2c_sub</definition>
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a8f47a085db0bac9c450d889095ee3397" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref>&lt; T, D, <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref> &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;R2C&lt;T,D,C&gt; &gt; amrex::FFT::R2C&lt; T, D, C &gt;::m_r2c_sub</definition>
         <argsstring></argsstring>
         <name>m_r2c_sub</name>
         <qualifiedname>amrex::FFT::R2C::m_r2c_sub</qualifiedname>
@@ -588,11 +594,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="228" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="228" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="274" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="274" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a36e5eaccb94426132c8dbcfd4e9aa6d9" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a91b067400729a46cd9cc2c37438c5eab" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1detail_1_1SubHelper" kindref="compound">detail::SubHelper</ref></type>
-        <definition>detail::SubHelper amrex::FFT::R2C&lt; T, D &gt;::m_sub_helper</definition>
+        <definition>detail::SubHelper amrex::FFT::R2C&lt; T, D, C &gt;::m_sub_helper</definition>
         <argsstring></argsstring>
         <name>m_sub_helper</name>
         <qualifiedname>amrex::FFT::R2C::m_sub_helper</qualifiedname>
@@ -602,11 +608,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="229" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="229" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="275" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="275" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a66718d5c702b86a495b1355b4800a234" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a06d2cb67911c4b941cbcff8b1c313c64" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1FFT_1_1Info" kindref="compound">Info</ref></type>
-        <definition>Info amrex::FFT::R2C&lt; T, D &gt;::m_info</definition>
+        <definition>Info amrex::FFT::R2C&lt; T, D, C &gt;::m_info</definition>
         <argsstring></argsstring>
         <name>m_info</name>
         <qualifiedname>amrex::FFT::R2C::m_info</qualifiedname>
@@ -616,11 +622,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="231" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="231" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="277" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="277" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a4ad9deffed56e665c984e659062401ff" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a67918f091c9254deb019ad8a07cbb09b" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::FFT::R2C&lt; T, D &gt;::m_do_alld_fft</definition>
+        <definition>bool amrex::FFT::R2C&lt; T, D, C &gt;::m_do_alld_fft</definition>
         <argsstring></argsstring>
         <name>m_do_alld_fft</name>
         <qualifiedname>amrex::FFT::R2C::m_do_alld_fft</qualifiedname>
@@ -631,11 +637,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="233" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="233" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="279" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="279" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1abd54e60bab9326b01f5cc4abbd7f7b8a" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1aea7a8880fa0cfd0c9fd69de239e5aee5" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::FFT::R2C&lt; T, D &gt;::m_slab_decomp</definition>
+        <definition>bool amrex::FFT::R2C&lt; T, D, C &gt;::m_slab_decomp</definition>
         <argsstring></argsstring>
         <name>m_slab_decomp</name>
         <qualifiedname>amrex::FFT::R2C::m_slab_decomp</qualifiedname>
@@ -646,11 +652,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="234" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="234" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="280" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="280" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1a868a9181a010890e6eeb03a3ced475a7" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1FFT_1_1R2C_1ace1a9f4f8e0f19d0ff099520c43aa90f" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::FFT::R2C&lt; T, D &gt;::m_openbc_half</definition>
+        <definition>bool amrex::FFT::R2C&lt; T, D, C &gt;::m_openbc_half</definition>
         <argsstring></argsstring>
         <name>m_openbc_half</name>
         <qualifiedname>amrex::FFT::R2C::m_openbc_half</qualifiedname>
@@ -661,13 +667,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="235" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="235" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="281" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="281" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1aedae67822f8809e38b2a7c5378efb8bf" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a422c9f9cd4adb3ca93c97b94a8440e9c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::FFT::R2C&lt; T, D &gt;::R2C</definition>
+        <definition>amrex::FFT::R2C&lt; T, D, C &gt;::R2C</definition>
         <argsstring>(Box const &amp;domain, Info const &amp;info=Info{})</argsstring>
         <name>R2C</name>
         <qualifiedname>amrex::FFT::R2C::R2C</qualifiedname>
@@ -705,11 +711,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="50" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="239" bodyend="459"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="51" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="285" bodyend="530"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ad45dde36a7f97978a78fc37119b6f4a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1aec3ed511a0c5070351c742231bb078fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::FFT::R2C&lt; T, D &gt;::~R2C&lt; T, D &gt;</definition>
+        <definition>amrex::FFT::R2C&lt; T, D, C &gt;::~R2C&lt; T, D, C &gt;</definition>
         <argsstring>()</argsstring>
         <name>~R2C</name>
         <qualifiedname>amrex::FFT::R2C::~R2C</qualifiedname>
@@ -719,33 +725,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="52" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="462" bodyend="480"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="53" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="533" bodyend="551"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a7a7c7479e45148841ed112fa7bd246d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ac024841c9f9848b7e7a85c810468a1a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::FFT::R2C&lt; T, D &gt;::R2C</definition>
+        <definition>amrex::FFT::R2C&lt; T, D, C &gt;::R2C</definition>
         <argsstring>(R2C const &amp;)=delete</argsstring>
         <name>R2C</name>
         <qualifiedname>amrex::FFT::R2C::R2C</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref> const &amp;</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="54" column="5"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1aa7b45fd640aae7eb89f38cd3516052f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>amrex::FFT::R2C&lt; T, D &gt;::R2C</definition>
-        <argsstring>(R2C &amp;&amp;)=delete</argsstring>
-        <name>R2C</name>
-        <qualifiedname>amrex::FFT::R2C::R2C</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -755,9 +744,26 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="55" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a077bdccf74e7187a11f5a8f0e9aa0749" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a625754f142ffaf7cc8661e8917e94153" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FFT::R2C&lt; T, D, C &gt;::R2C</definition>
+        <argsstring>(R2C &amp;&amp;)=delete</argsstring>
+        <name>R2C</name>
+        <qualifiedname>amrex::FFT::R2C::R2C</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="56" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a0965fb062a67ff26a2349a9c44b06da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref> &amp;</type>
-        <definition>R2C &amp; amrex::FFT::R2C&lt; T, D &gt;::operator=</definition>
+        <definition>R2C &amp; amrex::FFT::R2C&lt; T, D, C &gt;::operator=</definition>
         <argsstring>(R2C const &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>amrex::FFT::R2C::operator=</qualifiedname>
@@ -770,11 +776,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="56" column="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="57" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a5c6c41d9872eace3305c509a0baebc74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a399f7d54d1870e370908f77501355181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref> &amp;</type>
-        <definition>R2C &amp; amrex::FFT::R2C&lt; T, D &gt;::operator=</definition>
+        <definition>R2C &amp; amrex::FFT::R2C&lt; T, D, C &gt;::operator=</definition>
         <argsstring>(R2C &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>amrex::FFT::R2C::operator=</qualifiedname>
@@ -787,9 +793,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="57" column="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="58" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1abea0bacc559f98f545a20c290a5c713e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1aea9a934a1486a1e79988b2ef96e8d24f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
@@ -806,16 +812,16 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::forwardThenBackward</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::forwardThenBackward</definition>
         <argsstring>(MF const &amp;inmf, MF &amp;outmf, F const &amp;post_forward, int incomp=0, int outcomp=0)</argsstring>
         <name>forwardThenBackward</name>
         <qualifiedname>amrex::FFT::R2C::forwardThenBackward</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> const &amp;</type>
           <declname>inmf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -866,9 +872,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="80" bodyend="87"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="81" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="81" bodyend="88"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ad4ad6c1de1566188bd75f25c04243e2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1af97b9a2fd2cf2de2944f51c53659a9e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -882,12 +888,12 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::forward</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::forward</definition>
         <argsstring>(MF const &amp;inmf, int incomp=0)</argsstring>
         <name>forward</name>
         <qualifiedname>amrex::FFT::R2C::forward</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> const &amp;</type>
           <declname>inmf</declname>
         </param>
         <param>
@@ -913,9 +919,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="541" bodyend="600"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="101" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="612" bodyend="679"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a5997e07e594b724f1316a52134552737" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a2448d0524dc824afa2496c4b91360391" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -929,16 +935,16 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::forward</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::forward</definition>
         <argsstring>(MF const &amp;inmf, cMF &amp;outmf, int incomp=0, int outcomp=0)</argsstring>
         <name>forward</name>
         <qualifiedname>amrex::FFT::R2C::forward</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> const &amp;</type>
           <declname>inmf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -977,9 +983,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="113" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="831" bodyend="886"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="114" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="918" bodyend="973"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a23b5b08c674a98a25f360fbe171bd7db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a6572617625277fe8da80e09e44d75fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -993,12 +999,12 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::backward</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::backward</definition>
         <argsstring>(MF &amp;outmf, int outcomp=0)</argsstring>
         <name>backward</name>
         <qualifiedname>amrex::FFT::R2C::backward</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -1024,9 +1030,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="124" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="604" bodyend="607"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="125" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="683" bodyend="686"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a332ec0584f0575c2c6b6e28940e63440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a575c11f8c0c8babd332068696ebf7739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -1040,16 +1046,16 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::backward</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::backward</definition>
         <argsstring>(cMF const &amp;inmf, MF &amp;outmf, int incomp=0, int outcomp=0)</argsstring>
         <name>backward</name>
         <qualifiedname>amrex::FFT::R2C::backward</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref> const &amp;</type>
           <declname>inmf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -1088,11 +1094,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="137" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="891" bodyend="894"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="138" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="978" bodyend="981"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1acc09f9639645f4b743152a309d2dd88f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a837e3afdc0aacbf658df5685dccd8e5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
-        <definition>T amrex::FFT::R2C&lt; T, D &gt;::scalingFactor</definition>
+        <definition>T amrex::FFT::R2C&lt; T, D, C &gt;::scalingFactor</definition>
         <argsstring>() const</argsstring>
         <name>scalingFactor</name>
         <qualifiedname>amrex::FFT::R2C::scalingFactor</qualifiedname>
@@ -1103,9 +1109,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="142" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="790" bodyend="805"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="143" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="877" bodyend="892"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1adee781365744540d51fdbb2a2eb2549b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a855be873db56eacb576ed9b70b4b3d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -1118,8 +1124,8 @@
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type>std::pair&lt; <ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref> *, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
-        <definition>std::pair&lt; cMF *, IntVect &gt; amrex::FFT::R2C&lt; T, D &gt;::getSpectralData</definition>
+        <type>std::pair&lt; <ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref> *, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
+        <definition>std::pair&lt; cMF *, IntVect &gt; amrex::FFT::R2C&lt; T, D, C &gt;::getSpectralData</definition>
         <argsstring>()</argsstring>
         <name>getSpectralData</name>
         <qualifiedname>amrex::FFT::R2C::getSpectralData</qualifiedname>
@@ -1131,11 +1137,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="155" column="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="156" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a4ed4bec5d0b509eafe6ed59243f9b147" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ad0b77ce345115cbc6ffca2ca73f98241" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::pair&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt;</type>
-        <definition>std::pair&lt; BoxArray, DistributionMapping &gt; amrex::FFT::R2C&lt; T, D &gt;::getSpectralDataLayout</definition>
+        <definition>std::pair&lt; BoxArray, DistributionMapping &gt; amrex::FFT::R2C&lt; T, D, C &gt;::getSpectralDataLayout</definition>
         <argsstring>() const</argsstring>
         <name>getSpectralDataLayout</name>
         <qualifiedname>amrex::FFT::R2C::getSpectralDataLayout</qualifiedname>
@@ -1147,16 +1153,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="164" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="960" bodyend="1002"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="165" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="1047" bodyend="1089"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a94cb73c15675913a9381b5fa50d0682d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a8fc9c3d04bec4a578ed7ae1fd529e808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::post_forward_doit_0</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::post_forward_doit_0</definition>
         <argsstring>(F const &amp;post_forward)</argsstring>
         <name>post_forward_doit_0</name>
         <qualifiedname>amrex::FFT::R2C::post_forward_doit_0</qualifiedname>
@@ -1170,16 +1176,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="168" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="693" bodyend="744"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="169" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="780" bodyend="831"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a62ff948bcaf1ce75dbdb750fa579c900" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a6f49bf61ee718c334d9e2656058df55a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::post_forward_doit_1</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::post_forward_doit_1</definition>
         <argsstring>(F const &amp;post_forward)</argsstring>
         <name>post_forward_doit_1</name>
         <qualifiedname>amrex::FFT::R2C::post_forward_doit_1</qualifiedname>
@@ -1193,9 +1199,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="171" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="748" bodyend="787"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="172" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="835" bodyend="874"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a7884dcb5abf3406daaa878b19e571bc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a23ec2457d41e2c0112c00b72fc3d2511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref></type>
@@ -1206,8 +1212,8 @@
             <type>std::enable_if_t&lt; DIR==<ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8" kindref="member">Direction::forward</ref>||DIR==<ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f" kindref="member">Direction::both</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
           </param>
         </templateparamlist>
-        <type>std::pair&lt; typename <ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref>&lt; T, D &gt;<ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">::cMF</ref> *, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
-        <definition>std::pair&lt; typename R2C&lt; T, D &gt;::cMF *, IntVect &gt; amrex::FFT::R2C&lt; T, D &gt;::getSpectralData</definition>
+        <type>std::pair&lt; typename <ref refid="classamrex_1_1FFT_1_1R2C" kindref="compound">R2C</ref>&lt; T, D, <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref> &gt;<ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">::cMF</ref> *, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
+        <definition>std::pair&lt; typename R2C&lt; T, D, C &gt;::cMF *, IntVect &gt; amrex::FFT::R2C&lt; T, D, C &gt;::getSpectralData</definition>
         <argsstring>()</argsstring>
         <name>getSpectralData</name>
         <qualifiedname>amrex::FFT::R2C::getSpectralData</qualifiedname>
@@ -1217,13 +1223,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="811" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="811" bodyend="826"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="898" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="898" bodyend="913"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a5f306151d06e9ad8bcb1de6ead1ba1e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ad2112657be6a534f9e99505aa79c13c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::prepare_openbc</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::prepare_openbc</definition>
         <argsstring>()</argsstring>
         <name>prepare_openbc</name>
         <qualifiedname>amrex::FFT::R2C::prepare_openbc</qualifiedname>
@@ -1233,16 +1239,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="175" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="483" bodyend="536"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="176" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="554" bodyend="607"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1aee0725ed2c37e4b1b6ffd4f8a629e015" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a0e1ffeb02696282e50971b27ab3e623c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::backward_doit</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::backward_doit</definition>
         <argsstring>(MF &amp;outmf, IntVect const &amp;ngout=IntVect(0), Periodicity const &amp;period=Periodicity::NonPeriodic(), int outcomp=0)</argsstring>
         <name>backward_doit</name>
         <qualifiedname>amrex::FFT::R2C::backward_doit</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -1266,20 +1272,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="610" bodyend="659"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="178" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="689" bodyend="746"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a81e2e7fb85f6c4d40c73ec94fae9cbe9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a0d46065f4394c1d47235d89a5c1e2eef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::FFT::R2C&lt; T, D &gt;::backward_doit</definition>
+        <definition>void amrex::FFT::R2C&lt; T, D, C &gt;::backward_doit</definition>
         <argsstring>(cMF const &amp;inmf, MF &amp;outmf, IntVect const &amp;ngout=IntVect(0), Periodicity const &amp;period=Periodicity::NonPeriodic(), int incomp=0, int outcomp=0)</argsstring>
         <name>backward_doit</name>
         <qualifiedname>amrex::FFT::R2C::backward_doit</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref> const &amp;</type>
           <declname>inmf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" kindref="member">MF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" kindref="member">MF</ref> &amp;</type>
           <declname>outmf</declname>
         </param>
         <param>
@@ -1308,17 +1314,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="897" bodyend="956"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="182" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="984" bodyend="1043"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a459df3424ddd6bc5ab74e233f7510c51" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ab6520b1c01a70c834ae691084595e75c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::pair&lt; <ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt;, <ref refid="structamrex_1_1FFT_1_1Plan" kindref="compound">Plan</ref>&lt; T &gt; &gt;</type>
-        <definition>std::pair&lt; Plan&lt; T &gt;, Plan&lt; T &gt; &gt; amrex::FFT::R2C&lt; T, D &gt;::make_c2c_plans</definition>
-        <argsstring>(cMF &amp;inout) const</argsstring>
+        <definition>std::pair&lt; Plan&lt; T &gt;, Plan&lt; T &gt; &gt; amrex::FFT::R2C&lt; T, D, C &gt;::make_c2c_plans</definition>
+        <argsstring>(cMF &amp;inout, int ndims) const</argsstring>
         <name>make_c2c_plans</name>
         <qualifiedname>amrex::FFT::R2C::make_c2c_plans</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" kindref="member">cMF</ref> &amp;</type>
+          <type><ref refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" kindref="member">cMF</ref> &amp;</type>
           <declname>inout</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ndims</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -1326,7 +1336,63 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="186" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="663" bodyend="689"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="187" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="750" bodyend="776"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a3dda94c7d3d03313c61a4dfe10a26e5c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
+        <definition>static Box amrex::FFT::R2C&lt; T, D, C &gt;::make_domain_x</definition>
+        <argsstring>(Box const &amp;domain)</argsstring>
+        <name>make_domain_x</name>
+        <qualifiedname>amrex::FFT::R2C::make_domain_x</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="189" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="189" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1a4d46a932e7302bd4d0474b11a8a2d314" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
+        <definition>static Box amrex::FFT::R2C&lt; T, D, C &gt;::make_domain_y</definition>
+        <argsstring>(Box const &amp;domain)</argsstring>
+        <name>make_domain_y</name>
+        <qualifiedname>amrex::FFT::R2C::make_domain_y</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="204" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="204" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FFT_1_1R2C_1ad83c111348d4c308ace236e5f5e9dfac" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
+        <definition>static Box amrex::FFT::R2C&lt; T, D, C &gt;::make_domain_z</definition>
+        <argsstring>(Box const &amp;domain)</argsstring>
+        <name>make_domain_z</name>
+        <qualifiedname>amrex::FFT::R2C::make_domain_z</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="219" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="219" bodyend="232"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1501,7 +1567,7 @@
         <link refid="structamrex_1_1FFT_1_1Plan"/>
       </node>
       <node id="106">
-        <label>amrex::FFT::R2C&lt; Real, D &gt;</label>
+        <label>amrex::FFT::R2C&lt; Real, D, C &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="2" relation="usage">
           <edgelabel>m_fft_bwd_x</edgelabel>
@@ -1563,7 +1629,7 @@
         </childnode>
       </node>
       <node id="104">
-        <label>amrex::FFT::R2C&lt; Real, FFT::Direction::both &gt;</label>
+        <label>amrex::FFT::R2C&lt; Real, FFT::Direction::both, false &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="2" relation="usage">
           <edgelabel>m_fft_bwd_x</edgelabel>
@@ -1865,7 +1931,7 @@
         <link refid="structamrex_1_1FFT_1_1Info"/>
       </node>
       <node id="1">
-        <label>amrex::FFT::R2C&lt; T, D &gt;</label>
+        <label>amrex::FFT::R2C&lt; T, D, C &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="2" relation="usage">
           <edgelabel>m_fft_bwd_x</edgelabel>
@@ -2285,13 +2351,13 @@
         </childnode>
       </node>
       <node id="105">
-        <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; Real, D &gt; &gt;</label>
+        <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; Real, D, C &gt; &gt;</label>
         <childnode refid="106" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
       <node id="103">
-        <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; Real, FFT::Direction::both &gt; &gt;</label>
+        <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; Real, FFT::Direction::both, false &gt; &gt;</label>
         <childnode refid="104" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
@@ -2360,72 +2426,75 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="34" bodyend="236"/>
+    <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="34" bodyend="282"/>
     <listofallmembers>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a23b5b08c674a98a25f360fbe171bd7db" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a332ec0584f0575c2c6b6e28940e63440" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1aee0725ed2c37e4b1b6ffd4f8a629e015" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward_doit</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a81e2e7fb85f6c4d40c73ec94fae9cbe9" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward_doit</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1aa7c7335d76c9a949714e5b10ca90c3dc" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>cMF</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ad4ad6c1de1566188bd75f25c04243e2b" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forward</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a5997e07e594b724f1316a52134552737" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forward</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1abea0bacc559f98f545a20c290a5c713e" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forwardThenBackward</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1adee781365744540d51fdbb2a2eb2549b" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralData</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a7884dcb5abf3406daaa878b19e571bc3" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralData</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a4ed4bec5d0b509eafe6ed59243f9b147" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralDataLayout</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a918477cde28824f702acc29c93426141" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a3f29f86329cce624bac21599ff1b7339" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a2366035e59f29a839d7be6e80e225b08" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2z_half</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ad3a1611b1ca933d17e99ac17cf88ea62" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_y2x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ab75dc0f07a97bcf1aa07bf867036d7c6" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_y2z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a5df357ca623a22fd3f0f862b7bef2c2e" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1afe8fac4c43c25e1666144235aad8d1e3" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2x_half</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a82bc17cf6f48651e7cbdedb5d828c5af" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a432916244b0cdaf0faaf4a9307373551" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cx</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a142653e23cb3ff5a6d6b78ce9fabbc11" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cy</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1aa5b77ddebb8cd7ca2198aa74a752171d" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cz</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1af6a5a67e73d8371d523cc403d3277960" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_data_1</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a8c643500e1cb8ccc7d1d396173bbd81f" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_data_2</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a4ad9deffed56e665c984e659062401ff" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_do_alld_fft</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ae171b394ef7e5387eb9f7ae417bba2f4" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_x2y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ad95a3d9d0f3c79c2503f874cb30c55da" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_x2z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a9c2aab94da1f64fb53a37dfc80efc592" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_y2x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a04530da756c11fca01063d574565cd69" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_y2z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a9528ee784035cd8e431213d5153db200" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_z2x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a0b83890e9dcc1a178bc7efddbda05595" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_z2y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a81259ebdf85454dd36d69ac5b8651464" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a4753bc911f228b8ed3202a94e8541b50" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_x_half</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a8ffa52eeedd78ef92a1912ee19af49d8" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a3c1daadd2ea94f4613bb02bcfe7c9859" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a78cddf3146e625a91a5dc10bc5332ad1" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a9658054d64d9e5366aaacabe3d9c3218" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_x_half</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1af78cc401304f9754401ffa0341d76c9e" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a36b270190a680b05ff06132fef3c9e56" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a66718d5c702b86a495b1355b4800a234" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_info</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a868a9181a010890e6eeb03a3ced475a7" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_openbc_half</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1abca5aecbc7ab72d5dcb5188176c831fa" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_r2c_sub</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ab61c759c9b1dc4f010f36c3ea5f52a1f" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_real_domain</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a550a73dbe3b3401569be56cbe7fb1366" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_rx</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1abd54e60bab9326b01f5cc4abbd7f7b8a" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_slab_decomp</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a08e5528a477e63f9bd0d29d5bf27a989" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_x</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a5858e781b78f84455eb1ee4bc4a8d1cc" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_y</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a0feaf7887ae84686028a8eed6ceb0625" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_z</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a36e5eaccb94426132c8dbcfd4e9aa6d9" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_sub_helper</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a459df3424ddd6bc5ab74e233f7510c51" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>make_c2c_plans</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a1b7762ef1efa97491ef9805677ce9818" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>MF</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a6572617625277fe8da80e09e44d75fc1" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a575c11f8c0c8babd332068696ebf7739" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a0e1ffeb02696282e50971b27ab3e623c" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward_doit</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a0d46065f4394c1d47235d89a5c1e2eef" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>backward_doit</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ae7d1731672767514ef3909438c19ad24" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>cMF</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1af97b9a2fd2cf2de2944f51c53659a9e1" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forward</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a2448d0524dc824afa2496c4b91360391" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forward</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1aea9a934a1486a1e79988b2ef96e8d24f" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>forwardThenBackward</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a855be873db56eacb576ed9b70b4b3d26" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralData</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a23ec2457d41e2c0112c00b72fc3d2511" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralData</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ad0b77ce345115cbc6ffca2ca73f98241" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>getSpectralDataLayout</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a39be847a73cc6b5bf68f2def672ae6e6" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a7187c1efc4385db3d5585bc96f8b3f98" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a0043e0489b5a6bff456bb0b5127514d5" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_x2z_half</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ae957062e754bcadaf0991957af0841a9" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_y2x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a766a6f52cfa383cbd406ad24c64e32a8" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_y2z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1acbdc1e4e80e70872762588bd61d26b05" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a34a80ebcde2dfacb2c257baa399e3607" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2x_half</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a8cdcf8557e057ee155e8d2bb728328d4" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cmd_z2y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a49201032c814a83b504752d388ec846e" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cx</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a1487a1cb3c9c99eb2c97e2be25f9a85e" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cy</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a87ec1eefd998a8351288407362b87a50" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_cz</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1af2a37855637a647e63430415af0a709f" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_data_1</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a4aec372e4342615252409bc4c50ba954" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_data_2</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a67918f091c9254deb019ad8a07cbb09b" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_do_alld_fft</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a70799a81ad2650ed880b2a6d371f51a5" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_x2y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a733dfe4be995af1d172e89ca392c519c" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_x2z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a9fa340233592c6f0f95dee9a45ac127b" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_y2x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a5f20208891d3fba8faf0a6e2c56852ea" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_y2z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1af868711216f1ed131c9257ac14bd9156" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_z2x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1afcd87a98af06bb71eef53b52a8d77400" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_dtos_z2y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a4a6a9395c021e96d1e17832b40f8841b" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a7824471971d16b9e694be9096a26d8a5" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_x_half</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1af1a6e36c635a82881b800c971ab48e3f" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ac9c5dfc35d226c7f855ffc3c1442359b" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_bwd_z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1af4b15671810f5a84ab6715bbd56f7b58" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ac9ee1ebd7b1be12422791eba4a9a1846" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_x_half</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a1cf1e47a956e17a2a921406ac14162c6" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a210fd009cc8ceee6b10715f51a6b6d7b" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_fft_fwd_z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a06d2cb67911c4b941cbcff8b1c313c64" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_info</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ace1a9f4f8e0f19d0ff099520c43aa90f" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_openbc_half</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a8f47a085db0bac9c450d889095ee3397" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_r2c_sub</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ae96748bea1d4af0ec1f04bef5c96f6c8" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_real_domain</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1aebe08a2844357de336689cdba54a9804" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_rx</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1aea7a8880fa0cfd0c9fd69de239e5aee5" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_slab_decomp</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a40052f2e65b465812d23393edbf35054" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a1149c63ebb5db402f30556b717950a16" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a8386420723e4c174f28488a46e30e2fa" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_spectral_domain_z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a91b067400729a46cd9cc2c37438c5eab" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>m_sub_helper</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ab6520b1c01a70c834ae691084595e75c" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>make_c2c_plans</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a3dda94c7d3d03313c61a4dfe10a26e5c" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>make_domain_x</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a4d46a932e7302bd4d0474b11a8a2d314" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>make_domain_y</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ad83c111348d4c308ace236e5f5e9dfac" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>make_domain_z</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a07c18ab14d0df660208544c3ce8c0a94" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>MF</name></member>
       <member refid="classamrex_1_1FFT_1_1R2C_1afd3d509858e88e5f3a1efe7cb494baf4" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>OpenBCSolver</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a077bdccf74e7187a11f5a8f0e9aa0749" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a5c6c41d9872eace3305c509a0baebc74" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a0965fb062a67ff26a2349a9c44b06da6" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a399f7d54d1870e370908f77501355181" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>operator=</name></member>
       <member refid="classamrex_1_1FFT_1_1R2C_1a1be460f58e5e6b3d1fc4ddecc08e522b" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>Poisson</name></member>
       <member refid="classamrex_1_1FFT_1_1R2C_1abf6a97cc1f486d7ad995037461ecb49a" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>PoissonHybrid</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a94cb73c15675913a9381b5fa50d0682d" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>post_forward_doit_0</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a62ff948bcaf1ce75dbdb750fa579c900" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>post_forward_doit_1</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a5f306151d06e9ad8bcb1de6ead1ba1e3" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>prepare_openbc</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1aedae67822f8809e38b2a7c5378efb8bf" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1a7a7c7479e45148841ed112fa7bd246d5" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1aa7b45fd640aae7eb89f38cd3516052f4" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1acc09f9639645f4b743152a309d2dd88f" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>scalingFactor</name></member>
-      <member refid="classamrex_1_1FFT_1_1R2C_1ad45dde36a7f97978a78fc37119b6f4a4" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>~R2C</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a8fc9c3d04bec4a578ed7ae1fd529e808" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>post_forward_doit_0</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a6f49bf61ee718c334d9e2656058df55a" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>post_forward_doit_1</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ad2112657be6a534f9e99505aa79c13c0" prot="private" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>prepare_openbc</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a422c9f9cd4adb3ca93c97b94a8440e9c" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1ac024841c9f9848b7e7a85c810468a1a3" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a625754f142ffaf7cc8661e8917e94153" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>R2C</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1a837e3afdc0aacbf658df5685dccd8e5a" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>scalingFactor</name></member>
+      <member refid="classamrex_1_1FFT_1_1R2C_1aec3ed511a0c5070351c742231bb078fa" prot="public" virt="non-virtual"><scope>amrex::FFT::R2C</scope><name>~R2C</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

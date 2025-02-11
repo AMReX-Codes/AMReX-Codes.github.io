@@ -1,5 +1,13 @@
 var NAVTREEINDEX131 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,7,0,1],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,6,0,1],
+"structamrex_1_1amrex__KSP.html":[2,0,0,67],
+"structamrex_1_1amrex__KSP.html":[3,0,0,34],
+"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[3,0,0,34,4],
+"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[2,0,0,67,4],
+"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[2,0,0,67,5],
+"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[3,0,0,34,5],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[3,0,0,34,3],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[2,0,0,67,3],
 "structamrex_1_1amrex__KSP.html#ac9f5ff4629908ee4118f3e7ae1cf76bc":[2,0,0,67,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX131 =
 "structamrex_1_1iparser__symbol.html#a4bf5fc603ea8e9574ec71ba4ffef1da9":[3,0,0,264,1],
 "structamrex_1_1iparser__symbol.html#a4bf5fc603ea8e9574ec71ba4ffef1da9":[2,0,0,297,1],
 "structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[3,0,0,264,2],
-"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[2,0,0,297,2],
-"structamrex_1_1is__soa__particle.html":[2,0,0,332],
-"structamrex_1_1is__soa__particle.html":[3,0,0,299],
-"structamrex_1_1make__particle.html":[3,0,0,328],
-"structamrex_1_1make__particle.html":[2,0,0,361],
-"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[3,0,0,328,0],
-"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[2,0,0,361,0],
-"structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html":[3,0,0,329],
-"structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html":[2,0,0,362]
+"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[2,0,0,297,2]
 };

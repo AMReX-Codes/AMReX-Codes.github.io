@@ -1,5 +1,13 @@
 var NAVTREEINDEX111 =
 {
+"structamrex_1_1Array4BoxOrientationTag.html#a0c8b2a3bc498849b8dae53d94f86a685":[2,0,0,92,2],
+"structamrex_1_1Array4BoxOrientationTag.html#a0c8b2a3bc498849b8dae53d94f86a685":[3,0,0,59,2],
+"structamrex_1_1Array4BoxOrientationTag.html#a983b146fa22d1ed852dc07bfd52f2158":[2,0,0,92,1],
+"structamrex_1_1Array4BoxOrientationTag.html#a983b146fa22d1ed852dc07bfd52f2158":[3,0,0,59,1],
+"structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[2,0,0,92,0],
+"structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[3,0,0,59,0],
+"structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[3,0,0,59,3],
+"structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[2,0,0,92,3],
 "structamrex_1_1Array4BoxTag.html":[3,0,0,60],
 "structamrex_1_1Array4BoxTag.html":[2,0,0,93],
 "structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4":[3,0,0,60,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX111 =
 "structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[2,0,0,110,1],
 "structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[3,0,0,77,1],
 "structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[3,0,0,77,0],
-"structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[2,0,0,110,0],
-"structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8":[2,0,0,110,7],
-"structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8":[3,0,0,77,7],
-"structamrex_1_1BATindexType.html#aea913ddadc5577027865110d5e0a27ab":[2,0,0,110,2],
-"structamrex_1_1BATindexType.html#aea913ddadc5577027865110d5e0a27ab":[3,0,0,77,2],
-"structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[2,0,0,110,4],
-"structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[3,0,0,77,4],
-"structamrex_1_1BATindexType__coarsenRatio.html":[2,0,0,111],
-"structamrex_1_1BATindexType__coarsenRatio.html":[3,0,0,78]
+"structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[2,0,0,110,0]
 };

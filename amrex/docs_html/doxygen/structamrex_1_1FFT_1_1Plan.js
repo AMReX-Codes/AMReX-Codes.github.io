@@ -10,7 +10,7 @@ var structamrex_1_1FFT_1_1Plan =
     [ "destroy_vendor_plan", "structamrex_1_1FFT_1_1Plan.html#a791bb445961d41e01bb43afa0bd07b3c", null ],
     [ "free_scratch_space", "structamrex_1_1FFT_1_1Plan.html#a77c84431716c58741f7938208b075136", null ],
     [ "get_r2r_kind", "structamrex_1_1FFT_1_1Plan.html#a7a5c175b18e78fc83a2d368e2c26ec4a", null ],
-    [ "init_c2c", "structamrex_1_1FFT_1_1Plan.html#ab8ea9471d6a0a5b36a6df27f283d5c7f", null ],
+    [ "init_c2c", "structamrex_1_1FFT_1_1Plan.html#a8c64b0f08eb79211679f77405ba4ea11", null ],
     [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295", null ],
     [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#af5601c75dcde3f349cfcda5db4d6be3d", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0", null ],

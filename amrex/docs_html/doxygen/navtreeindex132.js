@@ -1,5 +1,13 @@
 var NAVTREEINDEX132 =
 {
+"structamrex_1_1is__soa__particle.html":[2,0,0,332],
+"structamrex_1_1is__soa__particle.html":[3,0,0,299],
+"structamrex_1_1make__particle.html":[3,0,0,328],
+"structamrex_1_1make__particle.html":[2,0,0,361],
+"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[3,0,0,328,0],
+"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[2,0,0,361,0],
+"structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html":[3,0,0,329],
+"structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html":[2,0,0,362],
 "structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html#a86966dabef30315a3a3198772af873d6":[2,0,0,362,0],
 "structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html#a86966dabef30315a3a3198772af873d6":[3,0,0,329,0],
 "structamrex_1_1openbc_1_1MomTag.html":[3,0,0,12,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX132 =
 "structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307":[3,0,22,1],
 "structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[3,0,22,8],
 "structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4":[3,0,22,4],
-"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[3,0,22,7],
-"structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c":[3,0,22,5],
-"structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[3,0,22,10],
-"structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199":[3,0,22,2],
-"structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0":[3,0,22,3],
-"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[3,0,22,0],
-"structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[3,0,22,9],
-"structyy__trans__info.html":[3,0,23],
-"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,23,1]
+"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[3,0,22,7]
 };
