@@ -139,7 +139,7 @@ var searchData=
   ['_7epolynomialif_136',['~PolynomialIF',['../classamrex_1_1EB2_1_1PolynomialIF.html#a38e787076c1c09ba8ea35d1815d97ea4',1,'amrex::EB2::PolynomialIF']]],
   ['_7eprint_137',['~Print',['../classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59',1,'amrex::Print']]],
   ['_7eprinttofile_138',['~PrintToFile',['../classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569',1,'amrex::PrintToFile']]],
-  ['_7er2c_139',['~R2C',['../classamrex_1_1FFT_1_1R2C.html#aec3ed511a0c5070351c742231bb078fa',1,'amrex::FFT::R2C']]],
+  ['_7er2c_139',['~R2C',['../classamrex_1_1FFT_1_1R2C.html#a307bbe24b6ccf594a090292ece7378ad',1,'amrex::FFT::R2C']]],
   ['_7er2x_140',['~R2X',['../classamrex_1_1FFT_1_1R2X.html#a20d96f9f255e81d0f91fe81a0c941993',1,'amrex::FFT::R2X']]],
   ['_7ereducedata_141',['~ReduceData',['../classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962',1,'amrex::ReduceData']]],
   ['_7eref_5fwrapper_142',['~ref_wrapper',['../classamrex_1_1ref__wrapper.html#a8d68a19e8e692c80582c0e2a4470c7ae',1,'amrex::ref_wrapper']]],

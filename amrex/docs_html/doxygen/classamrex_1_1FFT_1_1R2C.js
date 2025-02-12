@@ -3,7 +3,7 @@ var classamrex_1_1FFT_1_1R2C =
     [ "cMF", "classamrex_1_1FFT_1_1R2C.html#ae7d1731672767514ef3909438c19ad24", null ],
     [ "MF", "classamrex_1_1FFT_1_1R2C.html#a07c18ab14d0df660208544c3ce8c0a94", null ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html#a422c9f9cd4adb3ca93c97b94a8440e9c", null ],
-    [ "~R2C", "classamrex_1_1FFT_1_1R2C.html#aec3ed511a0c5070351c742231bb078fa", null ],
+    [ "~R2C", "classamrex_1_1FFT_1_1R2C.html#a307bbe24b6ccf594a090292ece7378ad", null ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html#ac024841c9f9848b7e7a85c810468a1a3", null ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html#a625754f142ffaf7cc8661e8917e94153", null ],
     [ "backward", "classamrex_1_1FFT_1_1R2C.html#a575c11f8c0c8babd332068696ebf7739", null ],
