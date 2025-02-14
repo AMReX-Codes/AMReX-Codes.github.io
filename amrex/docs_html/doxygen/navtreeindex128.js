@@ -1,5 +1,7 @@
 var NAVTREEINDEX128 =
 {
+"structamrex_1_1Scan_1_1RetSum.html#a237e9da276b87d96f439acec1e3db563":[2,0,0,47,2,1],
+"structamrex_1_1Scan_1_1RetSum.html#a237e9da276b87d96f439acec1e3db563":[3,0,0,19,2,1],
 "structamrex_1_1Scan_1_1RetSum.html#aa03df08645de2b5a2462d7de8e4d92b4":[2,0,0,47,2,0],
 "structamrex_1_1Scan_1_1RetSum.html#aa03df08645de2b5a2462d7de8e4d92b4":[3,0,0,19,2,0],
 "structamrex_1_1Scan_1_1Type_1_1Exclusive.html":[2,0,0,47,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX128 =
 "structamrex_1_1Stack.html#abcea4124bbc7aaade2e386895ca90c65":[2,0,0,538,8],
 "structamrex_1_1Stack.html#abcea4124bbc7aaade2e386895ca90c65":[3,0,0,505,8],
 "structamrex_1_1Stack.html#ae1ce52b58d0b9732b467285fe66907ba":[2,0,0,538,5],
-"structamrex_1_1Stack.html#ae1ce52b58d0b9732b467285fe66907ba":[3,0,0,505,5],
-"structamrex_1_1StateData_1_1TimeInterval.html":[2,0,0,539,0],
-"structamrex_1_1StateData_1_1TimeInterval.html":[3,0,0,506,0]
+"structamrex_1_1Stack.html#ae1ce52b58d0b9732b467285fe66907ba":[3,0,0,505,5]
 };

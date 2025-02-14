@@ -1,5 +1,7 @@
 var NAVTREEINDEX118 =
 {
+"structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[3,0,0,201,0,3],
+"structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[2,0,0,234,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a5fc429dc522fa17e291bbdd8d8e42f89":[3,0,0,201,0,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a5fc429dc522fa17e291bbdd8d8e42f89":[2,0,0,234,0,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a7d0fbbb79ec0286ab72dfe0d23116573":[3,0,0,201,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX118 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[3,0,0,6,11,0],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[2,0,0,16,13,0],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[2,0,0,16,13,1],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[3,0,0,6,11,1],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ab05f2b740c65ee82e5d4679e237a2887":[3,0,0,6,11,6],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ab05f2b740c65ee82e5d4679e237a2887":[2,0,0,16,13,6]
+"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[3,0,0,6,11,1]
 };

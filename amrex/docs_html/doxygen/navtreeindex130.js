@@ -1,5 +1,7 @@
 var NAVTREEINDEX130 =
 {
+"structamrex_1_1TinyProfiler_1_1ProcStats.html#a01cbf389132c01e2971cb1723fa846cd":[2,0,0,559,1,5],
+"structamrex_1_1TinyProfiler_1_1ProcStats.html#a01cbf389132c01e2971cb1723fa846cd":[3,0,0,526,1,5],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a072e3cbbf26527a9f54155ce1140e45c":[2,0,0,559,1,10],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a072e3cbbf26527a9f54155ce1140e45c":[3,0,0,526,1,10],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a23387ec0b0dd45815da72c13541e68de":[3,0,0,526,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX130 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,2,7],
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[3,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[3,0,0,0,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,3],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[3,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,3,8]
+"structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,3]
 };

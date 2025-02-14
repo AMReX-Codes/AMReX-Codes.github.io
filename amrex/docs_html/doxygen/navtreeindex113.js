@@ -1,5 +1,7 @@
 var NAVTREEINDEX113 =
 {
+"structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396":[2,0,0,119,4],
+"structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396":[3,0,0,86,4],
 "structamrex_1_1BlockMutex_1_1state__t_1_1II.html":[3,0,0,86,0,0],
 "structamrex_1_1BlockMutex_1_1state__t_1_1II.html":[2,0,0,119,0,0],
 "structamrex_1_1BlockMutex_1_1state__t_1_1II.html#a4b76869f13f33a51e15dcc7284301d85":[3,0,0,86,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX113 =
 "structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd":[3,0,0,126,1],
 "structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd":[2,0,0,159,1],
 "structamrex_1_1DataDeleter.html":[2,0,0,160],
-"structamrex_1_1DataDeleter.html":[3,0,0,127],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[2,0,0,160,0],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[3,0,0,127,0]
+"structamrex_1_1DataDeleter.html":[3,0,0,127]
 };
