@@ -416,9 +416,66 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLinOp__2D__K_8H_source.ht
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>}</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#adec70b44b6602b28be91e27a7595c9c1">mlndlap_set_dot_mask</a> (Box <span class="keyword">const</span>&amp; bx, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; dmsk,</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                           Array4&lt;int const&gt; <span class="keyword">const</span>&amp; omsk,</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                           Array4&lt;int const&gt; <span class="keyword">const</span>&amp; fmsk, Box <span class="keyword">const</span>&amp; dom,</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>{</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(bx);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(bx);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="keywordflow">if</span> (fmsk(i,j,0) == 0) {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            dmsk(i,j,0) = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(omsk(i,j,0));</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            dmsk(i,j,0) = Real(0);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    }}</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <span class="keyword">const</span> <span class="keyword">auto</span> domlo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(dom);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keyword">const</span> <span class="keyword">auto</span> domhi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(dom);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keywordflow">if</span> ((bclo[0] == LinOpBCType::Neumann || bclo[0] == LinOpBCType::inflow)</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        &amp;&amp; lo.x == domlo.x)</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            dmsk(lo.x,j,0) *= Real(0.5);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    }</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    <span class="keywordflow">if</span> ((bchi[0] == LinOpBCType::Neumann || bchi[0] == LinOpBCType::inflow)</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        &amp;&amp; hi.x == domhi.x)</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            dmsk(hi.x,j,0) *= Real(0.5);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        }</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordflow">if</span> ((bclo[1] == LinOpBCType::Neumann || bclo[1] == LinOpBCType::inflow)</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        &amp;&amp; lo.y == domlo.y)</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            dmsk(i,lo.y,0) *= Real(0.5);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        }</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    }</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordflow">if</span> ((bchi[1] == LinOpBCType::Neumann || bchi[1] == LinOpBCType::inflow)</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        &amp;&amp; hi.y == domhi.y)</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            dmsk(i,hi.y,0) *= Real(0.5);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    }</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a8c414106ab987031039a0ad05bb2519b"><div class="ttname"><a href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div><div class="ttdeci">#define AMREX_PRAGMA_SIMD</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:80</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__GpuLaunchMacrosC_8nolint_8H_html_af98b03b7b3a87691d2e944fcd96c5a84"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMREX_HOST_DEVICE_FOR_3D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_FOR_3D(...)</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchMacrosC.nolint.H:106</div></div>

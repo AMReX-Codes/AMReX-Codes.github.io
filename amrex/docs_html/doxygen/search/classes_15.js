@@ -43,7 +43,7 @@ var searchData=
   ['vector_3c_20amrex_3a_3aparticlelocator_3c_20bins_20_3e_20_3e_40',['Vector&lt; amrex::ParticleLocator&lt; Bins &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3apodvector_3c_20amrex_3a_3aintvectnd_20_3e_20_3e_41',['Vector&lt; amrex::PODVector&lt; amrex::IntVectND &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3apodvector_3c_20hypre_5fint_20_3e_20_3e_42',['Vector&lt; amrex::PODVector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_43',['vector&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::PODVector&lt; Int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::PODVector&lt; int &gt; &gt;']]],
+  ['vector_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_43',['vector&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::PODVector&lt; int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::PODVector&lt; Int &gt; &gt;']]],
   ['vector_3c_20amrex_3a_3apodvector_3c_20real_20_3e_20_3e_44',['Vector&lt; amrex::PODVector&lt; Real &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3apodvector_3c_20std_3a_3asize_5ft_20_3e_20_3e_45',['Vector&lt; amrex::PODVector&lt; std::size_t &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3areal_20_3e_46',['Vector&lt; amrex::Real &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
@@ -178,10 +178,11 @@ var searchData=
   ['vector_3c_20std_3a_3avector_3c_20bool_20_3e_20_3e_175',['Vector&lt; std::vector&lt; bool &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20v_20_3e_176',['Vector&lt; V &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20vec_20_3e_177',['Vector&lt; VEC &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20vertex_20_3e_178',['Vector&lt; Vertex &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vectortag_179',['VectorTag',['../structamrex_1_1VectorTag.html',1,'amrex']]],
-  ['vertex_180',['Vertex',['../structamrex_1_1EB2_1_1Vertex.html',1,'amrex::EB2']]],
-  ['vismf_181',['VisMF',['../classamrex_1_1VisMF.html',1,'amrex']]],
-  ['vismfbuffer_182',['VisMFBuffer',['../classamrex_1_1VisMFBuffer.html',1,'amrex']]],
-  ['voidcopytag_183',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]]
+  ['vector_3c_20vector_3c_20mf_20_3e_20_3e_178',['Vector&lt; Vector&lt; MF &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
+  ['vector_3c_20vertex_20_3e_179',['Vector&lt; Vertex &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
+  ['vectortag_180',['VectorTag',['../structamrex_1_1VectorTag.html',1,'amrex']]],
+  ['vertex_181',['Vertex',['../structamrex_1_1EB2_1_1Vertex.html',1,'amrex::EB2']]],
+  ['vismf_182',['VisMF',['../classamrex_1_1VisMF.html',1,'amrex']]],
+  ['vismfbuffer_183',['VisMFBuffer',['../classamrex_1_1VisMFBuffer.html',1,'amrex']]],
+  ['voidcopytag_184',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]]
 ];

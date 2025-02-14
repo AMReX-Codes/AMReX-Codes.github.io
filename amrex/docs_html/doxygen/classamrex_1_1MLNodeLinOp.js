@@ -15,6 +15,7 @@ var classamrex_1_1MLNodeLinOp =
     [ "buildMasks", "classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099", null ],
     [ "correctionResidual", "classamrex_1_1MLNodeLinOp.html#a2018b943fdab7019461dc9580b04177c", null ],
     [ "define", "classamrex_1_1MLNodeLinOp.html#a2032ea2a9fd37bb9179bc442d4949514", null ],
+    [ "dotProductPrecond", "classamrex_1_1MLNodeLinOp.html#a11969b4ee11a7fcf44cf99859174b702", null ],
     [ "Fapply", "classamrex_1_1MLNodeLinOp.html#afaae44c30405c4c8c2fdabede17a34ef", null ],
     [ "fixSolvabilityByOffset", "classamrex_1_1MLNodeLinOp.html#a8f7f76427fa0ea163014406f3d923933", null ],
     [ "fixUpResidualMask", "classamrex_1_1MLNodeLinOp.html#a29f7b2267b3d4d5847b1685e1ffd14ae", null ],
@@ -26,11 +27,12 @@ var classamrex_1_1MLNodeLinOp =
     [ "isSingular", "classamrex_1_1MLNodeLinOp.html#ae961a84e4d91aa6ff69bbfcd65f22e9c", null ],
     [ "makeOwnerMask", "classamrex_1_1MLNodeLinOp.html#ae050e4fda0843b175da8fbcfb8462392", null ],
     [ "nodalSync", "classamrex_1_1MLNodeLinOp.html#a0e84e7809b2a53d3c039783fdb5c33a2", null ],
+    [ "norm2Precond", "classamrex_1_1MLNodeLinOp.html#a8b9d85ac7ef2b8ce584bf0ca16a02ef2", null ],
     [ "normInf", "classamrex_1_1MLNodeLinOp.html#a6da7b56049ef0af652cdac637f1ce1e6", null ],
     [ "operator=", "classamrex_1_1MLNodeLinOp.html#a5686c143c41d8e57733f9ec99cc733de", null ],
     [ "operator=", "classamrex_1_1MLNodeLinOp.html#abaf2d3c82c8129007667300570326e44", null ],
-    [ "prepareForGMRES", "classamrex_1_1MLNodeLinOp.html#a895ca1ca69778b53dcf5ca86b366d4f7", null ],
     [ "prepareForSolve", "classamrex_1_1MLNodeLinOp.html#a997cf1a004e76b021a262f35a834da32", null ],
+    [ "preparePrecond", "classamrex_1_1MLNodeLinOp.html#a8b74b7733772e39028653b2450e9682f", null ],
     [ "resizeMultiGrid", "classamrex_1_1MLNodeLinOp.html#abe8255742bf5756e6659344cfa6ef5c4", null ],
     [ "setDirichletNodesToZero", "classamrex_1_1MLNodeLinOp.html#ad08f58adbfad6d97a54eec4261b8ce46", null ],
     [ "setLevelBC", "classamrex_1_1MLNodeLinOp.html#a85ee06a6171baffc7d8ba4e7470a44ef", null ],
@@ -53,5 +55,6 @@ var classamrex_1_1MLNodeLinOp =
     [ "m_overset_dirichlet_mask", "classamrex_1_1MLNodeLinOp.html#a7c0bb3eeb87e33f76c055d78e1e68df2", null ],
     [ "m_owner_mask_bottom", "classamrex_1_1MLNodeLinOp.html#a2f43f1de03008aad9e578d76ad0551be", null ],
     [ "m_owner_mask_top", "classamrex_1_1MLNodeLinOp.html#aa6f3b2435897100cfd9e1cba8c95d7af", null ],
+    [ "m_precond_weight_mask", "classamrex_1_1MLNodeLinOp.html#ae362e5b9bd75ede998b3d2d049fff5b2", null ],
     [ "m_smooth_num_sweeps", "classamrex_1_1MLNodeLinOp.html#ab0b6c523511d1ccca7263730a75019f9", null ]
 ];

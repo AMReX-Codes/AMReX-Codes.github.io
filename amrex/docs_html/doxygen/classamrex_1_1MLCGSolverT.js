@@ -22,6 +22,7 @@ var classamrex_1_1MLCGSolverT =
     [ "setInitSolnZeroed", "classamrex_1_1MLCGSolverT.html#a7193b703cfcb637ad19ed8b60c53f3cb", null ],
     [ "setMaxIter", "classamrex_1_1MLCGSolverT.html#adaf95795df6022fbffaeea323e4df3e0", null ],
     [ "setNGhost", "classamrex_1_1MLCGSolverT.html#ac578fcc67a6e49ae96d7578ce36c508f", null ],
+    [ "setPrintIdentation", "classamrex_1_1MLCGSolverT.html#a9928b43f4408bba7cc00a7569a38c4cf", null ],
     [ "setSolver", "classamrex_1_1MLCGSolverT.html#a1e6d43c5befb02185a364de58415471b", null ],
     [ "setVerbose", "classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1", null ],
     [ "solve", "classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39", null ],
@@ -34,6 +35,7 @@ var classamrex_1_1MLCGSolverT =
     [ "maxiter", "classamrex_1_1MLCGSolverT.html#a98e289422bb9545526d029a73b9df214", null ],
     [ "mglev", "classamrex_1_1MLCGSolverT.html#a3210f3ff9e55a7746a24d849cf9c39b2", null ],
     [ "nghost", "classamrex_1_1MLCGSolverT.html#a3389add6565681ffce22be42b4101fe2", null ],
+    [ "print_ident", "classamrex_1_1MLCGSolverT.html#aae7a915944318bfe244170496d8743c7", null ],
     [ "solver_type", "classamrex_1_1MLCGSolverT.html#af2a29b081fce0743089c448703b6da3a", null ],
     [ "verbose", "classamrex_1_1MLCGSolverT.html#a0f7eb83547164209035b1dd1d8a5409c", null ]
 ];

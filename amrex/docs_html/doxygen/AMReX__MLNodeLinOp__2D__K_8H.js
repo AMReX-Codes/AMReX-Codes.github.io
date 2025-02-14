@@ -5,6 +5,7 @@ var AMReX__MLNodeLinOp__2D__K_8H =
     [ "mlndlap_restriction", "AMReX__MLNodeLinOp__2D__K_8H.html#a88671deaf3aa1d3f7a4fab3598283bb9", null ],
     [ "mlndlap_semi_restriction", "AMReX__MLNodeLinOp__2D__K_8H.html#a739c61caa42304fdafed256192d5b3ae", null ],
     [ "mlndlap_set_dirichlet_mask", "AMReX__MLNodeLinOp__2D__K_8H.html#ada2b00e17500ae80305fdbf12852131b", null ],
+    [ "mlndlap_set_dot_mask", "AMReX__MLNodeLinOp__2D__K_8H.html#a0a81ad8d15bb71f76c3d78ceed1eecae", null ],
     [ "mlndlap_set_dot_mask", "AMReX__MLNodeLinOp__2D__K_8H.html#adec70b44b6602b28be91e27a7595c9c1", null ],
     [ "mlndlap_set_nodal_mask", "AMReX__MLNodeLinOp__2D__K_8H.html#a1200f8a64999cddaba15abf22ffb4e0f", null ]
 ];

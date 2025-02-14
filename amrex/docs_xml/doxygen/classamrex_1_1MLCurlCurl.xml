@@ -1394,6 +1394,7 @@ Domain&quot;, IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. <
       <member refid="classamrex_1_1MLLinOpT_1a08f1cfd6afc79121fce39e027f15cac5" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>avgDownResMG</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1ac9899bfb41cbcbf7f462d272047552e0" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>BCMode</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a417c10c0be808ec849890def26af4fee" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>BCType</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1af1d68aed7561ecff91f8bcb69ebed1f2" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>beginPrecondBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a2859b0cddde955b30ccf90c0af86e897" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>BottomCommunicator</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a6b2ce3775a4c209860db63635f969640" prot="private" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>checkPoint</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a2ac85c71c7e15137bd62cbfd04cc52ed" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>Communicator</name></member>
@@ -1412,6 +1413,8 @@ Domain&quot;, IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. <
       <member refid="classamrex_1_1MLLinOpT_1a33e77669d6f0da47f28959678db508e4" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>doAgglomeration</name></member>
       <member refid="classamrex_1_1MLLinOpT_1add56650e9ecd05e16a7f2f71bcbe7c9b" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>doConsolidation</name></member>
       <member refid="classamrex_1_1MLLinOpT_1aa99dea32527b34287aa64542b5545256" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>doSemicoarsening</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1a96396d7924dbdfd503b5bad5e2b029c3" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>dotProductPrecond</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1a9e00df855bac527e0d4a11a5c31eb435" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>endPrecondBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1adb9b0f44a3e66fbefa2310385747427b" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>enforceSingularSolvable</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a6266e785b547d5c2632730beeedbd91c" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>FAB</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a23933063b2982e47f97dcc3f0adbaec6" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>Factory</name></member>
@@ -1484,6 +1487,7 @@ Domain&quot;, IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. <
       <member refid="classamrex_1_1MLLinOpT_1afe9761ce7b771e51e0b47d415779ce93" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_num_amr_levels</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a64262a62291404dab652353158886cce" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_num_mg_levels</name></member>
       <member refid="classamrex_1_1MLLinOpT_1aa96812cd049f02fe827fc1573fa0626e" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_parent</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1a82891a6e0ee05aa37590fe877158ec65" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_precond_mode</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a3e96c4035b1315b80c6301329695f86e" prot="protected" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_raii_comm</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a90caeb3665770814375e6ab7108e7536" prot="private" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>m_use_pcg</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a7676ba4a8f0f7e18be2366dd33ef322f" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>make</name></member>
@@ -1515,15 +1519,16 @@ Domain&quot;, IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. <
       <member refid="classamrex_1_1MLLinOpT_1a7e2d1058dd843b67192b1aa489e112b6" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>needsCoarseDataForBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a1aeab1e2fe2f589ecdc3b9751208a22a" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>needsUpdate</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ad1697410f7ce33223a511796bbf9273f" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>NMGLevels</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1aac64e5e3f43ee3a11d6d657063abfa75" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>norm2Precond</name></member>
       <member refid="classamrex_1_1MLLinOpT_1aaa66bfea39287ead35be91ec940d0bb1" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>normalize</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a54b8f0a39566eee4ef913f6bad712d9f" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>normInf</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a637cc2c475b32f4606119af00617d840" prot="public" virt="pure-virtual" ambiguityscope="MLLinOpT&lt; Array&lt; MultiFab, 3 &gt; &gt;::"><scope>amrex::MLCurlCurl</scope><name>normInf</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a3ccb3bf677188e12ee5c3447a7440982" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>operator=</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a1f0362cc64cc8e85e445ce06edd81fd2" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1MLLinOpT_1a7766bf3ef48ac5508865ef5aa3ef49be" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>postSolve</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1ae4e5e8a7a396d2e9297e617bc575315a" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>postSolve</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ae101fd3f33bbd0f0085d668b196cb527" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>prepareForFluxes</name></member>
-      <member refid="classamrex_1_1MLLinOpT_1af79ba1ae9377062bdcdfc68884529865" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>prepareForGMRES</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a5c54cb4e1ea4c2b1818db0cf82741c30" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>prepareForSolve</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1ac651a809487c0cf7559d13a333b3f5b8" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>preparePrecond</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1acbc4efc38bffb2ceab5d5bf004cf6dc6" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>prepareRHS</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a8b1c71665134af1b1ceccc4d17df2615" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>reflux</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a43fcad8e24531044114e9572beb28323" prot="protected" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>resizeMultiGrid</name></member>
@@ -1533,7 +1538,7 @@ Domain&quot;, IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. <
       <member refid="classamrex_1_1MLLinOpT_1a90e6517d0ff6dee31c92101a9249de67" prot="private" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>robin_b_raii</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a451681732629cb75f6a4a9ba29799f44" prot="private" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>robin_f_raii</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a4771d48d0bafc31e4a8273b1e06da376" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>RT</name></member>
-      <member refid="classamrex_1_1MLLinOpT_1ad86c06dbaa4556184fb4dea08186e3c9" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>scaleRHS</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1aaef4ad9c7d2eb912a054b9583208c75e" prot="public" virt="virtual"><scope>amrex::MLCurlCurl</scope><name>scaleRHS</name></member>
       <member refid="classamrex_1_1MLCurlCurl_1a822dfa79fe239dd9bfc80100d8ddf186" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>setBeta</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a776db3c3a85a3f2d3938446d7ce6b19c" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>setCoarseFineBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ab12336bb4e985ab158e63397b4960171" prot="public" virt="non-virtual"><scope>amrex::MLCurlCurl</scope><name>setCoarseFineBC</name></member>
