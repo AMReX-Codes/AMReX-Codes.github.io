@@ -433,7 +433,7 @@ var searchData=
   ['amrex_5fcufft_5fsafe_5fcall_430',['AMREX_CUFFT_SAFE_CALL',['../AMReX__GpuError_8H.html#a5930ea84dbfe31747a5bb25a291bfad9',1,'AMReX_GpuError.H']]],
   ['amrex_5fcuptitrace_2ecpp_431',['AMReX_CuptiTrace.cpp',['../AMReX__CuptiTrace_8cpp.html',1,'']]],
   ['amrex_5fcuptitrace_2eh_432',['AMReX_CuptiTrace.H',['../AMReX__CuptiTrace_8H.html',1,'']]],
-  ['amrex_5fcurand_5fsafe_5fcall_433',['AMREX_CURAND_SAFE_CALL',['../AMReX__GpuError_8H.html#aa4b54260d06f5eb0f1fe5f7862962c4a',1,'AMReX_GpuError.H']]],
+  ['amrex_5fcurand_5fsafe_5fcall_433',['AMREX_CURAND_SAFE_CALL',['../AMReX__GpuError_8H.html#a8c90423a7611564879b99a5c6b85b49e',1,'AMReX_GpuError.H']]],
   ['amrex_5fd_5fdecl_434',['amrex_d_decl',['../namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd',1,'amrex::AMREX_D_DECL'],['../AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0',1,'AMREX_D_DECL:&#160;AMReX_SPACE.H'],['../namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd',1,'amrex::AMREX_D_DECL'],['../namespaceamrex.html#aea45874f350ec5ab95a6918255ecdba7a68b0c60ae4f5670ee8d0ad5dda84d0fd',1,'amrex::AMREX_D_DECL'],['../namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd',1,'amrex::AMREX_D_DECL']]],
   ['amrex_5fd_5fexpr_435',['AMREX_D_EXPR',['../AMReX__SPACE_8H.html#a3d7a88e405c623653f18afe8061c4a4f',1,'AMReX_SPACE.H']]],
   ['amrex_5fd_5fpick_436',['AMREX_D_PICK',['../AMReX__SPACE_8H.html#abcf04d652fe7dbc2835a996ab2d71325',1,'AMReX_SPACE.H']]],

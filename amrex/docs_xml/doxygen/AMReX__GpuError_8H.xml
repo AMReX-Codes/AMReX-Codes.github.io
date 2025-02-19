@@ -4589,20 +4589,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="73" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="73" bodyend="81"/>
       </memberdef>
-      <memberdef kind="define" id="AMReX__GpuError_8H_1aa4b54260d06f5eb0f1fe5f7862962c4a" prot="public" static="no">
+      <memberdef kind="define" id="AMReX__GpuError_8H_1a8c90423a7611564879b99a5c6b85b49e" prot="public" static="no">
         <name>AMREX_CURAND_SAFE_CALL</name>
-        <param><defname>x</defname></param>
-        <initializer>    do { <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref>((x)!=CURAND_STATUS_SUCCESS) { \
-    std::string errStr(std::string(&quot;CURAND error in file &quot;) + __FILE__  \
-                       + &quot; line &quot; + std::to_string(__LINE__));          \
-    <ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(errStr); }} while(0)</initializer>
+        <param><defname>call</defname></param>
+        <initializer>    { \
+    curandStatus_t amrex_i_err = call;          \
+    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (CURAND_STATUS_SUCCESS != amrex_i_err) { \
+        std::string errStr(std::string(&quot;CURAND error &quot;) + std::to_string(amrex_i_err) \
+                           + std::string(&quot; in file &quot;) + __FILE__ \
+                           + &quot; line &quot; + std::to_string(__LINE__)); \
+        <ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(errStr); \
+    }}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="83" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="83" bodyend="86"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="83" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="83" bodyend="90"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__GpuError_8H_1a5930ea84dbfe31747a5bb25a291bfad9" prot="public" static="no">
         <name>AMREX_CUFFT_SAFE_CALL</name>
@@ -4621,7 +4625,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="88" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="88" bodyend="95"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="92" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="92" bodyend="99"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" prot="public" static="no">
         <name>AMREX_GPU_ERROR_CHECK</name>
@@ -4633,7 +4637,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="125" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="125" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" line="133" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H" bodystart="133" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -4723,58 +4727,66 @@
 <codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
 <codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="AMReX__GpuError_8H_1aa4b54260d06f5eb0f1fe5f7862962c4a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_CURAND_SAFE_CALL(x)<sp/>do<sp/>{<sp/>if((x)!=CURAND_STATUS_SUCCESS)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;CURAND<sp/>error<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/>\</highlight></codeline>
-<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>}}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88" refid="AMReX__GpuError_8H_1a5930ea84dbfe31747a5bb25a291bfad9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_CUFFT_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>cufftResult_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/>\</highlight></codeline>
-<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(CUFFT_SUCCESS<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;CUFFT<sp/>error<sp/>&quot;)+std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
-<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="94"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
-<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HIP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HIP_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>hipError_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(hipSuccess<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;HIP<sp/>error<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/>\</highlight></codeline>
-<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__)<sp/>\</highlight></codeline>
-<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>&quot;<sp/>+<sp/>hipGetErrorString(amrex_i_err));<sp/>\</highlight></codeline>
-<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
-<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HIPRAND_SAFE_CALL(x)<sp/>do<sp/>{<sp/>if((x)!=HIPRAND_STATUS_SUCCESS)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;HIPRAND<sp/>error<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/>\</highlight></codeline>
-<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>}}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ROCFFT_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>auto<sp/>amrex_i_err<sp/>=<sp/>call;<sp/>\</highlight></codeline>
-<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(rocfft_status_success<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;rocFFT<sp/>error<sp/>&quot;)+std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
-<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="120"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
-<codeline lineno="121"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125" refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_ERROR_CHECK()<sp/>amrex::Gpu::ErrorCheck(__FILE__,<sp/>__LINE__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_SAFE_CALL(call)<sp/><sp/>(call)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_ERROR_CHECK()<sp/><sp/><sp/><sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="83" refid="AMReX__GpuError_8H_1a8c90423a7611564879b99a5c6b85b49e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_CURAND_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>curandStatus_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(CURAND_STATUS_SUCCESS<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;CURAND<sp/>error<sp/>&quot;)<sp/>+<sp/>std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/>\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="AMReX__GpuError_8H_1a5930ea84dbfe31747a5bb25a291bfad9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_CUFFT_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>cufftResult_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/>\</highlight></codeline>
+<codeline lineno="94"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(CUFFT_SUCCESS<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;CUFFT<sp/>error<sp/>&quot;)+std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HIP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HIP_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>hipError_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(hipSuccess<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;HIP<sp/>error<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__)<sp/>\</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>&quot;<sp/>+<sp/>hipGetErrorString(amrex_i_err));<sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HIPRAND_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>hiprandStatus_t<sp/>amrex_i_err<sp/>=<sp/>call;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(HIPRAND_STATUS_SUCCESS<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;HIPRAND<sp/>error<sp/>&quot;)<sp/>+<sp/>std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ROCFFT_SAFE_CALL(call)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>auto<sp/>amrex_i_err<sp/>=<sp/>call;<sp/>\</highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(rocfft_status_success<sp/>!=<sp/>amrex_i_err)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="125"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>errStr(std::string(&quot;rocFFT<sp/>error<sp/>&quot;)+std::to_string(amrex_i_err)<sp/>\</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::string(&quot;<sp/>in<sp/>file<sp/>&quot;)<sp/>+<sp/>__FILE__<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>&quot;<sp/>line<sp/>&quot;<sp/>+<sp/>std::to_string(__LINE__));<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="128"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(errStr);<sp/>\</highlight></codeline>
+<codeline lineno="129"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_ERROR_CHECK()<sp/>amrex::Gpu::ErrorCheck(__FILE__,<sp/>__LINE__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_SAFE_CALL(call)<sp/><sp/>(call)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_ERROR_CHECK()<sp/><sp/><sp/><sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuError.H"/>
   </compounddef>

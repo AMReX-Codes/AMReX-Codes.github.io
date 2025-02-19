@@ -12,7 +12,7 @@ var searchData=
   ['amrex_5fattribute_5fweak_9',['AMREX_ATTRIBUTE_WEAK',['../AMReX__Extension_8H.html#aca0e371f8327722548a19e84acabea8e',1,'AMReX_Extension.H']]],
   ['amrex_5fcuda_5fsafe_5fcall_10',['AMREX_CUDA_SAFE_CALL',['../AMReX__GpuError_8H.html#a6a8e9294d731b70d00a258e8a9d6d222',1,'AMReX_GpuError.H']]],
   ['amrex_5fcufft_5fsafe_5fcall_11',['AMREX_CUFFT_SAFE_CALL',['../AMReX__GpuError_8H.html#a5930ea84dbfe31747a5bb25a291bfad9',1,'AMReX_GpuError.H']]],
-  ['amrex_5fcurand_5fsafe_5fcall_12',['AMREX_CURAND_SAFE_CALL',['../AMReX__GpuError_8H.html#aa4b54260d06f5eb0f1fe5f7862962c4a',1,'AMReX_GpuError.H']]],
+  ['amrex_5fcurand_5fsafe_5fcall_12',['AMREX_CURAND_SAFE_CALL',['../AMReX__GpuError_8H.html#a8c90423a7611564879b99a5c6b85b49e',1,'AMReX_GpuError.H']]],
   ['amrex_5fd_5fdecl_13',['AMREX_D_DECL',['../AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0',1,'AMReX_SPACE.H']]],
   ['amrex_5fd_5fexpr_14',['AMREX_D_EXPR',['../AMReX__SPACE_8H.html#a3d7a88e405c623653f18afe8061c4a4f',1,'AMReX_SPACE.H']]],
   ['amrex_5fd_5fpick_15',['AMREX_D_PICK',['../AMReX__SPACE_8H.html#abcf04d652fe7dbc2835a996ab2d71325',1,'AMReX_SPACE.H']]],
