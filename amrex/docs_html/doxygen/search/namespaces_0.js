@@ -38,7 +38,7 @@ var searchData=
   ['amrex_3a_3alazy_35',['Lazy',['../namespaceamrex_1_1Lazy.html',1,'amrex']]],
   ['amrex_3a_3alongparticleids_36',['LongParticleIds',['../namespaceamrex_1_1LongParticleIds.html',1,'amrex']]],
   ['amrex_3a_3aloop_5fdetail_37',['loop_detail',['../namespaceamrex_1_1loop__detail.html',1,'amrex']]],
-  ['amrex_3a_3amachine_38',['machine',['../namespaceamrex_1_1machine.html',1,'amrex']]],
+  ['amrex_3a_3amachine_38',['Machine',['../namespaceamrex_1_1Machine.html',1,'amrex']]],
   ['amrex_3a_3amath_39',['Math',['../namespaceamrex_1_1Math.html',1,'amrex']]],
   ['amrex_3a_3amath_3a_3adetail_40',['detail',['../namespaceamrex_1_1Math_1_1detail.html',1,'amrex::Math']]],
   ['amrex_3a_3amfutil_41',['MFUtil',['../namespaceamrex_1_1MFUtil.html',1,'amrex']]],

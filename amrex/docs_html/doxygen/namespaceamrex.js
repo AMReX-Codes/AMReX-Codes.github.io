@@ -226,10 +226,10 @@ var namespaceamrex =
       [ "LoopOnCpu_impND", "namespaceamrex_1_1loop__detail.html#af7f8efd7c7639823222394e405d335f2", null ],
       [ "LoopOnCpu_impND", "namespaceamrex_1_1loop__detail.html#af4f26da56a7147fc25072e711b19688c", null ]
     ] ],
-    [ "machine", "namespaceamrex_1_1machine.html", [
-      [ "Finalize", "namespaceamrex_1_1machine.html#a80498796973f6b853437e50ba873a6d1", null ],
-      [ "find_best_nbh", "namespaceamrex_1_1machine.html#afa7cf247ac1fb3972693835d136c00f1", null ],
-      [ "Initialize", "namespaceamrex_1_1machine.html#a42a34e9b2688dfa4616c06781fe06d83", null ]
+    [ "Machine", "namespaceamrex_1_1Machine.html", [
+      [ "Finalize", "namespaceamrex_1_1Machine.html#a9502e811fea27e3d1e3af407834b04b1", null ],
+      [ "Initialize", "namespaceamrex_1_1Machine.html#a53b6e7dc08c68e065f836d819e5231ff", null ],
+      [ "name", "namespaceamrex_1_1Machine.html#a578c9b214c4e8dfa2f753181f21d5720", null ]
     ] ],
     [ "Math", "namespaceamrex_1_1Math.html", "namespaceamrex_1_1Math" ],
     [ "MFUtil", "namespaceamrex_1_1MFUtil.html", "namespaceamrex_1_1MFUtil" ],

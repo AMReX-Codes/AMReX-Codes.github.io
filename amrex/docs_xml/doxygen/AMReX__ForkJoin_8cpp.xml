@@ -2394,7 +2394,7 @@
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Strategy<sp/>strategy,<sp/>Intent<sp/>intent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>owner)</highlight></codeline>
 <codeline lineno="109"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idx<sp/>&gt;=<sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name].resize(idx<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[<ref refid="namespaceamrex_1_1Machine_1a578c9b214c4e8dfa2f753181f21d5720" kindref="member">name</ref>].resize(idx<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>(<ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name][idx].empty(),</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Can<sp/>only<sp/>register<sp/>to<sp/>a<sp/>(name,<sp/>index)<sp/>pair<sp/>once&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -2420,7 +2420,7 @@
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name][idx]<sp/>=<sp/>MFFork(&amp;mf,<sp/>strategy,<sp/>intent,<sp/>owner,<sp/>ngrow,<sp/>std::move(comp_split));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[<ref refid="namespaceamrex_1_1Machine_1a578c9b214c4e8dfa2f753181f21d5720" kindref="member">name</ref>][idx]<sp/>=<sp/>MFFork(&amp;mf,<sp/>strategy,<sp/>intent,<sp/>owner,<sp/>ngrow,<sp/>std::move(comp_split));</highlight></codeline>
 <codeline lineno="138"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"></highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -2434,7 +2434,7 @@
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>(ngrow[i]<sp/>&gt;=<sp/>0,</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ngrow[i]<sp/>must<sp/>be<sp/>non-negative&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name][idx].ngrow<sp/>=<sp/>ngrow;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[<ref refid="namespaceamrex_1_1Machine_1a578c9b214c4e8dfa2f753181f21d5720" kindref="member">name</ref>][idx].ngrow<sp/>=<sp/>ngrow;</highlight></codeline>
 <codeline lineno="152"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -2450,7 +2450,7 @@
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>(comp_split[i].hi<sp/>-<sp/>comp_split[i].lo<sp/>&gt;<sp/>0,</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;comp_split[i]<sp/>must<sp/>have<sp/>positive<sp/>number<sp/>of<sp/>components&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[name][idx].comp_split<sp/>=<sp/>std::move(comp_split);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" kindref="member">data</ref>[<ref refid="namespaceamrex_1_1Machine_1a578c9b214c4e8dfa2f753181f21d5720" kindref="member">name</ref>][idx].comp_split<sp/>=<sp/>std::move(comp_split);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><ref refid="structamrex_1_1ForkJoin_1_1ComponentSet" kindref="compound">ForkJoin::ComponentSet</ref></highlight></codeline>

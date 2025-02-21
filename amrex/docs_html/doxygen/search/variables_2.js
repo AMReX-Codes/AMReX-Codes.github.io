@@ -70,7 +70,7 @@ var searchData=
   ['boxarray_67',['boxarray',['../classamrex_1_1FabArrayBase.html#ae63b22ccabe6c5af01dd0779c60740c8',1,'amrex::FabArrayBase']]],
   ['bproxmapok_68',['bProxMapOK',['../classCommProfStats.html#a75483e35d9c71b281451d66142e996b9',1,'CommProfStats']]],
   ['brightblack_69',['brightblack',['../namespaceamrex_1_1BGColor.html#ae7b1a8ccc4e3bafcb6f5381f352cad8a',1,'amrex::BGColor::BrightBlack'],['../namespaceamrex_1_1FGColor.html#a98f1464e98accba852d95ed885b254b1',1,'amrex::FGColor::BrightBlack']]],
-  ['brightblue_70',['brightblue',['../namespaceamrex_1_1FGColor.html#a0dce94ed22641c85f1e89efc2993b01c',1,'amrex::FGColor::BrightBLUE'],['../namespaceamrex_1_1BGColor.html#a53efb273893251617d70a0882a1db7bb',1,'amrex::BGColor::BrightBlue']]],
+  ['brightblue_70',['brightblue',['../namespaceamrex_1_1BGColor.html#a53efb273893251617d70a0882a1db7bb',1,'amrex::BGColor::BrightBlue'],['../namespaceamrex_1_1FGColor.html#a0dce94ed22641c85f1e89efc2993b01c',1,'amrex::FGColor::BrightBLUE']]],
   ['brightcyan_71',['brightcyan',['../namespaceamrex_1_1FGColor.html#a41fac118d598355a3a89d1cf2510a4f2',1,'amrex::FGColor::BrightCyan'],['../namespaceamrex_1_1BGColor.html#adfca5e4fcc8b07bdcff12e9a766265ee',1,'amrex::BGColor::BrightCyan']]],
   ['brightgreen_72',['brightgreen',['../namespaceamrex_1_1FGColor.html#a275031854a190496e9142c9cd92367a9',1,'amrex::FGColor::BrightGreen'],['../namespaceamrex_1_1BGColor.html#a8216c2c4ce684299b8be4d39f0c3f713',1,'amrex::BGColor::BrightGreen']]],
   ['brightmagenta_73',['brightmagenta',['../namespaceamrex_1_1FGColor.html#a52fb55433450b1ee6af628bfa93c4571',1,'amrex::FGColor::BrightMagenta'],['../namespaceamrex_1_1BGColor.html#aa46c16e855686f562a9ec273574686e1',1,'amrex::BGColor::BrightMagenta']]],
