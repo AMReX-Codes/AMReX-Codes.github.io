@@ -70,6 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#fft-c2c-class">FFT::C2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fft-localr2c-class">FFT::LocalR2C Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#poisson-solver">Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raw-pointer-interface">Raw Pointer Interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
@@ -268,6 +269,119 @@ support non-uniform cell size in the z-direction. For most applications,
 <p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>, the Poisson solvers should be cached for reuse,
 and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>
 because there is no default constructor.</p>
+</section>
+<section id="raw-pointer-interface">
+<span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Permalink to this heading"></a></h1>
+<p>If you only want to use AMReX as a Parallel FFT library without using other
+functionalities and data containers, you could use the raw pointer
+interface. Below is an example.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+
+<span class="c1">// We don&#39;t need to call the full-blown amrex::Initialize</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Init_FFT</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">nprocs</span><span class="p">,</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nprocs</span><span class="p">);</span>
+<span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myproc</span><span class="p">);</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">RT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">CT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="n">RT</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// or cufftDoubleComplex, etc.</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">domain_size</span><span class="p">{</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">};</span>
+
+<span class="c1">// FFT between real and complex.</span>
+<span class="c1">// Domain decomposition is flexible. The only constraint for the raw</span>
+<span class="c1">// pointer interface is that there can be only zero or one local box</span>
+<span class="c1">// per process, whereas the MultiFab interface can take any number of</span>
+<span class="c1">// boxes. In this case, we choose to do manual domain decomposition for</span>
+<span class="c1">// the real (i.e., forward) domain, and use the domain decomposition</span>
+<span class="c1">// provided by amrex for the complex (i.e., backward) domain.</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">RT</span><span class="p">,</span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">domain_size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// amrex supports 1d, 2d and 3d domain decomposition. For simplicity,</span>
+<span class="w">    </span><span class="c1">// let&#39;s do 1d decomposition in the z-direction.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nprocs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nprocs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">zlo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">nz</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">zlo</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_start</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">zlo</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_size</span><span class="p">{</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">nz</span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Let amrex know the domain decomposition in the forward domain.</span>
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">setLocalDomain</span><span class="p">(</span><span class="n">local_start</span><span class="p">,</span><span class="n">local_size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use amrex&#39;s domain decomposition in the backward domain.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">local_start_sp</span><span class="p">,</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getLocalSpectralDomain</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">RT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">RT</span><span class="p">)</span><span class="o">*</span><span class="n">nr</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+<span class="w">    </span><span class="c1">// Initialize data ...</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nc</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">pr</span><span class="p">,</span><span class="w"> </span><span class="n">pc</span><span class="p">);</span><span class="w"> </span><span class="c1">// forward transform from real to complex</span>
+
+<span class="w">    </span><span class="c1">// work on the complex data pointed by pc ...</span>
+
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">pr</span><span class="p">);</span><span class="w"> </span><span class="c1">// backward transform from complex to real</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Batched FFT between complex and complex.</span>
+<span class="c1">// In this case, we choose to use the domain decomposition provided</span>
+<span class="c1">// by amrex for the forward domain, and do manual domain decomposition</span>
+<span class="c1">// for the backward domain.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nbatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// batch size</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="w"> </span><span class="n">info</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">info</span><span class="p">.</span><span class="n">setBatchSize</span><span class="p">(</span><span class="n">nbatch</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">C2C</span><span class="o">&lt;</span><span class="n">RT</span><span class="p">,</span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c2c</span><span class="p">(</span><span class="n">domain_size</span><span class="p">,</span><span class="n">info</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use amrex&#39;s domain decomposition in the forward domain.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">local_start</span><span class="p">,</span><span class="w"> </span><span class="n">local_size</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2c</span><span class="p">.</span><span class="n">getLocalDomain</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nprocs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nprocs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xlo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">xlo</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_start_sp</span><span class="p">{</span><span class="n">xlo</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">{</span><span class="n">nx</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]};</span>
+
+<span class="w">    </span><span class="c1">// Let amrex know the domain decomposition in the backward domain.</span>
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">setLocalSpectralDomain</span><span class="p">(</span><span class="n">local_start_sp</span><span class="p">,</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nf</span><span class="o">*</span><span class="n">nbatch</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+<span class="w">    </span><span class="c1">// Initialize data ...</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nb</span><span class="o">*</span><span class="n">nbatch</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">pf</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="p">);</span><span class="w"> </span><span class="c1">// forward transform</span>
+
+<span class="w">    </span><span class="c1">// work on the data pointed by pb</span>
+
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span><span class="w"> </span><span class="n">pf</span><span class="p">);</span><span class="w"> </span><span class="c1">// backward transform</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pf</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pb</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Finalize_FFT</span><span class="p">();</span>
+
+<span class="n">MPI_Finalize</span><span class="p">();</span>
+</pre></div>
+</div>
 </section>
 
 

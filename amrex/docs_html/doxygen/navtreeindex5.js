@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"AMReX__EB__Slopes__2D__K_8H.html":[4,0,0,4,58],
+"AMReX__EB__Slopes__2D__K_8H.html#a0770184b45c76a478a563b7e1c8727ec":[4,0,0,4,58,6],
+"AMReX__EB__Slopes__2D__K_8H.html#a13c4d063b6a8a044d74ba6f814f79e63":[4,0,0,4,58,2],
+"AMReX__EB__Slopes__2D__K_8H.html#a4e01f49332c474c23343e3bb33fedf6b":[4,0,0,4,58,1],
 "AMReX__EB__Slopes__2D__K_8H.html#a52bf9b80b0ae26e3f5cada3b642e119a":[4,0,0,4,58,7],
 "AMReX__EB__Slopes__2D__K_8H.html#a6b6dc44889caf2905a4bca287ed5fde0":[4,0,0,4,58,10],
 "AMReX__EB__Slopes__2D__K_8H.html#a8e528f7d9cfd03e5d00a1c9293a5c149":[4,0,0,4,58,4],
@@ -140,8 +144,10 @@ var NAVTREEINDEX5 =
 "AMReX__FEIntegrator_8H_source.html":[4,0,0,2,87],
 "AMReX__FFT_8H.html":[4,0,0,6,1],
 "AMReX__FFT_8H.html#a247121292130aadfdd97b2c5b9b518ad":[4,0,0,6,1,0],
-"AMReX__FFT_8H.html#a2976e074e2b759ec5813edcccce23341":[4,0,0,6,1,2],
+"AMReX__FFT_8H.html#a2976e074e2b759ec5813edcccce23341":[4,0,0,6,1,4],
+"AMReX__FFT_8H.html#a3eea92efd3c682f5f23770f47af7c14b":[4,0,0,6,1,3],
 "AMReX__FFT_8H.html#a7a2c62799856b7bb8a987aaba0e405a3":[4,0,0,6,1,1],
+"AMReX__FFT_8H.html#a86dd685e0ef82d7a3b6a25097fe08318":[4,0,0,6,1,2],
 "AMReX__FFT_8H_source.html":[4,0,0,6,1],
 "AMReX__FFT_8cpp.html":[4,0,0,6,0],
 "AMReX__FFT_8cpp.html#a247121292130aadfdd97b2c5b9b518ad":[4,0,0,6,0,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "AMReX__FabArrayUtility_8H.html#a3f0f44b09d21b49d00d3d1b12e9e2489":[4,0,0,2,78,1],
 "AMReX__FabArrayUtility_8H.html#a3f948e8f69355439c8e408405d24eb05":[4,0,0,2,78,18],
 "AMReX__FabArrayUtility_8H.html#a41a3ccdb479b7b99b07b29315b85d602":[4,0,0,2,78,90],
-"AMReX__FabArrayUtility_8H.html#a41e5cebe75ef775750e62ca7686c3c53":[4,0,0,2,78,65],
-"AMReX__FabArrayUtility_8H.html#a4252562789c375cc55a545cd278cf212":[4,0,0,2,78,92],
-"AMReX__FabArrayUtility_8H.html#a4b5b2920e4c1f13544630db42af9eaca":[4,0,0,2,78,30],
-"AMReX__FabArrayUtility_8H.html#a4c7eeb268d8109564ccafe29055137a1":[4,0,0,2,78,101],
-"AMReX__FabArrayUtility_8H.html#a4c9419f3bb631469eb846977ada50eb2":[4,0,0,2,78,8],
-"AMReX__FabArrayUtility_8H.html#a4db8bcd1f50c790aba6b81860143cc96":[4,0,0,2,78,32],
-"AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02":[4,0,0,2,78,112]
+"AMReX__FabArrayUtility_8H.html#a41e5cebe75ef775750e62ca7686c3c53":[4,0,0,2,78,65]
 };
