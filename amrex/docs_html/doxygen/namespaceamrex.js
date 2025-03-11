@@ -2000,6 +2000,8 @@ var namespaceamrex =
     [ "IsParticleTileData", "namespaceamrex.html#a29b0aae252a7a287f7975fa1995b0298", null ],
     [ "IsParticleTileData", "namespaceamrex.html#a69911bccde2f992eb93a426d24557e11", null ],
     [ "isSame", "namespaceamrex.html#aa47fc757d0d25899f61d37329d2d5769", null ],
+    [ "join", "namespaceamrex.html#a6e0cbbd3fb4987dd09b925b6941edcee", null ],
+    [ "join", "namespaceamrex.html#a08767170498c8b365b7bd3513eb8aa77", null ],
     [ "launch", "namespaceamrex.html#a6ea04e28cfba5279ba6a079ace618cb6", null ],
     [ "launch", "namespaceamrex.html#acf9e876d759a1c4b3984ab2373d670bc", null ],
     [ "launch", "namespaceamrex.html#a93bf7d62b3ca318333e7e1d4a6d5d5c1", null ],

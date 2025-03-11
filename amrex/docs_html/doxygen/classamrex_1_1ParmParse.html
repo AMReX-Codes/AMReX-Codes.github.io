@@ -249,6 +249,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a28d0faa2a576d6488b738ef309c11f44" id="r_a28d0faa2a576d6488b738ef309c11f44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a28d0faa2a576d6488b738ef309c11f44">add</a> (const char *name, const std::string &amp;val)</td></tr>
 <tr class="memdesc:a28d0faa2a576d6488b738ef309c11f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a key 'name'with value 'ref' to the end of the PP table.  <br /></td></tr>
 <tr class="separator:a28d0faa2a576d6488b738ef309c11f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957f429a7aa97a8951b85003cfe45883" id="r_a957f429a7aa97a8951b85003cfe45883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a957f429a7aa97a8951b85003cfe45883">getline</a> (const char *name, std::string &amp;ref) const</td></tr>
+<tr class="separator:a957f429a7aa97a8951b85003cfe45883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11b42f6b46f095bba5d26935963ffed" id="r_ac11b42f6b46f095bba5d26935963ffed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ac11b42f6b46f095bba5d26935963ffed">queryline</a> (const char *name, std::string &amp;ref) const</td></tr>
+<tr class="separator:ac11b42f6b46f095bba5d26935963ffed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a642956703fef48b48a1e23f7429b3a64" id="r_a642956703fef48b48a1e23f7429b3a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a642956703fef48b48a1e23f7429b3a64">getkth</a> (const char *name, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k, <a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> &amp;ref, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ival=<a class="el" href="classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const</td></tr>
 <tr class="memdesc:a642956703fef48b48a1e23f7429b3a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ival'th value of kth occurrence of the requested name. If successful, the value is converted to an IntVect and stored in reference ref. If the kth occurrence does not exist or ival'th value does not exist, or if the printed representation of the value cannot be converted to a IntVect, an error message is output and the program halts. Note that ival = 0 is the first value in the list.  <br /></td></tr>
 <tr class="separator:a642956703fef48b48a1e23f7429b3a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3373,6 +3377,36 @@ template&lt;typename T , std::enable_if_t&lt; <a class="el" href="namespaceamrex
 
 </div>
 </div>
+<a id="a957f429a7aa97a8951b85003cfe45883" name="a957f429a7aa97a8951b85003cfe45883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a957f429a7aa97a8951b85003cfe45883">&#9670;&#160;</a></span>getline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::getline </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Similar to <a class="el" href="classamrex_1_1ParmParse.html#a24db67f875cbc2a56406c66f48d60b8a" title="Same as getkth() but searches for the last occurrence of name.">get()</a> but store the whole line including empty spaces in the middle if present as a single string. For example, <code>foo = a b c</code> is treated by this function as a single string "a b c", whereas <a class="el" href="classamrex_1_1ParmParse.html#a24db67f875cbc2a56406c66f48d60b8a" title="Same as getkth() but searches for the last occurrence of name.">get()</a> will give only "a" and <a class="el" href="classamrex_1_1ParmParse.html#a643cc1f0359446a7ba0a997e949af928" title="Same as getktharr() but searches for last occurrence of name.">getarr()</a> will store the results in <code>std::vectcor&lt;std::string&gt;</code>. Note this does not preserve the number of empty spaces, because of how <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> parses the line. For example, <code>a b c</code> with two spaces between <code>b</code> and <code>c</code> will become "a
+b c". </p>
+
+</div>
+</div>
 <a id="aa4c1dbee984103cd1102514d70c954a3" name="aa4c1dbee984103cd1102514d70c954a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4c1dbee984103cd1102514d70c954a3">&#9670;&#160;</a></span>getUnusedInputs()</h2>
 
@@ -5920,6 +5954,36 @@ template&lt;typename T , std::enable_if_t&lt; <a class="el" href="namespaceamrex
 </div><div class="memdoc">
 
 <p><a class="el" href="classamrex_1_1ParmParse.html#a7e15c246accd5c8be1a296c55c7f2c8e" title="queryktharr() is to querykth() as getktharr() is to getkth().">queryktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#acb8471c7f04ad416c55d696c53b87e98" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful,...">querykth()</a> as <a class="el" href="classamrex_1_1ParmParse.html#a897613a49a650ce10780c02157b056fd" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful,...">getktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#a757bd795e26efa90e0001e42d3720538" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a>. </p>
+
+</div>
+</div>
+<a id="ac11b42f6b46f095bba5d26935963ffed" name="ac11b42f6b46f095bba5d26935963ffed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac11b42f6b46f095bba5d26935963ffed">&#9670;&#160;</a></span>queryline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParmParse::queryline </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Similar to <a class="el" href="classamrex_1_1ParmParse.html#aa98ab18bc26692876f9590316af5b1fa" title="Same as querykth() but searches for the last occurrence of name.">query()</a> but store the whole line including empty spaces in the middle if present as a single string. For example, <code>foo = a b c</code> is treated by this function as a single string "a b c", whereas <a class="el" href="classamrex_1_1ParmParse.html#aa98ab18bc26692876f9590316af5b1fa" title="Same as querykth() but searches for the last occurrence of name.">query()</a> will give only "a" and <a class="el" href="classamrex_1_1ParmParse.html#a54307dd658a96ac490ce75a3f74defe2" title="Same as queryktharr() but searches for last occurrence of name.">queryarr()</a> will store the results in <code>std::vectcor&lt;std::string&gt;</code>. Note this does not preserve the number of empty spaces, because of how <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> parses the line. For example, <code>a b c</code> with two spaces between <code>b</code> and <code>c</code> will become "a
+b c". </p>
 
 </div>
 </div>
