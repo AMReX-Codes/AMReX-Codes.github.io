@@ -499,22 +499,24 @@ every kernel would be  extremely lengthy and unnecessary.  To analyze a desired 
 kernels, AMReX users can use the Tiny Profiler’s built-in NVTX regions to narrow the scope of
 the analysis.  Nsight Compute allows users to specify which NVTX regions to include and exclude
 through the <code class="docutils literal notranslate"><span class="pre">--nvtx</span></code>, <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code> and <code class="docutils literal notranslate"><span class="pre">--nvtx-exclude</span></code> flags. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;Hydro()&quot; --nvtx-exclude &quot;StencilA(),StencilC()&quot; -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;Hydro()/&quot; --nvtx-exclude &quot;StencilA(),StencilC()&quot; -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will return a file named <code class="docutils literal notranslate"><span class="pre">kernels</span></code> which contains an analysis of the CUDA kernels launched inside
 the <code class="docutils literal notranslate"><span class="pre">Hydro()</span></code> region, ignoring any kernels launched inside <code class="docutils literal notranslate"><span class="pre">StencilA()</span></code> and <code class="docutils literal notranslate"><span class="pre">StencilC()</span></code>.
 When using the NVTX regions built into AMReX’s TinyProfiler, be aware that the application must be built
-with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> and the NVTX region names are identical to the TinyProfiler timer names.</p>
+with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> and the NVTX region names are identical to the TinyProfiler timer names.
+Note that the <code class="docutils literal notranslate"><span class="pre">/</span></code> must be appended to the TinyProfiler timer name specified with <code class="docutils literal notranslate"><span class="pre">--nvtx--include</span></code>
+because TinyProfiler sets NVTX push/pop regions, as described in the Nsight Compute official documentation on
+<a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
 <p>Another helpful flag for selecting a reasonable subset of kernels for analysis is the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option. This
 flag specifies the total number of kernels to be analyzed. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()/&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will only analyze the first ten kernels inside of the <code class="docutils literal notranslate"><span class="pre">GravitySolve()</span></code> NVTX region.</p>
 <p>For further details on how to choose a subset of CUDA kernels to analyze, or to run a more detailed
-analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation on
-<a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
+analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation.</p>
 </section>
 <section id="roofline">
 <h2>Roofline<a class="headerlink" href="#roofline" title="Permalink to this heading"></a></h2>
