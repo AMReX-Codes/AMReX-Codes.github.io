@@ -1,5 +1,8 @@
 var NAVTREEINDEX108 =
 {
+"namespaceamrex__acc__module.html#aafbf079c34c708eb6c38b72a05c77249":[2,0,1,3],
+"namespaceamrex__acc__module.html#ae6e5f688f216b146a2cc609ec638a462":[2,0,1,2],
+"namespaceamrex__bc__types__module.html":[2,0,2],
 "namespaceamrex__bc__types__module.html#a07483ec0c0dfe550ae285951efd6e408":[2,0,2,1],
 "namespaceamrex__bc__types__module.html#a20bfec4cecd51e1c95967ecb1be2eff4":[2,0,2,9],
 "namespaceamrex__bc__types__module.html#a23db950272f0f85aabf73bc7f1f94a29":[2,0,2,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX108 =
 "namespacemembers_func_p.html":[2,1,1,15],
 "namespacemembers_func_q.html":[2,1,1,16],
 "namespacemembers_func_r.html":[2,1,1,17],
-"namespacemembers_func_s.html":[2,1,1,18],
-"namespacemembers_func_t.html":[2,1,1,19],
-"namespacemembers_func_u.html":[2,1,1,20],
-"namespacemembers_func_v.html":[2,1,1,21]
+"namespacemembers_func_s.html":[2,1,1,18]
 };
