@@ -38,7 +38,7 @@ var classamrex_1_1MLNodeLinOp =
     [ "setLevelBC", "classamrex_1_1MLNodeLinOp.html#a85ee06a6171baffc7d8ba4e7470a44ef", null ],
     [ "setOversetMask", "classamrex_1_1MLNodeLinOp.html#afa9f37a1e4264b48744a5110fdb1c4ec", null ],
     [ "setSmoothNumSweeps", "classamrex_1_1MLNodeLinOp.html#acf2ee340ce60a3e241d9d06e4d14db59", null ],
-    [ "smooth", "classamrex_1_1MLNodeLinOp.html#aa6f77ffd080d73ac9346cc408ee7a6d8", null ],
+    [ "smooth", "classamrex_1_1MLNodeLinOp.html#a68bab8a8d6b70eb5847bbe5a9b2c4119", null ],
     [ "solutionResidual", "classamrex_1_1MLNodeLinOp.html#a9577a87ff76e6c9406e3cbe716d26746", null ],
     [ "xdoty", "classamrex_1_1MLNodeLinOp.html#a949d0c22ae1cd96ffa1961b06edee5d9", null ],
     [ "m_bottom_dot_mask", "classamrex_1_1MLNodeLinOp.html#a4b398a735f5c05d0919bc24efc9a7025", null ],

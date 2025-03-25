@@ -252,9 +252,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7aea888ca18e54df62e7dffc8378d872" id="r_a7aea888ca18e54df62e7dffc8378d872"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a7aea888ca18e54df62e7dffc8378d872">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;out, MF &amp;in, <a class="el" href="structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627">BCMode</a> bc_mode, <a class="el" href="structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndryT.html">MLMGBndryT</a>&lt; MF &gt; *bndry=nullptr) const =0</td></tr>
 <tr class="memdesc:a7aea888ca18e54df62e7dffc8378d872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the linear operator, out = L(in)  <br /></td></tr>
 <tr class="separator:a7aea888ca18e54df62e7dffc8378d872"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03189718c2f8cd40c34158bb4ddf6120" id="r_a03189718c2f8cd40c34158bb4ddf6120"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a03189718c2f8cd40c34158bb4ddf6120">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary=false) const =0</td></tr>
-<tr class="memdesc:a03189718c2f8cd40c34158bb4ddf6120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth.  <br /></td></tr>
-<tr class="separator:a03189718c2f8cd40c34158bb4ddf6120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e35d603b03bb06046cccda570bfc78" id="r_af8e35d603b03bb06046cccda570bfc78"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af8e35d603b03bb06046cccda570bfc78">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niter) const =0</td></tr>
+<tr class="memdesc:af8e35d603b03bb06046cccda570bfc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth.  <br /></td></tr>
+<tr class="separator:af8e35d603b03bb06046cccda570bfc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa66bfea39287ead35be91ec940d0bb1" id="r_aaa66bfea39287ead35be91ec940d0bb1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#aaa66bfea39287ead35be91ec940d0bb1">normalize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, MF &amp;mf) const</td></tr>
 <tr class="memdesc:aaa66bfea39287ead35be91ec940d0bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide mf by the diagonal component of the operator. Used by bicgstab.  <br /></td></tr>
 <tr class="separator:aaa66bfea39287ead35be91ec940d0bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4679,8 +4679,8 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
-<a id="a03189718c2f8cd40c34158bb4ddf6120" name="a03189718c2f8cd40c34158bb4ddf6120"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03189718c2f8cd40c34158bb4ddf6120">&#9670;&#160;</a></span>smooth()</h2>
+<a id="af8e35d603b03bb06046cccda570bfc78" name="af8e35d603b03bb06046cccda570bfc78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8e35d603b03bb06046cccda570bfc78">&#9670;&#160;</a></span>smooth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4718,7 +4718,13 @@ template&lt;typename MF &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>skip_fillboundary</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>skip_fillboundary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>niter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4741,11 +4747,12 @@ template&lt;typename MF &gt; </div>
     <tr><td class="paramname">sol</td><td>unknowns </td></tr>
     <tr><td class="paramname">rhs</td><td>RHS </td></tr>
     <tr><td class="paramname">skip_fillboundary</td><td>flag controlling whether ghost cell filling can be skipped. </td></tr>
+    <tr><td class="paramname">niter</td><td>number of (multicolor) smoothing iterations </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a04486888c630dc3e4a5258a0e174345c">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOpT.html#a5f620b5243fc5f53ba97983460bf0805">amrex::MLCellLinOpT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>

@@ -1155,13 +1155,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="83" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1203" bodyend="1209"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a04486888c630dc3e4a5258a0e174345c" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a5f620b5243fc5f53ba97983460bf0805" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::smooth</definition>
-        <argsstring>(int amrlev, int mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary=false) const final</argsstring>
+        <argsstring>(int amrlev, int mglev, MF &amp;sol, const MF &amp;rhs, bool skip_fillboundary, int niter) const final</argsstring>
         <name>smooth</name>
         <qualifiedname>amrex::MLCellLinOpT::smooth</qualifiedname>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a03189718c2f8cd40c34158bb4ddf6120">smooth</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1af8e35d603b03bb06046cccda570bfc78">smooth</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>amrlev</declname>
@@ -1181,7 +1181,10 @@
         <param>
           <type>bool</type>
           <declname>skip_fillboundary</declname>
-          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>niter</declname>
         </param>
         <briefdescription>
 <para>Smooth. </para>
@@ -1227,12 +1230,20 @@
 <para>flag controlling whether ghost cell filling can be skipped. </para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>niter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of (multicolor) smoothing iterations </para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="85" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1213" bodyend="1224"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="85" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1213" bodyend="1226"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1ad6684ea6b055170aad353ee9a4dcc316" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1311,7 +1322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="88" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1228" bodyend="1242"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="88" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1230" bodyend="1244"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1acfbbd0bc16c6143b970276cb3db30a03" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1335,7 +1346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="91" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1246" bodyend="1251"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="91" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1248" bodyend="1253"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a51480d2022ad9346d6eb11f3cbfd631a" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -1438,7 +1449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="93" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1255" bodyend="1277"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="93" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1257" bodyend="1279"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a35158f8a8bd840468c4dedb08d6726ff" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -1540,7 +1551,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="97" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1281" bodyend="1345"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="97" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1283" bodyend="1347"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1ae7f32e1b953ea4ef5643501e91560d32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1602,7 +1613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1349" bodyend="1386"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1351" bodyend="1388"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a2ed74b3dc4e3c46d2cd589cbb8301e94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1664,7 +1675,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1390" bodyend="1440"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1392" bodyend="1442"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a87bccd5330e4295f7108cf56c0a1cd20" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -1689,7 +1700,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="105" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1444" bodyend="1496"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="105" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1446" bodyend="1498"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a8681147e6aa6a83cba4451adda7b719c" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -1714,7 +1725,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="106" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1500" bodyend="1554"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="106" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1502" bodyend="1556"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a08e68e2870cd7367dd09d2ef777261b3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MLCellLinOpT_1a4cd7bb9cadbccdb52688ef33ddfd8d5c" kindref="member">RT</ref> &gt;</type>
@@ -1739,7 +1750,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="107" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1558" bodyend="1591"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="107" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1560" bodyend="1593"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1ac44f404584644c6cb3f7548de48206d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1769,7 +1780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="109" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1595" bodyend="1611"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="109" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1597" bodyend="1613"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a8201ce95349a35448ba37366eabc518b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1788,7 +1799,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="112" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1615" bodyend="1928"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="112" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1617" bodyend="1930"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a7c044db51cc603481135fb0d75e43e90" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type><ref refid="classamrex_1_1MLCellLinOpT_1a4cd7bb9cadbccdb52688ef33ddfd8d5c" kindref="member">RT</ref></type>
@@ -1824,7 +1835,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="114" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1932" bodyend="1942"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="114" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1934" bodyend="1944"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a37110a6d5cf422efd25f1a966dcd3af5" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type><ref refid="classamrex_1_1MLCellLinOpT_1a4cd7bb9cadbccdb52688ef33ddfd8d5c" kindref="member">RT</ref></type>
@@ -1847,7 +1858,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="116" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1946" bodyend="1958"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="116" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1948" bodyend="1960"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a89d419a110a2142ed59ddc316d053966" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type><ref refid="classamrex_1_1MLCellLinOpT_1a4cd7bb9cadbccdb52688ef33ddfd8d5c" kindref="member">RT</ref></type>
@@ -1866,7 +1877,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="118" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1962" bodyend="1973"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="118" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1964" bodyend="1975"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a3841e981caa197033fcd74eee93f0daf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -2032,7 +2043,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="131" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2039" bodyend="2135"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="131" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2041" bodyend="2137"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a118fb8de26be373907091016e1207645" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2051,7 +2062,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="133" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2139" bodyend="2157"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="133" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2141" bodyend="2159"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a33f2c8cbf69e58cbe60e9be048181f5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2078,7 +2089,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="135" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2161" bodyend="2177"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="135" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2163" bodyend="2179"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a8e5ccd586a36ca73071a893fd369a5b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2093,7 +2104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="137" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2181" bodyend="2205"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="137" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2183" bodyend="2207"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1a3edbe84b38cdfad3b9de1710151ba787" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2108,7 +2119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="138" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2209" bodyend="2213"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="138" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="2211" bodyend="2215"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCellLinOpT_1ab115b6bae61d5d8ee058b5690ae761c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -2170,7 +2181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="220" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1977" bodyend="2035"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="220" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="1979" bodyend="2037"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -2731,7 +2742,7 @@
       <member refid="classamrex_1_1MLLinOpT_1adc2c4cd3ccc03f6c0f958429b1d1f093" prot="public" virt="non-virtual" ambiguityscope="amrex::MLLinOpT::"><scope>amrex::MLCellLinOpT</scope><name>setLevelBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a2cea879bd6717f7b2f425b1c1aeff724" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>setMaxOrder</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a135bc97332faf6e4f7f864b45c2b0b69" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>setVerbose</name></member>
-      <member refid="classamrex_1_1MLCellLinOpT_1a04486888c630dc3e4a5258a0e174345c" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>smooth</name></member>
+      <member refid="classamrex_1_1MLCellLinOpT_1a5f620b5243fc5f53ba97983460bf0805" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>smooth</name></member>
       <member refid="classamrex_1_1MLCellLinOpT_1ad6684ea6b055170aad353ee9a4dcc316" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>solutionResidual</name></member>
       <member refid="classamrex_1_1MLCellLinOpT_1afaa558995ac0e6dace1b2539572250a7" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>StateMode</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ae0ca480e28c3c9c318f0e4d5beee0143" prot="protected" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>supportInhomogNeumannBC</name></member>

@@ -54,7 +54,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "setGaussSeidel", "classamrex_1_1MLCellLinOpT.html#a910678e8eb5a82aaa5550910cb4ac3fb", null ],
     [ "setInterpBndryHalfWidth", "classamrex_1_1MLCellLinOpT.html#ab115b6bae61d5d8ee058b5690ae761c9", null ],
     [ "setLevelBC", "classamrex_1_1MLCellLinOpT.html#afaf162a4471fc9b3a7121d9579fea518", null ],
-    [ "smooth", "classamrex_1_1MLCellLinOpT.html#a04486888c630dc3e4a5258a0e174345c", null ],
+    [ "smooth", "classamrex_1_1MLCellLinOpT.html#a5f620b5243fc5f53ba97983460bf0805", null ],
     [ "solutionResidual", "classamrex_1_1MLCellLinOpT.html#ad6684ea6b055170aad353ee9a4dcc316", null ],
     [ "unapplyMetricTerm", "classamrex_1_1MLCellLinOpT.html#a8681147e6aa6a83cba4451adda7b719c", null ],
     [ "update", "classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636", null ],

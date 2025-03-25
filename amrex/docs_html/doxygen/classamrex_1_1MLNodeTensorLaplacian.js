@@ -21,7 +21,7 @@ var classamrex_1_1MLNodeTensorLaplacian =
     [ "scaledSigma", "classamrex_1_1MLNodeTensorLaplacian.html#a13e7af8b2fc85c6b462778aeb5554296", null ],
     [ "setBeta", "classamrex_1_1MLNodeTensorLaplacian.html#af850b6de810fc05e025ef44039fbc29a", null ],
     [ "setSigma", "classamrex_1_1MLNodeTensorLaplacian.html#aacdcbb450e721a927c9697c8b10e3c0c", null ],
-    [ "smooth", "classamrex_1_1MLNodeTensorLaplacian.html#af9e5daf778c4816d30ce447baf3387b0", null ],
+    [ "smooth", "classamrex_1_1MLNodeTensorLaplacian.html#a5fa2c92269d6d8d952817b70896a9812", null ],
     [ "m_redblack", "classamrex_1_1MLNodeTensorLaplacian.html#a32694ef00d37d519168801799c4b90e1", null ],
     [ "m_sigma", "classamrex_1_1MLNodeTensorLaplacian.html#a84d4e74b64ef41514492203039ea9d31", null ],
     [ "nelems", "classamrex_1_1MLNodeTensorLaplacian.html#a0607bbf4e032f81bfd48d64cfca15cda", null ]

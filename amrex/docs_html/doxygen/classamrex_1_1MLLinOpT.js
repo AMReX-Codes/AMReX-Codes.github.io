@@ -111,7 +111,7 @@ var classamrex_1_1MLLinOpT =
     [ "setLevelBC", "classamrex_1_1MLLinOpT.html#a1ca9d659068ffdf4e8d78d035aa9450c", null ],
     [ "setMaxOrder", "classamrex_1_1MLLinOpT.html#a2cea879bd6717f7b2f425b1c1aeff724", null ],
     [ "setVerbose", "classamrex_1_1MLLinOpT.html#a135bc97332faf6e4f7f864b45c2b0b69", null ],
-    [ "smooth", "classamrex_1_1MLLinOpT.html#a03189718c2f8cd40c34158bb4ddf6120", null ],
+    [ "smooth", "classamrex_1_1MLLinOpT.html#af8e35d603b03bb06046cccda570bfc78", null ],
     [ "solutionResidual", "classamrex_1_1MLLinOpT.html#a4c4d498e615acd98b90da20eaee2a529", null ],
     [ "supportInhomogNeumannBC", "classamrex_1_1MLLinOpT.html#ae0ca480e28c3c9c318f0e4d5beee0143", null ],
     [ "supportNSolve", "classamrex_1_1MLLinOpT.html#aa9b2cbde953686aaf94f7f6442a0ea5c", null ],

@@ -37,7 +37,7 @@ var classamrex_1_1MLCurlCurl =
     [ "setLevelBC", "classamrex_1_1MLCurlCurl.html#a06eca5d2d85df13a44bec68fb491e02d", null ],
     [ "setScalars", "classamrex_1_1MLCurlCurl.html#a6ec4dbd1f4658dc7cd6ef708b3968c4c", null ],
     [ "setUsePCG", "classamrex_1_1MLCurlCurl.html#ab5ad6803cca78078368567c0c4ee1ed0", null ],
-    [ "smooth", "classamrex_1_1MLCurlCurl.html#a11d08332baaab14e6c7cd45597aef245", null ],
+    [ "smooth", "classamrex_1_1MLCurlCurl.html#a4c0286475c0d056c08e892becaa4cf47", null ],
     [ "smooth1D", "classamrex_1_1MLCurlCurl.html#a8f5ef059ab585f53c8c794ce7db0aef0", null ],
     [ "solutionResidual", "classamrex_1_1MLCurlCurl.html#a68c7fc765c4f93349326b9a7cd3d038e", null ],
     [ "xdoty", "classamrex_1_1MLCurlCurl.html#aafe03e36ef3a7d8c99466b3762358794", null ],
