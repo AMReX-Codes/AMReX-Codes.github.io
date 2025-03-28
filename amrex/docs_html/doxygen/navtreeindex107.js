@@ -1,5 +1,9 @@
 var NAVTREEINDEX107 =
 {
+"namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c":[2,0,0,6,126],
+"namespaceamrex_1_1detail.html#ad9ffd55042a6573c492b8fc107951d12":[2,0,0,6,28],
+"namespaceamrex_1_1detail.html#adc2850adfe9cf5541d06a9605342718b":[2,0,0,6,37],
+"namespaceamrex_1_1detail.html#ade8d882f6ba75270a6ea576d8bba3577":[2,0,0,6,50],
 "namespaceamrex_1_1detail.html#ae1db1fc5feb5005eee61aeeeb926a478":[2,0,0,6,86],
 "namespaceamrex_1_1detail.html#ae9c414dd7bc47e48d6fe4e6361b1b723":[2,0,0,6,122],
 "namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089":[2,0,0,6,124],
@@ -245,9 +249,5 @@ var NAVTREEINDEX107 =
 "namespaceamrex_1_1tri__geom__ops.html#ab51690f01621516b9e79005a32943d02":[2,0,0,51,1],
 "namespaceamrex_1_1tri__geom__ops.html#ac4a987e664e5b08e291676b2ba5802c7":[2,0,0,51,5],
 "namespaceamrex_1_1tri__geom__ops.html#ac8acae9ecfa92d2e555047add95768ee":[2,0,0,51,10],
-"namespaceamrex_1_1tri__geom__ops.html#ae67839e41416d0b659af14db8a721900":[2,0,0,51,11],
-"namespaceamrex_1_1tri__geom__ops.html#afc30456f7d2f5aec898c79f1870c244a":[2,0,0,51,3],
-"namespaceamrex__acc__module.html":[2,0,1],
-"namespaceamrex__acc__module.html#a7537721c18f228fca42f0db3e75a4470":[2,0,1,0],
-"namespaceamrex__acc__module.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[2,0,1,1]
+"namespaceamrex_1_1tri__geom__ops.html#ae67839e41416d0b659af14db8a721900":[2,0,0,51,11]
 };

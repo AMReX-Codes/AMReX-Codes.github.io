@@ -1,5 +1,9 @@
 var NAVTREEINDEX128 =
 {
+"structamrex_1_1ReduceOpSum.html#af18e050e03babd636f9b492f8776a4df":[3,0,0,487,0],
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box.html":[3,0,0,17,0,0],
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box.html":[2,0,0,45,0,0],
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html":[3,0,0,17,0,1],
 "structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html":[2,0,0,45,0,1],
 "structamrex_1_1RunOnGpu.html":[3,0,0,490],
 "structamrex_1_1RunOnGpu.html":[2,0,0,523],
@@ -245,9 +249,5 @@ var NAVTREEINDEX128 =
 "structamrex_1_1SpMatrix_1_1CSR.html#a0b20eead03324a601d70165291b2ce41":[3,0,0,503,0,2],
 "structamrex_1_1SpMatrix_1_1CSR.html#a3f854c75689a8294a6ddc1d010de45fe":[3,0,0,503,0,3],
 "structamrex_1_1SpMatrix_1_1CSR.html#a3f854c75689a8294a6ddc1d010de45fe":[2,0,0,536,0,3],
-"structamrex_1_1SpMatrix_1_1CSR.html#aaa5097ccb0c7106b73b8d66f2973c6fd":[2,0,0,536,0,0],
-"structamrex_1_1SpMatrix_1_1CSR.html#aaa5097ccb0c7106b73b8d66f2973c6fd":[3,0,0,503,0,0],
-"structamrex_1_1SpMatrix_1_1CSR.html#adf88fb97f8fdaee54f43af0711f972b8":[2,0,0,536,0,1],
-"structamrex_1_1SpMatrix_1_1CSR.html#adf88fb97f8fdaee54f43af0711f972b8":[3,0,0,503,0,1],
-"structamrex_1_1SparseBinIteratorFactory.html":[3,0,0,500]
+"structamrex_1_1SpMatrix_1_1CSR.html#aaa5097ccb0c7106b73b8d66f2973c6fd":[2,0,0,536,0,0]
 };
