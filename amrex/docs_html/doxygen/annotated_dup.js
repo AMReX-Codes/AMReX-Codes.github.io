@@ -761,6 +761,7 @@ var annotated_dup =
       [ "TableData", "classamrex_1_1TableData.html", "classamrex_1_1TableData" ],
       [ "TagBox", "classamrex_1_1TagBox.html", "classamrex_1_1TagBox" ],
       [ "TagBoxArray", "classamrex_1_1TagBoxArray.html", "classamrex_1_1TagBoxArray" ],
+      [ "TagVector", "structamrex_1_1TagVector.html", "structamrex_1_1TagVector" ],
       [ "TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", "structamrex_1_1TheFaArenaDeleter" ],
       [ "ThisParticleTileHasNoAoS", "structamrex_1_1ThisParticleTileHasNoAoS.html", "structamrex_1_1ThisParticleTileHasNoAoS" ],
       [ "ThisParticleTileHasNoParticleVector", "structamrex_1_1ThisParticleTileHasNoParticleVector.html", null ],

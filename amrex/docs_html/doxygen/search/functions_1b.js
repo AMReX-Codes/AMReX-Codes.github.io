@@ -157,12 +157,13 @@ var searchData=
   ['_7etabledata_154',['~TableData',['../classamrex_1_1TableData.html#af6ca594ff322e1da97e1b6c1096dc183',1,'amrex::TableData']]],
   ['_7etagbox_155',['~TagBox',['../classamrex_1_1TagBox.html#a46499df9c37906b8d12c9561945e1671',1,'amrex::TagBox']]],
   ['_7etagboxarray_156',['~TagBoxArray',['../classamrex_1_1TagBoxArray.html#a64e4bff8da8d8c89a2e893b483161910',1,'amrex::TagBoxArray']]],
-  ['_7etimeintegrator_157',['~TimeIntegrator',['../classamrex_1_1TimeIntegrator.html#acff5bb21bb84fea124f333d6f951c452',1,'amrex::TimeIntegrator']]],
-  ['_7etinyprofiler_158',['~TinyProfiler',['../classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d',1,'amrex::TinyProfiler']]],
-  ['_7etinyprofileregion_159',['~TinyProfileRegion',['../classamrex_1_1TinyProfileRegion.html#a529634d28a0589df7b0e0fd5f7294834',1,'amrex::TinyProfileRegion']]],
-  ['_7etracerparticlecontainer_160',['~TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#ae25ae5ecf1993c40ef4a4679c70149d2',1,'amrex::TracerParticleContainer']]],
-  ['_7euserfunc_161',['~UserFunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a5e5c0b55f097cbd9ec1518561641d6eb',1,'amrex::AMRErrorTag::UserFunc']]],
-  ['_7evismf_162',['~VisMF',['../classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0',1,'amrex::VisMF']]],
-  ['_7exyplotdatalist_163',['~XYPlotDataList',['../classamrex_1_1XYPlotDataList.html#a254017ded192870f9e88e201be790b4c',1,'amrex::XYPlotDataList']]],
-  ['_7exyplotdatalistlink_164',['~XYPlotDataListLink',['../classamrex_1_1XYPlotDataListLink.html#ad2c424b10d115a46d3aa576f9e08e1f7',1,'amrex::XYPlotDataListLink']]]
+  ['_7etagvector_157',['~TagVector',['../structamrex_1_1TagVector.html#a0fd15bb6193536f2603b35e16b0dde2e',1,'amrex::TagVector']]],
+  ['_7etimeintegrator_158',['~TimeIntegrator',['../classamrex_1_1TimeIntegrator.html#acff5bb21bb84fea124f333d6f951c452',1,'amrex::TimeIntegrator']]],
+  ['_7etinyprofiler_159',['~TinyProfiler',['../classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d',1,'amrex::TinyProfiler']]],
+  ['_7etinyprofileregion_160',['~TinyProfileRegion',['../classamrex_1_1TinyProfileRegion.html#a529634d28a0589df7b0e0fd5f7294834',1,'amrex::TinyProfileRegion']]],
+  ['_7etracerparticlecontainer_161',['~TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#ae25ae5ecf1993c40ef4a4679c70149d2',1,'amrex::TracerParticleContainer']]],
+  ['_7euserfunc_162',['~UserFunc',['../structamrex_1_1AMRErrorTag_1_1UserFunc.html#a5e5c0b55f097cbd9ec1518561641d6eb',1,'amrex::AMRErrorTag::UserFunc']]],
+  ['_7evismf_163',['~VisMF',['../classamrex_1_1VisMF.html#abdd1a2e47dbb31f1ad2e19f0aef5ccd0',1,'amrex::VisMF']]],
+  ['_7exyplotdatalist_164',['~XYPlotDataList',['../classamrex_1_1XYPlotDataList.html#a254017ded192870f9e88e201be790b4c',1,'amrex::XYPlotDataList']]],
+  ['_7exyplotdatalistlink_165',['~XYPlotDataListLink',['../classamrex_1_1XYPlotDataListLink.html#ad2c424b10d115a46d3aa576f9e08e1f7',1,'amrex::XYPlotDataListLink']]]
 ];

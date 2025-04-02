@@ -9,9 +9,13 @@ var AMReX__TagParallelFor_8H =
     [ "amrex::Array4BoxOrientationTag< T >", "structamrex_1_1Array4BoxOrientationTag.html", "structamrex_1_1Array4BoxOrientationTag" ],
     [ "amrex::Array4BoxOffsetTag< T >", "structamrex_1_1Array4BoxOffsetTag.html", "structamrex_1_1Array4BoxOffsetTag" ],
     [ "amrex::VectorTag< T >", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],
+    [ "amrex::TagVector< TagType >", "structamrex_1_1TagVector.html", "structamrex_1_1TagVector" ],
     [ "get_tag_size", "AMReX__TagParallelFor_8H.html#a5dabf23fc1d6b0482df819bdd5d465c9", null ],
+    [ "is_box_tag", "AMReX__TagParallelFor_8H.html#af326bd0d976be857a654524dde9d94b9", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a38eb255b13ee7ed203faecd6e21b7a79", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#ad50999ff4045032bb705d04f7195b33c", null ],
     [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a8743466d78a7e4458271e4a297723573", null ],
-    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a7d4be147355f3e12b472f970dac218c9", null ],
-    [ "ParallelFor_doit", "AMReX__TagParallelFor_8H.html#a3f8fddb521eea2e91972e8a665d0e1cc", null ],
+    [ "ParallelFor", "AMReX__TagParallelFor_8H.html#a45d9629bed7f5dd24034bd8345c128f2", null ],
+    [ "ParallelFor_doit", "AMReX__TagParallelFor_8H.html#a7a5a3206b9f94dfe494007e74436e178", null ],
     [ "tagparfor_call_f", "AMReX__TagParallelFor_8H.html#a993d7b3ea476f2a40be00ab6a5199d1e", null ]
 ];

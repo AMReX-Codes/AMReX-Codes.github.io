@@ -1106,6 +1106,7 @@ var hierarchy =
     [ "amrex::Table2D< RT >", "structamrex_1_1Table2D.html", null ],
     [ "amrex::Table3D< T, ORDER >", "structamrex_1_1Table3D.html", null ],
     [ "amrex::Table4D< T, ORDER >", "structamrex_1_1Table4D.html", null ],
+    [ "amrex::TagVector< TagType >", "structamrex_1_1TagVector.html", null ],
     [ "amrex::TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", null ],
     [ "amrex::ThisParticleTileHasNoAoS", "structamrex_1_1ThisParticleTileHasNoAoS.html", null ],
     [ "amrex::ThisParticleTileHasNoParticleVector", "structamrex_1_1ThisParticleTileHasNoParticleVector.html", null ],
