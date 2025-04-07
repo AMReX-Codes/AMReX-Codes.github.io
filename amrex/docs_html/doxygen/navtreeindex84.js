@@ -1,5 +1,14 @@
 var NAVTREEINDEX84 =
 {
+"classamrex_1_1PhysBCFunctUseCoarseGhost.html#ac4606069ff51762825e7c8c42f7d1c42":[3,0,0,464,1],
+"classamrex_1_1PhysBCFunctUseCoarseGhost.html#af4f46c3c77f6391f5f05e7beac8e49cb":[3,0,0,464,6],
+"classamrex_1_1PhysBCFunctUseCoarseGhost.html#af4f46c3c77f6391f5f05e7beac8e49cb":[2,0,0,497,6],
+"classamrex_1_1PinnedArenaAllocator.html":[3,0,0,465],
+"classamrex_1_1PinnedArenaAllocator.html":[2,0,0,498],
+"classamrex_1_1PlotFileData.html":[3,0,0,467],
+"classamrex_1_1PlotFileData.html":[2,0,0,500],
+"classamrex_1_1PlotFileData.html#a02a8a14ddee9b341ce53ed3af0b20b01":[3,0,0,467,20],
+"classamrex_1_1PlotFileData.html#a02a8a14ddee9b341ce53ed3af0b20b01":[2,0,0,500,20],
 "classamrex_1_1PlotFileData.html#a0382a4d2951c7ceb26cf70b1852a7bd4":[3,0,0,467,4],
 "classamrex_1_1PlotFileData.html#a0382a4d2951c7ceb26cf70b1852a7bd4":[2,0,0,500,4],
 "classamrex_1_1PlotFileData.html#a0cc0ef78ac5a9ed1d7ad288cf6774723":[3,0,0,467,17],
@@ -240,14 +249,5 @@ var NAVTREEINDEX84 =
 "classamrex_1_1RKIntegrator.html#ada4db7ea06e188ae4ab827a213cf35ce":[2,0,0,522,9],
 "classamrex_1_1RKIntegrator.html#ada5e46fb855c0ec424f31edd25bc953a":[3,0,0,489,4],
 "classamrex_1_1RKIntegrator.html#ada5e46fb855c0ec424f31edd25bc953a":[2,0,0,522,4],
-"classamrex_1_1RKIntegrator.html#ae967ca14edea4b4436eb438da434e081":[3,0,0,489,17],
-"classamrex_1_1RKIntegrator.html#ae967ca14edea4b4436eb438da434e081":[2,0,0,522,17],
-"classamrex_1_1RKIntegrator.html#aeb24e2eb4c7cd3f6f46ac8ce656fde5c":[3,0,0,489,15],
-"classamrex_1_1RKIntegrator.html#aeb24e2eb4c7cd3f6f46ac8ce656fde5c":[2,0,0,522,15],
-"classamrex_1_1RKIntegrator.html#af0eddcd4e42f2e70d706c84108c812e7":[2,0,0,522,5],
-"classamrex_1_1RKIntegrator.html#af0eddcd4e42f2e70d706c84108c812e7":[3,0,0,489,5],
-"classamrex_1_1RKIntegrator.html#af326e29a8c0b145ec35cfab0011a7f91":[3,0,0,489,6],
-"classamrex_1_1RKIntegrator.html#af326e29a8c0b145ec35cfab0011a7f91":[2,0,0,522,6],
-"classamrex_1_1RKIntegrator.html#afbdcf1854980555893e338cbb0c30534":[2,0,0,522,19],
-"classamrex_1_1RKIntegrator.html#afbdcf1854980555893e338cbb0c30534":[3,0,0,489,19]
+"classamrex_1_1RKIntegrator.html#ae967ca14edea4b4436eb438da434e081":[3,0,0,489,17]
 };

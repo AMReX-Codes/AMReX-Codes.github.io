@@ -1,5 +1,14 @@
 var NAVTREEINDEX87 =
 {
+"classamrex_1_1SpMatrix.html#ade6a7f87e1b0ff7cd09debf8cdf1a9e1":[3,0,0,503,48],
+"classamrex_1_1SpMatrix.html#af1eac58242d09a806cb7acb361f8c979":[3,0,0,503,14],
+"classamrex_1_1SpMatrix.html#af1eac58242d09a806cb7acb361f8c979":[2,0,0,536,14],
+"classamrex_1_1SpMatrix.html#af6b0d32af456857f800c542fb2901a83":[2,0,0,536,46],
+"classamrex_1_1SpMatrix.html#af6b0d32af456857f800c542fb2901a83":[3,0,0,503,46],
+"classamrex_1_1SpMatrix.html#aff7e59959f717801f580e1be96726fba":[2,0,0,536,24],
+"classamrex_1_1SpMatrix.html#aff7e59959f717801f580e1be96726fba":[3,0,0,503,24],
+"classamrex_1_1SparseBins.html":[3,0,0,501],
+"classamrex_1_1SparseBins.html":[2,0,0,534],
 "classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc":[3,0,0,501,1],
 "classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc":[2,0,0,534,1],
 "classamrex_1_1SparseBins.html#a03e1a2615cba85dbc4ea2509de572191":[3,0,0,501,14],
@@ -240,14 +249,5 @@ var NAVTREEINDEX87 =
 "classamrex_1_1StateDescriptor.html#a07ab21f13b747541446a303997f24aee":[2,0,0,541,18],
 "classamrex_1_1StateDescriptor.html#a0afe8de243a0504d0a3f57b0c6c1310b":[2,0,0,541,17],
 "classamrex_1_1StateDescriptor.html#a0afe8de243a0504d0a3f57b0c6c1310b":[3,0,0,508,17],
-"classamrex_1_1StateDescriptor.html#a0bde7d6910db8c5b29d8ea845f7dff88":[2,0,0,541,41],
-"classamrex_1_1StateDescriptor.html#a0bde7d6910db8c5b29d8ea845f7dff88":[3,0,0,508,41],
-"classamrex_1_1StateDescriptor.html#a13d32bba91b8bb8d5a707df7147f1fa8":[2,0,0,541,42],
-"classamrex_1_1StateDescriptor.html#a13d32bba91b8bb8d5a707df7147f1fa8":[3,0,0,508,42],
-"classamrex_1_1StateDescriptor.html#a19d2b43cab064c1ea321f9f25970c68f":[2,0,0,541,45],
-"classamrex_1_1StateDescriptor.html#a19d2b43cab064c1ea321f9f25970c68f":[3,0,0,508,45],
-"classamrex_1_1StateDescriptor.html#a1c3308f0a08a991d3b3d2576e9d1e149":[2,0,0,541,19],
-"classamrex_1_1StateDescriptor.html#a1c3308f0a08a991d3b3d2576e9d1e149":[3,0,0,508,19],
-"classamrex_1_1StateDescriptor.html#a26a49900d23f1e6dae4904636de28807":[2,0,0,541,15],
-"classamrex_1_1StateDescriptor.html#a26a49900d23f1e6dae4904636de28807":[3,0,0,508,15]
+"classamrex_1_1StateDescriptor.html#a0bde7d6910db8c5b29d8ea845f7dff88":[2,0,0,541,41]
 };

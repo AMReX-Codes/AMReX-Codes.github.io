@@ -1,5 +1,14 @@
 var NAVTREEINDEX86 =
 {
+"classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef":[3,0,0,479,62],
+"classamrex_1_1RealVect.html#acf4c2cd61a42a6e8fe7d8251000c2140":[2,0,0,512,0],
+"classamrex_1_1RealVect.html#acf4c2cd61a42a6e8fe7d8251000c2140":[3,0,0,479,0],
+"classamrex_1_1RealVect.html#ad468fb3ea188dff9efe09bfb71734be9":[3,0,0,479,39],
+"classamrex_1_1RealVect.html#ad468fb3ea188dff9efe09bfb71734be9":[2,0,0,512,39],
+"classamrex_1_1RealVect.html#ad6ae47a8656e02c4d566cdf251d5e532":[3,0,0,479,17],
+"classamrex_1_1RealVect.html#ad6ae47a8656e02c4d566cdf251d5e532":[2,0,0,512,17],
+"classamrex_1_1RealVect.html#ad83cc01ed7402d9d384b73c046a96b87":[3,0,0,479,13],
+"classamrex_1_1RealVect.html#ad83cc01ed7402d9d384b73c046a96b87":[2,0,0,512,13],
 "classamrex_1_1RealVect.html#addcc9764c758d18f28fb58fd3c5b3a8b":[3,0,0,479,44],
 "classamrex_1_1RealVect.html#addcc9764c758d18f28fb58fd3c5b3a8b":[2,0,0,512,44],
 "classamrex_1_1RealVect.html#ae2fd3bdec2802aef034cc7cfb36bf14a":[2,0,0,512,4],
@@ -240,14 +249,5 @@ var NAVTREEINDEX86 =
 "classamrex_1_1SpMatrix.html#ada3bc6e12d7dacb1312f61d3bcbc8cd2":[3,0,0,503,51],
 "classamrex_1_1SpMatrix.html#adca4ae46a4f355c74288a283a60d6889":[3,0,0,503,15],
 "classamrex_1_1SpMatrix.html#adca4ae46a4f355c74288a283a60d6889":[2,0,0,536,15],
-"classamrex_1_1SpMatrix.html#ade6a7f87e1b0ff7cd09debf8cdf1a9e1":[2,0,0,536,48],
-"classamrex_1_1SpMatrix.html#ade6a7f87e1b0ff7cd09debf8cdf1a9e1":[3,0,0,503,48],
-"classamrex_1_1SpMatrix.html#af1eac58242d09a806cb7acb361f8c979":[3,0,0,503,14],
-"classamrex_1_1SpMatrix.html#af1eac58242d09a806cb7acb361f8c979":[2,0,0,536,14],
-"classamrex_1_1SpMatrix.html#af6b0d32af456857f800c542fb2901a83":[2,0,0,536,46],
-"classamrex_1_1SpMatrix.html#af6b0d32af456857f800c542fb2901a83":[3,0,0,503,46],
-"classamrex_1_1SpMatrix.html#aff7e59959f717801f580e1be96726fba":[2,0,0,536,24],
-"classamrex_1_1SpMatrix.html#aff7e59959f717801f580e1be96726fba":[3,0,0,503,24],
-"classamrex_1_1SparseBins.html":[3,0,0,501],
-"classamrex_1_1SparseBins.html":[2,0,0,534]
+"classamrex_1_1SpMatrix.html#ade6a7f87e1b0ff7cd09debf8cdf1a9e1":[2,0,0,536,48]
 };
