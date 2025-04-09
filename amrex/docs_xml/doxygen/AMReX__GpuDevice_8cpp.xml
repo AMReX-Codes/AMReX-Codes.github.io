@@ -2593,12 +2593,16 @@
 <codeline lineno="1081"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hypreSynchronize<sp/>()</highlight></codeline>
 <codeline lineno="1082"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1083"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncCudaDevice(hypre_handle());<sp/></highlight><highlight class="comment">//<sp/>works<sp/>for<sp/>non-cuda<sp/>device<sp/>too</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1085"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1086"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1087"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1088"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1089"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1084"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(HYPRE_RELEASE_NUMBER<sp/>&gt;<sp/>23200)<sp/>||<sp/>(HYPRE_RELEASE_NUMBER<sp/>==<sp/>23200<sp/>&amp;&amp;<sp/>HYPRE_DEVELOP_NUMBER<sp/>&gt;=<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncComputeStream();</highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1087"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncCudaDevice(hypre_handle());<sp/></highlight><highlight class="comment">//<sp/>works<sp/>for<sp/>non-cuda<sp/>device<sp/>too</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1088"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1089"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1090"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1091"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1092"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1093"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp"/>
   </compounddef>

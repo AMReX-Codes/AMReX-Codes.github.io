@@ -67,6 +67,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#math-expressions">Math Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enum-class">Enum Class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-default-via-environment-variable">Setting Default Via Environment Variable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-line-flags">Command Line Flags</a></li>
@@ -552,6 +553,23 @@ file to the database and are therefore used by default. For example,
 to change the value of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ncells</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">hydro</span><span class="p">.</span><span class="n">cfl</span></code>, one can
 run with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myexecutable myinputsfile ncells=&quot;64 32 16&quot; hydro.cfl=0.9</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-default-via-environment-variable">
+<h2>Setting Default Via Environment Variable<a class="headerlink" href="#setting-default-via-environment-variable" title="Permalink to this heading"></a></h2>
+<p>You can specify default parameter values using the environment variable
+<cite>AMREX_DEFAULT_INIT</cite>. This method has lower precedence than settings
+provided in the inputs file or via command-line arguments. Here is an
+example of how to use it.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export AMREX_DEFAULT_INIT=&quot;amrex.envfoo=0 amrex.envbar=1 amrex.envabc=1 2 3 amrex.envstr=\&quot;a b c\&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This is equivalent to setting the following in the inputs file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">.</span><span class="n">envfoo</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">envbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">envabc</span> <span class="o">=</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="n">amrex</span><span class="o">.</span><span class="n">envstr</span> <span class="o">=</span> <span class="s2">&quot;a b c&quot;</span>
 </pre></div>
 </div>
 </section>
