@@ -7,8 +7,8 @@ var AMReX__MLCurlCurl__K_8H =
       [ "b", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f", null ],
       [ "r", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231", null ]
     ] ],
-    [ "mlcurlcurl_1D", "AMReX__MLCurlCurl__K_8H.html#ad920aa616dbcc68b11b4941a0c804dc4", null ],
-    [ "mlcurlcurl_1D", "AMReX__MLCurlCurl__K_8H.html#a53a6a264d9bb01942c69f48c81ad416c", null ],
+    [ "mlcurlcurl_1D", "AMReX__MLCurlCurl__K_8H.html#a8c369eaafc46c6ba325ae77b2f170a78", null ],
+    [ "mlcurlcurl_1D", "AMReX__MLCurlCurl__K_8H.html#a166e7b12af8525898dc44a009aaaa28f", null ],
     [ "mlcurlcurl_adotx_x", "AMReX__MLCurlCurl__K_8H.html#acfd5c8bd3612ac3d3079dc0189308d6f", null ],
     [ "mlcurlcurl_adotx_y", "AMReX__MLCurlCurl__K_8H.html#a806290e2106cf167ce88e28aa9fb2daf", null ],
     [ "mlcurlcurl_adotx_z", "AMReX__MLCurlCurl__K_8H.html#aa37948c1ee6507a42652fe71d9e8d262", null ],
