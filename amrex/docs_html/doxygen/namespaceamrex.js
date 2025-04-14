@@ -340,6 +340,15 @@ var namespaceamrex =
       [ "packParticleIDs", "namespaceamrex_1_1particle__detail.html#af7377c5f2b9df714890374940758cda9", null ],
       [ "PSizeInFile", "namespaceamrex_1_1particle__detail.html#a03a96fac7ce7e3cef2729a470a732f49", null ]
     ] ],
+    [ "particle_impl", "namespaceamrex_1_1particle__impl.html", [
+      [ "is_valid", "namespaceamrex_1_1particle__impl.html#a1cd7ada43c935a229f4e1af9819e2722", null ],
+      [ "make_invalid", "namespaceamrex_1_1particle__impl.html#a8d43d30e28caedd08cba477944645398", null ],
+      [ "make_valid", "namespaceamrex_1_1particle__impl.html#a2e2a874faf6b40398db34d4b7c06c381", null ],
+      [ "pack_cpu", "namespaceamrex_1_1particle__impl.html#ad98b7c64b3759cca102127387b79ad4c", null ],
+      [ "pack_id", "namespaceamrex_1_1particle__impl.html#a73af5eeb70423a869c895a059aef2e34", null ],
+      [ "unpack_cpu", "namespaceamrex_1_1particle__impl.html#a292bd43da7170d7c575666619a9e5678", null ],
+      [ "unpack_id", "namespaceamrex_1_1particle__impl.html#a2d04600f075446491619393da78cb086", null ]
+    ] ],
     [ "ParticleIdCpus", "namespaceamrex_1_1ParticleIdCpus.html", [
       [ "Invalid", "namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c", null ]
     ] ],
