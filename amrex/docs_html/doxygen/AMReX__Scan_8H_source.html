@@ -340,7 +340,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    T* blocksum_p = (T*)(dp + nbytes_blockresult);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    T* totalsum_p = (T*)(dp + nbytes_blockresult + nbytes_blocksum);</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads, sm, stream,</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    amrex::launch&lt;nthreads&gt;(nblocks, sm, stream,</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    {</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
@@ -420,7 +420,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        }</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    });</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(1, nthreads, sm, stream,</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    amrex::launch&lt;nthreads&gt;(1, sm, stream,</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    {</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
@@ -486,7 +486,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        }</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    });</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads, 0, stream,</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    amrex::launch&lt;nthreads&gt;(nblocks, 0, stream,</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    {</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        <span class="keywordtype">int</span> threadIdxx = gh.item-&gt;get_local_id(0);</div>
@@ -560,7 +560,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        }</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    });</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads, sm, stream,</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    amrex::launch&lt;nthreads&gt;(nblocks, sm, stream,</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    {</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
@@ -803,7 +803,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        (<span class="keyword">reinterpret_cast&lt;</span>OrderedBlockId::id_type*<span class="keyword">&gt;</span>(dp + nbytes_tile_state));</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="comment">// Init ScanTileState on device</span></div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>((nblocks+nthreads-1)/nthreads, nthreads, 0, stream, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> ()</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    amrex::launch&lt;nthreads&gt;((nblocks+nthreads-1)/nthreads, 0, stream, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> ()</div>
 <div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    {</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        <span class="keyword">auto</span>&amp; scan_tile_state = <span class="keyword">const_cast&lt;</span>ScanTileState&amp;<span class="keyword">&gt;</span>(tile_state);</div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>        <span class="keyword">auto</span>&amp; scan_bid = <span class="keyword">const_cast&lt;</span>OrderedBlockId&amp;<span class="keyword">&gt;</span>(ordered_block_id);</div>
@@ -944,7 +944,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span> </div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>    <span class="keywordflow">if</span> (nblocks &gt; 1) {</div>
 <div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        <span class="comment">// Init ScanTileState on device</span></div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>((nblocks+nthreads-1)/nthreads, nthreads, 0, stream, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> ()</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        amrex::launch&lt;nthreads&gt;((nblocks+nthreads-1)/nthreads, 0, stream, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> ()</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>        {</div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>            <span class="keyword">const_cast&lt;</span>ScanTileState&amp;<span class="keyword">&gt;</span>(tile_state).InitializeStatus(nblocks);</div>
 <div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>        });</div>
@@ -1089,7 +1089,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>        }</div>
 <div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>    });</div>
 <div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span> </div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>    <a class="code hl_function" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads, sm, stream,</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>    amrex::launch&lt;nthreads&gt;(nblocks, sm, stream,</div>
 <div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>    {</div>
 <div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>        <span class="keywordtype">int</span> lane = threadIdx.x % <a class="code hl_variable" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
@@ -1581,7 +1581,6 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4963180ac09020e51a2077bf2ebdb323"><div class="ttname"><a href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
-<div class="ttc" id="anamespaceamrex_html_a685ae8eab582f895ce964b6a99030ef2"><div class="ttname"><a href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a></div><div class="ttdeci">void launch(T const &amp;n, L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:120</div></div>
 <div class="ttc" id="anamespaceamrex_html_a68910ee43a4d4544d54a2a6fe26454e2"><div class="ttname"><a href="namespaceamrex.html#a68910ee43a4d4544d54a2a6fe26454e2">amrex::end</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1890</div></div>
 <div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:656</div></div>
 <div class="ttc" id="anamespaceamrex_html_abf1d4578d3f20a3f5b2d2d74c8c90af6"><div class="ttname"><a href="namespaceamrex.html#abf1d4578d3f20a3f5b2d2d74c8c90af6">amrex::begin</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 begin(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1881</div></div>

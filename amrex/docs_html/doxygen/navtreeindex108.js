@@ -1,5 +1,6 @@
 var NAVTREEINDEX108 =
 {
+"namespaceamrex_1_1system.html#ab759a6040b265393f64a1df720a00378":[2,0,0,50,9],
 "namespaceamrex_1_1system.html#ac647d6ac7bde6da41a4df17667903f5c":[2,0,0,50,5],
 "namespaceamrex_1_1system.html#ad37288ab4a9e0c33cb4629bdd7aa9aa7":[2,0,0,50,7],
 "namespaceamrex_1_1system.html#ae1d6711c50c87572893a9c863cbaa2e2":[2,0,0,50,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX108 =
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
 "namespacemembers_d.html":[2,1,0,4],
-"namespacemembers_e.html":[2,1,0,5],
-"namespacemembers_enum.html":[2,1,4]
+"namespacemembers_e.html":[2,1,0,5]
 };

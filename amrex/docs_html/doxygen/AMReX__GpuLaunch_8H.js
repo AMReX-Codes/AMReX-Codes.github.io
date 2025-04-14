@@ -8,6 +8,7 @@ var AMReX__GpuLaunch_8H =
     [ "AMREX_GPU_Y_STRIDE", "AMReX__GpuLaunch_8H.html#ac57fe95ecdd1870f3e520859f33dbbdb", null ],
     [ "AMREX_GPU_Z_STRIDE", "AMReX__GpuLaunch_8H.html#a1843514c0676790a085cc89796793831", null ],
     [ "AMREX_LAUNCH_KERNEL", "AMReX__GpuLaunch_8H.html#a70f6a154a9518b2be561acca7d54c95b", null ],
+    [ "AMREX_LAUNCH_KERNEL_NOBOUND", "AMReX__GpuLaunch_8H.html#aee5bba2a8675cba292c751114c91715d", null ],
     [ "call_device", "AMReX__GpuLaunch_8H.html#ad89172e7973936686d13f4926bfac5aa", null ],
     [ "call_device", "AMReX__GpuLaunch_8H.html#a450c15a9b3787ce7c979cded90f11574", null ],
     [ "getThreadBox", "AMReX__GpuLaunch_8H.html#ae2cf1d72cec1f6929ea0405c70ce2f45", null ],
