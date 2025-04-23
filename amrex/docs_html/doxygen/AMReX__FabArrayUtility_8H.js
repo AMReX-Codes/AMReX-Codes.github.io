@@ -116,6 +116,8 @@ var AMReX__FabArrayUtility_8H =
     [ "setVal", "AMReX__FabArrayUtility_8H.html#ae26f96532b61a1b39722a6125552c74c", null ],
     [ "Subtract", "AMReX__FabArrayUtility_8H.html#afeebec2f58b85bfde5b88b30810cd82d", null ],
     [ "Subtract", "AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02", null ],
+    [ "Swap", "AMReX__FabArrayUtility_8H.html#a778756c697ef8ef4f05ae4fe4f26ba3c", null ],
+    [ "Swap", "AMReX__FabArrayUtility_8H.html#a80257465148c89cb198291204f6d881e", null ],
     [ "Xpay", "AMReX__FabArrayUtility_8H.html#a25babe95b2334561dc4664fd9ff1fd20", null ],
     [ "Xpay", "AMReX__FabArrayUtility_8H.html#aafbeb2d5f8af6c2d371818a5b8b8b10e", null ]
 ];

@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('AMReX__SpMV_8H_source.html',''); initR
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#  include &lt;cusparse.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#  include &lt;rocsparse/rocsparse.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#  include &lt;oneapi/mkl/spblas.hpp&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -261,41 +261,42 @@ $(document).ready(function(){initNavTree('AMReX__SpMV_8H_source.html',''); initR
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    rocsparse_destroy_handle(handle);</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pbuffer);</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    mkl::sparse::matrix_handle_t handle{};</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    mkl::sparse::set_csr_data(Gpu::Device::streamQueue(), handle, nrows, ncols, mkl::index_base::zero,</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                              (Long*)row, (Long*)col, (T*)mat);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    mkl::sparse::gemv(Gpu::Device::streamQueue(), mkl::transpose::nontrans,</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                      T(1), handle, px, T(0), py);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_define" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>();</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    Long <span class="keyword">const</span> ny = y.<a class="code hl_function" href="classamrex_1_1AlgVector.html#a0811750a723b5146fafd5fec5e03b246">numLocalRows</a>();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span> (Long i = 0; i &lt; ny; ++i) {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = 0;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#pragma omp parallel for reduction(+:r)</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">for</span> (Long j = row[i]; j &lt; row[i+1]; ++j) {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> += mat[j] * px[col[j]];</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        py[i] = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="classamrex_1_1SpMatrix.html">SpMatrix&lt;T&gt;</a>&amp;<span class="keyword">&gt;</span>(A).finishComm(y);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_function" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(nnz);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    mkl::sparse::matrix_handle_t handle{};</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    mkl::sparse::set_csr_data(Gpu::Device::streamQueue(), handle, nrows, ncols, mkl::index_base::zero,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                              (Long*)row, (Long*)col, (T*)mat);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    mkl::sparse::gemv(Gpu::Device::streamQueue(), mkl::transpose::nontrans,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                      T(1), handle, px, T(0), py);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_define" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>();</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    Long <span class="keyword">const</span> ny = y.<a class="code hl_function" href="classamrex_1_1AlgVector.html#a0811750a723b5146fafd5fec5e03b246">numLocalRows</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">for</span> (Long i = 0; i &lt; ny; ++i) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = 0;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#pragma omp parallel for reduction(+:r)</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">for</span> (Long j = row[i]; j &lt; row[i+1]; ++j) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> += mat[j] * px[col[j]];</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        py[i] = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">const_cast&lt;</span><a class="code hl_class" href="classamrex_1_1SpMatrix.html">SpMatrix&lt;T&gt;</a>&amp;<span class="keyword">&gt;</span>(A).finishComm(y);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
 </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__AlgVector_8H_html"><div class="ttname"><a href="AMReX__AlgVector_8H.html">AMReX_AlgVector.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a97eafbdde3320b2e8981a1d1d3936f58"><div class="ttname"><a href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a></div><div class="ttdeci">#define AMREX_RESTRICT</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:37</div></div>
@@ -321,6 +322,7 @@ $(document).ready(function(){initNavTree('AMReX__SpMV_8H_source.html',''); initR
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">amrex::CurlCurlStateType::r</a></div><div class="ttdeci">@ r</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5497760fe0dddbe8b0ef6dc10521a843"><div class="ttname"><a href="namespaceamrex.html#a5497760fe0dddbe8b0ef6dc10521a843">amrex::SpMV</a></div><div class="ttdeci">void SpMV(AlgVector&lt; T &gt; &amp;y, SpMatrix&lt; T &gt; const &amp;A, AlgVector&lt; T &gt; const &amp;x)</div><div class="ttdef"><b>Definition</b> AMReX_SpMV.H:20</div></div>
+<div class="ttc" id="anamespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition</b> AMReX.H:127</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:616</div></div>
 </div><!-- fragment --></div><!-- contents -->

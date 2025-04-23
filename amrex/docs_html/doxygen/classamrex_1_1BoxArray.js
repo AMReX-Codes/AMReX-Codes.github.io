@@ -24,6 +24,7 @@ var classamrex_1_1BoxArray =
     [ "coarsenable", "classamrex_1_1BoxArray.html#a7398fc2b3ae449dfcec355e071bc16ce", null ],
     [ "complementIn", "classamrex_1_1BoxArray.html#aae7887e346945ad1154a31823b1f73e5", null ],
     [ "complementIn", "classamrex_1_1BoxArray.html#a9cfc3c2251e61eb1f1defb1e57badeb1", null ],
+    [ "complementIn", "classamrex_1_1BoxArray.html#a2c257ef1b3cd2b03436b16e5ec1d9ddd", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a23ba905888437090a2fc1cfd8e578c4d", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a27b3133e35f0dbae139aebf7769d86b3", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a5535d8c27dece816a8ef7bf022777040", null ],

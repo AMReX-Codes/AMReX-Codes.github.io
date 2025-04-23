@@ -2285,6 +2285,7 @@
     <member refid="classamrex_1_1BoxArray_1ac19b485ff74dd52d9bb8d8919184e0ce" kind="function"><name>intersections</name></member>
     <member refid="classamrex_1_1BoxArray_1a9cfc3c2251e61eb1f1defb1e57badeb1" kind="function"><name>complementIn</name></member>
     <member refid="classamrex_1_1BoxArray_1aae7887e346945ad1154a31823b1f73e5" kind="function"><name>complementIn</name></member>
+    <member refid="classamrex_1_1BoxArray_1a2c257ef1b3cd2b03436b16e5ec1d9ddd" kind="function"><name>complementIn</name></member>
     <member refid="classamrex_1_1BoxArray_1a6bdf6476369bee9a51d4c3d2f7d70cd0" kind="function"><name>clear_hash_bin</name></member>
     <member refid="classamrex_1_1BoxArray_1aafdd2fe3c88e9b17d4892dd36e92225f" kind="function"><name>removeOverlap</name></member>
     <member refid="classamrex_1_1BoxArray_1a0c8df27bfc6981d3e50784b64026a249" kind="function"><name>getRefID</name></member>
@@ -4453,7 +4454,7 @@
     <member refid="classamrex_1_1FabArrayBase_1ac71669e7574424826140208ef85fcc4a" kind="function"><name>flushRB180</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a5f84a0b53318abdd023c9715c1eacc64" kind="function"><name>getPolarB</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a11436d5c97b9158ac23058287feada66" kind="function"><name>flushPolarB</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a0e43ee4f161fb67429d34dd5a83e3984" kind="function"><name>getParForInfo</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1af1e11f13ae3235cd23551985340a465b" kind="function"><name>getParForInfo</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a38c437b445b30f872df4f5ed6232e9a1" kind="function"><name>flushParForInfo</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a1033b7779ec8b48b594b158fbabe13b4" kind="function"><name>clearThisBD</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a294641949d2f4dd2161ba42a6b10d570" kind="function"><name>addThisBD</name></member>
@@ -5944,11 +5945,17 @@
     <member refid="classamrex_1_1iMultiFab_1a217dd63726c8b7cf00ddb4fda03b8f7e" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1iMultiFab_1a8691489c0a9f57a52b48ad4037c895bb" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1iMultiFab_1a96632d65de11e9c8a5b941a615803fb0" kind="function"><name>Add</name></member>
+    <member refid="classamrex_1_1iMultiFab_1a5278b42055c1f4b6a3c82218a53e8532" kind="function"><name>Add</name></member>
     <member refid="classamrex_1_1iMultiFab_1afb9206f65daae6fa0d08e59a51b7ea8a" kind="function"><name>Copy</name></member>
     <member refid="classamrex_1_1iMultiFab_1a0ad4af39181a230c528e27398980ba5a" kind="function"><name>Copy</name></member>
+    <member refid="classamrex_1_1iMultiFab_1a1f612aa278e1501b292c141ea3939698" kind="function"><name>Swap</name></member>
+    <member refid="classamrex_1_1iMultiFab_1aced5b449f5cdc4a5cc3bcbe82fcb91c1" kind="function"><name>Swap</name></member>
     <member refid="classamrex_1_1iMultiFab_1a66a3302f803afd696dff628cf4c61e3b" kind="function"><name>Subtract</name></member>
+    <member refid="classamrex_1_1iMultiFab_1abfe2d926eb732213e478d716a4d6f189" kind="function"><name>Subtract</name></member>
     <member refid="classamrex_1_1iMultiFab_1ae4eab34e67e569399b7a53cbe5d9d188" kind="function"><name>Multiply</name></member>
+    <member refid="classamrex_1_1iMultiFab_1a02d76368c2395b79da06fbb04f31a3f8" kind="function"><name>Multiply</name></member>
     <member refid="classamrex_1_1iMultiFab_1a9aa5acb6b1a4d4701d4d35cc2a21f2c6" kind="function"><name>Divide</name></member>
+    <member refid="classamrex_1_1iMultiFab_1a361d54417da5e16a45f5628bd66d0517" kind="function"><name>Divide</name></member>
     <member refid="classamrex_1_1iMultiFab_1a04e68d07c0aae11be5946e24023b17d3" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1iMultiFab_1a30306fc1aaa921993a9667b639ec26c5" kind="function"><name>Finalize</name></member>
   </compound>
@@ -8985,14 +8992,12 @@
   <compound refid="structamrex_1_1FabArrayBase_1_1ParForInfo" kind="struct"><name>amrex::FabArrayBase::ParForInfo</name>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a24bf518e21de06c34d5ccafe0b1ac244" kind="variable"><name>m_bat</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1aa6a101ddf89df501b82f6fcc9e91ebd7" kind="variable"><name>m_ng</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a42964fcfc71605c366a9881334b4b44e" kind="variable"><name>m_nthreads</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1ab8a2eebe5390786a4fd677cae1cb498f" kind="variable"><name>m_nblocks_x</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a08c9988013dff591a539a0305d609ae7" kind="variable"><name>m_ncellsmax</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1afc603c5935ba128b01935f5ab94491ad" kind="variable"><name>m_boxes</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a61018a635a080b4ef9d94852423668ae" kind="variable"><name>m_hp</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1ad1cd3540aa647e1a370450d70fac6176" kind="variable"><name>m_dp</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1aecad54aa11e76f8bd774ca2d2c4580c7" kind="function"><name>ParForInfo</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a98d095ce41b1efaa09597831dc70101f" kind="function"><name>ParForInfo</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a946329b35181c218e019e1b767d42e95" kind="function"><name>~ParForInfo</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a9cd25dd0b51ba0d98a5d6ab6df034e9a" kind="function"><name>getBlocks</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a73c9f2f437247724d585d4a91552171b" kind="function"><name>getNBlocksPerBox</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a4043b1ce61e674459ec7bd38c573dc4d" kind="function"><name>getBoxes</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a58d5f8040e66a5f6e09e5687f68eb4ec" kind="function"><name>ParForInfo</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a0724d01468d2b2a8482208f62e4e1147" kind="function"><name>ParForInfo</name></member>
@@ -13245,6 +13250,8 @@
     <member refid="namespaceamrex_1aeddb35f2f67fa5f607d190b5d5306c9d" kind="function"><name>ReduceLogicalOr</name></member>
     <member refid="namespaceamrex_1a93ead4b7e5a5b99b0a88040076d7fd21" kind="function"><name>ReduceLogicalOr</name></member>
     <member refid="namespaceamrex_1a376ff66b5e6a76d195cace00df41d05e" kind="function"><name>printCell</name></member>
+    <member refid="namespaceamrex_1a80257465148c89cb198291204f6d881e" kind="function"><name>Swap</name></member>
+    <member refid="namespaceamrex_1a778756c697ef8ef4f05ae4fe4f26ba3c" kind="function"><name>Swap</name></member>
     <member refid="namespaceamrex_1a54b8b46deca518b441b849bbd1ceda02" kind="function"><name>Subtract</name></member>
     <member refid="namespaceamrex_1afeebec2f58b85bfde5b88b30810cd82d" kind="function"><name>Subtract</name></member>
     <member refid="namespaceamrex_1aec148f53c2d7fcc3b00c9e91999d4058" kind="function"><name>Multiply</name></member>
@@ -13640,6 +13647,8 @@
     <member refid="namespaceamrex_1af559f21584872566541db61cbacf7470" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a24aa5b51c299dd1337df192681f47e0e" kind="function"><name>cast</name></member>
     <member refid="namespaceamrex_1a364dfb9be3b959cfdb2509f4680ecd6f" kind="function"><name>ReduceToPlane</name></member>
+    <member refid="namespaceamrex_1a40c2c0500c3c5f5b536616ca66a968da" kind="function"><name>ReduceToPlaneMF</name></member>
+    <member refid="namespaceamrex_1a372b4c6fd8af2bdf17bb3d790e03f64d" kind="function"><name>ReduceToPlaneMF2</name></member>
     <member refid="namespaceamrex_1a7ef9aec0b2f67456f1467c71e043025c" kind="function"><name>NormHelper</name></member>
     <member refid="namespaceamrex_1a6758d6b184b1615ea5e4434762e944c3" kind="function"><name>NormHelper</name></member>
     <member refid="namespaceamrex_1a9904cb709f0cc1096942b2799924eec4" kind="function"><name>amrex_avg_nd_to_cc</name></member>
@@ -14881,8 +14890,10 @@
     <member refid="namespaceamrex_1_1detail_1aa5b5b0ea1c9328e169b2f95848868a75" kind="function"><name>IntVectSplit_imp2</name></member>
     <member refid="namespaceamrex_1_1detail_1a19624f52fdf52e40edcc90ba71de2afb" kind="function"><name>IntVectSplit_imp</name></member>
     <member refid="namespaceamrex_1_1detail_1a212330747d8eef18497f7b5aa65c40f0" kind="function"><name>get_sum</name></member>
-    <member refid="namespaceamrex_1_1detail_1a93be0fb0f65db39c14837748d0494860" kind="function"><name>build_par_for_nblocks</name></member>
-    <member refid="namespaceamrex_1_1detail_1ad7264c9be2687016a1fb029841f127e4" kind="function"><name>destroy_par_for_nblocks</name></member>
+    <member refid="namespaceamrex_1_1detail_1ae20e7a35360b4e186c0ebe376b80b551" kind="function"><name>build_par_for_boxes</name></member>
+    <member refid="namespaceamrex_1_1detail_1a65f4c73661780b56c58b697f491395e9" kind="function"><name>destroy_par_for_boxes</name></member>
+    <member refid="namespaceamrex_1_1detail_1a000ed35d0c246f3d833140b732696dce" kind="function"><name>reduce_to_plane</name></member>
+    <member refid="namespaceamrex_1_1detail_1ade17c15318059947f1833b705cea0bcd" kind="function"><name>reduce_to_plane</name></member>
     <member refid="namespaceamrex_1_1detail_1a2d9a622392a0eee879ac8180cb2371e6" kind="function"><name>Reduce</name></member>
     <member refid="namespaceamrex_1_1detail_1a11b496ac41b8e46fe7f1adf74392dcfb" kind="function"><name>Reduce</name></member>
     <member refid="namespaceamrex_1_1detail_1a59bb763ea3df042d86d6906cc9ccfc77" kind="function"><name>Reduce</name></member>

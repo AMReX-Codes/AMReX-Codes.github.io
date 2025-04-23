@@ -2164,23 +2164,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1130" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1130" bodyend="1132"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a93be0fb0f65db39c14837748d0494860" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ae20e7a35360b4e186c0ebe376b80b551" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::detail::build_par_for_nblocks</definition>
-        <argsstring>(char *&amp;a_hp, char *&amp;a_dp, std::pair&lt; int *, int * &gt; &amp;blocks_x, BoxIndexer *&amp;pboxes, Vector&lt; Box &gt; const &amp;boxes, Vector&lt; Long &gt; const &amp;ncells, int nthreads)</argsstring>
-        <name>build_par_for_nblocks</name>
-        <qualifiedname>amrex::detail::build_par_for_nblocks</qualifiedname>
+        <definition>void amrex::detail::build_par_for_boxes</definition>
+        <argsstring>(char *&amp;hp, BoxIndexer *&amp;pboxes, Vector&lt; Box &gt; const &amp;boxes)</argsstring>
+        <name>build_par_for_boxes</name>
+        <qualifiedname>amrex::detail::build_par_for_boxes</qualifiedname>
         <param>
           <type>char *&amp;</type>
-          <declname>a_hp</declname>
-        </param>
-        <param>
-          <type>char *&amp;</type>
-          <declname>a_dp</declname>
-        </param>
-        <param>
-          <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; &amp;</type>
-          <declname>blocks_x</declname>
+          <declname>hp</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1aac7253360db8634d12242f7237ff2af1" kindref="member">BoxIndexer</ref> *&amp;</type>
@@ -2190,28 +2182,20 @@
           <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &gt; const &amp;</type>
           <declname>boxes</declname>
         </param>
-        <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Long &gt; const &amp;</type>
-          <declname>ncells</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>nthreads</declname>
-        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="15" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="15" bodyend="43"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="15" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="15" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad7264c9be2687016a1fb029841f127e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a65f4c73661780b56c58b697f491395e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::detail::destroy_par_for_nblocks</definition>
+        <definition>void amrex::detail::destroy_par_for_boxes</definition>
         <argsstring>(char *hp, char *dp)</argsstring>
-        <name>destroy_par_for_nblocks</name>
-        <qualifiedname>amrex::detail::destroy_par_for_nblocks</qualifiedname>
+        <name>destroy_par_for_boxes</name>
+        <qualifiedname>amrex::detail::destroy_par_for_boxes</qualifiedname>
         <param>
           <type>char *</type>
           <declname>hp</declname>
@@ -2226,7 +2210,93 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="46" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="46" bodyend="50"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="32" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a000ed35d0c246f3d833140b732696dce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Op</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::detail::reduce_to_plane</definition>
+        <argsstring>(Array4&lt; T &gt; const &amp;ar, int direction, Box const &amp;bx, int box_no, F const &amp;f)</argsstring>
+        <name>reduce_to_plane</name>
+        <qualifiedname>amrex::detail::reduce_to_plane</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>box_no</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="1168" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="1168" bodyend="1248"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ade17c15318059947f1833b705cea0bcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Op</type>
+          </param>
+          <param>
+            <type>typename FA</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>FA</type>
+        <definition>FA amrex::detail::reduce_to_plane</definition>
+        <argsstring>(int direction, Box const &amp;domain, FA const &amp;mf, F const &amp;f)</argsstring>
+        <name>reduce_to_plane</name>
+        <qualifiedname>amrex::detail::reduce_to_plane</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> const &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>FA const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="1288" column="4" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="1288" bodyend="1320"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a2d9a622392a0eee879ac8180cb2371e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
