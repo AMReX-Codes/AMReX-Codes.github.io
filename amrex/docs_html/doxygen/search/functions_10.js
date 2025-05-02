@@ -41,7 +41,7 @@ var searchData=
   ['parser_5fast_5fdepth_38',['parser_ast_depth',['../namespaceamrex.html#a6815d583f941a297bbef6d77214829c8',1,'amrex']]],
   ['parser_5fast_5fdup_39',['parser_ast_dup',['../namespaceamrex.html#ad3b98b9aec198e9456f562949577675c',1,'amrex']]],
   ['parser_5fast_5fget_5fsymbols_40',['parser_ast_get_symbols',['../namespaceamrex.html#ae1d40846503356e1e1201c614163ea54',1,'amrex']]],
-  ['parser_5fast_5foptimize_41',['parser_ast_optimize',['../namespaceamrex.html#a5f9cf029d313196bd5c43c1d272ea9fe',1,'amrex']]],
+  ['parser_5fast_5foptimize_41',['parser_ast_optimize',['../namespaceamrex.html#a593d6ca4d6c96dd996abdd781bd0bc70',1,'amrex']]],
   ['parser_5fast_5fprint_42',['parser_ast_print',['../namespaceamrex.html#a87c0a8afac2fbe12cb2ac48e663ed0d6',1,'amrex']]],
   ['parser_5fast_5fregvar_43',['parser_ast_regvar',['../namespaceamrex.html#aee105e6b691d9fa51fef6e50c7ebb155',1,'amrex']]],
   ['parser_5fast_5fsetconst_44',['parser_ast_setconst',['../namespaceamrex.html#a406674d4bafc2a2a465b8127fa8f9f5e',1,'amrex']]],

@@ -6,7 +6,7 @@ var AMReX__Parser__Y_8cpp =
     [ "parser_ast_depth", "AMReX__Parser__Y_8cpp.html#a6815d583f941a297bbef6d77214829c8", null ],
     [ "parser_ast_dup", "AMReX__Parser__Y_8cpp.html#ad3b98b9aec198e9456f562949577675c", null ],
     [ "parser_ast_get_symbols", "AMReX__Parser__Y_8cpp.html#ae1d40846503356e1e1201c614163ea54", null ],
-    [ "parser_ast_optimize", "AMReX__Parser__Y_8cpp.html#a5f9cf029d313196bd5c43c1d272ea9fe", null ],
+    [ "parser_ast_optimize", "AMReX__Parser__Y_8cpp.html#a593d6ca4d6c96dd996abdd781bd0bc70", null ],
     [ "parser_ast_print", "AMReX__Parser__Y_8cpp.html#a87c0a8afac2fbe12cb2ac48e663ed0d6", null ],
     [ "parser_ast_regvar", "AMReX__Parser__Y_8cpp.html#aee105e6b691d9fa51fef6e50c7ebb155", null ],
     [ "parser_ast_setconst", "AMReX__Parser__Y_8cpp.html#a406674d4bafc2a2a465b8127fa8f9f5e", null ],
