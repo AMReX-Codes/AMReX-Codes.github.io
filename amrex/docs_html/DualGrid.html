@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dual Grid Approach &mdash; amrex 24.09-dev documentation</title>
+  <title>Dual Grid Approach &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -69,6 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -114,11 +115,11 @@
 the mesh work and particle work have very different requirements for load balancing.</p>
 <p>Rather than using a combined work estimate to create the same grids for mesh and particle
 data, we have the option to pursue a “dual grid” approach.</p>
-<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span><span class="w"></span></code>) data
-are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span><span class="w"></span></code>.</p>
+<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>) data
+are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span></code>.</p>
 <p>This enables separate load balancing strategies to be used for the mesh and particle work.</p>
 <p>The cost of this strategy, of course, is the need to copy mesh data onto temporary
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> when mesh-particle communication
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> when mesh-particle communication
 is required.</p>
 </section>
 

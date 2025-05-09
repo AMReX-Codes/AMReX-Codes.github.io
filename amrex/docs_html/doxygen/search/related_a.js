@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['scale_19133',['scale',['../classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef',1,'amrex::RealVect']]],
-  ['statedataphysbcfunct_19134',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
+  ['paralleldescriptor_3a_3ampi_5ftypemap_0',['Mpi_typemap',['../classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e',1,'amrex::BoxND']]],
+  ['pariterbase_5fimpl_3c_20false_2c_20particletype_2c_20narrayreal_2c_20narrayint_2c_20allocator_2c_20cellassignor_20_3e_1',['ParIterBase_impl&lt; false, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;',['../classamrex_1_1ParticleContainer__impl.html#a4c62beafa833201efa7c9e7ee259d785',1,'amrex::ParticleContainer_impl']]],
+  ['pariterbase_5fimpl_3c_20true_2c_20particletype_2c_20narrayreal_2c_20narrayint_2c_20allocator_2c_20cellassignor_20_3e_2',['ParIterBase_impl&lt; true, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;',['../classamrex_1_1ParticleContainer__impl.html#a8fbe7bffd0c677974504ded6ef24a9f0',1,'amrex::ParticleContainer_impl']]],
+  ['poisson_3',['poisson',['../classamrex_1_1FFT_1_1R2C.html#a1be460f58e5e6b3d1fc4ddecc08e522b',1,'amrex::FFT::R2C::Poisson'],['../classamrex_1_1FFT_1_1R2X.html#a1be460f58e5e6b3d1fc4ddecc08e522b',1,'amrex::FFT::R2X::Poisson']]],
+  ['poissonhybrid_4',['poissonhybrid',['../classamrex_1_1FFT_1_1R2C.html#abf6a97cc1f486d7ad995037461ecb49a',1,'amrex::FFT::R2C::PoissonHybrid'],['../classamrex_1_1FFT_1_1R2X.html#abf6a97cc1f486d7ad995037461ecb49a',1,'amrex::FFT::R2X::PoissonHybrid']]]
 ];

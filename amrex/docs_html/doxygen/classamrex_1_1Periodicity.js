@@ -3,6 +3,7 @@ var classamrex_1_1Periodicity =
     [ "Periodicity", "classamrex_1_1Periodicity.html#ab912d518e6c2289d18ca26e791920ea7", null ],
     [ "Periodicity", "classamrex_1_1Periodicity.html#abaaf6e49e85d1624a89b4ce8ade5c541", null ],
     [ "Domain", "classamrex_1_1Periodicity.html#a41d52e3a7bfcb2c174c80a6a14ad5e53", null ],
+    [ "intVect", "classamrex_1_1Periodicity.html#a44e412d57d51363d34b9f3b7d145ef34", null ],
     [ "isAllPeriodic", "classamrex_1_1Periodicity.html#a0c514a0dab32786f1285b20cdfd327a7", null ],
     [ "isAnyPeriodic", "classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042", null ],
     [ "isPeriodic", "classamrex_1_1Periodicity.html#ab263804d56d1280b7ece30109482ecee", null ],

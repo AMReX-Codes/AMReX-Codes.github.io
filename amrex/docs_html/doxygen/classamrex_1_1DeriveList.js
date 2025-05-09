@@ -18,7 +18,7 @@ var classamrex_1_1DeriveList =
     [ "clear", "classamrex_1_1DeriveList.html#aca9fade63e5fd3aeda71e2c7d58f933d", null ],
     [ "dlist", "classamrex_1_1DeriveList.html#a687b60c01f5addf31abee4e0a6510873", null ],
     [ "get", "classamrex_1_1DeriveList.html#a6ff8692064ee148c07daeec4c5f2620b", null ],
-    [ "operator=", "classamrex_1_1DeriveList.html#a7088f7c6f612cf558efb4db7cb7032bd", null ],
-    [ "operator=", "classamrex_1_1DeriveList.html#a85a8d2ceac5a6512561c787c0995c661", null ],
+    [ "operator=", "classamrex_1_1DeriveList.html#a8cdec6d127e1b03c595e22715a30ccb7", null ],
+    [ "operator=", "classamrex_1_1DeriveList.html#a6b10b91718bd5db7155e70d3c9622fc9", null ],
     [ "lst", "classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a", null ]
 ];

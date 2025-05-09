@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1BinIterator" kind="struct" language="C++" prot="public">
     <compoundname>amrex::BinIterator</compoundname>
     <includes refid="AMReX__BinIterator_8H" local="no">AMReX_BinIterator.H</includes>
@@ -9,12 +9,13 @@
         <type>typename T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-type">
+    <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" prot="public" static="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>using amrex::BinIterator&lt; T &gt;::index_type =  int</definition>
         <argsstring></argsstring>
         <name>index_type</name>
+        <qualifiedname>amrex::BinIterator::index_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -28,6 +29,7 @@
         <definition>using amrex::BinIterator&lt; T &gt;::const_pointer_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_type</name>
+        <qualifiedname>amrex::BinIterator::const_pointer_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -41,6 +43,7 @@
         <definition>using amrex::BinIterator&lt; T &gt;::const_pointer_input_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_input_type</name>
+        <qualifiedname>amrex::BinIterator::const_pointer_input_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,13 +52,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" line="32" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" bodystart="35" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="structamrex_1_1BinIterator_1ae3bf13aefa6e07e08445ab681f363296" prot="private" static="no" mutable="no">
         <type><ref refid="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" kindref="member">index_type</ref></type>
         <definition>index_type amrex::BinIterator&lt; T &gt;::m_i</definition>
         <argsstring></argsstring>
         <name>m_i</name>
+        <qualifiedname>amrex::BinIterator::m_i</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -69,6 +73,7 @@
         <definition>const index_type* amrex::BinIterator&lt; T &gt;::m_offsets_ptr</definition>
         <argsstring></argsstring>
         <name>m_offsets_ptr</name>
+        <qualifiedname>amrex::BinIterator::m_offsets_ptr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -82,6 +87,7 @@
         <definition>const index_type* amrex::BinIterator&lt; T &gt;::m_permutation_ptr</definition>
         <argsstring></argsstring>
         <name>m_permutation_ptr</name>
+        <qualifiedname>amrex::BinIterator::m_permutation_ptr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -95,6 +101,7 @@
         <definition>const_pointer_type amrex::BinIterator&lt; T &gt;::m_items</definition>
         <argsstring></argsstring>
         <name>m_items</name>
+        <qualifiedname>amrex::BinIterator::m_items</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -103,14 +110,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" line="91" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" bodystart="91" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-static-attrib">
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
       <memberdef kind="variable" id="structamrex_1_1BinIterator_1ab50914c07d7e0dd20468660135fb6a17" prot="private" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" kindref="member">index_type</ref></type>
         <definition>constexpr index_type amrex::BinIterator&lt; T &gt;::m_not_found</definition>
         <argsstring></argsstring>
         <name>m_not_found</name>
-        <initializer>= std::numeric_limits&lt;<ref refid="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" kindref="member">index_type</ref>&gt;::<ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">max</ref>()</initializer>
+        <qualifiedname>amrex::BinIterator::m_not_found</qualifiedname>
+        <initializer>= std::numeric_limits&lt;<ref refid="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" kindref="member">index_type</ref>&gt;<ref refid="namespaceamrex_1ac96e89dbbf05063f32d1ef7860f6a4ea" kindref="member">::max</ref>()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -119,13 +127,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" line="93" column="33" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" bodystart="93" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structamrex_1_1BinIterator_1aa39708cce4724ecb5eedffb2d91ddf1c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1BinIterator_1_1iterator" kindref="compound">iterator</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE iterator amrex::BinIterator&lt; T &gt;::begin</definition>
         <argsstring>() const</argsstring>
         <name>begin</name>
+        <qualifiedname>amrex::BinIterator::begin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -139,6 +148,7 @@
         <definition>AMREX_GPU_HOST_DEVICE iterator amrex::BinIterator&lt; T &gt;::end</definition>
         <argsstring>() const</argsstring>
         <name>end</name>
+        <qualifiedname>amrex::BinIterator::end</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -152,6 +162,7 @@
         <definition>AMREX_GPU_HOST_DEVICE amrex::BinIterator&lt; T &gt;::BinIterator</definition>
         <argsstring>(index_type i, const index_type *offsets_ptr, const index_type *permutation_ptr, const_pointer_input_type items)</argsstring>
         <name>BinIterator</name>
+        <qualifiedname>amrex::BinIterator::BinIterator</qualifiedname>
         <param>
           <type><ref refid="structamrex_1_1BinIterator_1a076901dd6c8e2e3c65fef98f0ca348cd" kindref="member">index_type</ref></type>
           <declname>i</declname>
@@ -176,7 +187,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" line="82" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_BinIterator.H" bodystart="82" bodyend="85"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

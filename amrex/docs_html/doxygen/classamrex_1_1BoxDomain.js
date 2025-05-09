@@ -27,9 +27,9 @@ var classamrex_1_1BoxDomain =
     [ "operator==", "classamrex_1_1BoxDomain.html#a03627b9f1cb88ad3ff6066b036e3ed97", null ],
     [ "refine", "classamrex_1_1BoxDomain.html#a1732a2c030467bb5a6d20721d0ff99c7", null ],
     [ "rmBox", "classamrex_1_1BoxDomain.html#a1d49c186eeea202115e3194e30c47a68", null ],
-    [ "shift", "classamrex_1_1BoxDomain.html#a724c4380dbcdc0d514cf18d029a49f92", null ],
-    [ "shiftHalf", "classamrex_1_1BoxDomain.html#a094d0a9c81730b5f3cade719d4b0b30d", null ],
-    [ "shiftHalf", "classamrex_1_1BoxDomain.html#abf9737ea9ecdf7a57adbe55f6215219f", null ],
+    [ "shift", "classamrex_1_1BoxDomain.html#ae1365cb7aee29d36a33db9804bcc1a89", null ],
+    [ "shiftHalf", "classamrex_1_1BoxDomain.html#ab7f6f44784766807b294541ab761df61", null ],
+    [ "shiftHalf", "classamrex_1_1BoxDomain.html#a212f2fed6ea24374e6eab8924370f83c", null ],
     [ "simplify", "classamrex_1_1BoxDomain.html#a827d337283d6b99be9feff0887409674", null ],
     [ "size", "classamrex_1_1BoxDomain.html#ac4030d4780cc8ca926857c82819c1c42", null ],
     [ "ClusterList", "classamrex_1_1BoxDomain.html#a3db3f4e602c9ae00c64da4d8d2a048aa", null ]

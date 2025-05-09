@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1AllPrintToFile" kind="class" language="C++" prot="public">
     <compoundname>amrex::AllPrintToFile</compoundname>
     <basecompoundref refid="classamrex_1_1PrintToFile" prot="public" virt="non-virtual">amrex::PrintToFile</basecompoundref>
     <includes refid="AMReX__Print_8H" local="no">AMReX_Print.H</includes>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1AllPrintToFile_1a458d380fa6223f8ecbc5eecef4080728" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::AllPrintToFile::AllPrintToFile</definition>
         <argsstring>(std::string file_name_)</argsstring>
         <name>AllPrintToFile</name>
+        <qualifiedname>amrex::AllPrintToFile::AllPrintToFile</qualifiedname>
         <param>
           <type>std::string</type>
           <declname>file_name_</declname>
@@ -24,28 +25,29 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Print.H" line="213" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Print.H" bodystart="213" bodyend="215"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para><ref refid="classamrex_1_1Print" kindref="compound">Print</ref> on all processors of the default communicator. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>amrex::PrintToFile</label>
-        <link refid="classamrex_1_1PrintToFile"/>
-      </node>
       <node id="1">
         <label>amrex::AllPrintToFile</label>
         <link refid="classamrex_1_1AllPrintToFile"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>amrex::PrintToFile</label>
+        <link refid="classamrex_1_1PrintToFile"/>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5">
-        <label>std::ostringstream</label>
-        <childnode refid="6" relation="public-inheritance">
+      <node id="1">
+        <label>amrex::AllPrintToFile</label>
+        <link refid="classamrex_1_1AllPrintToFile"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -55,39 +57,10 @@
           <edgelabel>file_name</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>ss</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
           <edgelabel>ofs</edgelabel>
         </childnode>
-      </node>
-      <node id="4">
-        <label>std::basic_string&lt; Char &gt;</label>
-      </node>
-      <node id="10">
-        <label>std::ofstream</label>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>std::basic_ofstream&lt; Char &gt;</label>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>std::basic_ostringstream&lt; Char &gt;</label>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>amrex::AllPrintToFile</label>
-        <link refid="classamrex_1_1AllPrintToFile"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>std::basic_ostream&lt; Char &gt;</label>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="10" relation="usage">
+          <edgelabel>ss</edgelabel>
         </childnode>
       </node>
       <node id="8">
@@ -95,8 +68,36 @@
         <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="6">
+        <label>std::basic_ofstream&lt; Char &gt;</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_ostream&lt; Char &gt;</label>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::basic_ostringstream&lt; Char &gt;</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
       <node id="9">
         <label>std::ios_base</label>
+      </node>
+      <node id="5">
+        <label>std::ofstream</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::ostringstream</label>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>std::string</label>
@@ -112,17 +113,17 @@
       <member refid="classamrex_1_1PrintToFile_1aabfb7ef7f6c054124db081f9fd506782" prot="private" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>file_name</name></member>
       <member refid="classamrex_1_1PrintToFile_1a182c3d20f76fd26e5de61a23450ac185" prot="private" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>Initialize</name></member>
       <member refid="classamrex_1_1PrintToFile_1a12f18b00f5a8136b2e884ab933249b63" prot="private" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>ofs</name></member>
-      <member refid="classamrex_1_1PrintToFile_1ac8175adceb5d8f83e3ce075822254d67" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classamrex_1_1PrintToFile_1a43ce9c9132ac1094cd3d33c4fc2dfa97" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classamrex_1_1PrintToFile_1abf93645c697fb911f46cecd6970c0d33" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1PrintToFile_1a9d4df0331eea85a7a2f9227ca301f847" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1PrintToFile_1aa2ec9d4cad6b21044236b8bf79697132" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1PrintToFile_1a5313f616f537e3e856b36f21c1ebc79c" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1PrintToFile_1a1c996dd91c54f732cc4da7f4668a0f30" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1PrintToFile_1ac404fab3b5567e20c716baa8dc225333" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>operator=</name></member>
       <member refid="classamrex_1_1PrintToFile_1a65e2ca6508a0d6387c5f138c43a2998f" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>PrintToFile</name></member>
       <member refid="classamrex_1_1PrintToFile_1a0893d5f29d082f561090f7d93cce8759" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>PrintToFile</name></member>
       <member refid="classamrex_1_1PrintToFile_1a6104fd13b117f3b559fc3287744db7c1" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>PrintToFile</name></member>
       <member refid="classamrex_1_1PrintToFile_1a840a4f6901205237e9bd7e7b0b879753" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>PrintToFile</name></member>
       <member refid="classamrex_1_1PrintToFile_1aa2fb6b50feec44f081108ae3f8cb30ef" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>PrintToFile</name></member>
       <member refid="classamrex_1_1PrintToFile_1a5ccf010e5d7cb5aaad0612f47a8a5d95" prot="private" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>rank</name></member>
-      <member refid="classamrex_1_1PrintToFile_1a3e38d76f3f46409cbf9fa81259641906" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>SetPrecision</name></member>
+      <member refid="classamrex_1_1PrintToFile_1ab1dfa4327f78a9fda1fa7a049ddf5610" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>SetPrecision</name></member>
       <member refid="classamrex_1_1PrintToFile_1ac4b44832e48e2668106dbfec83c8acca" prot="private" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>ss</name></member>
       <member refid="classamrex_1_1PrintToFile_1ab0074866efd97004b924c7bfbf67a569" prot="public" virt="non-virtual"><scope>amrex::AllPrintToFile</scope><name>~PrintToFile</name></member>
     </listofallmembers>

@@ -1,8 +1,8 @@
 var AMReX__TypeList_8H =
 [
-    [ "TypeList", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
-    [ "TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
-    [ "TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
+    [ "amrex::TypeList< Ts >", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
+    [ "amrex::detail::TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
+    [ "amrex::detail::TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
     [ "TypeAt", "AMReX__TypeList_8H.html#a11fcc5e72789252d6182a7d15233725f", null ],
     [ "TypeMultiplier", "AMReX__TypeList_8H.html#ad714b2c2b55d9cd35a788e0d861f5979", null ],
     [ "CartesianProduct", "AMReX__TypeList_8H.html#a9d736b217af3b87bef2bffd4dd55edff", null ],

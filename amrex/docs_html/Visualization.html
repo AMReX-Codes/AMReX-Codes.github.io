@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amrvis &mdash; amrex 24.09-dev documentation</title>
+  <title>Amrvis &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -39,7 +39,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -65,6 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a><ul class="current">
@@ -861,16 +862,16 @@ back end that was selected at run time.</p>
 </section>
 <section id="amrex-integration">
 <h2>AMReX Integration<a class="headerlink" href="#amrex-integration" title="Permalink to this heading"></a></h2>
-<p>AMReX codes based on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Amr</span><span class="w"></span></code> can use SENSEI simply by enabling it in
+<p>AMReX codes based on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Amr</span></code> can use SENSEI simply by enabling it in
 the build and run via ParmParse parameters.  AMReX codes based on
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">AmrMesh</span><span class="w"></span></code> need to additionally invoke the bridge code in
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">AmrMeshInSituBridge</span><span class="w"></span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">AmrMesh</span></code> need to additionally invoke the bridge code in
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">AmrMeshInSituBridge</span></code>.</p>
 </section>
 <section id="compiling-with-gnu-make">
 <h2>Compiling with GNU Make<a class="headerlink" href="#compiling-with-gnu-make" title="Permalink to this heading"></a></h2>
 <p>For codes making use of AMReX’s build system add the following variable to the
 code’s main <code class="code docutils literal notranslate"><span class="pre">GNUmakefile</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">USE_SENSEI_INSITU</span> <span class="o">=</span> TRUE
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">USE_SENSEI_INSITU</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>TRUE
 </pre></div>
 </div>
 <p>When set, AMReX’s make files will query environment variables for the lists of
@@ -879,13 +880,13 @@ can be quite elaborate when using more sophisticated back ends, and are best
 set automatically using the <code class="code docutils literal notranslate"><span class="pre">sensei_config</span></code> command line tool that should
 be installed with SENSEI. Prior to invoking make use the following command to
 set these variables:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> sensei_config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>sensei_config
 </pre></div>
 </div>
 <p>Typically, the <code class="code docutils literal notranslate"><span class="pre">sensei_config</span></code> tool is in the users PATH after loading
 the desired SENSEI module. After configuring the build environment with
 <code class="code docutils literal notranslate"><span class="pre">sensei_config</span></code>, proceed as usual.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j4 -f GNUmakefile
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j4<span class="w"> </span>-f<span class="w"> </span>GNUmakefile
 </pre></div>
 </div>
 </section>
@@ -893,14 +894,14 @@ the desired SENSEI module. After configuring the build environment with
 <h2>Compiling with CMake<a class="headerlink" href="#compiling-with-cmake" title="Permalink to this heading"></a></h2>
 <p>For codes making use of AMReX’s CMake based build, one needs to enable SENSEI
 and point to the CMake configuration installed with SENSEI.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DAMReX_SENSEI<span class="o">=</span>ON -DSENSEI_DIR<span class="o">=</span>&lt;path to install&gt;/&lt;lib dir&gt;/cmake ..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DAMReX_SENSEI<span class="o">=</span>ON<span class="w"> </span>-DSENSEI_DIR<span class="o">=</span>&lt;path<span class="w"> </span>to<span class="w"> </span>install&gt;/&lt;lib<span class="w"> </span>dir&gt;/cmake<span class="w"> </span>..
 </pre></div>
 </div>
 <p>When CMake generates the make files proceed as usual. Note: &lt;lib dir&gt; may be
 <cite>lib</cite> or <cite>lib64</cite> or something else depending on what CMake decided to use for
 your particular OS. See the CMake GNUInstallDirs documentation for more
 information.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j4 -f GNUmakefile
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j4<span class="w"> </span>-f<span class="w"> </span>GNUmakefile
 </pre></div>
 </div>
 </section>
@@ -928,11 +929,11 @@ use of.  For example the following XML configuration was used on NERSC’s Cori
 with IAMR to render 10 iso surfaces, shown in figure <a class="reference internal" href="#rt-visit"><span class="std std-numref">Fig. 22</span></a>, using
 VisIt Libsim.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sensei&gt;</span>
-  <span class="nt">&lt;analysis</span> <span class="na">type=</span><span class="s">&quot;libsim&quot;</span> <span class="na">frequency=</span><span class="s">&quot;1&quot;</span> <span class="na">mode=</span><span class="s">&quot;batch&quot;</span>
-    <span class="na">visitdir=</span><span class="s">&quot;/usr/common/software/sensei/visit&quot;</span>
-    <span class="na">session=</span><span class="s">&quot;rt_sensei_configs/visit_rt_contour_alpha_10.session&quot;</span>
-    <span class="na">image-filename=</span><span class="s">&quot;rt_contour_%ts&quot;</span> <span class="na">image-width=</span><span class="s">&quot;1555&quot;</span> <span class="na">image-height=</span><span class="s">&quot;815&quot;</span>
-    <span class="na">image-format=</span><span class="s">&quot;png&quot;</span> <span class="na">enabled=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;analysis</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;libsim&quot;</span><span class="w"> </span><span class="na">frequency=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="na">mode=</span><span class="s">&quot;batch&quot;</span>
+<span class="w">    </span><span class="na">visitdir=</span><span class="s">&quot;/usr/common/software/sensei/visit&quot;</span>
+<span class="w">    </span><span class="na">session=</span><span class="s">&quot;rt_sensei_configs/visit_rt_contour_alpha_10.session&quot;</span>
+<span class="w">    </span><span class="na">image-filename=</span><span class="s">&quot;rt_contour_%ts&quot;</span><span class="w"> </span><span class="na">image-width=</span><span class="s">&quot;1555&quot;</span><span class="w"> </span><span class="na">image-height=</span><span class="s">&quot;815&quot;</span>
+<span class="w">    </span><span class="na">image-format=</span><span class="s">&quot;png&quot;</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/sensei&gt;</span>
 </pre></div>
 </div>
@@ -950,8 +951,8 @@ by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id13"
 <p>The same run and visualization was repeated using ParaView Catalyst, shown in
 figure <a class="reference internal" href="#rt-pv"><span class="std std-numref">Fig. 23</span></a>, by providing the following XML configuration.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sensei&gt;</span>
-  <span class="nt">&lt;analysis</span> <span class="na">type=</span><span class="s">&quot;catalyst&quot;</span> <span class="na">pipeline=</span><span class="s">&quot;pythonscript&quot;</span>
-    <span class="na">filename=</span><span class="s">&quot;rt_sensei_configs/rt_contour.py&quot;</span> <span class="na">enabled=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;analysis</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;catalyst&quot;</span><span class="w"> </span><span class="na">pipeline=</span><span class="s">&quot;pythonscript&quot;</span>
+<span class="w">    </span><span class="na">filename=</span><span class="s">&quot;rt_sensei_configs/rt_contour.py&quot;</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/sensei&gt;</span>
 </pre></div>
 </div>
@@ -987,23 +988,23 @@ back ends such as ParaView Catalyst, VisIt Libsim, and Python.</p>
 <h4>AmrLevel Tutorial with Catalyst<a class="headerlink" href="#amrlevel-tutorial-with-catalyst" title="Permalink to this heading"></a></h4>
 <p>The following steps show how to run the tutorial with ParaView Catalyst. The
 simulation will periodically write images during the run.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh cori.nersc.gov
-<span class="nb">cd</span> <span class="nv">$SCRATCH</span>
-git clone https://github.com/AMReX-Codes/amrex.git
-git clone https://github.com/AMReX-Codes/amrex-tutorials.git
-<span class="nb">cd</span> amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
-module use /usr/common/software/sensei/modulefiles
-module load sensei/2.1.0-catalyst-shared
-<span class="nb">source</span> sensei_config
-vim GNUmakefile
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>cori.nersc.gov
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SCRATCH</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AMReX-Codes/amrex.git
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AMReX-Codes/amrex-tutorials.git
+<span class="nb">cd</span><span class="w"> </span>amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
+module<span class="w"> </span>use<span class="w"> </span>/usr/common/software/sensei/modulefiles
+module<span class="w"> </span>load<span class="w"> </span>sensei/2.1.0-catalyst-shared
+<span class="nb">source</span><span class="w"> </span>sensei_config
+vim<span class="w"> </span>GNUmakefile
 <span class="c1"># USE_SENSEI_INSITU=TRUE</span>
-make -j4 -f GNUmakefile
-vim inputs
+make<span class="w"> </span>-j4<span class="w"> </span>-f<span class="w"> </span>GNUmakefile
+vim<span class="w"> </span>inputs
 <span class="c1"># sensei.enabled=1</span>
 <span class="c1"># sensei.config=sensei/render_iso_catalyst_2d.xml</span>
-salloc -C haswell -N <span class="m">1</span> -t <span class="m">00</span>:30:00 -q debug
-<span class="nb">cd</span> <span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
-./main2d.gnu.haswell.MPI.ex inputs
+salloc<span class="w"> </span>-C<span class="w"> </span>haswell<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:30:00<span class="w"> </span>-q<span class="w"> </span>debug
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
+./main2d.gnu.haswell.MPI.ex<span class="w"> </span>inputs
 </pre></div>
 </div>
 </section>
@@ -1011,23 +1012,23 @@ salloc -C haswell -N <span class="m">1</span> -t <span class="m">00</span>:30:00
 <h4>AmrLevel Tutorial with Libsim<a class="headerlink" href="#amrlevel-tutorial-with-libsim" title="Permalink to this heading"></a></h4>
 <p>The following steps show how to run the tutorial with VisIt Libsim. The
 simulation will periodically write images during the run.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh cori.nersc.gov
-<span class="nb">cd</span> <span class="nv">$SCRATCH</span>
-git clone https://github.com/AMReX-Codes/amrex.git
-git clone https://github.com/AMReX-Codes/amrex-tutorials.git
-<span class="nb">cd</span> amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
-module use /usr/common/software/sensei/modulefiles
-module load sensei/2.1.0-libsim-shared
-<span class="nb">source</span> sensei_config
-vim GNUmakefile
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>cori.nersc.gov
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SCRATCH</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AMReX-Codes/amrex.git
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AMReX-Codes/amrex-tutorials.git
+<span class="nb">cd</span><span class="w"> </span>amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
+module<span class="w"> </span>use<span class="w"> </span>/usr/common/software/sensei/modulefiles
+module<span class="w"> </span>load<span class="w"> </span>sensei/2.1.0-libsim-shared
+<span class="nb">source</span><span class="w"> </span>sensei_config
+vim<span class="w"> </span>GNUmakefile
 <span class="c1"># USE_SENSEI_INSITU=TRUE</span>
-make -j4 -f GNUmakefile
-vim inputs
+make<span class="w"> </span>-j4<span class="w"> </span>-f<span class="w"> </span>GNUmakefile
+vim<span class="w"> </span>inputs
 <span class="c1"># sensei.enabled=1</span>
 <span class="c1"># sensei.config=sensei/render_iso_libsim_2d.xml</span>
-salloc -C haswell -N <span class="m">1</span> -t <span class="m">00</span>:30:00 -q debug
-<span class="nb">cd</span> <span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
-./main2d.gnu.haswell.MPI.ex inputs
+salloc<span class="w"> </span>-C<span class="w"> </span>haswell<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:30:00<span class="w"> </span>-q<span class="w"> </span>debug
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
+./main2d.gnu.haswell.MPI.ex<span class="w"> </span>inputs
 </pre></div>
 </div>
 </section>

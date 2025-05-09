@@ -1,12 +1,13 @@
 var AMReX__Parser__Y_8cpp =
 [
     [ "amrex_parser_delete", "AMReX__Parser__Y_8cpp.html#a2f20d75c59ef143705ccaeaef9897c17", null ],
+    [ "amrex_parser_delete_ptrs", "AMReX__Parser__Y_8cpp.html#a546c9f383fc176587c3018d4051b782e", null ],
     [ "amrex_parser_new", "AMReX__Parser__Y_8cpp.html#ae66dc6e64e2bbaeb5e33f845f1021f4f", null ],
     [ "amrex_parsererror", "AMReX__Parser__Y_8cpp.html#ab76fb0f384d4c8daa7bda6aa6f55aba9", null ],
     [ "parser_ast_depth", "AMReX__Parser__Y_8cpp.html#a6815d583f941a297bbef6d77214829c8", null ],
-    [ "parser_ast_dup", "AMReX__Parser__Y_8cpp.html#ad3b98b9aec198e9456f562949577675c", null ],
+    [ "parser_ast_dup", "AMReX__Parser__Y_8cpp.html#ab0081d540678ac187ad5787f20898f30", null ],
     [ "parser_ast_get_symbols", "AMReX__Parser__Y_8cpp.html#ae1d40846503356e1e1201c614163ea54", null ],
-    [ "parser_ast_optimize", "AMReX__Parser__Y_8cpp.html#a5f9cf029d313196bd5c43c1d272ea9fe", null ],
+    [ "parser_ast_optimize", "AMReX__Parser__Y_8cpp.html#a593d6ca4d6c96dd996abdd781bd0bc70", null ],
     [ "parser_ast_print", "AMReX__Parser__Y_8cpp.html#a87c0a8afac2fbe12cb2ac48e663ed0d6", null ],
     [ "parser_ast_regvar", "AMReX__Parser__Y_8cpp.html#aee105e6b691d9fa51fef6e50c7ebb155", null ],
     [ "parser_ast_setconst", "AMReX__Parser__Y_8cpp.html#a406674d4bafc2a2a465b8127fa8f9f5e", null ],
@@ -14,7 +15,6 @@ var AMReX__Parser__Y_8cpp =
     [ "parser_ast_sort", "AMReX__Parser__Y_8cpp.html#a3519067af5edf22a956910ef7ee7ce47", null ],
     [ "parser_defexpr", "AMReX__Parser__Y_8cpp.html#ad611b2a5542fba47b36125c772d02700", null ],
     [ "parser_depth", "AMReX__Parser__Y_8cpp.html#a511dc2f5222b878782000339b1858f3c", null ],
-    [ "parser_dup", "AMReX__Parser__Y_8cpp.html#af09002432ee048d8be86ce24cac1b230", null ],
     [ "parser_get_number", "AMReX__Parser__Y_8cpp.html#a953b2c149c67e1e516421d279f2fc22a", null ],
     [ "parser_get_symbols", "AMReX__Parser__Y_8cpp.html#aa4683ef8db99a703c386785fc95e1d29", null ],
     [ "parser_makesymbol", "AMReX__Parser__Y_8cpp.html#ae51f56e5de666bd486e02809fb95826a", null ],
@@ -30,6 +30,7 @@ var AMReX__Parser__Y_8cpp =
     [ "parser_node_equal", "AMReX__Parser__Y_8cpp.html#aaa47ebc7570db6460238b4a73824c682", null ],
     [ "parser_print", "AMReX__Parser__Y_8cpp.html#a53d306308d380a6d874ad24396fa7673", null ],
     [ "parser_regvar", "AMReX__Parser__Y_8cpp.html#a2287c28084a10ac6a9cfb4b2a50892fc", null ],
+    [ "parser_same_symbol", "AMReX__Parser__Y_8cpp.html#a8853cdebde12514b7d62b78ca851f750", null ],
     [ "parser_set_number", "AMReX__Parser__Y_8cpp.html#a031546532f5b81bd867039b219562b95", null ],
     [ "parser_setconst", "AMReX__Parser__Y_8cpp.html#a4051597b502fed03ea3b07d5f6cbb042", null ]
 ];

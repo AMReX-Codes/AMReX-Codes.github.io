@@ -101,7 +101,7 @@ var namespaces_dup =
       [ "amrex_lo_sanchez_pomraning", "namespaceamrex__lo__bctypes__module.html#aace6b018ab12cf7950ce9fa43315264f", null ]
     ] ],
     [ "amrex_lo_util_module", "namespaceamrex__lo__util__module.html", [
-      [ "polyinterpcoeff", "namespaceamrex__lo__util__module.html#a9b3a8d158e19f71d1af1ebe894c7d3de", null ]
+      [ "polyinterpcoeff", "namespaceamrex__lo__util__module.html#a5b70c8786041be89ecf6851db41e0437", null ]
     ] ],
     [ "amrex_mempool_module", "namespaceamrex__mempool__module.html", "namespaceamrex__mempool__module" ],
     [ "amrex_mllinop_nd_module", "namespaceamrex__mllinop__nd__module.html", [
@@ -120,27 +120,5 @@ var namespaces_dup =
     [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", "namespaceamrex__parmparse__module" ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", "namespaceamrex__string__module" ],
     [ "detail", "namespacedetail.html", "namespacedetail" ],
-    [ "hacc", "namespacehacc.html", "namespacehacc" ],
-    [ "particle_detail", "namespaceparticle__detail.html", [
-      [ "countFlags", "namespaceparticle__detail.html#ab03ce227854d1babaf5747264c7895a7", null ],
-      [ "countFlags", "namespaceparticle__detail.html#a7857fe2157c0bbcd736ec5ff69b25bc5", null ],
-      [ "countFlags", "namespaceparticle__detail.html#a70c1557a3408750fc36e511153e30df9", null ],
-      [ "countFlags", "namespaceparticle__detail.html#ac6d9fbdd693695e41223a867d37d47c1", null ],
-      [ "fillFlags", "namespaceparticle__detail.html#a1180158d9e9623e55d3d94563e5d078e", null ],
-      [ "fillFlags", "namespaceparticle__detail.html#a19ab2be6594d991c46cc919e1e56d1a0", null ],
-      [ "packIOData", "namespaceparticle__detail.html#a6fd1074ab53b322e0c0dbe45c3c31747", null ],
-      [ "packIOData", "namespaceparticle__detail.html#a689cb58670e56b21d1fa937e8772c992", null ],
-      [ "packParticleIDs", "namespaceparticle__detail.html#a30a6f3594be5d404180737352c8c375d", null ],
-      [ "PSizeInFile", "namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd", null ]
-    ] ],
-    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ],
-    [ "std", null, [
-      [ "tuple_size< amrex::IndexTypeND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4" ],
-      [ "tuple_element< s, amrex::IndexTypeND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4" ],
-      [ "tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
-      [ "tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
-      [ "tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
-      [ "tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
-      [ "tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ]
-    ] ]
+    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ]
 ];

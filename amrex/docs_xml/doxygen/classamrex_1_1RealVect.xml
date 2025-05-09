@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1RealVect" kind="class" language="C++" prot="public">
     <compoundname>amrex::RealVect</compoundname>
     <includes refid="AMReX__RealVect_8H" local="no">AMReX_RealVect.H</includes>
-      <sectiondef kind="user-defined">
+    <sectiondef kind="user-defined">
       <header>Constants</header>
       <memberdef kind="variable" id="classamrex_1_1RealVect_1ab64ddfe8e473503acf9a5f7103467b13" prot="public" static="yes" mutable="no">
         <type><ref refid="AMReX__Extension_8H_1ac05fa35b3db13c4599d7ad5fc51bef47" kindref="member">AMREX_EXPORT</ref> const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
         <definition>const RealVect amrex::RealVect::Zero</definition>
         <argsstring></argsstring>
         <name>Zero</name>
-        <initializer>= <ref refid="classamrex_1_1RealVect_1a6079a3598f512db9d01135710dfd6c87" kindref="member">RealVect::TheZeroVector</ref>()</initializer>
+        <qualifiedname>amrex::RealVect::Zero</qualifiedname>
+        <initializer>= <ref refid="classamrex_1_1RealVect_1abf73cc1782b728a662e6eab58a01fc38" kindref="member">RealVect::TheZeroVector</ref>()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -25,7 +26,8 @@
         <definition>const RealVect amrex::RealVect::Unit</definition>
         <argsstring></argsstring>
         <name>Unit</name>
-        <initializer>= <ref refid="classamrex_1_1RealVect_1a0d431942a457fc70f9c2f7d67a498223" kindref="member">RealVect::TheUnitVector</ref>()</initializer>
+        <qualifiedname>amrex::RealVect::Unit</qualifiedname>
+        <initializer>= <ref refid="classamrex_1_1RealVect_1a415190eae196ab804f9d6aa4653e878a" kindref="member">RealVect::TheUnitVector</ref>()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -40,6 +42,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect BASISREALV</definition>
         <argsstring>(int dir) noexcept</argsstring>
         <name>BASISREALV</name>
+        <qualifiedname>amrex::RealVect::BASISREALV</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>dir</declname>
@@ -49,24 +52,25 @@
         <detaileddescription>
 <para>Returns a basis vector in the given coordinate direction.<linebreak/>
  In 2-D:<linebreak/>
- BASISREALV(0) == (1.,0.); BASISREALV(1) == (0.,1.).<linebreak/>
+ <ref refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kindref="member">BASISREALV(0)</ref> == (1.,0.); <ref refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kindref="member">BASISREALV(1)</ref> == (0.,1.).<linebreak/>
  In 3-D:<linebreak/>
- BASISREALV(0) == (1.,0.,0.); BASISREALV(1) == (0.,1.,0.); BASISREALV(2) == (0.,0.,1.).<linebreak/>
+ <ref refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kindref="member">BASISREALV(0)</ref> == (1.,0.,0.); <ref refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kindref="member">BASISREALV(1)</ref> == (0.,1.,0.); <ref refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kindref="member">BASISREALV(2)</ref> == (0.,0.,1.).<linebreak/>
  Note that the coordinate directions are based at zero. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="517" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="991" bodyend="997"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Arithmetic friend functions</header>
       <memberdef kind="variable" id="classamrex_1_1RealVect_1a0f0b7286c21b06ba0eea3a31c09cf2f1" prot="protected" static="no" mutable="no">
         <type>Real</type>
         <definition>Real amrex::RealVect::vect[SpaceDim]</definition>
         <argsstring>[SpaceDim]</argsstring>
         <name>vect</name>
-        <initializer>= {AMREX_D_DECL(Real(0.),Real(0.),Real(0.))}</initializer>
+        <qualifiedname>amrex::RealVect::vect</qualifiedname>
+        <initializer>= {<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real(0.),Real(0.),Real(0.))}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -74,13 +78,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="642" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="642" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="642" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="642" bodyend="642"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a1e1ca0e6dc8c1ffe047d20716a80ded5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator+</definition>
         <argsstring>(Real s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator+</name>
+        <qualifiedname>amrex::RealVect::operator+</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -103,6 +108,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator-</definition>
         <argsstring>(Real s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator-</name>
+        <qualifiedname>amrex::RealVect::operator-</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -125,6 +131,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator*</definition>
         <argsstring>(Real s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator*</name>
+        <qualifiedname>amrex::RealVect::operator*</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -147,6 +154,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator/</definition>
         <argsstring>(Real s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator/</name>
+        <qualifiedname>amrex::RealVect::operator/</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -169,6 +177,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator+</definition>
         <argsstring>(const RealVect &amp;s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator+</name>
+        <qualifiedname>amrex::RealVect::operator+</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>s</declname>
@@ -191,6 +200,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator-</definition>
         <argsstring>(const RealVect &amp;s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator-</name>
+        <qualifiedname>amrex::RealVect::operator-</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>s</declname>
@@ -213,6 +223,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator*</definition>
         <argsstring>(const RealVect &amp;s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator*</name>
+        <qualifiedname>amrex::RealVect::operator*</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>s</declname>
@@ -235,6 +246,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect operator/</definition>
         <argsstring>(const RealVect &amp;s, const RealVect &amp;p) noexcept</argsstring>
         <name>operator/</name>
+        <qualifiedname>amrex::RealVect::operator/</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>s</declname>
@@ -257,6 +269,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect scale</definition>
         <argsstring>(const RealVect &amp;p, Real s) noexcept</argsstring>
         <name>scale</name>
+        <qualifiedname>amrex::RealVect::scale</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -274,11 +287,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="625" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="768" bodyend="772"/>
       </memberdef>
-      <memberdef kind="friend" id="classamrex_1_1RealVect_1a7df5aee72e64ca92a9b83ecb5d2dde1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="friend" id="classamrex_1_1RealVect_1a438fc3c45b24a612f8f31d1cb42327e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;ostr, const RealVect &amp;p)</argsstring>
         <name>operator&lt;&lt;</name>
+        <qualifiedname>amrex::RealVect::operator&lt;&lt;</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
           <declname>ostr</declname>
@@ -296,11 +310,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="633" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="11" bodyend="15"/>
       </memberdef>
-      <memberdef kind="friend" id="classamrex_1_1RealVect_1a12a8ba870c44c0b8df87fbf476ba0240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="friend" id="classamrex_1_1RealVect_1a4b455befb5882cf6997461a780b55e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
-        <definition>std::istream&amp; operator&gt;&gt;</definition>
+        <definition>std::istream &amp; operator&gt;&gt;</definition>
         <argsstring>(std::istream &amp;is, RealVect &amp;iv)</argsstring>
         <name>operator&gt;&gt;</name>
+        <qualifiedname>amrex::RealVect::operator&gt;&gt;</qualifiedname>
         <param>
           <type>std::istream &amp;</type>
           <declname>is</declname>
@@ -317,14 +332,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="635" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="18" bodyend="42"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Constructors and Accessors</header>
       <memberdef kind="function" id="classamrex_1_1RealVect_1acf4c2cd61a42a6e8fe7d8251000c2140" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
         <definition>constexpr amrex::RealVect::RealVect</definition>
         <argsstring>() noexcept</argsstring>
         <name>RealVect</name>
+        <qualifiedname>amrex::RealVect::RealVect</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -339,6 +355,7 @@
         <definition>amrex::RealVect::RealVect</definition>
         <argsstring>(const std::vector&lt; Real &gt; &amp;vr) noexcept</argsstring>
         <name>RealVect</name>
+        <qualifiedname>amrex::RealVect::RealVect</qualifiedname>
         <param>
           <type>const std::vector&lt; Real &gt; &amp;</type>
           <declname>vr</declname>
@@ -351,11 +368,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="46" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="46" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a3c853dd6f1e8e3a8633f066f5b15db31" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::RealVect::RealVect</definition>
+      <memberdef kind="function" id="classamrex_1_1RealVect_1aa3193e01e08d304b72016eee922c48e0" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::RealVect::RealVect</definition>
         <argsstring>(Real i) noexcept</argsstring>
         <name>RealVect</name>
+        <qualifiedname>amrex::RealVect::RealVect</qualifiedname>
         <param>
           <type>Real</type>
           <declname>i</declname>
@@ -374,6 +392,7 @@
         <definition>AMREX_GPU_HOST_DEVICE amrex::RealVect::RealVect</definition>
         <argsstring>(const Real *a) noexcept</argsstring>
         <name>RealVect</name>
+        <qualifiedname>amrex::RealVect::RealVect</qualifiedname>
         <param>
           <type>const Real *</type>
           <declname>a</declname>
@@ -392,6 +411,7 @@
         <definition>AMREX_GPU_HOST_DEVICE amrex::RealVect::RealVect</definition>
         <argsstring>(const IntVect &amp;iv) noexcept</argsstring>
         <name>RealVect</name>
+        <qualifiedname>amrex::RealVect::RealVect</qualifiedname>
         <param>
           <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>iv</declname>
@@ -405,11 +425,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="78" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="78" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1ac279e83bbbad84c9218d6673bf75fe65" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a998b88180e77007b1e73dea8b9ddfb37" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
         <type>Real &amp;</type>
-        <definition>Real&amp; amrex::RealVect::operator[]</definition>
+        <definition>Real &amp; amrex::RealVect::operator[]</definition>
         <argsstring>(int i) &amp;&amp;=delete</argsstring>
         <name>operator[]</name>
+        <qualifiedname>amrex::RealVect::operator[]</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
@@ -423,11 +444,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="85" column="8"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a48008873323ae4de7561f09237112e4c" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1ad468fb3ea188dff9efe09bfb71734be9" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real&amp; amrex::RealVect::operator[]</definition>
+        <definition>AMREX_GPU_HOST_DEVICE Real &amp; amrex::RealVect::operator[]</definition>
         <argsstring>(int i) &amp;noexcept</argsstring>
         <name>operator[]</name>
+        <qualifiedname>amrex::RealVect::operator[]</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
@@ -441,11 +463,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="94" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="94" bodyend="95"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1ae1d5a95100e25091c6cb29a50e0c2be7" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a296a2a004aa1d3e8b7d4eb5a5471a996" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real&amp; amrex::RealVect::operator[]</definition>
+        <definition>AMREX_GPU_HOST_DEVICE const Real &amp; amrex::RealVect::operator[]</definition>
         <argsstring>(int i) const &amp;noexcept</argsstring>
         <name>operator[]</name>
+        <qualifiedname>amrex::RealVect::operator[]</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
@@ -459,14 +482,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="103" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="103" bodyend="104"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Iterators</header>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a3383094f7bbff555574a91c64d01f4fb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a9acf1b8ad548c92198ba61270f60bd16" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real* amrex::RealVect::begin</definition>
+        <definition>AMREX_GPU_HOST_DEVICE Real * amrex::RealVect::begin</definition>
         <argsstring>() noexcept</argsstring>
         <name>begin</name>
+        <qualifiedname>amrex::RealVect::begin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -476,11 +500,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="119" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="119" bodyend="119"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1afb2aca19edd4e582423fb866f5ac7686" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a7e963cd7644ef143049f9603ba4cb128" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real* amrex::RealVect::begin</definition>
+        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealVect::begin</definition>
         <argsstring>() const noexcept</argsstring>
         <name>begin</name>
+        <qualifiedname>amrex::RealVect::begin</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -490,11 +515,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="127" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="127" bodyend="127"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a81c9df182cc9ede59e3eb3f75e144957" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a151c9dc624996c3f5c1ca1c9ece88223" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real* amrex::RealVect::end</definition>
+        <definition>AMREX_GPU_HOST_DEVICE Real * amrex::RealVect::end</definition>
         <argsstring>() noexcept</argsstring>
         <name>end</name>
+        <qualifiedname>amrex::RealVect::end</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -504,11 +530,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="135" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="135" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a02b3f4a04dc877e51bf6a2340ab1046e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a84e6aa568672e2830742376875f3e81c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real* amrex::RealVect::end</definition>
+        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealVect::end</definition>
         <argsstring>() const noexcept</argsstring>
         <name>end</name>
+        <qualifiedname>amrex::RealVect::end</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -518,14 +545,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="143" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="143" bodyend="143"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Comparison Operators</header>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a787b257855e1c1f21c26438230e0f482" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator==</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator==</name>
+        <qualifiedname>amrex::RealVect::operator==</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -544,6 +572,7 @@
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator!=</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator!=</name>
+        <qualifiedname>amrex::RealVect::operator!=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -562,6 +591,7 @@
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator&lt;</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator&lt;</name>
+        <qualifiedname>amrex::RealVect::operator&lt;</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -580,6 +610,7 @@
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator&lt;=</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator&lt;=</name>
+        <qualifiedname>amrex::RealVect::operator&lt;=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -598,6 +629,7 @@
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator&gt;</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator&gt;</name>
+        <qualifiedname>amrex::RealVect::operator&gt;</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -616,6 +648,7 @@
         <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealVect::operator&gt;=</definition>
         <argsstring>(const RealVect &amp;p) const noexcept</argsstring>
         <name>operator&gt;=</name>
+        <qualifiedname>amrex::RealVect::operator&gt;=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -629,14 +662,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="215" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="801" bodyend="804"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Arithmetic Operators</header>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a9588a0f9a417aa33d3131b7ffcdbab5f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator+=</definition>
         <argsstring>(Real s) noexcept</argsstring>
         <name>operator+=</name>
+        <qualifiedname>amrex::RealVect::operator+=</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -655,6 +689,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator+</definition>
         <argsstring>(Real s) const noexcept</argsstring>
         <name>operator+</name>
+        <qualifiedname>amrex::RealVect::operator+</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -673,6 +708,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator+=</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>operator+=</name>
+        <qualifiedname>amrex::RealVect::operator+=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -691,6 +727,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator-=</definition>
         <argsstring>(Real s) noexcept</argsstring>
         <name>operator-=</name>
+        <qualifiedname>amrex::RealVect::operator-=</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -709,6 +746,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator-=</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>operator-=</name>
+        <qualifiedname>amrex::RealVect::operator-=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -727,6 +765,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator-</definition>
         <argsstring>(Real s) const noexcept</argsstring>
         <name>operator-</name>
+        <qualifiedname>amrex::RealVect::operator-</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -745,6 +784,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator*=</definition>
         <argsstring>(Real s) noexcept</argsstring>
         <name>operator*=</name>
+        <qualifiedname>amrex::RealVect::operator*=</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -763,6 +803,7 @@
         <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealVect::dotProduct</definition>
         <argsstring>(const RealVect &amp;a_rhs) const noexcept</argsstring>
         <name>dotProduct</name>
+        <qualifiedname>amrex::RealVect::dotProduct</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>a_rhs</declname>
@@ -781,6 +822,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator*=</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>operator*=</name>
+        <qualifiedname>amrex::RealVect::operator*=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -799,6 +841,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator*</definition>
         <argsstring>(Real s) const noexcept</argsstring>
         <name>operator*</name>
+        <qualifiedname>amrex::RealVect::operator*</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -817,6 +860,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator/=</definition>
         <argsstring>(Real s) noexcept</argsstring>
         <name>operator/=</name>
+        <qualifiedname>amrex::RealVect::operator/=</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -835,6 +879,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::operator/=</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>operator/=</name>
+        <qualifiedname>amrex::RealVect::operator/=</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -853,6 +898,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator/</definition>
         <argsstring>(Real s) const noexcept</argsstring>
         <name>operator/</name>
+        <qualifiedname>amrex::RealVect::operator/</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -871,6 +917,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::scale</definition>
         <argsstring>(Real s) noexcept</argsstring>
         <name>scale</name>
+        <qualifiedname>amrex::RealVect::scale</qualifiedname>
         <param>
           <type>Real</type>
           <declname>s</declname>
@@ -889,6 +936,7 @@
         <definition>AMREX_GPU_HOST_DEVICE IntVect amrex::RealVect::floor</definition>
         <argsstring>() const noexcept</argsstring>
         <name>floor</name>
+        <qualifiedname>amrex::RealVect::floor</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -903,6 +951,7 @@
         <definition>AMREX_GPU_HOST_DEVICE IntVect amrex::RealVect::ceil</definition>
         <argsstring>() const noexcept</argsstring>
         <name>ceil</name>
+        <qualifiedname>amrex::RealVect::ceil</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -917,6 +966,7 @@
         <definition>AMREX_GPU_HOST_DEVICE IntVect amrex::RealVect::round</definition>
         <argsstring>() const noexcept</argsstring>
         <name>round</name>
+        <qualifiedname>amrex::RealVect::round</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -926,14 +976,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="370" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="722" bodyend="727"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Other arithmetic operators</header>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a7da81c75533a97e32fed875a93f6a7c8" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::min</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>min</name>
+        <qualifiedname>amrex::RealVect::min</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -952,6 +1003,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect &amp; amrex::RealVect::max</definition>
         <argsstring>(const RealVect &amp;p) noexcept</argsstring>
         <name>max</name>
+        <qualifiedname>amrex::RealVect::max</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p</declname>
@@ -970,6 +1022,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect min</definition>
         <argsstring>(const RealVect &amp;p1, const RealVect &amp;p2) noexcept</argsstring>
         <name>min</name>
+        <qualifiedname>amrex::RealVect::min</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p1</declname>
@@ -992,6 +1045,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect max</definition>
         <argsstring>(const RealVect &amp;p1, const RealVect &amp;p2) noexcept</argsstring>
         <name>max</name>
+        <qualifiedname>amrex::RealVect::max</qualifiedname>
         <param>
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>p1</declname>
@@ -1009,14 +1063,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="409" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="841" bodyend="846"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Unary operators</header>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a6a373b73cae408485adcb02e6b11d4f2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator+</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator+</name>
+        <qualifiedname>amrex::RealVect::operator+</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1031,6 +1086,7 @@
         <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::RealVect::operator-</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator-</name>
+        <qualifiedname>amrex::RealVect::operator-</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1045,6 +1101,7 @@
         <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealVect::sum</definition>
         <argsstring>() const noexcept</argsstring>
         <name>sum</name>
+        <qualifiedname>amrex::RealVect::sum</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1059,6 +1116,7 @@
         <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealVect::vectorLength</definition>
         <argsstring>() const noexcept</argsstring>
         <name>vectorLength</name>
+        <qualifiedname>amrex::RealVect::vectorLength</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1073,6 +1131,7 @@
         <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealVect::radSquared</definition>
         <argsstring>() const noexcept</argsstring>
         <name>radSquared</name>
+        <qualifiedname>amrex::RealVect::radSquared</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1087,6 +1146,7 @@
         <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealVect::product</definition>
         <argsstring>() const noexcept</argsstring>
         <name>product</name>
+        <qualifiedname>amrex::RealVect::product</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1101,6 +1161,7 @@
         <definition>AMREX_GPU_HOST_DEVICE int amrex::RealVect::minDir</definition>
         <argsstring>(const bool &amp;a_doAbs) const noexcept</argsstring>
         <name>minDir</name>
+        <qualifiedname>amrex::RealVect::minDir</qualifiedname>
         <param>
           <type>const bool &amp;</type>
           <declname>a_doAbs</declname>
@@ -1119,6 +1180,7 @@
         <definition>AMREX_GPU_HOST_DEVICE int amrex::RealVect::maxDir</definition>
         <argsstring>(const bool &amp;a_doAbs) const noexcept</argsstring>
         <name>maxDir</name>
+        <qualifiedname>amrex::RealVect::maxDir</qualifiedname>
         <param>
           <type>const bool &amp;</type>
           <declname>a_doAbs</declname>
@@ -1132,14 +1194,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="474" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="966" bodyend="987"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Data pointer functions</header>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1ade2f2eb10ca0655878ddb552c36208fc" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1afd7ede44f8b93ea42106f2acb6655753" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real* amrex::RealVect::dataPtr</definition>
+        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealVect::dataPtr</definition>
         <argsstring>() const noexcept</argsstring>
         <name>dataPtr</name>
+        <qualifiedname>amrex::RealVect::dataPtr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1149,11 +1212,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="488" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="488" bodyend="488"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a42fb3dffe08753e7c65790ffca5d9124" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a3f2fc38ae03dae942ecfbd3c6c2b8999" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real* amrex::RealVect::dataPtr</definition>
+        <definition>AMREX_GPU_HOST_DEVICE Real * amrex::RealVect::dataPtr</definition>
         <argsstring>() noexcept</argsstring>
         <name>dataPtr</name>
+        <qualifiedname>amrex::RealVect::dataPtr</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1163,14 +1227,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="495" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="495" bodyend="495"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
+    </sectiondef>
+    <sectiondef kind="user-defined">
       <header>Static public members functions</header>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a6079a3598f512db9d01135710dfd6c87" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE RealVect amrex::RealVect::TheZeroVector</definition>
+      <memberdef kind="function" id="classamrex_1_1RealVect_1abf73cc1782b728a662e6eab58a01fc38" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr RealVect amrex::RealVect::TheZeroVector</definition>
         <argsstring>() noexcept</argsstring>
         <name>TheZeroVector</name>
+        <qualifiedname>amrex::RealVect::TheZeroVector</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1180,11 +1245,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="543" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="543" bodyend="545"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1a0d431942a457fc70f9c2f7d67a498223" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE RealVect amrex::RealVect::TheUnitVector</definition>
+      <memberdef kind="function" id="classamrex_1_1RealVect_1a415190eae196ab804f9d6aa4653e878a" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr RealVect amrex::RealVect::TheUnitVector</definition>
         <argsstring>() noexcept</argsstring>
         <name>TheUnitVector</name>
+        <qualifiedname>amrex::RealVect::TheUnitVector</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1194,7 +1260,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="551" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="551" bodyend="553"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>A Real vector in SpaceDim-dimensional space. </para>
     </briefdescription>
@@ -1220,14 +1286,14 @@
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="32" bodyend="644"/>
     <listofallmembers>
       <member refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>BASISREALV</name></member>
-      <member refid="classamrex_1_1RealVect_1a3383094f7bbff555574a91c64d01f4fb" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>begin</name></member>
-      <member refid="classamrex_1_1RealVect_1afb2aca19edd4e582423fb866f5ac7686" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>begin</name></member>
+      <member refid="classamrex_1_1RealVect_1a9acf1b8ad548c92198ba61270f60bd16" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>begin</name></member>
+      <member refid="classamrex_1_1RealVect_1a7e963cd7644ef143049f9603ba4cb128" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>begin</name></member>
       <member refid="classamrex_1_1RealVect_1a792ecde737e120649cc137385297100c" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>ceil</name></member>
-      <member refid="classamrex_1_1RealVect_1ade2f2eb10ca0655878ddb552c36208fc" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>dataPtr</name></member>
-      <member refid="classamrex_1_1RealVect_1a42fb3dffe08753e7c65790ffca5d9124" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1RealVect_1afd7ede44f8b93ea42106f2acb6655753" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1RealVect_1a3f2fc38ae03dae942ecfbd3c6c2b8999" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>dataPtr</name></member>
       <member refid="classamrex_1_1RealVect_1a661d136b50fe686020f621f5528de4d4" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>dotProduct</name></member>
-      <member refid="classamrex_1_1RealVect_1a81c9df182cc9ede59e3eb3f75e144957" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>end</name></member>
-      <member refid="classamrex_1_1RealVect_1a02b3f4a04dc877e51bf6a2340ab1046e" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>end</name></member>
+      <member refid="classamrex_1_1RealVect_1a151c9dc624996c3f5c1ca1c9ece88223" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>end</name></member>
+      <member refid="classamrex_1_1RealVect_1a84e6aa568672e2830742376875f3e81c" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>end</name></member>
       <member refid="classamrex_1_1RealVect_1ad83cc01ed7402d9d384b73c046a96b87" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>floor</name></member>
       <member refid="classamrex_1_1RealVect_1a30944a8839e0dc2a873dc3fbef6b2c41" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>max</name></member>
       <member refid="classamrex_1_1RealVect_1a2c15c7a018202ae522e0777c120fa109" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>max</name></member>
@@ -1259,28 +1325,28 @@
       <member refid="classamrex_1_1RealVect_1a36fb56305984eee6881717a5ae1f65e8" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator/=</name></member>
       <member refid="classamrex_1_1RealVect_1a00e94bec2f221dd7f96873a3fd0a181b" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator/=</name></member>
       <member refid="classamrex_1_1RealVect_1a5df564194fcc375edcc202ed6bae4aea" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&lt;</name></member>
-      <member refid="classamrex_1_1RealVect_1a7df5aee72e64ca92a9b83ecb5d2dde1f" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1RealVect_1a438fc3c45b24a612f8f31d1cb42327e4" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&lt;&lt;</name></member>
       <member refid="classamrex_1_1RealVect_1a6c435556885b7c563cc6c0c02c107c69" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&lt;=</name></member>
       <member refid="classamrex_1_1RealVect_1a787b257855e1c1f21c26438230e0f482" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator==</name></member>
       <member refid="classamrex_1_1RealVect_1af98b10ea8dcc7c6b0a87218452b39448" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;</name></member>
       <member refid="classamrex_1_1RealVect_1aede3778179f57e5b9c02a7ed7cbfa04d" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;=</name></member>
-      <member refid="classamrex_1_1RealVect_1a12a8ba870c44c0b8df87fbf476ba0240" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;&gt;</name></member>
-      <member refid="classamrex_1_1RealVect_1ac279e83bbbad84c9218d6673bf75fe65" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
-      <member refid="classamrex_1_1RealVect_1a48008873323ae4de7561f09237112e4c" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
-      <member refid="classamrex_1_1RealVect_1ae1d5a95100e25091c6cb29a50e0c2be7" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1a4b455befb5882cf6997461a780b55e06" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;&gt;</name></member>
+      <member refid="classamrex_1_1RealVect_1a998b88180e77007b1e73dea8b9ddfb37" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1ad468fb3ea188dff9efe09bfb71734be9" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1a296a2a004aa1d3e8b7d4eb5a5471a996" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
       <member refid="classamrex_1_1RealVect_1a29bd7850951ae800d2bfd13ec8a3d593" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>product</name></member>
       <member refid="classamrex_1_1RealVect_1ab83bde52e73520cc1375d513030374df" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>radSquared</name></member>
       <member refid="classamrex_1_1RealVect_1acf4c2cd61a42a6e8fe7d8251000c2140" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
       <member refid="classamrex_1_1RealVect_1a3b80d8eb549dcdfa0fc5ab37b3d0bd1f" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
-      <member refid="classamrex_1_1RealVect_1a3c853dd6f1e8e3a8633f066f5b15db31" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
+      <member refid="classamrex_1_1RealVect_1aa3193e01e08d304b72016eee922c48e0" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
       <member refid="classamrex_1_1RealVect_1a95ba2b64c46580f6e8ebbb7f35dad2cb" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
       <member refid="classamrex_1_1RealVect_1ae2fd3bdec2802aef034cc7cfb36bf14a" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
       <member refid="classamrex_1_1RealVect_1a4a0514b2fe9078aff7ca5d72da6d6159" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>round</name></member>
       <member refid="classamrex_1_1RealVect_1addcc9764c758d18f28fb58fd3c5b3a8b" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>scale</name></member>
       <member refid="classamrex_1_1RealVect_1aced393e91058fd9dcf46321c5f8f1eef" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>scale</name></member>
       <member refid="classamrex_1_1RealVect_1a74051dce8bdf28e977934f2dedf0c993" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>sum</name></member>
-      <member refid="classamrex_1_1RealVect_1a0d431942a457fc70f9c2f7d67a498223" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>TheUnitVector</name></member>
-      <member refid="classamrex_1_1RealVect_1a6079a3598f512db9d01135710dfd6c87" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>TheZeroVector</name></member>
+      <member refid="classamrex_1_1RealVect_1a415190eae196ab804f9d6aa4653e878a" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>TheUnitVector</name></member>
+      <member refid="classamrex_1_1RealVect_1abf73cc1782b728a662e6eab58a01fc38" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>TheZeroVector</name></member>
       <member refid="classamrex_1_1RealVect_1a6745f136d89bdb15e57c3387ca01e973" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>Unit</name></member>
       <member refid="classamrex_1_1RealVect_1a0f0b7286c21b06ba0eea3a31c09cf2f1" prot="protected" virt="non-virtual"><scope>amrex::RealVect</scope><name>vect</name></member>
       <member refid="classamrex_1_1RealVect_1a5cb72900ed102d11d069c1e157364f59" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>vectorLength</name></member>

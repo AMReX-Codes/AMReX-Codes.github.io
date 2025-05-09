@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SWFFT &mdash; amrex 24.09-dev documentation</title>
+  <title>SWFFT &mdash; amrex 24.00-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -39,7 +39,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                24.00-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -65,6 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -132,7 +133,7 @@ test with <code class="docutils literal notranslate"><span class="pre">TestDfft/
 <p>The relationship between the number of processes versus global grid dimensions is determined by how the total number of grids can be factored from a three dimensional grid structure (block structured grids) into a two dimensional structure (pencil arrays), as shown in the figures below.</p>
 <p>The following figures illustrate how data is distributed from block structured grids to pencil arrays within SWFFT, where the colors of each box indicate which MPI rank it belongs to:</p>
 <table class="docutils align-center" id="id9">
-<caption><span class="caption-number">Table 21 </span><span class="caption-text">SWFFT Redistribution from <span class="math notranslate nohighlight">\(4 \times 4 \times 4\)</span> Box Array into Pencils</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 20 </span><span class="caption-text">SWFFT Redistribution from <span class="math notranslate nohighlight">\(4 \times 4 \times 4\)</span> Box Array into Pencils</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/grid_4x4x4.png"><img alt="a" src="_images/grid_4x4x4.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/grid_8x8x1.png"><img alt="b" src="_images/grid_8x8x1.png" style="width: 100%;" /></a></p></td>
@@ -149,7 +150,7 @@ test with <code class="docutils literal notranslate"><span class="pre">TestDfft/
 </tbody>
 </table>
 <table class="docutils align-center" id="id10">
-<caption><span class="caption-number">Table 22 </span><span class="caption-text">SWFFT Redistribution from <span class="math notranslate nohighlight">\(2 \times 2 \times 2\)</span> Box Array into Pencils</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 21 </span><span class="caption-text">SWFFT Redistribution from <span class="math notranslate nohighlight">\(2 \times 2 \times 2\)</span> Box Array into Pencils</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/grid_2x2x2.png"><img alt="c" src="_images/grid_2x2x2.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/grid_4x2x1.png"><img alt="d" src="_images/grid_4x2x1.png" style="width: 100%;" /></a></p></td>

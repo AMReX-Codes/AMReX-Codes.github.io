@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['location_18634',['Location',['../structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4',1,'amrex::LinOpEnumType']]]
+  ['kind_0',['Kind',['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70',1,'amrex::FFT']]]
 ];

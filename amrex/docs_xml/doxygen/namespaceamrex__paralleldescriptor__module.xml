@@ -1,20 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex__paralleldescriptor__module" kind="namespace" language="Fortran">
     <compoundname>amrex_paralleldescriptor_module</compoundname>
-    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_myproc</innerclass>
-    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_nprocs</innerclass>
+    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__bcast__r" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_bcast_r</innerclass>
     <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_ioprocessor</innerclass>
     <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor__number" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_ioprocessor_number</innerclass>
-    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__bcast__r" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_bcast_r</innerclass>
+    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_myproc</innerclass>
+    <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_nprocs</innerclass>
     <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime" prot="public">amrex_paralleldescriptor_module::amrex_fi_pd_wtime</innerclass>
     <innerclass refid="interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast" prot="public">amrex_paralleldescriptor_module::amrex_pd_bcast</innerclass>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex__paralleldescriptor__module_1a92b50119645b49ec71e1517aaddbbdaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>integer function, public</type>
         <definition>integer function, public amrex_paralleldescriptor_module::amrex_pd_myproc</definition>
         <argsstring>()</argsstring>
         <name>amrex_pd_myproc</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_myproc</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -28,6 +29,7 @@
         <definition>integer function, public amrex_paralleldescriptor_module::amrex_pd_nprocs</definition>
         <argsstring>()</argsstring>
         <name>amrex_pd_nprocs</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_nprocs</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -41,6 +43,7 @@
         <definition>logical function, public amrex_paralleldescriptor_module::amrex_pd_ioprocessor</definition>
         <argsstring>()</argsstring>
         <name>amrex_pd_ioprocessor</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_ioprocessor</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -54,6 +57,7 @@
         <definition>integer function, public amrex_paralleldescriptor_module::amrex_pd_ioprocessor_number</definition>
         <argsstring>()</argsstring>
         <name>amrex_pd_ioprocessor_number</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_ioprocessor_number</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -67,12 +71,13 @@
         <definition>subroutine amrex_paralleldescriptor_module::amrex_pd_bcast_r</definition>
         <argsstring>(x, a_root)</argsstring>
         <name>amrex_pd_bcast_r</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_bcast_r</qualifiedname>
         <param>
-          <type>x</type>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), target</type>
           <defname>x</defname>
         </param>
         <param>
-          <type>a_root</type>
+          <type>integer, intent(in), optional</type>
           <defname>a_root</defname>
         </param>
         <briefdescription>
@@ -88,12 +93,13 @@
         <definition>subroutine amrex_paralleldescriptor_module::amrex_pd_bcast_rv</definition>
         <argsstring>(x, a_root)</argsstring>
         <name>amrex_pd_bcast_rv</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_bcast_rv</qualifiedname>
         <param>
-          <type>x</type>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:)</type>
           <defname>x</defname>
         </param>
         <param>
-          <type>a_root</type>
+          <type>integer, intent(in), optional</type>
           <defname>a_root</defname>
         </param>
         <briefdescription>
@@ -109,12 +115,13 @@
         <definition>subroutine amrex_paralleldescriptor_module::amrex_pd_bcast_r2v</definition>
         <argsstring>(x, a_root)</argsstring>
         <name>amrex_pd_bcast_r2v</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_bcast_r2v</qualifiedname>
         <param>
-          <type>x</type>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:,:)</type>
           <defname>x</defname>
         </param>
         <param>
-          <type>a_root</type>
+          <type>integer, intent(in), optional</type>
           <defname>a_root</defname>
         </param>
         <briefdescription>
@@ -130,12 +137,13 @@
         <definition>subroutine amrex_paralleldescriptor_module::amrex_pd_bcast_r3v</definition>
         <argsstring>(x, a_root)</argsstring>
         <name>amrex_pd_bcast_r3v</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_bcast_r3v</qualifiedname>
         <param>
-          <type>x</type>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:,:,:)</type>
           <defname>x</defname>
         </param>
         <param>
-          <type>a_root</type>
+          <type>integer, intent(in), optional</type>
           <defname>a_root</defname>
         </param>
         <briefdescription>
@@ -147,10 +155,11 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelDescriptor_F.F90" line="120" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelDescriptor_F.F90" bodystart="121" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__paralleldescriptor__module_1a2fa55a14c84d0e1da19ba1cf9b8c0c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>) function, public</type>
+        <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>) function, public</type>
         <definition>real(amrex_real) function, public amrex_paralleldescriptor_module::amrex_pd_wtime</definition>
         <argsstring>()</argsstring>
         <name>amrex_pd_wtime</name>
+        <qualifiedname>amrex_paralleldescriptor_module::amrex_pd_wtime</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -159,7 +168,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelDescriptor_F.F90" line="132" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelDescriptor_F.F90" bodystart="133" bodyend="134"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

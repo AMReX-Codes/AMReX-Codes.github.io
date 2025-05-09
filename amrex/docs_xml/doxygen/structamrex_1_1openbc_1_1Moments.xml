@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1openbc_1_1Moments" kind="struct" language="C++" prot="public">
     <compoundname>amrex::openbc::Moments</compoundname>
     <includes refid="AMReX__OpenBC_8H" local="no">AMReX_OpenBC.H</includes>
-      <sectiondef kind="public-type">
+    <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structamrex_1_1openbc_1_1Moments_1aa2f37b0b5e8ada0aa23cccb86200dd3f" prot="public" static="no">
         <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real,(<ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>+2) *(<ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>+1)/2 &gt;</type>
         <definition>using amrex::openbc::Moments::array_type =  GpuArray&lt;Real,(M+2)*(M+1)/2&gt;</definition>
         <argsstring></argsstring>
         <name>array_type</name>
+        <qualifiedname>amrex::openbc::Moments::array_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -17,13 +18,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.H" line="18" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.H" bodystart="18" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
+    </sectiondef>
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1openbc_1_1Moments_1a8479610f91f050e03aa5738c513500d2" prot="public" static="no" mutable="no">
         <type><ref refid="structamrex_1_1openbc_1_1Moments_1aa2f37b0b5e8ada0aa23cccb86200dd3f" kindref="member">array_type</ref></type>
         <definition>array_type amrex::openbc::Moments::mom</definition>
         <argsstring></argsstring>
         <name>mom</name>
+        <qualifiedname>amrex::openbc::Moments::mom</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -37,6 +39,7 @@
         <definition>Real amrex::openbc::Moments::x</definition>
         <argsstring></argsstring>
         <name>x</name>
+        <qualifiedname>amrex::openbc::Moments::x</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -50,6 +53,7 @@
         <definition>Real amrex::openbc::Moments::y</definition>
         <argsstring></argsstring>
         <name>y</name>
+        <qualifiedname>amrex::openbc::Moments::y</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -63,6 +67,7 @@
         <definition>Real amrex::openbc::Moments::z</definition>
         <argsstring></argsstring>
         <name>z</name>
+        <qualifiedname>amrex::openbc::Moments::z</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -76,6 +81,7 @@
         <definition>Orientation amrex::openbc::Moments::face</definition>
         <argsstring></argsstring>
         <name>face</name>
+        <qualifiedname>amrex::openbc::Moments::face</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -84,28 +90,31 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.H" line="21" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.H" bodystart="21" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
-        <label>Real</label>
-      </node>
       <node id="2">
+        <label>amrex::GpuArray&lt; Real,(M+2) *(M+1)/2 &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
         <label>amrex::Orientation</label>
         <link refid="classamrex_1_1Orientation"/>
       </node>
-      <node id="4">
-        <label>amrex::GpuArray&lt; Real,(M+2) *(M+1)/2 &gt;</label>
-        <link refid="structamrex_1_1GpuArray"/>
+      <node id="3">
+        <label>Real</label>
       </node>
       <node id="1">
         <label>amrex::openbc::Moments</label>
         <link refid="structamrex_1_1openbc_1_1Moments"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>face</edgelabel>
+          <edgelabel>mom</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
           <edgelabel>x</edgelabel>
@@ -113,7 +122,7 @@
           <edgelabel>z</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
-          <edgelabel>mom</edgelabel>
+          <edgelabel>face</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

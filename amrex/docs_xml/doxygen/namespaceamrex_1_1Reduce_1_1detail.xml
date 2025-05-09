@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex_1_1Reduce_1_1detail" kind="namespace" language="C++">
     <compoundname>amrex::Reduce::detail</compoundname>
-    <innerclass refid="structamrex_1_1Reduce_1_1detail_1_1iterate__box" prot="public">amrex::Reduce::detail::iterate_box</innerclass>
-    <innerclass refid="structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp" prot="public">amrex::Reduce::detail::iterate_box_comp</innerclass>
-      <sectiondef kind="func">
+    <innerclass refid="structamrex_1_1Reduce_1_1detail_1_1iterate__box" prot="private">amrex::Reduce::detail::iterate_box</innerclass>
+    <innerclass refid="structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp" prot="private">amrex::Reduce::detail::iterate_box_comp</innerclass>
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1abe303744738dffcde1225825759169f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -23,6 +23,7 @@
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_parallel</definition>
         <argsstring>(T &amp;d, T const &amp;s)</argsstring>
         <name>for_each_parallel</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_parallel</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>d</declname>
@@ -65,6 +66,7 @@
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_parallel</definition>
         <argsstring>(T &amp;d, T const &amp;s)</argsstring>
         <name>for_each_parallel</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_parallel</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>d</declname>
@@ -99,6 +101,7 @@
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_local</definition>
         <argsstring>(T &amp;d, T const &amp;s)</argsstring>
         <name>for_each_local</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_local</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>d</declname>
@@ -141,6 +144,7 @@
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_local</definition>
         <argsstring>(T &amp;d, T const &amp;s)</argsstring>
         <name>for_each_local</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_local</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>d</declname>
@@ -157,7 +161,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="62" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="62" bodyend="66"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a22849c15bbaf703129453036d2a01aef" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1ad408715066953dc5eeade69a00c1d601" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>std::size_t</type>
@@ -171,10 +175,11 @@
             <type>typename P</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_init</definition>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE constexpr void amrex::Reduce::detail::for_each_init</definition>
         <argsstring>(T &amp;t)</argsstring>
         <name>for_each_init</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_init</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>t</declname>
@@ -187,7 +192,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="70" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="70" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1add1c5add1928bd88b96e1b6c996fab70" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a2d9dde2ab20c6b44e1d145f67c5b4715" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>std::size_t</type>
@@ -209,10 +214,11 @@
             <defname>Ps</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE void amrex::Reduce::detail::for_each_init</definition>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE constexpr void amrex::Reduce::detail::for_each_init</definition>
         <argsstring>(T &amp;t)</argsstring>
         <name>for_each_init</name>
+        <qualifiedname>amrex::Reduce::detail::for_each_init</qualifiedname>
         <param>
           <type>T &amp;</type>
           <declname>t</declname>
@@ -225,7 +231,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="77" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="77" bodyend="81"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a598f60a4f8120754f446e6f256db6a75" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a598f60a4f8120754f446e6f256db6a75" prot="private" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -235,8 +241,9 @@
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE auto amrex::Reduce::detail::call_f</definition>
         <argsstring>(F const &amp;f, int i, int j, int k, IndexType) noexcept -&gt; decltype(f(0, 0, 0))</argsstring>
         <name>call_f</name>
+        <qualifiedname>amrex::Reduce::detail::call_f</qualifiedname>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -263,7 +270,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="321" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="321" bodyend="325"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a4330f64d148aa6476ff64d5c36562712" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Reduce_1_1detail_1a4330f64d148aa6476ff64d5c36562712" prot="private" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename I</type>
@@ -288,8 +295,9 @@
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::Reduce::detail::mf_call_f</definition>
         <argsstring>(F const &amp;f, int ibox, int i, int j, int k, int, T &amp;r) noexcept</argsstring>
         <name>mf_call_f</name>
+        <qualifiedname>amrex::Reduce::detail::mf_call_f</qualifiedname>
         <param>
-          <type>F const &amp;</type>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -324,7 +332,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="344" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="344" bodyend="348"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

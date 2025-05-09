@@ -13,7 +13,7 @@ var classamrex_1_1AmrDataAdaptor =
     [ "GetMeshName", "classamrex_1_1AmrDataAdaptor.html#a56b023f943976c8cbc6868bc307d0e22", null ],
     [ "GetNumberOfArrays", "classamrex_1_1AmrDataAdaptor.html#aeb19ff64f67ce3d581833588cd8a362b", null ],
     [ "GetNumberOfMeshes", "classamrex_1_1AmrDataAdaptor.html#a4b98d2d309d72218c0bc9f2d82781433", null ],
-    [ "New", "classamrex_1_1AmrDataAdaptor.html#a41f3c8b6a7d66e0b17a4e9869c8c9b40", null ],
+    [ "New", "classamrex_1_1AmrDataAdaptor.html#a9ee7f64eb419ad21d0ecbceecf939283", null ],
     [ "ReleaseData", "classamrex_1_1AmrDataAdaptor.html#a7f983048f1e70348b58c381f0e104ae3", null ],
     [ "senseiTypeMacro", "classamrex_1_1AmrDataAdaptor.html#a85b2b18fd182728955fa9cb13ef5bf30", null ],
     [ "SetDataSource", "classamrex_1_1AmrDataAdaptor.html#ac8ab6353c41ea4880d2b5e68e2465564", null ],

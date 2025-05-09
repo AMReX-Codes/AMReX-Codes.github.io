@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classamrex_1_1JacobiSmoother" kind="class" language="C++" prot="public">
+    <compoundname>amrex::JacobiSmoother</compoundname>
+    <includes refid="AMReX__Smoother__MV_8H" local="no">AMReX_Smoother_MV.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1JacobiSmoother_1a111627960c4101fc83c957f9f4c365a1" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T &gt; const  *</type>
+        <definition>SpMatrix&lt;T&gt; const* amrex::JacobiSmoother&lt; T &gt;::m_A</definition>
+        <argsstring></argsstring>
+        <name>m_A</name>
+        <qualifiedname>amrex::JacobiSmoother::m_A</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="40" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1JacobiSmoother_1aaff75cca3633ab487ec2068e18c3d075" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::JacobiSmoother&lt; T &gt;::m_niters</definition>
+        <argsstring></argsstring>
+        <name>m_niters</name>
+        <qualifiedname>amrex::JacobiSmoother::m_niters</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="41" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1JacobiSmoother_1a0106b038d92dce4a6f2d15467d4ab103" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::JacobiSmoother&lt; T &gt;::JacobiSmoother</definition>
+        <argsstring>(SpMatrix&lt; T &gt; const *a_A)</argsstring>
+        <name>JacobiSmoother</name>
+        <qualifiedname>amrex::JacobiSmoother::JacobiSmoother</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T &gt; const *</type>
+          <declname>a_A</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="13" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1JacobiSmoother_1a3e0d7974487c8e736f1780b1b81bf847" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::JacobiSmoother&lt; T &gt;::setNumIters</definition>
+        <argsstring>(int a_niters)</argsstring>
+        <name>setNumIters</name>
+        <qualifiedname>amrex::JacobiSmoother::setNumIters</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>a_niters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="15" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1JacobiSmoother_1a81c81e2bc6d4aac684bf5902d3d7ac24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::JacobiSmoother&lt; T &gt;::operator()</definition>
+        <argsstring>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec)</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::JacobiSmoother::operator()</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
+          <declname>xvec</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <declname>bvec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="17" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="17" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H" bodystart="11" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1JacobiSmoother_1a0106b038d92dce4a6f2d15467d4ab103" prot="public" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>JacobiSmoother</name></member>
+      <member refid="classamrex_1_1JacobiSmoother_1a111627960c4101fc83c957f9f4c365a1" prot="private" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>m_A</name></member>
+      <member refid="classamrex_1_1JacobiSmoother_1aaff75cca3633ab487ec2068e18c3d075" prot="private" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>m_niters</name></member>
+      <member refid="classamrex_1_1JacobiSmoother_1a81c81e2bc6d4aac684bf5902d3d7ac24" prot="public" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1JacobiSmoother_1a3e0d7974487c8e736f1780b1b81bf847" prot="public" virt="non-virtual"><scope>amrex::JacobiSmoother</scope><name>setNumIters</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

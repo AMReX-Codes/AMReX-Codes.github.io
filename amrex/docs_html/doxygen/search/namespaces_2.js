@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hacc_10750',['hacc',['../namespacehacc.html',1,'']]]
+  ['sdcquadrature_5fmod_0',['sdcquadrature_mod',['../namespacesdcquadrature__mod.html',1,'']]]
 ];

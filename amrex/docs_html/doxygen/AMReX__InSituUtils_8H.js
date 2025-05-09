@@ -1,9 +1,9 @@
 var AMReX__InSituUtils_8H =
 [
-    [ "amrex_tt", "structamrex_1_1InSituUtils_1_1amrex__tt.html", null ],
-    [ "assignOp", "structamrex_1_1InSituUtils_1_1assignOp.html", "structamrex_1_1InSituUtils_1_1assignOp" ],
-    [ "orOp", "structamrex_1_1InSituUtils_1_1orOp.html", "structamrex_1_1InSituUtils_1_1orOp" ],
-    [ "StateMap", "classamrex_1_1InSituUtils_1_1StateMap.html", "classamrex_1_1InSituUtils_1_1StateMap" ],
+    [ "amrex::InSituUtils::amrex_tt< cpp_t >", "structamrex_1_1InSituUtils_1_1amrex__tt.html", null ],
+    [ "amrex::InSituUtils::assignOp< n_t >", "structamrex_1_1InSituUtils_1_1assignOp.html", "structamrex_1_1InSituUtils_1_1assignOp" ],
+    [ "amrex::InSituUtils::orOp< n_t >", "structamrex_1_1InSituUtils_1_1orOp.html", "structamrex_1_1InSituUtils_1_1orOp" ],
+    [ "amrex::InSituUtils::StateMap", "classamrex_1_1InSituUtils_1_1StateMap.html", "classamrex_1_1InSituUtils_1_1StateMap" ],
     [ "amrex_tt_specialize", "AMReX__InSituUtils_8H.html#ab14fe6532bbec8de0b1f8a3d2f6879a2", null ],
     [ "CellGhostTypes", "AMReX__InSituUtils_8H.html#a7c36b2f21774c997bbc295eb09a36530", [
       [ "DUPLICATECELL", "AMReX__InSituUtils_8H.html#a7c36b2f21774c997bbc295eb09a36530aa193ff323f29029e1e37eacda443d808", null ],

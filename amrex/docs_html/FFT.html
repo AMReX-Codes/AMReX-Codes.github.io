@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FFT::R2C Class &mdash; amrex 25.06-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Time Integration" href="TimeIntegration_Chapter.html" />
+    <link rel="prev" title="Discrete Fourier Transform" href="FFT_Chapter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+              <div class="version">
+                25.06-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FFT::R2C Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fft-c2c-class">FFT::C2C Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fft-localr2c-class">FFT::LocalR2C Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson-solver">Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raw-pointer-interface">Raw Pointer Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RuntimeParameters.html">Runtime Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Governance.html">AMReX Governance</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
+      <li class="breadcrumb-item active">FFT::R2C Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/FFT.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fft-r2c-class">
+<span id="sec-fft-r2c"></span><h1>FFT::R2C Class<a class="headerlink" href="#fft-r2c-class" title="Permalink to this heading"></a></h1>
+<p>Class template <cite>FFT::R2C</cite> supports discrete Fourier transforms between real
+and complex data across MPI processes. The name R2C indicates that the
+forward transform converts real data to complex data, while the backward
+transform converts complex data to real data. It should be noted that both
+directions of transformation are supported, not just from real to complex.</p>
+<p>The implementation utilizes cuFFT, rocFFT, oneMKL and FFTW, for CUDA, HIP,
+SYCL and CPU builds, respectively. Because the parallel communication is
+handled by AMReX, it does not need the parallel version of
+FFTW. Furthermore, there is no constraint on the domain decomposition such
+as one Box per process. This class performs parallel FFT on AMReX’s parallel
+data containers (e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">ComplexData</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;&gt;</span></code>.</p>
+<p>Other than using column-majored order, AMReX follows the convention of
+FFTW. Applying the forward transform followed by the backward transform
+scales the original data by the size of the input array. The layout of the
+complex data also follows the FFTW convention, where the complex Hermitian
+output array has <cite>(nx/2+1,ny,nz)</cite> elements. Here <cite>nx</cite>, <cite>ny</cite> and <cite>nz</cite> are the
+sizes of the real array and the division is rounded down.</p>
+<p>Below are examples of using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">mfin</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">mfout</span><span class="p">(...);</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">scaling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">().</span><span class="n">d_numPts</span><span class="p">();</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="w"> </span><span class="nf">r2c</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span>
+<span class="n">r2c</span><span class="p">.</span><span class="n">forwardThenBackward</span><span class="p">(</span><span class="n">mfin</span><span class="p">,</span><span class="w"> </span><span class="n">mfout</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sp</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sp</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">scaling</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="c1">// Use R2C provided spectral data layout.</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">cmf</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">forward</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c_forward</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span>
+<span class="n">r2c_forward</span><span class="p">(</span><span class="n">mfin</span><span class="p">,</span><span class="w"> </span><span class="n">cmf</span><span class="p">);</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">backward</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c_backward</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">());</span>
+<span class="n">r2c_backward</span><span class="p">(</span><span class="n">cmf</span><span class="p">,</span><span class="w"> </span><span class="n">mfout</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">forwardThenBackward</span></code> is expected to be more efficient
+than separate calls to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">forward</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">backward</span></code> because some
+parallel communication can be avoided. For the spectral data, the example
+above builds <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cMultiFab</span></code> using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code> provided layout. You can
+also use your own <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>, but it
+might result in extra communication. It should also be noted that a lot of
+preparation works are done in the construction of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>
+object. Therefore, one should cache it for reuse if possible. Although
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code> does not have a default constructor, one could always use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&gt;</span></code> to store an object in one’s class.</p>
+<p>Class template <cite>FFT::R2C</cite> also supports batched FFTs. The batch size is set
+in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span></code> object passed to the constructor of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>. Below is an example.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">batch_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="n">batch_size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="w"> </span><span class="n">info</span><span class="p">{};</span>
+<span class="n">info</span><span class="p">.</span><span class="n">setBatchSize</span><span class="p">(</span><span class="n">batch_size</span><span class="p">));</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">(),</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getSpectralDataLayout</span><span class="p">();</span>
+<span class="n">cMultiFab</span><span class="w"> </span><span class="nf">cmf</span><span class="p">(</span><span class="n">cba</span><span class="p">,</span><span class="w"> </span><span class="n">cdm</span><span class="p">,</span><span class="w"> </span><span class="n">batch_size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">cmf</span><span class="p">);</span>
+
+<span class="c1">// Do work on cmf.</span>
+<span class="c1">// Function forwardThenBackward is not yet supported for a batched FFT.</span>
+
+<span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">cmf</span><span class="p">,</span><span class="w"> </span><span class="n">mf</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="fft-c2c-class">
+<span id="sec-fft-c2c"></span><h1>FFT::C2C Class<a class="headerlink" href="#fft-c2c-class" title="Permalink to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">C2C</span></code> is a class template that supports complex to complex Fourier
+transforms. It has a similar interface as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>.</p>
+</section>
+<section id="fft-localr2c-class">
+<span id="sec-fft-localr2c"></span><h1>FFT::LocalR2C Class<a class="headerlink" href="#fft-localr2c-class" title="Permalink to this heading"></a></h1>
+<p>Class template <cite>FFT::LocalR2C</cite> supports local discrete Fourier transforms
+between real and complex data. The name R2C indicates that the forward
+transform converts real data to complex data, while the backward transform
+converts complex data to real data. It should be noted that both directions
+of transformation are supported, not just from real to complex.</p>
+<p>Below is an example of using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">LocalR2C</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span>
+<span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">GpuComplex</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">cfab</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">FFT</span><span class="o">::</span><span class="n">LocalR2C</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">mfi</span><span class="p">.</span><span class="n">fabbox</span><span class="p">().</span><span class="n">length</span><span class="p">());</span>
+<span class="w">    </span><span class="n">cfab</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">fft</span><span class="p">.</span><span class="n">spectralSize</span><span class="p">()</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fft</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">mf</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span><span class="w"> </span><span class="n">cfab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="poisson-solver">
+<h1>Poisson Solver<a class="headerlink" href="#poisson-solver" title="Permalink to this heading"></a></h1>
+<p>AMReX provides FFT based Poisson solvers. Here, Poisson’s equation is</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \phi = \rho.\]</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> supports periodic (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">periodic</span></code>),
+homogeneous Neumann (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">even</span></code>), and homogeneous Dirichlet
+(<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span></code>) boundaries using FFT. Below is an example of
+using the solver.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">soln</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(...);</span>
+
+<span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="p">,</span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">&gt;</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">{...};</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">first</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="n">fft_bc</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">second</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FFT</span><span class="o">::</span><span class="n">Boundary</span><span class="o">::</span><span class="n">odd</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="w"> </span><span class="n">has_dirichlet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Shift rhs so that its sum is zero.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">rhosum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">rhs</span><span class="p">.</span><span class="n">plus</span><span class="p">(</span><span class="o">-</span><span class="n">rhosum</span><span class="o">/</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">().</span><span class="n">d_numPts</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="w"> </span><span class="n">fft_poisson</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">fft_bc</span><span class="p">);</span>
+<span class="n">fft_poisson</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span></code> is a 3D only solver that supports open
+boundaries. Its implementation utilizes <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">OpenBCSolver</span></code>, which can
+be used for implementing convolution based solvers with a user provided
+Green’s function. If users want to extend the open BC solver to 2D or other
+types of Green’s function, they could use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span></code> as an
+example. Below is an example of solving Poisson’s equation with open
+boundaries.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">soln</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// soln can be either nodal or cell-centered.</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(...);</span><span class="w">  </span><span class="c1">// rhs must have the same index type as soln.</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span><span class="c1">// ng can be non-zero, if we want to compute potential</span>
+<span class="w">              </span><span class="c1">// outside the domain.</span>
+<span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span><span class="w"> </span><span class="nf">openbc_solver</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">soln</span><span class="p">.</span><span class="n">ixType</span><span class="p">(),</span><span class="w"> </span><span class="n">IntVect</span><span class="p">(</span><span class="n">ng</span><span class="p">));</span>
+<span class="n">openbc_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span></code> is a 3D only solver that supports periodic
+boundaries in the first two dimensions and Neumann boundary in the last
+dimension. The last dimension is solved with a tridiagonal solver that can
+support non-uniform cell size in the z-direction. For most applications,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> should be used.</p>
+<p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>, the Poisson solvers should be cached for reuse,
+and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>
+because there is no default constructor.</p>
+</section>
+<section id="raw-pointer-interface">
+<span id="sec-fft-rawptr"></span><h1>Raw Pointer Interface<a class="headerlink" href="#raw-pointer-interface" title="Permalink to this heading"></a></h1>
+<p>If you only want to use AMReX as a Parallel FFT library without using other
+functionalities and data containers, you could use the raw pointer
+interface. Below is an example.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+
+<span class="c1">// We don&#39;t need to call the full-blown amrex::Initialize</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Init_FFT</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">nprocs</span><span class="p">,</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nprocs</span><span class="p">);</span>
+<span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">myproc</span><span class="p">);</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">RT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">CT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="n">RT</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// or cufftDoubleComplex, etc.</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">domain_size</span><span class="p">{</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">};</span>
+
+<span class="c1">// FFT between real and complex.</span>
+<span class="c1">// Domain decomposition is flexible. The only constraint for the raw</span>
+<span class="c1">// pointer interface is that there can be only zero or one local box</span>
+<span class="c1">// per process, whereas the MultiFab interface can take any number of</span>
+<span class="c1">// boxes. In this case, we choose to do manual domain decomposition for</span>
+<span class="c1">// the real (i.e., forward) domain, and use the domain decomposition</span>
+<span class="c1">// provided by amrex for the complex (i.e., backward) domain.</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span><span class="o">&lt;</span><span class="n">RT</span><span class="p">,</span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">r2c</span><span class="p">(</span><span class="n">domain_size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// amrex supports 1d, 2d and 3d domain decomposition. For simplicity,</span>
+<span class="w">    </span><span class="c1">// let&#39;s do 1d decomposition in the z-direction.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nprocs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nprocs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">zlo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">nz</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">zlo</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_start</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">zlo</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_size</span><span class="p">{</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">nz</span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Let amrex know the domain decomposition in the forward domain.</span>
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">setLocalDomain</span><span class="p">(</span><span class="n">local_start</span><span class="p">,</span><span class="n">local_size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use amrex&#39;s domain decomposition in the backward domain.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">local_start_sp</span><span class="p">,</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2c</span><span class="p">.</span><span class="n">getLocalSpectralDomain</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">RT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">RT</span><span class="p">)</span><span class="o">*</span><span class="n">nr</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+<span class="w">    </span><span class="c1">// Initialize data ...</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nc</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">pr</span><span class="p">,</span><span class="w"> </span><span class="n">pc</span><span class="p">);</span><span class="w"> </span><span class="c1">// forward transform from real to complex</span>
+
+<span class="w">    </span><span class="c1">// work on the complex data pointed by pc ...</span>
+
+<span class="w">    </span><span class="n">r2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">pr</span><span class="p">);</span><span class="w"> </span><span class="c1">// backward transform from complex to real</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Batched FFT between complex and complex.</span>
+<span class="c1">// In this case, we choose to use the domain decomposition provided</span>
+<span class="c1">// by amrex for the forward domain, and do manual domain decomposition</span>
+<span class="c1">// for the backward domain.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nbatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// batch size</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Info</span><span class="w"> </span><span class="n">info</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">info</span><span class="p">.</span><span class="n">setBatchSize</span><span class="p">(</span><span class="n">nbatch</span><span class="p">);</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">C2C</span><span class="o">&lt;</span><span class="n">RT</span><span class="p">,</span><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">Direction</span><span class="o">::</span><span class="n">both</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c2c</span><span class="p">(</span><span class="n">domain_size</span><span class="p">,</span><span class="n">info</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use amrex&#39;s domain decomposition in the forward domain.</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">local_start</span><span class="p">,</span><span class="w"> </span><span class="n">local_size</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c2c</span><span class="p">.</span><span class="n">getLocalDomain</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nprocs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nprocs</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">xlo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myproc</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">xlo</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_start_sp</span><span class="p">{</span><span class="n">xlo</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">{</span><span class="n">nx</span><span class="p">,</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">domain_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]};</span>
+
+<span class="w">    </span><span class="c1">// Let amrex know the domain decomposition in the backward domain.</span>
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">setLocalSpectralDomain</span><span class="p">(</span><span class="n">local_start_sp</span><span class="p">,</span><span class="w"> </span><span class="n">local_size_sp</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nf</span><span class="o">*</span><span class="n">nbatch</span><span class="p">);</span><span class="w"> </span><span class="c1">// or use cudaMalloc</span>
+<span class="w">    </span><span class="c1">// Initialize data ...</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">nb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">            </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="p">(</span><span class="n">local_size_sp</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CT</span><span class="o">*</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span><span class="o">*</span><span class="n">nb</span><span class="o">*</span><span class="n">nbatch</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">pf</span><span class="p">,</span><span class="w"> </span><span class="n">pb</span><span class="p">);</span><span class="w"> </span><span class="c1">// forward transform</span>
+
+<span class="w">    </span><span class="c1">// work on the data pointed by pb</span>
+
+<span class="w">    </span><span class="n">c2c</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span><span class="w"> </span><span class="n">pf</span><span class="p">);</span><span class="w"> </span><span class="c1">// backward transform</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pf</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">free</span><span class="p">(</span><span class="n">pb</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Finalize_FFT</span><span class="p">();</span>
+
+<span class="n">MPI_Finalize</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FFT_Chapter.html" class="btn btn-neutral float-left" title="Discrete Fourier Transform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TimeIntegration_Chapter.html" class="btn btn-neutral float-right" title="Time Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

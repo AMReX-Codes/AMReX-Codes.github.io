@@ -18,14 +18,10 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLCellLinOp.H", "AMReX__MLCellLinOp_8H.html", "AMReX__MLCellLinOp_8H" ],
     [ "AMReX_MLCGSolver.H", "AMReX__MLCGSolver_8H.html", "AMReX__MLCGSolver_8H" ],
     [ "AMReX_MLCurlCurl.cpp", "AMReX__MLCurlCurl_8cpp.html", null ],
-    [ "AMReX_MLCurlCurl.H", "AMReX__MLCurlCurl_8H.html", [
-      [ "MLCurlCurl", "classamrex_1_1MLCurlCurl.html", "classamrex_1_1MLCurlCurl" ]
-    ] ],
+    [ "AMReX_MLCurlCurl.H", "AMReX__MLCurlCurl_8H.html", "AMReX__MLCurlCurl_8H" ],
     [ "AMReX_MLCurlCurl_K.H", "AMReX__MLCurlCurl__K_8H.html", "AMReX__MLCurlCurl__K_8H" ],
     [ "AMReX_MLEBABecLap.cpp", "AMReX__MLEBABecLap_8cpp.html", null ],
-    [ "AMReX_MLEBABecLap.H", "AMReX__MLEBABecLap_8H.html", [
-      [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html", "classamrex_1_1MLEBABecLap" ]
-    ] ],
+    [ "AMReX_MLEBABecLap.H", "AMReX__MLEBABecLap_8H.html", "AMReX__MLEBABecLap_8H" ],
     [ "AMReX_MLEBABecLap_2D_K.H", "AMReX__MLEBABecLap__2D__K_8H.html", "AMReX__MLEBABecLap__2D__K_8H" ],
     [ "AMReX_MLEBABecLap_3D_K.H", "AMReX__MLEBABecLap__3D__K_8H.html", "AMReX__MLEBABecLap__3D__K_8H" ],
     [ "AMReX_MLEBABecLap_F.cpp", "AMReX__MLEBABecLap__F_8cpp.html", null ],
@@ -35,16 +31,12 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLEBNodeFDLap_3D_K.H", "AMReX__MLEBNodeFDLap__3D__K_8H.html", "AMReX__MLEBNodeFDLap__3D__K_8H" ],
     [ "AMReX_MLEBNodeFDLap_K.H", "AMReX__MLEBNodeFDLap__K_8H.html", "AMReX__MLEBNodeFDLap__K_8H" ],
     [ "AMReX_MLEBNodeFDLaplacian.cpp", "AMReX__MLEBNodeFDLaplacian_8cpp.html", null ],
-    [ "AMReX_MLEBNodeFDLaplacian.H", "AMReX__MLEBNodeFDLaplacian_8H.html", [
-      [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", "classamrex_1_1MLEBNodeFDLaplacian" ]
-    ] ],
+    [ "AMReX_MLEBNodeFDLaplacian.H", "AMReX__MLEBNodeFDLaplacian_8H.html", "AMReX__MLEBNodeFDLaplacian_8H" ],
     [ "AMReX_MLEBTensor_2D_K.H", "AMReX__MLEBTensor__2D__K_8H.html", "AMReX__MLEBTensor__2D__K_8H" ],
     [ "AMReX_MLEBTensor_3D_K.H", "AMReX__MLEBTensor__3D__K_8H.html", "AMReX__MLEBTensor__3D__K_8H" ],
     [ "AMReX_MLEBTensor_K.H", "AMReX__MLEBTensor__K_8H.html", "AMReX__MLEBTensor__K_8H" ],
     [ "AMReX_MLEBTensorOp.cpp", "AMReX__MLEBTensorOp_8cpp.html", null ],
-    [ "AMReX_MLEBTensorOp.H", "AMReX__MLEBTensorOp_8H.html", [
-      [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ]
-    ] ],
+    [ "AMReX_MLEBTensorOp.H", "AMReX__MLEBTensorOp_8H.html", "AMReX__MLEBTensorOp_8H" ],
     [ "AMReX_MLEBTensorOp_bc.cpp", "AMReX__MLEBTensorOp__bc_8cpp.html", null ],
     [ "AMReX_MLLinOp.H", "AMReX__MLLinOp_8H.html", "AMReX__MLLinOp_8H" ],
     [ "AMReX_MLLinOp_F.H", "AMReX__MLLinOp__F_8H.html", "AMReX__MLLinOp__F_8H" ],
@@ -62,34 +54,30 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLNodeABecLap_3D_K.H", "AMReX__MLNodeABecLap__3D__K_8H.html", "AMReX__MLNodeABecLap__3D__K_8H" ],
     [ "AMReX_MLNodeABecLap_K.H", "AMReX__MLNodeABecLap__K_8H.html", null ],
     [ "AMReX_MLNodeABecLaplacian.cpp", "AMReX__MLNodeABecLaplacian_8cpp.html", null ],
-    [ "AMReX_MLNodeABecLaplacian.H", "AMReX__MLNodeABecLaplacian_8H.html", [
-      [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ]
-    ] ],
+    [ "AMReX_MLNodeABecLaplacian.H", "AMReX__MLNodeABecLaplacian_8H.html", "AMReX__MLNodeABecLaplacian_8H" ],
     [ "AMReX_MLNodeLap_1D_K.H", "AMReX__MLNodeLap__1D__K_8H.html", "AMReX__MLNodeLap__1D__K_8H" ],
     [ "AMReX_MLNodeLap_2D_K.H", "AMReX__MLNodeLap__2D__K_8H.html", "AMReX__MLNodeLap__2D__K_8H" ],
     [ "AMReX_MLNodeLap_3D_K.H", "AMReX__MLNodeLap__3D__K_8H.html", "AMReX__MLNodeLap__3D__K_8H" ],
     [ "AMReX_MLNodeLap_K.H", "AMReX__MLNodeLap__K_8H.html", "AMReX__MLNodeLap__K_8H" ],
     [ "AMReX_MLNodeLaplacian.cpp", "AMReX__MLNodeLaplacian_8cpp.html", null ],
-    [ "AMReX_MLNodeLaplacian.H", "AMReX__MLNodeLaplacian_8H.html", [
-      [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", "classamrex_1_1MLNodeLaplacian" ]
-    ] ],
+    [ "AMReX_MLNodeLaplacian.H", "AMReX__MLNodeLaplacian_8H.html", "AMReX__MLNodeLaplacian_8H" ],
     [ "AMReX_MLNodeLaplacian_eb.cpp", "AMReX__MLNodeLaplacian__eb_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_hypre.cpp", "AMReX__MLNodeLaplacian__hypre_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_misc.cpp", "AMReX__MLNodeLaplacian__misc_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_sten.cpp", "AMReX__MLNodeLaplacian__sten_8cpp.html", null ],
     [ "AMReX_MLNodeLaplacian_sync.cpp", "AMReX__MLNodeLaplacian__sync_8cpp.html", null ],
     [ "AMReX_MLNodeLinOp.cpp", "AMReX__MLNodeLinOp_8cpp.html", null ],
-    [ "AMReX_MLNodeLinOp.H", "AMReX__MLNodeLinOp_8H.html", [
-      [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", "classamrex_1_1MLNodeLinOp" ]
-    ] ],
+    [ "AMReX_MLNodeLinOp.H", "AMReX__MLNodeLinOp_8H.html", "AMReX__MLNodeLinOp_8H" ],
+    [ "AMReX_MLNodeLinOp_1D_K.H", "AMReX__MLNodeLinOp__1D__K_8H.html", "AMReX__MLNodeLinOp__1D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_2D_K.H", "AMReX__MLNodeLinOp__2D__K_8H.html", "AMReX__MLNodeLinOp__2D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_3D_K.H", "AMReX__MLNodeLinOp__3D__K_8H.html", "AMReX__MLNodeLinOp__3D__K_8H" ],
+    [ "AMReX_MLNodeLinOp_K.H", "AMReX__MLNodeLinOp__K_8H.html", "AMReX__MLNodeLinOp__K_8H" ],
     [ "AMReX_MLNodeTensorLap_1D_K.H", "AMReX__MLNodeTensorLap__1D__K_8H.html", "AMReX__MLNodeTensorLap__1D__K_8H" ],
     [ "AMReX_MLNodeTensorLap_2D_K.H", "AMReX__MLNodeTensorLap__2D__K_8H.html", "AMReX__MLNodeTensorLap__2D__K_8H" ],
     [ "AMReX_MLNodeTensorLap_3D_K.H", "AMReX__MLNodeTensorLap__3D__K_8H.html", "AMReX__MLNodeTensorLap__3D__K_8H" ],
     [ "AMReX_MLNodeTensorLap_K.H", "AMReX__MLNodeTensorLap__K_8H.html", null ],
     [ "AMReX_MLNodeTensorLaplacian.cpp", "AMReX__MLNodeTensorLaplacian_8cpp.html", null ],
-    [ "AMReX_MLNodeTensorLaplacian.H", "AMReX__MLNodeTensorLaplacian_8H.html", [
-      [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", "classamrex_1_1MLNodeTensorLaplacian" ]
-    ] ],
+    [ "AMReX_MLNodeTensorLaplacian.H", "AMReX__MLNodeTensorLaplacian_8H.html", "AMReX__MLNodeTensorLaplacian_8H" ],
     [ "AMReX_MLPoisson.H", "AMReX__MLPoisson_8H.html", "AMReX__MLPoisson_8H" ],
     [ "AMReX_MLPoisson_1D_K.H", "AMReX__MLPoisson__1D__K_8H.html", "AMReX__MLPoisson__1D__K_8H" ],
     [ "AMReX_MLPoisson_2D_K.H", "AMReX__MLPoisson__2D__K_8H.html", "AMReX__MLPoisson__2D__K_8H" ],
@@ -100,9 +88,7 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLTensor_3D_K.H", "AMReX__MLTensor__3D__K_8H.html", "AMReX__MLTensor__3D__K_8H" ],
     [ "AMReX_MLTensor_K.H", "AMReX__MLTensor__K_8H.html", "AMReX__MLTensor__K_8H" ],
     [ "AMReX_MLTensorOp.cpp", "AMReX__MLTensorOp_8cpp.html", null ],
-    [ "AMReX_MLTensorOp.H", "AMReX__MLTensorOp_8H.html", [
-      [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ]
-    ] ],
+    [ "AMReX_MLTensorOp.H", "AMReX__MLTensorOp_8H.html", "AMReX__MLTensorOp_8H" ],
     [ "AMReX_MLTensorOp_grad.cpp", "AMReX__MLTensorOp__grad_8cpp.html", null ],
     [ "AMReX_PCGSolver.H", "AMReX__PCGSolver_8H.html", "AMReX__PCGSolver_8H" ]
 ];

@@ -1,6 +1,6 @@
 var AMReX__GpuReduce_8H =
 [
-    [ "warpReduce", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ],
+    [ "amrex::Gpu::warpReduce< warpSize, T, F >", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ],
     [ "blockReduce", "AMReX__GpuReduce_8H.html#a06351ce8c083138d26fa7653a0c63d7b", null ],
     [ "blockReduce_partial", "AMReX__GpuReduce_8H.html#ab9a50b1a64ebde8610e71103d50c9ff4", null ],
     [ "blockReduceMax", "AMReX__GpuReduce_8H.html#a60fd190b91e286384cf13808993fea3d", null ],

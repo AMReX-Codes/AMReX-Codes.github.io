@@ -1,24 +1,22 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example: HeatEquation_EX1_C &mdash; amrex 24.09-dev documentation</title>
+  <title>Example: HeatEquation_EX1_C &mdash; amrex 25.05-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=dd148f65"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=64bf3744"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -35,9 +33,6 @@
           <a href="index.html" class="icon icon-home">
             amrex
           </a>
-              <div class="version">
-                24.09-dev
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -54,10 +49,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FFTW_Tutorial.html">FFTW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Tutorial.html">FFT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="heFFTe_Tutorial.html">heFFTe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MPMD_Tutorials.html">AMReX-MPMD</a></li>
@@ -67,7 +61,6 @@
 <li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
         </div>
@@ -102,7 +95,8 @@ code tree for the heat equation example is simple, as shown in
 <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">advance.cpp</span></code> to see some of the classes described
 below in action.</p>
 <figure class="align-default" id="id1">
-<span id="fig-basics-heat-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" src="_images/flowchart.png" style="width: 4in;" /></a>
+<span id="fig-basics-heat-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" src="_images/flowchart.png" style="width: 4in;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
@@ -115,7 +109,7 @@ below in action.</p>
 <code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>, <code class="docutils literal notranslate"><span class="pre">LinearSolvers</span></code>, etc.  In this tutorial the only source
 code directory we need is <code class="docutils literal notranslate"><span class="pre">Base</span></code>.</p>
 </dd>
-<dt>amrex-tutorials/GuidedTutorials/HeatEquation_EX1_C/Source</dt><dd><p>Contains the following source code specific to this tutorial:</p>
+<dt>amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/Source</dt><dd><p>Contains the following source code specific to this tutorial:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Make.package</span></code>: lists the source code files</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>: contains the C++ <code class="docutils literal notranslate"><span class="pre">main</span></code> function</p></li>
@@ -126,7 +120,7 @@ initializes the initial solution.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mykernel.H</span></code>: kernels functions called by <code class="docutils literal notranslate"><span class="pre">advance</span></code> and <code class="docutils literal notranslate"><span class="pre">init_phi</span></code>.</p></li>
 </ol>
 </dd>
-<dt>amrex-tutorials/GuidedTutorials/HeatEquation_EX1_C/Exec</dt><dd><p>This is where you build the code with make.  There is a GNUmakefile
+<dt>amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/Exec</dt><dd><p>This is where you build the code with make.  There is a GNUmakefile
 and inputs file.</p>
 </dd>
 </dl>

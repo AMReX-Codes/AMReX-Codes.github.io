@@ -1,16 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1EBMFCellConsLinInterp" kind="class" language="C++" prot="public" final="yes">
     <compoundname>amrex::EBMFCellConsLinInterp</compoundname>
     <basecompoundref refid="classamrex_1_1MFCellConsLinInterp" prot="public" virt="non-virtual">amrex::MFCellConsLinInterp</basecompoundref>
     <includes refid="AMReX__EBMFInterpolater_8H" local="no">AMReX_EBMFInterpolater.H</includes>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1EBMFCellConsLinInterp_1a024b3eb2b27436615aeb54a993c2f6f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void amrex::EBMFCellConsLinInterp::interp</definition>
         <argsstring>(MultiFab const &amp;crsemf, int ccomp, MultiFab &amp;finemf, int fcomp, int ncomp, IntVect const &amp;ng, Geometry const &amp;cgeom, Geometry const &amp;fgeom, Box const &amp;dest_domain, IntVect const &amp;ratio, Vector&lt; BCRec &gt; const &amp;bcs, int bcomp) override</argsstring>
         <name>interp</name>
-        <reimplements refid="classamrex_1_1MFCellConsLinInterp_1a188f59b61da019f7ed2eca4044b08cff">interp</reimplements>
+        <qualifiedname>amrex::EBMFCellConsLinInterp::interp</qualifiedname>
+        <reimplements refid="classamrex_1_1MFInterpolater_1ad58787e5d20224e834a55b1d566f7672">interp</reimplements>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const &amp;</type>
           <declname>crsemf</declname>
@@ -72,6 +73,7 @@
         <definition>amrex::MFCellConsLinInterp::MFCellConsLinInterp</definition>
         <argsstring>(bool do_linear_limiting_)</argsstring>
         <name>MFCellConsLinInterp</name>
+        <qualifiedname>amrex::EBMFCellConsLinInterp::MFCellConsLinInterp</qualifiedname>
         <param>
           <type>bool</type>
           <declname>do_linear_limiting_</declname>
@@ -84,56 +86,56 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H" line="13" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="53" bodyend="54"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4">
-        <label>amrex::InterpBase</label>
-        <link refid="classamrex_1_1InterpBase"/>
-      </node>
       <node id="1">
         <label>amrex::EBMFCellConsLinInterp</label>
         <link refid="classamrex_1_1EBMFCellConsLinInterp"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::MFInterpolater</label>
-        <link refid="classamrex_1_1MFInterpolater"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
+      <node id="4">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
       </node>
       <node id="2">
         <label>amrex::MFCellConsLinInterp</label>
         <link refid="classamrex_1_1MFCellConsLinInterp"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::MFInterpolater</label>
+        <link refid="classamrex_1_1MFInterpolater"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="4">
-        <label>amrex::InterpBase</label>
-        <link refid="classamrex_1_1InterpBase"/>
-      </node>
       <node id="1">
         <label>amrex::EBMFCellConsLinInterp</label>
         <link refid="classamrex_1_1EBMFCellConsLinInterp"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::MFInterpolater</label>
-        <link refid="classamrex_1_1MFInterpolater"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
+      <node id="4">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
       </node>
       <node id="2">
         <label>amrex::MFCellConsLinInterp</label>
         <link refid="classamrex_1_1MFCellConsLinInterp"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::MFInterpolater</label>
+        <link refid="classamrex_1_1MFInterpolater"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -149,9 +151,8 @@
       <member refid="classamrex_1_1InterpBase_1a021bb62c902497ccc17f9debb5fc10cc" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1InterpBase_1a2f6b67e875b76f7bcaa9151a1c6de2a6" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>InterpBase</name></member>
       <member refid="classamrex_1_1EBMFCellConsLinInterp_1a3143da788fef06af1498167b5d05a065" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>MFCellConsLinInterp</name></member>
-      <member refid="classamrex_1_1MFCellConsLinInterp_1a3143da788fef06af1498167b5d05a065" prot="public" virt="non-virtual" ambiguityscope="amrex::MFCellConsLinInterp::"><scope>amrex::EBMFCellConsLinInterp</scope><name>MFCellConsLinInterp</name></member>
-      <member refid="classamrex_1_1InterpBase_1a5753abe4eb1e3ac6d8747a0864533373" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1InterpBase_1a448200184ccdeced8fd7a609dd43fa71" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a9579ddf64adb4946cd65d7d931840b26" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1InterpBase_1a49faa298cde718a31582f53f26f0a4e7" prot="public" virt="non-virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>operator=</name></member>
       <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::EBMFCellConsLinInterp</scope><name>~InterpBase</name></member>
     </listofallmembers>
   </compounddef>

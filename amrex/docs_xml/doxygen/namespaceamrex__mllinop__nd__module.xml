@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex__mllinop__nd__module" kind="namespace" language="Fortran">
     <compoundname>amrex_mllinop_nd_module</compoundname>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceamrex__mllinop__nd__module_1aa8093488a6a576b9204a41a2c3b14612" prot="public" static="no" mutable="no">
         <type>integer, parameter</type>
         <definition>integer, parameter amrex_mllinop_nd_module::xlo_dir</definition>
         <argsstring></argsstring>
         <name>xlo_dir</name>
+        <qualifiedname>amrex_mllinop_nd_module::xlo_dir</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -22,6 +23,7 @@
         <definition>integer, parameter amrex_mllinop_nd_module::xhi_dir</definition>
         <argsstring></argsstring>
         <name>xhi_dir</name>
+        <qualifiedname>amrex_mllinop_nd_module::xhi_dir</qualifiedname>
         <initializer>= 1</initializer>
         <briefdescription>
         </briefdescription>
@@ -31,87 +33,88 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_nd.F90" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_nd.F90" bodystart="13" bodyend="13"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex__mllinop__nd__module_1a198adb293f84d85a8b1c8293e428b88c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine, public</type>
         <definition>subroutine, public amrex_mllinop_nd_module::amrex_mllinop_apply_bc</definition>
         <argsstring>(lo, hi, phi, hlo, hhi, mask, mlo, mhi, cdir, bct, bcl, bcval, blo, bhi, maxorder, dxinv, inhomog, nc, cross)</argsstring>
         <name>amrex_mllinop_apply_bc</name>
+        <qualifiedname>amrex_mllinop_nd_module::amrex_mllinop_apply_bc</qualifiedname>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>phi</type>
+          <type>real(amrex_real), dimension (hlo(1):hhi(1),hlo(2):hhi(2),hlo(3):hhi(3),nc), intent(inout)</type>
           <defname>phi</defname>
         </param>
         <param>
-          <type>hlo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>hlo</defname>
         </param>
         <param>
-          <type>hhi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>hhi</defname>
         </param>
         <param>
-          <type>mask</type>
+          <type>integer, dimension (mlo(1):mhi(1),mlo(2):mhi(2),mlo(3):mhi(3)), intent(in)</type>
           <defname>mask</defname>
         </param>
         <param>
-          <type>mlo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>mlo</defname>
         </param>
         <param>
-          <type>mhi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>mhi</defname>
         </param>
         <param>
-          <type>cdir</type>
+          <type>integer, intent(in), value</type>
           <defname>cdir</defname>
         </param>
         <param>
-          <type>bct</type>
+          <type>integer, intent(in), value</type>
           <defname>bct</defname>
         </param>
         <param>
-          <type>bcl</type>
+          <type>real(amrex_real), intent(in), value</type>
           <defname>bcl</defname>
         </param>
         <param>
-          <type>bcval</type>
+          <type>real(amrex_real), dimension(blo(1):bhi(1),blo(2):bhi(2),blo(3):bhi(3),nc), intent(in)</type>
           <defname>bcval</defname>
         </param>
         <param>
-          <type>blo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>blo</defname>
         </param>
         <param>
-          <type>bhi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>bhi</defname>
         </param>
         <param>
-          <type>maxorder</type>
+          <type>integer, intent(in), value</type>
           <defname>maxorder</defname>
         </param>
         <param>
-          <type>dxinv</type>
+          <type>real(amrex_real), dimension(3), intent(in)</type>
           <defname>dxinv</defname>
         </param>
         <param>
-          <type>inhomog</type>
+          <type>integer, intent(in), value</type>
           <defname>inhomog</defname>
         </param>
         <param>
-          <type>nc</type>
+          <type>integer, intent(in), value</type>
           <defname>nc</defname>
         </param>
         <param>
-          <type>cross</type>
+          <type>integer, intent(in), value</type>
           <defname>cross</defname>
         </param>
         <briefdescription>
@@ -122,7 +125,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_nd.F90" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_nd.F90" bodystart="36" bodyend="311"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

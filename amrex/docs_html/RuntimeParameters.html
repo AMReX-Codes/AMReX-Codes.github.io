@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Runtime Parameters &mdash; amrex 24.09-dev documentation</title>
+  <title>Runtime Parameters &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -64,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -131,15 +132,15 @@
              
   <section id="runtime-parameters">
 <span id="chap-inputs"></span><h1>Runtime Parameters<a class="headerlink" href="#runtime-parameters" title="Permalink to this heading"></a></h1>
-<p>This chapter contains a list of AMReX <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> runtime parameters
+<p>This chapter contains a list of AMReX <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> runtime parameters
 and their <strong>default</strong> values. They can be set by either including them in an
 inputs file, or specifying them at the command line, or passing a function
-to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="w"></span></code> and the function adds parameters to AMReX’s
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>’s parameter database. For more information on
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>, see <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
+to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> and the function adds parameters to AMReX’s
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>’s parameter database. For more information on
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, see <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>AMReX reserves the following prefixes in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+<p>AMReX reserves the following prefixes in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
 parameters: <code class="docutils literal notranslate"><span class="pre">amr</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex</span></code>, <code class="docutils literal notranslate"><span class="pre">blprofiler</span></code>, <code class="docutils literal notranslate"><span class="pre">device</span></code>,
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">eb2</span></code>, <code class="docutils literal notranslate"><span class="pre">fab</span></code>, <code class="docutils literal notranslate"><span class="pre">fabarray</span></code>,
 <code class="docutils literal notranslate"><span class="pre">geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">particles</span></code>, <code class="docutils literal notranslate"><span class="pre">tiny_profiler</span></code>, and
@@ -147,30 +148,30 @@ parameters: <code class="docutils literal notranslate"><span class="pre">amr</sp
 </div>
 <section id="amr">
 <h2>AMR<a class="headerlink" href="#amr" title="Permalink to this heading"></a></h2>
-<p>AMReX applications with AMR use either <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code> or the more
-specialized <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code>. Since <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code> is derived from
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code>, the parameters for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> class also apply
-to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span><span class="w"></span></code> class. Additionally, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code> is derived from
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrMesh</span><span class="w"></span></code>, so <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="w"></span></code> member functions are also available
-to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span><span class="w"></span></code>.</p>
+<p>AMReX applications with AMR use either <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code> or the more
+specialized <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code>. Since <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code> is derived from
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code>, the parameters for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> class also apply
+to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span></code> class. Additionally, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code> is derived from
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrMesh</span></code>, so <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code> member functions are also available
+to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Amr</span></code>.</p>
 <section id="amrcore-class">
 <h3>AmrCore Class<a class="headerlink" href="#amrcore-class" title="Permalink to this heading"></a></h3>
-<p>Below are a list of important <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters. However, AMReX
-applications can choose to avoid them entirely by use this <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRCore</span><span class="w"></span></code>
-constructor <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level_0_geom</span><span class="p">,</span><span class="w"> </span><span class="n">AmrInfo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"></span>
-<span class="n">amr_info</span><span class="p">)</span><span class="w"></span></code>, where <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">struct</span><span class="w"> </span><span class="nc">AmrInfo</span><span class="w"></span></code> contains all the information that
-can be set via <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>.</p>
+<p>Below are a list of important <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameters. However, AMReX
+applications can choose to avoid them entirely by use this <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRCore</span></code>
+constructor <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="p">(</span><span class="n">Geometry</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level_0_geom</span><span class="p">,</span><span class="w"> </span><span class="n">AmrInfo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span>
+<span class="n">amr_info</span><span class="p">)</span></code>, where <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">struct</span><span class="w"> </span><span class="nc">AmrInfo</span></code> contains all the information that
+can be set via <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.verbose">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#amr.verbose" title="Permalink to this definition"></a></dt>
-<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> functions.</p>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> functions.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.n_cell">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">n_cell</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.n_cell" title="Permalink to this definition"></a></dt>
 <dd><p>This parameter is used only when <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> is not provided as an
-argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> constructors. It specifies the number of cells
+argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> constructors. It specifies the number of cells
 in each dimension on Level 0.</p>
 </dd></dl>
 
@@ -178,7 +179,7 @@ in each dimension on Level 0.</p>
 <dt class="sig sig-object py" id="amr.max_level">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">max_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.max_level" title="Permalink to this definition"></a></dt>
 <dd><p>This parameter is used only when <code class="docutils literal notranslate"><span class="pre">max_level</span></code> is not provided as an
-argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code> constructors. It specifies the maximum level
+argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code> constructors. It specifies the maximum level
 of refinement allowed. Note that the total number of levels, including
 the base level 0, is <code class="docutils literal notranslate"><span class="pre">max_level+1</span></code>.</p>
 </dd></dl>
@@ -186,9 +187,9 @@ the base level 0, is <code class="docutils literal notranslate"><span class="pre
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.ref_ratio">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">ref_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">...</span> <span class="pre">2</span></em><a class="headerlink" href="#amr.ref_ratio" title="Permalink to this definition"></a></dt>
-<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code>
+<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>
 constructors and <a class="reference internal" href="#amr.ref_ratio_vect" title="amr.ref_ratio_vect"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.ref_ratio_vect</span></code></a> is not found in the
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> database, this parameter will be used to set the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database, this parameter will be used to set the
 refinement ratios between AMR levels. If there are more AMR levels than
 the size of the integer parameter array, the last integer will be used as
 the refinement ratio for the unspecified levels. For example, if
@@ -200,9 +201,9 @@ and 3/4, respectively.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.ref_ratio_vect">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">ref_ratio_vect</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#amr.ref_ratio_vect" title="Permalink to this definition"></a></dt>
-<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span><span class="w"></span></code>
+<dd><p>If the refinement ratio is not provided as an argument to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrCore</span></code>
 constructors and <a class="reference internal" href="#amr.ref_ratio_vect" title="amr.ref_ratio_vect"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.ref_ratio_vect</span></code></a> is found in the
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> database, it will be used to set the refinement ratios
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> database, it will be used to set the refinement ratios
 between AMR levels. It’s an error if the size of the integer array, if
 found, is less than <code class="docutils literal notranslate"><span class="pre">max_level*AMREX_SPACEDIM</span></code>. The first
 <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> numbers specify the refinement ratios in the
@@ -219,7 +220,7 @@ level. If the size of the integer array is less than the total number of
 levels, the last integer will be used for the unspecified levels. The
 default value is 128 for 1D and 2D runs. For 3D runs, the default value
 is 64 and 32, for GPU and CPU runs, respectively. Note that the user can
-also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetMaxGridSize</span><span class="w"></span></code> to set the maximum grid
+also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetMaxGridSize</span></code> to set the maximum grid
 sizes. Additionally, the values set by this parameter can be overridden
 by <a class="reference internal" href="#amr.max_grid_size_x" title="amr.max_grid_size_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_x</span></code></a>, <a class="reference internal" href="#amr.max_grid_size_y" title="amr.max_grid_size_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_y</span></code></a> and
 <a class="reference internal" href="#amr.max_grid_size_z" title="amr.max_grid_size_z"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.max_grid_size_z</span></code></a>.</p>
@@ -259,7 +260,7 @@ the unspecified levels.</p>
 level. If the size of the integer array is less than the total number of
 levels, the last integer will be used for the unspecified levels. The
 default value is 8. Note that the user can also call
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetBlockingFactor</span><span class="w"></span></code> to set the blocking
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetBlockingFactor</span></code> to set the blocking
 factors. Additionally, the values set by this parameter can be overridden
 by <a class="reference internal" href="#amr.blocking_factor_x" title="amr.blocking_factor_x"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_x</span></code></a>, <a class="reference internal" href="#amr.blocking_factor_y" title="amr.blocking_factor_y"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_y</span></code></a> and
 <a class="reference internal" href="#amr.blocking_factor_z" title="amr.blocking_factor_z"><code class="xref py py-data docutils literal notranslate"><span class="pre">amr.blocking_factor_z</span></code></a>.</p>
@@ -299,7 +300,7 @@ for the unspecified levels.</p>
 example, if we have <code class="docutils literal notranslate"><span class="pre">blocking_factor</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">ref_ratio</span> <span class="pre">=</span> <span class="pre">2</span></code> and
 <code class="docutils literal notranslate"><span class="pre">n_proper</span> <span class="pre">=</span> <span class="pre">1</span></code>, there will be at least <code class="docutils literal notranslate"><span class="pre">8/2*1</span> <span class="pre">=</span> <span class="pre">4</span></code> coarse level cells
 outside the fine level grids except at the physical boundaries. Note that
-the user can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetNProper</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code> to set the proper
+the user can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetNProper</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> to set the proper
 nesting parameter.</p>
 </dd></dl>
 
@@ -310,7 +311,7 @@ nesting parameter.</p>
 creation. While a higher value can enhance efficiency, it may negatively
 impact overall performance, especially for GPU runs, because it tends to
 create smaller grids. Note that the user can also call
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetGridEff</span><span class="p">(</span><span class="n">Real</span><span class="p">)</span><span class="w"></span></code> to set the grid efficiency threshold.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="o">::</span><span class="n">SetGridEff</span><span class="p">(</span><span class="n">Real</span><span class="p">)</span></code> to set the grid efficiency threshold.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -383,7 +384,7 @@ violate the blocking factor constraint.</p>
 <dt class="sig sig-object py" id="amr.check_input">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">check_input</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amr.check_input" title="Permalink to this definition"></a></dt>
 <dd><p>If this is true, AMReX will check if the various parameters in
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span><span class="w"></span></code> are reasonable.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrMesh</span></code> are reasonable.</p>
 </dd></dl>
 
 </section>
@@ -391,8 +392,8 @@ violate the blocking factor constraint.</p>
 <h3>Amr Class<a class="headerlink" href="#amr-class" title="Permalink to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>These parameters are specific to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code> based
-applications. If your application use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span><span class="w"></span></code>
+<p>These parameters are specific to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code> based
+applications. If your application use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code>
 directly, they do not apply unless you have provided
 implementations for them.</p>
 </div>
@@ -401,7 +402,7 @@ implementations for them.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.subcycling_mode">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">subcycling_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Auto</span></em><a class="headerlink" href="#amr.subcycling_mode" title="Permalink to this definition"></a></dt>
-<dd><p>This controls the subcycling mode of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span><span class="w"></span></code>. Possible value
+<dd><p>This controls the subcycling mode of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code>. Possible value
 are <code class="docutils literal notranslate"><span class="pre">None</span></code> for no subcycling, or <code class="docutils literal notranslate"><span class="pre">Auto</span></code> for subcycling.</p>
 </dd></dl>
 
@@ -503,7 +504,7 @@ or equal to 0 indicates no checkpoint files will be written.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.checkpoint_nfiles">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">checkpoint_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#amr.checkpoint_nfiles" title="Permalink to this definition"></a></dt>
-<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> when
+<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> when
 writing checkpoint files.</p>
 </dd></dl>
 
@@ -555,7 +556,7 @@ will be saved in a plot file.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amr.plot_nfiles">
 <span class="sig-prename descclassname"><span class="pre">amr.</span></span><span class="sig-name descname"><span class="pre">plot_nfiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#amr.plot_nfiles" title="Permalink to this definition"></a></dt>
-<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> when
+<dd><p>This is the maximum number of binary files per <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> when
 writing plot files.</p>
 </dd></dl>
 
@@ -699,16 +700,16 @@ log file name.</p>
 <dt class="sig sig-object py" id="amrex.verbose">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#amrex.verbose" title="Permalink to this definition"></a></dt>
 <dd><p>This controls the verbosity level of AMReX. Besides using
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>, you can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code> to set
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>, you can also call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> to set
 it.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.init_snan">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">init_snan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[build</span> <span class="pre">dependent]</span></em><a class="headerlink" href="#amrex.init_snan" title="Permalink to this definition"></a></dt>
-<dd><p>This controls whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PODVectors</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"></span></code>, etc. will be initialized to
+<dd><p>This controls whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PODVectors</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">|</span><span class="kt">float</span><span class="o">&gt;</span></code>, etc. will be initialized to
 signaling NaNs at construction. The default value is true for debug
 builds. For non-debug builds, the default is false unless <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code>
 for GNU Make or <code class="docutils literal notranslate"><span class="pre">AMReX_TESTING</span></code> is enabled for CMake.</p>
@@ -717,17 +718,17 @@ for GNU Make or <code class="docutils literal notranslate"><span class="pre">AMR
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.abort_on_unused_inputs">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">abort_on_unused_inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.abort_on_unused_inputs" title="Permalink to this definition"></a></dt>
-<dd><p>If this is true and there are unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameters, AMReX
-will abort during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="w"></span></code>.</p>
+<dd><p>If this is true and there are unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameters, AMReX
+will abort during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code>.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.parmparse.verbose">
 <span class="sig-prename descclassname"><span class="pre">amrex.parmparse.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">amrex.verbose</span></em><a class="headerlink" href="#amrex.parmparse.verbose" title="Permalink to this definition"></a></dt>
-<dd><p>If this is greater than zero, unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> variables will be
-printed out during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="w"></span></code> or
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">QueryUnusedInputs</span><span class="w"></span></code>. The parameter can also be set by
-calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>.</p>
+<dd><p>If this is greater than zero, unused <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> variables will be
+printed out during <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> or
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">QueryUnusedInputs</span></code>. The parameter can also be set by
+calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParmParse</span><span class="o">::</span><span class="n">SetVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -785,17 +786,17 @@ libraries.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="DistributionMapping.verbose">
 <span class="sig-prename descclassname"><span class="pre">DistributionMapping.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#DistributionMapping.verbose" title="Permalink to this definition"></a></dt>
-<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code>
 functions.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="DistributionMapping.strategy">
 <span class="sig-prename descclassname"><span class="pre">DistributionMapping.</span></span><span class="sig-name descname"><span class="pre">strategy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">SFC</span></em><a class="headerlink" href="#DistributionMapping.strategy" title="Permalink to this definition"></a></dt>
-<dd><p>This is the default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code> strategy. Possible values
+<dd><p>This is the default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code> strategy. Possible values
 are <code class="docutils literal notranslate"><span class="pre">SFC</span></code>, <code class="docutils literal notranslate"><span class="pre">KNAPSACK</span></code>, <code class="docutils literal notranslate"><span class="pre">ROUNDROBIN</span></code>, or <code class="docutils literal notranslate"><span class="pre">RRSFC</span></code>. Note that the
 default strategy can also be set by calling
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">strategy</span><span class="p">(</span><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">Strategy</span><span class="p">)</span><span class="w"></span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">strategy</span><span class="p">(</span><span class="n">DistributionMapping</span><span class="o">::</span><span class="n">Strategy</span><span class="p">)</span></code>.</p>
 </dd></dl>
 
 </section>
@@ -815,7 +816,7 @@ database, not the user’s data.</p>
 domain. If this is true, the embedded boundary outside the domain is
 extended perpendicularly from the domain face. Otherwise, it’s generated
 with the user provided implicit function. Note that this parameter can be
-overridden by the user when calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"></span></code> with the
+overridden by the user when calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span></code> with the
 optional parameter <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">extend_domain_face</span></code>.</p>
 </dd></dl>
 
@@ -828,7 +829,7 @@ coarsened by this factor and then the EB information details will be
 generated on the original grids. However, the user should be aware that
 setting this parameter too high could result in erroneous results. Also
 note that this parameter can be overridden by the user when calling
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"></span></code> with the optional parameter <code class="docutils literal notranslate"><span class="pre">int</span>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span></code> with the optional parameter <code class="docutils literal notranslate"><span class="pre">int</span>
 <span class="pre">num_coarsen_opt</span></code>.</p>
 </dd></dl>
 
@@ -837,7 +838,7 @@ note that this parameter can be overridden by the user when calling
 <span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">geom_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#eb2.geom_type" title="Permalink to this definition"></a></dt>
 <dd><p>There are two versions of the <cite>amrex::EB2::Build</cite> function that can be
 used to build EB. One version is a function template that takes a user
-provided <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span><span class="w"></span></code>, while the other uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+provided <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span></code>, while the other uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
 parameters to build EB. For the latter version, this parameter specifies
 the type of the EB. Possible values include the following.</p>
 <dl class="simple">
@@ -896,7 +897,7 @@ STL file will be reversed if this optional parameter is set to true.</p>
 <span class="sig-prename descclassname"><span class="pre">eb2.</span></span><span class="sig-name descname"><span class="pre">small_volfrac</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[depend</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">amrex::Real]</span></em><a class="headerlink" href="#eb2.small_volfrac" title="Permalink to this definition"></a></dt>
 <dd><p>This parameter specifies the threshold for small cells that will be
 converted to covered cells. The default value is <code class="docutils literal notranslate"><span class="pre">1.e-14</span></code> if
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"></span></code> is <code class="docutils literal notranslate"><span class="pre">double</span></code>, or <code class="docutils literal notranslate"><span class="pre">1.e-5</span></code> if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"></span></code> is
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span></code> is <code class="docutils literal notranslate"><span class="pre">double</span></code>, or <code class="docutils literal notranslate"><span class="pre">1.e-5</span></code> if <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span></code> is
 <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 </dd></dl>
 
@@ -992,10 +993,10 @@ will be handled by AMReX.</p>
 <dt class="sig sig-object py" id="amrex.throw_exception">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">throw_exception</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.throw_exception" title="Permalink to this definition"></a></dt>
 <dd><p>If this flag is true and <code class="docutils literal notranslate"><span class="pre">amrex.signal_handling</span></code> is false,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Error</span><span class="w"></span></code> will throw
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="w"></span></code> instead of aborting immediately. Note that
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Error</span></code> will throw
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span></code> instead of aborting immediately. Note that
 according the C++ standard, if an exception is thrown and not caught,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">terminate</span><span class="w"></span></code> will be called.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">terminate</span></code> will be called.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1038,7 +1039,7 @@ enabled. This flag has no effect on Windows.</p>
 <dt class="sig sig-object py" id="amrex.init_hypre">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">init_hypre</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">true</span></em><a class="headerlink" href="#amrex.init_hypre" title="Permalink to this definition"></a></dt>
 <dd><p>This controls whether AMReX should call <code class="docutils literal notranslate"><span class="pre">HYPRE_Init()</span></code> during
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="w"></span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1126,7 +1127,7 @@ used when AMReX writes a plotfile asynchronously.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="vismf.verbose">
 <span class="sig-prename descclassname"><span class="pre">vismf.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#vismf.verbose" title="Permalink to this definition"></a></dt>
-<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">VisMF</span><span class="w"></span></code> functions.</p>
+<dd><p>This controls the verbosity level of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">VisMF</span></code> functions.</p>
 </dd></dl>
 
 </section>
@@ -1143,7 +1144,7 @@ time to 3/4 of the system’s device memory.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">amrex</span> <span class="pre">v24.08</span></code>, instead of
 <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=10000000000</span></code>, one can use
 <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=10'000'000'000</span></code> or
-<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=1e10</span></code> to set <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code>
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size=1e10</span></code> to set <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
 integer parameters like this one.</p>
 </div>
 </dd></dl>
@@ -1236,16 +1237,16 @@ parameter is only relevant for GPU runs.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.mf.alloc_single_chunk">
 <span class="sig-prename descclassname"><span class="pre">amrex.mf.</span></span><span class="sig-name descname"><span class="pre">alloc_single_chunk</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#amrex.mf.alloc_single_chunk" title="Permalink to this definition"></a></dt>
-<dd><p>This controls if all the data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="w"></span></code> (including
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>) are in a contiguous chunk of memory.</p>
+<dd><p>This controls if all the data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span></code> (including
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) are in a contiguous chunk of memory.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="amrex.vector_growth_factor">
 <span class="sig-prename descclassname"><span class="pre">amrex.</span></span><span class="sig-name descname"><span class="pre">vector_growth_factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.5</span></em><a class="headerlink" href="#amrex.vector_growth_factor" title="Permalink to this definition"></a></dt>
-<dd><p>This controls the growth factor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">PODVector</span><span class="w"></span></code> and its
-derived classes such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span><span class="w"></span></code>,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span><span class="w"></span></code>, etc. A smaller value can avoid wasting
+<dd><p>This controls the growth factor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">PODVector</span></code> and its
+derived classes such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">DeviceVector</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span></code>, etc. A smaller value can avoid wasting
 memory, but it may result in a performance penalty during resizing.</p>
 </dd></dl>
 
@@ -1304,7 +1305,7 @@ they exist).</p>
 </section>
 <section id="tiny-profiler">
 <h2>Tiny Profiler<a class="headerlink" href="#tiny-profiler" title="Permalink to this heading"></a></h2>
-<p>These parameters are ignored unless profiling with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TinyProfiler</span><span class="w"></span></code> is
+<p>These parameters are ignored unless profiling with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">TinyProfiler</span></code> is
 enabled.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="tiny_profiler.verbose">
@@ -1341,7 +1342,7 @@ performance.</p>
 <p><span class="versionmodified added">New in version 24.09: </span>Runtime parameter <cite>tiny_profiler.enabled`</cite>.</p>
 </div>
 <p>This parameter can be used to disable tiny profiling including
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CArena</span><span class="w"></span></code> memory profiling at run time.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CArena</span></code> memory profiling at run time.</p>
 </dd></dl>
 
 <dl class="py data">
@@ -1350,7 +1351,7 @@ performance.</p>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">New in version 24.09: </span>Runtime parameter <code class="docutils literal notranslate"><span class="pre">tiny_profiler.memprof_enabled</span></code>.</p>
 </div>
-<p>This parameter can be used to disable <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CArena</span><span class="w"></span></code> memory profiling at
+<p>This parameter can be used to disable <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CArena</span></code> memory profiling at
 run time. If <code class="docutils literal notranslate"><span class="pre">tiny_profiler.enabled</span></code> is false, this parameter has no
 effects.</p>
 </dd></dl>
@@ -1363,8 +1364,8 @@ effects.</p>
 </div>
 <p>If this parameter is empty, the output of tiny profiling is dumped on the
 default out stream of AMReX. If it’s not empty, it specifies the file
-name for the output. Note that <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> is a special name that mean
-a null file.</p>
+name for the output. Note that <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> is a special name that means
+no output.</p>
 </dd></dl>
 
 </section>

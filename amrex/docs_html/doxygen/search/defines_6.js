@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['getarray_19440',['GETARRAY',['../AMReX__FabConv_8cpp.html#ac265e0db12a553b74d8560ca6678d17d',1,'AMReX_FabConv.cpp']]]
+  ['j_5fhi_0',['j_hi',['../AMReX__MLMG__2D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI:&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI:&#160;AMReX_MLMG_3D_K.H']]],
+  ['j_5flo_1',['j_lo',['../AMReX__MLMG__2D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO:&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO:&#160;AMReX_MLMG_3D_K.H']]]
 ];

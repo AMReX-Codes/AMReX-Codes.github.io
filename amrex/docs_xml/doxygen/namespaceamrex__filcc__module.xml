@@ -1,48 +1,49 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex__filcc__module" kind="namespace" language="Fortran">
     <compoundname>amrex_filcc_module</compoundname>
     <innerclass refid="interfaceamrex__filcc__module_1_1amrex__filcc" prot="public">amrex_filcc_module::amrex_filcc</innerclass>
-      <sectiondef kind="func">
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex__filcc__module_1ac06bb6294d56c80760256fef18826ce7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine amrex_filcc_module::amrex_filcc_n</definition>
         <argsstring>(q, qlo, qhi, domlo, domhi, dx, xlo, bclo, bchi)</argsstring>
         <name>amrex_filcc_n</name>
+        <qualifiedname>amrex_filcc_module::amrex_filcc_n</qualifiedname>
         <param>
-          <type>q</type>
+          <type>real(amrex_real), dimension(qlo(1):qhi(1),qlo(2):qhi(2),qlo(3):qhi(3),qlo(4):qhi(4)), intent(inout)</type>
           <defname>q</defname>
         </param>
         <param>
-          <type>qlo</type>
+          <type>integer, dimension(4), intent(in)</type>
           <defname>qlo</defname>
         </param>
         <param>
-          <type>qhi</type>
+          <type>integer, dimension(4), intent(in)</type>
           <defname>qhi</defname>
         </param>
         <param>
-          <type>domlo</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domlo</defname>
         </param>
         <param>
-          <type>domhi</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domhi</defname>
         </param>
         <param>
-          <type>dx</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>dx</defname>
         </param>
         <param>
-          <type>xlo</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>xlo</defname>
         </param>
         <param>
-          <type>bclo</type>
+          <type>integer, dimension(amrex_spacedim,*), intent(in)</type>
           <defname>bclo</defname>
         </param>
         <param>
-          <type>bchi</type>
+          <type>integer, dimension(amrex_spacedim,*), intent(in)</type>
           <defname>bchi</defname>
         </param>
         <briefdescription>
@@ -58,36 +59,37 @@
         <definition>subroutine amrex_filcc_module::amrex_filcc_1</definition>
         <argsstring>(q, qlo1, qhi1, domlo, domhi, dx, xlo, bc)</argsstring>
         <name>amrex_filcc_1</name>
+        <qualifiedname>amrex_filcc_module::amrex_filcc_1</qualifiedname>
         <param>
-          <type>q</type>
+          <type>real(amrex_real), dimension(qlo1:qhi1), intent(inout)</type>
           <defname>q</defname>
         </param>
         <param>
-          <type>qlo1</type>
+          <type>integer, intent(in)</type>
           <defname>qlo1</defname>
         </param>
         <param>
-          <type>qhi1</type>
+          <type>integer, intent(in)</type>
           <defname>qhi1</defname>
         </param>
         <param>
-          <type>domlo</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domlo</defname>
         </param>
         <param>
-          <type>domhi</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domhi</defname>
         </param>
         <param>
-          <type>dx</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>dx</defname>
         </param>
         <param>
-          <type>xlo</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>xlo</defname>
         </param>
         <param>
-          <type>bc</type>
+          <type>integer, dimension(amrex_spacedim, 2), intent(in)</type>
           <defname>bc</defname>
         </param>
         <briefdescription>
@@ -103,40 +105,41 @@
         <definition>subroutine, public amrex_filcc_module::amrex_fab_filcc</definition>
         <argsstring>(q, qlo, qhi, nq, domlo, domhi, dx, xlo, bc)</argsstring>
         <name>amrex_fab_filcc</name>
+        <qualifiedname>amrex_filcc_module::amrex_fab_filcc</qualifiedname>
         <param>
-          <type>q</type>
+          <type>real(amrex_real), dimension(qlo(1):qhi(1),qlo(2):qhi(2),qlo(3):qhi(3),nq), intent(inout)</type>
           <defname>q</defname>
         </param>
         <param>
-          <type>qlo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>qlo</defname>
         </param>
         <param>
-          <type>qhi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>qhi</defname>
         </param>
         <param>
-          <type>nq</type>
+          <type>integer, intent(in)</type>
           <defname>nq</defname>
         </param>
         <param>
-          <type>domlo</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domlo</defname>
         </param>
         <param>
-          <type>domhi</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domhi</defname>
         </param>
         <param>
-          <type>dx</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>dx</defname>
         </param>
         <param>
-          <type>xlo</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>xlo</defname>
         </param>
         <param>
-          <type>bc</type>
+          <type>integer, dimension(amrex_spacedim,2,nq), intent(in)</type>
           <defname>bc</defname>
         </param>
         <briefdescription>
@@ -152,48 +155,49 @@
         <definition>subroutine, public amrex_filcc_module::amrex_filccn</definition>
         <argsstring>(lo, hi, q, q_lo, q_hi, ncomp, domlo, domhi, dx, xlo, bc)</argsstring>
         <name>amrex_filccn</name>
+        <qualifiedname>amrex_filcc_module::amrex_filccn</qualifiedname>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>hi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>hi</defname>
         </param>
         <param>
-          <type>q</type>
+          <type>real(amrex_real), dimension(q_lo(1):q_hi(1),q_lo(2):q_hi(2),q_lo(3):q_hi(3),ncomp), intent(inout)</type>
           <defname>q</defname>
         </param>
         <param>
-          <type>q_lo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>q_lo</defname>
         </param>
         <param>
-          <type>q_hi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>q_hi</defname>
         </param>
         <param>
-          <type>ncomp</type>
+          <type>integer, intent(in)</type>
           <defname>ncomp</defname>
         </param>
         <param>
-          <type>domlo</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domlo</defname>
         </param>
         <param>
-          <type>domhi</type>
+          <type>integer, dimension(amrex_spacedim), intent(in)</type>
           <defname>domhi</defname>
         </param>
         <param>
-          <type>dx</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>dx</defname>
         </param>
         <param>
-          <type>xlo</type>
+          <type>real(amrex_real), dimension(amrex_spacedim), intent(in)</type>
           <defname>xlo</defname>
         </param>
         <param>
-          <type>bc</type>
+          <type>integer, dimension(amrex_spacedim,2,ncomp), intent(in)</type>
           <defname>bc</defname>
         </param>
         <briefdescription>
@@ -209,32 +213,33 @@
         <definition>subroutine, public amrex_filcc_module::amrex_hoextraptocc</definition>
         <argsstring>(q, qlo, qhi, domlo, domhi, dx, xlo)</argsstring>
         <name>amrex_hoextraptocc</name>
+        <qualifiedname>amrex_filcc_module::amrex_hoextraptocc</qualifiedname>
         <param>
-          <type>q</type>
+          <type>real(amrex_real), dimension(qlo(1):qhi(1),qlo(2):qhi(2),qlo(3):qhi(3)), intent(inout)</type>
           <defname>q</defname>
         </param>
         <param>
-          <type>qlo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>qlo</defname>
         </param>
         <param>
-          <type>qhi</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>qhi</defname>
         </param>
         <param>
-          <type>domlo</type>
+          <type>integer, dimension(*), intent(in)</type>
           <defname>domlo</defname>
         </param>
         <param>
-          <type>domhi</type>
+          <type>integer, dimension(*), intent(in)</type>
           <defname>domhi</defname>
         </param>
         <param>
-          <type>dx</type>
+          <type>real(amrex_real), dimension(*), intent(in)</type>
           <defname>dx</defname>
         </param>
         <param>
-          <type>xlo</type>
+          <type>real(amrex_real), dimension(*), intent(in)</type>
           <defname>xlo</defname>
         </param>
         <briefdescription>
@@ -245,7 +250,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_filcc_mod.F90" line="1120" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_filcc_mod.F90" bodystart="1122" bodyend="1130"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

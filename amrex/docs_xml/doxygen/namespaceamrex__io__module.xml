@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex__io__module" kind="namespace" language="Fortran">
     <compoundname>amrex_io_module</compoundname>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceamrex__io__module_1a60b6d1a7ebbeef734c0ad2b2d1f67e31" prot="private" static="no" mutable="no">
         <type>integer, parameter, private</type>
         <definition>integer, parameter, private amrex_io_module::io_stdin</definition>
         <argsstring></argsstring>
         <name>io_stdin</name>
+        <qualifiedname>amrex_io_module::io_stdin</qualifiedname>
         <initializer>= 5</initializer>
         <briefdescription>
 <para>Default input and output units: </para>
@@ -23,6 +24,7 @@
         <definition>integer, parameter, private amrex_io_module::io_stdout</definition>
         <argsstring></argsstring>
         <name>io_stdout</name>
+        <qualifiedname>amrex_io_module::io_stdout</qualifiedname>
         <initializer>= 6</initializer>
         <briefdescription>
         </briefdescription>
@@ -37,6 +39,7 @@
         <definition>integer, parameter, private amrex_io_module::io_num_precon</definition>
         <argsstring></argsstring>
         <name>io_num_precon</name>
+        <qualifiedname>amrex_io_module::io_num_precon</qualifiedname>
         <initializer>= 3</initializer>
         <briefdescription>
 <para>Number and value of pre-connected units. </para>
@@ -52,6 +55,7 @@
         <definition>integer, dimension(io_num_precon), parameter, private amrex_io_module::io_precon_units</definition>
         <argsstring></argsstring>
         <name>io_precon_units</name>
+        <qualifiedname>amrex_io_module::io_precon_units</qualifiedname>
         <initializer>= (/ 0, 5, 6 /)</initializer>
         <briefdescription>
         </briefdescription>
@@ -66,6 +70,7 @@
         <definition>integer, parameter, private amrex_io_module::io_max_unit</definition>
         <argsstring></argsstring>
         <name>io_max_unit</name>
+        <qualifiedname>amrex_io_module::io_max_unit</qualifiedname>
         <initializer>= 1000</initializer>
         <briefdescription>
 <para>Largest allowed unit number (or a large number, if none) </para>
@@ -76,15 +81,16 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_io_mod.F90" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_io_mod.F90" bodystart="17" bodyend="17"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex__io__module_1a6fcead01fd17200da7dcfbfcb381b90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>integer function</type>
         <definition>integer function amrex_io_module::unit_new</definition>
         <argsstring>()</argsstring>
         <name>unit_new</name>
+        <qualifiedname>amrex_io_module::unit_new</qualifiedname>
         <briefdescription>
-<para>Several routines are written so that they can be conveniently called in routines that have optional arguments. For example, `` subroutine print_box(box, unit) optional :: unit write(unit=unit_stdout(unit), fmt *) box `` This routine will print on the stdout if UNIT is not passed to print_box, but will print to UNIT if UNIT is passed. </para>
+<para>Several routines are written so that they can be conveniently called in routines that have optional arguments. For example, <computeroutput> subroutine print_box(box, unit) optional :: unit write(unit=unit_stdout(unit), fmt *) box </computeroutput> This routine will print on the stdout if UNIT is not passed to print_box, but will print to UNIT if UNIT is passed. </para>
         </briefdescription>
         <detaileddescription>
 <para>Returns a unit number of a unit that exists and is not connected </para>
@@ -98,8 +104,9 @@
         <definition>pure integer function amrex_io_module::unit_stdin</definition>
         <argsstring>(unit)</argsstring>
         <name>unit_stdin</name>
+        <qualifiedname>amrex_io_module::unit_stdin</qualifiedname>
         <param>
-          <type>unit</type>
+          <type>integer, intent(in), optional</type>
           <defname>unit</defname>
         </param>
         <briefdescription>
@@ -116,8 +123,9 @@
         <definition>pure integer function amrex_io_module::unit_stdout</definition>
         <argsstring>(unit)</argsstring>
         <name>unit_stdout</name>
+        <qualifiedname>amrex_io_module::unit_stdout</qualifiedname>
         <param>
-          <type>unit</type>
+          <type>integer, intent(in), optional</type>
           <defname>unit</defname>
         </param>
         <briefdescription>
@@ -134,8 +142,9 @@
         <definition>pure character(len=3) function amrex_io_module::unit_advance</definition>
         <argsstring>(advance)</argsstring>
         <name>unit_advance</name>
+        <qualifiedname>amrex_io_module::unit_advance</qualifiedname>
         <param>
-          <type>advance</type>
+          <type>character(len=*), intent(in), optional</type>
           <defname>advance</defname>
         </param>
         <briefdescription>
@@ -152,12 +161,13 @@
         <definition>subroutine amrex_io_module::unit_skip</definition>
         <argsstring>(unit, skip)</argsstring>
         <name>unit_skip</name>
+        <qualifiedname>amrex_io_module::unit_skip</qualifiedname>
         <param>
-          <type>unit</type>
+          <type>integer, intent(in)</type>
           <defname>unit</defname>
         </param>
         <param>
-          <type>skip</type>
+          <type>integer, intent(in), optional</type>
           <defname>skip</defname>
         </param>
         <briefdescription>
@@ -174,8 +184,9 @@
         <definition>pure integer function amrex_io_module::unit_get_skip</definition>
         <argsstring>(skip)</argsstring>
         <name>unit_get_skip</name>
+        <qualifiedname>amrex_io_module::unit_get_skip</qualifiedname>
         <param>
-          <type>skip</type>
+          <type>integer, intent(in), optional</type>
           <defname>skip</defname>
         </param>
         <briefdescription>
@@ -187,7 +198,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_io_mod.F90" line="99" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_io_mod.F90" bodystart="100" bodyend="102"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

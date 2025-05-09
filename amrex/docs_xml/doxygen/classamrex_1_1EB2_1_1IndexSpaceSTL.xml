@@ -1,15 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1EB2_1_1IndexSpaceSTL" kind="class" language="C++" prot="public">
     <compoundname>amrex::EB2::IndexSpaceSTL</compoundname>
     <basecompoundref refid="classamrex_1_1EB2_1_1IndexSpace" prot="public" virt="non-virtual">amrex::EB2::IndexSpace</basecompoundref>
     <includes refid="AMReX__EB2__IndexSpace__STL_8H" local="no">AMReX_EB2_IndexSpace_STL.H</includes>
-      <sectiondef kind="private-attrib">
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab14caa115cde8da650b6587b8e73dd02" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1EB2_1_1STLLevel" kindref="compound">STLLevel</ref> &gt;</type>
         <definition>Vector&lt;STLLevel&gt; amrex::EB2::IndexSpaceSTL::m_stllevel</definition>
         <argsstring></argsstring>
         <name>m_stllevel</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::m_stllevel</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>Vector&lt;Geometry&gt; amrex::EB2::IndexSpaceSTL::m_geom</definition>
         <argsstring></argsstring>
         <name>m_geom</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::m_geom</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -36,6 +38,7 @@
         <definition>Vector&lt;Box&gt; amrex::EB2::IndexSpaceSTL::m_domain</definition>
         <argsstring></argsstring>
         <name>m_domain</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::m_domain</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -49,6 +52,7 @@
         <definition>Vector&lt;int&gt; amrex::EB2::IndexSpaceSTL::m_ngrow</definition>
         <argsstring></argsstring>
         <name>m_ngrow</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::m_ngrow</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -57,13 +61,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="44" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" bodystart="44" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1abe85200c4d1b12e00b1c39640553f064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1ae531b8586503ec67f4d3ddf8ae4397d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</definition>
-        <argsstring>(const std::string &amp;stl_file, Real stl_scale, Array&lt; Real, 3 &gt; const &amp;stl_center, int stl_reverse_normal, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool extend_domain_face, int num_coarsen_opt)</argsstring>
+        <argsstring>(const std::string &amp;stl_file, Real stl_scale, Array&lt; Real, 3 &gt; const &amp;stl_center, int stl_reverse_normal, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool extend_domain_face, int num_coarsen_opt, bool bvh_optimization)</argsstring>
         <name>IndexSpaceSTL</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>stl_file</declname>
@@ -108,19 +113,24 @@
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>num_coarsen_opt</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>bvh_optimization</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="17" column="4" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="5" bodyend="67"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="17" column="4" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="5" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1accce0356b6e62b40a6fa8bb0cf1a9402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</definition>
         <argsstring>(IndexSpaceSTL const &amp;)=delete</argsstring>
         <name>IndexSpaceSTL</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL" kindref="compound">IndexSpaceSTL</ref> const &amp;</type>
         </param>
@@ -137,6 +147,7 @@
         <definition>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</definition>
         <argsstring>(IndexSpaceSTL &amp;&amp;)=delete</argsstring>
         <name>IndexSpaceSTL</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::IndexSpaceSTL</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL" kindref="compound">IndexSpaceSTL</ref> &amp;&amp;</type>
         </param>
@@ -153,6 +164,7 @@
         <definition>void amrex::EB2::IndexSpaceSTL::operator=</definition>
         <argsstring>(IndexSpaceSTL const &amp;)=delete</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::operator=</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL" kindref="compound">IndexSpaceSTL</ref> const &amp;</type>
         </param>
@@ -169,6 +181,7 @@
         <definition>void amrex::EB2::IndexSpaceSTL::operator=</definition>
         <argsstring>(IndexSpaceSTL &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::operator=</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL" kindref="compound">IndexSpaceSTL</ref> &amp;&amp;</type>
         </param>
@@ -185,6 +198,7 @@
         <definition>amrex::EB2::IndexSpaceSTL::~IndexSpaceSTL</definition>
         <argsstring>() override=default</argsstring>
         <name>~IndexSpaceSTL</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::~IndexSpaceSTL</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -198,7 +212,8 @@
         <definition>const Level &amp; amrex::EB2::IndexSpaceSTL::getLevel</definition>
         <argsstring>(const Geometry &amp;geom) const final</argsstring>
         <name>getLevel</name>
-        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a71aa6d39a145bc12424b2fc6c9a7e015">getLevel</reimplements>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::getLevel</qualifiedname>
+        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a109b97f6fdcc3ca3ddfc05ab56c054b2">getLevel</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
           <declname>geom</declname>
@@ -209,14 +224,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="31" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="70" bodyend="75"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="31" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="72" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
         <definition>const Geometry &amp; amrex::EB2::IndexSpaceSTL::getGeometry</definition>
         <argsstring>(const Box &amp;dom) const final</argsstring>
         <name>getGeometry</name>
-        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a683092cb9c842fb986c79f0aedcd05bb">getGeometry</reimplements>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::getGeometry</qualifiedname>
+        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a05925d4a7d0818f060dfbf7559e5b568">getGeometry</reimplements>
         <param>
           <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
           <declname>dom</declname>
@@ -227,14 +243,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="32" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="78" bodyend="83"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="32" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="80" bodyend="85"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1a31582dfcbca6d0e4a6094119722c6d2f" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab367fbb00dcd482615df4b0d163945a8" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
-        <definition>const Box&amp; amrex::EB2::IndexSpaceSTL::coarsestDomain</definition>
+        <definition>const Box &amp; amrex::EB2::IndexSpaceSTL::coarsestDomain</definition>
         <argsstring>() const final</argsstring>
         <name>coarsestDomain</name>
-        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a7795703119c27937004c54f50532a369">coarsestDomain</reimplements>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::coarsestDomain</qualifiedname>
+        <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1aae13c88201ac2660fa01b87672decf51">coarsestDomain</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -248,6 +265,7 @@
         <definition>void amrex::EB2::IndexSpaceSTL::addFineLevels</definition>
         <argsstring>(int num_new_fine_levels) final</argsstring>
         <name>addFineLevels</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::addFineLevels</qualifiedname>
         <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a346cc897525e434cd311f4b303d6b898">addFineLevels</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -259,13 +277,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="86" bodyend="89"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="88" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpaceSTL_1af24a9105766a527cf4e5f12118e58ca3" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
         <definition>void amrex::EB2::IndexSpaceSTL::addRegularCoarseLevels</definition>
         <argsstring>(int num_new_coarse_levels) final</argsstring>
         <name>addRegularCoarseLevels</name>
+        <qualifiedname>amrex::EB2::IndexSpaceSTL::addRegularCoarseLevels</qualifiedname>
         <reimplements refid="classamrex_1_1EB2_1_1IndexSpace_1a7fb0a3782aceccca024eebde7a8b292b">addRegularCoarseLevels</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -277,42 +296,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="37" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="92" bodyend="95"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H" line="37" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp" bodystart="97" bodyend="100"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>amrex::EB2::IndexSpaceSTL</label>
-        <link refid="classamrex_1_1EB2_1_1IndexSpaceSTL"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>amrex::EB2::IndexSpace</label>
         <link refid="classamrex_1_1EB2_1_1IndexSpace"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>amrex::EB2::IndexSpaceSTL</label>
         <link refid="classamrex_1_1EB2_1_1IndexSpaceSTL"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>m_stllevel</edgelabel>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>T</label>
+      </node>
+      <node id="10">
+        <label>amrex::Vector&lt; amrex::BoxND &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_domain</edgelabel>
+      </node>
+      <node id="6">
+        <label>amrex::Vector&lt; amrex::EB2::STLLevel &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
         </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>m_ngrow</edgelabel>
+      </node>
+      <node id="8">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_geom</edgelabel>
+      </node>
+      <node id="12">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -322,43 +356,52 @@
           <edgelabel>m_instance</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>T</label>
+      <node id="1">
+        <label>amrex::EB2::IndexSpaceSTL</label>
+        <link refid="classamrex_1_1EB2_1_1IndexSpaceSTL"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_stllevel</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_domain</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_ngrow</edgelabel>
+        </childnode>
       </node>
-      <node id="4">
+      <node id="11">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="5" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="8">
-        <label>amrex::Vector&lt; int &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>amrex::Vector&lt; amrex::EB2::STLLevel &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="7">
-        <label>amrex::Vector&lt; amrex::BoxND &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="9">
-        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
@@ -367,7 +410,7 @@
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a91c9991bc2691ccf3603be8005954c83" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>addFineLevels</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1af24a9105766a527cf4e5f12118e58ca3" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>addRegularCoarseLevels</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1ac2b149fea822702476a70d1b12ae2f21" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>clear</name></member>
-      <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a31582dfcbca6d0e4a6094119722c6d2f" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>coarsestDomain</name></member>
+      <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab367fbb00dcd482615df4b0d163945a8" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>coarsestDomain</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a7ebc7ce80aded82313b3f96ba0f14d8e" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>empty</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1aff6283995254b7660c80cd420d99886b" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>erase</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>getGeometry</name></member>
@@ -375,7 +418,7 @@
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a2a72ea2c766a09d49b74420005f4f700" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpace</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1afd623b9a8ba399823e33335841e30a20" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpace</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a08a6bcc75e45852b005fe627095155fe" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpace</name></member>
-      <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1abe85200c4d1b12e00b1c39640553f064" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpaceSTL</name></member>
+      <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ae531b8586503ec67f4d3ddf8ae4397d4" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpaceSTL</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1accce0356b6e62b40a6fa8bb0cf1a9402" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpaceSTL</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1adc0c4857ce013433b350e51cfb2f1b47" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>IndexSpaceSTL</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" prot="private" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>m_domain</name></member>
@@ -385,12 +428,12 @@
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab14caa115cde8da650b6587b8e73dd02" prot="private" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>m_stllevel</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a2e26fd180cf15b5ee489da10269d950d" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a9a958addce9e3b225e6d76af21e3e851" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1EB2_1_1IndexSpace_1a634dcb439936cae4f084050779828d68" prot="public" virt="non-virtual" ambiguityscope="amrex::EB2::IndexSpace::"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1EB2_1_1IndexSpace_1a03d5014d0330b1c49aa2b0deca0adf9e" prot="public" virt="non-virtual" ambiguityscope="amrex::EB2::IndexSpace::"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1EB2_1_1IndexSpace_1a8e563c8fd91426e5eb07c22b2e5b49d7" prot="public" virt="non-virtual" ambiguityscope="amrex::EB2::IndexSpace::"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1EB2_1_1IndexSpace_1ab65632b734dbdca5fa3eb5431dd2e7f6" prot="public" virt="non-virtual" ambiguityscope="amrex::EB2::IndexSpace::"><scope>amrex::EB2::IndexSpaceSTL</scope><name>operator=</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a45b714be9d0d45f3ecb339085a73c6ec" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>pop</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a5a3c0ce524a4c0bff9901548d9e8648d" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>push</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1aa263203c4d632942992a81436d22d658" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>size</name></member>
-      <member refid="classamrex_1_1EB2_1_1IndexSpace_1ad17160a9839f2d64ac20460b4cefbaee" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>top</name></member>
+      <member refid="classamrex_1_1EB2_1_1IndexSpace_1af4eb556fd6a8033ba8b7f33c71749edd" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>top</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1aa8956b4011dc91c2a886fdaf701cce58" prot="public" virt="virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>~IndexSpace</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a25c0dbf1883662d70b2026e33a49e561" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpaceSTL</scope><name>~IndexSpaceSTL</name></member>
     </listofallmembers>

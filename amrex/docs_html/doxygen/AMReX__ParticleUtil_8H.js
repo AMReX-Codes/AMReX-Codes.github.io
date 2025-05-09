@@ -1,13 +1,15 @@
 var AMReX__ParticleUtil_8H =
 [
-    [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
-    [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
-    [ "DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
+    [ "amrex::BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
+    [ "amrex::GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
+    [ "amrex::DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
     [ "clearEmptyEntries", "AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ],
     [ "computeNeighborProcs", "AMReX__ParticleUtil_8H.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeRefFac", "AMReX__ParticleUtil_8H.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],
     [ "enforcePeriodic", "AMReX__ParticleUtil_8H.html#a8d4982679d65bfe0ea15633d2c6bbca1", null ],
     [ "EnsureThreadSafeTiles", "AMReX__ParticleUtil_8H.html#a2a6f51f01e9f0350a8b447ee451d0efb", null ],
+    [ "getDefaultCompNameInt", "AMReX__ParticleUtil_8H.html#a32bc54c729de403f883a17fa3752d9fb", null ],
+    [ "getDefaultCompNameReal", "AMReX__ParticleUtil_8H.html#a611fbb46e430a0c369b0a58770edf82f", null ],
     [ "getParticleCell", "AMReX__ParticleUtil_8H.html#a26785ecc19207d71ef007f1cbeb3e6ec", null ],
     [ "getParticleCell", "AMReX__ParticleUtil_8H.html#a6e7a7d55a9760a9b62a5675badced0e1", null ],
     [ "getParticleCell", "AMReX__ParticleUtil_8H.html#a04427e35cff35a816668c7954717bac3", null ],

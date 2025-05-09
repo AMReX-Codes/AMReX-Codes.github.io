@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1EB2_1_1Vertex" kind="struct" language="C++" prot="public">
     <compoundname>amrex::EB2::Vertex</compoundname>
     <includes refid="AMReX__EB2__Graph_8H" local="no">AMReX_EB2_Graph.H</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1EB2_1_1Vertex_1a6b846c1c1abd86195353d49a275f6356" prot="public" static="no" mutable="no">
         <type><ref refid="structamrex_1_1EB2_1_1Cell" kindref="compound">Cell</ref></type>
         <definition>Cell amrex::EB2::Vertex::m_cell</definition>
         <argsstring></argsstring>
         <name>m_cell</name>
+        <qualifiedname>amrex::EB2::Vertex::m_cell</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>Neighbor amrex::EB2::Vertex::m_nghb</definition>
         <argsstring></argsstring>
         <name>m_nghb</name>
+        <qualifiedname>amrex::EB2::Vertex::m_nghb</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -35,6 +37,7 @@
         <definition>Vector&lt;Edge&gt; amrex::EB2::Vertex::m_edges</definition>
         <argsstring></argsstring>
         <name>m_edges</name>
+        <qualifiedname>amrex::EB2::Vertex::m_edges</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -43,46 +46,46 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" line="82" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Graph.H" bodystart="82" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="5">
-        <label>amrex::EB2::Neighbor</label>
-        <link refid="structamrex_1_1EB2_1_1Neighbor"/>
-      </node>
-      <node id="4">
+      <node id="6">
         <label>T</label>
       </node>
-      <node id="6">
+      <node id="4">
+        <label>amrex::Vector&lt; amrex::EB2::Edge &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
         <label>amrex::EB2::Cell</label>
         <link refid="structamrex_1_1EB2_1_1Cell"/>
       </node>
       <node id="3">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="4" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::Vector&lt; amrex::EB2::Edge &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
+        <label>amrex::EB2::Neighbor</label>
+        <link refid="structamrex_1_1EB2_1_1Neighbor"/>
       </node>
       <node id="1">
         <label>amrex::EB2::Vertex</label>
         <link refid="structamrex_1_1EB2_1_1Vertex"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>m_edges</edgelabel>
+          <edgelabel>m_cell</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>m_nghb</edgelabel>
         </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_edges</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
-          <edgelabel>m_cell</edgelabel>
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

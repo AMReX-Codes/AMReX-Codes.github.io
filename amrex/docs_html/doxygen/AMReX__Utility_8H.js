@@ -1,11 +1,11 @@
 var AMReX__Utility_8H =
 [
-    [ "expect", "classamrex_1_1expect.html", "classamrex_1_1expect" ],
-    [ "StreamRetry", "classamrex_1_1StreamRetry.html", "classamrex_1_1StreamRetry" ],
+    [ "amrex::expect", "classamrex_1_1expect.html", "classamrex_1_1expect" ],
+    [ "amrex::StreamRetry", "classamrex_1_1StreamRetry.html", "classamrex_1_1StreamRetry" ],
     [ "BL_IGNORE_MAX", "AMReX__Utility_8H.html#a93b4a56e5a8af340d43839230b94843c", null ],
     [ "MaxResSteadyClock", "AMReX__Utility_8H.html#a3e90f0304ff639b230b6b502e8546b88", null ],
     [ "amrex_free", "AMReX__Utility_8H.html#a2341d68b47f82cd117da58195ac02101", null ],
-    [ "amrex_malloc", "AMReX__Utility_8H.html#ab6136b169776e667910d5505dca32259", null ],
+    [ "amrex_malloc", "AMReX__Utility_8H.html#a69f575b0cb23e6374f9ab68b4b5903cf", null ],
     [ "BroadcastArray", "AMReX__Utility_8H.html#a8cf9dce7670dcc62897405af53fafcff", null ],
     [ "BroadcastBool", "AMReX__Utility_8H.html#af0fd43716fb89a13154ed4c037ebe6e6", null ],
     [ "BroadcastString", "AMReX__Utility_8H.html#aa60205e03d594df934b5b3afd723c764", null ],

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1DataDeleter" kind="struct" language="C++" prot="public">
     <compoundname>amrex::DataDeleter</compoundname>
     <includes refid="AMReX__DataAllocator_8H" local="no">AMReX_DataAllocator.H</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1DataDeleter_1a3f56660ebd06ba11f5c873d99b3e899f" prot="public" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
         <definition>Arena* amrex::DataDeleter::m_arena</definition>
         <argsstring></argsstring>
         <name>m_arena</name>
+        <qualifiedname>amrex::DataDeleter::m_arena</qualifiedname>
         <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -18,13 +19,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" line="30" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" bodystart="30" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structamrex_1_1DataDeleter_1a0c074bdebdbc0b35ae381228e005ec55" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::DataDeleter::DataDeleter</definition>
         <argsstring>() noexcept=default</argsstring>
         <name>DataDeleter</name>
+        <qualifiedname>amrex::DataDeleter::DataDeleter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -38,6 +40,7 @@
         <definition>amrex::DataDeleter::DataDeleter</definition>
         <argsstring>(Arena *ar) noexcept</argsstring>
         <name>DataDeleter</name>
+        <qualifiedname>amrex::DataDeleter::DataDeleter</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
           <declname>ar</declname>
@@ -50,11 +53,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" line="32" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" bodystart="32" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1DataDeleter_1a3daee94cbf63696956b6e349478448dc" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1DataDeleter_1a4736c2ef640d253fac96155ba4cd4f2b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
-        <definition>Arena* amrex::DataDeleter::arena</definition>
+        <definition>Arena * amrex::DataDeleter::arena</definition>
         <argsstring>() const noexcept</argsstring>
         <name>arena</name>
+        <qualifiedname>amrex::DataDeleter::arena</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -68,6 +72,7 @@
         <definition>void amrex::DataDeleter::operator()</definition>
         <argsstring>(void *pt) const noexcept</argsstring>
         <name>operator()</name>
+        <qualifiedname>amrex::DataDeleter::operator()</qualifiedname>
         <param>
           <type>void *</type>
           <declname>pt</declname>
@@ -80,22 +85,38 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" line="34" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" bodystart="34" bodyend="34"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
-        <label>amrex::ArenaInfo</label>
-        <link refid="structamrex_1_1ArenaInfo"/>
-      </node>
       <node id="2">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
         <childnode refid="3" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
       </node>
       <node id="1">
         <label>amrex::DataDeleter</label>
@@ -104,10 +125,37 @@
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
+      <node id="9">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+      </node>
+      <node id="6">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::mutex</label>
+      </node>
+      <node id="7">
+        <label>std::string</label>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" line="29" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DataAllocator.H" bodystart="29" bodyend="35"/>
     <listofallmembers>
-      <member refid="structamrex_1_1DataDeleter_1a3daee94cbf63696956b6e349478448dc" prot="public" virt="non-virtual"><scope>amrex::DataDeleter</scope><name>arena</name></member>
+      <member refid="structamrex_1_1DataDeleter_1a4736c2ef640d253fac96155ba4cd4f2b" prot="public" virt="non-virtual"><scope>amrex::DataDeleter</scope><name>arena</name></member>
       <member refid="structamrex_1_1DataDeleter_1a0c074bdebdbc0b35ae381228e005ec55" prot="public" virt="non-virtual"><scope>amrex::DataDeleter</scope><name>DataDeleter</name></member>
       <member refid="structamrex_1_1DataDeleter_1a2d435760333c6f0326e928c0f9481a24" prot="public" virt="non-virtual"><scope>amrex::DataDeleter</scope><name>DataDeleter</name></member>
       <member refid="structamrex_1_1DataDeleter_1a3f56660ebd06ba11f5c873d99b3e899f" prot="public" virt="non-virtual"><scope>amrex::DataDeleter</scope><name>m_arena</name></member>

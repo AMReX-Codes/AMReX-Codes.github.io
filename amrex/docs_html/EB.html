@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initializing the Geometric Database &mdash; amrex 24.09-dev documentation</title>
+  <title>Initializing the Geometric Database &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Time Integration" href="TimeIntegration_Chapter.html" />
+    <link rel="next" title="Discrete Fourier Transform" href="FFT_Chapter.html" />
     <link rel="prev" title="Embedded Boundaries" href="EB_Chapter.html" /> 
 </head>
 
@@ -39,7 +39,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -67,14 +67,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Initializing the Geometric Database</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#implicit-function">Implicit Function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eb2-geometryshop"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span><span class="w"></span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eb2-indexspace"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eb2-geometryshop"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eb2-indexspace"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ebfarrayboxfactory">EBFArrayBoxFactory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data">Embedded Boundary Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data-structures">Embedded Boundary Data Structures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ebcellflagfab"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span><span class="w"></span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ebcellflagfab"><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#small-cell-problem-and-redistribution">Small Cell Problem and Redistribution</a><ul>
@@ -88,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -139,35 +140,35 @@ function that takes a position and returns a negative value if that position
 is inside the fluid, a positive value in the body, and identically zero at the
 embedded boundary.</p></li>
 </ul>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="nf">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="nf">operator</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Make a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span><span class="w"></span></code> object using the implicit function.</p></li>
-<li><p>Build an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> with the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span><span class="w"></span></code> object and a
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span><span class="w"></span></code> object that contains the information about the domain and the
+<li><p>Make a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code> object using the implicit function.</p></li>
+<li><p>Build an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> with the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code> object and a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span></code> object that contains the information about the domain and the
 mesh.</p></li>
 </ul>
 <p>Here is a simple example of initialize the database for an embedded sphere.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
 <span class="n">Array</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">center</span><span class="p">{</span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">};</span><span class="w"> </span><span class="c1">//Center of the sphere</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">inside</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// Is the fluid inside the sphere?</span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="p">,</span><span class="w"> </span><span class="n">inside</span><span class="p">);</span><span class="w"></span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="p">,</span><span class="w"> </span><span class="n">inside</span><span class="p">);</span>
 
-<span class="k">auto</span><span class="w"> </span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">sphere</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">sphere</span><span class="p">);</span>
 
-<span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span><span class="w"></span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="n">Geometry</span><span class="w"> </span><span class="nf">geom</span><span class="p">(...);</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Alternatively, the EB information can be initialized from an STL file
-specified by a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameter <code class="docutils literal notranslate"><span class="pre">eb2.stl_file</span></code>. (This also requires setting <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">stl</span></code>.) The
+specified by a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameter <code class="docutils literal notranslate"><span class="pre">eb2.stl_file</span></code>. (This also requires setting <code class="docutils literal notranslate"><span class="pre">eb2.geom_type</span> <span class="pre">=</span> <span class="pre">stl</span></code>.) The
 initialization is done by calling</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">ngrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">build_coarse_level_by_coarsening</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">ngrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">build_coarse_level_by_coarsening</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Additionally one can use <code class="docutils literal notranslate"><span class="pre">eb2.stl_scale</span></code>, <code class="docutils literal notranslate"><span class="pre">eb2.stl_center</span></code> and
@@ -179,86 +180,86 @@ respectively.</p>
 for basic shapes. One can use these directly or as template for their own
 classes.</p>
 <ul class="simple">
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AllRegularIF</span><span class="w"></span></code>:  No embedded boundaries at all.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxIF</span><span class="w"></span></code>: Box.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CylinderIF</span><span class="w"></span></code>: Cylinder.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EllipsoidIF</span><span class="w"></span></code>: Ellipsoid.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PlaneIF</span><span class="w"></span></code>: Half-space plane.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SphereIF</span><span class="w"></span></code>: Sphere.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AllRegularIF</span></code>:  No embedded boundaries at all.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxIF</span></code>: Box.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CylinderIF</span></code>: Cylinder.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EllipsoidIF</span></code>: Ellipsoid.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">PlaneIF</span></code>: Half-space plane.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SphereIF</span></code>: Sphere.</p></li>
 </ul>
 <p>AMReX also provides a number of transformation operations to apply to an object.</p>
 <ul class="simple">
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeComplement</span><span class="w"></span></code>: Complement of an object. E.g. a sphere with fluid on
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeComplement</span></code>: Complement of an object. E.g. a sphere with fluid on
 outside becomes a sphere with fluid inside.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeIntersection</span><span class="w"></span></code>: Intersection of two or more objects.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeUnion</span><span class="w"></span></code>: Union of two or more objects.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Translate</span><span class="w"></span></code>: Translates an object.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">scale</span><span class="w"></span></code>: Scales an object.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">rotate</span><span class="w"></span></code>: Rotates an object.</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">lathe</span><span class="w"></span></code>: Creates a surface of revolution by rotating a 2D object around an axis.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeIntersection</span></code>: Intersection of two or more objects.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeUnion</span></code>: Union of two or more objects.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Translate</span></code>: Translates an object.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">scale</span></code>: Scales an object.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">rotate</span></code>: Rotates an object.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">lathe</span></code>: Creates a surface of revolution by rotating a 2D object around an axis.</p></li>
 </ul>
 <p>Here are some examples of using these functions.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere1</span><span class="p">(...);</span><span class="w"></span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere2</span><span class="p">(...);</span><span class="w"></span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">BoxIF</span><span class="w"> </span><span class="nf">box</span><span class="p">(...);</span><span class="w"></span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">CylinderIF</span><span class="w"> </span><span class="nf">cylinder</span><span class="p">(...);</span><span class="w"></span>
-<span class="n">EB2</span><span class="o">::</span><span class="n">PlaneIF</span><span class="w"> </span><span class="nf">plane</span><span class="p">(...);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere1</span><span class="p">(...);</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">SphereIF</span><span class="w"> </span><span class="nf">sphere2</span><span class="p">(...);</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">BoxIF</span><span class="w"> </span><span class="nf">box</span><span class="p">(...);</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">CylinderIF</span><span class="w"> </span><span class="nf">cylinder</span><span class="p">(...);</span>
+<span class="n">EB2</span><span class="o">::</span><span class="n">PlaneIF</span><span class="w"> </span><span class="nf">plane</span><span class="p">(...);</span>
 
 <span class="c1">// union of two spheres</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">twospheres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeUnion</span><span class="p">(</span><span class="n">sphere1</span><span class="p">,</span><span class="w"> </span><span class="n">sphere2</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">twospheres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeUnion</span><span class="p">(</span><span class="n">sphere1</span><span class="p">,</span><span class="w"> </span><span class="n">sphere2</span><span class="p">);</span>
 
 <span class="c1">// intersection of a rotated box, a plane and the union of two spheres</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">box_plane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeIntersection</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">rotate</span><span class="p">(</span><span class="n">box</span><span class="p">,...),</span><span class="w"></span>
-<span class="w">                                       </span><span class="n">plane</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                       </span><span class="n">twospheres</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">box_plane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeIntersection</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">rotate</span><span class="p">(</span><span class="n">box</span><span class="p">,...),</span>
+<span class="w">                                       </span><span class="n">plane</span><span class="p">,</span>
+<span class="w">                                       </span><span class="n">twospheres</span><span class="p">);</span>
 
 <span class="c1">// scale a cylinder by a factor of 2 in x and y directions, and 3 in z-direction.</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">scylinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">scale</span><span class="p">(</span><span class="n">cylinder</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">});</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">scylinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">scale</span><span class="p">(</span><span class="n">cylinder</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="mf">2.</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">});</span>
 </pre></div>
 </div>
 </section>
 <section id="eb2-geometryshop">
-<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span><span class="w"></span></code><a class="headerlink" href="#eb2-geometryshop" title="Permalink to this heading"></a></h2>
-<p>Given an implicit function object, say <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f</span><span class="w"></span></code>, we can make a
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span><span class="w"></span></code> object with</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">f</span><span class="p">);</span><span class="w"></span>
+<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code><a class="headerlink" href="#eb2-geometryshop" title="Permalink to this heading"></a></h2>
+<p>Given an implicit function object, say <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">f</span></code>, we can make a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GeometryShop</span></code> object with</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">shop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="eb2-indexspace">
-<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this heading"></a></h2>
-<p>We build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> with a template function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">G</span><span class="o">&gt;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">G</span><span class="o">&amp;</span><span class="w"> </span><span class="n">gshop</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"></span>
-<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span><span class="w"></span>
-<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="p">,</span><span class="w"></span>
-<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">ngrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this heading"></a></h2>
+<p>We build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> with a template function</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">G</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">EB2</span><span class="o">::</span><span class="n">Build</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">G</span><span class="o">&amp;</span><span class="w"> </span><span class="n">gshop</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">max_coarsening_level</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">ngrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Here the template parameter is a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span><span class="w"></span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span><span class="w"></span></code> (see
+<p>Here the template parameter is a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">GeometryShop</span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Geometry</span></code> (see
 section <a class="reference internal" href="Basics.html#sec-basics-geom"><span class="std std-ref">RealBox and Geometry</span></a>) describes the rectangular problem domain and the
 mesh on the finest AMR level. Coarse level EB data is generated from coarsening
-the original fine data. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span><span class="w"></span></code> parameter
+the original fine data. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">required_coarsening_level</span></code> parameter
 specifies the number of coarsening levels required. This is usually set to
-<span class="math notranslate nohighlight">\(N-1\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the total number of AMR levels. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"></span>
-<span class="n">max_coarsening_levels</span><span class="w"></span></code> parameter specifies the number of coarsening levels AMReX
+<span class="math notranslate nohighlight">\(N-1\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the total number of AMR levels. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span>
+<span class="n">max_coarsening_levels</span></code> parameter specifies the number of coarsening levels AMReX
 should try to have. This is usually set to a big number, say 20 if multigrid
 solvers are used. This essentially tells the build to coarsen as much as it can.
 If there are no multigrid solvers, the parameter should be set to the same as
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">required_coarsening_level</span><span class="w"></span></code>. It should be noted that coarsening could
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">required_coarsening_level</span></code>. It should be noted that coarsening could
 create multi-valued cells even if the fine level does not have any multi-valued
 cells. This occurs when the embedded boundary cuts a cell in such a way that
 there is fluid on multiple sides of the boundary within that cell. Because
 multi-valued cells are not supported, it will cause a runtime error if the
-required coarsening level generates multi-valued cells. The optional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"></span>
-<span class="n">ngrow</span><span class="w"></span></code> parameter specifies the number of ghost cells outside the domain on
+required coarsening level generates multi-valued cells. The optional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span>
+<span class="n">ngrow</span></code> parameter specifies the number of ghost cells outside the domain on
 required levels. For levels coarser than the required level, no EB data are
 generated for ghost cells outside the domain.</p>
-<p>The newly built <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> is pushed on to a stack. Static function
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="o">::</span><span class="n">top</span><span class="p">()</span><span class="w"></span></code> returns a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span></code> to the new
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> object. We usually only need to build one
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> object. However, if your application needs multiple
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="w"></span></code> objects, you can save the pointers for later use. For
+<p>The newly built <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> is pushed on to a stack. Static function
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span><span class="o">::</span><span class="n">top</span><span class="p">()</span></code> returns a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span></code> to the new
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> object. We usually only need to build one
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> object. However, if your application needs multiple
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EB2</span><span class="o">::</span><span class="n">IndexSpace</span></code> objects, you can save the pointers for later use. For
 simplicity, we assume there is only one <cite>EB2::IndexSpace</cite> object for the rest of
 this chapter.</p>
 </section>
@@ -266,98 +267,110 @@ this chapter.</p>
 <section id="ebfarrayboxfactory">
 <h1>EBFArrayBoxFactory<a class="headerlink" href="#ebfarrayboxfactory" title="Permalink to this heading"></a></h1>
 <p>After the EB database is initialized, the next thing we build is
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code>. This object provides access to the EB database in the
-format of basic AMReX objects such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="w"></span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>. We can construct it with</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ba</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">DistributionMapping</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dm</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_ngrow</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span><span class="p">);</span><span class="w"></span>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code>. This object provides access to the EB database in the
+format of basic AMReX objects such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. We can construct it with</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ba</span><span class="p">,</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">DistributionMapping</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dm</span><span class="p">,</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_ngrow</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="o">&gt;</span><span class="w"></span>
-<span class="n">makeEBFabFactory</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span><span class="w"></span>
-<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ba</span><span class="p">,</span><span class="w"></span>
-<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">DistributionMapping</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dm</span><span class="p">,</span><span class="w"></span>
-<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_ngrow</span><span class="p">,</span><span class="w"></span>
-<span class="w">                  </span><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="o">&gt;</span>
+<span class="n">makeEBFabFactory</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ba</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">DistributionMapping</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dm</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_ngrow</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ngrow</span><span class="w"></span></code> specifies the number of
-ghost cells we need for EB data at various <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBSupport</span><span class="w"></span></code> levels,
-and argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span><span class="w"></span></code> specifies the level of support
+<p>Argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ngrow</span></code> specifies the number of
+ghost cells we need for EB data at various <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBSupport</span></code> levels,
+and argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBSupport</span><span class="w"> </span><span class="n">a_support</span></code> specifies the level of support
 needed.</p>
 <ul class="simple">
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">basic</span><span class="w"></span></code>:  basic flags for cell types</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">volume</span><span class="w"></span></code>: basic plus volume fraction and centroid</p></li>
-<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">full</span><span class="w"></span></code>: volume plus area fraction, boundary centroid
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">basic</span></code>:  basic flags for cell types</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">volume</span></code>: basic plus volume fraction and centroid</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">EBSupport</span><span class="p">:</span><span class="n">full</span></code>: volume plus area fraction, boundary centroid
 and face centroid</p></li>
 </ul>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span><span class="w"></span></code>.
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> constructors have an optional argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span><span class="w"></span>
-<span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span><span class="w"></span></code>.  We can use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code> to
-build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>s that carry EB data.  Member function of
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="w"></span></code></p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FAB</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Factory</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span></code>.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> constructors have an optional argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span>
+<span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span></code>.  We can use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code> to
+build <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s that carry EB data.  Member function of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span></code></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FAB</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Factory</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>can then be used to return a reference to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code> used for
-building the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>. Using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">dynamic_cast</span><span class="w"></span></code>, we can test whether a
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> is built with an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code>.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">mf</span><span class="p">.</span><span class="n">Factory</span><span class="p">()));</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<p>can then be used to return a reference to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code> used for
+building the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. Using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">dynamic_cast</span></code>, we can test whether a
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> is built with an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">mf</span><span class="p">.</span><span class="n">Factory</span><span class="p">()));</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// this is EBFArrayBoxFactory</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// regular FabFactory&lt;FArrayBox&gt;</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="embedded-boundary-data">
 <h1>Embedded Boundary Data<a class="headerlink" href="#embedded-boundary-data" title="Permalink to this heading"></a></h1>
-<p>Through member functions of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code>, we have access to the
+<p>Through member functions of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code>, we have access to the
 following data:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// see section on EBCellFlagFab</span>
-<span class="k">const</span><span class="w"> </span><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">EBCellFlagFab</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getMultiEBCellFlagFab</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">EBCellFlagFab</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getMultiEBCellFlagFab</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="c1">// volume fraction</span>
-<span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getVolFrac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getVolFrac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="c1">// volume centroid</span>
-<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getCentroid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getCentroid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="c1">// embedded boundary centroid</span>
-<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryCent</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryCent</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// embedded boundary normal direction</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryNormal</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="c1">// embedded boundary surface area</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getBndryArea</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="c1">// area fractions</span>
-<span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getAreaFrac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getAreaFrac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="c1">// face centroid</span>
-<span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getFaceCent</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getFaceCent</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Volume fraction</strong> is in a single-component <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>. Data are in the range
+<li><p><strong>Volume fraction</strong> is in a single-component <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. Data are in the range
 of <span class="math notranslate nohighlight">\([0,1]\)</span> with zero representing covered cells and one for regular
 cells.</p></li>
 <li><p><strong>Volume centroid</strong> (also called cell centroid) is
-in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components. Each component
+in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components. Each component
 of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on each
 cell’s local coordinates with respect to the regular cell’s center.</p></li>
-<li><p><strong>Boundary centroid</strong> is also in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with
+<li><p><strong>Boundary centroid</strong> is also in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> with
 <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.  Each component
 of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on each
 cell’s local coordinates with respect to the regular cell’s center.</p></li>
-<li><p><strong>Face centroid</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.
-Each component of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on
-each cell’s local coordinates with respect to the embedded boundary.</p></li>
-<li><p><strong>Area fractions</strong> are returned in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array</span><span class="w"></span></code> of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code>
+<li><p><strong>Boundary normal</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>
+components representing the unit vector pointing toward the covered part.</p></li>
+<li><p><strong>Boundary area</strong> is in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> with a single component
+representing the dimensionless boundary area. When the cell is isotropic
+(i.e., <span class="math notranslate nohighlight">\(\Delta x = \Delta y = \Delta z\)</span>), it’s trivial to convert it
+to physical units. If the cell size is anisotropic, the conversion
+requires multiplying by a factor of <span class="math notranslate nohighlight">\(\sqrt{(n_x \Delta y \Delta
+z)^2 + (n_y \Delta x \Delta z)^2 + (n_z \Delta x \Delta y)^2}\)</span>, where
+<span class="math notranslate nohighlight">\(n\)</span> is the boundary normal vector.</p></li>
+<li><p><strong>Area fractions</strong> are returned in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array</span></code> of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code>
 pointers. For each direction, area fraction is for the face of that direction.
 Data are in the range of <span class="math notranslate nohighlight">\([0,1]\)</span> with zero representing a covered face
 and one an un-cut face.</p></li>
-<li><p><strong>Face centroids</strong> are returned in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array</span><span class="w"></span></code> of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code>
+<li><p><strong>Face centroids</strong> are returned in an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array</span></code> of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code>
 pointers. There are two components for each direction and the
 ordering is always the same as the original ordering of the coordinates. For
 example, for <span class="math notranslate nohighlight">\(y\)</span> face, the component 0 is for <span class="math notranslate nohighlight">\(x\)</span> coordinate and 1
@@ -367,63 +380,63 @@ range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p></
 </section>
 <section id="embedded-boundary-data-structures">
 <h1>Embedded Boundary Data Structures<a class="headerlink" href="#embedded-boundary-data-structures" title="Permalink to this heading"></a></h1>
-<p>A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> is very similar to a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>. Its data can be
+<p>A <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> is very similar to a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. Its data can be
 accessed with subscript operator</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">CutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MFIter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">CutFab</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MFIter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Here <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CutFab</span><span class="w"></span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> and can be passed to Fortran
-just like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>. The difference between <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> and
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> is that to save memory <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span><span class="w"></span></code> only has data on boxes
-that contain cut cells. It is an error to call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span><span class="w"></span></code> if that box
-does not have cut cells. Thus the call must be in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span><span class="w"></span></code> test block (see
+<p>Here <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">CutFab</span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> and can be passed to Fortran
+just like <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>. The difference between <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> is that to save memory <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiCutFab</span></code> only has data on boxes
+that contain cut cells. It is an error to call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span></code> if that box
+does not have cut cells. Thus the call must be in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">if</span></code> test block (see
 section <a class="reference internal" href="#sec-eb-flag"><span class="std std-ref">EBCellFlagFab</span></a>).</p>
 <section id="ebcellflagfab">
-<span id="sec-eb-flag"></span><h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span><span class="w"></span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this heading"></a></h2>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span><span class="w"></span></code> contains information on cell types.  We can use
+<span id="sec-eb-flag"></span><h2><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this heading"></a></h2>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code> contains information on cell types.  We can use
 it to determine if a box contains cut cells.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getMultiEBCellFlagFab</span><span class="p">();</span><span class="w"></span>
-<span class="n">MultiCutFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">centroid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getCentroid</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getMultiEBCellFlagFab</span><span class="p">();</span>
+<span class="n">MultiCutFab</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">centroid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="o">-&gt;</span><span class="n">getCentroid</span><span class="p">();</span>
 
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">FabType</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">getType</span><span class="p">(</span><span class="n">bx</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">regular</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+<span class="w">    </span><span class="n">FabType</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flags</span><span class="p">[</span><span class="n">mfi</span><span class="p">].</span><span class="n">getType</span><span class="p">(</span><span class="n">bx</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">regular</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// This box is regular</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">covered</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">covered</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// This box is covered</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">singlevalued</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FabType</span><span class="o">::</span><span class="n">singlevalued</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// This box has cut cells</span>
 <span class="w">        </span><span class="c1">// Getting cutfab is safe</span>
-<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">centroid_fab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">centroid</span><span class="p">[</span><span class="n">mfi</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">centroid_fab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">centroid</span><span class="p">[</span><span class="n">mfi</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span><span class="w"></span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>. Its data are stored in an
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBCellFlagFab</span></code> is derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code>. Its data are stored in an
 array of 32-bit integers, and can be used in C++ or passed to Fortran just like
-an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IArrayBox</span><span class="w"></span></code> (section <a class="reference internal" href="Basics.html#sec-basics-fab"><span class="std std-ref">BaseFab, FArrayBox, IArrayBox, and Array4</span></a>). AMReX provides a Fortran
+an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IArrayBox</span></code> (section <a class="reference internal" href="Basics.html#sec-basics-fab"><span class="std std-ref">BaseFab, FArrayBox, IArrayBox, and Array4</span></a>). AMReX provides a Fortran
 module called <code class="docutils literal notranslate"><span class="pre">amrex_ebcellflag_module</span></code>. This module contains procedures for
 testing cell types and getting neighbor information. For example</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_ebcellflag_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is_regular_cell</span><span class="p">,</span><span class="w"> </span><span class="n">is_single_valued_cell</span><span class="p">,</span><span class="w"> </span><span class="n">is_covered_cell</span><span class="w"></span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_ebcellflag_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is_regular_cell</span><span class="p">,</span><span class="w"> </span><span class="n">is_single_valued_cell</span><span class="p">,</span><span class="w"> </span><span class="n">is_covered_cell</span>
 
-<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flags</span><span class="p">(...)</span><span class="w"></span>
+<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flags</span><span class="p">(...)</span>
 
-<span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="w"></span>
+<span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
 
-<span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
-<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_covered_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_covered_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
 <span class="w">                </span><span class="c">! this is a completely covered cells</span>
-<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">is_regular_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">is_regular_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
 <span class="w">                </span><span class="c">! this is a regular cell</span>
-<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">is_single_valued_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">is_single_valued_cell</span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
 <span class="w">                </span><span class="c">! this is a cut cell</span>
 <span class="w">            </span><span class="k">end if</span>
 <span class="k">        end do</span>
 <span class="k">    end do</span>
-<span class="k">end do</span><span class="w"></span>
+<span class="k">end do</span>
 </pre></div>
 </div>
 </section>
@@ -569,25 +582,25 @@ or inhomogeneous Dirichlet boundary conditions on the EB faces, and
 2) nodal solvers with homogeneous Neumann boundary conditions,
 or inflow velocity conditions on the EB faces.</p>
 <p>To use a cell-centered solver with EB, one builds a linear operator
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span><span class="w"></span></code> with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span><span class="w"></span></code> (instead of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span><span class="w"></span></code>)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLEBABecLap</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_grids</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_dmap</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">LPInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_info</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_factory</span><span class="p">);</span><span class="w"></span>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLEBABecLap</span></code> with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EBFArrayBoxFactory</span></code> (instead of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>)</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLEBABecLap</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_grids</span><span class="p">,</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_dmap</span><span class="p">,</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">LPInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_info</span><span class="p">,</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_factory</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The usage of this EB-specific class is essentially the same as
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span><span class="w"></span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>.</p>
 <p>The default boundary condition on EB faces is homogeneous Neumann.</p>
 <p>To set homogeneous Dirichlet boundary conditions, call</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBHomogDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBHomogDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>where coeff can be a real number (i.e. the value is the same at every cell)
 or is the MultiFab holding the coefficient of the gradient at each cell with an EB face.</p>
 <p>To set inhomogeneous Dirichlet boundary conditions, call</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">phi_on_eb</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">phi_on_eb</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>where phi_on_eb is the MultiFab holding the Dirichlet values in every cut cell,
@@ -599,13 +612,13 @@ as being defined on cell centers vs cell centroids.</p>
 <p>The default is for the solution variable to be defined at cell centers;
 to tell the solver to interpret the solution variable as living
 at cell centroids, you must set</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setPhiOnCentroid</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setPhiOnCentroid</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>The default is for the face-based coefficients to be defined at face centers;
 to tell the that the face-based coefficients should be interpreted
 as living at face centroids, modify the setBCoeffs command to be</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCentroid</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCentroid</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -626,7 +639,7 @@ field of (1,0,0).</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="EB_Chapter.html" class="btn btn-neutral float-left" title="Embedded Boundaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="TimeIntegration_Chapter.html" class="btn btn-neutral float-right" title="Time Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="FFT_Chapter.html" class="btn btn-neutral float-right" title="Discrete Fourier Transform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

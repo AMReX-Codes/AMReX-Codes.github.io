@@ -9,7 +9,7 @@ var classamrex_1_1EBToPVD =
     [ "print_connectivity", "classamrex_1_1EBToPVD.html#a4fc94184dd7d26f8ccb2fccdd8367474", null ],
     [ "print_grids", "classamrex_1_1EBToPVD.html#a692701cba27f352589066c9024d388a7", null ],
     [ "print_points", "classamrex_1_1EBToPVD.html#af56069dd01a4a44b7f471f70f051887b", null ],
-    [ "reorder_polygon", "classamrex_1_1EBToPVD.html#a275e5bd2322a1d3aace66481364de23a", null ],
+    [ "reorder_polygon", "classamrex_1_1EBToPVD.html#a4338425569b2fd6ba2da83d56ea582e5", null ],
     [ "WriteEBVTP", "classamrex_1_1EBToPVD.html#a9795643b31358ac5f35c30f291d15adf", null ],
     [ "WritePVTP", "classamrex_1_1EBToPVD.html#aa55d2d01fac1d3f0d6d489ec74f0698a", null ],
     [ "m_connectivity", "classamrex_1_1EBToPVD.html#aaa06cb6a74aa4b0f59ba1a5108665870", null ],

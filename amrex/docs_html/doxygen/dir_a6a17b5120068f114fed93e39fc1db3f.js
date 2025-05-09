@@ -14,8 +14,5 @@ var dir_a6a17b5120068f114fed93e39fc1db3f =
     [ "AMReX_CommProfStats.H", "AMReX__CommProfStats_8H.html", "AMReX__CommProfStats_8H" ],
     [ "AMReX_ProfParserBatch.cpp", "AMReX__ProfParserBatch_8cpp.html", "AMReX__ProfParserBatch_8cpp" ],
     [ "AMReX_RegionsProfStats.cpp", "AMReX__RegionsProfStats_8cpp.html", "AMReX__RegionsProfStats_8cpp" ],
-    [ "AMReX_RegionsProfStats.H", "AMReX__RegionsProfStats_8H.html", [
-      [ "RegionsProfStats", "classRegionsProfStats.html", "classRegionsProfStats" ],
-      [ "DataBlock", "structRegionsProfStats_1_1DataBlock.html", "structRegionsProfStats_1_1DataBlock" ]
-    ] ]
+    [ "AMReX_RegionsProfStats.H", "AMReX__RegionsProfStats_8H.html", "AMReX__RegionsProfStats_8H" ]
 ];

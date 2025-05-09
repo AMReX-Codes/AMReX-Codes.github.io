@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1IntegratorBase" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::IntegratorBase</compoundname>
     <derivedcompoundref refid="classamrex_1_1FEIntegrator" prot="public" virt="non-virtual">amrex::FEIntegrator&lt; T &gt;</derivedcompoundref>
@@ -11,12 +11,13 @@
         <type>class T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="protected-attrib">
+    <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classamrex_1_1IntegratorBase_1ab5166c9130778bcf08f08230d72b05f3" prot="protected" static="no" mutable="no">
         <type>std::function&lt; void(T &amp;rhs, T &amp;state, const amrex::Real time)&gt;</type>
         <definition>std::function&lt;void(T&amp; rhs, T&amp; state, const amrex::Real time)&gt; amrex::IntegratorBase&lt; T &gt;::Rhs</definition>
         <argsstring></argsstring>
         <name>Rhs</name>
+        <qualifiedname>amrex::IntegratorBase::Rhs</qualifiedname>
         <briefdescription>
 <para>Rhs is the right-hand-side function the integrator will use. </para>
         </briefdescription>
@@ -31,6 +32,7 @@
         <definition>std::function&lt;void(T&amp; rhs, T&amp; state, const amrex::Real time)&gt; amrex::IntegratorBase&lt; T &gt;::RhsIm</definition>
         <argsstring></argsstring>
         <name>RhsIm</name>
+        <qualifiedname>amrex::IntegratorBase::RhsIm</qualifiedname>
         <briefdescription>
 <para>RhsIm is the implicit right-hand-side function an ImEx integrator will use. </para>
         </briefdescription>
@@ -45,6 +47,7 @@
         <definition>std::function&lt;void(T&amp; rhs, T&amp; state, const amrex::Real time)&gt; amrex::IntegratorBase&lt; T &gt;::RhsEx</definition>
         <argsstring></argsstring>
         <name>RhsEx</name>
+        <qualifiedname>amrex::IntegratorBase::RhsEx</qualifiedname>
         <briefdescription>
 <para>RhsEx is the explicit right-hand-side function an ImEx integrator will use. </para>
         </briefdescription>
@@ -59,6 +62,7 @@
         <definition>std::function&lt;void(T&amp; rhs, T&amp; state, const amrex::Real time)&gt; amrex::IntegratorBase&lt; T &gt;::RhsFast</definition>
         <argsstring></argsstring>
         <name>RhsFast</name>
+        <qualifiedname>amrex::IntegratorBase::RhsFast</qualifiedname>
         <briefdescription>
 <para>RhsFast is the fast timescale right-hand-side function a multirate integrator will use. </para>
         </briefdescription>
@@ -73,6 +77,7 @@
         <definition>std::function&lt;void (T&amp;, amrex::Real)&gt; amrex::IntegratorBase&lt; T &gt;::post_stage_action</definition>
         <argsstring></argsstring>
         <name>post_stage_action</name>
+        <qualifiedname>amrex::IntegratorBase::post_stage_action</qualifiedname>
         <briefdescription>
 <para>The post_stage_action function is called by the integrator on the computed stage just after it is computed. </para>
         </briefdescription>
@@ -87,6 +92,7 @@
         <definition>std::function&lt;void (T&amp;, amrex::Real)&gt; amrex::IntegratorBase&lt; T &gt;::post_step_action</definition>
         <argsstring></argsstring>
         <name>post_step_action</name>
+        <qualifiedname>amrex::IntegratorBase::post_step_action</qualifiedname>
         <briefdescription>
 <para>The post_step_action function is called by the integrator on the computed state just after it is computed. </para>
         </briefdescription>
@@ -101,6 +107,7 @@
         <definition>std::function&lt;void (T&amp;, amrex::Real)&gt; amrex::IntegratorBase&lt; T &gt;::post_fast_stage_action</definition>
         <argsstring></argsstring>
         <name>post_fast_stage_action</name>
+        <qualifiedname>amrex::IntegratorBase::post_fast_stage_action</qualifiedname>
         <briefdescription>
 <para>The post_stage_action function is called by the integrator on the computed stage just after it is computed. </para>
         </briefdescription>
@@ -115,6 +122,7 @@
         <definition>std::function&lt;void (T&amp;, amrex::Real)&gt; amrex::IntegratorBase&lt; T &gt;::post_fast_step_action</definition>
         <argsstring></argsstring>
         <name>post_fast_step_action</name>
+        <qualifiedname>amrex::IntegratorBase::post_fast_step_action</qualifiedname>
         <briefdescription>
 <para>The post_step_action function is called by the integrator on the computed state just after it is computed. </para>
         </briefdescription>
@@ -129,6 +137,7 @@
         <definition>bool amrex::IntegratorBase&lt; T &gt;::use_adaptive_time_step</definition>
         <argsstring></argsstring>
         <name>use_adaptive_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::use_adaptive_time_step</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
 <para>Flag to enable/disable adaptive time stepping in single rate methods or at the slow time scale in multirate methods (bool) </para>
@@ -144,6 +153,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::time_step</definition>
         <argsstring></argsstring>
         <name>time_step</name>
+        <qualifiedname>amrex::IntegratorBase::time_step</qualifiedname>
         <briefdescription>
 <para>Current integrator time step size (Real) </para>
         </briefdescription>
@@ -158,6 +168,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::previous_time_step</definition>
         <argsstring></argsstring>
         <name>previous_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::previous_time_step</qualifiedname>
         <briefdescription>
 <para>Step size of the last completed step (Real) </para>
         </briefdescription>
@@ -172,6 +183,7 @@
         <definition>bool amrex::IntegratorBase&lt; T &gt;::use_adaptive_fast_time_step</definition>
         <argsstring></argsstring>
         <name>use_adaptive_fast_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::use_adaptive_fast_time_step</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
 <para>Flag to enable/disable adaptive time stepping at the fast time scale in multirate methods (bool) </para>
@@ -187,6 +199,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::fast_time_step</definition>
         <argsstring></argsstring>
         <name>fast_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::fast_time_step</qualifiedname>
         <briefdescription>
 <para>Current integrator fast time scale time step size with multirate methods (Real) </para>
         </briefdescription>
@@ -201,6 +214,7 @@
         <definition>amrex::Long amrex::IntegratorBase&lt; T &gt;::num_steps</definition>
         <argsstring></argsstring>
         <name>num_steps</name>
+        <qualifiedname>amrex::IntegratorBase::num_steps</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
 <para>Number of integrator time steps (Long) </para>
@@ -216,6 +230,7 @@
         <definition>int amrex::IntegratorBase&lt; T &gt;::max_steps</definition>
         <argsstring></argsstring>
         <name>max_steps</name>
+        <qualifiedname>amrex::IntegratorBase::max_steps</qualifiedname>
         <initializer>= 500</initializer>
         <briefdescription>
 <para>Max number of internal steps before an error is returned (Long) </para>
@@ -231,6 +246,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::rel_tol</definition>
         <argsstring></argsstring>
         <name>rel_tol</name>
+        <qualifiedname>amrex::IntegratorBase::rel_tol</qualifiedname>
         <initializer>= 1.0e-4</initializer>
         <briefdescription>
 <para>Relative tolerance for adaptive time stepping (Real) </para>
@@ -246,6 +262,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::abs_tol</definition>
         <argsstring></argsstring>
         <name>abs_tol</name>
+        <qualifiedname>amrex::IntegratorBase::abs_tol</qualifiedname>
         <initializer>= 1.0e-9</initializer>
         <briefdescription>
 <para>Absolute tolerance for adaptive time stepping (Real) </para>
@@ -261,6 +278,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::fast_rel_tol</definition>
         <argsstring></argsstring>
         <name>fast_rel_tol</name>
+        <qualifiedname>amrex::IntegratorBase::fast_rel_tol</qualifiedname>
         <initializer>= 1.0e-4</initializer>
         <briefdescription>
 <para>Relative tolerance for adaptive time stepping at the fast time scale (Real) </para>
@@ -276,6 +294,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::fast_abs_tol</definition>
         <argsstring></argsstring>
         <name>fast_abs_tol</name>
+        <qualifiedname>amrex::IntegratorBase::fast_abs_tol</qualifiedname>
         <initializer>= 1.0e-9</initializer>
         <briefdescription>
 <para>Absolute tolerance for adaptive time stepping at the fast time scale (Real) </para>
@@ -286,13 +305,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="270" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="270" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a0161e86a01e6b8a3ae9a9d3f91e5ad29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::IntegratorBase&lt; T &gt;::IntegratorBase</definition>
         <argsstring>()=default</argsstring>
         <name>IntegratorBase</name>
+        <qualifiedname>amrex::IntegratorBase::IntegratorBase</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -306,6 +326,7 @@
         <definition>amrex::IntegratorBase&lt; T &gt;::IntegratorBase</definition>
         <argsstring>(const T &amp;)</argsstring>
         <name>IntegratorBase</name>
+        <qualifiedname>amrex::IntegratorBase::IntegratorBase</qualifiedname>
         <param>
           <type>const T &amp;</type>
         </param>
@@ -322,6 +343,7 @@
         <definition>virtual amrex::IntegratorBase&lt; T &gt;::~IntegratorBase</definition>
         <argsstring>()=default</argsstring>
         <name>~IntegratorBase</name>
+        <qualifiedname>amrex::IntegratorBase::~IntegratorBase</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -335,6 +357,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_rhs</definition>
         <argsstring>(std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt; F)</argsstring>
         <name>set_rhs</name>
+        <qualifiedname>amrex::IntegratorBase::set_rhs</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt;</type>
           <declname>F</declname>
@@ -352,6 +375,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_imex_rhs</definition>
         <argsstring>(std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt; Fi, std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt; Fe)</argsstring>
         <name>set_imex_rhs</name>
+        <qualifiedname>amrex::IntegratorBase::set_imex_rhs</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt;</type>
           <declname>Fi</declname>
@@ -373,6 +397,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_fast_rhs</definition>
         <argsstring>(std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt; F)</argsstring>
         <name>set_fast_rhs</name>
+        <qualifiedname>amrex::IntegratorBase::set_fast_rhs</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, T &amp;, const amrex::Real)&gt;</type>
           <declname>F</declname>
@@ -390,6 +415,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_post_stage_action</definition>
         <argsstring>(std::function&lt; void(T &amp;, amrex::Real)&gt; A)</argsstring>
         <name>set_post_stage_action</name>
+        <qualifiedname>amrex::IntegratorBase::set_post_stage_action</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
           <declname>A</declname>
@@ -407,6 +433,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_post_step_action</definition>
         <argsstring>(std::function&lt; void(T &amp;, amrex::Real)&gt; A)</argsstring>
         <name>set_post_step_action</name>
+        <qualifiedname>amrex::IntegratorBase::set_post_step_action</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
           <declname>A</declname>
@@ -424,6 +451,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_post_fast_stage_action</definition>
         <argsstring>(std::function&lt; void(T &amp;, amrex::Real)&gt; A)</argsstring>
         <name>set_post_fast_stage_action</name>
+        <qualifiedname>amrex::IntegratorBase::set_post_fast_stage_action</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
           <declname>A</declname>
@@ -441,6 +469,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_post_fast_step_action</definition>
         <argsstring>(std::function&lt; void(T &amp;, amrex::Real)&gt; A)</argsstring>
         <name>set_post_fast_step_action</name>
+        <qualifiedname>amrex::IntegratorBase::set_post_fast_step_action</qualifiedname>
         <param>
           <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
           <declname>A</declname>
@@ -458,6 +487,7 @@
         <definition>amrex::Real amrex::IntegratorBase&lt; T &gt;::get_time_step</definition>
         <argsstring>()</argsstring>
         <name>get_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::get_time_step</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -471,6 +501,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_time_step</definition>
         <argsstring>(amrex::Real dt)</argsstring>
         <name>set_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::set_time_step</qualifiedname>
         <param>
           <type>amrex::Real</type>
           <declname>dt</declname>
@@ -488,6 +519,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_adaptive_step</definition>
         <argsstring>()</argsstring>
         <name>set_adaptive_step</name>
+        <qualifiedname>amrex::IntegratorBase::set_adaptive_step</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -501,6 +533,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_fast_time_step</definition>
         <argsstring>(amrex::Real dt)</argsstring>
         <name>set_fast_time_step</name>
+        <qualifiedname>amrex::IntegratorBase::set_fast_time_step</qualifiedname>
         <param>
           <type>amrex::Real</type>
           <declname>dt</declname>
@@ -518,6 +551,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_adaptive_fast_step</definition>
         <argsstring>()</argsstring>
         <name>set_adaptive_fast_step</name>
+        <qualifiedname>amrex::IntegratorBase::set_adaptive_fast_step</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -531,6 +565,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_max_steps</definition>
         <argsstring>(int steps)</argsstring>
         <name>set_max_steps</name>
+        <qualifiedname>amrex::IntegratorBase::set_max_steps</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>steps</declname>
@@ -548,6 +583,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_tolerances</definition>
         <argsstring>(amrex::Real rtol, amrex::Real atol)</argsstring>
         <name>set_tolerances</name>
+        <qualifiedname>amrex::IntegratorBase::set_tolerances</qualifiedname>
         <param>
           <type>amrex::Real</type>
           <declname>rtol</declname>
@@ -569,6 +605,7 @@
         <definition>void amrex::IntegratorBase&lt; T &gt;::set_fast_tolerances</definition>
         <argsstring>(amrex::Real rtol, amrex::Real atol)</argsstring>
         <name>set_fast_tolerances</name>
+        <qualifiedname>amrex::IntegratorBase::set_fast_tolerances</qualifiedname>
         <param>
           <type>amrex::Real</type>
           <declname>rtol</declname>
@@ -590,6 +627,7 @@
         <definition>virtual amrex::Real amrex::IntegratorBase&lt; T &gt;::advance</definition>
         <argsstring>(T &amp;S_old, T &amp;S_new, amrex::Real time, amrex::Real dt)=0</argsstring>
         <name>advance</name>
+        <qualifiedname>amrex::IntegratorBase::advance</qualifiedname>
         <reimplementedby refid="classamrex_1_1FEIntegrator_1a8fd0bd1a546d76eaf337dabca422ead4">advance</reimplementedby>
         <reimplementedby refid="classamrex_1_1RKIntegrator_1ada5e46fb855c0ec424f31edd25bc953a">advance</reimplementedby>
         <reimplementedby refid="classamrex_1_1SundialsIntegrator_1a5db76fd7e2cd637504a4addd0d3f4a88">advance</reimplementedby>
@@ -623,6 +661,7 @@
         <definition>virtual void amrex::IntegratorBase&lt; T &gt;::evolve</definition>
         <argsstring>(T &amp;S_out, const amrex::Real time_out)=0</argsstring>
         <name>evolve</name>
+        <qualifiedname>amrex::IntegratorBase::evolve</qualifiedname>
         <reimplementedby refid="classamrex_1_1FEIntegrator_1a31411280257ee4d2942a140cbead4635">evolve</reimplementedby>
         <reimplementedby refid="classamrex_1_1RKIntegrator_1af0eddcd4e42f2e70d706c84108c812e7">evolve</reimplementedby>
         <reimplementedby refid="classamrex_1_1SundialsIntegrator_1a688191347e4eef3fa6bc2714a8d51a0e">evolve</reimplementedby>
@@ -648,6 +687,7 @@
         <definition>virtual void amrex::IntegratorBase&lt; T &gt;::time_interpolate</definition>
         <argsstring>(const T &amp;S_new, const T &amp;S_old, amrex::Real timestep_fraction, T &amp;data)=0</argsstring>
         <name>time_interpolate</name>
+        <qualifiedname>amrex::IntegratorBase::time_interpolate</qualifiedname>
         <reimplementedby refid="classamrex_1_1FEIntegrator_1ac0b9633fedee03bd638f87514a952720">time_interpolate</reimplementedby>
         <reimplementedby refid="classamrex_1_1SundialsIntegrator_1a064376184442b5fa00c9f3b407e9fe5d">time_interpolate</reimplementedby>
         <reimplementedby refid="classamrex_1_1RKIntegrator_1a2372340230301693e973e404c12618fa">time_interpolate</reimplementedby>
@@ -680,6 +720,7 @@
         <definition>virtual void amrex::IntegratorBase&lt; T &gt;::map_data</definition>
         <argsstring>(std::function&lt; void(T &amp;)&gt; Map)=0</argsstring>
         <name>map_data</name>
+        <qualifiedname>amrex::IntegratorBase::map_data</qualifiedname>
         <reimplementedby refid="classamrex_1_1FEIntegrator_1acd01b4dfae6f5cbd84d2ed940355fd0c">map_data</reimplementedby>
         <reimplementedby refid="classamrex_1_1RKIntegrator_1acc1277598adc82e186fef0b44c86e603">map_data</reimplementedby>
         <reimplementedby refid="classamrex_1_1SundialsIntegrator_1af0bac245837e93c1fc9a6a157c4a30a7">map_data</reimplementedby>
@@ -695,18 +736,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="376" column="18"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>amrex::RKIntegrator&lt; T &gt;</label>
-        <link refid="classamrex_1_1RKIntegrator"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>amrex::FEIntegrator&lt; T &gt;</label>
         <link refid="classamrex_1_1FEIntegrator"/>
@@ -717,6 +752,12 @@
         <label>amrex::IntegratorBase&lt; T &gt;</label>
         <link refid="classamrex_1_1IntegratorBase"/>
       </node>
+      <node id="3">
+        <label>amrex::RKIntegrator&lt; T &gt;</label>
+        <link refid="classamrex_1_1RKIntegrator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>amrex::SundialsIntegrator&lt; T &gt;</label>
         <link refid="classamrex_1_1SundialsIntegrator"/>
@@ -725,9 +766,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>Real</label>
-      </node>
       <node id="1">
         <label>amrex::IntegratorBase&lt; T &gt;</label>
         <link refid="classamrex_1_1IntegratorBase"/>
@@ -740,6 +778,9 @@
           <edgelabel>rel_tol</edgelabel>
           <edgelabel>time_step</edgelabel>
         </childnode>
+      </node>
+      <node id="2">
+        <label>Real</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="162" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="163" bodyend="377"/>

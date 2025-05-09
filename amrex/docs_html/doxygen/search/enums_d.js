@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['side_18649',['Side',['../classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410',1,'amrex::Orientation']]],
-  ['statemode_18650',['StateMode',['../structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8',1,'amrex::LinOpEnumType']]],
-  ['strategy_18651',['Strategy',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8',1,'amrex::DistributionMapping::Strategy()'],['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282',1,'amrex::ForkJoin::Strategy()']]]
+  ['reduceop_0',['ReduceOp',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d',1,'amrex::detail']]],
+  ['runon_1',['RunOn',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2',1,'amrex']]]
 ];

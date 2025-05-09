@@ -1,6 +1,6 @@
 var AMReX_8H =
 [
-    [ "AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
+    [ "amrex::AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
     [ "ErrorHandler", "AMReX_8H.html#af6f45c130cacf67455811e9b4829f432", null ],
     [ "PTR_TO_VOID_FUNC", "AMReX_8H.html#a364202ccae0ac53c5c0d1440b8c06dd2", null ],
     [ "FPExcept", "AMReX_8H.html#a242c1fdf859dbcbdecd2794373ea0d2c", [
@@ -22,15 +22,17 @@ var AMReX_8H =
     [ "Error", "AMReX_8H.html#aaa5d048f7bf7386b6976b10001a5f8b4", null ],
     [ "Error_host", "AMReX_8H.html#a620a62df5f47fd577e2628f850a447fc", null ],
     [ "ErrorStream", "AMReX_8H.html#a1e213ab52cdac41e691ab49370b30a34", null ],
-    [ "ExecOnFinalize", "AMReX_8H.html#aec8ceac1148bd8331f3a51572068f8a0", null ],
-    [ "ExecOnInitialize", "AMReX_8H.html#a6911748ceb0d88bf5b6bf7f3f0402e97", null ],
+    [ "ExecOnFinalize", "AMReX_8H.html#ad321a3965621a748d4c08e80c42b7af3", null ],
+    [ "ExecOnInitialize", "AMReX_8H.html#a3087256f5c6ac4e3c89eb62111603d44", null ],
     [ "Finalize", "AMReX_8H.html#a58b341e8a1b6a668812e8801b917a9de", null ],
     [ "Finalize", "AMReX_8H.html#a8117ae9942e01445ea7fe62d2f190c64", null ],
+    [ "Finalize_minimal", "AMReX_8H.html#a5f0a2d36e3539b0feab77cb7670d5053", null ],
     [ "GccPlacater", "AMReX_8H.html#a9d0fa7afb6bbeb5e81b5570445599fbf", null ],
     [ "get_command", "AMReX_8H.html#a0b2451baea738a8717530466c13f37fe", null ],
     [ "get_command_argument", "AMReX_8H.html#a566544464dedd2d70fe9969fc79658cd", null ],
     [ "getFPExcept", "AMReX_8H.html#ae23d62d1c91ace8d10a35f15db80e780", null ],
     [ "ignore_unused", "AMReX_8H.html#a95b1159ba3a5494abd49dc9b3d34eacf", null ],
+    [ "Init_minimal", "AMReX_8H.html#afadc6162983c674e4597ea37fa732645", null ],
     [ "Initialize", "AMReX_8H.html#a023801a9417fb6bd2f74787e89124a8c", null ],
     [ "Initialize", "AMReX_8H.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d", null ],
     [ "Initialized", "AMReX_8H.html#afdedd4a55eb147e0e27194b9e06f68e0", null ],

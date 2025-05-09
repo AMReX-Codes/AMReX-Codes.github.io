@@ -1,5 +1,4 @@
 var AMReX__CArena_8cpp =
 [
-    [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
-    [ "operator<<", "AMReX__CArena_8cpp.html#ae61c3524e3181147593dbfdd52701639", null ]
+    [ "operator<<", "AMReX__CArena_8cpp.html#a14dfe2fb4a9b97fd0c118883449462e8", null ]
 ];

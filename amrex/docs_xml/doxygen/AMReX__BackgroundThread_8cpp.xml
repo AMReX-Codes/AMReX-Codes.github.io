@@ -1,21 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="AMReX__BackgroundThread_8cpp" kind="file" language="C++">
     <compoundname>AMReX_BackgroundThread.cpp</compoundname>
     <includes refid="AMReX__BackgroundThread_8H" local="no">AMReX_BackgroundThread.H</includes>
     <incdepgraph>
-      <node id="6">
-        <label>functional</label>
-      </node>
-      <node id="9">
-        <label>queue</label>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BackgroundThread.cpp</label>
-        <link refid="AMReX__BackgroundThread_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
       <node id="2">
         <label>AMReX_BackgroundThread.H</label>
         <link refid="AMReX__BackgroundThread_8H"/>
@@ -36,23 +24,35 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>condition_variable</label>
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BackgroundThread.cpp</label>
+        <link refid="AMReX__BackgroundThread_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
-      <node id="8">
-        <label>mutex</label>
-      </node>
-      <node id="10">
-        <label>thread</label>
-      </node>
       <node id="4">
         <label>algorithm</label>
       </node>
+      <node id="5">
+        <label>condition_variable</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
       <node id="7">
         <label>memory</label>
+      </node>
+      <node id="8">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>queue</label>
+      </node>
+      <node id="10">
+        <label>thread</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
@@ -85,10 +85,10 @@
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_lock&lt;std::mutex&gt;<sp/>lck(<ref refid="classamrex_1_1BackgroundThread_1a9f33f06880c6b03a62b70fd559ab53df" kindref="member">m_mutx</ref>);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1a71752cb305b9ed234397d1575b5c679b" kindref="member">m_job_cond</ref>.wait(lck,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>()<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>.empty();<sp/>});</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref><sp/>=<sp/><ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>.front();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>f<sp/>=<sp/><ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>.front();</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>.pop();</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lck.unlock();</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a7c64e1c30110b537ab4c7acbc9a3900a" kindref="member">f</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f();</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1BackgroundThread_1a50eaee402e1e16b45a4e535eda4f2860" kindref="member">m_clearing</ref>)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>All<sp/>jobs<sp/>before<sp/>this<sp/>have<sp/>finished.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1adbb640d4685fec31cf46171b7833a059" kindref="member">m_done_cond</ref>.notify_one();</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

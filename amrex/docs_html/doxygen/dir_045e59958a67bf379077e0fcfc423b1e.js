@@ -6,11 +6,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_acc_mod.F90", "AMReX__acc__mod_8F90.html", "AMReX__acc__mod_8F90" ],
     [ "AMReX_Algorithm.H", "AMReX__Algorithm_8H.html", "AMReX__Algorithm_8H" ],
     [ "AMReX_ANSIEscCode.H", "AMReX__ANSIEscCode_8H.html", "AMReX__ANSIEscCode_8H" ],
-    [ "AMReX_Any.H", "AMReX__Any_8H.html", [
-      [ "Any", "classamrex_1_1Any.html", "classamrex_1_1Any" ],
-      [ "innards_base", "structamrex_1_1Any_1_1innards__base.html", "structamrex_1_1Any_1_1innards__base" ],
-      [ "innards", "structamrex_1_1Any_1_1innards.html", "structamrex_1_1Any_1_1innards" ]
-    ] ],
+    [ "AMReX_Any.H", "AMReX__Any_8H.html", "AMReX__Any_8H" ],
     [ "AMReX_Arena.cpp", "AMReX__Arena_8cpp.html", "AMReX__Arena_8cpp" ],
     [ "AMReX_Arena.H", "AMReX__Arena_8H.html", "AMReX__Arena_8H" ],
     [ "AMReX_Array.H", "AMReX__Array_8H.html", "AMReX__Array_8H" ],
@@ -19,13 +15,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_AsyncOut.cpp", "AMReX__AsyncOut_8cpp.html", "AMReX__AsyncOut_8cpp" ],
     [ "AMReX_AsyncOut.H", "AMReX__AsyncOut_8H.html", "AMReX__AsyncOut_8H" ],
     [ "AMReX_BackgroundThread.cpp", "AMReX__BackgroundThread_8cpp.html", null ],
-    [ "AMReX_BackgroundThread.H", "AMReX__BackgroundThread_8H.html", [
-      [ "BackgroundThread", "classamrex_1_1BackgroundThread.html", "classamrex_1_1BackgroundThread" ]
-    ] ],
+    [ "AMReX_BackgroundThread.H", "AMReX__BackgroundThread_8H.html", "AMReX__BackgroundThread_8H" ],
     [ "AMReX_BArena.cpp", "AMReX__BArena_8cpp.html", null ],
-    [ "AMReX_BArena.H", "AMReX__BArena_8H.html", [
-      [ "BArena", "classamrex_1_1BArena.html", "classamrex_1_1BArena" ]
-    ] ],
+    [ "AMReX_BArena.H", "AMReX__BArena_8H.html", "AMReX__BArena_8H" ],
     [ "AMReX_BaseFab.cpp", "AMReX__BaseFab_8cpp.html", "AMReX__BaseFab_8cpp" ],
     [ "AMReX_BaseFab.H", "AMReX__BaseFab_8H.html", "AMReX__BaseFab_8H" ],
     [ "AMReX_BaseFabUtility.H", "AMReX__BaseFabUtility_8H.html", "AMReX__BaseFabUtility_8H" ],
@@ -41,40 +33,29 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_BLBackTrace.H", "AMReX__BLBackTrace_8H.html", "AMReX__BLBackTrace_8H" ],
     [ "AMReX_BLFort.H", "AMReX__BLFort_8H.html", "AMReX__BLFort_8H" ],
     [ "AMReX_BlockMutex.cpp", "AMReX__BlockMutex_8cpp.html", null ],
-    [ "AMReX_BlockMutex.H", "AMReX__BlockMutex_8H.html", [
-      [ "BlockMutex", "structamrex_1_1BlockMutex.html", "structamrex_1_1BlockMutex" ],
-      [ "state_t", "unionamrex_1_1BlockMutex_1_1state__t.html", "unionamrex_1_1BlockMutex_1_1state__t" ],
-      [ "II", "structamrex_1_1BlockMutex_1_1state__t_1_1II.html", "structamrex_1_1BlockMutex_1_1state__t_1_1II" ]
-    ] ],
+    [ "AMReX_BlockMutex.H", "AMReX__BlockMutex_8H.html", "AMReX__BlockMutex_8H" ],
     [ "AMReX_BLProfiler.cpp", "AMReX__BLProfiler_8cpp.html", "AMReX__BLProfiler_8cpp" ],
     [ "AMReX_BLProfiler.H", "AMReX__BLProfiler_8H.html", "AMReX__BLProfiler_8H" ],
     [ "AMReX_BLProfiler_F.F90", "AMReX__BLProfiler__F_8F90.html", "AMReX__BLProfiler__F_8F90" ],
     [ "AMReX_BLutil_F.F90", "AMReX__BLutil__F_8F90.html", "AMReX__BLutil__F_8F90" ],
     [ "AMReX_Box.cpp", "AMReX__Box_8cpp.html", "AMReX__Box_8cpp" ],
     [ "AMReX_Box.H", "AMReX__Box_8H.html", "AMReX__Box_8H" ],
-    [ "AMReX_BoxArray.cpp", "AMReX__BoxArray_8cpp.html", "AMReX__BoxArray_8cpp" ],
+    [ "AMReX_BoxArray.cpp", "AMReX__BoxArray_8cpp.html", null ],
     [ "AMReX_BoxArray.H", "AMReX__BoxArray_8H.html", "AMReX__BoxArray_8H" ],
     [ "AMReX_BoxDomain.cpp", "AMReX__BoxDomain_8cpp.html", "AMReX__BoxDomain_8cpp" ],
     [ "AMReX_BoxDomain.H", "AMReX__BoxDomain_8H.html", "AMReX__BoxDomain_8H" ],
     [ "AMReX_BoxIterator.cpp", "AMReX__BoxIterator_8cpp.html", null ],
-    [ "AMReX_BoxIterator.H", "AMReX__BoxIterator_8H.html", [
-      [ "BoxIterator", "classamrex_1_1BoxIterator.html", "classamrex_1_1BoxIterator" ]
-    ] ],
+    [ "AMReX_BoxIterator.H", "AMReX__BoxIterator_8H.html", "AMReX__BoxIterator_8H" ],
     [ "AMReX_BoxList.cpp", "AMReX__BoxList_8cpp.html", null ],
     [ "AMReX_BoxList.H", "AMReX__BoxList_8H.html", "AMReX__BoxList_8H" ],
     [ "AMReX_CArena.cpp", "AMReX__CArena_8cpp.html", "AMReX__CArena_8cpp" ],
-    [ "AMReX_CArena.H", "AMReX__CArena_8H.html", [
-      [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],
-      [ "Node", "classamrex_1_1CArena_1_1Node.html", "classamrex_1_1CArena_1_1Node" ],
-      [ "hash", "structamrex_1_1CArena_1_1Node_1_1hash.html", "structamrex_1_1CArena_1_1Node_1_1hash" ]
-    ] ],
+    [ "AMReX_CArena.H", "AMReX__CArena_8H.html", "AMReX__CArena_8H" ],
     [ "AMReX_ccse-mpi.H", "AMReX__ccse-mpi_8H.html", "AMReX__ccse-mpi_8H" ],
     [ "AMReX_CONSTANTS.H", "AMReX__CONSTANTS_8H.html", null ],
     [ "AMReX_constants_mod.f90", "AMReX__constants__mod_8f90.html", "AMReX__constants__mod_8f90" ],
+    [ "AMReX_ConstexprFor.H", "AMReX__ConstexprFor_8H.html", "AMReX__ConstexprFor_8H" ],
     [ "AMReX_CoordSys.cpp", "AMReX__CoordSys_8cpp.html", "AMReX__CoordSys_8cpp" ],
-    [ "AMReX_CoordSys.H", "AMReX__CoordSys_8H.html", [
-      [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ]
-    ] ],
+    [ "AMReX_CoordSys.H", "AMReX__CoordSys_8H.html", "AMReX__CoordSys_8H" ],
     [ "AMReX_COORDSYS_1D_C.H", "AMReX__COORDSYS__1D__C_8H.html", "AMReX__COORDSYS__1D__C_8H" ],
     [ "AMReX_COORDSYS_2D_C.H", "AMReX__COORDSYS__2D__C_8H.html", "AMReX__COORDSYS__2D__C_8H" ],
     [ "AMReX_COORDSYS_3D_C.H", "AMReX__COORDSYS__3D__C_8H.html", null ],
@@ -83,10 +64,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_CudaGraph.H", "AMReX__CudaGraph_8H.html", null ],
     [ "AMReX_CuptiTrace.cpp", "AMReX__CuptiTrace_8cpp.html", null ],
     [ "AMReX_CuptiTrace.H", "AMReX__CuptiTrace_8H.html", null ],
-    [ "AMReX_DataAllocator.H", "AMReX__DataAllocator_8H.html", [
-      [ "DataAllocator", "structamrex_1_1DataAllocator.html", "structamrex_1_1DataAllocator" ],
-      [ "DataDeleter", "structamrex_1_1DataDeleter.html", "structamrex_1_1DataDeleter" ]
-    ] ],
+    [ "AMReX_DataAllocator.H", "AMReX__DataAllocator_8H.html", "AMReX__DataAllocator_8H" ],
     [ "AMReX_Demangle.H", "AMReX__Demangle_8H.html", "AMReX__Demangle_8H" ],
     [ "AMReX_Dim3.H", "AMReX__Dim3_8H.html", "AMReX__Dim3_8H" ],
     [ "AMReX_DistributionMapping.cpp", "AMReX__DistributionMapping_8cpp.html", "AMReX__DistributionMapping_8cpp" ],
@@ -103,68 +81,35 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_FabArrayUtility.H", "AMReX__FabArrayUtility_8H.html", "AMReX__FabArrayUtility_8H" ],
     [ "AMReX_FabConv.cpp", "AMReX__FabConv_8cpp.html", "AMReX__FabConv_8cpp" ],
     [ "AMReX_FabConv.H", "AMReX__FabConv_8H.html", "AMReX__FabConv_8H" ],
-    [ "AMReX_FabDataType.H", "AMReX__FabDataType_8H.html", [
-      [ "FabDataType", "structamrex_1_1FabDataType.html", null ],
-      [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< T > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4" ],
-      [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< typename T::value_type > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4" ]
-    ] ],
+    [ "AMReX_FabDataType.H", "AMReX__FabDataType_8H.html", "AMReX__FabDataType_8H" ],
     [ "AMReX_FabFactory.H", "AMReX__FabFactory_8H.html", "AMReX__FabFactory_8H" ],
     [ "AMReX_FACopyDescriptor.H", "AMReX__FACopyDescriptor_8H.html", "AMReX__FACopyDescriptor_8H" ],
     [ "AMReX_FArrayBox.cpp", "AMReX__FArrayBox_8cpp.html", "AMReX__FArrayBox_8cpp" ],
     [ "AMReX_FArrayBox.H", "AMReX__FArrayBox_8H.html", "AMReX__FArrayBox_8H" ],
     [ "AMReX_FBI.H", "AMReX__FBI_8H.html", "AMReX__FBI_8H" ],
-    [ "AMReX_FEIntegrator.H", "AMReX__FEIntegrator_8H.html", [
-      [ "FEIntegrator", "classamrex_1_1FEIntegrator.html", "classamrex_1_1FEIntegrator" ]
-    ] ],
-    [ "AMReX_FilCC_1D_C.H", "AMReX__FilCC__1D__C_8H.html", [
-      [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ]
-    ] ],
-    [ "AMReX_FilCC_2D_C.H", "AMReX__FilCC__2D__C_8H.html", [
-      [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ]
-    ] ],
-    [ "AMReX_FilCC_3D_C.H", "AMReX__FilCC__3D__C_8H.html", [
-      [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ]
-    ] ],
+    [ "AMReX_FEIntegrator.H", "AMReX__FEIntegrator_8H.html", "AMReX__FEIntegrator_8H" ],
+    [ "AMReX_FilCC_1D_C.H", "AMReX__FilCC__1D__C_8H.html", "AMReX__FilCC__1D__C_8H" ],
+    [ "AMReX_FilCC_2D_C.H", "AMReX__FilCC__2D__C_8H.html", "AMReX__FilCC__2D__C_8H" ],
+    [ "AMReX_FilCC_3D_C.H", "AMReX__FilCC__3D__C_8H.html", "AMReX__FilCC__3D__C_8H" ],
     [ "AMReX_FilCC_C.cpp", "AMReX__FilCC__C_8cpp.html", "AMReX__FilCC__C_8cpp" ],
     [ "AMReX_FilCC_C.H", "AMReX__FilCC__C_8H.html", "AMReX__FilCC__C_8H" ],
     [ "AMReX_filcc_f.H", "AMReX__filcc__f_8H.html", "AMReX__filcc__f_8H" ],
     [ "AMReX_filcc_mod.F90", "AMReX__filcc__mod_8F90.html", "AMReX__filcc__mod_8F90" ],
     [ "AMReX_FileSystem.cpp", "AMReX__FileSystem_8cpp.html", "AMReX__FileSystem_8cpp" ],
     [ "AMReX_FileSystem.H", "AMReX__FileSystem_8H.html", "AMReX__FileSystem_8H" ],
-    [ "AMReX_FilFC_1D_C.H", "AMReX__FilFC__1D__C_8H.html", [
-      [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ]
-    ] ],
-    [ "AMReX_FilFC_2D_C.H", "AMReX__FilFC__2D__C_8H.html", [
-      [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ]
-    ] ],
-    [ "AMReX_FilFC_3D_C.H", "AMReX__FilFC__3D__C_8H.html", [
-      [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ]
-    ] ],
+    [ "AMReX_FilFC_1D_C.H", "AMReX__FilFC__1D__C_8H.html", "AMReX__FilFC__1D__C_8H" ],
+    [ "AMReX_FilFC_2D_C.H", "AMReX__FilFC__2D__C_8H.html", "AMReX__FilFC__2D__C_8H" ],
+    [ "AMReX_FilFC_3D_C.H", "AMReX__FilFC__3D__C_8H.html", "AMReX__FilFC__3D__C_8H" ],
     [ "AMReX_FilFC_C.cpp", "AMReX__FilFC__C_8cpp.html", "AMReX__FilFC__C_8cpp" ],
     [ "AMReX_FilFC_C.H", "AMReX__FilFC__C_8H.html", "AMReX__FilFC__C_8H" ],
     [ "AMReX_FilND_C.cpp", "AMReX__FilND__C_8cpp.html", "AMReX__FilND__C_8cpp" ],
     [ "AMReX_FilND_C.H", "AMReX__FilND__C_8H.html", "AMReX__FilND__C_8H" ],
     [ "AMReX_ForkJoin.cpp", "AMReX__ForkJoin_8cpp.html", null ],
-    [ "AMReX_ForkJoin.H", "AMReX__ForkJoin_8H.html", [
-      [ "ForkJoin", "classamrex_1_1ForkJoin.html", "classamrex_1_1ForkJoin" ],
-      [ "ComponentSet", "structamrex_1_1ForkJoin_1_1ComponentSet.html", "structamrex_1_1ForkJoin_1_1ComponentSet" ],
-      [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html", "structamrex_1_1ForkJoin_1_1MFFork" ]
-    ] ],
+    [ "AMReX_ForkJoin.H", "AMReX__ForkJoin_8H.html", "AMReX__ForkJoin_8H" ],
     [ "AMReX_fort_mod.F90", "AMReX__fort__mod_8F90.html", "AMReX__fort__mod_8F90" ],
     [ "AMReX_FPC.cpp", "AMReX__FPC_8cpp.html", null ],
-    [ "AMReX_FPC.H", "AMReX__FPC_8H.html", [
-      [ "FPC", "classamrex_1_1FPC.html", "classamrex_1_1FPC" ]
-    ] ],
-    [ "AMReX_Functional.H", "AMReX__Functional_8H.html", [
-      [ "Plus", "structamrex_1_1Plus.html", "structamrex_1_1Plus" ],
-      [ "Minus", "structamrex_1_1Minus.html", "structamrex_1_1Minus" ],
-      [ "Minimum", "structamrex_1_1Minimum.html", "structamrex_1_1Minimum" ],
-      [ "Maximum", "structamrex_1_1Maximum.html", "structamrex_1_1Maximum" ],
-      [ "LogicalAnd", "structamrex_1_1LogicalAnd.html", "structamrex_1_1LogicalAnd" ],
-      [ "LogicalOr", "structamrex_1_1LogicalOr.html", "structamrex_1_1LogicalOr" ],
-      [ "Multiplies", "structamrex_1_1Multiplies.html", "structamrex_1_1Multiplies" ],
-      [ "Divides", "structamrex_1_1Divides.html", "structamrex_1_1Divides" ]
-    ] ],
+    [ "AMReX_FPC.H", "AMReX__FPC_8H.html", "AMReX__FPC_8H" ],
+    [ "AMReX_Functional.H", "AMReX__Functional_8H.html", "AMReX__Functional_8H" ],
     [ "AMReX_Geometry.cpp", "AMReX__Geometry_8cpp.html", "AMReX__Geometry_8cpp" ],
     [ "AMReX_Geometry.H", "AMReX__Geometry_8H.html", "AMReX__Geometry_8H" ],
     [ "AMReX_Gpu.H", "AMReX__Gpu_8H.html", null ],
@@ -173,9 +118,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuAsyncArray.cpp", "AMReX__GpuAsyncArray_8cpp.html", "AMReX__GpuAsyncArray_8cpp" ],
     [ "AMReX_GpuAsyncArray.H", "AMReX__GpuAsyncArray_8H.html", "AMReX__GpuAsyncArray_8H" ],
     [ "AMReX_GpuAtomic.H", "AMReX__GpuAtomic_8H.html", "AMReX__GpuAtomic_8H" ],
-    [ "AMReX_GpuBuffer.H", "AMReX__GpuBuffer_8H.html", [
-      [ "Buffer", "classamrex_1_1Gpu_1_1Buffer.html", "classamrex_1_1Gpu_1_1Buffer" ]
-    ] ],
+    [ "AMReX_GpuBuffer.H", "AMReX__GpuBuffer_8H.html", "AMReX__GpuBuffer_8H" ],
     [ "AMReX_GpuComplex.H", "AMReX__GpuComplex_8H.html", "AMReX__GpuComplex_8H" ],
     [ "AMReX_GpuContainers.H", "AMReX__GpuContainers_8H.html", "AMReX__GpuContainers_8H" ],
     [ "AMReX_GpuControl.cpp", "AMReX__GpuControl_8cpp.html", "AMReX__GpuControl_8cpp" ],
@@ -183,13 +126,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuDevice.cpp", "AMReX__GpuDevice_8cpp.html", null ],
     [ "AMReX_GpuDevice.H", "AMReX__GpuDevice_8H.html", "AMReX__GpuDevice_8H" ],
     [ "AMReX_GpuElixir.cpp", "AMReX__GpuElixir_8cpp.html", null ],
-    [ "AMReX_GpuElixir.H", "AMReX__GpuElixir_8H.html", [
-      [ "Elixir", "classamrex_1_1Gpu_1_1Elixir.html", "classamrex_1_1Gpu_1_1Elixir" ]
-    ] ],
+    [ "AMReX_GpuElixir.H", "AMReX__GpuElixir_8H.html", "AMReX__GpuElixir_8H" ],
     [ "AMReX_GpuError.H", "AMReX__GpuError_8H.html", "AMReX__GpuError_8H" ],
-    [ "AMReX_GpuKernelInfo.H", "AMReX__GpuKernelInfo_8H.html", [
-      [ "KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", "classamrex_1_1Gpu_1_1KernelInfo" ]
-    ] ],
+    [ "AMReX_GpuKernelInfo.H", "AMReX__GpuKernelInfo_8H.html", "AMReX__GpuKernelInfo_8H" ],
     [ "AMReX_GpuLaunch.H", "AMReX__GpuLaunch_8H.html", "AMReX__GpuLaunch_8H" ],
     [ "AMReX_GpuLaunch.nolint.H", "AMReX__GpuLaunch_8nolint_8H.html", "AMReX__GpuLaunch_8nolint_8H" ],
     [ "AMReX_GpuLaunchFunctsC.H", "AMReX__GpuLaunchFunctsC_8H.html", "AMReX__GpuLaunchFunctsC_8H" ],
@@ -199,40 +138,16 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuLaunchMacrosC.nolint.H", "AMReX__GpuLaunchMacrosC_8nolint_8H.html", "AMReX__GpuLaunchMacrosC_8nolint_8H" ],
     [ "AMReX_GpuLaunchMacrosG.H", "AMReX__GpuLaunchMacrosG_8H.html", null ],
     [ "AMReX_GpuLaunchMacrosG.nolint.H", "AMReX__GpuLaunchMacrosG_8nolint_8H.html", "AMReX__GpuLaunchMacrosG_8nolint_8H" ],
-    [ "AMReX_GpuMemory.H", "AMReX__GpuMemory_8H.html", [
-      [ "Managed", "structamrex_1_1Gpu_1_1Managed.html", "structamrex_1_1Gpu_1_1Managed" ],
-      [ "Pinned", "structamrex_1_1Gpu_1_1Pinned.html", "structamrex_1_1Gpu_1_1Pinned" ],
-      [ "Deleter", "structamrex_1_1Gpu_1_1Deleter.html", "structamrex_1_1Gpu_1_1Deleter" ],
-      [ "DeviceScalar", "structamrex_1_1Gpu_1_1DeviceScalar.html", "structamrex_1_1Gpu_1_1DeviceScalar" ],
-      [ "SharedMemory", "structamrex_1_1Gpu_1_1SharedMemory.html", "structamrex_1_1Gpu_1_1SharedMemory" ],
-      [ "SharedMemory< double >", "structamrex_1_1Gpu_1_1SharedMemory_3_01double_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01double_01_4" ],
-      [ "SharedMemory< float >", "structamrex_1_1Gpu_1_1SharedMemory_3_01float_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01float_01_4" ],
-      [ "SharedMemory< long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4" ],
-      [ "SharedMemory< long long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4" ],
-      [ "SharedMemory< int >", "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4" ],
-      [ "SharedMemory< short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4" ],
-      [ "SharedMemory< char >", "structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01char_01_4" ],
-      [ "SharedMemory< unsigned long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01_4" ],
-      [ "SharedMemory< unsigned long long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4" ],
-      [ "SharedMemory< unsigned int >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4" ],
-      [ "SharedMemory< unsigned short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4" ],
-      [ "SharedMemory< unsigned char >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4" ],
-      [ "SharedMemory< bool >", "structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01bool_01_4" ]
-    ] ],
+    [ "AMReX_GpuMemory.H", "AMReX__GpuMemory_8H.html", "AMReX__GpuMemory_8H" ],
     [ "AMReX_GpuPrint.H", "AMReX__GpuPrint_8H.html", "AMReX__GpuPrint_8H" ],
     [ "AMReX_GpuQualifiers.H", "AMReX__GpuQualifiers_8H.html", "AMReX__GpuQualifiers_8H" ],
     [ "AMReX_GpuRange.H", "AMReX__GpuRange_8H.html", "AMReX__GpuRange_8H" ],
     [ "AMReX_GpuReduce.H", "AMReX__GpuReduce_8H.html", "AMReX__GpuReduce_8H" ],
-    [ "AMReX_GpuTypes.H", "AMReX__GpuTypes_8H.html", [
-      [ "Handler", "structamrex_1_1Gpu_1_1Handler.html", "structamrex_1_1Gpu_1_1Handler" ]
-    ] ],
+    [ "AMReX_GpuTypes.H", "AMReX__GpuTypes_8H.html", "AMReX__GpuTypes_8H" ],
     [ "AMReX_GpuUtility.cpp", "AMReX__GpuUtility_8cpp.html", "AMReX__GpuUtility_8cpp" ],
     [ "AMReX_GpuUtility.H", "AMReX__GpuUtility_8H.html", "AMReX__GpuUtility_8H" ],
     [ "AMReX_IArrayBox.cpp", "AMReX__IArrayBox_8cpp.html", null ],
-    [ "AMReX_IArrayBox.H", "AMReX__IArrayBox_8H.html", [
-      [ "IFABio", "classamrex_1_1IFABio.html", "classamrex_1_1IFABio" ],
-      [ "IArrayBox", "classamrex_1_1IArrayBox.html", "classamrex_1_1IArrayBox" ]
-    ] ],
+    [ "AMReX_IArrayBox.H", "AMReX__IArrayBox_8H.html", "AMReX__IArrayBox_8H" ],
     [ "AMReX_iMultiFab.cpp", "AMReX__iMultiFab_8cpp.html", "AMReX__iMultiFab_8cpp" ],
     [ "AMReX_iMultiFab.H", "AMReX__iMultiFab_8H.html", "AMReX__iMultiFab_8H" ],
     [ "AMReX_IndexType.cpp", "AMReX__IndexType_8cpp.html", "AMReX__IndexType_8cpp" ],
@@ -240,24 +155,17 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_INT.H", "AMReX__INT_8H.html", "AMReX__INT_8H" ],
     [ "AMReX_IntConv.cpp", "AMReX__IntConv_8cpp.html", "AMReX__IntConv_8cpp" ],
     [ "AMReX_IntConv.H", "AMReX__IntConv_8H.html", "AMReX__IntConv_8H" ],
-    [ "AMReX_IntegratorBase.H", "AMReX__IntegratorBase_8H.html", [
-      [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::Vector< amrex::MultiFab >, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047" ],
-      [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::MultiFab, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4" ],
-      [ "IntegratorBase", "classamrex_1_1IntegratorBase.html", "classamrex_1_1IntegratorBase" ]
-    ] ],
+    [ "AMReX_IntegratorBase.H", "AMReX__IntegratorBase_8H.html", "AMReX__IntegratorBase_8H" ],
     [ "AMReX_IntVect.cpp", "AMReX__IntVect_8cpp.html", "AMReX__IntVect_8cpp" ],
     [ "AMReX_IntVect.H", "AMReX__IntVect_8H.html", "AMReX__IntVect_8H" ],
     [ "AMReX_io_mod.F90", "AMReX__io__mod_8F90.html", "AMReX__io__mod_8F90" ],
-    [ "AMReX_LayoutData.H", "AMReX__LayoutData_8H.html", [
-      [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ]
-    ] ],
+    [ "AMReX_IOFormat.H", "AMReX__IOFormat_8H.html", "AMReX__IOFormat_8H" ],
+    [ "AMReX_LayoutData.H", "AMReX__LayoutData_8H.html", "AMReX__LayoutData_8H" ],
     [ "AMReX_Lazy.cpp", "AMReX__Lazy_8cpp.html", "AMReX__Lazy_8cpp" ],
     [ "AMReX_Lazy.H", "AMReX__Lazy_8H.html", "AMReX__Lazy_8H" ],
     [ "AMReX_Loop.H", "AMReX__Loop_8H.html", "AMReX__Loop_8H" ],
     [ "AMReX_Loop.nolint.H", "AMReX__Loop_8nolint_8H.html", "AMReX__Loop_8nolint_8H" ],
-    [ "AMReX_LUSolver.H", "AMReX__LUSolver_8H.html", [
-      [ "LUSolver", "classamrex_1_1LUSolver.html", "classamrex_1_1LUSolver" ]
-    ] ],
+    [ "AMReX_LUSolver.H", "AMReX__LUSolver_8H.html", "AMReX__LUSolver_8H" ],
     [ "AMReX_Machine.cpp", "AMReX__Machine_8cpp.html", "AMReX__Machine_8cpp" ],
     [ "AMReX_Machine.H", "AMReX__Machine_8H.html", "AMReX__Machine_8H" ],
     [ "AMReX_MakeType.H", "AMReX__MakeType_8H.html", "AMReX__MakeType_8H" ],
@@ -266,13 +174,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_MemPool.H", "AMReX__MemPool_8H.html", "AMReX__MemPool_8H" ],
     [ "AMReX_mempool_mod.F90", "AMReX__mempool__mod_8F90.html", "AMReX__mempool__mod_8F90" ],
     [ "AMReX_MemProfiler.cpp", "AMReX__MemProfiler_8cpp.html", "AMReX__MemProfiler_8cpp" ],
-    [ "AMReX_MemProfiler.H", "AMReX__MemProfiler_8H.html", [
-      [ "MemProfiler", "classamrex_1_1MemProfiler.html", "classamrex_1_1MemProfiler" ],
-      [ "MemInfo", "structamrex_1_1MemProfiler_1_1MemInfo.html", "structamrex_1_1MemProfiler_1_1MemInfo" ],
-      [ "NBuildsInfo", "structamrex_1_1MemProfiler_1_1NBuildsInfo.html", "structamrex_1_1MemProfiler_1_1NBuildsInfo" ],
-      [ "Bytes", "structamrex_1_1MemProfiler_1_1Bytes.html", "structamrex_1_1MemProfiler_1_1Bytes" ],
-      [ "Builds", "structamrex_1_1MemProfiler_1_1Builds.html", "structamrex_1_1MemProfiler_1_1Builds" ]
-    ] ],
+    [ "AMReX_MemProfiler.H", "AMReX__MemProfiler_8H.html", "AMReX__MemProfiler_8H" ],
     [ "AMReX_MFCopyDescriptor.cpp", "AMReX__MFCopyDescriptor_8cpp.html", "AMReX__MFCopyDescriptor_8cpp" ],
     [ "AMReX_MFCopyDescriptor.H", "AMReX__MFCopyDescriptor_8H.html", "AMReX__MFCopyDescriptor_8H" ],
     [ "AMReX_MFIter.cpp", "AMReX__MFIter_8cpp.html", null ],
@@ -294,9 +196,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_MultiFabUtil_nd_C.H", "AMReX__MultiFabUtil__nd__C_8H.html", "AMReX__MultiFabUtil__nd__C_8H" ],
     [ "AMReX_MultiFabUtilI.H", "AMReX__MultiFabUtilI_8H.html", "AMReX__MultiFabUtilI_8H" ],
     [ "AMReX_NFiles.cpp", "AMReX__NFiles_8cpp.html", null ],
-    [ "AMReX_NFiles.H", "AMReX__NFiles_8H.html", [
-      [ "NFilesIter", "classamrex_1_1NFilesIter.html", "classamrex_1_1NFilesIter" ]
-    ] ],
+    [ "AMReX_NFiles.H", "AMReX__NFiles_8H.html", "AMReX__NFiles_8H" ],
     [ "AMReX_NonLocalBC.cpp", "AMReX__NonLocalBC_8cpp.html", "AMReX__NonLocalBC_8cpp" ],
     [ "AMReX_NonLocalBC.H", "AMReX__NonLocalBC_8H.html", "AMReX__NonLocalBC_8H" ],
     [ "AMReX_NonLocalBCImpl.H", "AMReX__NonLocalBCImpl_8H.html", null ],
@@ -312,14 +212,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_ParallelDescriptor_F.F90", "AMReX__ParallelDescriptor__F_8F90.html", "AMReX__ParallelDescriptor__F_8F90" ],
     [ "AMReX_ParallelReduce.H", "AMReX__ParallelReduce_8H.html", "AMReX__ParallelReduce_8H" ],
     [ "AMReX_PArena.cpp", "AMReX__PArena_8cpp.html", null ],
-    [ "AMReX_PArena.H", "AMReX__PArena_8H.html", [
-      [ "PArena", "classamrex_1_1PArena.html", "classamrex_1_1PArena" ]
-    ] ],
+    [ "AMReX_PArena.H", "AMReX__PArena_8H.html", "AMReX__PArena_8H" ],
     [ "AMReX_ParmParse.cpp", "AMReX__ParmParse_8cpp.html", "AMReX__ParmParse_8cpp" ],
-    [ "AMReX_ParmParse.H", "AMReX__ParmParse_8H.html", [
-      [ "ParmParse", "classamrex_1_1ParmParse.html", "classamrex_1_1ParmParse" ],
-      [ "PP_entry", "structamrex_1_1ParmParse_1_1PP__entry.html", "structamrex_1_1ParmParse_1_1PP__entry" ]
-    ] ],
+    [ "AMReX_ParmParse.H", "AMReX__ParmParse_8H.html", "AMReX__ParmParse_8H" ],
     [ "AMReX_parmparse_fi.cpp", "AMReX__parmparse__fi_8cpp.html", "AMReX__parmparse__fi_8cpp" ],
     [ "AMReX_parmparse_mod.F90", "AMReX__parmparse__mod_8F90.html", "AMReX__parmparse__mod_8F90" ],
     [ "AMReX_ParReduce.H", "AMReX__ParReduce_8H.html", "AMReX__ParReduce_8H" ],
@@ -328,15 +223,11 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Partition.H", "AMReX__Partition_8H.html", "AMReX__Partition_8H" ],
     [ "AMReX_PCI.H", "AMReX__PCI_8H.html", null ],
     [ "AMReX_Periodicity.cpp", "AMReX__Periodicity_8cpp.html", null ],
-    [ "AMReX_Periodicity.H", "AMReX__Periodicity_8H.html", [
-      [ "Periodicity", "classamrex_1_1Periodicity.html", "classamrex_1_1Periodicity" ]
-    ] ],
+    [ "AMReX_Periodicity.H", "AMReX__Periodicity_8H.html", "AMReX__Periodicity_8H" ],
     [ "AMReX_PhysBCFunct.cpp", "AMReX__PhysBCFunct_8cpp.html", null ],
     [ "AMReX_PhysBCFunct.H", "AMReX__PhysBCFunct_8H.html", "AMReX__PhysBCFunct_8H" ],
     [ "AMReX_PlotFileDataImpl.cpp", "AMReX__PlotFileDataImpl_8cpp.html", null ],
-    [ "AMReX_PlotFileDataImpl.H", "AMReX__PlotFileDataImpl_8H.html", [
-      [ "PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html", "classamrex_1_1PlotFileDataImpl" ]
-    ] ],
+    [ "AMReX_PlotFileDataImpl.H", "AMReX__PlotFileDataImpl_8H.html", "AMReX__PlotFileDataImpl_8H" ],
     [ "AMReX_PlotFileUtil.cpp", "AMReX__PlotFileUtil_8cpp.html", "AMReX__PlotFileUtil_8cpp" ],
     [ "AMReX_PlotFileUtil.H", "AMReX__PlotFileUtil_8H.html", "AMReX__PlotFileUtil_8H" ],
     [ "AMReX_PODVector.cpp", "AMReX__PODVector_8cpp.html", "AMReX__PODVector_8cpp" ],
@@ -355,7 +246,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_RungeKutta.H", "AMReX__RungeKutta_8H.html", "AMReX__RungeKutta_8H" ],
     [ "AMReX_Scan.H", "AMReX__Scan_8H.html", "AMReX__Scan_8H" ],
     [ "AMReX_Slopes_K.H", "AMReX__Slopes__K_8H.html", "AMReX__Slopes__K_8H" ],
+    [ "AMReX_SmallMatrix.H", "AMReX__SmallMatrix_8H.html", "AMReX__SmallMatrix_8H" ],
     [ "AMReX_SPACE.H", "AMReX__SPACE_8H.html", "AMReX__SPACE_8H" ],
+    [ "AMReX_Stack.H", "AMReX__Stack_8H.html", "AMReX__Stack_8H" ],
     [ "AMReX_String.cpp", "AMReX__String_8cpp.html", "AMReX__String_8cpp" ],
     [ "AMReX_String.H", "AMReX__String_8H.html", "AMReX__String_8H" ],
     [ "AMReX_string_mod.F90", "AMReX__string__mod_8F90.html", "AMReX__string__mod_8F90" ],
@@ -364,14 +257,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_ThirdPartyProfiling.H", "AMReX__ThirdPartyProfiling_8H.html", null ],
     [ "AMReX_TimeIntegrator.H", "AMReX__TimeIntegrator_8H.html", "AMReX__TimeIntegrator_8H" ],
     [ "AMReX_TinyProfiler.cpp", "AMReX__TinyProfiler_8cpp.html", null ],
-    [ "AMReX_TinyProfiler.H", "AMReX__TinyProfiler_8H.html", [
-      [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
-      [ "TinyProfiler", "classamrex_1_1TinyProfiler.html", "classamrex_1_1TinyProfiler" ],
-      [ "Stats", "structamrex_1_1TinyProfiler_1_1Stats.html", "structamrex_1_1TinyProfiler_1_1Stats" ],
-      [ "ProcStats", "structamrex_1_1TinyProfiler_1_1ProcStats.html", "structamrex_1_1TinyProfiler_1_1ProcStats" ],
-      [ "MemProcStats", "structamrex_1_1TinyProfiler_1_1MemProcStats.html", "structamrex_1_1TinyProfiler_1_1MemProcStats" ],
-      [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", "classamrex_1_1TinyProfileRegion" ]
-    ] ],
+    [ "AMReX_TinyProfiler.H", "AMReX__TinyProfiler_8H.html", "AMReX__TinyProfiler_8H" ],
     [ "AMReX_Tuple.H", "AMReX__Tuple_8H.html", "AMReX__Tuple_8H" ],
     [ "AMReX_TypeList.H", "AMReX__TypeList_8H.html", "AMReX__TypeList_8H" ],
     [ "AMReX_TypeTraits.H", "AMReX__TypeTraits_8H.html", "AMReX__TypeTraits_8H" ],
@@ -384,7 +270,5 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Version.cpp", "AMReX__Version_8cpp.html", "AMReX__Version_8cpp" ],
     [ "AMReX_VisMF.cpp", "AMReX__VisMF_8cpp.html", "AMReX__VisMF_8cpp" ],
     [ "AMReX_VisMF.H", "AMReX__VisMF_8H.html", "AMReX__VisMF_8H" ],
-    [ "AMReX_VisMFBuffer.H", "AMReX__VisMFBuffer_8H.html", [
-      [ "VisMFBuffer", "classamrex_1_1VisMFBuffer.html", "classamrex_1_1VisMFBuffer" ]
-    ] ]
+    [ "AMReX_VisMFBuffer.H", "AMReX__VisMFBuffer_8H.html", "AMReX__VisMFBuffer_8H" ]
 ];

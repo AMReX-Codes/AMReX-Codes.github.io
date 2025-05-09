@@ -1,8 +1,8 @@
 var AMReX__ParIter_8H =
 [
-    [ "ParIterBase_impl", "classamrex_1_1ParIterBase__impl.html", "classamrex_1_1ParIterBase__impl" ],
-    [ "ParIter_impl", "classamrex_1_1ParIter__impl.html", "classamrex_1_1ParIter__impl" ],
-    [ "ParConstIter_impl", "classamrex_1_1ParConstIter__impl.html", "classamrex_1_1ParConstIter__impl" ],
+    [ "amrex::ParIterBase_impl< is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParIterBase__impl.html", "classamrex_1_1ParIterBase__impl" ],
+    [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParIter__impl.html", "classamrex_1_1ParIter__impl" ],
+    [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParConstIter__impl.html", "classamrex_1_1ParConstIter__impl" ],
     [ "ParConstIter", "AMReX__ParIter_8H.html#a82b15f07c651f6c100348c6891b9d412", null ],
     [ "ParConstIterSoA", "AMReX__ParIter_8H.html#a3ee82e3bc9bfc0a2b726fa65240f7342", null ],
     [ "ParIter", "AMReX__ParIter_8H.html#a2b24a534dc7f3adbd4e23acd6a71e154", null ],

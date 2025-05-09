@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1ArenaAllocator" kind="class" language="C++" prot="public">
     <compoundname>amrex::ArenaAllocator</compoundname>
     <basecompoundref refid="structamrex_1_1ArenaAllocatorBase" prot="public" virt="non-virtual">amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</basecompoundref>
-    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; uint64_t, DefaultAllocator&lt; uint64_t &gt; &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; T, DefaultAllocator&lt; T &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; uint64_t, DefaultAllocator&lt; uint64_t &gt; &gt;</derivedcompoundref>
     <includes refid="AMReX__GpuAllocators_8H" local="no">AMReX_GpuAllocators.H</includes>
     <templateparamlist>
       <param>
@@ -20,15 +21,39 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="8">
+      <node id="2">
+        <label>amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</label>
+        <link refid="structamrex_1_1ArenaAllocatorBase"/>
+      </node>
+      <node id="5">
+        <label>amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::PODVector&lt; T, DefaultAllocator&lt; T &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
         <label>amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</label>
-        <link refid="structamrex_1_1ArenaAllocatorBase"/>
+      <node id="8">
+        <label>amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="6">
         <label>amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</label>
@@ -36,16 +61,25 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</label>
+      <node id="9">
+        <label>amrex::PODVector&lt; uint64_t, DefaultAllocator&lt; uint64_t &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
-        <label>amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="1" relation="public-inheritance">
+      <node id="1">
+        <label>amrex::ArenaAllocator&lt; T &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</label>
+        <link refid="structamrex_1_1ArenaAllocatorBase"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ar</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -55,41 +89,21 @@
         </childnode>
       </node>
       <node id="3">
-        <label>amrex::PODVector&lt; uint64_t, DefaultAllocator&lt; uint64_t &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>amrex::ArenaAllocatorBase&lt; T, ArenaWrapper &gt;</label>
-        <link refid="structamrex_1_1ArenaAllocatorBase"/>
-      </node>
-      <node id="1">
-        <label>amrex::ArenaAllocator&lt; T &gt;</label>
-        <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
+        <label>amrex::ArenaWrapper</label>
+        <link refid="structamrex_1_1ArenaWrapper"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" line="112" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="114" bodyend="115"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a70ce2081b6a122fb56306d01a798983d" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>allocate</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a08d1c621831a4cba4a26c24f72c0d734" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>allocate_in_place</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a884712e3b0c3b53f799d30d5f77c0520" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>arena</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a4919b893b36a2d5ae0687fcfab9e622c" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>allocate</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1aacfd8a11b41714538a068f8a0003d0b0" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>allocate_in_place</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a24a11021c80c7510b0a30170a9f43ea4" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>arena</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a3013f3e6be3447fa80b47378bb289421" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>arena_wrapper_type</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a2eb4b475d321bac1f26493e56b1f79ce" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>ArenaAllocatorBase</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a710cf5f0a5dd205b02197ba17ccc0303" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>ArenaAllocatorBase</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1aff48c37eec55fef7a4e4013dd98cb1bc" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>deallocate</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a67effac8e5c965d78a9914ff4f1649c5" prot="private" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>m_ar</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1ad5f2db0d8d58e0591dae17ff0c3672c3" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>shrink_in_place</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a68247e75792d1b25fad0b379ec2ac116" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>shrink_in_place</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a14617724279ae05ee72af2b519c485e4" prot="public" virt="non-virtual"><scope>amrex::ArenaAllocator</scope><name>value_type</name></member>
     </listofallmembers>
   </compounddef>

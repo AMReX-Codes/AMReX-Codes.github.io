@@ -1,6 +1,6 @@
 var AMReX__MPMD_8H =
 [
-    [ "Copier", "classamrex_1_1MPMD_1_1Copier.html", "classamrex_1_1MPMD_1_1Copier" ],
+    [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", "classamrex_1_1MPMD_1_1Copier" ],
     [ "AppNum", "AMReX__MPMD_8H.html#ac54d81a4bc3dba2c0a8c6a0ddd05451b", null ],
     [ "Finalize", "AMReX__MPMD_8H.html#a444d6a7e87c49476671049df5ea59107", null ],
     [ "Initialize", "AMReX__MPMD_8H.html#ae1e60c63ded7ddfd23bdb3e6d2e4d96c", null ],

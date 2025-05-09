@@ -14,7 +14,7 @@ var classamrex_1_1ClusterList =
     [ "intersect", "classamrex_1_1ClusterList.html#a30626a7fa3cb467d4567c820ba4aabb8", null ],
     [ "length", "classamrex_1_1ClusterList.html#ae0c4bfaf52dced3b58a138bc2d28dc47", null ],
     [ "new_chop", "classamrex_1_1ClusterList.html#aa556ac17a14c8ed6b6280bae1ab48be5", null ],
-    [ "operator=", "classamrex_1_1ClusterList.html#aaabb4ce1df8c64f8ca3fcca58f0b27b0", null ],
-    [ "operator=", "classamrex_1_1ClusterList.html#a4826072bd3b954ff611387822a76db01", null ],
+    [ "operator=", "classamrex_1_1ClusterList.html#a40d87739f7d3555443da9ad30e8ce42e", null ],
+    [ "operator=", "classamrex_1_1ClusterList.html#af05d3c1b690bb3d40d1e084abe00e545", null ],
     [ "lst", "classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732", null ]
 ];

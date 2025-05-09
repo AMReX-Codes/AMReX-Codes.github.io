@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CrayPat &mdash; amrex 24.09-dev documentation</title>
+  <title>CrayPat &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -64,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -241,40 +242,40 @@ hardware performance counters can also be collected through PAPI.</p>
 <p>Example MPI profile output:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1">#IPMv2.0.5########################################################</span>
 <span class="gp">#</span>
-<span class="gp"># </span><span class="nb">command</span>   : /global/cscratch1/sd/cchan2/projects/lbl/BoxLib/Tests/LinearSolvers/C_CellMG/./main3d.intel.MPI.OMP.ex.ipm inputs.3d.25600
-<span class="gp"># </span>start     : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:23 <span class="m">2017</span>   host      : nid11311
-<span class="gp"># </span>stop      : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:35 <span class="m">2017</span>   wallclock : <span class="m">11</span>.54
-<span class="gp"># </span>mpi_tasks : <span class="m">128</span> on <span class="m">32</span> nodes            %comm     : <span class="m">32</span>.51
-<span class="gp"># </span>mem <span class="o">[</span>GB<span class="o">]</span>  : <span class="m">126</span>.47                     gflop/sec : <span class="m">0</span>.00
+<span class="gp"># </span><span class="nb">command</span><span class="w">   </span>:<span class="w"> </span>/global/cscratch1/sd/cchan2/projects/lbl/BoxLib/Tests/LinearSolvers/C_CellMG/./main3d.intel.MPI.OMP.ex.ipm<span class="w"> </span>inputs.3d.25600
+<span class="gp"># </span>start<span class="w">     </span>:<span class="w"> </span>Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">17</span>:34:23<span class="w"> </span><span class="m">2017</span><span class="w">   </span>host<span class="w">      </span>:<span class="w"> </span>nid11311
+<span class="gp"># </span>stop<span class="w">      </span>:<span class="w"> </span>Tue<span class="w"> </span>Aug<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">17</span>:34:35<span class="w"> </span><span class="m">2017</span><span class="w">   </span>wallclock<span class="w"> </span>:<span class="w"> </span><span class="m">11</span>.54
+<span class="gp"># </span>mpi_tasks<span class="w"> </span>:<span class="w"> </span><span class="m">128</span><span class="w"> </span>on<span class="w"> </span><span class="m">32</span><span class="w"> </span>nodes<span class="w">            </span>%comm<span class="w">     </span>:<span class="w"> </span><span class="m">32</span>.51
+<span class="gp"># </span>mem<span class="w"> </span><span class="o">[</span>GB<span class="o">]</span><span class="w">  </span>:<span class="w"> </span><span class="m">126</span>.47<span class="w">                     </span>gflop/sec<span class="w"> </span>:<span class="w"> </span><span class="m">0</span>.00
 <span class="gp">#</span>
-<span class="gp">#           </span>:       <span class="o">[</span>total<span class="o">]</span>        &lt;avg&gt;          min          max
-<span class="gp"># </span>wallclock :       <span class="m">1188</span>.42         <span class="m">9</span>.28         <span class="m">8</span>.73        <span class="m">11</span>.54
-<span class="gp"># </span>MPI       :        <span class="m">386</span>.31         <span class="m">3</span>.02         <span class="m">2</span>.51         <span class="m">4</span>.78
-<span class="gp"># </span>%wall     :
-<span class="gp">#   </span>MPI     :                      <span class="m">32</span>.52        <span class="m">24</span>.36        <span class="m">41</span>.44
+<span class="gp">#           </span>:<span class="w">       </span><span class="o">[</span>total<span class="o">]</span><span class="w">        </span>&lt;avg&gt;<span class="w">          </span>min<span class="w">          </span>max
+<span class="gp"># </span>wallclock<span class="w"> </span>:<span class="w">       </span><span class="m">1188</span>.42<span class="w">         </span><span class="m">9</span>.28<span class="w">         </span><span class="m">8</span>.73<span class="w">        </span><span class="m">11</span>.54
+<span class="gp"># </span>MPI<span class="w">       </span>:<span class="w">        </span><span class="m">386</span>.31<span class="w">         </span><span class="m">3</span>.02<span class="w">         </span><span class="m">2</span>.51<span class="w">         </span><span class="m">4</span>.78
+<span class="gp"># </span>%wall<span class="w">     </span>:
+<span class="gp">#   </span>MPI<span class="w">     </span>:<span class="w">                      </span><span class="m">32</span>.52<span class="w">        </span><span class="m">24</span>.36<span class="w">        </span><span class="m">41</span>.44
 <span class="gp"># </span><span class="c1">#calls    :</span>
-<span class="gp">#   </span>MPI     :       <span class="m">5031172</span>        <span class="m">39306</span>        <span class="m">23067</span>        <span class="m">57189</span>
-<span class="gp"># </span>mem <span class="o">[</span>GB<span class="o">]</span>  :        <span class="m">126</span>.47         <span class="m">0</span>.99         <span class="m">0</span>.98         <span class="m">1</span>.00
+<span class="gp">#   </span>MPI<span class="w">     </span>:<span class="w">       </span><span class="m">5031172</span><span class="w">        </span><span class="m">39306</span><span class="w">        </span><span class="m">23067</span><span class="w">        </span><span class="m">57189</span>
+<span class="gp"># </span>mem<span class="w"> </span><span class="o">[</span>GB<span class="o">]</span><span class="w">  </span>:<span class="w">        </span><span class="m">126</span>.47<span class="w">         </span><span class="m">0</span>.99<span class="w">         </span><span class="m">0</span>.98<span class="w">         </span><span class="m">1</span>.00
 <span class="gp">#</span>
-<span class="gp">#                             </span><span class="o">[</span>time<span class="o">]</span>        <span class="o">[</span>count<span class="o">]</span>        &lt;%wall&gt;
-<span class="gp"># </span>MPI_Allreduce               <span class="m">225</span>.72         <span class="m">567552</span>          <span class="m">18</span>.99
-<span class="gp"># </span>MPI_Waitall                  <span class="m">92</span>.84         <span class="m">397056</span>           <span class="m">7</span>.81
-<span class="gp"># </span>MPI_Recv                     <span class="m">29</span>.36            <span class="m">193</span>           <span class="m">2</span>.47
-<span class="gp"># </span>MPI_Isend                    <span class="m">25</span>.04        <span class="m">2031810</span>           <span class="m">2</span>.11
-<span class="gp"># </span>MPI_Irecv                     <span class="m">4</span>.35        <span class="m">2031810</span>           <span class="m">0</span>.37
-<span class="gp"># </span>MPI_Allgather                 <span class="m">2</span>.60            <span class="m">128</span>           <span class="m">0</span>.22
-<span class="gp"># </span>MPI_Barrier                   <span class="m">2</span>.24            <span class="m">512</span>           <span class="m">0</span>.19
-<span class="gp"># </span>MPI_Gatherv                   <span class="m">1</span>.70            <span class="m">128</span>           <span class="m">0</span>.14
-<span class="gp"># </span>MPI_Comm_dup                  <span class="m">1</span>.23            <span class="m">256</span>           <span class="m">0</span>.10
-<span class="gp"># </span>MPI_Bcast                     <span class="m">1</span>.14            <span class="m">256</span>           <span class="m">0</span>.10
-<span class="gp"># </span>MPI_Send                      <span class="m">0</span>.06            <span class="m">319</span>           <span class="m">0</span>.01
-<span class="gp"># </span>MPI_Reduce                    <span class="m">0</span>.02            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_free                 <span class="m">0</span>.01            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_group                <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_size                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_rank                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Init                      <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Finalize                  <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#                             </span><span class="o">[</span>time<span class="o">]</span><span class="w">        </span><span class="o">[</span>count<span class="o">]</span><span class="w">        </span>&lt;%wall&gt;
+<span class="gp"># </span>MPI_Allreduce<span class="w">               </span><span class="m">225</span>.72<span class="w">         </span><span class="m">567552</span><span class="w">          </span><span class="m">18</span>.99
+<span class="gp"># </span>MPI_Waitall<span class="w">                  </span><span class="m">92</span>.84<span class="w">         </span><span class="m">397056</span><span class="w">           </span><span class="m">7</span>.81
+<span class="gp"># </span>MPI_Recv<span class="w">                     </span><span class="m">29</span>.36<span class="w">            </span><span class="m">193</span><span class="w">           </span><span class="m">2</span>.47
+<span class="gp"># </span>MPI_Isend<span class="w">                    </span><span class="m">25</span>.04<span class="w">        </span><span class="m">2031810</span><span class="w">           </span><span class="m">2</span>.11
+<span class="gp"># </span>MPI_Irecv<span class="w">                     </span><span class="m">4</span>.35<span class="w">        </span><span class="m">2031810</span><span class="w">           </span><span class="m">0</span>.37
+<span class="gp"># </span>MPI_Allgather<span class="w">                 </span><span class="m">2</span>.60<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.22
+<span class="gp"># </span>MPI_Barrier<span class="w">                   </span><span class="m">2</span>.24<span class="w">            </span><span class="m">512</span><span class="w">           </span><span class="m">0</span>.19
+<span class="gp"># </span>MPI_Gatherv<span class="w">                   </span><span class="m">1</span>.70<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.14
+<span class="gp"># </span>MPI_Comm_dup<span class="w">                  </span><span class="m">1</span>.23<span class="w">            </span><span class="m">256</span><span class="w">           </span><span class="m">0</span>.10
+<span class="gp"># </span>MPI_Bcast<span class="w">                     </span><span class="m">1</span>.14<span class="w">            </span><span class="m">256</span><span class="w">           </span><span class="m">0</span>.10
+<span class="gp"># </span>MPI_Send<span class="w">                      </span><span class="m">0</span>.06<span class="w">            </span><span class="m">319</span><span class="w">           </span><span class="m">0</span>.01
+<span class="gp"># </span>MPI_Reduce<span class="w">                    </span><span class="m">0</span>.02<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Comm_free<span class="w">                 </span><span class="m">0</span>.01<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Comm_group<span class="w">                </span><span class="m">0</span>.00<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Comm_size<span class="w">                 </span><span class="m">0</span>.00<span class="w">            </span><span class="m">256</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Comm_rank<span class="w">                 </span><span class="m">0</span>.00<span class="w">            </span><span class="m">256</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Init<span class="w">                      </span><span class="m">0</span>.00<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.00
+<span class="gp"># </span>MPI_Finalize<span class="w">                  </span><span class="m">0</span>.00<span class="w">            </span><span class="m">128</span><span class="w">           </span><span class="m">0</span>.00
 </pre></div>
 </div>
 <p>The total, average, minimum, and maximum wallclock and MPI times across ranks
@@ -443,11 +444,11 @@ Nsight System analyses accordingly.</p>
 </ol>
 <p>This requires manually altering your source code, but can provide better specificity in what you analyze.
 Directly insert <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart\Stop</span></code> around the region of code you want to analyze:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cudaProfilerStart</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cudaProfilerStart</span><span class="p">();</span>
 
 <span class="c1">// CODE TO PROFILE</span>
 
-<span class="n">cudaProfilerStop</span><span class="p">();</span><span class="w"></span>
+<span class="n">cudaProfilerStop</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Then, run with <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">cudaProfilerApi</span></code>:</p>
@@ -498,22 +499,24 @@ every kernel would be  extremely lengthy and unnecessary.  To analyze a desired 
 kernels, AMReX users can use the Tiny Profiler’s built-in NVTX regions to narrow the scope of
 the analysis.  Nsight Compute allows users to specify which NVTX regions to include and exclude
 through the <code class="docutils literal notranslate"><span class="pre">--nvtx</span></code>, <code class="docutils literal notranslate"><span class="pre">--nvtx-include</span></code> and <code class="docutils literal notranslate"><span class="pre">--nvtx-exclude</span></code> flags. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;Hydro()&quot; --nvtx-exclude &quot;StencilA(),StencilC()&quot; -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;Hydro()/&quot; --nvtx-exclude &quot;StencilA(),StencilC()&quot; -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will return a file named <code class="docutils literal notranslate"><span class="pre">kernels</span></code> which contains an analysis of the CUDA kernels launched inside
 the <code class="docutils literal notranslate"><span class="pre">Hydro()</span></code> region, ignoring any kernels launched inside <code class="docutils literal notranslate"><span class="pre">StencilA()</span></code> and <code class="docutils literal notranslate"><span class="pre">StencilC()</span></code>.
 When using the NVTX regions built into AMReX’s TinyProfiler, be aware that the application must be built
-with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> and the NVTX region names are identical to the TinyProfiler timer names.</p>
+with <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code> and the NVTX region names are identical to the TinyProfiler timer names.
+Note that the <code class="docutils literal notranslate"><span class="pre">/</span></code> must be appended to the TinyProfiler timer name specified with <code class="docutils literal notranslate"><span class="pre">--nvtx--include</span></code>
+because TinyProfiler sets NVTX push/pop regions, as described in the Nsight Compute official documentation on
+<a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
 <p>Another helpful flag for selecting a reasonable subset of kernels for analysis is the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option. This
 flag specifies the total number of kernels to be analyzed. For example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ncu --nvtx --nvtx-include &quot;GravitySolve()/&quot; -c 10 -o kernels ${EXE} ${INPUTS} amrex.fpe_trap_invalid=0</span>
 </pre></div>
 </div>
 <p>will only analyze the first ten kernels inside of the <code class="docutils literal notranslate"><span class="pre">GravitySolve()</span></code> NVTX region.</p>
 <p>For further details on how to choose a subset of CUDA kernels to analyze, or to run a more detailed
-analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation on
-<a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
+analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation.</p>
 </section>
 <section id="roofline">
 <h2>Roofline<a class="headerlink" href="#roofline" title="Permalink to this heading"></a></h2>

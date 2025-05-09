@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex__parmparse__module_1_1amrex__parmparse" kind="type" language="Fortran" prot="public">
     <compoundname>amrex_parmparse_module::amrex_parmparse</compoundname>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex__parmparse__module_1_1amrex__parmparse_1ab9c4e4255bdd7cbfe4e9decb095d1bcc" prot="public" static="no" mutable="no">
         <type>logical</type>
         <definition>logical amrex_parmparse_module::amrex_parmparse::owner</definition>
         <argsstring></argsstring>
         <name>owner</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::owner</qualifiedname>
         <initializer>= .false.</initializer>
         <briefdescription>
         </briefdescription>
@@ -22,6 +23,7 @@
         <definition>type(c_ptr) amrex_parmparse_module::amrex_parmparse::p</definition>
         <argsstring></argsstring>
         <name>p</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::p</qualifiedname>
         <initializer>= c_null_ptr</initializer>
         <briefdescription>
         </briefdescription>
@@ -31,13 +33,22 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="18" bodyend="18"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a7d38178a2b0b5dbb4327d75133f7176b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1acf829a368c6b72ffd38922fa044d2a49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::assignment</definition>
-        <argsstring>=&gt; amrex_parmparse_assign</argsstring>
+        <argsstring>(dst, src)</argsstring>
         <name>assignment</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::assignment</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>dst</defname>
+        </param>
+        <param>
+          <type>type (<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>src</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -46,11 +57,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="20" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1acaacc2e448d7ecbac9fbcb817e39b125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::get</definition>
-        <argsstring>=&gt; get_int, get_real, get_logical, get_string</argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -59,11 +83,106 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="21" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a341e69f6e3bc1c30de317f47b67b67c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::get</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>get</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::get</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>get</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::get</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>get</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::query</definition>
-        <argsstring>=&gt; query_int, query_real, query_logical, query_string</argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -72,11 +191,114 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="22" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a4e9428e27996d192ffbb496cb009abd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::query</definition>
+        <argsstring>(this, name, v, flag)</argsstring>
+        <name>query</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>)</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::query</definition>
+        <argsstring>(this, name, v, flag)</argsstring>
+        <name>query</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::query</definition>
+        <argsstring>(this, name, v, flag)</argsstring>
+        <name>query</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::getarr</definition>
-        <argsstring>=&gt; get_intarr, get_realarr, get_stringarr</argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>getarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::getarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -85,11 +307,80 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="27" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a1b8984787dd6a07f9a79bbae19c51316" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::getarr</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>getarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::getarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::getarr</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>getarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::getarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::queryarr</definition>
-        <argsstring>=&gt; query_intarr, query_realarr, query_stringarr</argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>queryarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::queryarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -98,11 +389,84 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="28" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="28" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a00b3414ab27018ecee235594b89ee675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::queryarr</definition>
+        <argsstring>(this, name, v, flag)</argsstring>
+        <name>queryarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::queryarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="28" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::queryarr</definition>
+        <argsstring>(this, name, v, flag)</argsstring>
+        <name>queryarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::queryarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="28" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::add</definition>
-        <argsstring>=&gt; add_int, add_real, add_logical, add_string</argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -111,11 +475,102 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="30" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1aa816750df0bdca4542b913fccbb3cdf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::add</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>add</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), intent(in)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::add</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>add</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical, intent(in)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::add</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>add</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>generic</type>
         <definition>generic amrex_parmparse_module::amrex_parmparse::addarr</definition>
-        <argsstring>=&gt; add_intarr, add_realarr, add_stringarr</argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>addarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::addarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -124,11 +579,68 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="31" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ab9997ef40c49a9721423e8bec4f30e14" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::addarr</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>addarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::addarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>generic</type>
+        <definition>generic amrex_parmparse_module::amrex_parmparse::addarr</definition>
+        <argsstring>(this, name, v)</argsstring>
+        <name>addarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::addarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=*), dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1aadae48aaf449c8b55233f6f8aa3fe31e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type>final</type>
         <definition>final amrex_parmparse_module::amrex_parmparse::amrex_parmparse_destroy</definition>
-        <argsstring></argsstring>
+        <argsstring>(this)</argsstring>
         <name>amrex_parmparse_destroy</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::amrex_parmparse_destroy</qualifiedname>
+        <param>
+          <type>type(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>)</type>
+          <defname>this</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -137,13 +649,22 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="55" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="55" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a939cd8c93d4cdbee4165f9b5923b2978" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a43f56960913975f21b71dfbf9ae4b668" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::amrex_parmparse_assign</definition>
-        <argsstring></argsstring>
+        <argsstring>(dst, src)</argsstring>
         <name>amrex_parmparse_assign</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::amrex_parmparse_assign</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>dst</defname>
+        </param>
+        <param>
+          <type>type (<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>src</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -152,11 +673,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="32" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad7d6f97565596d31e0c64d3797f3b128" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1af85a0b702d267545a613486c37896345" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_int</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_int</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_int</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -165,11 +699,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="33" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a0fe403153388ffa22847e362231c0db3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a9e5a2352d2bc2d1d0f6bb2db8eff77de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_real</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_real</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_real</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -178,11 +725,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="34" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1abfcfeabda256c79024069aef558469b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ac3b04d876d5459d0573c8ca384db6f62" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_logical</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_logical</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_logical</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -191,11 +751,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a0546d6b0c985419b4c1f4db2df4238cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ae511ab89ab662c29db7f4b63e2b13d1b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_string</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_string</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_string</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -204,11 +777,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a610d8844a68ada5bdacea533323bb756" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a12a8f6fb29747586cd5440ee529cc3ef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_intarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_intarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_intarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -217,11 +803,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="37" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="37" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a0c550ea9b94a0f755aad8d4b82eb7c49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a8458d9a2ebc2120316d172676088d0af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_realarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_realarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_realarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -230,11 +829,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="38" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="38" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ac0d76e840454ccdf657b39a423876e5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a66fab9b56be893b25cfafd8771ff1f79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::get_stringarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>get_stringarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::get_stringarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -243,11 +855,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="39" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="39" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1adbc27a8477adf06772e50c9063e3f450" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a8762cb880e4b37fb5fd6746969d001d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_int</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_int</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_int</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -256,11 +885,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="40" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="40" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1ad660c077f1712d497852f995827fbead" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a28f19563fb97ec5a87f8c9403c467a4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_real</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_real</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_real</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>)</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -269,11 +915,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="41" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="41" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1add4580d98996e6b8f6339611f0313adb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a4a1fc54ebf177ba9fdf2628b6c7235b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_logical</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_logical</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_logical</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -282,11 +945,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="42" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a800c065458ab8f425a54a521c7032dd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a099e7982fa40fadf696e38cc01ce2006" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_string</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_string</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_string</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -295,11 +975,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="43" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="43" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a382f89d2f2f2d88e292677472eb44312" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a08cffbd140ae6b61c1f9eb5b01854df4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_intarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_intarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_intarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -308,11 +1005,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="44" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="44" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a49000c613ca825c9a110712f80d846f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1acfb1d8ce3b5554c3236ff3233e19dd01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_realarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_realarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_realarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -321,11 +1035,28 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="45" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="45" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a5ec9f30a3afeb82338e0717258a0fdc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1aed9c2af4d429dc7fa8c2809b6275ad9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::query_stringarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v, flag)</argsstring>
         <name>query_stringarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::query_stringarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(in)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(len=*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=:), dimension(:), intent(inout), allocatable</type>
+          <defname>v</defname>
+        </param>
+        <param>
+          <type>logical, intent(out), optional</type>
+          <defname>flag</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -334,11 +1065,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="46" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="46" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a184eeffd6ff61b5148958083446b81a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a16ad34a12a2206fcd6ac36e97c31a940" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_int</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_int</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_int</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -347,11 +1091,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="47" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="47" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a7fdebe67521d3f4398769af87944f95b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a6915d18be676e7d3082fb25c14eeb2df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_real</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_real</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_real</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -360,11 +1117,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="48" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="48" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1aebc8eb2c32d3de6780fda24e9aa03019" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a995dc43164ba9f53ee0bdbe6039888b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_logical</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_logical</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_logical</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>logical, intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -373,11 +1143,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="49" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="49" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a8fa13412cd06b2965d14b79ab81e5d3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a8adde0d00a5f1289fd44ee62cb87d0ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_string</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_string</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_string</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -386,11 +1169,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="50" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="50" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a7da102722f2c23737d46d5be499c8f3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1aa74d2d74c12a0fa5f986f015a229b124" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_intarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_intarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_intarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>integer, dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -399,11 +1195,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="51" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a4a92e6cbf9b620c1eebc0b5d81615c75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a5dfc1516d11cc4b3aa13892b7228face" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_realarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_realarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_realarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>real(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -412,11 +1221,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="52" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a50c2401baa8b23657d0cea5a280bfcac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex__parmparse__module_1_1amrex__parmparse_1a19e712c0f68bfbb10372d83a8ba1122d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>procedure, private</type>
         <definition>procedure, private amrex_parmparse_module::amrex_parmparse::add_stringarr</definition>
-        <argsstring></argsstring>
+        <argsstring>(this, name, v)</argsstring>
         <name>add_stringarr</name>
+        <qualifiedname>amrex_parmparse_module::amrex_parmparse::add_stringarr</qualifiedname>
+        <param>
+          <type>class(<ref refid="structamrex__parmparse__module_1_1amrex__parmparse" kindref="compound">amrex_parmparse</ref>), intent(inout)</type>
+          <defname>this</defname>
+        </param>
+        <param>
+          <type>character(*), intent(in)</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>character(len=*), dimension(:), intent(in)</type>
+          <defname>v</defname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -425,15 +1247,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="53" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="53" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
-        <label>c_ptr</label>
-      </node>
       <node id="1">
         <label>amrex_parmparse_module::amrex_parmparse</label>
         <link refid="structamrex__parmparse__module_1_1amrex__parmparse"/>
@@ -441,41 +1260,59 @@
           <edgelabel>p</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>c_ptr</label>
+      </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" line="16" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_parmparse_mod.F90" bodystart="16" bodyend="57"/>
     <listofallmembers>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a00b3414ab27018ecee235594b89ee675" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a184eeffd6ff61b5148958083446b81a9" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_int</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a7da102722f2c23737d46d5be499c8f3b" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_intarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1aebc8eb2c32d3de6780fda24e9aa03019" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_logical</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a7fdebe67521d3f4398769af87944f95b" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_real</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a4a92e6cbf9b620c1eebc0b5d81615c75" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_realarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a8fa13412cd06b2965d14b79ab81e5d3b" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_string</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a50c2401baa8b23657d0cea5a280bfcac" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_stringarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1aa816750df0bdca4542b913fccbb3cdf7" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>addarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a939cd8c93d4cdbee4165f9b5923b2978" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>amrex_parmparse_assign</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ab9997ef40c49a9721423e8bec4f30e14" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>amrex_parmparse_destroy</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a7d38178a2b0b5dbb4327d75133f7176b" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>assignment</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1acaacc2e448d7ecbac9fbcb817e39b125" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad7d6f97565596d31e0c64d3797f3b128" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_int</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a610d8844a68ada5bdacea533323bb756" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_intarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1abfcfeabda256c79024069aef558469b2" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_logical</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a0fe403153388ffa22847e362231c0db3" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_real</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a0c550ea9b94a0f755aad8d4b82eb7c49" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_realarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a0546d6b0c985419b4c1f4db2df4238cc" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_string</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ac0d76e840454ccdf657b39a423876e5a" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_stringarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a4e9428e27996d192ffbb496cb009abd3" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>getarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1abc29cd577e77c330417cce5d506e74f3" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a16ad34a12a2206fcd6ac36e97c31a940" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_int</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1aa74d2d74c12a0fa5f986f015a229b124" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_intarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a995dc43164ba9f53ee0bdbe6039888b4" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_logical</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a6915d18be676e7d3082fb25c14eeb2df" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_real</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a5dfc1516d11cc4b3aa13892b7228face" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_realarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a8adde0d00a5f1289fd44ee62cb87d0ce" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_string</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a19e712c0f68bfbb10372d83a8ba1122d" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>add_stringarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>addarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>addarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55e03f1664960b938685641ceaa10546" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>addarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a43f56960913975f21b71dfbf9ae4b668" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>amrex_parmparse_assign</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1aadae48aaf449c8b55233f6f8aa3fe31e" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>amrex_parmparse_destroy</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1acf829a368c6b72ffd38922fa044d2a49" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>assignment</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad34b7470bf82b1f33e1d3f4705815664" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1af85a0b702d267545a613486c37896345" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_int</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a12a8f6fb29747586cd5440ee529cc3ef" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_intarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ac3b04d876d5459d0573c8ca384db6f62" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_logical</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a9e5a2352d2bc2d1d0f6bb2db8eff77de" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_real</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a8458d9a2ebc2120316d172676088d0af" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_realarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ae511ab89ab662c29db7f4b63e2b13d1b" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_string</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a66fab9b56be893b25cfafd8771ff1f79" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>get_stringarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>getarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>getarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a31219f08012a63c451ad0c884159dc03" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>getarr</name></member>
       <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ab9c4e4255bdd7cbfe4e9decb095d1bcc" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>owner</name></member>
       <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1add6764a664666a9bdb4065f20184514e" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>p</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a341e69f6e3bc1c30de317f47b67b67c0" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1adbc27a8477adf06772e50c9063e3f450" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_int</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a382f89d2f2f2d88e292677472eb44312" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_intarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1add4580d98996e6b8f6339611f0313adb" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_logical</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1ad660c077f1712d497852f995827fbead" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_real</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a49000c613ca825c9a110712f80d846f3" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_realarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a800c065458ab8f425a54a521c7032dd8" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_string</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a5ec9f30a3afeb82338e0717258a0fdc0" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_stringarr</name></member>
-      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a1b8984787dd6a07f9a79bbae19c51316" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>queryarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a1c06cc2e0753eab7e75a6a50a401fefb" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a8762cb880e4b37fb5fd6746969d001d6" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_int</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a08cffbd140ae6b61c1f9eb5b01854df4" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_intarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a4a1fc54ebf177ba9fdf2628b6c7235b7" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_logical</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a28f19563fb97ec5a87f8c9403c467a4c" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_real</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1acfb1d8ce3b5554c3236ff3233e19dd01" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_realarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a099e7982fa40fadf696e38cc01ce2006" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_string</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1aed9c2af4d429dc7fa8c2809b6275ad9b" prot="private" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>query_stringarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>queryarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>queryarr</name></member>
+      <member refid="structamrex__parmparse__module_1_1amrex__parmparse_1a55eebb171b73f69770b85d76e354ea1f" prot="public" virt="non-virtual"><scope>amrex_parmparse_module::amrex_parmparse</scope><name>queryarr</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

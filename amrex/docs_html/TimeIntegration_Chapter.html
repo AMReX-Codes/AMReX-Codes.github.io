@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Time Integration &mdash; amrex 24.09-dev documentation</title>
+  <title>Time Integration &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GPU" href="GPU_Chapter.html" />
-    <link rel="prev" title="Initializing the Geometric Database" href="EB.html" /> 
+    <link rel="prev" title="FFT::R2C Class" href="FFT.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -64,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Time Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-simple-time-integrator-setup">A Simple Time Integrator Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking A Time Integration Method</a></li>
@@ -121,7 +122,7 @@ whatever right hand side operations they need.</p>
 <p>This is best shown with some sample code that sets up a time integrator and
 asks it to step forward by some interval <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The user needs to supply the
 right-hand side function using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> function.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span>
 
 <span class="n">MultiFab</span><span class="w"> </span><span class="n">Sold</span><span class="p">;</span><span class="w"> </span><span class="c1">// MultiFab containing old-time state data</span>
 <span class="n">MultiFab</span><span class="w"> </span><span class="n">Snew</span><span class="p">;</span><span class="w"> </span><span class="c1">// MultiFab where we want new-time state data</span>
@@ -131,18 +132,18 @@ right-hand side function using the <code class="docutils literal notranslate"><s
 <span class="c1">// Create a time integrator that will work with</span>
 <span class="c1">// MultiFabs with the same BoxArray, DistributionMapping,</span>
 <span class="c1">// and number of components as the state_data MultiFab.</span>
-<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrator</span><span class="p">(</span><span class="n">Sold</span><span class="p">);</span><span class="w"></span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrator</span><span class="p">(</span><span class="n">Sold</span><span class="p">);</span>
 
 <span class="c1">// Create a function that fills the state BCs and computes the RHS</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">rhs_fun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">){</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">rhs_fun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">,</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">time</span><span class="p">){</span>
 <span class="w">    </span><span class="c1">// [Calculate the rhs MultiFab given the state MultiFab]</span>
-<span class="p">};</span><span class="w"></span>
+<span class="p">};</span>
 
 <span class="c1">// Attach the right hand side function to the integrator</span>
-<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">source_fun</span><span class="p">);</span><span class="w"></span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">source_fun</span><span class="p">);</span>
 
 <span class="c1">// integrate forward one step from `time` by `dt` to fill Snew</span>
-<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sold</span><span class="p">,</span><span class="w"> </span><span class="n">Snew</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span><span class="w"></span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sold</span><span class="p">,</span><span class="w"> </span><span class="n">Snew</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -163,7 +164,7 @@ use a custom table and supply it manually.</p>
 <span class="cp">## &quot;RungeKutta&quot; or &quot;1&quot;   = Native Explicit Runge Kutta</span>
 <span class="cp">## &quot;SUNDIALS&quot; or &quot;2&quot;     = SUNDIALS Integrator</span>
 <span class="cp">## for example:</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RungeKutta</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RungeKutta</span>
 
 <span class="cp">## *** Parameters Needed For Native Explicit Runge-Kutta ***</span>
 <span class="cp">#</span>
@@ -173,7 +174,7 @@ use a custom table and supply it manually.</p>
 <span class="cp">### 2 = Trapezoid Method</span>
 <span class="cp">### 3 = SSPRK3 Method</span>
 <span class="cp">### 4 = RK4 Method</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
 
 <span class="cp">## If using a user-specified Butcher Tableau, then</span>
 <span class="cp">## set nodes, weights, and table entries here:</span>
@@ -181,9 +182,9 @@ use a custom table and supply it manually.</p>
 <span class="cp">## The Butcher Tableau is read as a flattened,</span>
 <span class="cp">## lower triangular matrix (but including the diagonal)</span>
 <span class="cp">## in row major format.</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
 </pre></div>
 </div>
 </section>
@@ -202,8 +203,8 @@ concurrently.</p>
 Runge-Kutta methods without any modification. To select a SUNDIALS explicit
 Runge-Kutta integrator, one needs only to add the following two input parameters
 at runtime:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span><span class="w"></span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span>
 </pre></div>
 </div>
 <p>One can select a different method type by changing the value of
@@ -262,7 +263,7 @@ SUNDIALS documentation for more details:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION WITH SUNDIALS</span>
 
 <span class="cp"># *** Select the SUNDIALS integrator backend ***</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SUNDIALS</span>
 
 <span class="cp"># *** Select the SUNDIALS method type ***</span>
 <span class="cp"># ERK      = Explicit Runge-Kutta method</span>
@@ -271,18 +272,18 @@ SUNDIALS documentation for more details:</p>
 <span class="cp"># EX-MRI   = Explicit Multirate Infatesimal method</span>
 <span class="cp"># IM-MRI   = Implicit Multirate Infatesimal method</span>
 <span class="cp"># IMEX-MRI = Implicit-Explicit Multirate Infatesimal method</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ERK</span>
 
 <span class="cp"># *** Select a specific SUNDIALS ERK method ***</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_BOGACKI_SHAMPINE_4_2_3</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_BOGACKI_SHAMPINE_4_2_3</span>
 
 <span class="cp"># *** Select a specific SUNDIALS ImEx method ***</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_DIRK_3_1_2</span><span class="w"></span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_ERK_3_1_2</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_DIRK_3_1_2</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_ARK2_ERK_3_1_2</span>
 
 <span class="cp"># *** Select a specific SUNDIALS MRI method ***</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_MIS_KW3</span><span class="w"></span>
-<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">fast_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_KNOTH_WOLKE_3_3</span><span class="w"></span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_MIS_KW3</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">fast_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ARKODE_KNOTH_WOLKE_3_3</span>
 </pre></div>
 </div>
 <p>The features of this interface evolve with the needs of our codes, so they may
@@ -295,7 +296,7 @@ SUNDIALS options we have not implemented, please let us know.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="EB.html" class="btn btn-neutral float-left" title="Initializing the Geometric Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FFT.html" class="btn btn-neutral float-left" title="FFT::R2C Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="GPU_Chapter.html" class="btn btn-neutral float-right" title="GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

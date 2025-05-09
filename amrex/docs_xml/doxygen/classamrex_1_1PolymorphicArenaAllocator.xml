@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1PolymorphicArenaAllocator" kind="class" language="C++" prot="public">
     <compoundname>amrex::PolymorphicArenaAllocator</compoundname>
     <basecompoundref refid="structamrex_1_1ArenaAllocatorBase" prot="public" virt="non-virtual">amrex::ArenaAllocatorBase&lt; T, PolymorphicArenaWrapper &gt;</basecompoundref>
-    <derivedcompoundref refid="classamrex_1_1PODVector" prot="public" virt="non-virtual">amrex::PODVector&lt; char, amrex::PolymorphicArenaAllocator&lt; char &gt; &gt;</derivedcompoundref>
     <includes refid="AMReX__GpuAllocators_8H" local="no">AMReX_GpuAllocators.H</includes>
     <templateparamlist>
       <param>
         <type>typename T</type>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1PolymorphicArenaAllocator_1abd49730f61493b4c7b5d596ed7ffa547" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
         <definition>constexpr amrex::PolymorphicArenaAllocator&lt; T &gt;::PolymorphicArenaAllocator</definition>
         <argsstring>()=default</argsstring>
         <name>PolymorphicArenaAllocator</name>
+        <qualifiedname>amrex::PolymorphicArenaAllocator::PolymorphicArenaAllocator</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -29,6 +29,7 @@
         <definition>constexpr amrex::PolymorphicArenaAllocator&lt; T &gt;::PolymorphicArenaAllocator</definition>
         <argsstring>(Arena *a_arena)</argsstring>
         <name>PolymorphicArenaAllocator</name>
+        <qualifiedname>amrex::PolymorphicArenaAllocator::PolymorphicArenaAllocator</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
           <declname>a_arena</declname>
@@ -46,6 +47,7 @@
         <definition>void amrex::PolymorphicArenaAllocator&lt; T &gt;::setArena</definition>
         <argsstring>(Arena *a_ar) noexcept</argsstring>
         <name>setArena</name>
+        <qualifiedname>amrex::PolymorphicArenaAllocator::setArena</qualifiedname>
         <param>
           <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
           <declname>a_ar</declname>
@@ -58,7 +60,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" line="151" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="151" bodyend="154"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -74,17 +76,45 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::PODVector&lt; char, amrex::PolymorphicArenaAllocator&lt; char &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
         <label>amrex::ArenaAllocatorBase&lt; T, PolymorphicArenaWrapper &gt;</label>
         <link refid="structamrex_1_1ArenaAllocatorBase"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ar</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_profiler</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::Arena::ArenaProfiler</label>
+        <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_arena_profiler_mutex</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_profiling_stats</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_currently_allocated</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="11">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
       </node>
       <node id="1">
         <label>amrex::PolymorphicArenaAllocator&lt; T &gt;</label>
@@ -92,12 +122,42 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>amrex::PolymorphicArenaWrapper</label>
+        <link refid="structamrex_1_1PolymorphicArenaWrapper"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_arena</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::mutex</label>
+      </node>
+      <node id="9">
+        <label>std::string</label>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" line="142" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="144" bodyend="155"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a70ce2081b6a122fb56306d01a798983d" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>allocate</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a08d1c621831a4cba4a26c24f72c0d734" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>allocate_in_place</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1a884712e3b0c3b53f799d30d5f77c0520" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>arena</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a4919b893b36a2d5ae0687fcfab9e622c" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>allocate</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1aacfd8a11b41714538a068f8a0003d0b0" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>allocate_in_place</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a24a11021c80c7510b0a30170a9f43ea4" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>arena</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a3013f3e6be3447fa80b47378bb289421" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>arena_wrapper_type</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a2eb4b475d321bac1f26493e56b1f79ce" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>ArenaAllocatorBase</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a710cf5f0a5dd205b02197ba17ccc0303" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>ArenaAllocatorBase</name></member>
@@ -106,7 +166,7 @@
       <member refid="classamrex_1_1PolymorphicArenaAllocator_1abd49730f61493b4c7b5d596ed7ffa547" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>PolymorphicArenaAllocator</name></member>
       <member refid="classamrex_1_1PolymorphicArenaAllocator_1a7e37e0451471fcf02dbfb376f2804145" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>PolymorphicArenaAllocator</name></member>
       <member refid="classamrex_1_1PolymorphicArenaAllocator_1a6cc91f415f75d3cbe8f2cd97a96b8e30" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>setArena</name></member>
-      <member refid="structamrex_1_1ArenaAllocatorBase_1ad5f2db0d8d58e0591dae17ff0c3672c3" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>shrink_in_place</name></member>
+      <member refid="structamrex_1_1ArenaAllocatorBase_1a68247e75792d1b25fad0b379ec2ac116" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>shrink_in_place</name></member>
       <member refid="structamrex_1_1ArenaAllocatorBase_1a14617724279ae05ee72af2b519c485e4" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArenaAllocator</scope><name>value_type</name></member>
     </listofallmembers>
   </compounddef>

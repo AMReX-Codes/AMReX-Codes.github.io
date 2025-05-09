@@ -1,8 +1,8 @@
 var namespaceamrex__error__module =
 [
     [ "amrex_error", "interfaceamrex__error__module_1_1amrex__error.html", "interfaceamrex__error__module_1_1amrex__error" ],
-    [ "amrex_fi_error", "interfaceamrex__error__module_1_1amrex__fi__error.html", "interfaceamrex__error__module_1_1amrex__fi__error" ],
     [ "amrex_fi_abort", "interfaceamrex__error__module_1_1amrex__fi__abort.html", "interfaceamrex__error__module_1_1amrex__fi__abort" ],
+    [ "amrex_fi_error", "interfaceamrex__error__module_1_1amrex__fi__error.html", "interfaceamrex__error__module_1_1amrex__fi__error" ],
     [ "amrex_fi_warning", "interfaceamrex__error__module_1_1amrex__fi__warning.html", "interfaceamrex__error__module_1_1amrex__fi__warning" ],
     [ "amrex_abort", "namespaceamrex__error__module.html#a3c0db0a8f73560694a95e3be546ad0fc", null ],
     [ "amrex_error0", "namespaceamrex__error__module.html#a1a83328a0c70eaabd8ab9e1f041e581a", null ],

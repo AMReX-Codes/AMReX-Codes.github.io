@@ -1,6 +1,6 @@
 var structamrex_1_1ReduceOpLogicalAnd =
 [
-    [ "init", "structamrex_1_1ReduceOpLogicalAnd.html#ae14960aa4d997ba60b2df5e9a1cf3956", null ],
-    [ "local_update", "structamrex_1_1ReduceOpLogicalAnd.html#a6fa8e68bad77f4d1094db1acddad0a93", null ],
-    [ "parallel_update", "structamrex_1_1ReduceOpLogicalAnd.html#ab2e8bb4b35603b81737b82cf9b495636", null ]
+    [ "init", "structamrex_1_1ReduceOpLogicalAnd.html#a27a33b36481f7bc3fe641154c00b5a66", null ],
+    [ "local_update", "structamrex_1_1ReduceOpLogicalAnd.html#a8d823167601d1cdbaae7d40b2b19a57b", null ],
+    [ "parallel_update", "structamrex_1_1ReduceOpLogicalAnd.html#a8e4f44ab12c1b198ec136e823b0f8120", null ]
 ];

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="AMReX__mempool__mod_8F90" kind="file" language="Fortran">
     <compoundname>AMReX_mempool_mod.F90</compoundname>
     <innerclass refid="interfaceamrex__mempool__module_1_1amrex__allocate" prot="public">amrex_mempool_module::amrex_allocate</innerclass>
@@ -10,22 +10,22 @@
     <innerclass refid="interfaceamrex__mempool__module_1_1amrex__mempool__free" prot="public">amrex_mempool_module::amrex_mempool_free</innerclass>
     <innerclass refid="interfaceamrex__mempool__module_1_1amrex__real__array__init" prot="public">amrex_mempool_module::amrex_real_array_init</innerclass>
     <innernamespace refid="namespaceamrex__mempool__module">amrex_mempool_module</innernamespace>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1abed87df63a38391fc491e4be7b5da008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1abed87df63a38391fc491e4be7b5da008" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r1::shift_bound_d1</definition>
         <argsstring>(fp, lo1, a)</argsstring>
         <name>shift_bound_d1</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -36,25 +36,25 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="109" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="110" bodyend="113"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a6a8fdfb73fbb212ceb3eb35cbd6b7bdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a6a8fdfb73fbb212ceb3eb35cbd6b7bdf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r2::shift_bound_d2</definition>
         <argsstring>(fp, lo1, lo2, a)</argsstring>
         <name>shift_bound_d2</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:,lo2:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -65,29 +65,29 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="136" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="137" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a59b75a7de599d385d7ded1242fe62abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a59b75a7de599d385d7ded1242fe62abf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r3::shift_bound_d3</definition>
         <argsstring>(fp, lo1, lo2, lo3, a)</argsstring>
         <name>shift_bound_d3</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:,lo2:,lo3:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>lo3</type>
+          <type>integer, intent(in)</type>
           <defname>lo3</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -98,33 +98,33 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="164" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="165" bodyend="168"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1abac101ae09af185b3da41a6bab31f456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1abac101ae09af185b3da41a6bab31f456" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r4::shift_bound_d4</definition>
         <argsstring>(fp, lo1, lo2, lo3, lo4, a)</argsstring>
         <name>shift_bound_d4</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:,lo2:,lo3:,lo4:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>lo3</type>
+          <type>integer, intent(in)</type>
           <defname>lo3</defname>
         </param>
         <param>
-          <type>lo4</type>
+          <type>integer, intent(in)</type>
           <defname>lo4</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -135,37 +135,37 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="194" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="195" bodyend="198"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1aff5d1ad305e591dda873d37b8a2a7dbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1aff5d1ad305e591dda873d37b8a2a7dbe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r5::shift_bound_d5</definition>
         <argsstring>(fp, lo1, lo2, lo3, lo4, lo5, a)</argsstring>
         <name>shift_bound_d5</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:,lo2:,lo3:,lo4:,lo5:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>lo3</type>
+          <type>integer, intent(in)</type>
           <defname>lo3</defname>
         </param>
         <param>
-          <type>lo4</type>
+          <type>integer, intent(in)</type>
           <defname>lo4</defname>
         </param>
         <param>
-          <type>lo5</type>
+          <type>integer, intent(in)</type>
           <defname>lo5</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -176,41 +176,41 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="225" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="226" bodyend="229"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a84085cb7459b50391f5ffc41f96ab2d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a84085cb7459b50391f5ffc41f96ab2d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r6::shift_bound_d6</definition>
         <argsstring>(fp, lo1, lo2, lo3, lo4, lo5, lo6, a)</argsstring>
         <name>shift_bound_d6</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo1:,lo2:,lo3:,lo4:,lo5:,lo6:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>lo3</type>
+          <type>integer, intent(in)</type>
           <defname>lo3</defname>
         </param>
         <param>
-          <type>lo4</type>
+          <type>integer, intent(in)</type>
           <defname>lo4</defname>
         </param>
         <param>
-          <type>lo5</type>
+          <type>integer, intent(in)</type>
           <defname>lo5</defname>
         </param>
         <param>
-          <type>lo6</type>
+          <type>integer, intent(in)</type>
           <defname>lo6</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:,:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -221,21 +221,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="257" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="258" bodyend="261"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a967f812c681580d2823d18ed0ad8ff60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a967f812c681580d2823d18ed0ad8ff60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r1_v::shift_bound_d1_v</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d1_v</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(1), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -246,21 +246,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="283" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="284" bodyend="287"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a6eea46c67f82e6aa657bde8929bd44ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a6eea46c67f82e6aa657bde8929bd44ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r2_v::shift_bound_d2_v</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d2_v</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):,lo(2):), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(2), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -271,21 +271,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="309" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="310" bodyend="313"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a472bb83258a0d92b0e083a9c39d7acc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a472bb83258a0d92b0e083a9c39d7acc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r3_v::shift_bound_d3_v</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d3_v</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):,lo(2):,lo(3):), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -296,21 +296,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="335" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="336" bodyend="339"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a23bae64c87fe27a0ba910ec43a9533d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a23bae64c87fe27a0ba910ec43a9533d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r1_vc::shift_bound_d1_vc</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d1_vc</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):,1:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(1), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -321,21 +321,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="362" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="363" bodyend="366"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a91fda6e21c2638aefe0014a4a4c53418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a91fda6e21c2638aefe0014a4a4c53418" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r2_vc::shift_bound_d2_vc</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d2_vc</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):,lo(2):,1:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(2), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -346,21 +346,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="389" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="390" bodyend="393"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a7d0ee922d5ba60a10899c4ab27dc2863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a7d0ee922d5ba60a10899c4ab27dc2863" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_r3_vc::shift_bound_d3_vc</definition>
         <argsstring>(fp, lo, a)</argsstring>
         <name>shift_bound_d3_vc</name>
         <param>
-          <type>fp</type>
+          <type>real(c_real), dimension(lo(1):,lo(2):,lo(3):,1:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo</type>
+          <type>integer, dimension(3), intent(in)</type>
           <defname>lo</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>real(c_real), dimension(:,:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -371,21 +371,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="417" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="418" bodyend="421"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a5fa8471df4c357d0eaeb409be5103a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a5fa8471df4c357d0eaeb409be5103a10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_i1::shift_bound_i1</definition>
         <argsstring>(fp, lo1, a)</argsstring>
         <name>shift_bound_i1</name>
         <param>
-          <type>fp</type>
+          <type>integer, dimension(lo1:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>integer, dimension(:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -396,25 +396,25 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="502" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="503" bodyend="506"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1ad025dafea56683b0485d755583879dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1ad025dafea56683b0485d755583879dac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_i2::shift_bound_i2</definition>
         <argsstring>(fp, lo1, lo2, a)</argsstring>
         <name>shift_bound_i2</name>
         <param>
-          <type>fp</type>
+          <type>integer, dimension(lo1:,lo2:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>integer, dimension(:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -425,29 +425,29 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="528" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="529" bodyend="532"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a29e17f13c7452069bf3d97542e49408d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__mempool__mod_8F90_1a29e17f13c7452069bf3d97542e49408d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>subroutine</type>
         <definition>subroutine bl_allocate_i3::shift_bound_i3</definition>
         <argsstring>(fp, lo1, lo2, lo3, a)</argsstring>
         <name>shift_bound_i3</name>
         <param>
-          <type>fp</type>
+          <type>integer, dimension(lo1:,lo2:,lo3:), intent(in), target</type>
           <defname>fp</defname>
         </param>
         <param>
-          <type>lo1</type>
+          <type>integer, intent(in)</type>
           <defname>lo1</defname>
         </param>
         <param>
-          <type>lo2</type>
+          <type>integer, intent(in)</type>
           <defname>lo2</defname>
         </param>
         <param>
-          <type>lo3</type>
+          <type>integer, intent(in)</type>
           <defname>lo3</defname>
         </param>
         <param>
-          <type>a</type>
+          <type>integer, dimension(:,:,:), intent(inout), pointer</type>
           <defname>a</defname>
         </param>
         <briefdescription>
@@ -458,7 +458,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" line="555" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_mempool_mod.F90" bodystart="556" bodyend="559"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

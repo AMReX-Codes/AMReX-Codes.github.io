@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fortran Interface &mdash; amrex 24.09-dev documentation</title>
+  <title>Fortran Interface &mdash; amrex 25.06-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                24.09-dev
+                25.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Chapter.html">Python Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -112,10 +113,10 @@
 <span id="chap-fortran"></span><h1>Fortran Interface<a class="headerlink" href="#fortran-interface" title="Permalink to this heading"></a></h1>
 <p>The core of AMReX is written in C++. For Fortran users who want to write all of
 their programs in Fortran, AMReX provides Fortran interfaces around most of
-functionalities except for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span><span class="w"></span></code> class (see the chapter on
+functionalities except for the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AmrLevel</span></code> class (see the chapter on
 <a class="reference internal" href="AmrLevel_Chapter.html#chap-amrlevel"><span class="std std-ref">Amr Source Code</span></a>) and particles (see the chapter on <a class="reference internal" href="Particle_Chapter.html#chap-particles"><span class="std std-ref">Particles</span></a>).
 We should not confuse the Fortran interface in this chapter with the Fortran
-kernel functions called inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loops in codes (see the section
+kernel functions called inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> loops in codes (see the section
 on <a class="reference internal" href="Basics.html#sec-basics-fortran"><span class="std std-ref">Fortran and C++ Kernels</span></a>). For the latter, Fortran is used in some sense as
 a domain-specific language with native multi-dimensional arrays, whereas here
 Fortran is used to drive the whole application code. In order to better

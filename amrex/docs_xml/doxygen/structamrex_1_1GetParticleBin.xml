@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1GetParticleBin" kind="struct" language="C++" prot="public">
     <compoundname>amrex::GetParticleBin</compoundname>
     <includes refid="AMReX__ParticleUtil_8H" local="no">AMReX_ParticleUtil.H</includes>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1GetParticleBin_1aeb85700e02150d77688f2f48f87a0220" prot="public" static="no" mutable="no">
         <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
         <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::GetParticleBin::plo</definition>
         <argsstring></argsstring>
         <name>plo</name>
+        <qualifiedname>amrex::GetParticleBin::plo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,6 +23,7 @@
         <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::GetParticleBin::dxi</definition>
         <argsstring></argsstring>
         <name>dxi</name>
+        <qualifiedname>amrex::GetParticleBin::dxi</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -35,6 +37,7 @@
         <definition>Box amrex::GetParticleBin::domain</definition>
         <argsstring></argsstring>
         <name>domain</name>
+        <qualifiedname>amrex::GetParticleBin::domain</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -48,6 +51,7 @@
         <definition>IntVect amrex::GetParticleBin::bin_size</definition>
         <argsstring></argsstring>
         <name>bin_size</name>
+        <qualifiedname>amrex::GetParticleBin::bin_size</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -61,6 +65,7 @@
         <definition>Box amrex::GetParticleBin::box</definition>
         <argsstring></argsstring>
         <name>box</name>
+        <qualifiedname>amrex::GetParticleBin::box</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -69,8 +74,8 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="346" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="346" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structamrex_1_1GetParticleBin_1a6dc1f8b3f8c85df7d0508d2afa62497d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -81,6 +86,7 @@
         <definition>AMREX_GPU_HOST_DEVICE unsigned int amrex::GetParticleBin::operator()</definition>
         <argsstring>(const ParticleType &amp;p) const noexcept</argsstring>
         <name>operator()</name>
+        <qualifiedname>amrex::GetParticleBin::operator()</qualifiedname>
         <param>
           <type>const ParticleType &amp;</type>
           <declname>p</declname>
@@ -93,38 +99,44 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="350" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="350" bodyend="356"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
+      <node id="4">
         <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="4">
+      <node id="2">
         <label>amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="1">
         <label>amrex::GetParticleBin</label>
         <link refid="structamrex_1_1GetParticleBin"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>bin_size</edgelabel>
-        </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>box</edgelabel>
-          <edgelabel>domain</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
           <edgelabel>dxi</edgelabel>
           <edgelabel>plo</edgelabel>
         </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>box</edgelabel>
+          <edgelabel>domain</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>bin_size</edgelabel>
+        </childnode>
       </node>
-      <node id="2">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
-        <link refid="classamrex_1_1IntVectND"/>
+      <node id="3">
+        <label>Real</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="340" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="341" bodyend="357"/>

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex__string__module" kind="namespace" language="Fortran">
     <compoundname>amrex_string_module</compoundname>
     <innerclass refid="structamrex__string__module_1_1amrex__string" prot="public">amrex_string_module::amrex_string</innerclass>
-      <sectiondef kind="var">
+    <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceamrex__string__module_1a624a8f56ebfb3afaeb6658ef1c343616" prot="public" static="no" mutable="no">
         <type>character(kind=c_char), dimension(1), parameter, public</type>
         <definition>character(kind=c_char), dimension(1), parameter, public amrex_string_module::amrex_c_null_char_array</definition>
         <argsstring></argsstring>
         <name>amrex_c_null_char_array</name>
+        <qualifiedname>amrex_string_module::amrex_c_null_char_array</qualifiedname>
         <initializer>= (/ c_null_char /)</initializer>
         <briefdescription>
         </briefdescription>
@@ -18,15 +19,16 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_string_mod.F90" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_string_mod.F90" bodystart="10" bodyend="10"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex__string__module_1a0bf8f20010cb63d36d70475cce439c7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>character(kind=c_char) function, dimension(len_trim(fstr)+1), public</type>
         <definition>character(kind=c_char) function, dimension(len_trim(fstr)+1), public amrex_string_module::amrex_string_f_to_c</definition>
         <argsstring>(fstr)</argsstring>
         <name>amrex_string_f_to_c</name>
+        <qualifiedname>amrex_string_module::amrex_string_f_to_c</qualifiedname>
         <param>
-          <type>fstr</type>
+          <type>character(*), intent(in)</type>
           <defname>fstr</defname>
         </param>
         <briefdescription>
@@ -42,8 +44,9 @@
         <definition>character(len=size(cstr)-1) function, public amrex_string_module::amrex_string_c_to_f</definition>
         <argsstring>(cstr)</argsstring>
         <name>amrex_string_c_to_f</name>
+        <qualifiedname>amrex_string_module::amrex_string_c_to_f</qualifiedname>
         <param>
-          <type>cstr</type>
+          <type>character(kind=c_char), dimension(:), intent(in)</type>
           <defname>cstr</defname>
         </param>
         <briefdescription>
@@ -59,12 +62,13 @@
         <definition>subroutine, public amrex_string_module::amrex_string_build</definition>
         <argsstring>(str, fstr)</argsstring>
         <name>amrex_string_build</name>
+        <qualifiedname>amrex_string_module::amrex_string_build</qualifiedname>
         <param>
-          <type>str</type>
+          <type>type(<ref refid="structamrex__string__module_1_1amrex__string" kindref="compound">amrex_string</ref>), intent(inout)</type>
           <defname>str</defname>
         </param>
         <param>
-          <type>fstr</type>
+          <type>character(*), intent(in)</type>
           <defname>fstr</defname>
         </param>
         <briefdescription>
@@ -80,8 +84,9 @@
         <definition>character(len=len_trim(fstr)) function, public amrex_string_module::amrex_string_f_to_lower</definition>
         <argsstring>(fstr)</argsstring>
         <name>amrex_string_f_to_lower</name>
+        <qualifiedname>amrex_string_module::amrex_string_f_to_lower</qualifiedname>
         <param>
-          <type>fstr</type>
+          <type>character(len=*), intent(in)</type>
           <defname>fstr</defname>
         </param>
         <briefdescription>
@@ -92,7 +97,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_string_mod.F90" line="57" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_string_mod.F90" bodystart="58" bodyend="69"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

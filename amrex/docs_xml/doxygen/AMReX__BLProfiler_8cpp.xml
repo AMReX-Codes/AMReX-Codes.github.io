@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="AMReX__BLProfiler_8cpp" kind="file" language="C++">
     <compoundname>AMReX_BLProfiler.cpp</compoundname>
     <includes refid="AMReX__BLFort_8H" local="no">AMReX_BLFort.H</includes>
     <incdepgraph>
+      <node id="7">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>AMReX_BLFort.H</label>
         <link refid="AMReX__BLFort_8H"/>
@@ -18,36 +26,17 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>AMReX_SPACE.H</label>
-        <link refid="AMReX__SPACE_8H"/>
-        <childnode refid="3" relation="include">
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BLProfiler.cpp</label>
+        <link refid="AMReX__BLProfiler_8cpp"/>
+        <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="10">
-        <label>float.h</label>
-      </node>
-      <node id="8">
-        <label>AMReX_REAL.H</label>
-        <link refid="AMReX__REAL_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>limits.h</label>
       </node>
       <node id="9">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>AMReX_Config.H</label>
       </node>
       <node id="4">
         <label>AMReX_INT.H</label>
@@ -59,22 +48,33 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BLProfiler.cpp</label>
-        <link refid="AMReX__BLProfiler_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>AMReX_ArrayLim.H</label>
-        <link refid="AMReX__ArrayLim_8H"/>
+      <node id="8">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="10">
+        <label>float.h</label>
       </node>
       <node id="5">
         <label>inttypes.h</label>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
@@ -192,7 +192,7 @@
 <codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_TRACE_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>BLProfiler::callStackDepth(-1);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>BLProfiler::prevCallStackDepth(0);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">Real<sp/>BLProfiler::CallStats::minCallTime(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;Real&gt;::max</ref>());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">Real<sp/>BLProfiler::CallStats::minCallTime(std::numeric_limits&lt;Real&gt;::max());</highlight></codeline>
 <codeline lineno="111"><highlight class="normal">Real<sp/>BLProfiler::CallStats::maxCallTime(-1.0);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
@@ -224,7 +224,7 @@
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a187cdb4f4273fdf9bcad01ac8e3fcc4d" kindref="member">BLProfiler::Initialize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::Initialize()<sp/>{</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bInitialized)<sp/>{</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -238,10 +238,10 @@
 <codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(resultLen<sp/>&lt;<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>procName<sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;NoProcName&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>procNumber<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>procNumber<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>procName<sp/>=<sp/>cProcName;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>procNumber<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>procNumber<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//amrex::AllPrint()<sp/>&lt;&lt;<sp/>myProc<sp/>&lt;&lt;<sp/>&quot;::::<sp/>&quot;<sp/>&lt;&lt;<sp/>procName<sp/>&lt;&lt;<sp/>&quot;<sp/><sp/>len<sp/>=<sp/><sp/>&quot;<sp/>&lt;&lt;<sp/>resultLen<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight></codeline>
@@ -255,11 +255,11 @@
 <codeline lineno="170"><highlight class="normal"><sp/><sp/>timerTime<sp/>/=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(nTimerTimes);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_COMM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/>vCommStats.reserve(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(csFlushSize,<sp/>defaultReserveSize));</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>vCommStats.reserve(std::max(csFlushSize,<sp/>defaultReserveSize));</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight></codeline>
 <codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_TRACE_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/>vCallTrace.reserve(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(traceFlushSize,<sp/>defaultReserveSize));</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>vCallTrace.reserve(std::max(traceFlushSize,<sp/>defaultReserveSize));</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>make<sp/>sure<sp/>there<sp/>is<sp/>always<sp/>at<sp/>least<sp/>one<sp/>so<sp/>we<sp/>dont<sp/>need<sp/>to<sp/>check<sp/>in<sp/>start()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/>CallStats<sp/>unusedCS(-1,<sp/>-1,<sp/>-1,<sp/>-1.1,<sp/>-1.2,<sp/>-1.3);</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/>vCallTrace.push_back(unusedCS);</highlight></codeline>
@@ -318,7 +318,7 @@
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/>Vector&lt;char&gt;<sp/>fileCharPtr;</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bExitOnError(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>the<sp/>file<sp/>does<sp/>not<sp/>exist</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a4736dec48acb46827a04cdca7b4045d7" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(exFile,<sp/>fileCharPtr,<sp/>bExitOnError);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>ParallelDescriptor::ReadAndBcastFile(exFile,<sp/>fileCharPtr,<sp/>bExitOnError);</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/>CommStats::cftExclude.erase(AllCFTypes);</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
@@ -413,8 +413,8 @@
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(vCallTrace.size()<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"><sp/><sp/>Real<sp/>calltime(bltstart<sp/>-<sp/>startTime);</highlight></codeline>
 <codeline lineno="330"><highlight class="normal"><sp/><sp/>vCallTrace.push_back(CallStats(callStackDepth,<sp/>fnameNumber,<sp/>1,<sp/>0.0,<sp/>0.0,<sp/>calltime));</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/>CallStats::minCallTime<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(CallStats::minCallTime,<sp/>calltime);</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><sp/><sp/>CallStats::maxCallTime<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(CallStats::maxCallTime,<sp/>calltime);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>CallStats::minCallTime<sp/>=<sp/>std::min(CallStats::minCallTime,<sp/>calltime);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>CallStats::maxCallTime<sp/>=<sp/>std::max(CallStats::maxCallTime,<sp/>calltime);</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"></highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/>callIndexStack.push_back(CallStatsStack(vCallTrace.size()<sp/>-<sp/>1));</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/>prevCallStackDepth<sp/>=<sp/>callStackDepth;</highlight></codeline>
@@ -546,7 +546,7 @@
 <codeline lineno="461"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="462"><highlight class="normal"></highlight></codeline>
 <codeline lineno="463"><highlight class="normal"></highlight></codeline>
-<codeline lineno="464"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8117ae9942e01445ea7fe62d2f190c64" kindref="member">BLProfiler::Finalize</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bFlushing,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>memCheck)<sp/>{</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::Finalize(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bFlushing,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>memCheck)<sp/>{</highlight></codeline>
 <codeline lineno="465"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>bInitialized)<sp/>{</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -627,7 +627,7 @@
 <codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numPrec(4),<sp/>pctPrec(2);</highlight></codeline>
 <codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>stdDev(0.0),<sp/>coeffVariation(0.0);</highlight></codeline>
 <codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pstats.variance<sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
-<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stdDev<sp/>=<sp/><ref refid="namespaceamrex_1afe1175c09892da177b5f5ecaf36936ab" kindref="member">std::sqrt</ref>(pstats.variance);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stdDev<sp/>=<sp/>std::sqrt(pstats.variance);</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pstats.avgTime<sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
 <codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>coeffVariation<sp/>=<sp/>100.0<sp/>*<sp/>(stdDev<sp/>/<sp/>pstats.avgTime);<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>percent</highlight><highlight class="normal"></highlight></codeline>
@@ -666,7 +666,7 @@
 <codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BLProfiler::CallStats&gt;<sp/>&amp;callTraces,</highlight></codeline>
 <codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bwriteavg,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bwriteinclusivetimes)</highlight></codeline>
 <codeline lineno="583"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>());</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc(ParallelDescriptor::MyProc());</highlight></codeline>
 <codeline lineno="585"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>colWidth(10);</highlight></codeline>
 <codeline lineno="586"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>calcRunTime(BLProfiler::GetRunTime());</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"></highlight></codeline>
@@ -679,7 +679,7 @@
 <codeline lineno="594"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>profName(it-&gt;first);</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pnLen(profName.size());</highlight></codeline>
-<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/>maxlen<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(maxlen,<sp/>pnLen);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/>maxlen<sp/>=<sp/>std::max(maxlen,<sp/>pnLen);</highlight></codeline>
 <codeline lineno="598"><highlight class="normal"></highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bwriteavg)<sp/>{</highlight></codeline>
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>totalTimers<sp/>+=<sp/>it-&gt;second.avgTime;</highlight></codeline>
@@ -796,7 +796,7 @@
 <codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth(cs.callStackDepth);</highlight></codeline>
-<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/>maxCSD<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(maxCSD,<sp/>depth);</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/>maxCSD<sp/>=<sp/>std::max(maxCSD,<sp/>depth);</highlight></codeline>
 <codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(depth<sp/>&gt;=<sp/>callStack.size())<sp/>{</highlight></codeline>
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>callStack.resize(depth<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -848,7 +848,7 @@
 <codeline lineno="763"><highlight class="normal"></highlight></codeline>
 <codeline lineno="764"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>namespace<sp/>BLProfilerUtils</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="765"><highlight class="normal"></highlight></codeline>
-<codeline lineno="766"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream<sp/>&amp;os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BLProfiler::CommStats<sp/>&amp;cs)<sp/>{</highlight></codeline>
+<codeline lineno="766"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="AMReX__BLProfStats_8cpp_1a1bf4d1b16227052c48dc3a55a8886ace" kindref="member">operator&lt;&lt; </ref>(std::ostream<sp/>&amp;os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BLProfiler::CommStats<sp/>&amp;cs)<sp/>{</highlight></codeline>
 <codeline lineno="767"><highlight class="normal"><sp/><sp/>os<sp/>&lt;&lt;<sp/>BLProfiler::CommStats::CFTToString(cs.cfType)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cs.size</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cs.commpid<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cs.tag<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cs.timeStamp;</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
@@ -858,9 +858,9 @@
 <codeline lineno="773"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(memCheck);</highlight></codeline>
 <codeline lineno="774"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---------------------------------------<sp/>gather<sp/>global<sp/>stats</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="775"><highlight class="normal"><sp/><sp/>Real<sp/>baseProfStart(<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>());<sp/><sp/></highlight><highlight class="comment">//<sp/>time<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="776"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nProcs(<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>());</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nProcs(ParallelDescriptor::NProcs());</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//const<sp/>int<sp/>myProc(ParallelDescriptor::MyProc());</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="778"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iopNum(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iopNum(ParallelDescriptor::IOProcessorNumber());</highlight></codeline>
 <codeline lineno="779"><highlight class="normal"></highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------<sp/>make<sp/>sure<sp/>the<sp/>set<sp/>of<sp/>profiled<sp/>functions<sp/>is<sp/>the<sp/>same<sp/>on<sp/>all<sp/>processors</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/>Vector&lt;std::string&gt;<sp/>localStrings,<sp/>syncedStrings;</highlight></codeline>
@@ -909,7 +909,7 @@
 <codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxlen(0);</highlight></codeline>
 <codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>gtimes(1);</highlight></codeline>
 <codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>ncalls(1);</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>gtimes.resize(nProcs);</highlight></codeline>
 <codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ncalls.resize(nProcs);</highlight></codeline>
 <codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -919,23 +919,23 @@
 <codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>profName(it-&gt;first);</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pnLen(profName.size());</highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>maxlen<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(maxlen,<sp/>pnLen);</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>maxlen<sp/>=<sp/>std::max(maxlen,<sp/>pnLen);</highlight></codeline>
 <codeline lineno="838"><highlight class="normal"></highlight></codeline>
 <codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ProfStats<sp/>&amp;pstats<sp/>=<sp/>mProfStats[profName];</highlight></codeline>
 <codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nProcs<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gtimes[0]<sp/>=<sp/>pstats.totalTime;</highlight></codeline>
 <codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncalls[0]<sp/>=<sp/>pstats.nCalls;</highlight></codeline>
 <codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab3aa34d0c55755f52fccec7dd20dd9fb" kindref="member">ParallelDescriptor::Gather</ref>(&amp;pstats.totalTime,<sp/>1,<sp/>gtimes.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab3aa34d0c55755f52fccec7dd20dd9fb" kindref="member">ParallelDescriptor::Gather</ref>(&amp;pstats.nCalls,<sp/>1,<sp/>ncalls.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Gather(&amp;pstats.totalTime,<sp/>1,<sp/>gtimes.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Gather(&amp;pstats.nCalls,<sp/>1,<sp/>ncalls.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
 <codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>tsum(0.0),<sp/>tmin(gtimes[0]),<sp/>tmax(gtimes[0]),<sp/>tavg(0.0),<sp/>variance(0.0);</highlight></codeline>
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>ncsum(0);</highlight></codeline>
-<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>gtimes.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tsum<sp/>+=<sp/>gtimes[i];</highlight></codeline>
-<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmin<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(tmin,<sp/>gtimes[i]);</highlight></codeline>
-<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmax<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(tmax,<sp/>gtimes[i]);</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmin<sp/>=<sp/>std::min(tmin,<sp/>gtimes[i]);</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmax<sp/>=<sp/>std::max(tmax,<sp/>gtimes[i]);</highlight></codeline>
 <codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tavg<sp/>=<sp/>tsum<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(gtimes.size());</highlight></codeline>
 <codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>gtimes.size();<sp/>++i)<sp/>{</highlight></codeline>
@@ -955,7 +955,7 @@
 <codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="871"><highlight class="normal"></highlight></codeline>
 <codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---------------------------------------<sp/>print<sp/>global<sp/>stats<sp/>to<sp/>cout</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bWriteAvg(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nProcs<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bWriteAvg<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
@@ -969,7 +969,7 @@
 <codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>if<sp/>we<sp/>use<sp/>an<sp/>unordered_map<sp/>for<sp/>mProfStats,<sp/>copy<sp/>to<sp/>a<sp/>sorted<sp/>container</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>wait<sp/>for<sp/>everyone<sp/>(remove<sp/>after<sp/>adding<sp/>filters)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Barrier();<sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>wait<sp/>for<sp/>everyone<sp/>(remove<sp/>after<sp/>adding<sp/>filters)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>nCallsOut(mProfStats.size(),<sp/>0);</highlight></codeline>
 <codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>totalTimesOut(mProfStats.size(),<sp/>0.0);</highlight></codeline>
 <codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count(0);</highlight></codeline>
@@ -988,7 +988,7 @@
 <codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>blProfDirCreated<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="905"><highlight class="normal"></highlight></codeline>
-<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(1,<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(nProcs,<sp/>nProfFiles));</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nProcs,<sp/>nProfFiles));</highlight></codeline>
 <codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>phFilePrefix(</highlight><highlight class="stringliteral">&quot;bl_prof&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cFileName(cdir<sp/>+<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>+<sp/>phFilePrefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_D_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>seekPos(0);</highlight></codeline>
@@ -1008,12 +1008,12 @@
 <codeline lineno="923"><highlight class="normal"></highlight></codeline>
 <codeline lineno="924"><highlight class="normal"></highlight></codeline>
 <codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>seekPosOut(1);</highlight></codeline>
-<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>seekPosOut.resize(nProcs,<sp/>0);</highlight></codeline>
 <codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab3aa34d0c55755f52fccec7dd20dd9fb" kindref="member">ParallelDescriptor::Gather</ref>(&amp;seekPos,<sp/>1,<sp/>seekPosOut.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Gather(&amp;seekPos,<sp/>1,<sp/>seekPosOut.dataPtr(),<sp/>1,<sp/>iopNum);</highlight></codeline>
 <codeline lineno="930"><highlight class="normal"></highlight></codeline>
-<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>phFileName(cdir<sp/>+<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>+<sp/>phFilePrefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_H&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/>phHeaderFile;</highlight></codeline>
 <codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>phHeaderFile.open(phFileName.c_str(),<sp/>std::ios::out<sp/>|<sp/>std::ios::trunc);</highlight></codeline>
@@ -1039,7 +1039,7 @@
 <codeline lineno="954"><highlight class="normal"></highlight></codeline>
 <codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1ad8ea62a61c6045d82e8dc32d5dad229b" kindref="member">BL_PROFILE_REGION_STOP</ref>(noRegionName);</highlight></codeline>
 <codeline lineno="956"><highlight class="normal"></highlight></codeline>
-<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(</highlight><highlight class="stringliteral">&quot;BLProfiler::Finalize&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Barrier(</highlight><highlight class="stringliteral">&quot;BLProfiler::Finalize&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="958"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="959"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;BLProfiler::Finalize():<sp/><sp/>time:<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>time<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="960"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>baseProfStart<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1051,7 +1051,7 @@
 <codeline lineno="966"><highlight class="normal"></highlight></codeline>
 <codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(memCheck)<sp/>{</highlight></codeline>
 <codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nCT(vCallTrace.size());</highlight></codeline>
-<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(nCT);</highlight></codeline>
+<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceIntMax(nCT);</highlight></codeline>
 <codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>doFlush(nCT<sp/>&gt;<sp/>traceFlushSize);</highlight></codeline>
 <codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doFlush)<sp/>{</highlight></codeline>
 <codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Flushing<sp/>call<sp/>traces:<sp/><sp/>nCT<sp/>traceFlushSize<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>nCT</highlight></codeline>
@@ -1065,9 +1065,9 @@
 <codeline lineno="980"><highlight class="normal"></highlight></codeline>
 <codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>wctStart(<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>());<sp/><sp/></highlight><highlight class="comment">//<sp/>time<sp/>the<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cdir(blProfDirName);</highlight></codeline>
-<codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>myProc<sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nProcs<sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(1,<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(nProcs,<sp/>nProfFiles));</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>myProc<sp/><sp/><sp/><sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
+<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nProcs<sp/><sp/><sp/><sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
+<codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nProcs,<sp/>nProfFiles));</highlight></codeline>
 <codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cFilePrefix(</highlight><highlight class="stringliteral">&quot;bl_call_stats&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>cFileName(cdir<sp/>+<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>+<sp/>cFilePrefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_D_&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"></highlight></codeline>
@@ -1091,7 +1091,7 @@
 <codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unsupported<sp/>for<sp/>now</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1008"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>globalHeaderFileName(cdir<sp/>+<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>+<sp/>cFilePrefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_H&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/>csGlobalHeaderFile;</highlight></codeline>
 <codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>csGlobalHeaderFile.open(globalHeaderFileName.c_str(),</highlight></codeline>
@@ -1258,7 +1258,7 @@
 <codeline lineno="1173"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(memCheck)<sp/>{</highlight></codeline>
 <codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nCS(vCommStats.size());</highlight></codeline>
-<codeline lineno="1176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(nCS);</highlight></codeline>
+<codeline lineno="1176"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::ReduceIntMax(nCS);</highlight></codeline>
 <codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nCS<sp/>&lt;<sp/>csFlushSize)<sp/>{</highlight></codeline>
 <codeline lineno="1178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>bAllCFTypesExcluded)<sp/>{</highlight></codeline>
 <codeline lineno="1179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CommStats::cftExclude.erase(AllCFTypes);</highlight></codeline>
@@ -1288,12 +1288,12 @@
 <codeline lineno="1203"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1204"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>myProc<sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="1207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nProcs<sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="1208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(1,<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(nProcs,<sp/>nProfFiles));</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>myProc<sp/><sp/><sp/><sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
+<codeline lineno="1207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nProcs<sp/><sp/><sp/><sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nProcs,<sp/>nProfFiles));</highlight></codeline>
 <codeline lineno="1209"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>write<sp/>the<sp/>global<sp/>header</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>()<sp/>&amp;&amp;<sp/>bFirstCommWrite)<sp/>{</highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor()<sp/>&amp;&amp;<sp/>bFirstCommWrite)<sp/>{</highlight></codeline>
 <codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>globalHeaderFileName(cdir<sp/>+<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>+<sp/>commprofPrefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_H&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>csGlobalHeaderFile;</highlight></codeline>
 <codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/>csGlobalHeaderFile.open(globalHeaderFileName.c_str(),<sp/>std::ios::out<sp/>|<sp/>std::ios::trunc);</highlight></codeline>
@@ -1369,14 +1369,14 @@
 <codeline lineno="1284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>seekpos<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>nfiDatafile.SeekPos()<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>data<sp/>file<sp/>seek<sp/>position</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>procName<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ib(0);<sp/>ib<sp/>&lt;<sp/>CommStats::barrierNames.size();<sp/>++ib)<sp/>{</highlight></codeline>
-<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seekindex(CommStats::barrierNames[ib].<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac5028f0e53837bb92fcf49d087aeee88" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seekindex(CommStats::barrierNames[ib].second);</highlight></codeline>
 <codeline lineno="1288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CommStats<sp/>&amp;cs<sp/>=<sp/>vCommStats[seekindex];</highlight></codeline>
 <codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nfiHeader.Stream()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;bNum<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cs.tag<sp/><sp/></highlight><highlight class="comment">//<sp/>tag<sp/>is<sp/>used<sp/>for<sp/>barrier<sp/>number</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;&quot;&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>CommStats::barrierNames[ib].first<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;&quot;&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>seekindex<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ib(0);<sp/>ib<sp/>&lt;<sp/>CommStats::nameTags.size();<sp/>++ib)<sp/>{</highlight></codeline>
-<codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seekindex(CommStats::nameTags[ib].<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac5028f0e53837bb92fcf49d087aeee88" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>seekindex(CommStats::nameTags[ib].second);</highlight></codeline>
 <codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nfiHeader.Stream()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;nTag<sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>CommStats::nameTags[ib].first<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>seekindex<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1415,7 +1415,7 @@
 <codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/>CommStats::cftExclude.erase(AllCFTypes);</highlight></codeline>
 <codeline lineno="1331"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1332"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1333"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(</highlight><highlight class="stringliteral">&quot;BLProfiler::WriteCommStats::end&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1333"><highlight class="normal"><sp/><sp/>ParallelDescriptor::Barrier(</highlight><highlight class="stringliteral">&quot;BLProfiler::WriteCommStats::end&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1334"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1335"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;BLProfiler::WriteCommStats():<sp/><sp/>time:<sp/><sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>wcsStart<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -1424,7 +1424,7 @@
 <codeline lineno="1339"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1340"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::WriteFortProfErrors()<sp/>{</highlight></codeline>
 <codeline lineno="1341"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>report<sp/>any<sp/>fortran<sp/>errors.<sp/><sp/>should<sp/>really<sp/>check<sp/>with<sp/>all<sp/>procs,<sp/>just<sp/>iop<sp/>for<sp/>now</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1342"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="1342"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
 <codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(BLProfiler::mFortProfs.<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FFFFFFFF<sp/>--------<sp/>FORTRAN<sp/>PROFILING<sp/>UNSTOPPED<sp/>ERRORS&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(std::map&lt;std::string,<sp/>BLProfiler<sp/>*&gt;::iterator<sp/>it<sp/>=<sp/>BLProfiler::mFortProfs.<ref refid="namespaceamrex_1abf1d4578d3f20a3f5b2d2d74c8c90af6" kindref="member">begin</ref>();</highlight></codeline>
@@ -1477,18 +1477,18 @@
 <codeline lineno="1392"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1393"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1394"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1395"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::AddCommStat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,</highlight></codeline>
+<codeline lineno="1395"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::AddCommStat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
 <codeline lineno="1396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pid,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag)</highlight></codeline>
 <codeline lineno="1397"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1398"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(OnExcludeList(cft))<sp/>{</highlight></codeline>
 <codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1400"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1401"><highlight class="normal"><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,<sp/>pid,<sp/>tag,<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()));</highlight></codeline>
+<codeline lineno="1401"><highlight class="normal"><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/>size,<sp/>pid,<sp/>tag,<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()));</highlight></codeline>
 <codeline lineno="1402"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1403"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1404"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1405"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::AddBarrier(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>beforecall)<sp/>{</highlight></codeline>
-<codeline lineno="1406"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">BLProfiler::Barrier</ref>);</highlight></codeline>
+<codeline lineno="1406"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft(BLProfiler::Barrier);</highlight></codeline>
 <codeline lineno="1407"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(OnExcludeList(cft))<sp/>{</highlight></codeline>
 <codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1409"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1526,7 +1526,7 @@
 <codeline lineno="1441"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1442"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1443"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1444"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::AddAllReduce(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,</highlight></codeline>
+<codeline lineno="1444"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BLProfiler::AddAllReduce(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CommFuncType<sp/>cft,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,</highlight></codeline>
 <codeline lineno="1445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>beforecall)</highlight></codeline>
 <codeline lineno="1446"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1447"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(OnExcludeList(cft))<sp/>{</highlight></codeline>
@@ -1534,12 +1534,12 @@
 <codeline lineno="1449"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1450"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(beforecall)<sp/>{</highlight></codeline>
 <codeline lineno="1451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag(CommStats::reductionNumber);</highlight></codeline>
-<codeline lineno="1452"><highlight class="normal"><sp/><sp/><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,<sp/>BeforeCall(),<sp/>tag,</highlight></codeline>
+<codeline lineno="1452"><highlight class="normal"><sp/><sp/><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/>size,<sp/>BeforeCall(),<sp/>tag,</highlight></codeline>
 <codeline lineno="1453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()));</highlight></codeline>
 <codeline lineno="1454"><highlight class="normal"><sp/><sp/><sp/><sp/>++CommStats::reductionNumber;</highlight></codeline>
 <codeline lineno="1455"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag(CommStats::reductionNumber<sp/>-<sp/>1);</highlight></codeline>
-<codeline lineno="1457"><highlight class="normal"><sp/><sp/><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,<sp/>AfterCall(),<sp/>tag,</highlight></codeline>
+<codeline lineno="1457"><highlight class="normal"><sp/><sp/><sp/><sp/>vCommStats.push_back(CommStats(cft,<sp/>size,<sp/>AfterCall(),<sp/>tag,</highlight></codeline>
 <codeline lineno="1458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()));</highlight></codeline>
 <codeline lineno="1459"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1460"><highlight class="normal">}</highlight></codeline>
@@ -1798,7 +1798,7 @@
 <codeline lineno="1713"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1714"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1715"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1716"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1716"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1717"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
 <codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
@@ -1807,7 +1807,7 @@
 <codeline lineno="1722"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1723"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1724"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1725"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1725"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1726"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
 <codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
@@ -1836,7 +1836,7 @@
 <codeline lineno="1751"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1752"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1753"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1754"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1754"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
 <codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sync_counter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
@@ -1847,7 +1847,7 @@
 <codeline lineno="1762"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1763"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1764"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1765"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1765"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1766"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
 <codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sync_counter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
