@@ -1,5 +1,13 @@
 var NAVTREEINDEX128 =
 {
+"structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196":[2,0,0,503,0],
+"structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196":[3,0,0,469,0],
+"structamrex_1_1PolymorphicArenaWrapper.html":[3,0,0,472],
+"structamrex_1_1PolymorphicArenaWrapper.html":[2,0,0,506],
+"structamrex_1_1PolymorphicArenaWrapper.html#a579908990ceb617fc236604011136af6":[2,0,0,506,0],
+"structamrex_1_1PolymorphicArenaWrapper.html#a579908990ceb617fc236604011136af6":[3,0,0,472,0],
+"structamrex_1_1PolymorphicArenaWrapper.html#a85a639c6c909c175dc65653bf9c4ac72":[2,0,0,506,1],
+"structamrex_1_1PolymorphicArenaWrapper.html#a85a639c6c909c175dc65653bf9c4ac72":[3,0,0,472,1],
 "structamrex_1_1PolymorphicArenaWrapper.html#a978d8eceeb4f721828251364d40e8fd4":[2,0,0,506,2],
 "structamrex_1_1PolymorphicArenaWrapper.html#a978d8eceeb4f721828251364d40e8fd4":[3,0,0,472,2],
 "structamrex_1_1PolymorphicArenaWrapper.html#a9f2221690b1d215e8f683e84753bbde5":[3,0,0,472,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX128 =
 "structamrex_1_1SmallMatrix.html#ae33359e7bce45d6a7bfea9bfee3220ad":[2,0,0,531,22],
 "structamrex_1_1SmallMatrix.html#ae33359e7bce45d6a7bfea9bfee3220ad":[3,0,0,497,22],
 "structamrex_1_1SmallMatrix.html#ae54d9be19be0cf11747349876041d803":[2,0,0,531,0],
-"structamrex_1_1SmallMatrix.html#ae54d9be19be0cf11747349876041d803":[3,0,0,497,0],
-"structamrex_1_1SmallMatrix.html#ae8cf19f766b5abebe99a55b314ae2e60":[2,0,0,531,16],
-"structamrex_1_1SmallMatrix.html#ae8cf19f766b5abebe99a55b314ae2e60":[3,0,0,497,16],
-"structamrex_1_1SmallMatrix.html#ae9608225e97fe6122467ada431fa11c8":[3,0,0,497,30],
-"structamrex_1_1SmallMatrix.html#ae9608225e97fe6122467ada431fa11c8":[2,0,0,531,30],
-"structamrex_1_1SmallMatrix.html#aeaaa8ace7a3bbe1ef56e8c40eabf6ab9":[2,0,0,531,28],
-"structamrex_1_1SmallMatrix.html#aeaaa8ace7a3bbe1ef56e8c40eabf6ab9":[3,0,0,497,28],
-"structamrex_1_1SmallMatrix.html#aed77dbefaa3163a2dfbca65ceb9a3f61":[2,0,0,531,26],
-"structamrex_1_1SmallMatrix.html#aed77dbefaa3163a2dfbca65ceb9a3f61":[3,0,0,497,26]
+"structamrex_1_1SmallMatrix.html#ae54d9be19be0cf11747349876041d803":[3,0,0,497,0]
 };

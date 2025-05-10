@@ -1,5 +1,13 @@
 var NAVTREEINDEX116 =
 {
+"structamrex_1_1FFT_1_1Plan.html#a40a75d3378402a322324040d4e87d1cd":[3,0,0,5,5,6],
+"structamrex_1_1FFT_1_1Plan.html#a40a75d3378402a322324040d4e87d1cd":[2,0,0,11,5,6],
+"structamrex_1_1FFT_1_1Plan.html#a4fccdeff1f411720917139f2bb045197":[3,0,0,5,5,19],
+"structamrex_1_1FFT_1_1Plan.html#a4fccdeff1f411720917139f2bb045197":[2,0,0,11,5,19],
+"structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e":[2,0,0,11,5,14],
+"structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e":[3,0,0,5,5,14],
+"structamrex_1_1FFT_1_1Plan.html#a6290c31392b5e57ad4487d10ba742a2a":[3,0,0,5,5,15],
+"structamrex_1_1FFT_1_1Plan.html#a6290c31392b5e57ad4487d10ba742a2a":[2,0,0,11,5,15],
 "structamrex_1_1FFT_1_1Plan.html#a77c84431716c58741f7938208b075136":[2,0,0,11,5,8],
 "structamrex_1_1FFT_1_1Plan.html#a77c84431716c58741f7938208b075136":[3,0,0,5,5,8],
 "structamrex_1_1FFT_1_1Plan.html#a791bb445961d41e01bb43afa0bd07b3c":[2,0,0,11,5,7],
@@ -241,13 +249,5 @@ var NAVTREEINDEX116 =
 "structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d":[3,0,0,169,3,3],
 "structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d":[2,0,0,203,3,3],
 "structamrex_1_1FabArrayBase_1_1CommMetaData.html#a45f8bde679589b1086b07cc3faba6740":[3,0,0,169,3,4],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a45f8bde679589b1086b07cc3faba6740":[2,0,0,203,3,4],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a8a30e2336976ffe878c2c6558ecce70d":[3,0,0,169,3,1],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a8a30e2336976ffe878c2c6558ecce70d":[2,0,0,203,3,1],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a9faedeb4a7bf786a1143c2f4264369a0":[2,0,0,203,3,2],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a9faedeb4a7bf786a1143c2f4264369a0":[3,0,0,169,3,2],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8":[2,0,0,203,3,0],
-"structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8":[3,0,0,169,3,0],
-"structamrex_1_1FabArrayBase_1_1CopyComTag.html":[3,0,0,169,4],
-"structamrex_1_1FabArrayBase_1_1CopyComTag.html":[2,0,0,203,4]
+"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a45f8bde679589b1086b07cc3faba6740":[2,0,0,203,3,4]
 };

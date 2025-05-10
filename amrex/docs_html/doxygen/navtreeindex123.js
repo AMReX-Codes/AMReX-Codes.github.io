@@ -1,5 +1,13 @@
 var NAVTREEINDEX123 =
 {
+"structamrex_1_1NeighborCode.html":[2,0,0,410],
+"structamrex_1_1NeighborCode.html":[3,0,0,376],
+"structamrex_1_1NeighborCode.html#ae5f702cff0dcc8b8dc04038691330e0a":[2,0,0,410,1],
+"structamrex_1_1NeighborCode.html#ae5f702cff0dcc8b8dc04038691330e0a":[3,0,0,376,1],
+"structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e":[3,0,0,376,0],
+"structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e":[2,0,0,410,0],
+"structamrex_1_1NeighborData.html":[3,0,0,377],
+"structamrex_1_1NeighborData.html":[2,0,0,411],
 "structamrex_1_1NeighborData.html#a09fd3cee10d0e540e802b6c7cd9fc6fd":[3,0,0,377,4],
 "structamrex_1_1NeighborData.html#a09fd3cee10d0e540e802b6c7cd9fc6fd":[2,0,0,411,4],
 "structamrex_1_1NeighborData.html#a7f2e9c324bce9a494b544b608d346999":[2,0,0,411,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX123 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a7c8d153a059ab7a3d4667268e44b37bd":[3,0,0,11,10,2],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a7c8d153a059ab7a3d4667268e44b37bd":[2,0,0,30,11,2],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[3,0,0,11,10,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[2,0,0,30,11,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[3,0,0,11,11],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[2,0,0,30,12],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a2b43db01447bc941d865e495da9c568f":[3,0,0,11,11,3],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a2b43db01447bc941d865e495da9c568f":[2,0,0,30,12,3],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b":[2,0,0,30,12,6],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b":[3,0,0,11,11,6],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a57d71866cb674a85f1cc645bfdc0bd06":[2,0,0,30,12,4],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a57d71866cb674a85f1cc645bfdc0bd06":[3,0,0,11,11,4]
+"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[2,0,0,30,11,1]
 };

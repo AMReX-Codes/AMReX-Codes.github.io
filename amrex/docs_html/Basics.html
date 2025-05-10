@@ -335,10 +335,14 @@ parsed by <code class="code highlight cpp c++ docutils literal highlight-c++"><s
 command line sharing (see section <a class="reference internal" href="#sec-basics-parmparse-sharingcl"><span class="std std-ref">Sharing the Command Line</span></a> ).</p>
 <section id="inputs-file">
 <h2>Inputs File<a class="headerlink" href="#inputs-file" title="Permalink to this heading"></a></h2>
-<p>The format of the inputs
-file is a series of
-definitions in the form of <code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">....</span></code> For each line,
-text after # are comments. Here is an example inputs file.</p>
+<p>The format of the inputs file is a series of definitions in the form of
+<code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">...</span></code>. For each line, text after # are
+comments. For values spanning multiple lines except for table, one must use
+<code class="docutils literal notranslate"><span class="pre">\</span></code> at the end of a line for continuation, otherwise it’s a runtime
+error. Note that there must be at least one space before the continuation
+character <code class="docutils literal notranslate"><span class="pre">\</span></code>.  Multiple lines inside a pair of double quotes are
+considered a single string containing <code class="docutils literal notranslate"><span class="pre">\n</span></code>s. Here is an example inputs
+file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">100</span>               <span class="c1"># integer</span>
 <span class="n">nsteps</span>    <span class="o">=</span> <span class="mi">1000</span>              <span class="c1"># nsteps appears a second time</span>
 <span class="n">dt</span>        <span class="o">=</span> <span class="mf">0.03</span>              <span class="c1"># floating point number</span>
@@ -346,6 +350,24 @@ text after # are comments. Here is an example inputs file.</p>
 <span class="n">xrange</span>    <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span>          <span class="c1"># a list of 2 reals</span>
 <span class="n">title</span>     <span class="o">=</span> <span class="s2">&quot;Three Kingdoms&quot;</span>  <span class="c1"># a string</span>
 <span class="n">hydro</span><span class="o">.</span><span class="n">cfl</span> <span class="o">=</span> <span class="mf">0.8</span>               <span class="c1"># with prefix, hydro</span>
+<span class="n">my_2d_table</span> <span class="o">=</span> \
+       <span class="c1"># col 1      2      3</span>
+         <span class="p">{{</span> <span class="mf">11.0</span><span class="p">,</span>  <span class="mf">12.0</span><span class="p">,</span>  <span class="mf">13.0</span> <span class="p">}</span>   <span class="c1"># row 1</span>
+          <span class="p">{</span> <span class="mf">21.0</span><span class="p">,</span>  <span class="mf">22.0</span><span class="p">,</span>  <span class="mf">23.0</span> <span class="p">}</span>   <span class="c1"># row 2</span>
+          <span class="p">{</span> <span class="mf">31.0</span><span class="p">,</span>  <span class="mf">32.0</span><span class="p">,</span>  <span class="mf">33.0</span> <span class="p">}</span>   <span class="c1"># row 3</span>
+          <span class="p">{</span> <span class="mf">41.0</span><span class="p">,</span>  <span class="mf">42.0</span><span class="p">,</span>  <span class="mf">43.0</span> <span class="p">}</span> <span class="p">}</span> <span class="c1"># row 4</span>
+<span class="c1"># or</span>
+<span class="n">my_2d_table</span> <span class="o">=</span> <span class="c1"># col 1    2    3</span>
+                <span class="p">{{</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">12</span><span class="p">,</span>  <span class="mi">13</span> <span class="p">}</span>   <span class="c1"># row 1</span>
+                 <span class="p">{</span> <span class="mi">21</span><span class="p">,</span>  <span class="mi">22</span><span class="p">,</span>  <span class="mi">23</span> <span class="p">}</span>   <span class="c1"># row 2</span>
+                 <span class="p">{</span> <span class="mi">31</span><span class="p">,</span>  <span class="mi">32</span><span class="p">,</span>  <span class="mi">33</span> <span class="p">}</span>   <span class="c1"># row 3</span>
+                 <span class="p">{</span> <span class="mi">41</span><span class="p">,</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">43</span> <span class="p">}</span> <span class="p">}</span> <span class="c1"># row 4</span>
+<span class="c1"># or</span>
+<span class="n">my_2d_table</span> <span class="o">=</span> <span class="c1"># col 1    2    3</span>
+                <span class="p">{{</span> <span class="mi">11</span><span class="p">,</span>  <span class="mi">12</span><span class="p">,</span>  <span class="mi">13</span> <span class="p">},</span>   <span class="c1"># row 1</span>
+                 <span class="p">{</span> <span class="mi">21</span><span class="p">,</span>  <span class="mi">22</span><span class="p">,</span>  <span class="mi">23</span> <span class="p">},</span>   <span class="c1"># row 2</span>
+                 <span class="p">{</span> <span class="mi">31</span><span class="p">,</span>  <span class="mi">32</span><span class="p">,</span>  <span class="mi">33</span> <span class="p">},</span>   <span class="c1"># row 3</span>
+                 <span class="p">{</span> <span class="mi">41</span><span class="p">,</span>  <span class="mi">42</span><span class="p">,</span>  <span class="mi">43</span> <span class="p">}</span>  <span class="p">}</span> <span class="c1"># row 4</span>
 </pre></div>
 </div>
 <p>The following code shows how to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> to get/query the values.</p>
@@ -375,6 +397,9 @@ text after # are comments. Here is an example inputs file.</p>
 <span class="n">ParmParse</span><span class="w"> </span><span class="n">pph</span><span class="p">(</span><span class="s">&quot;hydro&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// with prefix &#39;hydro&#39;</span>
 <span class="n">Real</span><span class="w"> </span><span class="n">cfl</span><span class="p">;</span>
 <span class="n">pph</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cfl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cfl</span><span class="p">);</span><span class="w">    </span><span class="c1">// get parameter with prefix</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">my_2d_table</span><span class="p">;</span>
+<span class="n">pp</span><span class="p">.</span><span class="n">gettable</span><span class="p">(</span><span class="s">&quot;my_2d_table&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">my_2d_table</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note that when there are multiple definitions for a parameter <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>

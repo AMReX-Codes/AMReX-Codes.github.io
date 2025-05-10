@@ -1,5 +1,13 @@
 var NAVTREEINDEX96 =
 {
+"namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20abba47a7c03289a67ca347baa3f55be2f":[2,0,0,673,2],
+"namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20af695e73139b1c1d06d77655104370f00":[2,0,0,673,3],
+"namespaceamrex.html#a1ea98821ea183c55bd8a7ecca588e971":[2,0,0,1097],
+"namespaceamrex.html#a1ebc8341ffa9cc6f20e707bfb36ce253":[2,0,0,2265],
+"namespaceamrex.html#a1ee4f894329d09293a8a9e81fe342d05":[2,0,0,753],
+"namespaceamrex.html#a1f0884436c0e9c45901b834761379595":[2,0,0,2297],
+"namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9":[2,0,0,2036],
+"namespaceamrex.html#a1f4e686aad0553abae0b163533833615":[2,0,0,1908],
 "namespaceamrex.html#a1f7795a2449ec3d82382fe16b9721850":[2,0,0,2129],
 "namespaceamrex.html#a1fd06146a4b87e83901a6ffdb39e2b5d":[2,0,0,1601],
 "namespaceamrex.html#a1fdc0d6938e50feef0be49bf0ce3fa53":[2,0,0,1759],
@@ -241,13 +249,5 @@ var NAVTREEINDEX96 =
 "namespaceamrex.html#a39ef943d7dce669d6287469f17d25af4":[2,0,0,1466],
 "namespaceamrex.html#a3a030f294fac0688f0a029c43b79b68b":[2,0,0,1247],
 "namespaceamrex.html#a3a130e78c478fddbb794329c104cbc05":[2,0,0,1866],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589":[2,0,0,675],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a0168c8658e4afe3e386ce0bfe8a3fc83":[2,0,0,675,13],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a0e8b5d96d71e43edef0273b7e86277ee":[2,0,0,675,12],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a146c14c8d7badfe1adbfa704245f686e":[2,0,0,675,5],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a1c44c6c982e5f5394b02f66a59cbcbf0":[2,0,0,675,11],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a396843df4fbe8fdc7fb395e61f7fcbf5":[2,0,0,675,19],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a3fb34ef0b3bf8980039c8b7938964511":[2,0,0,675,0],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a43db7cb27778d6ef769014bcf7d9825e":[2,0,0,675,20],
-"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a45e9ea1f41504ce7c2d125cc59fa08ea":[2,0,0,675,6]
+"namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589":[2,0,0,675]
 };
