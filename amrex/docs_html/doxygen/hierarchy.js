@@ -1017,7 +1017,8 @@ var hierarchy =
     [ "amrex::Gpu::range_detail::range_impl< T >", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", null ],
     [ "amrex::RealBox", "classamrex_1_1RealBox.html", null ],
     [ "amrex::RealDescriptor", "classamrex_1_1RealDescriptor.html", null ],
-    [ "amrex::RealVect", "classamrex_1_1RealVect.html", null ],
+    [ "amrex::RealVectND< dim >", "classamrex_1_1RealVectND.html", null ],
+    [ "amrex::RealVectND< AMREX_SPACEDIM >", "classamrex_1_1RealVectND.html", null ],
     [ "amrex::RedistributeUnpackPolicy", "structamrex_1_1RedistributeUnpackPolicy.html", null ],
     [ "amrex::ReduceData< Ts >", "classamrex_1_1ReduceData.html", null ],
     [ "amrex::ReduceOpLogicalAnd", "structamrex_1_1ReduceOpLogicalAnd.html", null ],
@@ -1174,10 +1175,12 @@ var hierarchy =
     [ "std::tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::IndexTypeND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
+    [ "std::tuple_element< s, amrex::RealVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::IndexTypeND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
+    [ "std::tuple_size< amrex::RealVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::is_base_of::type", null, [
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ]
     ] ],
