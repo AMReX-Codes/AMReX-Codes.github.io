@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_0',['r',['../structamrex_1_1iparser__f2.html#a2016f7f5bdedd5d88d71ca5582f69d69',1,'amrex::iparser_f2::r'],['../structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538',1,'amrex::parser_node::r'],['../structamrex_1_1parser__f2.html#a3d6eae5bbd75c46a06b38a40d6978ba6',1,'amrex::parser_f2::r'],['../structamrex_1_1iparser__node.html#a862f92307932421c664884480724ac5e',1,'amrex::iparser_node::r']]],
+  ['r_0',['r',['../structamrex_1_1iparser__f2.html#a2016f7f5bdedd5d88d71ca5582f69d69',1,'amrex::iparser_f2::r'],['../structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538',1,'amrex::parser_node::r'],['../structamrex_1_1parser__f2.html#a3d6eae5bbd75c46a06b38a40d6978ba6',1,'amrex::parser_f2::r'],['../structamrex_1_1parser__usrf2.html#a4fdcceef2ab05cad613962d2f43b4235',1,'amrex::parser_usrf2::r'],['../structamrex_1_1iparser__node.html#a862f92307932421c664884480724ac5e',1,'amrex::iparser_node::r']]],
   ['r2r_5fdata_5fis_5fcomplex_1',['r2r_data_is_complex',['../structamrex_1_1FFT_1_1Plan.html#acb5c971f2fa4d4d4d244d65f2df703ce',1,'amrex::FFT::Plan']]],
   ['rand_5fstate_2',['rand_state',['../structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c',1,'amrex::RandomEngine']]],
   ['rank_3',['rank',['../structamrex_1_1NonLocalBC_1_1CommData.html#a7043829d46fc0b8fe144d8f94a2d8580',1,'amrex::NonLocalBC::CommData::rank'],['../classamrex_1_1Print.html#a7fd9cdeb58318bfc38b9381ca3ab3b01',1,'amrex::Print::rank'],['../classamrex_1_1PrintToFile.html#a5ccf010e5d7cb5aaad0612f47a8a5d95',1,'amrex::PrintToFile::rank']]],
@@ -51,7 +51,7 @@ var searchData=
   ['regtest_5freduction_48',['regtest_reduction',['../namespaceamrex_1_1system.html#aa98e0456115fdf35699d683e5a4c0e84',1,'amrex::system']]],
   ['regular_49',['regular',['../namespaceamrex_1_1EB2_1_1Type.html#a4e8ececf7cf081d7a2125f18f3ba6642',1,'amrex::EB2::Type::regular'],['../namespaceamrex__ebcellflag__module.html#adb0a0516e63c6b90231902627fd51da1',1,'amrex_ebcellflag_module::regular']]],
   ['regular_5fbits_50',['regular_bits',['../classamrex_1_1EBCellFlag.html#a98e740b42531b93d0abef721579b39be',1,'amrex::EBCellFlag']]],
-  ['regular_5fstencil_5fsize_51',['regular_stencil_size',['../classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934',1,'amrex::Hypre::regular_stencil_size'],['../classamrex_1_1PETScABecLap.html#aecf6271b785a92eee2bcd891ba3111e5',1,'amrex::PETScABecLap::regular_stencil_size']]],
+  ['regular_5fstencil_5fsize_51',['regular_stencil_size',['../classamrex_1_1PETScABecLap.html#aecf6271b785a92eee2bcd891ba3111e5',1,'amrex::PETScABecLap::regular_stencil_size'],['../classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934',1,'amrex::Hypre::regular_stencil_size']]],
   ['rel_5ftol_52',['rel_tol',['../classamrex_1_1IntegratorBase.html#a260c250d0a39818e4d4f9ef808b82239',1,'amrex::IntegratorBase']]],
   ['relax_5forder_53',['relax_order',['../classamrex_1_1Hypre.html#aa602c05ea8f16fa5aa95d79b372cffa8',1,'amrex::Hypre']]],
   ['relax_5ftype_54',['relax_type',['../classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec',1,'amrex::Hypre']]],
@@ -70,7 +70,7 @@ var searchData=
   ['reverse_5fdouble_5forder_5f2_67',['reverse_double_order_2',['../classamrex_1_1FPC.html#aa5f55a6cd8a3addc8eb1927b9f700564',1,'amrex::FPC']]],
   ['reverse_5ffloat_5forder_68',['reverse_float_order',['../classamrex_1_1FPC.html#ad8695587637ebea6ad37b278fb7e677d',1,'amrex::FPC']]],
   ['reverse_5ffloat_5forder_5f2_69',['reverse_float_order_2',['../classamrex_1_1FPC.html#a71ce71bf65be5235d8e74ee6921cfea7',1,'amrex::FPC']]],
-  ['rhs_70',['rhs',['../classamrex_1_1MLMGT.html#a4e3f5047925ba3d77f1c7284011ebc91',1,'amrex::MLMGT::rhs'],['../classamrex_1_1IntegratorBase.html#ab5166c9130778bcf08f08230d72b05f3',1,'amrex::IntegratorBase::Rhs']]],
+  ['rhs_70',['rhs',['../classamrex_1_1IntegratorBase.html#ab5166c9130778bcf08f08230d72b05f3',1,'amrex::IntegratorBase::Rhs'],['../classamrex_1_1MLMGT.html#a4e3f5047925ba3d77f1c7284011ebc91',1,'amrex::MLMGT::rhs']]],
   ['rhsex_71',['RhsEx',['../classamrex_1_1IntegratorBase.html#a580d4499f9876896b94cd3db82664bc0',1,'amrex::IntegratorBase']]],
   ['rhsfast_72',['RhsFast',['../classamrex_1_1IntegratorBase.html#ae700a0f7a7f2bf4456e466be7a2828ed',1,'amrex::IntegratorBase']]],
   ['rhsim_73',['RhsIm',['../classamrex_1_1IntegratorBase.html#a983bd9fe800746c882ce2184ef5baf48',1,'amrex::IntegratorBase']]],

@@ -9268,6 +9268,10 @@
     <member refid="classamrex_1_1ParmParse_1a6657f8c789a5b37f79bc4219dd6e3a81" kind="function"><name>remove</name></member>
     <member refid="classamrex_1_1ParmParse_1a6a0e28c45ee942f30c9f5c50f338e203" kind="function"><name>makeParser</name></member>
     <member refid="classamrex_1_1ParmParse_1afac8d3383aa70acfdd3cd22a8df79539" kind="function"><name>makeIParser</name></member>
+    <member refid="classamrex_1_1ParmParse_1a331024d9224777df97c75e8ca9898c33" kind="function"><name>querytable</name></member>
+    <member refid="classamrex_1_1ParmParse_1adb2e36f91a6a7ea50529faf98ae504c3" kind="function"><name>querytable</name></member>
+    <member refid="classamrex_1_1ParmParse_1a6981c07ea810f4c84d2cc0642dcc60cb" kind="function"><name>querytable</name></member>
+    <member refid="classamrex_1_1ParmParse_1ae1189cb49a57bf0a7a2ec14af98ddeb2" kind="function"><name>gettable</name></member>
     <member refid="classamrex_1_1ParmParse_1a957fdca08b9590837d67ea30d507f148" kind="function"><name>table</name></member>
     <member refid="classamrex_1_1ParmParse_1a9acf57232096dc7488995a49627924eb" kind="function"><name>prefixedName</name></member>
     <member refid="classamrex_1_1ParmParse_1a302162fcd495ffd22ab0ebb8d8f36a05" kind="function"><name>Initialize</name></member>
@@ -9285,6 +9289,8 @@
   </compound>
   <compound refid="classamrex_1_1Parser" kind="class"><name>amrex::Parser</name>
     <member refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kind="variable"><name>m_data</name></member>
+    <member refid="classamrex_1_1Parser_1a05ebfb3bd4f9a76b5c868d8a682c7a85" kind="variable"><name>m_ufs</name></member>
+    <member refid="classamrex_1_1Parser_1a8cf34879864c8df5989ec9ebb1ba2132" kind="variable"><name>m_uf_ptrs</name></member>
     <member refid="classamrex_1_1Parser_1a38fbb1b724d2f5ea93477b942c1b589c" kind="variable"><name>m_vars</name></member>
     <member refid="classamrex_1_1Parser_1a9829ccc584238c1042b7c1ef25b69685" kind="function"><name>Parser</name></member>
     <member refid="classamrex_1_1Parser_1a979ec2bb844542bdd274c04010282c19" kind="function"><name>Parser</name></member>
@@ -9292,14 +9298,20 @@
     <member refid="classamrex_1_1Parser_1a1463e62b561526c2d4932222cbd663fc" kind="function"><name>operator bool</name></member>
     <member refid="classamrex_1_1Parser_1abce888c0693fdd70003a6177b18d06a6" kind="function"><name>setConstant</name></member>
     <member refid="classamrex_1_1Parser_1ac7f2281fb9a99b8c410d9cbc0b20b67b" kind="function"><name>registerVariables</name></member>
+    <member refid="classamrex_1_1Parser_1a1e6e403b6241f2d0a1e14072ede56937" kind="function"><name>registerUserFn1</name></member>
+    <member refid="classamrex_1_1Parser_1aeade87d8614f791cb14a7781215bce02" kind="function"><name>registerUserFn2</name></member>
+    <member refid="classamrex_1_1Parser_1a0fb4f44ec5ac2e26965eeeacfeee663b" kind="function"><name>registerUserFn3</name></member>
+    <member refid="classamrex_1_1Parser_1a3470f98fafe869b6ed4a09e4cdf7f8f2" kind="function"><name>registerUserFn4</name></member>
     <member refid="classamrex_1_1Parser_1a217d48dc80e0448899823a0d47460d8b" kind="function"><name>print</name></member>
     <member refid="classamrex_1_1Parser_1aa3e51f354702ada83a42fa17d6450ff1" kind="function"><name>printExe</name></member>
     <member refid="classamrex_1_1Parser_1ae8f69b337a650c2a73a3aa33dad35064" kind="function"><name>depth</name></member>
     <member refid="classamrex_1_1Parser_1a27dc3946de52071f374c1a11e6182bad" kind="function"><name>maxStackSize</name></member>
     <member refid="classamrex_1_1Parser_1a39e13b29c0ab51b5a27264c706a1d7a8" kind="function"><name>expr</name></member>
     <member refid="classamrex_1_1Parser_1a0dfb30d6386a630f676982f25fb24a06" kind="function"><name>symbols</name></member>
+    <member refid="classamrex_1_1Parser_1acc98bde00ebe15e678d06525bc328f09" kind="function"><name>userFunctions</name></member>
     <member refid="classamrex_1_1Parser_1a84c2f77f7586faf9e89ef87489297bfa" kind="function"><name>compile</name></member>
     <member refid="classamrex_1_1Parser_1a2bcb71246d0395f1f9c3ce37e2286c09" kind="function"><name>compileHost</name></member>
+    <member refid="classamrex_1_1Parser_1a1a8a58b20563570d6fb892dfac561ea1" kind="function"><name>register_user_fn</name></member>
   </compound>
   <compound refid="structamrex_1_1parser__assign" kind="struct"><name>amrex::parser_assign</name>
     <member refid="structamrex_1_1parser__assign_1a325d96e7d2b35e89cb12c6a5fa0db023" kind="variable"><name>type</name></member>
@@ -9342,6 +9354,27 @@
     <member refid="structamrex_1_1parser__symbol_1a8b935e5014acf16b10e6b98c79de3054" kind="variable"><name>type</name></member>
     <member refid="structamrex_1_1parser__symbol_1a36d42d12dc34e9e1a3321c27539bb34d" kind="variable"><name>name</name></member>
     <member refid="structamrex_1_1parser__symbol_1a99f7da0f4633b6fc68df7cf4f0d9d398" kind="variable"><name>ip</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrf1" kind="struct"><name>amrex::parser_usrf1</name>
+    <member refid="structamrex_1_1parser__usrf1_1a73631e7b7c6c99d8cae3e006dbe77f4a" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1aa3738d408341bbe5e175dddbb8a41944" kind="variable"><name>padding</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a5d9f447da55cf81ecc98632e8da54e3f" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a138ddc66b5fbc483f30ce727cd477902" kind="variable"><name>l</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a4420f5122d018752e9beac6fadbf694f" kind="variable"><name>padding1</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrf2" kind="struct"><name>amrex::parser_usrf2</name>
+    <member refid="structamrex_1_1parser__usrf2_1ab221a73a9ad0c641a3d2a6f2f3ab4e12" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a05ec7ca4938e4d525d4698cdaa724076" kind="variable"><name>padding</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a3e1f869d840b21891a0d5c2110d51e34" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a06a69894f2903bd7d255bb3e81c5e354" kind="variable"><name>l</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a4fdcceef2ab05cad613962d2f43b4235" kind="variable"><name>r</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrfn" kind="struct"><name>amrex::parser_usrfn</name>
+    <member refid="structamrex_1_1parser__usrfn_1a64fca537c909541f78a75feae72a7dd1" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a46c39e97364d395868c5fc7ce018853a" kind="variable"><name>argc</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a29df342dfe89cbfea58032a7e899c66d" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a07b4d687cbc3621be34b1c421f1ead80" kind="variable"><name>n1</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a005876b2cb982540a7b9235612bc88f1" kind="variable"><name>others</name></member>
   </compound>
   <compound refid="structamrex_1_1ParserExeADD" kind="struct"><name>amrex::ParserExeADD</name>
     <member refid="structamrex_1_1ParserExeADD_1ae9780c323f695d1c05f0da89b404f3f5" kind="variable"><name>type</name></member>
@@ -9481,6 +9514,12 @@
   <compound refid="structamrex_1_1ParserExeSymbol" kind="struct"><name>amrex::ParserExeSymbol</name>
     <member refid="structamrex_1_1ParserExeSymbol_1a27fce7530cbea2d1fa6fbc8dcb9c292d" kind="variable"><name>type</name></member>
     <member refid="structamrex_1_1ParserExeSymbol_1a8c997d8cdc27b43d7f0914cae4e375eb" kind="variable"><name>i</name></member>
+  </compound>
+  <compound refid="structamrex_1_1ParserExeUserFn" kind="struct"><name>amrex::ParserExeUserFn</name>
+    <member refid="structamrex_1_1ParserExeUserFn_1aa121bf53a6a1c5005da265fb4f4c2188" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a4a76133790ea52ee5ac0f4a220889d36" kind="variable"><name>argc</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a82b570455f769916553a7c1c2006f5a0" kind="variable"><name>fh</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a1ec2abf9162357bbc2eaa9e2eaf841f1" kind="variable"><name>fd</name></member>
   </compound>
   <compound refid="classamrex_1_1EB2_1_1ParserIF" kind="class"><name>amrex::EB2::ParserIF</name>
     <member refid="classamrex_1_1EB2_1_1ParserIF_1a0ee1bc4aa5ddc1e1c59c6e3b4965630c" kind="variable"><name>m_parser</name></member>
@@ -10787,73 +10826,72 @@
     <member refid="classamrex_1_1RealDescriptor_1af34959841955d956473b14feca1209cb" kind="function"><name>convertToNativeFloatFormat</name></member>
     <member refid="classamrex_1_1RealDescriptor_1aa83674a91e2dcc69c8fd93d4009b3276" kind="function"><name>convertToNativeDoubleFormat</name></member>
   </compound>
-  <compound refid="classamrex_1_1RealVect" kind="class"><name>amrex::RealVect</name>
-    <member refid="classamrex_1_1RealVect_1ab64ddfe8e473503acf9a5f7103467b13" kind="variable"><name>Zero</name></member>
-    <member refid="classamrex_1_1RealVect_1a6745f136d89bdb15e57c3387ca01e973" kind="variable"><name>Unit</name></member>
-    <member refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" kind="friend"><name>BASISREALV</name></member>
-    <member refid="classamrex_1_1RealVect_1a0f0b7286c21b06ba0eea3a31c09cf2f1" kind="variable"><name>vect</name></member>
-    <member refid="classamrex_1_1RealVect_1a1e1ca0e6dc8c1ffe047d20716a80ded5" kind="friend"><name>operator+</name></member>
-    <member refid="classamrex_1_1RealVect_1a3f84cf28a3eb1f690b08ac9486c7dcf9" kind="friend"><name>operator-</name></member>
-    <member refid="classamrex_1_1RealVect_1a51443bb99fc505d285d7fe70a60ddb3c" kind="friend"><name>operator*</name></member>
-    <member refid="classamrex_1_1RealVect_1a1fca01b7216175d3cd1f366840f46373" kind="friend"><name>operator/</name></member>
-    <member refid="classamrex_1_1RealVect_1ab33793196d0917f9e4b69d8e84412430" kind="friend"><name>operator+</name></member>
-    <member refid="classamrex_1_1RealVect_1a394035414055d9cfe78d10bb63d4f169" kind="friend"><name>operator-</name></member>
-    <member refid="classamrex_1_1RealVect_1a3ca85db4b44ceb45ad915a815e79578a" kind="friend"><name>operator*</name></member>
-    <member refid="classamrex_1_1RealVect_1ac0469b60807117dc2419785ce1168b84" kind="friend"><name>operator/</name></member>
-    <member refid="classamrex_1_1RealVect_1aced393e91058fd9dcf46321c5f8f1eef" kind="friend"><name>scale</name></member>
-    <member refid="classamrex_1_1RealVect_1a438fc3c45b24a612f8f31d1cb42327e4" kind="friend"><name>operator&lt;&lt;</name></member>
-    <member refid="classamrex_1_1RealVect_1a4b455befb5882cf6997461a780b55e06" kind="friend"><name>operator&gt;&gt;</name></member>
-    <member refid="classamrex_1_1RealVect_1acf4c2cd61a42a6e8fe7d8251000c2140" kind="function"><name>RealVect</name></member>
-    <member refid="classamrex_1_1RealVect_1a3b80d8eb549dcdfa0fc5ab37b3d0bd1f" kind="function"><name>RealVect</name></member>
-    <member refid="classamrex_1_1RealVect_1aa3193e01e08d304b72016eee922c48e0" kind="function"><name>RealVect</name></member>
-    <member refid="classamrex_1_1RealVect_1a95ba2b64c46580f6e8ebbb7f35dad2cb" kind="function"><name>RealVect</name></member>
-    <member refid="classamrex_1_1RealVect_1ae2fd3bdec2802aef034cc7cfb36bf14a" kind="function"><name>RealVect</name></member>
-    <member refid="classamrex_1_1RealVect_1a998b88180e77007b1e73dea8b9ddfb37" kind="function"><name>operator[]</name></member>
-    <member refid="classamrex_1_1RealVect_1ad468fb3ea188dff9efe09bfb71734be9" kind="function"><name>operator[]</name></member>
-    <member refid="classamrex_1_1RealVect_1a296a2a004aa1d3e8b7d4eb5a5471a996" kind="function"><name>operator[]</name></member>
-    <member refid="classamrex_1_1RealVect_1a9acf1b8ad548c92198ba61270f60bd16" kind="function"><name>begin</name></member>
-    <member refid="classamrex_1_1RealVect_1a7e963cd7644ef143049f9603ba4cb128" kind="function"><name>begin</name></member>
-    <member refid="classamrex_1_1RealVect_1a151c9dc624996c3f5c1ca1c9ece88223" kind="function"><name>end</name></member>
-    <member refid="classamrex_1_1RealVect_1a84e6aa568672e2830742376875f3e81c" kind="function"><name>end</name></member>
-    <member refid="classamrex_1_1RealVect_1a787b257855e1c1f21c26438230e0f482" kind="function"><name>operator==</name></member>
-    <member refid="classamrex_1_1RealVect_1a0fdb785f0952ba5c6672a90a0a9120d0" kind="function"><name>operator!=</name></member>
-    <member refid="classamrex_1_1RealVect_1a5df564194fcc375edcc202ed6bae4aea" kind="function"><name>operator&lt;</name></member>
-    <member refid="classamrex_1_1RealVect_1a6c435556885b7c563cc6c0c02c107c69" kind="function"><name>operator&lt;=</name></member>
-    <member refid="classamrex_1_1RealVect_1af98b10ea8dcc7c6b0a87218452b39448" kind="function"><name>operator&gt;</name></member>
-    <member refid="classamrex_1_1RealVect_1aede3778179f57e5b9c02a7ed7cbfa04d" kind="function"><name>operator&gt;=</name></member>
-    <member refid="classamrex_1_1RealVect_1a9588a0f9a417aa33d3131b7ffcdbab5f" kind="function"><name>operator+=</name></member>
-    <member refid="classamrex_1_1RealVect_1a4abec8704c5d7117457d1c6b8edc1cb1" kind="function"><name>operator+</name></member>
-    <member refid="classamrex_1_1RealVect_1a0e5740b532214831cf6cf56dec666098" kind="function"><name>operator+=</name></member>
-    <member refid="classamrex_1_1RealVect_1a4d98c8467cecdb5b939ba120d29fbc9d" kind="function"><name>operator-=</name></member>
-    <member refid="classamrex_1_1RealVect_1a3a078245dfc6d742afcaf41f8fe8c0da" kind="function"><name>operator-=</name></member>
-    <member refid="classamrex_1_1RealVect_1a6f5adf2159116692f8f67cb96cb0e351" kind="function"><name>operator-</name></member>
-    <member refid="classamrex_1_1RealVect_1aa0f24542a6d07e02073616961cd2b285" kind="function"><name>operator*=</name></member>
-    <member refid="classamrex_1_1RealVect_1a661d136b50fe686020f621f5528de4d4" kind="function"><name>dotProduct</name></member>
-    <member refid="classamrex_1_1RealVect_1a2662b0dc461f4bb3f54cfa456dd2dcd1" kind="function"><name>operator*=</name></member>
-    <member refid="classamrex_1_1RealVect_1a94e4700dcfa50729e8a0fcd7d2e82fb6" kind="function"><name>operator*</name></member>
-    <member refid="classamrex_1_1RealVect_1a36fb56305984eee6881717a5ae1f65e8" kind="function"><name>operator/=</name></member>
-    <member refid="classamrex_1_1RealVect_1a00e94bec2f221dd7f96873a3fd0a181b" kind="function"><name>operator/=</name></member>
-    <member refid="classamrex_1_1RealVect_1aa976869120ccbfd2660d36c18013a66c" kind="function"><name>operator/</name></member>
-    <member refid="classamrex_1_1RealVect_1addcc9764c758d18f28fb58fd3c5b3a8b" kind="function"><name>scale</name></member>
-    <member refid="classamrex_1_1RealVect_1ad83cc01ed7402d9d384b73c046a96b87" kind="function"><name>floor</name></member>
-    <member refid="classamrex_1_1RealVect_1a792ecde737e120649cc137385297100c" kind="function"><name>ceil</name></member>
-    <member refid="classamrex_1_1RealVect_1a4a0514b2fe9078aff7ca5d72da6d6159" kind="function"><name>round</name></member>
-    <member refid="classamrex_1_1RealVect_1a7da81c75533a97e32fed875a93f6a7c8" kind="function"><name>min</name></member>
-    <member refid="classamrex_1_1RealVect_1a30944a8839e0dc2a873dc3fbef6b2c41" kind="function"><name>max</name></member>
-    <member refid="classamrex_1_1RealVect_1a0450ba685d7fa9c493158ec2a005f792" kind="friend"><name>min</name></member>
-    <member refid="classamrex_1_1RealVect_1a2c15c7a018202ae522e0777c120fa109" kind="friend"><name>max</name></member>
-    <member refid="classamrex_1_1RealVect_1a6a373b73cae408485adcb02e6b11d4f2" kind="function"><name>operator+</name></member>
-    <member refid="classamrex_1_1RealVect_1ac49e1cd3af85aa3a6cf106f8064fb3d0" kind="function"><name>operator-</name></member>
-    <member refid="classamrex_1_1RealVect_1a74051dce8bdf28e977934f2dedf0c993" kind="function"><name>sum</name></member>
-    <member refid="classamrex_1_1RealVect_1a5cb72900ed102d11d069c1e157364f59" kind="function"><name>vectorLength</name></member>
-    <member refid="classamrex_1_1RealVect_1ab83bde52e73520cc1375d513030374df" kind="function"><name>radSquared</name></member>
-    <member refid="classamrex_1_1RealVect_1a29bd7850951ae800d2bfd13ec8a3d593" kind="function"><name>product</name></member>
-    <member refid="classamrex_1_1RealVect_1ad6ae47a8656e02c4d566cdf251d5e532" kind="function"><name>minDir</name></member>
-    <member refid="classamrex_1_1RealVect_1a2d79ca79da983c3064622c628ecc8d93" kind="function"><name>maxDir</name></member>
-    <member refid="classamrex_1_1RealVect_1afd7ede44f8b93ea42106f2acb6655753" kind="function"><name>dataPtr</name></member>
-    <member refid="classamrex_1_1RealVect_1a3f2fc38ae03dae942ecfbd3c6c2b8999" kind="function"><name>dataPtr</name></member>
-    <member refid="classamrex_1_1RealVect_1abf73cc1782b728a662e6eab58a01fc38" kind="function"><name>TheZeroVector</name></member>
-    <member refid="classamrex_1_1RealVect_1a415190eae196ab804f9d6aa4653e878a" kind="function"><name>TheUnitVector</name></member>
+  <compound refid="classamrex_1_1RealVectND" kind="class"><name>amrex::RealVectND</name>
+    <member refid="classamrex_1_1RealVectND_1ae0a0cb29f737b147dd363ba8fbcbaf41" kind="typedef"><name>value_type</name></member>
+    <member refid="classamrex_1_1RealVectND_1a8b0c15f36a810af4974757509ad003df" kind="variable"><name>vect</name></member>
+    <member refid="classamrex_1_1RealVectND_1a7062057b11edf92335b2f65dfbb3bda7" kind="function"><name>shrink</name></member>
+    <member refid="classamrex_1_1RealVectND_1aabe3feb5087019984cc361df536b0452" kind="function"><name>expand</name></member>
+    <member refid="classamrex_1_1RealVectND_1abd34d7414c51115c3a45071bd737b3ee" kind="function"><name>resize</name></member>
+    <member refid="classamrex_1_1RealVectND_1a6e51f405d2fda2ec85ea1db6f7af5735" kind="function"><name>TheZeroVector</name></member>
+    <member refid="classamrex_1_1RealVectND_1a9fc50f6a9b89aa44c65b3970740a08df" kind="function"><name>TheUnitVector</name></member>
+    <member refid="classamrex_1_1RealVectND_1a20207e3c969b714e6b9705b528858afa" kind="function"><name>size</name></member>
+    <member refid="classamrex_1_1RealVectND_1a550cb29b2d91c50652031dcebfc6391a" kind="function"><name>isize</name></member>
+    <member refid="classamrex_1_1RealVectND_1ac4286c6d8d6d8e0a948d8b8ef6d41d24" kind="variable"><name>Zero</name></member>
+    <member refid="classamrex_1_1RealVectND_1abd41268bd0749cb0555b6759be75dd25" kind="variable"><name>Unit</name></member>
+    <member refid="classamrex_1_1RealVectND_1a1c3eebfb4feed7b2dd63c8e8683d0b8b" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a3fb9dbb4efcd3ee19ec87ce5e21ea7f2" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a49da823c110ea6d3548325d2eb842f03" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a29a047ff1e470be5f79c85822b6b0dee" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a9ccbf2e96a2dbf14dd014eece484fab4" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1aad420c3a463b1d606dbc42f7eac92cc7" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a4388e9cf3762157f7cd2672019c68ad2" kind="function"><name>RealVectND</name></member>
+    <member refid="classamrex_1_1RealVectND_1a8618cd406ab2d0af3c22ffc756f056c2" kind="function"><name>operator[]</name></member>
+    <member refid="classamrex_1_1RealVectND_1a539ebbca04cc605d0cfdceaf483174fe" kind="function"><name>operator[]</name></member>
+    <member refid="classamrex_1_1RealVectND_1aa6337ac2ee193f9a12ac36228a975f7f" kind="function"><name>operator[]</name></member>
+    <member refid="classamrex_1_1RealVectND_1abcd1a53eb8a827a666e264f7e6aca502" kind="function"><name>get</name></member>
+    <member refid="classamrex_1_1RealVectND_1a3b464536c67be735a036fa69f62a3073" kind="function"><name>get</name></member>
+    <member refid="classamrex_1_1RealVectND_1a0bee1a719153a57654e199c2ba5e48fa" kind="function"><name>to_array</name></member>
+    <member refid="classamrex_1_1RealVectND_1a9d7d6cd9e9afec2268dde6e5434707fd" kind="function"><name>begin</name></member>
+    <member refid="classamrex_1_1RealVectND_1ae9baaa7419a469496857f62d04605286" kind="function"><name>begin</name></member>
+    <member refid="classamrex_1_1RealVectND_1aa17450f359c6760973764734e15bb3ca" kind="function"><name>end</name></member>
+    <member refid="classamrex_1_1RealVectND_1a076a07bcf3f9a410e3b666a4fea3b337" kind="function"><name>end</name></member>
+    <member refid="classamrex_1_1RealVectND_1a5479319bf51455b69b520cb9ede9cab1" kind="function"><name>operator==</name></member>
+    <member refid="classamrex_1_1RealVectND_1a72742750714b5ae432800c86bad1f607" kind="function"><name>operator!=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a77bd5fa93c9f884c7110a9618b3190f8" kind="function"><name>operator&lt;</name></member>
+    <member refid="classamrex_1_1RealVectND_1a6b6f63d028891c9b866810e94ac283cd" kind="function"><name>operator&lt;=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a94d5f94c8eff2abfb0a2c794b2c95387" kind="function"><name>operator&gt;</name></member>
+    <member refid="classamrex_1_1RealVectND_1adda0551240ded4a29d76c6cc8ff5f778" kind="function"><name>operator&gt;=</name></member>
+    <member refid="classamrex_1_1RealVectND_1accb3a6687b735cb8e899e57e0561a27a" kind="function"><name>operator+=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a10b0499e964203dc6b08d879db0bb2c4" kind="function"><name>operator+</name></member>
+    <member refid="classamrex_1_1RealVectND_1ab4fb83b14e7da9663d80b0c9bfb0ac84" kind="function"><name>operator+=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a8fba3967669da792872afd3dfacd5e29" kind="function"><name>operator-=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a589734fbf09df42e23a47570e391cb33" kind="function"><name>operator-=</name></member>
+    <member refid="classamrex_1_1RealVectND_1ae74b22ba52add06285174444dc03107a" kind="function"><name>operator-</name></member>
+    <member refid="classamrex_1_1RealVectND_1a24cbe82b8679444258b91d3a193f6dc3" kind="function"><name>operator*=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a8dd231a8b231c4ae0442ba2d80d02d31" kind="function"><name>dotProduct</name></member>
+    <member refid="classamrex_1_1RealVectND_1a3c09e8e06a544b220129fd6636f41fa5" kind="function"><name>crossProduct</name></member>
+    <member refid="classamrex_1_1RealVectND_1a9496da00f18108599db15ee74344c3e5" kind="function"><name>operator*=</name></member>
+    <member refid="classamrex_1_1RealVectND_1abbc7f508b66a5512df6d66edb9b6e373" kind="function"><name>operator*</name></member>
+    <member refid="classamrex_1_1RealVectND_1adae75d5a0867457b5890bbc0ecd0e444" kind="function"><name>operator/=</name></member>
+    <member refid="classamrex_1_1RealVectND_1aff023361a417e23b594081122d9b5e78" kind="function"><name>operator/=</name></member>
+    <member refid="classamrex_1_1RealVectND_1a377c5329dc6d9b15c47c5dc6ff69746d" kind="function"><name>operator/</name></member>
+    <member refid="classamrex_1_1RealVectND_1a482d05bc1346e80a62aaab685ce5ac82" kind="function"><name>scale</name></member>
+    <member refid="classamrex_1_1RealVectND_1a1d85b9577acefba51e825f337e89f881" kind="function"><name>floor</name></member>
+    <member refid="classamrex_1_1RealVectND_1a6c8fd94ade0d5e099b2478d1b164668a" kind="function"><name>ceil</name></member>
+    <member refid="classamrex_1_1RealVectND_1a47a2bccf867b3eee869cf48e89fd5f00" kind="function"><name>round</name></member>
+    <member refid="classamrex_1_1RealVectND_1ae4f12f984e1c2fee9925a9ba47809f9e" kind="function"><name>min</name></member>
+    <member refid="classamrex_1_1RealVectND_1ad97344cdfe361a10c143c10619a19734" kind="function"><name>max</name></member>
+    <member refid="classamrex_1_1RealVectND_1a29da7a9fbc78d29095a1a6f0addba9a6" kind="function"><name>operator+</name></member>
+    <member refid="classamrex_1_1RealVectND_1a1a1db935a5bca4e0ce332fcfd924e073" kind="function"><name>operator-</name></member>
+    <member refid="classamrex_1_1RealVectND_1a4e0a864eff3e2d1b2bfc1592bba17a08" kind="function"><name>sum</name></member>
+    <member refid="classamrex_1_1RealVectND_1ac7a53db1eae51816c677507aa4674724" kind="function"><name>vectorLength</name></member>
+    <member refid="classamrex_1_1RealVectND_1add2a4bea63274f9b99c1fad749af74eb" kind="function"><name>radSquared</name></member>
+    <member refid="classamrex_1_1RealVectND_1aef8651006887834735686c2f8f684cd9" kind="function"><name>product</name></member>
+    <member refid="classamrex_1_1RealVectND_1a88c45171b9013b57656c612c25e757a3" kind="function"><name>minDir</name></member>
+    <member refid="classamrex_1_1RealVectND_1a97124ac3f11d7b1ed06d6c68f7a3e36f" kind="function"><name>maxDir</name></member>
+    <member refid="classamrex_1_1RealVectND_1a192f18c1324d4b495ce68999b01a2aec" kind="function"><name>dataPtr</name></member>
+    <member refid="classamrex_1_1RealVectND_1a2b2910c457c55cd97483b5a1b92bbf23" kind="function"><name>dataPtr</name></member>
+    <member refid="classamrex_1_1RealVectND_1a01c64747fda05a5a3433d6da580de8a6" kind="function"><name>crossProduct</name></member>
   </compound>
   <compound refid="structamrex_1_1RedistributeUnpackPolicy" kind="struct"><name>amrex::RedistributeUnpackPolicy</name>
     <member refid="structamrex_1_1RedistributeUnpackPolicy_1a8511545f28339259917a04b655a30aab" kind="function"><name>resizeTiles</name></member>
@@ -12177,6 +12215,9 @@
   <compound refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4" kind="struct"><name>std::tuple_element&lt; s, amrex::IntVectND&lt; dim &gt; &gt;</name>
     <member refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4_1a36a3da6780ccd990b74e1e1ceb07f606" kind="typedef"><name>type</name></member>
   </compound>
+  <compound refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4" kind="struct"><name>std::tuple_element&lt; s, amrex::RealVectND&lt; dim &gt; &gt;</name>
+    <member refid="structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a9a3f199aa294fcafae8a347c22d8e12d" kind="typedef"><name>type</name></member>
+  </compound>
   <compound refid="structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" kind="struct"><name>std::tuple_element&lt; std::size_t{0}, amrex::GpuTuple&lt; T, Ts... &gt; &gt;</name>
     <member refid="structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4_1a8790d0767460f18c8331769ade550c3d" kind="typedef"><name>type</name></member>
   </compound>
@@ -12188,6 +12229,9 @@
   </compound>
   <compound refid="structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4" kind="struct"><name>std::tuple_size&lt; amrex::IntVectND&lt; dim &gt; &gt;</name>
     <member refid="structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4_1a02352e50126403c1dcf04e5850ffdd4d" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4" kind="struct"><name>std::tuple_size&lt; amrex::RealVectND&lt; dim &gt; &gt;</name>
+    <member refid="structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4_1a015437ba071e87dad7e534830a018eb6" kind="variable"><name>value</name></member>
   </compound>
   <compound refid="structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4" kind="struct"><name>std::tuple_size&lt; amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;</name>
   </compound>
@@ -12535,6 +12579,22 @@
   <compound refid="namespace_0d66" kind="namespace"><name>@66</name>
   </compound>
   <compound refid="namespaceamrex" kind="namespace"><name>amrex</name>
+    <member refid="namespaceamrex_1aefc64764e1041795c052b0b0f9f60a91" kind="function"><name>operator/</name></member>
+    <member refid="namespaceamrex_1a7dc3de331fd37ce035d397b548438ce5" kind="function"><name>operator+</name></member>
+    <member refid="namespaceamrex_1a8a2d25ddc7221603b95c03b1a9d9388c" kind="function"><name>operator-</name></member>
+    <member refid="namespaceamrex_1aba2b1653f0b73da10fed2b4dc29a1ffc" kind="function"><name>operator*</name></member>
+    <member refid="namespaceamrex_1a7d1f451783c69dc45619122b59a09d6d" kind="function"><name>operator/</name></member>
+    <member refid="namespaceamrex_1a5712ccd7df443c420d19b93304df7c67" kind="function"><name>operator+</name></member>
+    <member refid="namespaceamrex_1a350776ed19cb87906196fe742b62aaa5" kind="function"><name>operator-</name></member>
+    <member refid="namespaceamrex_1a88e9d5f6ffe637265f1190b88667c78c" kind="function"><name>operator*</name></member>
+    <member refid="namespaceamrex_1a73bafa98ee10ef79c1da82bae1f74ba4" kind="function"><name>scale</name></member>
+    <member refid="namespaceamrex_1a1d825ed0dc6e2e83cdab3fa3c14edbe2" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespaceamrex_1aae45b8b99e4750cebf23c2ba9266aec5" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="namespaceamrex_1a4fdef3bd87f7884c0508dbfb570e00f7" kind="function"><name>RealVectCat</name></member>
+    <member refid="namespaceamrex_1adaefd02f855c2f9fd18a298c969076c0" kind="function"><name>RealVectSplit</name></member>
+    <member refid="namespaceamrex_1a40b21c8430bc211faa32bad25913cf35" kind="function"><name>RealVectShrink</name></member>
+    <member refid="namespaceamrex_1a9ae879608b7d4c14600b8619947c5a69" kind="function"><name>RealVectExpand</name></member>
+    <member refid="namespaceamrex_1a809f3251a88707c3fda5b8fde106a80f" kind="function"><name>RealVectResize</name></member>
     <member refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80df" kind="enum"><name>InterpEM_t</name></member>
     <member refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80dfaea241117e55edc2764d31a18a4740ff3" kind="enumvalue"><name>InterpE</name></member>
     <member refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80dfa9d55599aaee42c677bcd175e50bebbca" kind="enumvalue"><name>InterpB</name></member>
@@ -12687,6 +12747,7 @@
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a0d4daa650d2d51c5b0e9a48b41461e7a" kind="enumvalue"><name>PARSER_EXE_POWI</name></member>
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1" kind="enumvalue"><name>PARSER_EXE_IF</name></member>
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe" kind="enumvalue"><name>PARSER_EXE_JUMP</name></member>
+    <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a80dcce0e15e699ac6cf644bc84bfd6cc" kind="enumvalue"><name>PARSER_EXE_USER_FN</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589" kind="enum"><name>parser_f1_t</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a3fb34ef0b3bf8980039c8b7938964511" kind="enumvalue"><name>PARSER_SQRT</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a5659297c786f4248f15bf8990826f06c" kind="enumvalue"><name>PARSER_EXP</name></member>
@@ -12739,6 +12800,9 @@
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a67341a513537b8aa38737d076a142649" kind="enumvalue"><name>PARSER_F1</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883af549bd0564bc7302b40b87b67b296aad" kind="enumvalue"><name>PARSER_F2</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883addb390004a66cd17993db3c37d2ab248" kind="enumvalue"><name>PARSER_F3</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a20909eba211d31c5db36cabe6107eb33" kind="enumvalue"><name>PARSER_USRF1</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883aef5768b556e4efbf30ec931c163d9a59" kind="enumvalue"><name>PARSER_USRF2</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a8067bb61cc55aa174217d3807396dee8" kind="enumvalue"><name>PARSER_USRFN</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ac0862fc2f508fb56ae7cae7fc86a282c" kind="enumvalue"><name>PARSER_ASSIGN</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a705f34196073afbdc27635fcf758a5b7" kind="enumvalue"><name>PARSER_LIST</name></member>
     <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7" kind="enum"><name>EBData_t</name></member>
@@ -12806,6 +12870,7 @@
     <member refid="namespaceamrex_1a98a85f350a96eb36272d756d5a9c9a05" kind="typedef"><name>gpuError_t</name></member>
     <member refid="namespaceamrex_1a55427a27e71c45e7066414b0accf4a9b" kind="typedef"><name>MultiFabId</name></member>
     <member refid="namespaceamrex_1a1df3d6c5876d88132d2b3793984a6b7d" kind="typedef"><name>fMultiFab</name></member>
+    <member refid="namespaceamrex_1a84466765b78f04404d1d42c19ee85657" kind="typedef"><name>RealVect</name></member>
     <member refid="namespaceamrex_1a8b7e34da6fddd1312471a5962bf774cd" kind="typedef"><name>BndryFuncDefault</name></member>
     <member refid="namespaceamrex_1a5e4a902f699c144a9823d30d6dbb7236" kind="typedef"><name>BndryFunc3DDefault</name></member>
     <member refid="namespaceamrex_1a88781af4a5d3f8271de2b3129cc49393" kind="typedef"><name>UserFillBox</name></member>
@@ -12824,6 +12889,10 @@
     <member refid="namespaceamrex_1a3d7af06ef9ce2e0a696e5c73f3e460aa" kind="typedef"><name>Negation</name></member>
     <member refid="namespaceamrex_1a3e90f0304ff639b230b6b502e8546b88" kind="typedef"><name>MaxResSteadyClock</name></member>
     <member refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kind="typedef"><name>KeyValuePair</name></member>
+    <member refid="namespaceamrex_1ad9c58a4540a9917730f5ad6210bcce0e" kind="typedef"><name>ParserUserFn1</name></member>
+    <member refid="namespaceamrex_1a611d7b322ea2dcfc9f0ec44a88dd9bda" kind="typedef"><name>ParserUserFn2</name></member>
+    <member refid="namespaceamrex_1a51daa0f5588700582893c1fc2fd6280a" kind="typedef"><name>ParserUserFn3</name></member>
+    <member refid="namespaceamrex_1aa58113c6433e3aa251361b9eea2bbbba" kind="typedef"><name>ParserUserFn4</name></member>
     <member refid="namespaceamrex_1a9f6fb58eb396dd06df45ba7787548b32" kind="typedef"><name>BndryData</name></member>
     <member refid="namespaceamrex_1a24fbf2d04e7dac268f7f5cb3af96064e" kind="typedef"><name>fBndryData</name></member>
     <member refid="namespaceamrex_1a51a3951b54ca3db6bf891ebc2f867168" kind="typedef"><name>BndryRegister</name></member>
@@ -12971,6 +13040,8 @@
     <member refid="namespaceamrex_1ac74a4e0d0baad149ab5c36c66fb774a0" kind="function"><name>mf_cell_cons_lin_interp_sph</name></member>
     <member refid="namespaceamrex_1a14bcace4a1a6e1bc3e74a32d929165d1" kind="function"><name>mf_cell_bilin_interp</name></member>
     <member refid="namespaceamrex_1ab0fde5a29bb528390db2710d71ea4825" kind="function"><name>mf_nodebilin_interp</name></member>
+    <member refid="namespaceamrex_1aafc49322646bce834c046560115b5163" kind="function"><name>mf_cell_cons_lin_interp_mcslope_sph</name></member>
+    <member refid="namespaceamrex_1ab8fb1838ce51c3f4a6f894c88327965b" kind="function"><name>mf_cell_cons_lin_interp_sph</name></member>
     <member refid="namespaceamrex_1a134da8efe3158b98d26a191f52797d00" kind="function"><name>mf_cell_cons_lin_interp_mcslope_rz</name></member>
     <member refid="namespaceamrex_1aaa6a0345d98d3b7b583194f1143472c3" kind="function"><name>mf_cell_cons_lin_interp_rz</name></member>
     <member refid="namespaceamrex_1a158bd7e805f756e3d110875e9feaef7e" kind="function"><name>mf_cell_quadratic_calcslope</name></member>
@@ -13736,20 +13807,12 @@
     <member refid="namespaceamrex_1a1e3af8577a1ee3509e9bd184d2ab575a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1a3fa033d5f7e81438c45cc3b5f6af3443" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="namespaceamrex_1a9ad547d6295814fdf857cbec46887092" kind="function"><name>AlmostEqual</name></member>
-    <member refid="namespaceamrex_1abd6232bc4db286a8c3ac376e8ef9a419" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="namespaceamrex_1ae2b1836f59729d1d133e7544aa8b0cfd" kind="function"><name>operator&gt;&gt;</name></member>
-    <member refid="namespaceamrex_1a26f254d668dd872d470d231a1058eaac" kind="function"><name>scale</name></member>
-    <member refid="namespaceamrex_1ab2f47c183037880adec6de44fcbb0344" kind="function"><name>min</name></member>
-    <member refid="namespaceamrex_1a57e5b11414b29e5aeaf30c5e301e8f34" kind="function"><name>max</name></member>
-    <member refid="namespaceamrex_1a133d9cc5152d06db5db552037d7ee486" kind="function"><name>BASISREALV</name></member>
-    <member refid="namespaceamrex_1af8def61d771b914af3de1bf3095d30d8" kind="function"><name>operator/</name></member>
-    <member refid="namespaceamrex_1aa734733ef1b28c8cecd99859f3e56606" kind="function"><name>operator+</name></member>
-    <member refid="namespaceamrex_1a9544c7d6ed4e33b91cb32e5b3c32a344" kind="function"><name>operator-</name></member>
-    <member refid="namespaceamrex_1a195022a2bf1f86de6f3f454ad1d586b7" kind="function"><name>operator*</name></member>
-    <member refid="namespaceamrex_1a01d310d8cbb95e1ea1af03ef92c82895" kind="function"><name>operator/</name></member>
-    <member refid="namespaceamrex_1a78af1eb5d5bfbed5aea780ed03314482" kind="function"><name>operator+</name></member>
-    <member refid="namespaceamrex_1ae04516f228abbaedeb3e57c4acd79a47" kind="function"><name>operator-</name></member>
-    <member refid="namespaceamrex_1aad23797e3ede2065dcdc613ef5999603" kind="function"><name>operator*</name></member>
+    <member refid="namespaceamrex_1a79d1d90f1c9c642fbbcf9df0fab1aae3" kind="function"><name>RealVectND</name></member>
+    <member refid="namespaceamrex_1a2c3cc6cc6681d34154b3a23da6b19d0f" kind="function"><name>RealVectND</name></member>
+    <member refid="namespaceamrex_1a8cdd2f77ecae1d5377f613425bc24ecf" kind="function"><name>RealVectND</name></member>
+    <member refid="namespaceamrex_1a1e19dc6e0f87f29d8eb6172f3be53588" kind="function"><name>min</name></member>
+    <member refid="namespaceamrex_1a9fb70e2c7f40d34a96fb96eee0f7d6c8" kind="function"><name>max</name></member>
+    <member refid="namespaceamrex_1a725dbc72340675683f86aecbfe586f18" kind="function"><name>BASISREALV</name></member>
     <member refid="namespaceamrex_1a6b76de90fe8baeba6cd025392ff19b22" kind="function"><name>IdentityTuple</name></member>
     <member refid="namespaceamrex_1a8be6542f2cc1e3ff3f282a394fba0eb4" kind="function"><name>IdentityTuple</name></member>
     <member refid="namespaceamrex_1aba62b0734dec9b69bdc82781f4e87151" kind="function"><name>amrex_calc_xslope</name></member>
@@ -13877,9 +13940,9 @@
     <member refid="namespaceamrex_1a8710f394abe007b53737084c8bbd3021" kind="function"><name>iparser_newlist</name></member>
     <member refid="namespaceamrex_1a414ba7de5a008178d4fa0953a6e69073" kind="function"><name>amrex_iparser_new</name></member>
     <member refid="namespaceamrex_1a79e084d7248e50fe5cd9f6037db2b2e1" kind="function"><name>amrex_iparser_delete</name></member>
-    <member refid="namespaceamrex_1ad22cca51d4bfda06050d7f02e555131b" kind="function"><name>iparser_dup</name></member>
+    <member refid="namespaceamrex_1ac85a8c5774724410d75b322c745b221a" kind="function"><name>amrex_iparser_delete_ptrs</name></member>
     <member refid="namespaceamrex_1a88284344fbc21e1fad73e0f2e4280394" kind="function"><name>iparser_ast_size</name></member>
-    <member refid="namespaceamrex_1a6d20135c80c410cae70ceca17c5fd7bf" kind="function"><name>iparser_ast_dup</name></member>
+    <member refid="namespaceamrex_1ae71189ec5f387962675f7ea9f5d5df76" kind="function"><name>iparser_ast_dup</name></member>
     <member refid="namespaceamrex_1a86b9b9521f3dd1de76b9815dcdc7b9d0" kind="function"><name>iparser_ast_optimize</name></member>
     <member refid="namespaceamrex_1a2e832571b607617664a8a588c69a0dc4" kind="function"><name>iparser_ast_print</name></member>
     <member refid="namespaceamrex_1a5632af39a73771c9c4131e718495680f" kind="function"><name>iparser_ast_depth</name></member>
@@ -13895,11 +13958,11 @@
     <member refid="namespaceamrex_1a38a244129f554bd0c30380dac28c840e" kind="function"><name>iparser_call_f1</name></member>
     <member refid="namespaceamrex_1aa01c0dff8dad30bcf3f9bbdb5897a57c" kind="function"><name>iparser_call_f2</name></member>
     <member refid="namespaceamrex_1ad01fd22d750372f4a5e3b2783cadaf87" kind="function"><name>iparser_call_f3</name></member>
-    <member refid="namespaceamrex_1ab427f00335de584d8602aec963d5e730" kind="function"><name>parser_compile_exe_size</name></member>
+    <member refid="namespaceamrex_1a0224fef3a99125d3e6ea017909c9c7a5" kind="function"><name>parser_compile_exe_size</name></member>
     <member refid="namespaceamrex_1ad8610e10a0a8b9cafad8a53f47c05da6" kind="function"><name>parser_exe_print</name></member>
     <member refid="namespaceamrex_1ad8b4ee29b3ed76cab2179ad13c01c19b" kind="function"><name>parser_exe_eval</name></member>
     <member refid="namespaceamrex_1ad0968c4da0c27c9762dbd61dcc89e270" kind="function"><name>parser_exe_size</name></member>
-    <member refid="namespaceamrex_1a2b37fb541d1b36f2809b7af2a30b81b6" kind="function"><name>parser_compile</name></member>
+    <member refid="namespaceamrex_1a1e5cad28d1007b1a84a5f53161379138" kind="function"><name>parser_compile</name></member>
     <member refid="namespaceamrex_1ad611b2a5542fba47b36125c772d02700" kind="function"><name>parser_defexpr</name></member>
     <member refid="namespaceamrex_1ae51f56e5de666bd486e02809fb95826a" kind="function"><name>parser_makesymbol</name></member>
     <member refid="namespaceamrex_1a54e375fb078fbde3c46609319674551f" kind="function"><name>parser_newnode</name></member>
@@ -13909,13 +13972,17 @@
     <member refid="namespaceamrex_1af7520cc9fa8b9a8de8e845d02b75db77" kind="function"><name>parser_newf1</name></member>
     <member refid="namespaceamrex_1a1a35a66f1f45aa77d0be9afe8def5501" kind="function"><name>parser_newf2</name></member>
     <member refid="namespaceamrex_1a6762c0fee754bd1ce564f76ef81253b6" kind="function"><name>parser_newf3</name></member>
+    <member refid="namespaceamrex_1a795ae79df308121e430f74cc4f7421d2" kind="function"><name>parser_newusrf1</name></member>
+    <member refid="namespaceamrex_1a4cecf340777796d914a6c7bf003df2f0" kind="function"><name>parser_newusrf2</name></member>
+    <member refid="namespaceamrex_1a7110636e86cc51edd66165fefce41f7e" kind="function"><name>parser_newusrfn</name></member>
     <member refid="namespaceamrex_1a63cdcee7f7165d07558abfd490a3cf8f" kind="function"><name>parser_newassign</name></member>
     <member refid="namespaceamrex_1af77166ee4bf8e84e0628c8d6ef96f055" kind="function"><name>parser_newlist</name></member>
     <member refid="namespaceamrex_1ae66dc6e64e2bbaeb5e33f845f1021f4f" kind="function"><name>amrex_parser_new</name></member>
     <member refid="namespaceamrex_1a2f20d75c59ef143705ccaeaef9897c17" kind="function"><name>amrex_parser_delete</name></member>
-    <member refid="namespaceamrex_1af09002432ee048d8be86ce24cac1b230" kind="function"><name>parser_dup</name></member>
+    <member refid="namespaceamrex_1a546c9f383fc176587c3018d4051b782e" kind="function"><name>amrex_parser_delete_ptrs</name></member>
     <member refid="namespaceamrex_1a70b4e8ec482471a9d5c1a2b17c2420b2" kind="function"><name>parser_ast_size</name></member>
-    <member refid="namespaceamrex_1ad3b98b9aec198e9456f562949577675c" kind="function"><name>parser_ast_dup</name></member>
+    <member refid="namespaceamrex_1ab0081d540678ac187ad5787f20898f30" kind="function"><name>parser_ast_dup</name></member>
+    <member refid="namespaceamrex_1a8853cdebde12514b7d62b78ca851f750" kind="function"><name>parser_same_symbol</name></member>
     <member refid="namespaceamrex_1aaa47ebc7570db6460238b4a73824c682" kind="function"><name>parser_node_equal</name></member>
     <member refid="namespaceamrex_1a593d6ca4d6c96dd996abdd781bd0bc70" kind="function"><name>parser_ast_optimize</name></member>
     <member refid="namespaceamrex_1a87c0a8afac2fbe12cb2ac48e663ed0d6" kind="function"><name>parser_ast_print</name></member>
@@ -13924,10 +13991,12 @@
     <member refid="namespaceamrex_1aee105e6b691d9fa51fef6e50c7ebb155" kind="function"><name>parser_ast_regvar</name></member>
     <member refid="namespaceamrex_1a406674d4bafc2a2a465b8127fa8f9f5e" kind="function"><name>parser_ast_setconst</name></member>
     <member refid="namespaceamrex_1ae1d40846503356e1e1201c614163ea54" kind="function"><name>parser_ast_get_symbols</name></member>
+    <member refid="namespaceamrex_1a277695ecdba682418433994a0f7648f0" kind="function"><name>parser_ast_get_user_functions</name></member>
     <member refid="namespaceamrex_1a2287c28084a10ac6a9cfb4b2a50892fc" kind="function"><name>parser_regvar</name></member>
     <member refid="namespaceamrex_1a4051597b502fed03ea3b07d5f6cbb042" kind="function"><name>parser_setconst</name></member>
     <member refid="namespaceamrex_1a53d306308d380a6d874ad24396fa7673" kind="function"><name>parser_print</name></member>
     <member refid="namespaceamrex_1aa4683ef8db99a703c386785fc95e1d29" kind="function"><name>parser_get_symbols</name></member>
+    <member refid="namespaceamrex_1a13378a3ad4dea5e7f3140d563cbc210d" kind="function"><name>parser_get_user_functions</name></member>
     <member refid="namespaceamrex_1a511dc2f5222b878782000339b1858f3c" kind="function"><name>parser_depth</name></member>
     <member refid="namespaceamrex_1a953b2c149c67e1e516421d279f2fc22a" kind="function"><name>parser_get_number</name></member>
     <member refid="namespaceamrex_1a031546532f5b81bd867039b219562b95" kind="function"><name>parser_set_number</name></member>
@@ -14911,6 +14980,11 @@
     <member refid="namespaceamrex_1_1detail_1aa96357c6317510d47b48c850a6369421" kind="function"><name>memMoveImpl</name></member>
     <member refid="namespaceamrex_1_1detail_1acaad82f4281e3a1b6691574774731430" kind="function"><name>maybe_init_snan</name></member>
     <member refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kind="function"><name>DefaultGpuSeed</name></member>
+    <member refid="namespaceamrex_1_1detail_1a177c7c95c391c6f66768e9941de3f5b5" kind="function"><name>real_vector_write</name></member>
+    <member refid="namespaceamrex_1_1detail_1af8b32f47381c856a24526c7094f59b08" kind="function"><name>real_vector_read</name></member>
+    <member refid="namespaceamrex_1_1detail_1aa47c9843db0439d93e761932252724a9" kind="function"><name>RealVectCat_imp</name></member>
+    <member refid="namespaceamrex_1_1detail_1a4a94ec9593eec5537df7f9e8a75b03fb" kind="function"><name>RealVectSplit_imp2</name></member>
+    <member refid="namespaceamrex_1_1detail_1a72664be26417579880fe6ac83e7c7122" kind="function"><name>RealVectSplit_imp</name></member>
     <member refid="namespaceamrex_1_1detail_1abe68fd4d68114add4f550c526d2990ac" kind="function"><name>make_table</name></member>
     <member refid="namespaceamrex_1_1detail_1a825923f56b431f9f68e2324130da23e9" kind="function"><name>make_table</name></member>
     <member refid="namespaceamrex_1_1detail_1a79896a63aa04eece86eb047f77ccd396" kind="function"><name>make_table</name></member>
@@ -15795,6 +15869,9 @@
     <member refid="namespaceamrex_1_1ParallelReduce_1a83b6af463895bccfbf4ae0606041cd33" kind="function"><name>Sum</name></member>
     <member refid="namespaceamrex_1_1ParallelReduce_1a5f7fc55ae2bbfbbc7f2b026b754c30c1" kind="function"><name>Or</name></member>
     <member refid="namespaceamrex_1_1ParallelReduce_1aa0de4c8be25f053f86f82505350e61de" kind="function"><name>And</name></member>
+  </compound>
+  <compound refid="namespaceamrex_1_1parser__detail" kind="namespace"><name>amrex::parser_detail</name>
+    <member refid="namespaceamrex_1_1parser__detail_1aede71bc465cbd1df3d4258469b9257cf" kind="function"><name>call_user_fn</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1particle__detail" kind="namespace"><name>amrex::particle_detail</name>
     <member refid="namespaceamrex_1_1particle__detail_1af72f8c4ec6c858d83f59c48034851294" kind="function"><name>call_f</name></member>
@@ -16982,6 +17059,7 @@
   <compound refid="AMReX__GpuUtility_8cpp" kind="file"><name>AMReX_GpuUtility.cpp</name>
   </compound>
   <compound refid="AMReX__GpuUtility_8H" kind="file"><name>AMReX_GpuUtility.H</name>
+    <member refid="AMReX__GpuUtility_8H_1a2478d3207b5ec70f3cfd803323211926" kind="define"><name>AMREX_GET_DEVICE_FUNC_PTR</name></member>
   </compound>
   <compound refid="AMReX__IArrayBox_8cpp" kind="file"><name>AMReX_IArrayBox.cpp</name>
   </compound>
@@ -17245,6 +17323,7 @@
   <compound refid="AMReX__RealBox_8H" kind="file"><name>AMReX_RealBox.H</name>
   </compound>
   <compound refid="AMReX__RealVect_8cpp" kind="file"><name>AMReX_RealVect.cpp</name>
+    <member refid="AMReX__RealVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kind="define"><name>BL_IGNORE_MAX</name></member>
   </compound>
   <compound refid="AMReX__RealVect_8H" kind="file"><name>AMReX_RealVect.H</name>
   </compound>

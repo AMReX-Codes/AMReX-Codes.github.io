@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuUtility_8H.html',''); initRe
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AMReX_GpuUtility.H File Reference</div></div>
 </div><!--header-->
@@ -138,6 +139,11 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex_1_1Gpu" id="r_namespaceamrex_1_1Gpu"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html">amrex::Gpu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2478d3207b5ec70f3cfd803323211926" id="r_a2478d3207b5ec70f3cfd803323211926"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuUtility_8H.html#a2478d3207b5ec70f3cfd803323211926">AMREX_GET_DEVICE_FUNC_PTR</a>(FP_t,  sym)</td></tr>
+<tr class="separator:a2478d3207b5ec70f3cfd803323211926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a568da598ec8829dff901c81d530db976" id="r_a568da598ec8829dff901c81d530db976"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -165,6 +171,46 @@ Functions</h2></td></tr>
 <tr class="memitem:a9757af2bf86a9ecbb80561b51d6b5323" id="r_a9757af2bf86a9ecbb80561b51d6b5323"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9757af2bf86a9ecbb80561b51d6b5323">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const dim3 &amp;d)</td></tr>
 <tr class="separator:a9757af2bf86a9ecbb80561b51d6b5323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a2478d3207b5ec70f3cfd803323211926" name="a2478d3207b5ec70f3cfd803323211926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2478d3207b5ec70f3cfd803323211926">&#9670;&#160;</a></span>AMREX_GET_DEVICE_FUNC_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_GET_DEVICE_FUNC_PTR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">FP_t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sym&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    [] () { \</div>
+<div class="line">        <span class="keyword">auto</span>* amrex_i_hp = (FP_t*) <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(FP_t)); \</div>
+<div class="line">        amrex::single_task([=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () { *amrex_i_hp = sym; }); \</div>
+<div class="line">        amrex::Gpu::streamSynchronize(); \</div>
+<div class="line">        <span class="keyword">auto</span> amrex_i_r = *amrex_i_hp; \</div>
+<div class="line">        amrex::The_Pinned_Arena()-&gt;free(amrex_i_hp); \</div>
+<div class="line">        <span class="keywordflow">return</span> amrex_i_r; \</div>
+<div class="line">    } ()</div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:18</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html_a0fa2cdc35eb9da4a03fedf53f6484c86"><div class="ttname"><a href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div></div>
+<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:656</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

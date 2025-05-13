@@ -2,6 +2,7 @@ var AMReX__GpuUtility_8H =
 [
     [ "amrex::Gpu::StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", "structamrex_1_1Gpu_1_1StreamItInfo" ],
     [ "amrex::Gpu::StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html", "classamrex_1_1Gpu_1_1StreamIter" ],
+    [ "AMREX_GET_DEVICE_FUNC_PTR", "AMReX__GpuUtility_8H.html#a2478d3207b5ec70f3cfd803323211926", null ],
     [ "isDevicePtr", "AMReX__GpuUtility_8H.html#af5ad0c7753b11912c68338e7f33fde0f", null ],
     [ "isGpuPtr", "AMReX__GpuUtility_8H.html#a5ee8881eb9dcf74360bb8981d1478a17", null ],
     [ "isinf", "AMReX__GpuUtility_8H.html#a0b47b234df50714368217dfb8703aaab", null ],

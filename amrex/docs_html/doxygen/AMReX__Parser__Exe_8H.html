@@ -113,6 +113,7 @@ $(document).ready(function(){initNavTree('AMReX__Parser__Exe_8H.html',''); initR
 <code>#include &lt;<a class="el" href="AMReX__Stack_8H_source.html">AMReX_Stack.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div>
 <p><a href="AMReX__Parser__Exe_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -182,10 +183,14 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExeJUMP.html">amrex::ParserExeJUMP</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParserExeUserFn.html">amrex::ParserExeUserFn</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1parser__detail" id="r_namespaceamrex_1_1parser__detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1parser__detail.html">amrex::parser_detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -239,20 +244,25 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49a0d4daa650d2d51c5b0e9a48b41461e7a">amrex::PARSER_EXE_POWI</a>
 , <a class="el" href="namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1">amrex::PARSER_EXE_IF</a>
 , <a class="el" href="namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe">amrex::PARSER_EXE_JUMP</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49a80dcce0e15e699ac6cf644bc84bfd6cc">amrex::PARSER_EXE_USER_FN</a>
 <br />
  }</td></tr>
 <tr class="separator:a0f600e600176e6bc4444aaea08ca1c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aede71bc465cbd1df3d4258469b9257cf" id="r_aede71bc465cbd1df3d4258469b9257cf"><td class="memTemplParams" colspan="2">template&lt;typename T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N&gt; </td></tr>
+<tr class="memitem:aede71bc465cbd1df3d4258469b9257cf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a5fddc549617b82ce5fc2b33aa9b6aa6f">AMREX_NO_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1parser__detail.html#aede71bc465cbd1df3d4258469b9257cf">amrex::parser_detail::call_user_fn</a> (<a class="el" href="structamrex_1_1ParserExeUserFn.html">ParserExeUserFn</a> *p, <a class="el" href="structamrex_1_1Stack.html">Stack</a>&lt; T, N &gt; &amp;pstack)</td></tr>
+<tr class="separator:aede71bc465cbd1df3d4258469b9257cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8b4ee29b3ed76cab2179ad13c01c19b" id="r_ad8b4ee29b3ed76cab2179ad13c01c19b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad8b4ee29b3ed76cab2179ad13c01c19b">amrex::parser_exe_eval</a> (const char *p, double const *<a class="el" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="separator:ad8b4ee29b3ed76cab2179ad13c01c19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab427f00335de584d8602aec963d5e730" id="r_ab427f00335de584d8602aec963d5e730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab427f00335de584d8602aec963d5e730">amrex::parser_compile_exe_size</a> (struct <a class="el" href="structamrex_1_1parser__node.html">parser_node</a> *node, char *&amp;p, std::size_t &amp;exe_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;max_stack_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;stack_size, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char const * &gt; &amp;local_variables)</td></tr>
-<tr class="separator:ab427f00335de584d8602aec963d5e730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0224fef3a99125d3e6ea017909c9c7a5" id="r_a0224fef3a99125d3e6ea017909c9c7a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0224fef3a99125d3e6ea017909c9c7a5">amrex::parser_compile_exe_size</a> (struct <a class="el" href="structamrex_1_1parser__node.html">parser_node</a> *node, char *&amp;p, std::size_t &amp;exe_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;max_stack_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;stack_size, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char const * &gt; &amp;local_variables, std::map&lt; std::string, std::pair&lt; void *, void * &gt; &gt; const &amp;ufs)</td></tr>
+<tr class="separator:a0224fef3a99125d3e6ea017909c9c7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0968c4da0c27c9762dbd61dcc89e270" id="r_ad0968c4da0c27c9762dbd61dcc89e270"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad0968c4da0c27c9762dbd61dcc89e270">amrex::parser_exe_size</a> (struct <a class="el" href="structamrex_1_1amrex__parser.html">amrex_parser</a> *parser, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;max_stack_size, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;stack_size)</td></tr>
 <tr class="separator:ad0968c4da0c27c9762dbd61dcc89e270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b37fb541d1b36f2809b7af2a30b81b6" id="r_a2b37fb541d1b36f2809b7af2a30b81b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char const * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2b37fb541d1b36f2809b7af2a30b81b6">amrex::parser_compile</a> (struct <a class="el" href="structamrex_1_1amrex__parser.html">amrex_parser</a> *parser, char *p)</td></tr>
-<tr class="separator:a2b37fb541d1b36f2809b7af2a30b81b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5cad28d1007b1a84a5f53161379138" id="r_a1e5cad28d1007b1a84a5f53161379138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char const * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1e5cad28d1007b1a84a5f53161379138">amrex::parser_compile</a> (struct <a class="el" href="structamrex_1_1amrex__parser.html">amrex_parser</a> *parser, std::map&lt; std::string, std::pair&lt; void *, void * &gt; &gt; const &amp;ufs, char *p)</td></tr>
+<tr class="separator:a1e5cad28d1007b1a84a5f53161379138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8610e10a0a8b9cafad8a53f47c05da6" id="r_ad8610e10a0a8b9cafad8a53f47c05da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad8610e10a0a8b9cafad8a53f47c05da6">amrex::parser_exe_print</a> (char const *p, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; const &amp;vars, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char const * &gt; const &amp;locals)</td></tr>
 <tr class="separator:ad8610e10a0a8b9cafad8a53f47c05da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
