@@ -9289,6 +9289,8 @@
   </compound>
   <compound refid="classamrex_1_1Parser" kind="class"><name>amrex::Parser</name>
     <member refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kind="variable"><name>m_data</name></member>
+    <member refid="classamrex_1_1Parser_1a05ebfb3bd4f9a76b5c868d8a682c7a85" kind="variable"><name>m_ufs</name></member>
+    <member refid="classamrex_1_1Parser_1a8cf34879864c8df5989ec9ebb1ba2132" kind="variable"><name>m_uf_ptrs</name></member>
     <member refid="classamrex_1_1Parser_1a38fbb1b724d2f5ea93477b942c1b589c" kind="variable"><name>m_vars</name></member>
     <member refid="classamrex_1_1Parser_1a9829ccc584238c1042b7c1ef25b69685" kind="function"><name>Parser</name></member>
     <member refid="classamrex_1_1Parser_1a979ec2bb844542bdd274c04010282c19" kind="function"><name>Parser</name></member>
@@ -9296,14 +9298,20 @@
     <member refid="classamrex_1_1Parser_1a1463e62b561526c2d4932222cbd663fc" kind="function"><name>operator bool</name></member>
     <member refid="classamrex_1_1Parser_1abce888c0693fdd70003a6177b18d06a6" kind="function"><name>setConstant</name></member>
     <member refid="classamrex_1_1Parser_1ac7f2281fb9a99b8c410d9cbc0b20b67b" kind="function"><name>registerVariables</name></member>
+    <member refid="classamrex_1_1Parser_1a1e6e403b6241f2d0a1e14072ede56937" kind="function"><name>registerUserFn1</name></member>
+    <member refid="classamrex_1_1Parser_1aeade87d8614f791cb14a7781215bce02" kind="function"><name>registerUserFn2</name></member>
+    <member refid="classamrex_1_1Parser_1a0fb4f44ec5ac2e26965eeeacfeee663b" kind="function"><name>registerUserFn3</name></member>
+    <member refid="classamrex_1_1Parser_1a3470f98fafe869b6ed4a09e4cdf7f8f2" kind="function"><name>registerUserFn4</name></member>
     <member refid="classamrex_1_1Parser_1a217d48dc80e0448899823a0d47460d8b" kind="function"><name>print</name></member>
     <member refid="classamrex_1_1Parser_1aa3e51f354702ada83a42fa17d6450ff1" kind="function"><name>printExe</name></member>
     <member refid="classamrex_1_1Parser_1ae8f69b337a650c2a73a3aa33dad35064" kind="function"><name>depth</name></member>
     <member refid="classamrex_1_1Parser_1a27dc3946de52071f374c1a11e6182bad" kind="function"><name>maxStackSize</name></member>
     <member refid="classamrex_1_1Parser_1a39e13b29c0ab51b5a27264c706a1d7a8" kind="function"><name>expr</name></member>
     <member refid="classamrex_1_1Parser_1a0dfb30d6386a630f676982f25fb24a06" kind="function"><name>symbols</name></member>
+    <member refid="classamrex_1_1Parser_1acc98bde00ebe15e678d06525bc328f09" kind="function"><name>userFunctions</name></member>
     <member refid="classamrex_1_1Parser_1a84c2f77f7586faf9e89ef87489297bfa" kind="function"><name>compile</name></member>
     <member refid="classamrex_1_1Parser_1a2bcb71246d0395f1f9c3ce37e2286c09" kind="function"><name>compileHost</name></member>
+    <member refid="classamrex_1_1Parser_1a1a8a58b20563570d6fb892dfac561ea1" kind="function"><name>register_user_fn</name></member>
   </compound>
   <compound refid="structamrex_1_1parser__assign" kind="struct"><name>amrex::parser_assign</name>
     <member refid="structamrex_1_1parser__assign_1a325d96e7d2b35e89cb12c6a5fa0db023" kind="variable"><name>type</name></member>
@@ -9346,6 +9354,27 @@
     <member refid="structamrex_1_1parser__symbol_1a8b935e5014acf16b10e6b98c79de3054" kind="variable"><name>type</name></member>
     <member refid="structamrex_1_1parser__symbol_1a36d42d12dc34e9e1a3321c27539bb34d" kind="variable"><name>name</name></member>
     <member refid="structamrex_1_1parser__symbol_1a99f7da0f4633b6fc68df7cf4f0d9d398" kind="variable"><name>ip</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrf1" kind="struct"><name>amrex::parser_usrf1</name>
+    <member refid="structamrex_1_1parser__usrf1_1a73631e7b7c6c99d8cae3e006dbe77f4a" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1aa3738d408341bbe5e175dddbb8a41944" kind="variable"><name>padding</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a5d9f447da55cf81ecc98632e8da54e3f" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a138ddc66b5fbc483f30ce727cd477902" kind="variable"><name>l</name></member>
+    <member refid="structamrex_1_1parser__usrf1_1a4420f5122d018752e9beac6fadbf694f" kind="variable"><name>padding1</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrf2" kind="struct"><name>amrex::parser_usrf2</name>
+    <member refid="structamrex_1_1parser__usrf2_1ab221a73a9ad0c641a3d2a6f2f3ab4e12" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a05ec7ca4938e4d525d4698cdaa724076" kind="variable"><name>padding</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a3e1f869d840b21891a0d5c2110d51e34" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a06a69894f2903bd7d255bb3e81c5e354" kind="variable"><name>l</name></member>
+    <member refid="structamrex_1_1parser__usrf2_1a4fdcceef2ab05cad613962d2f43b4235" kind="variable"><name>r</name></member>
+  </compound>
+  <compound refid="structamrex_1_1parser__usrfn" kind="struct"><name>amrex::parser_usrfn</name>
+    <member refid="structamrex_1_1parser__usrfn_1a64fca537c909541f78a75feae72a7dd1" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a46c39e97364d395868c5fc7ce018853a" kind="variable"><name>argc</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a29df342dfe89cbfea58032a7e899c66d" kind="variable"><name>name</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a07b4d687cbc3621be34b1c421f1ead80" kind="variable"><name>n1</name></member>
+    <member refid="structamrex_1_1parser__usrfn_1a005876b2cb982540a7b9235612bc88f1" kind="variable"><name>others</name></member>
   </compound>
   <compound refid="structamrex_1_1ParserExeADD" kind="struct"><name>amrex::ParserExeADD</name>
     <member refid="structamrex_1_1ParserExeADD_1ae9780c323f695d1c05f0da89b404f3f5" kind="variable"><name>type</name></member>
@@ -9485,6 +9514,12 @@
   <compound refid="structamrex_1_1ParserExeSymbol" kind="struct"><name>amrex::ParserExeSymbol</name>
     <member refid="structamrex_1_1ParserExeSymbol_1a27fce7530cbea2d1fa6fbc8dcb9c292d" kind="variable"><name>type</name></member>
     <member refid="structamrex_1_1ParserExeSymbol_1a8c997d8cdc27b43d7f0914cae4e375eb" kind="variable"><name>i</name></member>
+  </compound>
+  <compound refid="structamrex_1_1ParserExeUserFn" kind="struct"><name>amrex::ParserExeUserFn</name>
+    <member refid="structamrex_1_1ParserExeUserFn_1aa121bf53a6a1c5005da265fb4f4c2188" kind="variable"><name>type</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a4a76133790ea52ee5ac0f4a220889d36" kind="variable"><name>argc</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a82b570455f769916553a7c1c2006f5a0" kind="variable"><name>fh</name></member>
+    <member refid="structamrex_1_1ParserExeUserFn_1a1ec2abf9162357bbc2eaa9e2eaf841f1" kind="variable"><name>fd</name></member>
   </compound>
   <compound refid="classamrex_1_1EB2_1_1ParserIF" kind="class"><name>amrex::EB2::ParserIF</name>
     <member refid="classamrex_1_1EB2_1_1ParserIF_1a0ee1bc4aa5ddc1e1c59c6e3b4965630c" kind="variable"><name>m_parser</name></member>
@@ -12712,6 +12747,7 @@
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a0d4daa650d2d51c5b0e9a48b41461e7a" kind="enumvalue"><name>PARSER_EXE_POWI</name></member>
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1" kind="enumvalue"><name>PARSER_EXE_IF</name></member>
     <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe" kind="enumvalue"><name>PARSER_EXE_JUMP</name></member>
+    <member refid="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a80dcce0e15e699ac6cf644bc84bfd6cc" kind="enumvalue"><name>PARSER_EXE_USER_FN</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589" kind="enum"><name>parser_f1_t</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a3fb34ef0b3bf8980039c8b7938964511" kind="enumvalue"><name>PARSER_SQRT</name></member>
     <member refid="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a5659297c786f4248f15bf8990826f06c" kind="enumvalue"><name>PARSER_EXP</name></member>
@@ -12764,6 +12800,9 @@
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a67341a513537b8aa38737d076a142649" kind="enumvalue"><name>PARSER_F1</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883af549bd0564bc7302b40b87b67b296aad" kind="enumvalue"><name>PARSER_F2</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883addb390004a66cd17993db3c37d2ab248" kind="enumvalue"><name>PARSER_F3</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a20909eba211d31c5db36cabe6107eb33" kind="enumvalue"><name>PARSER_USRF1</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883aef5768b556e4efbf30ec931c163d9a59" kind="enumvalue"><name>PARSER_USRF2</name></member>
+    <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a8067bb61cc55aa174217d3807396dee8" kind="enumvalue"><name>PARSER_USRFN</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ac0862fc2f508fb56ae7cae7fc86a282c" kind="enumvalue"><name>PARSER_ASSIGN</name></member>
     <member refid="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a705f34196073afbdc27635fcf758a5b7" kind="enumvalue"><name>PARSER_LIST</name></member>
     <member refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7" kind="enum"><name>EBData_t</name></member>
@@ -12850,6 +12889,10 @@
     <member refid="namespaceamrex_1a3d7af06ef9ce2e0a696e5c73f3e460aa" kind="typedef"><name>Negation</name></member>
     <member refid="namespaceamrex_1a3e90f0304ff639b230b6b502e8546b88" kind="typedef"><name>MaxResSteadyClock</name></member>
     <member refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kind="typedef"><name>KeyValuePair</name></member>
+    <member refid="namespaceamrex_1ad9c58a4540a9917730f5ad6210bcce0e" kind="typedef"><name>ParserUserFn1</name></member>
+    <member refid="namespaceamrex_1a611d7b322ea2dcfc9f0ec44a88dd9bda" kind="typedef"><name>ParserUserFn2</name></member>
+    <member refid="namespaceamrex_1a51daa0f5588700582893c1fc2fd6280a" kind="typedef"><name>ParserUserFn3</name></member>
+    <member refid="namespaceamrex_1aa58113c6433e3aa251361b9eea2bbbba" kind="typedef"><name>ParserUserFn4</name></member>
     <member refid="namespaceamrex_1a9f6fb58eb396dd06df45ba7787548b32" kind="typedef"><name>BndryData</name></member>
     <member refid="namespaceamrex_1a24fbf2d04e7dac268f7f5cb3af96064e" kind="typedef"><name>fBndryData</name></member>
     <member refid="namespaceamrex_1a51a3951b54ca3db6bf891ebc2f867168" kind="typedef"><name>BndryRegister</name></member>
@@ -13915,11 +13958,11 @@
     <member refid="namespaceamrex_1a38a244129f554bd0c30380dac28c840e" kind="function"><name>iparser_call_f1</name></member>
     <member refid="namespaceamrex_1aa01c0dff8dad30bcf3f9bbdb5897a57c" kind="function"><name>iparser_call_f2</name></member>
     <member refid="namespaceamrex_1ad01fd22d750372f4a5e3b2783cadaf87" kind="function"><name>iparser_call_f3</name></member>
-    <member refid="namespaceamrex_1ab427f00335de584d8602aec963d5e730" kind="function"><name>parser_compile_exe_size</name></member>
+    <member refid="namespaceamrex_1a0224fef3a99125d3e6ea017909c9c7a5" kind="function"><name>parser_compile_exe_size</name></member>
     <member refid="namespaceamrex_1ad8610e10a0a8b9cafad8a53f47c05da6" kind="function"><name>parser_exe_print</name></member>
     <member refid="namespaceamrex_1ad8b4ee29b3ed76cab2179ad13c01c19b" kind="function"><name>parser_exe_eval</name></member>
     <member refid="namespaceamrex_1ad0968c4da0c27c9762dbd61dcc89e270" kind="function"><name>parser_exe_size</name></member>
-    <member refid="namespaceamrex_1a2b37fb541d1b36f2809b7af2a30b81b6" kind="function"><name>parser_compile</name></member>
+    <member refid="namespaceamrex_1a1e5cad28d1007b1a84a5f53161379138" kind="function"><name>parser_compile</name></member>
     <member refid="namespaceamrex_1ad611b2a5542fba47b36125c772d02700" kind="function"><name>parser_defexpr</name></member>
     <member refid="namespaceamrex_1ae51f56e5de666bd486e02809fb95826a" kind="function"><name>parser_makesymbol</name></member>
     <member refid="namespaceamrex_1a54e375fb078fbde3c46609319674551f" kind="function"><name>parser_newnode</name></member>
@@ -13929,6 +13972,9 @@
     <member refid="namespaceamrex_1af7520cc9fa8b9a8de8e845d02b75db77" kind="function"><name>parser_newf1</name></member>
     <member refid="namespaceamrex_1a1a35a66f1f45aa77d0be9afe8def5501" kind="function"><name>parser_newf2</name></member>
     <member refid="namespaceamrex_1a6762c0fee754bd1ce564f76ef81253b6" kind="function"><name>parser_newf3</name></member>
+    <member refid="namespaceamrex_1a795ae79df308121e430f74cc4f7421d2" kind="function"><name>parser_newusrf1</name></member>
+    <member refid="namespaceamrex_1a4cecf340777796d914a6c7bf003df2f0" kind="function"><name>parser_newusrf2</name></member>
+    <member refid="namespaceamrex_1a7110636e86cc51edd66165fefce41f7e" kind="function"><name>parser_newusrfn</name></member>
     <member refid="namespaceamrex_1a63cdcee7f7165d07558abfd490a3cf8f" kind="function"><name>parser_newassign</name></member>
     <member refid="namespaceamrex_1af77166ee4bf8e84e0628c8d6ef96f055" kind="function"><name>parser_newlist</name></member>
     <member refid="namespaceamrex_1ae66dc6e64e2bbaeb5e33f845f1021f4f" kind="function"><name>amrex_parser_new</name></member>
@@ -13945,10 +13991,12 @@
     <member refid="namespaceamrex_1aee105e6b691d9fa51fef6e50c7ebb155" kind="function"><name>parser_ast_regvar</name></member>
     <member refid="namespaceamrex_1a406674d4bafc2a2a465b8127fa8f9f5e" kind="function"><name>parser_ast_setconst</name></member>
     <member refid="namespaceamrex_1ae1d40846503356e1e1201c614163ea54" kind="function"><name>parser_ast_get_symbols</name></member>
+    <member refid="namespaceamrex_1a277695ecdba682418433994a0f7648f0" kind="function"><name>parser_ast_get_user_functions</name></member>
     <member refid="namespaceamrex_1a2287c28084a10ac6a9cfb4b2a50892fc" kind="function"><name>parser_regvar</name></member>
     <member refid="namespaceamrex_1a4051597b502fed03ea3b07d5f6cbb042" kind="function"><name>parser_setconst</name></member>
     <member refid="namespaceamrex_1a53d306308d380a6d874ad24396fa7673" kind="function"><name>parser_print</name></member>
     <member refid="namespaceamrex_1aa4683ef8db99a703c386785fc95e1d29" kind="function"><name>parser_get_symbols</name></member>
+    <member refid="namespaceamrex_1a13378a3ad4dea5e7f3140d563cbc210d" kind="function"><name>parser_get_user_functions</name></member>
     <member refid="namespaceamrex_1a511dc2f5222b878782000339b1858f3c" kind="function"><name>parser_depth</name></member>
     <member refid="namespaceamrex_1a953b2c149c67e1e516421d279f2fc22a" kind="function"><name>parser_get_number</name></member>
     <member refid="namespaceamrex_1a031546532f5b81bd867039b219562b95" kind="function"><name>parser_set_number</name></member>
@@ -15822,6 +15870,9 @@
     <member refid="namespaceamrex_1_1ParallelReduce_1a5f7fc55ae2bbfbbc7f2b026b754c30c1" kind="function"><name>Or</name></member>
     <member refid="namespaceamrex_1_1ParallelReduce_1aa0de4c8be25f053f86f82505350e61de" kind="function"><name>And</name></member>
   </compound>
+  <compound refid="namespaceamrex_1_1parser__detail" kind="namespace"><name>amrex::parser_detail</name>
+    <member refid="namespaceamrex_1_1parser__detail_1aede71bc465cbd1df3d4258469b9257cf" kind="function"><name>call_user_fn</name></member>
+  </compound>
   <compound refid="namespaceamrex_1_1particle__detail" kind="namespace"><name>amrex::particle_detail</name>
     <member refid="namespaceamrex_1_1particle__detail_1af72f8c4ec6c858d83f59c48034851294" kind="function"><name>call_f</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1a4fc575fa169519c925f33d6bb746d598" kind="function"><name>call_f</name></member>
@@ -17008,6 +17059,7 @@
   <compound refid="AMReX__GpuUtility_8cpp" kind="file"><name>AMReX_GpuUtility.cpp</name>
   </compound>
   <compound refid="AMReX__GpuUtility_8H" kind="file"><name>AMReX_GpuUtility.H</name>
+    <member refid="AMReX__GpuUtility_8H_1a2478d3207b5ec70f3cfd803323211926" kind="define"><name>AMREX_GET_DEVICE_FUNC_PTR</name></member>
   </compound>
   <compound refid="AMReX__IArrayBox_8cpp" kind="file"><name>AMReX_IArrayBox.cpp</name>
   </compound>

@@ -32,6 +32,7 @@ var AMReX__Parser__Exe_8H =
     [ "amrex::ParserExePOWI", "structamrex_1_1ParserExePOWI.html", "structamrex_1_1ParserExePOWI" ],
     [ "amrex::ParserExeIF", "structamrex_1_1ParserExeIF.html", "structamrex_1_1ParserExeIF" ],
     [ "amrex::ParserExeJUMP", "structamrex_1_1ParserExeJUMP.html", "structamrex_1_1ParserExeJUMP" ],
+    [ "amrex::ParserExeUserFn", "structamrex_1_1ParserExeUserFn.html", "structamrex_1_1ParserExeUserFn" ],
     [ "AMREX_PARSER_GET_DATA", "AMReX__Parser__Exe_8H.html#a7478a6b2c1f097effb3b8788ebf49726", null ],
     [ "AMREX_PARSER_LOCAL_IDX0", "AMReX__Parser__Exe_8H.html#a13e00db49c0c59dd2772385306e84f9a", null ],
     [ "AMREX_PARSER_STACK_SIZE", "AMReX__Parser__Exe_8H.html#a17ce5ea3b6e40fa1da429fca8b07406e", null ],
@@ -67,10 +68,12 @@ var AMReX__Parser__Exe_8H =
       [ "PARSER_EXE_SQUARE", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49a5e517dacd4952e08078b4c01130a83ee", null ],
       [ "PARSER_EXE_POWI", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49a0d4daa650d2d51c5b0e9a48b41461e7a", null ],
       [ "PARSER_EXE_IF", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1", null ],
-      [ "PARSER_EXE_JUMP", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe", null ]
+      [ "PARSER_EXE_JUMP", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe", null ],
+      [ "PARSER_EXE_USER_FN", "AMReX__Parser__Exe_8H.html#a0f600e600176e6bc4444aaea08ca1c49a80dcce0e15e699ac6cf644bc84bfd6cc", null ]
     ] ],
-    [ "parser_compile", "AMReX__Parser__Exe_8H.html#a2b37fb541d1b36f2809b7af2a30b81b6", null ],
-    [ "parser_compile_exe_size", "AMReX__Parser__Exe_8H.html#ab427f00335de584d8602aec963d5e730", null ],
+    [ "call_user_fn", "AMReX__Parser__Exe_8H.html#aede71bc465cbd1df3d4258469b9257cf", null ],
+    [ "parser_compile", "AMReX__Parser__Exe_8H.html#a1e5cad28d1007b1a84a5f53161379138", null ],
+    [ "parser_compile_exe_size", "AMReX__Parser__Exe_8H.html#a0224fef3a99125d3e6ea017909c9c7a5", null ],
     [ "parser_exe_eval", "AMReX__Parser__Exe_8H.html#ad8b4ee29b3ed76cab2179ad13c01c19b", null ],
     [ "parser_exe_print", "AMReX__Parser__Exe_8H.html#ad8610e10a0a8b9cafad8a53f47c05da6", null ],
     [ "parser_exe_size", "AMReX__Parser__Exe_8H.html#ad0968c4da0c27c9762dbd61dcc89e270", null ]

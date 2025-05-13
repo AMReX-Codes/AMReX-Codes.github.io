@@ -4389,6 +4389,28 @@
     <innerclass refid="classamrex_1_1Gpu_1_1StreamIter" prot="public">amrex::Gpu::StreamIter</innerclass>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Gpu">amrex::Gpu</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__GpuUtility_8H_1a2478d3207b5ec70f3cfd803323211926" prot="public" static="no">
+        <name>AMREX_GET_DEVICE_FUNC_PTR</name>
+        <param><defname>FP_t</defname></param>
+        <param><defname>sym</defname></param>
+        <initializer>    [] () { \
+        auto* amrex_i_hp = (FP_t*) <ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;alloc(sizeof(FP_t)); \
+        <ref refid="namespaceamrex_1aa785b3b07c24c864604e8de72a0bb919" kindref="member">amrex::single_task</ref>([=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () { *amrex_i_hp = sym; }); \
+        <ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">amrex::Gpu::streamSynchronize</ref>(); \
+        auto amrex_i_r = *amrex_i_hp; \
+        <ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;<ref refid="amrex__iparser_8tab_8nolint_8H_1af07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free</ref>(amrex_i_hp); \
+        return amrex_i_r; \
+    } ()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuUtility.H" line="242" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="242" bodyend="250"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -4633,7 +4655,22 @@
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Somehow<sp/>I<sp/>cannot<sp/>get<sp/>cudaMemcpyFromSymbol<sp/>to<sp/>work.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="AMReX__GpuUtility_8H_1a2478d3207b5ec70f3cfd803323211926" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GET_DEVICE_FUNC_PTR(FP_t,<sp/>sym)<sp/>\</highlight></codeline>
+<codeline lineno="243"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>[]<sp/>()<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="244"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto*<sp/>amrex_i_hp<sp/>=<sp/>(FP_t*)<sp/>amrex::The_Pinned_Arena()-&gt;alloc(sizeof(FP_t));<sp/>\</highlight></codeline>
+<codeline lineno="245"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::single_task([=]<sp/>AMREX_GPU_DEVICE<sp/>()<sp/>{<sp/>*amrex_i_hp<sp/>=<sp/>sym;<sp/>});<sp/>\</highlight></codeline>
+<codeline lineno="246"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Gpu::streamSynchronize();<sp/>\</highlight></codeline>
+<codeline lineno="247"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>amrex_i_r<sp/>=<sp/>*amrex_i_hp;<sp/>\</highlight></codeline>
+<codeline lineno="248"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::The_Pinned_Arena()-&gt;free(amrex_i_hp);<sp/>\</highlight></codeline>
+<codeline lineno="249"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>amrex_i_r;<sp/>\</highlight></codeline>
+<codeline lineno="250"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>!defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GET_DEVICE_FUNC_PTR(FP_t,<sp/>sym)<sp/>sym</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuUtility.H"/>
   </compounddef>

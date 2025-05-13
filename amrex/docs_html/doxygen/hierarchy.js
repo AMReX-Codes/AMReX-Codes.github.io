@@ -892,6 +892,9 @@ var hierarchy =
     [ "amrex::parser_node", "structamrex_1_1parser__node.html", null ],
     [ "amrex::parser_number", "structamrex_1_1parser__number.html", null ],
     [ "amrex::parser_symbol", "structamrex_1_1parser__symbol.html", null ],
+    [ "amrex::parser_usrf1", "structamrex_1_1parser__usrf1.html", null ],
+    [ "amrex::parser_usrf2", "structamrex_1_1parser__usrf2.html", null ],
+    [ "amrex::parser_usrfn", "structamrex_1_1parser__usrfn.html", null ],
     [ "amrex::ParserExeADD", "structamrex_1_1ParserExeADD.html", null ],
     [ "amrex::ParserExeADD_PN", "structamrex_1_1ParserExeADD__PN.html", null ],
     [ "amrex::ParserExeADD_PP", "structamrex_1_1ParserExeADD__PP.html", null ],
@@ -926,6 +929,7 @@ var hierarchy =
     [ "amrex::ParserExeSUB_VN", "structamrex_1_1ParserExeSUB__VN.html", null ],
     [ "amrex::ParserExeSUB_VP", "structamrex_1_1ParserExeSUB__VP.html", null ],
     [ "amrex::ParserExeSymbol", "structamrex_1_1ParserExeSymbol.html", null ],
+    [ "amrex::ParserExeUserFn", "structamrex_1_1ParserExeUserFn.html", null ],
     [ "amrex::ParticleArray< ContainerType, ParticleType, DataLayoutTag >", "structamrex_1_1ParticleArray.html", null ],
     [ "amrex::ParticleArrayAccessor< ParticleType, DataLayoutTag >", "structamrex_1_1ParticleArrayAccessor.html", null ],
     [ "amrex::ParticleBase< T, NReal, NInt >", "structamrex_1_1ParticleBase.html", [
