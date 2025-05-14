@@ -53,7 +53,7 @@ var searchData=
   ['mltensorop_50',['MLTensorOp',['../classamrex_1_1MLTensorOp.html',1,'amrex']]],
   ['moments_51',['Moments',['../structamrex_1_1openbc_1_1Moments.html',1,'amrex::openbc']]],
   ['momtag_52',['MomTag',['../structamrex_1_1openbc_1_1MomTag.html',1,'amrex::openbc']]],
-  ['mpi_5fstatus_53',['MPI_Status',['../structMPI__Status.html',1,'']]],
+  ['mpi_5fstatus_53',['MPI_Status',['../structamrex_1_1MPI__Status.html',1,'amrex']]],
   ['mpi_5ftypemap_54',['Mpi_typemap',['../structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html',1,'amrex::ParallelDescriptor']]],
   ['mpi_5ftypemap_3c_20gpucomplex_3c_20t_20_3e_20_3e_55',['Mpi_typemap&lt; GpuComplex&lt; T &gt; &gt;',['../structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html',1,'amrex::ParallelDescriptor']]],
   ['mpi_5ftypemap_3c_20vallocpair_3c_20tv_2c_20ti_20_3e_20_3e_56',['Mpi_typemap&lt; ValLocPair&lt; TV, TI &gt; &gt;',['../structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html',1,'amrex::ParallelDescriptor']]],

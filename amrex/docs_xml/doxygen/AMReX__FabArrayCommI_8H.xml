@@ -2843,7 +2843,7 @@
 <codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_data.push_back(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_size.push_back(nbytes);</highlight></codeline>
 <codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_rank.push_back(kv.first);</highlight></codeline>
-<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs.push_back(<ref refid="AMReX__ccse-mpi_8H_1af21740106a5c90305be33f95b09f37eb" kindref="member">MPI_REQUEST_NULL</ref>);</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs.push_back(MPI_REQUEST_NULL);</highlight></codeline>
 <codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_cctc.push_back(&amp;cctc);</highlight></codeline>
 <codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="740"><highlight class="normal"></highlight></codeline>
@@ -2866,7 +2866,7 @@
 <codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;MPI_Request&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs,</highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SeqNum)</highlight></codeline>
 <codeline lineno="759"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a17a4f52c40dbfc535548624013b51cf2" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"></highlight></codeline>
 <codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>N_snds<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(send_reqs.size());</highlight></codeline>
 <codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>N_snds;<sp/>++j)</highlight></codeline>
@@ -2934,12 +2934,12 @@
 <codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_data.push_back(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_size.push_back(nbytes);</highlight></codeline>
 <codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_from.push_back(kv.first);</highlight></codeline>
-<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_reqs.push_back(<ref refid="AMReX__ccse-mpi_8H_1af21740106a5c90305be33f95b09f37eb" kindref="member">MPI_REQUEST_NULL</ref>);</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_reqs.push_back(MPI_REQUEST_NULL);</highlight></codeline>
 <codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="830"><highlight class="normal"></highlight></codeline>
 <codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nrecv<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(recv_from.size());</highlight></codeline>
 <codeline lineno="832"><highlight class="normal"></highlight></codeline>
-<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a17a4f52c40dbfc535548624013b51cf2" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
 <codeline lineno="834"><highlight class="normal"></highlight></codeline>
 <codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TotalRcvsVolume<sp/>==<sp/>0)</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3103,7 +3103,7 @@
 <codeline lineno="994"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise<sp/>sequence<sp/>numbers<sp/>will<sp/>not<sp/>match<sp/>across<sp/>MPI<sp/>processes.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9fa50b376ee8c97f8d84852e244fd916" kindref="member">SeqNum</ref><sp/>=<sp/>ParallelDescriptor::SeqNum();</highlight></codeline>
-<codeline lineno="997"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
+<codeline lineno="997"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a17a4f52c40dbfc535548624013b51cf2" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/>ParallelContext::CommunicatorSub();</highlight></codeline>
 <codeline lineno="998"><highlight class="normal"></highlight></codeline>
 <codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_locs<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>N_rcvs<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>N_snds<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}<sp/></highlight><highlight class="comment">//<sp/>No<sp/>work<sp/>to<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1000"><highlight class="normal"></highlight></codeline>
@@ -3127,7 +3127,7 @@
 <codeline lineno="1018"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1adc731523d4241d981e7279b29c5d7a6d" kindref="member">amrex::RemoveDuplicates</ref>(recv_from);</highlight></codeline>
 <codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrecv<sp/>=<sp/>recv_from.size();</highlight></codeline>
 <codeline lineno="1020"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1021"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_reqs.resize(nrecv,<sp/><ref refid="AMReX__ccse-mpi_8H_1af21740106a5c90305be33f95b09f37eb" kindref="member">MPI_REQUEST_NULL</ref>);</highlight></codeline>
+<codeline lineno="1021"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_reqs.resize(nrecv,<sp/>MPI_REQUEST_NULL);</highlight></codeline>
 <codeline lineno="1022"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_stat.resize(nrecv);</highlight></codeline>
 <codeline lineno="1023"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_tags.reserve(N_rcvs);</highlight></codeline>
@@ -3200,7 +3200,7 @@
 <codeline lineno="1091"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsend<sp/>=<sp/>send_rank.size();</highlight></codeline>
 <codeline lineno="1092"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_data.resize(nsend,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs.resize(nsend,<sp/><ref refid="AMReX__ccse-mpi_8H_1af21740106a5c90305be33f95b09f37eb" kindref="member">MPI_REQUEST_NULL</ref>);</highlight></codeline>
+<codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs.resize(nsend,<sp/>MPI_REQUEST_NULL);</highlight></codeline>
 <codeline lineno="1095"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1096"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;TagT&gt;<sp/>send_tags;</highlight></codeline>
 <codeline lineno="1097"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_tags.reserve(N_snds);</highlight></codeline>

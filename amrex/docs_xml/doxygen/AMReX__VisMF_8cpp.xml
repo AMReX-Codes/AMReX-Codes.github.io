@@ -2525,13 +2525,13 @@
 <codeline lineno="149"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><ref refid="classamrex_1_1VisMF_1a12f990c53f9abf19fdd7c10f14eae38b" kindref="member">VisMF::SetNOutFiles</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>noutfiles,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><ref refid="classamrex_1_1VisMF_1a12f990c53f9abf19fdd7c10f14eae38b" kindref="member">VisMF::SetNOutFiles</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>noutfiles,<sp/><ref refid="namespaceamrex_1a17a4f52c40dbfc535548624013b51cf2" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
 <codeline lineno="153"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1ade6a45cdc3be4fb324ccd3a863788aae" kindref="member">nOutFiles</ref><sp/>=<sp/>std::max(1,<sp/>std::min(<ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>(comm),<sp/>noutfiles));</highlight></codeline>
 <codeline lineno="155"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><ref refid="classamrex_1_1VisMF_1abda03b733e4f5e0b9f005f764f1a5b65" kindref="member">VisMF::SetMFFileInStreams</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstreams,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><ref refid="classamrex_1_1VisMF_1abda03b733e4f5e0b9f005f764f1a5b65" kindref="member">VisMF::SetMFFileInStreams</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstreams,<sp/><ref refid="namespaceamrex_1a17a4f52c40dbfc535548624013b51cf2" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
 <codeline lineno="159"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1abfbb2ed9c1aa1c00786e7ae2218f0b0f" kindref="member">nMFFileInStreams</ref><sp/>=<sp/>std::max(1,<sp/>std::min(<ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>(comm),<sp/>nstreams));</highlight></codeline>
 <codeline lineno="161"><highlight class="normal">}</highlight></codeline>
@@ -3059,7 +3059,7 @@
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VisMF::How<sp/>how,</highlight></codeline>
 <codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Version<sp/>version,</highlight></codeline>
 <codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>calcMinMax,</highlight></codeline>
-<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Comm<sp/>comm)</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/>m_vers(version),</highlight></codeline>
 <codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/>m_how(how),</highlight></codeline>
@@ -3115,7 +3115,7 @@
 <codeline lineno="739"><highlight class="normal"></highlight></codeline>
 <codeline lineno="740"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="741"><highlight class="normal">VisMF::Header::CalculateMinMax<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArray&lt;FArrayBox&gt;&amp;<sp/>mf,</highlight></codeline>
-<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite,<sp/>MPI_Comm<sp/>comm)</highlight></codeline>
 <codeline lineno="743"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(procToWrite,comm);</highlight></codeline>
 <codeline lineno="745"><highlight class="normal"></highlight></codeline>
@@ -3324,7 +3324,7 @@
 <codeline lineno="948"><highlight class="normal"></highlight></codeline>
 <codeline lineno="949"><highlight class="normal">Long</highlight></codeline>
 <codeline lineno="950"><highlight class="normal">VisMF::WriteHeader<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;mf_name,<sp/>VisMF::Header<sp/>&amp;hdr,</highlight></codeline>
-<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite,<sp/>MPI_Comm<sp/>comm)</highlight></codeline>
 <codeline lineno="952"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="953"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;VisMF::WriteHeader&quot;);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>bytesWritten(0);</highlight></codeline>
@@ -3587,7 +3587,7 @@
 <codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;filePrefix,</highlight></codeline>
 <codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VisMF::Header<sp/>&amp;hdr,</highlight></codeline>
 <codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VisMF::Header::Version<sp/></highlight><highlight class="comment">/*whichVersion*/</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NFilesIter<sp/>&amp;nfi,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NFilesIter<sp/>&amp;nfi,<sp/>MPI_Comm<sp/>comm)</highlight></codeline>
 <codeline lineno="1215"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1216"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;VisMF::FindOffsets&quot;);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1217"><highlight class="normal"></highlight></codeline>
@@ -4276,7 +4276,7 @@
 <codeline lineno="1900"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(myProc<sp/>==<sp/>coordinatorProc)<sp/>{<sp/><sp/></highlight><highlight class="comment">//<sp/>manage<sp/>the<sp/>file<sp/>locks</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>reqsPending(0),<sp/>iopFileIndex(0);</highlight></codeline>
 <codeline lineno="1902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::deque&lt;int&gt;<sp/>iopReads;</highlight></codeline>
-<codeline lineno="1903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structMPI__Status" kindref="compound">MPI_Status</ref><sp/>status;</highlight></codeline>
+<codeline lineno="1903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Status<sp/>status;</highlight></codeline>
 <codeline lineno="1904"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>doneFlag;</highlight></codeline>
 <codeline lineno="1905"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(totalIOReqs<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>vReads;</highlight></codeline>
