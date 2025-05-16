@@ -1,5 +1,13 @@
 var NAVTREEINDEX93 =
 {
+"classamrex_1_1iMultiFab.html#af5406410d32043523bbf1731020585f1":[3,0,0,242,26],
+"classamrex_1_1iMultiFab.html#af5406410d32043523bbf1731020585f1":[2,0,0,277,26],
+"classamrex_1_1iMultiFab.html#af56a10b8407c86226901dc0b5ba070c7":[2,0,0,277,43],
+"classamrex_1_1iMultiFab.html#af56a10b8407c86226901dc0b5ba070c7":[3,0,0,242,43],
+"classamrex_1_1iMultiFab.html#af7c2414a99e5017f1130e2e2c8e9d70f":[2,0,0,277,7],
+"classamrex_1_1iMultiFab.html#af7c2414a99e5017f1130e2e2c8e9d70f":[3,0,0,242,7],
+"classamrex_1_1iMultiFab.html#af9746c8ee7ac16060bf338ecdbdcaa5a":[3,0,0,242,39],
+"classamrex_1_1iMultiFab.html#af9746c8ee7ac16060bf338ecdbdcaa5a":[2,0,0,277,39],
 "classamrex_1_1iMultiFab.html#afb9206f65daae6fa0d08e59a51b7ea8a":[2,0,0,277,11],
 "classamrex_1_1iMultiFab.html#afb9206f65daae6fa0d08e59a51b7ea8a":[3,0,0,242,11],
 "classamrex_1_1ref__wrapper.html":[3,0,0,493],
@@ -241,13 +249,5 @@ var NAVTREEINDEX93 =
 "globals_type.html":[4,1,3],
 "globals_u.html":[4,1,0,18],
 "globals_v.html":[4,1,0,19],
-"globals_vars.html":[4,1,2],
-"globals_w.html":[4,1,0,20],
-"globals_x.html":[4,1,0,21],
-"globals_y.html":[4,1,0,22],
-"globals_z.html":[4,1,0,23],
-"group__HYPRE.html":[1,0],
-"hierarchy.html":[3,2],
-"index.html":[],
-"index.html":[0]
+"globals_vars.html":[4,1,2]
 };

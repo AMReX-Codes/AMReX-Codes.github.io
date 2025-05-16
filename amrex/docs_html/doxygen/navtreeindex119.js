@@ -1,5 +1,13 @@
 var NAVTREEINDEX119 =
 {
+"structamrex_1_1ForkJoin_1_1ComponentSet.html#aa6ebc6ce0f58172561258c343c9b0921":[2,0,0,237,0,2],
+"structamrex_1_1ForkJoin_1_1MFFork.html":[3,0,0,202,1],
+"structamrex_1_1ForkJoin_1_1MFFork.html":[2,0,0,237,1],
+"structamrex_1_1ForkJoin_1_1MFFork.html#a10f36654d975cbc986561d7c1931a02b":[3,0,0,202,1,8],
+"structamrex_1_1ForkJoin_1_1MFFork.html#a10f36654d975cbc986561d7c1931a02b":[2,0,0,237,1,8],
+"structamrex_1_1ForkJoin_1_1MFFork.html#a335de4835763f4875e6c6089f5e739c9":[3,0,0,202,1,9],
+"structamrex_1_1ForkJoin_1_1MFFork.html#a335de4835763f4875e6c6089f5e739c9":[2,0,0,237,1,9],
+"structamrex_1_1ForkJoin_1_1MFFork.html#a34adaed2dce7ad0a962488bee88e6589":[3,0,0,202,1,0],
 "structamrex_1_1ForkJoin_1_1MFFork.html#a34adaed2dce7ad0a962488bee88e6589":[2,0,0,237,1,0],
 "structamrex_1_1ForkJoin_1_1MFFork.html#a3d57d55dc4495341b7bd6de0ac9e4bd6":[3,0,0,202,1,5],
 "structamrex_1_1ForkJoin_1_1MFFork.html#a3d57d55dc4495341b7bd6de0ac9e4bd6":[2,0,0,237,1,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX119 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,16,13,3],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ae19f0d07c17ff5a62f78057e5cc124ee":[2,0,0,16,13,5],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ae19f0d07c17ff5a62f78057e5cc124ee":[3,0,0,6,11,5],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,16,13,4],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[3,0,0,6,11,4],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[3,0,0,6,11,10],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,16,13,10],
-"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,16,14],
-"structamrex_1_1Gpu_1_1DeviceToDevice.html":[3,0,0,6,12],
-"structamrex_1_1Gpu_1_1DeviceToHost.html":[2,0,0,16,15],
-"structamrex_1_1Gpu_1_1DeviceToHost.html":[3,0,0,6,13],
-"structamrex_1_1Gpu_1_1ExecConfig.html":[2,0,0,16,17]
+"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,16,13,4]
 };

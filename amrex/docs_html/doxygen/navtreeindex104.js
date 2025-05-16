@@ -1,5 +1,13 @@
 var NAVTREEINDEX104 =
 {
+"namespaceamrex_1_1BGColor.html#a8e336a13c3edc33f8190fd9f150ef19f":[2,0,0,3,14],
+"namespaceamrex_1_1BGColor.html#a93f5aa5cadd77b4b2192e8b4588d30b9":[2,0,0,3,7],
+"namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56":[2,0,0,3,16],
+"namespaceamrex_1_1BGColor.html#aa46c16e855686f562a9ec273574686e1":[2,0,0,3,6],
+"namespaceamrex_1_1BGColor.html#acc0179ae7051c77e255513c5ebbce41e":[2,0,0,3,9],
+"namespaceamrex_1_1BGColor.html#adfca5e4fcc8b07bdcff12e9a766265ee":[2,0,0,3,4],
+"namespaceamrex_1_1BGColor.html#ae412efe15f82f962408e557b3cee52e4":[2,0,0,3,0],
+"namespaceamrex_1_1BGColor.html#ae7b1a8ccc4e3bafcb6f5381f352cad8a":[2,0,0,3,2],
 "namespaceamrex_1_1BGColor.html#afd89341cfa10f0751ebf6312ea565a03":[2,0,0,3,10],
 "namespaceamrex_1_1BinPolicy.html":[2,0,0,4],
 "namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b":[2,0,0,4,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX104 =
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a1ca14857c9072d782f6e4a98592ba2b6":[2,0,0,16,0,21],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a36a87ab5fbe799714dcc825134aa6027":[2,0,0,16,0,10],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a3794cd96c4a2f4b00db9cc1e5d66af87":[2,0,0,16,0,5],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a428330a4e7622c16d943003ad97e54a0":[2,0,0,16,0,1],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0":[2,0,0,16,0,13],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a53a66f5fe06e3b8839cb0f79f0d0ea3d":[2,0,0,16,0,12],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a53c8ca8f4c92a40ec4eee06b385f6ef7":[2,0,0,16,0,19],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a57da8c33bc706892e873bca4ff05f7ab":[2,0,0,16,0,23],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a5c122d7c55e6fa6cf6ab6a45a4cf87e5":[2,0,0,16,0,16],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a629c38eebdf637b06b26049acae626c8":[2,0,0,16,0,2],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a6bd8e274f3c060b8f34e508ca531f527":[2,0,0,16,0,7],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a766ff7e5ed9d78fb3a0d5eaffec9c2ea":[2,0,0,16,0,11]
+"namespaceamrex_1_1Gpu_1_1Atomic.html#a428330a4e7622c16d943003ad97e54a0":[2,0,0,16,0,1]
 };

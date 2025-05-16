@@ -1,5 +1,13 @@
 var NAVTREEINDEX65 =
 {
+"classamrex_1_1LineDistFcnElement2d.html#a9c9ba23ae82c4ab0a38587d96c99f344":[3,0,0,323,5],
+"classamrex_1_1LineDistFcnElement2d.html#a9c9ba23ae82c4ab0a38587d96c99f344":[2,0,0,358,5],
+"classamrex_1_1LineDistFcnElement2d.html#ac9429e79b55e8f6b054280c924829a94":[3,0,0,323,2],
+"classamrex_1_1LineDistFcnElement2d.html#ac9429e79b55e8f6b054280c924829a94":[2,0,0,358,2],
+"classamrex_1_1MFCellBilinear.html":[2,0,0,374],
+"classamrex_1_1MFCellBilinear.html":[3,0,0,339],
+"classamrex_1_1MFCellBilinear.html#a534db7efe626f43b2e652b1779bd802d":[3,0,0,339,1],
+"classamrex_1_1MFCellBilinear.html#a534db7efe626f43b2e652b1779bd802d":[2,0,0,374,1],
 "classamrex_1_1MFCellBilinear.html#ad77a8408bcacf00baa43bffadf5c1830":[2,0,0,374,0],
 "classamrex_1_1MFCellBilinear.html#ad77a8408bcacf00baa43bffadf5c1830":[3,0,0,339,0],
 "classamrex_1_1MFCellBilinear.html#afb1ce4c138df4eef0c79359d2f313299":[2,0,0,374,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX65 =
 "classamrex_1_1MLABecLaplacianT.html#aaa7bd08886e8e132fbd9b3982bcadaa6":[3,0,0,350,24],
 "classamrex_1_1MLABecLaplacianT.html#aaa7bd08886e8e132fbd9b3982bcadaa6":[2,0,0,385,24],
 "classamrex_1_1MLABecLaplacianT.html#ab3dca372fae6a1446f43a056d410f165":[3,0,0,350,53],
-"classamrex_1_1MLABecLaplacianT.html#ab3dca372fae6a1446f43a056d410f165":[2,0,0,385,53],
-"classamrex_1_1MLABecLaplacianT.html#ab4e68066e0f668c0272d29a86023221d":[2,0,0,385,5],
-"classamrex_1_1MLABecLaplacianT.html#ab4e68066e0f668c0272d29a86023221d":[3,0,0,350,5],
-"classamrex_1_1MLABecLaplacianT.html#abb6062df17c9eec35484fa60924fa5a9":[2,0,0,385,42],
-"classamrex_1_1MLABecLaplacianT.html#abb6062df17c9eec35484fa60924fa5a9":[3,0,0,350,42],
-"classamrex_1_1MLABecLaplacianT.html#ac03f98cb7e5a9397213306e9884a65b4":[3,0,0,350,30],
-"classamrex_1_1MLABecLaplacianT.html#ac03f98cb7e5a9397213306e9884a65b4":[2,0,0,385,30],
-"classamrex_1_1MLABecLaplacianT.html#ac6489a20e89c720a91f81ae8d29496f2":[3,0,0,350,48],
-"classamrex_1_1MLABecLaplacianT.html#ac6489a20e89c720a91f81ae8d29496f2":[2,0,0,385,48]
+"classamrex_1_1MLABecLaplacianT.html#ab3dca372fae6a1446f43a056d410f165":[2,0,0,385,53]
 };

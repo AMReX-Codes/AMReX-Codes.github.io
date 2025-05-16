@@ -1,5 +1,13 @@
 var NAVTREEINDEX88 =
 {
+"classamrex_1_1StateData.html#a83d7bc0a021a283efce9b4f500315540":[3,0,0,511,8],
+"classamrex_1_1StateData.html#a83d7bc0a021a283efce9b4f500315540":[2,0,0,546,8],
+"classamrex_1_1StateData.html#a84e433aa5076093c39d51bf97a9b0ca6":[3,0,0,511,21],
+"classamrex_1_1StateData.html#a84e433aa5076093c39d51bf97a9b0ca6":[2,0,0,546,21],
+"classamrex_1_1StateData.html#a8e6217ecac0e2a8d99ce273835b20e91":[3,0,0,511,53],
+"classamrex_1_1StateData.html#a8e6217ecac0e2a8d99ce273835b20e91":[2,0,0,546,53],
+"classamrex_1_1StateData.html#a947b62feb1753b7ebe6c604066b1d494":[2,0,0,546,1],
+"classamrex_1_1StateData.html#a947b62feb1753b7ebe6c604066b1d494":[3,0,0,511,1],
 "classamrex_1_1StateData.html#a9702465fcc6db1bb193b1a82222b0e1c":[3,0,0,511,67],
 "classamrex_1_1StateData.html#a9702465fcc6db1bb193b1a82222b0e1c":[2,0,0,546,67],
 "classamrex_1_1StateData.html#a9abd20c02f978ad493cfe44eec3dec13":[3,0,0,511,51],
@@ -241,13 +249,5 @@ var NAVTREEINDEX88 =
 "classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c":[3,0,0,515,3],
 "classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c":[2,0,0,550,3],
 "classamrex_1_1StreamRetry.html#af59c34dc9c7f3ff811de893776f96ea1":[3,0,0,515,11],
-"classamrex_1_1StreamRetry.html#af59c34dc9c7f3ff811de893776f96ea1":[2,0,0,550,11],
-"classamrex_1_1SundialsIntegrator.html":[2,0,0,552],
-"classamrex_1_1SundialsIntegrator.html":[3,0,0,517],
-"classamrex_1_1SundialsIntegrator.html#a01b848aa7893bf78e2e35fd06fbd7cb3":[3,0,0,517,20],
-"classamrex_1_1SundialsIntegrator.html#a01b848aa7893bf78e2e35fd06fbd7cb3":[2,0,0,552,20],
-"classamrex_1_1SundialsIntegrator.html#a023816ef658136d5deee9a7afa631f5a":[3,0,0,517,32],
-"classamrex_1_1SundialsIntegrator.html#a023816ef658136d5deee9a7afa631f5a":[2,0,0,552,32],
-"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[2,0,0,552,13],
-"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[3,0,0,517,13]
+"classamrex_1_1StreamRetry.html#af59c34dc9c7f3ff811de893776f96ea1":[2,0,0,550,11]
 };

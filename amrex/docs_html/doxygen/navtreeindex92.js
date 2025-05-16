@@ -1,5 +1,13 @@
 var NAVTREEINDEX92 =
 {
+"classamrex_1_1YAFluxRegisterT.html#a3cc8f2331d48facc82d8d85c31bab3f1":[3,0,0,548,30],
+"classamrex_1_1YAFluxRegisterT.html#a3cc8f2331d48facc82d8d85c31bab3f1":[2,0,0,583,30],
+"classamrex_1_1YAFluxRegisterT.html#a493f364171c018374a110d24f0c9b7c3":[2,0,0,583,8],
+"classamrex_1_1YAFluxRegisterT.html#a493f364171c018374a110d24f0c9b7c3":[3,0,0,548,8],
+"classamrex_1_1YAFluxRegisterT.html#a5191f9f71d66d51913c859e7835fd3a9":[2,0,0,583,7],
+"classamrex_1_1YAFluxRegisterT.html#a5191f9f71d66d51913c859e7835fd3a9":[3,0,0,548,7],
+"classamrex_1_1YAFluxRegisterT.html#a5368c976e1f4845f16096aa9a9945c02":[2,0,0,583,3],
+"classamrex_1_1YAFluxRegisterT.html#a5368c976e1f4845f16096aa9a9945c02":[3,0,0,548,3],
 "classamrex_1_1YAFluxRegisterT.html#a58d0c8eb8bdaf808e5462cfa75b76b3f":[3,0,0,548,26],
 "classamrex_1_1YAFluxRegisterT.html#a58d0c8eb8bdaf808e5462cfa75b76b3f":[2,0,0,583,26],
 "classamrex_1_1YAFluxRegisterT.html#a5a0318376def0681f878a9628db75930":[3,0,0,548,24],
@@ -241,13 +249,5 @@ var NAVTREEINDEX92 =
 "classamrex_1_1iMultiFab.html#aeac56ffb9329f6269e866cff504adc9e":[3,0,0,242,34],
 "classamrex_1_1iMultiFab.html#aeac56ffb9329f6269e866cff504adc9e":[2,0,0,277,34],
 "classamrex_1_1iMultiFab.html#af4227a4c2ca3581ae44d3749849f3f86":[3,0,0,242,28],
-"classamrex_1_1iMultiFab.html#af4227a4c2ca3581ae44d3749849f3f86":[2,0,0,277,28],
-"classamrex_1_1iMultiFab.html#af5406410d32043523bbf1731020585f1":[3,0,0,242,26],
-"classamrex_1_1iMultiFab.html#af5406410d32043523bbf1731020585f1":[2,0,0,277,26],
-"classamrex_1_1iMultiFab.html#af56a10b8407c86226901dc0b5ba070c7":[2,0,0,277,43],
-"classamrex_1_1iMultiFab.html#af56a10b8407c86226901dc0b5ba070c7":[3,0,0,242,43],
-"classamrex_1_1iMultiFab.html#af7c2414a99e5017f1130e2e2c8e9d70f":[2,0,0,277,7],
-"classamrex_1_1iMultiFab.html#af7c2414a99e5017f1130e2e2c8e9d70f":[3,0,0,242,7],
-"classamrex_1_1iMultiFab.html#af9746c8ee7ac16060bf338ecdbdcaa5a":[3,0,0,242,39],
-"classamrex_1_1iMultiFab.html#af9746c8ee7ac16060bf338ecdbdcaa5a":[2,0,0,277,39]
+"classamrex_1_1iMultiFab.html#af4227a4c2ca3581ae44d3749849f3f86":[2,0,0,277,28]
 };

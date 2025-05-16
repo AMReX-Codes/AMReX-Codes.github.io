@@ -1,5 +1,13 @@
 var NAVTREEINDEX64 =
 {
+"classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9":[3,0,0,246,4],
+"classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9":[2,0,0,281,4],
+"classamrex_1_1IntegratorBase.html#a983bd9fe800746c882ce2184ef5baf48":[2,0,0,281,37],
+"classamrex_1_1IntegratorBase.html#a983bd9fe800746c882ce2184ef5baf48":[3,0,0,246,37],
+"classamrex_1_1IntegratorBase.html#a9a0b2271de694f1ea0903339931578ec":[2,0,0,281,6],
+"classamrex_1_1IntegratorBase.html#a9a0b2271de694f1ea0903339931578ec":[3,0,0,246,6],
+"classamrex_1_1IntegratorBase.html#a9a2a23791bed8871f255633f141f0444":[2,0,0,281,15],
+"classamrex_1_1IntegratorBase.html#a9a2a23791bed8871f255633f141f0444":[3,0,0,246,15],
 "classamrex_1_1IntegratorBase.html#a9c9409a416dc1c392f0a06e958ca10a4":[2,0,0,281,12],
 "classamrex_1_1IntegratorBase.html#a9c9409a416dc1c392f0a06e958ca10a4":[3,0,0,246,12],
 "classamrex_1_1IntegratorBase.html#a9fe529e314e46e719aec6150281858a3":[2,0,0,281,13],
@@ -241,13 +249,5 @@ var NAVTREEINDEX64 =
 "classamrex_1_1LineDistFcnElement2d.html#a8e307fd3ea03450f0da9acb4148a81a3":[2,0,0,358,6],
 "classamrex_1_1LineDistFcnElement2d.html#a8e307fd3ea03450f0da9acb4148a81a3":[3,0,0,323,6],
 "classamrex_1_1LineDistFcnElement2d.html#a9b5d43a1548c7f7c5629d3f503c8c890":[3,0,0,323,1],
-"classamrex_1_1LineDistFcnElement2d.html#a9b5d43a1548c7f7c5629d3f503c8c890":[2,0,0,358,1],
-"classamrex_1_1LineDistFcnElement2d.html#a9c9ba23ae82c4ab0a38587d96c99f344":[3,0,0,323,5],
-"classamrex_1_1LineDistFcnElement2d.html#a9c9ba23ae82c4ab0a38587d96c99f344":[2,0,0,358,5],
-"classamrex_1_1LineDistFcnElement2d.html#ac9429e79b55e8f6b054280c924829a94":[3,0,0,323,2],
-"classamrex_1_1LineDistFcnElement2d.html#ac9429e79b55e8f6b054280c924829a94":[2,0,0,358,2],
-"classamrex_1_1MFCellBilinear.html":[2,0,0,374],
-"classamrex_1_1MFCellBilinear.html":[3,0,0,339],
-"classamrex_1_1MFCellBilinear.html#a534db7efe626f43b2e652b1779bd802d":[3,0,0,339,1],
-"classamrex_1_1MFCellBilinear.html#a534db7efe626f43b2e652b1779bd802d":[2,0,0,374,1]
+"classamrex_1_1LineDistFcnElement2d.html#a9b5d43a1548c7f7c5629d3f503c8c890":[2,0,0,358,1]
 };

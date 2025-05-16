@@ -1,5 +1,13 @@
 var NAVTREEINDEX82 =
 {
+"classamrex_1_1ParticleContainerBase.html#a0e1a0dcc5bf3f405f40ad020f18389bc":[2,0,0,488,61],
+"classamrex_1_1ParticleContainerBase.html#a0e1a0dcc5bf3f405f40ad020f18389bc":[3,0,0,453,61],
+"classamrex_1_1ParticleContainerBase.html#a0fef888a5370f9723f2ab2df2fe32266":[3,0,0,453,23],
+"classamrex_1_1ParticleContainerBase.html#a0fef888a5370f9723f2ab2df2fe32266":[2,0,0,488,23],
+"classamrex_1_1ParticleContainerBase.html#a1720e5ec3b987f6bee57fde2d515012a":[2,0,0,488,11],
+"classamrex_1_1ParticleContainerBase.html#a1720e5ec3b987f6bee57fde2d515012a":[3,0,0,453,11],
+"classamrex_1_1ParticleContainerBase.html#a18183e85d5ae22c27721996b3c5bfead":[3,0,0,453,63],
+"classamrex_1_1ParticleContainerBase.html#a18183e85d5ae22c27721996b3c5bfead":[2,0,0,488,63],
 "classamrex_1_1ParticleContainerBase.html#a1b59660938f651e5a56bc45bb6bc4d8e":[2,0,0,488,3],
 "classamrex_1_1ParticleContainerBase.html#a1b59660938f651e5a56bc45bb6bc4d8e":[3,0,0,453,3],
 "classamrex_1_1ParticleContainerBase.html#a1d3c53a73651fd4d1b30a4b7f92f11b5":[3,0,0,453,36],
@@ -241,13 +249,5 @@ var NAVTREEINDEX82 =
 "classamrex_1_1ParticleContainer__impl.html#a4820e40e502374a1e7b31736b3df0f29":[3,0,0,452,120],
 "classamrex_1_1ParticleContainer__impl.html#a4820e40e502374a1e7b31736b3df0f29":[2,0,0,487,120],
 "classamrex_1_1ParticleContainer__impl.html#a4ad32bd643f611ee9d4b501b4a572069":[2,0,0,487,5],
-"classamrex_1_1ParticleContainer__impl.html#a4ad32bd643f611ee9d4b501b4a572069":[3,0,0,452,5],
-"classamrex_1_1ParticleContainer__impl.html#a4af9afe57030eb2d0a66b1fab9660594":[2,0,0,487,41],
-"classamrex_1_1ParticleContainer__impl.html#a4af9afe57030eb2d0a66b1fab9660594":[3,0,0,452,41],
-"classamrex_1_1ParticleContainer__impl.html#a4c62beafa833201efa7c9e7ee259d785":[2,0,0,487,147],
-"classamrex_1_1ParticleContainer__impl.html#a4c62beafa833201efa7c9e7ee259d785":[3,0,0,452,147],
-"classamrex_1_1ParticleContainer__impl.html#a51391fb142dbee6a66f681a38e862e4b":[2,0,0,487,80],
-"classamrex_1_1ParticleContainer__impl.html#a51391fb142dbee6a66f681a38e862e4b":[3,0,0,452,80],
-"classamrex_1_1ParticleContainer__impl.html#a51414af32d7051aef77e91a94ae009ef":[2,0,0,487,119],
-"classamrex_1_1ParticleContainer__impl.html#a51414af32d7051aef77e91a94ae009ef":[3,0,0,452,119]
+"classamrex_1_1ParticleContainer__impl.html#a4ad32bd643f611ee9d4b501b4a572069":[3,0,0,452,5]
 };

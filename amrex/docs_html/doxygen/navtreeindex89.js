@@ -1,5 +1,13 @@
 var NAVTREEINDEX89 =
 {
+"classamrex_1_1SundialsIntegrator.html":[2,0,0,552],
+"classamrex_1_1SundialsIntegrator.html":[3,0,0,517],
+"classamrex_1_1SundialsIntegrator.html#a01b848aa7893bf78e2e35fd06fbd7cb3":[3,0,0,517,20],
+"classamrex_1_1SundialsIntegrator.html#a01b848aa7893bf78e2e35fd06fbd7cb3":[2,0,0,552,20],
+"classamrex_1_1SundialsIntegrator.html#a023816ef658136d5deee9a7afa631f5a":[3,0,0,517,32],
+"classamrex_1_1SundialsIntegrator.html#a023816ef658136d5deee9a7afa631f5a":[2,0,0,552,32],
+"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[2,0,0,552,13],
+"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[3,0,0,517,13],
 "classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa":[3,0,0,517,1],
 "classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa":[2,0,0,552,1],
 "classamrex_1_1SundialsIntegrator.html#a07c7c9b9fd21fd9560151c2bfbfd7571":[3,0,0,517,14],
@@ -241,13 +249,5 @@ var NAVTREEINDEX89 =
 "classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b":[2,0,0,566,26],
 "classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b":[3,0,0,531,26],
 "classamrex_1_1TimeIntegrator.html#a945c0ab164fee73db3dcc6cdc38fe216":[2,0,0,566,27],
-"classamrex_1_1TimeIntegrator.html#a945c0ab164fee73db3dcc6cdc38fe216":[3,0,0,531,27],
-"classamrex_1_1TimeIntegrator.html#aa447937fa3bb442c94ce46cca5facd50":[2,0,0,566,24],
-"classamrex_1_1TimeIntegrator.html#aa447937fa3bb442c94ce46cca5facd50":[3,0,0,531,24],
-"classamrex_1_1TimeIntegrator.html#acdbecf21e7e5de787e59c0e1a2680fc8":[3,0,0,531,6],
-"classamrex_1_1TimeIntegrator.html#acdbecf21e7e5de787e59c0e1a2680fc8":[2,0,0,566,6],
-"classamrex_1_1TimeIntegrator.html#acff5bb21bb84fea124f333d6f951c452":[3,0,0,531,3],
-"classamrex_1_1TimeIntegrator.html#acff5bb21bb84fea124f333d6f951c452":[2,0,0,566,3],
-"classamrex_1_1TimeIntegrator.html#ad1ba45d94e1a50ca73a6d9d43b36a87a":[3,0,0,531,4],
-"classamrex_1_1TimeIntegrator.html#ad1ba45d94e1a50ca73a6d9d43b36a87a":[2,0,0,566,4]
+"classamrex_1_1TimeIntegrator.html#a945c0ab164fee73db3dcc6cdc38fe216":[3,0,0,531,27]
 };

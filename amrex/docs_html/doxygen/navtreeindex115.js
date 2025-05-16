@@ -1,5 +1,13 @@
 var NAVTREEINDEX115 =
 {
+"structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03":[2,0,0,163,3],
+"structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[3,0,0,128,1],
+"structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[2,0,0,163,1],
+"structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f":[2,0,0,163,4],
+"structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f":[3,0,0,128,4],
+"structamrex_1_1DataDeleter.html#a4736c2ef640d253fac96155ba4cd4f2b":[2,0,0,163,2],
+"structamrex_1_1DataDeleter.html#a4736c2ef640d253fac96155ba4cd4f2b":[3,0,0,128,2],
+"structamrex_1_1DataLayoutPolicy.html":[2,0,0,164],
 "structamrex_1_1DataLayoutPolicy.html":[3,0,0,129],
 "structamrex_1_1DataLayoutPolicyRaw.html":[2,0,0,167],
 "structamrex_1_1DataLayoutPolicyRaw.html":[3,0,0,132],
@@ -241,13 +249,5 @@ var NAVTREEINDEX115 =
 "structamrex_1_1EB2_1_1Neighbor.html#a6f2f3a70226dea198fcc69a320b88b43":[2,0,0,8,41,0],
 "structamrex_1_1EB2_1_1Neighbor.html#a753fca266a688d197024b1fb911cd828":[3,0,0,4,37,20],
 "structamrex_1_1EB2_1_1Neighbor.html#a753fca266a688d197024b1fb911cd828":[2,0,0,8,41,20],
-"structamrex_1_1EB2_1_1Neighbor.html#a78a31298d705a14fabdb3b894a489dae":[2,0,0,8,41,5],
-"structamrex_1_1EB2_1_1Neighbor.html#a78a31298d705a14fabdb3b894a489dae":[3,0,0,4,37,5],
-"structamrex_1_1EB2_1_1Neighbor.html#a89b6f98e17fc1ab18e714227d70a16c6":[3,0,0,4,37,10],
-"structamrex_1_1EB2_1_1Neighbor.html#a89b6f98e17fc1ab18e714227d70a16c6":[2,0,0,8,41,10],
-"structamrex_1_1EB2_1_1Neighbor.html#a952c4c7fc9609711f2c94c6a84255c09":[3,0,0,4,37,4],
-"structamrex_1_1EB2_1_1Neighbor.html#a952c4c7fc9609711f2c94c6a84255c09":[2,0,0,8,41,4],
-"structamrex_1_1EB2_1_1Neighbor.html#aa07825ca5ad98d94fa9bfb9879bb8383":[3,0,0,4,37,7],
-"structamrex_1_1EB2_1_1Neighbor.html#aa07825ca5ad98d94fa9bfb9879bb8383":[2,0,0,8,41,7],
-"structamrex_1_1EB2_1_1Neighbor.html#ab33258566bae2c23b99ff91a3ac9519c":[3,0,0,4,37,11]
+"structamrex_1_1EB2_1_1Neighbor.html#a78a31298d705a14fabdb3b894a489dae":[2,0,0,8,41,5]
 };

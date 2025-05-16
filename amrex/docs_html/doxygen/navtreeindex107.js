@@ -1,5 +1,13 @@
 var NAVTREEINDEX107 =
 {
+"namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14":[2,0,0,56,5],
+"namespaceamrex_1_1VectorGrowthStrategy.html#a41878a0e62c1df914fba3fda248ea56d":[2,0,0,56,6],
+"namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa":[2,0,0,56,1],
+"namespaceamrex_1_1VectorGrowthStrategy.html#ae40903e99ce2fa70dfcfbc71e8e1f9d1":[2,0,0,56,3],
+"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html":[2,0,0,56,0],
+"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html#a55450ed37c6677fb96a9f9c724553739":[2,0,0,56,0,0],
+"namespaceamrex_1_1algoim.html":[2,0,0,0],
+"namespaceamrex_1_1algoim.html#a01c402173effc1376e1e121633ff5f40":[2,0,0,0,19],
 "namespaceamrex_1_1algoim.html#a028434e66d37788b7c7aa354d73ed4b3":[2,0,0,0,39],
 "namespaceamrex_1_1algoim.html#a035ca724de0232c06fb8f932f48dfb5b":[2,0,0,0,38],
 "namespaceamrex_1_1algoim.html#a05434c8a13201e8af0f5dab5420e33d2":[2,0,0,0,12],
@@ -241,13 +249,5 @@ var NAVTREEINDEX107 =
 "namespaceamrex_1_1interp__detail.html#a3346865339c6c4741bfbe4fc93d22621":[2,0,0,19,6],
 "namespaceamrex_1_1interp__detail.html#a390d2521c2368811a821a0cd3e499e31":[2,0,0,19,4],
 "namespaceamrex_1_1interp__detail.html#a69c17d57cbc7538401740c1eb5a438ad":[2,0,0,19,0],
-"namespaceamrex_1_1interp__detail.html#a77157e26ce600fbc5ce9298f23730af4":[2,0,0,19,5],
-"namespaceamrex_1_1interp__detail.html#ab4ce75e915291922fab6bb6e4f04b002":[2,0,0,19,3],
-"namespaceamrex_1_1interp__detail.html#acedf6cd7d27760da7d209fa4849a18c3":[2,0,0,19,1],
-"namespaceamrex_1_1interp__detail.html#af8b6df2fce20e85dd23c5c3349d44fae":[2,0,0,19,2],
-"namespaceamrex_1_1loop__detail.html":[2,0,0,22],
-"namespaceamrex_1_1loop__detail.html#a154e136915988b195cf06eece0749933":[2,0,0,22,7],
-"namespaceamrex_1_1loop__detail.html#a3042d031dccc1977dbc3c3f6574099ae":[2,0,0,22,0],
-"namespaceamrex_1_1loop__detail.html#a3392de1e44c6c7d03a7402ddc5207984":[2,0,0,22,11],
-"namespaceamrex_1_1loop__detail.html#a361a894845df6bb8adc38a2483044878":[2,0,0,22,15]
+"namespaceamrex_1_1interp__detail.html#a77157e26ce600fbc5ce9298f23730af4":[2,0,0,19,5]
 };

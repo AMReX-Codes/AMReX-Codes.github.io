@@ -173,10 +173,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1aefcfca2b595c0f7ddac3e351f6e8a3" id="r_a1aefcfca2b595c0f7ddac3e351f6e8a3"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a1aefcfca2b595c0f7ddac3e351f6e8a3">sizeOf</a> (void *p) const noexcept</td></tr>
 <tr class="memdesc:a1aefcfca2b595c0f7ddac3e351f6e8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of memory in this pointer. Return 0 for unknown pointer.  <br /></td></tr>
 <tr class="separator:a1aefcfca2b595c0f7ddac3e351f6e8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa73ded7161a0649ccd1103491034632a" id="r_aa73ded7161a0649ccd1103491034632a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#aa73ded7161a0649ccd1103491034632a">PrintUsage</a> (std::string const &amp;name) const</td></tr>
-<tr class="separator:aa73ded7161a0649ccd1103491034632a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf03c7d216561ed41f5fcdd64169b8b7" id="r_acf03c7d216561ed41f5fcdd64169b8b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#acf03c7d216561ed41f5fcdd64169b8b7">PrintUsage</a> (std::string const &amp;name, bool print_max_usage) const</td></tr>
+<tr class="separator:acf03c7d216561ed41f5fcdd64169b8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a220453b0ec3b2de0df5cd94cb08dab03" id="r_a220453b0ec3b2de0df5cd94cb08dab03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a220453b0ec3b2de0df5cd94cb08dab03">PrintUsage</a> (std::ostream &amp;os, std::string const &amp;name, std::string const &amp;space) const</td></tr>
 <tr class="separator:a220453b0ec3b2de0df5cd94cb08dab03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c2ae14a68569c5cdfc6c5e014af038" id="r_a77c2ae14a68569c5cdfc6c5e014af038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a77c2ae14a68569c5cdfc6c5e014af038">ResetMaxUsageCounter</a> () final</td></tr>
+<tr class="separator:a77c2ae14a68569c5cdfc6c5e014af038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:a327e7541e6291ce735c03392b21931b6 inherit pub_methods_classamrex_1_1Arena" id="r_a327e7541e6291ce735c03392b21931b6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6">~Arena</a> ()=default</td></tr>
 <tr class="separator:a327e7541e6291ce735c03392b21931b6 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,9 +259,15 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a7ec2fcdaa0d06d1fceb739d0e1661751" id="r_a7ec2fcdaa0d06d1fceb739d0e1661751"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a7ec2fcdaa0d06d1fceb739d0e1661751">m_used</a> {0}</td></tr>
 <tr class="memdesc:a7ec2fcdaa0d06d1fceb739d0e1661751"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of heap space currently allocated.  <br /></td></tr>
 <tr class="separator:a7ec2fcdaa0d06d1fceb739d0e1661751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae080e8f434fe1dbdd9913a5089c481c5" id="r_ae080e8f434fe1dbdd9913a5089c481c5"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#ae080e8f434fe1dbdd9913a5089c481c5">m_max_used</a> {0}</td></tr>
+<tr class="memdesc:ae080e8f434fe1dbdd9913a5089c481c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max amount of heap space currently allocated.  <br /></td></tr>
+<tr class="separator:ae080e8f434fe1dbdd9913a5089c481c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3edc78581fb20c7273fbf74494e0c48" id="r_af3edc78581fb20c7273fbf74494e0c48"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48">m_actually_used</a> {0}</td></tr>
 <tr class="memdesc:af3edc78581fb20c7273fbf74494e0c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of memory given out via <a class="el" href="classamrex_1_1CArena.html#a8d55773acd31606b385f0a524587bd1d" title="Allocate some memory.">alloc()</a>.  <br /></td></tr>
 <tr class="separator:af3edc78581fb20c7273fbf74494e0c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500345d5a92552eeb34943b989318952" id="r_a500345d5a92552eeb34943b989318952"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a500345d5a92552eeb34943b989318952">m_max_actually_used</a> {0}</td></tr>
+<tr class="memdesc:a500345d5a92552eeb34943b989318952"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max amount of memory given out via <a class="el" href="classamrex_1_1CArena.html#a8d55773acd31606b385f0a524587bd1d" title="Allocate some memory.">alloc()</a>.  <br /></td></tr>
+<tr class="separator:a500345d5a92552eeb34943b989318952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a445be9f2ccca25ca4d2c8db026400136" id="r_a445be9f2ccca25ca4d2c8db026400136"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a445be9f2ccca25ca4d2c8db026400136">carena_mutex</a></td></tr>
 <tr class="separator:a445be9f2ccca25ca4d2c8db026400136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
@@ -281,8 +289,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena" id="r_ad3c30247b7f738cc4e292f781a503ce9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ad3c30247b7f738cc4e292f781a503ce9">Initialize</a> (bool minimal)</td></tr>
 <tr class="separator:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a506a68384da30629323d0839f13812c2 inherit pub_static_methods_classamrex_1_1Arena" id="r_a506a68384da30629323d0839f13812c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a506a68384da30629323d0839f13812c2">PrintUsage</a> ()</td></tr>
-<tr class="separator:a506a68384da30629323d0839f13812c2 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena" id="r_ada0c93d4aa3a9adce127ba381c652ac6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ada0c93d4aa3a9adce127ba381c652ac6">PrintUsage</a> (bool print_max_usage=false)</td></tr>
+<tr class="separator:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1cfbcfa1c41ac7e45bf469e93db7402 inherit pub_static_methods_classamrex_1_1Arena" id="r_aa1cfbcfa1c41ac7e45bf469e93db7402"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402">PrintUsageToFiles</a> (std::string const &amp;filename, std::string const &amp;message)</td></tr>
 <tr class="separator:aa1cfbcfa1c41ac7e45bf469e93db7402 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena" id="r_a06dd6197d2081d7dd4c1bed308edd387"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a06dd6197d2081d7dd4c1bed308edd387">Finalize</a> ()</td></tr>
@@ -783,8 +791,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa73ded7161a0649ccd1103491034632a" name="aa73ded7161a0649ccd1103491034632a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa73ded7161a0649ccd1103491034632a">&#9670;&#160;</a></span>PrintUsage() <span class="overload">[2/2]</span></h2>
+<a id="acf03c7d216561ed41f5fcdd64169b8b7" name="acf03c7d216561ed41f5fcdd64169b8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf03c7d216561ed41f5fcdd64169b8b7">&#9670;&#160;</a></span>PrintUsage() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,11 +801,48 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void amrex::CArena::PrintUsage </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>print_max_usage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77c2ae14a68569c5cdfc6c5e014af038" name="a77c2ae14a68569c5cdfc6c5e014af038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77c2ae14a68569c5cdfc6c5e014af038">&#9670;&#160;</a></span>ResetMaxUsageCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::CArena::ResetMaxUsageCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a3f1783f675e9c483705081a695f9cedf">amrex::Arena</a>.</p>
 
 </div>
 </div>
@@ -1069,6 +1114,54 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The minimal size of hunks to request from system. </p>
+
+</div>
+</div>
+<a id="a500345d5a92552eeb34943b989318952" name="a500345d5a92552eeb34943b989318952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500345d5a92552eeb34943b989318952">&#9670;&#160;</a></span>m_max_actually_used</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::CArena::m_max_actually_used {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The max amount of memory given out via <a class="el" href="classamrex_1_1CArena.html#a8d55773acd31606b385f0a524587bd1d" title="Allocate some memory.">alloc()</a>. </p>
+
+</div>
+</div>
+<a id="ae080e8f434fe1dbdd9913a5089c481c5" name="ae080e8f434fe1dbdd9913a5089c481c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae080e8f434fe1dbdd9913a5089c481c5">&#9670;&#160;</a></span>m_max_used</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::CArena::m_max_used {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The max amount of heap space currently allocated. </p>
 
 </div>
 </div>
