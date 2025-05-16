@@ -33,7 +33,7 @@ var searchData=
   ['vector_3c_20amrex_3a_3aintvectnd_20_3e_30',['Vector&lt; amrex::IntVectND &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3alayoutdata_3c_20hypre_5fint_20_3e_20_3e_31',['Vector&lt; amrex::LayoutData&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3alayoutdata_3c_20int_20_3e_20_3e_32',['Vector&lt; amrex::LayoutData&lt; int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20amrex_3a_3ampi_5fstatus_20_3e_33',['Vector&lt; amrex::MPI_Status &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
+  ['vector_3c_20amrex_3a_3ampidatatypes_3a_3ampi_5fstatus_20_3e_33',['Vector&lt; amrex::mpidatatypes::MPI_Status &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3amultifab_20_2a_20_3e_34',['Vector&lt; amrex::MultiFab * &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3amultifab_20_3e_35',['Vector&lt; amrex::MultiFab &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3amultimask_20_3e_36',['Vector&lt; amrex::MultiMask &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],

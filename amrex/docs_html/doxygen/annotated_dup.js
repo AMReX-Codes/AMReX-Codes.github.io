@@ -189,6 +189,9 @@ var annotated_dup =
         [ "AsymmetricGhost", "structamrex_1_1MFUtil_1_1AsymmetricGhost.html", "structamrex_1_1MFUtil_1_1AsymmetricGhost" ],
         [ "SymmetricGhost", "structamrex_1_1MFUtil_1_1SymmetricGhost.html", "structamrex_1_1MFUtil_1_1SymmetricGhost" ]
       ] ],
+      [ "mpidatatypes", "namespaceamrex_1_1mpidatatypes.html", [
+        [ "MPI_Status", "structamrex_1_1mpidatatypes_1_1MPI__Status.html", null ]
+      ] ],
       [ "MPMD", "namespaceamrex_1_1MPMD.html", [
         [ "Copier", "classamrex_1_1MPMD_1_1Copier.html", "classamrex_1_1MPMD_1_1Copier" ]
       ] ],
@@ -609,7 +612,6 @@ var annotated_dup =
       [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", "classamrex_1_1MLNodeTensorLaplacian" ],
       [ "MLPoissonT", "classamrex_1_1MLPoissonT.html", "classamrex_1_1MLPoissonT" ],
       [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ],
-      [ "MPI_Status", "structamrex_1_1MPI__Status.html", null ],
       [ "MultiArray4", "structamrex_1_1MultiArray4.html", "structamrex_1_1MultiArray4" ],
       [ "MultiCutFab", "classamrex_1_1MultiCutFab.html", "classamrex_1_1MultiCutFab" ],
       [ "MultiFab", "classamrex_1_1MultiFab.html", "classamrex_1_1MultiFab" ],
