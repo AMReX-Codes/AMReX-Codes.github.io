@@ -1952,6 +1952,7 @@ var namespaceamrex =
     [ "Init_FFT", "namespaceamrex.html#a3eea92efd3c682f5f23770f47af7c14b", null ],
     [ "Init_minimal", "namespaceamrex.html#afadc6162983c674e4597ea37fa732645", null ],
     [ "Initialize", "namespaceamrex.html#a023801a9417fb6bd2f74787e89124a8c", null ],
+    [ "Initialize", "namespaceamrex.html#a3fcd10411985de296e7281a78ef99c58", null ],
     [ "Initialize", "namespaceamrex.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d", null ],
     [ "Initialized", "namespaceamrex.html#afdedd4a55eb147e0e27194b9e06f68e0", null ],
     [ "InitRandom", "namespaceamrex.html#a1b2c12e9a133d26ba2bd4b978a95df44", null ],

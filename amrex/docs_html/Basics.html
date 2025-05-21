@@ -326,7 +326,7 @@ use <code class="code highlight cpp c++ docutils literal highlight-c++"><span cl
 <span id="sec-basics-parmparse"></span><h1>ParmParse<a class="headerlink" href="#parmparse" title="Permalink to this heading"></a></h1>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> in AMReX_ParmParse.H is a class providing a database for the
 storage and retrieval of command-line and input-file arguments. When
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**&amp;</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span></code> is called, the first command-line
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**&amp;</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code> is called, the first command-line
 argument after the executable name (if there is one, and it does not contain the character
 ‘=’ or start with ‘-’) is taken
 to be the inputs file, and the contents of the file are used to initialize the
@@ -632,7 +632,7 @@ inputs file or as a command line argument —effectively overriding them with
 the value set here in the function.</p>
 <p>In the second step, we pass the name of the function we defined to <code class="docutils literal notranslate"><span class="pre">amrex::Initialize</span></code>.
 In the example above the function was called <code class="docutils literal notranslate"><span class="pre">add_par</span></code>, and therefore we write,</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="n">add_par</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="n">add_par</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Now AMReX will use the user defined function to appropriately set the desired values.</p>
@@ -762,6 +762,12 @@ are two versions of <code class="code highlight cpp c++ docutils literal highlig
 <span class="w">                 </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_oserr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">,</span>
 <span class="w">                 </span><span class="n">ErrorHandler</span><span class="w"> </span><span class="n">a_errhandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
 
+<span class="n">AMReX</span><span class="o">*</span><span class="w"> </span><span class="nf">Initialize</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**&amp;</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span>
+<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">func_parm_parse</span><span class="p">,</span>
+<span class="w">                   </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_osout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">,</span>
+<span class="w">                   </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_oserr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="p">,</span>
+<span class="w">                   </span><span class="n">ErrorHandler</span><span class="w"> </span><span class="n">a_errhandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+
 <span class="kt">void</span><span class="w"> </span><span class="nf">Initialize</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**&amp;</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">build_parm_parse</span><span class="o">=</span><span class="nb">true</span><span class="p">,</span>
 <span class="w">                 </span><span class="n">MPI_Comm</span><span class="w"> </span><span class="n">mpi_comm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span>
 <span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">func_parm_parse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
@@ -770,23 +776,29 @@ are two versions of <code class="code highlight cpp c++ docutils literal highlig
 <span class="w">                 </span><span class="n">ErrorHandler</span><span class="w"> </span><span class="n">a_errhandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> tests if MPI has been initialized.  If MPI has been
-initialized, AMReX will duplicate the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument.  If not,
-AMReX will initialize MPI and ignore the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument.</p>
-<p>Both versions have two optional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span></code> parameters, one
-for standard output in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Print</span></code> (section <a class="reference internal" href="#sec-basics-print"><span class="std std-ref">Print</span></a>)
-and the other for standard error, and they can be accessed with
-functions <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OutStream</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorStream</span><span class="p">()</span></code>.  Both versions
-can also take an optional error handler function.  If it is provided
-by the user, AMReX will use it to handle errors and signals.
-Otherwise, AMReX will use its own function for error and signal
-handling.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> checks if MPI has been initialized.  If it has, AMReX will
+duplicate the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument provided by the users in the first and
+third versions or <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code> in the second version.  If not, AMReX
+will initialize MPI and ignore the <code class="docutils literal notranslate"><span class="pre">MPI_Comm</span></code> argument. Since AMReX 25.06,
+MPI types are no longer placed in the global namespace in non-MPI builds to
+avoid potential conflicts with other libraries. If you want to use MPI types
+in non-MPI builds for convenience (e.g., calling
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">)</span></code>), you could add <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">using</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">amrex</span><span class="o">::</span><span class="nn">mpidatatypes</span><span class="p">;</span></code>.</p>
+<p>All three versions accept two optional <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span></code> parameters, one
+for standard output in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Print</span></code> (section <a class="reference internal" href="#sec-basics-print"><span class="std std-ref">Print</span></a>) and
+the other for standard error. These streams can be accessed via functions
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OutStream</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ErrorStream</span><span class="p">()</span></code>. Each version can also take an
+optional error handler function.  If provided, AMReX will use it to handle
+errors and signals; otherwise, it will use its own function for error and
+signal handling.</p>
 <p>The first version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Initialize</span></code> does not parse the command line
-options, whereas the second version will build ParmParse database
-(section <a class="reference internal" href="#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>) unless <code class="docutils literal notranslate"><span class="pre">build_parm_parse</span></code>
-parameter is <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">false</span></code>.  In the second version, one can pass a
-function that adds ParmParse parameters to the database instead of
-reading from command line or input file.</p>
+options. The second version builds ParmParse database (section
+<a class="reference internal" href="#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>), and the third version does so as well unless
+the <code class="docutils literal notranslate"><span class="pre">build_parm_parse</span></code> parameter is set to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nb">false</span></code>. In both the
+second and third versions, the user may also pass a function that adds
+parameters to the ParmParse database instead of reading from command line or
+input file.</p>
 <p>Because many AMReX classes and functions (including destructors
 inserted by the compiler) do not function properly after
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span></code> is called, it’s best to put the codes between

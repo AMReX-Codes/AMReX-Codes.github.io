@@ -34,6 +34,7 @@ var AMReX_8H =
     [ "ignore_unused", "AMReX_8H.html#a95b1159ba3a5494abd49dc9b3d34eacf", null ],
     [ "Init_minimal", "AMReX_8H.html#afadc6162983c674e4597ea37fa732645", null ],
     [ "Initialize", "AMReX_8H.html#a023801a9417fb6bd2f74787e89124a8c", null ],
+    [ "Initialize", "AMReX_8H.html#a3fcd10411985de296e7281a78ef99c58", null ],
     [ "Initialize", "AMReX_8H.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d", null ],
     [ "Initialized", "AMReX_8H.html#afdedd4a55eb147e0e27194b9e06f68e0", null ],
     [ "InitSNaN", "AMReX_8H.html#a48ee24ac226396b92932d8d533d68af1", null ],

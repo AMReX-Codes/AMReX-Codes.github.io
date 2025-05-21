@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"AMReX__EB2__Level_8cpp.html":[4,0,0,4,41],
 "AMReX__EB2__Level__STL_8H.html":[4,0,0,4,46],
 "AMReX__EB2__Level__STL_8H_source.html":[4,0,0,4,46],
 "AMReX__EB2__Level__STL_8cpp.html":[4,0,0,4,45],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__EB__Redistribution_8H_source.html":[4,0,0,4,56],
 "AMReX__EB__Redistribution_8cpp.html":[4,0,0,4,55],
 "AMReX__EB__STL__utils_8H.html":[4,0,0,4,66],
-"AMReX__EB__STL__utils_8H_source.html":[4,0,0,4,66],
-"AMReX__EB__STL__utils_8cpp.html":[4,0,0,4,65]
+"AMReX__EB__STL__utils_8H_source.html":[4,0,0,4,66]
 };
