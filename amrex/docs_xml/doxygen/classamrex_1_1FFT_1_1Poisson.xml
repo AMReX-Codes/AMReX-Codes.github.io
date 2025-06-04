@@ -173,6 +173,22 @@
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
+      <node id="93">
+        <label>amrex::Array4CopyTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1Array4CopyTag"/>
+        <childnode refid="83" relation="usage">
+          <edgelabel>dfab</edgelabel>
+        </childnode>
+        <childnode refid="86" relation="usage">
+          <edgelabel>sfab</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>dbox</edgelabel>
+        </childnode>
+        <childnode refid="84" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
       <node id="80">
         <label>amrex::BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
@@ -189,27 +205,47 @@
         <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="91">
+      <node id="97">
+        <label>amrex::CommRecvBufTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1CommRecvBufTag"/>
+        <childnode refid="83" relation="usage">
+          <edgelabel>dfab</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>bx</edgelabel>
+        </childnode>
+      </node>
+      <node id="101">
+        <label>amrex::CommSendBufTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1CommSendBufTag"/>
+        <childnode refid="86" relation="usage">
+          <edgelabel>sfab</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>bx</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
         <label>amrex::FBData&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt;</label>
         <link refid="structamrex_1_1FBData"/>
-        <childnode refid="92" relation="usage">
+        <childnode refid="104" relation="usage">
           <edgelabel>fb</edgelabel>
         </childnode>
         <childnode refid="55" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="94" relation="usage">
+        <childnode refid="106" relation="usage">
           <edgelabel>recv_data</edgelabel>
           <edgelabel>send_data</edgelabel>
         </childnode>
-        <childnode refid="96" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="98" relation="usage">
+        <childnode refid="110" relation="usage">
           <edgelabel>recv_reqs</edgelabel>
           <edgelabel>send_reqs</edgelabel>
         </childnode>
-        <childnode refid="100" relation="usage">
+        <childnode refid="112" relation="usage">
           <edgelabel>recv_stat</edgelabel>
         </childnode>
       </node>
@@ -243,12 +279,21 @@
           <edgelabel>shmem</edgelabel>
         </childnode>
         <childnode refid="90" relation="usage">
-          <edgelabel>fbd</edgelabel>
+          <edgelabel>m_fb_local_copy_handler</edgelabel>
+        </childnode>
+        <childnode refid="94" relation="usage">
+          <edgelabel>m_recv_copy_handler</edgelabel>
+        </childnode>
+        <childnode refid="98" relation="usage">
+          <edgelabel>m_send_copy_handler</edgelabel>
         </childnode>
         <childnode refid="102" relation="usage">
+          <edgelabel>fbd</edgelabel>
+        </childnode>
+        <childnode refid="114" relation="usage">
           <edgelabel>pcd</edgelabel>
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="117" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
       </node>
@@ -293,10 +338,10 @@
           <edgelabel>hp</edgelabel>
         </childnode>
       </node>
-      <node id="103">
+      <node id="115">
         <label>amrex::PCData&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt;</label>
         <link refid="structamrex_1_1PCData"/>
-        <childnode refid="104" relation="usage">
+        <childnode refid="116" relation="usage">
           <edgelabel>cpc</edgelabel>
         </childnode>
         <childnode refid="22" relation="usage">
@@ -305,13 +350,13 @@
         <childnode refid="55" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="94" relation="usage">
+        <childnode refid="106" relation="usage">
           <edgelabel>recv_data</edgelabel>
         </childnode>
-        <childnode refid="96" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="98" relation="usage">
+        <childnode refid="110" relation="usage">
           <edgelabel>recv_reqs</edgelabel>
           <edgelabel>send_reqs</edgelabel>
         </childnode>
@@ -320,7 +365,7 @@
         <label>amrex::FFT::Plan&lt; typename MF::value_type &gt;</label>
         <link refid="structamrex_1_1FFT_1_1Plan"/>
       </node>
-      <node id="110">
+      <node id="122">
         <label>amrex::FFT::R2C&lt; typename MF::value_type &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="10" relation="usage">
@@ -351,10 +396,10 @@
           <edgelabel>m_dtos_y2z</edgelabel>
           <edgelabel>m_dtos_z2y</edgelabel>
         </childnode>
-        <childnode refid="111" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>m_dtos_x2z</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>m_dtos_z2x</edgelabel>
         </childnode>
         <childnode refid="22" relation="usage">
@@ -363,7 +408,7 @@
           <edgelabel>m_cz</edgelabel>
           <edgelabel>m_raw_cmf</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>m_data_1</edgelabel>
           <edgelabel>m_data_2</edgelabel>
         </childnode>
@@ -373,17 +418,17 @@
           <edgelabel>m_spectral_domain_y</edgelabel>
           <edgelabel>m_spectral_domain_z</edgelabel>
         </childnode>
-        <childnode refid="113" relation="usage">
+        <childnode refid="125" relation="usage">
           <edgelabel>m_r2c_sub</edgelabel>
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="119" relation="usage">
           <edgelabel>m_sub_helper</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>m_info</edgelabel>
         </childnode>
       </node>
-      <node id="116">
+      <node id="128">
         <label>amrex::FFT::R2C&lt; typename MF::value_type, D, C &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="10" relation="usage">
@@ -414,10 +459,10 @@
           <edgelabel>m_dtos_y2z</edgelabel>
           <edgelabel>m_dtos_z2y</edgelabel>
         </childnode>
-        <childnode refid="111" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>m_dtos_x2z</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>m_dtos_z2x</edgelabel>
         </childnode>
         <childnode refid="22" relation="usage">
@@ -426,7 +471,7 @@
           <edgelabel>m_cz</edgelabel>
           <edgelabel>m_raw_cmf</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>m_data_1</edgelabel>
           <edgelabel>m_data_2</edgelabel>
         </childnode>
@@ -436,17 +481,17 @@
           <edgelabel>m_spectral_domain_y</edgelabel>
           <edgelabel>m_spectral_domain_z</edgelabel>
         </childnode>
-        <childnode refid="115" relation="usage">
+        <childnode refid="127" relation="usage">
           <edgelabel>m_r2c_sub</edgelabel>
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="119" relation="usage">
           <edgelabel>m_sub_helper</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>m_info</edgelabel>
         </childnode>
       </node>
-      <node id="114">
+      <node id="126">
         <label>amrex::FFT::R2C&lt; typename MF::value_type, FFT::Direction::both, false &gt;</label>
         <link refid="classamrex_1_1FFT_1_1R2C"/>
         <childnode refid="10" relation="usage">
@@ -477,10 +522,10 @@
           <edgelabel>m_dtos_y2z</edgelabel>
           <edgelabel>m_dtos_z2y</edgelabel>
         </childnode>
-        <childnode refid="111" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>m_dtos_x2z</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>m_dtos_z2x</edgelabel>
         </childnode>
         <childnode refid="22" relation="usage">
@@ -489,7 +534,7 @@
           <edgelabel>m_cz</edgelabel>
           <edgelabel>m_raw_cmf</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>m_data_1</edgelabel>
           <edgelabel>m_data_2</edgelabel>
         </childnode>
@@ -499,13 +544,13 @@
           <edgelabel>m_spectral_domain_y</edgelabel>
           <edgelabel>m_spectral_domain_z</edgelabel>
         </childnode>
-        <childnode refid="115" relation="usage">
+        <childnode refid="127" relation="usage">
           <edgelabel>m_r2c_sub</edgelabel>
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="119" relation="usage">
           <edgelabel>m_sub_helper</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>m_info</edgelabel>
         </childnode>
       </node>
@@ -552,27 +597,48 @@
           <edgelabel>m_cy</edgelabel>
           <edgelabel>m_cz</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>m_data_1</edgelabel>
           <edgelabel>m_data_2</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>m_r2x_sub</edgelabel>
         </childnode>
-        <childnode refid="107" relation="usage">
+        <childnode refid="119" relation="usage">
           <edgelabel>m_sub_helper</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>m_info</edgelabel>
         </childnode>
       </node>
       <node id="16">
         <label>T</label>
       </node>
-      <node id="98">
+      <node id="92">
+        <label>amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="93" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="96">
+        <label>amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="97" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="100">
+        <label>amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="101" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
         <label>amrex::Vector&lt; MPI_Request &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="99" relation="public-inheritance">
+        <childnode refid="111" relation="public-inheritance">
         </childnode>
       </node>
       <node id="46">
@@ -581,16 +647,16 @@
         <childnode refid="47" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="100">
+      <node id="112">
         <label>amrex::Vector&lt; amrex::mpidatatypes::MPI_Status &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="101" relation="public-inheritance">
+        <childnode refid="113" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="94">
+      <node id="106">
         <label>amrex::Vector&lt; char * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="95" relation="public-inheritance">
+        <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
       <node id="55">
@@ -599,10 +665,10 @@
         <childnode refid="56" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="96">
+      <node id="108">
         <label>amrex::Vector&lt; std::size_t &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="97" relation="public-inheritance">
+        <childnode refid="109" relation="public-inheritance">
         </childnode>
       </node>
       <node id="87">
@@ -811,7 +877,7 @@
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="108">
+      <node id="120">
         <label>amrex::FFT::Info</label>
         <link refid="structamrex_1_1FFT_1_1Info"/>
       </node>
@@ -824,15 +890,15 @@
         <childnode refid="8" relation="usage">
           <edgelabel>m_r2x</edgelabel>
         </childnode>
-        <childnode refid="109" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>m_r2c</edgelabel>
         </childnode>
       </node>
-      <node id="112">
+      <node id="124">
         <label>amrex::FFT::RotateBwd</label>
         <link refid="structamrex_1_1FFT_1_1RotateBwd"/>
       </node>
-      <node id="111">
+      <node id="123">
         <label>amrex::FFT::RotateFwd</label>
         <link refid="structamrex_1_1FFT_1_1RotateFwd"/>
       </node>
@@ -844,7 +910,7 @@
         <label>amrex::FFT::Swap02</label>
         <link refid="structamrex_1_1FFT_1_1Swap02"/>
       </node>
-      <node id="107">
+      <node id="119">
         <label>amrex::FFT::detail::SubHelper</label>
         <link refid="structamrex_1_1FFT_1_1detail_1_1SubHelper"/>
       </node>
@@ -923,7 +989,7 @@
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
       </node>
-      <node id="104">
+      <node id="116">
         <label>amrex::FabArrayBase::CPC</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CPC"/>
         <childnode refid="13" relation="public-inheritance">
@@ -936,7 +1002,7 @@
           <edgelabel>m_dstng</edgelabel>
           <edgelabel>m_srcng</edgelabel>
         </childnode>
-        <childnode refid="93" relation="usage">
+        <childnode refid="105" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
         <childnode refid="32" relation="usage">
@@ -962,7 +1028,7 @@
           <edgelabel>m_SndTags</edgelabel>
         </childnode>
       </node>
-      <node id="92">
+      <node id="104">
         <label>amrex::FabArrayBase::FB</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FB"/>
         <childnode refid="13" relation="public-inheritance">
@@ -974,7 +1040,7 @@
           <edgelabel>m_crse_ratio</edgelabel>
           <edgelabel>m_ngrow</edgelabel>
         </childnode>
-        <childnode refid="93" relation="usage">
+        <childnode refid="105" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
@@ -1037,7 +1103,7 @@
         <label>amrex::Orientation</label>
         <link refid="classamrex_1_1Orientation"/>
       </node>
-      <node id="93">
+      <node id="105">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
         <childnode refid="40" relation="usage">
@@ -1064,6 +1130,18 @@
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
       </node>
+      <node id="94">
+        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="95" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="98">
+        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="99" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="65">
         <label>std::map&lt; amrex::FabArrayBase::BDKey, int &gt;</label>
         <childnode refid="58" relation="usage">
@@ -1085,6 +1163,12 @@
           <edgelabel>keys</edgelabel>
         </childnode>
         <childnode refid="75" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="90">
+        <label>std::map&lt; std::uint64_t, std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="91" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -1150,7 +1234,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="99">
+      <node id="111">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="16" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -1162,13 +1246,13 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="101">
+      <node id="113">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="16" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="95">
+      <node id="107">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="16" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -1180,7 +1264,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="97">
+      <node id="109">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="16" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -1204,27 +1288,27 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="90">
+      <node id="102">
         <label>std::unique_ptr&lt; amrex::FBData&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt; &gt;</label>
-        <childnode refid="91" relation="usage">
+        <childnode refid="103" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="109">
+      <node id="121">
         <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; typename MF::value_type &gt; &gt;</label>
-        <childnode refid="110" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="115">
+      <node id="127">
         <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; typename MF::value_type, D, C &gt; &gt;</label>
-        <childnode refid="116" relation="usage">
+        <childnode refid="128" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="113">
+      <node id="125">
         <label>std::unique_ptr&lt; amrex::FFT::R2C&lt; typename MF::value_type, FFT::Direction::both, false &gt; &gt;</label>
-        <childnode refid="114" relation="usage">
+        <childnode refid="126" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -1234,7 +1318,7 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="105">
+      <node id="117">
         <label>std::unique_ptr&lt; amrex::FabArray&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt; &gt;</label>
         <childnode refid="22" relation="usage">
           <edgelabel>ptr</edgelabel>
@@ -1252,9 +1336,27 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="102">
+      <node id="114">
         <label>std::unique_ptr&lt; amrex::PCData&lt; BaseFab&lt; GpuComplex&lt; typename MF::value_type &gt; &gt; &gt; &gt;</label>
-        <childnode refid="103" relation="usage">
+        <childnode refid="115" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="92" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="96" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="99">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="100" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -1264,7 +1366,7 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="106">
+      <node id="118">
         <label>std::unique_ptr&lt; char, amrex::DataDeleter &gt;</label>
       </node>
       <node id="48">

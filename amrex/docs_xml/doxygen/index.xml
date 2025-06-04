@@ -1152,12 +1152,14 @@
     <member refid="structamrex_1_1ArenaInfo_1a106f4ef6d447922447c63d296583e917" kind="variable"><name>device_set_readonly</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a0ab972913e7e764d7f0c88097ce1c619" kind="variable"><name>device_set_preferred</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a18ad35d706eda3be6347c90f86d68e81" kind="variable"><name>device_use_hostalloc</name></member>
+    <member refid="structamrex_1_1ArenaInfo_1aeb4dd41cfcb9791cb3abf434bbe2d98c" kind="variable"><name>defragmentation</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a19a88b4c7779799600ae4553a968e1fd" kind="function"><name>SetReleaseThreshold</name></member>
     <member refid="structamrex_1_1ArenaInfo_1adc0cf9e8957e23e715ad3e3c9ffb3f99" kind="function"><name>SetDeviceMemory</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a01c982802a73eebdb6036a656581432e" kind="function"><name>SetReadOnly</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a6b75c734811ee56f34b0a865d3f541f6" kind="function"><name>SetPreferred</name></member>
     <member refid="structamrex_1_1ArenaInfo_1af4f097a84d36aacba5160bcfb16641c1" kind="function"><name>SetHostAlloc</name></member>
     <member refid="structamrex_1_1ArenaInfo_1a91e18ca041ad74a996c98b8df0bfd5fd" kind="function"><name>SetCpuMemory</name></member>
+    <member refid="structamrex_1_1ArenaInfo_1a3b0933ffd31d090b298a7e1c1f757ae4" kind="function"><name>SetDefragmentation</name></member>
   </compound>
   <compound refid="structamrex_1_1Arena_1_1ArenaProfiler" kind="struct"><name>amrex::Arena::ArenaProfiler</name>
     <member refid="structamrex_1_1Arena_1_1ArenaProfiler_1a95e91e069e1ea8873693839d0bbc72e7" kind="variable"><name>m_do_profiling</name></member>
@@ -2857,6 +2859,7 @@
     <member refid="structamrex_1_1NonLocalBC_1_1CommData_1a4e23f4023dc19cf04cce947add6a27a8" kind="variable"><name>request</name></member>
     <member refid="structamrex_1_1NonLocalBC_1_1CommData_1a482a19ba37661846afa0f40688702f95" kind="variable"><name>stats</name></member>
     <member refid="structamrex_1_1NonLocalBC_1_1CommData_1a1bef6147ea1eda449fa5872d533d1876" kind="variable"><name>cctc</name></member>
+    <member refid="structamrex_1_1NonLocalBC_1_1CommData_1a573a26d67508d26764a924cc21a9e755" kind="variable"><name>id</name></member>
   </compound>
   <compound refid="structamrex_1_1NonLocalBC_1_1CommHandler" kind="struct"><name>amrex::NonLocalBC::CommHandler</name>
     <member refid="structamrex_1_1NonLocalBC_1_1CommHandler_1aa8135050d54b2e8cf0216b9038c4ab8b" kind="variable"><name>mpi_tag</name></member>
@@ -2959,6 +2962,18 @@
     <member refid="classCommProfStats_1ab5b0c11f3980a18ad4d42d9de9c4af6a" kind="function"><name>ReadCommStats</name></member>
     <member refid="classCommProfStats_1aab858210acf47eebbfa8549123cb2836" kind="function"><name>ClearCommStats</name></member>
     <member refid="classCommProfStats_1a2df08e98c81c9d8bc1fd71defa327d4d" kind="friend"><name>yyparse</name></member>
+  </compound>
+  <compound refid="structamrex_1_1CommRecvBufTag" kind="struct"><name>amrex::CommRecvBufTag</name>
+    <member refid="structamrex_1_1CommRecvBufTag_1ad7875505498c6fe9a5a7673dcf8f0ce1" kind="variable"><name>dfab</name></member>
+    <member refid="structamrex_1_1CommRecvBufTag_1a8b83d0ecba5eb972abe7de7c84358c7b" kind="variable"><name>poff</name></member>
+    <member refid="structamrex_1_1CommRecvBufTag_1a3a4427250f45492fc47eb1d76f092901" kind="variable"><name>bx</name></member>
+    <member refid="structamrex_1_1CommRecvBufTag_1a330031b2306b703f96b5023fcc3574d2" kind="function"><name>box</name></member>
+  </compound>
+  <compound refid="structamrex_1_1CommSendBufTag" kind="struct"><name>amrex::CommSendBufTag</name>
+    <member refid="structamrex_1_1CommSendBufTag_1ab78035befaf1ec0b9decb752bf97dc6e" kind="variable"><name>sfab</name></member>
+    <member refid="structamrex_1_1CommSendBufTag_1a04768d4ad9927852f09815ce7fd630a6" kind="variable"><name>poff</name></member>
+    <member refid="structamrex_1_1CommSendBufTag_1adfe4a7c919f086852de5023135ca64e7" kind="variable"><name>bx</name></member>
+    <member refid="structamrex_1_1CommSendBufTag_1a3d0e44049bc0b15c5f06101e3666f7ec" kind="function"><name>box</name></member>
   </compound>
   <compound refid="structamrex_1_1CompileTimeOptions" kind="struct"><name>amrex::CompileTimeOptions</name>
     <member refid="structamrex_1_1CompileTimeOptions_1ade5844430b8549754df043e3cf4d870d" kind="typedef"><name>list_type</name></member>
@@ -3120,6 +3135,8 @@
     <member refid="classamrex_1_1CoordSys_1a635fa3a22b91c84b298c72e42f9c18d9" kind="function"><name>GetCellVolCoord</name></member>
   </compound>
   <compound refid="classamrex_1_1MPMD_1_1Copier" kind="class"><name>amrex::MPMD::Copier</name>
+    <member refid="classamrex_1_1MPMD_1_1Copier_1a774d5ba08da0f9d16716762aa01c5637" kind="variable"><name>m_send_id</name></member>
+    <member refid="classamrex_1_1MPMD_1_1Copier_1a3a259d1e332962a0099db01670c0bd86" kind="variable"><name>m_recv_id</name></member>
     <member refid="classamrex_1_1MPMD_1_1Copier_1ac8a7a8cb167be835313951319df1a7c0" kind="variable"><name>m_SndTags</name></member>
     <member refid="classamrex_1_1MPMD_1_1Copier_1ace340f0f6a72f7ab1c028ea49d783ba3" kind="variable"><name>m_RcvTags</name></member>
     <member refid="classamrex_1_1MPMD_1_1Copier_1a10d54646513ded7c12d45870888d0e64" kind="variable"><name>m_is_thread_safe</name></member>
@@ -3144,6 +3161,7 @@
     <member refid="structamrex_1_1FabArrayBase_1_1CopyComTag_1a8b3953bf7e65f41e79d25acef114bde7" kind="function"><name>operator&lt;</name></member>
   </compound>
   <compound refid="structamrex_1_1FabArrayBase_1_1CPC" kind="struct"><name>amrex::FabArrayBase::CPC</name>
+    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a7c3dcd199898a40c8265752c614451b0" kind="variable"><name>m_id</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a786fb125f0c7e03c58115eaddeb7c159" kind="variable"><name>m_srcbdk</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a9f4d274d86da7bb18bb64c7f4a32d0b2" kind="variable"><name>m_dstbdk</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a368567f75989319e5002e2ec870d82b6" kind="variable"><name>m_srcng</name></member>
@@ -4152,6 +4170,7 @@
     <member refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kind="typedef"><name>value_type</name></member>
     <member refid="classamrex_1_1FabArray_1a4ea567a25f13cd931b2b1e9433eeda5e" kind="typedef"><name>fab_type</name></member>
     <member refid="classamrex_1_1FabArray_1a958d272c39f50f1157029d5a0c6ade1c" kind="typedef"><name>Iterator</name></member>
+    <member refid="classamrex_1_1FabArray_1aaf405d372875eda63d54bcb7bb90e192" kind="typedef"><name>RecvSendCopyHandlerKey</name></member>
     <member refid="classamrex_1_1FabArray_1a9172b400e374666d6100fa61ccc586db" kind="variable"><name>m_factory</name></member>
     <member refid="classamrex_1_1FabArray_1a6a2a60d3af361dde9463f2d586d0e358" kind="variable"><name>m_dallocator</name></member>
     <member refid="classamrex_1_1FabArray_1a4d42668928f56c18d43d24f673ebd2ce" kind="variable"><name>m_single_chunk_arena</name></member>
@@ -4164,6 +4183,9 @@
     <member refid="classamrex_1_1FabArray_1ac30f73f6b587c175fdc34bab68294613" kind="variable"><name>m_const_arrays</name></member>
     <member refid="classamrex_1_1FabArray_1a5ea249e7b897909f9d01b4fed851d7af" kind="variable"><name>m_tags</name></member>
     <member refid="classamrex_1_1FabArray_1abc3985ed98ddaf530bde81076c0295de" kind="variable"><name>shmem</name></member>
+    <member refid="classamrex_1_1FabArray_1ae98dde1f735466ba56710e39eec3c404" kind="variable"><name>m_fb_local_copy_handler</name></member>
+    <member refid="classamrex_1_1FabArray_1a4be8117f0879a668e9906ac818e9a2a9" kind="variable"><name>m_recv_copy_handler</name></member>
+    <member refid="classamrex_1_1FabArray_1a24e0c1e9cdca81d616e61594fe98a33c" kind="variable"><name>m_send_copy_handler</name></member>
     <member refid="classamrex_1_1FabArray_1a4bec341c204bf002ce9ea2d636e94f56" kind="variable"><name>fbd</name></member>
     <member refid="classamrex_1_1FabArray_1a4a22bada553ad3ff929d91be1b8bfc9f" kind="variable"><name>pcd</name></member>
     <member refid="classamrex_1_1FabArray_1a11346c64d84d261c3766c76a0b09a032" kind="variable"><name>os_temp</name></member>
@@ -4324,20 +4346,25 @@
     <member refid="classamrex_1_1FabArray_1af001e3fed315af1165f42213a1042c09" kind="function"><name>PC_local_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1a2b78f7c0a869eecad1d281d26363cb35" kind="function"><name>setVal</name></member>
     <member refid="classamrex_1_1FabArray_1a59639f9d47c654200ffccda96ff78ae5" kind="function"><name>RecvLayoutMask</name></member>
+    <member refid="classamrex_1_1FabArray_1a05d82e9686b998e22a6b608a801cdaa2" kind="function"><name>FB_get_local_copy_tag_vector</name></member>
     <member refid="classamrex_1_1FabArray_1a60891bcadc0382dfc1aaf4df8ad34771" kind="function"><name>FB_local_copy_gpu</name></member>
     <member refid="classamrex_1_1FabArray_1a6479ffc5e154a5b21d80e1b6dedb44cf" kind="function"><name>PC_local_gpu</name></member>
     <member refid="classamrex_1_1FabArray_1a202d8ada102cc6fc40749039c0e1f3a7" kind="function"><name>CMD_local_setVal_gpu</name></member>
     <member refid="classamrex_1_1FabArray_1a2064856b8d0efe0ae3e92d91a72f3274" kind="function"><name>CMD_remote_setVal_gpu</name></member>
+    <member refid="classamrex_1_1FabArray_1ae5960aafd295d6d86adfac567cad3280" kind="function"><name>get_recv_copy_tag_vector</name></member>
+    <member refid="classamrex_1_1FabArray_1a0456ada69e988edeaad59a34530c22b3" kind="function"><name>get_send_copy_tag_vector</name></member>
     <member refid="classamrex_1_1FabArray_1a48dc35bc87c8b41129bdff1e0cf9af05" kind="function"><name>norminf</name></member>
     <member refid="classamrex_1_1FabArray_1aea595d71e8f04b18bc48aaca29acfe77" kind="function"><name>norminf</name></member>
     <member refid="classamrex_1_1FabArray_1a9b108f48e43d0b56e3113d2264fdc910" kind="function"><name>FBEP_nowait</name></member>
     <member refid="classamrex_1_1FabArray_1af36dee00f70339ae9a3e126bbbc5d56e" kind="function"><name>FillBoundary_finish</name></member>
-    <member refid="classamrex_1_1FabArray_1a44c4542a9504ebedf9c0439ad4f2650b" kind="function"><name>pack_send_buffer_gpu</name></member>
-    <member refid="classamrex_1_1FabArray_1a34105be3fcf0be0cc074081b0667441f" kind="function"><name>unpack_recv_buffer_gpu</name></member>
+    <member refid="classamrex_1_1FabArray_1a0a3fdaa175c4b3b92089511d5010345e" kind="function"><name>get_send_copy_tag_vector</name></member>
+    <member refid="classamrex_1_1FabArray_1abe65ba892ce97b00ca751bbfcffc5510" kind="function"><name>pack_send_buffer_gpu</name></member>
+    <member refid="classamrex_1_1FabArray_1ae421d954fcebe187dcdda303e61353e6" kind="function"><name>get_recv_copy_tag_vector</name></member>
+    <member refid="classamrex_1_1FabArray_1a6fba0fb59d10268e54cbc3b4bc7481d1" kind="function"><name>unpack_recv_buffer_gpu</name></member>
     <member refid="classamrex_1_1FabArray_1abf79f429c979d93fb8a204aae9851054" kind="function"><name>pack_send_buffer_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1ad3f362d93f85699c530e36d2f78193ff" kind="function"><name>unpack_recv_buffer_cpu</name></member>
-    <member refid="classamrex_1_1FabArray_1a0ec0671737732f4a925a56eb1f138d16" kind="function"><name>pack_send_buffer_gpu</name></member>
-    <member refid="classamrex_1_1FabArray_1a8c6dd4507f03d916f85476d2571a10c3" kind="function"><name>unpack_recv_buffer_gpu</name></member>
+    <member refid="classamrex_1_1FabArray_1a8926bd4db82930bd5b78f95d7ad2e4b7" kind="function"><name>pack_send_buffer_gpu</name></member>
+    <member refid="classamrex_1_1FabArray_1a8ca2ba4de7ddca153e5693f9c2fb6ff9" kind="function"><name>unpack_recv_buffer_gpu</name></member>
     <member refid="classamrex_1_1FabArray_1ad369c044980014877a2affbed7e266dd" kind="function"><name>pack_send_buffer_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1a6251aaa8ffe703d3eb8a259393471a5a" kind="function"><name>unpack_recv_buffer_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1ab3e18d4d369bda7337c541adad0c6cd3" kind="function"><name>Saxpy</name></member>
@@ -4449,9 +4476,7 @@
     <member refid="classamrex_1_1FabArrayBase_1a03141dc770d42b5297105bb259b9c8e5" kind="function"><name>flushTileArray</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a2099ffa4c81398ed273722ce2ff7b6f3" kind="function"><name>define_fb_metadata</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ae83718c6002de09122c49c154515e104" kind="function"><name>getFB</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1ad0036a8cccab0b66956ebdb8fb07d16f" kind="function"><name>flushFB</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a01f6024d437671eabb73de8aaaf03073" kind="function"><name>getCPC</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a16c472ffe97ca76e2ffa59ffceec0931" kind="function"><name>flushCPC</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ab290a4a108f6b001466e57bbe683f85e" kind="function"><name>getRB90</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ab092b4d04401abad6715b550b01dd5b4" kind="function"><name>flushRB90</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a19c3f39544051a01f267c8c2fa9252f8" kind="function"><name>getRB180</name></member>
@@ -4475,13 +4500,16 @@
     <member refid="classamrex_1_1FabArrayBase_1a6c6874f6a073ba5a8fe15d5fc7837a5d" kind="function"><name>pushRegionTag</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a8bf2b5f80cfa6a00fd92a2c10b16720c" kind="function"><name>popRegionTag</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a653b5bd0ac05e183721ba30b5c5dbb55" kind="function"><name>flushTileArrayCache</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1ac8219bfa75d50673c667ce09d6cb2d83" kind="function"><name>flushFBCache</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a6011806b7564dbb0849cc33d57e95a4f" kind="function"><name>flushCPCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1abf133627f3fe188828f9cdf811dd8a86" kind="function"><name>flushRB90Cache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a44faf0f19d9f24cacd58d8396b2c1610" kind="function"><name>flushRB180Cache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a70b561d2ca803ef3488983323339bac6" kind="function"><name>flushPolarBCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1af1e359a059abb783d093f29cc1c84693" kind="function"><name>flushParForCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a26c57d9e401fcc56f720c50f5bfdeb06" kind="function"><name>getAllocSingleChunk</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a1da0b56c76619331dae95d3e075dab8a" kind="function"><name>getNextCommMetaDataId</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1ad0036a8cccab0b66956ebdb8fb07d16f" kind="function"><name>flushFB</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a16c472ffe97ca76e2ffa59ffceec0931" kind="function"><name>flushCPC</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1ac8219bfa75d50673c667ce09d6cb2d83" kind="function"><name>flushFBCache</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a6011806b7564dbb0849cc33d57e95a4f" kind="function"><name>flushCPCache</name></member>
   </compound>
   <compound refid="classamrex_1_1FabArrayCopyDescriptor" kind="class"><name>amrex::FabArrayCopyDescriptor</name>
     <member refid="classamrex_1_1FabArrayCopyDescriptor_1ae36897cf35128c6ce6dc895169977b36" kind="typedef"><name>FCDMap</name></member>
@@ -4826,6 +4854,7 @@
     <member refid="structamrex_1_1FatPtr_1add0c4c063317604e14f8e37a5111afcd" kind="function"><name>size</name></member>
   </compound>
   <compound refid="structamrex_1_1FabArrayBase_1_1FB" kind="struct"><name>amrex::FabArrayBase::FB</name>
+    <member refid="structamrex_1_1FabArrayBase_1_1FB_1a96832e350c4c9c967b3a6e925e048f40" kind="variable"><name>m_id</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a70a0f9e05a982b0fba0204104b794e72" kind="variable"><name>m_typ</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1abe82c8b83c190d9388ff8cb1f2f41cc1" kind="variable"><name>m_crse_ratio</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a3ca8c8a83ae8de231f84a5f8069e8348" kind="variable"><name>m_ngrow</name></member>
@@ -12327,6 +12356,8 @@
     <member refid="classamrex_1_1VisMF_1a0c9e87f4c459196a9f1ce7870ccbf9cb" kind="variable"><name>useSynchronousReads</name></member>
     <member refid="classamrex_1_1VisMF_1a9149ec039a2136083c03aabdaa275672" kind="variable"><name>useDynamicSetSelection</name></member>
     <member refid="classamrex_1_1VisMF_1ad6b2c32f84c4e530a473eab6ffd666f2" kind="variable"><name>allowSparseWrites</name></member>
+    <member refid="classamrex_1_1VisMF_1a12e3989a26166e3f19e516d81c3f45b7" kind="variable"><name>noFlushAfterWrite</name></member>
+    <member refid="classamrex_1_1VisMF_1a474a1a53f56b4e12e98d288699b9dc98" kind="variable"><name>barrierAfterLevel</name></member>
     <member refid="classamrex_1_1VisMF_1ac004ba1e006788eb0b77356977f72238" kind="function"><name>VisMF</name></member>
     <member refid="classamrex_1_1VisMF_1abdd1a2e47dbb31f1ad2e19f0aef5ccd0" kind="function"><name>~VisMF</name></member>
     <member refid="classamrex_1_1VisMF_1af548c2f100181d3712792cf4fae27ef5" kind="function"><name>VisMF</name></member>
@@ -12387,6 +12418,10 @@
     <member refid="classamrex_1_1VisMF_1a97d811af2fd976d508e3f0cb4460c0fb" kind="function"><name>SetUseSynchronousReads</name></member>
     <member refid="classamrex_1_1VisMF_1a20746ef0d6ef7d8491c815e2a954d13c" kind="function"><name>GetUseDynamicSetSelection</name></member>
     <member refid="classamrex_1_1VisMF_1ae5edd64d22f48b760a17f2e1c7369df6" kind="function"><name>SetUseDynamicSetSelection</name></member>
+    <member refid="classamrex_1_1VisMF_1a7f0369211779f6c63f4cb5f7942e7c67" kind="function"><name>GetNoFlushAfterWrite</name></member>
+    <member refid="classamrex_1_1VisMF_1a57c55357126b9900d2b67326cdef7c35" kind="function"><name>SetNoFlushAfterWrite</name></member>
+    <member refid="classamrex_1_1VisMF_1abd5a104c0daa34c33ee6c0d2d8519ed5" kind="function"><name>GetBarrierAfterLevel</name></member>
+    <member refid="classamrex_1_1VisMF_1ab795185fdbb36e215a5f6d178073184a" kind="function"><name>SetBarrierAfterLevel</name></member>
     <member refid="classamrex_1_1VisMF_1a87ed18b9e628d872b53b55a5b3fed710" kind="function"><name>DirName</name></member>
     <member refid="classamrex_1_1VisMF_1acdc54dfd982d910dafbe21e9c0459bf1" kind="function"><name>BaseName</name></member>
     <member refid="classamrex_1_1VisMF_1aca0f6fbf4458284d275ca2f0625c2303" kind="function"><name>Initialize</name></member>

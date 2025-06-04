@@ -9,6 +9,8 @@ var AMReX__TagParallelFor_8H =
     [ "amrex::Array4BoxOrientationTag< T >", "structamrex_1_1Array4BoxOrientationTag.html", "structamrex_1_1Array4BoxOrientationTag" ],
     [ "amrex::Array4BoxOffsetTag< T >", "structamrex_1_1Array4BoxOffsetTag.html", "structamrex_1_1Array4BoxOffsetTag" ],
     [ "amrex::VectorTag< T >", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],
+    [ "amrex::CommRecvBufTag< T >", "structamrex_1_1CommRecvBufTag.html", "structamrex_1_1CommRecvBufTag" ],
+    [ "amrex::CommSendBufTag< T >", "structamrex_1_1CommSendBufTag.html", "structamrex_1_1CommSendBufTag" ],
     [ "amrex::TagVector< TagType >", "structamrex_1_1TagVector.html", "structamrex_1_1TagVector" ],
     [ "get_tag_size", "AMReX__TagParallelFor_8H.html#a5dabf23fc1d6b0482df819bdd5d465c9", null ],
     [ "is_box_tag", "AMReX__TagParallelFor_8H.html#af326bd0d976be857a654524dde9d94b9", null ],

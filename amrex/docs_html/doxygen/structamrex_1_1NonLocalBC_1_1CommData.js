@@ -2,6 +2,7 @@ var structamrex_1_1NonLocalBC_1_1CommData =
 [
     [ "cctc", "structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876", null ],
     [ "data", "structamrex_1_1NonLocalBC_1_1CommData.html#a013fcdb6969b2114c8a41b59a75ce564", null ],
+    [ "id", "structamrex_1_1NonLocalBC_1_1CommData.html#a573a26d67508d26764a924cc21a9e755", null ],
     [ "offset", "structamrex_1_1NonLocalBC_1_1CommData.html#adacc0eb8f4427cd400d829a713149d17", null ],
     [ "rank", "structamrex_1_1NonLocalBC_1_1CommData.html#a7043829d46fc0b8fe144d8f94a2d8580", null ],
     [ "request", "structamrex_1_1NonLocalBC_1_1CommData.html#a4e23f4023dc19cf04cce947add6a27a8", null ],

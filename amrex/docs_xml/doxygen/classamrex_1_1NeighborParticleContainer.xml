@@ -1855,6 +1855,22 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
+      <node id="101">
+        <label>amrex::Array4CopyTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1Array4CopyTag"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>dfab</edgelabel>
+        </childnode>
+        <childnode refid="94" relation="usage">
+          <edgelabel>sfab</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>dbox</edgelabel>
+        </childnode>
+        <childnode refid="92" relation="usage">
+          <edgelabel>offset</edgelabel>
+        </childnode>
+      </node>
       <node id="87">
         <label>amrex::BaseFab&lt; int &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
@@ -1868,10 +1884,30 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="128">
+      <node id="105">
+        <label>amrex::CommRecvBufTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1CommRecvBufTag"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>dfab</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>bx</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>amrex::CommSendBufTag&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1CommSendBufTag"/>
+        <childnode refid="94" relation="usage">
+          <edgelabel>sfab</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>bx</edgelabel>
+        </childnode>
+      </node>
+      <node id="140">
         <label>amrex::DenseBins&lt; typename amrex::ParticleTileData &gt;</label>
         <link refid="classamrex_1_1DenseBins"/>
-        <childnode refid="129" relation="usage">
+        <childnode refid="141" relation="usage">
           <edgelabel>m_bins</edgelabel>
           <edgelabel>m_counts</edgelabel>
           <edgelabel>m_local_offsets</edgelabel>
@@ -1879,27 +1915,27 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_perm</edgelabel>
         </childnode>
       </node>
-      <node id="99">
+      <node id="111">
         <label>amrex::FBData&lt; IArrayBox &gt;</label>
         <link refid="structamrex_1_1FBData"/>
-        <childnode refid="100" relation="usage">
+        <childnode refid="112" relation="usage">
           <edgelabel>fb</edgelabel>
         </childnode>
         <childnode refid="60" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>recv_data</edgelabel>
           <edgelabel>send_data</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>recv_reqs</edgelabel>
           <edgelabel>send_reqs</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>recv_stat</edgelabel>
         </childnode>
       </node>
@@ -1933,12 +1969,21 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>shmem</edgelabel>
         </childnode>
         <childnode refid="98" relation="usage">
+          <edgelabel>m_fb_local_copy_handler</edgelabel>
+        </childnode>
+        <childnode refid="102" relation="usage">
+          <edgelabel>m_recv_copy_handler</edgelabel>
+        </childnode>
+        <childnode refid="106" relation="usage">
+          <edgelabel>m_send_copy_handler</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
           <edgelabel>fbd</edgelabel>
         </childnode>
-        <childnode refid="114" relation="usage">
+        <childnode refid="126" relation="usage">
           <edgelabel>pcd</edgelabel>
         </childnode>
-        <childnode refid="117" relation="usage">
+        <childnode refid="129" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
       </node>
@@ -1975,10 +2020,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>hp</edgelabel>
         </childnode>
       </node>
-      <node id="115">
+      <node id="127">
         <label>amrex::PCData&lt; IArrayBox &gt;</label>
         <link refid="structamrex_1_1PCData"/>
-        <childnode refid="116" relation="usage">
+        <childnode refid="128" relation="usage">
           <edgelabel>cpc</edgelabel>
         </childnode>
         <childnode refid="26" relation="usage">
@@ -1987,13 +2032,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="60" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="106" relation="usage">
+        <childnode refid="118" relation="usage">
           <edgelabel>recv_data</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>recv_reqs</edgelabel>
           <edgelabel>send_reqs</edgelabel>
         </childnode>
@@ -2004,58 +2049,58 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="157">
-        <label>amrex::PODVector&lt; amrex::BoxND &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="158" relation="public-inheritance">
-        </childnode>
-        <childnode refid="159" relation="usage">
-          <edgelabel>m_data</edgelabel>
-        </childnode>
-      </node>
-      <node id="153">
-        <label>amrex::PODVector&lt; amrex::NeighborCode &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="154" relation="public-inheritance">
-        </childnode>
-        <childnode refid="155" relation="usage">
-          <edgelabel>m_data</edgelabel>
-        </childnode>
-      </node>
-      <node id="174">
-        <label>amrex::PODVector&lt; char &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="175" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="171">
-        <label>amrex::PODVector&lt; char, amrex::PolymorphicArenaAllocator&lt; char &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="172" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="129">
-        <label>amrex::PODVector&lt; index_type &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="130" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="119">
-        <label>amrex::PODVector&lt; int &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="120" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="169">
-        <label>amrex::PODVector&lt; std::size_t &gt;</label>
+        <label>amrex::PODVector&lt; amrex::BoxND &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="170" relation="public-inheritance">
         </childnode>
+        <childnode refid="171" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
       </node>
-      <node id="167">
+      <node id="165">
+        <label>amrex::PODVector&lt; amrex::NeighborCode &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="166" relation="public-inheritance">
+        </childnode>
+        <childnode refid="167" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="186">
+        <label>amrex::PODVector&lt; char &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="183">
+        <label>amrex::PODVector&lt; char, amrex::PolymorphicArenaAllocator&lt; char &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="184" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>amrex::PODVector&lt; index_type &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>amrex::PODVector&lt; int &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>amrex::PODVector&lt; std::size_t &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="182" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="179">
         <label>amrex::PODVector&lt; unsigned int &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="168" relation="public-inheritance">
+        <childnode refid="180" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -2063,21 +2108,21 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <link refid="classamrex_1_1ParticleContainer__impl"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="121" relation="usage">
+        <childnode refid="133" relation="usage">
           <edgelabel>ParticleRealDescriptor</edgelabel>
         </childnode>
         <childnode refid="60" relation="usage">
           <edgelabel>h_redistribute_int_comp</edgelabel>
           <edgelabel>h_redistribute_real_comp</edgelabel>
         </childnode>
-        <childnode refid="122" relation="usage">
+        <childnode refid="134" relation="usage">
           <edgelabel>nParticlesAtLevelPrePost</edgelabel>
         </childnode>
-        <childnode refid="124" relation="usage">
+        <childnode refid="136" relation="usage">
           <edgelabel>countPrePost</edgelabel>
           <edgelabel>whichPrePost</edgelabel>
         </childnode>
-        <childnode refid="126" relation="usage">
+        <childnode refid="138" relation="usage">
           <edgelabel>wherePrePost</edgelabel>
         </childnode>
         <childnode refid="31" relation="usage">
@@ -2086,10 +2131,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="95" relation="usage">
           <edgelabel>filePrefixPrePost</edgelabel>
         </childnode>
-        <childnode refid="128" relation="usage">
+        <childnode refid="140" relation="usage">
           <edgelabel>m_bins</edgelabel>
         </childnode>
-        <childnode refid="131" relation="usage">
+        <childnode refid="143" relation="usage">
           <edgelabel>m_particles</edgelabel>
         </childnode>
         <childnode refid="35" relation="usage">
@@ -2097,31 +2142,52 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_soa_rdata_names</edgelabel>
         </childnode>
       </node>
-      <node id="172">
+      <node id="184">
         <label>amrex::PolymorphicArenaAllocator&lt; char &gt;</label>
         <link refid="classamrex_1_1PolymorphicArenaAllocator"/>
-        <childnode refid="173" relation="public-inheritance">
+        <childnode refid="185" relation="public-inheritance">
         </childnode>
       </node>
       <node id="8">
         <label>T</label>
       </node>
-      <node id="122">
+      <node id="100">
+        <label>amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="101" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="104">
+        <label>amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="105" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt;</label>
+        <link refid="structamrex_1_1TagVector"/>
+        <childnode refid="109" relation="usage">
+          <edgelabel>d_tags</edgelabel>
+        </childnode>
+      </node>
+      <node id="134">
         <label>amrex::Vector&lt; Long &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="123" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="110">
-        <label>amrex::Vector&lt; MPI_Request &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="111" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="131">
+      <node id="143">
         <label>amrex::Vector&lt; ParticleLevel &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="132" relation="public-inheritance">
+        <childnode refid="144" relation="public-inheritance">
         </childnode>
       </node>
       <node id="18">
@@ -2154,10 +2220,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="21" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="139">
+      <node id="151">
         <label>amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCommTag &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="140" relation="public-inheritance">
+        <childnode refid="152" relation="public-inheritance">
         </childnode>
       </node>
       <node id="6">
@@ -2166,34 +2232,34 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="126">
+      <node id="138">
         <label>amrex::Vector&lt; amrex::Vector&lt; Long &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="127" relation="public-inheritance">
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="137" relation="public-inheritance">
         </childnode>
       </node>
       <node id="124">
-        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
+        <label>amrex::Vector&lt; amrex::mpidatatypes::MPI_Status &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="125" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="112">
-        <label>amrex::Vector&lt; amrex::mpidatatypes::MPI_Status &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="113" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="106">
+      <node id="118">
         <label>amrex::Vector&lt; char * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="107" relation="public-inheritance">
+        <childnode refid="119" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="148">
+      <node id="160">
         <label>amrex::Vector&lt; char &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="161" relation="public-inheritance">
         </childnode>
       </node>
       <node id="60">
@@ -2202,64 +2268,64 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="61" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="137">
+      <node id="149">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, IntVector &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="138" relation="public-inheritance">
+        <childnode refid="150" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="135">
+      <node id="147">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, ParticleTile &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="136" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="133">
-        <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="134" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="143">
-        <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="144" relation="public-inheritance">
+        <childnode refid="148" relation="public-inheritance">
         </childnode>
       </node>
       <node id="145">
-        <label>amrex::Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</label>
+        <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="146" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="164">
-        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; amrex::IntVectND &gt; &gt; &gt;</label>
+      <node id="155">
+        <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="165" relation="public-inheritance">
+        <childnode refid="156" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="162">
-        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; int &gt; &gt; &gt;</label>
+      <node id="157">
+        <label>amrex::Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="163" relation="public-inheritance">
+        <childnode refid="158" relation="public-inheritance">
         </childnode>
       </node>
       <node id="176">
-        <label>amrex::Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; ParticleType &gt; &gt; &gt;</label>
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; amrex::IntVectND &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="177" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="178">
-        <label>amrex::Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::PODVector&lt; int &gt; &gt; &gt;</label>
+      <node id="174">
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; int &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="179" relation="public-inheritance">
+        <childnode refid="175" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="108">
+      <node id="188">
+        <label>amrex::Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; ParticleType &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="189" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="190">
+        <label>amrex::Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::PODVector&lt; int &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="120">
         <label>amrex::Vector&lt; std::size_t &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="109" relation="public-inheritance">
+        <childnode refid="121" relation="public-inheritance">
         </childnode>
       </node>
       <node id="95">
@@ -2274,10 +2340,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="141">
+      <node id="153">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="142" relation="public-inheritance">
+        <childnode refid="154" relation="public-inheritance">
         </childnode>
       </node>
       <node id="76">
@@ -2303,7 +2369,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_currently_allocated</edgelabel>
         </childnode>
       </node>
-      <node id="173">
+      <node id="185">
         <label>amrex::ArenaAllocatorBase&lt; T, AR &gt;</label>
         <link refid="structamrex_1_1ArenaAllocatorBase"/>
       </node>
@@ -2435,7 +2501,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="159">
+      <node id="171">
         <label>amrex::BoxND&lt; dim &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
@@ -2554,10 +2620,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
       </node>
-      <node id="116">
+      <node id="128">
         <label>amrex::FabArrayBase::CPC</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CPC"/>
-        <childnode refid="101" relation="public-inheritance">
+        <childnode refid="113" relation="public-inheritance">
         </childnode>
         <childnode refid="63" relation="usage">
           <edgelabel>m_dstbdk</edgelabel>
@@ -2567,7 +2633,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_dstng</edgelabel>
           <edgelabel>m_srcng</edgelabel>
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="117" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
         <childnode refid="36" relation="usage">
@@ -2582,21 +2648,21 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="101">
+      <node id="113">
         <label>amrex::FabArrayBase::CommMetaData</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CommMetaData"/>
-        <childnode refid="102" relation="usage">
+        <childnode refid="114" relation="usage">
           <edgelabel>m_LocTags</edgelabel>
         </childnode>
-        <childnode refid="104" relation="usage">
+        <childnode refid="116" relation="usage">
           <edgelabel>m_RcvTags</edgelabel>
           <edgelabel>m_SndTags</edgelabel>
         </childnode>
       </node>
-      <node id="100">
+      <node id="112">
         <label>amrex::FabArrayBase::FB</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FB"/>
-        <childnode refid="101" relation="public-inheritance">
+        <childnode refid="113" relation="public-inheritance">
         </childnode>
         <childnode refid="41" relation="usage">
           <edgelabel>m_typ</edgelabel>
@@ -2605,7 +2671,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_crse_ratio</edgelabel>
           <edgelabel>m_ngrow</edgelabel>
         </childnode>
-        <childnode refid="105" relation="usage">
+        <childnode refid="117" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
@@ -2655,7 +2721,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <label>amrex::MemStat</label>
         <link refid="structamrex_1_1MemStat"/>
       </node>
-      <node id="155">
+      <node id="167">
         <label>amrex::NeighborCode</label>
         <link refid="structamrex_1_1NeighborCode"/>
         <childnode refid="44" relation="usage">
@@ -2667,25 +2733,25 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <link refid="classamrex_1_1NeighborParticleContainer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="133" relation="usage">
+        <childnode refid="145" relation="usage">
           <edgelabel>inverse_tags</edgelabel>
         </childnode>
-        <childnode refid="135" relation="usage">
+        <childnode refid="147" relation="usage">
           <edgelabel>neighbors</edgelabel>
         </childnode>
-        <childnode refid="137" relation="usage">
+        <childnode refid="149" relation="usage">
           <edgelabel>neighbor_list</edgelabel>
         </childnode>
-        <childnode refid="139" relation="usage">
+        <childnode refid="151" relation="usage">
           <edgelabel>local_neighbors</edgelabel>
         </childnode>
-        <childnode refid="141" relation="usage">
+        <childnode refid="153" relation="usage">
           <edgelabel>mask_ptr</edgelabel>
         </childnode>
-        <childnode refid="143" relation="usage">
+        <childnode refid="155" relation="usage">
           <edgelabel>buffer_tag_cache</edgelabel>
         </childnode>
-        <childnode refid="145" relation="usage">
+        <childnode refid="157" relation="usage">
           <edgelabel>local_neighbor_sizes</edgelabel>
         </childnode>
         <childnode refid="60" relation="usage">
@@ -2693,45 +2759,45 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>ghost_real_comp</edgelabel>
           <edgelabel>neighbor_procs</edgelabel>
         </childnode>
-        <childnode refid="122" relation="usage">
+        <childnode refid="134" relation="usage">
           <edgelabel>rcvs</edgelabel>
         </childnode>
-        <childnode refid="147" relation="usage">
+        <childnode refid="159" relation="usage">
           <edgelabel>send_data</edgelabel>
         </childnode>
         <childnode refid="24" relation="usage">
           <edgelabel>m_neighbor_mask_ptr</edgelabel>
         </childnode>
-        <childnode refid="150" relation="usage">
+        <childnode refid="162" relation="usage">
           <edgelabel>m_grid_map</edgelabel>
         </childnode>
-        <childnode refid="152" relation="usage">
+        <childnode refid="164" relation="usage">
           <edgelabel>m_code_array</edgelabel>
         </childnode>
-        <childnode refid="156" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>m_isec_boxes</edgelabel>
         </childnode>
-        <childnode refid="160" relation="usage">
+        <childnode refid="172" relation="usage">
           <edgelabel>m_code_offsets</edgelabel>
         </childnode>
-        <childnode refid="161" relation="usage">
+        <childnode refid="173" relation="usage">
           <edgelabel>neighbor_copy_op</edgelabel>
         </childnode>
-        <childnode refid="166" relation="usage">
+        <childnode refid="178" relation="usage">
           <edgelabel>neighbor_copy_plan</edgelabel>
         </childnode>
-        <childnode refid="171" relation="usage">
+        <childnode refid="183" relation="usage">
           <edgelabel>rcv_buffer</edgelabel>
           <edgelabel>snd_buffer</edgelabel>
         </childnode>
-        <childnode refid="174" relation="usage">
+        <childnode refid="186" relation="usage">
           <edgelabel>pinned_rcv_buffer</edgelabel>
           <edgelabel>pinned_snd_buffer</edgelabel>
         </childnode>
-        <childnode refid="176" relation="usage">
+        <childnode refid="188" relation="usage">
           <edgelabel>m_neighbor_list</edgelabel>
         </childnode>
-        <childnode refid="178" relation="usage">
+        <childnode refid="190" relation="usage">
           <edgelabel>m_boundary_particle_ids</edgelabel>
         </childnode>
       </node>
@@ -2761,7 +2827,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <label>amrex::ParGDBBase</label>
         <link refid="classamrex_1_1ParGDBBase"/>
       </node>
-      <node id="118">
+      <node id="130">
         <label>amrex::ParticleBufferMap</label>
         <link refid="classamrex_1_1ParticleBufferMap"/>
         <childnode refid="18" relation="usage">
@@ -2779,7 +2845,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_proc_box_counts</edgelabel>
           <edgelabel>m_proc_box_offsets</edgelabel>
         </childnode>
-        <childnode refid="119" relation="usage">
+        <childnode refid="131" relation="usage">
           <edgelabel>d_bucket_to_pid</edgelabel>
           <edgelabel>d_lev_gid_to_bucket</edgelabel>
           <edgelabel>d_lev_offsets</edgelabel>
@@ -2809,29 +2875,29 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="60" relation="usage">
           <edgelabel>neighbor_procs</edgelabel>
         </childnode>
-        <childnode refid="118" relation="usage">
+        <childnode refid="130" relation="usage">
           <edgelabel>m_buffer_map</edgelabel>
         </childnode>
       </node>
-      <node id="161">
+      <node id="173">
         <label>amrex::ParticleCopyOp</label>
         <link refid="structamrex_1_1ParticleCopyOp"/>
-        <childnode refid="162" relation="usage">
+        <childnode refid="174" relation="usage">
           <edgelabel>m_boxes</edgelabel>
           <edgelabel>m_levels</edgelabel>
           <edgelabel>m_src_indices</edgelabel>
         </childnode>
-        <childnode refid="164" relation="usage">
+        <childnode refid="176" relation="usage">
           <edgelabel>m_periodic_shift</edgelabel>
         </childnode>
       </node>
-      <node id="166">
+      <node id="178">
         <label>amrex::ParticleCopyPlan</label>
         <link refid="structamrex_1_1ParticleCopyPlan"/>
-        <childnode refid="162" relation="usage">
+        <childnode refid="174" relation="usage">
           <edgelabel>m_dst_indices</edgelabel>
         </childnode>
-        <childnode refid="167" relation="usage">
+        <childnode refid="179" relation="usage">
           <edgelabel>m_box_counts_d</edgelabel>
           <edgelabel>m_box_counts_h</edgelabel>
           <edgelabel>m_box_offsets</edgelabel>
@@ -2845,50 +2911,50 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_rcv_box_offsets</edgelabel>
           <edgelabel>m_rcv_box_pids</edgelabel>
         </childnode>
-        <childnode refid="112" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>m_build_stats</edgelabel>
           <edgelabel>m_particle_rstats</edgelabel>
           <edgelabel>m_particle_sstats</edgelabel>
         </childnode>
-        <childnode refid="110" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>m_build_rreqs</edgelabel>
           <edgelabel>m_particle_rreqs</edgelabel>
           <edgelabel>m_particle_sreqs</edgelabel>
         </childnode>
-        <childnode refid="122" relation="usage">
+        <childnode refid="134" relation="usage">
           <edgelabel>m_Rcvs</edgelabel>
           <edgelabel>m_Snds</edgelabel>
           <edgelabel>m_rcv_num_particles</edgelabel>
           <edgelabel>m_snd_num_particles</edgelabel>
         </childnode>
-        <childnode refid="108" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>m_rOffset</edgelabel>
           <edgelabel>m_rcv_pad_correction_h</edgelabel>
           <edgelabel>m_snd_counts</edgelabel>
           <edgelabel>m_snd_offsets</edgelabel>
           <edgelabel>m_snd_pad_correction_h</edgelabel>
         </childnode>
-        <childnode refid="119" relation="usage">
+        <childnode refid="131" relation="usage">
           <edgelabel>d_int_comp_mask</edgelabel>
           <edgelabel>d_real_comp_mask</edgelabel>
           <edgelabel>m_rcv_data</edgelabel>
         </childnode>
-        <childnode refid="169" relation="usage">
+        <childnode refid="181" relation="usage">
           <edgelabel>m_rcv_pad_correction_d</edgelabel>
           <edgelabel>m_snd_pad_correction_d</edgelabel>
         </childnode>
       </node>
-      <node id="105">
+      <node id="117">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
         <childnode refid="44" relation="usage">
           <edgelabel>period</edgelabel>
         </childnode>
       </node>
-      <node id="121">
+      <node id="133">
         <label>amrex::RealDescriptor</label>
         <link refid="classamrex_1_1RealDescriptor"/>
-        <childnode refid="122" relation="usage">
+        <childnode refid="134" relation="usage">
           <edgelabel>fr</edgelabel>
         </childnode>
         <childnode refid="60" relation="usage">
@@ -2910,39 +2976,51 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="102">
+        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="103" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="106">
+        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="107" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="71">
         <label>std::map&lt; amrex::FabArrayBase::BDKey, int &gt;</label>
         <childnode refid="63" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
       </node>
-      <node id="156">
+      <node id="168">
         <label>std::map&lt; int, amrex::PODVector&lt; amrex::BoxND &gt; &gt;</label>
-        <childnode refid="157" relation="usage">
+        <childnode refid="169" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="152">
+      <node id="164">
         <label>std::map&lt; int, amrex::PODVector&lt; amrex::NeighborCode &gt; &gt;</label>
-        <childnode refid="153" relation="usage">
+        <childnode refid="165" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="160">
+      <node id="172">
         <label>std::map&lt; int, amrex::PODVector&lt; int &gt; &gt;</label>
-        <childnode refid="119" relation="usage">
+        <childnode refid="131" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="147">
+      <node id="159">
         <label>std::map&lt; int, amrex::Vector&lt; char &gt; &gt;</label>
-        <childnode refid="148" relation="usage">
+        <childnode refid="160" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="150">
+      <node id="162">
         <label>std::map&lt; int, std::vector&lt; std::vector&lt; amrex::NeighborCode &gt; &gt; &gt;</label>
-        <childnode refid="151" relation="usage">
+        <childnode refid="163" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -2961,6 +3039,12 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>keys</edgelabel>
         </childnode>
         <childnode refid="81" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="98">
+        <label>std::map&lt; std::uint64_t, std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt; &gt;</label>
+        <childnode refid="99" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -2997,43 +3081,43 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="158">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="154">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="175">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="130">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="120">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
       <node id="170">
         <label>std::allocator&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="168">
+      <node id="166">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="187">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="142">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="182">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="180">
         <label>std::allocator&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3068,7 +3152,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="103">
+      <node id="115">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3080,13 +3170,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="111">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="132">
+      <node id="144">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3122,7 +3206,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="140">
+      <node id="152">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3134,7 +3218,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="127">
+      <node id="139">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3146,19 +3236,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="113">
+      <node id="119">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="107">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="149">
+      <node id="161">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3170,25 +3254,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="138">
+      <node id="150">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="136">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="134">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="144">
+      <node id="148">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3200,13 +3272,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="165">
+      <node id="156">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="163">
+      <node id="158">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3218,13 +3290,25 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="179">
+      <node id="175">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="109">
+      <node id="189">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -3242,31 +3326,31 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="142">
+      <node id="154">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="102">
+      <node id="114">
         <label>std::unique_ptr&lt; CopyComTagsContainer &gt;</label>
-        <childnode refid="103" relation="usage">
+        <childnode refid="115" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="104">
+      <node id="116">
         <label>std::unique_ptr&lt; MapOfCopyComTagContainers &gt;</label>
         <childnode refid="66" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="98">
+      <node id="110">
         <label>std::unique_ptr&lt; amrex::FBData&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="99" relation="usage">
+        <childnode refid="111" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="117">
+      <node id="129">
         <label>std::unique_ptr&lt; amrex::FabArray&lt; IArrayBox &gt; &gt;</label>
         <childnode refid="26" relation="usage">
           <edgelabel>ptr</edgelabel>
@@ -3284,15 +3368,33 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="114">
+      <node id="126">
         <label>std::unique_ptr&lt; amrex::PCData&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="115" relation="usage">
+        <childnode refid="127" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
       <node id="11">
         <label>std::unique_ptr&lt; amrex::ParGDB &gt;</label>
         <childnode refid="12" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="99">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="100" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="104" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt;</label>
+        <childnode refid="108" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -3338,7 +3440,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="151">
+      <node id="163">
         <label>std::vector&lt; std::vector&lt; amrex::NeighborCode &gt; &gt;</label>
       </node>
     </collaborationgraph>

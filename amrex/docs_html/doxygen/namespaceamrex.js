@@ -542,6 +542,8 @@ var namespaceamrex =
     [ "CellQuartic", "classamrex_1_1CellQuartic.html", "classamrex_1_1CellQuartic" ],
     [ "Cluster", "classamrex_1_1Cluster.html", "classamrex_1_1Cluster" ],
     [ "ClusterList", "classamrex_1_1ClusterList.html", "classamrex_1_1ClusterList" ],
+    [ "CommRecvBufTag", "structamrex_1_1CommRecvBufTag.html", "structamrex_1_1CommRecvBufTag" ],
+    [ "CommSendBufTag", "structamrex_1_1CommSendBufTag.html", "structamrex_1_1CommSendBufTag" ],
     [ "CompileTimeOptions", "structamrex_1_1CompileTimeOptions.html", "structamrex_1_1CompileTimeOptions" ],
     [ "Conjunction", "structamrex_1_1Conjunction.html", null ],
     [ "Conjunction< B1 >", "structamrex_1_1Conjunction_3_01B1_01_4.html", null ],

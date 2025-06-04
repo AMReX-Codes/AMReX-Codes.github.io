@@ -10,5 +10,7 @@ var classamrex_1_1MPMD_1_1Copier =
     [ "m_dm", "classamrex_1_1MPMD_1_1Copier.html#a5312b848b9647e4f204768a4d5ee5df7", null ],
     [ "m_is_thread_safe", "classamrex_1_1MPMD_1_1Copier.html#a10d54646513ded7c12d45870888d0e64", null ],
     [ "m_RcvTags", "classamrex_1_1MPMD_1_1Copier.html#ace340f0f6a72f7ab1c028ea49d783ba3", null ],
+    [ "m_recv_id", "classamrex_1_1MPMD_1_1Copier.html#a3a259d1e332962a0099db01670c0bd86", null ],
+    [ "m_send_id", "classamrex_1_1MPMD_1_1Copier.html#a774d5ba08da0f9d16716762aa01c5637", null ],
     [ "m_SndTags", "classamrex_1_1MPMD_1_1Copier.html#ac8a7a8cb167be835313951319df1a7c0", null ]
 ];

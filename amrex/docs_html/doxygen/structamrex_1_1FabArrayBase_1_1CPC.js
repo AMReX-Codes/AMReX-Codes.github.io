@@ -8,6 +8,7 @@ var structamrex_1_1FabArrayBase_1_1CPC =
     [ "m_dstba", "structamrex_1_1FabArrayBase_1_1CPC.html#a5f390136bc410e6524afb0c7605d01ae", null ],
     [ "m_dstbdk", "structamrex_1_1FabArrayBase_1_1CPC.html#a9f4d274d86da7bb18bb64c7f4a32d0b2", null ],
     [ "m_dstng", "structamrex_1_1FabArrayBase_1_1CPC.html#aee160ab238c25e6538964c9ca2ce1e1c", null ],
+    [ "m_id", "structamrex_1_1FabArrayBase_1_1CPC.html#a7c3dcd199898a40c8265752c614451b0", null ],
     [ "m_nuse", "structamrex_1_1FabArrayBase_1_1CPC.html#a9f9ac2d25dca93a6c78e056366d6a1d7", null ],
     [ "m_period", "structamrex_1_1FabArrayBase_1_1CPC.html#ae5ff0f4d1aea7da43378472739eae7d2", null ],
     [ "m_srcba", "structamrex_1_1FabArrayBase_1_1CPC.html#a0731da1aa60b01a75a86c66a1e49a82c", null ],
