@@ -1421,6 +1421,7 @@ var namespaceamrex =
     [ "amrex_compute_gradient_rz", "namespaceamrex.html#a09f44c9c74cb08a19432aa259ebace65", null ],
     [ "amrex_deposit_cic", "namespaceamrex.html#a00779f2a650345e29919bda485417d90", null ],
     [ "amrex_deposit_particle_dx_cic", "namespaceamrex.html#ab2c2bcf642851e4903e3c9449f857e14", null ],
+    [ "AMREX_ENUM", "namespaceamrex.html#ab95cb6bea7091c6703c74a3087cc86dc", null ],
     [ "amrex_fill_slice_interp", "namespaceamrex.html#a02764a19b02ad5aa59766eaba8cde224", null ],
     [ "amrex_first_order_extrap_cpu", "namespaceamrex.html#ae764daf3d8010df29bc0fb4b6833f0c8", null ],
     [ "amrex_first_order_extrap_gpu", "namespaceamrex.html#a9570ea1b5e3ab8070aee754ccbcf28a2", null ],

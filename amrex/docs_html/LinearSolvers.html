@@ -237,13 +237,18 @@ and then we can use the <code class="docutils literal notranslate"><span class="
 Zero is a perfectly fine initial guess.  The two <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Reals</span></code> in the argument
 list are the targeted relative and absolute error tolerances. The relative
 error tolerance is hard-coded to be at least <span class="math notranslate nohighlight">\(10^{-16}\)</span>.
-Given the linear system <span class="math notranslate nohighlight">\(Ax=b\)</span>, the solver will terminate when the
-max-norm of the residual (<span class="math notranslate nohighlight">\(b-Ax\)</span>) is less than
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">a_tol_abs</span><span class="p">,</span><span class="w"> </span><span class="n">a_tol_rel</span><span class="o">*</span><span class="n">max_norm</span><span class="p">)</span></code> where <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_norm</span></code>
-is the max-norm of the rhs, <span class="math notranslate nohighlight">\(b\)</span>, if the flag <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">always_use_bnorm</span></code> is
-set to True or if the rhs max-norm is greater than or equal to the max-norm error
-of the initial guess, otherwise <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_norm</span></code> is equal to the max-norm error
-of the initial guess.  Set the absolute tolerance to zero if one does not have a
+Given the linear system <span class="math notranslate nohighlight">\(Ax = b\)</span>, the solver will terminate when the
+max-norm of the residual (<span class="math notranslate nohighlight">\(b - Ax\)</span>) is less than
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">a_tol_abs</span><span class="p">,</span><span class="w"> </span><span class="n">a_tol_rel</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_norm</span><span class="p">)</span></code>. By default, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_norm</span></code> is
+equal to the greater of rhs max-norm and residual max-norm. This behavior can
+be modified using the <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> member function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setConvergenceNormType</span><span class="w"> </span><span class="p">(</span><span class="n">MLMGNormType</span><span class="w"> </span><span class="n">norm</span><span class="p">)</span></code>,
+where the available options are</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMGNormType</span><span class="o">::</span><span class="n">greater</span></code>: The default.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMGNormType</span><span class="o">::</span><span class="n">bnorm</span></code>: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_norm</span></code> is set to rhs max-norm.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMGNormType</span><span class="o">::</span><span class="n">resnorm</span></code>: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">max_norm</span></code> is set to residual max-norm.</p></li>
+</ul>
+<p>Set the absolute tolerance to zero if one does not have a
 good value for it.  The return value of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">solve</span></code> is the max-norm error.</p>
 <p>After the solver returns successfully, if needed, we can call</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">compResidual</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_res</span><span class="p">,</span>
