@@ -7,6 +7,7 @@ var classamrex_1_1STLtools =
     [ "bvh_size", "classamrex_1_1STLtools.html#a0473b066498d4c0df39749018a3babcd", null ],
     [ "fill", "classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b", null ],
     [ "fillFab", "classamrex_1_1STLtools.html#aefcdeb44ca0770702422b5f7eb289234", null ],
+    [ "fillSignedDistance", "classamrex_1_1STLtools.html#a49aa91ffdb45cf5d5bd15664e163eb1f", null ],
     [ "getBoxType", "classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70", null ],
     [ "getIntercept", "classamrex_1_1STLtools.html#addae911a258f776f2bf862da19290953", null ],
     [ "isGPUable", "classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858", null ],

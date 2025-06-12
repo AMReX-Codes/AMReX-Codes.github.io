@@ -1,5 +1,15 @@
 var NAVTREEINDEX105 =
 {
+"namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c":[2,0,0,16,84],
+"namespaceamrex_1_1Gpu.html#a45b5d93b9e83ebcd8fb2f1e90aced0c7":[2,0,0,16,124],
+"namespaceamrex_1_1Gpu.html#a46c58e76f1942c7eefcf205b3ec3d24c":[2,0,0,16,128],
+"namespaceamrex_1_1Gpu.html#a486219b28139a9445f213969c5324167":[2,0,0,16,60],
+"namespaceamrex_1_1Gpu.html#a4bca2075ddd39a12c54ef72d6ab6982c":[2,0,0,16,70],
+"namespaceamrex_1_1Gpu.html#a4c26ead15b942c1c4a0195ca7483a315":[2,0,0,16,58],
+"namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548":[2,0,0,16,125],
+"namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9":[2,0,0,16,126],
+"namespaceamrex_1_1Gpu.html#a568da598ec8829dff901c81d530db976":[2,0,0,16,101],
+"namespaceamrex_1_1Gpu.html#a5ee8881eb9dcf74360bb8981d1478a17":[2,0,0,16,96],
 "namespaceamrex_1_1Gpu.html#a5f398c68426376a50cd0a17af032a904":[2,0,0,16,59],
 "namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d":[2,0,0,16,56],
 "namespaceamrex_1_1Gpu.html#a611afa3380635b22c50e0c48d1a9e127":[2,0,0,16,71],
@@ -239,15 +249,5 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1ParallelAllReduce.html#a93a9a9427252098f6da83a7116c4219d":[2,0,0,35,13],
 "namespaceamrex_1_1ParallelAllReduce.html#a9a24ed2b1803fba71b1ab93b44db7a98":[2,0,0,35,9],
 "namespaceamrex_1_1ParallelAllReduce.html#ab295f18b74675ea0f559d2563eace87d":[2,0,0,35,8],
-"namespaceamrex_1_1ParallelAllReduce.html#ab75655a29ac29049cb6b1fafbd12a7f7":[2,0,0,35,10],
-"namespaceamrex_1_1ParallelAllReduce.html#abc654239660dfc6eb557813ef5314650":[2,0,0,35,3],
-"namespaceamrex_1_1ParallelAllReduce.html#ac6513212c95687334df1e0ee67cc96a2":[2,0,0,35,4],
-"namespaceamrex_1_1ParallelAllReduce.html#ae1d56156af0262c668411501ef5f2592":[2,0,0,35,1],
-"namespaceamrex_1_1ParallelContext.html":[2,0,0,36],
-"namespaceamrex_1_1ParallelContext.html#a09cb92f4a123081a62f72e26a4e3c2a3":[2,0,0,36,23],
-"namespaceamrex_1_1ParallelContext.html#a1bd2485b1543e7238ec40aac8c331fa5":[2,0,0,36,14],
-"namespaceamrex_1_1ParallelContext.html#a1ceab6de8572b3cfd10ddba48f266863":[2,0,0,36,2],
-"namespaceamrex_1_1ParallelContext.html#a1cf787d04cd343c542c01f978d071781":[2,0,0,36,20],
-"namespaceamrex_1_1ParallelContext.html#a2ac214c9799843152abe583b8c714501":[2,0,0,36,8],
-"namespaceamrex_1_1ParallelContext.html#a2c1b05e38fc339f7a2275f8e32ca64e8":[2,0,0,36,16]
+"namespaceamrex_1_1ParallelAllReduce.html#ab75655a29ac29049cb6b1fafbd12a7f7":[2,0,0,35,10]
 };

@@ -1,5 +1,15 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1ParallelAllReduce.html#abc654239660dfc6eb557813ef5314650":[2,0,0,35,3],
+"namespaceamrex_1_1ParallelAllReduce.html#ac6513212c95687334df1e0ee67cc96a2":[2,0,0,35,4],
+"namespaceamrex_1_1ParallelAllReduce.html#ae1d56156af0262c668411501ef5f2592":[2,0,0,35,1],
+"namespaceamrex_1_1ParallelContext.html":[2,0,0,36],
+"namespaceamrex_1_1ParallelContext.html#a09cb92f4a123081a62f72e26a4e3c2a3":[2,0,0,36,23],
+"namespaceamrex_1_1ParallelContext.html#a1bd2485b1543e7238ec40aac8c331fa5":[2,0,0,36,14],
+"namespaceamrex_1_1ParallelContext.html#a1ceab6de8572b3cfd10ddba48f266863":[2,0,0,36,2],
+"namespaceamrex_1_1ParallelContext.html#a1cf787d04cd343c542c01f978d071781":[2,0,0,36,20],
+"namespaceamrex_1_1ParallelContext.html#a2ac214c9799843152abe583b8c714501":[2,0,0,36,8],
+"namespaceamrex_1_1ParallelContext.html#a2c1b05e38fc339f7a2275f8e32ca64e8":[2,0,0,36,16],
 "namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8":[2,0,0,36,4],
 "namespaceamrex_1_1ParallelContext.html#a48543c30b34e4a2696efc8b2788abadd":[2,0,0,36,5],
 "namespaceamrex_1_1ParallelContext.html#a49130bb9cdd82b02c9ac9674aa19925f":[2,0,0,36,10],
@@ -239,15 +249,5 @@ var NAVTREEINDEX106 =
 "namespaceamrex_1_1Reduce_1_1detail.html#abe303744738dffcde1225825759169f1":[2,0,0,48,0,7],
 "namespaceamrex_1_1Reduce_1_1detail.html#ad408715066953dc5eeade69a00c1d601":[2,0,0,48,0,3],
 "namespaceamrex_1_1Reduce_1_1detail.html#afd579b95fc57cf9aaf43717d976eff41":[2,0,0,48,0,5],
-"namespaceamrex_1_1RungeKutta.html":[2,0,0,49],
-"namespaceamrex_1_1RungeKutta.html#a7b3a5cb61b6d1f82313a73e66fb218ef":[2,0,0,49,2],
-"namespaceamrex_1_1RungeKutta.html#adafe95f71429898362d5c7d0f9e0ccd7":[2,0,0,49,4],
-"namespaceamrex_1_1RungeKutta.html#ae717fc5f1594b2062a5178d495ae0edd":[2,0,0,49,3],
-"namespaceamrex_1_1RungeKutta_1_1detail.html":[2,0,0,49,0],
-"namespaceamrex_1_1RungeKutta_1_1detail.html#a04628ed5d5e6a12c16a387c1aa38fe88":[2,0,0,49,0,1],
-"namespaceamrex_1_1RungeKutta_1_1detail.html#a2b1678a718395e6b7e45b5f94facacc5":[2,0,0,49,0,4],
-"namespaceamrex_1_1RungeKutta_1_1detail.html#a48d9165de135899d941aab232bb9a0bc":[2,0,0,49,0,0],
-"namespaceamrex_1_1RungeKutta_1_1detail.html#a4d21c4682e4e96dd66469d11d28251fc":[2,0,0,49,0,2],
-"namespaceamrex_1_1RungeKutta_1_1detail.html#a8669b8369a79b53d3596365f5b601dfa":[2,0,0,49,0,3],
-"namespaceamrex_1_1Scan.html":[2,0,0,50]
+"namespaceamrex_1_1RungeKutta.html":[2,0,0,49]
 };

@@ -1,5 +1,15 @@
 var NAVTREEINDEX119 =
 {
+"structamrex_1_1FabCopyDescriptor.html#aaa865db7c42ae26183110932425ab7a6":[3,0,0,175,14],
+"structamrex_1_1FabCopyDescriptor.html#abe60f2cf30aac61d68454a6823d1e3a4":[2,0,0,210,10],
+"structamrex_1_1FabCopyDescriptor.html#abe60f2cf30aac61d68454a6823d1e3a4":[3,0,0,175,10],
+"structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac":[2,0,0,210,15],
+"structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac":[3,0,0,175,15],
+"structamrex_1_1FabCopyDescriptor.html#acbfb910d7582f3e32b2e263e1581e382":[3,0,0,175,11],
+"structamrex_1_1FabCopyDescriptor.html#acbfb910d7582f3e32b2e263e1581e382":[2,0,0,210,11],
+"structamrex_1_1FabCopyDescriptor.html#ad3452f40f7460d04c39e99172fc9d2f7":[2,0,0,210,3],
+"structamrex_1_1FabCopyDescriptor.html#ad3452f40f7460d04c39e99172fc9d2f7":[3,0,0,175,3],
+"structamrex_1_1FabCopyDescriptor.html#aee8abd3f91100c694b40a498142c1891":[2,0,0,210,8],
 "structamrex_1_1FabCopyDescriptor.html#aee8abd3f91100c694b40a498142c1891":[3,0,0,175,8],
 "structamrex_1_1FabDataType.html":[2,0,0,211],
 "structamrex_1_1FabDataType.html":[3,0,0,176],
@@ -239,15 +249,5 @@ var NAVTREEINDEX119 =
 "structamrex_1_1GpuComplex.html":[3,0,0,218],
 "structamrex_1_1GpuComplex.html#a019b661b37689703d1b337a2bdb47773":[3,0,0,218,11],
 "structamrex_1_1GpuComplex.html#a019b661b37689703d1b337a2bdb47773":[2,0,0,253,11],
-"structamrex_1_1GpuComplex.html#a077d2f35c1410375813f65b4f4d76dce":[3,0,0,218,2],
-"structamrex_1_1GpuComplex.html#a077d2f35c1410375813f65b4f4d76dce":[2,0,0,253,2],
-"structamrex_1_1GpuComplex.html#a0fb2ea75ef9006ff02a9a938eb138343":[3,0,0,218,6],
-"structamrex_1_1GpuComplex.html#a0fb2ea75ef9006ff02a9a938eb138343":[2,0,0,253,6],
-"structamrex_1_1GpuComplex.html#a234565cd9bbf1ba7a86abda5e9a3722a":[3,0,0,218,10],
-"structamrex_1_1GpuComplex.html#a234565cd9bbf1ba7a86abda5e9a3722a":[2,0,0,253,10],
-"structamrex_1_1GpuComplex.html#a30e188e45d0fdce32f68355c061e7dbd":[2,0,0,253,4],
-"structamrex_1_1GpuComplex.html#a30e188e45d0fdce32f68355c061e7dbd":[3,0,0,218,4],
-"structamrex_1_1GpuComplex.html#a50e77be424412b0789610d627520c151":[2,0,0,253,13],
-"structamrex_1_1GpuComplex.html#a50e77be424412b0789610d627520c151":[3,0,0,218,13],
-"structamrex_1_1GpuComplex.html#a52c35f8234e4dc97239c5fa052d9463a":[2,0,0,253,8]
+"structamrex_1_1GpuComplex.html#a077d2f35c1410375813f65b4f4d76dce":[3,0,0,218,2]
 };
