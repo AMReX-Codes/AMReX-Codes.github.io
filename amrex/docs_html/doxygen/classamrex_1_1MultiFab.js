@@ -69,6 +69,7 @@ var classamrex_1_1MultiFab =
     [ "norm1", "classamrex_1_1MultiFab.html#afcdc4aaf73896a44ad364520af9a7398", null ],
     [ "norm2", "classamrex_1_1MultiFab.html#a933d1dd75c4441bf922f8c5baa931be4", null ],
     [ "norm2", "classamrex_1_1MultiFab.html#a0982c02422dcb603d1c5129d744d6611", null ],
+    [ "norm2", "classamrex_1_1MultiFab.html#acc29a136f07efb39a2d9acafc04cf9e1", null ],
     [ "norm2", "classamrex_1_1MultiFab.html#aa0b6bb4fb2ee206356cd613ed8458b8f", null ],
     [ "norminf", "classamrex_1_1MultiFab.html#abc7329288ae6f73f8fd7eda95e49b8ba", null ],
     [ "norminf", "classamrex_1_1MultiFab.html#a7d3280950fb8a9b1ed17e73ee5df3c43", null ],

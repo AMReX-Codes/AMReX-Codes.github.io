@@ -1,5 +1,7 @@
 var NAVTREEINDEX134 =
 {
+"structamrex_1_1openbc_1_1Moments.html#aa2f37b0b5e8ada0aa23cccb86200dd3f":[3,0,0,13,0,0],
+"structamrex_1_1openbc_1_1Moments.html#adb6657fa49f022a5f02ab1a51fafeac0":[2,0,0,32,0,4],
 "structamrex_1_1openbc_1_1Moments.html#adb6657fa49f022a5f02ab1a51fafeac0":[3,0,0,13,0,4],
 "structamrex_1_1openbc_1_1Moments.html#ae6db912d553d631bb09b61be167b59e9":[2,0,0,32,0,3],
 "structamrex_1_1openbc_1_1Moments.html#ae6db912d553d631bb09b61be167b59e9":[3,0,0,13,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX134 =
 "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#a5d5a37198c314fd454c6d5a11303f8dc":[3,0,11,6,0],
 "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,11,7],
 "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html#af43ffa90c029ee19a4d2cdd5e4d1bbdb":[3,0,11,7,0],
-"structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,11,8],
-"structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a02352e50126403c1dcf04e5850ffdd4d":[3,0,11,8,0],
-"structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html":[3,0,11,9]
+"structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,11,8]
 };
