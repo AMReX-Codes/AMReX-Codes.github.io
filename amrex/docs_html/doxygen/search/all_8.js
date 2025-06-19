@@ -17,7 +17,7 @@ var searchData=
   ['handle_5fsigint_14',['handle_sigint',['../namespaceamrex_1_1system.html#a8b6473a9ec7893519014c5b9f755d75b',1,'amrex::system']]],
   ['handle_5fsigsegv_15',['handle_sigsegv',['../namespaceamrex_1_1system.html#ab759a6040b265393f64a1df720a00378',1,'amrex::system']]],
   ['handle_5fsigterm_16',['handle_sigterm',['../namespaceamrex_1_1system.html#a99f27160395aa160e6fa8f3bc2cdf8db',1,'amrex::system']]],
-  ['handler_17',['handler',['../structamrex_1_1Gpu_1_1Handler.html',1,'amrex::Gpu::Handler'],['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()'],['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()']]],
+  ['handler_17',['handler',['../structamrex_1_1Gpu_1_1Handler.html',1,'amrex::Gpu::Handler'],['../structamrex_1_1Gpu_1_1Handler.html#af96c4c07125d1162d20fad689f968acb',1,'amrex::Gpu::Handler::Handler()'],['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace::handler()']]],
   ['has_5fhashmap_18',['has_hashmap',['../structamrex_1_1BARef.html#aa7702554a15d6a73ffa7a16ee2e017bc',1,'amrex::BARef']]],
   ['has_5fmetric_5fterm_19',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
   ['has_5freduction_20',['has_reduction',['../classamrex_1_1Gpu_1_1KernelInfo.html#a794eb89fc4f570378970b9ae6495e8e8',1,'amrex::Gpu::KernelInfo']]],

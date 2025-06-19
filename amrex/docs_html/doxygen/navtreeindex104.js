@@ -1,5 +1,11 @@
 var NAVTREEINDEX104 =
 {
+"namespaceamrex.html#aff6483cc92504552a999444884df9c7f":[2,0,0,1520],
+"namespaceamrex.html#aff64e983a02f98455e7319fb031838e7":[2,0,0,1402],
+"namespaceamrex.html#aff6b4420435f9951710a37eda411db8f":[2,0,0,1974],
+"namespaceamrex.html#aff791fa855110d40cd7eb2bffb62e15e":[2,0,0,2449],
+"namespaceamrex.html#aff7bc26e4e82b323802d4b6d546101fc":[2,0,0,829],
+"namespaceamrex.html#aff7e1eb998059fdb9cbc90a22c2d01d5":[2,0,0,901],
 "namespaceamrex.html#aff9b2ebd167a621c7784769618bda4c6":[2,0,0,2046],
 "namespaceamrex.html#aff9cc4b21a84dbb1def69e24fa575064":[2,0,0,2205],
 "namespaceamrex.html#affc72a76f87a51121fb4f876828b1299":[2,0,0,1819],
@@ -243,11 +249,5 @@ var NAVTREEINDEX104 =
 "namespaceamrex_1_1Gpu.html#a132c08cd6614796306908e0155ac58b2":[2,0,0,16,57],
 "namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92":[2,0,0,16,98],
 "namespaceamrex_1_1Gpu.html#a15d5aa9cbac1f2a0ef1f042530760b88":[2,0,0,16,66],
-"namespaceamrex_1_1Gpu.html#a16a3885ac1170fd177c3ef4b23a6721d":[2,0,0,16,116],
-"namespaceamrex_1_1Gpu.html#a18d6ae36f6f894265b771b9d33717041":[2,0,0,16,68],
-"namespaceamrex_1_1Gpu.html#a2388c83afe31a41fc38fab133d98a1be":[2,0,0,16,52],
-"namespaceamrex_1_1Gpu.html#a28a5a940451f82dac8c84f09e5f89fea":[2,0,0,16,105],
-"namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb":[2,0,0,16,64],
-"namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8":[2,0,0,16,91],
-"namespaceamrex_1_1Gpu.html#a337aceb06d1f93486e6593ff058c0a93":[2,0,0,16,49]
+"namespaceamrex_1_1Gpu.html#a16a3885ac1170fd177c3ef4b23a6721d":[2,0,0,16,116]
 };

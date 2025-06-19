@@ -77,7 +77,7 @@ var classamrex_1_1FabArrayBase =
     [ "flushTileArrayCache", "classamrex_1_1FabArrayBase.html#a653b5bd0ac05e183721ba30b5c5dbb55", null ],
     [ "getAllocSingleChunk", "classamrex_1_1FabArrayBase.html#a26c57d9e401fcc56f720c50f5bfdeb06", null ],
     [ "getBDKey", "classamrex_1_1FabArrayBase.html#aa0cb5039380dc0545d40ac5ac6589943", null ],
-    [ "getCPC", "classamrex_1_1FabArrayBase.html#a01f6024d437671eabb73de8aaaf03073", null ],
+    [ "getCPC", "classamrex_1_1FabArrayBase.html#a471656fde3b89d96f738c640a922e192", null ],
     [ "getFB", "classamrex_1_1FabArrayBase.html#ae83718c6002de09122c49c154515e104", null ],
     [ "getNextCommMetaDataId", "classamrex_1_1FabArrayBase.html#a1da0b56c76619331dae95d3e075dab8a", null ],
     [ "getParForInfo", "classamrex_1_1FabArrayBase.html#af1e11f13ae3235cd23551985340a465b", null ],
