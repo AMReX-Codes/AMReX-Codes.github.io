@@ -1,5 +1,7 @@
 var NAVTREEINDEX107 =
 {
+"namespaceamrex_1_1ParticleIdCpus.html":[2,0,0,43],
+"namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c":[2,0,0,43,0],
 "namespaceamrex_1_1ParticleInterpolator.html":[2,0,0,44],
 "namespaceamrex_1_1Reduce.html":[2,0,0,48],
 "namespaceamrex_1_1Reduce.html#a07365bcdfaa9fe246330e8d91f71ecc0":[2,0,0,48,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX107 =
 "namespaceamrex_1_1detail.html#ae1db1fc5feb5005eee61aeeeb926a478":[2,0,0,6,86],
 "namespaceamrex_1_1detail.html#ae20e7a35360b4e186c0ebe376b80b551":[2,0,0,6,42],
 "namespaceamrex_1_1detail.html#ae9c414dd7bc47e48d6fe4e6361b1b723":[2,0,0,6,130],
-"namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089":[2,0,0,6,132],
-"namespaceamrex_1_1detail.html#af281321d89351c33fe9ac9804527741a":[2,0,0,6,58],
-"namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92":[2,0,0,6,95]
+"namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089":[2,0,0,6,132]
 };

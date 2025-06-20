@@ -1458,7 +1458,7 @@ var searchData=
   ['mpi_5fmax_5fprocessor_5fname_1455',['MPI_MAX_PROCESSOR_NAME',['../namespaceamrex_1_1mpidatatypes.html#ae4ce0e3e08c56092c211a9eaae820c4f',1,'amrex::mpidatatypes']]],
   ['mpi_5fmaxloc_1456',['MPI_MAXLOC',['../namespaceamrex_1_1mpidatatypes.html#aaee37708efac0833da72c8beab1759f7',1,'amrex::mpidatatypes']]],
   ['mpi_5fminloc_1457',['MPI_MINLOC',['../namespaceamrex_1_1mpidatatypes.html#abf18394e24563c0d8f17cb54b886b4d6',1,'amrex::mpidatatypes']]],
-  ['mpi_5fop_1458',['mpi_op',['../namespaceamrex_1_1ParallelDescriptor.html#afd90fafb507b775adeafc707208573eb',1,'amrex::ParallelDescriptor::Mpi_op()'],['../namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e',1,'amrex::mpidatatypes::MPI_Op']]],
+  ['mpi_5fop_1458',['mpi_op',['../namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e',1,'amrex::mpidatatypes::MPI_Op'],['../namespaceamrex_1_1ParallelDescriptor.html#afd90fafb507b775adeafc707208573eb',1,'amrex::ParallelDescriptor::Mpi_op()']]],
   ['mpi_5fproc_5fnull_1459',['MPI_PROC_NULL',['../namespaceamrex_1_1mpidatatypes.html#a20b243330ca3546e466075c7bd72f4f5',1,'amrex::mpidatatypes']]],
   ['mpi_5frequest_1460',['MPI_Request',['../namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929',1,'amrex::mpidatatypes']]],
   ['mpi_5frequest_5fnull_1461',['MPI_REQUEST_NULL',['../namespaceamrex_1_1mpidatatypes.html#aa91849416755201e0b9b4951a6b426de',1,'amrex::mpidatatypes']]],

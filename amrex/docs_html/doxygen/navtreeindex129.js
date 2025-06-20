@@ -1,5 +1,7 @@
 var NAVTREEINDEX129 =
 {
+"structamrex_1_1PinnedArenaWrapper.html#aa964a116532ce61b24ab52947cf325ec":[3,0,0,473,0],
+"structamrex_1_1Plus.html":[3,0,0,476],
 "structamrex_1_1Plus.html":[2,0,0,511],
 "structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196":[2,0,0,511,0],
 "structamrex_1_1Plus.html#a57fb4703952d4a5f580f1d938d0d8196":[3,0,0,476,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX129 =
 "structamrex_1_1SmallMatrix.html#ada1b49761d5fc4a79c5d9d80ee927a14":[3,0,0,504,5],
 "structamrex_1_1SmallMatrix.html#ae33254284f8f44f03ffd88625068e60e":[3,0,0,504,23],
 "structamrex_1_1SmallMatrix.html#ae33254284f8f44f03ffd88625068e60e":[2,0,0,539,23],
-"structamrex_1_1SmallMatrix.html#ae33359e7bce45d6a7bfea9bfee3220ad":[3,0,0,504,22],
-"structamrex_1_1SmallMatrix.html#ae33359e7bce45d6a7bfea9bfee3220ad":[2,0,0,539,22],
-"structamrex_1_1SmallMatrix.html#ae54d9be19be0cf11747349876041d803":[3,0,0,504,0]
+"structamrex_1_1SmallMatrix.html#ae33359e7bce45d6a7bfea9bfee3220ad":[3,0,0,504,22]
 };

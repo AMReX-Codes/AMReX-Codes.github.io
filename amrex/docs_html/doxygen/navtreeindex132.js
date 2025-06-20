@@ -1,5 +1,7 @@
 var NAVTREEINDEX132 =
 {
+"structamrex_1_1VectorTag.html#a86498b7a5078e5d717d9208721216af7":[2,0,0,577,1],
+"structamrex_1_1VectorTag.html#aee7d2fdc93ce371ec5059e473dc4a546":[3,0,0,542,0],
 "structamrex_1_1VectorTag.html#aee7d2fdc93ce371ec5059e473dc4a546":[2,0,0,577,0],
 "structamrex_1_1VisMF_1_1FabOnDisk.html":[2,0,0,578,0],
 "structamrex_1_1VisMF_1_1FabOnDisk.html":[3,0,0,543,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX132 =
 "structamrex_1_1amrex__KSP.html":[2,0,0,70],
 "structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[2,0,0,70,4],
 "structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[3,0,0,35,4],
-"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[2,0,0,70,5],
-"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[3,0,0,35,5],
-"structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[2,0,0,70,3]
+"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[2,0,0,70,5]
 };

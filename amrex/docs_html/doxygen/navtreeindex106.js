@@ -1,5 +1,7 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1NonLocalBC_1_1detail.html":[2,0,0,31,0],
+"namespaceamrex_1_1NonLocalBC_1_1detail.html#a5e2828c1791468964c1eee471e874eaa":[2,0,0,31,0,0],
 "namespaceamrex_1_1OpenMP.html":[2,0,0,33],
 "namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032":[2,0,0,33,2],
 "namespaceamrex_1_1OpenMP.html#aaeee8e96a1a1222c5fe65bf996f4b840":[2,0,0,33,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX106 =
 "namespaceamrex_1_1ParallelReduce.html#aa556775029846fbb9c0ba446c07505a0":[2,0,0,39,4],
 "namespaceamrex_1_1ParallelReduce.html#abe2f46b96ea5d1752c49cfb8a44b55b9":[2,0,0,39,12],
 "namespaceamrex_1_1ParallelReduce.html#ac02b81de9041c274cd81061b7c66c189":[2,0,0,39,5],
-"namespaceamrex_1_1ParallelReduce.html#ae9c54202ab1977174170abe666454cb6":[2,0,0,39,2],
-"namespaceamrex_1_1ParticleIdCpus.html":[2,0,0,43],
-"namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c":[2,0,0,43,0]
+"namespaceamrex_1_1ParallelReduce.html#ae9c54202ab1977174170abe666454cb6":[2,0,0,39,2]
 };

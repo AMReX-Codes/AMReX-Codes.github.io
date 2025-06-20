@@ -203,6 +203,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_omp_mod.F90", "AMReX__omp__mod_8F90.html", "AMReX__omp__mod_8F90" ],
     [ "AMReX_OpenMP.cpp", "AMReX__OpenMP_8cpp.html", "AMReX__OpenMP_8cpp" ],
     [ "AMReX_OpenMP.H", "AMReX__OpenMP_8H.html", "AMReX__OpenMP_8H" ],
+    [ "AMReX_Order.H", "AMReX__Order_8H.html", "AMReX__Order_8H" ],
     [ "AMReX_Orientation.cpp", "AMReX__Orientation_8cpp.html", "AMReX__Orientation_8cpp" ],
     [ "AMReX_Orientation.H", "AMReX__Orientation_8H.html", "AMReX__Orientation_8H" ],
     [ "AMReX_ParallelContext.cpp", "AMReX__ParallelContext_8cpp.html", "AMReX__ParallelContext_8cpp" ],
