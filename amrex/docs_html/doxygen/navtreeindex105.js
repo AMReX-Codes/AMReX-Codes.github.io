@@ -1,5 +1,15 @@
 var NAVTREEINDEX105 =
 {
+"namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91":[2,0,0,16,80],
+"namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25":[2,0,0,16,123],
+"namespaceamrex_1_1Gpu.html#a06351ce8c083138d26fa7653a0c63d7b":[2,0,0,16,54],
+"namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be":[2,0,0,16,117],
+"namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab":[2,0,0,16,97],
+"namespaceamrex_1_1Gpu.html#a0c2569c007a55f5619e6242794f066e6":[2,0,0,16,85],
+"namespaceamrex_1_1Gpu.html#a132c08cd6614796306908e0155ac58b2":[2,0,0,16,57],
+"namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92":[2,0,0,16,98],
+"namespaceamrex_1_1Gpu.html#a15d5aa9cbac1f2a0ef1f042530760b88":[2,0,0,16,66],
+"namespaceamrex_1_1Gpu.html#a16a3885ac1170fd177c3ef4b23a6721d":[2,0,0,16,116],
 "namespaceamrex_1_1Gpu.html#a18d6ae36f6f894265b771b9d33717041":[2,0,0,16,68],
 "namespaceamrex_1_1Gpu.html#a2388c83afe31a41fc38fab133d98a1be":[2,0,0,16,52],
 "namespaceamrex_1_1Gpu.html#a28a5a940451f82dac8c84f09e5f89fea":[2,0,0,16,105],
@@ -239,15 +249,5 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1NonLocalBC.html#ae386bf24e7c4d15e5c7566cb28e42e1b":[2,0,0,31,44],
 "namespaceamrex_1_1NonLocalBC.html#af036b80faac529836fac28ffa5f11e41":[2,0,0,31,43],
 "namespaceamrex_1_1NonLocalBC_1_1detail.html":[2,0,0,31,0],
-"namespaceamrex_1_1NonLocalBC_1_1detail.html#a5e2828c1791468964c1eee471e874eaa":[2,0,0,31,0,0],
-"namespaceamrex_1_1OpenMP.html":[2,0,0,33],
-"namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032":[2,0,0,33,2],
-"namespaceamrex_1_1OpenMP.html#aaeee8e96a1a1222c5fe65bf996f4b840":[2,0,0,33,4],
-"namespaceamrex_1_1OpenMP.html#ab20933abbde0f4d52baff34fd3d0f10a":[2,0,0,33,1],
-"namespaceamrex_1_1OpenMP.html#ac4d826cf1b5dd7b16d2e1d54a73ff935":[2,0,0,33,3],
-"namespaceamrex_1_1OpenMP.html#ade36032ab5920b203a693a1cc44bd82a":[2,0,0,33,0],
-"namespaceamrex_1_1ParallelAllGather.html":[2,0,0,34],
-"namespaceamrex_1_1ParallelAllGather.html#a1ea9d029b1a0e862f2cf90ee0679ab65":[2,0,0,34,0],
-"namespaceamrex_1_1ParallelAllGather.html#aaeea1cff72579eabfe1778d22f0c5b35":[2,0,0,34,1],
-"namespaceamrex_1_1ParallelAllReduce.html":[2,0,0,35]
+"namespaceamrex_1_1NonLocalBC_1_1detail.html#a5e2828c1791468964c1eee471e874eaa":[2,0,0,31,0,0]
 };

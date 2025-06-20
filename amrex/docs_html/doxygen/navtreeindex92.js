@@ -1,5 +1,15 @@
 var NAVTREEINDEX92 =
 {
+"classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16":[2,0,0,583,29],
+"classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16":[3,0,0,548,29],
+"classamrex_1_1XYPlotDataList.html#a88ab515d361ad0b1fdd14ec20b572969":[3,0,0,548,36],
+"classamrex_1_1XYPlotDataList.html#a88ab515d361ad0b1fdd14ec20b572969":[2,0,0,583,36],
+"classamrex_1_1XYPlotDataList.html#a901a80f5953cc152073c60286cb6c860":[3,0,0,548,38],
+"classamrex_1_1XYPlotDataList.html#a901a80f5953cc152073c60286cb6c860":[2,0,0,583,38],
+"classamrex_1_1XYPlotDataList.html#a9810578aa21d4c3ea548697820ada970":[3,0,0,548,23],
+"classamrex_1_1XYPlotDataList.html#a9810578aa21d4c3ea548697820ada970":[2,0,0,583,23],
+"classamrex_1_1XYPlotDataList.html#a9ea4cf951957098f5fa36fe181899f41":[3,0,0,548,3],
+"classamrex_1_1XYPlotDataList.html#a9ea4cf951957098f5fa36fe181899f41":[2,0,0,583,3],
 "classamrex_1_1XYPlotDataList.html#ab0ececa28c1beb562d0739bf961013fb":[2,0,0,583,4],
 "classamrex_1_1XYPlotDataList.html#ab0ececa28c1beb562d0739bf961013fb":[3,0,0,548,4],
 "classamrex_1_1XYPlotDataList.html#ab19f254be90dcd366f2e12953d492cd4":[3,0,0,548,40],
@@ -239,15 +249,5 @@ var NAVTREEINDEX92 =
 "classamrex_1_1iMultiFab.html#a04e68d07c0aae11be5946e24023b17d3":[2,0,0,279,18],
 "classamrex_1_1iMultiFab.html#a04e68d07c0aae11be5946e24023b17d3":[3,0,0,244,18],
 "classamrex_1_1iMultiFab.html#a0ad4af39181a230c528e27398980ba5a":[3,0,0,244,10],
-"classamrex_1_1iMultiFab.html#a0ad4af39181a230c528e27398980ba5a":[2,0,0,279,10],
-"classamrex_1_1iMultiFab.html#a107599bda529487acf4ad13281918a6f":[2,0,0,279,2],
-"classamrex_1_1iMultiFab.html#a107599bda529487acf4ad13281918a6f":[3,0,0,244,2],
-"classamrex_1_1iMultiFab.html#a16f57e0d929a79571e20a91253efe2d7":[3,0,0,244,21],
-"classamrex_1_1iMultiFab.html#a16f57e0d929a79571e20a91253efe2d7":[2,0,0,279,21],
-"classamrex_1_1iMultiFab.html#a19b141dcd625b4204e8f2fa1b7002cb7":[3,0,0,244,19],
-"classamrex_1_1iMultiFab.html#a19b141dcd625b4204e8f2fa1b7002cb7":[2,0,0,279,19],
-"classamrex_1_1iMultiFab.html#a1f612aa278e1501b292c141ea3939698":[3,0,0,244,49],
-"classamrex_1_1iMultiFab.html#a1f612aa278e1501b292c141ea3939698":[2,0,0,279,49],
-"classamrex_1_1iMultiFab.html#a20f88cb636e58141aff41e1ce56a7932":[3,0,0,244,27],
-"classamrex_1_1iMultiFab.html#a20f88cb636e58141aff41e1ce56a7932":[2,0,0,279,27]
+"classamrex_1_1iMultiFab.html#a0ad4af39181a230c528e27398980ba5a":[2,0,0,279,10]
 };

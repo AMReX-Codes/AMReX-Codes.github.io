@@ -1,5 +1,15 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1OpenMP.html":[2,0,0,33],
+"namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032":[2,0,0,33,2],
+"namespaceamrex_1_1OpenMP.html#aaeee8e96a1a1222c5fe65bf996f4b840":[2,0,0,33,4],
+"namespaceamrex_1_1OpenMP.html#ab20933abbde0f4d52baff34fd3d0f10a":[2,0,0,33,1],
+"namespaceamrex_1_1OpenMP.html#ac4d826cf1b5dd7b16d2e1d54a73ff935":[2,0,0,33,3],
+"namespaceamrex_1_1OpenMP.html#ade36032ab5920b203a693a1cc44bd82a":[2,0,0,33,0],
+"namespaceamrex_1_1ParallelAllGather.html":[2,0,0,34],
+"namespaceamrex_1_1ParallelAllGather.html#a1ea9d029b1a0e862f2cf90ee0679ab65":[2,0,0,34,0],
+"namespaceamrex_1_1ParallelAllGather.html#aaeea1cff72579eabfe1778d22f0c5b35":[2,0,0,34,1],
+"namespaceamrex_1_1ParallelAllReduce.html":[2,0,0,35],
 "namespaceamrex_1_1ParallelAllReduce.html#a220eeb19edc1365466cc0acfec9ee3d7":[2,0,0,35,11],
 "namespaceamrex_1_1ParallelAllReduce.html#a22a60add9d9c9a8d562a9417d297f9bc":[2,0,0,35,5],
 "namespaceamrex_1_1ParallelAllReduce.html#a52cd6d76e8a30d6a2dd9ff1835f036dc":[2,0,0,35,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX106 =
 "namespaceamrex_1_1ParallelReduce.html#ac02b81de9041c274cd81061b7c66c189":[2,0,0,39,5],
 "namespaceamrex_1_1ParallelReduce.html#ae9c54202ab1977174170abe666454cb6":[2,0,0,39,2],
 "namespaceamrex_1_1ParticleIdCpus.html":[2,0,0,43],
-"namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c":[2,0,0,43,0],
-"namespaceamrex_1_1ParticleInterpolator.html":[2,0,0,44],
-"namespaceamrex_1_1Reduce.html":[2,0,0,48],
-"namespaceamrex_1_1Reduce.html#a07365bcdfaa9fe246330e8d91f71ecc0":[2,0,0,48,6],
-"namespaceamrex_1_1Reduce.html#a14f4ad196e92e318437fba27909ea581":[2,0,0,48,1],
-"namespaceamrex_1_1Reduce.html#a7ac8075282193aef5024b3a7092a0f3c":[2,0,0,48,4],
-"namespaceamrex_1_1Reduce.html#a8e8a5dd1862e4f8c8eb70e4601edd281":[2,0,0,48,5],
-"namespaceamrex_1_1Reduce.html#abb357d8fcc6dd0426249ee962166fdd3":[2,0,0,48,3],
-"namespaceamrex_1_1Reduce.html#ac1dab3efd41294be3534dceac0c145b7":[2,0,0,48,7],
-"namespaceamrex_1_1Reduce.html#adae163b6d167d018ba6ec7cf821b97a8":[2,0,0,48,8],
-"namespaceamrex_1_1Reduce.html#ae179b14741cc532f08816fceabea24f5":[2,0,0,48,9]
+"namespaceamrex_1_1ParticleIdCpus.html#a7dade82513033963b539558d0d2d5e0c":[2,0,0,43,0]
 };

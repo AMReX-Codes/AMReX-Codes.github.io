@@ -1,5 +1,15 @@
 var NAVTREEINDEX104 =
 {
+"namespaceamrex.html#afe5f053f9083b72c3ba55354f2f30e71":[2,0,0,1446],
+"namespaceamrex.html#afe890be0bd82650235456eabcf50e309":[2,0,0,1991],
+"namespaceamrex.html#afe930d74045516fece8591f173e57007":[2,0,0,587],
+"namespaceamrex.html#afe943e0bac4c931ba74fcfb7e0fceb64":[2,0,0,2242],
+"namespaceamrex.html#afeb47b1ddabe421a74790b1ef812b908":[2,0,0,1878],
+"namespaceamrex.html#afebcec6551cf0c41678b8ea34dbd7b52":[2,0,0,857],
+"namespaceamrex.html#afee414511118e5074a62b89cb88f0f5a":[2,0,0,1432],
+"namespaceamrex.html#afeebec2f58b85bfde5b88b30810cd82d":[2,0,0,2313],
+"namespaceamrex.html#aff33f49d1494120e79df850eaa87201e":[2,0,0,1828],
+"namespaceamrex.html#aff3db9e0a6ad08f9e98ff966faeb1244":[2,0,0,1557],
 "namespaceamrex.html#aff6483cc92504552a999444884df9c7f":[2,0,0,1520],
 "namespaceamrex.html#aff64e983a02f98455e7319fb031838e7":[2,0,0,1402],
 "namespaceamrex.html#aff6b4420435f9951710a37eda411db8f":[2,0,0,1974],
@@ -239,15 +249,5 @@ var NAVTREEINDEX104 =
 "namespaceamrex_1_1Font.html#ac22ce3b2fbbb155d2706d522d445fbf0":[2,0,0,14,0],
 "namespaceamrex_1_1Font.html#acbd1501cb1d6930cf314592a22e5319f":[2,0,0,14,3],
 "namespaceamrex_1_1Font.html#aec25a4181c246941fa29e862e4443b85":[2,0,0,14,1],
-"namespaceamrex_1_1Gpu.html":[2,0,0,16],
-"namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91":[2,0,0,16,80],
-"namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25":[2,0,0,16,123],
-"namespaceamrex_1_1Gpu.html#a06351ce8c083138d26fa7653a0c63d7b":[2,0,0,16,54],
-"namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be":[2,0,0,16,117],
-"namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab":[2,0,0,16,97],
-"namespaceamrex_1_1Gpu.html#a0c2569c007a55f5619e6242794f066e6":[2,0,0,16,85],
-"namespaceamrex_1_1Gpu.html#a132c08cd6614796306908e0155ac58b2":[2,0,0,16,57],
-"namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92":[2,0,0,16,98],
-"namespaceamrex_1_1Gpu.html#a15d5aa9cbac1f2a0ef1f042530760b88":[2,0,0,16,66],
-"namespaceamrex_1_1Gpu.html#a16a3885ac1170fd177c3ef4b23a6721d":[2,0,0,16,116]
+"namespaceamrex_1_1Gpu.html":[2,0,0,16]
 };

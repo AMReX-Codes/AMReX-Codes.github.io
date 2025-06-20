@@ -1,5 +1,15 @@
 var NAVTREEINDEX85 =
 {
+"classamrex_1_1PlotFileDataImpl.html#a7e2188ea0d115389a8342cc5cee7b100":[2,0,0,510,25],
+"classamrex_1_1PlotFileDataImpl.html#a7e2188ea0d115389a8342cc5cee7b100":[3,0,0,475,25],
+"classamrex_1_1PlotFileDataImpl.html#a7f9318219055f7d10f6975d75660182f":[2,0,0,510,29],
+"classamrex_1_1PlotFileDataImpl.html#a7f9318219055f7d10f6975d75660182f":[3,0,0,475,29],
+"classamrex_1_1PlotFileDataImpl.html#a803eda21276f7f33029700a471f9f275":[3,0,0,475,5],
+"classamrex_1_1PlotFileDataImpl.html#a803eda21276f7f33029700a471f9f275":[2,0,0,510,5],
+"classamrex_1_1PlotFileDataImpl.html#a8d96b2349dc6a44db9659c673434511a":[2,0,0,510,1],
+"classamrex_1_1PlotFileDataImpl.html#a8d96b2349dc6a44db9659c673434511a":[3,0,0,475,1],
+"classamrex_1_1PlotFileDataImpl.html#a8f100dd50d87c8225ab3f4bd4e4e81ee":[2,0,0,510,34],
+"classamrex_1_1PlotFileDataImpl.html#a8f100dd50d87c8225ab3f4bd4e4e81ee":[3,0,0,475,34],
 "classamrex_1_1PlotFileDataImpl.html#a95ae8f39c974d9fba6103cf94bd47c51":[3,0,0,475,13],
 "classamrex_1_1PlotFileDataImpl.html#a95ae8f39c974d9fba6103cf94bd47c51":[2,0,0,510,13],
 "classamrex_1_1PlotFileDataImpl.html#a95d9cd20405f8a1010923a022c929f38":[3,0,0,475,8],
@@ -239,15 +249,5 @@ var NAVTREEINDEX85 =
 "classamrex_1_1RealDescriptor.html#a91dde50b590073ce6c8154df86c9c281":[3,0,0,485,5],
 "classamrex_1_1RealDescriptor.html#a91dde50b590073ce6c8154df86c9c281":[2,0,0,520,5],
 "classamrex_1_1RealDescriptor.html#a9b0aca1cc51c3490d72b8196426d4f7a":[3,0,0,485,13],
-"classamrex_1_1RealDescriptor.html#a9b0aca1cc51c3490d72b8196426d4f7a":[2,0,0,520,13],
-"classamrex_1_1RealDescriptor.html#a9dbe5ae2ad6763590e469c1a74036b53":[2,0,0,520,0],
-"classamrex_1_1RealDescriptor.html#a9dbe5ae2ad6763590e469c1a74036b53":[3,0,0,485,0],
-"classamrex_1_1RealDescriptor.html#aa5b07184bf42f9d39fcaccf6e9ca0fc6":[2,0,0,520,4],
-"classamrex_1_1RealDescriptor.html#aa5b07184bf42f9d39fcaccf6e9ca0fc6":[3,0,0,485,4],
-"classamrex_1_1RealDescriptor.html#aa83674a91e2dcc69c8fd93d4009b3276":[2,0,0,520,7],
-"classamrex_1_1RealDescriptor.html#aa83674a91e2dcc69c8fd93d4009b3276":[3,0,0,485,7],
-"classamrex_1_1RealDescriptor.html#aaa3172ecb27298323dd87d8c72204eb2":[2,0,0,520,26],
-"classamrex_1_1RealDescriptor.html#aaa3172ecb27298323dd87d8c72204eb2":[3,0,0,485,26],
-"classamrex_1_1RealDescriptor.html#aad58178e786c29c8513d8549b20e0e6b":[2,0,0,520,29],
-"classamrex_1_1RealDescriptor.html#aad58178e786c29c8513d8549b20e0e6b":[3,0,0,485,29]
+"classamrex_1_1RealDescriptor.html#a9b0aca1cc51c3490d72b8196426d4f7a":[2,0,0,520,13]
 };

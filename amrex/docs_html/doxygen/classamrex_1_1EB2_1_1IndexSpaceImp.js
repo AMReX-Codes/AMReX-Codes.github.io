@@ -12,6 +12,7 @@ var classamrex_1_1EB2_1_1IndexSpaceImp =
     [ "getLevel", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a1eeaab4266c11166a3072eea2f888f52", null ],
     [ "operator=", "classamrex_1_1EB2_1_1IndexSpaceImp.html#af6b6248eceb701c542539a952c5808d8", null ],
     [ "operator=", "classamrex_1_1EB2_1_1IndexSpaceImp.html#acd1ec386ca611eae4f102c7bc4562168", null ],
+    [ "setShift", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ae4467aff16a7f41a2e985fd833d36130", null ],
     [ "m_build_coarse_level_by_coarsening", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ac61a177a98e7db517cf368ca8e901a68", null ],
     [ "m_domain", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a961c595a3d22b06da38b244becb9f3e3", null ],
     [ "m_extend_domain_face", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a9f74df8f16a93bd17f000fc12040400c", null ],

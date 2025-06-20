@@ -1,5 +1,15 @@
 var NAVTREEINDEX118 =
 {
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091":[2,0,0,207,4,0],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a8b3953bf7e65f41e79d25acef114bde7":[3,0,0,172,4,4],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a8b3953bf7e65f41e79d25acef114bde7":[2,0,0,207,4,4],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c":[2,0,0,207,4,8],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c":[3,0,0,172,4,8],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa4ad873f80c114d0041fd4c30d9fbe94":[3,0,0,172,4,5],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa4ad873f80c114d0041fd4c30d9fbe94":[2,0,0,207,4,5],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#abc0d662cdc63c3e99f4c114dc3ac266f":[3,0,0,172,4,6],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#abc0d662cdc63c3e99f4c114dc3ac266f":[2,0,0,207,4,6],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae121ffe428388c574820f65530cdd113":[3,0,0,172,4,3],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae121ffe428388c574820f65530cdd113":[2,0,0,207,4,3],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e":[2,0,0,207,4,1],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e":[3,0,0,172,4,1],
@@ -239,15 +249,5 @@ var NAVTREEINDEX118 =
 "structamrex_1_1FabArray_1_1ShMem.html#ae6782d2f0ddec9454e506567feeb64f9":[2,0,0,206,1,5],
 "structamrex_1_1FabArray_1_1ShMem.html#aec97898947982708e087ae84c0efc3d0":[2,0,0,206,1,3],
 "structamrex_1_1FabArray_1_1ShMem.html#aec97898947982708e087ae84c0efc3d0":[3,0,0,171,1,3],
-"structamrex_1_1FabCopyDescriptor.html":[3,0,0,175],
-"structamrex_1_1FabCopyDescriptor.html":[2,0,0,210],
-"structamrex_1_1FabCopyDescriptor.html#a164510f57c480c98b19458a1516ba6dd":[3,0,0,175,9],
-"structamrex_1_1FabCopyDescriptor.html#a164510f57c480c98b19458a1516ba6dd":[2,0,0,210,9],
-"structamrex_1_1FabCopyDescriptor.html#a19def3b9d982e1bb4b399d5f79bda16e":[3,0,0,175,2],
-"structamrex_1_1FabCopyDescriptor.html#a19def3b9d982e1bb4b399d5f79bda16e":[2,0,0,210,2],
-"structamrex_1_1FabCopyDescriptor.html#a339ecf32165d5528efe85cd26bdcb9ff":[2,0,0,210,7],
-"structamrex_1_1FabCopyDescriptor.html#a339ecf32165d5528efe85cd26bdcb9ff":[3,0,0,175,7],
-"structamrex_1_1FabCopyDescriptor.html#a3d6e218f177ba9156deff887f2356d67":[3,0,0,175,0],
-"structamrex_1_1FabCopyDescriptor.html#a3d6e218f177ba9156deff887f2356d67":[2,0,0,210,0],
-"structamrex_1_1FabCopyDescriptor.html#a3e2bb26a42b27ca072324f9bdfb0e1cf":[3,0,0,175,13]
+"structamrex_1_1FabCopyDescriptor.html":[3,0,0,175]
 };

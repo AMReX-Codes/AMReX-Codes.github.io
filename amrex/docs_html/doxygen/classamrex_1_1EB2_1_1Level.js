@@ -32,6 +32,7 @@ var classamrex_1_1EB2_1_1Level =
     [ "nGrowVect", "classamrex_1_1EB2_1_1Level.html#ab4418a18ddd42434836fe606d7f76d1e", null ],
     [ "prepareForCoarsening", "classamrex_1_1EB2_1_1Level.html#a1f72985a64a6353ac131eb89728f7ba9", null ],
     [ "setRegularLevel", "classamrex_1_1EB2_1_1Level.html#aa134f8da748d28d9c016c9ccf35e0276", null ],
+    [ "setShift", "classamrex_1_1EB2_1_1Level.html#aa2175a56afb7b0b6a9be04615dc6dc2f", null ],
     [ "write_to_chkpt_file", "classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1", null ],
     [ "GShopLevel", "classamrex_1_1EB2_1_1Level.html#acd9942090fa93b0eb048fbd2026d9b3c", null ],
     [ "m_allregular", "classamrex_1_1EB2_1_1Level.html#a16651c9d026bf4c7876a890be6e85253", null ],
@@ -54,5 +55,6 @@ var classamrex_1_1EB2_1_1Level =
     [ "m_ngrow", "classamrex_1_1EB2_1_1Level.html#a4b580f495f97633950d9a0822c940fe8", null ],
     [ "m_ok", "classamrex_1_1EB2_1_1Level.html#acdef1c2b11c62f8e02b1a4806de74376", null ],
     [ "m_parent", "classamrex_1_1EB2_1_1Level.html#a4e89aa75cb75a863666efa8df2f74e9b", null ],
+    [ "m_shift", "classamrex_1_1EB2_1_1Level.html#a1866cb5d3a50409ea2d006074442b57e", null ],
     [ "m_volfrac", "classamrex_1_1EB2_1_1Level.html#a0fd8fbb0ff5ceb71c27249153f70a53f", null ]
 ];
