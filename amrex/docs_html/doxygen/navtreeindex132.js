@@ -1,5 +1,11 @@
 var NAVTREEINDEX132 =
 {
+"structamrex_1_1ValLocPair.html#ab807eb6f06e61dab7ba41259b82dc50b":[3,0,0,540,6],
+"structamrex_1_1VectorTag.html":[2,0,0,577],
+"structamrex_1_1VectorTag.html":[3,0,0,542],
+"structamrex_1_1VectorTag.html#a3769fec569be6c2c4379be5bdd1329b6":[3,0,0,542,2],
+"structamrex_1_1VectorTag.html#a3769fec569be6c2c4379be5bdd1329b6":[2,0,0,577,2],
+"structamrex_1_1VectorTag.html#a86498b7a5078e5d717d9208721216af7":[3,0,0,542,1],
 "structamrex_1_1VectorTag.html#a86498b7a5078e5d717d9208721216af7":[2,0,0,577,1],
 "structamrex_1_1VectorTag.html#aee7d2fdc93ce371ec5059e473dc4a546":[3,0,0,542,0],
 "structamrex_1_1VectorTag.html#aee7d2fdc93ce371ec5059e473dc4a546":[2,0,0,577,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX132 =
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[3,0,0,0,6,0,3],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[2,0,0,0,7,0,2],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[3,0,0,0,6,0,2],
-"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,7,0,1],
-"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,6,0,1],
-"structamrex_1_1amrex__KSP.html":[3,0,0,35],
-"structamrex_1_1amrex__KSP.html":[2,0,0,70],
-"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[2,0,0,70,4],
-"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[3,0,0,35,4],
-"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[2,0,0,70,5]
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,7,0,1]
 };

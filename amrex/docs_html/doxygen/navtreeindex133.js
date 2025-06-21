@@ -1,5 +1,11 @@
 var NAVTREEINDEX133 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,6,0,1],
+"structamrex_1_1amrex__KSP.html":[3,0,0,35],
+"structamrex_1_1amrex__KSP.html":[2,0,0,70],
+"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[2,0,0,70,4],
+"structamrex_1_1amrex__KSP.html#a6bf2eead9309feebfb7cc6fe7ac13e5c":[3,0,0,35,4],
+"structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[2,0,0,70,5],
 "structamrex_1_1amrex__KSP.html#a75d08f0395025f653322cd6f6864d482":[3,0,0,35,5],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[2,0,0,70,3],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[3,0,0,35,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX133 =
 "structamrex_1_1iparser__symbol.html#a4bf5fc603ea8e9574ec71ba4ffef1da9":[2,0,0,302,1],
 "structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[3,0,0,267,2],
 "structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[2,0,0,302,2],
-"structamrex_1_1is__soa__particle.html":[3,0,0,302],
-"structamrex_1_1is__soa__particle.html":[2,0,0,337],
-"structamrex_1_1make__particle.html":[2,0,0,366],
-"structamrex_1_1make__particle.html":[3,0,0,331],
-"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[3,0,0,331,0],
-"structamrex_1_1make__particle.html#aa1bc1c792235901d484868e02b0fe600":[2,0,0,366,0],
-"structamrex_1_1make__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particlc68a74db21db66e00f623afe9a792145.html":[2,0,0,367]
+"structamrex_1_1is__soa__particle.html":[3,0,0,302]
 };

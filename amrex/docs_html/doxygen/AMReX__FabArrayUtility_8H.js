@@ -27,6 +27,7 @@ var AMReX__FabArrayUtility_8H =
     [ "nGrowVect", "AMReX__FabArrayUtility_8H.html#a35376063ac1a1e47b47f61e5c0b169e0", null ],
     [ "norminf", "AMReX__FabArrayUtility_8H.html#a0298f67b516f80f783d08d796763d0bc", null ],
     [ "norminf", "AMReX__FabArrayUtility_8H.html#a02870cc0ddaa25fae3bd252bb65da3a4", null ],
+    [ "OverlapMask", "AMReX__FabArrayUtility_8H.html#a5b03cad3144b45df7691ca553e1f507c", null ],
     [ "OverrideSync", "AMReX__FabArrayUtility_8H.html#a5821b989454c54f92dd1f2312e95b5b6", null ],
     [ "OverrideSync_finish", "AMReX__FabArrayUtility_8H.html#ad81d4975698feb7461d8ad18c21c7951", null ],
     [ "OverrideSync_nowait", "AMReX__FabArrayUtility_8H.html#af6d31b25633d781cd8fe931951889e6c", null ],

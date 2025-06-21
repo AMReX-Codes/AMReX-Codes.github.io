@@ -2631,6 +2631,7 @@ var namespaceamrex =
     [ "operator|", "namespaceamrex.html#a61941cdb68b6ca2b6bd0ccef3831019b", null ],
     [ "OutOfMemory", "namespaceamrex.html#afe890be0bd82650235456eabcf50e309", null ],
     [ "OutStream", "namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df", null ],
+    [ "OverlapMask", "namespaceamrex.html#a5b03cad3144b45df7691ca553e1f507c", null ],
     [ "OverrideSync", "namespaceamrex.html#a5821b989454c54f92dd1f2312e95b5b6", null ],
     [ "OverrideSync_finish", "namespaceamrex.html#ad81d4975698feb7461d8ad18c21c7951", null ],
     [ "OverrideSync_nowait", "namespaceamrex.html#af6d31b25633d781cd8fe931951889e6c", null ],

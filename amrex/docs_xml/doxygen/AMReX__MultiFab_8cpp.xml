@@ -3210,7 +3210,7 @@
 <codeline lineno="1088"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1089"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>nm2<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="1090"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1091"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref><sp/>=<sp/>OverlapMask(period);</highlight></codeline>
+<codeline lineno="1091"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref><sp/>=<sp/><ref refid="namespaceamrex_1a5b03cad3144b45df7691ca553e1f507c" kindref="member">OverlapMask</ref>(period);</highlight></codeline>
 <codeline lineno="1092"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1093"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Gpu::inLaunchRegion())<sp/>{</highlight></codeline>
@@ -3277,7 +3277,7 @@
 <codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref><sp/>=<sp/>OverlapMask(period);</highlight></codeline>
+<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref><sp/>=<sp/><ref refid="namespaceamrex_1a5b03cad3144b45df7691ca553e1f507c" kindref="member">OverlapMask</ref>(period);</highlight></codeline>
 <codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab::Divide(tmpmf,<sp/>*<ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref>,<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
 <codeline lineno="1160"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tmpmf.norm1(0,<sp/>0);</highlight></codeline>
@@ -3651,8 +3651,8 @@
 <codeline lineno="1529"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">amrex::ParallelFor</ref>(tags,<sp/>1,</highlight></codeline>
 <codeline lineno="1530"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Array4BoxTag&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tag)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1531"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>p<sp/>=<sp/>tag.dfab.ptr(i,j,k,n);</highlight></codeline>
-<codeline lineno="1533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::Atomic::AddNoRet(p,<sp/>Real(1.0));</highlight></codeline>
+<codeline lineno="1532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>ptr<sp/>=<sp/>tag.dfab.ptr(i,j,k,n);</highlight></codeline>
+<codeline lineno="1533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::Atomic::AddNoRet(ptr,<sp/>Real(1.0));</highlight></codeline>
 <codeline lineno="1534"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="1535"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1536"><highlight class="normal"></highlight></codeline>
@@ -3671,7 +3671,7 @@
 <codeline lineno="1549"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MultiFab::AverageSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1550"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1551"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ixType().cellCentered())<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="1552"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wgt<sp/>=<sp/>this-&gt;OverlapMask(period);</highlight></codeline>
+<codeline lineno="1552"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wgt<sp/>=<sp/>this-&gt;<ref refid="namespaceamrex_1a5b03cad3144b45df7691ca553e1f507c" kindref="member">OverlapMask</ref>(period);</highlight></codeline>
 <codeline lineno="1553"><highlight class="normal"><sp/><sp/><sp/><sp/>wgt-&gt;invert(1.0,<sp/>0,<sp/>1);</highlight></codeline>
 <codeline lineno="1554"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;WeightedSync(*wgt,<sp/>period);</highlight></codeline>
 <codeline lineno="1555"><highlight class="normal">}</highlight></codeline>

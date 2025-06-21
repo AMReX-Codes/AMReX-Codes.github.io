@@ -396,7 +396,7 @@ var searchData=
   ['gmresmlmgt_393',['gmresmlmgt',['../classamrex_1_1MLLinOpT.html#a2b2614ccc7faa12ee28a1428f5cd03d0',1,'amrex::MLLinOpT::GMRESMLMGT'],['../classamrex_1_1GMRESMLMGT.html',1,'amrex::GMRESMLMGT&lt; MF &gt;'],['../classamrex_1_1MLMGT.html#a2b2614ccc7faa12ee28a1428f5cd03d0',1,'amrex::MLMGT::GMRESMLMGT'],['../classamrex_1_1GMRESMLMGT.html#a23db5527f7bcd75ba78997016648b906',1,'amrex::GMRESMLMGT::GMRESMLMGT()']]],
   ['gp_394',['gp',['../structamrex_1_1openbc_1_1MomTag.html#a886bcabd4fa635b87082757fb595cc6c',1,'amrex::openbc::MomTag']]],
   ['gpercent_395',['gPercent',['../classBLProfStats.html#aa9cbfb5bc0b3ad413e06060864eed0f8',1,'BLProfStats']]],
-  ['gpu_396',['gpu',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu'],['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU']]],
+  ['gpu_396',['gpu',['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU'],['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu']]],
   ['gpu_5frand_5fstate_397',['gpu_rand_state',['../namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
   ['gpu_5fstream_398',['gpu_stream',['../classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666',1,'amrex::Gpu::Device']]],
   ['gpu_5fstream_5fpool_399',['gpu_stream_pool',['../classamrex_1_1Gpu_1_1Device.html#a367f9e7d41a6be0c7822f3dc358b0e4e',1,'amrex::Gpu::Device']]],
