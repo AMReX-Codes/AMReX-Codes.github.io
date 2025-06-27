@@ -1,5 +1,7 @@
 var NAVTREEINDEX124 =
 {
+"structamrex_1_1NeighborCode.html":[2,0,0,414],
+"structamrex_1_1NeighborCode.html#ae5f702cff0dcc8b8dc04038691330e0a":[2,0,0,414,1],
 "structamrex_1_1NeighborCode.html#ae5f702cff0dcc8b8dc04038691330e0a":[3,0,0,379,1],
 "structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e":[2,0,0,414,0],
 "structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e":[3,0,0,379,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX124 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a07bee095114ca505ad4c3a70de926628":[3,0,0,12,10,0],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a7c8d153a059ab7a3d4667268e44b37bd":[3,0,0,12,10,2],
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a7c8d153a059ab7a3d4667268e44b37bd":[2,0,0,31,11,2],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[3,0,0,12,10,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[2,0,0,31,11,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[2,0,0,31,12]
+"structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#ab10c5e2ad3652e1739eaaa8577ec551c":[3,0,0,12,10,1]
 };

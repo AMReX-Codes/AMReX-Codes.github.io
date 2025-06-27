@@ -1,5 +1,6 @@
 var NAVTREEINDEX93 =
 {
+"classamrex_1_1iMultiFab.html#a02d76368c2395b79da06fbb04f31a3f8":[2,0,0,279,30],
 "classamrex_1_1iMultiFab.html#a02d76368c2395b79da06fbb04f31a3f8":[3,0,0,244,30],
 "classamrex_1_1iMultiFab.html#a04e68d07c0aae11be5946e24023b17d3":[2,0,0,279,18],
 "classamrex_1_1iMultiFab.html#a04e68d07c0aae11be5946e24023b17d3":[3,0,0,244,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX93 =
 "functions_v.html":[3,3,0,22],
 "functions_vars.html":[3,3,2,0],
 "functions_vars.html":[3,3,2],
-"functions_vars_a.html":[3,3,2,1],
-"functions_vars_b.html":[3,3,2,2]
+"functions_vars_a.html":[3,3,2,1]
 };

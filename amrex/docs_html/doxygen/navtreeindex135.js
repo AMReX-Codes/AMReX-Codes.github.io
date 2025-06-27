@@ -1,5 +1,7 @@
 var NAVTREEINDEX135 =
 {
+"structamrex__string__module_1_1amrex__string.html":[2,0,17,0],
+"structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69":[3,0,8,0,0],
 "structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69":[2,0,17,0,0],
 "structdetail_1_1CellAdd.html":[3,0,9,0],
 "structdetail_1_1CellAdd.html":[2,0,18,0],

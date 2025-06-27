@@ -1,5 +1,7 @@
 var NAVTREEINDEX134 =
 {
+"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[2,0,0,302,2],
+"structamrex_1_1is__soa__particle.html":[3,0,0,302],
 "structamrex_1_1is__soa__particle.html":[2,0,0,337],
 "structamrex_1_1make__particle.html":[2,0,0,366],
 "structamrex_1_1make__particle.html":[3,0,0,331],
@@ -247,7 +249,5 @@ var NAVTREEINDEX134 =
 "structamrex__parmparse__module_1_1amrex__parmparse.html#aed9c2af4d429dc7fa8c2809b6275ad9b":[2,0,16,2,41],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#af85a0b702d267545a613486c37896345":[3,0,7,2,21],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#af85a0b702d267545a613486c37896345":[2,0,16,2,21],
-"structamrex__string__module_1_1amrex__string.html":[3,0,8,0],
-"structamrex__string__module_1_1amrex__string.html":[2,0,17,0],
-"structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69":[3,0,8,0,0]
+"structamrex__string__module_1_1amrex__string.html":[3,0,8,0]
 };

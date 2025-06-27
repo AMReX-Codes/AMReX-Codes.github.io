@@ -174,15 +174,27 @@ $(document).ready(function(){initNavTree('AMReX__RandomEngine_8H_source.html',''
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a8016c9ff694c538e1ecde5289c580b0a">   72</a></span>    <a class="code hl_struct" href="structamrex_1_1RandomEngine.html">RandomEngine</a> <a class="code hl_function" href="namespaceamrex.html#a8016c9ff694c538e1ecde5289c580b0a">getInvalidRandomEngine</a> () {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1RandomEngine.html">RandomEngine</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1RandomEngine.html">RandomEngine</a>{};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:20</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a72a585c8e383e98aab94c9141a27659a"><div class="ttname"><a href="namespaceamrex.html#a72a585c8e383e98aab94c9141a27659a">amrex::randGenerator_t</a></div><div class="ttdeci">curandGenerator_t randGenerator_t</div><div class="ttdef"><b>Definition</b> AMReX_RandomEngine.H:50</div></div>
+<div class="ttc" id="anamespaceamrex_html_a8016c9ff694c538e1ecde5289c580b0a"><div class="ttname"><a href="namespaceamrex.html#a8016c9ff694c538e1ecde5289c580b0a">amrex::getInvalidRandomEngine</a></div><div class="ttdeci">AMREX_FORCE_INLINE RandomEngine getInvalidRandomEngine()</div><div class="ttdef"><b>Definition</b> AMReX_RandomEngine.H:72</div></div>
 <div class="ttc" id="anamespaceamrex_html_a97de2d012759a259948cda53dd99f77f"><div class="ttname"><a href="namespaceamrex.html#a97de2d012759a259948cda53dd99f77f">amrex::getRandState</a></div><div class="ttdeci">AMREX_FORCE_INLINE randState_t * getRandState()</div><div class="ttdef"><b>Definition</b> AMReX_RandomEngine.H:56</div></div>
 <div class="ttc" id="anamespaceamrex_html_abbea0a87a768d8f4e8112b9cd673b124"><div class="ttname"><a href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">amrex::randState_t</a></div><div class="ttdeci">curandState_t randState_t</div><div class="ttdef"><b>Definition</b> AMReX_RandomEngine.H:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae5aa4a92b1c9940d028c38628ec7a866"><div class="ttname"><a href="namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866">amrex::gpu_rand_state</a></div><div class="ttdeci">amrex::randState_t * gpu_rand_state</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:23</div></div>

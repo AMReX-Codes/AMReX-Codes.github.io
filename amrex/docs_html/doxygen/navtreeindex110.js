@@ -1,5 +1,7 @@
 var NAVTREEINDEX110 =
 {
+"namespacedetail.html#ab1edc85caabaea9ac0a3b1e5cf851f17":[2,0,18,5],
+"namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacemembers.html":[2,1,0,0],
 "namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX110 =
 "structamrex_1_1AMRErrorTagInfo.html#a2a4305e6d904d38980905de01195f7db":[3,0,0,32,9],
 "structamrex_1_1AMRErrorTagInfo.html#a409555ab3dc60fa8e6ecd5d4da83271f":[3,0,0,32,2],
 "structamrex_1_1AMRErrorTagInfo.html#a409555ab3dc60fa8e6ecd5d4da83271f":[2,0,0,67,2],
-"structamrex_1_1AMRErrorTagInfo.html#a4a86222d86d735759499296c17af9759":[2,0,0,67,0],
-"structamrex_1_1AMRErrorTagInfo.html#a4a86222d86d735759499296c17af9759":[3,0,0,32,0],
-"structamrex_1_1AMRErrorTagInfo.html#a4ba1c973c9286de53b28bc75c6a526a7":[2,0,0,67,1]
+"structamrex_1_1AMRErrorTagInfo.html#a4a86222d86d735759499296c17af9759":[2,0,0,67,0]
 };

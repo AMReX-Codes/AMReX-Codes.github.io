@@ -1812,6 +1812,7 @@ var namespaceamrex =
     [ "getIndexBounds", "namespaceamrex.html#a5cc794297758c6b5b127ce0acaf800be", null ],
     [ "getIndexBounds", "namespaceamrex.html#a86d4f0422a1ef043598968f4e23a772a", null ],
     [ "getIndexBounds", "namespaceamrex.html#a0fd674c3b4d99ec26b625209c2b7b99c", null ],
+    [ "getInvalidRandomEngine", "namespaceamrex.html#a8016c9ff694c538e1ecde5289c580b0a", null ],
     [ "getParticleCell", "namespaceamrex.html#a26785ecc19207d71ef007f1cbeb3e6ec", null ],
     [ "getParticleCell", "namespaceamrex.html#a6e7a7d55a9760a9b62a5675badced0e1", null ],
     [ "getParticleCell", "namespaceamrex.html#a04427e35cff35a816668c7954717bac3", null ],

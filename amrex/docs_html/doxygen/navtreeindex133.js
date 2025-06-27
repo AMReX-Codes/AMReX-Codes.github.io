@@ -1,5 +1,7 @@
 var NAVTREEINDEX133 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[3,0,0,0,6,0,2],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,7,0,1],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,6,0,1],
 "structamrex_1_1amrex__KSP.html":[3,0,0,35],
 "structamrex_1_1amrex__KSP.html":[2,0,0,70],
@@ -247,7 +249,5 @@ var NAVTREEINDEX133 =
 "structamrex_1_1iparser__symbol.html#a2ceebd378d40320f658d673aa7df8b19":[3,0,0,267,0],
 "structamrex_1_1iparser__symbol.html#a4bf5fc603ea8e9574ec71ba4ffef1da9":[3,0,0,267,1],
 "structamrex_1_1iparser__symbol.html#a4bf5fc603ea8e9574ec71ba4ffef1da9":[2,0,0,302,1],
-"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[3,0,0,267,2],
-"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[2,0,0,302,2],
-"structamrex_1_1is__soa__particle.html":[3,0,0,302]
+"structamrex_1_1iparser__symbol.html#ab7dbb1ddebc9853860a4e44239d43ea5":[3,0,0,267,2]
 };

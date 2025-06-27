@@ -1,5 +1,7 @@
 var NAVTREEINDEX123 =
 {
+"structamrex_1_1LogicalAnd.html":[3,0,0,327],
+"structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[2,0,0,362,0],
 "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,327,0],
 "structamrex_1_1LogicalOr.html":[2,0,0,363],
 "structamrex_1_1LogicalOr.html":[3,0,0,328],
@@ -247,7 +249,5 @@ var NAVTREEINDEX123 =
 "structamrex_1_1Multiplies.html":[2,0,0,413],
 "structamrex_1_1Multiplies.html#ae695d68776b96c331022e784b0de28a2":[2,0,0,413,0],
 "structamrex_1_1Multiplies.html#ae695d68776b96c331022e784b0de28a2":[3,0,0,378,0],
-"structamrex_1_1NeighborCode.html":[3,0,0,379],
-"structamrex_1_1NeighborCode.html":[2,0,0,414],
-"structamrex_1_1NeighborCode.html#ae5f702cff0dcc8b8dc04038691330e0a":[2,0,0,414,1]
+"structamrex_1_1NeighborCode.html":[3,0,0,379]
 };
