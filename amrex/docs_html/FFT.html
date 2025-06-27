@@ -261,11 +261,10 @@ boundaries.</p>
 <span class="n">openbc_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">soln</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span></code> is a 3D only solver that supports periodic
-boundaries in the first two dimensions and Neumann boundary in the last
-dimension. The last dimension is solved with a tridiagonal solver that can
-support non-uniform cell size in the z-direction. For most applications,
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> should be used.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonHybrid</span></code> is a 3D only solver that supports Dirichlet and
+Neumann boundary in the last dimension. The last dimension is solved with a
+tridiagonal solver that can support non-uniform cell size in the
+z-direction. For most applications, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span></code> should be used.</p>
 <p>Similar to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FFT</span><span class="o">::</span><span class="n">R2C</span></code>, the Poisson solvers should be cached for reuse,
 and one might need to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">FFT</span><span class="o">::</span><span class="n">Poisson</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&gt;</span></code>
 because there is no default constructor.</p>

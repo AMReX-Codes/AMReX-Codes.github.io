@@ -3,7 +3,6 @@ var classamrex_1_1FFT_1_1PoissonHybrid =
     [ "cMF", "classamrex_1_1FFT_1_1PoissonHybrid.html#a4745eb15ce739c7abe21edadc545c3d8", null ],
     [ "T", "classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22", null ],
     [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#aad43d1246d480986946e7ca9af9be08e", null ],
-    [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html#ae8f24509dd3bd6e8f03afff454e3028d", null ],
     [ "build_spmf", "classamrex_1_1FFT_1_1PoissonHybrid.html#adcfdf3eac0529bf89a7f5debcb9335c8", null ],
     [ "getSpectralDataLayout", "classamrex_1_1FFT_1_1PoissonHybrid.html#aa19276c7ba2708349c81a5660ffdbcc5", null ],
     [ "solve", "classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3", null ],
