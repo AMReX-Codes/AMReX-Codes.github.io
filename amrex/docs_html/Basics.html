@@ -697,7 +697,8 @@ numbers can be computed with <code class="docutils literal notranslate"><span cl
 the Heaviside step function, <code class="docutils literal notranslate"><span class="pre">heaviside(x1,x2)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>,
 <code class="docutils literal notranslate"><span class="pre">1</span></code>, for <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.
 It supports the Bessel function of the first kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code>
-<code class="docutils literal notranslate"><span class="pre">jn(n,x)</span></code>, and the Bessel function of the second kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code> <code class="docutils literal notranslate"><span class="pre">yn(n,x)</span></code>. Complete elliptic integrals of the first and second kind, <code class="docutils literal notranslate"><span class="pre">comp_ellint_1(k)</span></code> and <code class="docutils literal notranslate"><span class="pre">comp_ellint_2(k)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">jn(n,x)</span></code>, and the Bessel function of the second kind of order <code class="docutils literal notranslate"><span class="pre">n</span></code> <code class="docutils literal notranslate"><span class="pre">yn(n,x)</span></code>.
+Complete elliptic integrals of the first and second kind, <code class="docutils literal notranslate"><span class="pre">comp_ellint_1(k)</span></code> and <code class="docutils literal notranslate"><span class="pre">comp_ellint_2(k)</span></code>,
 are supported.
 There is <code class="docutils literal notranslate"><span class="pre">if(a,b,c)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code> depending on the value of
 <code class="docutils literal notranslate"><span class="pre">a</span></code>.  A number of comparison operators are supported, including <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
@@ -707,9 +708,9 @@ for true and <code class="docutils literal notranslate"><span class="pre">0</spa
 convention of the C and C++ programming languages.  Here is an example of using
 the parser.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;if(x&gt;a and x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;);</span>
-<span class="go">parser.setConstant(a, ...);</span>
-<span class="go">parser.setConstant(b, ...);</span>
-<span class="go">parser.setConstant(c, ...);</span>
+<span class="go">parser.setConstant(&quot;a&quot;, ...);</span>
+<span class="go">parser.setConstant(&quot;b&quot;, ...);</span>
+<span class="go">parser.setConstant(&quot;c&quot;, ...);</span>
 <span class="go">parser.registerVariables({&quot;x&quot;,&quot;y&quot;,&quot;z&quot;});</span>
 <span class="go">auto f = parser.compile&lt;3&gt;();  // 3 because there are three variables.</span>
 
@@ -718,7 +719,7 @@ the parser.</p>
 <span class="go">for (int k = 0; ...) {</span>
 <span class="go">  for (int j = 0; ...) {</span>
 <span class="go">    for (int i = 0; ...) {</span>
-<span class="go">      a(i,j,k) = f(i*dx, j*dy, k*dz);</span>
+<span class="go">      my_array(i,j,k) = f(i*dx, j*dy, k*dz);</span>
 <span class="go">    }</span>
 <span class="go">  }</span>
 <span class="go">}</span>
