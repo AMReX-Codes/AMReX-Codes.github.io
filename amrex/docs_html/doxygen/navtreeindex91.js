@@ -1,5 +1,13 @@
 var NAVTREEINDEX91 =
 {
+"classamrex_1_1VisMF.html#a0706ea7e89d0d5b2d9a60acacc8f38f0":[3,0,0,543,96],
+"classamrex_1_1VisMF.html#a0706ea7e89d0d5b2d9a60acacc8f38f0":[2,0,0,578,96],
+"classamrex_1_1VisMF.html#a07b1ead2f2b6a21362bcfbe6fa0cc784":[3,0,0,543,48],
+"classamrex_1_1VisMF.html#a07b1ead2f2b6a21362bcfbe6fa0cc784":[2,0,0,578,48],
+"classamrex_1_1VisMF.html#a0ab15576cd65ae5152ba609b54b24550":[3,0,0,543,92],
+"classamrex_1_1VisMF.html#a0ab15576cd65ae5152ba609b54b24550":[2,0,0,578,92],
+"classamrex_1_1VisMF.html#a0afcb55c6cfee56032dfb6e23389be35":[2,0,0,578,54],
+"classamrex_1_1VisMF.html#a0afcb55c6cfee56032dfb6e23389be35":[3,0,0,543,54],
 "classamrex_1_1VisMF.html#a0c9e87f4c459196a9f1ce7870ccbf9cb":[3,0,0,543,97],
 "classamrex_1_1VisMF.html#a0c9e87f4c459196a9f1ce7870ccbf9cb":[2,0,0,578,97],
 "classamrex_1_1VisMF.html#a0e5c0555decdea8a4d09c7eabff1a07d":[3,0,0,543,62],
@@ -241,13 +249,5 @@ var NAVTREEINDEX91 =
 "classamrex_1_1XYPlotDataList.html#a3dddf82e4f6eea682ca4bfdab2aebd21":[3,0,0,548,0],
 "classamrex_1_1XYPlotDataList.html#a3dddf82e4f6eea682ca4bfdab2aebd21":[2,0,0,583,0],
 "classamrex_1_1XYPlotDataList.html#a3e3037b0de84e081fe1d2e0997d143d4":[3,0,0,548,25],
-"classamrex_1_1XYPlotDataList.html#a3e3037b0de84e081fe1d2e0997d143d4":[2,0,0,583,25],
-"classamrex_1_1XYPlotDataList.html#a523062418a8d9a4207077fa87b98d521":[3,0,0,548,13],
-"classamrex_1_1XYPlotDataList.html#a523062418a8d9a4207077fa87b98d521":[2,0,0,583,13],
-"classamrex_1_1XYPlotDataList.html#a58dbc137c88f33a60c950b1a399e7ec2":[2,0,0,583,1],
-"classamrex_1_1XYPlotDataList.html#a58dbc137c88f33a60c950b1a399e7ec2":[3,0,0,548,1],
-"classamrex_1_1XYPlotDataList.html#a613fe181c09a5abcd497c827b17c3bbb":[2,0,0,583,15],
-"classamrex_1_1XYPlotDataList.html#a613fe181c09a5abcd497c827b17c3bbb":[3,0,0,548,15],
-"classamrex_1_1XYPlotDataList.html#a65bf7f0e51d33f2738290df373edbfde":[2,0,0,583,16],
-"classamrex_1_1XYPlotDataList.html#a65bf7f0e51d33f2738290df373edbfde":[3,0,0,548,16]
+"classamrex_1_1XYPlotDataList.html#a3e3037b0de84e081fe1d2e0997d143d4":[2,0,0,583,25]
 };

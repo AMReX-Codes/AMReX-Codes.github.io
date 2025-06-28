@@ -1,5 +1,13 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1NonLocalBC.html#ac95088044e95d4faa9d6911c91880e46":[2,0,0,31,30],
+"namespaceamrex_1_1NonLocalBC.html#ac99233ad51d2d09ebcba61e9dd54032f":[2,0,0,31,64],
+"namespaceamrex_1_1NonLocalBC.html#acc3af0464d21bd50f4bfa57e1c655c1d":[2,0,0,31,56],
+"namespaceamrex_1_1NonLocalBC.html#acf1df3abc51bf47559c6a3add40b819b":[2,0,0,31,62],
+"namespaceamrex_1_1NonLocalBC.html#ad604544d2fd60b6d9fb7a8b75f95ffe0":[2,0,0,31,67],
+"namespaceamrex_1_1NonLocalBC.html#ad6afa903ade1682dd13aecc08cb7b629":[2,0,0,31,59],
+"namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6":[2,0,0,31,19],
+"namespaceamrex_1_1NonLocalBC.html#adc2414553bcd0d9e270e1ed3db8ad1db":[2,0,0,31,46],
 "namespaceamrex_1_1NonLocalBC.html#ae17e814a842854263d53d36424189f75":[2,0,0,31,42],
 "namespaceamrex_1_1NonLocalBC.html#ae2d32864597a007cf9f1b51be84984e5":[2,0,0,31,49],
 "namespaceamrex_1_1NonLocalBC.html#ae386bf24e7c4d15e5c7566cb28e42e1b":[2,0,0,31,44],
@@ -241,13 +249,5 @@ var NAVTREEINDEX106 =
 "namespaceamrex_1_1ParallelReduce.html":[2,0,0,39],
 "namespaceamrex_1_1ParallelReduce.html#a214a8d06880d44cb28990daeccc2884e":[2,0,0,39,10],
 "namespaceamrex_1_1ParallelReduce.html#a44f537cdb77b89119617f7760ada307a":[2,0,0,39,3],
-"namespaceamrex_1_1ParallelReduce.html#a56e15e93755954b067dd5a2769037fed":[2,0,0,39,6],
-"namespaceamrex_1_1ParallelReduce.html#a5f7fc55ae2bbfbbc7f2b026b754c30c1":[2,0,0,39,11],
-"namespaceamrex_1_1ParallelReduce.html#a6c3ee948e758158f19ccce52a7865c92":[2,0,0,39,1],
-"namespaceamrex_1_1ParallelReduce.html#a740d2289f6cd242ef44275506920df09":[2,0,0,39,7],
-"namespaceamrex_1_1ParallelReduce.html#a7b59db01a99d74e6bb7a057942b48d04":[2,0,0,39,8],
-"namespaceamrex_1_1ParallelReduce.html#a83b6af463895bccfbf4ae0606041cd33":[2,0,0,39,14],
-"namespaceamrex_1_1ParallelReduce.html#a84377e96c4ecb57c17fe8e83aea0e04e":[2,0,0,39,13],
-"namespaceamrex_1_1ParallelReduce.html#a936c783bdaf304f8b6761ad1f58c63a3":[2,0,0,39,9],
-"namespaceamrex_1_1ParallelReduce.html#aa0de4c8be25f053f86f82505350e61de":[2,0,0,39,0]
+"namespaceamrex_1_1ParallelReduce.html#a56e15e93755954b067dd5a2769037fed":[2,0,0,39,6]
 };

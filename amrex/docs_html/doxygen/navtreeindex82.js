@@ -1,5 +1,13 @@
 var NAVTREEINDEX82 =
 {
+"classamrex_1_1Parser.html#abce888c0693fdd70003a6177b18d06a6":[3,0,0,400,18],
+"classamrex_1_1Parser.html#abce888c0693fdd70003a6177b18d06a6":[2,0,0,435,18],
+"classamrex_1_1Parser.html#ac7f2281fb9a99b8c410d9cbc0b20b67b":[3,0,0,400,17],
+"classamrex_1_1Parser.html#ac7f2281fb9a99b8c410d9cbc0b20b67b":[2,0,0,435,17],
+"classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09":[2,0,0,435,20],
+"classamrex_1_1Parser.html#acc98bde00ebe15e678d06525bc328f09":[3,0,0,400,20],
+"classamrex_1_1Parser.html#ae8f69b337a650c2a73a3aa33dad35064":[3,0,0,400,6],
+"classamrex_1_1Parser.html#ae8f69b337a650c2a73a3aa33dad35064":[2,0,0,435,6],
 "classamrex_1_1Parser.html#aeade87d8614f791cb14a7781215bce02":[2,0,0,435,14],
 "classamrex_1_1Parser.html#aeade87d8614f791cb14a7781215bce02":[3,0,0,400,14],
 "classamrex_1_1ParticleBufferMap.html":[2,0,0,487],
@@ -241,13 +249,5 @@ var NAVTREEINDEX82 =
 "classamrex_1_1ParticleContainer__impl.html#a1464b4259b521c1ed74a68c83ee8ef1a":[2,0,0,489,150],
 "classamrex_1_1ParticleContainer__impl.html#a1464b4259b521c1ed74a68c83ee8ef1a":[3,0,0,454,150],
 "classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497":[3,0,0,454,178],
-"classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497":[2,0,0,489,178],
-"classamrex_1_1ParticleContainer__impl.html#a17b32ed9f05b29c632ad9dc82e13f0fa":[3,0,0,454,23],
-"classamrex_1_1ParticleContainer__impl.html#a17b32ed9f05b29c632ad9dc82e13f0fa":[2,0,0,489,23],
-"classamrex_1_1ParticleContainer__impl.html#a1967a72736444134d0de172ad1358743":[2,0,0,489,154],
-"classamrex_1_1ParticleContainer__impl.html#a1967a72736444134d0de172ad1358743":[3,0,0,454,154],
-"classamrex_1_1ParticleContainer__impl.html#a19cc9a46b7d9e49c478bc9f26714ee0b":[3,0,0,454,177],
-"classamrex_1_1ParticleContainer__impl.html#a19cc9a46b7d9e49c478bc9f26714ee0b":[2,0,0,489,177],
-"classamrex_1_1ParticleContainer__impl.html#a1b57811f2abf751ac0228b4c5c43442c":[2,0,0,489,174],
-"classamrex_1_1ParticleContainer__impl.html#a1b57811f2abf751ac0228b4c5c43442c":[3,0,0,454,174]
+"classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497":[2,0,0,489,178]
 };

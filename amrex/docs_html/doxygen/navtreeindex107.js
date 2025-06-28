@@ -1,5 +1,13 @@
 var NAVTREEINDEX107 =
 {
+"namespaceamrex_1_1ParallelReduce.html#a5f7fc55ae2bbfbbc7f2b026b754c30c1":[2,0,0,39,11],
+"namespaceamrex_1_1ParallelReduce.html#a6c3ee948e758158f19ccce52a7865c92":[2,0,0,39,1],
+"namespaceamrex_1_1ParallelReduce.html#a740d2289f6cd242ef44275506920df09":[2,0,0,39,7],
+"namespaceamrex_1_1ParallelReduce.html#a7b59db01a99d74e6bb7a057942b48d04":[2,0,0,39,8],
+"namespaceamrex_1_1ParallelReduce.html#a83b6af463895bccfbf4ae0606041cd33":[2,0,0,39,14],
+"namespaceamrex_1_1ParallelReduce.html#a84377e96c4ecb57c17fe8e83aea0e04e":[2,0,0,39,13],
+"namespaceamrex_1_1ParallelReduce.html#a936c783bdaf304f8b6761ad1f58c63a3":[2,0,0,39,9],
+"namespaceamrex_1_1ParallelReduce.html#aa0de4c8be25f053f86f82505350e61de":[2,0,0,39,0],
 "namespaceamrex_1_1ParallelReduce.html#aa556775029846fbb9c0ba446c07505a0":[2,0,0,39,4],
 "namespaceamrex_1_1ParallelReduce.html#abe2f46b96ea5d1752c49cfb8a44b55b9":[2,0,0,39,12],
 "namespaceamrex_1_1ParallelReduce.html#ac02b81de9041c274cd81061b7c66c189":[2,0,0,39,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX107 =
 "namespaceamrex_1_1detail.html#acaad82f4281e3a1b6691574774731430":[2,0,0,6,109],
 "namespaceamrex_1_1detail.html#acc454a2126927ee94899960756cf8fff":[2,0,0,6,85],
 "namespaceamrex_1_1detail.html#acd22cc8e7edfa53f2cf129c76d8745ea":[2,0,0,6,47],
-"namespaceamrex_1_1detail.html#acd664d5efff72dae0a5b31f4a05ea09d":[2,0,0,6,88],
-"namespaceamrex_1_1detail.html#acdccebd8d9e6a4c1db19363438a5cba2":[2,0,0,6,57],
-"namespaceamrex_1_1detail.html#ad0a751c8706e531d0cd3f1b5058cfdd0":[2,0,0,6,89],
-"namespaceamrex_1_1detail.html#ad5568d6d500edc6ee5938dca76c1caa8":[2,0,0,6,136],
-"namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c":[2,0,0,6,134],
-"namespaceamrex_1_1detail.html#ad9ffd55042a6573c492b8fc107951d12":[2,0,0,6,28],
-"namespaceamrex_1_1detail.html#adc2850adfe9cf5541d06a9605342718b":[2,0,0,6,37],
-"namespaceamrex_1_1detail.html#ade17c15318059947f1833b705cea0bcd":[2,0,0,6,129],
-"namespaceamrex_1_1detail.html#ade8d882f6ba75270a6ea576d8bba3577":[2,0,0,6,50]
+"namespaceamrex_1_1detail.html#acd664d5efff72dae0a5b31f4a05ea09d":[2,0,0,6,88]
 };

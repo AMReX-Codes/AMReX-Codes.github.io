@@ -1,5 +1,13 @@
 var NAVTREEINDEX85 =
 {
+"classamrex_1_1PlotFileDataImpl.html#a67448031bad4b668d4208c53c1b5056a":[2,0,0,510,39],
+"classamrex_1_1PlotFileDataImpl.html#a67448031bad4b668d4208c53c1b5056a":[3,0,0,475,39],
+"classamrex_1_1PlotFileDataImpl.html#a6c516e4a14ab342af75574f79db0a64e":[3,0,0,475,12],
+"classamrex_1_1PlotFileDataImpl.html#a6c516e4a14ab342af75574f79db0a64e":[2,0,0,510,12],
+"classamrex_1_1PlotFileDataImpl.html#a6d0ac10a646a8f05beba74618b855b8f":[2,0,0,510,4],
+"classamrex_1_1PlotFileDataImpl.html#a6d0ac10a646a8f05beba74618b855b8f":[3,0,0,475,4],
+"classamrex_1_1PlotFileDataImpl.html#a77e164e48c0363b8f87c3879a509ad23":[3,0,0,475,0],
+"classamrex_1_1PlotFileDataImpl.html#a77e164e48c0363b8f87c3879a509ad23":[2,0,0,510,0],
 "classamrex_1_1PlotFileDataImpl.html#a780c89af0db95b7c96610739ca60ac6c":[2,0,0,510,6],
 "classamrex_1_1PlotFileDataImpl.html#a780c89af0db95b7c96610739ca60ac6c":[3,0,0,475,6],
 "classamrex_1_1PlotFileDataImpl.html#a7dd76c0ba4a0e1c03cad73ce8e4147e4":[3,0,0,475,41],
@@ -241,13 +249,5 @@ var NAVTREEINDEX85 =
 "classamrex_1_1RealDescriptor.html#a15088522b061b0e6c504ea1175a783f2":[3,0,0,485,22],
 "classamrex_1_1RealDescriptor.html#a15088522b061b0e6c504ea1175a783f2":[2,0,0,520,22],
 "classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966":[3,0,0,485,30],
-"classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966":[2,0,0,520,30],
-"classamrex_1_1RealDescriptor.html#a695b762b22a59d2fb29ab3b3dee1a6b4":[3,0,0,485,11],
-"classamrex_1_1RealDescriptor.html#a695b762b22a59d2fb29ab3b3dee1a6b4":[2,0,0,520,11],
-"classamrex_1_1RealDescriptor.html#a834fb65342114ff30939f55642575f36":[2,0,0,520,18],
-"classamrex_1_1RealDescriptor.html#a834fb65342114ff30939f55642575f36":[3,0,0,485,18],
-"classamrex_1_1RealDescriptor.html#a88b7acd8c23099513d5b5c9ce06344f4":[2,0,0,520,6],
-"classamrex_1_1RealDescriptor.html#a88b7acd8c23099513d5b5c9ce06344f4":[3,0,0,485,6],
-"classamrex_1_1RealDescriptor.html#a8d3e02daedf046920036514587034b2e":[3,0,0,485,3],
-"classamrex_1_1RealDescriptor.html#a8d3e02daedf046920036514587034b2e":[2,0,0,520,3]
+"classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966":[2,0,0,520,30]
 };

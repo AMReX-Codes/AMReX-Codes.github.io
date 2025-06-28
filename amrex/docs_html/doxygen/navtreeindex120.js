@@ -1,5 +1,13 @@
 var NAVTREEINDEX120 =
 {
+"structamrex_1_1GetSendBufferOffset.html#a81bc5519ac623a1d14e612f8fe202742":[3,0,0,211,5],
+"structamrex_1_1GetSendBufferOffset.html#ae0bd21edb636525d7e8011db403b9fca":[2,0,0,246,0],
+"structamrex_1_1GetSendBufferOffset.html#ae0bd21edb636525d7e8011db403b9fca":[3,0,0,211,0],
+"structamrex_1_1GpuArray.html":[2,0,0,251],
+"structamrex_1_1GpuArray.html":[3,0,0,216],
+"structamrex_1_1GpuArray.html#a0297388c327b3a21d4e3c85e99da0f0d":[3,0,0,216,6],
+"structamrex_1_1GpuArray.html#a0297388c327b3a21d4e3c85e99da0f0d":[2,0,0,251,6],
+"structamrex_1_1GpuArray.html#a08b11e9bf05b95609d07512467a09a5b":[3,0,0,216,5],
 "structamrex_1_1GpuArray.html#a08b11e9bf05b95609d07512467a09a5b":[2,0,0,251,5],
 "structamrex_1_1GpuArray.html#a1939ab3df4e4fc3d92dd9eab6917a837":[2,0,0,251,4],
 "structamrex_1_1GpuArray.html#a1939ab3df4e4fc3d92dd9eab6917a837":[3,0,0,216,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX120 =
 "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html#a12d628460c0de38164e2efd9ffd3a651":[3,0,0,6,31,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html":[2,0,0,16,34],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html":[3,0,0,6,32],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html#a056d127c4684200496160287a5407f5c":[3,0,0,6,32,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html#a056d127c4684200496160287a5407f5c":[2,0,0,16,34,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html":[3,0,0,6,33],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html":[2,0,0,16,35],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html#ab4fd1ab5dbde8a25056ab6fdcf9b0110":[2,0,0,16,35,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html#ab4fd1ab5dbde8a25056ab6fdcf9b0110":[3,0,0,6,33,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html":[2,0,0,16,36],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html":[3,0,0,6,34],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html#ad5d845d419640a566a2182e35ddd2381":[2,0,0,16,36,0]
+"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html#a056d127c4684200496160287a5407f5c":[3,0,0,6,32,0]
 };

@@ -907,6 +907,7 @@ var hierarchy =
     [ "amrex::ParserExeADD_VP", "structamrex_1_1ParserExeADD__VP.html", null ],
     [ "amrex::ParserExecutor< N >", "structamrex_1_1ParserExecutor.html", null ],
     [ "amrex::ParserExecutor< 3 >", "structamrex_1_1ParserExecutor.html", null ],
+    [ "amrex::ParserExecutor< 4 >", "structamrex_1_1ParserExecutor.html", null ],
     [ "amrex::ParserExeDIV_B", "structamrex_1_1ParserExeDIV__B.html", null ],
     [ "amrex::ParserExeDIV_F", "structamrex_1_1ParserExeDIV__F.html", null ],
     [ "amrex::ParserExeDIV_PN", "structamrex_1_1ParserExeDIV__PN.html", null ],

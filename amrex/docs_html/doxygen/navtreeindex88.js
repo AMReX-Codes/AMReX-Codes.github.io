@@ -1,5 +1,13 @@
 var NAVTREEINDEX88 =
 {
+"classamrex_1_1SplineDistFcnElement2d.html#acfaa366856b5d181ef31e271d810a461":[2,0,0,544,2],
+"classamrex_1_1SplineDistFcnElement2d.html#acfaa366856b5d181ef31e271d810a461":[3,0,0,509,2],
+"classamrex_1_1SplineDistFcnElement2d.html#ae31b17cbb88dce4057e7412cb0b5a7b4":[2,0,0,544,7],
+"classamrex_1_1SplineDistFcnElement2d.html#ae31b17cbb88dce4057e7412cb0b5a7b4":[3,0,0,509,7],
+"classamrex_1_1SplineDistFcnElement2d.html#afbaf7389cb10c9e735d8528b49e9f555":[2,0,0,544,11],
+"classamrex_1_1SplineDistFcnElement2d.html#afbaf7389cb10c9e735d8528b49e9f555":[3,0,0,509,11],
+"classamrex_1_1StateData.html":[2,0,0,548],
+"classamrex_1_1StateData.html":[3,0,0,513],
 "classamrex_1_1StateData.html#a06540ec48ea9f0078a983964f233a9d2":[3,0,0,513,39],
 "classamrex_1_1StateData.html#a06540ec48ea9f0078a983964f233a9d2":[2,0,0,548,39],
 "classamrex_1_1StateData.html#a08a2147b6700171418a4e950f23917a8":[2,0,0,548,32],
@@ -241,13 +249,5 @@ var NAVTREEINDEX88 =
 "classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960":[3,0,0,515,14],
 "classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960":[2,0,0,550,14],
 "classamrex_1_1StateDescriptor.html#ac5eb703c82d394b6736620116b12206e":[2,0,0,550,12],
-"classamrex_1_1StateDescriptor.html#ac5eb703c82d394b6736620116b12206e":[3,0,0,515,12],
-"classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd":[3,0,0,515,49],
-"classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd":[2,0,0,550,49],
-"classamrex_1_1StateDescriptor.html#ad0751c6380b8996cb85c91ff4dc9f7ea":[3,0,0,515,2],
-"classamrex_1_1StateDescriptor.html#ad0751c6380b8996cb85c91ff4dc9f7ea":[2,0,0,550,2],
-"classamrex_1_1StateDescriptor.html#ae0e3631c9cd4872714c6d926073d1a51":[3,0,0,515,47],
-"classamrex_1_1StateDescriptor.html#ae0e3631c9cd4872714c6d926073d1a51":[2,0,0,550,47],
-"classamrex_1_1StateDescriptor.html#ae8e2531823af7371e1df8e414a8c6fd9":[3,0,0,515,21],
-"classamrex_1_1StateDescriptor.html#ae8e2531823af7371e1df8e414a8c6fd9":[2,0,0,550,21]
+"classamrex_1_1StateDescriptor.html#ac5eb703c82d394b6736620116b12206e":[3,0,0,515,12]
 };
