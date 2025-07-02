@@ -10,6 +10,7 @@ var classamrex_1_1CArena =
     [ "alloc_in_place", "classamrex_1_1CArena.html#a61c3deadcb0c3c69b91ecec373b086ee", null ],
     [ "alloc_protected", "classamrex_1_1CArena.html#acb20836b76ef5e5c0fb002637132c442", null ],
     [ "free", "classamrex_1_1CArena.html#a92c318e660a559a2c8d4dc75ba2bc658", null ],
+    [ "freeableMemory", "classamrex_1_1CArena.html#ae0090bc1a73485f114e3f45373302177", null ],
     [ "freeUnused", "classamrex_1_1CArena.html#a7e9429cce47c95ae5f8d8d379ffe6184", null ],
     [ "freeUnused_protected", "classamrex_1_1CArena.html#a496e3022b2c758f0f8cde7b20f954066", null ],
     [ "hasFreeDeviceMemory", "classamrex_1_1CArena.html#ac778bcf5399be4884d6a2cf35cc5c9f3", null ],
