@@ -422,7 +422,9 @@ save this script. Then run the bash script by executing the following command in
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash write_series_file.sh</span>
 </pre></div>
 </div>
-<p>This will generate a file <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code>. Open ParaView, and then select
+<p>This will generate a file <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> which indexes the time variable based on the order of the plotfile numbers.</p>
+<p>To make a <code class="docutils literal notranslate"><span class="pre">.series</span></code> file which reads the time out of the plotfile header, use <a class="reference download internal" download="" href="_downloads/18d063859ddfa88abfb048828e342a61/write_series_file_timestamp.sh"><code class="xref download docutils literal notranslate"><span class="pre">write_series_file_timestamp.sh</span></code></a>.</p>
+<p>Open ParaView, and then select
 “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open”. In the “Files of Type” dropdown menu (see <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 16</span></a>)
 choose the option <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Files</span> <span class="pre">(*)</span></code>. Then choose <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> and click “OK”. Now the plotfiles have been
 loaded as a Group as in Step 2 of section <a class="reference internal" href="#section-1"><span class="std std-ref">ParaView</span></a>. Now, you can follow the steps 2 to 7 in the section
@@ -486,13 +488,30 @@ with the VCR-like controls at the top, as shown in
 <h2>Plot a Vector Field<a class="headerlink" href="#plot-a-vector-field" title="Permalink to this heading"></a></h2>
 <p>Paraview can be used to plot a vector field from AMR plotfile data. In this example
 we will assume a single vector has been stored as three separate variables,
-<code class="docutils literal notranslate"><span class="pre">V_x</span></code>, <code class="docutils literal notranslate"><span class="pre">V_y</span></code> and <code class="docutils literal notranslate"><span class="pre">V_z</span></code>. The steps below outline a basic construction:</p>
-<ol class="arabic">
-<li><p>Open a plotfile or plotfile group, using <code class="docutils literal notranslate"><span class="pre">File</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Open</span></code>.
+<code class="docutils literal notranslate"><span class="pre">V_x</span></code>, <code class="docutils literal notranslate"><span class="pre">V_y</span></code> and <code class="docutils literal notranslate"><span class="pre">V_z</span></code>.</p>
+<p>The easiest way to create a vector <code class="docutils literal notranslate"><span class="pre">V</span></code> from the components is to
+first download the python file
+<a class="reference download internal" download="" href="_downloads/313c5a9b71575f9c0a734a5c084b2ed9/makevector.py"><code class="xref download docutils literal notranslate"><span class="pre">makevector.py</span></code></a>.</p>
+<p>If you are running paraview remotely, put <code class="docutils literal notranslate"><span class="pre">makevector.py</span></code> in the location
+of the plotfiles you will open under the heading <code class="docutils literal notranslate"><span class="pre">Remote</span> <span class="pre">Plugins</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Now open a plotfile or plotfile group, using <code class="docutils literal notranslate"><span class="pre">File</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Open</span></code>.
 A pop-up will appear, select “AMReX/Boxlib Grid Reader”.</p></li>
 <li><p>Select the plotfile or group in the Pipeline Browser. The Cell Array Status
 window of the Properties should populate with the values <code class="docutils literal notranslate"><span class="pre">V_x</span></code>, <code class="docutils literal notranslate"><span class="pre">V_y</span></code>
 and <code class="docutils literal notranslate"><span class="pre">V_z</span></code>. Select these values and click apply.</p></li>
+</ol>
+<p>#. Select <code class="docutils literal notranslate"><span class="pre">Tools</span></code>  <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Plugins...</span></code> then choose
+<code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">New...</span></code>.   Select <code class="docutils literal notranslate"><span class="pre">makevector.py</span></code>; after you load it you will see
+<code class="docutils literal notranslate"><span class="pre">makevector</span></code> in the list of plugins.</p>
+<ol class="arabic simple">
+<li><p>Select the MakeVector filter from <code class="docutils literal notranslate"><span class="pre">Filters</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Alphabetical</span></code>
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">MakeVector</span></code> and apply.  You will now have the vector <code class="docutils literal notranslate"><span class="pre">V</span></code>
+listed with your other variables.</p></li>
+</ol>
+<p>Alternatively, if you prefer not to use the python plugin, you can follow the
+steps below:</p>
+<ol class="arabic simple">
 <li><p>Select the Cell Centers filter from <code class="docutils literal notranslate"><span class="pre">Filters</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Alphabetical</span></code>
 <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">Centers</span></code> and apply.</p></li>
 <li><p>Next we’ll define a vector variable using the Calculator filter. Select
@@ -503,7 +522,10 @@ line below that we define a new vector value with the equation:
 <code class="docutils literal notranslate"><span class="pre">V_x*iHat</span> <span class="pre">+</span> <span class="pre">V_y*jHat</span> <span class="pre">+</span> <span class="pre">V_z*kHat</span></code>
 Note that, the values <code class="docutils literal notranslate"><span class="pre">V_x</span></code>, <code class="docutils literal notranslate"><span class="pre">V_y</span></code> and <code class="docutils literal notranslate"><span class="pre">V_z</span></code>, should be selectable
 from the dropdown Scalars menu. Apply the filter.</p></li>
-<li><p>To plot the arrows, select the Glyph filter,
+</ol>
+<p>To plot the arrows corresponding to this vector field</p>
+<ol class="arabic">
+<li><p>Select the Glyph filter,
 <code class="docutils literal notranslate"><span class="pre">Filters</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Alphabetical</span></code> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">Glyph</span></code>.
 Under the heading, Glyph Source, select <code class="docutils literal notranslate"><span class="pre">Arrow</span></code>. Under Orientation, select
 the name of the vector value created in the last step. The default name is
