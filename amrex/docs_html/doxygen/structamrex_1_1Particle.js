@@ -1,6 +1,7 @@
 var structamrex_1_1Particle =
 [
     [ "ConstType", "structamrex_1_1Particle.html#af636a99b3002811b638a300d34333028", null ],
+    [ "IntType", "structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069", null ],
     [ "RealType", "structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26", null ],
     [ "StorageParticleType", "structamrex_1_1Particle.html#a60efba6078d3acb0c2911e1a91a67a7b", null ],
     [ "atomicSetID", "structamrex_1_1Particle.html#aee07d2004dda8bc468e3310ccd7eacb1", null ],
@@ -13,6 +14,8 @@ var structamrex_1_1Particle =
     [ "idata", "structamrex_1_1Particle.html#aee950b7df0ce0d7feaa67973b39ec779", null ],
     [ "idata", "structamrex_1_1Particle.html#adffa348400a2c770707376c0040d4596", null ],
     [ "idata", "structamrex_1_1Particle.html#a9a8d50011397207e3683329bb018aed6", null ],
+    [ "idcpu", "structamrex_1_1Particle.html#ab80d74f94c694b3fbc9d09fe16419f46", null ],
+    [ "idcpu", "structamrex_1_1Particle.html#a99268050b79eb173d4d32c02c13b4836", null ],
     [ "NextID", "structamrex_1_1Particle.html#a2fcbaec8aac910c864f4a210d48d9c93", null ],
     [ "NextID", "structamrex_1_1Particle.html#acfec109fc6821c1e45db900b4adc6779", null ],
     [ "pos", "structamrex_1_1Particle.html#a6974466bbe1639c042ea8079b1ee163c", null ],

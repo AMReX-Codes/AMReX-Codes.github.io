@@ -1,6 +1,7 @@
 var structamrex_1_1SoAParticle =
 [
     [ "ConstType", "structamrex_1_1SoAParticle.html#afafac166b36eeebe0df3e79cd3b7660c", null ],
+    [ "IntType", "structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97", null ],
     [ "PTD", "structamrex_1_1SoAParticle.html#a2ca81ea23a9543e907da3e9bcb93d923", null ],
     [ "RealType", "structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0", null ],
     [ "StorageParticleType", "structamrex_1_1SoAParticle.html#ac3fb7efdc3d6e84fffaf246164cbd7a2", null ],

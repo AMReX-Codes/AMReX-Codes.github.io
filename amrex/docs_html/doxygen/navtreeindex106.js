@@ -1,5 +1,11 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1NonLocalBC.html#aa0174cdbe72e2968e46f0293c2ecab73":[2,0,0,31,65],
+"namespaceamrex_1_1NonLocalBC.html#aa9d38898e06da05aa7e4bfab9706f1f0":[2,0,0,31,24],
+"namespaceamrex_1_1NonLocalBC.html#ab0c82fd522ba0d80ac27690027c8fe7e":[2,0,0,31,35],
+"namespaceamrex_1_1NonLocalBC.html#ab11bf269e7aebae89bdc5d7d178bb12f":[2,0,0,31,47],
+"namespaceamrex_1_1NonLocalBC.html#ab2f822d938ccbecd5504a81cef53c5cf":[2,0,0,31,37],
+"namespaceamrex_1_1NonLocalBC.html#ab4bcaf9eaa33d7cbedc2f699ad6a288f":[2,0,0,31,55],
 "namespaceamrex_1_1NonLocalBC.html#abb7cd050d6dd1aef7603048eeccd7ded":[2,0,0,31,66],
 "namespaceamrex_1_1NonLocalBC.html#ac352232fe0363d175aaf2615666c8439":[2,0,0,31,23],
 "namespaceamrex_1_1NonLocalBC.html#ac95088044e95d4faa9d6911c91880e46":[2,0,0,31,30],
@@ -243,11 +249,5 @@ var NAVTREEINDEX106 =
 "namespaceamrex_1_1ParallelDescriptor.html#aff6bc74ed06d830d1db5d24040838e14":[2,0,0,37,123],
 "namespaceamrex_1_1ParallelDescriptor.html#affe2511c09c37d2de3acca0cef5b28d3":[2,0,0,37,60],
 "namespaceamrex_1_1ParallelDescriptor_1_1detail.html":[2,0,0,37,0],
-"namespaceamrex_1_1ParallelDescriptor_1_1detail.html#a52f1e5a72bb76dae00cfdcd3bb9c7a07":[2,0,0,37,0,0],
-"namespaceamrex_1_1ParallelDescriptor_1_1detail.html#a818763835d911ca86537be4604cc10ce":[2,0,0,37,0,1],
-"namespaceamrex_1_1ParallelGather.html":[2,0,0,38],
-"namespaceamrex_1_1ParallelGather.html#ac500e0120b76d32a349a73f8ebfd36b2":[2,0,0,38,0],
-"namespaceamrex_1_1ParallelGather.html#accad75ceb30d24dd985037a1dddb72fa":[2,0,0,38,1],
-"namespaceamrex_1_1ParallelReduce.html":[2,0,0,39],
-"namespaceamrex_1_1ParallelReduce.html#a214a8d06880d44cb28990daeccc2884e":[2,0,0,39,10]
+"namespaceamrex_1_1ParallelDescriptor_1_1detail.html#a52f1e5a72bb76dae00cfdcd3bb9c7a07":[2,0,0,37,0,0]
 };
