@@ -1,5 +1,9 @@
 var NAVTREEINDEX123 =
 {
+"structamrex_1_1LPInfo.html#af13ee7c53079a48d87691f5770c162fe":[2,0,0,364,3],
+"structamrex_1_1LPInfo.html#af940b94437ae9286df0f551aa28c8119":[2,0,0,364,26],
+"structamrex_1_1LPInfo.html#af940b94437ae9286df0f551aa28c8119":[3,0,0,329,26],
+"structamrex_1_1LinOpEnumType.html":[2,0,0,361],
 "structamrex_1_1LinOpEnumType.html":[3,0,0,326],
 "structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8":[3,0,0,326,2],
 "structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8":[2,0,0,361,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX123 =
 "structamrex_1_1MemStat.html#a2bd452ad7a114fcc1750efffe7e63ba2":[2,0,0,375,1],
 "structamrex_1_1MemStat.html#a4871062a2ac188af29295f1cf7721669":[3,0,0,340,2],
 "structamrex_1_1MemStat.html#a4871062a2ac188af29295f1cf7721669":[2,0,0,375,2],
-"structamrex_1_1MemStat.html#a59e766bfe21e1f505dee3649c10037b4":[2,0,0,375,3],
-"structamrex_1_1MemStat.html#a59e766bfe21e1f505dee3649c10037b4":[3,0,0,340,3],
-"structamrex_1_1MemStat.html#a9d6dfbc5efa557f55251adda530dcf4a":[2,0,0,375,4],
-"structamrex_1_1MemStat.html#a9d6dfbc5efa557f55251adda530dcf4a":[3,0,0,340,4],
-"structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165":[3,0,0,340,0]
+"structamrex_1_1MemStat.html#a59e766bfe21e1f505dee3649c10037b4":[2,0,0,375,3]
 };
