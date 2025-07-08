@@ -702,12 +702,13 @@ Complete elliptic integrals of the first and second kind, <code class="docutils 
 are supported.
 There is <code class="docutils literal notranslate"><span class="pre">if(a,b,c)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code> depending on the value of
 <code class="docutils literal notranslate"><span class="pre">a</span></code>.  A number of comparison operators are supported, including <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.  The Boolean results from
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, and they can be chained.
+The Boolean results from
 comparison can be combined by <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>, and they hold the value <code class="docutils literal notranslate"><span class="pre">1</span></code>
 for true and <code class="docutils literal notranslate"><span class="pre">0</span></code> for false.  The precedence of the operators follows the
 convention of the C and C++ programming languages.  Here is an example of using
 the parser.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;if(x&gt;a and x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;);</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;if(a&lt;x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;);</span>
 <span class="go">parser.setConstant(&quot;a&quot;, ...);</span>
 <span class="go">parser.setConstant(&quot;b&quot;, ...);</span>
 <span class="go">parser.setConstant(&quot;c&quot;, ...);</span>

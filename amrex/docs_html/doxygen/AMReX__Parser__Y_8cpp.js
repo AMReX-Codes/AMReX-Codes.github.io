@@ -21,6 +21,7 @@ var AMReX__Parser__Y_8cpp =
     [ "parser_get_user_functions", "AMReX__Parser__Y_8cpp.html#a13378a3ad4dea5e7f3140d563cbc210d", null ],
     [ "parser_makesymbol", "AMReX__Parser__Y_8cpp.html#ae51f56e5de666bd486e02809fb95826a", null ],
     [ "parser_newassign", "AMReX__Parser__Y_8cpp.html#a63cdcee7f7165d07558abfd490a3cf8f", null ],
+    [ "parser_newcmpchain", "AMReX__Parser__Y_8cpp.html#ab597b2f270c46ecf5a3ec2b34a3f6003", null ],
     [ "parser_newf1", "AMReX__Parser__Y_8cpp.html#af7520cc9fa8b9a8de8e845d02b75db77", null ],
     [ "parser_newf2", "AMReX__Parser__Y_8cpp.html#a1a35a66f1f45aa77d0be9afe8def5501", null ],
     [ "parser_newf3", "AMReX__Parser__Y_8cpp.html#a6762c0fee754bd1ce564f76ef81253b6", null ],

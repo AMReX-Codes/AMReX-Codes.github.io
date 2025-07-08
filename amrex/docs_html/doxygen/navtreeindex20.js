@@ -1,5 +1,11 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__Particle_8H.html#a20c4dab0db3f6bd35eb1517789bae8ed":[4,0,0,8,11,16],
+"AMReX__Particle_8H.html#a24df8a9162e3ff47d7bffbdbc04d660b":[4,0,0,8,11,23],
+"AMReX__Particle_8H.html#a25fb41bd9f954681587b6835058c5405":[4,0,0,8,11,15],
+"AMReX__Particle_8H.html#a29090f4da18aa07dbb136347df3a0e52":[4,0,0,8,11,26],
+"AMReX__Particle_8H.html#a292bd43da7170d7c575666619a9e5678":[4,0,0,8,11,20],
+"AMReX__Particle_8H.html#a2d04600f075446491619393da78cb086":[4,0,0,8,11,21],
 "AMReX__Particle_8H.html#a2e2a874faf6b40398db34d4b7c06c381":[4,0,0,8,11,12],
 "AMReX__Particle_8H.html#a4338aa4cab572b2f577754ade0252083":[4,0,0,8,11,27],
 "AMReX__Particle_8H.html#a57a04adbe182d509a89869d06f668b31":[4,0,0,8,11,22],
@@ -243,11 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__Reduce_8H.html#adae163b6d167d018ba6ec7cf821b97a8":[4,0,0,2,242,26],
 "AMReX__Reduce_8H.html#ae179b14741cc532f08816fceabea24f5":[4,0,0,2,242,27],
 "AMReX__Reduce_8H.html#af362eac7caa17fd8a2f7ee3831236367":[4,0,0,2,242,10],
-"AMReX__Reduce_8H.html#afac1250d786b98bab8d8d2cf5c06411e":[4,0,0,2,242,28],
-"AMReX__Reduce_8H.html#afd579b95fc57cf9aaf43717d976eff41":[4,0,0,2,242,14],
-"AMReX__Reduce_8H_source.html":[4,0,0,2,242],
-"AMReX__RegionsProfStats_8H.html":[4,0,0,5,6,14],
-"AMReX__RegionsProfStats_8H_source.html":[4,0,0,5,6,14],
-"AMReX__RegionsProfStats_8cpp.html":[4,0,0,5,6,13],
-"AMReX__RegionsProfStats_8cpp.html#a02b76a92a17338752cdd29335caaa60d":[4,0,0,5,6,13,9]
+"AMReX__Reduce_8H.html#afac1250d786b98bab8d8d2cf5c06411e":[4,0,0,2,242,28]
 };

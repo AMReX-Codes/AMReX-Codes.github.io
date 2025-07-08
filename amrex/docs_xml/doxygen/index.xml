@@ -12762,6 +12762,7 @@
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7daad092f4ce24e4996580645e355ad54ed" kind="enumvalue"><name>IPARSER_LEQ</name></member>
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7da844af70cd0ff0cd99ff98d9d5110110f" kind="enumvalue"><name>IPARSER_EQ</name></member>
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7daeb58ad22420b6bc9b3b80e0bcd7821ad" kind="enumvalue"><name>IPARSER_NEQ</name></member>
+    <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7dadacf54e711e7e124ec6adac37b51f316" kind="enumvalue"><name>IPARSER_CMP_CHAIN</name></member>
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7da48e6f0f0ca53a84ed3d5abed8f9a2aa1" kind="enumvalue"><name>IPARSER_AND</name></member>
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7da77da1410d1a13e70c1b39a1529c0556a" kind="enumvalue"><name>IPARSER_OR</name></member>
     <member refid="namespaceamrex_1a9f73a0b38577743c875e56fd6c89de7da8a3a5bb779a49faee7afaf2151ee1a52" kind="enumvalue"><name>IPARSER_MIN</name></member>
@@ -12857,6 +12858,7 @@
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bca4d0e5b2b972b4bf0ffa84bb373ec9c77" kind="enumvalue"><name>PARSER_LEQ</name></member>
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bcae7a9987ba06f3e22647b6455a894d954" kind="enumvalue"><name>PARSER_EQ</name></member>
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bca3a1729e1b576ae7d414ae6ba76c3b194" kind="enumvalue"><name>PARSER_NEQ</name></member>
+    <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bcab53e591e56421a15b5bb35207da19908" kind="enumvalue"><name>PARSER_CMP_CHAIN</name></member>
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bca2d8f7fc88d138e332180438e1171ee57" kind="enumvalue"><name>PARSER_AND</name></member>
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bca3b65381fef1e4a480813955566ac6224" kind="enumvalue"><name>PARSER_OR</name></member>
     <member refid="namespaceamrex_1a0075507273391e5967b9d869daed98bcacb0b84f852fe36fbb6ffafd2455f9644" kind="enumvalue"><name>PARSER_HEAVISIDE</name></member>
@@ -14022,6 +14024,7 @@
     <member refid="namespaceamrex_1a0b4c71ba95b7e107e4dedc3077c0c5ec" kind="function"><name>iparser_newf3</name></member>
     <member refid="namespaceamrex_1aa08464d7633bb6fcba918c743263f295" kind="function"><name>iparser_newassign</name></member>
     <member refid="namespaceamrex_1a8710f394abe007b53737084c8bbd3021" kind="function"><name>iparser_newlist</name></member>
+    <member refid="namespaceamrex_1a137553e85c67aef649dc830556e01596" kind="function"><name>iparser_newcmpchain</name></member>
     <member refid="namespaceamrex_1a414ba7de5a008178d4fa0953a6e69073" kind="function"><name>amrex_iparser_new</name></member>
     <member refid="namespaceamrex_1a79e084d7248e50fe5cd9f6037db2b2e1" kind="function"><name>amrex_iparser_delete</name></member>
     <member refid="namespaceamrex_1ac85a8c5774724410d75b322c745b221a" kind="function"><name>amrex_iparser_delete_ptrs</name></member>
@@ -14061,6 +14064,7 @@
     <member refid="namespaceamrex_1a7110636e86cc51edd66165fefce41f7e" kind="function"><name>parser_newusrfn</name></member>
     <member refid="namespaceamrex_1a63cdcee7f7165d07558abfd490a3cf8f" kind="function"><name>parser_newassign</name></member>
     <member refid="namespaceamrex_1af77166ee4bf8e84e0628c8d6ef96f055" kind="function"><name>parser_newlist</name></member>
+    <member refid="namespaceamrex_1ab597b2f270c46ecf5a3ec2b34a3f6003" kind="function"><name>parser_newcmpchain</name></member>
     <member refid="namespaceamrex_1ae66dc6e64e2bbaeb5e33f845f1021f4f" kind="function"><name>amrex_parser_new</name></member>
     <member refid="namespaceamrex_1a2f20d75c59ef143705ccaeaef9897c17" kind="function"><name>amrex_parser_delete</name></member>
     <member refid="namespaceamrex_1a546c9f383fc176587c3018d4051b782e" kind="function"><name>amrex_parser_delete_ptrs</name></member>
@@ -17954,6 +17958,15 @@
     <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aa95ab546bba1fe8445b54f24a1009c5b" kind="enumvalue"><name>YYSYMBOL_YYACCEPT</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5ac6d5ff4f8c67ab03a845a51edbc94219" kind="enumvalue"><name>YYSYMBOL_input</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a41039be29b65779605dc66f0ffa0d516" kind="enumvalue"><name>YYSYMBOL_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a1292c14341c0da57f154bfb9df54f955" kind="enumvalue"><name>YYSYMBOL_stmt</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a06d789e12899e1916527a82f9f3946f2" kind="enumvalue"><name>YYSYMBOL_or_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a5ba7ab33b921928bb8d9803ce1eada1b" kind="enumvalue"><name>YYSYMBOL_and_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a59fbe0ce021cace7140f028054cf9552" kind="enumvalue"><name>YYSYMBOL_cmp_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aa85e5f3df2e5cc51ef21f7f9185cf2fb" kind="enumvalue"><name>YYSYMBOL_add_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aebf371e49cc0ab1cc06fbb64164bb350" kind="enumvalue"><name>YYSYMBOL_mul_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5ab009db822c3c11779b7db8f97680e821" kind="enumvalue"><name>YYSYMBOL_unary_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a352a82828ac4b55c459407ee68afbb3a" kind="enumvalue"><name>YYSYMBOL_pow_exp</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a30a7b9c29e441b99618e465ba3263285" kind="enumvalue"><name>YYSYMBOL_primary_exp</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a99fb83031ce9923c84392b4e92f956b5" kind="enum"><name></name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a99fb83031ce9923c84392b4e92f956b5a33b65b59dd6c18a52cd4e662918a0742" kind="enumvalue"><name>YYENOMEM</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a5770f4481fa757da330a70e968998447" kind="typedef"><name>yysymbol_kind_t</name></member>
@@ -17964,7 +17977,7 @@
     <member refid="amrex__iparser_8tab_8nolint_8H_1af60d46806ea315c647784579d7f3b73d" kind="typedef"><name>yy_state_t</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1ad4cd18509fed8eea90c6932ba4087485" kind="typedef"><name>yy_state_fast_t</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a1d8883fe4dadf185e4ba432f9474a732" kind="variable"><name>yytranslate</name></member>
-    <member refid="amrex__iparser_8tab_8nolint_8H_1a52c12de9f634391f03b1680c3b680852" kind="variable"><name>yypact</name></member>
+    <member refid="amrex__iparser_8tab_8nolint_8H_1a5d5f1a7a5182e57a2589f4753bfaddc9" kind="variable"><name>yypact</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1a2b71105c5f43e0ff02a3dcf924d48591" kind="variable"><name>yydefact</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1abb1d1e685ef953f65410be5d32544cfe" kind="variable"><name>yypgoto</name></member>
     <member refid="amrex__iparser_8tab_8nolint_8H_1add50b39c93bd000e59c735788074a427" kind="variable"><name>yydefgoto</name></member>
@@ -18454,6 +18467,15 @@
     <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aa95ab546bba1fe8445b54f24a1009c5b" kind="enumvalue"><name>YYSYMBOL_YYACCEPT</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5ac6d5ff4f8c67ab03a845a51edbc94219" kind="enumvalue"><name>YYSYMBOL_input</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a41039be29b65779605dc66f0ffa0d516" kind="enumvalue"><name>YYSYMBOL_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a1292c14341c0da57f154bfb9df54f955" kind="enumvalue"><name>YYSYMBOL_stmt</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a06d789e12899e1916527a82f9f3946f2" kind="enumvalue"><name>YYSYMBOL_or_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a5ba7ab33b921928bb8d9803ce1eada1b" kind="enumvalue"><name>YYSYMBOL_and_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a59fbe0ce021cace7140f028054cf9552" kind="enumvalue"><name>YYSYMBOL_cmp_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aa85e5f3df2e5cc51ef21f7f9185cf2fb" kind="enumvalue"><name>YYSYMBOL_add_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5aebf371e49cc0ab1cc06fbb64164bb350" kind="enumvalue"><name>YYSYMBOL_mul_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5ab009db822c3c11779b7db8f97680e821" kind="enumvalue"><name>YYSYMBOL_unary_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a352a82828ac4b55c459407ee68afbb3a" kind="enumvalue"><name>YYSYMBOL_pow_exp</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a20a769e9b8f129abf35d03d3904ec0e5a30a7b9c29e441b99618e465ba3263285" kind="enumvalue"><name>YYSYMBOL_primary_exp</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1abc6126af1d45847bc59afa0aa3216b04" kind="enum"><name></name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1abc6126af1d45847bc59afa0aa3216b04a33b65b59dd6c18a52cd4e662918a0742" kind="enumvalue"><name>YYENOMEM</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1a5770f4481fa757da330a70e968998447" kind="typedef"><name>yysymbol_kind_t</name></member>
@@ -18464,7 +18486,7 @@
     <member refid="amrex__parser_8tab_8nolint_8H_1af60d46806ea315c647784579d7f3b73d" kind="typedef"><name>yy_state_t</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1ad4cd18509fed8eea90c6932ba4087485" kind="typedef"><name>yy_state_fast_t</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1a1d8883fe4dadf185e4ba432f9474a732" kind="variable"><name>yytranslate</name></member>
-    <member refid="amrex__parser_8tab_8nolint_8H_1a52c12de9f634391f03b1680c3b680852" kind="variable"><name>yypact</name></member>
+    <member refid="amrex__parser_8tab_8nolint_8H_1a5d5f1a7a5182e57a2589f4753bfaddc9" kind="variable"><name>yypact</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1a2b71105c5f43e0ff02a3dcf924d48591" kind="variable"><name>yydefact</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1abb1d1e685ef953f65410be5d32544cfe" kind="variable"><name>yypgoto</name></member>
     <member refid="amrex__parser_8tab_8nolint_8H_1add50b39c93bd000e59c735788074a427" kind="variable"><name>yydefgoto</name></member>
