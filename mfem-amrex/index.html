@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+    Transit by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AMReX+MFEM: Overview</title>
+    <link rel="icon" href="web_icon.ico" type="image/x-icon">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">AMReX+MFEM</a></h1>
+      <nav id="nav">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="container">
+
+        <header class="major">
+          <h2>AMReX + MFEM Coupling</h2>
+        </header>
+
+        <div class="row 50% uniform">
+          <div class="12u 12u(small)">
+            <p>
+              The examples in our <a href="gallery.html">gallery</a> demonstrate our
+              proof-of-concept AMReX-MFEM integration for scalar advection problems.
+              This coupling framework enables real-time data exchange between
+              AMReX's block-structured adaptive mesh refinement and MFEM's high-order finite element
+              capabilities through MPI communication. The integration provides:
+            </p>
+
+            <div class="row 50% uniform">
+              <div class="6u 12u(small)">
+                <center>
+                  <img src="gallery_images/mfem-amrex-helix-3d-mesh-rotated.png" alt="AMReX-MFEM 3D Helix Discretization Setup" style="width: 100%; max-width: 400px;">
+                  <p style="font-size: 0.9em; font-style: italic; margin-top: 10px;">
+                    Visualization of the AMReX-MFEM 3D helix coupling setup showing the complex three-dimensional geometry with variable height profile and the integration between block-structured AMReX grids and MFEM finite element discretization.
+                  </p>
+                </center>
+              </div>
+
+              <div class="6u 12u(small)">
+                <ul style="margin-left: 20px;">
+                  <li><strong>MPI domain decomposition:</strong> Processes split between AMReX and MFEM frameworks with dedicated communicators</li>
+                  <li><strong>Dimensional flexibility:</strong> Support for 2D and 3D simulations</li>
+                  <li><strong>Time-synchronized coupling:</strong> Real-time data exchange at each timestep using MPI point-to-point communication</li>
+                  <li><strong>Complex geometries:</strong> Support for three-dimensional domains with variable height profiles and curved boundaries, as demonstrated in the helix example</li>
+                  <li><strong>Visualization:</strong> Compatible output formats for viewing of full simulation domain in ParaView</li>
+            </ul>
+          </div>
+        </div>
+
+            <!-- <p>
+              The combination of accurate transport algorithms, adaptive mesh refinement,
+              and multi-method integration provides researchers with powerful tools for
+              tackling complex multiphysics problems across diverse scientific domains.
+            </p> -->
+
+      </div>
+      <!-- End Container -->
+    </section>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+    <div class="row">
+      <ul class="copyright">
+            <li>Copyright &copy; LF Charities. All rights reserved.
+              LF Charities' <a href="https://lf-charities.org/policies">terms & policies are available here</a>. LF Charities registers and uses trademarks.
+              Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</li>
+          </ul>
+    </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
+

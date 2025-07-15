@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+    Transit by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AMReX+MFEM: Gallery</title>
+    <link rel="icon" href="web_icon.ico" type="image/x-icon">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">AMReX+MFEM</a></h1>
+      <nav id="nav">
+    <ul>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      
+      <div class="container">
+
+    <!--header class="major">
+          <p>
+            If you would like to contribute to our gallery, 
+            <a href="mailto:AJNonaka@lbl.gov?subject=AMReX Gallery">please contact us</a>.
+          </p>
+    </header-->
+        <p>          
+
+        <header class="major">
+          <h2>AMReX-MFEM Integration: Scalar Advection Examples</h2>
+          <p>Proof-of-concept demonstrations of scalar transport between AMReX and MFEM domains</p>
+        </header>
+        
+
+        <div class="row 50% uniform">
+          <div class="12u 12u(small)">
+            <h3>The Physical Problem</h3>
+            <p>
+            Consider a drop of dye with concentration $\phi$, passively advected by a fluid with prescribed motion. In each case shown below, $\phi$ is initialized using a cosine profile $\phi = 0.5(1 + \cos(\pi r/w))$ for $r < w$ and $\phi = 0$ otherwise, where $r$ is the distance from the blob center and $w = 0.2$ is the blob radius.
+
+            <h3>The Solution Procedure</h3>
+            <p>
+            AMReX solves for $\phi(\mathbf{x},t)$ using an explicit finite volume approach on a 
+            block-structured mesh that maintains 
+            conservation of $\phi$ and is first-order accurate in time and second-order accurate in space.
+
+            <p>
+            MFEM solves for $\phi(\mathbf{x},t)$ using a discontinuous piecewise-cubic finite element
+            approach on an unstructured mesh of quadrilateral elements with explicit third-order time 
+            integration.
+
+            <p>
+            Each simulation uses multiple MPI processes and domain decomposition such that
+            MPI processes are split between AMReX and MFEM with data 
+            exchange occurring every time step at user-defined coupling regions.
+            The frameworks communicate field values and coordinates through MPI 
+            point-to-point messaging.
+
+            <p>
+            <h4>ParaView Visualization Capabilities</h4>
+            ParaView supports both AMReX native plotfiles and MFEM-generated ParaView-ready output. 
+            For coupled simulations, both outputs must be read separately but can be viewed together. 
+            The reading can be facilitated through pvsm or python state scripts. These tools enable 
+            automated animations in multiple formats (AVI, MP4, GIF) using pvpython with various 
+            rendering backends.
+            </p>
+
+            <p>
+            As part of the visualization capabilities in this work, we provide both Python state files and PVSM ParaView state files that can be used to quickly reproduce the plots and animations shown on this website. These state files can also be incorporated into debugging or analysis workflows to facilitate consistent visualization setups across different simulation runs and parameter studies. Additionally, we provide a Python state file demonstrating 
+            multi-layout visualization capabilities for coupled MFEM-AMReX simulations. The script 
+            creates three side-by-side render views: a complete surface representation using unified 
+            Viridis colormap, contour analysis with multiple isosurface levels rendered as wireframe 
+            overlays, and threshold analysis using layered opacity effects. All views are synchronized 
+            for animation playback with consistent color mapping and camera positioning. For guidance on 
+            using state files with ParaView, see the <a href="https://amrex-codes.github.io/amrex/docs_html/Visualization.html#saving-and-loading-state-files">saving and loading state files</a> subheading in the AMReX documentation.
+            </p>
+
+            <p>
+            Visualization of AMReX results is facilitated by the write_series_file_timestamp.sh script, 
+            which generates JSON-formatted .series files indexing plotfiles with timestamps. This follows 
+            <a href="https://amrex-codes.github.io/amrex/docs_html/Visualization.html#creating-and-loading-series-files">AMReX documentation guidelines for time series files</a> that can be efficiently loaded into 
+            ParaView or VisIt. The script can be re-executed as new plotfiles are generated, and 
+            ParaView's "Reload Files" functionality enables seamless incorporation of new timesteps 
+            during ongoing simulations.
+            </p>
+          </div>
+        </div>
+        <p><p>
+          <h3>2D Rectangular Domain</h3>
+          <!-- <p>Two-dimensional scalar advection demonstration</p> -->
+        </header>
+        <div class="row 50% uniform">
+          <div class="6u 12u(small)">
+            <center>
+              <video width="100%" height="300" controls>
+                <source src="gallery_images/mfem-amrex-square-2d.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+          </div>
+          <div class="6u 12u(small)">
+            <p>
+            This 2D example demonstrates the AMReX-MFEM coupling for 
+            scalar advection on a rectangular domain. 
+            </p>
+
+            <!--p>
+                This example was run with the overall amrex domain having 320 by 160 cells and mfem having 40 elements in x and 80 elements in y.
+            </p-->
+
+            <p>
+            For this domain, we define a simple shearing flow where the flow moves                
+            left to right in the lower half and right to left in the upper half (i.e. $u = ±1$ and $v = 0$).  
+            The solution (aka the value of $\phi$) is computed by                   
+            MFEM in the left half of the domain and by AMReX in the right half of the domain.    The domain is periodic in both 
+            the $x$- and $y-$ directions.
+           
+          </div>
+        </div>
+        <p>
+
+        <header class="major">
+          <h3>3D Rectangular Domain</h3>
+     <!-- <p>Three-dimensional scalar advection demonstration</p> -->
+
+        </header>
+        <div class="row 50% uniform">
+          <div class="6u 12u(small)">
+            <center>
+              <video width="100%" height="300" controls>
+                <source src="gallery_images/mfem-amrex-square-3d.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+          </div>
+          <div class="6u 12u(small)">
+            <p>
+            This 3D example extends the scalar advection demonstration to three dimensions,
+            The same MPI domain decomposition approach is used, with processes split between 
+            AMReX and MFEM frameworks (again with MFEM on the left).
+            </p>
+
+            <p>
+            The velocity field is analogous to that in the 2D case, with $u = ±1$ depending on the y-coordinate and $v = w = 0$. 
+            As above, the solution is computed by                   
+            MFEM in the left half of the domain and by AMReX in the right half of the domain. 
+          </div>
+        </div>
+        <p>
+
+        <header class="major">
+          <h3>2D "Racetrack"</h3>
+          <p>Complex geometry demonstration with curved boundaries</p>
+        </header>
+        <div class="row 50% uniform">
+          <div class="6u 12u(small)">
+            <center>
+              <video width="100%" height="300" controls>
+                <source src="gallery_images/mfem-amrex-racetrack-2d.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+          </div>
+          <div class="6u 12u(small)">
+            This example demonstrates two additional features: first, the ability
+            to have multiple AMReX subdomains and multiple MFEM subdomains with multiple planes of intersection
+            in a single simulation, and second, the ability of MFEM to naturally support a non-rectangular geometry.
+            </p>
+
+            <!--p>
+                This example was run with the overall amrex domain having 200 by 120 cells and mfem having 40 elements in the x direction and 40 elements in the y direction
+            </p-->
+
+            <p>
+            In this problem the flow is counter-clockwise and is parallel to the domain boundaries as they appear
+            in the animation.  The flow in the semicircular regions is that of solid-body rotation.
+
+            <!-- The curved geometry combined with the circular velocity field $\mathbf{u} = (-(y-3), (x-7))$ creates interesting rotational flow patterns. This proof-of-concept demonstrates how MFEM can handle complicated and interesting domain geometries while AMReX manages logically rectangular sections in between. -->
+
+The racetrack example showcases the potential flexibility of the coupling framework for complex multiphysics problems requiring both structured and unstructured discretization approaches.
+          </div>
+        </div>
+        <p>
+        <header class="major">
+          <h3>3D "Helix"</h3>
+          <p>Complex three-dimensional geometry with curved boundaries and variable height</p>
+        </header>
+        <div class="row 50% uniform">
+          <div class="6u 12u(small)">
+            <center>
+              <video width="100%" height="300" controls>
+                <source src="gallery_images/mfem-amrex-helix-3d.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </center>
+          </div>
+          <div class="6u 12u(small)">
+            <p>
+            This example demonstrates advanced three-dimensional capabilities: the ability
+            to have multiple AMReX subdomains and multiple MFEM subdomains with multiple planes of intersection
+            in a single simulation, and the ability of MFEM to naturally support complex non-rectangular geometries with varying vertical dimensions.
+            </p>
+
+            <p>
+            The helix geometry features a variable height profile, with sections maintaining different elevations
+            that create a banked track configuration. This showcases how the coupling framework can handle
+            geometries with significant topographical variation.
+            </p>
+
+            <p>
+            In this problem the flow follows the helical domain boundaries as they appear
+            in the animation, with vertical flow components accommodating the height transitions. 
+            The flow in the curved regions exhibits complex three-dimensional patterns due to the elevation changes.
+            </p>
+
+            <p>
+            The three-dimensional helix example showcases the enhanced flexibility of the coupling framework 
+            for complex multiphysics problems requiring both structured and unstructured discretization approaches 
+            across geometries with significant topographical variation.
+            </p>
+          </div>
+        </div>
+        <p>
+<!--
+          <h3>Framework Overview</h3>
+          <p>Proof-of-concept multiphysics coupling capabilities</p>
+        </header>
+        <div class="row 50% uniform">
+          <div class="12u 12u(small)">
+            These examples demonstrate a proof-of-concept multiphysics coupling framework 
+            that could be suitable for complex scientific computing applications requiring coordinated 
+            block-structured and finite element methods. Key features include:<p><p>
+
+            <ul>
+              <li><strong>Dimensional flexibility:</strong> Support for 2D and 3D simulations with complex geometries</li>
+              <li><strong>Complex geometries:</strong> Handling of irregular domains like the racetrack example</li>
+              <li><strong>MPI domain decomposition:</strong> Process-level splitting between frameworks</li>
+              <li><strong>Time-synchronized coupling:</strong> Real-time data exchange maintaining conservation across domain boundaries</li>
+              <li><strong>Configurable regions:</strong> User-defined coupling areas through input parameters</li>
+            </ul>
+
+            The framework enables sophisticated multiphysics simulations that leverage the 
+            strengths of both AMReX's adaptive mesh refinement capabilities and MFEM's 
+            advanced finite element discretizations.
+          </div>
+        </div>
+        <p>
+      </div>
+-->
+      <!-- End Container -->
+
+    </section>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+    <div class="row">
+      <ul class="copyright">
+            <li>Copyright &copy; LF Charities. All rights reserved.
+              LF Charities' <a href="https://lf-charities.org/policies">terms & policies are available here</a>. LF Charities registers and uses trademarks.
+              Please see our <a href="https://lf-charities.org/trademark-policy/">Trademark Usage</a> page.</li>
+          </ul>
+    </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
+
