@@ -78,9 +78,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#paraview">ParaView</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-and-loading-series-files">Creating and Loading <code class="docutils literal notranslate"><span class="pre">.series</span></code> Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-an-iso-surface">Building an Iso-surface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#visualizing-particle-data">Visualizing Particle Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#plot-a-vector-field">Plot a Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-and-loading-state-files">Saving and Loading State Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-from-a-paraview-state-file-pvsm">Loading from a Paraview state file (.pvsm)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-from-a-python-state-file-py">Loading from a Python state file (.py)</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#paraview-hdf5-format">ParaView HDF5 Format</a></li>
 </ul>
 </li>
@@ -265,8 +271,8 @@ would like to display the data in another format, please leave a
 message on <a class="reference external" href="https://github.com/AMReX-Codes/amrex/discussions">AMReX’s GitHub Discussions page</a>.</p>
 </li>
 </ol>
-<span id="fig-amrvis"></span><table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 18 </span><span class="caption-text">. 2D and 3D images generated using Amrvis.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<span id="fig-amrvis"></span><table class="docutils align-center" id="id7">
+<caption><span class="caption-number">Table 18 </span><span class="caption-text">. 2D and 3D images generated using Amrvis.</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/Amrvis_2d.png"><img alt="a" src="_images/Amrvis_2d.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/Amrvis_3d.png"><img alt="b" src="_images/Amrvis_3d.png" style="width: 100%;" /></a></p></td>
@@ -311,8 +317,8 @@ select “Draw”.</p></li>
 then customize the image format to your liking, then click “Save”.</p></li>
 </ul>
 <p>Your image should look similar to the left side of <a class="reference internal" href="#fig-visit"><span class="std std-numref">Table 19</span></a>.</p>
-<span id="fig-visit"></span><table class="docutils align-center" id="id4">
-<caption><span class="caption-number">Table 19 </span><span class="caption-text">: 2D (left) and 3D (right) images generated using VisIt.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<span id="fig-visit"></span><table class="docutils align-center" id="id8">
+<caption><span class="caption-number">Table 19 </span><span class="caption-text">: 2D (left) and 3D (right) images generated using VisIt.</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="_images/VisIt_2D.png"><img alt="c" src="_images/VisIt_2D.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="_images/VisIt_3D.png"><img alt="d" src="_images/VisIt_3D.png" style="width: 100%;" /></a></p></td>
@@ -393,12 +399,14 @@ Click that button.</p></li>
 <li><p>You can play with the Plane Parameters to define a plane of data to view, as
 shown in <a class="reference internal" href="#fig-paraview"><span class="std std-numref">Fig. 14</span></a>.</p></li>
 </ol>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id9">
 <span id="fig-paraview"></span><a class="reference internal image-reference" href="_images/ParaView.png"><img alt="_images/ParaView.png" src="_images/ParaView.png" style="width: 3.1in;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">: Plotfile image generated with ParaView</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">: Plotfile image generated with ParaView</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
+<section id="creating-and-loading-series-files">
+<h2>Creating and Loading <code class="docutils literal notranslate"><span class="pre">.series</span></code> Files<a class="headerlink" href="#creating-and-loading-series-files" title="Permalink to this heading"></a></h2>
 <p>Another useful feature in ParaView to load and re-load a group of plotfiles is using a <code class="docutils literal notranslate"><span class="pre">.series</span></code> file
 (similar to the <code class="docutils literal notranslate"><span class="pre">.visit</span></code> file in VisIt). It is a text file (say <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code>) which lists
 the plotfiles in a JSON format as below.</p>
@@ -431,12 +439,13 @@ loaded as a Group as in Step 2 of section <a class="reference internal" href="#s
 <a class="reference internal" href="#section-1"><span class="std std-ref">ParaView</span></a> to plot. As new plotfiles are generated, just re-run the bash script to re-generate the
 <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> file, right-click on <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> in the ParaView menu, and click on
 “Reload Files” (see <a class="reference internal" href="#fig-paraview-series-reload"><span class="std std-numref">Fig. 15</span></a>).</p>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id10">
 <span id="fig-paraview-series-reload"></span><a class="reference internal image-reference" href="_images/ParaView_series_reload.png"><img alt="_images/ParaView_series_reload.png" src="_images/ParaView_series_reload.png" style="width: 3.0in;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">: File dialog in ParaView showing how to reload a series file</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">: File dialog in ParaView showing how to reload a series file</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
+</section>
 <section id="building-an-iso-surface">
 <h2>Building an Iso-surface<a class="headerlink" href="#building-an-iso-surface" title="Permalink to this heading"></a></h2>
 <p>Note that Paraview is not able to generate iso-surfaces from cell centered data. To build an iso-surface (or iso-line in 2D):</p>
@@ -450,10 +459,10 @@ values and click “Apply”.</p></li>
 <h2>Visualizing Particle Data<a class="headerlink" href="#visualizing-particle-data" title="Permalink to this heading"></a></h2>
 <p>To visualize particle data within plofile directories (for example, you could
 run the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#neighborlist">NeighborList</a> example in <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html">Tutorials/Particles</a>):</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id11">
 <span id="fig-paraview-filegroup"></span><a class="reference internal image-reference" href="_images/ParaView_filegroup.png"><img alt="_images/ParaView_filegroup.png" src="_images/ParaView_filegroup.png" style="width: 3.1in;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">: File dialog in ParaView showing a group of plotfile directories selected</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">: File dialog in ParaView showing a group of plotfile directories selected</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -470,10 +479,10 @@ also choose which point arrays to read.</p></li>
 with the VCR-like controls at the top, as shown in
 <a class="reference internal" href="#fig-paraview-particles"><span class="std std-numref">Fig. 17</span></a>.</p></li>
 </ol>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id12">
 <span id="fig-paraview-particles"></span><a class="reference internal image-reference" href="_images/ParaView_particles.png"><img alt="_images/ParaView_particles.png" src="_images/ParaView_particles.png" style="width: 3.1in;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">: Particle image generated with ParaView</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">: Particle image generated with ParaView</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>Following these instructions, you can open fluid and/or particles plotfiles and visualize them together on the same Panel View.</p>
@@ -535,12 +544,97 @@ vector value as the Scale Array and select Scale by Magnitude.</p>
 settings under the Masking heading.</p>
 </li>
 </ol>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id13">
 <a class="reference internal image-reference" href="_images/ParaView_vectorfield.png"><img alt="_images/ParaView_vectorfield.png" src="_images/ParaView_vectorfield.png" style="width: 3.1in;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Vector Field generated with ParaView</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Vector Field generated with ParaView</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
+</section>
+<section id="saving-and-loading-state-files">
+<h2>Saving and Loading State Files<a class="headerlink" href="#saving-and-loading-state-files" title="Permalink to this heading"></a></h2>
+<p>Paraview allows users to save the <em>state</em> of their visualization, viz. variable mappings,
+filters, color maps, etc. The same display style can then be applied to different datasets.
+See also the Paraview documentation at <a class="reference external" href="https://docs.paraview.org/en/latest/Tutorials/ClassroomTutorials/advancedStateManagement.html">section 10</a> and <a class="reference external" href="https://docs.paraview.org/en/v5.8/UsersGuide/savingResults.html#saving-state">section 8.4</a>.</p>
+<p>There are two file formats available for saving and loading state: <code class="docutils literal notranslate"><span class="pre">.pvsm</span></code> (XML) and <code class="docutils literal notranslate"><span class="pre">.py</span></code> (Python).
+Examples of both methods are given below. For these examples, we will be working with the data stored
+in the folder <code class="docutils literal notranslate"><span class="pre">plt..</span></code> that results from running <code class="docutils literal notranslate"><span class="pre">HeatEquation_EX1_C</span></code> in 3D, as in the example at the
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Visualization.html#paraview">beginning of this section</a>.</p>
+<p>To save the state of this example, go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">State...</span></code>, and select the format, location, and name
+of the state file you want to save. In order to later reload the state you’ve saved, see below.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">State</span></code> option will write state files containing the absolute path to the data files you have loaded.
+This can cause issues if you’re using state files saved on another machine, have moved your data files, or
+if Paraview doesn’t know which directory to look in. When loading state from a <code class="docutils literal notranslate"><span class="pre">pvsm</span></code> file, there are menu
+options available to navigate to the data source directory. When running a Python script to load data, this can
+cause an error or crash. We outline the way to avoid this below.</p>
+<p>For demonstration purposes, we have also included state files in both formats:
+<a class="reference download internal" download="" href="_downloads/03417ed4a7a77e487a4fd718f7b0b716/slice_state1.pvsm"><code class="xref download docutils literal notranslate"><span class="pre">slice_state1.pvsm</span></code></a> and <a class="reference download internal" download="" href="_downloads/eaf786d32b0659dd9b2b09e1bf54be5f/slice_state1.py"><code class="xref download docutils literal notranslate"><span class="pre">slice_state1.py</span></code></a></p>
+<section id="loading-from-a-paraview-state-file-pvsm">
+<h3>Loading from a Paraview state file (.pvsm)<a class="headerlink" href="#loading-from-a-paraview-state-file-pvsm" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Load</span> <span class="pre">State</span></code>, navigate to <code class="docutils literal notranslate"><span class="pre">slice_state1.pvsm</span></code> in the file browser and click <code class="docutils literal notranslate"><span class="pre">OK</span></code>. A new window labeled <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">State</span> <span class="pre">Options</span></code> appears with a drop-down menu.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Search</span> <span class="pre">files</span> <span class="pre">under</span> <span class="pre">specified</span> <span class="pre">directory</span></code>, and click the <code class="docutils literal notranslate"><span class="pre">...</span></code> button to the right of the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Directory</span></code> line.</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C/Exec</span></code> and click <code class="docutils literal notranslate"><span class="pre">OK</span></code>. This is where the plotfiles will have been saved by default if you’ve built and run the example code <code class="docutils literal notranslate"><span class="pre">HeatEquation_EX1_C</span></code>.</p></li>
+</ol>
+<p>What you see displayed should be a 2D slice of the solution to the 3D equation.</p>
+<p>In general, you can use the load state menu options to navigate to whichever data files you wish to load using your saved <code class="docutils literal notranslate"><span class="pre">pvsm</span></code> state.</p>
+</section>
+<section id="loading-from-a-python-state-file-py">
+<h3>Loading from a Python state file (.py)<a class="headerlink" href="#loading-from-a-python-state-file-py" title="Permalink to this heading"></a></h3>
+<p>In order to load state from a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file, you must execute the file as a script from the Python Shell within Paraview.</p>
+<ol class="arabic simple">
+<li><p>If the Python Shell is not displayed, click the checkbox in <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Python</span> <span class="pre">Shell</span></code>.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Script</span></code> button to the bottom right of the Python shell, navigate to the file <code class="docutils literal notranslate"><span class="pre">amrex/Docs/sphinx_documentation/source/Visualization/slice_state1.py</span></code> in the file navigator, and click <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p></li>
+</ol>
+<p>You should see a 2D slice of the solution to the 3D heat equation. If Paraview reports
+an error or crashes, see below.</p>
+<section id="aside-working-directory-in-the-paraview-python-shell">
+<h4>Aside: Working directory in the Paraview Python shell<a class="headerlink" href="#aside-working-directory-in-the-paraview-python-shell" title="Permalink to this heading"></a></h4>
+<p>When you load a state from a Python script in Paraview, it will look in the current working directory of the Python shell to
+resolve the paths to the data files provided in the Python script.</p>
+<p>By default, the current working directory of the Paraview Python shell will be the directory from which you launched Paraview.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your Python script makes direct reference to a set of files that can’t be found from your current working directory, then running that script will result in an error, and potentially cause Paraview to crash. This can be addressed by changing the cwd of your Python shell to the proper location.</p>
+</div>
+<p>To check the cwd of the Paraview Python shell, run</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and make sure that your cwd contains the folder you want to search in so that Python can resolve the path. To change the cwd, run</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;path/to/folder/containing/your/plotfiles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="modifying-a-state-file-to-work-with-different-data">
+<h4>Modifying a State File to Work with Different Data<a class="headerlink" href="#modifying-a-state-file-to-work-with-different-data" title="Permalink to this heading"></a></h4>
+<p>As noted above, a Python state file exported from Paraview will save the path to the data files you used, if any, from your working directory.
+In order to use such a file with different data, you can modify your Python state file to use the <a class="reference external" href="https://docs.python.org/3/library/glob.html">glob</a> package to create a list
+of potential data file names to search in your current path. The steps are outlined below, including the line numbers in the file
+<code class="docutils literal notranslate"><span class="pre">slice_state1.py</span></code>.</p>
+<ol class="arabic">
+<li><p>Import the glob package</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a variable that will hold the list of names to search for. Following the AMReX convention for naming plotfiles, use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">62</span><span class="p">:</span> <span class="n">PlotFiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;plt&quot;</span> <span class="o">+</span> <span class="s2">&quot;[0-9]&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the code section that builds an <code class="docutils literal notranslate"><span class="pre">AMReX/BoxLib</span> <span class="pre">Grid</span> <span class="pre">Reader</span></code>, replace the list of data paths with the variable <code class="docutils literal notranslate"><span class="pre">PlotFiles</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">65</span><span class="p">:</span> <span class="n">plt00000</span> <span class="o">=</span> <span class="n">AMReXBoxLibGridReader</span><span class="p">(</span><span class="n">registrationName</span><span class="o">=</span><span class="s2">&quot;plt00000*&quot;</span><span class="p">,</span> <span class="n">FileNames</span><span class="o">=</span><span class="n">PlotFiles</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Change the cwd of your Python shell, as outlined above, to a directory containing the other plotfiles you wish to view.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Script</span></code> and navigate to the Python state file you wish to run in the pop-up file navigator.</p></li>
+</ol>
+<p>You should now be able to view a new data set with the same filters, color mappings, etc. that you saved to your state file.</p>
+</section>
+</section>
 </section>
 <section id="paraview-hdf5-format">
 <h2>ParaView HDF5 Format<a class="headerlink" href="#paraview-hdf5-format" title="Permalink to this heading"></a></h2>
@@ -621,10 +715,10 @@ the slice plot feature is shown below:</p>
 </div>
 <p>The resulting image is <a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 19</span></a>. One can also make
 volume renderings with ; an example is show below:</p>
-<figure class="align-default" id="id10">
+<figure class="align-default" id="id14">
 <span id="fig-yt-nyx-slice-plot"></span><img alt="_images/yt_Nyx_density_slice.png" src="_images/yt_Nyx_density_slice.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">: Slice plot of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">: Slice plot of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt.</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s2">&quot;perspective&quot;</span><span class="p">)</span>
@@ -663,12 +757,12 @@ volume renderings with ; an example is show below:</p>
 </pre></div>
 </div>
 <p>The output of this is <a class="reference internal" href="#fig-yt-nyx-vol-rend"><span class="std std-numref">Fig. 20</span></a>.</p>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id15">
 <span id="fig-yt-nyx-vol-rend"></span><img alt="_images/yt_Nyx_density_vol_rend.png" src="_images/yt_Nyx_density_vol_rend.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">Volume rendering of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt. This corresponds
 to the same plot file used to generate the slice plot in
-<a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 19</span></a>.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 19</span></a>.</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -715,7 +809,7 @@ instructions at this URL under the “Custom Kernels” heading:
 <a class="reference external" href="http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-analytics">http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-analytics</a>.
 After writing the appropriate <code class="docutils literal notranslate"><span class="pre">kernel.json</span></code> file, the custom kernel will
 appear as an available Jupyter notebook. Then one can interactively visualize
-AMReX plot files in the web browser. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+AMReX plot files in the web browser. <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </section>
 <section id="parallel">
 <h3>Parallel<a class="headerlink" href="#parallel" title="Permalink to this heading"></a></h3>
@@ -842,8 +936,8 @@ large time series of data.</p>
 </div></blockquote>
 </li>
 </ul>
-<aside class="footnote brackets" id="id2" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id6" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
 <p>It is convenient to use the
 magic command <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> in order to render matplotlib
 figures in the same browser window as the notebook, as opposed to displaying it
@@ -860,11 +954,11 @@ of visualization and analysis back ends including VisIt Libsim, ParaView
 Catalyst, VTK-m, Ascent, ADIOS, Yt, and Python.</p>
 <section id="system-architecture">
 <h2>System Architecture<a class="headerlink" href="#system-architecture" title="Permalink to this heading"></a></h2>
-<figure class="align-default" id="id12">
+<figure class="align-default" id="id16">
 <span id="sensei-arch"></span><img alt="_images/sensei_amrex_arch_sm_824.png" src="_images/sensei_amrex_arch_sm_824.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 21 </span><span class="caption-text">SENSEI’s in situ architecture enables use of a diverse of back ends which
-can be selected at run time via an XML configuration file</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+can be selected at run time via an XML configuration file</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The three major architectural components in SENSEI are <em>data adaptors</em> which
@@ -964,11 +1058,11 @@ VisIt Libsim.</p>
 runtime configuration. The session file is generated using VisIt GUI on a
 representative dataset. Usually this data set is generated in a low resolution
 run of the desired simulation.</p>
-<figure class="align-default" id="id13">
+<figure class="align-default" id="id17">
 <span id="rt-visit"></span><img alt="_images/rt_2048_visit_000500.png" src="_images/rt_2048_visit_000500.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 22 </span><span class="caption-text">SENSEI-Libsim in situ visualization of a Raleigh-Taylor instability computed
-by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The same run and visualization was repeated using ParaView Catalyst, shown in
@@ -982,11 +1076,11 @@ figure <a class="reference internal" href="#rt-pv"><span class="std std-numref">
 <p>Here the <em>filename</em> attribute is used to pass Catalyst a Catalyst specific
 configuration that was generated using the ParaView GUI on a representative
 dataset.</p>
-<figure class="align-default" id="id14">
+<figure class="align-default" id="id18">
 <span id="rt-pv"></span><img alt="_images/rt_2048_paraview_000500.png" src="_images/rt_2048_paraview_000500.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 23 </span><span class="caption-text">SENSEI-Catalyst in situ visualization of a Raleigh-Taylor instability
-computed by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+computed by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
