@@ -3,10 +3,16 @@
   <compounddef id="structamrex_1_1ParticleIDWrapper" kind="struct" language="C++" prot="public">
     <compoundname>amrex::ParticleIDWrapper</compoundname>
     <includes refid="AMReX__Particle_8H" local="no">AMReX_Particle.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+        <defval>uint64_t</defval>
+      </param>
+    </templateparamlist>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1ParticleIDWrapper_1a2b585340461a43c8bed49aefc535f060" prot="public" static="no" mutable="no">
-        <type>uint64_t *</type>
-        <definition>uint64_t* amrex::ParticleIDWrapper::m_idata</definition>
+      <memberdef kind="variable" id="structamrex_1_1ParticleIDWrapper_1a9856422d2c1b29f226289b9646744d35" prot="public" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* amrex::ParticleIDWrapper&lt; T &gt;::m_idata</definition>
         <argsstring></argsstring>
         <name>m_idata</name>
         <qualifiedname>amrex::ParticleIDWrapper::m_idata</qualifiedname>
@@ -16,13 +22,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="111" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="111" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="160" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="160" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a421b8df4ba4bef283d8b812c8a35e976" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1aaaf1d10ae585485275dc959b63f36268" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::ParticleIDWrapper::~ParticleIDWrapper</definition>
+        <definition>amrex::ParticleIDWrapper&lt; T &gt;::~ParticleIDWrapper</definition>
         <argsstring>() noexcept=default</argsstring>
         <name>~ParticleIDWrapper</name>
         <qualifiedname>amrex::ParticleIDWrapper::~ParticleIDWrapper</qualifiedname>
@@ -32,16 +38,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="113" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="162" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a70c96c85021171e8ca0e31b75ba26885" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a2cfe1d8a282906828833a1454945cf92" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper::ParticleIDWrapper</definition>
-        <argsstring>(uint64_t &amp;idata) noexcept</argsstring>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper&lt; T &gt;::ParticleIDWrapper</definition>
+        <argsstring>(T &amp;idata) noexcept</argsstring>
         <name>ParticleIDWrapper</name>
         <qualifiedname>amrex::ParticleIDWrapper::ParticleIDWrapper</qualifiedname>
         <param>
-          <type>uint64_t &amp;</type>
+          <type>T &amp;</type>
           <declname>idata</declname>
         </param>
         <briefdescription>
@@ -50,11 +56,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="116" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="116" bodyend="118"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="165" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="165" bodyend="167"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a1be128a081a654e36673ae143e0c78cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a15b782647c3a2c008e39ea65606d7e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper::ParticleIDWrapper</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper&lt; T &gt;::ParticleIDWrapper</definition>
         <argsstring>(const ParticleIDWrapper &amp;rhs)=default</argsstring>
         <name>ParticleIDWrapper</name>
         <qualifiedname>amrex::ParticleIDWrapper::ParticleIDWrapper</qualifiedname>
@@ -68,11 +74,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="121" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="170" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1abe6eaeb579f55deb9eea2375bf0cdb4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1ac3836bb90023bac2c8d16cb6031612a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::ParticleIDWrapper::ParticleIDWrapper</definition>
+        <definition>amrex::ParticleIDWrapper&lt; T &gt;::ParticleIDWrapper</definition>
         <argsstring>(ParticleIDWrapper &amp;&amp;)=delete</argsstring>
         <name>ParticleIDWrapper</name>
         <qualifiedname>amrex::ParticleIDWrapper::ParticleIDWrapper</qualifiedname>
@@ -85,11 +91,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="123" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="172" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a4a59ba259fcfe89a74b11f58565a26d7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a1f291e97ce550156a57a75d5de6ae4ed" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref> &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper::operator=</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper&lt; T &gt;::operator=</definition>
         <argsstring>(const ParticleIDWrapper &amp;pidw) noexcept</argsstring>
         <name>operator=</name>
         <qualifiedname>amrex::ParticleIDWrapper::operator=</qualifiedname>
@@ -103,11 +109,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="126" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="126" bodyend="129"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="175" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="175" bodyend="178"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a68a2a5ae8b56d41e9be78efa09ce54f6" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1aa7d460d1216feed9ef2cfe23cbcaebbe" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref> &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper::operator=</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper&lt; T &gt;::operator=</definition>
         <argsstring>(ParticleIDWrapper &amp;&amp;pidw) noexcept</argsstring>
         <name>operator=</name>
         <qualifiedname>amrex::ParticleIDWrapper::operator=</qualifiedname>
@@ -121,11 +127,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="132" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="132" bodyend="135"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="181" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="181" bodyend="184"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a23172db027e66159f5cc82bfaa65d7ae" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a23a1cfeb8a7e5eae61e1c7663bbcc225" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref> &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper::operator=</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper &amp; amrex::ParticleIDWrapper&lt; T &gt;::operator=</definition>
         <argsstring>(const Long id) noexcept</argsstring>
         <name>operator=</name>
         <qualifiedname>amrex::ParticleIDWrapper::operator=</qualifiedname>
@@ -139,11 +145,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="138" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="138" bodyend="142"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="187" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="187" bodyend="191"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a3cdec68611dbd36c124a37200d6eb516" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a5571f2b090e4451a9e9c7dd24e212ec5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper::operator Long</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParticleIDWrapper&lt; T &gt;::operator Long</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator Long</name>
         <qualifiedname>amrex::ParticleIDWrapper::operator Long</qualifiedname>
@@ -153,11 +159,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="145" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="145" bodyend="148"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="194" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="194" bodyend="197"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1af21bcbc4ede1afe42beb3ce0667e56be" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1accce8cb7050e3b1988ac9211c3e8a388" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper::make_invalid</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper&lt; T &gt;::make_invalid</definition>
         <argsstring>() const noexcept</argsstring>
         <name>make_invalid</name>
         <qualifiedname>amrex::ParticleIDWrapper::make_invalid</qualifiedname>
@@ -165,15 +171,40 @@
         </briefdescription>
         <detaileddescription>
 <para>Mark the particle as invalid</para>
-<para>Swaps the is_valid (sign) bit to invalid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1a932035c8f264cf9e16c6568842bdd2ce" kindref="member">make_valid()</ref>. </para>
+<para>Swaps the is_valid (sign) bit to invalid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1aa15d74b9a03e4f956b907d394140cd5a" kindref="member">make_valid()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="156" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="156" bodyend="159"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="205" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="205" bodyend="208"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a932035c8f264cf9e16c6568842bdd2ce" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a467e2c2d32d37dbb267bb01ca52a4d7f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T_Bool</type>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper::make_valid</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper&lt; T &gt;::make_invalid</definition>
+        <argsstring>(T_Bool const &amp;mask) const noexcept</argsstring>
+        <name>make_invalid</name>
+        <qualifiedname>amrex::ParticleIDWrapper::make_invalid</qualifiedname>
+        <param>
+          <type>T_Bool const &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mark the particle as invalid</para>
+<para>Swaps the is_valid (sign) bit to invalid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1aa15d74b9a03e4f956b907d394140cd5a" kindref="member">make_valid()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="217" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1aa15d74b9a03e4f956b907d394140cd5a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper&lt; T &gt;::make_valid</definition>
         <argsstring>() const noexcept</argsstring>
         <name>make_valid</name>
         <qualifiedname>amrex::ParticleIDWrapper::make_valid</qualifiedname>
@@ -181,15 +212,40 @@
         </briefdescription>
         <detaileddescription>
 <para>Mark the particle as valid</para>
-<para>Swaps the is_valid (sign) bit to valid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1af21bcbc4ede1afe42beb3ce0667e56be" kindref="member">make_invalid()</ref>. </para>
+<para>Swaps the is_valid (sign) bit to valid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1accce8cb7050e3b1988ac9211c3e8a388" kindref="member">make_invalid()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="167" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="167" bodyend="170"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="228" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="228" bodyend="231"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a6dcba6255321dadae60755324bc0f7e2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1ab1674a22092a6276cb39b10db1ad3e0c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T_Bool</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ParticleIDWrapper&lt; T &gt;::make_valid</definition>
+        <argsstring>(T_Bool const &amp;mask) const noexcept</argsstring>
+        <name>make_valid</name>
+        <qualifiedname>amrex::ParticleIDWrapper::make_valid</qualifiedname>
+        <param>
+          <type>T_Bool const &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mark the particle as valid</para>
+<para>Swaps the is_valid (sign) bit to valid. This is NOT identical to id = -id, but it is equally reversible via <ref refid="structamrex_1_1ParticleIDWrapper_1accce8cb7050e3b1988ac9211c3e8a388" kindref="member">make_invalid()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="240" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="240" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleIDWrapper_1a22dd4bf7d9eb706b5893d22f63e56d5b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::ParticleIDWrapper::is_valid</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::ParticleIDWrapper&lt; T &gt;::is_valid</definition>
         <argsstring>() const noexcept</argsstring>
         <name>is_valid</name>
         <qualifiedname>amrex::ParticleIDWrapper::is_valid</qualifiedname>
@@ -201,27 +257,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="177" bodyend="180"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="250" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="250" bodyend="253"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="109" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="110" bodyend="181"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" line="151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle.H" bodystart="152" bodyend="254"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a6dcba6255321dadae60755324bc0f7e2" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>is_valid</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a2b585340461a43c8bed49aefc535f060" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>m_idata</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1af21bcbc4ede1afe42beb3ce0667e56be" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_invalid</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a932035c8f264cf9e16c6568842bdd2ce" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_valid</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a3cdec68611dbd36c124a37200d6eb516" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator Long</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a4a59ba259fcfe89a74b11f58565a26d7" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a68a2a5ae8b56d41e9be78efa09ce54f6" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a23172db027e66159f5cc82bfaa65d7ae" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a70c96c85021171e8ca0e31b75ba26885" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a1be128a081a654e36673ae143e0c78cb" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1abe6eaeb579f55deb9eea2375bf0cdb4b" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
-      <member refid="structamrex_1_1ParticleIDWrapper_1a421b8df4ba4bef283d8b812c8a35e976" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>~ParticleIDWrapper</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a22dd4bf7d9eb706b5893d22f63e56d5b" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>is_valid</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a9856422d2c1b29f226289b9646744d35" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>m_idata</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1accce8cb7050e3b1988ac9211c3e8a388" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_invalid</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a467e2c2d32d37dbb267bb01ca52a4d7f" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_invalid</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1aa15d74b9a03e4f956b907d394140cd5a" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_valid</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1ab1674a22092a6276cb39b10db1ad3e0c" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>make_valid</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a5571f2b090e4451a9e9c7dd24e212ec5" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator Long</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a1f291e97ce550156a57a75d5de6ae4ed" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1aa7d460d1216feed9ef2cfe23cbcaebbe" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a23a1cfeb8a7e5eae61e1c7663bbcc225" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a2cfe1d8a282906828833a1454945cf92" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1a15b782647c3a2c008e39ea65606d7e1c" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1ac3836bb90023bac2c8d16cb6031612a2" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>ParticleIDWrapper</name></member>
+      <member refid="structamrex_1_1ParticleIDWrapper_1aaaf1d10ae585485275dc959b63f36268" prot="public" virt="non-virtual"><scope>amrex::ParticleIDWrapper</scope><name>~ParticleIDWrapper</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

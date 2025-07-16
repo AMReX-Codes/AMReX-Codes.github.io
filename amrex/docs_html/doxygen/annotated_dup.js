@@ -261,6 +261,12 @@ var annotated_dup =
         ] ],
         [ "RetSum", "structamrex_1_1Scan_1_1RetSum.html", "structamrex_1_1Scan_1_1RetSum" ]
       ] ],
+      [ "simd", "namespaceamrex_1_1simd.html", [
+        [ "detail", "namespaceamrex_1_1simd_1_1detail.html", [
+          [ "InternalVectorized", "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html", null ]
+        ] ],
+        [ "Vectorized", "structamrex_1_1simd_1_1Vectorized.html", "structamrex_1_1simd_1_1Vectorized" ]
+      ] ],
       [ "sundials", "namespaceamrex_1_1sundials.html", [
         [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ]
       ] ],
@@ -746,6 +752,7 @@ var annotated_dup =
       [ "RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
       [ "Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", "structamrex_1_1Same_3_01T_00_01U_01_4" ],
+      [ "SIMDindex", "structamrex_1_1SIMDindex.html", "structamrex_1_1SIMDindex" ],
       [ "SmallMatrix", "structamrex_1_1SmallMatrix.html", "structamrex_1_1SmallMatrix" ],
       [ "SoAParticle", "structamrex_1_1SoAParticle.html", "structamrex_1_1SoAParticle" ],
       [ "SoAParticleBase", "structamrex_1_1SoAParticleBase.html", "structamrex_1_1SoAParticleBase" ],

@@ -1,5 +1,6 @@
 var AMReX__GpuLaunchFunctsC_8H =
 [
+    [ "amrex::SIMDindex< WIDTH, N >", "structamrex_1_1SIMDindex.html", "structamrex_1_1SIMDindex" ],
     [ "call_f_intvect_engine", "AMReX__GpuLaunchFunctsC_8H.html#abf33e4589ea5adab841f76cf4ba8fec2", null ],
     [ "call_f_intvect_handler", "AMReX__GpuLaunchFunctsC_8H.html#a046cf7f7c280ba419ad77e7d97f61d88", null ],
     [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsC_8H.html#ade8d882f6ba75270a6ea576d8bba3577", null ],
@@ -131,5 +132,6 @@ var AMReX__GpuLaunchFunctsC_8H =
     [ "ParallelForRNG", "AMReX__GpuLaunchFunctsC_8H.html#ae3514c3f8c4b2a78c2ddc9b49d8cca6c", null ],
     [ "ParallelForRNG_impND", "AMReX__GpuLaunchFunctsC_8H.html#aa9178db9a47be24aee36f3c72d0ed274", null ],
     [ "ParallelForRNG_impND", "AMReX__GpuLaunchFunctsC_8H.html#a80bc7ba0eaf66754172d9d1d172eeacc", null ],
+    [ "ParallelForSIMD", "AMReX__GpuLaunchFunctsC_8H.html#a7329f7a3e903d5a9abcd5f8603def1a1", null ],
     [ "single_task", "AMReX__GpuLaunchFunctsC_8H.html#aa785b3b07c24c864604e8de72a0bb919", null ]
 ];

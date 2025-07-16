@@ -122,8 +122,8 @@ var searchData=
   ['vector_3c_20gfab_20_3e_119',['Vector&lt; GFab &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20gpustream_5ft_20_3e_120',['Vector&lt; gpuStream_t &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20hypre_5fint_20_3e_121',['Vector&lt; HYPRE_Int &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20int_20_3e_122',['vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;']]],
-  ['vector_3c_20long_20_3e_123',['vector&lt; long &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Long &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; long &gt;']]],
+  ['vector_3c_20int_20_3e_122',['vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;']]],
+  ['vector_3c_20long_20_3e_123',['vector&lt; long &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; long &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Long &gt;']]],
   ['vector_3c_20mf_20_3e_124',['Vector&lt; MF &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20mpi_5frequest_20_3e_125',['Vector&lt; MPI_Request &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20particlelevel_20_3e_126',['Vector&lt; ParticleLevel &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
@@ -180,9 +180,10 @@ var searchData=
   ['vector_3c_20vec_20_3e_177',['Vector&lt; VEC &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20vector_3c_20mf_20_3e_20_3e_178',['Vector&lt; Vector&lt; MF &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20vertex_20_3e_179',['Vector&lt; Vertex &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vectortag_180',['VectorTag',['../structamrex_1_1VectorTag.html',1,'amrex']]],
-  ['vertex_181',['Vertex',['../structamrex_1_1EB2_1_1Vertex.html',1,'amrex::EB2']]],
-  ['vismf_182',['VisMF',['../classamrex_1_1VisMF.html',1,'amrex']]],
-  ['vismfbuffer_183',['VisMFBuffer',['../classamrex_1_1VisMFBuffer.html',1,'amrex']]],
-  ['voidcopytag_184',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]]
+  ['vectorized_180',['Vectorized',['../structamrex_1_1simd_1_1Vectorized.html',1,'amrex::simd']]],
+  ['vectortag_181',['VectorTag',['../structamrex_1_1VectorTag.html',1,'amrex']]],
+  ['vertex_182',['Vertex',['../structamrex_1_1EB2_1_1Vertex.html',1,'amrex::EB2']]],
+  ['vismf_183',['VisMF',['../classamrex_1_1VisMF.html',1,'amrex']]],
+  ['vismfbuffer_184',['VisMFBuffer',['../classamrex_1_1VisMFBuffer.html',1,'amrex']]],
+  ['voidcopytag_185',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]]
 ];

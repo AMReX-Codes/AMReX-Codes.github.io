@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structamrex_1_1simd_1_1Vectorized" kind="struct" language="C++" prot="public">
+    <compoundname>amrex::simd::Vectorized</compoundname>
+    <basecompoundref refid="structamrex_1_1simd_1_1detail_1_1InternalVectorized" prot="public" virt="non-virtual">amrex::simd::detail::InternalVectorized</basecompoundref>
+    <includes refid="AMReX__SIMD_8H" local="no">AMReX_SIMD.H</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>SIMD_WIDTH</declname>
+        <defname>SIMD_WIDTH</defname>
+        <defval><ref refid="namespaceamrex_1_1simd_1a3eedc46ea269765dc7010c48bd8a39d8" kindref="member">native_simd_size_real</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structamrex_1_1simd_1_1Vectorized_1a0e893dff355298214666ddcada09e8c5" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;::simd_width</definition>
+        <argsstring></argsstring>
+        <name>simd_width</name>
+        <qualifiedname>amrex::simd::Vectorized::simd_width</qualifiedname>
+        <initializer>= SIMD_WIDTH</initializer>
+        <briefdescription>
+<para>SIMD width in elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" line="104" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Mixin Helper Class</para>
+<para>Use this class as a mixin (base) class to simplify writing functors that support/do not support ParallelForSIMD.</para>
+<para>Example: <programlisting filename=".c"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Compute<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Vectorized&lt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T_Real&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()<sp/>(T_Real<sp/>&amp;<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/>x)<sp/>{<sp/>...<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>...<sp/>call<sp/>site<sp/>below</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Compute<sp/>c;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(amrex::simd::is_vectorized&lt;Compute&gt;)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7329f7a3e903d5a9abcd5f8603def1a1" kindref="member">ParallelForSIMD</ref>&lt;...&gt;(np,<sp/>c).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">ParallelFor</ref>(np,<sp/>c);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</label>
+        <link refid="structamrex_1_1simd_1_1Vectorized"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::simd::detail::InternalVectorized</label>
+        <link refid="structamrex_1_1simd_1_1detail_1_1InternalVectorized"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</label>
+        <link refid="structamrex_1_1simd_1_1Vectorized"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::simd::detail::InternalVectorized</label>
+        <link refid="structamrex_1_1simd_1_1detail_1_1InternalVectorized"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" line="100" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" bodystart="102" bodyend="105"/>
+    <listofallmembers>
+      <member refid="structamrex_1_1simd_1_1Vectorized_1a0e893dff355298214666ddcada09e8c5" prot="public" virt="non-virtual"><scope>amrex::simd::Vectorized</scope><name>simd_width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

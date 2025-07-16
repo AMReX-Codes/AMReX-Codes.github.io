@@ -1,7 +1,7 @@
 var searchData=
 [
   ['openbcsolver_0',['OpenBCSolver',['../classamrex_1_1FFT_1_1R2C.html#afd3d509858e88e5f3a1efe7cb494baf4',1,'amrex::FFT::R2C']]],
-  ['operator_2a_1',['operator*',['../structamrex_1_1SmallMatrix.html#ae9608225e97fe6122467ada431fa11c8',1,'amrex::SmallMatrix::operator*'],['../structamrex_1_1SmallMatrix.html#a5c4abe7b58b6571ddf74f8923d3e285b',1,'amrex::SmallMatrix::operator*'],['../structamrex_1_1SmallMatrix.html#a18998cce65a8eb7f5be687817a2f3c85',1,'amrex::SmallMatrix::operator*']]],
+  ['operator_2a_1',['operator*',['../structamrex_1_1SmallMatrix.html#ae9608225e97fe6122467ada431fa11c8',1,'amrex::SmallMatrix::operator*'],['../structamrex_1_1SmallMatrix.html#a5c4abe7b58b6571ddf74f8923d3e285b',1,'amrex::SmallMatrix::operator*'],['../structamrex_1_1SmallMatrix.html#a6aaba5c05794507f7d50d95e973a71d8',1,'amrex::SmallMatrix::operator*']]],
   ['operator_2b_2',['operator+',['../structamrex_1_1SmallMatrix.html#abc0087c3fa31989aeddc4d3f7766f434',1,'amrex::SmallMatrix']]],
   ['operator_2d_3',['operator-',['../structamrex_1_1SmallMatrix.html#a4c254cbfcfb9e13bce0e6ac9676be70d',1,'amrex::SmallMatrix']]],
   ['operator_3c_4',['operator&lt;',['../structamrex_1_1ValLocPair.html#ab807eb6f06e61dab7ba41259b82dc50b',1,'amrex::ValLocPair']]],

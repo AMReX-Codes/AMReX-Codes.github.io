@@ -664,6 +664,9 @@ var hierarchy =
     [ "amrex::IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::Vector< amrex::MultiFab >, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047.html", null ],
     [ "amrex::AmrDataAdaptor::InternalsType", "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::AmrMeshDataAdaptor::InternalsType", "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html", null ],
+    [ "amrex::simd::detail::InternalVectorized", "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html", [
+      [ "amrex::simd::Vectorized< SIMD_WIDTH >", "structamrex_1_1simd_1_1Vectorized.html", null ]
+    ] ],
     [ "amrex::InterpBase", "classamrex_1_1InterpBase.html", [
       [ "amrex::Interpolater", "classamrex_1_1Interpolater.html", [
         [ "amrex::CellBilinear", "classamrex_1_1CellBilinear.html", null ],
@@ -960,7 +963,7 @@ var hierarchy =
     [ "amrex::ParticleCopyOp", "structamrex_1_1ParticleCopyOp.html", null ],
     [ "amrex::ParticleCopyPlan", "structamrex_1_1ParticleCopyPlan.html", null ],
     [ "amrex::ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html", null ],
-    [ "amrex::ParticleIDWrapper", "structamrex_1_1ParticleIDWrapper.html", null ],
+    [ "amrex::ParticleIDWrapper< T >", "structamrex_1_1ParticleIDWrapper.html", null ],
     [ "amrex::ParticleInitType< NStructReal, NStructInt, NArrayReal, NArrayInt >", "structamrex_1_1ParticleInitType.html", null ],
     [ "amrex::ParticleLocator< Bins >", "classamrex_1_1ParticleLocator.html", null ],
     [ "amrex::ParticleLocator< amrex::DenseBins< amrex::BoxND > >", "classamrex_1_1ParticleLocator.html", null ],
@@ -1073,6 +1076,7 @@ var hierarchy =
     [ "amrex::Gpu::SharedMemory< unsigned short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html", null ],
     [ "amrex::IntVectND< dim >::shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
+    [ "amrex::SIMDindex< WIDTH, N >", "structamrex_1_1SIMDindex.html", null ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
     [ "amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex >", "structamrex_1_1SmallMatrix.html", null ],
     [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", [

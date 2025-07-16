@@ -1,6 +1,6 @@
 var AMReX__Particle_8H =
 [
-    [ "amrex::ParticleIDWrapper", "structamrex_1_1ParticleIDWrapper.html", "structamrex_1_1ParticleIDWrapper" ],
+    [ "amrex::ParticleIDWrapper< T >", "structamrex_1_1ParticleIDWrapper.html", "structamrex_1_1ParticleIDWrapper" ],
     [ "amrex::ParticleCPUWrapper", "structamrex_1_1ParticleCPUWrapper.html", "structamrex_1_1ParticleCPUWrapper" ],
     [ "amrex::ConstParticleIDWrapper", "structamrex_1_1ConstParticleIDWrapper.html", "structamrex_1_1ConstParticleIDWrapper" ],
     [ "amrex::ConstParticleCPUWrapper", "structamrex_1_1ConstParticleCPUWrapper.html", "structamrex_1_1ConstParticleCPUWrapper" ],
@@ -11,7 +11,9 @@ var AMReX__Particle_8H =
     [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", "structamrex_1_1SoAParticleBase" ],
     [ "amrex::Particle< T_NReal, T_NInt >", "structamrex_1_1Particle.html", "structamrex_1_1Particle" ],
     [ "is_valid", "AMReX__Particle_8H.html#a1cd7ada43c935a229f4e1af9819e2722", null ],
+    [ "make_invalid", "AMReX__Particle_8H.html#ab14c14d842de54bd8ffddd42aa5ef072", null ],
     [ "make_invalid", "AMReX__Particle_8H.html#a8d43d30e28caedd08cba477944645398", null ],
+    [ "make_valid", "AMReX__Particle_8H.html#aeb133b04687a8e31440d114e4ef548e3", null ],
     [ "make_valid", "AMReX__Particle_8H.html#a2e2a874faf6b40398db34d4b7c06c381", null ],
     [ "operator<<", "AMReX__Particle_8H.html#ab4e01d5d8e6f08b071c8621dd79c8e6a", null ],
     [ "operator<<", "AMReX__Particle_8H.html#aa1fa1f59093db95dcc9e1b82bd31c543", null ],

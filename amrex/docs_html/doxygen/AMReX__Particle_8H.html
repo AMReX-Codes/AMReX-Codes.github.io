@@ -108,19 +108,19 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__FArrayBox_8H_source.html">AMReX_FArrayBox.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__IntVect_8H_source.html">AMReX_IntVect.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__RealVect_8H_source.html">AMReX_RealVect.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__ParmParse_8H_source.html">AMReX_ParmParse.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Geometry_8H_source.html">AMReX_Geometry.H</a>&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__IntVect_8H_source.html">AMReX_IntVect.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__ParmParse_8H_source.html">AMReX_ParmParse.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__RealVect_8H_source.html">AMReX_RealVect.H</a>&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="AMReX__Particle_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleIDWrapper.html">amrex::ParticleIDWrapper</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleIDWrapper.html">amrex::ParticleIDWrapper&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCPUWrapper.html">amrex::ParticleCPUWrapper</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,8 +165,14 @@ Functions</h2></td></tr>
 <tr class="separator:ad98b7c64b3759cca102127387b79ad4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d43d30e28caedd08cba477944645398" id="r_a8d43d30e28caedd08cba477944645398"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1particle__impl.html#a8d43d30e28caedd08cba477944645398">amrex::particle_impl::make_invalid</a> (uint64_t &amp;idcpu) noexcept</td></tr>
 <tr class="separator:a8d43d30e28caedd08cba477944645398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14c14d842de54bd8ffddd42aa5ef072" id="r_ab14c14d842de54bd8ffddd42aa5ef072"><td class="memTemplParams" colspan="2">template&lt;typename T_SIMD , typename T_Mask &gt; </td></tr>
+<tr class="memitem:ab14c14d842de54bd8ffddd42aa5ef072"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1particle__impl.html#ab14c14d842de54bd8ffddd42aa5ef072">amrex::particle_impl::make_invalid</a> (T_SIMD &amp;idcpu, T_Mask const &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>) noexcept</td></tr>
+<tr class="separator:ab14c14d842de54bd8ffddd42aa5ef072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2a874faf6b40398db34d4b7c06c381" id="r_a2e2a874faf6b40398db34d4b7c06c381"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1particle__impl.html#a2e2a874faf6b40398db34d4b7c06c381">amrex::particle_impl::make_valid</a> (uint64_t &amp;idcpu) noexcept</td></tr>
 <tr class="separator:a2e2a874faf6b40398db34d4b7c06c381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb133b04687a8e31440d114e4ef548e3" id="r_aeb133b04687a8e31440d114e4ef548e3"><td class="memTemplParams" colspan="2">template&lt;typename T_SIMD , typename T_Mask &gt; </td></tr>
+<tr class="memitem:aeb133b04687a8e31440d114e4ef548e3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1particle__impl.html#aeb133b04687a8e31440d114e4ef548e3">amrex::particle_impl::make_valid</a> (T_SIMD &amp;idcpu, T_Mask const &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>) noexcept</td></tr>
+<tr class="separator:aeb133b04687a8e31440d114e4ef548e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cd7ada43c935a229f4e1af9819e2722" id="r_a1cd7ada43c935a229f4e1af9819e2722"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1particle__impl.html#a1cd7ada43c935a229f4e1af9819e2722">amrex::particle_impl::is_valid</a> (const uint64_t idcpu) noexcept</td></tr>
 <tr class="separator:a1cd7ada43c935a229f4e1af9819e2722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6076dc93e17aef13f76bd835e89ce265" id="r_a6076dc93e17aef13f76bd835e89ce265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6076dc93e17aef13f76bd835e89ce265">amrex::SetParticleIDandCPU</a> (Long id, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cpu) noexcept</td></tr>

@@ -31,7 +31,7 @@ var structamrex_1_1SmallMatrix =
     [ "transposeInPlace", "structamrex_1_1SmallMatrix.html#aeaaa8ace7a3bbe1ef56e8c40eabf6ab9", null ],
     [ "Zero", "structamrex_1_1SmallMatrix.html#a9b8ca245e5931136082a2525d3e92c13", null ],
     [ "operator*", "structamrex_1_1SmallMatrix.html#ae9608225e97fe6122467ada431fa11c8", null ],
-    [ "operator*", "structamrex_1_1SmallMatrix.html#a18998cce65a8eb7f5be687817a2f3c85", null ],
+    [ "operator*", "structamrex_1_1SmallMatrix.html#a6aaba5c05794507f7d50d95e973a71d8", null ],
     [ "operator*", "structamrex_1_1SmallMatrix.html#a5c4abe7b58b6571ddf74f8923d3e285b", null ],
     [ "operator+", "structamrex_1_1SmallMatrix.html#abc0087c3fa31989aeddc4d3f7766f434", null ],
     [ "operator-", "structamrex_1_1SmallMatrix.html#a4c254cbfcfb9e13bce0e6ac9676be70d", null ],

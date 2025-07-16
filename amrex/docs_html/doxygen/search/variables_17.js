@@ -11,8 +11,9 @@ var searchData=
   ['whichdir_8',['whichDir',['../classamrex_1_1XYPlotDataList.html#a14f4438e8f2c186df9c2d1e8c9d46198',1,'amrex::XYPlotDataList']]],
   ['whichprepost_9',['whichPrePost',['../classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497',1,'amrex::ParticleContainer_impl']]],
   ['white_10',['white',['../namespaceamrex_1_1FGColor.html#a4f800964745dee2d1547730d621dcbbf',1,'amrex::FGColor::White'],['../namespaceamrex_1_1BGColor.html#a14b91fdfbbf6f0d385b6348887870d18',1,'amrex::BGColor::White']]],
-  ['woffset_11',['WOFFSET',['../namespaceamrex_1_1Amrvis.html#af95fc61c883af4bd3ab8d3bb72334cf0',1,'amrex::Amrvis']]],
-  ['write_5fplotfile_5fwith_5fcheckpoint_12',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]],
-  ['writebuffersize_13',['writeBufferSize',['../classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966',1,'amrex::RealDescriptor']]],
-  ['writetag_14',['writeTag',['../classamrex_1_1NFilesIter.html#a85f34f8f85d278c2a003b7861afc62c0',1,'amrex::NFilesIter']]]
+  ['width_11',['width',['../structamrex_1_1SIMDindex.html#a95a073aef6d29dc3fc24c1fc7be5bbeb',1,'amrex::SIMDindex']]],
+  ['woffset_12',['WOFFSET',['../namespaceamrex_1_1Amrvis.html#af95fc61c883af4bd3ab8d3bb72334cf0',1,'amrex::Amrvis']]],
+  ['write_5fplotfile_5fwith_5fcheckpoint_13',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]],
+  ['writebuffersize_14',['writeBufferSize',['../classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966',1,'amrex::RealDescriptor']]],
+  ['writetag_15',['writeTag',['../classamrex_1_1NFilesIter.html#a85f34f8f85d278c2a003b7861afc62c0',1,'amrex::NFilesIter']]]
 ];
