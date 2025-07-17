@@ -1,9 +1,9 @@
 var NAVTREEINDEX106 =
 {
+"namespaceamrex_1_1Math.html#aae7262755836bb222753c42fa7260c25":[2,0,0,24,8],
 "namespaceamrex_1_1Math.html#ada567ffe82efab0c702b7c317f227fb8":[2,0,0,24,12],
 "namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d":[2,0,0,24,4],
 "namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7":[2,0,0,24,5],
-"namespaceamrex_1_1Math.html#aec19c232678cd982bad2ccaa484c349f":[2,0,0,24,13],
 "namespaceamrex_1_1Math.html#af3ec0eb80e89fb4e4acca9c0c2941789":[2,0,0,24,11],
 "namespaceamrex_1_1Math.html#af45493ddd19101a65b9b43f79072f36b":[2,0,0,24,9],
 "namespaceamrex_1_1Math.html#af57cfa83af1c7e36c3f085932cd2febf":[2,0,0,24,7],

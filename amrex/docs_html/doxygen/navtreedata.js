@@ -175,7 +175,7 @@ var NAVTREEINDEX =
 "namespaceamrex.html#adaf35cd6ed336b8c439985415ea0b20f",
 "namespaceamrex.html#af60d0d1ff2d8e4b50ece6b220764f064",
 "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8",
-"namespaceamrex_1_1Math.html#ada567ffe82efab0c702b7c317f227fb8",
+"namespaceamrex_1_1Math.html#aae7262755836bb222753c42fa7260c25",
 "namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a",
 "namespaceamrex_1_1detail.html#a5dabf23fc1d6b0482df819bdd5d465c9",
 "namespaceamrex_1_1particle__detail.html#aedddad73b38ca49f734d56af39f83838",

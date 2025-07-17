@@ -245,9 +245,9 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1Math.html":[2,0,0,24],
 "namespaceamrex_1_1Math.html#a01a50f01bdffee6800b64090e421f47f":[2,0,0,24,2],
 "namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585":[2,0,0,24,14],
-"namespaceamrex_1_1Math.html#a1797321fc1588c00caf3421d5285da81":[2,0,0,24,10],
 "namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900":[2,0,0,24,15],
+"namespaceamrex_1_1Math.html#a21bef7d9eecfab79cdea5028344746af":[2,0,0,24,10],
 "namespaceamrex_1_1Math.html#a2d522eb2d366ecb5383529269e417457":[2,0,0,24,6],
-"namespaceamrex_1_1Math.html#a64d6ba33500bba8603dd6fba3588ac3c":[2,0,0,24,3],
-"namespaceamrex_1_1Math.html#aae7262755836bb222753c42fa7260c25":[2,0,0,24,8]
+"namespaceamrex_1_1Math.html#a4ed62483f4d5b20657f81bb9db575770":[2,0,0,24,13],
+"namespaceamrex_1_1Math.html#a64d6ba33500bba8603dd6fba3588ac3c":[2,0,0,24,3]
 };

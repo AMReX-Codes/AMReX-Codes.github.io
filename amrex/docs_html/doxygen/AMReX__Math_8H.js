@@ -16,11 +16,11 @@ var AMReX__Math_8H =
     [ "sincos", "AMReX__Math_8H.html#aae7262755836bb222753c42fa7260c25", null ],
     [ "sincos", "AMReX__Math_8H.html#a42f31885c8f93e816a142d0685715ad6", null ],
     [ "sincos", "AMReX__Math_8H.html#af45493ddd19101a65b9b43f79072f36b", null ],
-    [ "sincos", "AMReX__Math_8H.html#a1797321fc1588c00caf3421d5285da81", null ],
+    [ "sincos", "AMReX__Math_8H.html#a21bef7d9eecfab79cdea5028344746af", null ],
     [ "sincosf", "AMReX__Math_8H.html#a6040b705f14e2498baef550a8196fe39", null ],
     [ "sincospi", "AMReX__Math_8H.html#af3ec0eb80e89fb4e4acca9c0c2941789", null ],
     [ "sincospi", "AMReX__Math_8H.html#ada567ffe82efab0c702b7c317f227fb8", null ],
-    [ "sincospi", "AMReX__Math_8H.html#aec19c232678cd982bad2ccaa484c349f", null ],
+    [ "sincospi", "AMReX__Math_8H.html#a4ed62483f4d5b20657f81bb9db575770", null ],
     [ "sinpi", "AMReX__Math_8H.html#a0568425c35018cd1be09a3b08a245585", null ],
     [ "sinpi", "AMReX__Math_8H.html#a209b6bc6888f6b26a5337094aa3b5900", null ]
 ];
