@@ -126,6 +126,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a995b1b061a4b76ab820758880fb3ab30" id="r_a995b1b061a4b76ab820758880fb3ab30"><td class="memTemplParams" colspan="2">template&lt;typename MF &gt; </td></tr>
 <tr class="memitem:a995b1b061a4b76ab820758880fb3ab30"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#a995b1b061a4b76ab820758880fb3ab30">fill_physbc</a> (MF &amp;mf, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt; const &amp;bc)</td></tr>
 <tr class="separator:a995b1b061a4b76ab820758880fb3ab30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0c2b958fded09bf8458edbb27153ff" id="r_a6b0c2b958fded09bf8458edbb27153ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#a6b0c2b958fded09bf8458edbb27153ff">shift_geom</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom)</td></tr>
+<tr class="separator:a6b0c2b958fded09bf8458edbb27153ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58a96a62f833329517b17fe27e8b803" id="r_ae58a96a62f833329517b17fe27e8b803"><td class="memTemplParams" colspan="2">template&lt;typename MF &gt; </td></tr>
+<tr class="memitem:ae58a96a62f833329517b17fe27e8b803"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1FFT_1_1detail.html#ae58a96a62f833329517b17fe27e8b803">shift_mfs</a> (<a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> const &amp;domain_lo, MF const &amp;mf1, MF const &amp;mf2, MF &amp;new_mf1, MF &amp;new_mf2)</td></tr>
+<tr class="separator:ae58a96a62f833329517b17fe27e8b803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a995b1b061a4b76ab820758880fb3ab30" name="a995b1b061a4b76ab820758880fb3ab30"></a>
@@ -221,6 +226,80 @@ template&lt;typename FA1 , typename FA2 &gt; </div>
           <td></td>
           <td class="paramtype">FA2 &amp;&#160;</td>
           <td class="paramname"><em>fa2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b0c2b958fded09bf8458edbb27153ff" name="a6b0c2b958fded09bf8458edbb27153ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0c2b958fded09bf8458edbb27153ff">&#9670;&#160;</a></span>shift_geom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> amrex::FFT::detail::shift_geom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae58a96a62f833329517b17fe27e8b803" name="ae58a96a62f833329517b17fe27e8b803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae58a96a62f833329517b17fe27e8b803">&#9670;&#160;</a></span>shift_mfs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::FFT::detail::shift_mfs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>domain_lo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF const &amp;&#160;</td>
+          <td class="paramname"><em>mf1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF const &amp;&#160;</td>
+          <td class="paramname"><em>mf2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname"><em>new_mf1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname"><em>new_mf2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

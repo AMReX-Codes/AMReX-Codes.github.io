@@ -1,5 +1,11 @@
 var NAVTREEINDEX105 =
 {
+"namespaceamrex_1_1Extrapolater.html#af161e1034e6eb3d4f30760fa5b5b1944":[2,0,0,10,1],
+"namespaceamrex_1_1FFT.html":[2,0,0,11],
+"namespaceamrex_1_1FFT.html#a247121292130aadfdd97b2c5b9b518ad":[2,0,0,11,24],
+"namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0":[2,0,0,11,18],
+"namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502":[2,0,0,11,18,1],
+"namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a334c4a4c42fdb79d7ebc3e73b517e6f8":[2,0,0,11,18,3],
 "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8":[2,0,0,11,18,0],
 "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f":[2,0,0,11,18,2],
 "namespaceamrex_1_1FFT.html#a2976e074e2b759ec5813edcccce23341":[2,0,0,11,28],
@@ -31,9 +37,11 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81":[2,0,0,11,15],
 "namespaceamrex_1_1FFT_1_1detail.html":[2,0,0,11,0],
 "namespaceamrex_1_1FFT_1_1detail.html#a25881b5f0cdccef7ba2901436f1afbb4":[2,0,0,11,0,5],
+"namespaceamrex_1_1FFT_1_1detail.html#a6b0c2b958fded09bf8458edbb27153ff":[2,0,0,11,0,6],
 "namespaceamrex_1_1FFT_1_1detail.html#a864c4b4a96065b1cf5959fe6fc1cfc54":[2,0,0,11,0,3],
 "namespaceamrex_1_1FFT_1_1detail.html#a995b1b061a4b76ab820758880fb3ab30":[2,0,0,11,0,2],
 "namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c":[2,0,0,11,0,4],
+"namespaceamrex_1_1FFT_1_1detail.html#ae58a96a62f833329517b17fe27e8b803":[2,0,0,11,0,7],
 "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html":[2,0,0,11,1],
 "namespaceamrex_1_1FGColor.html":[2,0,0,12],
 "namespaceamrex_1_1FGColor.html#a06499b8d0da3f3ab7bd99745820f6f33":[2,0,0,12,9],
@@ -241,13 +249,5 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1Machine.html":[2,0,0,23],
 "namespaceamrex_1_1Machine.html#a53b6e7dc08c68e065f836d819e5231ff":[2,0,0,23,1],
 "namespaceamrex_1_1Machine.html#a578c9b214c4e8dfa2f753181f21d5720":[2,0,0,23,2],
-"namespaceamrex_1_1Machine.html#a9502e811fea27e3d1e3af407834b04b1":[2,0,0,23,0],
-"namespaceamrex_1_1Math.html":[2,0,0,24],
-"namespaceamrex_1_1Math.html#a01a50f01bdffee6800b64090e421f47f":[2,0,0,24,2],
-"namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585":[2,0,0,24,14],
-"namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900":[2,0,0,24,15],
-"namespaceamrex_1_1Math.html#a21bef7d9eecfab79cdea5028344746af":[2,0,0,24,10],
-"namespaceamrex_1_1Math.html#a2d522eb2d366ecb5383529269e417457":[2,0,0,24,6],
-"namespaceamrex_1_1Math.html#a4ed62483f4d5b20657f81bb9db575770":[2,0,0,24,13],
-"namespaceamrex_1_1Math.html#a64d6ba33500bba8603dd6fba3588ac3c":[2,0,0,24,3]
+"namespaceamrex_1_1Machine.html#a9502e811fea27e3d1e3af407834b04b1":[2,0,0,23,0]
 };

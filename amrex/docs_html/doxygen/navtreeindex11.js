@@ -1,5 +1,7 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__InterpFaceRegister_8H.html":[4,0,0,1,36],
+"AMReX__InterpFaceRegister_8H_source.html":[4,0,0,1,36],
 "AMReX__InterpFaceRegister_8cpp.html":[4,0,0,1,35],
 "AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b":[4,0,0,1,35,2],
 "AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430":[4,0,0,1,35,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX11 =
 "AMReX__MFParallelFor_8H.html#ac79f243c0680723c0e561f4479ca6539":[4,0,0,2,179,2],
 "AMReX__MFParallelFor_8H.html#afe78860abd5a4d3ddf55ed5d9d53f68b":[4,0,0,2,179,7],
 "AMReX__MFParallelFor_8H_source.html":[4,0,0,2,179],
-"AMReX__MLABecLap__1D__K_8H.html":[4,0,0,7,0,0],
-"AMReX__MLABecLap__1D__K_8H.html#a040b31bdb9951876d8277049591cfe51":[4,0,0,7,0,0,10],
-"AMReX__MLABecLap__1D__K_8H.html#a48d2ee5ef05ca8b461877a41e532d66e":[4,0,0,7,0,0,6]
+"AMReX__MLABecLap__1D__K_8H.html":[4,0,0,7,0,0]
 };

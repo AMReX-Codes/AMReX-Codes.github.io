@@ -1,5 +1,13 @@
 var NAVTREEINDEX108 =
 {
+"namespaceamrex_1_1detail.html#a447b3a82196abd5e97f2cec9f53d466b":[2,0,0,6,91],
+"namespaceamrex_1_1detail.html#a49e77dfdb351e7ec62381480eb764922":[2,0,0,6,97],
+"namespaceamrex_1_1detail.html#a4a94ec9593eec5537df7f9e8a75b03fb":[2,0,0,6,124],
+"namespaceamrex_1_1detail.html#a4d8bd6131b31ad2784f287c4b81f5e87":[2,0,0,6,137],
+"namespaceamrex_1_1detail.html#a552276d715b5fb007fa8045a2f8dc713":[2,0,0,6,64],
+"namespaceamrex_1_1detail.html#a59bb763ea3df042d86d6906cc9ccfc77":[2,0,0,6,127],
+"namespaceamrex_1_1detail.html#a5ad2e1914e7d42fdb76f380b4a29e2ae":[2,0,0,6,40],
+"namespaceamrex_1_1detail.html#a5c97e24447d9887bed04b8e7ecf13cc8":[2,0,0,6,55],
 "namespaceamrex_1_1detail.html#a5dabf23fc1d6b0482df819bdd5d465c9":[2,0,0,6,83],
 "namespaceamrex_1_1detail.html#a62c08f90753df00eb337b5fb354dbb06":[2,0,0,6,72],
 "namespaceamrex_1_1detail.html#a63f67f333c651c923c2d3eaf7b0a15aa":[2,0,0,6,65],
@@ -241,13 +249,5 @@ var NAVTREEINDEX108 =
 "namespaceamrex_1_1particle__detail.html#a03a96fac7ce7e3cef2729a470a732f49":[2,0,0,41,13],
 "namespaceamrex_1_1particle__detail.html#a2d2a60d46d1fab347521156295a85f70":[2,0,0,41,12],
 "namespaceamrex_1_1particle__detail.html#a4fc575fa169519c925f33d6bb746d598":[2,0,0,41,0],
-"namespaceamrex_1_1particle__detail.html#a5ea1180c6295aab7036c983fa1d926c3":[2,0,0,41,3],
-"namespaceamrex_1_1particle__detail.html#a61cd4d51070b0b2b1c15d23a00f4cced":[2,0,0,41,6],
-"namespaceamrex_1_1particle__detail.html#a6c71a333436b729f5d06b1bcd8a663f6":[2,0,0,41,7],
-"namespaceamrex_1_1particle__detail.html#a729247ba45bdf7ae3857546d7fe586f3":[2,0,0,41,14],
-"namespaceamrex_1_1particle__detail.html#a8d93e887eb1762cd7f310e333eb8c48d":[2,0,0,41,10],
-"namespaceamrex_1_1particle__detail.html#aa3eb1cfb5234af860fd90b9d99dfac43":[2,0,0,41,4],
-"namespaceamrex_1_1particle__detail.html#ab3ff26d769238258d6af6770476264fd":[2,0,0,41,5],
-"namespaceamrex_1_1particle__detail.html#ad7db271b5c030516daca8b9a64dc3b34":[2,0,0,41,8],
-"namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2":[2,0,0,41,2]
+"namespaceamrex_1_1particle__detail.html#a5ea1180c6295aab7036c983fa1d926c3":[2,0,0,41,3]
 };

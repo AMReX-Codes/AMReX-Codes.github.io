@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__ParticleUtil_8cpp.html#ad2e9cbb8f28bbbba7378ec7bf4654b89":[4,0,0,8,33,1],
+"AMReX__Particle_8H.html":[4,0,0,8,11],
 "AMReX__Particle_8H.html#a1cd7ada43c935a229f4e1af9819e2722":[4,0,0,8,11,10],
 "AMReX__Particle_8H.html#a20c4dab0db3f6bd35eb1517789bae8ed":[4,0,0,8,11,18],
 "AMReX__Particle_8H.html#a24df8a9162e3ff47d7bffbdbc04d660b":[4,0,0,8,11,25],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__Reduce_8H.html#a8e8a5dd1862e4f8c8eb70e4601edd281":[4,0,0,2,242,23],
 "AMReX__Reduce_8H.html#abb357d8fcc6dd0426249ee962166fdd3":[4,0,0,2,242,20],
 "AMReX__Reduce_8H.html#abe303744738dffcde1225825759169f1":[4,0,0,2,242,16],
-"AMReX__Reduce_8H.html#ac1dab3efd41294be3534dceac0c145b7":[4,0,0,2,242,25],
-"AMReX__Reduce_8H.html#ad408715066953dc5eeade69a00c1d601":[4,0,0,2,242,12],
-"AMReX__Reduce_8H.html#adae163b6d167d018ba6ec7cf821b97a8":[4,0,0,2,242,26]
+"AMReX__Reduce_8H.html#ac1dab3efd41294be3534dceac0c145b7":[4,0,0,2,242,25]
 };

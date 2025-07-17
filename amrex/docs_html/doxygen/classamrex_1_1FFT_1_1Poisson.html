@@ -120,11 +120,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a91c77091e895ff146f47e1885ae96236" id="r_a91c77091e895ff146f47e1885ae96236"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a91c77091e895ff146f47e1885ae96236"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a91c77091e895ff146f47e1885ae96236">Poisson</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom)</td></tr>
 <tr class="separator:a91c77091e895ff146f47e1885ae96236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf154307aa5c83ed024f730adafda922" id="r_abf154307aa5c83ed024f730adafda922"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#abf154307aa5c83ed024f730adafda922">solve</a> (MF &amp;soln, MF const &amp;rhs)</td></tr>
-<tr class="separator:abf154307aa5c83ed024f730adafda922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfb75988a3172e397c71f78473aa900" id="r_a8cfb75988a3172e397c71f78473aa900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a8cfb75988a3172e397c71f78473aa900">solve</a> (MF &amp;a_soln, MF const &amp;a_rhs)</td></tr>
+<tr class="separator:a8cfb75988a3172e397c71f78473aa900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a5ed6827a5ed486bbe4947bdc965dbc30" id="r_a5ed6827a5ed486bbe4947bdc965dbc30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a5ed6827a5ed486bbe4947bdc965dbc30">m_domain_lo</a></td></tr>
+<tr class="separator:a5ed6827a5ed486bbe4947bdc965dbc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d60bcb276f03fdbb5aa5ac87fff1af" id="r_a74d60bcb276f03fdbb5aa5ac87fff1af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a74d60bcb276f03fdbb5aa5ac87fff1af">m_geom</a></td></tr>
 <tr class="separator:a74d60bcb276f03fdbb5aa5ac87fff1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a877e3e72db72d557255009217bc15862" id="r_a877e3e72db72d557255009217bc15862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; std::pair&lt; Boundary, Boundary &gt;, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1Poisson.html#a877e3e72db72d557255009217bc15862">m_bc</a></td></tr>
@@ -209,8 +211,8 @@ template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespac
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abf154307aa5c83ed024f730adafda922" name="abf154307aa5c83ed024f730adafda922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf154307aa5c83ed024f730adafda922">&#9670;&#160;</a></span>solve()</h2>
+<a id="a8cfb75988a3172e397c71f78473aa900" name="a8cfb75988a3172e397c71f78473aa900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cfb75988a3172e397c71f78473aa900">&#9670;&#160;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,13 +223,13 @@ template&lt;typename MF &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::solve </td>
           <td>(</td>
           <td class="paramtype">MF &amp;&#160;</td>
-          <td class="paramname"><em>soln</em>, </td>
+          <td class="paramname"><em>a_soln</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MF const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
+          <td class="paramname"><em>a_rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -253,6 +255,30 @@ template&lt;typename MF  = MultiFab&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;std::pair&lt;Boundary,Boundary&gt;,AMREX_SPACEDIM&gt; <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::m_bc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ed6827a5ed486bbe4947bdc965dbc30" name="a5ed6827a5ed486bbe4947bdc965dbc30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed6827a5ed486bbe4947bdc965dbc30">&#9670;&#160;</a></span>m_domain_lo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> <a class="el" href="classamrex_1_1FFT_1_1Poisson.html">amrex::FFT::Poisson</a>&lt; MF &gt;::m_domain_lo</td>
         </tr>
       </table>
   </td>

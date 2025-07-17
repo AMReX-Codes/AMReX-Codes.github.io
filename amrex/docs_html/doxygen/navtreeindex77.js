@@ -1,5 +1,11 @@
 var NAVTREEINDEX77 =
 {
+"classamrex_1_1NeighborParticleContainer.html#a57f27a8f270653d1a738490e32dffe4b":[2,0,0,418,95],
+"classamrex_1_1NeighborParticleContainer.html#a57f27a8f270653d1a738490e32dffe4b":[3,0,0,383,95],
+"classamrex_1_1NeighborParticleContainer.html#a5ba336738781f2d529bbb68a7f297e17":[3,0,0,383,99],
+"classamrex_1_1NeighborParticleContainer.html#a5ba336738781f2d529bbb68a7f297e17":[2,0,0,418,99],
+"classamrex_1_1NeighborParticleContainer.html#a5bde7ea76f99ed274bef3626dc3f833b":[3,0,0,383,48],
+"classamrex_1_1NeighborParticleContainer.html#a5bde7ea76f99ed274bef3626dc3f833b":[2,0,0,418,48],
 "classamrex_1_1NeighborParticleContainer.html#a5c29c92fbd7c6fd461b5cfb41dbe6c53":[2,0,0,418,49],
 "classamrex_1_1NeighborParticleContainer.html#a5c29c92fbd7c6fd461b5cfb41dbe6c53":[3,0,0,383,49],
 "classamrex_1_1NeighborParticleContainer.html#a60a40e557410a932b8adc0275a5d019f":[3,0,0,383,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX77 =
 "classamrex_1_1OrderedBoxes.html#add62a346a9316ed7490fbb232ee85ccc":[2,0,0,426,1],
 "classamrex_1_1OrderedBoxes.html#add62a346a9316ed7490fbb232ee85ccc":[3,0,0,391,1],
 "classamrex_1_1Orientation.html":[3,0,0,392],
-"classamrex_1_1Orientation.html":[2,0,0,427],
-"classamrex_1_1Orientation.html#a113bd6398654564605653436aff3db76":[2,0,0,427,14],
-"classamrex_1_1Orientation.html#a113bd6398654564605653436aff3db76":[3,0,0,392,14],
-"classamrex_1_1Orientation.html#a20616a77be20de0b816afe9db8cb3427":[3,0,0,392,11],
-"classamrex_1_1Orientation.html#a20616a77be20de0b816afe9db8cb3427":[2,0,0,427,11],
-"classamrex_1_1Orientation.html#a2b165e7e8b05111ce8c93285bc85f081":[3,0,0,392,7],
-"classamrex_1_1Orientation.html#a2b165e7e8b05111ce8c93285bc85f081":[2,0,0,427,7]
+"classamrex_1_1Orientation.html":[2,0,0,427]
 };

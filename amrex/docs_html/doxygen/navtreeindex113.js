@@ -1,5 +1,13 @@
 var NAVTREEINDEX113 =
 {
+"structamrex_1_1Array4BoxOffsetTag.html#af5878f0f6935800abc18aaffe34e50d6":[3,0,0,60,3],
+"structamrex_1_1Array4BoxOffsetTag.html#af5878f0f6935800abc18aaffe34e50d6":[2,0,0,95,3],
+"structamrex_1_1Array4BoxOrientationTag.html":[3,0,0,61],
+"structamrex_1_1Array4BoxOrientationTag.html":[2,0,0,96],
+"structamrex_1_1Array4BoxOrientationTag.html#a0c8b2a3bc498849b8dae53d94f86a685":[3,0,0,61,2],
+"structamrex_1_1Array4BoxOrientationTag.html#a0c8b2a3bc498849b8dae53d94f86a685":[2,0,0,96,2],
+"structamrex_1_1Array4BoxOrientationTag.html#a983b146fa22d1ed852dc07bfd52f2158":[3,0,0,61,1],
+"structamrex_1_1Array4BoxOrientationTag.html#a983b146fa22d1ed852dc07bfd52f2158":[2,0,0,96,1],
 "structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[3,0,0,61,0],
 "structamrex_1_1Array4BoxOrientationTag.html#a9a1fd761611bacf4defe8658a612c915":[2,0,0,96,0],
 "structamrex_1_1Array4BoxOrientationTag.html#ac3ccee3ad382def594bbe1cc44d22464":[3,0,0,61,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX113 =
 "structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[2,0,0,114,6],
 "structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[3,0,0,79,6],
 "structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[2,0,0,114,5],
-"structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[3,0,0,79,5],
-"structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[2,0,0,114,1],
-"structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[3,0,0,79,1],
-"structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[2,0,0,114,0],
-"structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[3,0,0,79,0],
-"structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8":[2,0,0,114,7],
-"structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8":[3,0,0,79,7],
-"structamrex_1_1BATindexType.html#aea913ddadc5577027865110d5e0a27ab":[2,0,0,114,2],
-"structamrex_1_1BATindexType.html#aea913ddadc5577027865110d5e0a27ab":[3,0,0,79,2]
+"structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[3,0,0,79,5]
 };

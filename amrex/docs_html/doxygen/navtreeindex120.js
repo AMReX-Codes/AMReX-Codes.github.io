@@ -1,5 +1,13 @@
 var NAVTREEINDEX120 =
 {
+"structamrex_1_1ForkJoin_1_1MFFork.html#adbd7f73880dcc05f2b786cd9f1ccfb23":[3,0,0,205,1,6],
+"structamrex_1_1ForkJoin_1_1MFFork.html#adbd7f73880dcc05f2b786cd9f1ccfb23":[2,0,0,240,1,6],
+"structamrex_1_1ForkJoin_1_1MFFork.html#af278943e6089937c826f0bd0967a264f":[3,0,0,205,1,12],
+"structamrex_1_1ForkJoin_1_1MFFork.html#af278943e6089937c826f0bd0967a264f":[2,0,0,240,1,12],
+"structamrex_1_1GPUable.html":[2,0,0,251],
+"structamrex_1_1GPUable.html":[3,0,0,216],
+"structamrex_1_1GeometryData.html":[2,0,0,243],
+"structamrex_1_1GeometryData.html":[3,0,0,208],
 "structamrex_1_1GeometryData.html#a00a5815cf1c7d5f1800f9346a3d100ba":[2,0,0,243,2],
 "structamrex_1_1GeometryData.html#a00a5815cf1c7d5f1800f9346a3d100ba":[3,0,0,208,2],
 "structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68":[2,0,0,243,10],
@@ -241,13 +249,5 @@ var NAVTREEINDEX120 =
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[3,0,0,6,16,1],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[2,0,0,16,18,1],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[3,0,0,6,16,0],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[2,0,0,16,18,0],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a":[2,0,0,16,18,7],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a":[3,0,0,6,16,7],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html":[2,0,0,16,19],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html":[3,0,0,6,17],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[2,0,0,16,19,1],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[3,0,0,6,17,1],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[2,0,0,16,19,2],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[3,0,0,6,17,2]
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[2,0,0,16,18,0]
 };
