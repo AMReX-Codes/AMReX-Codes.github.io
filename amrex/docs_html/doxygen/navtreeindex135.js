@@ -1,9 +1,5 @@
 var NAVTREEINDEX135 =
 {
-"structamrex_1_1parser__usrfn.html#a29df342dfe89cbfea58032a7e899c66d":[2,0,0,446,2],
-"structamrex_1_1parser__usrfn.html#a29df342dfe89cbfea58032a7e899c66d":[3,0,0,411,2],
-"structamrex_1_1parser__usrfn.html#a46c39e97364d395868c5fc7ce018853a":[2,0,0,446,0],
-"structamrex_1_1parser__usrfn.html#a46c39e97364d395868c5fc7ce018853a":[3,0,0,411,0],
 "structamrex_1_1parser__usrfn.html#a64fca537c909541f78a75feae72a7dd1":[2,0,0,446,4],
 "structamrex_1_1parser__usrfn.html#a64fca537c909541f78a75feae72a7dd1":[3,0,0,411,4],
 "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT.html":[3,0,0,17,0],

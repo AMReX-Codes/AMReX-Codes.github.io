@@ -1,7 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"classamrex_1_1MLTensorOp.html#a0aebce2114e6c519b7648b87daceeb11":[2,0,0,407,27],
-"classamrex_1_1MLTensorOp.html#a0aebce2114e6c519b7648b87daceeb11":[3,0,0,372,27],
 "classamrex_1_1MLTensorOp.html#a15ebbe140a2faea1fccb3b4bb71ddb60":[2,0,0,407,29],
 "classamrex_1_1MLTensorOp.html#a15ebbe140a2faea1fccb3b4bb71ddb60":[3,0,0,372,29],
 "classamrex_1_1MLTensorOp.html#a2cf6f2e2ef6c4cceed3f3a67cf4e1201":[2,0,0,407,5],
@@ -249,5 +247,7 @@ var NAVTREEINDEX74 =
 "classamrex_1_1MultiFab.html":[2,0,0,410],
 "classamrex_1_1MultiFab.html":[3,0,0,375],
 "classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957":[2,0,0,410,42],
-"classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957":[3,0,0,375,42]
+"classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957":[3,0,0,375,42],
+"classamrex_1_1MultiFab.html#a08cbe2b2bf9887d4971bd9270c3aa734":[3,0,0,375,25],
+"classamrex_1_1MultiFab.html#a08cbe2b2bf9887d4971bd9270c3aa734":[2,0,0,410,25]
 };
