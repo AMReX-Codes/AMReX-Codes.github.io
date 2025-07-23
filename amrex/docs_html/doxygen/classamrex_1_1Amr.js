@@ -17,6 +17,7 @@ var classamrex_1_1Amr =
     [ "checkInt", "classamrex_1_1Amr.html#ac30d97b7e66cda1fad54283a9e6a9600", null ],
     [ "checkPer", "classamrex_1_1Amr.html#aa2e4c97e5351e7e9353af927b4628e24", null ],
     [ "checkPoint", "classamrex_1_1Amr.html#a8afe35c2818f661481ed2603ae036928", null ],
+    [ "checkPointNow", "classamrex_1_1Amr.html#aadc9377e15499863124b67724afdb865", null ],
     [ "clearDerivePlotVarList", "classamrex_1_1Amr.html#a4f6a614f477cd3ff94f362d7a8dfe8b0", null ],
     [ "clearDeriveSmallPlotVarList", "classamrex_1_1Amr.html#a0517c3858954b59c15be4b72472c0e55", null ],
     [ "ClearLevel", "classamrex_1_1Amr.html#a8db721500ce8e8fd737774f06ee494bd", null ],

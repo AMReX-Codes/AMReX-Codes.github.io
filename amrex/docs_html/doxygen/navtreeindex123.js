@@ -1,5 +1,9 @@
 var NAVTREEINDEX123 =
 {
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[3,0,0,319],
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,354],
+"structamrex_1_1IsStoreAtomic.html":[3,0,0,320],
+"structamrex_1_1IsStoreAtomic.html":[2,0,0,355],
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,356],
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[3,0,0,321],
 "structamrex_1_1KeepValidFilter.html":[2,0,0,358],
@@ -245,9 +249,5 @@ var NAVTREEINDEX123 =
 "structamrex_1_1MLMGPSTag.html#ade5307c3097ed11a8ad8e3284f07e2ad":[3,0,0,365,6],
 "structamrex_1_1MLMGPSTag.html#ade5307c3097ed11a8ad8e3284f07e2ad":[2,0,0,400,6],
 "structamrex_1_1MLMGPSTag.html#ae9d986e8d5951f695e0e98fb8144c6d7":[3,0,0,365,4],
-"structamrex_1_1MLMGPSTag.html#ae9d986e8d5951f695e0e98fb8144c6d7":[2,0,0,400,4],
-"structamrex_1_1MLMGPSTag.html#af143206c2ffbeb6be40a27c6d3c1a1d2":[2,0,0,400,11],
-"structamrex_1_1MLMGPSTag.html#af143206c2ffbeb6be40a27c6d3c1a1d2":[3,0,0,365,11],
-"structamrex_1_1MLMGPSTag.html#afd91fff06baaefde6f7619dba9007355":[2,0,0,400,1],
-"structamrex_1_1MLMGPSTag.html#afd91fff06baaefde6f7619dba9007355":[3,0,0,365,1]
+"structamrex_1_1MLMGPSTag.html#ae9d986e8d5951f695e0e98fb8144c6d7":[2,0,0,400,4]
 };

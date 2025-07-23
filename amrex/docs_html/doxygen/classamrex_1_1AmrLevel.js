@@ -17,6 +17,7 @@ var classamrex_1_1AmrLevel =
     [ "allocOldData", "classamrex_1_1AmrLevel.html#a6508a7e48f0d9da16e52fe4c79917ed3", null ],
     [ "boxArray", "classamrex_1_1AmrLevel.html#a2e5195db636cd719645d0d51228b4c7f", null ],
     [ "checkPoint", "classamrex_1_1AmrLevel.html#a169bef0169afefe32db1d994d2600c69", null ],
+    [ "checkPointNow", "classamrex_1_1AmrLevel.html#a8371221489ef4bb1ffca6089bbb9df3d", null ],
     [ "checkPointPost", "classamrex_1_1AmrLevel.html#a91b3bc1707aa307c5eeb73d9e2bfdd80", null ],
     [ "checkPointPre", "classamrex_1_1AmrLevel.html#aa8953b789fe7af91082c2fefcced1a16", null ],
     [ "computeInitialDt", "classamrex_1_1AmrLevel.html#a252f7123d2f0a98351bc7b39c32b3152", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX112 =
 {
+"structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[2,0,0,89,5],
+"structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[3,0,0,54,5],
+"structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[2,0,0,89,8],
+"structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[3,0,0,54,8],
 "structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917":[2,0,0,89,9],
 "structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917":[3,0,0,54,9],
 "structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81":[2,0,0,89,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX112 =
 "structamrex_1_1Array4BoxOffsetTag.html#a4b6ca8c08233ae7d5f9168c8e603dc96":[3,0,0,60,2],
 "structamrex_1_1Array4BoxOffsetTag.html#a4b6ca8c08233ae7d5f9168c8e603dc96":[2,0,0,95,2],
 "structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[3,0,0,60,0],
-"structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[2,0,0,95,0],
-"structamrex_1_1Array4BoxOffsetTag.html#af5878f0f6935800abc18aaffe34e50d6":[3,0,0,60,3],
-"structamrex_1_1Array4BoxOffsetTag.html#af5878f0f6935800abc18aaffe34e50d6":[2,0,0,95,3],
-"structamrex_1_1Array4BoxOrientationTag.html":[3,0,0,61],
-"structamrex_1_1Array4BoxOrientationTag.html":[2,0,0,96]
+"structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[2,0,0,95,0]
 };

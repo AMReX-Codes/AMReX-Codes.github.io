@@ -4949,242 +4949,248 @@
 <codeline lineno="2056"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2057"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2058"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2059"><highlight class="normal">AmrLevel::writePlotNow<sp/>()</highlight></codeline>
+<codeline lineno="2059"><highlight class="normal">AmrLevel::checkPointNow<sp/>()</highlight></codeline>
 <codeline lineno="2060"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2061"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="2062"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2063"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2064"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2065"><highlight class="normal">AmrLevel::writeSmallPlotNow<sp/>()</highlight></codeline>
+<codeline lineno="2065"><highlight class="normal">AmrLevel::writePlotNow<sp/>()</highlight></codeline>
 <codeline lineno="2066"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2067"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="2068"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2069"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2070"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>AmrLevel::getAreaNotToTag<sp/>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="2071"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2072"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_AreaNotToTag;</highlight></codeline>
-<codeline lineno="2073"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2074"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2075"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref>&amp;<sp/>AmrLevel::getAreaToTag<sp/>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="2076"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2077"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_AreaToTag;</highlight></codeline>
-<codeline lineno="2078"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2079"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2080"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AmrLevel::setAreaNotToTag<sp/>(BoxArray&amp;<sp/>ba)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2081"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2082"><highlight class="normal"><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>ba;</highlight></codeline>
-<codeline lineno="2083"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2084"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2085"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AmrLevel::constructAreaNotToTag<sp/>()</highlight></codeline>
-<codeline lineno="2086"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2087"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0<sp/>||<sp/>!parent-&gt;useFixedCoarseGrids()<sp/>||<sp/>parent-&gt;useFixedUpToLevel()&gt;level)<sp/>{</highlight></codeline>
-<codeline lineno="2088"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2089"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2070"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2071"><highlight class="normal">AmrLevel::writeSmallPlotNow<sp/>()</highlight></codeline>
+<codeline lineno="2072"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2073"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2074"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2075"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2076"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>AmrLevel::getAreaNotToTag<sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="2077"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2078"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_AreaNotToTag;</highlight></codeline>
+<codeline lineno="2079"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2080"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2081"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref>&amp;<sp/>AmrLevel::getAreaToTag<sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="2082"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2083"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_AreaToTag;</highlight></codeline>
+<codeline lineno="2084"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2085"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2086"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AmrLevel::setAreaNotToTag<sp/>(BoxArray&amp;<sp/>ba)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2087"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2088"><highlight class="normal"><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>ba;</highlight></codeline>
+<codeline lineno="2089"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2090"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2091"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>restricting<sp/>the<sp/>tagging<sp/>on<sp/>the<sp/>finest<sp/>fixed<sp/>level</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2092"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parent-&gt;useFixedUpToLevel()==level)</highlight></codeline>
-<codeline lineno="2093"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>use<sp/>the<sp/>next<sp/>coarser<sp/>level<sp/>shrunk<sp/>by<sp/>one<sp/>blockingfactor</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2095"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>as<sp/>the<sp/>region<sp/>in<sp/>which<sp/>we<sp/>allow<sp/>tagging.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2096"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Why<sp/>level-1?<sp/>Because<sp/>we<sp/>always<sp/>use<sp/>the<sp/>full<sp/>domain<sp/>at<sp/>level<sp/>0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2097"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>and<sp/>therefore<sp/>level<sp/>0<sp/>in<sp/>initialba<sp/>is<sp/>level<sp/>1<sp/>in<sp/>the<sp/>AMR<sp/>hierarchy,<sp/>etc.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2098"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BoxArray&gt;&amp;<sp/>initialba<sp/>=<sp/><ref refid="classamrex_1_1Amr_1a1cb4fa8c70133837b3b6940290732c30" kindref="member">amrex::Amr::getInitialBA</ref>();</highlight></codeline>
-<codeline lineno="2099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/>tagarea(initialba[level-1].minimalBox());</highlight></codeline>
-<codeline lineno="2100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.grow(-parent-&gt;blockingFactor(level));</highlight></codeline>
-<codeline lineno="2101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaToTag<sp/>=<sp/>tagarea;</highlight></codeline>
-<codeline lineno="2102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>disallow<sp/>tagging<sp/>in<sp/>the<sp/>remaining<sp/>part<sp/>of<sp/>the<sp/>domain.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxArray<sp/>tagba<sp/>=<sp/><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">amrex::boxComplement</ref>(parent-&gt;Geom(level).Domain(),m_AreaToTag);</highlight></codeline>
-<codeline lineno="2105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>std::move(tagba);</highlight></codeline>
-<codeline lineno="2106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(parent-&gt;Geom(level).Domain().contains(m_AreaNotToTag.minimalBox()));</highlight></codeline>
-<codeline lineno="2108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parent-&gt;useFixedUpToLevel()&lt;level)</highlight></codeline>
-<codeline lineno="2111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/>tagarea<sp/>=<sp/>parent-&gt;getLevel(level-1).getAreaToTag();</highlight></codeline>
-<codeline lineno="2113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.<ref refid="classamrex_1_1BoxND_1ad8f4d1c718e4a0120ad35adb5107bf83" kindref="member">refine</ref>(parent-&gt;refRatio(level-1));</highlight></codeline>
-<codeline lineno="2114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.<ref refid="classamrex_1_1BoxND_1aba542e5373a679ceb91b158fcc173f2a" kindref="member">grow</ref>(-parent-&gt;blockingFactor(level));</highlight></codeline>
-<codeline lineno="2115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaToTag<sp/>=<sp/>tagarea;</highlight></codeline>
-<codeline lineno="2116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxArray<sp/>tagba<sp/>=<sp/><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">amrex::boxComplement</ref>(parent-&gt;Geom(level).Domain(),m_AreaToTag);</highlight></codeline>
-<codeline lineno="2117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>std::move(tagba);</highlight></codeline>
-<codeline lineno="2118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2119"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2121"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2122"><highlight class="normal">AmrLevel::resetFillPatcher<sp/>()</highlight></codeline>
-<codeline lineno="2123"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fp<sp/>:<sp/>m_fillpatcher)<sp/>{</highlight></codeline>
-<codeline lineno="2125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fp.reset();</highlight></codeline>
-<codeline lineno="2126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2127"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2130"><highlight class="normal">AmrLevel::FillPatcherFill<sp/>(MultiFab&amp;<sp/>mf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nghost,</highlight></codeline>
-<codeline lineno="2131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state_index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp)</highlight></codeline>
-<codeline lineno="2132"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatcherFill()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="2135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FillPatch(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>mf,<sp/>nghost,<sp/>time,<sp/>state_index,<sp/>scomp,<sp/>ncomp,<sp/>dcomp);</highlight></codeline>
-<codeline lineno="2136"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="2137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AmrLevel&amp;<sp/>fine_level<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AmrLevel&amp;<sp/>crse_level<sp/>=<sp/>parent-&gt;getLevel(level-1);</highlight></codeline>
-<codeline lineno="2139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom_fine<sp/>=<sp/>fine_level.geom;</highlight></codeline>
-<codeline lineno="2140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom_crse<sp/>=<sp/>crse_level.geom;</highlight></codeline>
-<codeline lineno="2141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;MultiFab*&gt;<sp/>smf_crse;</highlight></codeline>
-<codeline lineno="2143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>stime_crse;</highlight></codeline>
-<codeline lineno="2144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateData&amp;<sp/>statedata_crse<sp/>=<sp/>crse_level.state[state_index];</highlight></codeline>
-<codeline lineno="2145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>statedata_crse.getData(smf_crse,stime_crse,time);</highlight></codeline>
-<codeline lineno="2146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_crse(statedata_crse,scomp,geom_crse);</highlight></codeline>
+<codeline lineno="2091"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AmrLevel::constructAreaNotToTag<sp/>()</highlight></codeline>
+<codeline lineno="2092"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2093"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0<sp/>||<sp/>!parent-&gt;useFixedCoarseGrids()<sp/>||<sp/>parent-&gt;useFixedUpToLevel()&gt;level)<sp/>{</highlight></codeline>
+<codeline lineno="2094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2095"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2096"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2097"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>are<sp/>restricting<sp/>the<sp/>tagging<sp/>on<sp/>the<sp/>finest<sp/>fixed<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2098"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parent-&gt;useFixedUpToLevel()==level)</highlight></codeline>
+<codeline lineno="2099"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="2100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>use<sp/>the<sp/>next<sp/>coarser<sp/>level<sp/>shrunk<sp/>by<sp/>one<sp/>blockingfactor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>as<sp/>the<sp/>region<sp/>in<sp/>which<sp/>we<sp/>allow<sp/>tagging.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Why<sp/>level-1?<sp/>Because<sp/>we<sp/>always<sp/>use<sp/>the<sp/>full<sp/>domain<sp/>at<sp/>level<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>and<sp/>therefore<sp/>level<sp/>0<sp/>in<sp/>initialba<sp/>is<sp/>level<sp/>1<sp/>in<sp/>the<sp/>AMR<sp/>hierarchy,<sp/>etc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BoxArray&gt;&amp;<sp/>initialba<sp/>=<sp/><ref refid="classamrex_1_1Amr_1a1cb4fa8c70133837b3b6940290732c30" kindref="member">amrex::Amr::getInitialBA</ref>();</highlight></codeline>
+<codeline lineno="2105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/>tagarea(initialba[level-1].minimalBox());</highlight></codeline>
+<codeline lineno="2106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.grow(-parent-&gt;blockingFactor(level));</highlight></codeline>
+<codeline lineno="2107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaToTag<sp/>=<sp/>tagarea;</highlight></codeline>
+<codeline lineno="2108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>disallow<sp/>tagging<sp/>in<sp/>the<sp/>remaining<sp/>part<sp/>of<sp/>the<sp/>domain.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxArray<sp/>tagba<sp/>=<sp/><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">amrex::boxComplement</ref>(parent-&gt;Geom(level).Domain(),m_AreaToTag);</highlight></codeline>
+<codeline lineno="2111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>std::move(tagba);</highlight></codeline>
+<codeline lineno="2112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(parent-&gt;Geom(level).Domain().contains(m_AreaNotToTag.minimalBox()));</highlight></codeline>
+<codeline lineno="2114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parent-&gt;useFixedUpToLevel()&lt;level)</highlight></codeline>
+<codeline lineno="2117"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="2118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/>tagarea<sp/>=<sp/>parent-&gt;getLevel(level-1).getAreaToTag();</highlight></codeline>
+<codeline lineno="2119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.<ref refid="classamrex_1_1BoxND_1ad8f4d1c718e4a0120ad35adb5107bf83" kindref="member">refine</ref>(parent-&gt;refRatio(level-1));</highlight></codeline>
+<codeline lineno="2120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tagarea.<ref refid="classamrex_1_1BoxND_1aba542e5373a679ceb91b158fcc173f2a" kindref="member">grow</ref>(-parent-&gt;blockingFactor(level));</highlight></codeline>
+<codeline lineno="2121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaToTag<sp/>=<sp/>tagarea;</highlight></codeline>
+<codeline lineno="2122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxArray<sp/>tagba<sp/>=<sp/><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">amrex::boxComplement</ref>(parent-&gt;Geom(level).Domain(),m_AreaToTag);</highlight></codeline>
+<codeline lineno="2123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_AreaNotToTag<sp/>=<sp/>std::move(tagba);</highlight></codeline>
+<codeline lineno="2124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2128"><highlight class="normal">AmrLevel::resetFillPatcher<sp/>()</highlight></codeline>
+<codeline lineno="2129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fp<sp/>:<sp/>m_fillpatcher)<sp/>{</highlight></codeline>
+<codeline lineno="2131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fp.reset();</highlight></codeline>
+<codeline lineno="2132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2136"><highlight class="normal">AmrLevel::FillPatcherFill<sp/>(MultiFab&amp;<sp/>mf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nghost,</highlight></codeline>
+<codeline lineno="2137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state_index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp)</highlight></codeline>
+<codeline lineno="2138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatcherFill()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="2141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FillPatch(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>mf,<sp/>nghost,<sp/>time,<sp/>state_index,<sp/>scomp,<sp/>ncomp,<sp/>dcomp);</highlight></codeline>
+<codeline lineno="2142"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="2143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AmrLevel&amp;<sp/>fine_level<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AmrLevel&amp;<sp/>crse_level<sp/>=<sp/>parent-&gt;getLevel(level-1);</highlight></codeline>
+<codeline lineno="2145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom_fine<sp/>=<sp/>fine_level.geom;</highlight></codeline>
+<codeline lineno="2146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom_crse<sp/>=<sp/>crse_level.geom;</highlight></codeline>
 <codeline lineno="2147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;MultiFab*&gt;<sp/>smf_fine;</highlight></codeline>
-<codeline lineno="2149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>stime_fine;</highlight></codeline>
-<codeline lineno="2150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateData&amp;<sp/>statedata_fine<sp/>=<sp/>fine_level.state[state_index];</highlight></codeline>
-<codeline lineno="2151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>statedata_fine.getData(smf_fine,stime_fine,time);</highlight></codeline>
-<codeline lineno="2152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_fine(statedata_fine,scomp,geom_fine);</highlight></codeline>
+<codeline lineno="2148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;MultiFab*&gt;<sp/>smf_crse;</highlight></codeline>
+<codeline lineno="2149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>stime_crse;</highlight></codeline>
+<codeline lineno="2150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateData&amp;<sp/>statedata_crse<sp/>=<sp/>crse_level.state[state_index];</highlight></codeline>
+<codeline lineno="2151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>statedata_crse.getData(smf_crse,stime_crse,time);</highlight></codeline>
+<codeline lineno="2152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_crse(statedata_crse,scomp,geom_crse);</highlight></codeline>
 <codeline lineno="2153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>StateDescriptor&amp;<sp/>desc<sp/>=<sp/>AmrLevel::desc_lst[state_index];</highlight></codeline>
-<codeline lineno="2155"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&gt;<sp/>1<sp/>&amp;&amp;!<ref refid="namespaceamrex_1a36b10976708081700c810d70417da8c9" kindref="member">amrex::ProperlyNested</ref>(fine_level.crse_ratio,</highlight></codeline>
-<codeline lineno="2157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent-&gt;blockingFactor(fine_level.level),</highlight></codeline>
-<codeline lineno="2158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost,<sp/>mf.ixType(),</highlight></codeline>
-<codeline lineno="2159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.interp(scomp)))<sp/>{</highlight></codeline>
-<codeline lineno="2160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>new_blocking_factor<sp/>=<sp/>AmrLevel::ProperBlockingFactor</highlight></codeline>
-<codeline lineno="2161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fine_level,<sp/>nghost,<sp/>mf.ixType(),<sp/>desc,<sp/>scomp);</highlight></codeline>
-<codeline lineno="2162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>Grids<sp/>are<sp/>not<sp/>properly<sp/>nested.<sp/>Consider<sp/>using<sp/>amr.blocking_factor<sp/>=<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(new_blocking_factor[0],</highlight></codeline>
-<codeline lineno="2164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>new_blocking_factor[1],</highlight></codeline>
-<codeline lineno="2165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>new_blocking_factor[2])</highlight></codeline>
-<codeline lineno="2166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;FillPatcherFill:<sp/>Grids<sp/>are<sp/>not<sp/>properly<sp/>nested.<sp/><sp/>Must<sp/>increase<sp/>blocking<sp/>factor.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2169"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fillpatcher<sp/>=<sp/>m_fillpatcher[state_index];</highlight></codeline>
-<codeline lineno="2171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fillpatcher<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="2172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher<sp/>=<sp/>std::make_unique&lt;FillPatcher&lt;MultiFab&gt;&gt;</highlight></codeline>
-<codeline lineno="2173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parent-&gt;boxArray(level),<sp/>parent-&gt;DistributionMap(level),<sp/>geom_fine,</highlight></codeline>
-<codeline lineno="2174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent-&gt;boxArray(level-1),<sp/>parent-&gt;DistributionMap(level-1),<sp/>geom_crse,</highlight></codeline>
-<codeline lineno="2175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(nghost),<sp/>desc.nComp(),<sp/>desc.interp(scomp));</highlight></codeline>
-<codeline lineno="2176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher-&gt;fill(mf,<sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(nghost),<sp/>time,</highlight></codeline>
-<codeline lineno="2179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smf_crse,<sp/>stime_crse,<sp/>smf_fine,<sp/>stime_fine,</highlight></codeline>
-<codeline lineno="2180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,<sp/>dcomp,<sp/>ncomp,</highlight></codeline>
-<codeline lineno="2181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf_crse,<sp/>scomp,<sp/>physbcf_fine,<sp/>scomp,</highlight></codeline>
-<codeline lineno="2182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.getBCs(),<sp/>scomp);</highlight></codeline>
-<codeline lineno="2183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2184"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2185"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2186"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2187"><highlight class="normal">AmrLevel::FillPatch<sp/>(AmrLevel&amp;<sp/>amrlevel,</highlight></codeline>
-<codeline lineno="2188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>leveldata,</highlight></codeline>
-<codeline lineno="2189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,</highlight></codeline>
-<codeline lineno="2190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>time,</highlight></codeline>
-<codeline lineno="2191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index,</highlight></codeline>
-<codeline lineno="2192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,</highlight></codeline>
-<codeline lineno="2193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp,</highlight></codeline>
-<codeline lineno="2194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcomp)</highlight></codeline>
-<codeline lineno="2195"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatch()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dcomp+ncomp-1<sp/>&lt;=<sp/>leveldata.nComp());</highlight></codeline>
-<codeline lineno="2198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(leveldata.nGrowVect().allGE(boxGrow));</highlight></codeline>
-<codeline lineno="2199"><highlight class="normal"><sp/><sp/><sp/><sp/>FillPatchIterator<sp/>fpi(amrlevel,<sp/>leveldata,<sp/>boxGrow,<sp/>time,<sp/>index,<sp/>scomp,<sp/>ncomp);</highlight></codeline>
-<codeline lineno="2200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf_fillpatched<sp/>=<sp/>fpi.get_mf();</highlight></codeline>
-<codeline lineno="2201"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab::Copy(leveldata,<sp/>mf_fillpatched,<sp/>0,<sp/>dcomp,<sp/>ncomp,<sp/>boxGrow);</highlight></codeline>
-<codeline lineno="2202"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2203"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2204"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2205"><highlight class="normal">AmrLevel::FillPatchAdd<sp/>(AmrLevel&amp;<sp/>amrlevel,</highlight></codeline>
-<codeline lineno="2206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>leveldata,</highlight></codeline>
-<codeline lineno="2207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,</highlight></codeline>
-<codeline lineno="2208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>time,</highlight></codeline>
-<codeline lineno="2209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index,</highlight></codeline>
-<codeline lineno="2210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,</highlight></codeline>
-<codeline lineno="2211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp,</highlight></codeline>
-<codeline lineno="2212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcomp)</highlight></codeline>
-<codeline lineno="2213"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatchAdd()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dcomp+ncomp-1<sp/>&lt;=<sp/>leveldata.nComp());</highlight></codeline>
-<codeline lineno="2216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(leveldata.nGrowVect().allGE(boxGrow));</highlight></codeline>
-<codeline lineno="2217"><highlight class="normal"><sp/><sp/><sp/><sp/>FillPatchIterator<sp/>fpi(amrlevel,<sp/>leveldata,<sp/>boxGrow,<sp/>time,<sp/>index,<sp/>scomp,<sp/>ncomp);</highlight></codeline>
-<codeline lineno="2218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf_fillpatched<sp/>=<sp/>fpi.get_mf();</highlight></codeline>
-<codeline lineno="2219"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab::Add(leveldata,<sp/>mf_fillpatched,<sp/>0,<sp/>dcomp,<sp/>ncomp,<sp/>boxGrow);</highlight></codeline>
-<codeline lineno="2220"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2221"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2222"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2223"><highlight class="normal">AmrLevel::LevelDirectoryNames<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dir,</highlight></codeline>
-<codeline lineno="2224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;LevelDir,</highlight></codeline>
-<codeline lineno="2225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;FullPath)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="2226"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2227"><highlight class="normal"><sp/><sp/><sp/><sp/>LevelDir<sp/>=<sp/><ref refid="namespaceamrex_1a6e3a82e54e91d8c7543596b2c2476250" kindref="member">amrex::Concatenate</ref>(</highlight><highlight class="stringliteral">&quot;Level_&quot;</highlight><highlight class="normal">,<sp/>level,<sp/>1);</highlight></codeline>
-<codeline lineno="2228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>for<sp/>the<sp/>full<sp/>pathname<sp/>of<sp/>that<sp/>directory.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2231"><highlight class="normal"><sp/><sp/><sp/><sp/>FullPath<sp/>=<sp/>dir;</highlight></codeline>
-<codeline lineno="2232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>FullPath.empty()<sp/>&amp;&amp;<sp/>FullPath.back()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="2233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FullPath<sp/>+=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2235"><highlight class="normal"><sp/><sp/><sp/><sp/>FullPath<sp/>+=<sp/>LevelDir;</highlight></codeline>
-<codeline lineno="2236"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2238"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2239"><highlight class="normal">AmrLevel::CreateLevelDirectory<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dir)</highlight></codeline>
-<codeline lineno="2240"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Build<sp/>directory<sp/>to<sp/>hold<sp/>the<sp/>MultiFabs<sp/>in<sp/>the<sp/>StateData<sp/>at<sp/>this<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>directory<sp/>is<sp/>relative<sp/>the<sp/>the<sp/>directory<sp/>containing<sp/>the<sp/>Header<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;MultiFab*&gt;<sp/>smf_fine;</highlight></codeline>
+<codeline lineno="2155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>stime_fine;</highlight></codeline>
+<codeline lineno="2156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateData&amp;<sp/>statedata_fine<sp/>=<sp/>fine_level.state[state_index];</highlight></codeline>
+<codeline lineno="2157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>statedata_fine.getData(smf_fine,stime_fine,time);</highlight></codeline>
+<codeline lineno="2158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_fine(statedata_fine,scomp,geom_fine);</highlight></codeline>
+<codeline lineno="2159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>StateDescriptor&amp;<sp/>desc<sp/>=<sp/>AmrLevel::desc_lst[state_index];</highlight></codeline>
+<codeline lineno="2161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&gt;<sp/>1<sp/>&amp;&amp;!<ref refid="namespaceamrex_1a36b10976708081700c810d70417da8c9" kindref="member">amrex::ProperlyNested</ref>(fine_level.crse_ratio,</highlight></codeline>
+<codeline lineno="2163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent-&gt;blockingFactor(fine_level.level),</highlight></codeline>
+<codeline lineno="2164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost,<sp/>mf.ixType(),</highlight></codeline>
+<codeline lineno="2165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.interp(scomp)))<sp/>{</highlight></codeline>
+<codeline lineno="2166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>new_blocking_factor<sp/>=<sp/>AmrLevel::ProperBlockingFactor</highlight></codeline>
+<codeline lineno="2167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fine_level,<sp/>nghost,<sp/>mf.ixType(),<sp/>desc,<sp/>scomp);</highlight></codeline>
+<codeline lineno="2168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>Grids<sp/>are<sp/>not<sp/>properly<sp/>nested.<sp/>Consider<sp/>using<sp/>amr.blocking_factor<sp/>=<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(new_blocking_factor[0],</highlight></codeline>
+<codeline lineno="2170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>new_blocking_factor[1],</highlight></codeline>
+<codeline lineno="2171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>new_blocking_factor[2])</highlight></codeline>
+<codeline lineno="2172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;FillPatcherFill:<sp/>Grids<sp/>are<sp/>not<sp/>properly<sp/>nested.<sp/><sp/>Must<sp/>increase<sp/>blocking<sp/>factor.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fillpatcher<sp/>=<sp/>m_fillpatcher[state_index];</highlight></codeline>
+<codeline lineno="2177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fillpatcher<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="2178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher<sp/>=<sp/>std::make_unique&lt;FillPatcher&lt;MultiFab&gt;&gt;</highlight></codeline>
+<codeline lineno="2179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(parent-&gt;boxArray(level),<sp/>parent-&gt;DistributionMap(level),<sp/>geom_fine,</highlight></codeline>
+<codeline lineno="2180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parent-&gt;boxArray(level-1),<sp/>parent-&gt;DistributionMap(level-1),<sp/>geom_crse,</highlight></codeline>
+<codeline lineno="2181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(nghost),<sp/>desc.nComp(),<sp/>desc.interp(scomp));</highlight></codeline>
+<codeline lineno="2182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher-&gt;fill(mf,<sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(nghost),<sp/>time,</highlight></codeline>
+<codeline lineno="2185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smf_crse,<sp/>stime_crse,<sp/>smf_fine,<sp/>stime_fine,</highlight></codeline>
+<codeline lineno="2186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,<sp/>dcomp,<sp/>ncomp,</highlight></codeline>
+<codeline lineno="2187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf_crse,<sp/>scomp,<sp/>physbcf_fine,<sp/>scomp,</highlight></codeline>
+<codeline lineno="2188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc.getBCs(),<sp/>scomp);</highlight></codeline>
+<codeline lineno="2189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2192"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2193"><highlight class="normal">AmrLevel::FillPatch<sp/>(AmrLevel&amp;<sp/>amrlevel,</highlight></codeline>
+<codeline lineno="2194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>leveldata,</highlight></codeline>
+<codeline lineno="2195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,</highlight></codeline>
+<codeline lineno="2196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>time,</highlight></codeline>
+<codeline lineno="2197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index,</highlight></codeline>
+<codeline lineno="2198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,</highlight></codeline>
+<codeline lineno="2199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp,</highlight></codeline>
+<codeline lineno="2200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcomp)</highlight></codeline>
+<codeline lineno="2201"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatch()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dcomp+ncomp-1<sp/>&lt;=<sp/>leveldata.nComp());</highlight></codeline>
+<codeline lineno="2204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(leveldata.nGrowVect().allGE(boxGrow));</highlight></codeline>
+<codeline lineno="2205"><highlight class="normal"><sp/><sp/><sp/><sp/>FillPatchIterator<sp/>fpi(amrlevel,<sp/>leveldata,<sp/>boxGrow,<sp/>time,<sp/>index,<sp/>scomp,<sp/>ncomp);</highlight></codeline>
+<codeline lineno="2206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf_fillpatched<sp/>=<sp/>fpi.get_mf();</highlight></codeline>
+<codeline lineno="2207"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab::Copy(leveldata,<sp/>mf_fillpatched,<sp/>0,<sp/>dcomp,<sp/>ncomp,<sp/>boxGrow);</highlight></codeline>
+<codeline lineno="2208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2210"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2211"><highlight class="normal">AmrLevel::FillPatchAdd<sp/>(AmrLevel&amp;<sp/>amrlevel,</highlight></codeline>
+<codeline lineno="2212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>leveldata,</highlight></codeline>
+<codeline lineno="2213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,</highlight></codeline>
+<codeline lineno="2214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>time,</highlight></codeline>
+<codeline lineno="2215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index,</highlight></codeline>
+<codeline lineno="2216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scomp,</highlight></codeline>
+<codeline lineno="2217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp,</highlight></codeline>
+<codeline lineno="2218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dcomp)</highlight></codeline>
+<codeline lineno="2219"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillPatchAdd()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dcomp+ncomp-1<sp/>&lt;=<sp/>leveldata.nComp());</highlight></codeline>
+<codeline lineno="2222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(leveldata.nGrowVect().allGE(boxGrow));</highlight></codeline>
+<codeline lineno="2223"><highlight class="normal"><sp/><sp/><sp/><sp/>FillPatchIterator<sp/>fpi(amrlevel,<sp/>leveldata,<sp/>boxGrow,<sp/>time,<sp/>index,<sp/>scomp,<sp/>ncomp);</highlight></codeline>
+<codeline lineno="2224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf_fillpatched<sp/>=<sp/>fpi.get_mf();</highlight></codeline>
+<codeline lineno="2225"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab::Add(leveldata,<sp/>mf_fillpatched,<sp/>0,<sp/>dcomp,<sp/>ncomp,<sp/>boxGrow);</highlight></codeline>
+<codeline lineno="2226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2228"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2229"><highlight class="normal">AmrLevel::LevelDirectoryNames<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dir,</highlight></codeline>
+<codeline lineno="2230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;LevelDir,</highlight></codeline>
+<codeline lineno="2231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;FullPath)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="2232"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2233"><highlight class="normal"><sp/><sp/><sp/><sp/>LevelDir<sp/>=<sp/><ref refid="namespaceamrex_1a6e3a82e54e91d8c7543596b2c2476250" kindref="member">amrex::Concatenate</ref>(</highlight><highlight class="stringliteral">&quot;Level_&quot;</highlight><highlight class="normal">,<sp/>level,<sp/>1);</highlight></codeline>
+<codeline lineno="2234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>for<sp/>the<sp/>full<sp/>pathname<sp/>of<sp/>that<sp/>directory.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2237"><highlight class="normal"><sp/><sp/><sp/><sp/>FullPath<sp/>=<sp/>dir;</highlight></codeline>
+<codeline lineno="2238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>FullPath.empty()<sp/>&amp;&amp;<sp/>FullPath.back()<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="2239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FullPath<sp/>+=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2240"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2241"><highlight class="normal"><sp/><sp/><sp/><sp/>FullPath<sp/>+=<sp/>LevelDir;</highlight></codeline>
+<codeline lineno="2242"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2244"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>LevelDir,<sp/>FullPath;</highlight></codeline>
-<codeline lineno="2245"><highlight class="normal"><sp/><sp/><sp/><sp/>LevelDirectoryNames(dir,<sp/>LevelDir,<sp/>FullPath);</highlight></codeline>
-<codeline lineno="2246"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
-<codeline lineno="2248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/><ref refid="namespaceamrex_1a913fd7ccf7cab45bc7d8e2a09ddd2824" kindref="member">amrex::UtilCreateDirectory</ref>(FullPath,<sp/>0755))<sp/>{</highlight></codeline>
-<codeline lineno="2249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a894a812531d6362ce4ac5065c3224699" kindref="member">amrex::CreateDirectoryFailed</ref>(FullPath);</highlight></codeline>
-<codeline lineno="2250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2251"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2252"><highlight class="normal"><sp/><sp/><sp/><sp/>levelDirectoryCreated<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2253"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2254"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2255"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2256"><highlight class="normal">AmrLevel::FillRKPatch<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state_index,<sp/>MultiFab&amp;<sp/>S,<sp/>Real<sp/>time,</highlight></codeline>
-<codeline lineno="2257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stage,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iteration,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncycle)</highlight></codeline>
-<codeline lineno="2258"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillRKPatch()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2260"><highlight class="normal"><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf(state[state_index],<sp/>0,<sp/>geom);</highlight></codeline>
-<codeline lineno="2261"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="2263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S.FillBoundary(geom.periodicity());</highlight></codeline>
-<codeline lineno="2264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf(S,<sp/>0,<sp/>S.nComp(),<sp/>S.nGrowVect(),<sp/>time,<sp/>0);</highlight></codeline>
-<codeline lineno="2265"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="2266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>crse_level<sp/>=<sp/>parent-&gt;getLevel(level-1);</highlight></codeline>
-<codeline lineno="2267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_crse(crse_level.state[state_index],<sp/>0,</highlight></codeline>
-<codeline lineno="2268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse_level.geom);</highlight></codeline>
-<codeline lineno="2269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fillpatcher<sp/>=<sp/>m_fillpatcher[state_index];</highlight></codeline>
-<codeline lineno="2270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher-&gt;fillRK(stage,<sp/>iteration,<sp/>ncycle,<sp/>S,<sp/>time,<sp/>physbcf_crse,</highlight></codeline>
-<codeline lineno="2271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf,<sp/>AmrLevel::desc_lst[state_index].getBCs());</highlight></codeline>
-<codeline lineno="2272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2273"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2274"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2275"><highlight class="normal"><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></highlight></codeline>
-<codeline lineno="2276"><highlight class="normal">AmrLevel::ProperBlockingFactor<sp/>(AmrLevel<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>amr_level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boxGrow,</highlight></codeline>
-<codeline lineno="2277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxType,</highlight></codeline>
-<codeline lineno="2278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDescriptor<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SComp)</highlight></codeline>
-<codeline lineno="2279"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2280"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>new_blocking_factor<sp/>=<sp/>amr_level.parent-&gt;blockingFactor(amr_level.level);</highlight></codeline>
-<codeline lineno="2281"><highlight class="normal"><sp/><sp/><sp/><sp/>new_blocking_factor<sp/>*=<sp/>2;</highlight></codeline>
-<codeline lineno="2282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>10;<sp/>++j)<sp/>{</highlight></codeline>
-<codeline lineno="2283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a36b10976708081700c810d70417da8c9" kindref="member">amrex::ProperlyNested</ref>(amr_level.crse_ratio,</highlight></codeline>
-<codeline lineno="2284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_blocking_factor,</highlight></codeline>
-<codeline lineno="2285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,<sp/>boxType,<sp/>desc.interp(SComp)))<sp/>{</highlight></codeline>
-<codeline lineno="2286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="2288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_blocking_factor<sp/>*=<sp/>2;</highlight></codeline>
-<codeline lineno="2289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2290"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>new_blocking_factor;</highlight></codeline>
-<codeline lineno="2292"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2293"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2244"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2245"><highlight class="normal">AmrLevel::CreateLevelDirectory<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;dir)</highlight></codeline>
+<codeline lineno="2246"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Build<sp/>directory<sp/>to<sp/>hold<sp/>the<sp/>MultiFabs<sp/>in<sp/>the<sp/>StateData<sp/>at<sp/>this<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>directory<sp/>is<sp/>relative<sp/>the<sp/>the<sp/>directory<sp/>containing<sp/>the<sp/>Header<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2250"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>LevelDir,<sp/>FullPath;</highlight></codeline>
+<codeline lineno="2251"><highlight class="normal"><sp/><sp/><sp/><sp/>LevelDirectoryNames(dir,<sp/>LevelDir,<sp/>FullPath);</highlight></codeline>
+<codeline lineno="2252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ParallelDescriptor::IOProcessor())<sp/>{</highlight></codeline>
+<codeline lineno="2254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/><ref refid="namespaceamrex_1a913fd7ccf7cab45bc7d8e2a09ddd2824" kindref="member">amrex::UtilCreateDirectory</ref>(FullPath,<sp/>0755))<sp/>{</highlight></codeline>
+<codeline lineno="2255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a894a812531d6362ce4ac5065c3224699" kindref="member">amrex::CreateDirectoryFailed</ref>(FullPath);</highlight></codeline>
+<codeline lineno="2256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2258"><highlight class="normal"><sp/><sp/><sp/><sp/>levelDirectoryCreated<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2262"><highlight class="normal">AmrLevel::FillRKPatch<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state_index,<sp/>MultiFab&amp;<sp/>S,<sp/>Real<sp/>time,</highlight></codeline>
+<codeline lineno="2263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stage,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iteration,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncycle)</highlight></codeline>
+<codeline lineno="2264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;AmrLevel::FillRKPatch()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2266"><highlight class="normal"><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf(state[state_index],<sp/>0,<sp/>geom);</highlight></codeline>
+<codeline lineno="2267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="2269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S.FillBoundary(geom.periodicity());</highlight></codeline>
+<codeline lineno="2270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf(S,<sp/>0,<sp/>S.nComp(),<sp/>S.nGrowVect(),<sp/>time,<sp/>0);</highlight></codeline>
+<codeline lineno="2271"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="2272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>crse_level<sp/>=<sp/>parent-&gt;getLevel(level-1);</highlight></codeline>
+<codeline lineno="2273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDataPhysBCFunct<sp/>physbcf_crse(crse_level.state[state_index],<sp/>0,</highlight></codeline>
+<codeline lineno="2274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse_level.geom);</highlight></codeline>
+<codeline lineno="2275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>fillpatcher<sp/>=<sp/>m_fillpatcher[state_index];</highlight></codeline>
+<codeline lineno="2276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillpatcher-&gt;fillRK(stage,<sp/>iteration,<sp/>ncycle,<sp/>S,<sp/>time,<sp/>physbcf_crse,</highlight></codeline>
+<codeline lineno="2277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physbcf,<sp/>AmrLevel::desc_lst[state_index].getBCs());</highlight></codeline>
+<codeline lineno="2278"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2281"><highlight class="normal"><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></highlight></codeline>
+<codeline lineno="2282"><highlight class="normal">AmrLevel::ProperBlockingFactor<sp/>(AmrLevel<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>amr_level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boxGrow,</highlight></codeline>
+<codeline lineno="2283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxType,</highlight></codeline>
+<codeline lineno="2284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateDescriptor<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SComp)</highlight></codeline>
+<codeline lineno="2285"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2286"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref><sp/>new_blocking_factor<sp/>=<sp/>amr_level.parent-&gt;blockingFactor(amr_level.level);</highlight></codeline>
+<codeline lineno="2287"><highlight class="normal"><sp/><sp/><sp/><sp/>new_blocking_factor<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="2288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>10;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="2289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a36b10976708081700c810d70417da8c9" kindref="member">amrex::ProperlyNested</ref>(amr_level.crse_ratio,</highlight></codeline>
+<codeline lineno="2290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_blocking_factor,</highlight></codeline>
+<codeline lineno="2291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxGrow,<sp/>boxType,<sp/>desc.interp(SComp)))<sp/>{</highlight></codeline>
+<codeline lineno="2292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="2294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_blocking_factor<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="2295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>new_blocking_factor;</highlight></codeline>
+<codeline lineno="2298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2300"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.cpp"/>
   </compounddef>
