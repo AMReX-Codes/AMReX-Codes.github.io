@@ -1,5 +1,6 @@
 var NAVTREEINDEX92 =
 {
+"classamrex_1_1VisMF.html#af7f852d2d1e0656e85e58dcf5ba364b1":[2,0,0,580,49],
 "classamrex_1_1VisMFBuffer.html":[2,0,0,581],
 "classamrex_1_1VisMFBuffer.html":[3,0,0,546],
 "classamrex_1_1VisMFBuffer.html#a18fe5085940077f84917d957455078ab":[3,0,0,546,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX92 =
 "classamrex_1_1detail_1_1SingleChunkArena.html#a08324a9f9d1c2b9e7d81b3ef8e8d4ad5":[2,0,0,6,18,12],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a086746e7c29cb1c9635bfc1d3e243772":[3,0,0,3,18,5],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a086746e7c29cb1c9635bfc1d3e243772":[2,0,0,6,18,5],
-"classamrex_1_1detail_1_1SingleChunkArena.html#a1c7a6c7a2a82e1c705442baa09e84560":[3,0,0,3,18,10],
-"classamrex_1_1detail_1_1SingleChunkArena.html#a1c7a6c7a2a82e1c705442baa09e84560":[2,0,0,6,18,10]
+"classamrex_1_1detail_1_1SingleChunkArena.html#a1c7a6c7a2a82e1c705442baa09e84560":[3,0,0,3,18,10]
 };

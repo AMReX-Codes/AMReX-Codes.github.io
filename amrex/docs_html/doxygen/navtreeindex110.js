@@ -1,5 +1,6 @@
 var NAVTREEINDEX110 =
 {
+"namespaceamrex__mempool__module.html#a0e05b26a99ee9bfcd67d3bcf92f5c2c8":[2,0,12,17],
 "namespaceamrex__mempool__module.html#a2b5ada4df017deb8b5ab35daf32ee166":[2,0,12,15],
 "namespaceamrex__mempool__module.html#a3fc8f0cceacb6dcb6bac79950dcc81f2":[2,0,12,11],
 "namespaceamrex__mempool__module.html#a47590a2b614ca1a020c77a019a93253d":[2,0,12,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX110 =
 "structBLProfStats_1_1TimeRangeCompare.html":[3,0,14,4],
 "structBLProfStats_1_1TimeRangeCompare.html#a9773758cbd910ac77b995b586462c0ce":[3,0,14,4,0],
 "structCommProfStats_1_1BarrierEntry.html":[3,0,15,0],
-"structCommProfStats_1_1BarrierEntry.html#a1330c7cc1ff74140f7a408663d21b537":[3,0,15,0,0],
-"structCommProfStats_1_1BarrierEntry.html#a14d594f7a0f3360a1efbe5621869d37e":[3,0,15,0,3]
+"structCommProfStats_1_1BarrierEntry.html#a1330c7cc1ff74140f7a408663d21b537":[3,0,15,0,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX120 =
 {
+"structamrex_1_1ForkJoin_1_1MFFork.html#adab1f2dcfd2d52eebf3c6727ef5e37d7":[2,0,0,240,1,10],
 "structamrex_1_1ForkJoin_1_1MFFork.html#adbd7f73880dcc05f2b786cd9f1ccfb23":[3,0,0,205,1,6],
 "structamrex_1_1ForkJoin_1_1MFFork.html#adbd7f73880dcc05f2b786cd9f1ccfb23":[2,0,0,240,1,6],
 "structamrex_1_1ForkJoin_1_1MFFork.html#af278943e6089937c826f0bd0967a264f":[3,0,0,205,1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX120 =
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a6aae308317a5d0b1f713f8f5e6da30e0":[2,0,0,16,18,2],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[3,0,0,6,16,1],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[2,0,0,16,18,1],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[3,0,0,6,16,0],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[2,0,0,16,18,0]
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[3,0,0,6,16,0]
 };

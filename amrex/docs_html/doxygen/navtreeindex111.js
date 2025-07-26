@@ -1,5 +1,6 @@
 var NAVTREEINDEX111 =
 {
+"structCommProfStats_1_1BarrierEntry.html#a14d594f7a0f3360a1efbe5621869d37e":[3,0,15,0,3],
 "structCommProfStats_1_1BarrierEntry.html#a44cad8e418f7be7c01a8d8fb75f90865":[3,0,15,0,5],
 "structCommProfStats_1_1BarrierEntry.html#a8323a9d1128d230d3cd3ec5d448f7577":[3,0,15,0,1],
 "structCommProfStats_1_1BarrierEntry.html#aa4edfb42a1c77e953234b83e0f87ce6f":[3,0,15,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX111 =
 "structamrex_1_1ArenaAllocatorBase.html#aacfd8a11b41714538a068f8a0003d0b0":[3,0,0,53,5],
 "structamrex_1_1ArenaAllocatorBase.html#aff48c37eec55fef7a4e4013dd98cb1bc":[2,0,0,88,7],
 "structamrex_1_1ArenaAllocatorBase.html#aff48c37eec55fef7a4e4013dd98cb1bc":[3,0,0,53,7],
-"structamrex_1_1ArenaInfo.html":[3,0,0,54],
-"structamrex_1_1ArenaInfo.html":[2,0,0,89]
+"structamrex_1_1ArenaInfo.html":[3,0,0,54]
 };

@@ -4,6 +4,7 @@ var AMReX__GpuControl_8H =
     [ "amrex::Gpu::GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", "structamrex_1_1Gpu_1_1GraphSafeGuard" ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", "structamrex_1_1Gpu_1_1SingleStreamRegion" ],
     [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", "structamrex_1_1Gpu_1_1NoSyncRegion" ],
+    [ "AMREX_DEFAULT_RUNON", "AMReX__GpuControl_8H.html#a3366977083f4788e5548edd103efaa0b", null ],
     [ "AMREX_GPU_OR_CPU", "AMReX__GpuControl_8H.html#ac7fc102519949e6bf5e0e7fe70e82e23", null ],
     [ "AMREX_HIP_OR_CUDA", "AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941", null ],
     [ "AMREX_HIP_OR_CUDA_OR_SYCL", "AMReX__GpuControl_8H.html#a0389b15d0c54d5b472c13de940c4c5d4", null ],

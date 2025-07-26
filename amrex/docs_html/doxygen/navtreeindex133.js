@@ -1,5 +1,6 @@
 var NAVTREEINDEX133 =
 {
+"structamrex_1_1WeightedBoxList.html#ae24fe3baf8a68e30216e20bf9e25e1c1":[2,0,0,583,4],
 "structamrex_1_1WeightedBoxList.html#af182f43dc9ced3e1b9bb6e702c8071f6":[2,0,0,583,0],
 "structamrex_1_1WeightedBoxList.html#af182f43dc9ced3e1b9bb6e702c8071f6":[3,0,0,548,0],
 "structamrex_1_1XDim3.html":[3,0,0,549],
@@ -248,6 +249,5 @@ var NAVTREEINDEX133 =
 "structamrex_1_1detail_1_1clzl__tag.html":[3,0,0,3,3],
 "structamrex_1_1detail_1_1clzll__tag.html":[2,0,0,6,4],
 "structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,4],
-"structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,9],
-"structamrex_1_1detail_1_1gpu__tuple__element.html":[2,0,0,6,9]
+"structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,9]
 };

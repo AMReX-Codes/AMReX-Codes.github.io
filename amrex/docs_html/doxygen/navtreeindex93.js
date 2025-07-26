@@ -1,5 +1,6 @@
 var NAVTREEINDEX93 =
 {
+"classamrex_1_1detail_1_1SingleChunkArena.html#a1c7a6c7a2a82e1c705442baa09e84560":[2,0,0,6,18,10],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a2ab5bb610d1b9c02e9a9d0d7a75138ad":[2,0,0,6,18,18],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a2ab5bb610d1b9c02e9a9d0d7a75138ad":[3,0,0,3,18,18],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a2e3657b0ceda0efbd0b6457aec18480b":[3,0,0,3,18,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX93 =
 "functions_eval.html":[3,3,5],
 "functions_f.html":[3,3,0,6],
 "functions_func.html":[3,3,1],
-"functions_func.html":[3,3,1,0],
-"functions_func_b.html":[3,3,1,1]
+"functions_func.html":[3,3,1,0]
 };

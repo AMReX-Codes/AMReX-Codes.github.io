@@ -1,5 +1,6 @@
 var NAVTREEINDEX112 =
 {
+"structamrex_1_1ArenaInfo.html":[2,0,0,89],
 "structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[2,0,0,89,5],
 "structamrex_1_1ArenaInfo.html#a01c982802a73eebdb6036a656581432e":[3,0,0,54,5],
 "structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[2,0,0,89,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX112 =
 "structamrex_1_1Array4BoxOffsetTag.html#a2754c8e7cbd174d92c5d0ec4bd58583c":[2,0,0,95,1],
 "structamrex_1_1Array4BoxOffsetTag.html#a4b6ca8c08233ae7d5f9168c8e603dc96":[3,0,0,60,2],
 "structamrex_1_1Array4BoxOffsetTag.html#a4b6ca8c08233ae7d5f9168c8e603dc96":[2,0,0,95,2],
-"structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[3,0,0,60,0],
-"structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[2,0,0,95,0]
+"structamrex_1_1Array4BoxOffsetTag.html#abb7a6f79573e299a46c7918872c7e886":[3,0,0,60,0]
 };
