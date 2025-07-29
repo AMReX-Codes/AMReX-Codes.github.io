@@ -19,6 +19,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -95,6 +96,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#memory">Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particles">Particles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tiling">Tiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-integration">Time Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#runge-kutta-methods">Runge–Kutta Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-specificed-runge-kutta-method">User-specificed Runge–Kutta Method</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sundials">SUNDIALS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-sizes">Step Sizes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tolerances">Tolerances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algebraic-solvers">Algebraic Solvers</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#tiny-profiler">Tiny Profiler</a></li>
 </ul>
 </li>
@@ -143,8 +158,8 @@ to <code class="code highlight cpp c++ docutils literal highlight-c++"><span cla
 <p>AMReX reserves the following prefixes in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
 parameters: <code class="docutils literal notranslate"><span class="pre">amr</span></code>, <code class="docutils literal notranslate"><span class="pre">amrex</span></code>, <code class="docutils literal notranslate"><span class="pre">blprofiler</span></code>, <code class="docutils literal notranslate"><span class="pre">device</span></code>,
 <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code>, <code class="docutils literal notranslate"><span class="pre">eb2</span></code>, <code class="docutils literal notranslate"><span class="pre">fab</span></code>, <code class="docutils literal notranslate"><span class="pre">fabarray</span></code>,
-<code class="docutils literal notranslate"><span class="pre">geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">particles</span></code>, <code class="docutils literal notranslate"><span class="pre">tiny_profiler</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">vismf</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">geometry</span></code>, <code class="docutils literal notranslate"><span class="pre">integration</span></code>, <code class="docutils literal notranslate"><span class="pre">particles</span></code>, <code class="docutils literal notranslate"><span class="pre">tiny_profiler</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">vismf</span></code>.</p>
 </div>
 <section id="amr">
 <h2>AMR<a class="headerlink" href="#amr" title="Permalink to this heading"></a></h2>
@@ -393,7 +408,7 @@ violate the blocking factor constraint.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>These parameters are specific to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">Amr</span></code> based
-applications. If your application use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code>
+applications. If your application uses <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">class</span><span class="w"> </span><span class="nc">AmrCore</span></code>
 directly, they do not apply unless you have provided
 implementations for them.</p>
 </div>
@@ -1068,7 +1083,7 @@ functionality.</p>
 <section id="geometry">
 <span id="sec-inputs-geom"></span><h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h2>
 <p>All these parameters are optional for constructing a <a class="reference internal" href="Basics.html#sec-basics-geom"><span class="std std-ref">Geometry</span></a>
-object. There are only used if the information is not provided via function
+object. They are only used if the information is not provided via function
 arguments.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="geometry.coord_sys">
@@ -1333,6 +1348,340 @@ enabled for CPU runs with a tile size of 8 in the y and z-directions (if
 they exist).</p>
 </dd></dl>
 
+</section>
+<section id="time-integration">
+<span id="sec-inputs-timeintegration"></span><h2>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this heading"></a></h2>
+<p>All these parameters are optional for constructing or configuring a
+<a class="reference internal" href="TimeIntegration_Chapter.html#sec-basics-timeintegration"><span class="std std-ref">TimeIntegrator</span></a> object.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.type">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.type" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter sets the type of time integrator to use. The supported values
+are:</p>
+<ul class="simple">
+<li><p>ForwardEuler</p></li>
+<li><p>RungeKutta</p></li>
+<li><p>SUNDIALS</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.time_step">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">time_step</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.time_step" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter sets the fixed time step size to use.</p>
+<p>For SUNDIALS methods, this parameter sets a fixed step size for single rate
+methods (e.g., ERK) or a fixed slow time scale step size for multirate
+methods (e.g., EX-MRI).</p>
+</dd></dl>
+
+<section id="runge-kutta-methods">
+<span id="sec-inputs-timeintegration-rungekutta"></span><h3>Runge–Kutta Methods<a class="headerlink" href="#runge-kutta-methods" title="Permalink to this heading"></a></h3>
+<p>These parameters are relevant only when <a class="reference internal" href="#integration.type" title="integration.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.type</span></code></a> is
+“RungeKutta”.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rk.type">
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.rk.type" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter sets the Runge–Kutta method to use. The supported values are:</p>
+<ul class="simple">
+<li><p>User</p></li>
+<li><p>ForwardEuler</p></li>
+<li><p>Trapezoid</p></li>
+<li><p>SSPRK3</p></li>
+<li><p>RK4</p></li>
+</ul>
+</dd></dl>
+
+<section id="user-specificed-runge-kutta-method">
+<h4>User-specificed Runge–Kutta Method<a class="headerlink" href="#user-specificed-runge-kutta-method" title="Permalink to this heading"></a></h4>
+<p>When <a class="reference internal" href="#integration.rk.type" title="integration.rk.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.rk.type</span></code></a> is “User”, the following parameters can be
+used to set a user-specificed explicit Butcher tableau,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B \; \equiv \;
+\begin{array}{r|c}
+  c &amp; A \\
+  \hline
+    &amp; b \\
+    &amp; \tilde{b}
+\end{array},\end{split}\]</div>
+<p>where, for a method with <span class="math notranslate nohighlight">\(s\)</span> stages, <span class="math notranslate nohighlight">\(c\)</span>, and <span class="math notranslate nohighlight">\(b\)</span>,
+<span class="math notranslate nohighlight">\(\tilde{b}\)</span> are arrays of <span class="math notranslate nohighlight">\(s\)</span> values and <span class="math notranslate nohighlight">\(A\)</span> is a lower
+triangular <span class="math notranslate nohighlight">\(s \times s\)</span> matrix.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rk.nodes">
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.rk.nodes" title="Permalink to this definition"></a></dt>
+<dd><p>The <span class="math notranslate nohighlight">\(c\)</span> values of the Butcher tableau.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rk.tableau">
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">tableau</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.rk.tableau" title="Permalink to this definition"></a></dt>
+<dd><p>The <span class="math notranslate nohighlight">\(A\)</span> values of the Butcher tableau.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rk.weights">
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">weights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.rk.weights" title="Permalink to this definition"></a></dt>
+<dd><p>The <span class="math notranslate nohighlight">\(b\)</span> values of the Butcher tableau.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rk.extended_weights">
+<span class="sig-prename descclassname"><span class="pre">integration.rk.</span></span><span class="sig-name descname"><span class="pre">extended_weights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span> <span class="pre">array</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.rk.extended_weights" title="Permalink to this definition"></a></dt>
+<dd><p>The <span class="math notranslate nohighlight">\(\tilde{b}\)</span> values of the Butcher tableau. These values are only
+required if the method has an embedding.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="sundials">
+<span id="sec-inputs-timeintegration-sundials"></span><h3>SUNDIALS<a class="headerlink" href="#sundials" title="Permalink to this heading"></a></h3>
+<p>These parameters are relevant only when support for SUNDIALS time integrators is
+enabled (see <a class="reference internal" href="TimeIntegration_Chapter.html#sec-time-int-sundials"><span class="std std-ref">Using SUNDIALS</span></a>) and <a class="reference internal" href="#integration.type" title="integration.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.type</span></code></a> is
+“SUNDIALS”.</p>
+<section id="methods">
+<span id="sec-inputs-timeintegration-sundials-methods"></span><h4>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.type">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">ERK</span></em><a class="headerlink" href="#integration.sundials.type" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter sets type of SUNDIALS time integrator to use. See the table
+below for supported values.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter Value</p></th>
+<th class="head"><p>SUNDIALS Method Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ERK</p></td>
+<td><p>Explicit Runge-Kutta method</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIRK</p></td>
+<td><p>Diagonally Implicit Runge-Kutta method</p></td>
+</tr>
+<tr class="row-even"><td><p>IMEX-RK</p></td>
+<td><p>Implicit-Explicit Additive Runge-Kutta method</p></td>
+</tr>
+<tr class="row-odd"><td><p>EX-MRI</p></td>
+<td><p>Explicit Multirate Infinitesimal method</p></td>
+</tr>
+<tr class="row-even"><td><p>IM-MRI</p></td>
+<td><p>Implicit Multirate Infinitesimal method</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMEX-MRI</p></td>
+<td><p>Implicit-Explicit Multirate Infinitesimal method</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_type">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">ERK</span></em><a class="headerlink" href="#integration.sundials.fast_type" title="Permalink to this definition"></a></dt>
+<dd><p>When using a multirate method, this parameter sets the type of time
+integrator to use at the fast time scale. Currently, ERK and DIRK methods are
+supported.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.method">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.sundials.method" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter sets the name of the specific time integration method to
+use. See the sections listed below in the SUNDIALS documentation for valid
+method names. Note, IMEX method must be specified using the
+<a class="reference internal" href="#integration.sundials.method_i" title="integration.sundials.method_i"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_i</span></code></a> and
+<a class="reference internal" href="#integration.sundials.method_e" title="integration.sundials.method_e"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_e</span></code></a> parameters. If a method name is not
+provided, the SUNDIALS default method is used.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#explicit-butcher-tables">ERK methods</a></p></li>
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#implicit-butcher-tables">DIRK methods</a></p></li>
+<li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Usage/MRIStep/MRIStepCoupling.html#mri-coupling-tables">MRI methods</a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.method_i">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">method_i</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.sundials.method_i" title="Permalink to this definition"></a></dt>
+<dd><p>When using an IMEX method, both the implicit and explicit methods must be
+specified. This parameter can be used to select the <em>implicit</em> portion of the
+IMEX method. See the <a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#additive-butcher-tables">ImEx methods</a>
+section in the SUNDIALS documentation for valid method names. If a method
+name is not provided, the SUNDIALS default method is used.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.method_e">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">method_e</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.sundials.method_e" title="Permalink to this definition"></a></dt>
+<dd><p>When using an IMEX method, both the implicit and explicit methods must be
+specified. This parameter can be used to select the <em>explicit</em> portion of the
+IMEX method. See the <a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#additive-butcher-tables">ImEx methods</a>
+section in the SUNDIALS documentation for valid method names. If a method
+name is not provided, the SUNDIALS default method is used.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_method">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.sundials.fast_method" title="Permalink to this definition"></a></dt>
+<dd><p>When using a multirate method, this parameter sets the method to use at the
+fast time scale. If a method name is not provided, the SUNDIALS default
+method is used.</p>
+</dd></dl>
+
+</section>
+<section id="step-sizes">
+<span id="sec-inputs-timeintegration-sundials-stepsizes"></span><h4>Step Sizes<a class="headerlink" href="#step-sizes" title="Permalink to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The parameter <a class="reference internal" href="#integration.time_step" title="integration.time_step"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.time_step</span></code></a> is used to set a fixed step
+size with single rate methods (e.g., ERK) or a fixed slow time scale step
+size with multirate methods (e.g., EX-MRI).</p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.fast_time_step">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">fast_time_step</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.fast_time_step" title="Permalink to this definition"></a></dt>
+<dd><p>When using a multirate method, this parameter sets the fixed step size to use
+at the fast time scale.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.use_adaptive_time_step">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">use_adaptive_time_step</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#integration.use_adaptive_time_step" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter enables adaptive time step sizes with single rate methods
+(e.g., ERK) or adaptive time step sizes at the slow time scale with multirate
+methods (e.g., EX-MRI).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.use_adaptive_fast_time_step">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">use_adaptive_fast_time_step</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">false</span></em><a class="headerlink" href="#integration.use_adaptive_fast_time_step" title="Permalink to this definition"></a></dt>
+<dd><p>This parameter enables adaptive time step sizes at the fast time scale with
+multirate methods (e.g., EX-MRI).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.max_num_steps">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">max_num_steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">500</span></em><a class="headerlink" href="#integration.sundials.max_num_steps" title="Permalink to this definition"></a></dt>
+<dd><p>When using the <code class="docutils literal notranslate"><span class="pre">evolve</span></code> method, which allows the integrator to take
+multiple time steps to reach the specified output time, this parameter sets
+the maximum number of time steps allowed before reaching the output time. If
+this limit is reached before the output time, SUNDIALS will return an error.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.stop_time">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">stop_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[none]</span></em><a class="headerlink" href="#integration.sundials.stop_time" title="Permalink to this definition"></a></dt>
+<dd><p>When using the <code class="docutils literal notranslate"><span class="pre">evolve</span></code> method (especially with adaptive time step sizes),
+the SUNDIALS integrator may step past the requested output time and return an
+interpolated solution at the requested time. This parameter will force the
+integrator to stop and return the solution at the requested time.</p>
+</dd></dl>
+
+</section>
+<section id="tolerances">
+<span id="sec-inputs-timeintegration-sundials-tolerances"></span><h4>Tolerances<a class="headerlink" href="#tolerances" title="Permalink to this heading"></a></h4>
+<p>When using adaptive time step sizes or an implicit method (e.g., DIRK),
+selecting appropriate tolerances for the target application is a critical factor
+in method performance. For advice on selecting tolerances see the <a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Usage/User_callable.html#general-advice-on-the-choice-of-tolerances">SUNDIALS
+documentation</a>.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.rel_tol">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">rel_tol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.e-4</span></em><a class="headerlink" href="#integration.rel_tol" title="Permalink to this definition"></a></dt>
+<dd><p>Relative tolerance for temporal error control.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.abs_tol">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">abs_tol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.e-9</span></em><a class="headerlink" href="#integration.abs_tol" title="Permalink to this definition"></a></dt>
+<dd><p>Absolute tolerance for temporal error control.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.fast_rel_tol">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">fast_rel_tol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.e-4</span></em><a class="headerlink" href="#integration.fast_rel_tol" title="Permalink to this definition"></a></dt>
+<dd><p>Relative tolerance for the temporal error at the fast time scale with
+multrate methods.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.fast_abs_tol">
+<span class="sig-prename descclassname"><span class="pre">integration.</span></span><span class="sig-name descname"><span class="pre">fast_abs_tol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">amrex::Real</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.e-9</span></em><a class="headerlink" href="#integration.fast_abs_tol" title="Permalink to this definition"></a></dt>
+<dd><p>Absolute tolerance for the temporal error at the fast time scale with
+multrate methods.</p>
+</dd></dl>
+
+</section>
+<section id="algebraic-solvers">
+<span id="sec-inputs-timeintegration-sundials-algebraicsolvers"></span><h4>Algebraic Solvers<a class="headerlink" href="#algebraic-solvers" title="Permalink to this heading"></a></h4>
+<p>The parameters provide control over the nonlinear and linear solvers utilized
+with implicit methods (e.g., DIRK).</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.nonlinear_solver">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">nonlinear_solver</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Newton</span></em><a class="headerlink" href="#integration.sundials.nonlinear_solver" title="Permalink to this definition"></a></dt>
+<dd><p>The nonlinear solver used with single rate methods (e.g., DIRK) or at the
+slow time scale with multirate methods (e.g., IM-MRI). The supported values
+are:</p>
+<ul class="simple">
+<li><p>Newton</p></li>
+<li><p>fixed-point</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.max_nonlinear_iters">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">max_nonlinear_iters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#integration.sundials.max_nonlinear_iters" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of nonlinear iterations allowed per solve with single rate
+methods (e.g., DIRK) or at the slow time scale with multirate methods (e.g.,
+IM-MRI).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.linear_solver">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">linear_solver</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GMRES</span></em><a class="headerlink" href="#integration.sundials.linear_solver" title="Permalink to this definition"></a></dt>
+<dd><p>The linear solver used with Newton’s method for single rate methods (e.g.,
+DIRK) or at the slow time scale with multirate methods (e.g., IM-MRI).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.max_linear_iters">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">max_linear_iters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#integration.sundials.max_linear_iters" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of linear iterations allowed per solve with single rate
+methods (e.g., DIRK) or at the slow time scale with multirate methods (e.g.,
+IM-MRI).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_nonlinear_solver">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_nonlinear_solver</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Newton</span></em><a class="headerlink" href="#integration.sundials.fast_nonlinear_solver" title="Permalink to this definition"></a></dt>
+<dd><p>The nonlinear solver used at the fast time scale with multirate methods
+(e.g., when the fast method is DIRK). The supported values are:</p>
+<ul class="simple">
+<li><p>Newton</p></li>
+<li><p>fixed-point</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_max_nonlinear_iters">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_max_nonlinear_iters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#integration.sundials.fast_max_nonlinear_iters" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of nonlinear iterations allowed per solve at the fast time
+scale (e.g., when the fast method is DIRK).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_linear_solver">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_linear_solver</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">string</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">GMRES</span></em><a class="headerlink" href="#integration.sundials.fast_linear_solver" title="Permalink to this definition"></a></dt>
+<dd><p>The linear solver used with Newton’s method at the fast time scale with
+multirate methods (e.g., when the fast method is DIRK).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="integration.sundials.fast_max_linear_iters">
+<span class="sig-prename descclassname"><span class="pre">integration.sundials.</span></span><span class="sig-name descname"><span class="pre">fast_max_linear_iters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#integration.sundials.fast_max_linear_iters" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of linear iterations allowed at the fast time scale per
+solve with multirate methods (e.g., when the fast method is DIRK).</p>
+</dd></dl>
+
+</section>
+</section>
 </section>
 <section id="tiny-profiler">
 <h2>Tiny Profiler<a class="headerlink" href="#tiny-profiler" title="Permalink to this heading"></a></h2>

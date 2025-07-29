@@ -1,11 +1,12 @@
 var classamrex_1_1IntegratorBase =
 [
-    [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#a0161e86a01e6b8a3ae9a9d3f91e5ad29", null ],
+    [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#a8960e06411e4dac4bd0a99f5be3b489e", null ],
     [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#ad6e1d1e6bb0cd9f1ac3dec311f811151", null ],
     [ "~IntegratorBase", "classamrex_1_1IntegratorBase.html#ab552abbdc6f529d492e5912b8af6f3a3", null ],
     [ "advance", "classamrex_1_1IntegratorBase.html#a4d714675069097ce07c843145e45d465", null ],
     [ "evolve", "classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9", null ],
     [ "get_time_step", "classamrex_1_1IntegratorBase.html#a4e271bb0dfa0e7bee049e3b8dfcbfec4", null ],
+    [ "initialize_base_parameters", "classamrex_1_1IntegratorBase.html#a2aa5bd913a65baae7135ef4945c4c327", null ],
     [ "map_data", "classamrex_1_1IntegratorBase.html#a9a0b2271de694f1ea0903339931578ec", null ],
     [ "set_adaptive_fast_step", "classamrex_1_1IntegratorBase.html#a49c90c36c565d4499bd64662416f4d0d", null ],
     [ "set_adaptive_step", "classamrex_1_1IntegratorBase.html#a100f797cb82abd1ec8563c591ebe823a", null ],

@@ -154,7 +154,8 @@ runtime parameters that allow choosing between a simple Forward Euler method or
 a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
 can choose which of a set of predefined Butcher Tables to use, or can choose to
 use a custom table and supply it manually.</p>
-<p>The full set of integrator options are detailed as follows:</p>
+<p>An example of integrator options is given below. For a complete list of options
+see the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-timeintegration"><span class="std std-ref">Time Integration Runtime Parameters</span></a>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION</span>
 
 <span class="cp">## *** Selecting the integrator backend ***</span>
@@ -208,7 +209,7 @@ at runtime:</p>
 </pre></div>
 </div>
 <p>One can select a different method type by changing the value of
-<code class="docutils literal notranslate"><span class="pre">integration.sundials.type</span></code> to one of the following values:</p>
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.type" title="integration.sundials.type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.type</span></code></a> to one of the following values:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Input Option</p></th>
@@ -243,23 +244,25 @@ needs to supply slow and fast right-hand side functions using
 <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code> to set the slow function and
 <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_fast_rhs()</span></code> to set the fast function. With multirate
 methods, one also needs to select the fast time scale method type using the
-input option <code class="docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span></code> which maybe set to <code class="docutils literal notranslate"><span class="pre">ERK</span></code> or
-<code class="docutils literal notranslate"><span class="pre">DIRK</span></code>.</p>
+input option <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_type" title="integration.sundials.fast_type"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_type</span></code></a> which maybe set to
+<code class="docutils literal notranslate"><span class="pre">ERK</span></code> or <code class="docutils literal notranslate"><span class="pre">DIRK</span></code>.</p>
 <p>To select a specific SUNDIALS method use the input option
-<code class="docutils literal notranslate"><span class="pre">integration.sundials.method</span></code> for ERK and DIRK methods as well as the slow
-time scale method with an MRI integrator, use <code class="docutils literal notranslate"><span class="pre">integration.sundials.method_i</span></code>
-and <code class="docutils literal notranslate"><span class="pre">integration.sundials.method_e</span></code> to set the implicit and explicit method in
-an ImEx method, and <code class="docutils literal notranslate"><span class="pre">integration.sundials.fast_method</span></code> to set the ERK or DIRK
-method used at the fast time scale with an MRI integrator. These options may be
-set to any valid SUNDIALS method name, see the following sections in the
-SUNDIALS documentation for more details:</p>
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method" title="integration.sundials.method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method</span></code></a> for ERK and DIRK methods as well as the
+slow time scale method with an MRI integrator, use
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_i" title="integration.sundials.method_i"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_i</span></code></a> and
+<a class="reference internal" href="RuntimeParameters.html#integration.sundials.method_e" title="integration.sundials.method_e"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.method_e</span></code></a> to set the implicit and explicit method
+in an ImEx method, and <a class="reference internal" href="RuntimeParameters.html#integration.sundials.fast_method" title="integration.sundials.fast_method"><code class="xref py py-data docutils literal notranslate"><span class="pre">integration.sundials.fast_method</span></code></a> to set the
+ERK or DIRK method used at the fast time scale with an MRI integrator. These
+options may be set to any valid SUNDIALS method name, see the following sections
+in the SUNDIALS documentation for more details:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#explicit-butcher-tables">ERK methods</a></p></li>
 <li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#implicit-butcher-tables">DIRK methods</a></p></li>
 <li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Butcher_link.html#additive-butcher-tables">ImEx methods</a></p></li>
 <li><p><a class="reference external" href="https://sundials.readthedocs.io/en/latest/arkode/Usage/MRIStep/MRIStepCoupling.html#mri-coupling-tables">MRI methods</a></p></li>
 </ul>
-<p>The full set of integrator options are detailed as follows:</p>
+<p>An example of integrator options is given below. For a complete list of options
+see the section on <a class="reference internal" href="RuntimeParameters.html#sec-inputs-timeintegration"><span class="std std-ref">Time Integration Runtime Parameters</span></a>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION WITH SUNDIALS</span>
 
 <span class="cp"># *** Select the SUNDIALS integrator backend ***</span>
