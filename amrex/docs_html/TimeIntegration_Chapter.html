@@ -194,8 +194,23 @@ see the section on <a class="reference internal" href="RuntimeParameters.html#se
 <p>The AMReX Time Integration interface also supports a SUNDIALS backend that
 provides explicit, implicit, and implicit-explicit (ImEx) Runge-Kutta methods
 as well a multirate (MRI) methods from the ARKODE package in SUNDIALS.
-To use SUNDIALS integrators, the user needs to compile AMReX with
-<code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS=TRUE</span></code> and use SUNDIALS v6.0 or later.</p>
+Presently, SUNDIALS v6.0 or later is required, but v7.4.0 has been successfully tested.
+To install SUNDIALS, the full documentation is available at
+<a class="reference external" href="https://sundials.readthedocs.io/en/latest/sundials/Install_link.html">https://sundials.readthedocs.io/en/latest/sundials/Install_link.html</a></p>
+<p>Here is a summary of steps that you need to take using cmake.
+First obtain the source code from either
+<a class="reference external" href="https://computing.llnl.gov/projects/sundials/sundials-software">https://computing.llnl.gov/projects/sundials/sundials-software</a> or the github page at
+<a class="reference external" href="https://github.com/LLNL/sundials">https://github.com/LLNL/sundials</a>.
+Once you have unpacked or cloned the source code, run the following
+(altering the ENABLE_MPI and ENABLE_CUDA lines as appropriate):</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span><span class="w"> </span><span class="o">-</span><span class="n">S</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_source_code</span><span class="w"> </span><span class="o">-</span><span class="n">B</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_build_dir</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">CMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">path_to_sundials_install_dir</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">ENABLE_MPI</span><span class="o">=</span><span class="n">ON</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"> </span><span class="n">ENABLE_CUDA</span><span class="o">=</span><span class="n">ON</span>
+<span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">path_to_sundials_build_dir</span>
+<span class="n">make</span>
+<span class="n">make</span><span class="w"> </span><span class="n">install</span>
+</pre></div>
+</div>
+<p>To use SUNDIALS integrators, the user needs to compile their AMReX application with
+<code class="docutils literal notranslate"><span class="pre">USE_SUNDIALS=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">SUNDIALS_HOME=/path_to_sundials_install_dir</span></code></p>
 <p>The SUNDIALS interface supports <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> or <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> data
 types. Using a <code class="docutils literal notranslate"><span class="pre">Vector&lt;MultiFab&gt;</span></code> permits integrating state data with
 different spatial centering (e.g. cell centered, face centered, node centered)
