@@ -365,392 +365,437 @@ $(document).ready(function(){initNavTree('AMReX__TracerParticle__mod__K_8H_sourc
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <a class="code hl_function" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(ly);</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> j  = p.idata(0);</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        amrex::Real hlo_xlo = amrex::Real(0.25)</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                                   * ( height_arr(i0                       , j                     , k)</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                                   +   height_arr(i0 + (!(is_nodal[d][0])) , j                     , k)</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                                   +   height_arr(i0                       , j + (!is_nodal[d][1]) , k)</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                                   +   height_arr(i0 + (!(is_nodal[d][0])) , j + (!is_nodal[d][1]) , k) );</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        amrex::Real hlo_xhi = amrex::Real(0.25)</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                                   * ( height_arr(i0 + 1                       , j                    , k )</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                                   +   height_arr(i0 + 1 + (!(is_nodal[d][0])) , j                    , k )</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                   +   height_arr(i0 + 1                       , j + (!is_nodal[d][1]), k )</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                                   +   height_arr(i0 + 1 + (!(is_nodal[d][0])) , j + (!is_nodal[d][1]), k ) );</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        amrex::Real <span class="keyword">const</span> xint = lx - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i0);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        amrex::Real sx[] = { amrex::Real(1.) - xint, xint};</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        amrex::Real height_at_px = sx[0] * hlo_xlo + sx[1] * hlo_xhi;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> j0 = (amrex::Real(p.pos(1)) &gt;= height_at_px) ? j : j-1;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordtype">int</span> yctr = 0;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        amrex::Real ht[4];</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii=0; ii &lt; 2; ++ii) {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj=0; jj &lt; 2; ++jj) {</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                ht[yctr] = amrex::Real(0.25)</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                                * ( height_arr(i0 + ii                       , j0 + jj , k                    )</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                +   height_arr(i0 + ii + (!(is_nodal[d][0])) , j0 + jj , k                    )</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                                +   height_arr(i0 + ii                       , j0 + jj + (!is_nodal[d][1]), k )</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                                +   height_arr(i0 + ii + (!(is_nodal[d][0])) , j0 + jj + (!is_nodal[d][1]), k ) );</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                ++yctr;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        amrex::Real hint_ilo = (p.pos(1) - ht[0]) / (ht[1] - ht[0]);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        amrex::Real hint_ihi = (p.pos(1) - ht[2]) / (ht[3] - ht[2]);</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        amrex::Real sy[] = { amrex::Real(1.) - hint_ilo, amrex::Real(1.) - hint_ihi,</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                                               hint_ilo,                   hint_ihi};</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> j0 = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(ly));</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        k = p.idata(0);</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        amrex::Real <span class="keyword">const</span> xint = lx - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i0);</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        amrex::Real <span class="keyword">const</span> yint = ly - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(j0);</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        amrex::Real sx[] = { amrex::Real(1.) - xint, xint};</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        amrex::Real sy[] = { amrex::Real(1.) - yint, yint};</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        amrex::Real hlo[4];</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordtype">int</span> ilo = 0;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        amrex::Real height_at_pxy = 0.;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2; ++ii) {</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt; 2; ++jj) {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                hlo[ilo] = amrex::Real(0.125)</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                * ( height_arr(i0 + ii                    , j0 + jj                    , k                    )</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k                    )</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                +   height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k                    )</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k                    )</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                +   height_arr(i0 + ii                    , j0 + jj                    , k + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                +   height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                );</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                height_at_pxy += hlo[ilo] * sx[ii] * sy[jj];</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                ++ilo;</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            }</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        }</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> k0 = (amrex::Real(p.pos(2)) &gt;= height_at_pxy ) ? k : k-1;</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        <span class="keywordtype">int</span> zctr = 0;</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        amrex::Real ht[8];</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2; ++ii) {</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt; 2; ++jj) {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; 2; ++kk) {</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            ht[zctr] = amrex::Real(0.125) *</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>             ( height_arr(i0 + ii                    , j0 + jj                    , k0 + kk                    )</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>             + height_arr(i0 + ii                    , j0 + jj                    , k0 + kk + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>             + height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k0 + kk                    )</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>             + height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k0 + kk + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k0 + kk                    )</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k0 + kk + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k0 + kk                    )</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k0 + kk + (!is_nodal[d][2]))</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>             );</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            ++zctr;</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        }}}</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        amrex::Real hint_ilojlo = ( p.pos(2) - ht[0] ) / (ht[1] - ht[0]);</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        amrex::Real hint_ilojhi = ( p.pos(2) - ht[2] ) / (ht[3] - ht[2]);</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        amrex::Real hint_ihijlo = ( p.pos(2) - ht[4] ) / (ht[5] - ht[4]);</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        amrex::Real hint_ihijhi = ( p.pos(2) - ht[6] ) / (ht[7] - ht[6]);</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        amrex::Real sz[] = { amrex::Real(1.) - hint_ilojlo,</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                             amrex::Real(1.) - hint_ihijlo,</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                             amrex::Real(1.) - hint_ilojhi,</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                             amrex::Real(1.) - hint_ihijhi,</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                                               hint_ilojlo,</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                                               hint_ihijlo,</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                                               hint_ilojhi,</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                                               hint_ihijhi};</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = start_comp; comp &lt; start_comp + ncomp; ++comp) {</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            val[ctr] = amrex::ParticleReal(0.);</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="preprocessor">#if (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>            <span class="keywordtype">int</span> k0 = 0;</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            <span class="keywordtype">int</span> sy_ctr = 0;</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;=1; ++ii) {</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                    val[ctr] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>( (data_arr[d])(i0+ii, j0+jj, k0 ,comp)*sx[ii]*sy[sy_ctr] );</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                    ++sy_ctr;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                }</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>            }</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            <span class="keywordtype">int</span> sz_ctr = 0;</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) {</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>                        val[ctr] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>                                    (data_arr[d])(i0+ii, j0+jj, k0 + kk, comp)*sx[ii]*sy[jj]*sz[sz_ctr]);</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>                        ++sz_ctr;</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                    }</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                }</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>            }</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            ctr++;</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        } <span class="comment">// ncomp</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    } <span class="comment">// d</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>}</div>
-</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="comment">//</span></div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span><span class="comment">// **********************************************************************</span></div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><span class="comment">// General mapped coordinates</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span><span class="comment">// **********************************************************************</span></div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="comment">//</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordtype">int</span> j0 = j;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        amrex::Real <span class="keyword">const</span> xint = lx - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i0);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        amrex::Real sx[] = { amrex::Real(1.) - xint, xint};</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="comment">// hlo holds the height of the face-based velocity at the relevant face center, e.g.</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <span class="comment">//     for u it holds the height of the x-face centers of the two cells that will contribute</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="comment">//     for v it holds the height of the y-face centers of the two cells that will contribute</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="comment">// height_at_px is then the value of hlo interpolated to the (i) of the particle location</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="comment">// We only use height_at_px to determine which cells (in the j-direction) we should use for interpolation</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="comment">//  -- but ONLY for the lateral velocities because otherwise we risk using vertical velocity below the sfc</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">if</span> (d != AMREX_SPACEDIM-1) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            amrex::Real hlo_xlo = amrex::Real(0.25)</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                                       * ( height_arr(i0                       , j                     , k)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                                       +   height_arr(i0 + (!(is_nodal[d][0])) , j                     , k)</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                                       +   height_arr(i0                       , j + (!is_nodal[d][1]) , k)</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                                       +   height_arr(i0 + (!(is_nodal[d][0])) , j + (!is_nodal[d][1]) , k) );</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            amrex::Real hlo_xhi = amrex::Real(0.25)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                                       * ( height_arr(i0 + 1                       , j                    , k )</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                                       +   height_arr(i0 + 1 + (!(is_nodal[d][0])) , j                    , k )</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                                       +   height_arr(i0 + 1                       , j + (!is_nodal[d][1]), k )</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                       +   height_arr(i0 + 1 + (!(is_nodal[d][0])) , j + (!is_nodal[d][1]), k ) );</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>           amrex::Real height_at_px = sx[0] * hlo_xlo + sx[1] * hlo_xhi;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>           <span class="keywordflow">if</span> (amrex::Real(p.pos(1)) &lt; height_at_px) {j0 = j-1;}</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        } <span class="comment">// if not vertical direction</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="comment">// ht holds the heights of the face-based velocity at the relevant face centers, e.g.</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="comment">//     for u it holds the height of the x-face centers of the four cells that will contribute</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="comment">//     for v it holds the height of the y-face centers of the four cells that will contribute</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="comment">// ht differs from hlo in that it uses the correct j0 which may be different from k above</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="comment">//    AND it computes all 4 values needed for 2D interpolation (hlo held only the lower 2)</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keywordtype">int</span> yctr = 0;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        amrex::Real ht[4];</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii=0; ii &lt; 2; ++ii) {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj=0; jj &lt; 2; ++jj) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                ht[yctr] = amrex::Real(0.25)</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                                * ( height_arr(i0 + ii                       , j0 + jj , k                    )</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                                +   height_arr(i0 + ii + (!(is_nodal[d][0])) , j0 + jj , k                    )</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                                +   height_arr(i0 + ii                       , j0 + jj + (!is_nodal[d][1]), k )</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                                +   height_arr(i0 + ii + (!(is_nodal[d][0])) , j0 + jj + (!is_nodal[d][1]), k ) );</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                ++yctr;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        amrex::Real hint_ilo = (p.pos(1) - ht[0]) / (ht[1] - ht[0]);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        amrex::Real hint_ihi = (p.pos(1) - ht[2]) / (ht[3] - ht[2]);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        amrex::Real sy[] = { amrex::Real(1.) - hint_ilo, amrex::Real(1.) - hint_ihi,</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                                               hint_ilo,                   hint_ihi};</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keywordtype">int</span> <span class="keyword">const</span> j0 = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(ly));</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        k = p.idata(0);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        amrex::Real <span class="keyword">const</span> xint = lx - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i0);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        amrex::Real <span class="keyword">const</span> yint = ly - <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(j0);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        amrex::Real sx[] = { amrex::Real(1.) - xint, xint};</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        amrex::Real sy[] = { amrex::Real(1.) - yint, yint};</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <span class="keywordtype">int</span> k0 = k;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        <span class="comment">// hlo holds the height of the face-based velocity at the relevant face center, e.g.</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <span class="comment">//     for u it holds the height of the x-face centers of the four cells that will contribute</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <span class="comment">//     for v it holds the height of the y-face centers of the four cells that will contribute</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="comment">//     for w it holds the height of the z-face centers of the four cells that will contribute</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="comment">// height_at_pxy is then the value of hlo interpolated to the (i,j) of the particle location</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <span class="comment">// We use height_at_pxy to determine which cells (in the k-direction) we should use for interpolation</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="comment">//  -- but ONLY for the lateral velocities because otherwise we risk using vertical velocity below the sfc</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        <span class="keywordflow">if</span> (d != AMREX_SPACEDIM-1) {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            amrex::Real hlo[4];</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>            <span class="keywordtype">int</span> ilo = 0;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            amrex::Real height_at_pxy = 0.;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2; ++ii) {</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt; 2; ++jj) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                    hlo[ilo] = amrex::Real(0.125)</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                    * ( height_arr(i0 + ii                    , j0 + jj                    , k                    )</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                    +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k                    )</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                    +   height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k                    )</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                    +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k                    )</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                    +   height_arr(i0 + ii                    , j0 + jj                    , k + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                    +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                    +   height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                    +   height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                    );</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                    height_at_pxy += hlo[ilo] * sx[ii] * sy[jj];</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                    ++ilo;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                }</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            <span class="keywordflow">if</span> (amrex::Real(p.pos(2)) &lt; height_at_pxy ) {k0 = k-1;}</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        } <span class="comment">// if not vertical direction</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        <span class="comment">// ht holds the heights of the face-based velocity at the relevant face centers, e.g.</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="comment">//     for u it holds the height of the x-face centers of the eight cells that will contribute</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="comment">//     for v it holds the height of the y-face centers of the eight cells that will contribute</span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="comment">//     for w it holds the height of the z-face centers of the eight cells that will contribute</span></div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        <span class="comment">// ht differs from hlo in that it uses the correct k0 which may be different from k above</span></div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        <span class="comment">//    AND it computes all 8 values needed for 3D interpolation (hlo held only the lower 4)</span></div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        <span class="keywordtype">int</span> zctr = 0;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        amrex::Real ht[8];</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2; ++ii) {</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt; 2; ++jj) {</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; 2; ++kk) {</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>            ht[zctr] = amrex::Real(0.125) *</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>             ( height_arr(i0 + ii                    , j0 + jj                    , k0 + kk                    )</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>             + height_arr(i0 + ii                    , j0 + jj                    , k0 + kk + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>             + height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k0 + kk                    )</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>             + height_arr(i0 + ii                    , j0 + jj + (!is_nodal[d][1]), k0 + kk + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k0 + kk                    )</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj                    , k0 + kk + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k0 + kk                    )</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>             + height_arr(i0 + ii + (!is_nodal[d][0]), j0 + jj + (!is_nodal[d][1]), k0 + kk + (!is_nodal[d][2]))</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>             );</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            ++zctr;</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        }}}</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        amrex::Real hint_ilojlo = ( p.pos(2) - ht[0] ) / (ht[1] - ht[0]);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        amrex::Real hint_ilojhi = ( p.pos(2) - ht[2] ) / (ht[3] - ht[2]);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        amrex::Real hint_ihijlo = ( p.pos(2) - ht[4] ) / (ht[5] - ht[4]);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        amrex::Real hint_ihijhi = ( p.pos(2) - ht[6] ) / (ht[7] - ht[6]);</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00422" data-start="{" data-end="}">
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">  422</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a> (Array2D&lt;Real,1,7,1,7&gt;&amp; a, Array1D&lt;int,1,7&gt;&amp; ip, <span class="keywordtype">int</span> neq)</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>{</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    amrex::Real amult,apm,apn;</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++)</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    {</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        ip(n) = n;</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt;neq; i++)</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    {</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keywordtype">int</span> ip1=i+1;</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <span class="keywordtype">int</span> k=i;</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        <span class="keywordtype">int</span> ipi = ip(i);</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        apm  = std::abs(a(ipi,i));</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=ip1; j&lt;neq+1; j++)</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        {</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            <span class="keywordtype">int</span> ipj = ip(j);</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>            apn=std::abs(a(ipj,i));</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>            <span class="keywordflow">if</span>(apm &lt; apn){</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                apm = apn;</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>                k=j;</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>            }</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        }</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keywordtype">int</span> j=ip(k);</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        ip(k)=ip(i);</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        ip(i)=j;</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=ip1; l&lt;neq+1; l++)</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        {</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>            <span class="keywordtype">int</span> n=ip(l);</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>            amult=a(n,i)/a(j,i);</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>            a(n,i)=amult;</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = ip1; kk &lt; neq+1; kk++)</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>            {</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>                a(n,kk) -= amult*a(j,kk);</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>            }</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>        }</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    }</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>}</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        amrex::Real sz[] = { amrex::Real(1.) - hint_ilojlo,</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                             amrex::Real(1.) - hint_ihijlo,</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                             amrex::Real(1.) - hint_ilojhi,</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>                             amrex::Real(1.) - hint_ihijhi,</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>                                               hint_ilojlo,</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                                               hint_ihijlo,</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>                                               hint_ilojhi,</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                                               hint_ihijhi};</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = start_comp; comp &lt; start_comp + ncomp; ++comp) {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>            val[ctr] = amrex::ParticleReal(0.);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="preprocessor">#if (AMREX_SPACEDIM == 2)</span></div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            <span class="keywordtype">int</span> k0 = 0;</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordtype">int</span> sy_ctr = 0;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;=1; ++ii) {</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>                    val[ctr] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>( (data_arr[d])(i0+ii, j0+jj, k0 ,comp)*sx[ii]*sy[sy_ctr] );</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>                    ++sy_ctr;</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                }</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>            }</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>            <span class="keywordtype">int</span> sz_ctr = 0;</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) {</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                        val[ctr] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>                                    (data_arr[d])(i0+ii, j0+jj, k0 + kk, comp)*sx[ii]*sy[jj]*sz[sz_ctr]);</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                        ++sz_ctr;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                    }</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>                }</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>            }</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            ctr++;</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        } <span class="comment">// ncomp</span></div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    } <span class="comment">// d</span></div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>}</div>
 </div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span> </div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00464" data-start="{" data-end="}">
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">  464</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a> (Array2D&lt;Real,1,7,1,7&gt;&amp; a, Array1D&lt;Real,1,7&gt;&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>, Array1D&lt;int,1,7&gt;&amp; ip, <span class="keywordtype">int</span> neq)</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>{</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    amrex::Real scr;</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=2; l&lt;neq+1; l++)</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    {</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        <span class="keywordtype">int</span> n = ip(l);</div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=1; k&lt;l; k++){</div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>             <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n) -= a(n,k) * <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(k));</div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>        }</div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>    }</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(neq))=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(neq))/a(ip(neq),neq);</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span> </div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=1; l&lt;neq; l++)</div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>    {</div>
-<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        <span class="keywordtype">int</span> j=neq-l;</div>
-<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>        <span class="keywordtype">int</span> jp1=j+1;</div>
-<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>        <span class="keywordtype">int</span> n=ip(j);</div>
-<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=jp1; k&lt;neq+1; k++){</div>
-<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>           <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n) -= a(n,k  ) * <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(k));</div>
-<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>        }</div>
-<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n)=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n)/a(n,j);</div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    }</div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++)</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    {</div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        <span class="keywordflow">while</span>(ip(n) != n) {</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>            <span class="keywordtype">int</span> j=ip(n);</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>            scr=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(j);</div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>            ip(n)=ip(j);</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(j)=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(j));</div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(j))=scr;</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>            ip(j)=j;</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>        }</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    }</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>}</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span><span class="comment">//</span></div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span><span class="comment">// **********************************************************************</span></div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="comment">// General mapped coordinates</span></div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span><span class="comment">// **********************************************************************</span></div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span><span class="comment">//</span></div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span> </div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00467" data-start="{" data-end="}">
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">  467</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a> (Array2D&lt;Real,1,7,1,7&gt;&amp; a, Array1D&lt;int,1,7&gt;&amp; ip, <span class="keywordtype">int</span> neq)</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>{</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    amrex::Real amult,apm,apn;</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++)</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>    {</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>        ip(n) = n;</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    }</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span> </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt;neq; i++)</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    {</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        <span class="keywordtype">int</span> ip1=i+1;</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <span class="keywordtype">int</span> k=i;</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        <span class="keywordtype">int</span> ipi = ip(i);</div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>        apm  = std::abs(a(ipi,i));</div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span> </div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=ip1; j&lt;neq+1; j++)</div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>        {</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>            <span class="keywordtype">int</span> ipj = ip(j);</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>            apn=std::abs(a(ipj,i));</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>            <span class="keywordflow">if</span>(apm &lt; apn){</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>                apm = apn;</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>                k=j;</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>            }</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        }</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span> </div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        <span class="keywordtype">int</span> j=ip(k);</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        ip(k)=ip(i);</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>        ip(i)=j;</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=ip1; l&lt;neq+1; l++)</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>        {</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>            <span class="keywordtype">int</span> n=ip(l);</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>            amult=a(n,i)/a(j,i);</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>            a(n,i)=amult;</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = ip1; kk &lt; neq+1; kk++)</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>            {</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>                a(n,kk) -= amult*a(j,kk);</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>            }</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        }</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>    }</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>}</div>
 </div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span> </div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00506" data-start="{" data-end="}">
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">  506</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">cic_interpolate_nd_mapped</a> (<span class="keyword">const</span> P&amp; p,</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>                                <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp; data_arr,</div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>                                <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp;  loc_arr,</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>                                amrex::ParticleReal * val, <span class="keywordtype">int</span> M = AMREX_SPACEDIM)</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span> </div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00509" data-start="{" data-end="}">
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">  509</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a> (Array2D&lt;Real,1,7,1,7&gt;&amp; a, Array1D&lt;Real,1,7&gt;&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>, Array1D&lt;int,1,7&gt;&amp; ip, <span class="keywordtype">int</span> neq)</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>{</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keywordtype">int</span> icomp = 0;</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordtype">int</span> ncomp_per_array = M;</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    <span class="keywordtype">int</span> num_arrays = 1;</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <a class="code hl_typedef" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> is_nodal = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a6e681cd76abecdaac22a90fec57f040e">amrex::IntVect::TheUnitVector</a>();</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a>(p, &amp;data_arr, loc_arr,</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>                                          val, &amp;is_nodal, icomp, ncomp_per_array, num_arrays);</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>}</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    amrex::Real scr;</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=2; l&lt;neq+1; l++)</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    {</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <span class="keywordtype">int</span> n = ip(l);</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=1; k&lt;l; k++){</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>             <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n) -= a(n,k) * <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(k));</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        }</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    }</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(neq))=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(neq))/a(ip(neq),neq);</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l=1; l&lt;neq; l++)</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>        <span class="keywordtype">int</span> j=neq-l;</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>        <span class="keywordtype">int</span> jp1=j+1;</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>        <span class="keywordtype">int</span> n=ip(j);</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=jp1; k&lt;neq+1; k++){</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>           <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n) -= a(n,k  ) * <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(k));</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>        }</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n)=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(n)/a(n,j);</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>    }</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++)</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    {</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>        <span class="keywordflow">while</span>(ip(n) != n) {</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>            <span class="keywordtype">int</span> j=ip(n);</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>            scr=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(j);</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>            ip(n)=ip(j);</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(j)=<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(j));</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>            <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(ip(j))=scr;</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>            ip(j)=j;</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>        }</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    }</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>}</div>
 </div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span> </div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="foldopen" id="foldopen00526" data-start="{" data-end="}">
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">  526</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a> (<span class="keyword">const</span> P&amp; p,</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                                            <span class="keyword">const</span> Array4&lt;amrex::Real const&gt;* data_arr,</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                                            <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp;  loc_arr,</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                                            amrex::ParticleReal * val,</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                            <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>* is_nodal,</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                                            <span class="keywordtype">int</span> start_comp, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">int</span> num_arrays)</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>{</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span><span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    <a class="code hl_function" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p, data_arr, loc_arr, val, is_nodal, start_comp, ncomp, num_arrays);</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot; General mapped interpolation is not supported in 1D\n&quot;</span>);</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(val != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(num_arrays == 1);</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; num_arrays; d++)</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    {</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>        <span class="comment">// Assertion to ensure that only nodal data is supported</span></div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][0] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][1] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][2] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    }</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    <span class="keywordtype">int</span> n_of_data = 0;</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span> </div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    <span class="keywordtype">int</span> i = p.idata(0);</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    <span class="keywordtype">int</span> j = p.idata(1);</div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = start_comp; comp &lt; start_comp + ncomp; ++comp) {</div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span><span class="preprocessor">#if (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        <span class="comment">// Value of data at surrounding nodes</span></div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>        amrex::Real f1 = (data_arr[n_of_data])(i  ,j  ,0,comp);</div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        amrex::Real f2 = (data_arr[n_of_data])(i  ,j+1,0,comp) - f1;</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        amrex::Real f3 = (data_arr[n_of_data])(i+1,j  ,0,comp) - f1;</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        amrex::Real f4 = (data_arr[n_of_data])(i+1,j+1,0,comp) - f1;</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span> </div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="comment">// Node locations</span></div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        amrex::Real x1 =  loc_arr(i  ,j  ,0,0);</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>        amrex::Real x2 =  loc_arr(i  ,j+1,0,0) - x1;</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        amrex::Real x3 =  loc_arr(i+1,j  ,0,0) - x1;</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        amrex::Real x4 =  loc_arr(i+1,j+1,0,0) - x1;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        amrex::Real y1 =  loc_arr(i  ,j  ,0,1);</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        amrex::Real y2 =  loc_arr(i  ,j+1,0,1) - y1;</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        amrex::Real y3 =  loc_arr(i+1,j  ,0,1) - y1;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        amrex::Real y4 =  loc_arr(i+1,j+1,0,1) - y1;</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        <span class="comment">// Particle location</span></div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        amrex::Real <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = p.pos(0) - x1;</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        amrex::Real y = p.pos(1) - y1;</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        amrex::Real det = x2*x4*y3*(y2 - y4) - x3*x4*y2*(y3 - y4) - x2*x3*(y2 - y3)*y4;</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        amrex::Real <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = (  f4*(x2*y2*y3 - x3*y2*y3) + (f2*(x3 - x4)*y3)*y4 + f3*(-(x2*y2*y4) + x4*y2*y4) ) / det;</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        amrex::Real c = ( -f2*x3*x4*y3 + f4*x2*x3*(-y2 + y3) + f3*x2*x4*(y2 - y4) + f2*x3*x4*y4          ) / det;</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        amrex::Real d = (  f2*x4*y3 + f4*(x3*y2 - x2*y3) - f2*x3*y4 + f3*(-(x4*y2) + x2*y4)              ) / det;</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span> </div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00551" data-start="{" data-end="}">
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">  551</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">cic_interpolate_nd_mapped</a> (<span class="keyword">const</span> P&amp; p,</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>                                <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp; data_arr,</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>                                <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp;  loc_arr,</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>                                amrex::ParticleReal * val, <span class="keywordtype">int</span> M = AMREX_SPACEDIM)</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>{</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordtype">int</span> icomp = 0;</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    <span class="keywordtype">int</span> ncomp_per_array = M;</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    <span class="keywordtype">int</span> num_arrays = 1;</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    <a class="code hl_typedef" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> is_nodal = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a6e681cd76abecdaac22a90fec57f040e">amrex::IntVect::TheUnitVector</a>();</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a>(p, &amp;data_arr, loc_arr,</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>                                          val, &amp;is_nodal, icomp, ncomp_per_array, num_arrays);</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>}</div>
+</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="foldopen" id="foldopen00571" data-start="{" data-end="}">
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">  571</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a> (<span class="keyword">const</span> P&amp; p,</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>                                            <span class="keyword">const</span> Array4&lt;amrex::Real const&gt;* data_arr,</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>                                            <span class="keyword">const</span> <a class="code hl_struct" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>&amp;  loc_arr,</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>                                            amrex::ParticleReal * val,</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>                                            <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>* is_nodal,</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                                            <span class="keywordtype">int</span> start_comp, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">int</span> num_arrays)</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>{</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    <a class="code hl_function" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p, data_arr, loc_arr, val, is_nodal, start_comp, ncomp, num_arrays);</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot; General mapped interpolation is not supported in 1D\n&quot;</span>);</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        amrex::Real f = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> + c*y + d*<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>*y;</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>        val[comp-start_comp] = f1 + f;</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        <span class="keywordtype">int</span> k = p.idata(2);</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        <span class="comment">//</span></div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <span class="comment">// Ordering of particles (lo,lo,lo) (hi,lo,lo) (lo,hi,lo) (hi,hi,lo) (lo,lo,hi) (hi,lo,hi) (lo,hi,hi) (hi,hi,hi)</span></div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        <span class="comment">//    All locations are calculated as offsets from (lo,lo,lo), which is only need 7 values are needed</span></div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        <span class="comment">//</span></div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>        Array1D&lt;Real,0,7&gt; x_vals;</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>        Array1D&lt;Real,0,7&gt; y_vals;</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        Array1D&lt;Real,0,7&gt; z_vals;</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>        Array1D&lt;Real,1,7&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        amrex::Real x1, y1, z1, f1;</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span> </div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        x1        = loc_arr(i  ,j  ,k  ,0);</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        x_vals(1) = loc_arr(i+1,j  ,k  ,0) - x1;</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        x_vals(2) = loc_arr(i  ,j+1,k  ,0) - x1;</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        x_vals(3) = loc_arr(i+1,j+1,k  ,0) - x1;</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        x_vals(4) = loc_arr(i  ,j  ,k+1,0) - x1;</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        x_vals(5) = loc_arr(i+1,j  ,k+1,0) - x1;</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        x_vals(6) = loc_arr(i  ,j+1,k+1,0) - x1;</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        x_vals(7) = loc_arr(i+1,j+1,k+1,0) - x1;</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span> </div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        y1        = loc_arr(i  ,j  ,k  ,1);</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        y_vals(1) = loc_arr(i+1,j  ,k  ,1) - y1;</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        y_vals(2) = loc_arr(i  ,j+1,k  ,1) - y1;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>        y_vals(3) = loc_arr(i+1,j+1,k  ,1) - y1;</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>        y_vals(4) = loc_arr(i  ,j  ,k+1,1) - y1;</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        y_vals(5) = loc_arr(i+1,j  ,k+1,1) - y1;</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        y_vals(6) = loc_arr(i  ,j+1,k+1,1) - y1;</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>        y_vals(7) = loc_arr(i+1,j+1,k+1,1) - y1;</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        z1        = loc_arr(i  ,j  ,k  ,2);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        z_vals(1) = loc_arr(i+1,j  ,k  ,2) - z1;</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        z_vals(2) = loc_arr(i  ,j+1,k  ,2) - z1;</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        z_vals(3) = loc_arr(i+1,j+1,k  ,2) - z1;</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        z_vals(4) = loc_arr(i  ,j  ,k+1,2) - z1;</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        z_vals(5) = loc_arr(i+1,j  ,k+1,2) - z1;</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>        z_vals(6) = loc_arr(i  ,j+1,k+1,2) - z1;</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        z_vals(7) = loc_arr(i+1,j+1,k+1,2) - z1;</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(val != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(num_arrays == 1);</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; num_arrays; d++)</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    {</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="comment">// Assertion to ensure that only nodal data is supported</span></div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][0] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][1] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((is_nodal[d][2] == 1),<span class="stringliteral">&quot;For general mapped coordinates, interpolation is supported only for node-centered data&quot;</span>);</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    }</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    <span class="keywordtype">int</span> n_of_data = 0;</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordtype">int</span> i = p.idata(0);</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    <span class="keywordtype">int</span> j = p.idata(1);</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = start_comp; comp &lt; start_comp + ncomp; ++comp) {</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="preprocessor">#if (AMREX_SPACEDIM == 2)</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        <span class="comment">// Value of data at surrounding nodes</span></div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        amrex::Real f1 = (data_arr[n_of_data])(i  ,j  ,0,comp);</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        amrex::Real f2 = (data_arr[n_of_data])(i  ,j+1,0,comp) - f1;</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        amrex::Real f3 = (data_arr[n_of_data])(i+1,j  ,0,comp) - f1;</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        amrex::Real f4 = (data_arr[n_of_data])(i+1,j+1,0,comp) - f1;</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        <span class="comment">// Node locations</span></div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        amrex::Real x1 =  loc_arr(i  ,j  ,0,0);</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>        amrex::Real x2 =  loc_arr(i  ,j+1,0,0) - x1;</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        amrex::Real x3 =  loc_arr(i+1,j  ,0,0) - x1;</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        amrex::Real x4 =  loc_arr(i+1,j+1,0,0) - x1;</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>        amrex::Real y1 =  loc_arr(i  ,j  ,0,1);</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>        amrex::Real y2 =  loc_arr(i  ,j+1,0,1) - y1;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        amrex::Real y3 =  loc_arr(i+1,j  ,0,1) - y1;</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        amrex::Real y4 =  loc_arr(i+1,j+1,0,1) - y1;</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> </div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        <span class="comment">// Particle location</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        amrex::Real <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = p.pos(0) - x1;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        amrex::Real y = p.pos(1) - y1;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span> </div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        amrex::Real det = x2*x4*y3*(y2 - y4) - x3*x4*y2*(y3 - y4) - x2*x3*(y2 - y3)*y4;</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        amrex::Real <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = (  f4*(x2*y2*y3 - x3*y2*y3) + (f2*(x3 - x4)*y3)*y4 + f3*(-(x2*y2*y4) + x4*y2*y4) ) / det;</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>        amrex::Real c = ( -f2*x3*x4*y3 + f4*x2*x3*(-y2 + y3) + f3*x2*x4*(y2 - y4) + f2*x3*x4*y4          ) / det;</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        amrex::Real d = (  f2*x4*y3 + f4*(x3*y2 - x2*y3) - f2*x3*y4 + f3*(-(x4*y2) + x2*y4)              ) / det;</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span> </div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        f1   = (data_arr[n_of_data])(i  ,j  ,k  ,comp);</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(1) = (data_arr[n_of_data])(i+1,j  ,k  ,comp) - f1;</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(2) = (data_arr[n_of_data])(i  ,j+1,k  ,comp) - f1;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(3) = (data_arr[n_of_data])(i+1,j+1,k  ,comp) - f1;</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(4) = (data_arr[n_of_data])(i  ,j  ,k+1,comp) - f1;</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(5) = (data_arr[n_of_data])(i+1,j  ,k+1,comp) - f1;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(6) = (data_arr[n_of_data])(i  ,j+1,k+1,comp) - f1;</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(7) = (data_arr[n_of_data])(i+1,j+1,k+1,comp) - f1;</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>        Array2D&lt;Real,1,7,1,7&gt; a;</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        Array1D&lt;int,1,7&gt; ip;</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        <span class="keywordtype">int</span> neq = 7;</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++) {</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>            a(n,1) = x_vals(n);</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>            a(n,2) = y_vals(n);</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>            a(n,3) = z_vals(n);</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>            a(n,4) = x_vals(n)*y_vals(n);</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>            a(n,5) = x_vals(n)*z_vals(n);</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>            a(n,6) = z_vals(n)*y_vals(n);</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>            a(n,7) = x_vals(n)*y_vals(n)*z_vals(n);</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        }</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a>(a,ip,neq);</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>        <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a>(a,<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>,ip,neq);</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        amrex::Real f = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> + c*y + d*<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>*y;</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        val[comp-start_comp] = f1 + f;</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        <span class="keywordtype">int</span> k = p.idata(2);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        <span class="comment">// Ordering of particles (lo,lo,lo) (hi,lo,lo) (lo,hi,lo) (hi,hi,lo) (lo,lo,hi) (hi,lo,hi) (lo,hi,hi) (hi,hi,hi)</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>        <span class="comment">//    All locations are calculated as offsets from (lo,lo,lo), which is only need 7 values are needed</span></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>        Array1D&lt;Real,0,7&gt; x_vals;</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        Array1D&lt;Real,0,7&gt; y_vals;</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        Array1D&lt;Real,0,7&gt; z_vals;</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        Array1D&lt;Real,1,7&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        amrex::Real x1, y1, z1, f1;</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>        x1        = loc_arr(i  ,j  ,k  ,0);</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>        x_vals(1) = loc_arr(i+1,j  ,k  ,0) - x1;</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>        x_vals(2) = loc_arr(i  ,j+1,k  ,0) - x1;</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>        x_vals(3) = loc_arr(i+1,j+1,k  ,0) - x1;</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        x_vals(4) = loc_arr(i  ,j  ,k+1,0) - x1;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>        x_vals(5) = loc_arr(i+1,j  ,k+1,0) - x1;</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        x_vals(6) = loc_arr(i  ,j+1,k+1,0) - x1;</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>        x_vals(7) = loc_arr(i+1,j+1,k+1,0) - x1;</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>        amrex::Real px, py, pz;</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>        px = p.pos(0) - x1;</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>        py = p.pos(1) - y1;</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>        pz = p.pos(2) - z1;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span> </div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>        amrex::Real f = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(1)*px + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(2)*py + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(3)*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(4)*px*py + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(5)*px*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(6)*py*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(7)*px*py*pz;</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        val[comp-start_comp] = <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(f + f1);</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>        y1        = loc_arr(i  ,j  ,k  ,1);</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>        y_vals(1) = loc_arr(i+1,j  ,k  ,1) - y1;</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>        y_vals(2) = loc_arr(i  ,j+1,k  ,1) - y1;</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>        y_vals(3) = loc_arr(i+1,j+1,k  ,1) - y1;</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>        y_vals(4) = loc_arr(i  ,j  ,k+1,1) - y1;</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>        y_vals(5) = loc_arr(i+1,j  ,k+1,1) - y1;</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        y_vals(6) = loc_arr(i  ,j+1,k+1,1) - y1;</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>        y_vals(7) = loc_arr(i+1,j+1,k+1,1) - y1;</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    } <span class="comment">// comp</span></div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>}</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>        z1        = loc_arr(i  ,j  ,k  ,2);</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>        z_vals(1) = loc_arr(i+1,j  ,k  ,2) - z1;</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>        z_vals(2) = loc_arr(i  ,j+1,k  ,2) - z1;</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>        z_vals(3) = loc_arr(i+1,j+1,k  ,2) - z1;</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        z_vals(4) = loc_arr(i  ,j  ,k+1,2) - z1;</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        z_vals(5) = loc_arr(i+1,j  ,k+1,2) - z1;</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>        z_vals(6) = loc_arr(i  ,j+1,k+1,2) - z1;</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>        z_vals(7) = loc_arr(i+1,j+1,k+1,2) - z1;</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>        f1   = (data_arr[n_of_data])(i  ,j  ,k  ,comp);</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(1) = (data_arr[n_of_data])(i+1,j  ,k  ,comp) - f1;</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(2) = (data_arr[n_of_data])(i  ,j+1,k  ,comp) - f1;</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(3) = (data_arr[n_of_data])(i+1,j+1,k  ,comp) - f1;</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(4) = (data_arr[n_of_data])(i  ,j  ,k+1,comp) - f1;</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(5) = (data_arr[n_of_data])(i+1,j  ,k+1,comp) - f1;</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(6) = (data_arr[n_of_data])(i  ,j+1,k+1,comp) - f1;</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(7) = (data_arr[n_of_data])(i+1,j+1,k+1,comp) - f1;</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        Array2D&lt;Real,1,7,1,7&gt; a;</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>        Array1D&lt;int,1,7&gt; ip;</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        <span class="keywordtype">int</span> neq = 7;</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=1; n&lt;neq+1; n++) {</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>            a(n,1) = x_vals(n);</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>            a(n,2) = y_vals(n);</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>            a(n,3) = z_vals(n);</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            a(n,4) = x_vals(n)*y_vals(n);</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>            a(n,5) = x_vals(n)*z_vals(n);</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>            a(n,6) = z_vals(n)*y_vals(n);</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>            a(n,7) = x_vals(n)*y_vals(n)*z_vals(n);</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        }</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a>(a,ip,neq);</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <a class="code hl_function" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a>(a,<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>,ip,neq);</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> </div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        amrex::Real px, py, pz;</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        px = p.pos(0) - x1;</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        py = p.pos(1) - y1;</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        pz = p.pos(2) - z1;</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span> </div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        amrex::Real f = <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(1)*px + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(2)*py + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(3)*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(4)*px*py + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(5)*px*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(6)*py*pz + <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>(7)*px*py*pz;</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        val[comp-start_comp] = <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(f + f1);</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span> </div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    } <span class="comment">// comp</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>}</div>
 </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>}  <span class="comment">// namespace amrex</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="preprocessor">#endif  </span><span class="comment">// include guard</span></div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>}  <span class="comment">// namespace amrex</span></div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="preprocessor">#endif  </span><span class="comment">// include guard</span></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Box_8H_html"><div class="ttname"><a href="AMReX__Box_8H.html">AMReX_Box.H</a></div></div>
@@ -766,11 +811,11 @@ $(document).ready(function(){initNavTree('AMReX__TracerParticle__mod__K_8H_sourc
 <div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a143b08ea59c33c93218d26dd8e342a11"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a143b08ea59c33c93218d26dd8e342a11">linear_interpolate_to_particle_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void linear_interpolate_to_particle_z(const P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Array4&lt; amrex::Real const &gt; *data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;height_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from mesh data. This general form can ha...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:252</div></div>
 <div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a330fbbd269ed2705da8627df72097e82"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a330fbbd269ed2705da8627df72097e82">cic_interpolate_nd_mapped_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cic_interpolate_nd_mapped_z(const P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const amrex::Array4&lt; amrex::Real const &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;height_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from node-centered data....</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:204</div></div>
 <div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a5974ea36630cfdcfa45970b5ce35bd9e"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a5974ea36630cfdcfa45970b5ce35bd9e">mac_interpolate_mapped_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mac_interpolate_mapped_z(const P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real const &gt;, AMREX_SPACEDIM &gt; const &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;height_arr, amrex::ParticleReal *val)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from face-centered data on a terrain-fit...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:226</div></div>
-<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a6f1846c127bd7588ddf3eec24c078c7b"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">cic_interpolate_nd_mapped</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cic_interpolate_nd_mapped(const P &amp;p, const amrex::Array4&lt; amrex::Real const &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from node-centered data on a general map...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:506</div></div>
-<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a7a14fc30c9c8fbf0d7a1a19fda5a0268"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_decomp(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</div><div class="ttdoc">Helper functions for 3D interpolation from values on nodes/vertices of arbitrary hexahedra to particl...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:422</div></div>
-<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a807477f2ebe1226bd0f53ff7537dfc1b"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_solve(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; Real, 1, 7 &gt; &amp;b, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:464</div></div>
+<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a6f1846c127bd7588ddf3eec24c078c7b"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">cic_interpolate_nd_mapped</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cic_interpolate_nd_mapped(const P &amp;p, const amrex::Array4&lt; amrex::Real const &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from node-centered data on a general map...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:551</div></div>
+<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a7a14fc30c9c8fbf0d7a1a19fda5a0268"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_decomp(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</div><div class="ttdoc">Helper functions for 3D interpolation from values on nodes/vertices of arbitrary hexahedra to particl...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:467</div></div>
+<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_a807477f2ebe1226bd0f53ff7537dfc1b"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_solve(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; Real, 1, 7 &gt; &amp;b, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:509</div></div>
 <div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_aa91339a18a1b77f30234f7717f882399"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#aa91339a18a1b77f30234f7717f882399">cic_interpolate_cc_mapped_z</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cic_interpolate_cc_mapped_z(const P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const amrex::Array4&lt; amrex::Real const &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;height_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position from cell-centered data on a terrain-fit...</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:183</div></div>
-<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_ab7e58565a1c686ec9474f8a8d43af671"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void linear_interpolate_to_particle_mapped(const P &amp;p, const Array4&lt; amrex::Real const &gt; *data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position on a general mapped grid....</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:526</div></div>
+<div class="ttc" id="aAMReX__TracerParticle__mod__K_8H_html_ab7e58565a1c686ec9474f8a8d43af671"><div class="ttname"><a href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void linear_interpolate_to_particle_mapped(const P &amp;p, const Array4&lt; amrex::Real const &gt; *data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</div><div class="ttdoc">Linearly interpolates the mesh data to the particle position on a general mapped grid....</div><div class="ttdef"><b>Definition</b> AMReX_TracerParticle_mod_K.H:571</div></div>
 <div class="ttc" id="aAMReX__TracerParticles_8H_html"><div class="ttname"><a href="AMReX__TracerParticles_8H.html">AMReX_TracerParticles.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</a></div></div>
 <div class="ttc" id="aclassamrex_1_1IntVectND_html_a6e681cd76abecdaac22a90fec57f040e"><div class="ttname"><a href="classamrex_1_1IntVectND.html#a6e681cd76abecdaac22a90fec57f040e">amrex::IntVectND&lt; AMREX_SPACEDIM &gt;::TheUnitVector</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr IntVectND&lt; dim &gt; TheUnitVector() noexcept</div><div class="ttdoc">This static member function returns a reference to a constant IntVectND object, all of whose dim argu...</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:680</div></div>
