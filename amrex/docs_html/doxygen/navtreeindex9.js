@@ -30,9 +30,11 @@ var NAVTREEINDEX9 =
 "AMReX__GpuLaunchMacrosG_8nolint_8H_source.html":[4,0,0,2,137],
 "AMReX__GpuLaunch_8H.html":[4,0,0,2,129],
 "AMReX__GpuLaunch_8H.html#a006c22eb1e141a0784faa415c00a49c4":[4,0,0,2,129,13],
+"AMReX__GpuLaunch_8H.html#a04c5802123f70da48b28edc03aaa7a00":[4,0,0,2,129,22],
 "AMReX__GpuLaunch_8H.html#a12c011a8bc6459b1c2a8f691b2554972":[4,0,0,2,129,14],
 "AMReX__GpuLaunch_8H.html#a1843514c0676790a085cc89796793831":[4,0,0,2,129,6],
 "AMReX__GpuLaunch_8H.html#a28a5a940451f82dac8c84f09e5f89fea":[4,0,0,2,129,17],
+"AMReX__GpuLaunch_8H.html#a3aae358bff466d224feb83e88581f818":[4,0,0,2,129,20],
 "AMReX__GpuLaunch_8H.html#a450c15a9b3787ce7c979cded90f11574":[4,0,0,2,129,10],
 "AMReX__GpuLaunch_8H.html#a70f6a154a9518b2be561acca7d54c95b":[4,0,0,2,129,7],
 "AMReX__GpuLaunch_8H.html#a847a3d9567ae4e8ac078cad1ac555d20":[4,0,0,2,129,18],
@@ -44,6 +46,7 @@ var NAVTREEINDEX9 =
 "AMReX__GpuLaunch_8H.html#ad89172e7973936686d13f4926bfac5aa":[4,0,0,2,129,9],
 "AMReX__GpuLaunch_8H.html#ae2cf1d72cec1f6929ea0405c70ce2f45":[4,0,0,2,129,11],
 "AMReX__GpuLaunch_8H.html#aee5bba2a8675cba292c751114c91715d":[4,0,0,2,129,8],
+"AMReX__GpuLaunch_8H.html#af0cfb9300117e9ffda0bd23a9768aebd":[4,0,0,2,129,21],
 "AMReX__GpuLaunch_8H.html#af6334d58395d4bec0257d18060918ab0":[4,0,0,2,129,12],
 "AMReX__GpuLaunch_8H_source.html":[4,0,0,2,129],
 "AMReX__GpuLaunch_8nolint_8H.html":[4,0,0,2,130],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28a998513e1cc0eb24ca2aeee521b270571":[4,0,0,2,0,9,36,4],
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28a9a0487c5cd8d1732c8c1b399f66d498c":[4,0,0,2,0,9,36,23],
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28a9eabbc6b1a61bef1db16279b771f6ebc":[4,0,0,2,0,9,36,31],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aa381a61b4507e60fc34dbd770937674b":[4,0,0,2,0,9,36,32],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aa67ea243c59289ba8e2bd1bca92e4085":[4,0,0,2,0,9,36,11],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aae21ba0046dbd5e03413eff57c091563":[4,0,0,2,0,9,36,30],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28ab0ed4840180195b9a6ad04f38fbf587d":[4,0,0,2,0,9,36,9]
+"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aa381a61b4507e60fc34dbd770937674b":[4,0,0,2,0,9,36,32]
 };

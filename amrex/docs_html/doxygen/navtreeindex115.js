@@ -1,5 +1,11 @@
 var NAVTREEINDEX115 =
 {
+"structamrex_1_1BoxIndexerND.html#a5675e229ddf29d9c458cd5b0f49b9b44":[3,0,0,98,0],
+"structamrex_1_1BoxIndexerND.html#a6d064be1725438f3d730f6522f9ced83":[2,0,0,133,5],
+"structamrex_1_1BoxIndexerND.html#a6d064be1725438f3d730f6522f9ced83":[3,0,0,98,5],
+"structamrex_1_1BoxIndexerND.html#a7adc993888135dfc8e53f7d32b74562b":[2,0,0,133,1],
+"structamrex_1_1BoxIndexerND.html#a7adc993888135dfc8e53f7d32b74562b":[3,0,0,98,1],
+"structamrex_1_1BoxIndexerND.html#a95e13aac1eac4316e6e01d2ddd47ac3f":[2,0,0,133,3],
 "structamrex_1_1BoxIndexerND.html#a95e13aac1eac4316e6e01d2ddd47ac3f":[3,0,0,98,3],
 "structamrex_1_1BoxIndexerND.html#ad69bb2d630508a55b5a60e7756c3540f":[2,0,0,133,4],
 "structamrex_1_1BoxIndexerND.html#ad69bb2d630508a55b5a60e7756c3540f":[3,0,0,98,4],
@@ -243,11 +249,5 @@ var NAVTREEINDEX115 =
 "structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd":[2,0,0,165,1],
 "structamrex_1_1DataDeleter.html":[2,0,0,166],
 "structamrex_1_1DataDeleter.html":[3,0,0,131],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[2,0,0,166,0],
-"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[3,0,0,131,0],
-"structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03":[2,0,0,166,3],
-"structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03":[3,0,0,131,3],
-"structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[2,0,0,166,1],
-"structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[3,0,0,131,1],
-"structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f":[3,0,0,131,4]
+"structamrex_1_1DataDeleter.html#a0c074bdebdbc0b35ae381228e005ec55":[2,0,0,166,0]
 };

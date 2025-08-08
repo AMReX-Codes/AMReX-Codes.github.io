@@ -19,5 +19,8 @@ var AMReX__GpuLaunch_8H =
     [ "makeExecutionConfig", "AMReX__GpuLaunch_8H.html#ac21b6d1625e2f56c27d364434a5c49f4", null ],
     [ "makeNExecutionConfigs", "AMReX__GpuLaunch_8H.html#a28a5a940451f82dac8c84f09e5f89fea", null ],
     [ "makeNExecutionConfigs", "AMReX__GpuLaunch_8H.html#a847a3d9567ae4e8ac078cad1ac555d20", null ],
-    [ "numThreadsPerBlockParallelFor", "AMReX__GpuLaunch_8H.html#a99d3039071c1009b16e08b63b63013db", null ]
+    [ "numThreadsPerBlockParallelFor", "AMReX__GpuLaunch_8H.html#a99d3039071c1009b16e08b63b63013db", null ],
+    [ "ParallelForOMP", "AMReX__GpuLaunch_8H.html#a3aae358bff466d224feb83e88581f818", null ],
+    [ "ParallelForOMP", "AMReX__GpuLaunch_8H.html#af0cfb9300117e9ffda0bd23a9768aebd", null ],
+    [ "ParallelForOMP", "AMReX__GpuLaunch_8H.html#a04c5802123f70da48b28edc03aaa7a00", null ]
 ];

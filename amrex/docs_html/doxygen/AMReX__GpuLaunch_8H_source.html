@@ -383,13 +383,130 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__CTOParallelForImpl_8H.html">AMReX_CTOParallelForImpl.H</a>&gt;</span></div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a> {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#if defined(AMREX_USE_GPU) || !defined(AMREX_USE_OMP)</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> L, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;T&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen00249" data-start="{" data-end="}">
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">  249</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (T n, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>{</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">ParallelFor</a>(n, f);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>}</div>
+</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a3aae358bff466d224feb83e88581f818">  255</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (<a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>{</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">ParallelFor</a>(box, f);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> L, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;T&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af0cfb9300117e9ffda0bd23a9768aebd">  261</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (<a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box, T ncomp, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>{</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">ParallelFor</a>(box, ncomp, f);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="preprocessor">#else </span><span class="comment">/* !defined(AMREX_USE_GPU) &amp;&amp; defined(AMREX_USE_OMP) */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> L, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;T&gt;&gt; &gt;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><a class="code hl_define" href="AMReX__Extension_8H.html#a959c30675fdc4974adca486be8de3c6e">AMREX_ATTRIBUTE_FLATTEN_FOR</a></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (T n, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>{</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">for</span> (T i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        f(i);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>}</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><a class="code hl_define" href="AMReX__Extension_8H.html#a959c30675fdc4974adca486be8de3c6e">AMREX_ATTRIBUTE_FLATTEN_FOR</a></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (<a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; box, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>{</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        f(i,0,0);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            f(i,j,0);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                f(i,j,k);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>}</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> L, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;T&gt;&gt; &gt;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><a class="code hl_define" href="AMReX__Extension_8H.html#a959c30675fdc4974adca486be8de3c6e">AMREX_ATTRIBUTE_FLATTEN_FOR</a></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">ParallelForOMP</a> (<a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; box, T ncomp, L <span class="keyword">const</span>&amp; f) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>{</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            f(i,0,0,n);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                f(i,j,0,n);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="preprocessor">#pragma omp parallel for collapse(3)</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                    f(i,j,k,n);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            }</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        }</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    }</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>}</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>}</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Algorithm_8H_html"><div class="ttname"><a href="AMReX__Algorithm_8H.html">AMReX_Algorithm.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html"><div class="ttname"><a href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Box_8H_html"><div class="ttname"><a href="AMReX__Box_8H.html">AMReX_Box.H</a></div></div>
 <div class="ttc" id="aAMReX__CTOParallelForImpl_8H_html"><div class="ttname"><a href="AMReX__CTOParallelForImpl_8H.html">AMReX_CTOParallelForImpl.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
+<div class="ttc" id="aAMReX__Extension_8H_html_a8c414106ab987031039a0ad05bb2519b"><div class="ttname"><a href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div><div class="ttdeci">#define AMREX_PRAGMA_SIMD</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:80</div></div>
+<div class="ttc" id="aAMReX__Extension_8H_html_a959c30675fdc4974adca486be8de3c6e"><div class="ttname"><a href="AMReX__Extension_8H.html#a959c30675fdc4974adca486be8de3c6e">AMREX_ATTRIBUTE_FLATTEN_FOR</a></div><div class="ttdeci">#define AMREX_ATTRIBUTE_FLATTEN_FOR</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:151</div></div>
 <div class="ttc" id="aAMReX__GpuControl_8H_html"><div class="ttname"><a href="AMReX__GpuControl_8H.html">AMReX_GpuControl.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuDevice_8H_html"><div class="ttname"><a href="AMReX__GpuDevice_8H.html">AMReX_GpuDevice.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuError_8H_html"><div class="ttname"><a href="AMReX__GpuError_8H.html">AMReX_GpuError.H</a></div></div>
@@ -435,10 +552,14 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae2cf1d72cec1f6929ea0405c70ce2f45"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae2cf1d72cec1f6929ea0405c70ce2f45">amrex::Gpu::getThreadBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Box getThreadBox(const Box &amp;bx, Long offset) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.H:110</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a006c22eb1e141a0784faa415c00a49c4"><div class="ttname"><a href="namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4">amrex::launch_host</a></div><div class="ttdeci">void launch_host(L &amp;&amp;f0) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.H:70</div></div>
+<div class="ttc" id="anamespaceamrex_html_a04c5802123f70da48b28edc03aaa7a00"><div class="ttname"><a href="namespaceamrex.html#a04c5802123f70da48b28edc03aaa7a00">amrex::ParallelForOMP</a></div><div class="ttdeci">void ParallelForOMP(T n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.H:249</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1f15630874d45aeb722ca649e6c4c3a9"><div class="ttname"><a href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt; ParallelFor(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_CTOParallelForImpl.H:191</div></div>
 <div class="ttc" id="anamespaceamrex_html_a222089e49ba211b37cf7a4a8ae7eb186"><div class="ttname"><a href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">amrex::Box</a></div><div class="ttdeci">BoxND&lt; AMREX_SPACEDIM &gt; Box</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:27</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">amrex::CurlCurlStateType::r</a></div><div class="ttdeci">@ r</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">amrex::CurlCurlStateType::b</a></div><div class="ttdeci">@ b</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2d53232d499554c089b3032bde4554c2"><div class="ttname"><a href="namespaceamrex.html#a2d53232d499554c089b3032bde4554c2">amrex::surroundingNodes</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; surroundingNodes(const BoxND&lt; dim &gt; &amp;b, int dir) noexcept</div><div class="ttdoc">Returns a BoxND with NODE based coordinates in direction dir that encloses BoxND b....</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1399</div></div>
+<div class="ttc" id="anamespaceamrex_html_a6ce6b4176121c2c23327903a8139af0c"><div class="ttname"><a href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:319</div></div>
+<div class="ttc" id="anamespaceamrex_html_a71600c8a528e0f1863154e4cf0183cbc"><div class="ttname"><a href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:312</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8792201c856a367dda275e09047daa33"><div class="ttname"><a href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; AMREX_SPACEDIM &gt; IntVect</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">amrex::Direction::AMREX_D_DECL</a></div><div class="ttdeci">@ AMREX_D_DECL</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition</b> AMReX.H:135</div></div>

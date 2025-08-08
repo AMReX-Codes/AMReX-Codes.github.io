@@ -516,7 +516,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT, <span class="keyword">typename</span> TYPE,</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value &amp;&amp;</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt; &amp;&amp;</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt; &gt;</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>T <a class="code hl_function" href="namespaceamrex_1_1Scan.html#ad7ef336709704a3b8b05b00b9432059d">PrefixSum</a> (N n, FIN &amp;&amp; fin, FOUT &amp;&amp; fout, TYPE type, RetSum a_ret_sum = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
@@ -755,7 +755,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT, <span class="keyword">typename</span> TYPE,</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value &amp;&amp;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt; &amp;&amp;</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt; &gt;</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>T <a class="code hl_function" href="namespaceamrex_1_1Scan.html#ad7ef336709704a3b8b05b00b9432059d">PrefixSum</a> (N n, FIN <span class="keyword">const</span>&amp; fin, FOUT <span class="keyword">const</span>&amp; fout, TYPE, RetSum a_ret_sum = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
@@ -918,7 +918,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="preprocessor">#elif defined(AMREX_USE_CUDA) &amp;&amp; defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 11)</span></div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span> </div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT, <span class="keyword">typename</span> TYPE,</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value &amp;&amp;</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt; &amp;&amp;</div>
 <div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||</div>
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt; &gt;</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>T <a class="code hl_function" href="namespaceamrex_1_1Scan.html#ad7ef336709704a3b8b05b00b9432059d">PrefixSum</a> (N n, FIN <span class="keyword">const</span>&amp; fin, FOUT <span class="keyword">const</span>&amp; fout, TYPE, RetSum a_ret_sum = <a class="code hl_variable" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
@@ -1057,7 +1057,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT, <span class="keyword">typename</span> TYPE,</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value &amp;&amp;</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt; &amp;&amp;</div>
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt; &gt;</div>
 <div class="foldopen" id="foldopen00932" data-start="{" data-end="}">
@@ -1303,7 +1303,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span> </div>
 <div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span><span class="comment">// The return value is the total sum if a_ret_sum is true.</span></div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> T, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
 <div class="foldopen" id="foldopen01174" data-start="{" data-end="}">
 <div class="line"><a id="l01174" name="l01174"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Scan.html#a252adc550a6d7b6ff5e31b6be3b2f12f"> 1174</a></span>T <a class="code hl_function" href="namespaceamrex_1_1Scan.html#a252adc550a6d7b6ff5e31b6be3b2f12f">InclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, <a class="code hl_struct" href="structamrex_1_1Scan_1_1RetSum.html">RetSum</a> a_ret_sum = retSum)</div>
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>{</div>
@@ -1366,7 +1366,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 </div>
 <div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span> </div>
 <div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span><span class="comment">// The return value is the total sum if a_ret_sum is true.</span></div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> T, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
 <div class="foldopen" id="foldopen01235" data-start="{" data-end="}">
 <div class="line"><a id="l01235" name="l01235"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Scan.html#a375a3f04c8c0b11c577d168dbff3c9fd"> 1235</a></span>T <a class="code hl_function" href="namespaceamrex_1_1Scan.html#a375a3f04c8c0b11c577d168dbff3c9fd">ExclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, <a class="code hl_struct" href="structamrex_1_1Scan_1_1RetSum.html">RetSum</a> a_ret_sum = retSum)</div>
 <div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>{</div>
