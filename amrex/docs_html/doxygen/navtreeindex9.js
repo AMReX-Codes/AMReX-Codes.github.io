@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"AMReX__GpuLaunchMacrosC_8nolint_8H.html#adfbd3503e6d17682738b06831fad0e3e":[4,0,0,2,135,5],
+"AMReX__GpuLaunchMacrosC_8nolint_8H.html#ae57c0c24e324c7f036e03631ac52ccef":[4,0,0,2,135,9],
 "AMReX__GpuLaunchMacrosC_8nolint_8H.html#af44071ada5d6349748d7ee4bd8fcd8d9":[4,0,0,2,135,14],
 "AMReX__GpuLaunchMacrosC_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84":[4,0,0,2,135,13],
 "AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d":[4,0,0,2,135,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aa381a61b4507e60fc34dbd770937674b":[4,0,0,2,0,9,36,32],
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aa67ea243c59289ba8e2bd1bca92e4085":[4,0,0,2,0,9,36,11],
 "AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28aae21ba0046dbd5e03413eff57c091563":[4,0,0,2,0,9,36,30],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28ab0ed4840180195b9a6ad04f38fbf587d":[4,0,0,2,0,9,36,9],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28ab2fdbbd4215b2a68f9419600ea697348":[4,0,0,2,0,9,36,27],
-"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28abc2d01f49b641950408081fac0af47ad":[4,0,0,2,0,9,36,6]
+"AMReX__IParser__Exe_8H.html#a92ee563e823bf1f37c94d26531af0a28ab0ed4840180195b9a6ad04f38fbf587d":[4,0,0,2,0,9,36,9]
 };
