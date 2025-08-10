@@ -131,10 +131,14 @@ $(document).ready(function(){initNavTree('AMReX__Utility_8H.html',''); initResiz
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
+<code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;typeinfo&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div>
 <p><a href="AMReX__Utility_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -148,6 +152,8 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1detail" id="r_namespaceamrex_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html">amrex::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -239,10 +245,31 @@ Functions</h2></td></tr>
 <tr class="memitem:a72ebcf044c2dabd659e4ed5831cadc5e" id="r_a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a72ebcf044c2dabd659e4ed5831cadc5e">amrex::hash_vector</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;vec, uint64_t seed=0xDEADBEEFDEADBEEF) noexcept</td></tr>
 <tr class="separator:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a002a7544dd6307ca1e4e08afddb91f9d" id="r_a002a7544dd6307ca1e4e08afddb91f9d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a002a7544dd6307ca1e4e08afddb91f9d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a002a7544dd6307ca1e4e08afddb91f9d">amrex::ToString</a> (std::ostream &amp;os, const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> limit=100)</td></tr>
+<tr class="separator:a002a7544dd6307ca1e4e08afddb91f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961910865b4cb3e73209366007abf927" id="r_a961910865b4cb3e73209366007abf927"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a961910865b4cb3e73209366007abf927"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a961910865b4cb3e73209366007abf927">amrex::ToString</a> (const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> limit=100, std::ostringstream ss={})</td></tr>
+<tr class="separator:a961910865b4cb3e73209366007abf927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69f575b0cb23e6374f9ab68b4b5903cf" id="r_a69f575b0cb23e6374f9ab68b4b5903cf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Utility_8H.html#a69f575b0cb23e6374f9ab68b4b5903cf">amrex_malloc</a> (std::size_t size)</td></tr>
 <tr class="separator:a69f575b0cb23e6374f9ab68b4b5903cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2341d68b47f82cd117da58195ac02101" id="r_a2341d68b47f82cd117da58195ac02101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Utility_8H.html#a2341d68b47f82cd117da58195ac02101">amrex_free</a> (void *p)</td></tr>
 <tr class="separator:a2341d68b47f82cd117da58195ac02101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52a7c80af5bdb3acbe7530033d68f5c" id="r_ac52a7c80af5bdb3acbe7530033d68f5c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac52a7c80af5bdb3acbe7530033d68f5c"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype((std::declval&lt; T &gt;().<a class="el" href="namespaceamrex.html#abf1d4578d3f20a3f5b2d2d74c8c90af6">begin</a>(), std::declval&lt; T &gt;().<a class="el" href="namespaceamrex.html#a68910ee43a4d4544d54a2a6fe26454e2">end</a>(), true))&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac52a7c80af5bdb3acbe7530033d68f5c">amrex::detail::HasBeginEnd</a> ()</td></tr>
+<tr class="separator:ac52a7c80af5bdb3acbe7530033d68f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7c00c17d8f6f7a1cf248ac5c3a7006" id="r_a6d7c00c17d8f6f7a1cf248ac5c3a7006"><td class="memTemplParams" colspan="2">template&lt;class T , class... Args&gt; </td></tr>
+<tr class="memitem:a6d7c00c17d8f6f7a1cf248ac5c3a7006"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a6d7c00c17d8f6f7a1cf248ac5c3a7006">amrex::detail::HasBeginEnd</a> (Args...)</td></tr>
+<tr class="separator:a6d7c00c17d8f6f7a1cf248ac5c3a7006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce08b35d21afcf9bc5bd424932d62e1" id="r_a8ce08b35d21afcf9bc5bd424932d62e1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8ce08b35d21afcf9bc5bd424932d62e1"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype((std::tuple_size&lt; T &gt;::value, true))&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a8ce08b35d21afcf9bc5bd424932d62e1">amrex::detail::HasTupleSize</a> ()</td></tr>
+<tr class="separator:a8ce08b35d21afcf9bc5bd424932d62e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a3c98b4c5c5aed1b2fbc13a26109a2" id="r_a74a3c98b4c5c5aed1b2fbc13a26109a2"><td class="memTemplParams" colspan="2">template&lt;class T , class... Args&gt; </td></tr>
+<tr class="memitem:a74a3c98b4c5c5aed1b2fbc13a26109a2"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a74a3c98b4c5c5aed1b2fbc13a26109a2">amrex::detail::HasTupleSize</a> (Args...)</td></tr>
+<tr class="separator:a74a3c98b4c5c5aed1b2fbc13a26109a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cefaaa5d889b064cd258d0365763274" id="r_a2cefaaa5d889b064cd258d0365763274"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t... idx&gt; </td></tr>
+<tr class="memitem:a2cefaaa5d889b064cd258d0365763274"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2cefaaa5d889b064cd258d0365763274">amrex::detail::ToStringTupleImp</a> (std::index_sequence&lt; idx... &gt;, std::ostream &amp;os, const T &amp;t, const char *symbol_begin, const char *symbol_delim, const char *symbol_end, const char *symbol_str, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> limit)</td></tr>
+<tr class="separator:a2cefaaa5d889b064cd258d0365763274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
