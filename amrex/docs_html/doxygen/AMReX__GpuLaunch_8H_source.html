@@ -464,41 +464,40 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            f(i,0,0,n);</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                f(i,j,0,n);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            }</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        }</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="preprocessor">#pragma omp parallel for collapse(3)</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                    f(i,j,k,n);</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                }</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            }</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        }</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    }</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>}</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>}</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            f(i,0,0,n);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#pragma omp parallel for collapse(2)</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                f(i,j,0,n);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#pragma omp parallel for collapse(3)</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">for</span> (T n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                <a class="code hl_define" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                    f(i,j,k,n);</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                }</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        }</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    }</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>}</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>}</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Algorithm_8H_html"><div class="ttname"><a href="AMReX__Algorithm_8H.html">AMReX_Algorithm.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html"><div class="ttname"><a href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
