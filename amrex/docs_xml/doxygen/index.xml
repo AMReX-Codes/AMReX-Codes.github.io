@@ -9741,6 +9741,7 @@
     <member refid="classamrex_1_1ParticleContainer__impl_1a591fb654644bfe6f3b18e63547e1079f" kind="variable"><name>NStructInt</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a32623939f5453d39bcfc26fef34972a8" kind="variable"><name>NArrayReal</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a3063446dc305120704ec3f1670f301c1" kind="variable"><name>NArrayInt</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1adb1caf15575d7ae4f1e3a056e35c5558" kind="variable"><name>has_polymorphic_allocator</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a8fbe7bffd0c677974504ded6ef24a9f0" kind="friend"><name>ParIterBase_impl&lt; true, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a4c62beafa833201efa7c9e7ee259d785" kind="friend"><name>ParIterBase_impl&lt; false, ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a1b57811f2abf751ac0228b4c5c43442c" kind="variable"><name>ParticleRealDescriptor</name></member>
@@ -9909,6 +9910,7 @@
     <member refid="classamrex_1_1ParticleContainerBase_1a7faac754ff05cf1b841bfe49dad579ba" kind="variable"><name>m_gdb_object</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a2821fc52ed661ccd9e9d821b81476fff" kind="variable"><name>m_gdb</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1adb9b347bff9efa17831af4b1c5cb846a" kind="variable"><name>m_dummy_mf</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1ae968111a4e6a727889fa145dff69406e" kind="variable"><name>m_arena</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a18183e85d5ae22c27721996b3c5bfead" kind="variable"><name>redistribute_mask_ptr</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1ac6b4b306d8f0399657b3884f51ea569e" kind="variable"><name>redistribute_mask_nghost</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a0e1a0dcc5bf3f405f40ad020f18389bc" kind="variable"><name>neighbor_procs</name></member>
@@ -9956,6 +9958,8 @@
     <member refid="classamrex_1_1ParticleContainerBase_1adcf30e3dbe2798fa430837cb4b7454c8" kind="function"><name>BufferMap</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a2779b5a388da42483553b8802cf2371f" kind="function"><name>NeighborProcs</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a92aa9afcd8adbbb62d06b8c3c293912a" kind="function"><name>OnSameGrids</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a77dd3b3180d1946ee84111d2bff63136" kind="function"><name>arena</name></member>
+    <member refid="classamrex_1_1ParticleContainerBase_1a2f11cba25c96c199ed3d09db4af66668" kind="function"><name>SetArena</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a575c4433c9b8bfec8bd57d5a9bdf7191" kind="function"><name>CheckpointVersion</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a455c5a8b3e564ebdd8f3008995096057" kind="function"><name>PlotfileVersion</name></member>
     <member refid="classamrex_1_1ParticleContainerBase_1a777b3fdf529e65178ba4be9fd37b75f4" kind="function"><name>DataPrefix</name></member>
@@ -10099,6 +10103,7 @@
     <member refid="structamrex_1_1ParticleTile_1a27974d2d46e3698a69b1997e905072e8" kind="variable"><name>NAI</name></member>
     <member refid="structamrex_1_1ParticleTile_1af37f9208b1b9908daad6789415d20f81" kind="variable"><name>NStructReal</name></member>
     <member refid="structamrex_1_1ParticleTile_1a2e52440bc21e01affff077fff37edb44" kind="variable"><name>NStructInt</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a4e84b52c63a1a0e132c1b231a570cdf1" kind="variable"><name>has_polymorphic_allocator</name></member>
     <member refid="structamrex_1_1ParticleTile_1a434377380cf9f4dd45362080837b6ec4" kind="variable"><name>m_aos_tile</name></member>
     <member refid="structamrex_1_1ParticleTile_1acfdbf84efe0aae5266a28545a2e45480" kind="variable"><name>m_soa_tile</name></member>
     <member refid="structamrex_1_1ParticleTile_1ad4a6e09ba4f2ef496ba35c3dac4c19b4" kind="variable"><name>m_defined</name></member>
@@ -10116,7 +10121,7 @@
     <member refid="structamrex_1_1ParticleTile_1a28ae7d1aa4c1e8d5a479203a9099835c" kind="function"><name>ParticleTile</name></member>
     <member refid="structamrex_1_1ParticleTile_1a952bbcd35df0bd3a0f969f8c8132c850" kind="function"><name>operator=</name></member>
     <member refid="structamrex_1_1ParticleTile_1a207649c83f3dc2af085a3f5600c6cc72" kind="function"><name>operator=</name></member>
-    <member refid="structamrex_1_1ParticleTile_1a2c59bdc55920f1b88aa4a5ac1a877e58" kind="function"><name>define</name></member>
+    <member refid="structamrex_1_1ParticleTile_1acf5558fefbc76e04f45b4a34363067bc" kind="function"><name>define</name></member>
     <member refid="structamrex_1_1ParticleTile_1af0f0e616393a552d2bde49f930babbae" kind="function"><name>id</name></member>
     <member refid="structamrex_1_1ParticleTile_1a36f9ab05aec0c6ff6c10e60af0dc01d2" kind="function"><name>id</name></member>
     <member refid="structamrex_1_1ParticleTile_1acd6829f21f92c9aba7864a790b9200df" kind="function"><name>cpu</name></member>
@@ -16029,17 +16034,21 @@
     <member refid="namespaceamrex_1_1particle__detail_1a4fc575fa169519c925f33d6bb746d598" kind="function"><name>call_f</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1aece8b1e2716e84a5261e988b9e9b1ef2" kind="function"><name>clearEmptyEntries</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1a03a96fac7ce7e3cef2729a470a732f49" kind="function"><name>PSizeInFile</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1a6c71a333436b729f5d06b1bcd8a663f6" kind="function"><name>fillFlags</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1ad7db271b5c030516daca8b9a64dc3b34" kind="function"><name>fillFlags</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1ab3ff26d769238258d6af6770476264fd" kind="function"><name>countFlags</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1a5ea1180c6295aab7036c983fa1d926c3" kind="function"><name>countFlags</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1a61cd4d51070b0b2b1c15d23a00f4cced" kind="function"><name>countFlags</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1aa3eb1cfb5234af860fd90b9d99dfac43" kind="function"><name>countFlags</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a9ed0f13dc3c3eeed0fc5288046e0310a" kind="function"><name>fillFlagsGpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1aafdebd9172833760fd77cdc1dd3570bd" kind="function"><name>fillFlagsCpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1ae8f33cf3204c03598bb4b488a4d234fe" kind="function"><name>fillFlags</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a68aebe44362201fca5e23b79595dad28" kind="function"><name>countFlagsGpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1ae6ba1109394b99592492b9fc16f05645" kind="function"><name>countFlagsGpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a90069862ade9741d18db04fae386dc41" kind="function"><name>countFlagsCpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a9604892eff5050a987845d77bfbd4a38" kind="function"><name>countFlagsCpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a9fcb7cd281f4dc7cb1f6cb49e0827b8b" kind="function"><name>countFlags</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1afbe16ecb748782a7f49530c931d5bcd4" kind="function"><name>countFlags</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1a2d2a60d46d1fab347521156295a85f70" kind="function"><name>packParticleIDs</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1a729247ba45bdf7ae3857546d7fe586f3" kind="function"><name>rPackParticleData</name></member>
     <member refid="namespaceamrex_1_1particle__detail_1aef4fee177c4535946c219adc02a8b08e" kind="function"><name>iPackParticleData</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1a8d93e887eb1762cd7f310e333eb8c48d" kind="function"><name>packIOData</name></member>
-    <member refid="namespaceamrex_1_1particle__detail_1aedddad73b38ca49f734d56af39f83838" kind="function"><name>packIOData</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a9ebd2b4dc95c3f10e8d13f9178de4c9b" kind="function"><name>packIODataGpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1ac22985a9b3d708832f6686600480ea15" kind="function"><name>packIODataCpu</name></member>
+    <member refid="namespaceamrex_1_1particle__detail_1a4a6935cf13276f19d1db874c158caf22" kind="function"><name>packIOData</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1particle__impl" kind="namespace"><name>amrex::particle_impl</name>
     <member refid="namespaceamrex_1_1particle__impl_1a2d04600f075446491619393da78cb086" kind="function"><name>unpack_id</name></member>

@@ -18,11 +18,11 @@ var AMReX__GpuAllocators_8H =
     [ "amrex::IsArenaAllocator< T, Enable >", "structamrex_1_1IsArenaAllocator.html", null ],
     [ "amrex::IsArenaAllocator< T, std::enable_if_t< std::is_base_of_v< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T > > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01A3a0553dd1fe92c460e3e2edf71ec41f7.html", null ],
     [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
+    [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "amrex::RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "amrex::RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "amrex::RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "amrex::RunOnGpu< AsyncArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html", null ],
-    [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "DefaultAllocator", "AMReX__GpuAllocators_8H.html#a179fafc569924202b166896b608cd5c2", null ],
     [ "operator!=", "AMReX__GpuAllocators_8H.html#a8e766038223d0266729aaf683f0b45be", null ],
     [ "operator==", "AMReX__GpuAllocators_8H.html#aa92fe9cc159271081f5d93db53a531f6", null ]

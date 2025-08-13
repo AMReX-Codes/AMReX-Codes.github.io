@@ -156,6 +156,7 @@ var classamrex_1_1ParticleContainer__impl =
     [ "filePrefixPrePost", "classamrex_1_1ParticleContainer__impl.html#aa059f60f99bc3f5a3bcf24cdb6638920", null ],
     [ "h_redistribute_int_comp", "classamrex_1_1ParticleContainer__impl.html#a65100fe165b67994e823d372e4c5256e", null ],
     [ "h_redistribute_real_comp", "classamrex_1_1ParticleContainer__impl.html#aaa226a4b30b1045dfef949fb868e706b", null ],
+    [ "has_polymorphic_allocator", "classamrex_1_1ParticleContainer__impl.html#adb1caf15575d7ae4f1e3a056e35c5558", null ],
     [ "HdrFileNamePrePost", "classamrex_1_1ParticleContainer__impl.html#a1967a72736444134d0de172ad1358743", null ],
     [ "levelDirectoriesCreated", "classamrex_1_1ParticleContainer__impl.html#a2b9f02af8e7da88a8e55af2dadfbcce9", null ],
     [ "m_bins", "classamrex_1_1ParticleContainer__impl.html#a8117b70d723320a9c0c4dfc5d57fb224", null ],
