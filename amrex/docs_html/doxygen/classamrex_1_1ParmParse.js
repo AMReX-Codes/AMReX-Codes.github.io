@@ -75,6 +75,7 @@ var classamrex_1_1ParmParse =
     [ "getktharr", "classamrex_1_1ParmParse.html#a3a8a963df03fadd42bb22a0d3dcf4d86", null ],
     [ "getktharr", "classamrex_1_1ParmParse.html#a51fbaa30ce635b4022c14f8479adb59b", null ],
     [ "getline", "classamrex_1_1ParmParse.html#a957f429a7aa97a8951b85003cfe45883", null ],
+    [ "getPrefix", "classamrex_1_1ParmParse.html#aa6631c8bb7546e8418283f0f6d35c83d", null ],
     [ "gettable", "classamrex_1_1ParmParse.html#ae1189cb49a57bf0a7a2ec14af98ddeb2", null ],
     [ "getUnusedInputs", "classamrex_1_1ParmParse.html#aa4c1dbee984103cd1102514d70c954a3", null ],
     [ "getWithParser", "classamrex_1_1ParmParse.html#a65f0fdc57c6d3d630b040d096a17afee", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX121 =
 {
+"structamrex_1_1Gpu_1_1AtomicMax.html#a3652266a0f587ab6652566b40ce86a2f":[2,0,0,16,7,0],
+"structamrex_1_1Gpu_1_1AtomicMin.html":[3,0,0,6,6],
 "structamrex_1_1Gpu_1_1AtomicMin.html":[2,0,0,16,8],
 "structamrex_1_1Gpu_1_1AtomicMin.html#a57fa34f46bd220567f9aa55376e8dd01":[2,0,0,16,8,0],
 "structamrex_1_1Gpu_1_1AtomicMin.html#a57fa34f46bd220567f9aa55376e8dd01":[3,0,0,6,6,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX121 =
 "structamrex_1_1HasAtomicAdd_3_01long_01_4.html":[3,0,0,230],
 "structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html":[2,0,0,266],
 "structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html":[3,0,0,231],
-"structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html":[3,0,0,232],
-"structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html":[2,0,0,267],
-"structamrex_1_1HasMultiComp.html":[3,0,0,233]
+"structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html":[3,0,0,232]
 };
