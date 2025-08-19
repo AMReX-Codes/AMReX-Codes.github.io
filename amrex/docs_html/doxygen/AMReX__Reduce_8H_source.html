@@ -1251,233 +1251,253 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">true</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>            <a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = mfi.growntilebox(nghost);</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>            <span class="keyword">auto</span>&amp; rr = reduce_data.reference(OpenMP::get_thread_num());</div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>            <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(b);</div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(b);</div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>                Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(li,i,j,k));</div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>            }}}</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>        }</div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>    }</div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span> </div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>    std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &amp;&amp; IsCallable&lt;F, int, int, int, int, int&gt;::value&gt;</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>    eval (MF <span class="keyword">const</span>&amp; mf, IntVect <span class="keyword">const</span>&amp; nghost, <span class="keywordtype">int</span> ncomp, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>    {</div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span><span class="preprocessor">#pragma omp parallel</span></div>
-<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">true</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>            <a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = mfi.growntilebox(nghost);</div>
-<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>            <span class="keyword">auto</span>&amp; rr = reduce_data.reference(OpenMP::get_thread_num());</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>            <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(b);</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>            <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(b);</div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>                Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(li,i,j,k,n));</div>
-<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>            }}}}</div>
-<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>        }</div>
-<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>    }</div>
-<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span> </div>
-<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> D, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>    <span class="keywordtype">void</span> eval (Box <span class="keyword">const</span>&amp; box, D &amp; reduce_data, F&amp;&amp; f)</div>
-<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>    {</div>
-<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>        <span class="keyword">auto</span>&amp; rr = reduce_data.reference(OpenMP::get_thread_num());</div>
-<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>        call_f&lt;D&gt;(box, rr, std::forward&lt;F&gt;(f));</div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>    }</div>
-<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span> </div>
-<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
-<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>    <span class="keywordtype">void</span> eval (Box <span class="keyword">const</span>&amp; box, N ncomp, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>    {</div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
-<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>        <span class="keyword">auto</span>&amp; rr = reduce_data.reference(OpenMP::get_thread_num());</div>
-<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>        <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
-<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>        <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
-<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>        <span class="keywordflow">for</span> (N n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(i,j,k,n));</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        }}}}</div>
-<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>    }</div>
-<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span> </div>
-<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
-<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>    <span class="keywordtype">void</span> eval (N n, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
-<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>    {</div>
-<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
-<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>        <span class="keyword">auto</span>&amp; rr = reduce_data.reference(OpenMP::get_thread_num());</div>
-<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>        <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(i));</div>
-<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>        }</div>
-<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>    }</div>
-<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span> </div>
-<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> D&gt;</div>
-<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>    <span class="keyword">typename</span> D::Type value (D &amp; reduce_data)</div>
-<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>    {</div>
-<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>        <span class="keyword">auto</span>&amp; rrv = reduce_data.reference();</div>
-<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>        <span class="keywordflow">if</span> (! m_result_is_ready) {</div>
-<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>            <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
-<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>            <span class="keywordflow">if</span> (rrv.size() &gt; 1) {</div>
-<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1, N = rrv.size(); i &lt; N; ++i) {</div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>                    Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rrv[0], rrv[i]);</div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>                }</div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>            }</div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>            m_result_is_ready = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>        }</div>
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>        <span class="keywordflow">return</span> rrv[0];</div>
-<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>    }</div>
-<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span> </div>
-<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>    <span class="keywordtype">bool</span> m_result_is_ready = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span> </div>
-<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>    <span class="keywordtype">void</span> resetResultReadiness () { m_result_is_ready = <span class="keyword">false</span>; }</div>
-<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>};</div>
-<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span> </div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span><span class="keyword">namespace </span><a class="code hl_function" href="namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6">Reduce</a> {</div>
-<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span> </div>
-<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
-<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>T <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = 0)</div>
-<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>{</div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>    T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = init_val;</div>
-<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span><span class="preprocessor">#pragma omp parallel for reduction(+:r)</span></div>
-<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> += f(i);</div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>    }</div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
-<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>}</div>
-<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span> </div>
-<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>T <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a> (N n, T <span class="keyword">const</span>* v, T init_val = 0)</div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>{</div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a>(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>}</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>        {</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>            ReduceTuple rr;</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>            Reduce::detail::for_each_init&lt;0, ReduceTuple, Ps...&gt;(rr);</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>            <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">true</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>                <a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = mfi.growntilebox(nghost);</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>                <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(b);</div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>                <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(b);</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>                    Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(li,i,j,k));</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>                }}}</div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>            }</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(</div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>                reduce_data.reference(OpenMP::get_thread_num()), rr);</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>        }</div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>    }</div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span> </div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>    std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &amp;&amp; IsCallable&lt;F, int, int, int, int, int&gt;::value&gt;</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>    eval (MF <span class="keyword">const</span>&amp; mf, IntVect <span class="keyword">const</span>&amp; nghost, <span class="keywordtype">int</span> ncomp, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>    {</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>        {</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>            ReduceTuple rr;</div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>            Reduce::detail::for_each_init&lt;0, ReduceTuple, Ps...&gt;(rr);</div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>            <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">true</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>                <a class="code hl_typedef" href="namespaceamrex.html#a222089e49ba211b37cf7a4a8ae7eb186">Box</a> <span class="keyword">const</span>&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = mfi.growntilebox(nghost);</div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>                <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(b);</div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>                <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(b);</div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>                    Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(li,i,j,k,n));</div>
+<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>                }}}}</div>
+<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>            }</div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(</div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>                reduce_data.reference(OpenMP::get_thread_num()), rr);</div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>        }</div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>    }</div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span> </div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> D, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>    <span class="keywordtype">void</span> eval (Box <span class="keyword">const</span>&amp; box, D &amp; reduce_data, F&amp;&amp; f)</div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>    {</div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>        ReduceTuple rr;</div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>        Reduce::detail::for_each_init&lt;0, ReduceTuple, Ps...&gt;(rr);</div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>        call_f&lt;D&gt;(box, rr, std::forward&lt;F&gt;(f));</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>        Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>             reduce_data.reference(OpenMP::get_thread_num()), rr);</div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>    }</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span> </div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>    <span class="keywordtype">void</span> eval (Box <span class="keyword">const</span>&amp; box, N ncomp, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>    {</div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>        ReduceTuple rr;</div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>        Reduce::detail::for_each_init&lt;0, ReduceTuple, Ps...&gt;(rr);</div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span>        <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>        <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>        <span class="keywordflow">for</span> (N n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(i,j,k,n));</div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>        }}}}</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>        Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(</div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>             reduce_data.reference(OpenMP::get_thread_num()), rr);</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>    }</div>
+<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span> </div>
+<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>    <span class="keywordtype">void</span> eval (N n, D &amp; reduce_data, F <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>    {</div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>        <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>        ReduceTuple rr;</div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>        Reduce::detail::for_each_init&lt;0, ReduceTuple, Ps...&gt;(rr);</div>
+<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>        <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>            Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rr, f(i));</div>
+<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>        }</div>
+<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>        Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>             reduce_data.reference(OpenMP::get_thread_num()), rr);</div>
+<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>    }</div>
+<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span> </div>
+<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> D&gt;</div>
+<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>    <span class="keyword">typename</span> D::Type value (D &amp; reduce_data)</div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>    {</div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>        <span class="keyword">auto</span>&amp; rrv = reduce_data.reference();</div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>        <span class="keywordflow">if</span> (! m_result_is_ready) {</div>
+<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>            <span class="keyword">using </span>ReduceTuple = <span class="keyword">typename</span> D::Type;</div>
+<div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>            <span class="keywordflow">if</span> (rrv.size() &gt; 1) {</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1, N = rrv.size(); i &lt; N; ++i) {</div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>                    Reduce::detail::for_each_local&lt;0, ReduceTuple, Ps...&gt;(rrv[0], rrv[i]);</div>
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>                }</div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>            }</div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>            m_result_is_ready = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>        }</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>        <span class="keywordflow">return</span> rrv[0];</div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>    }</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span> </div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>    <span class="keywordtype">bool</span> m_result_is_ready = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span> </div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>    <span class="keywordtype">void</span> resetResultReadiness () { m_result_is_ready = <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>};</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span> </div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span><span class="keyword">namespace </span><a class="code hl_function" href="namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6">Reduce</a> {</div>
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span> </div>
 <div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = std::numeric_limits&lt;T&gt;::max())</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>T <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = 0)</div>
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>{</div>
 <div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>    T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = init_val;</div>
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span><span class="preprocessor">#pragma omp parallel for reduction(min:r)</span></div>
+<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span><span class="preprocessor">#pragma omp parallel for reduction(+:r)</span></div>
 <div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = std::min(r,f(i));</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> += f(i);</div>
 <div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    }</div>
 <div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>}</div>
 <div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span> </div>
 <div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::max())</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>T <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a> (N n, T <span class="keyword">const</span>* v, T init_val = 0)</div>
 <div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>{</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    <span class="keywordflow">return</span> Reduce::Min(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">Sum</a>(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
 <div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>}</div>
 <div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span> </div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">Max</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = std::numeric_limits&lt;T&gt;::max())</div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>{</div>
 <div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = init_val;</div>
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span><span class="preprocessor">#pragma omp parallel for reduction(max:r)</span></div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span><span class="preprocessor">#pragma omp parallel for reduction(min:r)</span></div>
 <div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = std::max(r,f(i));</div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = std::min(r,f(i));</div>
 <div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>    }</div>
 <div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>}</div>
 <div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span> </div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">Max</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::max())</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>{</div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    <span class="keywordflow">return</span> Reduce::Max(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    <span class="keywordflow">return</span> Reduce::Min(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>}</div>
 <div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span> </div>
 <div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
 <div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>std::pair&lt;T,T&gt; <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, F <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">Max</a> (N n, F <span class="keyword">const</span>&amp; f, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
 <div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>{</div>
-<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>    T r_min = std::numeric_limits&lt;T&gt;::max();</div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>    T r_max = std::numeric_limits&lt;T&gt;::lowest();</div>
-<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="preprocessor">#pragma omp parallel for reduction(min:r_min) reduction(max:r_max)</span></div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>        T tmp = f(i);</div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>        r_min = std::min(r_min,tmp);</div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>        r_max = std::max(r_max,tmp);</div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>    }</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    <span class="keywordflow">return</span> std::make_pair(r_min,r_max);</div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>}</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span> </div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>std::pair&lt;T,T&gt; <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#adae163b6d167d018ba6ec7cf821b97a8">MinMax</a> (N n, T <span class="keyword">const</span>* v)</div>
-<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>{</div>
-<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>    <span class="keywordflow">return</span> Reduce::MinMax&lt;T&gt;(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; });</div>
-<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>}</div>
-<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span> </div>
-<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> P, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#af362eac7caa17fd8a2f7ee3831236367">AnyOf</a> (N n, T <span class="keyword">const</span>* v, P&amp;&amp; pred)</div>
-<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>{</div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>    <span class="keywordflow">return</span> std::any_of(v, v+n, std::forward&lt;P&gt;(pred));</div>
-<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>}</div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span> </div>
-<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
-<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#af362eac7caa17fd8a2f7ee3831236367">AnyOf</a> (Box <span class="keyword">const</span>&amp; box, P <span class="keyword">const</span>&amp; pred)</div>
-<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>{</div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
-<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>        <span class="keywordflow">if</span> (pred(i,j,k)) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>    }}}</div>
-<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>}</div>
-<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span> </div>
-<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>}</div>
-<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span> </div>
-<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span> </div>
-<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts, <span class="keyword">typename</span>... Ps&gt;</div>
-<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
-<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span><span class="keyword">constexpr</span> GpuTuple&lt;Ts...&gt;</div>
-<div class="foldopen" id="foldopen01269" data-start="{" data-end="}">
-<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22"> 1269</a></span><a class="code hl_function" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">IdentityTuple</a> (<a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>, <a class="code hl_class" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;Ps...&gt;</a>) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>{</div>
-<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>    <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt;Ts...&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>{};</div>
-<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>    Reduce::detail::for_each_init&lt;0, <span class="keyword">decltype</span>(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>), Ps...&gt;(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>);</div>
-<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
-<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>}</div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>    T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = init_val;</div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span><span class="preprocessor">#pragma omp parallel for reduction(max:r)</span></div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = std::max(r,f(i));</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>    }</div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>}</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span> </div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>T <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">Max</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>{</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    <span class="keywordflow">return</span> Reduce::Max(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>}</div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span> </div>
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,</div>
+<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>std::pair&lt;T,T&gt; <a class="code hl_function" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">Min</a> (N n, F <span class="keyword">const</span>&amp; f)</div>
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>{</div>
+<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>    T r_min = std::numeric_limits&lt;T&gt;::max();</div>
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>    T r_max = std::numeric_limits&lt;T&gt;::lowest();</div>
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span><span class="preprocessor">#pragma omp parallel for reduction(min:r_min) reduction(max:r_max)</span></div>
+<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>    <span class="keywordflow">for</span> (N i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>        T tmp = f(i);</div>
+<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>        r_min = std::min(r_min,tmp);</div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>        r_max = std::max(r_max,tmp);</div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>    }</div>
+<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>    <span class="keywordflow">return</span> std::make_pair(r_min,r_max);</div>
+<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>}</div>
+<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span> </div>
+<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>std::pair&lt;T,T&gt; <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#adae163b6d167d018ba6ec7cf821b97a8">MinMax</a> (N n, T <span class="keyword">const</span>* v)</div>
+<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>{</div>
+<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>    <span class="keywordflow">return</span> Reduce::MinMax&lt;T&gt;(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; });</div>
+<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>}</div>
+<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span> </div>
+<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> P, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#af362eac7caa17fd8a2f7ee3831236367">AnyOf</a> (N n, T <span class="keyword">const</span>* v, P&amp;&amp; pred)</div>
+<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>{</div>
+<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>    <span class="keywordflow">return</span> std::any_of(v, v+n, std::forward&lt;P&gt;(pred));</div>
+<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>}</div>
+<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span> </div>
+<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
+<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1Reduce.html#af362eac7caa17fd8a2f7ee3831236367">AnyOf</a> (Box <span class="keyword">const</span>&amp; box, P <span class="keyword">const</span>&amp; pred)</div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span>{</div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code hl_function" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span>    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code hl_function" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
+<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>        <span class="keywordflow">if</span> (pred(i,j,k)) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>    }}}</div>
+<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>}</div>
+<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span> </div>
+<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span>}</div>
+<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span> </div>
+<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span> </div>
+<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts, <span class="keyword">typename</span>... Ps&gt;</div>
+<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span><span class="keyword">constexpr</span> GpuTuple&lt;Ts...&gt;</div>
+<div class="foldopen" id="foldopen01289" data-start="{" data-end="}">
+<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22"> 1289</a></span><a class="code hl_function" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">IdentityTuple</a> (<a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>, <a class="code hl_class" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;Ps...&gt;</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>{</div>
+<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>    <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt;Ts...&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>{};</div>
+<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>    Reduce::detail::for_each_init&lt;0, <span class="keyword">decltype</span>(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>), Ps...&gt;(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>);</div>
+<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>}</div>
 </div>
-<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span> </div>
-<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts, <span class="keyword">typename</span>... Ps&gt;</div>
-<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
-<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span><span class="keyword">constexpr</span> GpuTuple&lt;Ts...&gt;</div>
-<div class="foldopen" id="foldopen01283" data-start="{" data-end="}">
-<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a8be6542f2cc1e3ff3f282a394fba0eb4"> 1283</a></span><a class="code hl_function" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">IdentityTuple</a> (<a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;Ps...&gt;</a>) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>{</div>
-<div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>    <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt;Ts...&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>{};</div>
-<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>    Reduce::detail::for_each_init&lt;0, <span class="keyword">decltype</span>(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>), Ps...&gt;(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>);</div>
-<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
-<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>}</div>
+<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span> </div>
+<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts, <span class="keyword">typename</span>... Ps&gt;</div>
+<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span><a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span><span class="keyword">constexpr</span> GpuTuple&lt;Ts...&gt;</div>
+<div class="foldopen" id="foldopen01303" data-start="{" data-end="}">
+<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a8be6542f2cc1e3ff3f282a394fba0eb4"> 1303</a></span><a class="code hl_function" href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">IdentityTuple</a> (<a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple&lt;Ts...&gt;</a>, <a class="code hl_struct" href="structamrex_1_1TypeList.html">TypeList&lt;Ps...&gt;</a>) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>{</div>
+<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>    <a class="code hl_class" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt;Ts...&gt; <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>{};</div>
+<div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>    Reduce::detail::for_each_init&lt;0, <span class="keyword">decltype</span>(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>), Ps...&gt;(<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>);</div>
+<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span>}</div>
 </div>
-<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span> </div>
-<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>}</div>
-<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span> </div>
-<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span> </div>
+<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>}</div>
+<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span> </div>
+<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
@@ -1556,7 +1576,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737">amrex::RunOn::Device</a></div><div class="ttdeci">@ Device</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3e08759747455ff96c8f68e8673c2b19"><div class="ttname"><a href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">amrex::gpuStream_t</a></div><div class="ttdeci">cudaStream_t gpuStream_t</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:83</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4963180ac09020e51a2077bf2ebdb323"><div class="ttname"><a href="namespaceamrex.html#a4963180ac09020e51a2077bf2ebdb323">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
-<div class="ttc" id="anamespaceamrex_html_a6b76de90fe8baeba6cd025392ff19b22"><div class="ttname"><a href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">amrex::IdentityTuple</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr GpuTuple&lt; Ts... &gt; IdentityTuple(GpuTuple&lt; Ts... &gt;, ReduceOps&lt; Ps... &gt;) noexcept</div><div class="ttdoc">Return a GpuTuple containing the identity element for each operation in ReduceOps....</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:1269</div></div>
+<div class="ttc" id="anamespaceamrex_html_a6b76de90fe8baeba6cd025392ff19b22"><div class="ttname"><a href="namespaceamrex.html#a6b76de90fe8baeba6cd025392ff19b22">amrex::IdentityTuple</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr GpuTuple&lt; Ts... &gt; IdentityTuple(GpuTuple&lt; Ts... &gt;, ReduceOps&lt; Ps... &gt;) noexcept</div><div class="ttdoc">Return a GpuTuple containing the identity element for each operation in ReduceOps....</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:1289</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6ce6b4176121c2c23327903a8139af0c"><div class="ttname"><a href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:319</div></div>
 <div class="ttc" id="anamespaceamrex_html_a71600c8a528e0f1863154e4cf0183cbc"><div class="ttname"><a href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:312</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8d0e27653258741ca8eaa305c105932e"><div class="ttname"><a href="namespaceamrex.html#a8d0e27653258741ca8eaa305c105932e">amrex::grow</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE BoxND&lt; dim &gt; grow(const BoxND&lt; dim &gt; &amp;b, int i) noexcept</div><div class="ttdoc">Grow BoxND in all directions by given amount.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1211</div></div>
