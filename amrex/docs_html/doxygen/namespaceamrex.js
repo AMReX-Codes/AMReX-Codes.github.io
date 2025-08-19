@@ -977,6 +977,7 @@ var namespaceamrex =
     [ "TracerParticleContainer", "classamrex_1_1TracerParticleContainer.html", "classamrex_1_1TracerParticleContainer" ],
     [ "TransformerGhost", "structamrex_1_1TransformerGhost.html", "structamrex_1_1TransformerGhost" ],
     [ "TransformerVirt", "structamrex_1_1TransformerVirt.html", "structamrex_1_1TransformerVirt" ],
+    [ "TypeArray", "structamrex_1_1TypeArray.html", "structamrex_1_1TypeArray" ],
     [ "TypeList", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
     [ "ValLocPair", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
     [ "Vector", "classamrex_1_1Vector.html", "classamrex_1_1Vector" ],
@@ -1067,7 +1068,7 @@ var namespaceamrex =
     [ "TracerParIter", "namespaceamrex.html#a2172ed493dfadbd34d5cdb72995f96af", null ],
     [ "Tuple", "namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8", null ],
     [ "TypeAt", "namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f", null ],
-    [ "TypeMultiplier", "namespaceamrex.html#ad714b2c2b55d9cd35a788e0d861f5979", null ],
+    [ "TypeMultiplier", "namespaceamrex.html#ad9a6d3e0ecd435bde5a280d288b185dc", null ],
     [ "UserFillBox", "namespaceamrex.html#a88781af4a5d3f8271de2b3129cc49393", null ],
     [ "YAFluxRegister", "namespaceamrex.html#a9418cfdd8457daebb1c971d4e38ceb17", null ],
     [ "BottomSolver", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4", [

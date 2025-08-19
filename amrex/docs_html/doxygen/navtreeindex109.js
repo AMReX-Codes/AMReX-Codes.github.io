@@ -1,5 +1,7 @@
 var NAVTREEINDEX109 =
 {
+"namespaceamrex_1_1loop__detail.html#a9c95f90383eea891f7ae725de969de76":[2,0,0,22,1],
+"namespaceamrex_1_1loop__detail.html#aa6ce039c09354f520de021d761c40800":[2,0,0,22,12],
 "namespaceamrex_1_1loop__detail.html#ac48e6fab4200845ae1464ab52ec831f9":[2,0,0,22,3],
 "namespaceamrex_1_1loop__detail.html#acc9fdee6f642f94d35694e57ac4046d5":[2,0,0,22,6],
 "namespaceamrex_1_1loop__detail.html#ae922667b0d850b2bb5603749f8864438":[2,0,0,22,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX109 =
 "namespaceamrex__eb__flux__reg__nd__module.html#a0688dcea64b51e2f058407b826f95045":[2,0,4,5],
 "namespaceamrex__eb__flux__reg__nd__module.html#a248ca933a7707ac5dfe93b484be5c2cc":[2,0,4,3],
 "namespaceamrex__eb__flux__reg__nd__module.html#a533c926df2a1660325d87978063391ad":[2,0,4,2],
-"namespaceamrex__eb__flux__reg__nd__module.html#aa221a3ae37a8e49741bf7503ddfbf026":[2,0,4,4],
-"namespaceamrex__eb__flux__reg__nd__module.html#afc3d4f889be1ef91df14eae4e538f6f5":[2,0,4,0],
-"namespaceamrex__ebcellflag__module.html":[2,0,5]
+"namespaceamrex__eb__flux__reg__nd__module.html#aa221a3ae37a8e49741bf7503ddfbf026":[2,0,4,4]
 };

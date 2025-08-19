@@ -46,9 +46,10 @@ var searchData=
   ['tuple_5fsize_3c_20amrex_3a_3aintvectnd_3c_20dim_20_3e_20_3e_43',['tuple_size&lt; amrex::IntVectND&lt; dim &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html',1,'std']]],
   ['tuple_5fsize_3c_20amrex_3a_3arealvectnd_3c_20dim_20_3e_20_3e_44',['tuple_size&lt; amrex::RealVectND&lt; dim &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html',1,'std']]],
   ['tuple_5fsize_3c_20amrex_3a_3asmallmatrix_3c_20t_2c_20nrows_2c_20ncols_2c_20order_2c_20startindex_20_3e_20_3e_45',['tuple_size&lt; amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;',['../structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html',1,'std']]],
-  ['typelist_46',['TypeList',['../structamrex_1_1TypeList.html',1,'amrex']]],
-  ['typelistget_47',['TypeListGet',['../structamrex_1_1detail_1_1TypeListGet.html',1,'amrex::detail']]],
-  ['typelistget_3c_200_2c_20typelist_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e_48',['TypeListGet&lt; 0, TypeList&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex::detail']]],
-  ['typelistget_3c_20i_2c_20typelist_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e_49',['TypeListGet&lt; I, TypeList&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex::detail']]],
-  ['typelistget_3c_20i_2d1_2c_20typelist_3c_20tail_2e_2e_2e_20_3e_20_3e_50',['TypeListGet&lt; I-1, TypeList&lt; Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet.html',1,'amrex::detail']]]
+  ['typearray_46',['TypeArray',['../structamrex_1_1TypeArray.html',1,'amrex']]],
+  ['typelist_47',['TypeList',['../structamrex_1_1TypeList.html',1,'amrex']]],
+  ['typelistget_48',['TypeListGet',['../structamrex_1_1detail_1_1TypeListGet.html',1,'amrex::detail']]],
+  ['typelistget_3c_200_2c_20typelist_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e_49',['TypeListGet&lt; 0, TypeList&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex::detail']]],
+  ['typelistget_3c_20i_2c_20typelist_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e_50',['TypeListGet&lt; I, TypeList&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex::detail']]],
+  ['typelistget_3c_20i_2d1_2c_20typelist_3c_20tail_2e_2e_2e_20_3e_20_3e_51',['TypeListGet&lt; I-1, TypeList&lt; Tail... &gt; &gt;',['../structamrex_1_1detail_1_1TypeListGet.html',1,'amrex::detail']]]
 ];

@@ -788,6 +788,7 @@ var annotated_dup =
       [ "TracerParticleContainer", "classamrex_1_1TracerParticleContainer.html", "classamrex_1_1TracerParticleContainer" ],
       [ "TransformerGhost", "structamrex_1_1TransformerGhost.html", "structamrex_1_1TransformerGhost" ],
       [ "TransformerVirt", "structamrex_1_1TransformerVirt.html", "structamrex_1_1TransformerVirt" ],
+      [ "TypeArray", "structamrex_1_1TypeArray.html", "structamrex_1_1TypeArray" ],
       [ "TypeList", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
       [ "ValLocPair", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
       [ "Vector", "classamrex_1_1Vector.html", "classamrex_1_1Vector" ],

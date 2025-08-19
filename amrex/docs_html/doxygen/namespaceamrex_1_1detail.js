@@ -144,6 +144,7 @@ var namespaceamrex_1_1detail =
     [ "shrink_in_place", "namespaceamrex_1_1detail.html#a8d163044e732afdda53677c7dddd9c15", null ],
     [ "SingleTypeMultiplier", "namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089", null ],
     [ "SingleTypeMultiplier", "namespaceamrex_1_1detail.html#ab5675d735314e418d7eb80a17ef3f135", null ],
+    [ "SingleTypeMultiplier", "namespaceamrex_1_1detail.html#ad2a45b8966cebe365a3b497c9c9be44c", null ],
     [ "SingleTypeMultiplier_impl", "namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c", null ],
     [ "tagparfor_call_f", "namespaceamrex_1_1detail.html#a993d7b3ea476f2a40be00ab6a5199d1e", null ],
     [ "TApply", "namespaceamrex_1_1detail.html#ad5568d6d500edc6ee5938dca76c1caa8", null ],

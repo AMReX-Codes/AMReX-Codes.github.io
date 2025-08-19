@@ -1201,6 +1201,7 @@ var hierarchy =
     [ "std::is_base_of::type", null, [
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ]
     ] ],
+    [ "amrex::TypeArray< T, N >", "structamrex_1_1TypeArray.html", null ],
     [ "amrex::TypeList< Ts >", "structamrex_1_1TypeList.html", null ],
     [ "amrex::detail::TypeListGet< I, T >", "structamrex_1_1detail_1_1TypeListGet.html", null ],
     [ "amrex::detail::TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],

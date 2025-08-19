@@ -3,8 +3,9 @@ var AMReX__TypeList_8H =
     [ "amrex::TypeList< Ts >", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
     [ "amrex::detail::TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "amrex::detail::TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
+    [ "amrex::TypeArray< T, N >", "structamrex_1_1TypeArray.html", "structamrex_1_1TypeArray" ],
     [ "TypeAt", "AMReX__TypeList_8H.html#a11fcc5e72789252d6182a7d15233725f", null ],
-    [ "TypeMultiplier", "AMReX__TypeList_8H.html#ad714b2c2b55d9cd35a788e0d861f5979", null ],
+    [ "TypeMultiplier", "AMReX__TypeList_8H.html#ad9a6d3e0ecd435bde5a280d288b185dc", null ],
     [ "CartesianProduct", "AMReX__TypeList_8H.html#a9d736b217af3b87bef2bffd4dd55edff", null ],
     [ "for_each_impl", "AMReX__TypeList_8H.html#af378b35270a3e9fbab911a6fe0058eb5", null ],
     [ "for_each_until_impl", "AMReX__TypeList_8H.html#a8e84dd049acffc06333882e476f741ce", null ],
@@ -15,6 +16,7 @@ var AMReX__TypeList_8H =
     [ "single_product", "AMReX__TypeList_8H.html#aad1bedfbf5b00ed85060a201b5e19ffb", null ],
     [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#af01333ae8cd22a78600a759f8cc32089", null ],
     [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#ab5675d735314e418d7eb80a17ef3f135", null ],
+    [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#ad2a45b8966cebe365a3b497c9c9be44c", null ],
     [ "SingleTypeMultiplier_impl", "AMReX__TypeList_8H.html#ad867a3bb23fa15988044c68bf1266b7c", null ],
     [ "TApply", "AMReX__TypeList_8H.html#ad5568d6d500edc6ee5938dca76c1caa8", null ]
 ];
