@@ -1,5 +1,16 @@
 var NAVTREEINDEX116 =
 {
+"structamrex_1_1CurlCurlDirichletInfo.html":[2,0,0,162],
+"structamrex_1_1CurlCurlDirichletInfo.html":[3,0,0,127],
+"structamrex_1_1CurlCurlDirichletInfo.html#a43c18defca914c519e773fdf104c4956":[3,0,0,127,1],
+"structamrex_1_1CurlCurlDirichletInfo.html#a43c18defca914c519e773fdf104c4956":[2,0,0,162,1],
+"structamrex_1_1CurlCurlDirichletInfo.html#a462be2c962cc7ba2efdf8003b1192e61":[2,0,0,162,0],
+"structamrex_1_1CurlCurlDirichletInfo.html#a462be2c962cc7ba2efdf8003b1192e61":[3,0,0,127,0],
+"structamrex_1_1CurlCurlDirichletInfo.html#a734cfa013c0578c158c64cd8bb22691d":[3,0,0,127,4],
+"structamrex_1_1CurlCurlDirichletInfo.html#a734cfa013c0578c158c64cd8bb22691d":[2,0,0,162,4],
+"structamrex_1_1CurlCurlDirichletInfo.html#aa1322afdd0c679a263cb5637732121f5":[2,0,0,162,5],
+"structamrex_1_1CurlCurlDirichletInfo.html#aa1322afdd0c679a263cb5637732121f5":[3,0,0,127,5],
+"structamrex_1_1CurlCurlDirichletInfo.html#aa9beb0253ffa199754255b047cce7409":[2,0,0,162,3],
 "structamrex_1_1CurlCurlDirichletInfo.html#aa9beb0253ffa199754255b047cce7409":[3,0,0,127,3],
 "structamrex_1_1CurlCurlDirichletInfo.html#ab41d14427ee6aa987dec1a6777f089c9":[2,0,0,162,6],
 "structamrex_1_1CurlCurlDirichletInfo.html#ab41d14427ee6aa987dec1a6777f089c9":[3,0,0,127,6],
@@ -238,16 +249,5 @@ var NAVTREEINDEX116 =
 "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html":[2,0,0,8,27],
 "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html":[3,0,0,4,23],
 "structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01std_1_1enable__if__t_3_0b8f5d460277f1d91a5423c29613f5d25.html":[2,0,0,8,28],
-"structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01std_1_1enable__if__t_3_0b8f5d460277f1d91a5423c29613f5d25.html":[3,0,0,4,24],
-"structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUabf062b6fd2701f97c86146ed02bddaa9e.html":[2,0,0,8,29],
-"structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUabf062b6fd2701f97c86146ed02bddaa9e.html":[3,0,0,4,25],
-"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPf9c8a061c673452f35713630afd9be10.html":[2,0,0,8,30],
-"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPf9c8a061c673452f35713630afd9be10.html":[3,0,0,4,26],
-"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01std_1_1ena0c37219ffe6b39871c91221e9d798d75.html":[2,0,0,8,31],
-"structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01std_1_1ena0c37219ffe6b39871c91221e9d798d75.html":[3,0,0,4,27],
-"structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html":[2,0,0,8,32],
-"structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html":[3,0,0,4,28],
-"structamrex_1_1EB2_1_1IsGPUable_3_01RotationIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html":[3,0,0,4,29],
-"structamrex_1_1EB2_1_1IsGPUable_3_01RotationIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html":[2,0,0,8,33],
-"structamrex_1_1EB2_1_1IsGPUable_3_01ScaleIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html":[2,0,0,8,34]
+"structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01std_1_1enable__if__t_3_0b8f5d460277f1d91a5423c29613f5d25.html":[3,0,0,4,24]
 };

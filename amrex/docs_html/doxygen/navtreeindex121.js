@@ -1,5 +1,16 @@
 var NAVTREEINDEX121 =
 {
+"structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[3,0,0,6,2,0],
+"structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[2,0,0,16,4,0],
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[3,0,0,6,3],
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[2,0,0,16,5],
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[2,0,0,16,5,0],
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[3,0,0,6,3,0],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[2,0,0,16,6],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[3,0,0,6,4],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[3,0,0,6,4,0],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[2,0,0,16,6,0],
+"structamrex_1_1Gpu_1_1AtomicMax.html":[2,0,0,16,7],
 "structamrex_1_1Gpu_1_1AtomicMax.html":[3,0,0,6,5],
 "structamrex_1_1Gpu_1_1AtomicMax.html#a3652266a0f587ab6652566b40ce86a2f":[3,0,0,6,5,0],
 "structamrex_1_1Gpu_1_1AtomicMax.html#a3652266a0f587ab6652566b40ce86a2f":[2,0,0,16,7,0],
@@ -238,16 +249,5 @@ var NAVTREEINDEX121 =
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,44,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[2,0,0,16,46,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,6,44,0],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[2,0,0,16,46,0],
-"structamrex_1_1HasAtomicAdd.html":[3,0,0,226],
-"structamrex_1_1HasAtomicAdd.html":[2,0,0,261],
-"structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[2,0,0,262],
-"structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,227],
-"structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[2,0,0,263],
-"structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,228],
-"structamrex_1_1HasAtomicAdd_3_01int_01_4.html":[2,0,0,264],
-"structamrex_1_1HasAtomicAdd_3_01int_01_4.html":[3,0,0,229],
-"structamrex_1_1HasAtomicAdd_3_01long_01_4.html":[3,0,0,230],
-"structamrex_1_1HasAtomicAdd_3_01long_01_4.html":[2,0,0,265],
-"structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html":[3,0,0,231]
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[2,0,0,16,46,0]
 };

@@ -1,5 +1,16 @@
 var NAVTREEINDEX120 =
 {
+"structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec":[2,0,0,217,4],
+"structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec":[3,0,0,182,4],
+"structamrex_1_1FatPtr.html":[3,0,0,193],
+"structamrex_1_1FatPtr.html":[2,0,0,228],
+"structamrex_1_1FatPtr.html#a5e77914ee37d93d70599946c20415494":[2,0,0,228,0],
+"structamrex_1_1FatPtr.html#a5e77914ee37d93d70599946c20415494":[3,0,0,193,0],
+"structamrex_1_1FatPtr.html#a686115184123b7683f8ecfeda3cec126":[3,0,0,193,3],
+"structamrex_1_1FatPtr.html#a686115184123b7683f8ecfeda3cec126":[2,0,0,228,3],
+"structamrex_1_1FatPtr.html#acb61a285c530ab7badab8ba4c096eb4b":[3,0,0,193,2],
+"structamrex_1_1FatPtr.html#acb61a285c530ab7badab8ba4c096eb4b":[2,0,0,228,2],
+"structamrex_1_1FatPtr.html#add0c4c063317604e14f8e37a5111afcd":[3,0,0,193,1],
 "structamrex_1_1FatPtr.html#add0c4c063317604e14f8e37a5111afcd":[2,0,0,228,1],
 "structamrex_1_1FilccCell.html":[3,0,0,196],
 "structamrex_1_1FilccCell.html":[2,0,0,231],
@@ -238,16 +249,5 @@ var NAVTREEINDEX120 =
 "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,260],
 "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,225],
 "structamrex_1_1Gpu_1_1AtomicAdd.html":[3,0,0,6,2],
-"structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,16,4],
-"structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[3,0,0,6,2,0],
-"structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[2,0,0,16,4,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[3,0,0,6,3],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[2,0,0,16,5],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[2,0,0,16,5,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[3,0,0,6,3,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[2,0,0,16,6],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[3,0,0,6,4],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[3,0,0,6,4,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[2,0,0,16,6,0],
-"structamrex_1_1Gpu_1_1AtomicMax.html":[2,0,0,16,7]
+"structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,16,4]
 };
