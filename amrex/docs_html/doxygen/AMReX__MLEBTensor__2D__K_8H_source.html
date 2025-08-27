@@ -457,12 +457,12 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__2D__K_8H_source.htm
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                }</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                Real volinv = bscalar / kappa;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                Ax(i,j,0,0) += volinv * (dxi*(apx(i,j,0)*fxm_0-apx(i+1,j,0)*fxp_0)</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                        +dyi*(apy(i,j,0)*fym_0-apy(i,j+1,0)*fyp_0)</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                        -dxi*                               feb_0);</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                Ax(i,j,0,1) += volinv * (dxi*(apx(i,j,0)*fxm_1-apx(i+1,j,0)*fxp_1)</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                                        +dyi*(apy(i,j,0)*fym_1-apy(i,j+1,0)*fyp_1)</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                                        -dxi*                               feb_1);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                Ax(i,j,0,0) += volinv * (dxi*(apx(i+1,j,0)*fxp_0-apx(i,j,0)*fxm_0)</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                        +dyi*(apy(i,j+1,0)*fyp_0-apy(i,j,0)*fym_0)</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                        +dxi*                               feb_0);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                Ax(i,j,0,1) += volinv * (dxi*(apx(i+1,j,0)*fxp_1-apx(i,j,0)*fxm_1)</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                                        +dyi*(apy(i,j+1,0)*fyp_1-apy(i,j,0)*fym_1)</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                                        +dxi*                               feb_1);</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            }</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        }</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
