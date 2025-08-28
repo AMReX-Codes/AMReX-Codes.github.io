@@ -1,5 +1,7 @@
 var NAVTREEINDEX105 =
 {
+"namespaceamrex_1_1BinPolicy.html":[2,0,0,4],
+"namespaceamrex_1_1BinPolicy.html#a3e36e7c8384f469a1817ae7f2ddd069b":[2,0,0,4,5],
 "namespaceamrex_1_1BinPolicy.html#a6820b8950a17c3d037ffb8f94fed298b":[2,0,0,4,3],
 "namespaceamrex_1_1BinPolicy.html#a78f596e766995fe79e9feefa86af852b":[2,0,0,4,6],
 "namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78":[2,0,0,4,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX105 =
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a57da8c33bc706892e873bca4ff05f7ab":[2,0,0,16,0,23],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a5c122d7c55e6fa6cf6ab6a45a4cf87e5":[2,0,0,16,0,16],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#a629c38eebdf637b06b26049acae626c8":[2,0,0,16,0,2],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a6bd8e274f3c060b8f34e508ca531f527":[2,0,0,16,0,7],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a766ff7e5ed9d78fb3a0d5eaffec9c2ea":[2,0,0,16,0,11],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a76e8971f5869a60aac1462e720fead2b":[2,0,0,16,0,14]
+"namespaceamrex_1_1Gpu_1_1Atomic.html#a6bd8e274f3c060b8f34e508ca531f527":[2,0,0,16,0,7]
 };

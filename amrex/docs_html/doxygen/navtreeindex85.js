@@ -1,5 +1,6 @@
 var NAVTREEINDEX85 =
 {
+"classamrex_1_1PhysBCFunctUseCoarseGhost.html#a19519f86bdb850603b708442e35f04b2":[3,0,0,472,0],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#a19519f86bdb850603b708442e35f04b2":[2,0,0,507,0],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#a5a23493dcdb2a877b6f4ec8e9ed4dc94":[3,0,0,472,3],
 "classamrex_1_1PhysBCFunctUseCoarseGhost.html#a5a23493dcdb2a877b6f4ec8e9ed4dc94":[2,0,0,507,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX85 =
 "classamrex_1_1RKIntegrator.html#a9619066e96c1ff5ad635c2597744192e":[2,0,0,532,16],
 "classamrex_1_1RKIntegrator.html#a9619066e96c1ff5ad635c2597744192e":[3,0,0,497,16],
 "classamrex_1_1RKIntegrator.html#abd571d996d1adea0300fb76372fce6bf":[2,0,0,532,20],
-"classamrex_1_1RKIntegrator.html#abd571d996d1adea0300fb76372fce6bf":[3,0,0,497,20],
-"classamrex_1_1RKIntegrator.html#ac2e6499b53e139edf43e385cdcef27cf":[2,0,0,532,7]
+"classamrex_1_1RKIntegrator.html#abd571d996d1adea0300fb76372fce6bf":[3,0,0,497,20]
 };

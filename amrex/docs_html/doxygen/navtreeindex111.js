@@ -1,5 +1,7 @@
 var NAVTREEINDEX111 =
 {
+"namespacemembers_vars_i.html":[2,1,2,8],
+"namespacemembers_vars_k.html":[2,1,2,9],
 "namespacemembers_vars_l.html":[2,1,2,10],
 "namespacemembers_vars_m.html":[2,1,2,11],
 "namespacemembers_vars_n.html":[2,1,2,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX111 =
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#aeb6b0e7cb1bbac77e4f65e96e4f8a4d5":[3,0,0,31,0,1],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#aeb6b0e7cb1bbac77e4f65e96e4f8a4d5":[2,0,0,66,0,1],
 "structamrex_1_1AmrInfo.html":[3,0,0,40],
-"structamrex_1_1AmrInfo.html":[2,0,0,75],
-"structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf":[2,0,0,75,7],
-"structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf":[3,0,0,40,7]
+"structamrex_1_1AmrInfo.html":[2,0,0,75]
 };

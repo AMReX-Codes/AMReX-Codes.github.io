@@ -1,5 +1,6 @@
 var NAVTREEINDEX88 =
 {
+"classamrex_1_1SpMatrix.html#ac30f6cc408abda37a6ab47dfb17119f2":[2,0,0,547,8],
 "classamrex_1_1SpMatrix.html#ac30f6cc408abda37a6ab47dfb17119f2":[3,0,0,512,8],
 "classamrex_1_1SpMatrix.html#ac5f392ccb3a25dec4f6f3ed5c8b47e18":[2,0,0,547,47],
 "classamrex_1_1SpMatrix.html#ac5f392ccb3a25dec4f6f3ed5c8b47e18":[3,0,0,512,47],
@@ -248,6 +249,5 @@ var NAVTREEINDEX88 =
 "classamrex_1_1StateDataPhysBCFunct.html#a555d0d4c4ae81f45d2cd854bc9d64ead":[3,0,0,516,5],
 "classamrex_1_1StateDataPhysBCFunct.html#a555d0d4c4ae81f45d2cd854bc9d64ead":[2,0,0,551,5],
 "classamrex_1_1StateDataPhysBCFunct.html#a6313812bf3fe1b6c628ad07679244354":[2,0,0,551,3],
-"classamrex_1_1StateDataPhysBCFunct.html#a6313812bf3fe1b6c628ad07679244354":[3,0,0,516,3],
-"classamrex_1_1StateDataPhysBCFunct.html#a7d83762b4f64ce375d57c3f3bc34d4e1":[2,0,0,551,2]
+"classamrex_1_1StateDataPhysBCFunct.html#a6313812bf3fe1b6c628ad07679244354":[3,0,0,516,3]
 };

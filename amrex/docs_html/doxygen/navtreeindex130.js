@@ -1,5 +1,7 @@
 var NAVTREEINDEX130 =
 {
+"structamrex_1_1ReduceOpLogicalOr.html#a518be3e14a93b981c8d6e0c22c06d382":[2,0,0,526,2],
+"structamrex_1_1ReduceOpLogicalOr.html#a518be3e14a93b981c8d6e0c22c06d382":[3,0,0,491,2],
 "structamrex_1_1ReduceOpMax.html":[3,0,0,492],
 "structamrex_1_1ReduceOpMax.html":[2,0,0,527],
 "structamrex_1_1ReduceOpMax.html#a0a2b78dac216a89a59073ac12b0a525d":[3,0,0,492,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX130 =
 "structamrex_1_1SoAParticle.html#a7aa22d84c051ea2a2638c7d119438ddd":[3,0,0,507,19],
 "structamrex_1_1SoAParticle.html#a7aa22d84c051ea2a2638c7d119438ddd":[2,0,0,542,19],
 "structamrex_1_1SoAParticle.html#a80e071292338a77d3575b66fabf8263a":[3,0,0,507,18],
-"structamrex_1_1SoAParticle.html#a80e071292338a77d3575b66fabf8263a":[2,0,0,542,18],
-"structamrex_1_1SoAParticle.html#a8d6c15b2cd00fcee655a8b9b90a29e8d":[3,0,0,507,13],
-"structamrex_1_1SoAParticle.html#a8d6c15b2cd00fcee655a8b9b90a29e8d":[2,0,0,542,13]
+"structamrex_1_1SoAParticle.html#a80e071292338a77d3575b66fabf8263a":[2,0,0,542,18]
 };

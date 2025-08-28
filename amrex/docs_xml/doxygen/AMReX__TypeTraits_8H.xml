@@ -24,6 +24,7 @@
     <includedby refid="AMReX__ParmParse_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H</includedby>
     <includedby refid="AMReX__PhysBCFunct_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H</includedby>
     <includedby refid="AMReX__Tuple_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H</includedby>
+    <includedby refid="AMReX__Utility_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_Utility.H</includedby>
     <includedby refid="AMReX__Vector_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_Vector.H</includedby>
     <includedby refid="AMReX__GMRES__MLMG_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H</includedby>
     <includedby refid="AMReX__ParticleArray_8H" local="no">/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleArray.H</includedby>
@@ -2710,6 +2711,8 @@
         </childnode>
         <childnode refid="511" relation="include">
         </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
         <childnode refid="513" relation="include">
         </childnode>
         <childnode refid="101" relation="include">
@@ -5312,9 +5315,9 @@
     <innerclass refid="structamrex_1_1HasAtomicAdd_3_01float_01_4" prot="public">amrex::HasAtomicAdd&lt; float &gt;</innerclass>
     <innerclass refid="structamrex_1_1HasAtomicAdd_3_01double_01_4" prot="public">amrex::HasAtomicAdd&lt; double &gt;</innerclass>
     <innerclass refid="structamrex_1_1IsMultiFabIterator" prot="public">amrex::IsMultiFabIterator</innerclass>
+    <innerclass refid="structamrex_1_1DefinitelyNotHostRunnable" prot="public">amrex::DefinitelyNotHostRunnable</innerclass>
     <innerclass refid="structamrex_1_1MaybeDeviceRunnable" prot="public">amrex::MaybeDeviceRunnable</innerclass>
     <innerclass refid="structamrex_1_1MaybeHostDeviceRunnable" prot="public">amrex::MaybeHostDeviceRunnable</innerclass>
-    <innerclass refid="structamrex_1_1DefinitelyNotHostRunnable" prot="public">amrex::DefinitelyNotHostRunnable</innerclass>
     <innerclass refid="structamrex_1_1Same_3_01T_00_01U_01_4" prot="public">amrex::Same&lt; T, U &gt;</innerclass>
     <innerclass refid="structamrex_1_1Same" prot="public">amrex::Same</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1Nonesuch" prot="public">amrex::detail::Nonesuch</innerclass>
@@ -5454,16 +5457,16 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IsParticleContainer<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::is_base_of&lt;ParticleContainerBase,<sp/>T&gt;::type<sp/>{};</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Enable<sp/>=<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;</highlight></codeline>
-<codeline lineno="93" refid="structamrex_1_1MaybeDeviceRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref><sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Enable<sp/>=<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="91" refid="structamrex_1_1DefinitelyNotHostRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1DefinitelyNotHostRunnable" kindref="compound">DefinitelyNotHostRunnable</ref><sp/>:<sp/>std::false_type<sp/>{};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Enable<sp/>=<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;</highlight></codeline>
-<codeline lineno="96" refid="structamrex_1_1MaybeHostDeviceRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref><sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
+<codeline lineno="96" refid="structamrex_1_1MaybeDeviceRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref><sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Enable<sp/>=<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;</highlight></codeline>
-<codeline lineno="99" refid="structamrex_1_1DefinitelyNotHostRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1DefinitelyNotHostRunnable" kindref="compound">DefinitelyNotHostRunnable</ref><sp/>:<sp/>std::false_type<sp/>{};</highlight></codeline>
+<codeline lineno="99" refid="structamrex_1_1MaybeHostDeviceRunnable" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref><sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>&amp;&amp;<sp/>defined(__NVCC__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>

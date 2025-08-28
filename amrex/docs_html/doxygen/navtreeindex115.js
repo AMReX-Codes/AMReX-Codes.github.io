@@ -1,5 +1,7 @@
 var NAVTREEINDEX115 =
 {
+"structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[3,0,0,2,2],
+"structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[2,0,0,4,2],
 "structamrex_1_1BlockMutex.html":[2,0,0,123],
 "structamrex_1_1BlockMutex.html":[3,0,0,88],
 "structamrex_1_1BlockMutex.html#a2c7806c54820135f097449360f35a8f4":[2,0,0,123,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX115 =
 "structamrex_1_1ConstSoAParticle.html#adf0b591e84350f6fd8e805949784afdf":[2,0,0,159,11],
 "structamrex_1_1ConstSoAParticle.html#adf0b591e84350f6fd8e805949784afdf":[3,0,0,124,11],
 "structamrex_1_1ConstSoAParticle.html#ae496c194b170d1cf830b34138e9bdcef":[2,0,0,159,13],
-"structamrex_1_1ConstSoAParticle.html#ae496c194b170d1cf830b34138e9bdcef":[3,0,0,124,13],
-"structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916":[3,0,0,124,1],
-"structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916":[2,0,0,159,1]
+"structamrex_1_1ConstSoAParticle.html#ae496c194b170d1cf830b34138e9bdcef":[3,0,0,124,13]
 };

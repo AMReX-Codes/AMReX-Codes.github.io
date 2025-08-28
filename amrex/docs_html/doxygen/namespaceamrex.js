@@ -1525,6 +1525,7 @@ var namespaceamrex =
     [ "bytesOf", "namespaceamrex.html#a7eba5dd365d87751a963b6bd078673c4", null ],
     [ "call_device", "namespaceamrex.html#ad89172e7973936686d13f4926bfac5aa", null ],
     [ "call_device", "namespaceamrex.html#a450c15a9b3787ce7c979cded90f11574", null ],
+    [ "callNoinline", "namespaceamrex.html#af3d5fd284fad6e07cf0db60c867d57f8", null ],
     [ "CartesianProduct", "namespaceamrex.html#a9d736b217af3b87bef2bffd4dd55edff", null ],
     [ "cast", "namespaceamrex.html#aa7261f50da60e78a42e700384710cd47", null ],
     [ "cast", "namespaceamrex.html#a24aa5b51c299dd1337df192681f47e0e", null ],
