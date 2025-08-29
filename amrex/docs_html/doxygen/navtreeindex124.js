@@ -1,5 +1,11 @@
 var NAVTREEINDEX124 =
 {
+"structamrex_1_1MFIter_1_1DeviceSync.html#ab80259827235e9ab36d22ae3e6ca9774":[2,0,0,382,0,3],
+"structamrex_1_1MFIter_1_1DeviceSync.html#ab80259827235e9ab36d22ae3e6ca9774":[3,0,0,347,0,3],
+"structamrex_1_1MFIter_1_1DeviceSync.html#ad840aa3ceae941660cb2d176ec47466a":[2,0,0,382,0,5],
+"structamrex_1_1MFIter_1_1DeviceSync.html#ad840aa3ceae941660cb2d176ec47466a":[3,0,0,347,0,5],
+"structamrex_1_1MFIter_1_1DeviceSync.html#ae0735abae42447ec4d484a5d3fd93a87":[2,0,0,382,0,7],
+"structamrex_1_1MFIter_1_1DeviceSync.html#ae0735abae42447ec4d484a5d3fd93a87":[3,0,0,347,0,7],
 "structamrex_1_1MFIter_1_1DeviceSync.html#afb52b8eb46f2e00c2eda77ec791ef5b9":[2,0,0,382,0,2],
 "structamrex_1_1MFIter_1_1DeviceSync.html#afb52b8eb46f2e00c2eda77ec791ef5b9":[3,0,0,347,0,2],
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html":[3,0,0,9,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX124 =
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#aa54365274c737f11f87f1e2ae2cf7344":[2,0,0,418,3,2],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#aa54365274c737f11f87f1e2ae2cf7344":[3,0,0,383,3,2],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ab55ece948b6a78f3ac9ece3db8abea57":[2,0,0,418,3,7],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ab55ece948b6a78f3ac9ece3db8abea57":[3,0,0,383,3,7],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#acf68009e1f3972880ff589a540c8859d":[2,0,0,418,3,5],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#acf68009e1f3972880ff589a540c8859d":[3,0,0,383,3,5],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ae72224f4b411313148d1db9fc0572bd5":[2,0,0,418,3,8],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ae72224f4b411313148d1db9fc0572bd5":[3,0,0,383,3,8],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#af6a0f9df0a06e03eeb147712461332e7":[3,0,0,383,3,9],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#af6a0f9df0a06e03eeb147712461332e7":[2,0,0,418,3,9]
+"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ab55ece948b6a78f3ac9ece3db8abea57":[3,0,0,383,3,7]
 };

@@ -1,5 +1,11 @@
 var NAVTREEINDEX107 =
 {
+"namespaceamrex_1_1ParallelDescriptor.html#a307e6fc3b7df510cca76aff2fda29435":[2,0,0,37,163],
+"namespaceamrex_1_1ParallelDescriptor.html#a31842e0bf333c7f85c31e6f227055716":[2,0,0,37,92],
+"namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29":[2,0,0,37,55],
+"namespaceamrex_1_1ParallelDescriptor.html#a3441f492fc784719d2b872f7a6da54ac":[2,0,0,37,87],
+"namespaceamrex_1_1ParallelDescriptor.html#a3461c9bae69de0e75d147ae431f938d4":[2,0,0,37,171],
+"namespaceamrex_1_1ParallelDescriptor.html#a3557c1b3ec791b8bf6f9e9cab5c6b0d8":[2,0,0,37,53],
 "namespaceamrex_1_1ParallelDescriptor.html#a3661303172f9bd5b139c1c19adbd93f8":[2,0,0,37,103],
 "namespaceamrex_1_1ParallelDescriptor.html#a387acd4f26462ef60c5de9d87ef15c67":[2,0,0,37,177],
 "namespaceamrex_1_1ParallelDescriptor.html#a38b3712843db6ceb3877ab59bd4df4f0":[2,0,0,37,174],
@@ -243,11 +249,5 @@ var NAVTREEINDEX107 =
 "namespaceamrex_1_1VectorGrowthStrategy.html":[2,0,0,57],
 "namespaceamrex_1_1VectorGrowthStrategy.html#a03d109d27d848ed9f9a2bf219dd34a42":[2,0,0,57,4],
 "namespaceamrex_1_1VectorGrowthStrategy.html#a220176c8289f1b22577adf0500f09561":[2,0,0,57,2],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14":[2,0,0,57,5],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a41878a0e62c1df914fba3fda248ea56d":[2,0,0,57,6],
-"namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa":[2,0,0,57,1],
-"namespaceamrex_1_1VectorGrowthStrategy.html#ae40903e99ce2fa70dfcfbc71e8e1f9d1":[2,0,0,57,3],
-"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html":[2,0,0,57,0],
-"namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html#a55450ed37c6677fb96a9f9c724553739":[2,0,0,57,0,0],
-"namespaceamrex_1_1algoim.html":[2,0,0,0]
+"namespaceamrex_1_1VectorGrowthStrategy.html#a23797f03fc4dcc6e5448b9a8e0695d14":[2,0,0,57,5]
 };
