@@ -43,7 +43,7 @@ var searchData=
   ['config_40',['config',['../classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2',1,'amrex::InSituBridge']]],
   ['control_5fpoints_5fx_41',['control_points_x',['../classamrex_1_1SplineDistFcnElement2d.html#ac1c23f1058ddc5e09b1d859e3cba904a',1,'amrex::SplineDistFcnElement2d::control_points_x'],['../classamrex_1_1LineDistFcnElement2d.html#a484c372e01f95e8b7426541ba14cf903',1,'amrex::LineDistFcnElement2d::control_points_x']]],
   ['control_5fpoints_5fy_42',['control_points_y',['../classamrex_1_1SplineDistFcnElement2d.html#a3662f00f13decf4a4ad983e1cc19c2f9',1,'amrex::SplineDistFcnElement2d::control_points_y'],['../classamrex_1_1LineDistFcnElement2d.html#a10bdd01583d4250e8c717c69280f3490',1,'amrex::LineDistFcnElement2d::control_points_y']]],
-  ['coord_43',['coord',['../structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb',1,'amrex::GeometryData']]],
+  ['coord_43',['coord',['../structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb',1,'amrex::GeometryData::coord'],['../structamrex_1_1CurlCurlDirichletInfo.html#af90c94c1f26d5bba4e06719e69929328',1,'amrex::CurlCurlDirichletInfo::coord']]],
   ['coordinatorproc_44',['coordinatorProc',['../classamrex_1_1NFilesIter.html#a86d15e5891de4e1968493a59da32f121',1,'amrex::NFilesIter']]],
   ['coordinatortag_45',['coordinatorTag',['../classamrex_1_1NFilesIter.html#a29ac83e60acfc2a393c76e950b16160e',1,'amrex::NFilesIter']]],
   ['coordsys_46',['coordSys',['../classamrex_1_1AmrData.html#a6c2cd93052ccb8644d8a419d9d2230bc',1,'amrex::AmrData']]],

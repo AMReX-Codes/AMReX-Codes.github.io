@@ -3208,6 +3208,7 @@
   <compound refid="structamrex_1_1CurlCurlDirichletInfo" kind="struct"><name>amrex::CurlCurlDirichletInfo</name>
     <member refid="structamrex_1_1CurlCurlDirichletInfo_1ab41d14427ee6aa987dec1a6777f089c9" kind="variable"><name>dirichlet_lo</name></member>
     <member refid="structamrex_1_1CurlCurlDirichletInfo_1aa1322afdd0c679a263cb5637732121f5" kind="variable"><name>dirichlet_hi</name></member>
+    <member refid="structamrex_1_1CurlCurlDirichletInfo_1af90c94c1f26d5bba4e06719e69929328" kind="variable"><name>coord</name></member>
     <member refid="structamrex_1_1CurlCurlDirichletInfo_1a43c18defca914c519e773fdf104c4956" kind="function"><name>is_dirichlet_node</name></member>
     <member refid="structamrex_1_1CurlCurlDirichletInfo_1ac36b247b6a7baf4f880d55225615223f" kind="function"><name>is_dirichlet_x_edge</name></member>
     <member refid="structamrex_1_1CurlCurlDirichletInfo_1aa9beb0253ffa199754255b047cce7409" kind="function"><name>is_dirichlet_y_edge</name></member>
@@ -7505,6 +7506,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1ac9899bfb41cbcbf7f462d272047552e0" kind="typedef"><name>BCMode</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1aa4c0f4d5b84c079cc96ab6b0c0fb276e" kind="typedef"><name>StateMode</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1aa0d2dff0a1bfbad55c5f6e3a31d16652" kind="typedef"><name>Location</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1ac3c5a0fb0e94fa29cf64c1a40f4e4ff5" kind="variable"><name>m_coord</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a8e3436cc293f45df20b351de804af2fd" kind="variable"><name>m_alpha</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a7b83a2461e9903530a1903a12ddec15b" kind="variable"><name>m_beta</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1ae73e6c0e2000bd5397e42f8fd8e42cba" kind="variable"><name>m_etype</name></member>
@@ -7515,8 +7517,8 @@
     <member refid="classamrex_1_1MLCurlCurl_1a9a4a9fbc8ca4a4406fe0fe0a08dc1a25" kind="variable"><name>m_needs_update</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a85d721f72de7a13036fb1ce5bc77d452" kind="variable"><name>m_ncomp</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a890a339d109993f9e6b102a61af0a2da" kind="function"><name>MLCurlCurl</name></member>
-    <member refid="classamrex_1_1MLCurlCurl_1ad41266ab9f9d45383b54320911ac53fe" kind="function"><name>MLCurlCurl</name></member>
-    <member refid="classamrex_1_1MLCurlCurl_1a9d94e9fa0d0ed2ebadf1428023d95809" kind="function"><name>define</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a9e13827dae958cf634f906927fb23d1f" kind="function"><name>MLCurlCurl</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a47e75c07b8afed73926cf1cb3b0220f8" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a6ec4dbd1f4658dc7cd6ef708b3968c4c" kind="function"><name>setScalars</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a822dfa79fe239dd9bfc80100d8ddf186" kind="function"><name>setBeta</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1acbc4efc38bffb2ceab5d5bf004cf6dc6" kind="function"><name>prepareRHS</name></member>
@@ -7533,6 +7535,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1ac4678fc2abb205d1fcc3df29809173f6" kind="function"><name>needsUpdate</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a348b93fae0250369d6129dbc8703c93e" kind="function"><name>update</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a5c54cb4e1ea4c2b1818db0cf82741c30" kind="function"><name>prepareForSolve</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a0b1a0dd60dd7b2f502d755ec862e2fd1" kind="function"><name>preparePrecond</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a29a695e894b100f9ee670ec7dcc15926" kind="function"><name>isSingular</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1afeb4c3dbad1399f4576352234f02a159" kind="function"><name>isBottomSingular</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1aafe03e36ef3a7d8c99466b3762358794" kind="function"><name>xdoty</name></member>
@@ -7552,6 +7555,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1a3c262e8635218f88ca186c613bdc9c9c" kind="function"><name>getDirichletInfo</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a32545ca23bf840257ec3ff0321f0cc28" kind="function"><name>getSymmetryInfo</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1ab1b829e3d0384627b38f2ae504af3191" kind="function"><name>update_lusolver</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a6aabd843cc4c1dd86a2104e38aa6c135" kind="function"><name>set_curvilinear_domain_bc</name></member>
   </compound>
   <compound refid="classamrex_1_1MLEBABecLap" kind="class"><name>amrex::MLEBABecLap</name>
     <member refid="classamrex_1_1MLEBABecLap_1ac43a9c8728bb7861415d80283d41e064" kind="variable"><name>m_a_scalar</name></member>
@@ -14420,10 +14424,10 @@
     <member refid="namespaceamrex_1a078658f433f21a921eaee99b9bb2423f" kind="function"><name>coarsen_overset_mask</name></member>
     <member refid="namespaceamrex_1a40570b9308cc5134a2db6a08a170515a" kind="function"><name>coarsen_overset_mask</name></member>
     <member refid="namespaceamrex_1acfd5c8bd3612ac3d3079dc0189308d6f" kind="function"><name>mlcurlcurl_adotx_x</name></member>
-    <member refid="namespaceamrex_1a806290e2106cf167ce88e28aa9fb2daf" kind="function"><name>mlcurlcurl_adotx_y</name></member>
-    <member refid="namespaceamrex_1aa37948c1ee6507a42652fe71d9e8d262" kind="function"><name>mlcurlcurl_adotx_z</name></member>
-    <member refid="namespaceamrex_1a166e7b12af8525898dc44a009aaaa28f" kind="function"><name>mlcurlcurl_1D</name></member>
-    <member refid="namespaceamrex_1a8c369eaafc46c6ba325ae77b2f170a78" kind="function"><name>mlcurlcurl_1D</name></member>
+    <member refid="namespaceamrex_1a4858148c11cf3df12f34d8ec7bd6d8f1" kind="function"><name>mlcurlcurl_adotx_y</name></member>
+    <member refid="namespaceamrex_1a551fe1f44d07a06d9b47fe961f3268a1" kind="function"><name>mlcurlcurl_adotx_z</name></member>
+    <member refid="namespaceamrex_1a9e58e9eb571484f9e7de7533445b3b13" kind="function"><name>mlcurlcurl_smooth_1d</name></member>
+    <member refid="namespaceamrex_1aaa80c1bb2b6993f8c8263b8beb70a8f2" kind="function"><name>mlcurlcurl_smooth_1d</name></member>
     <member refid="namespaceamrex_1a46f754596e0c0d977d970818bbec1dd2" kind="function"><name>mlcurlcurl_interpadd</name></member>
     <member refid="namespaceamrex_1aeb03681c5a1705809b2f860ece2cad66" kind="function"><name>mlcurlcurl_restriction</name></member>
     <member refid="namespaceamrex_1a95c9cd2dabd9a907c9d7124f9a4ae0f9" kind="function"><name>mlcurlcurl_bc_symmetry</name></member>
