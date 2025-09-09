@@ -85,6 +85,8 @@ var classamrex_1_1ParmParse =
     [ "makeParser", "classamrex_1_1ParmParse.html#a6a0e28c45ee942f30c9f5c50f338e203", null ],
     [ "prefixedName", "classamrex_1_1ParmParse.html#a9acf57232096dc7488995a49627924eb", null ],
     [ "prettyPrintTable", "classamrex_1_1ParmParse.html#a25e20319d7e653849733bf39d7416437", null ],
+    [ "prettyPrintUnusedInputs", "classamrex_1_1ParmParse.html#ad9c8a23815fd21810e9f736a5ec3de97", null ],
+    [ "prettyPrintUsedInputs", "classamrex_1_1ParmParse.html#a9216f6edda8e16c30796f4929fb28892", null ],
     [ "query", "classamrex_1_1ParmParse.html#aa98ab18bc26692876f9590316af5b1fa", null ],
     [ "query", "classamrex_1_1ParmParse.html#a5ed7725f4552397edff794e471dc2f2c", null ],
     [ "query", "classamrex_1_1ParmParse.html#af205ea927f7888a00aebcdc95d55f432", null ],
