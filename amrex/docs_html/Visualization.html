@@ -387,7 +387,9 @@ them one by one or select an ensemble of file, labelled as <code class="docutils
 as a Group in the “Type” column of the file explorer (see <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 16</span></a>).
 In the later case, Paraview will load the plotfiles as a time series.
 ParaView will ask you about the file type – choose “AMReX/BoxLib Grid Reader” or
-“AMReX/BoxLib Particles Reader”.</p></li>
+“AMReX/BoxLib Particles Reader”.
+Note that if your ploftile prefix is not <code class="docutils literal notranslate"><span class="pre">plt</span></code> or any other type supported by default,
+then in <code class="docutils literal notranslate"><span class="pre">Files</span> <span class="pre">of</span> <span class="pre">type</span></code> you need to first select <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">files</span> <span class="pre">(*)</span></code>.</p></li>
 <li><p>Under the “Cell Arrays” field, select a variable (e.g., “phi”) and click
 “Apply”. Note that the default number of refinement levels loaded and visualized is 1.
 Change to the required number of AMR level before clicking “Apply”.</p></li>
@@ -430,7 +432,9 @@ save this script. Then run the bash script by executing the following command in
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash write_series_file.sh</span>
 </pre></div>
 </div>
-<p>This will generate a file <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> which indexes the time variable based on the order of the plotfile numbers.</p>
+<p>This will generate a file <code class="docutils literal notranslate"><span class="pre">plot_files.series</span></code> which indexes the time variable based on the order of the plotfile numbers.
+Note that if your ploftile prefix is not <code class="docutils literal notranslate"><span class="pre">plt</span></code>, you can manually edit
+<code class="docutils literal notranslate"><span class="pre">write_series_file.sh</span></code> accordingly.</p>
 <p>To make a <code class="docutils literal notranslate"><span class="pre">.series</span></code> file which reads the time out of the plotfile header, use <a class="reference download internal" download="" href="_downloads/18d063859ddfa88abfb048828e342a61/write_series_file_timestamp.sh"><code class="xref download docutils literal notranslate"><span class="pre">write_series_file_timestamp.sh</span></code></a>.</p>
 <p>Open ParaView, and then select
 “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open”. In the “Files of Type” dropdown menu (see <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 16</span></a>)
