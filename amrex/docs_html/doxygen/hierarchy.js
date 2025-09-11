@@ -838,6 +838,7 @@ var hierarchy =
     [ "amrex::MLLinOpT< Array< MultiFab, 3 > >", "classamrex_1_1MLLinOpT.html", [
       [ "amrex::MLCurlCurl", "classamrex_1_1MLCurlCurl.html", null ]
     ] ],
+    [ "amrex::MLMGABCEBTag< T >", "structamrex_1_1MLMGABCEBTag.html", null ],
     [ "amrex::MLMGABCTag< T >", "structamrex_1_1MLMGABCTag.html", null ],
     [ "amrex::MLMGPSTag< T >", "structamrex_1_1MLMGPSTag.html", null ],
     [ "amrex::MLMGT< MF >", "classamrex_1_1MLMGT.html", null ],

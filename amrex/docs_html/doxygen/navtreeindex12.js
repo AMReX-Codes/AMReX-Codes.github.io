@@ -186,8 +186,11 @@ var NAVTREEINDEX12 =
 "AMReX__MLEBABecLap__3D__K_8H_source.html":[4,0,0,7,0,23],
 "AMReX__MLEBABecLap__F_8cpp.html":[4,0,0,7,0,24],
 "AMReX__MLEBABecLap__K_8H.html":[4,0,0,7,0,25],
-"AMReX__MLEBABecLap__K_8H.html#a04cedf52619400ba12317eb179625198":[4,0,0,7,0,25,2],
-"AMReX__MLEBABecLap__K_8H.html#a268bac202eeb66c4da6dd4d271d5656e":[4,0,0,7,0,25,1],
+"AMReX__MLEBABecLap__K_8H.html#a04cedf52619400ba12317eb179625198":[4,0,0,7,0,25,4],
+"AMReX__MLEBABecLap__K_8H.html#a268bac202eeb66c4da6dd4d271d5656e":[4,0,0,7,0,25,2],
+"AMReX__MLEBABecLap__K_8H.html#a2eb5d04397a0c317c30de9537b22e53e":[4,0,0,7,0,25,3],
+"AMReX__MLEBABecLap__K_8H.html#acc4a822625e3b29477348158522271cb":[4,0,0,7,0,25,1],
+"AMReX__MLEBABecLap__K_8H.html#ad5dc043778e57db5e27f6186361aa569":[4,0,0,7,0,25,5],
 "AMReX__MLEBABecLap__K_8H.html#ae651916b2a04b9033825d343fe244b3f":[4,0,0,7,0,25,0],
 "AMReX__MLEBABecLap__K_8H_source.html":[4,0,0,7,0,25],
 "AMReX__MLEBNodeFDLap__1D__K_8H.html":[4,0,0,7,0,26],
@@ -246,8 +249,5 @@ var NAVTREEINDEX12 =
 "AMReX__MLEBNodeFDLaplacian_8cpp.html":[4,0,0,7,0,30],
 "AMReX__MLEBTensorOp_8H.html":[4,0,0,7,0,36],
 "AMReX__MLEBTensorOp_8H_source.html":[4,0,0,7,0,36],
-"AMReX__MLEBTensorOp_8cpp.html":[4,0,0,7,0,35],
-"AMReX__MLEBTensorOp__bc_8cpp.html":[4,0,0,7,0,37],
-"AMReX__MLEBTensor__2D__K_8H.html":[4,0,0,7,0,32],
-"AMReX__MLEBTensor__2D__K_8H.html#a389b087837766656206528387955a282":[4,0,0,7,0,32,9]
+"AMReX__MLEBTensorOp_8cpp.html":[4,0,0,7,0,35]
 };

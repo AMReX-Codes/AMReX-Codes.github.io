@@ -610,6 +610,7 @@ var annotated_dup =
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", "classamrex_1_1MLEBNodeFDLaplacian" ],
       [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ],
       [ "MLLinOpT", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
+      [ "MLMGABCEBTag", "structamrex_1_1MLMGABCEBTag.html", "structamrex_1_1MLMGABCEBTag" ],
       [ "MLMGABCTag", "structamrex_1_1MLMGABCTag.html", "structamrex_1_1MLMGABCTag" ],
       [ "MLMGBndryT", "classamrex_1_1MLMGBndryT.html", "classamrex_1_1MLMGBndryT" ],
       [ "MLMGPSTag", "structamrex_1_1MLMGPSTag.html", "structamrex_1_1MLMGPSTag" ],
