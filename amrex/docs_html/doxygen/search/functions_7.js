@@ -170,7 +170,7 @@ var searchData=
   ['getenumclassname_167',['getEnumClassName',['../namespaceamrex.html#a045ff5fa344cfaa38699087003062fcb',1,'amrex']]],
   ['getenumnamestring_168',['getEnumNameString',['../namespaceamrex.html#a2690baa171c059a8cb8e7131989be2e6',1,'amrex']]],
   ['getenumnamestrings_169',['getEnumNameStrings',['../namespaceamrex.html#ad291f7c70d02dbbb3cc58228d4d7f4e2',1,'amrex']]],
-  ['getenumnamevaluepairs_170',['getEnumNameValuePairs',['../namespaceamrex.html#aec1258e3b05a0d2b41c348dce3dd8e2f',1,'amrex']]],
+  ['getenumnamevaluepairs_170',['getEnumNameValuePairs',['../namespaceamrex.html#a88ecea52b7921b731f070226526fa55a',1,'amrex']]],
   ['getfab_171',['GetFab',['../classamrex_1_1VisMF.html#a6849db338a0e6174a0b39b5e483b74b9',1,'amrex::VisMF']]],
   ['getfabio_172',['getfabio',['../classamrex_1_1FArrayBox.html#a67fb916342e7c929641dbde731b8aa1b',1,'amrex::FArrayBox::getFABio()'],['../classamrex_1_1IArrayBox.html#aceb0eff246538d984578232e27f82045',1,'amrex::IArrayBox::getFABio()']]],
   ['getfacearea_173',['getfacearea',['../classamrex_1_1Geometry.html#a8e4aa2c2e88a46cb31b1ce0f9590c350',1,'amrex::Geometry::GetFaceArea(FArrayBox &amp;area, const BoxArray &amp;grds, int idx, int dir, int grow) const'],['../classamrex_1_1Geometry.html#aa546dc5e4e7fd70bc151955e2984b0ed',1,'amrex::Geometry::GetFaceArea(MultiFab &amp;area, int dir) const'],['../classamrex_1_1Geometry.html#a5959b22b9bfa06ce43a7357c18b0124e',1,'amrex::Geometry::GetFaceArea(MultiFab &amp;area, const BoxArray &amp;grds, const DistributionMapping &amp;dm, int dir, int grow) const'],['../classamrex_1_1CoordSys.html#af912928529cb7ca74eae3d2a812c9c0c',1,'amrex::CoordSys::GetFaceArea()']]],

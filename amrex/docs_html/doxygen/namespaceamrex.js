@@ -1831,7 +1831,7 @@ var namespaceamrex =
     [ "getEnumClassName", "namespaceamrex.html#a045ff5fa344cfaa38699087003062fcb", null ],
     [ "getEnumNameString", "namespaceamrex.html#a2690baa171c059a8cb8e7131989be2e6", null ],
     [ "getEnumNameStrings", "namespaceamrex.html#ad291f7c70d02dbbb3cc58228d4d7f4e2", null ],
-    [ "getEnumNameValuePairs", "namespaceamrex.html#aec1258e3b05a0d2b41c348dce3dd8e2f", null ],
+    [ "getEnumNameValuePairs", "namespaceamrex.html#a88ecea52b7921b731f070226526fa55a", null ],
     [ "getFPExcept", "namespaceamrex.html#ae23d62d1c91ace8d10a35f15db80e780", null ],
     [ "getIndexBounds", "namespaceamrex.html#a5cc794297758c6b5b127ce0acaf800be", null ],
     [ "getIndexBounds", "namespaceamrex.html#a86d4f0422a1ef043598968f4e23a772a", null ],
