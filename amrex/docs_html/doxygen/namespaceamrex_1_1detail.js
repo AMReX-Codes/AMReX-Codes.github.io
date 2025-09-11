@@ -91,6 +91,7 @@ var namespaceamrex_1_1detail =
     [ "get_sum", "namespaceamrex_1_1detail.html#a212330747d8eef18497f7b5aa65c40f0", null ],
     [ "get_tag_size", "namespaceamrex_1_1detail.html#a5dabf23fc1d6b0482df819bdd5d465c9", null ],
     [ "getBoundaryBoxes", "namespaceamrex_1_1detail.html#a01f595a1caf92d3d2db64fe8916e0011", null ],
+    [ "getNewEnumNameValuePairs", "namespaceamrex_1_1detail.html#ae95f8e970bb6bb182d415dd53f37a0d3", null ],
     [ "GetSubTuple", "namespaceamrex_1_1detail.html#acc454a2126927ee94899960756cf8fff", null ],
     [ "HasBeginEnd", "namespaceamrex_1_1detail.html#ac52a7c80af5bdb3acbe7530033d68f5c", null ],
     [ "HasBeginEnd", "namespaceamrex_1_1detail.html#a6d7c00c17d8f6f7a1cf248ac5c3a7006", null ],

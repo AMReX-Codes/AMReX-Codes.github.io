@@ -1,5 +1,7 @@
 var NAVTREEINDEX111 =
 {
+"namespacemembers_i.html":[2,1,0,9],
+"namespacemembers_j.html":[2,1,0,10],
 "namespacemembers_k.html":[2,1,0,11],
 "namespacemembers_l.html":[2,1,0,12],
 "namespacemembers_m.html":[2,1,0,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX111 =
 "structamrex_1_1AlgPartition_1_1Ref.html#af0d03c5d43943465b75c0e9c4e36db74":[2,0,0,58,0,5],
 "structamrex_1_1AlgPartition_1_1Ref.html#af0d03c5d43943465b75c0e9c4e36db74":[3,0,0,23,0,5],
 "structamrex_1_1AmrAssignGrid.html":[3,0,0,28],
-"structamrex_1_1AmrAssignGrid.html":[2,0,0,63],
-"structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[3,0,0,28,3],
-"structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[2,0,0,63,3]
+"structamrex_1_1AmrAssignGrid.html":[2,0,0,63]
 };

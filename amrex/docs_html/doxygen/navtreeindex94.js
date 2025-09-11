@@ -1,5 +1,6 @@
 var NAVTREEINDEX94 =
 {
+"classamrex_1_1ref__wrapper.html#a74d2637d0d51d54078ed449ca7099f54":[3,0,0,497,10],
 "classamrex_1_1ref__wrapper.html#a81f44d1949d6ef403bcd0221b9f03070":[2,0,0,532,8],
 "classamrex_1_1ref__wrapper.html#a81f44d1949d6ef403bcd0221b9f03070":[3,0,0,497,8],
 "classamrex_1_1ref__wrapper.html#a8ae7d0c30828a710034c7992f0383c12":[2,0,0,532,5],
@@ -247,7 +248,6 @@ var NAVTREEINDEX94 =
 "index.html#migration_from_boxlib":[0,0,5],
 "index.html#tutorials":[0,0,3],
 "index.html#welcome_to_AMReX":[0,0],
-"interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html":[3,0,1,0],
 "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html":[2,0,5,0],
-"interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html#a11c655436ceff8d225a22cd6d9f5546f":[3,0,1,0,0]
+"interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html":[3,0,1,0]
 };

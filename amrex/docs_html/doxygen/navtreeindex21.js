@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"AMReX__RealVect_8cpp.html#a177c7c95c391c6f66768e9941de3f5b5":[4,0,0,2,240,2],
 "AMReX__RealVect_8cpp.html#a93b4a56e5a8af340d43839230b94843c":[4,0,0,2,240,0],
 "AMReX__RealVect_8cpp.html#af8b32f47381c856a24526c7094f59b08":[4,0,0,2,240,1],
 "AMReX__Reduce_8H.html":[4,0,0,2,242],
@@ -29,16 +30,16 @@ var NAVTREEINDEX21 =
 "AMReX__RegionsProfStats_8cpp.html":[4,0,0,5,6,13],
 "AMReX__RegionsProfStats_8cpp.html#a02b76a92a17338752cdd29335caaa60d":[4,0,0,5,6,13,9],
 "AMReX__RegionsProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[4,0,0,5,6,13,10],
-"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,1],
 "AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,2],
+"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,6,13,1],
 "AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3":[4,0,0,5,6,13,7],
 "AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf":[4,0,0,5,6,13,5],
 "AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12":[4,0,0,5,6,13,6],
 "AMReX__RegionsProfStats_8cpp.html#a82ff102a1952ad4ab549505b10f24456":[4,0,0,5,6,13,11],
 "AMReX__RegionsProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,6,13,8],
 "AMReX__RegionsProfStats_8cpp.html#a9eaad985fc3700bfc26c0ce411504f81":[4,0,0,5,6,13,12],
-"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,6,13,3],
 "AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,6,13,4],
+"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,6,13,3],
 "AMReX__RegionsProfStats_8cpp.html#adf40b37aa3d31187890635b3b571403c":[4,0,0,5,6,13,0],
 "AMReX__RungeKutta_8H.html":[4,0,0,2,244],
 "AMReX__RungeKutta_8H.html#a04628ed5d5e6a12c16a387c1aa38fe88":[4,0,0,2,244,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "AMReX__Tuple_8H.html#a66335e299cd3b1f7e6089c38a4cb3436":[4,0,0,2,260,41],
 "AMReX__Tuple_8H.html#a71a6961512c0397dd1a7cce8c8c0c5b4":[4,0,0,2,260,36],
 "AMReX__Tuple_8H.html#a89d8eebc0b5a53e8a5601b4bfb317959":[4,0,0,2,260,26],
-"AMReX__Tuple_8H.html#a958735e6c780bbb34f369c97d8b16f98":[4,0,0,2,260,27],
-"AMReX__Tuple_8H.html#a9c34cacdb9e743c69a70b8faacfa73da":[4,0,0,2,260,29]
+"AMReX__Tuple_8H.html#a958735e6c780bbb34f369c97d8b16f98":[4,0,0,2,260,27]
 };
