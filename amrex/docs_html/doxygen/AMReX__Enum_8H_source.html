@@ -258,21 +258,30 @@ $(document).ready(function(){initNavTree('AMReX__Enum_8H_source.html',''); initR
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> std::string(ET::class_name);</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
 </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="foldopen" id="foldopen00145" data-start="" data-end="">
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">  145</a></span><span class="preprocessor">#define AMREX_ENUM(CLASS, ...) \</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">    enum class CLASS : int { __VA_ARGS__ }; \</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">    struct CLASS##_EnumTraits { \</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">        using enum_class_t = CLASS; \</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">        static constexpr bool value = true; \</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">        static constexpr std::string_view class_name{#CLASS}; \</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">        static constexpr std::string_view enum_names{#__VA_ARGS__}; \</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">    }; \</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">    CLASS##_EnumTraits amrex_get_enum_traits(CLASS)</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ET = amrex_enum_traits&lt;T&gt;,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>              std::enable_if_t&lt;ET::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af11e27e33248402e16a37489677647d3">  150</a></span>    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespaceamrex.html#af11e27e33248402e16a37489677647d3">toUnderlying</a> (T v) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::underlying_type_t&lt;T&gt;<span class="keyword">&gt;</span>(v);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
 </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="foldopen" id="foldopen00156" data-start="" data-end="">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="AMReX__Enum_8H.html#a19559ed6a3d4281344b600b10c6a31f2">  156</a></span><span class="preprocessor">#define AMREX_ENUM(CLASS, ...) \</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">    enum class CLASS : int { __VA_ARGS__ }; \</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">    struct CLASS##_EnumTraits { \</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">        using enum_class_t = CLASS; \</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">        static constexpr bool value = true; \</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">        static constexpr std::string_view class_name{#CLASS}; \</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">        static constexpr std::string_view enum_names{#__VA_ARGS__}; \</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">    }; \</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">    CLASS##_EnumTraits amrex_get_enum_traits(CLASS)</span></div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Enum_8H_html_a9f2a1a484d1e714fda55c741bf6b7ec9"><div class="ttname"><a href="AMReX__Enum_8H.html#a9f2a1a484d1e714fda55c741bf6b7ec9">amrex_enum_traits</a></div><div class="ttdeci">decltype(amrex_get_enum_traits(std::declval&lt; T &gt;())) amrex_enum_traits</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:16</div></div>
 <div class="ttc" id="aAMReX__String_8H_html"><div class="ttname"><a href="AMReX__String_8H.html">AMReX_String.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_ae95f8e970bb6bb182d415dd53f37a0d3"><div class="ttname"><a href="namespaceamrex_1_1detail.html#ae95f8e970bb6bb182d415dd53f37a0d3">amrex::detail::getNewEnumNameValuePairs</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, T &gt; &gt; getNewEnumNameValuePairs()</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:24</div></div>
@@ -288,6 +297,7 @@ $(document).ready(function(){initNavTree('AMReX__Enum_8H_source.html',''); initR
 <div class="ttc" id="anamespaceamrex_html_ad291f7c70d02dbbb3cc58228d4d7f4e2"><div class="ttname"><a href="namespaceamrex.html#ad291f7c70d02dbbb3cc58228d4d7f4e2">amrex::getEnumNameStrings</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getEnumNameStrings()</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:124</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae905d147b84a78af7a2ccf7620bdf9b1"><div class="ttname"><a href="namespaceamrex.html#ae905d147b84a78af7a2ccf7620bdf9b1">amrex::split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(std::string const &amp;s, std::string const &amp;sep)</div><div class="ttdoc">Split a string using given tokens in sep.</div><div class="ttdef"><b>Definition</b> AMReX_String.cpp:42</div></div>
 <div class="ttc" id="anamespaceamrex_html_aec1258e3b05a0d2b41c348dce3dd8e2f"><div class="ttname"><a href="namespaceamrex.html#aec1258e3b05a0d2b41c348dce3dd8e2f">amrex::getEnumNameValuePairs</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::string, T &gt; &gt; getEnumNameValuePairs()</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:56</div></div>
+<div class="ttc" id="anamespaceamrex_html_af11e27e33248402e16a37489677647d3"><div class="ttname"><a href="namespaceamrex.html#af11e27e33248402e16a37489677647d3">amrex::toUnderlying</a></div><div class="ttdeci">constexpr auto toUnderlying(T v) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Enum.H:150</div></div>
 <div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition</b> AMReX_FabArrayCommI.H:957</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -3027,6 +3027,7 @@ var namespaceamrex =
     [ "TotalBytesAllocatedInFabsHWM", "namespaceamrex.html#a95a2c5251b0bc8cc9f28f6384738404a", null ],
     [ "TotalCellsAllocatedInFabs", "namespaceamrex.html#aa9ed510cedd140658efd18542d9479c7", null ],
     [ "TotalCellsAllocatedInFabsHWM", "namespaceamrex.html#aa85143ea71ce835e3a64ce8551b726b4", null ],
+    [ "toUnderlying", "namespaceamrex.html#af11e27e33248402e16a37489677647d3", null ],
     [ "toUpper", "namespaceamrex.html#afb53573f5330e4753ad1b562e5dd95ce", null ],
     [ "transformParticles", "namespaceamrex.html#ae03ee3a195d7ee3ebcb19d20f9fdce73", null ],
     [ "transformParticles", "namespaceamrex.html#a6f4df8f3df0bb529d0f348e93afdb949", null ],

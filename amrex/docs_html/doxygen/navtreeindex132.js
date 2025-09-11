@@ -1,5 +1,7 @@
 var NAVTREEINDEX132 =
 {
+"structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0":[3,0,0,523,0],
+"structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0":[2,0,0,558,0],
 "structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b":[3,0,0,523,6],
 "structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b":[2,0,0,558,6],
 "structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930":[3,0,0,523,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX132 =
 "structamrex_1_1ValLocPair.html#a0c3808b669899ddde6c26fa5ec26cc1a":[3,0,0,544,8],
 "structamrex_1_1ValLocPair.html#a0c3808b669899ddde6c26fa5ec26cc1a":[2,0,0,579,8],
 "structamrex_1_1ValLocPair.html#a424e67ba672e98085c8c39a1c299566b":[2,0,0,579,1],
-"structamrex_1_1ValLocPair.html#a424e67ba672e98085c8c39a1c299566b":[3,0,0,544,1],
-"structamrex_1_1ValLocPair.html#a52ba2e2e9eda96d48c05138b95a707c4":[3,0,0,544,0],
-"structamrex_1_1ValLocPair.html#a52ba2e2e9eda96d48c05138b95a707c4":[2,0,0,579,0]
+"structamrex_1_1ValLocPair.html#a424e67ba672e98085c8c39a1c299566b":[3,0,0,544,1]
 };
