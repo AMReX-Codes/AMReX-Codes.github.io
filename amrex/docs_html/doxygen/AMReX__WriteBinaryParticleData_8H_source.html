@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structamrex_1_1KeepValidFilter.html#a0e96f06a62223fa799761f1739b4c4ea">   16</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1KeepValidFilter.html#a0e96f06a62223fa799761f1739b4c4ea">operator() </a>(<span class="keyword">const</span> SrcData&amp; src, <span class="keywordtype">int</span> i) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> (src.id(i) &gt; 0);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> (src.id(i).is_valid());</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
@@ -947,7 +947,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>            reduce_op.<a class="code hl_function" href="classamrex_1_1ReduceOps.html#a76c9c4a303db128f0e416889bc54aef6">eval</a>(np, reduce_data,</div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>            [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i) -&gt; ReduceTuple</div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>            {</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                <span class="keywordflow">return</span> (ptd.id(i) &gt; 0) ? 1 : 0;</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                <span class="keywordflow">return</span> (ptd.id(i).is_valid()) ? 1 : 0;</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>            });</div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>            <span class="keywordtype">int</span> np_valid = amrex::get&lt;0&gt;(reduce_data.<a class="code hl_function" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op));</div>
@@ -1232,7 +1232,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = pbox.getConstParticleTileData();</div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pindex = 0; pindex &lt; pbox.numParticles(); ++pindex)</div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>                    {</div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>                        <span class="keywordflow">if</span> (ptd.id(pindex) &lt;= 0) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>                        <span class="keywordflow">if</span> (!ptd.id(pindex).is_valid()) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span> </div>
 <div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>                        <a class="code hl_function" href="namespaceamrex_1_1particle__detail.html#aef4fee177c4535946c219adc02a8b08e">particle_detail::iPackParticleData</a>(ptd, pindex, iptr,</div>
 <div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>                            write_int_comp.<a class="code hl_function" href="classamrex_1_1Vector.html#a427a78687f94cf43c2ce61f5f946c612">dataPtr</a>(), is_checkpoint);</div>
@@ -1259,7 +1259,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = pbox.getConstParticleTileData();</div>
 <div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pindex = 0; pindex &lt; pbox.numParticles(); ++pindex)</div>
 <div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>                    {</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>                        <span class="keywordflow">if</span> (ptd.id(pindex) &lt;= 0) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>                        <span class="keywordflow">if</span> (!ptd.id(pindex).is_valid()) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span> </div>
 <div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>                        <a class="code hl_function" href="namespaceamrex_1_1particle__detail.html#a729247ba45bdf7ae3857546d7fe586f3">particle_detail::rPackParticleData</a>(ptd, pindex, rptr,</div>
 <div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>                            write_real_comp.<a class="code hl_function" href="classamrex_1_1Vector.html#a427a78687f94cf43c2ce61f5f946c612">dataPtr</a>());</div>
