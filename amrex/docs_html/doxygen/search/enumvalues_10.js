@@ -18,8 +18,7 @@ var searchData=
   ['ssprk3_15',['SSPRK3',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564ab65603b0c54c1b7114d61811751ccf42',1,'amrex']]],
   ['standard_16',['Standard',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143',1,'amrex::ErrorRec']]],
   ['structed_17',['structed',['../classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6',1,'amrex::Hypre']]],
-  ['subregionminmax_18',['SUBREGIONMINMAX',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98ea503682758a9652794035ca63ab96c560',1,'amrex::Amrvis']]],
-  ['sum_19',['sum',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52',1,'amrex::detail']]],
-  ['sundials_20',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
-  ['symbol_21',['symbol',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fdae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1ae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_parser.tab.h']]]
+  ['sum_18',['sum',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52',1,'amrex::detail']]],
+  ['sundials_19',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
+  ['symbol_20',['symbol',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fdae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1ae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_parser.tab.h']]]
 ];

@@ -6,7 +6,7 @@
     <includes refid="AMReX__SIMD_8H" local="no">AMReX_SIMD.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>SIMD_WIDTH</declname>
         <defname>SIMD_WIDTH</defname>
         <defval><ref refid="namespaceamrex_1_1simd_1a3eedc46ea269765dc7010c48bd8a39d8" kindref="member">native_simd_size_real</ref></defval>
@@ -14,7 +14,7 @@
     </templateparamlist>
     <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="structamrex_1_1simd_1_1Vectorized_1a0e893dff355298214666ddcada09e8c5" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;::simd_width</definition>
         <argsstring></argsstring>
         <name>simd_width</name>
@@ -35,8 +35,7 @@
     <detaileddescription>
 <para>Mixin Helper Class</para>
 <para>Use this class as a mixin (base) class to simplify writing functors that support/do not support ParallelForSIMD.</para>
-<para>Example: <programlisting filename=".c"><codeline><highlight class="normal"><sp/>++</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Compute<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Vectorized&lt;&gt;</highlight></codeline>
+<para>Example: <programlisting filename=".cpp"><codeline><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Compute<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Vectorized&lt;&gt;</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T_Real&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>

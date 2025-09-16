@@ -2,12 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespaceamrex_1_1FFT" kind="namespace" language="C++">
     <compoundname>amrex::FFT</compoundname>
+    <innerclass refid="structamrex_1_1FFT_1_1Boundary__EnumTraits" prot="public">amrex::FFT::Boundary_EnumTraits</innerclass>
     <innerclass refid="structamrex_1_1FFT_1_1Info" prot="public">amrex::FFT::Info</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1LocalR2C" prot="public">amrex::FFT::LocalR2C</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1OpenBCSolver" prot="public">amrex::FFT::OpenBCSolver</innerclass>
     <innerclass refid="structamrex_1_1FFT_1_1Plan" prot="public">amrex::FFT::Plan</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1Poisson" prot="public">amrex::FFT::Poisson</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1PoissonHybrid" prot="public">amrex::FFT::PoissonHybrid</innerclass>
+    <innerclass refid="classamrex_1_1FFT_1_1PoissonOpenBC" prot="public">amrex::FFT::PoissonOpenBC</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1R2C" prot="public">amrex::FFT::R2C</innerclass>
     <innerclass refid="classamrex_1_1FFT_1_1R2X" prot="public">amrex::FFT::R2X</innerclass>
     <innerclass refid="structamrex_1_1FFT_1_1RotateBwd" prot="public">amrex::FFT::RotateBwd</innerclass>
@@ -89,6 +91,39 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="50" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceamrex_1_1FFT_1a2a5b9696bd31b9e62eb1fda9e2bb9964" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>Boundary</name>
+        <qualifiedname>amrex::FFT::Boundary</qualifiedname>
+        <enumvalue id="namespaceamrex_1_1FFT_1a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee" prot="public">
+          <name>periodic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138" prot="public">
+          <name>even</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1_1FFT_1a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e" prot="public">
+          <name>odd</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" bodystart="52" bodyend="52"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" prot="public" static="no" strong="yes">
         <type></type>
@@ -182,7 +217,7 @@
     </sectiondef>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceamrex_1_1FFT_1af2da8d3e9633d475da772b0769ce3b81" prot="public" static="no">
-        <type>std::tuple&lt; <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 3 &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref>, <ref refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" kindref="member">Kind</ref> &gt;</type>
+        <type>std::tuple&lt; <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 3 &gt;, int, <ref refid="namespaceamrex_1_1FFT_1a28c4d0ce41c89d0d14f83d98b45375c0" kindref="member">Direction</ref>, <ref refid="namespaceamrex_1_1FFT_1aab68145bf2931040e7ebba7ac2b15f70" kindref="member">Kind</ref> &gt;</type>
         <definition>using amrex::FFT::Key = typedef std::tuple&lt;IntVectND&lt;3&gt;,int,Direction,Kind&gt;</definition>
         <argsstring></argsstring>
         <name>Key</name>
@@ -248,7 +283,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="1443" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="1443" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" line="1451" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_R2C.H" bodystart="1451" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceamrex_1_1FFT_1a030f0cdd98372793256e2e4d0cf9711c" prot="public" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1FFT_1_1Boundary__EnumTraits" kindref="compound">Boundary_EnumTraits</ref></type>
+        <definition>Boundary_EnumTraits amrex::FFT::amrex_get_enum_traits(Boundary)</definition>
+        <argsstring>(Boundary)</argsstring>
+        <name>amrex_get_enum_traits</name>
+        <qualifiedname>amrex::FFT::amrex_get_enum_traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="52" column="73"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -373,32 +424,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" line="78" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.cpp" bodystart="78" bodyend="81" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="1205" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1FFT_1a5f62bdef4ab3baa40ccac7c6ab58a4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>amrex::FFT::AMREX_ENUM</definition>
-        <argsstring>(Boundary, periodic, even, odd)</argsstring>
-        <name>AMREX_ENUM</name>
-        <qualifiedname>amrex::FFT::AMREX_ENUM</qualifiedname>
-        <param>
-          <type>Boundary</type>
-        </param>
-        <param>
-          <type>periodic</type>
-        </param>
-        <param>
-          <type>even</type>
-        </param>
-        <param>
-          <type>odd</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" line="52" column="1" declfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT_Helper.H" declline="52" declcolumn="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

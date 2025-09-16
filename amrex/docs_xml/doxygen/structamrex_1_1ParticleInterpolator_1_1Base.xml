@@ -13,7 +13,7 @@
     </templateparamlist>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;::index[3]</definition>
         <argsstring>[3]</argsstring>
         <name>index</name>
@@ -42,7 +42,7 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Base_1aad2b3e1789a599cf1517fbfa66214213" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Base_1a501e319cda102b2fb5b9673852231db6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename P</type>
@@ -54,8 +54,8 @@
             <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;::ParticleToMesh</definition>
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;::ParticleToMesh</definition>
         <argsstring>(const P &amp;p, amrex::Array4&lt; V &gt; const &amp;arr, int src_comp, int dst_comp, int num_comps, F const &amp;f)</argsstring>
         <name>ParticleToMesh</name>
         <qualifiedname>amrex::ParticleInterpolator::Base::ParticleToMesh</qualifiedname>
@@ -68,15 +68,15 @@
           <declname>arr</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>src_comp</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dst_comp</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>num_comps</declname>
         </param>
         <param>
@@ -181,7 +181,7 @@ Usage:</para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="64" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="64" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Base_1a81c2922823a2fdac178b526dcd271141" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Base_1ac669b25bcc6cb7f75290ce22adcac772" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename P</type>
@@ -196,8 +196,8 @@ Usage:</para>
             <type>typename G</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;::MeshToParticle</definition>
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;::MeshToParticle</definition>
         <argsstring>(P &amp;p, amrex::Array4&lt; const V &gt; const &amp;arr, int src_comp, int dst_comp, int num_comps, F const &amp;f, G const &amp;g)</argsstring>
         <name>MeshToParticle</name>
         <qualifiedname>amrex::ParticleInterpolator::Base::MeshToParticle</qualifiedname>
@@ -210,15 +210,15 @@ Usage:</para>
           <declname>arr</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>src_comp</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dst_comp</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>num_comps</declname>
         </param>
         <param>
@@ -315,8 +315,7 @@ Usage:</para>
 <para>function for computing the particle quantity to interpolate </para>
 </parameterdescription>
 </parameteritem>
-</parameterlist>
-<parameterlist kind="templateparam"><parameteritem>
+<parameteritem>
 <parameternamelist>
 <parametername>g</parametername>
 </parameternamelist>
@@ -366,8 +365,8 @@ Usage:</para>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="19" bodyend="159"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>index</name></member>
-      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a81c2922823a2fdac178b526dcd271141" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>MeshToParticle</name></member>
-      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1aad2b3e1789a599cf1517fbfa66214213" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>ParticleToMesh</name></member>
+      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1ac669b25bcc6cb7f75290ce22adcac772" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>MeshToParticle</name></member>
+      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a501e319cda102b2fb5b9673852231db6" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>ParticleToMesh</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a5e658795689d17cacf75bdb7c46675ac" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>w</name></member>
     </listofallmembers>
   </compounddef>

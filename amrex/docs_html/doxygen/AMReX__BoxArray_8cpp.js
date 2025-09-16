@@ -6,6 +6,7 @@ var AMReX__BoxArray_8cpp =
     [ "complementIn", "AMReX__BoxArray_8cpp.html#a8c00ae57393c9f6665f88b80e3cdfb2c", null ],
     [ "convert", "AMReX__BoxArray_8cpp.html#a911442fbfdd591235baf90cac01d9856", null ],
     [ "convert", "AMReX__BoxArray_8cpp.html#af37f380f72af598af4865070235664c2", null ],
+    [ "decompose", "AMReX__BoxArray_8cpp.html#a86a6591ebde4320c6b7a835c701f1830", null ],
     [ "GetBndryCells", "AMReX__BoxArray_8cpp.html#a719e505b04b336141e1a9a6ab52ecbcd", null ],
     [ "intersect", "AMReX__BoxArray_8cpp.html#a2fa5535ba8d983023e1a6bd61c9a4880", null ],
     [ "intersect", "AMReX__BoxArray_8cpp.html#a31f38031bc51519297d88d3234115277", null ],

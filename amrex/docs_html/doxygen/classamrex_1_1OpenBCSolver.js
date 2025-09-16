@@ -26,7 +26,7 @@ var classamrex_1_1OpenBCSolver =
     [ "m_crse_grown_faces_phi", "classamrex_1_1OpenBCSolver.html#a25518d5cabb1d9332b6f8fb812d872cf", null ],
     [ "m_dm_all", "classamrex_1_1OpenBCSolver.html#a40d019b887fcf68ab02864765f88643e", null ],
     [ "m_dmap", "classamrex_1_1OpenBCSolver.html#aa8a7ddd4f65f8f43b9df11669e7720cf", null ],
-    [ "m_dpdn", "classamrex_1_1OpenBCSolver.html#ae7fada71ee96535887f907f28e17246c", null ],
+    [ "m_dpdn", "classamrex_1_1OpenBCSolver.html#a8fa56a692e506856e802c2b661910846", null ],
     [ "m_geom", "classamrex_1_1OpenBCSolver.html#a1d6c905d586d04d63a33985d4a919ce2", null ],
     [ "m_geom_all", "classamrex_1_1OpenBCSolver.html#a0ad29033cba507834586f9f24eef2fbf", null ],
     [ "m_grids", "classamrex_1_1OpenBCSolver.html#a036b6904fd09ed914a7b12ebc900034a", null ],

@@ -3,7 +3,7 @@
   <compounddef id="namespaceamrex_1_1particle__detail" kind="namespace" language="C++">
     <compoundname>amrex::particle_detail</compoundname>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1af72f8c4ec6c858d83f59c48034851294" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a0815919e29e03ee8666b9b0b0d69df39" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -30,9 +30,9 @@
             <defname>NAI</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto amrex::particle_detail::call_f</definition>
-        <argsstring>(F const &amp;f, const PTDType&lt; T_ParticleType, NAR, NAI &gt; &amp;p, const int i, Array4&lt; T &gt; const &amp;fabarr, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;plo, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxi) noexcept</argsstring>
+        <type>__host__ __device__ auto</type>
+        <definition>__host__ __device__ auto amrex::particle_detail::call_f</definition>
+        <argsstring>(F const &amp;f, const PTDType&lt; T_ParticleType, NAR, NAI &gt; &amp;p, const int i, Array4&lt; T &gt; const &amp;fabarr, GpuArray&lt; Real, 3 &gt; const &amp;plo, GpuArray&lt; Real, 3 &gt; const &amp;dxi) noexcept</argsstring>
         <name>call_f</name>
         <qualifiedname>amrex::particle_detail::call_f</qualifiedname>
         <param>
@@ -44,7 +44,7 @@
           <declname>p</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>const int</type>
           <declname>i</declname>
         </param>
         <param>
@@ -52,11 +52,11 @@
           <declname>fabarr</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt; const &amp;</type>
           <declname>plo</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt; const &amp;</type>
           <declname>dxi</declname>
         </param>
         <briefdescription>
@@ -67,7 +67,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleMesh.H" line="16" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleMesh.H" bodystart="16" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a4fc575fa169519c925f33d6bb746d598" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a67781cea5d141deb050b98d4501f0acf" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename F</type>
@@ -86,8 +86,8 @@
             <defname>NAI</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto amrex::particle_detail::call_f</definition>
+        <type>__host__ __device__ auto</type>
+        <definition>__host__ __device__ auto amrex::particle_detail::call_f</definition>
         <argsstring>(F const &amp;f, const ConstParticleTileData&lt; T_ParticleType, NAR, NAI &gt; &amp;p, const int i) noexcept</argsstring>
         <name>call_f</name>
         <qualifiedname>amrex::particle_detail::call_f</qualifiedname>
@@ -100,7 +100,7 @@
           <declname>p</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>const int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -146,11 +146,11 @@
         <name>PSizeInFile</name>
         <qualifiedname>amrex::particle_detail::PSizeInFile</qualifiedname>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>wrc</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>wic</declname>
         </param>
         <briefdescription>
@@ -258,7 +258,7 @@
         <name>fillFlags</name>
         <qualifiedname>amrex::particle_detail::fillFlags</qualifiedname>
         <param>
-          <type>Container&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, Allocator &gt; &amp;</type>
+          <type>Container&lt; int, Allocator &gt; &amp;</type>
           <declname>pflags</declname>
         </param>
         <param>
@@ -292,7 +292,7 @@
         <name>countFlagsGpu</name>
         <qualifiedname>amrex::particle_detail::countFlagsGpu</qualifiedname>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, Container &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, Container &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
@@ -345,7 +345,7 @@
         <name>countFlagsCpu</name>
         <qualifiedname>amrex::particle_detail::countFlagsCpu</qualifiedname>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, Container &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, Container &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
@@ -403,7 +403,7 @@
         <name>countFlags</name>
         <qualifiedname>amrex::particle_detail::countFlags</qualifiedname>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, Container&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, Allocator &gt; &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, Container&lt; int, Allocator &gt; &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
@@ -435,7 +435,7 @@
         <name>countFlags</name>
         <qualifiedname>amrex::particle_detail::countFlags</qualifiedname>
         <param>
-          <type>const Container&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, Allocator &gt; &amp;</type>
+          <type>const Container&lt; int, Allocator &gt; &amp;</type>
           <declname>pflags</declname>
         </param>
         <briefdescription>
@@ -446,14 +446,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="202" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="202" bodyend="217"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a2d2a60d46d1fab347521156295a85f70" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1ac8697ba1fbd8c4a073b54043d0c46790" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename I</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE void amrex::particle_detail::packParticleIDs</definition>
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::particle_detail::packParticleIDs</definition>
         <argsstring>(I *idata, const std::uint64_t idcpu, bool is_checkpoint) noexcept</argsstring>
         <name>packParticleIDs</name>
         <qualifiedname>amrex::particle_detail::packParticleIDs</qualifiedname>
@@ -477,14 +477,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="221" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="221" bodyend="236"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a729247ba45bdf7ae3857546d7fe586f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a40c57ab7223ef5dc9c6463765197e9f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PTD</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE void amrex::particle_detail::rPackParticleData</definition>
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::particle_detail::rPackParticleData</definition>
         <argsstring>(const PTD &amp;ptd, int idx, typename PTD::RealType *rdata_ptr, const int *write_real_comp)</argsstring>
         <name>rPackParticleData</name>
         <qualifiedname>amrex::particle_detail::rPackParticleData</qualifiedname>
@@ -493,7 +493,7 @@
           <declname>ptd</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>idx</declname>
         </param>
         <param>
@@ -501,7 +501,7 @@
           <declname>rdata_ptr</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <type>const int *</type>
           <declname>write_real_comp</declname>
         </param>
         <briefdescription>
@@ -512,14 +512,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="240" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="240" bodyend="276"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1aef4fee177c4535946c219adc02a8b08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1particle__detail_1a8fd307bf4a16192de0f86dd696c40788" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PTD</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE void amrex::particle_detail::iPackParticleData</definition>
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::particle_detail::iPackParticleData</definition>
         <argsstring>(const PTD &amp;ptd, int idx, typename PTD::IntType *idata_ptr, const int *write_int_comp, bool is_checkpoint)</argsstring>
         <name>iPackParticleData</name>
         <qualifiedname>amrex::particle_detail::iPackParticleData</qualifiedname>
@@ -528,7 +528,7 @@
           <declname>ptd</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>idx</declname>
         </param>
         <param>
@@ -536,7 +536,7 @@
           <declname>idata_ptr</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <type>const int *</type>
           <declname>write_int_comp</declname>
         </param>
         <param>
@@ -563,7 +563,7 @@
         <name>packIODataGpu</name>
         <qualifiedname>amrex::particle_detail::packIODataGpu</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>idata</declname>
         </param>
         <param>
@@ -575,31 +575,31 @@
           <declname>pc</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>grid</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_real_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_int_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>tiles</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>np</declname>
         </param>
         <param>
@@ -626,7 +626,7 @@
         <name>packIODataCpu</name>
         <qualifiedname>amrex::particle_detail::packIODataCpu</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>idata</declname>
         </param>
         <param>
@@ -638,31 +638,31 @@
           <declname>pc</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>grid</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_real_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_int_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>tiles</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>np</declname>
         </param>
         <param>
@@ -689,7 +689,7 @@
         <name>packIOData</name>
         <qualifiedname>amrex::particle_detail::packIOData</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>idata</declname>
         </param>
         <param>
@@ -701,31 +701,31 @@
           <declname>pc</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>grid</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_real_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>write_int_comp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt; &gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>tiles</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>np</declname>
         </param>
         <param>

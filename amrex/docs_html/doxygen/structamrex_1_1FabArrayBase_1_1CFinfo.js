@@ -2,7 +2,7 @@ var structamrex_1_1FabArrayBase_1_1CFinfo =
 [
     [ "CFinfo", "structamrex_1_1FabArrayBase_1_1CFinfo.html#a2ad23c41fccd032693997df69c0bce0d", null ],
     [ "bytes", "structamrex_1_1FabArrayBase_1_1CFinfo.html#a3cdb4faae0dd007fed2edc93c08c9759", null ],
-    [ "Domain", "structamrex_1_1FabArrayBase_1_1CFinfo.html#a26aca5aed0a35b2075c1311ff2b92988", null ],
+    [ "Domain", "structamrex_1_1FabArrayBase_1_1CFinfo.html#a6145a3808144108357bbbedffdfbd34e", null ],
     [ "ba_cfb", "structamrex_1_1FabArrayBase_1_1CFinfo.html#ac07051a2c7c91144216d0a333e2b9bce", null ],
     [ "dm_cfb", "structamrex_1_1FabArrayBase_1_1CFinfo.html#aeb127de6351fbe080c4d924c38e6a9db", null ],
     [ "fine_grid_idx", "structamrex_1_1FabArrayBase_1_1CFinfo.html#aca354eb516dc263308380e26666bb0b7", null ],

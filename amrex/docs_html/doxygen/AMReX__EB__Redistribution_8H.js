@@ -2,14 +2,14 @@ var AMReX__EB__Redistribution_8H =
 [
     [ "amrex_flux_redistribute", "AMReX__EB__Redistribution_8H.html#a2997746786ac52f67e2d900ad628b54e", null ],
     [ "apply_flux_redistribution", "AMReX__EB__Redistribution_8H.html#aefd8bdd7a185cff23fc99fb94a8a17d0", null ],
-    [ "ApplyInitialRedistribution", "AMReX__EB__Redistribution_8H.html#aec9402ad077cb5bc93ffbc075444ff28", null ],
-    [ "ApplyMLRedistribution", "AMReX__EB__Redistribution_8H.html#a3931698a2f597bb9cf2ae64e53cc0463", null ],
-    [ "ApplyRedistribution", "AMReX__EB__Redistribution_8H.html#ad09a07e5d11a8076d60a359707ccb53e", null ],
-    [ "MakeITracker", "AMReX__EB__Redistribution_8H.html#a48d0da8ea1955807973d77a627c4d3a3", null ],
+    [ "ApplyInitialRedistribution", "AMReX__EB__Redistribution_8H.html#a315b48edb351e2d406384deec70d228a", null ],
+    [ "ApplyMLRedistribution", "AMReX__EB__Redistribution_8H.html#a3f8f8683a45019b95339504aef4c7f0f", null ],
+    [ "ApplyRedistribution", "AMReX__EB__Redistribution_8H.html#a0e0b59317b972387489d090670ab24fd", null ],
+    [ "MakeITracker", "AMReX__EB__Redistribution_8H.html#adf782b114ef7fc3ea3dd5e42009836ba", null ],
     [ "MakeStateRedistUtils", "AMReX__EB__Redistribution_8H.html#a1415c2b7be8fa468b572da6a5b8ce2dc", null ],
-    [ "MLStateRedistribute", "AMReX__EB__Redistribution_8H.html#a2a61a7588d23092462a8a0de34ebbd94", null ],
-    [ "single_level_redistribute", "AMReX__EB__Redistribution_8H.html#a03abd966dfb25986b3cf03c84f0027a1", null ],
-    [ "single_level_weighted_redistribute", "AMReX__EB__Redistribution_8H.html#aa3e0c2d6c6d25bd6068cc3347d94d89c", null ],
-    [ "StateRedistribute", "AMReX__EB__Redistribution_8H.html#a4ce1202a361f22a3e49b7858677f1a63", null ],
+    [ "MLStateRedistribute", "AMReX__EB__Redistribution_8H.html#ad8e316a7633806e4b6d26f0842f3cb82", null ],
+    [ "single_level_redistribute", "AMReX__EB__Redistribution_8H.html#a06dd62adc2d175177f6daf327040e6c8", null ],
+    [ "single_level_weighted_redistribute", "AMReX__EB__Redistribution_8H.html#a21aae7c97802a4204649e8fb26a9c611", null ],
+    [ "StateRedistribute", "AMReX__EB__Redistribution_8H.html#acd6c32c9119d102132df8b470bd35828", null ],
     [ "eb_covered_val", "AMReX__EB__Redistribution_8H.html#a7e0f258a02602680779facdad15ec448", null ]
 ];

@@ -1,8 +1,8 @@
 var namespaceamrex_1_1Gpu_1_1range__detail =
 [
     [ "range_impl", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl" ],
-    [ "at", "namespaceamrex_1_1Gpu_1_1range__detail.html#a0b8d0dde83911b9f39384a771eb3b215", null ],
-    [ "at", "namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665", null ],
-    [ "size", "namespaceamrex_1_1Gpu_1_1range__detail.html#af4a6afcca3d71815aa1bc2ea67f622d1", null ],
-    [ "size", "namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906", null ]
+    [ "at", "namespaceamrex_1_1Gpu_1_1range__detail.html#af1c514ca13cf18e25075a3febd70db26", null ],
+    [ "at", "namespaceamrex_1_1Gpu_1_1range__detail.html#ac52862f66798fbe253adae49b63bdf38", null ],
+    [ "size", "namespaceamrex_1_1Gpu_1_1range__detail.html#abcbb6e42f8696e13a104dcb7c3f405e4", null ],
+    [ "size", "namespaceamrex_1_1Gpu_1_1range__detail.html#a466461fab8b1a59566414281213dd631", null ]
 ];

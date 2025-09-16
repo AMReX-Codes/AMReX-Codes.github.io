@@ -5,7 +5,7 @@
     <includes refid="AMReX__ParticleCommunication_8H" local="no">AMReX_ParticleCommunication.H</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1GetSendBufferOffset_1a0ed01f542a7575b5a8d300c751d962b2" prot="public" static="no" mutable="no">
-        <type>const unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const unsigned int *</type>
         <definition>const unsigned int* amrex::GetSendBufferOffset::m_box_offsets</definition>
         <argsstring></argsstring>
         <name>m_box_offsets</name>
@@ -84,18 +84,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="315" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="315" bodyend="320"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1GetSendBufferOffset_1a6e0f7057538a8b0e3447ad9f3eca33ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> Long</type>
-        <definition>AMREX_FORCE_INLINE AMREX_GPU_DEVICE Long amrex::GetSendBufferOffset::operator()</definition>
+      <memberdef kind="function" id="structamrex_1_1GetSendBufferOffset_1adc3d679e7ce95c4ebd5a707c2902e874" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>__device__ Long</type>
+        <definition>__device__ Long amrex::GetSendBufferOffset::operator()</definition>
         <argsstring>(int dst_box, int dst_lev, std::size_t psize, int i) const</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::GetSendBufferOffset::operator()</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dst_box</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dst_lev</declname>
         </param>
         <param>
@@ -103,7 +103,7 @@
           <declname>psize</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -146,7 +146,7 @@
       <member refid="structamrex_1_1GetSendBufferOffset_1a7fed473672f976de3014a8116df479f4" prot="public" virt="non-virtual"><scope>amrex::GetSendBufferOffset</scope><name>m_get_bucket</name></member>
       <member refid="structamrex_1_1GetSendBufferOffset_1a6a63716df57946f90594a5a756582a77" prot="public" virt="non-virtual"><scope>amrex::GetSendBufferOffset</scope><name>m_get_pid</name></member>
       <member refid="structamrex_1_1GetSendBufferOffset_1a81bc5519ac623a1d14e612f8fe202742" prot="public" virt="non-virtual"><scope>amrex::GetSendBufferOffset</scope><name>m_pad_correction</name></member>
-      <member refid="structamrex_1_1GetSendBufferOffset_1a6e0f7057538a8b0e3447ad9f3eca33ba" prot="public" virt="non-virtual"><scope>amrex::GetSendBufferOffset</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1GetSendBufferOffset_1adc3d679e7ce95c4ebd5a707c2902e874" prot="public" virt="non-virtual"><scope>amrex::GetSendBufferOffset</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

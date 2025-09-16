@@ -29,7 +29,7 @@
     </sectiondef>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1GMRES_1a42dcd0b4b94f5567bef14a46032b5646" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::m_verbose</definition>
         <argsstring></argsstring>
         <name>m_verbose</name>
@@ -44,7 +44,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="133" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1GMRES_1a5c0f9c75918ca3d28071244df41bd1aa" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::m_maxiter</definition>
         <argsstring></argsstring>
         <name>m_maxiter</name>
@@ -59,7 +59,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="134" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1GMRES_1a87d7d08dbb34c4033f140161cf136a10" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::m_its</definition>
         <argsstring></argsstring>
         <name>m_its</name>
@@ -74,7 +74,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="135" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1GMRES_1a17f683d2c35ae90c2503051415156de6" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::m_status</definition>
         <argsstring></argsstring>
         <name>m_status</name>
@@ -89,7 +89,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="136" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1GMRES_1a8c2b6b33ceb2cb2a1342efd3f2b1c13b" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::m_restrtlen</definition>
         <argsstring></argsstring>
         <name>m_restrtlen</name>
@@ -109,7 +109,7 @@
         <argsstring></argsstring>
         <name>m_res</name>
         <qualifiedname>amrex::GMRES::m_res</qualifiedname>
-        <initializer>= std::numeric_limits&lt;<ref refid="classamrex_1_1GMRES_1afe8b44f171784e28dd29632a08ce0bd4" kindref="member">RT</ref>&gt;<ref refid="namespaceamrex_1ac96e89dbbf05063f32d1ef7860f6a4ea" kindref="member">::max</ref>()</initializer>
+        <initializer>= std::numeric_limits&lt;<ref refid="classamrex_1_1GMRES_1afe8b44f171784e28dd29632a08ce0bd4" kindref="member">RT</ref>&gt;<ref refid="namespaceamrex_1a9d99cb1523b9f336dad742f6a15bdf59" kindref="member">::max</ref>()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -361,7 +361,7 @@
           <declname>a_tol_abs</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>a_its</declname>
           <defval>-1</defval>
         </param>
@@ -398,7 +398,15 @@
 <parametername>a_tol_abs</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>absolute tolerance. \patam a_its optional argument specifying the maximum number of iterations. </para>
+<para>absolute tolerance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_its</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>optional argument specifying the maximum number of iterations. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -415,7 +423,7 @@
         <name>setVerbose</name>
         <qualifiedname>amrex::GMRES::setVerbose</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>v</declname>
         </param>
         <briefdescription>
@@ -434,7 +442,7 @@
         <name>setRestartLength</name>
         <qualifiedname>amrex::GMRES::setRestartLength</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>rl</declname>
         </param>
         <briefdescription>
@@ -453,7 +461,7 @@
         <name>setMaxIters</name>
         <qualifiedname>amrex::GMRES::setMaxIters</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>niters</declname>
         </param>
         <briefdescription>
@@ -466,7 +474,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="110" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="110" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1GMRES_1a0e06adae47932cbfeb075dad9a3504b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::getNumIters</definition>
         <argsstring>() const</argsstring>
         <name>getNumIters</name>
@@ -481,7 +489,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" line="113" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES.H" bodystart="113" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1GMRES_1ae3b04d357f2d34f4c13eae2f87a85e36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::GMRES&lt; V, M &gt;::getStatus</definition>
         <argsstring>() const</argsstring>
         <name>getStatus</name>
@@ -551,11 +559,11 @@
           <declname>a_xx</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <type>int &amp;</type>
           <declname>a_status</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <type>int &amp;</type>
           <declname>a_itcount</declname>
         </param>
         <param>
@@ -581,7 +589,7 @@
           <declname>a_xx</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>it</declname>
         </param>
         <briefdescription>
@@ -647,7 +655,7 @@
         <name>gram_schmidt_orthogonalization</name>
         <qualifiedname>amrex::GMRES::gram_schmidt_orthogonalization</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>it</declname>
         </param>
         <briefdescription>
@@ -665,7 +673,7 @@
         <name>update_hessenberg</name>
         <qualifiedname>amrex::GMRES::update_hessenberg</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>it</declname>
         </param>
         <param>

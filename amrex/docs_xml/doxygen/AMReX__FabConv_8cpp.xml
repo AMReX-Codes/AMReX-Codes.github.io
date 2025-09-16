@@ -1787,25 +1787,25 @@ getarray (std::istream&amp;  is,                                       \
 {                                                                  \
     char c;                                                        \
     is &gt;&gt; c;                                                       \
-    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (c != &apos;(&apos;)                                                  \
+    if (c != &apos;(&apos;)                                                  \
         <ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(&quot;getarray(istream&amp;): expected a \&apos;(\&apos;&quot;);     \
     int size;                                                      \
     is &gt;&gt; size;                                                    \
     is &gt;&gt; c;                                                       \
-    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ( c != &apos;,&apos;)                                                 \
+    if ( c != &apos;,&apos;)                                                 \
         <ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(&quot;getarray(istream&amp;): expected a \&apos;,\&apos;&quot;);     \
     is &gt;&gt; c;                                                       \
-    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (c != &apos;(&apos;)                                                  \
+    if (c != &apos;(&apos;)                                                  \
         <ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(&quot;getarray(istream&amp;): expected a \&apos;(\&apos;&quot;);     \
     AMREX_ASSERT(size &gt;= 0 &amp;&amp; size &lt; std::numeric_limits&lt;int&gt;::max()); \
     ar.resize(size);                                               \
     for(int i = 0; i &lt; size; ++i)                                  \
         is &gt;&gt; ar[i];                                               \
     is &gt;&gt; c;                                                       \
-    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (c != &apos;)&apos;)                                                  \
+    if (c != &apos;)&apos;)                                                  \
         <ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(&quot;getarray(istream&amp;): expected a \&apos;)\&apos;&quot;);     \
     is &gt;&gt; c;                                                       \
-    <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (c != &apos;)&apos;)                                                  \
+    if (c != &apos;)&apos;)                                                  \
         <ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(&quot;getarray(istream&amp;): expected a \&apos;)\&apos;&quot;);     \
 }</initializer>
         <briefdescription>
@@ -1829,7 +1829,7 @@ putarray (std::ostream&amp;        os,     \
     for (i = 0; i &lt; ar.size(); ++i)    \
     {                                  \
         os &lt;&lt; ar[i];                   \
-        <ref refid="amrex__iparser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (i != ar.size() - 1)        \
+        if (i != ar.size() - 1)        \
             os &lt;&lt; &apos; &apos;;                 \
     }                                  \
     os &lt;&lt; &quot;))&quot;;                        \
@@ -1897,7 +1897,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="47"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><ref refid="AMReX__BLProfStats_8cpp_1a1bf4d1b16227052c48dc3a55a8886ace" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntDescriptor&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1StreamRetry" kindref="compound">amrex::StreamRetry</ref><sp/>sr(os,<sp/></highlight><highlight class="stringliteral">&quot;opRD&quot;</highlight><highlight class="normal">,<sp/>4);</highlight></codeline>
@@ -2160,7 +2160,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bit<sp/>OFFS</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>n<sp/><sp/><sp/>=<sp/>offs<sp/>&gt;&gt;<sp/>3;</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offy<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(n<sp/>%<sp/>nby);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offy<sp/>=<sp/>int(n<sp/>%<sp/>nby);</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>n<sp/><sp/><sp/>-=<sp/>offy;</highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>offs<sp/>=<sp/>offs<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
@@ -2481,16 +2481,16 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*lout,<sp/>*lin;</highlight></codeline>
 <codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rout;</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"></highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>nbi<sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[0]);</highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>nbo<sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[0]);</highlight></codeline>
-<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/>nbi_exp<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[1]);</highlight></codeline>
-<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>nbo_exp<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[1]);</highlight></codeline>
-<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_sign<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[3]<sp/>+<sp/>boffs);</highlight></codeline>
-<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_sign<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[3]);</highlight></codeline>
-<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_exp<sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[4]<sp/>+<sp/>boffs);</highlight></codeline>
-<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_exp<sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[4]);</highlight></codeline>
-<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_mant<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[5]<sp/>+<sp/>boffs);</highlight></codeline>
-<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_mant<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[5]);</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>nbi<sp/><sp/><sp/><sp/><sp/>=<sp/>int(infor[0]);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/>nbo<sp/><sp/><sp/><sp/><sp/>=<sp/>int(outfor[0]);</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/>nbi_exp<sp/>=<sp/>int(infor[1]);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/>nbo_exp<sp/>=<sp/>int(outfor[1]);</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_sign<sp/>=<sp/>int(infor[3]<sp/>+<sp/>boffs);</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_sign<sp/>=<sp/>int(outfor[3]);</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_exp<sp/><sp/>=<sp/>int(infor[4]<sp/>+<sp/>boffs);</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_exp<sp/><sp/>=<sp/>int(outfor[4]);</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/>bi_mant<sp/>=<sp/>int(infor[5]<sp/>+<sp/>boffs);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>bo_mant<sp/>=<sp/>int(outfor[5]);</highlight></codeline>
 <codeline lineno="644"><highlight class="normal"></highlight></codeline>
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/>hmbo<sp/><sp/><sp/><sp/>=<sp/>(outfor[6]<sp/>&amp;<sp/>1LL);</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/>hmbi<sp/><sp/><sp/><sp/>=<sp/>(infor[6]<sp/>&amp;<sp/>1LL);</highlight></codeline>
@@ -2542,15 +2542,15 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="693"><highlight class="normal"></highlight></codeline>
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxin<sp/><sp/>=<sp/>bi_mant;</highlight></codeline>
-<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inrem<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(infor[2]);</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inrem<sp/><sp/><sp/>=<sp/>int(infor[2]);</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxout<sp/>=<sp/>bo_mant;</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outrem<sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[2]);</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outrem<sp/><sp/>=<sp/>int(outfor[2]);</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>input<sp/>high<sp/>mantissa<sp/>bit<sp/>(HMB)<sp/>is<sp/>assumed<sp/>1<sp/>and<sp/>not<sp/>written</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(e.g.<sp/>IEEE)<sp/>but<sp/>output<sp/>HMB<sp/>is<sp/>assumed<sp/>0<sp/>(e.g.<sp/>CRAY)<sp/>write<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>input<sp/>starting<sp/>at<sp/>the<sp/>output<sp/>HMB+1<sp/>and<sp/>set<sp/>the<sp/>HMB.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dindx<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(hmbo<sp/>-<sp/>hmbi);</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dindx<sp/>=<sp/>int(hmbo<sp/>-<sp/>hmbi);</highlight></codeline>
 <codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dindx<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac3daae71af784ea861908589aa58b9e9" kindref="member">_pd_set_bit</ref>(lout,<sp/>indxout);</highlight></codeline>
@@ -2617,7 +2617,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>(7<sp/>-<sp/>bo_mant<sp/>%<sp/>8));</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"></highlight></codeline>
-<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxout<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[5]/8);</highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxout<sp/>=<sp/>int(outfor[5]/8);</highlight></codeline>
 <codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rout<sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>out;</highlight></codeline>
 <codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0L;<sp/>i<sp/>&lt;<sp/>nitems;<sp/>i++,<sp/>rout<sp/>+=<sp/>outbytes)</highlight></codeline>
 <codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2644,10 +2644,10 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><sp/>outord)</highlight></codeline>
 <codeline lineno="795"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;PD_fixdenormals&quot;);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbo<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[0]);</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbo<sp/>=<sp/>int(outfor[0]);</highlight></codeline>
 <codeline lineno="798"><highlight class="normal"></highlight></codeline>
-<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbo_exp<sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[1]);</highlight></codeline>
-<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bo_exp<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(outfor[4]);</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbo_exp<sp/><sp/>=<sp/>int(outfor[1]);</highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bo_exp<sp/><sp/><sp/>=<sp/>int(outfor[4]);</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outbytes<sp/>=<sp/>(nbo<sp/>+<sp/>7)<sp/>&gt;&gt;<sp/>3;</highlight></codeline>
 <codeline lineno="802"><highlight class="normal"></highlight></codeline>
 <codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>lout<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>out;</highlight></codeline>
@@ -2731,7 +2731,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="881"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>PUTARRAY</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="882"><highlight class="normal"></highlight></codeline>
 <codeline lineno="883"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="884"><highlight class="normal"><ref refid="AMReX__BLProfStats_8cpp_1a1bf4d1b16227052c48dc3a55a8886ace" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="884"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RealDescriptor&amp;<sp/>rd)</highlight></codeline>
 <codeline lineno="886"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="887"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1StreamRetry" kindref="compound">amrex::StreamRetry</ref><sp/>sr(os,<sp/></highlight><highlight class="stringliteral">&quot;opRD&quot;</highlight><highlight class="normal">,<sp/>4);</highlight></codeline>
@@ -2787,7 +2787,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>size_t(nitems);</highlight></codeline>
 <codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">(n)<sp/>==<sp/>nitems);</highlight></codeline>
-<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a33d56199c2355e67453c7ba7626c7050" kindref="member">memcpy</ref>(out,<sp/>in,<sp/>n*ord.numBytes());</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1ae705f3df7090abe926659ea69999c756" kindref="member">memcpy</ref>(out,<sp/>in,<sp/>n*ord.numBytes());</highlight></codeline>
 <codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ord.formatarray()<sp/>==<sp/>ird.formatarray()<sp/>&amp;&amp;<sp/>boffs<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>!<sp/>onescmp)<sp/>{</highlight></codeline>
 <codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>permute_real_word_order(out,<sp/>in,<sp/>nitems,</highlight></codeline>
@@ -2797,10 +2797,10 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="947"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*rIn<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(in);</highlight></codeline>
 <codeline lineno="948"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*rOut=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(out);</highlight></codeline>
 <codeline lineno="949"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(Long<sp/>i(0);<sp/>i<sp/>&lt;<sp/>nitems;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="950"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>;</highlight></codeline>
-<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d" kindref="member">y</ref>;</highlight></codeline>
 <codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::memcpy(&amp;x,<sp/>rIn,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Real));</highlight></codeline>
-<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d" kindref="member">y</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>);</highlight></codeline>
 <codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::memcpy(rOut,<sp/>&amp;y,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="955"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rOut<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(float);</highlight></codeline>
 <codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rIn<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Real);</highlight></codeline>
@@ -2859,7 +2859,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1009"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nitems<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
 <codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.read(bufr,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.numBytes()*get);</highlight></codeline>
 <codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_convert(out,</highlight></codeline>
 <codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bufr,</highlight></codeline>
@@ -2873,8 +2873,8 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1023"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_fixdenormals(out,<sp/>get,<sp/>FPC::NativeRealDescriptor().format(),</highlight></codeline>
 <codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FPC::NativeRealDescriptor().order());</highlight></codeline>
 <codeline lineno="1025"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
-<codeline lineno="1027"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1027"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
 <codeline lineno="1028"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1029"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1030"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
@@ -3047,7 +3047,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1197"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nitems<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.read(bufr,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.numBytes()*get);</highlight></codeline>
 <codeline lineno="1202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_convert(out,</highlight></codeline>
 <codeline lineno="1203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bufr,</highlight></codeline>
@@ -3061,8 +3061,8 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_fixdenormals(out,<sp/>get,<sp/>FPC::Native32RealDescriptor().format(),</highlight></codeline>
 <codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FPC::Native32RealDescriptor().order());</highlight></codeline>
 <codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
-<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
 <codeline lineno="1216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1217"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>
@@ -3089,7 +3089,7 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1239"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nitems<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
+<codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref><sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readBufferSize),<sp/>nitems);</highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.read(bufr,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.numBytes()*get);</highlight></codeline>
 <codeline lineno="1244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_convert(out,</highlight></codeline>
 <codeline lineno="1245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bufr,</highlight></codeline>
@@ -3103,8 +3103,8 @@ putarray (std::ostream&amp;        os,     \
 <codeline lineno="1253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PD_fixdenormals(out,<sp/>get,<sp/>FPC::Native64RealDescriptor().format(),</highlight></codeline>
 <codeline lineno="1254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FPC::Native64RealDescriptor().order());</highlight></codeline>
 <codeline lineno="1255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
-<codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a89d8eebc0b5a53e8a5601b4bfb317959" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nitems<sp/>-=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
+<codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/><sp/><sp/><sp/>+=<sp/><ref refid="namespaceamrex_1a214a7623a47d937b69264130556a6434" kindref="member">get</ref>;</highlight></codeline>
 <codeline lineno="1258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1259"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(is.fail())<sp/>{</highlight></codeline>

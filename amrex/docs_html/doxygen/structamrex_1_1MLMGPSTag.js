@@ -1,6 +1,6 @@
 var structamrex_1_1MLMGPSTag =
 [
-    [ "box", "structamrex_1_1MLMGPSTag.html#a17f29318aebccbaf22c26d615973af5c", null ],
+    [ "box", "structamrex_1_1MLMGPSTag.html#a03f480338147d898e2a399a2ef4368b1", null ],
     [ "bclhi", "structamrex_1_1MLMGPSTag.html#afd91fff06baaefde6f7619dba9007355", null ],
     [ "bcllo", "structamrex_1_1MLMGPSTag.html#adcec319cce6a75a26a3cf838f4f0ac6f", null ],
     [ "bcthi", "structamrex_1_1MLMGPSTag.html#a20538805638333c905e2d73f5a2ef6be", null ],

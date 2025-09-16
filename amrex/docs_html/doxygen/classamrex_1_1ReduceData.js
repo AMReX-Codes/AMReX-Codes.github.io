@@ -10,7 +10,7 @@ var classamrex_1_1ReduceData =
     [ "hostPtr", "classamrex_1_1ReduceData.html#ae6984860f6996796902e7b62d14eb19f", null ],
     [ "maxBlocks", "classamrex_1_1ReduceData.html#ae76a0d3958366cbcd739d85648a6701b", null ],
     [ "maxStreamIndex", "classamrex_1_1ReduceData.html#a1547ff8c26bca4593ba334bb1999f1d1", null ],
-    [ "nBlocks", "classamrex_1_1ReduceData.html#a87ea8ab0a11e7b1a2c2c9ce1228efd08", null ],
+    [ "nBlocks", "classamrex_1_1ReduceData.html#ad0573a8e1c22a9391f4754cf36928cc0", null ],
     [ "nBlocks", "classamrex_1_1ReduceData.html#a51efa78fe95fcdecffe32e64d0eb84f1", null ],
     [ "operator=", "classamrex_1_1ReduceData.html#af9d4fe0e27411855af7fc9f1c5da7f14", null ],
     [ "operator=", "classamrex_1_1ReduceData.html#a44cea26614b1b5af1ff9729f554d94c3", null ],
@@ -22,5 +22,5 @@ var classamrex_1_1ReduceData =
     [ "m_host_tuple", "classamrex_1_1ReduceData.html#a45d8b95de17a37ca2b1a02df500f2035", null ],
     [ "m_max_blocks", "classamrex_1_1ReduceData.html#a95441a0edc24955aa9f0c83e21c34cad", null ],
     [ "m_max_stream_index", "classamrex_1_1ReduceData.html#a8c68dd84973b0f9d3ab7c7d5a3c81fd6", null ],
-    [ "m_nblocks", "classamrex_1_1ReduceData.html#afc0d93d82209acea61137a5a042adee1", null ]
+    [ "m_nblocks", "classamrex_1_1ReduceData.html#a9b4fcec2d441d88b77dc7053301ea5fb", null ]
 ];

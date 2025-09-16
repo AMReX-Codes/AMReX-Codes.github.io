@@ -26,5 +26,5 @@ var namespaceamrex_1_1ParallelContext =
     [ "push", "namespaceamrex_1_1ParallelContext.html#a09cb92f4a123081a62f72e26a4e3c2a3", null ],
     [ "push", "namespaceamrex_1_1ParallelContext.html#a8c562ca41b2d74fcd48dc76cc2acb6b4", null ],
     [ "set_last_frame_ofs", "namespaceamrex_1_1ParallelContext.html#af6494464a81b93bee92095f59487324b", null ],
-    [ "frames", "namespaceamrex_1_1ParallelContext.html#a7f3a69943ec56b1596e37eef30f8c0f9", null ]
+    [ "frames", "namespaceamrex_1_1ParallelContext.html#a9bffb84c7ffc09c79a7a48e953322be2", null ]
 ];

@@ -1,5 +1,7 @@
 var AMReX__PlotFileUtil_8cpp =
 [
+    [ "EB_WriteMultiLevelPlotfile", "AMReX__PlotFileUtil_8cpp.html#ad074a90703857dddefd0c26069f7db65", null ],
+    [ "EB_WriteSingleLevelPlotfile", "AMReX__PlotFileUtil_8cpp.html#a4c6d86d16b29791709b2cd18ffdbd7e1", null ],
     [ "LevelFullPath", "AMReX__PlotFileUtil_8cpp.html#a438b71d250fb65fd385716c745be94ad", null ],
     [ "LevelPath", "AMReX__PlotFileUtil_8cpp.html#a6e1c541c50331b9a3c005b80b4503f85", null ],
     [ "MultiFabFileFullPrefix", "AMReX__PlotFileUtil_8cpp.html#a81e8d2ba5c7abaf7b2ca9bd2f43d5fb1", null ],

@@ -7,12 +7,12 @@ var AMReX__MLCurlCurl__K_8H =
       [ "b", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f", null ],
       [ "r", "AMReX__MLCurlCurl__K_8H.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231", null ]
     ] ],
-    [ "mlcurlcurl_adotx_x", "AMReX__MLCurlCurl__K_8H.html#acfd5c8bd3612ac3d3079dc0189308d6f", null ],
-    [ "mlcurlcurl_adotx_y", "AMReX__MLCurlCurl__K_8H.html#a4858148c11cf3df12f34d8ec7bd6d8f1", null ],
-    [ "mlcurlcurl_adotx_z", "AMReX__MLCurlCurl__K_8H.html#a551fe1f44d07a06d9b47fe961f3268a1", null ],
-    [ "mlcurlcurl_bc_symmetry", "AMReX__MLCurlCurl__K_8H.html#a95c9cd2dabd9a907c9d7124f9a4ae0f9", null ],
-    [ "mlcurlcurl_interpadd", "AMReX__MLCurlCurl__K_8H.html#a46f754596e0c0d977d970818bbec1dd2", null ],
-    [ "mlcurlcurl_restriction", "AMReX__MLCurlCurl__K_8H.html#aeb03681c5a1705809b2f860ece2cad66", null ],
-    [ "mlcurlcurl_smooth_1d", "AMReX__MLCurlCurl__K_8H.html#aaa80c1bb2b6993f8c8263b8beb70a8f2", null ],
-    [ "mlcurlcurl_smooth_1d", "AMReX__MLCurlCurl__K_8H.html#a9e58e9eb571484f9e7de7533445b3b13", null ]
+    [ "mlcurlcurl_adotx_x", "AMReX__MLCurlCurl__K_8H.html#ae8eefa4961678b794ab2412ef068ef2f", null ],
+    [ "mlcurlcurl_adotx_y", "AMReX__MLCurlCurl__K_8H.html#aec4783f7108d1449687ad6e2e8d3a7fe", null ],
+    [ "mlcurlcurl_adotx_z", "AMReX__MLCurlCurl__K_8H.html#ac98d7a83cc3b914782a7276668767bf7", null ],
+    [ "mlcurlcurl_bc_symmetry", "AMReX__MLCurlCurl__K_8H.html#aacc01bb437971d51f7779418d6184802", null ],
+    [ "mlcurlcurl_gs4", "AMReX__MLCurlCurl__K_8H.html#acd29743f61393d2c38df7fdcb11fb083", null ],
+    [ "mlcurlcurl_gs4_lu", "AMReX__MLCurlCurl__K_8H.html#a74ed95b27878a22a26606813feb99c71", null ],
+    [ "mlcurlcurl_interpadd", "AMReX__MLCurlCurl__K_8H.html#ac89102d8e0404dc9be5eeeaec22e18b8", null ],
+    [ "mlcurlcurl_restriction", "AMReX__MLCurlCurl__K_8H.html#a04c65405178eedb7685a4c8a1ae972b0", null ]
 ];

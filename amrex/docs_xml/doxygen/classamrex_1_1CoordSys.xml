@@ -66,10 +66,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="239" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="239" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" prot="protected" static="no" mutable="no">
         <type>Real</type>
-        <definition>Real amrex::CoordSys::offset[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>Real amrex::CoordSys::offset[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>offset</name>
         <qualifiedname>amrex::CoordSys::offset</qualifiedname>
         <briefdescription>
@@ -80,13 +80,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="240" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="240" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" prot="protected" static="no" mutable="no">
         <type>Real</type>
-        <definition>Real amrex::CoordSys::dx[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>Real amrex::CoordSys::dx[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>dx</name>
         <qualifiedname>amrex::CoordSys::dx</qualifiedname>
-        <initializer>= {<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(0.,0.,0.)}</initializer>
+        <initializer>= { 0. , 0. , 0. }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -95,15 +95,15 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="242" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="242" bodyend="242"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1CoordSys_1a09a58ce8c24e2ad549c98754fd2adaeb" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1CoordSys_1a73bd57bf0592f37ef987a37d7b3a90a4" prot="protected" static="no" mutable="no">
         <type>Real</type>
-        <definition>Real amrex::CoordSys::inv_dx[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>Real amrex::CoordSys::inv_dx[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>inv_dx</name>
         <qualifiedname>amrex::CoordSys::inv_dx</qualifiedname>
-        <initializer>= {<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1ac96e89dbbf05063f32d1ef7860f6a4ea" kindref="member">::max</ref>(),
-                        std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1ac96e89dbbf05063f32d1ef7860f6a4ea" kindref="member">::max</ref>(),
-                        std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1ac96e89dbbf05063f32d1ef7860f6a4ea" kindref="member">::max</ref>())}</initializer>
+        <initializer>= {
+
+ std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1a9d99cb1523b9f336dad742f6a15bdf59" kindref="member">::max</ref>() , std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1a9d99cb1523b9f336dad742f6a15bdf59" kindref="member">::max</ref>() , std::numeric_limits&lt;Real&gt;<ref refid="namespaceamrex_1a9d99cb1523b9f336dad742f6a15bdf59" kindref="member">::max</ref>() }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -227,7 +227,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="41" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="41" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CoordSys_1a37d58cefcf442aea6b94e824394cde52" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::CoordSys::CoordInt</definition>
         <argsstring>() const noexcept</argsstring>
         <name>CoordInt</name>
@@ -327,7 +327,7 @@
         <name>Offset</name>
         <qualifiedname>amrex::CoordSys::Offset</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -361,7 +361,7 @@
         <name>CellSize</name>
         <qualifiedname>amrex::CoordSys::CellSize</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -373,9 +373,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="74" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="74" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CoordSys_1a9e52d6f5ff82c85a4c328039a2f2b231" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
-        <definition>GpuArray&lt; Real, AMREX_SPACEDIM &gt; amrex::CoordSys::CellSizeArray</definition>
+      <memberdef kind="function" id="classamrex_1_1CoordSys_1a224e5e999ab96d7a10369b98f26c997d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
+        <definition>GpuArray&lt; Real, 3 &gt; amrex::CoordSys::CellSizeArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>CellSizeArray</name>
         <qualifiedname>amrex::CoordSys::CellSizeArray</qualifiedname>
@@ -409,7 +409,7 @@
         <name>InvCellSize</name>
         <qualifiedname>amrex::CoordSys::InvCellSize</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -421,9 +421,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="85" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="85" bodyend="85"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CoordSys_1a4bd45eed000a303f40f84716ebed45aa" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
-        <definition>GpuArray&lt; Real, AMREX_SPACEDIM &gt; amrex::CoordSys::InvCellSizeArray</definition>
+      <memberdef kind="function" id="classamrex_1_1CoordSys_1ab6e6d6eb89be3e254b61ce7a09ffabd2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
+        <definition>GpuArray&lt; Real, 3 &gt; amrex::CoordSys::InvCellSizeArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>InvCellSizeArray</name>
         <qualifiedname>amrex::CoordSys::InvCellSizeArray</qualifiedname>
@@ -442,11 +442,11 @@
         <name>CellCenter</name>
         <qualifiedname>amrex::CoordSys::CellCenter</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -465,7 +465,7 @@
         <name>CellCenter</name>
         <qualifiedname>amrex::CoordSys::CellCenter</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -488,7 +488,7 @@
         <name>CellCenter</name>
         <qualifiedname>amrex::CoordSys::CellCenter</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -511,11 +511,11 @@
         <name>LoEdge</name>
         <qualifiedname>amrex::CoordSys::LoEdge</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -534,11 +534,11 @@
         <name>LoEdge</name>
         <qualifiedname>amrex::CoordSys::LoEdge</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -557,11 +557,11 @@
         <name>HiEdge</name>
         <qualifiedname>amrex::CoordSys::HiEdge</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -580,11 +580,11 @@
         <name>HiEdge</name>
         <qualifiedname>amrex::CoordSys::HiEdge</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -603,11 +603,11 @@
         <name>LoFace</name>
         <qualifiedname>amrex::CoordSys::LoFace</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -630,11 +630,11 @@
         <name>LoFace</name>
         <qualifiedname>amrex::CoordSys::LoFace</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -657,11 +657,11 @@
         <name>HiFace</name>
         <qualifiedname>amrex::CoordSys::HiFace</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -684,11 +684,11 @@
         <name>HiFace</name>
         <qualifiedname>amrex::CoordSys::HiFace</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -711,7 +711,7 @@
         <name>LoNode</name>
         <qualifiedname>amrex::CoordSys::LoNode</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -734,7 +734,7 @@
         <name>LoNode</name>
         <qualifiedname>amrex::CoordSys::LoNode</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -757,7 +757,7 @@
         <name>HiNode</name>
         <qualifiedname>amrex::CoordSys::HiNode</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -780,7 +780,7 @@
         <name>HiNode</name>
         <qualifiedname>amrex::CoordSys::HiNode</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
@@ -797,7 +797,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="150" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.cpp" bodystart="114" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CoordSys_1a285d110b44d2e4412b27427418246fa4" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::CoordSys::CellIndex</definition>
         <argsstring>(const Real *point) const noexcept</argsstring>
         <name>CellIndex</name>
@@ -816,7 +816,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="156" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.cpp" bodystart="134" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CoordSys_1aedba9cb3e81e6a96fd3cea8330ef0708" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::CoordSys::LowerIndex</definition>
         <argsstring>(const Real *point) const noexcept</argsstring>
         <name>LowerIndex</name>
@@ -835,7 +835,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="161" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.cpp" bodystart="147" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CoordSys_1a74cecde9e2041a58b0d9b81b8ed00c22" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::CoordSys::UpperIndex</definition>
         <argsstring>(const Real *point) const noexcept</argsstring>
         <name>UpperIndex</name>
@@ -864,7 +864,7 @@
           <declname>a_volfab</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <briefdescription>
@@ -887,7 +887,7 @@
           <declname>vol</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <briefdescription>
@@ -910,11 +910,11 @@
           <declname>a_dlogafab</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -937,11 +937,11 @@
           <declname>dloga</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -960,7 +960,7 @@
         <name>Volume</name>
         <qualifiedname>amrex::CoordSys::Volume</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <briefdescription>
@@ -972,21 +972,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="189" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.cpp" bodystart="494" bodyend="501"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CoordSys_1a1f29329ea886494a3df45eaba9c0b2cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1CoordSys_1a7a1698ae8e4873a5f816a1bd9e8ae2b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
         <definition>Real amrex::CoordSys::Volume</definition>
-        <argsstring>(const Real xlo[AMREX_SPACEDIM], const Real xhi[AMREX_SPACEDIM]) const</argsstring>
+        <argsstring>(const Real xlo[3], const Real xhi[3]) const</argsstring>
         <name>Volume</name>
         <qualifiedname>amrex::CoordSys::Volume</qualifiedname>
         <param>
           <type>const Real</type>
           <declname>xlo</declname>
-          <array>[AMREX_SPACEDIM]</array>
+          <array>[3]</array>
         </param>
         <param>
           <type>const Real</type>
           <declname>xhi</declname>
-          <array>[AMREX_SPACEDIM]</array>
+          <array>[3]</array>
         </param>
         <briefdescription>
 <para>Return the volume of the specified cell. </para>
@@ -1008,11 +1008,11 @@
           <declname>a_areafab</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1035,11 +1035,11 @@
           <declname>area</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1058,11 +1058,11 @@
         <name>AreaLo</name>
         <qualifiedname>amrex::CoordSys::AreaLo</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1081,11 +1081,11 @@
         <name>AreaHi</name>
         <qualifiedname>amrex::CoordSys::AreaHi</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &amp;</type>
           <declname>point</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1108,11 +1108,11 @@
           <declname>loc</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1135,11 +1135,11 @@
           <declname>loc</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1162,11 +1162,11 @@
           <declname>vc</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1189,11 +1189,11 @@
           <declname>vc</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>region</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -1224,20 +1224,6 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>amrex::CoordSys</label>
-        <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>dx</edgelabel>
-          <edgelabel>inv_dx</edgelabel>
-          <edgelabel>offset</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Real</label>
-      </node>
-    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" line="23" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CoordSys.H" bodystart="24" bodyend="248"/>
     <listofallmembers>
       <member refid="classamrex_1_1CoordSys_1a7de7d489e53654914daf590cc820fd60" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>AreaHi</name></member>
@@ -1250,11 +1236,11 @@
       <member refid="classamrex_1_1CoordSys_1a285d110b44d2e4412b27427418246fa4" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CellIndex</name></member>
       <member refid="classamrex_1_1CoordSys_1a0c1f3144518b33725024c34697d98283" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CellSize</name></member>
       <member refid="classamrex_1_1CoordSys_1afc9b2295dec506f60239afca5e6a4a5d" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CellSize</name></member>
-      <member refid="classamrex_1_1CoordSys_1a9e52d6f5ff82c85a4c328039a2f2b231" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CellSizeArray</name></member>
+      <member refid="classamrex_1_1CoordSys_1a224e5e999ab96d7a10369b98f26c997d" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CellSizeArray</name></member>
       <member refid="classamrex_1_1CoordSys_1a2c36af3bfd89e3168d643c45f123cac5" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Coord</name></member>
       <member refid="classamrex_1_1CoordSys_1a37d58cefcf442aea6b94e824394cde52" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CoordInt</name></member>
       <member refid="classamrex_1_1CoordSys_1afb633344fd17c5565ce2fff188806eba" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>CoordType</name></member>
-      <member refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>dx</name></member>
+      <member refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>dx</name></member>
       <member refid="classamrex_1_1CoordSys_1a1e5bb6708a24e6df5c5d73422b637620" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>GetCellLoc</name></member>
       <member refid="classamrex_1_1CoordSys_1a635fa3a22b91c84b298c72e42f9c18d9" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>GetCellVolCoord</name></member>
       <member refid="classamrex_1_1CoordSys_1add482d37cf7569590ad9052ef0c9d5be" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>GetDLogA</name></member>
@@ -1268,10 +1254,10 @@
       <member refid="classamrex_1_1CoordSys_1a99d299808c6a8314a3e2064894d0a03a" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>HiFace</name></member>
       <member refid="classamrex_1_1CoordSys_1a6900764dc4dfae368296b0caf5548999" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>HiNode</name></member>
       <member refid="classamrex_1_1CoordSys_1a450803429d6c54bdfaeacaadeace5cb3" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>HiNode</name></member>
-      <member refid="classamrex_1_1CoordSys_1a09a58ce8c24e2ad549c98754fd2adaeb" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>inv_dx</name></member>
+      <member refid="classamrex_1_1CoordSys_1a73bd57bf0592f37ef987a37d7b3a90a4" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>inv_dx</name></member>
       <member refid="classamrex_1_1CoordSys_1a81387c1c47114559d52a5300f946e46d" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>InvCellSize</name></member>
       <member refid="classamrex_1_1CoordSys_1a3a9c67df49c93b825ac5378f5411b9da" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>InvCellSize</name></member>
-      <member refid="classamrex_1_1CoordSys_1a4bd45eed000a303f40f84716ebed45aa" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>InvCellSizeArray</name></member>
+      <member refid="classamrex_1_1CoordSys_1ab6e6d6eb89be3e254b61ce7a09ffabd2" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>InvCellSizeArray</name></member>
       <member refid="classamrex_1_1CoordSys_1a500695aa14e3fd01f3d7162fd784133e" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>IsCartesian</name></member>
       <member refid="classamrex_1_1CoordSys_1aff79cb7249a744e24c5b335935f20fe6" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>IsRZ</name></member>
       <member refid="classamrex_1_1CoordSys_1a87414a566bba1fff3d0185286a11ba56" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>IsSPHERICAL</name></member>
@@ -1282,7 +1268,7 @@
       <member refid="classamrex_1_1CoordSys_1a2b1eed19248c0b8ffc16733bbf1d6baa" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>LoNode</name></member>
       <member refid="classamrex_1_1CoordSys_1a0f2dc8592daa645225f6fbb76c7061c7" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>LoNode</name></member>
       <member refid="classamrex_1_1CoordSys_1aedba9cb3e81e6a96fd3cea8330ef0708" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>LowerIndex</name></member>
-      <member refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>offset</name></member>
+      <member refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>offset</name></member>
       <member refid="classamrex_1_1CoordSys_1a1136f68435ea566fbe07cd88af020eeb" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Offset</name></member>
       <member refid="classamrex_1_1CoordSys_1aa67991fbbc479f95a966bcf04ae0e49a" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Offset</name></member>
       <member refid="classamrex_1_1CoordSys_1abee8e858b3ca22a33388275e0a2cfcbf" prot="protected" virt="non-virtual"><scope>amrex::CoordSys</scope><name>ok</name></member>
@@ -1299,7 +1285,7 @@
       <member refid="classamrex_1_1CoordSys_1afb633344fd17c5565ce2fff188806ebaa2debcd8f37986ae0e3c488f583234ccc" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>undef</name></member>
       <member refid="classamrex_1_1CoordSys_1a74cecde9e2041a58b0d9b81b8ed00c22" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>UpperIndex</name></member>
       <member refid="classamrex_1_1CoordSys_1aba35a53907662ab238f8ad457a9c242d" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Volume</name></member>
-      <member refid="classamrex_1_1CoordSys_1a1f29329ea886494a3df45eaba9c0b2cb" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Volume</name></member>
+      <member refid="classamrex_1_1CoordSys_1a7a1698ae8e4873a5f816a1bd9e8ae2b7" prot="public" virt="non-virtual"><scope>amrex::CoordSys</scope><name>Volume</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

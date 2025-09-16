@@ -2,7 +2,7 @@ var classamrex_1_1FFT_1_1R2X =
 [
     [ "cMF", "classamrex_1_1FFT_1_1R2X.html#a7e4e49f640cc8ed6a25bd508ea203b9b", null ],
     [ "MF", "classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799", null ],
-    [ "R2X", "classamrex_1_1FFT_1_1R2X.html#aa90769e6040397e5961a9b5b0f427ff5", null ],
+    [ "R2X", "classamrex_1_1FFT_1_1R2X.html#a73d215b46f71ccc65b41f00ab7f02227", null ],
     [ "~R2X", "classamrex_1_1FFT_1_1R2X.html#a20d96f9f255e81d0f91fe81a0c941993", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#aa593960df39fbf225ed9adf5fd0bf695", null ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html#a7f68b261a7ff4df360a4b2376dd39703", null ],
@@ -21,7 +21,7 @@ var classamrex_1_1FFT_1_1R2X =
     [ "scalingFactor", "classamrex_1_1FFT_1_1R2X.html#a890e63d01d4c8139875361556458a834", null ],
     [ "Poisson", "classamrex_1_1FFT_1_1R2X.html#a1be460f58e5e6b3d1fc4ddecc08e522b", null ],
     [ "PoissonHybrid", "classamrex_1_1FFT_1_1R2X.html#abf6a97cc1f486d7ad995037461ecb49a", null ],
-    [ "m_bc", "classamrex_1_1FFT_1_1R2X.html#a02ae354abda27b438eaef76040597332", null ],
+    [ "m_bc", "classamrex_1_1FFT_1_1R2X.html#a05a696f9fb40168c3088b53513b2a833", null ],
     [ "m_cmd_cx2cy", "classamrex_1_1FFT_1_1R2X.html#abf521ee93243e8c170b1965f743e2cb3", null ],
     [ "m_cmd_cy2cx", "classamrex_1_1FFT_1_1R2X.html#aba4ce108f5c4cad94c417191c0a908b3", null ],
     [ "m_cmd_cy2cz", "classamrex_1_1FFT_1_1R2X.html#a4f2f24751b86f79d1576993fe67e70a1", null ],

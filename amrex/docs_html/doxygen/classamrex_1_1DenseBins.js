@@ -14,7 +14,7 @@ var classamrex_1_1DenseBins =
     [ "build", "classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5", null ],
     [ "build", "classamrex_1_1DenseBins.html#a97b2a646e5d6e068f0aef8827724c083", null ],
     [ "build", "classamrex_1_1DenseBins.html#ac7b31f16c880c16927e8a3e2e75c6481", null ],
-    [ "call_f", "classamrex_1_1DenseBins.html#a4f613d720a8f01968e54a2b6fc820dc3", null ],
+    [ "call_f", "classamrex_1_1DenseBins.html#ab517b08ff91655fc83e4cb9e58f2bb57", null ],
     [ "getBinIteratorFactory", "classamrex_1_1DenseBins.html#a45e940a7b8ffaa8d2e4c47ef17da2605", null ],
     [ "numBins", "classamrex_1_1DenseBins.html#af98199a3fd0f724083761ddea28e4606", null ],
     [ "numItems", "classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3", null ],

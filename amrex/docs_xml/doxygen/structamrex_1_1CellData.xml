@@ -9,9 +9,9 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1CellData_1aa2bef3d69fa1dc344b5208eb2f9a0b55" prot="public" static="no" mutable="no">
-        <type>T *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref></type>
-        <definition>T* AMREX_RESTRICT amrex::CellData&lt; T &gt;::p</definition>
+      <memberdef kind="variable" id="structamrex_1_1CellData_1ac596b23c6015f40aef64d09740c9ec4f" prot="public" static="no" mutable="no">
+        <type>T *restrict</type>
+        <definition>T* restrict amrex::CellData&lt; T &gt;::p</definition>
         <argsstring></argsstring>
         <name>p</name>
         <qualifiedname>amrex::CellData::p</qualifiedname>
@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="17" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="17" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1CellData_1a43b1a4e88127b9fe9ec9c37c5623d5ed" prot="public" static="no" mutable="no">
         <type>Long</type>
@@ -40,7 +40,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="18" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1CellData_1a327facaefaef9c16772d8b9f5647848e" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::CellData&lt; T &gt;::ncomp</definition>
         <argsstring></argsstring>
         <name>ncomp</name>
@@ -56,9 +56,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1CellData_1ab94971dda8ca85efee8414c468113757" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::CellData&lt; T &gt;::CellData</definition>
+      <memberdef kind="function" id="structamrex_1_1CellData_1a195fc196486e4d32c7441be56351312b" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>__host__ __device__ constexpr</type>
+        <definition>__host__ __device__ constexpr amrex::CellData&lt; T &gt;::CellData</definition>
         <argsstring>(T *a_p, Long a_stride, int a_ncomp)</argsstring>
         <name>CellData</name>
         <qualifiedname>amrex::CellData::CellData</qualifiedname>
@@ -71,7 +71,7 @@
           <declname>a_stride</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>a_ncomp</declname>
         </param>
         <briefdescription>
@@ -82,19 +82,19 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="22" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="22" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1CellData_1a466655d2a5db0350ad956b987be94de7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1CellData_1a35e63a9332c50216e9af8062780be931" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::CellData&lt; T &gt;::CellData</definition>
+        <type>__host__ __device__ constexpr</type>
+        <definition>__host__ __device__ constexpr amrex::CellData&lt; T &gt;::CellData</definition>
         <argsstring>(CellData&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</argsstring>
         <name>CellData</name>
         <qualifiedname>amrex::CellData::CellData</qualifiedname>
@@ -110,9 +110,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="29" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="29" bodyend="31"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1CellData_1a379f80fbf920e73f6b6f19c7c659da35" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::CellData&lt; T &gt;::operator bool</definition>
+      <memberdef kind="function" id="structamrex_1_1CellData_1aff74abc170f16dd98b4782371297c4e5" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::CellData&lt; T &gt;::operator bool</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator bool</name>
         <qualifiedname>amrex::CellData::operator bool</qualifiedname>
@@ -124,9 +124,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="34" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="34" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1CellData_1a47ea706bedc5e03c2a5556da50801cf3" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE int amrex::CellData&lt; T &gt;::nComp</definition>
+      <memberdef kind="function" id="structamrex_1_1CellData_1ac5a3432cf809ab23f7255acdf2268573" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ int</type>
+        <definition>__host__ __device__ int amrex::CellData&lt; T &gt;::nComp</definition>
         <argsstring>() const noexcept</argsstring>
         <name>nComp</name>
         <qualifiedname>amrex::CellData::nComp</qualifiedname>
@@ -138,24 +138,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="37" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="37" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1CellData_1a8b884ac6f33c449b54598386b3f0c715" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1CellData_1ac03c31c20c85fdcd25b44ea075ff6ad5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> U &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE U &amp; amrex::CellData&lt; T &gt;::operator[]</definition>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::CellData&lt; T &gt;::operator[]</definition>
         <argsstring>(int n) const noexcept</argsstring>
         <name>operator[]</name>
         <qualifiedname>amrex::CellData::operator[]</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -173,13 +173,13 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="16" bodyend="57"/>
     <listofallmembers>
-      <member refid="structamrex_1_1CellData_1ab94971dda8ca85efee8414c468113757" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
-      <member refid="structamrex_1_1CellData_1a466655d2a5db0350ad956b987be94de7" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
+      <member refid="structamrex_1_1CellData_1a195fc196486e4d32c7441be56351312b" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
+      <member refid="structamrex_1_1CellData_1a35e63a9332c50216e9af8062780be931" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
       <member refid="structamrex_1_1CellData_1a327facaefaef9c16772d8b9f5647848e" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>ncomp</name></member>
-      <member refid="structamrex_1_1CellData_1a47ea706bedc5e03c2a5556da50801cf3" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>nComp</name></member>
-      <member refid="structamrex_1_1CellData_1a379f80fbf920e73f6b6f19c7c659da35" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>operator bool</name></member>
-      <member refid="structamrex_1_1CellData_1a8b884ac6f33c449b54598386b3f0c715" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>operator[]</name></member>
-      <member refid="structamrex_1_1CellData_1aa2bef3d69fa1dc344b5208eb2f9a0b55" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>p</name></member>
+      <member refid="structamrex_1_1CellData_1ac5a3432cf809ab23f7255acdf2268573" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>nComp</name></member>
+      <member refid="structamrex_1_1CellData_1aff74abc170f16dd98b4782371297c4e5" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1CellData_1ac03c31c20c85fdcd25b44ea075ff6ad5" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>operator[]</name></member>
+      <member refid="structamrex_1_1CellData_1ac596b23c6015f40aef64d09740c9ec4f" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>p</name></member>
       <member refid="structamrex_1_1CellData_1a43b1a4e88127b9fe9ec9c37c5623d5ed" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>stride</name></member>
     </listofallmembers>
   </compounddef>

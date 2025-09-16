@@ -127,6 +127,89 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" line="115" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" bodystart="115" bodyend="-1"/>
       </memberdef>
     </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1simd_1a83c898c768cfae013bfd34c9ec548517" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename R</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::simd::is_nth_arg_non_const</definition>
+        <argsstring>(R(*)(Args...), int n)</argsstring>
+        <name>is_nth_arg_non_const</name>
+        <qualifiedname>amrex::simd::is_nth_arg_non_const</qualifiedname>
+        <param>
+          <type>R(*)(Args...)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if a function argument is declared as non-const</para>
+<para>Use in conjunction with conditional write-back logic from vector registers, e.g.,</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T_Real&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>compute<sp/>(T_Real<sp/>&amp;<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T_Real<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d" kindref="member">y</ref>)<sp/>{<sp/>...<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">part_x.copy_from(&amp;m_part_x[i],<sp/>stdx::element_aligned);</highlight></codeline>
+<codeline><highlight class="normal">part_y.copy_from(&amp;m_part_y[i],<sp/>stdx::element_aligned);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">compute(part_x,<sp/>part_y);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1simd_1a83c898c768cfae013bfd34c9ec548517" kindref="member">is_nth_arg_non_const</ref>(compute&lt;double&gt;,<sp/>0))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>part_x.copy_to(&amp;m_part_x[i],<sp/>stdx::element_aligned);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1simd_1a83c898c768cfae013bfd34c9ec548517" kindref="member">is_nth_arg_non_const</ref>(compute&lt;double&gt;,<sp/>1))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>part_y.copy_to(&amp;m_part_y[i],<sp/>stdx::element_aligned);</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" line="138" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1simd_1aecb850f4517c5fdfadf86c06506366d8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename R</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::simd::is_nth_arg_non_const</definition>
+        <argsstring>(R(C::*)(Args...), int n)</argsstring>
+        <name>is_nth_arg_non_const</name>
+        <qualifiedname>amrex::simd::is_nth_arg_non_const</qualifiedname>
+        <param>
+          <type>R(C::*)(Args...)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" line="145" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SIMD.H" bodystart="145" bodyend="149"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -4,14 +4,14 @@
     <compoundname>amrex::BCRec</compoundname>
     <includes refid="AMReX__BCRec_8H" local="no">AMReX_BCRec.H</includes>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1BCRec_1adb5fc84ac2f9e43e15f6cc05ed2216f5" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::BCRec::bc[2 *AMREX_SPACEDIM]</definition>
-        <argsstring>[2 *AMREX_SPACEDIM]</argsstring>
+      <memberdef kind="variable" id="classamrex_1_1BCRec_1acd3cc14f58d5b646f9baef5eeee57253" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::BCRec::bc[2 *3]</definition>
+        <argsstring>[2 *3]</argsstring>
         <name>bc</name>
         <qualifiedname>amrex::BCRec::bc</qualifiedname>
-        <initializer>{<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(BCType::bogus,BCType::bogus,BCType::bogus),
-              <ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(BCType::bogus,BCType::bogus,BCType::bogus)}</initializer>
+        <initializer>{ BCType::bogus , BCType::bogus , BCType::bogus ,
+               BCType::bogus , BCType::bogus , BCType::bogus }</initializer>
         <briefdescription>
 <para>Array of integer values describing boundary conditions. </para>
         </briefdescription>
@@ -23,9 +23,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a9e5719f622b7d89450779f87943605f0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::BCRec::BCRec</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1affeac94615b2dec72ac2ebe71ed34982" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::BCRec::BCRec</definition>
         <argsstring>() noexcept=default</argsstring>
         <name>BCRec</name>
         <qualifiedname>amrex::BCRec::BCRec</qualifiedname>
@@ -38,17 +38,35 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="23" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1aa5257e844dbc3d0b0b444cc570f01771" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::BCRec::BCRec</definition>
-        <argsstring>(AMREX_D_DECL(int loX, int loY, int loZ), AMREX_D_DECL(int hiX, int hiY, int hiZ)) noexcept</argsstring>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1af8e99e3eb1255f0b59e241ed3bc17913" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::BCRec::BCRec</definition>
+        <argsstring>(int loX, int loY, int loZ, int hiX, int hiY, int hiZ) noexcept</argsstring>
         <name>BCRec</name>
         <qualifiedname>amrex::BCRec::BCRec</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> loX, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> loY, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> loZ)</type>
+          <type>int</type>
+          <declname>loX</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> hiX, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> hiY, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> hiZ)</type>
+          <type>int</type>
+          <declname>loY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>loZ</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hiX</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hiY</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hiZ</declname>
         </param>
         <briefdescription>
 <para>The constructor. </para>
@@ -59,18 +77,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="30" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="30" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1ae1576e0b559f11a37341daf6c66ab4ba" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::BCRec::BCRec</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a5d506d94ab62ffb36df24e19646851c9" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::BCRec::BCRec</definition>
         <argsstring>(const int *a_lo, const int *a_hi) noexcept</argsstring>
         <name>BCRec</name>
         <qualifiedname>amrex::BCRec::BCRec</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <type>const int *</type>
           <declname>a_lo</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <type>const int *</type>
           <declname>a_hi</declname>
         </param>
         <briefdescription>
@@ -82,18 +100,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="39" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="39" bodyend="42"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1ad2a7c418c7fb23e464b9cc5a8761f741" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::BCRec::BCRec</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a21adb1217a4c6ddbcfd0b02ed5ad93f3" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::BCRec::BCRec</definition>
         <argsstring>(const Box &amp;bx, const Box &amp;domain, const BCRec &amp;bc_domain) noexcept</argsstring>
         <name>BCRec</name>
         <qualifiedname>amrex::BCRec::BCRec</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>domain</declname>
         </param>
         <param>
@@ -108,18 +126,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="48" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="48" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a7b9f9505622e2fa14b13aebd7f417d8f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::BCRec::setLo</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a9e129477429bab2c49de73c41964c5fa" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::BCRec::setLo</definition>
         <argsstring>(int dir, int bc_val) noexcept</argsstring>
         <name>setLo</name>
         <qualifiedname>amrex::BCRec::setLo</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>bc_val</declname>
         </param>
         <briefdescription>
@@ -130,18 +148,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="68" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="68" bodyend="68"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a0d3a7e55c3bd28f808e3d130879f762e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::BCRec::setHi</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1ad7661b7b3aa77687283eaa1e879b70c3" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::BCRec::setHi</definition>
         <argsstring>(int dir, int bc_val) noexcept</argsstring>
         <name>setHi</name>
         <qualifiedname>amrex::BCRec::setHi</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>bc_val</declname>
         </param>
         <briefdescription>
@@ -153,9 +171,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="73" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="73" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1aa878c4b78d2255ee578f1774359453a4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::BCRec::set</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1afaee2a2ee262fd0eedba130c32dbaad8" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::BCRec::set</definition>
         <argsstring>(Orientation face, int bc_val) noexcept</argsstring>
         <name>set</name>
         <qualifiedname>amrex::BCRec::set</qualifiedname>
@@ -164,7 +182,7 @@
           <declname>face</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>bc_val</declname>
         </param>
         <briefdescription>
@@ -176,9 +194,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="78" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1abd99165843ba42504981f3622f9450e6" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const int * amrex::BCRec::vect</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a853953b57bb4580004a23d1e725f1640" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const int *</type>
+        <definition>__host__ __device__ const int * amrex::BCRec::vect</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>vect</name>
         <qualifiedname>amrex::BCRec::vect</qualifiedname>
@@ -192,7 +210,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="89" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="89" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1BCRec_1a0bd8779fb0529f60bb7c0aae9ddbc72e" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const int *</type>
         <definition>const int * amrex::BCRec::vect</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>vect</name>
@@ -205,9 +223,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="90" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1ad7cd2caddd7ecc253c656e08d67b96c4" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const int * amrex::BCRec::data</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a531d56a5dd6ec35a0d6203bd82e8fad3" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const int *</type>
+        <definition>__host__ __device__ const int * amrex::BCRec::data</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>data</name>
         <qualifiedname>amrex::BCRec::data</qualifiedname>
@@ -220,7 +238,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="93" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="93" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1BCRec_1a105bd635055a3ee6287960f131666965" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const int *</type>
         <definition>const int * amrex::BCRec::data</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>data</name>
@@ -233,9 +251,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="94" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a74fd235fae26308310dc648f3b26fea6" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const int * amrex::BCRec::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a6aa075e8e6b0c22588c8441285eef926" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const int *</type>
+        <definition>__host__ __device__ const int * amrex::BCRec::lo</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>lo</name>
         <qualifiedname>amrex::BCRec::lo</qualifiedname>
@@ -249,7 +267,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="100" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="100" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1BCRec_1a9c1107a9df49a03985577c3286be0f0f" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const int *</type>
         <definition>const int * amrex::BCRec::lo</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>lo</name>
@@ -262,9 +280,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="101" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a71f31a94c5cc90a516f81113149c8dc5" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const int * amrex::BCRec::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a653a844fb1d7621cc28b1a17fa3eb5e3" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const int *</type>
+        <definition>__host__ __device__ const int * amrex::BCRec::hi</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>hi</name>
         <qualifiedname>amrex::BCRec::hi</qualifiedname>
@@ -278,7 +296,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="106" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="106" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1BCRec_1a6cd8d75c01a0df14b456e20865113b5e" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const int *</type>
         <definition>const int * amrex::BCRec::hi</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>hi</name>
@@ -291,14 +309,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="107" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1ac75d317389a2ae2a793dd69194557a50" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::BCRec::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a269f720df8015ce3493f9bc27e1cef88" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ int</type>
+        <definition>__host__ __device__ int amrex::BCRec::lo</definition>
         <argsstring>(int dir) const noexcept</argsstring>
         <name>lo</name>
         <qualifiedname>amrex::BCRec::lo</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -310,14 +328,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="112" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="112" bodyend="112"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1aeb4617ca6fae4cb3d2840611d77f1f59" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::BCRec::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1aa9cb6e9a033e4624361abf3bf380e904" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ int</type>
+        <definition>__host__ __device__ int amrex::BCRec::hi</definition>
         <argsstring>(int dir) const noexcept</argsstring>
         <name>hi</name>
         <qualifiedname>amrex::BCRec::hi</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -329,9 +347,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="117" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="117" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a8b138bbeeb2436431a73d8c605e4a15d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::BCRec::operator==</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a6ef475f006053e1079d2567bb2268214" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::BCRec::operator==</definition>
         <argsstring>(const BCRec &amp;rhs) const noexcept</argsstring>
         <name>operator==</name>
         <qualifiedname>amrex::BCRec::operator==</qualifiedname>
@@ -348,9 +366,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="122" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="122" bodyend="129"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BCRec_1a7dbcd8a4547e0ba1341506dddf491538" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::BCRec::operator!=</definition>
+      <memberdef kind="function" id="classamrex_1_1BCRec_1a669494c3d523ef4dc0fdb022ce9a8bb0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::BCRec::operator!=</definition>
         <argsstring>(const BCRec &amp;rhs) const noexcept</argsstring>
         <name>operator!=</name>
         <qualifiedname>amrex::BCRec::operator!=</qualifiedname>
@@ -401,26 +419,26 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" line="16" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BCRec.H" bodystart="17" bodyend="146"/>
     <listofallmembers>
-      <member refid="classamrex_1_1BCRec_1adb5fc84ac2f9e43e15f6cc05ed2216f5" prot="private" virt="non-virtual"><scope>amrex::BCRec</scope><name>bc</name></member>
-      <member refid="classamrex_1_1BCRec_1a9e5719f622b7d89450779f87943605f0" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
-      <member refid="classamrex_1_1BCRec_1aa5257e844dbc3d0b0b444cc570f01771" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
-      <member refid="classamrex_1_1BCRec_1ae1576e0b559f11a37341daf6c66ab4ba" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
-      <member refid="classamrex_1_1BCRec_1ad2a7c418c7fb23e464b9cc5a8761f741" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
-      <member refid="classamrex_1_1BCRec_1ad7cd2caddd7ecc253c656e08d67b96c4" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>data</name></member>
+      <member refid="classamrex_1_1BCRec_1acd3cc14f58d5b646f9baef5eeee57253" prot="private" virt="non-virtual"><scope>amrex::BCRec</scope><name>bc</name></member>
+      <member refid="classamrex_1_1BCRec_1affeac94615b2dec72ac2ebe71ed34982" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
+      <member refid="classamrex_1_1BCRec_1af8e99e3eb1255f0b59e241ed3bc17913" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
+      <member refid="classamrex_1_1BCRec_1a5d506d94ab62ffb36df24e19646851c9" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
+      <member refid="classamrex_1_1BCRec_1a21adb1217a4c6ddbcfd0b02ed5ad93f3" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>BCRec</name></member>
+      <member refid="classamrex_1_1BCRec_1a531d56a5dd6ec35a0d6203bd82e8fad3" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>data</name></member>
       <member refid="classamrex_1_1BCRec_1a105bd635055a3ee6287960f131666965" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>data</name></member>
-      <member refid="classamrex_1_1BCRec_1a71f31a94c5cc90a516f81113149c8dc5" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>hi</name></member>
+      <member refid="classamrex_1_1BCRec_1a653a844fb1d7621cc28b1a17fa3eb5e3" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>hi</name></member>
       <member refid="classamrex_1_1BCRec_1a6cd8d75c01a0df14b456e20865113b5e" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>hi</name></member>
-      <member refid="classamrex_1_1BCRec_1aeb4617ca6fae4cb3d2840611d77f1f59" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>hi</name></member>
-      <member refid="classamrex_1_1BCRec_1a74fd235fae26308310dc648f3b26fea6" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>lo</name></member>
+      <member refid="classamrex_1_1BCRec_1aa9cb6e9a033e4624361abf3bf380e904" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>hi</name></member>
+      <member refid="classamrex_1_1BCRec_1a6aa075e8e6b0c22588c8441285eef926" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>lo</name></member>
       <member refid="classamrex_1_1BCRec_1a9c1107a9df49a03985577c3286be0f0f" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>lo</name></member>
-      <member refid="classamrex_1_1BCRec_1ac75d317389a2ae2a793dd69194557a50" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>lo</name></member>
-      <member refid="classamrex_1_1BCRec_1a7dbcd8a4547e0ba1341506dddf491538" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>operator!=</name></member>
+      <member refid="classamrex_1_1BCRec_1a269f720df8015ce3493f9bc27e1cef88" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>lo</name></member>
+      <member refid="classamrex_1_1BCRec_1a669494c3d523ef4dc0fdb022ce9a8bb0" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>operator!=</name></member>
       <member refid="classamrex_1_1BCRec_1a9581c3a2335a29038935fd0897e288c2" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classamrex_1_1BCRec_1a8b138bbeeb2436431a73d8c605e4a15d" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>operator==</name></member>
-      <member refid="classamrex_1_1BCRec_1aa878c4b78d2255ee578f1774359453a4" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>set</name></member>
-      <member refid="classamrex_1_1BCRec_1a0d3a7e55c3bd28f808e3d130879f762e" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>setHi</name></member>
-      <member refid="classamrex_1_1BCRec_1a7b9f9505622e2fa14b13aebd7f417d8f" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>setLo</name></member>
-      <member refid="classamrex_1_1BCRec_1abd99165843ba42504981f3622f9450e6" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>vect</name></member>
+      <member refid="classamrex_1_1BCRec_1a6ef475f006053e1079d2567bb2268214" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>operator==</name></member>
+      <member refid="classamrex_1_1BCRec_1afaee2a2ee262fd0eedba130c32dbaad8" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>set</name></member>
+      <member refid="classamrex_1_1BCRec_1ad7661b7b3aa77687283eaa1e879b70c3" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>setHi</name></member>
+      <member refid="classamrex_1_1BCRec_1a9e129477429bab2c49de73c41964c5fa" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>setLo</name></member>
+      <member refid="classamrex_1_1BCRec_1a853953b57bb4580004a23d1e725f1640" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>vect</name></member>
       <member refid="classamrex_1_1BCRec_1a0bd8779fb0529f60bb7c0aae9ddbc72e" prot="public" virt="non-virtual"><scope>amrex::BCRec</scope><name>vect</name></member>
     </listofallmembers>
   </compounddef>

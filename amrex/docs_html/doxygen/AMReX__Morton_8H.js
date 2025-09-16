@@ -1,8 +1,9 @@
 var AMReX__Morton_8H =
 [
-    [ "get32BitCode", "AMReX__Morton_8H.html#acbda6a326e80b22c8e947f504a89f459", null ],
-    [ "makeSpace", "AMReX__Morton_8H.html#ab09eae83b5060972f2f437bd7dba115a", null ],
-    [ "toUInt10", "AMReX__Morton_8H.html#ae3e56c34dacdffe240410a3f6a7a9252", null ],
-    [ "toUInt16", "AMReX__Morton_8H.html#a9b7572e0a75bb2c5274809e9e1edffba", null ],
-    [ "toUInt32", "AMReX__Morton_8H.html#a16988bc3300f11fdee381c8ef8bc80f6", null ]
+    [ "get32BitCode", "AMReX__Morton_8H.html#a8b2b806f461635e6695a1281da1a63e5", null ],
+    [ "get32BitCode", "AMReX__Morton_8H.html#a97c0d3c91c596fbab4645bae70f46c26", null ],
+    [ "makeSpace", "AMReX__Morton_8H.html#a50d00717231e067994583a7c23c29007", null ],
+    [ "toUInt10", "AMReX__Morton_8H.html#a595f5db9664324e9bb78cbb47ec31399", null ],
+    [ "toUInt16", "AMReX__Morton_8H.html#a0fd0d6fb6c00f2d95edd902c8bfb3a76", null ],
+    [ "toUInt32", "AMReX__Morton_8H.html#a5f4f04ab3f6670a10fcb9b44dfab4bbc", null ]
 ];

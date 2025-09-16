@@ -5,12 +5,12 @@
     <includes refid="AMReX__EBData_8H" local="no">AMReX_EBData.H</includes>
     <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="structamrex_1_1EBData_1aa9983fdf5d6a7a2b4383eb011a564bb1" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::EBData::real_data_size</definition>
         <argsstring></argsstring>
         <name>real_data_size</name>
         <qualifiedname>amrex::EBData::real_data_size</qualifiedname>
-        <initializer>= static_cast&lt;<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>&gt;(<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f" kindref="member">EBData_t::cellflag</ref>)</initializer>
+        <initializer>= static_cast&lt;int&gt;(<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ae8157b7557ca28ae739dad488092e66f" kindref="member">EBData_t::cellflag</ref>)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -53,7 +53,7 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1EBData_1abf91d175338f6c7db149219d56c3ac48" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1EBData_1af0ef3ee2f9e91fd630fdc46149619494" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7" kindref="member">EBData_t</ref></type>
@@ -61,21 +61,21 @@
             <defname>T</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto amrex::EBData::get</definition>
+        <type>__host__ __device__ auto</type>
+        <definition>__host__ __device__ auto amrex::EBData::get</definition>
         <argsstring>(int i, int j, int k) const noexcept</argsstring>
         <name>get</name>
         <qualifiedname>amrex::EBData::get</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>k</declname>
         </param>
         <briefdescription>
@@ -86,7 +86,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" line="29" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" bodystart="29" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1EBData_1af677454494acc572554a3a3ef6d1f0f8" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1EBData_1aef7e3ae2d18ac3e3bb87eb3abb8f193d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7" kindref="member">EBData_t</ref></type>
@@ -94,29 +94,29 @@
             <defname>T</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt; T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f" kindref="member">EBData_t::centroid</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b" kindref="member">EBData_t::bndrycent</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1" kindref="member">EBData_t::bndrynorm</ref> <ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(||T==EBData_t::fcx,||T==EBData_t::fcy,||T==EBData_t::fcz), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a1401e7de3c16108d52d902869a7fb29f" kindref="member">EBData_t::centroid</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a37d3056e94c1d51b6a008f31df92069b" kindref="member">EBData_t::bndrycent</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ab9cc5c5229ab9d2efae2fa4124a079b1" kindref="member">EBData_t::bndrynorm</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a3f604dc3a2da1ffc7be935e3738454a2" kindref="member">EBData_t::fcx</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7acff05319c59aeaccf13bce08d1b09b85" kindref="member">EBData_t::fcy</ref>||T==<ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7aba006ba7669bb3b52655be17abaae963" kindref="member">EBData_t::fcz</ref>, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto amrex::EBData::get</definition>
+        <type>__host__ __device__ auto</type>
+        <definition>__host__ __device__ auto amrex::EBData::get</definition>
         <argsstring>(int i, int j, int k, int n) const noexcept</argsstring>
         <name>get</name>
         <qualifiedname>amrex::EBData::get</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>k</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -127,22 +127,22 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" line="45" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" bodystart="45" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1EBData_1abae76aec5f3d94bd30e80ac2dbd7dd94" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuArray&lt; Real, AMREX_SPACEDIM &gt; amrex::EBData::randomPointOnEB</definition>
+      <memberdef kind="function" id="structamrex_1_1EBData_1a000b4e3f7ee15ee54c8ddcd40b41e6ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>__host__ __device__ <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
+        <definition>__host__ __device__ GpuArray&lt; Real, 3 &gt; amrex::EBData::randomPointOnEB</definition>
         <argsstring>(int i, int j, int k, RandomEngine const &amp;engine) const</argsstring>
         <name>randomPointOnEB</name>
         <qualifiedname>amrex::EBData::randomPointOnEB</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>j</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>k</declname>
         </param>
         <param>
@@ -166,9 +166,6 @@
       <node id="5">
         <label>amrex::Array4&lt; Real const &gt;</label>
         <link refid="structamrex_1_1Array4"/>
-        <childnode refid="6" relation="usage">
-          <edgelabel>p</edgelabel>
-        </childnode>
         <childnode refid="4" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
@@ -203,17 +200,14 @@
           <edgelabel>m_real_data</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>Real</label>
-      </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBData.H" bodystart="26" bodyend="176"/>
     <listofallmembers>
-      <member refid="structamrex_1_1EBData_1abf91d175338f6c7db149219d56c3ac48" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>get</name></member>
-      <member refid="structamrex_1_1EBData_1af677454494acc572554a3a3ef6d1f0f8" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>get</name></member>
+      <member refid="structamrex_1_1EBData_1af0ef3ee2f9e91fd630fdc46149619494" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>get</name></member>
+      <member refid="structamrex_1_1EBData_1aef7e3ae2d18ac3e3bb87eb3abb8f193d" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>get</name></member>
       <member refid="structamrex_1_1EBData_1a8054ae8edba7f3b9c1b871920442882e" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>m_cell_flag</name></member>
       <member refid="structamrex_1_1EBData_1ad64cb588e3291f80f02113ce7dc7c6ce" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>m_real_data</name></member>
-      <member refid="structamrex_1_1EBData_1abae76aec5f3d94bd30e80ac2dbd7dd94" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>randomPointOnEB</name></member>
+      <member refid="structamrex_1_1EBData_1a000b4e3f7ee15ee54c8ddcd40b41e6ed" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>randomPointOnEB</name></member>
       <member refid="structamrex_1_1EBData_1aa9983fdf5d6a7a2b4383eb011a564bb1" prot="public" virt="non-virtual"><scope>amrex::EBData</scope><name>real_data_size</name></member>
     </listofallmembers>
   </compounddef>

@@ -4,20 +4,20 @@
     <compoundname>amrex::ReduceOpSum</compoundname>
     <includes refid="AMReX__Reduce_8H" local="no">AMReX_Reduce.H</includes>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ReduceOpSum_1a9da9f0f3debf3be703628afad1643563" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ReduceOpSum_1a32315ae02f0d878fde5c4f01a84b5921" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <type>int</type>
             <declname>MT</declname>
             <defname>MT</defname>
             <defval>AMREX_GPU_MAX_THREADS</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::ReduceOpSum::parallel_update</definition>
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::ReduceOpSum::parallel_update</definition>
         <argsstring>(T &amp;d, T const &amp;s) const noexcept</argsstring>
         <name>parallel_update</name>
         <qualifiedname>amrex::ReduceOpSum::parallel_update</qualifiedname>
@@ -37,14 +37,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="98" bodyend="101"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ReduceOpSum_1adbf4eb7fdc93fd0bfdae1aee23a1239b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ReduceOpSum_1ab5c960b4db2aca167488ad66e49f1797" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::ReduceOpSum::local_update</definition>
+        <type>__host__ __device__ void</type>
+        <definition>__host__ __device__ void amrex::ReduceOpSum::local_update</definition>
         <argsstring>(T &amp;d, T const &amp;s) const noexcept</argsstring>
         <name>local_update</name>
         <qualifiedname>amrex::ReduceOpSum::local_update</qualifiedname>
@@ -95,8 +95,8 @@
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="84" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="85" bodyend="111"/>
     <listofallmembers>
       <member refid="structamrex_1_1ReduceOpSum_1af18e050e03babd636f9b492f8776a4df" prot="public" virt="non-virtual"><scope>amrex::ReduceOpSum</scope><name>init</name></member>
-      <member refid="structamrex_1_1ReduceOpSum_1adbf4eb7fdc93fd0bfdae1aee23a1239b" prot="public" virt="non-virtual"><scope>amrex::ReduceOpSum</scope><name>local_update</name></member>
-      <member refid="structamrex_1_1ReduceOpSum_1a9da9f0f3debf3be703628afad1643563" prot="public" virt="non-virtual"><scope>amrex::ReduceOpSum</scope><name>parallel_update</name></member>
+      <member refid="structamrex_1_1ReduceOpSum_1ab5c960b4db2aca167488ad66e49f1797" prot="public" virt="non-virtual"><scope>amrex::ReduceOpSum</scope><name>local_update</name></member>
+      <member refid="structamrex_1_1ReduceOpSum_1a32315ae02f0d878fde5c4f01a84b5921" prot="public" virt="non-virtual"><scope>amrex::ReduceOpSum</scope><name>parallel_update</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

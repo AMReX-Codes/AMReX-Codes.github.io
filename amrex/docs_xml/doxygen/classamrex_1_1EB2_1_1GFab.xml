@@ -5,7 +5,7 @@
     <includes refid="AMReX__EB2__MultiGFab_8H" local="no">AMReX_EB2_MultiGFab.H</includes>
     <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1aeda8ad7ebda39d029e5e7253b9ee1b6d" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::EB2::GFab::ng</definition>
         <argsstring></argsstring>
         <name>ng</name>
@@ -22,7 +22,7 @@
     </sectiondef>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1ae472b90af10b7b39bc9b15f9b3ae9563" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
+        <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref></type>
         <definition>Box amrex::EB2::GFab::m_validbox</definition>
         <argsstring></argsstring>
         <name>m_validbox</name>
@@ -49,9 +49,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="55" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="55" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1af4864d4b179756bbd81ac48e98f640c9" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, AMREX_SPACEDIM &gt;</type>
-        <definition>Array&lt;BaseFab&lt;Type_t&gt;, AMREX_SPACEDIM&gt; amrex::EB2::GFab::m_facetype</definition>
+      <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1a0b7451df529d53f83e570be43df415fb" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt;</type>
+        <definition>Array&lt;BaseFab&lt;Type_t&gt;, 3&gt; amrex::EB2::GFab::m_facetype</definition>
         <argsstring></argsstring>
         <name>m_facetype</name>
         <qualifiedname>amrex::EB2::GFab::m_facetype</qualifiedname>
@@ -62,6 +62,20 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="56" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1a0dbd14d1fa393915fe3b593a33c1e34b" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt;</type>
+        <definition>Array&lt;BaseFab&lt;Type_t&gt;, 3&gt; amrex::EB2::GFab::m_edgetype</definition>
+        <argsstring></argsstring>
+        <name>m_edgetype</name>
+        <qualifiedname>amrex::EB2::GFab::m_edgetype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="58" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1GFab_1a8f4dcb82f15a4fb7213375849bd135bd" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1EB2_1a0838e8d3d2f11703bb21ebb6bddbb1b1" kindref="member">Graph</ref></type>
@@ -100,7 +114,7 @@
         <name>define</name>
         <qualifiedname>amrex::EB2::GFab::define</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>vbx</declname>
         </param>
         <briefdescription>
@@ -112,7 +126,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="21" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="21" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a06370be1805b070ebf8964b57b5957e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref></type>
+        <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref></type>
         <definition>Box amrex::EB2::GFab::validbox</definition>
         <argsstring>() const</argsstring>
         <name>validbox</name>
@@ -153,9 +167,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="37" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="37" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1aa6f0212078eff7d2a05db71010e26671" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, AMREX_SPACEDIM &gt; &amp;</type>
-        <definition>const Array&lt; BaseFab&lt; Type_t &gt;, AMREX_SPACEDIM &gt; &amp; amrex::EB2::GFab::getFaceType</definition>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a36a9d31d19b7bd740a6cf31ea76a60bc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt; &amp;</type>
+        <definition>const Array&lt; BaseFab&lt; Type_t &gt;, 3 &gt; &amp; amrex::EB2::GFab::getFaceType</definition>
         <argsstring>() const</argsstring>
         <name>getFaceType</name>
         <qualifiedname>amrex::EB2::GFab::getFaceType</qualifiedname>
@@ -167,9 +181,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="39" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="39" bodyend="39"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a4c435fd279aec2f3c744b41f041fbe1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, AMREX_SPACEDIM &gt; &amp;</type>
-        <definition>Array&lt; BaseFab&lt; Type_t &gt;, AMREX_SPACEDIM &gt; &amp; amrex::EB2::GFab::getFaceType</definition>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1ab043458a48fad6ea342bc75c7e2f275a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt; &amp;</type>
+        <definition>Array&lt; BaseFab&lt; Type_t &gt;, 3 &gt; &amp; amrex::EB2::GFab::getFaceType</definition>
         <argsstring>()</argsstring>
         <name>getFaceType</name>
         <qualifiedname>amrex::EB2::GFab::getFaceType</qualifiedname>
@@ -180,6 +194,34 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="40" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a7132c8605772de2e2e9f02eff57cb08b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt; &amp;</type>
+        <definition>const Array&lt; BaseFab&lt; Type_t &gt;, 3 &gt; &amp; amrex::EB2::GFab::getEdgeType</definition>
+        <argsstring>() const</argsstring>
+        <name>getEdgeType</name>
+        <qualifiedname>amrex::EB2::GFab::getEdgeType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="43" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a81b97cadbb7958b1c7ec066b7f9df472" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt;, 3 &gt; &amp;</type>
+        <definition>Array&lt; BaseFab&lt; Type_t &gt;, 3 &gt; &amp; amrex::EB2::GFab::getEdgeType</definition>
+        <argsstring>()</argsstring>
+        <name>getEdgeType</name>
+        <qualifiedname>amrex::EB2::GFab::getEdgeType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" line="44" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.H" bodystart="44" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1GFab_1a32b50e8c15d624730d0f05d85e365237" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="namespaceamrex_1_1EB2_1a0838e8d3d2f11703bb21ebb6bddbb1b1" kindref="member">Graph</ref> &amp;</type>
@@ -238,24 +280,21 @@
         <link refid="classamrex_1_1BaseFab"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
-        <childnode refid="14" relation="usage">
-          <edgelabel>dptr</edgelabel>
-        </childnode>
         <childnode refid="2" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
       <node id="2">
-        <label>amrex::BoxND&lt; AMREX_SPACEDIM &gt;</label>
+        <label>amrex::BoxND&lt; 3 &gt;</label>
         <link refid="classamrex_1_1BoxND"/>
       </node>
-      <node id="19">
+      <node id="18">
         <label>T</label>
       </node>
-      <node id="17">
+      <node id="16">
         <label>amrex::Vector&lt; Vertex &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="18" relation="public-inheritance">
+        <childnode refid="17" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
@@ -301,20 +340,17 @@
         <childnode refid="3" relation="usage">
           <edgelabel>m_levelset</edgelabel>
         </childnode>
-        <childnode refid="15" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_graph</edgelabel>
         </childnode>
       </node>
-      <node id="16">
+      <node id="15">
         <label>amrex::IntVectND&lt; dim &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="12">
         <label>amrex::MemStat</label>
         <link refid="structamrex_1_1MemStat"/>
-      </node>
-      <node id="14">
-        <label>Real</label>
       </node>
       <node id="9">
         <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
@@ -336,18 +372,18 @@
         <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="18">
+      <node id="17">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="19" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="15">
+      <node id="14">
         <label>std::unordered_map&lt; IntVect, Vector&lt; Vertex &gt;, IntVect::hasher &gt;</label>
-        <childnode refid="16" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="17" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -359,14 +395,17 @@
     <listofallmembers>
       <member refid="classamrex_1_1EB2_1_1GFab_1aaccb2f2ff2b1a19d11a62b23c7771808" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>buildTypes</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1ad86c701f246edc2aef04add188c57da5" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>define</name></member>
-      <member refid="classamrex_1_1EB2_1_1GFab_1aa6f0212078eff7d2a05db71010e26671" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getFaceType</name></member>
-      <member refid="classamrex_1_1EB2_1_1GFab_1a4c435fd279aec2f3c744b41f041fbe1f" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getFaceType</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1a7132c8605772de2e2e9f02eff57cb08b" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getEdgeType</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1a81b97cadbb7958b1c7ec066b7f9df472" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getEdgeType</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1a36a9d31d19b7bd740a6cf31ea76a60bc" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getFaceType</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1ab043458a48fad6ea342bc75c7e2f275a" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getFaceType</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a32b50e8c15d624730d0f05d85e365237" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getGraph</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a20365e7fdd7f44e3ff736bcd66d1068a" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getGraph</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a33951dcd1888ab94e9f6b9e5941bd8b6" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getLevelSet</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a77e77da87b9d4f5b1b3dae27cc4c543c" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>getLevelSet</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1aa8d516e6b8844b78816ade68a2c86165" prot="public" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>GFab</name></member>
-      <member refid="classamrex_1_1EB2_1_1GFab_1af4864d4b179756bbd81ac48e98f640c9" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_facetype</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1a0dbd14d1fa393915fe3b593a33c1e34b" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_edgetype</name></member>
+      <member refid="classamrex_1_1EB2_1_1GFab_1a0b7451df529d53f83e570be43df415fb" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_facetype</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a8f4dcb82f15a4fb7213375849bd135bd" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_graph</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1a361f500f8c5de192acb6538e1a372139" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_levelset</name></member>
       <member refid="classamrex_1_1EB2_1_1GFab_1ae472b90af10b7b39bc9b15f9b3ae9563" prot="private" virt="non-virtual"><scope>amrex::EB2::GFab</scope><name>m_validbox</name></member>

@@ -5,6 +5,22 @@
     <basecompoundref refid="classamrex_1_1AmrMesh" prot="public" virt="non-virtual">amrex::AmrMesh</basecompoundref>
     <derivedcompoundref refid="classamrex_1_1Amr" prot="public" virt="non-virtual">amrex::Amr</derivedcompoundref>
     <includes refid="AMReX__AmrCore_8H" local="no">AMReX_AmrCore.H</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1AmrCore_1ac82f43bbd1b3ebbbcf635d3d1d3c61ed" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1AmrParGDB" kindref="compound">AmrParGDB</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;AmrParGDB&gt; amrex::AmrCore::m_gdb</definition>
+        <argsstring></argsstring>
+        <name>m_gdb</name>
+        <qualifiedname>amrex::AmrCore::m_gdb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="86" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1AmrCore_1a30f4c446e360d02875146f91f942012c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -31,25 +47,25 @@
           <declname>rb</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>max_level_in</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>n_cell_in</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>coord</declname>
           <defval>-1</defval>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt;</type>
           <declname>ref_ratios</declname>
-          <defval><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;()</defval>
+          <defval><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt;()</defval>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <type>const int *</type>
           <declname>is_per</declname>
           <defval>nullptr</defval>
         </param>
@@ -61,10 +77,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="30" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.cpp" bodystart="23" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1AmrCore_1afb69ffb7fcb6a73fd03d61b5752424b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1AmrCore_1ae85f3f680eda0b4fcd8f1a294013db69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::AmrCore::AmrCore</definition>
-        <argsstring>(const RealBox &amp;rb, int max_level_in, const Vector&lt; int &gt; &amp;n_cell_in, int coord, Vector&lt; IntVect &gt; const &amp;ref_ratios, Array&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per)</argsstring>
+        <argsstring>(const RealBox &amp;rb, int max_level_in, const Vector&lt; int &gt; &amp;n_cell_in, int coord, Vector&lt; IntVect &gt; const &amp;ref_ratios, Array&lt; int, 3 &gt; const &amp;is_per)</argsstring>
         <name>AmrCore</name>
         <qualifiedname>amrex::AmrCore::AmrCore</qualifiedname>
         <param>
@@ -72,23 +88,23 @@
           <declname>rb</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>max_level_in</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
           <declname>n_cell_in</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>coord</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> &gt; const &amp;</type>
           <declname>ref_ratios</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; int, 3 &gt; const &amp;</type>
           <declname>is_per</declname>
         </param>
         <briefdescription>
@@ -207,6 +223,20 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="48" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.cpp" bodystart="57" bodyend="57"/>
       </memberdef>
+      <memberdef kind="function" id="classamrex_1_1AmrCore_1a93943d20543db47e8c61870b30fc854b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AmrParGDB" kindref="compound">AmrParGDB</ref> *</type>
+        <definition>AmrParGDB * amrex::AmrCore::GetParGDB</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetParGDB</name>
+        <qualifiedname>amrex::AmrCore::GetParGDB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="51" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" bodystart="51" bodyend="51"/>
+      </memberdef>
       <memberdef kind="function" id="classamrex_1_1AmrCore_1a309a4bad63faba98cfc57641e274413d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::AmrCore::InitFromScratch</definition>
@@ -234,7 +264,7 @@
         <qualifiedname>amrex::AmrCore::regrid</qualifiedname>
         <reimplementedby refid="classamrex_1_1Amr_1a9d6faadd0aabf54081fe9ea12be10484">regrid</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lbase</declname>
         </param>
         <param>
@@ -266,11 +296,11 @@
           <declname>os</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>min_lev</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>max_lev</declname>
         </param>
         <briefdescription>
@@ -292,7 +322,7 @@
         <reimplements refid="classamrex_1_1AmrMesh_1a8d8e1e1b2e8fa5a1a5055ed761a2410d">ErrorEst</reimplements>
         <reimplementedby refid="classamrex_1_1Amr_1a80b107efe79904f079c92600156e523d">ErrorEst</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
@@ -304,7 +334,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>ngrow</declname>
         </param>
         <briefdescription>
@@ -325,7 +355,7 @@
         <reimplements refid="classamrex_1_1AmrMesh_1a2b313b548c5c16a75ad21b053f9fc1b0">MakeNewLevelFromScratch</reimplements>
         <reimplementedby refid="classamrex_1_1Amr_1aeadd0d727cd8c5abbd46b3c4dbcb363a">MakeNewLevelFromScratch</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
@@ -357,7 +387,7 @@
         <qualifiedname>amrex::AmrCore::MakeNewLevelFromCoarse</qualifiedname>
         <reimplementedby refid="classamrex_1_1Amr_1a2695f24a5faa596e3a8bfb3e0021bf5b">MakeNewLevelFromCoarse</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
@@ -389,7 +419,7 @@
         <qualifiedname>amrex::AmrCore::RemakeLevel</qualifiedname>
         <reimplementedby refid="classamrex_1_1Amr_1a049915f7354e20184509a6ddb5bf4a6b">RemakeLevel</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <param>
@@ -421,7 +451,7 @@
         <qualifiedname>amrex::AmrCore::ClearLevel</qualifiedname>
         <reimplementedby refid="classamrex_1_1Amr_1a8db721500ce8e8fd737774f06ee494bd">ClearLevel</reimplementedby>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>lev</declname>
         </param>
         <briefdescription>
@@ -481,29 +511,29 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="8">
-        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
+      <node id="7">
+        <label>amrex::IntVectND&lt; 3 &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="6">
         <label>T</label>
       </node>
-      <node id="13">
+      <node id="12">
         <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
+      <node id="8">
         <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -512,10 +542,19 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="17">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::AmrCore</label>
         <link refid="classamrex_1_1AmrCore"/>
         <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_gdb</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -528,9 +567,6 @@
           <edgelabel>ref_ratio</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>grid_eff</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
           <edgelabel>refine_grid_layout_dims</edgelabel>
         </childnode>
       </node>
@@ -539,32 +575,54 @@
         <link refid="classamrex_1_1AmrMesh"/>
         <childnode refid="3" relation="protected-inheritance">
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>grids</edgelabel>
         </childnode>
       </node>
-      <node id="7">
-        <label>Real</label>
+      <node id="15">
+        <label>amrex::AmrParGDB</label>
+        <link refid="classamrex_1_1AmrParGDB"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>m_amrcore</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_has_geom</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_ba</edgelabel>
+        </childnode>
       </node>
-      <node id="14">
+      <node id="16">
+        <label>amrex::ParGDBBase</label>
+        <link refid="classamrex_1_1ParGDBBase"/>
+      </node>
+      <node id="13">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
@@ -576,18 +634,30 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
+      <node id="18">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::unique_ptr&lt; amrex::AmrParGDB &gt;</label>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="23" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" bodystart="25" bodyend="91"/>
     <listofallmembers>
       <member refid="classamrex_1_1AmrCore_1a30f4c446e360d02875146f91f942012c" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrCore_1ac9680d7596a200d0a7403732101565e2" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
-      <member refid="classamrex_1_1AmrCore_1afb69ffb7fcb6a73fd03d61b5752424b4" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrCore_1ae85f3f680eda0b4fcd8f1a294013db69" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrCore_1a5d9e69f3be72cef7a8aa76cf94f9588c" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrCore_1a221c9b12e81a586f11d7cf5883e3038c" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrCore_1ac0a84aa89a7db1e9543096d9c9f50a65" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrMesh_1a163e8a28e1f841b2c174d6d34664e2d3" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
       <member refid="classamrex_1_1AmrMesh_1a58e7077dec217e4bdad1f5221e6229cc" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
-      <member refid="classamrex_1_1AmrMesh_1a82b57f9cf8e12e9542c14f7d00a986ff" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a8c23138921bc0b90149f20ea452662b1" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
       <member refid="classamrex_1_1AmrMesh_1ac0486abd196135fb9ac41748f2d2f1c9" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
       <member refid="classamrex_1_1AmrMesh_1aa3d1b57d3957feca7d0f897ec2e62824" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
       <member refid="classamrex_1_1AmrMesh_1a43f67413ffdd911f5a91e9041bb20d0e" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>AmrMesh</name></member>
@@ -618,6 +688,7 @@
       <member refid="classamrex_1_1AmrMesh_1a7a6f9e6150f13252f90b47a22e755c93" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>Geom</name></member>
       <member refid="classamrex_1_1AmrMesh_1a9a621503f0ef653fc2eab9229168782d" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>GetAreaNotToTag</name></member>
       <member refid="classamrex_1_1AmrMesh_1a73c572b51cfc05238746fdac17e7b8c2" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>GetLevel</name></member>
+      <member refid="classamrex_1_1AmrCore_1a93943d20543db47e8c61870b30fc854b" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>GetParGDB</name></member>
       <member refid="structamrex_1_1AmrInfo_1a8932f2846ed22b769126d4783f76107a" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>grid_eff</name></member>
       <member refid="classamrex_1_1AmrMesh_1a7bc5798a6ef2a0c27b0141112104e087" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>gridEff</name></member>
       <member refid="classamrex_1_1AmrMesh_1ae53347adc8a239367f153d3705a8ed25" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>grids</name></member>
@@ -626,6 +697,7 @@
       <member refid="classamrex_1_1AmrCore_1a309a4bad63faba98cfc57641e274413d" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>InitFromScratch</name></member>
       <member refid="structamrex_1_1AmrInfo_1a937e0b9dc3689884b262936e6c3c0b7d" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>iterate_on_new_grids</name></member>
       <member refid="classamrex_1_1AmrMesh_1a472f37d544bf28e75d2c05630969e554" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>LevelDefined</name></member>
+      <member refid="classamrex_1_1AmrCore_1ac82f43bbd1b3ebbbcf635d3d1d3c61ed" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>m_gdb</name></member>
       <member refid="classamrex_1_1AmrMesh_1ac7d0ce87a8047dcdf7b45d4232121881" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>MakeBaseGrids</name></member>
       <member refid="classamrex_1_1AmrMesh_1abf07e71ebb90aa135bd78e4965536d04" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>MakeDistributionMap</name></member>
       <member refid="classamrex_1_1AmrMesh_1acb422930e8e69fc386727f45607e114b" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>MakeNewGrids</name></member>
@@ -651,7 +723,7 @@
       <member refid="classamrex_1_1AmrMesh_1afae60a3f920a8839a05ca8b70d041cb8" prot="public" virt="non-virtual" ambiguityscope="amrex::AmrMesh::"><scope>amrex::AmrCore</scope><name>operator=</name></member>
       <member refid="classamrex_1_1AmrMesh_1ad5863ce18c2b8b1dc6371d33c227f2a6" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>PostProcessBaseGrids</name></member>
       <member refid="classamrex_1_1AmrCore_1a4f3c144db8f986764324e9ba788666b3" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>printGridSummary</name></member>
-      <member refid="classamrex_1_1AmrMesh_1a663a92c5e8c0dbe3578d19cd8fb36af3" prot="private" virt="non-virtual"><scope>amrex::AmrCore</scope><name>ProjPeriodic</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a5d98352aa6b18ea3223300ceaae596d9" prot="private" virt="non-virtual"><scope>amrex::AmrCore</scope><name>ProjPeriodic</name></member>
       <member refid="structamrex_1_1AmrInfo_1a73a3b38cadf1943503cf77622ea6a3ae" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>ref_ratio</name></member>
       <member refid="structamrex_1_1AmrInfo_1a4494b1f6c76612d4af30d18d62dd410c" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refine_grid_layout</name></member>
       <member refid="structamrex_1_1AmrInfo_1ac92498a911f4e98692efdba9005f492f" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refine_grid_layout_dims</name></member>

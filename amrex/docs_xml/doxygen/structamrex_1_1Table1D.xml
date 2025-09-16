@@ -9,13 +9,13 @@
       </param>
       <param>
         <type>typename IDX</type>
-        <defval><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></defval>
+        <defval>int</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1Table1D_1a5b2d5829baad9e96710708eae3e4c4a9" prot="public" static="no" mutable="no">
-        <type>T *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref></type>
-        <definition>T* AMREX_RESTRICT amrex::Table1D&lt; T, IDX &gt;::p</definition>
+      <memberdef kind="variable" id="structamrex_1_1Table1D_1aaf0cea7b29cabff40d598de8b40403f6" prot="public" static="no" mutable="no">
+        <type>T *restrict</type>
+        <definition>T* restrict amrex::Table1D&lt; T, IDX &gt;::p</definition>
         <argsstring></argsstring>
         <name>p</name>
         <qualifiedname>amrex::Table1D::p</qualifiedname>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="21" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="21" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1Table1D_1a06af5cf12031ffd738020537760de9c9" prot="public" static="no" mutable="no">
         <type>IDX</type>
@@ -74,19 +74,19 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="25" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table1D_1a73381f66df4035c710f61af250ef9c23" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table1D_1af9ba3e22c0a0f3e650fe11562fe0871f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::Table1D&lt; T, IDX &gt;::Table1D</definition>
+        <type>__host__ __device__ constexpr</type>
+        <definition>__host__ __device__ constexpr amrex::Table1D&lt; T, IDX &gt;::Table1D</definition>
         <argsstring>(Table1D&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</argsstring>
         <name>Table1D</name>
         <qualifiedname>amrex::Table1D::Table1D</qualifiedname>
@@ -102,9 +102,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="29" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="29" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table1D_1a22e4bda1087bf2ab348287c07b4acccd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::Table1D&lt; T, IDX &gt;::Table1D</definition>
+      <memberdef kind="function" id="structamrex_1_1Table1D_1ad2726ba74e1e15cf1d368e2b67f69eb1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ constexpr</type>
+        <definition>__host__ __device__ constexpr amrex::Table1D&lt; T, IDX &gt;::Table1D</definition>
         <argsstring>(T *a_p, IDX a_begin, IDX a_end) noexcept</argsstring>
         <name>Table1D</name>
         <qualifiedname>amrex::Table1D::Table1D</qualifiedname>
@@ -128,9 +128,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="36" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="36" bodyend="40"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table1D_1aa48ae43d8c4d4caef49dd8b4efecac13" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::Table1D&lt; T, IDX &gt;::operator bool</definition>
+      <memberdef kind="function" id="structamrex_1_1Table1D_1a3a3703723a3a1a69d59b40b587335be2" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::Table1D&lt; T, IDX &gt;::operator bool</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator bool</name>
         <qualifiedname>amrex::Table1D::operator bool</qualifiedname>
@@ -142,19 +142,19 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="43" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="43" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table1D_1af808d5227a92b35f3dc797ec8b2e88a3" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table1D_1aeb46e3e94740ca99982d2e602ca01952" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> U &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE U &amp; amrex::Table1D&lt; T, IDX &gt;::operator()</definition>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::Table1D&lt; T, IDX &gt;::operator()</definition>
         <argsstring>(IDX i) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::Table1D::operator()</qualifiedname>
@@ -179,12 +179,12 @@
     <listofallmembers>
       <member refid="structamrex_1_1Table1D_1a06af5cf12031ffd738020537760de9c9" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>begin</name></member>
       <member refid="structamrex_1_1Table1D_1accabc1f0f0d39d05a414c9bdc9edaf7f" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>end</name></member>
-      <member refid="structamrex_1_1Table1D_1aa48ae43d8c4d4caef49dd8b4efecac13" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>operator bool</name></member>
-      <member refid="structamrex_1_1Table1D_1af808d5227a92b35f3dc797ec8b2e88a3" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Table1D_1a5b2d5829baad9e96710708eae3e4c4a9" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>p</name></member>
+      <member refid="structamrex_1_1Table1D_1a3a3703723a3a1a69d59b40b587335be2" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1Table1D_1aeb46e3e94740ca99982d2e602ca01952" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1Table1D_1aaf0cea7b29cabff40d598de8b40403f6" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>p</name></member>
       <member refid="structamrex_1_1Table1D_1ad25b4232acfe98753043509f04b449ca" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>Table1D</name></member>
-      <member refid="structamrex_1_1Table1D_1a73381f66df4035c710f61af250ef9c23" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>Table1D</name></member>
-      <member refid="structamrex_1_1Table1D_1a22e4bda1087bf2ab348287c07b4acccd" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>Table1D</name></member>
+      <member refid="structamrex_1_1Table1D_1af9ba3e22c0a0f3e650fe11562fe0871f" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>Table1D</name></member>
+      <member refid="structamrex_1_1Table1D_1ad2726ba74e1e15cf1d368e2b67f69eb1" prot="public" virt="non-virtual"><scope>amrex::Table1D</scope><name>Table1D</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,0 +1,6 @@
+var structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134 =
+[
+    [ "Copy", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134.html#a8a6fb945abd7817718dc76ef1557c905", null ],
+    [ "CreateLike", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134.html#a1f55321eebaabd2929cc279277be4a00", null ],
+    [ "Saxpy", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134.html#a6dc380c4bf2185f2c4cb96bc2e02edcd", null ]
+];

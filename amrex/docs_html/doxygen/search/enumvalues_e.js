@@ -89,9 +89,8 @@ var searchData=
   ['parser_5fusrfn_86',['PARSER_USRFN',['../namespaceamrex.html#ad9039fea6c6d400df4ca8e5fef35b883a8067bb61cc55aa174217d3807396dee8',1,'amrex']]],
   ['parser_5fyn_87',['PARSER_YN',['../namespaceamrex.html#a0075507273391e5967b9d869daed98bca54ca5d1224b56477f77d07fdeccd8469',1,'amrex']]],
   ['pencil_88',['pencil',['../namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba',1,'amrex::FFT']]],
-  ['petsc_89',['petsc',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f',1,'amrex']]],
-  ['point_90',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
-  ['pointvaluerequest_91',['PointValueRequest',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9af2edde48d8bc88db394583d8e3a01588',1,'amrex::DataServices']]],
-  ['pow_92',['pow',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_parser.tab.h']]],
-  ['profdata_93',['PROFDATA',['../namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae7fe174117a8bd8847e7530391fb5fdc',1,'amrex::Amrvis']]]
+  ['periodic_89',['periodic',['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee',1,'amrex::FFT']]],
+  ['petsc_90',['petsc',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f',1,'amrex']]],
+  ['point_91',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
+  ['pow_92',['pow',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_parser.tab.h']]]
 ];

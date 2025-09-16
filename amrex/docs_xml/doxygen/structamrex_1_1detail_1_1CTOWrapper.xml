@@ -30,7 +30,7 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1detail_1_1CTOWrapper_1a2f05d18c4a173c5d24e6f716f5c4b05f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1detail_1_1CTOWrapper_1aa0c265e0bec6192fe49e7c9a0c468cf9" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class...</type>
@@ -38,8 +38,8 @@
             <defname>Args</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> auto</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto amrex::detail::CTOWrapper&lt; F, ctr &gt;::operator()</definition>
+        <type>__host__ __device__ auto</type>
+        <definition>__host__ __device__ auto amrex::detail::CTOWrapper&lt; F, ctr &gt;::operator()</definition>
         <argsstring>(Args... args) const noexcept -&gt; decltype(f(args..., std::integral_constant&lt; int, ctr &gt;{}...))</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::detail::CTOWrapper::operator()</qualifiedname>
@@ -57,9 +57,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="structamrex_1_1detail_1_1CTOWrapper_1ab0e9071ffab87020e3baafa2260d75d5" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(ctr)&gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr std::array&lt; int, sizeof...(ctr)&gt; amrex::detail::CTOWrapper&lt; F, ctr &gt;::GetOptions</definition>
+      <memberdef kind="function" id="structamrex_1_1detail_1_1CTOWrapper_1a9b8974e3319d5b445f736822446a2681" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ static __device__ constexpr std::array&lt; int, sizeof...(ctr)&gt;</type>
+        <definition>__host__ static __device__ constexpr std::array&lt; int, sizeof...(ctr)&gt; amrex::detail::CTOWrapper&lt; F, ctr &gt;::GetOptions</definition>
         <argsstring>() noexcept</argsstring>
         <name>GetOptions</name>
         <qualifiedname>amrex::detail::CTOWrapper::GetOptions</qualifiedname>
@@ -79,8 +79,8 @@
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="28" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="28" bodyend="43"/>
     <listofallmembers>
       <member refid="structamrex_1_1detail_1_1CTOWrapper_1aa628df27155d3f0063cee5a0d8f8a9ee" prot="public" virt="non-virtual"><scope>amrex::detail::CTOWrapper</scope><name>f</name></member>
-      <member refid="structamrex_1_1detail_1_1CTOWrapper_1ab0e9071ffab87020e3baafa2260d75d5" prot="public" virt="non-virtual"><scope>amrex::detail::CTOWrapper</scope><name>GetOptions</name></member>
-      <member refid="structamrex_1_1detail_1_1CTOWrapper_1a2f05d18c4a173c5d24e6f716f5c4b05f" prot="public" virt="non-virtual"><scope>amrex::detail::CTOWrapper</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1detail_1_1CTOWrapper_1a9b8974e3319d5b445f736822446a2681" prot="public" virt="non-virtual"><scope>amrex::detail::CTOWrapper</scope><name>GetOptions</name></member>
+      <member refid="structamrex_1_1detail_1_1CTOWrapper_1aa0c265e0bec6192fe49e7c9a0c468cf9" prot="public" virt="non-virtual"><scope>amrex::detail::CTOWrapper</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

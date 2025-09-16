@@ -1,4 +1,4 @@
 var AMReX__BLProfiler_8cpp =
 [
-    [ "int", "AMReX__BLProfiler_8cpp.html#ad2e8127753e9be0ebf531435c6511937", null ]
+    [ "AMREX_FORT_NAME", "AMReX__BLProfiler_8cpp.html#a6f6fae4428a3e15f113ba80d2523a634", null ]
 ];

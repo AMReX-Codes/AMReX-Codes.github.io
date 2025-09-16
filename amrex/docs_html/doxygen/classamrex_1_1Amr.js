@@ -96,6 +96,7 @@ var classamrex_1_1Amr =
     [ "plotPer", "classamrex_1_1Amr.html#a5a931bcdf3440fa41801f73a87f417ef", null ],
     [ "printGridInfo", "classamrex_1_1Amr.html#a4b7fbf8492a6e663bd567bfdb4151a40", null ],
     [ "readProbinFile", "classamrex_1_1Amr.html#a979e1cff503e5f3c6436a232284fdcfb", null ],
+    [ "RedistributeParticles", "classamrex_1_1Amr.html#a7eca91b4520abe71b194f23309e9e369", null ],
     [ "regrid", "classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484", null ],
     [ "regrid_level_0_on_restart", "classamrex_1_1Amr.html#a5c2a28dfa0840069f813bf56565b4007", null ],
     [ "regridInt", "classamrex_1_1Amr.html#a6c0f2e73f58bdff46fc5692ed85611f5", null ],

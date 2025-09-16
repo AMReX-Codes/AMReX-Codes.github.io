@@ -4,6 +4,7 @@
     <compoundname>AMReX_MLEBTensor_K.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <includes refid="AMReX__FArrayBox_8H" local="no">AMReX_FArrayBox.H</includes>
+    <includes refid="AMReX__MLEBTensor__3D__K_8H" local="no">AMReX_MLEBTensor_3D_K.H</includes>
     <includedby refid="AMReX__MLEBTensorOp_8cpp" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp</includedby>
     <includedby refid="AMReX__MLEBTensorOp__bc_8cpp" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp_bc.cpp</includedby>
     <incdepgraph>
@@ -1587,12 +1588,112 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="146">
+        <label>AMReX_BoundCond.H</label>
+        <link refid="AMReX__BoundCond_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>AMReX_LOUtil_K.H</label>
+        <link refid="AMReX__LOUtil__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>AMReX_LO_BCTYPES.H</label>
+        <link refid="AMReX__LO__BCTYPES_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>AMReX_EBCellFlag.H</label>
+        <link refid="AMReX__EBCellFlag_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>AMReX_EB_LeastSquares_3D_K.H</label>
+        <link refid="AMReX__EB__LeastSquares__3D__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>AMReX_MLEBABecLap_3D_K.H</label>
+        <link refid="AMReX__MLEBABecLap__3D__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>AMReX_MLEBABecLap_K.H</label>
+        <link refid="AMReX__MLEBABecLap__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>AMReX_MLEBTensor_3D_K.H</label>
+        <link refid="AMReX__MLEBTensor__3D__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_K.H</label>
         <link refid="AMReX__MLEBTensor__K_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>AMReX_MLLinOp_K.H</label>
+        <link refid="AMReX__MLLinOp__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -1779,12 +1880,12 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="10" refid="namespaceamrex_1a17dc6a5f2f58fef3ff23153f88f565ae" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a17dc6a5f2f58fef3ff23153f88f565ae" kindref="member">mlebtensor_weight</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d)<sp/>{</highlight></codeline>
+<codeline lineno="10" refid="namespaceamrex_1ab0c90b93d85bed9c9d00132d5ae7425b" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1ab0c90b93d85bed9c9d00132d5ae7425b" kindref="member">mlebtensor_weight</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d)<sp/>{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(d==2)<sp/>?<sp/>Real(0.5)<sp/>:<sp/>((d==1)<sp/>?<sp/>Real(1.0)<sp/>:<sp/>Real(0.0));</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="15" refid="namespaceamrex_1a8504bac8d4350e21fbcd88c9c048e45f" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a8504bac8d4350e21fbcd88c9c048e45f" kindref="member">mlebtensor_dy_on_xface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="15" refid="namespaceamrex_1a1180a43e85f45c9a653da7d180500c24" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a1180a43e85f45c9a653da7d180500c24" kindref="member">mlebtensor_dy_on_xface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vel,<sp/>Real<sp/>dyi,</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>whi,<sp/>Real<sp/>wlo,</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jhip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jhim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jlop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jlom)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
@@ -1794,7 +1895,7 @@
 <codeline lineno="22"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="25" refid="namespaceamrex_1a802f1aac35a7d1a1f9445612feaba9ec" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a802f1aac35a7d1a1f9445612feaba9ec" kindref="member">mlebtensor_dx_on_yface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="25" refid="namespaceamrex_1a679c2a3d6b99d4f0b4048c05f509aece" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a679c2a3d6b99d4f0b4048c05f509aece" kindref="member">mlebtensor_dx_on_yface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vel,<sp/>Real<sp/>dxi,</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>whi,<sp/>Real<sp/>wlo,</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ihip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ihim,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilop,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilom)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
@@ -1804,7 +1905,7 @@
 <codeline lineno="32"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="35" refid="namespaceamrex_1a5b3231c3f790199a70d08b60f2b8eca1" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a8504bac8d4350e21fbcd88c9c048e45f" kindref="member">mlebtensor_dy_on_xface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="35" refid="namespaceamrex_1a989ed60b63c8339579b2008b8f2682a7" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a1180a43e85f45c9a653da7d180500c24" kindref="member">mlebtensor_dy_on_xface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vel,<sp/>Real<sp/>dyi,</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvxlo,</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvxhi,</highlight></codeline>
@@ -1817,7 +1918,7 @@
 <codeline lineno="45"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>ddy;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>dlo.x)<sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ad1e38f6941395eb7450a0c15a9f0d2ef" kindref="member">Orientation::xlo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvxlo)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ae3aa5d6bc9b12b48079ce24ffab3335c" kindref="member">Orientation::xlo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvxlo)<sp/>{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>==<sp/>dlo.y)<sp/>{</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>(bvxlo(i-1,j<sp/><sp/>,k,n)<sp/>*<sp/>Real(-1.5)<sp/>+</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvxlo(i-1,j+1,k,n)<sp/>*<sp/>Real(2.)<sp/>+</highlight></codeline>
@@ -1829,13 +1930,13 @@
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>wlo*dyi*(bvxlo(i-1,jlop,k,n)-bvxlo(i-1,jlom,k,n));</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ad1e38f6941395eb7450a0c15a9f0d2ef" kindref="member">Orientation::xlo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ae3aa5d6bc9b12b48079ce24ffab3335c" kindref="member">Orientation::xlo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>whi*dyi*(vel(i,jhip,k,n)-vel(i,jhim,k,n));</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>AMREX_LO_REFLECT_ODD<sp/>or<sp/>homogeneous<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>Real(0.);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>dhi.x+1)<sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ac102d602dc20ef1e62437a8a098fe6ef" kindref="member">Orientation::xhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvxhi)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ac0c747b6d31d95d8283a25a76f61f75d" kindref="member">Orientation::xhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvxhi)<sp/>{</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>==<sp/>dlo.y)<sp/>{</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>(bvxhi(i,j<sp/><sp/>,k,n)<sp/>*<sp/>Real(-1.5)<sp/>+</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvxhi(i,j+1,k,n)<sp/>*<sp/>Real(2.)<sp/>+</highlight></codeline>
@@ -1847,19 +1948,19 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>whi*dyi*(bvxhi(i,jhip,k,n)-bvxhi(i,jhim,k,n));</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ac102d602dc20ef1e62437a8a098fe6ef" kindref="member">Orientation::xhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ac0c747b6d31d95d8283a25a76f61f75d" kindref="member">Orientation::xhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>wlo*dyi*(vel(i-1,jlop,k,n)-vel(i-1,jlom,k,n));</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>AMREX_LO_REFLECT_ODD<sp/>or<sp/>homogeneous<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/>Real(0.);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/><ref refid="namespaceamrex_1a8504bac8d4350e21fbcd88c9c048e45f" kindref="member">mlebtensor_dy_on_xface</ref>(i,j,k,n,vel,dyi,whi,wlo,jhip,jhim,jlop,jlom);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddy<sp/>=<sp/><ref refid="namespaceamrex_1a1180a43e85f45c9a653da7d180500c24" kindref="member">mlebtensor_dy_on_xface</ref>(i,j,k,n,vel,dyi,whi,wlo,jhip,jhim,jlop,jlom);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ddy;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="90" refid="namespaceamrex_1a14d3d5c743a1aca6f8ea57fb9033a81f" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a802f1aac35a7d1a1f9445612feaba9ec" kindref="member">mlebtensor_dx_on_yface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
+<codeline lineno="90" refid="namespaceamrex_1ab8f869dc77a57e3385ee291910ee7921" refkind="member"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a679c2a3d6b99d4f0b4048c05f509aece" kindref="member">mlebtensor_dx_on_yface</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vel,<sp/>Real<sp/>dxi,</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvylo,</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvyhi,</highlight></codeline>
@@ -1872,7 +1973,7 @@
 <codeline lineno="100"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>ddx;</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>==<sp/>dlo.y)<sp/>{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1af6be6ea36ed6e7d22a6d80f3c18cb42d" kindref="member">Orientation::ylo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvylo)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1aeda171e55833ceecd16574a0f2043e44" kindref="member">Orientation::ylo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvylo)<sp/>{</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>dlo.x)<sp/>{</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>(bvylo(i<sp/><sp/>,j-1,k,n)<sp/>*<sp/>Real(-1.5)<sp/>+</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvylo(i+1,j-1,k,n)<sp/>*<sp/>Real(2.)<sp/>+</highlight></codeline>
@@ -1884,13 +1985,13 @@
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>wlo*dxi*(bvylo(ilop,j-1,k,n)-bvylo(ilom,j-1,k,n));</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1af6be6ea36ed6e7d22a6d80f3c18cb42d" kindref="member">Orientation::ylo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1aeda171e55833ceecd16574a0f2043e44" kindref="member">Orientation::ylo</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>whi*dxi*(vel(ihip,j,k,n)-vel(ihim,j,k,n));</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>AMREX_LO_REFLECT_ODD<sp/>or<sp/>homogeneous<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>Real(0.);</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>==<sp/>dhi.y+1)<sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1a3b7f25d76189715394c20705e0954a88" kindref="member">Orientation::yhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvyhi)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ad34995103412fda4609c31441648f54b" kindref="member">Orientation::yhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref><sp/>&amp;&amp;<sp/>bvyhi)<sp/>{</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>dlo.x)<sp/>{</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>(bvyhi(i<sp/><sp/>,j,k,n)<sp/>*<sp/>Real(-1.5)<sp/>+</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvyhi(i+1,j,k,n)<sp/>*<sp/>Real(2.)<sp/>+</highlight></codeline>
@@ -1902,13 +2003,13 @@
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>whi*dxi*(bvyhi(ihip,j,k,n)-bvyhi(ihim,j,k,n));</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1a3b7f25d76189715394c20705e0954a88" kindref="member">Orientation::yhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bct(<ref refid="classamrex_1_1Orientation_1ad34995103412fda4609c31441648f54b" kindref="member">Orientation::yhi</ref>(),n)<sp/>==<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>wlo*dxi*(vel(ilop,j-1,k,n)-vel(ilom,j-1,k,n));</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>AMREX_LO_REFLECT_ODD<sp/>or<sp/>homogeneous<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/>Real(0.);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/><ref refid="namespaceamrex_1a802f1aac35a7d1a1f9445612feaba9ec" kindref="member">mlebtensor_dx_on_yface</ref>(i,j,k,n,vel,dxi,whi,wlo,ihip,ihim,ilop,ilom);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ddx<sp/>=<sp/><ref refid="namespaceamrex_1a679c2a3d6b99d4f0b4048c05f509aece" kindref="member">mlebtensor_dx_on_yface</ref>(i,j,k,n,vel,dxi,whi,wlo,ihip,ihim,ilop,ilom);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ddx;</highlight></codeline>
 <codeline lineno="142"><highlight class="normal">}</highlight></codeline>

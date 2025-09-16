@@ -78,7 +78,7 @@
           <declname>a_small_radius</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a9de48c04056551924746c42f9eda3c8f" kindref="member">RealArray</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1aeb06fab72f85728954130adbe25c5397" kindref="member">RealArray</ref> &amp;</type>
           <declname>a_center</declname>
         </param>
         <param>
@@ -93,14 +93,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Torus.H" line="19" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Torus.H" bodystart="19" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1TorusIF_1a77c0aa2da3ac31736b0ef2f6e7e5786a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real amrex::EB2::TorusIF::operator()</definition>
-        <argsstring>(AMREX_D_DECL(Real x, Real y, Real z)) const noexcept</argsstring>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1TorusIF_1a4fb9acd17f8e6a0d79c5be1ba75257aa" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::EB2::TorusIF::operator()</definition>
+        <argsstring>(Real x, Real y, Real z) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::EB2::TorusIF::operator()</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real <ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>, Real y, Real z)</type>
+          <type>Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>z</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -117,7 +126,7 @@
         <name>operator()</name>
         <qualifiedname>amrex::EB2::TorusIF::operator()</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a9de48c04056551924746c42f9eda3c8f" kindref="member">RealArray</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1aeb06fab72f85728954130adbe25c5397" kindref="member">RealArray</ref> &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -152,11 +161,6 @@
         <childnode refid="2" relation="private-inheritance">
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>m_large_radius</edgelabel>
-          <edgelabel>m_sign</edgelabel>
-          <edgelabel>m_small_radius</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
           <edgelabel>m_center</edgelabel>
         </childnode>
       </node>
@@ -165,16 +169,8 @@
         <link refid="structamrex_1_1GPUable"/>
       </node>
       <node id="3">
-        <label>Real</label>
-      </node>
-      <node id="4">
         <label>amrex::XDim3</label>
         <link refid="structamrex_1_1XDim3"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>x</edgelabel>
-          <edgelabel>y</edgelabel>
-          <edgelabel>z</edgelabel>
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Torus.H" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Torus.H" bodystart="15" bodyend="49"/>
@@ -183,7 +179,7 @@
       <member refid="classamrex_1_1EB2_1_1TorusIF_1ab5c98ffdc830c5d1b1161e7febad6e0f" prot="protected" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>m_large_radius</name></member>
       <member refid="classamrex_1_1EB2_1_1TorusIF_1a99567ce8919aa7ae802d60b62de5d08e" prot="protected" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>m_sign</name></member>
       <member refid="classamrex_1_1EB2_1_1TorusIF_1ab2c4c827cd735a1c6759fadd8173f4f5" prot="protected" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>m_small_radius</name></member>
-      <member refid="classamrex_1_1EB2_1_1TorusIF_1a77c0aa2da3ac31736b0ef2f6e7e5786a" prot="public" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1EB2_1_1TorusIF_1a4fb9acd17f8e6a0d79c5be1ba75257aa" prot="public" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>operator()</name></member>
       <member refid="classamrex_1_1EB2_1_1TorusIF_1a5e39ae05f89d8155ce4fd5428b8ac84f" prot="public" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>operator()</name></member>
       <member refid="classamrex_1_1EB2_1_1TorusIF_1ab9f0fa84c649ce8a6a6b66bd12f4eeb9" prot="public" virt="non-virtual"><scope>amrex::EB2::TorusIF</scope><name>TorusIF</name></member>
     </listofallmembers>

@@ -4,13 +4,13 @@
     <compoundname>amrex::RealBox</compoundname>
     <includes refid="AMReX__RealBox_8H" local="no">AMReX_RealBox.H</includes>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1RealBox_1ae4725fce5cb9ab4e306e9cb7a9c37f3c" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1RealBox_1a4f9c8d6e2a72c25360195de819831fd0" prot="private" static="no" mutable="no">
         <type>Real</type>
-        <definition>Real amrex::RealBox::xlo[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>Real amrex::RealBox::xlo[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>xlo</name>
         <qualifiedname>amrex::RealBox::xlo</qualifiedname>
-        <initializer>= {<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real(0.),Real(0.),Real(0.))}</initializer>
+        <initializer>= { Real(0.) , Real(0.) , Real(0.) }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -19,13 +19,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="141" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="141" bodyend="141"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1RealBox_1af7c8319947a6017a36027bc15c3ad065" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1RealBox_1a2a8beb0d249fef26ad726aa32563b823" prot="private" static="no" mutable="no">
         <type>Real</type>
-        <definition>Real amrex::RealBox::xhi[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>Real amrex::RealBox::xhi[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>xhi</name>
         <qualifiedname>amrex::RealBox::xhi</qualifiedname>
-        <initializer>= {<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real(-1.),Real(-1.),Real(-1.))}</initializer>
+        <initializer>= { Real(-1.) , Real(-1.) , Real(-1.) }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -51,9 +51,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="24" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a08455d95f7a26778ba42b5d023d16eec" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::RealBox::RealBox</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a1e665340f31c0bd0f3e133ea81277718" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::RealBox::RealBox</definition>
         <argsstring>(const Real *a_lo, const Real *a_hi) noexcept</argsstring>
         <name>RealBox</name>
         <qualifiedname>amrex::RealBox::RealBox</qualifiedname>
@@ -74,18 +74,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="28" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="28" bodyend="29"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a4fad8ad2d3ec608a2c1f2fb205ddda86" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a6f8e3f9da25574d7f1e0865c686762d2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::RealBox::RealBox</definition>
-        <argsstring>(const std::array&lt; Real, AMREX_SPACEDIM &gt; &amp;a_lo, const std::array&lt; Real, AMREX_SPACEDIM &gt; &amp;a_hi) noexcept</argsstring>
+        <argsstring>(const std::array&lt; Real, 3 &gt; &amp;a_lo, const std::array&lt; Real, 3 &gt; &amp;a_hi) noexcept</argsstring>
         <name>RealBox</name>
         <qualifiedname>amrex::RealBox::RealBox</qualifiedname>
         <param>
-          <type>const std::array&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const std::array&lt; Real, 3 &gt; &amp;</type>
           <declname>a_lo</declname>
         </param>
         <param>
-          <type>const std::array&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const std::array&lt; Real, 3 &gt; &amp;</type>
           <declname>a_hi</declname>
         </param>
         <briefdescription>
@@ -103,7 +103,7 @@
         <name>RealBox</name>
         <qualifiedname>amrex::RealBox::RealBox</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
@@ -123,17 +123,35 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="38" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.cpp" bodystart="10" bodyend="22"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a0133f0708ca052eb1eb7a7753169bb75" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::RealBox::RealBox</definition>
-        <argsstring>(AMREX_D_DECL(Real x0, Real y0, Real z0), AMREX_D_DECL(Real x1, Real y1, Real z1)) noexcept</argsstring>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1ad108897eec5d7b96f3175a62999a58aa" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::RealBox::RealBox</definition>
+        <argsstring>(Real x0, Real y0, Real z0, Real x1, Real y1, Real z1) noexcept</argsstring>
         <name>RealBox</name>
         <qualifiedname>amrex::RealBox::RealBox</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real x0, Real y0, Real z0)</type>
+          <type>Real</type>
+          <declname>x0</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real x1, Real y1, Real z1)</type>
+          <type>Real</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>z0</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>z1</declname>
         </param>
         <briefdescription>
 <para>Explicit dimension specific constructors. </para>
@@ -144,9 +162,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="41" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="41" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a11c6e6e8433de79512ce8e01995c0e0f" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealBox::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a9bf22d3afecd440bb1f5490f1ca15db7" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const Real *</type>
+        <definition>__host__ __device__ const Real * amrex::RealBox::lo</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>lo</name>
         <qualifiedname>amrex::RealBox::lo</qualifiedname>
@@ -159,9 +177,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="46" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="46" bodyend="46"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a89a951223f66ddcde4009e0b61451d4a" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealBox::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a850140adde4f5a359b7d4322c4db44d2" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type>__host__ __device__ const Real *</type>
+        <definition>__host__ __device__ const Real * amrex::RealBox::lo</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>lo</name>
         <qualifiedname>amrex::RealBox::lo</qualifiedname>
@@ -173,9 +191,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="48" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1aed535cd3b42062a6d1702c2556fd91ab" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealBox::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1ac52a368075c89685c1abcc3ddbd00ff3" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ const Real *</type>
+        <definition>__host__ __device__ const Real * amrex::RealBox::hi</definition>
         <argsstring>() const &amp;noexcept</argsstring>
         <name>hi</name>
         <qualifiedname>amrex::RealBox::hi</qualifiedname>
@@ -188,9 +206,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="51" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="51" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a40dbaca0fc2086aacbac975c42b9b974" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real * amrex::RealBox::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a9774ef8de85a107e434e3f5614216fb6" prot="public" static="no" const="no" explicit="no" inline="no" refqual="rvalue" virt="non-virtual">
+        <type>__host__ __device__ const Real *</type>
+        <definition>__host__ __device__ const Real * amrex::RealBox::hi</definition>
         <argsstring>() &amp;&amp;=delete</argsstring>
         <name>hi</name>
         <qualifiedname>amrex::RealBox::hi</qualifiedname>
@@ -202,14 +220,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="53" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1aeb9332bd9350ab5d7fd3a32afa888659" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealBox::lo</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a3b5e7b04e5a12a033d5fa51b90181e3c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::RealBox::lo</definition>
         <argsstring>(int dir) const noexcept</argsstring>
         <name>lo</name>
         <qualifiedname>amrex::RealBox::lo</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -221,14 +239,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="56" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="56" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a853070bf06ced25f07f7c02a5cd9293f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealBox::hi</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1aca85ccb07a26611a51808c4704579de5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::RealBox::hi</definition>
         <argsstring>(int dir) const noexcept</argsstring>
         <name>hi</name>
         <qualifiedname>amrex::RealBox::hi</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -240,14 +258,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="59" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1aee1bde14bdd1fa4a02c2f340c5611b85" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealBox::length</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1ac92ea1ab251e81661d23f8c12a34c860" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::RealBox::length</definition>
         <argsstring>(int dir) const noexcept</argsstring>
         <name>length</name>
         <qualifiedname>amrex::RealBox::length</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -304,7 +322,7 @@
         <name>setLo</name>
         <qualifiedname>amrex::RealBox::setLo</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a84466765b78f04404d1d42c19ee85657" kindref="member">RealVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a9a66cb310efdbc12b9b4d5f170470726" kindref="member">RealVect</ref> &amp;</type>
           <declname>a_lo</declname>
         </param>
         <briefdescription>
@@ -323,7 +341,7 @@
         <name>setLo</name>
         <qualifiedname>amrex::RealBox::setLo</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -384,7 +402,7 @@
         <name>setHi</name>
         <qualifiedname>amrex::RealBox::setHi</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a84466765b78f04404d1d42c19ee85657" kindref="member">RealVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a9a66cb310efdbc12b9b4d5f170470726" kindref="member">RealVect</ref> &amp;</type>
           <declname>a_hi</declname>
         </param>
         <briefdescription>
@@ -403,7 +421,7 @@
         <name>setHi</name>
         <qualifiedname>amrex::RealBox::setHi</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <param>
@@ -419,9 +437,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="78" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a0ef0d1567b79fabf1c2ac051a78b3f95" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::ok</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1ae82e3ad67dc6b874eceb8cf81028e218" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::ok</definition>
         <argsstring>() const noexcept</argsstring>
         <name>ok</name>
         <qualifiedname>amrex::RealBox::ok</qualifiedname>
@@ -434,9 +452,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="81" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="81" bodyend="90"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a098e1f2357e21072c37d33fff98d9cb7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real amrex::RealBox::volume</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a93db6fe21fbffe66f89ca56e42197175" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::RealBox::volume</definition>
         <argsstring>() const noexcept</argsstring>
         <name>volume</name>
         <qualifiedname>amrex::RealBox::volume</qualifiedname>
@@ -449,9 +467,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="95" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="95" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a6e117146678175a0d2be9d40e7873200" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::contains</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a05442764978cacf90a1c15dbb5fafa17" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::contains</definition>
         <argsstring>(const Real *point, Real eps=0.0) const noexcept</argsstring>
         <name>contains</name>
         <qualifiedname>amrex::RealBox::contains</qualifiedname>
@@ -473,9 +491,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="102" bodyend="107"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a7c3358585c6f290b57884ea0297d373a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::contains</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a9f25f3c66cba1912e9885e7439914cc7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::contains</definition>
         <argsstring>(XDim3 point, Real eps=0.0) const noexcept</argsstring>
         <name>contains</name>
         <qualifiedname>amrex::RealBox::contains</qualifiedname>
@@ -497,14 +515,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="111" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="111" bodyend="115"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a890b48af91fab2e472657e116656fa73" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::contains</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1af84db0be938e0e45cef84387eaca6aee" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::contains</definition>
         <argsstring>(const RealVect &amp;rv, Real eps=0.0) const noexcept</argsstring>
         <name>contains</name>
         <qualifiedname>amrex::RealBox::contains</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a84466765b78f04404d1d42c19ee85657" kindref="member">RealVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a9a66cb310efdbc12b9b4d5f170470726" kindref="member">RealVect</ref> &amp;</type>
           <declname>rv</declname>
         </param>
         <param>
@@ -521,9 +539,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="119" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="119" bodyend="120"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1aecb30e60d8a6a56c7c7233db3ae8d148" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::contains</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a35e4fe3ce6318e500ab0cd1411351ee7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::contains</definition>
         <argsstring>(const RealBox &amp;rb, Real eps=0.0) const noexcept</argsstring>
         <name>contains</name>
         <qualifiedname>amrex::RealBox::contains</qualifiedname>
@@ -545,9 +563,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="124" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="124" bodyend="127"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealBox_1a8b71ab83b796a36109d487b53b7ec4c1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
-        <definition>AMREX_GPU_HOST_DEVICE bool amrex::RealBox::intersects</definition>
+      <memberdef kind="function" id="classamrex_1_1RealBox_1a87cf86c67d2fd71644e93cf097b35d0c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::RealBox::intersects</definition>
         <argsstring>(const RealBox &amp;bx) const noexcept</argsstring>
         <name>intersects</name>
         <qualifiedname>amrex::RealBox::intersects</qualifiedname>
@@ -570,39 +588,26 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="2">
-        <label>Real</label>
-      </node>
-      <node id="1">
-        <label>amrex::RealBox</label>
-        <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>xhi</edgelabel>
-          <edgelabel>xlo</edgelabel>
-        </childnode>
-      </node>
-    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" line="20" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealBox.H" bodystart="21" bodyend="143"/>
     <listofallmembers>
-      <member refid="classamrex_1_1RealBox_1a6e117146678175a0d2be9d40e7873200" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
-      <member refid="classamrex_1_1RealBox_1a7c3358585c6f290b57884ea0297d373a" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
-      <member refid="classamrex_1_1RealBox_1a890b48af91fab2e472657e116656fa73" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
-      <member refid="classamrex_1_1RealBox_1aecb30e60d8a6a56c7c7233db3ae8d148" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
-      <member refid="classamrex_1_1RealBox_1aed535cd3b42062a6d1702c2556fd91ab" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
-      <member refid="classamrex_1_1RealBox_1a40dbaca0fc2086aacbac975c42b9b974" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
-      <member refid="classamrex_1_1RealBox_1a853070bf06ced25f07f7c02a5cd9293f" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
-      <member refid="classamrex_1_1RealBox_1a8b71ab83b796a36109d487b53b7ec4c1" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>intersects</name></member>
-      <member refid="classamrex_1_1RealBox_1aee1bde14bdd1fa4a02c2f340c5611b85" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>length</name></member>
-      <member refid="classamrex_1_1RealBox_1a11c6e6e8433de79512ce8e01995c0e0f" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
-      <member refid="classamrex_1_1RealBox_1a89a951223f66ddcde4009e0b61451d4a" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
-      <member refid="classamrex_1_1RealBox_1aeb9332bd9350ab5d7fd3a32afa888659" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
-      <member refid="classamrex_1_1RealBox_1a0ef0d1567b79fabf1c2ac051a78b3f95" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>ok</name></member>
+      <member refid="classamrex_1_1RealBox_1a05442764978cacf90a1c15dbb5fafa17" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1RealBox_1a9f25f3c66cba1912e9885e7439914cc7" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1RealBox_1af84db0be938e0e45cef84387eaca6aee" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1RealBox_1a35e4fe3ce6318e500ab0cd1411351ee7" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1RealBox_1ac52a368075c89685c1abcc3ddbd00ff3" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
+      <member refid="classamrex_1_1RealBox_1a9774ef8de85a107e434e3f5614216fb6" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
+      <member refid="classamrex_1_1RealBox_1aca85ccb07a26611a51808c4704579de5" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>hi</name></member>
+      <member refid="classamrex_1_1RealBox_1a87cf86c67d2fd71644e93cf097b35d0c" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>intersects</name></member>
+      <member refid="classamrex_1_1RealBox_1ac92ea1ab251e81661d23f8c12a34c860" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>length</name></member>
+      <member refid="classamrex_1_1RealBox_1a9bf22d3afecd440bb1f5490f1ca15db7" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
+      <member refid="classamrex_1_1RealBox_1a850140adde4f5a359b7d4322c4db44d2" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
+      <member refid="classamrex_1_1RealBox_1a3b5e7b04e5a12a033d5fa51b90181e3c" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>lo</name></member>
+      <member refid="classamrex_1_1RealBox_1ae82e3ad67dc6b874eceb8cf81028e218" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>ok</name></member>
       <member refid="classamrex_1_1RealBox_1a0c94da578ae78f612f3c7a1295edb272" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
-      <member refid="classamrex_1_1RealBox_1a08455d95f7a26778ba42b5d023d16eec" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
-      <member refid="classamrex_1_1RealBox_1a4fad8ad2d3ec608a2c1f2fb205ddda86" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
+      <member refid="classamrex_1_1RealBox_1a1e665340f31c0bd0f3e133ea81277718" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
+      <member refid="classamrex_1_1RealBox_1a6f8e3f9da25574d7f1e0865c686762d2" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
       <member refid="classamrex_1_1RealBox_1ac0a2462c4b6cf7119c7946140d4ba979" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
-      <member refid="classamrex_1_1RealBox_1a0133f0708ca052eb1eb7a7753169bb75" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
+      <member refid="classamrex_1_1RealBox_1ad108897eec5d7b96f3175a62999a58aa" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>RealBox</name></member>
       <member refid="classamrex_1_1RealBox_1adfe0a1636b666203a0fc32be47c5bedb" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setHi</name></member>
       <member refid="classamrex_1_1RealBox_1a48f67e7be6f62e4e0ac416af2ca860fa" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setHi</name></member>
       <member refid="classamrex_1_1RealBox_1a94d83eb3cb499791bd998169535994d8" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setHi</name></member>
@@ -611,9 +616,9 @@
       <member refid="classamrex_1_1RealBox_1ad513c995fcf5ff2ca68ea4a1ca78a9f7" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setLo</name></member>
       <member refid="classamrex_1_1RealBox_1ad17a084669ca15c44ee367f21a9ffc68" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setLo</name></member>
       <member refid="classamrex_1_1RealBox_1a06a08fc2ff5eb243e5b56ad66734fd55" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>setLo</name></member>
-      <member refid="classamrex_1_1RealBox_1a098e1f2357e21072c37d33fff98d9cb7" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>volume</name></member>
-      <member refid="classamrex_1_1RealBox_1af7c8319947a6017a36027bc15c3ad065" prot="private" virt="non-virtual"><scope>amrex::RealBox</scope><name>xhi</name></member>
-      <member refid="classamrex_1_1RealBox_1ae4725fce5cb9ab4e306e9cb7a9c37f3c" prot="private" virt="non-virtual"><scope>amrex::RealBox</scope><name>xlo</name></member>
+      <member refid="classamrex_1_1RealBox_1a93db6fe21fbffe66f89ca56e42197175" prot="public" virt="non-virtual"><scope>amrex::RealBox</scope><name>volume</name></member>
+      <member refid="classamrex_1_1RealBox_1a2a8beb0d249fef26ad726aa32563b823" prot="private" virt="non-virtual"><scope>amrex::RealBox</scope><name>xhi</name></member>
+      <member refid="classamrex_1_1RealBox_1a4f9c8d6e2a72c25360195de819831fd0" prot="private" virt="non-virtual"><scope>amrex::RealBox</scope><name>xlo</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

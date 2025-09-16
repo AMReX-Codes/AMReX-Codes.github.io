@@ -6,7 +6,7 @@
     <includes refid="AMReX__ParticleInterpolators_8H" local="no">AMReX_ParticleInterpolators.H</includes>
     <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::ParticleInterpolator::Linear::stencil_width</definition>
         <argsstring></argsstring>
         <name>stencil_width</name>
@@ -21,12 +21,12 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="223" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="223" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a064dd3c6107b296a915aedcd0f2f1826" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::ParticleInterpolator::Linear::nx</definition>
         <argsstring></argsstring>
         <name>nx</name>
         <qualifiedname>amrex::ParticleInterpolator::Linear::nx</qualifiedname>
-        <initializer>= (AMREX_SPACEDIM &gt;= 1) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
+        <initializer>= (3 &gt;= 1) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -36,12 +36,12 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="225" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="225" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a0e0af124579f9ad5fec3710bb83ee821" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::ParticleInterpolator::Linear::ny</definition>
         <argsstring></argsstring>
         <name>ny</name>
         <qualifiedname>amrex::ParticleInterpolator::Linear::ny</qualifiedname>
-        <initializer>= (AMREX_SPACEDIM &gt;= 2) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
+        <initializer>= (3 &gt;= 2) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -51,12 +51,12 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="226" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="226" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1ad178c7e8f42426ab5b0eb3bd45ce8bd0" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>constexpr int</type>
         <definition>constexpr int amrex::ParticleInterpolator::Linear::nz</definition>
         <argsstring></argsstring>
         <name>nz</name>
         <qualifiedname>amrex::ParticleInterpolator::Linear::nz</qualifiedname>
-        <initializer>= (AMREX_SPACEDIM &gt;= 3) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
+        <initializer>= (3 &gt;= 3) ? <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" kindref="member">stencil_width</ref> - 1 : 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -83,15 +83,15 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a1fc7379baaa9b4132c2ce77840f89272" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a324045c398bc26e84c793799c6fa909f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename P</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::ParticleInterpolator::Linear::Linear</definition>
-        <argsstring>(const P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi)</argsstring>
+        <type>__device__</type>
+        <definition>__device__ amrex::ParticleInterpolator::Linear::Linear</definition>
+        <argsstring>(const P &amp;p, amrex::GpuArray&lt; amrex::Real, 3 &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, 3 &gt; const &amp;dxi)</argsstring>
         <name>Linear</name>
         <qualifiedname>amrex::ParticleInterpolator::Linear::Linear</qualifiedname>
         <param>
@@ -99,11 +99,11 @@
           <declname>p</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref>&lt; amrex::Real, 3 &gt; const &amp;</type>
           <declname>plo</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref>&lt; amrex::Real, 3 &gt; const &amp;</type>
           <declname>dxi</declname>
         </param>
         <briefdescription>
@@ -150,23 +150,17 @@
         <link refid="structamrex_1_1ParticleInterpolator_1_1Linear"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="usage">
-          <edgelabel>weights</edgelabel>
-        </childnode>
-      </node>
-      <node id="3">
-        <label>Real</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="221" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="222" bodyend="251"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>index</name></member>
-      <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a1fc7379baaa9b4132c2ce77840f89272" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>Linear</name></member>
-      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a81c2922823a2fdac178b526dcd271141" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>MeshToParticle</name></member>
+      <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a324045c398bc26e84c793799c6fa909f" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>Linear</name></member>
+      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1ac669b25bcc6cb7f75290ce22adcac772" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>MeshToParticle</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a064dd3c6107b296a915aedcd0f2f1826" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>nx</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a0e0af124579f9ad5fec3710bb83ee821" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>ny</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1ad178c7e8f42426ab5b0eb3bd45ce8bd0" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>nz</name></member>
-      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1aad2b3e1789a599cf1517fbfa66214213" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>ParticleToMesh</name></member>
+      <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a501e319cda102b2fb5b9673852231db6" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>ParticleToMesh</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a2d02dfb2273a47559f2cdb441f5843f0" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>stencil_width</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a5e658795689d17cacf75bdb7c46675ac" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>w</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1ad310f842476426c90a428403ea4a47a0" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>weights</name></member>

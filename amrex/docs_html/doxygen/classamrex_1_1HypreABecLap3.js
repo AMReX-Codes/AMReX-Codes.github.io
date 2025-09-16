@@ -9,6 +9,7 @@ var classamrex_1_1HypreABecLap3 =
     [ "operator=", "classamrex_1_1HypreABecLap3.html#a2fe1a1920cb0d7e13ab2d2f831eb1d01", null ],
     [ "operator=", "classamrex_1_1HypreABecLap3.html#a5ecd8652e316e3ebede0b4eef0e20cfe", null ],
     [ "prepareSolver", "classamrex_1_1HypreABecLap3.html#a73956b5120ef6513532cb22e2e8335ab", null ],
+    [ "setEBDirichlet", "classamrex_1_1HypreABecLap3.html#a16a92093d6411b5b696be3d823633203", null ],
     [ "solve", "classamrex_1_1HypreABecLap3.html#a8aab0e1b05eed8423e2b70979ff703d8", null ],
     [ "A", "classamrex_1_1HypreABecLap3.html#a3094f9b4df6d8bc23577d00b40087587", null ],
     [ "b", "classamrex_1_1HypreABecLap3.html#aac9a18102f9bc2f5b4b060e49fabaea0", null ],

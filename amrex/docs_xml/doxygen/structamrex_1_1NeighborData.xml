@@ -10,7 +10,7 @@
     </templateparamlist>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structamrex_1_1NeighborData_1af26fd25b39faa11f8357d2d750b44ba4" prot="public" static="no" mutable="no">
-        <type>const unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const unsigned int *</type>
         <definition>const unsigned int* amrex::NeighborData&lt; ParticleType &gt;::m_nbor_offsets_ptr</definition>
         <argsstring></argsstring>
         <name>m_nbor_offsets_ptr</name>
@@ -24,7 +24,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" line="224" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1NeighborData_1aaa6b74f92a1ba6a7318b0f06381035dc" prot="public" static="no" mutable="no">
-        <type>const unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+        <type>const unsigned int *</type>
         <definition>const unsigned int* amrex::NeighborData&lt; ParticleType &gt;::m_nbor_list_ptr</definition>
         <argsstring></argsstring>
         <name>m_nbor_list_ptr</name>
@@ -60,11 +60,11 @@
         <name>NeighborData</name>
         <qualifiedname>amrex::NeighborData::NeighborData</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned int &gt; &amp;</type>
           <declname>offsets</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned int &gt; &amp;</type>
           <declname>list</declname>
         </param>
         <param>
@@ -79,14 +79,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" line="212" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="212" bodyend="218"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1NeighborData_1aaa3cd5e649c590b1a17067afc3b0d943" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Neighbors" kindref="compound">amrex::Neighbors</ref>&lt; ParticleType &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::Neighbors&lt; ParticleType &gt; amrex::NeighborData&lt; ParticleType &gt;::getNeighbors</definition>
+      <memberdef kind="function" id="structamrex_1_1NeighborData_1a21a404a520f88faceebe888b56e2df19" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>__host__ __device__ <ref refid="structamrex_1_1Neighbors" kindref="compound">amrex::Neighbors</ref>&lt; ParticleType &gt;</type>
+        <definition>__host__ __device__ amrex::Neighbors&lt; ParticleType &gt; amrex::NeighborData&lt; ParticleType &gt;::getNeighbors</definition>
         <argsstring>(int i) const</argsstring>
         <name>getNeighbors</name>
         <qualifiedname>amrex::NeighborData::getNeighbors</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>i</declname>
         </param>
         <briefdescription>
@@ -104,7 +104,7 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" line="210" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="211" bodyend="227"/>
     <listofallmembers>
-      <member refid="structamrex_1_1NeighborData_1aaa3cd5e649c590b1a17067afc3b0d943" prot="public" virt="non-virtual"><scope>amrex::NeighborData</scope><name>getNeighbors</name></member>
+      <member refid="structamrex_1_1NeighborData_1a21a404a520f88faceebe888b56e2df19" prot="public" virt="non-virtual"><scope>amrex::NeighborData</scope><name>getNeighbors</name></member>
       <member refid="structamrex_1_1NeighborData_1aaa6b74f92a1ba6a7318b0f06381035dc" prot="public" virt="non-virtual"><scope>amrex::NeighborData</scope><name>m_nbor_list_ptr</name></member>
       <member refid="structamrex_1_1NeighborData_1af26fd25b39faa11f8357d2d750b44ba4" prot="public" virt="non-virtual"><scope>amrex::NeighborData</scope><name>m_nbor_offsets_ptr</name></member>
       <member refid="structamrex_1_1NeighborData_1a09fd3cee10d0e540e802b6c7cd9fc6fd" prot="public" virt="non-virtual"><scope>amrex::NeighborData</scope><name>m_pstruct</name></member>

@@ -1,6 +1,6 @@
 var structamrex_1_1MLMGABCEBTag =
 [
-    [ "box", "structamrex_1_1MLMGABCEBTag.html#a63113966f05d727eb723da93fdeef549", null ],
+    [ "box", "structamrex_1_1MLMGABCEBTag.html#ad31a7eac446f5f96521e7af977a4ac49", null ],
     [ "area", "structamrex_1_1MLMGABCEBTag.html#a70bac86f5baace711ce162abe01b1171", null ],
     [ "bcloc", "structamrex_1_1MLMGABCEBTag.html#a24757d18c53a617812df3d1c47a9a51b", null ],
     [ "bctype", "structamrex_1_1MLMGABCEBTag.html#a1c86b6b7ad7d8d72a76b1e8c2da91f69", null ],

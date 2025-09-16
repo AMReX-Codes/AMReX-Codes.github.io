@@ -86,6 +86,5 @@ var searchData=
   ['forkjoin_83',['ForkJoin',['../classamrex_1_1ForkJoin.html',1,'amrex']]],
   ['fpc_84',['FPC',['../classamrex_1_1FPC.html',1,'amrex']]],
   ['fpinfo_85',['FPinfo',['../structamrex_1_1FabArrayBase_1_1FPinfo.html',1,'amrex::FabArrayBase']]],
-  ['frame_86',['Frame',['../classamrex_1_1ParallelContext_1_1Frame.html',1,'amrex::ParallelContext']]],
-  ['funcstat_87',['FuncStat',['../structBLProfStats_1_1FuncStat.html',1,'BLProfStats']]]
+  ['frame_86',['Frame',['../classamrex_1_1ParallelContext_1_1Frame.html',1,'amrex::ParallelContext']]]
 ];

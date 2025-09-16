@@ -2,7 +2,7 @@ var classamrex_1_1AmrMesh =
 [
     [ "AmrMesh", "classamrex_1_1AmrMesh.html#a163e8a28e1f841b2c174d6d34664e2d3", null ],
     [ "AmrMesh", "classamrex_1_1AmrMesh.html#a58e7077dec217e4bdad1f5221e6229cc", null ],
-    [ "AmrMesh", "classamrex_1_1AmrMesh.html#a82b57f9cf8e12e9542c14f7d00a986ff", null ],
+    [ "AmrMesh", "classamrex_1_1AmrMesh.html#a8c23138921bc0b90149f20ea452662b1", null ],
     [ "AmrMesh", "classamrex_1_1AmrMesh.html#ac0486abd196135fb9ac41748f2d2f1c9", null ],
     [ "AmrMesh", "classamrex_1_1AmrMesh.html#aa3d1b57d3957feca7d0f897ec2e62824", null ],
     [ "AmrMesh", "classamrex_1_1AmrMesh.html#a43f67413ffdd911f5a91e9041bb20d0e", null ],
@@ -46,7 +46,7 @@ var classamrex_1_1AmrMesh =
     [ "operator=", "classamrex_1_1AmrMesh.html#afae60a3f920a8839a05ca8b70d041cb8", null ],
     [ "operator=", "classamrex_1_1AmrMesh.html#aea11957c1545724bc01fe4b8840bde05", null ],
     [ "PostProcessBaseGrids", "classamrex_1_1AmrMesh.html#ad5863ce18c2b8b1dc6371d33c227f2a6", null ],
-    [ "ProjPeriodic", "classamrex_1_1AmrMesh.html#a663a92c5e8c0dbe3578d19cd8fb36af3", null ],
+    [ "ProjPeriodic", "classamrex_1_1AmrMesh.html#a5d98352aa6b18ea3223300ceaae596d9", null ],
     [ "refRatio", "classamrex_1_1AmrMesh.html#ac64a8b306d5402acee8ccac597802544", null ],
     [ "refRatio", "classamrex_1_1AmrMesh.html#a848a89635a0f509800a5d912ef7b4f0b", null ],
     [ "SetBlockingFactor", "classamrex_1_1AmrMesh.html#adf01c926d4f55d291a5d5a0e0b48c348", null ],

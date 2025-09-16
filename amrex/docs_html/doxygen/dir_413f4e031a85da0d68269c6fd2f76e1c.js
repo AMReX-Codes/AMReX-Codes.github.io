@@ -8,6 +8,5 @@ var dir_413f4e031a85da0d68269c6fd2f76e1c =
     [ "Extern", "dir_5d09622fde15ef324d9164e0f7b5b566.html", "dir_5d09622fde15ef324d9164e0f7b5b566" ],
     [ "FFT", "dir_f9aed410b5021f03f179e9c45a075800.html", "dir_f9aed410b5021f03f179e9c45a075800" ],
     [ "LinearSolvers", "dir_25f1d00fd66065d0aa2a8720d1ed1df5.html", "dir_25f1d00fd66065d0aa2a8720d1ed1df5" ],
-    [ "Particle", "dir_678e78232f51bebdca12cae3de73223b.html", "dir_678e78232f51bebdca12cae3de73223b" ],
-    [ "SDC", "dir_997fa42af28f6d8af2a79275cfe7ca93.html", "dir_997fa42af28f6d8af2a79275cfe7ca93" ]
+    [ "Particle", "dir_678e78232f51bebdca12cae3de73223b.html", "dir_678e78232f51bebdca12cae3de73223b" ]
 ];

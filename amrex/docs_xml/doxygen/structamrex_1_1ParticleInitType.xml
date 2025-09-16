@@ -5,22 +5,22 @@
     <includes refid="AMReX__ParticleContainer_8H" local="no">AMReX_ParticleContainer.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>NStructReal</declname>
         <defname>NStructReal</defname>
       </param>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>NStructInt</declname>
         <defname>NStructInt</defname>
       </param>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>NArrayReal</declname>
         <defname>NArrayReal</defname>
       </param>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>NArrayInt</declname>
         <defname>NArrayInt</defname>
       </param>
@@ -38,10 +38,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="118" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="118" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="119" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInitType_1a0bd3b566d108db4165d89a0cbb8dd274" prot="public" static="no" mutable="no">
-        <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, NStructInt &gt;</type>
+        <type>std::array&lt; int, NStructInt &gt;</type>
         <definition>std::array&lt;int, NStructInt &gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::int_struct_data</definition>
         <argsstring></argsstring>
         <name>int_struct_data</name>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="119" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="119" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="120" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInitType_1a96a2835e24e73f8f83bac5d4b898ab1a" prot="public" static="no" mutable="no">
         <type>std::array&lt; double, NArrayReal &gt;</type>
@@ -66,10 +66,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="120" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="120" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="121" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInitType_1a653d4adb055f256961d77c1ec6020388" prot="public" static="no" mutable="no">
-        <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, NArrayInt &gt;</type>
+        <type>std::array&lt; int, NArrayInt &gt;</type>
         <definition>std::array&lt;int, NArrayInt &gt; amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::int_array_data</definition>
         <argsstring></argsstring>
         <name>int_array_data</name>
@@ -80,15 +80,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="121" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="121" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="122" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="122" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>A struct used to pass initial data into the various Init methods. This struct is used to pass initial data into the various Init methods of the particle container. That data should be initialized in the order real struct data, int struct data, real array data, int array data. If fewer components are specified than the template parameters specify for, a given component, then the extra values will be set to zero. If more components are specified, it is a compile-time error. </para>
     </briefdescription>
     <detaileddescription>
-<para>Example usage: <verbatim>ParticleInitType&lt;0, 2, 4, 1&gt; pdata = {{}, {7, 9}, {1.5, 2.5, 3.5, 4.5}, {11}};
-</verbatim> </para>
+<para>Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal">ParticleInitType&lt;0,<sp/>2,<sp/>4,<sp/>1&gt;<sp/>pdata<sp/>=<sp/>{{},<sp/>{7,<sp/>9},<sp/>{1.5,<sp/>2.5,<sp/>3.5,<sp/>4.5},<sp/>{11}};</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
     <collaborationgraph>
       <node id="1">
@@ -120,7 +120,7 @@
         <label>std::array&lt; int, NStructInt &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="116" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="117" bodyend="122"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="117" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="118" bodyend="123"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInitType_1a653d4adb055f256961d77c1ec6020388" prot="public" virt="non-virtual"><scope>amrex::ParticleInitType</scope><name>int_array_data</name></member>
       <member refid="structamrex_1_1ParticleInitType_1a0bd3b566d108db4165d89a0cbb8dd274" prot="public" virt="non-virtual"><scope>amrex::ParticleInitType</scope><name>int_struct_data</name></member>

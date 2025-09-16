@@ -6,7 +6,7 @@ var AMReX__BaseFab_8H =
     [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
     [ "BaseFab_Finalize", "AMReX__BaseFab_8H.html#a67b24cef9df62e8cced041445b239e86", null ],
     [ "BaseFab_Initialize", "AMReX__BaseFab_8H.html#a652bd22fb8cfcdfeaa4ac62e81a41fe6", null ],
-    [ "makeArray4", "AMReX__BaseFab_8H.html#a825a4f6c9e97402dbf1ac726ae4b1a48", null ],
+    [ "makeArray4", "AMReX__BaseFab_8H.html#a210f2e40437f79c38535ce7cf847642a", null ],
     [ "placementDelete", "AMReX__BaseFab_8H.html#acc27e73c011e49ac271d3dcdd03d901e", null ],
     [ "placementDelete", "AMReX__BaseFab_8H.html#abfcd362c43fc0a141e3d38b64e7cd8a7", null ],
     [ "placementNew", "AMReX__BaseFab_8H.html#a1f7795a2449ec3d82382fe16b9721850", null ],

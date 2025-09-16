@@ -41,7 +41,7 @@ var classamrex_1_1MLCurlCurl =
     [ "setScalars", "classamrex_1_1MLCurlCurl.html#a6ec4dbd1f4658dc7cd6ef708b3968c4c", null ],
     [ "setUsePCG", "classamrex_1_1MLCurlCurl.html#ab5ad6803cca78078368567c0c4ee1ed0", null ],
     [ "smooth", "classamrex_1_1MLCurlCurl.html#a4c0286475c0d056c08e892becaa4cf47", null ],
-    [ "smooth1D", "classamrex_1_1MLCurlCurl.html#a8f5ef059ab585f53c8c794ce7db0aef0", null ],
+    [ "smooth4", "classamrex_1_1MLCurlCurl.html#a7b8448ec4cebb216a725c03e0bb37bee", null ],
     [ "solutionResidual", "classamrex_1_1MLCurlCurl.html#a68c7fc765c4f93349326b9a7cd3d038e", null ],
     [ "update", "classamrex_1_1MLCurlCurl.html#a348b93fae0250369d6129dbc8703c93e", null ],
     [ "update_lusolver", "classamrex_1_1MLCurlCurl.html#ab1b829e3d0384627b38f2ae504af3191", null ],
@@ -52,7 +52,7 @@ var classamrex_1_1MLCurlCurl =
     [ "m_coord", "classamrex_1_1MLCurlCurl.html#ac3c5a0fb0e94fa29cf64c1a40f4e4ff5", null ],
     [ "m_dotmask", "classamrex_1_1MLCurlCurl.html#a5e1b51f776e54426d9a92e0101b75066", null ],
     [ "m_etype", "classamrex_1_1MLCurlCurl.html#ae73e6c0e2000bd5397e42f8fd8e42cba", null ],
-    [ "m_lusolver", "classamrex_1_1MLCurlCurl.html#a194ba25b27e4f357966eb10f008566d2", null ],
+    [ "m_lusolver", "classamrex_1_1MLCurlCurl.html#adac80c76607bc08014cb838f001cf303", null ],
     [ "m_ncomp", "classamrex_1_1MLCurlCurl.html#a85d721f72de7a13036fb1ce5bc77d452", null ],
     [ "m_needs_update", "classamrex_1_1MLCurlCurl.html#a9a4a9fbc8ca4a4406fe0fe0a08dc1a25", null ],
     [ "m_use_pcg", "classamrex_1_1MLCurlCurl.html#a90caeb3665770814375e6ab7108e7536", null ]

@@ -11,7 +11,7 @@ var AMReX__EB2_8cpp =
     [ "maxCoarseningLevel", "AMReX__EB2_8cpp.html#acb02398d0c8b02dae840acf4f35b886c", null ],
     [ "NumCoarsenOpt", "AMReX__EB2_8cpp.html#a0077b0d85e112a8f4be7662f1cde1048", null ],
     [ "TopIndexSpaceIfPresent", "AMReX__EB2_8cpp.html#ab08bb163ec9d566ce748dd6c4a7f0385", null ],
-    [ "extend_domain_face", "AMReX__EB2_8cpp.html#a900c8b65fe13dca2d107ec8ae396b7b7", null ],
-    [ "max_grid_size", "AMReX__EB2_8cpp.html#a0e86c3c8bf9f242ddba11fbe8db60e66", null ],
-    [ "num_coarsen_opt", "AMReX__EB2_8cpp.html#aa6d8b9ccdeea03640db903d130f9af47", null ]
+    [ "extend_domain_face", "AMReX__EB2_8cpp.html#aacfb27dff7f9916a9ff6b261672ca715", null ],
+    [ "max_grid_size", "AMReX__EB2_8cpp.html#a6a03e6a896276bd89190ad6eee9566e1", null ],
+    [ "num_coarsen_opt", "AMReX__EB2_8cpp.html#a87408955c0fa835eb58386e859dcd4f6", null ]
 ];

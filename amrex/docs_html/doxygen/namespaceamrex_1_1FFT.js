@@ -2,12 +2,14 @@ var namespaceamrex_1_1FFT =
 [
     [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", "namespaceamrex_1_1FFT_1_1detail" ],
     [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", "namespaceamrex_1_1FFT_1_1fft__poisson__detail" ],
+    [ "Boundary_EnumTraits", "structamrex_1_1FFT_1_1Boundary__EnumTraits.html", "structamrex_1_1FFT_1_1Boundary__EnumTraits" ],
     [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "LocalR2C", "classamrex_1_1FFT_1_1LocalR2C.html", "classamrex_1_1FFT_1_1LocalR2C" ],
     [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html", "classamrex_1_1FFT_1_1OpenBCSolver" ],
     [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],
     [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html", "classamrex_1_1FFT_1_1Poisson" ],
     [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
+    [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
     [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
@@ -18,6 +20,11 @@ var namespaceamrex_1_1FFT =
     [ "Key", "namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81", null ],
     [ "PlanD", "namespaceamrex_1_1FFT.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
     [ "PlanF", "namespaceamrex_1_1FFT.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],
+    [ "Boundary", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964", [
+      [ "periodic", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee", null ],
+      [ "even", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138", null ],
+      [ "odd", "namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e", null ]
+    ] ],
     [ "Direction", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0", [
       [ "forward", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8", null ],
       [ "backward", "namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a195fe59b6f103787a914aead0f3db502", null ],
@@ -44,10 +51,10 @@ var namespaceamrex_1_1FFT =
     ] ],
     [ "add_vendor_plan_d", "namespaceamrex_1_1FFT.html#a6cb9d5c30fd6357eb758299f3abd61d2", null ],
     [ "add_vendor_plan_f", "namespaceamrex_1_1FFT.html#a59e01f27497fe7be2f0826c2d2aaa40e", null ],
-    [ "AMREX_ENUM", "namespaceamrex_1_1FFT.html#a5f62bdef4ab3baa40ccac7c6ab58a4d1", null ],
     [ "Clear", "namespaceamrex_1_1FFT.html#a247121292130aadfdd97b2c5b9b518ad", null ],
     [ "Finalize", "namespaceamrex_1_1FFT.html#a7a2c62799856b7bb8a987aaba0e405a3", null ],
     [ "get_vendor_plan_d", "namespaceamrex_1_1FFT.html#aef4353cee9c5e67d665ae0ce48d26a16", null ],
     [ "get_vendor_plan_f", "namespaceamrex_1_1FFT.html#ab9840e2620314d60691e6438e5b8bde3", null ],
-    [ "Initialize", "namespaceamrex_1_1FFT.html#a2976e074e2b759ec5813edcccce23341", null ]
+    [ "Initialize", "namespaceamrex_1_1FFT.html#a2976e074e2b759ec5813edcccce23341", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a030f0cdd98372793256e2e4d0cf9711c", null ]
 ];

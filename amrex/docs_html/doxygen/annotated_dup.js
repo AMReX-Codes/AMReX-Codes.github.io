@@ -112,12 +112,14 @@ var annotated_dup =
           [ "TriA", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA" ],
           [ "TriC", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC" ]
         ] ],
+        [ "Boundary_EnumTraits", "structamrex_1_1FFT_1_1Boundary__EnumTraits.html", "structamrex_1_1FFT_1_1Boundary__EnumTraits" ],
         [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
         [ "LocalR2C", "classamrex_1_1FFT_1_1LocalR2C.html", "classamrex_1_1FFT_1_1LocalR2C" ],
         [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html", "classamrex_1_1FFT_1_1OpenBCSolver" ],
         [ "Plan", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],
         [ "Poisson", "classamrex_1_1FFT_1_1Poisson.html", "classamrex_1_1FFT_1_1Poisson" ],
         [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
+        [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
         [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
         [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
         [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
@@ -173,14 +175,6 @@ var annotated_dup =
         [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html", "classamrex_1_1Gpu_1_1StreamIter" ],
         [ "StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", "structamrex_1_1Gpu_1_1StreamItInfo" ],
         [ "warpReduce", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ]
-      ] ],
-      [ "InSituUtils", "namespaceamrex_1_1InSituUtils.html", [
-        [ "amrex_tt", "structamrex_1_1InSituUtils_1_1amrex__tt.html", null ],
-        [ "assignOp", "structamrex_1_1InSituUtils_1_1assignOp.html", "structamrex_1_1InSituUtils_1_1assignOp" ],
-        [ "DescriptorMap", "classamrex_1_1InSituUtils_1_1DescriptorMap.html", "classamrex_1_1InSituUtils_1_1DescriptorMap" ],
-        [ "MeshStateMap", "classamrex_1_1InSituUtils_1_1MeshStateMap.html", "classamrex_1_1InSituUtils_1_1MeshStateMap" ],
-        [ "orOp", "structamrex_1_1InSituUtils_1_1orOp.html", "structamrex_1_1InSituUtils_1_1orOp" ],
-        [ "StateMap", "classamrex_1_1InSituUtils_1_1StateMap.html", "classamrex_1_1InSituUtils_1_1StateMap" ]
       ] ],
       [ "Math", "namespaceamrex_1_1Math.html", [
         [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ]
@@ -277,8 +271,6 @@ var annotated_dup =
       [ "Amr", "classamrex_1_1Amr.html", "classamrex_1_1Amr" ],
       [ "AmrAssignGrid", "structamrex_1_1AmrAssignGrid.html", "structamrex_1_1AmrAssignGrid" ],
       [ "AmrCore", "classamrex_1_1AmrCore.html", "classamrex_1_1AmrCore" ],
-      [ "AmrData", "classamrex_1_1AmrData.html", "classamrex_1_1AmrData" ],
-      [ "AmrDataAdaptor", "classamrex_1_1AmrDataAdaptor.html", "classamrex_1_1AmrDataAdaptor" ],
       [ "AMRErrorTag", "classamrex_1_1AMRErrorTag.html", "classamrex_1_1AMRErrorTag" ],
       [ "AMRErrorTagInfo", "structamrex_1_1AMRErrorTagInfo.html", "structamrex_1_1AMRErrorTagInfo" ],
       [ "AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
@@ -288,11 +280,8 @@ var annotated_dup =
       [ "amrex_parser", "structamrex_1_1amrex__parser.html", "structamrex_1_1amrex__parser" ],
       [ "amrex_Vec", "structamrex_1_1amrex__Vec.html", "structamrex_1_1amrex__Vec" ],
       [ "AmrInfo", "structamrex_1_1AmrInfo.html", "structamrex_1_1AmrInfo" ],
-      [ "AmrInSituBridge", "classamrex_1_1AmrInSituBridge.html", "classamrex_1_1AmrInSituBridge" ],
       [ "AmrLevel", "classamrex_1_1AmrLevel.html", "classamrex_1_1AmrLevel" ],
       [ "AmrMesh", "classamrex_1_1AmrMesh.html", "classamrex_1_1AmrMesh" ],
-      [ "AmrMeshDataAdaptor", "classamrex_1_1AmrMeshDataAdaptor.html", "classamrex_1_1AmrMeshDataAdaptor" ],
-      [ "AmrMeshInSituBridge", "classamrex_1_1AmrMeshInSituBridge.html", "classamrex_1_1AmrMeshInSituBridge" ],
       [ "AmrParGDB", "classamrex_1_1AmrParGDB.html", "classamrex_1_1AmrParGDB" ],
       [ "AmrParticleContainer_impl", "classamrex_1_1AmrParticleContainer__impl.html", "classamrex_1_1AmrParticleContainer__impl" ],
       [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html", "classamrex_1_1AmrParticleLocator" ],
@@ -350,7 +339,6 @@ var annotated_dup =
       [ "BoxIterator", "classamrex_1_1BoxIterator.html", "classamrex_1_1BoxIterator" ],
       [ "BoxList", "classamrex_1_1BoxList.html", "classamrex_1_1BoxList" ],
       [ "BoxND", "classamrex_1_1BoxND.html", "classamrex_1_1BoxND" ],
-      [ "btUnit", "classamrex_1_1btUnit.html", "classamrex_1_1btUnit" ],
       [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],
       [ "CellBilinear", "classamrex_1_1CellBilinear.html", "classamrex_1_1CellBilinear" ],
       [ "CellConservativeLinear", "classamrex_1_1CellConservativeLinear.html", "classamrex_1_1CellConservativeLinear" ],
@@ -385,7 +373,6 @@ var annotated_dup =
       [ "DataLayoutPolicyRaw", "structamrex_1_1DataLayoutPolicyRaw.html", null ],
       [ "DataLayoutPolicyRaw< ParticleType< Types... >, DataLayout::AoS >", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4" ],
       [ "DataLayoutPolicyRaw< ParticleType< Types... >, DataLayout::SoA >", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4" ],
-      [ "DataServices", "classamrex_1_1DataServices.html", "classamrex_1_1DataServices" ],
       [ "DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
       [ "DefaultFabFactory", "classamrex_1_1DefaultFabFactory.html", "classamrex_1_1DefaultFabFactory" ],
       [ "DefinitelyNotHostRunnable", "structamrex_1_1DefinitelyNotHostRunnable.html", null ],
@@ -494,10 +481,10 @@ var annotated_dup =
       [ "IFABio", "classamrex_1_1IFABio.html", "classamrex_1_1IFABio" ],
       [ "iMultiFab", "classamrex_1_1iMultiFab.html", "classamrex_1_1iMultiFab" ],
       [ "IndexTypeND", "classamrex_1_1IndexTypeND.html", "classamrex_1_1IndexTypeND" ],
-      [ "InSituBridge", "classamrex_1_1InSituBridge.html", "classamrex_1_1InSituBridge" ],
       [ "IntDescriptor", "classamrex_1_1IntDescriptor.html", "classamrex_1_1IntDescriptor" ],
       [ "IntegratorBase", "classamrex_1_1IntegratorBase.html", "classamrex_1_1IntegratorBase" ],
       [ "IntegratorOps", "structamrex_1_1IntegratorOps.html", null ],
+      [ "IntegratorOps< T, std::enable_if_t< std::is_base_of_v< amrex::ParticleContainerBase, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01amre4a8b722c501826628c0ce0b931e91134" ],
       [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::MultiFab, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4" ],
       [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::Vector< amrex::MultiFab >, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047" ],
       [ "InterpBase", "classamrex_1_1InterpBase.html", "classamrex_1_1InterpBase" ],
@@ -565,6 +552,8 @@ var annotated_dup =
       [ "IsMultiFabIterator", "structamrex_1_1IsMultiFabIterator.html", null ],
       [ "IsMultiFabLike", "structamrex_1_1IsMultiFabLike.html", null ],
       [ "IsMultiFabLike< M, std::enable_if_t< IsFabArray_v< M > &&IsBaseFab_v< typename M::fab_type > > >", "structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d.html", null ],
+      [ "IsParticleContainer", "structamrex_1_1IsParticleContainer.html", null ],
+      [ "IsParticleIterator", "structamrex_1_1IsParticleIterator.html", null ],
       [ "IsPolymorphicArenaAllocator", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "IsStoreAtomic", "structamrex_1_1IsStoreAtomic.html", null ],
@@ -613,6 +602,8 @@ var annotated_dup =
       [ "MLMGABCEBTag", "structamrex_1_1MLMGABCEBTag.html", "structamrex_1_1MLMGABCEBTag" ],
       [ "MLMGABCTag", "structamrex_1_1MLMGABCTag.html", "structamrex_1_1MLMGABCTag" ],
       [ "MLMGBndryT", "classamrex_1_1MLMGBndryT.html", "classamrex_1_1MLMGBndryT" ],
+      [ "MLMGNormType_EnumTraits", "structamrex_1_1MLMGNormType__EnumTraits.html", "structamrex_1_1MLMGNormType__EnumTraits" ],
+      [ "MLMGPSEBTag", "structamrex_1_1MLMGPSEBTag.html", "structamrex_1_1MLMGPSEBTag" ],
       [ "MLMGPSTag", "structamrex_1_1MLMGPSTag.html", "structamrex_1_1MLMGPSTag" ],
       [ "MLMGT", "classamrex_1_1MLMGT.html", "classamrex_1_1MLMGT" ],
       [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ],
@@ -639,7 +630,6 @@ var annotated_dup =
       [ "NullInterpHook", "structamrex_1_1NullInterpHook.html", "structamrex_1_1NullInterpHook" ],
       [ "NumComps", "structamrex_1_1NumComps.html", "structamrex_1_1NumComps" ],
       [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html", "classamrex_1_1OpenBCSolver" ],
-      [ "OrderedBoxes", "classamrex_1_1OrderedBoxes.html", "classamrex_1_1OrderedBoxes" ],
       [ "Orientation", "classamrex_1_1Orientation.html", "classamrex_1_1Orientation" ],
       [ "OrientationIter", "classamrex_1_1OrientationIter.html", "classamrex_1_1OrientationIter" ],
       [ "ParConstIter_impl", "classamrex_1_1ParConstIter__impl.html", "classamrex_1_1ParConstIter__impl" ],
@@ -799,8 +789,6 @@ var annotated_dup =
       [ "WeightedBox", "classamrex_1_1WeightedBox.html", "classamrex_1_1WeightedBox" ],
       [ "WeightedBoxList", "structamrex_1_1WeightedBoxList.html", "structamrex_1_1WeightedBoxList" ],
       [ "XDim3", "structamrex_1_1XDim3.html", "structamrex_1_1XDim3" ],
-      [ "XYPlotDataList", "classamrex_1_1XYPlotDataList.html", "classamrex_1_1XYPlotDataList" ],
-      [ "XYPlotDataListLink", "classamrex_1_1XYPlotDataListLink.html", "classamrex_1_1XYPlotDataListLink" ],
       [ "YAFluxRegisterT", "classamrex_1_1YAFluxRegisterT.html", "classamrex_1_1YAFluxRegisterT" ]
     ] ],
     [ "amrex_ebcellflag_module", "namespaceamrex__ebcellflag__module.html", [
@@ -873,9 +861,6 @@ var annotated_dup =
       [ "CellAtomicAdd", "structdetail_1_1CellAtomicAdd.html", "structdetail_1_1CellAtomicAdd" ],
       [ "CellStore", "structdetail_1_1CellStore.html", "structdetail_1_1CellStore" ]
     ] ],
-    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", [
-      [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ]
-    ] ],
     [ "std", null, [
       [ "tuple_element< N, amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex > >", "structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html", "structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4" ],
       [ "tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
@@ -891,14 +876,8 @@ var annotated_dup =
     ] ],
     [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", "unionAMREX__IPARSERSTYPE" ],
     [ "AMREX_PARSERSTYPE", "unionAMREX__PARSERSTYPE.html", "unionAMREX__PARSERSTYPE" ],
-    [ "BLProfStats", "classBLProfStats.html", "classBLProfStats" ],
-    [ "CommProfStats", "classCommProfStats.html", "classCommProfStats" ],
     [ "FabCopyTag", "structFabCopyTag.html", "structFabCopyTag" ],
     [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", "structN__VectorContent__MultiFab__notptr" ],
-    [ "RegionsProfStats", "classRegionsProfStats.html", "classRegionsProfStats" ],
-    [ "SDCstruct", "classSDCstruct.html", "classSDCstruct" ],
     [ "VoidCopyTag", "structVoidCopyTag.html", "structVoidCopyTag" ],
-    [ "yy_buffer_state", "structyy__buffer__state.html", "structyy__buffer__state" ],
-    [ "yy_trans_info", "structyy__trans__info.html", "structyy__trans__info" ],
-    [ "yyalloc", "unionyyalloc.html", "unionyyalloc" ]
+    [ "yy_buffer_state", "structyy__buffer__state.html", "structyy__buffer__state" ]
 ];

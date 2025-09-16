@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['k_5fhi_0',['K_HI',['../AMReX__MLMG__3D__K_8H.html#a5fa1fd1d257bfaebf6b9cb744172b878',1,'AMReX_MLMG_3D_K.H']]],
-  ['k_5flo_1',['K_LO',['../AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f',1,'AMReX_MLMG_3D_K.H']]]
+  ['putarray_0',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
 ];

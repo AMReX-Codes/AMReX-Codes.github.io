@@ -52,7 +52,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1RotationIF_1a2e57f52a7f9f0b9b64c98c2c0cb48fed" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::EB2::RotationIF&lt; F &gt;::m_dir</definition>
         <argsstring></argsstring>
         <name>m_dir</name>
@@ -82,7 +82,7 @@
           <declname>angle</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>int</type>
           <declname>dir</declname>
         </param>
         <briefdescription>
@@ -93,30 +93,73 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="19" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="19" bodyend="24"/>
       </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1RotationIF_1a16396f5bbe7fdd5524e031d31017ea7a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::EB2::RotationIF&lt; F &gt;::operator()</definition>
+        <argsstring>(const RealArray &amp;p) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::EB2::RotationIF::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceamrex_1aeb06fab72f85728954130adbe25c5397" kindref="member">RealArray</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="45" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="45" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1RotationIF_1a1c4900c005defc9aef13b96b4c74aa75" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1EB2_1_1IsGPUable" kindref="compound">IsGPUable</ref>&lt; U &gt;::value, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ Real</type>
+        <definition>__host__ __device__ Real amrex::EB2::RotationIF&lt; F &gt;::operator()</definition>
+        <argsstring>(Real x, Real y, Real z) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::EB2::RotationIF::operator()</qualifiedname>
+        <param>
+          <type>Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="71" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="71" bodyend="93"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>amrex::EB2::RotationIF&lt; F &gt;</label>
-        <link refid="classamrex_1_1EB2_1_1RotationIF"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>m_cos_angle</edgelabel>
-          <edgelabel>m_sin_angle</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Real</label>
-      </node>
-    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Rotation.H" bodystart="16" bodyend="102"/>
     <listofallmembers>
       <member refid="classamrex_1_1EB2_1_1RotationIF_1ab51c69319d7d35dc43124c3692af67ee" prot="protected" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>m_cos_angle</name></member>
       <member refid="classamrex_1_1EB2_1_1RotationIF_1a2e57f52a7f9f0b9b64c98c2c0cb48fed" prot="protected" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>m_dir</name></member>
       <member refid="classamrex_1_1EB2_1_1RotationIF_1abdaf7ef0894bbc027482f233e7fadf74" prot="protected" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>m_f</name></member>
       <member refid="classamrex_1_1EB2_1_1RotationIF_1a985a4f063595d3fa4506d2b014dff877" prot="protected" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>m_sin_angle</name></member>
+      <member refid="classamrex_1_1EB2_1_1RotationIF_1a16396f5bbe7fdd5524e031d31017ea7a" prot="public" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1EB2_1_1RotationIF_1a1c4900c005defc9aef13b96b4c74aa75" prot="public" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>operator()</name></member>
       <member refid="classamrex_1_1EB2_1_1RotationIF_1afe9fbf2bc166e3cb4921b307144b9eff" prot="public" virt="non-virtual"><scope>amrex::EB2::RotationIF</scope><name>RotationIF</name></member>
     </listofallmembers>
   </compounddef>

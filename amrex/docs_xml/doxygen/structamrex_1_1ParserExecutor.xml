@@ -5,7 +5,7 @@
     <includes refid="AMReX__Parser_8H" local="no">AMReX_Parser.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>N</declname>
         <defname>N</defname>
       </param>
@@ -43,21 +43,21 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a5f007a74d83f9bdcb198458404414118" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a1b43483c8347a5919952c55c825458d7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <type>int</type>
             <declname>M</declname>
             <defname>M</defname>
             <defval>N</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; M==0, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; M==0, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double amrex::ParserExecutor&lt; N &gt;::operator()</definition>
+        <type>__host__ __device__ double</type>
+        <definition>__host__ __device__ double amrex::ParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::ParserExecutor::operator()</qualifiedname>
@@ -69,7 +69,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="24" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="24" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a83904381217eff940ac1e39a04dd2c2e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a75e91b839517815ffa693948bdf9104a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -77,8 +77,8 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;!<ref refid="structamrex_1_1Same" kindref="compound">amrex::Same</ref>&lt; float, Ts... &gt;::value, double &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;!amrex::Same&lt; float, Ts... &gt;::value, double &gt; amrex::ParserExecutor&lt; N &gt;::operator()</definition>
+        <type>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;!<ref refid="structamrex_1_1Same" kindref="compound">amrex::Same</ref>&lt; float, Ts... &gt;::value, double &gt;</type>
+        <definition>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;!amrex::Same&lt; float, Ts... &gt;::value, double &gt; amrex::ParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>(Ts... var) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::ParserExecutor::operator()</qualifiedname>
@@ -94,7 +94,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="33" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="33" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1ad25e807fbd11fc60a9c6ddd84b15fda1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1aacf7072a5078bc88f7c4c5e6e6662ca1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -102,8 +102,8 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;<ref refid="structamrex_1_1Same" kindref="compound">amrex::Same</ref>&lt; float, Ts... &gt;::value, float &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp; amrex::Same&lt; float, Ts... &gt;::value, float &gt; amrex::ParserExecutor&lt; N &gt;::operator()</definition>
+        <type>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;<ref refid="structamrex_1_1Same" kindref="compound">amrex::Same</ref>&lt; float, Ts... &gt;::value, float &gt;</type>
+        <definition>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp; amrex::Same&lt; float, Ts... &gt;::value, float &gt; amrex::ParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>(Ts... var) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::ParserExecutor::operator()</qualifiedname>
@@ -119,9 +119,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="43" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="43" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a132a34cc401496050ca54b6d3cb3855c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double amrex::ParserExecutor&lt; N &gt;::operator()</definition>
+      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a05c200248f4d164343f37217cbea256c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ double</type>
+        <definition>__host__ __device__ double amrex::ParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>(GpuArray&lt; double, N &gt; const &amp;var) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::ParserExecutor::operator()</qualifiedname>
@@ -137,9 +137,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" line="51" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H" bodystart="51" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a93e1ada56a461feae37abad6fa8483ad" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::ParserExecutor&lt; N &gt;::operator bool</definition>
+      <memberdef kind="function" id="structamrex_1_1ParserExecutor_1a921acbb8e39425f73bbe3f5d59f05337" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::ParserExecutor&lt; N &gt;::operator bool</definition>
         <argsstring>() const</argsstring>
         <name>operator bool</name>
         <qualifiedname>amrex::ParserExecutor::operator bool</qualifiedname>
@@ -160,11 +160,11 @@
     <listofallmembers>
       <member refid="structamrex_1_1ParserExecutor_1a38862e30a4c2fbeefe1e07252ce69c31" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>m_device_executor</name></member>
       <member refid="structamrex_1_1ParserExecutor_1a195771c96ef68cb237c6da6f6c2d336d" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>m_host_executor</name></member>
-      <member refid="structamrex_1_1ParserExecutor_1a93e1ada56a461feae37abad6fa8483ad" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator bool</name></member>
-      <member refid="structamrex_1_1ParserExecutor_1a5f007a74d83f9bdcb198458404414118" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1ParserExecutor_1a83904381217eff940ac1e39a04dd2c2e" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1ParserExecutor_1ad25e807fbd11fc60a9c6ddd84b15fda1" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1ParserExecutor_1a132a34cc401496050ca54b6d3cb3855c" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ParserExecutor_1a921acbb8e39425f73bbe3f5d59f05337" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1ParserExecutor_1a1b43483c8347a5919952c55c825458d7" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ParserExecutor_1a75e91b839517815ffa693948bdf9104a" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ParserExecutor_1aacf7072a5078bc88f7c4c5e6e6662ca1" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ParserExecutor_1a05c200248f4d164343f37217cbea256c" prot="public" virt="non-virtual"><scope>amrex::ParserExecutor</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

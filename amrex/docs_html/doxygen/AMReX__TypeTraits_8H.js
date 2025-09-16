@@ -14,6 +14,8 @@ var AMReX__TypeTraits_8H =
     [ "amrex::HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],
     [ "amrex::HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
     [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ],
+    [ "amrex::IsParticleIterator< T >", "structamrex_1_1IsParticleIterator.html", null ],
+    [ "amrex::IsParticleContainer< T >", "structamrex_1_1IsParticleContainer.html", null ],
     [ "amrex::DefinitelyNotHostRunnable< T, Enable >", "structamrex_1_1DefinitelyNotHostRunnable.html", null ],
     [ "amrex::MaybeDeviceRunnable< T, Enable >", "structamrex_1_1MaybeDeviceRunnable.html", null ],
     [ "amrex::MaybeHostDeviceRunnable< T, Enable >", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],

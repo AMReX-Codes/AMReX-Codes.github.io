@@ -4,7 +4,7 @@
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA[AMReX]]></value></option>
   <option  id='PROJECT_NUMBER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='PROJECT_BRIEF' default='no' type='string'><value><![CDATA["Block-Structured AMR Software Framework"]]></value></option>
-  <option  id='PROJECT_LOGO' default='no' type='string'><value><![CDATA[./resize_AMReX_logo.png]]></value></option>
+  <option  id='PROJECT_LOGO' default='no' type='string'><value><![CDATA[./amrex_logo_tiny.png]]></value></option>
   <option  id='OUTPUT_DIRECTORY' default='no' type='string'><value><![CDATA[../Doxygen]]></value></option>
   <option  id='CREATE_SUBDIRS' default='yes' type='bool'><value>NO</value></option>
   <option  id='CREATE_SUBDIRS_LEVEL' default='yes' type='int'><value>8</value></option>
@@ -150,10 +150,17 @@
   </option>
   <option  id='RECURSIVE' default='no' type='bool'><value>YES</value></option>
   <option  id='EXCLUDE' default='no' type='stringlist'>
+    <value><![CDATA[../../Src/Extern/amrdata]]></value>
+    <value><![CDATA[../../Src/Extern/Bittree]]></value>
+    <value><![CDATA[../../Src/Extern/Conduit]]></value>
+    <value><![CDATA[../../Src/Extern/ProfParser]]></value>
+    <value><![CDATA[../../Src/Extern/SENSEI]]></value>
     <value><![CDATA[../../Src/F_Interfaces]]></value>
+    <value><![CDATA[../../Src/SDC]]></value>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
-  <option  id='EXCLUDE_PATTERNS' default='yes' type='stringlist'>
+  <option  id='EXCLUDE_PATTERNS' default='no' type='stringlist'>
+    <value><![CDATA[*/Base/Parser/*.nolint.H]]></value>
   </option>
   <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
   </option>
@@ -304,30 +311,27 @@
   <option  id='PERLMOD_PRETTY' default='yes' type='bool'><value>YES</value></option>
   <option  id='PERLMOD_MAKEVAR_PREFIX' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='ENABLE_PREPROCESSING' default='yes' type='bool'><value>YES</value></option>
-  <option  id='MACRO_EXPANSION' default='yes' type='bool'><value>NO</value></option>
+  <option  id='MACRO_EXPANSION' default='no' type='bool'><value>YES</value></option>
   <option  id='EXPAND_ONLY_PREDEF' default='yes' type='bool'><value>NO</value></option>
   <option  id='SEARCH_INCLUDES' default='yes' type='bool'><value>YES</value></option>
   <option  id='INCLUDE_PATH' default='no' type='stringlist'>
+    <value><![CDATA[../../Src/Amr]]></value>
+    <value><![CDATA[../../Src/AmrCore]]></value>
     <value><![CDATA[../../Src/Base]]></value>
     <value><![CDATA[../../Src/Base/Parser]]></value>
-    <value><![CDATA[../../Src/SDC]]></value>
-    <value><![CDATA[../../Src/Amr]]></value>
     <value><![CDATA[../../Src/EB]]></value>
-    <value><![CDATA[../../Src/Particle]]></value>
     <value><![CDATA[../../Src/Boundary]]></value>
     <value><![CDATA[../../Src/Extern]]></value>
-    <value><![CDATA[../../Src/Extern/HYPRE]]></value>
     <value><![CDATA[../../Src/Extern/HDF5]]></value>
+    <value><![CDATA[../../Src/Extern/HYPRE]]></value>
     <value><![CDATA[../../Src/Extern/PETSc]]></value>
-    <value><![CDATA[../../Src/Extern/amrdata]]></value>
-    <value><![CDATA[../../Src/Extern/Conduit]]></value>
     <value><![CDATA[../../Src/Extern/SUNDIALS]]></value>
-    <value><![CDATA[../../Src/Extern/ProfParser]]></value>
-    <value><![CDATA[../../Src/Extern/SENSEI]]></value>
-    <value><![CDATA[../../Src/AmrCore]]></value>
+    <value><![CDATA[../../Src/LinearSolvers]]></value>
+    <value><![CDATA[../../Src/FFT]]></value>
     <value><![CDATA[../../Src/LinearSolvers]]></value>
     <value><![CDATA[../../Src/LinearSolvers/MLMG]]></value>
     <value><![CDATA[../../Src/LinearSolvers/OpenBC]]></value>
+    <value><![CDATA[../../Src/Particle]]></value>
   </option>
   <option  id='INCLUDE_FILE_PATTERNS' default='yes' type='stringlist'>
   </option>
@@ -335,7 +339,9 @@
     <value><![CDATA[AMREX_USE_MPI]]></value>
     <value><![CDATA[AMREX_USE_GPU]]></value>
     <value><![CDATA[AMREX_USE_CUDA]]></value>
-    <value><![CDATA[AMREX_SPACEDIM=1]]></value>
+    <value><![CDATA[AMREX_USE_EB]]></value>
+    <value><![CDATA[AMREX_PARTICLES]]></value>
+    <value><![CDATA[AMREX_SPACEDIM=3]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>

@@ -47,7 +47,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Polynomial.H" line="103" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Polynomial.H" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1PolynomialIF_1a1a226866e5efa7580c4f117e1c45e386" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <definition>int amrex::EB2::PolynomialIF::m_size</definition>
         <argsstring></argsstring>
         <name>m_size</name>
@@ -172,14 +172,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Polynomial.H" line="82" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EB2_1_1PolynomialIF_1a8af866d6a7ef190529d3f3d174054b3d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1EB2_1_1PolynomialIF_1aeec171e7efa0610db01608c992e52291" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>Real</type>
         <definition>Real amrex::EB2::PolynomialIF::operator()</definition>
-        <argsstring>(AMREX_D_DECL(Real x, Real y, Real z)) const noexcept</argsstring>
+        <argsstring>(Real x, Real y, Real z) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::EB2::PolynomialIF::operator()</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Real <ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>, Real y, Real z)</type>
+          <type>Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>z</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -196,7 +205,7 @@
         <name>operator()</name>
         <qualifiedname>amrex::EB2::PolynomialIF::operator()</qualifiedname>
         <param>
-          <type>const <ref refid="namespaceamrex_1a9de48c04056551924746c42f9eda3c8f" kindref="member">RealArray</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1aeb06fab72f85728954130adbe25c5397" kindref="member">RealArray</ref> &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -228,12 +237,6 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_polynomial</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>m_sign</edgelabel>
-        </childnode>
-      </node>
-      <node id="5">
-        <label>Real</label>
       </node>
       <node id="3">
         <label>std::vector&lt; T &gt;</label>
@@ -248,7 +251,7 @@
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1ab7dabb0bff8ee7a62ab1b97108429374" prot="protected" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>m_polynomial</name></member>
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1ad957f17b324e9e51370e72b065d6684c" prot="protected" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>m_sign</name></member>
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1a1a226866e5efa7580c4f117e1c45e386" prot="protected" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>m_size</name></member>
-      <member refid="classamrex_1_1EB2_1_1PolynomialIF_1a8af866d6a7ef190529d3f3d174054b3d" prot="public" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1EB2_1_1PolynomialIF_1aeec171e7efa0610db01608c992e52291" prot="public" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>operator()</name></member>
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1a2e3ae065305b661cde39900314db8a26" prot="public" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>operator()</name></member>
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1adfa5b118569f29ddc11d0f8a6a0a13e9" prot="public" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>operator=</name></member>
       <member refid="classamrex_1_1EB2_1_1PolynomialIF_1a86d8d62011bcfef4363a4279529c8065" prot="public" virt="non-virtual"><scope>amrex::EB2::PolynomialIF</scope><name>operator=</name></member>

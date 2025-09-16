@@ -5,7 +5,7 @@
     <includes refid="AMReX__IParser_8H" local="no">AMReX_IParser.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <type>int</type>
         <declname>N</declname>
         <defname>N</defname>
       </param>
@@ -43,21 +43,21 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1adb9b5a32bd60f0e12c25dea36a515b7a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1a5b368e6fa741782f5b0f685a9b45339f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <type>int</type>
             <declname>M</declname>
             <defname>M</defname>
             <defval>N</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; M==0, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; M==0, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> long long</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE long long amrex::IParserExecutor&lt; N &gt;::operator()</definition>
+        <type>__host__ __device__ long long</type>
+        <definition>__host__ __device__ long long amrex::IParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::IParserExecutor::operator()</qualifiedname>
@@ -69,7 +69,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" line="21" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" bodystart="21" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1a5593257dbfc286cb4f740c432d9a6c39" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1ade0afe4a6ef491770a1444f30072215c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -77,8 +77,8 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;std::conjunction_v&lt; std::is_integral&lt; Ts &gt;... &gt;, long long &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;std::conjunction_v&lt; std::is_integral&lt; Ts &gt;... &gt;, long long &gt; amrex::IParserExecutor&lt; N &gt;::operator()</definition>
+        <type>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;std::conjunction_v&lt; std::is_integral&lt; Ts &gt;... &gt;, long long &gt;</type>
+        <definition>__host__ __device__ std::enable_if_t&lt; sizeof...(Ts)==N &amp;&amp;std::conjunction_v&lt; std::is_integral&lt; Ts &gt;... &gt;, long long &gt; amrex::IParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>(Ts... var) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::IParserExecutor::operator()</qualifiedname>
@@ -94,9 +94,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" line="31" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" bodystart="31" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1a4c3267155e90c9b58523f0b562d4ae96" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> long long</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE long long amrex::IParserExecutor&lt; N &gt;::operator()</definition>
+      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1a0532f34eedf8465baf431815b8807182" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ long long</type>
+        <definition>__host__ __device__ long long amrex::IParserExecutor&lt; N &gt;::operator()</definition>
         <argsstring>(GpuArray&lt; long long, N &gt; const &amp;var) const noexcept</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::IParserExecutor::operator()</qualifiedname>
@@ -112,9 +112,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" line="39" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.H" bodystart="39" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1aa9a4f3b1d1294b2d9ee3c11690ca4c08" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::IParserExecutor&lt; N &gt;::operator bool</definition>
+      <memberdef kind="function" id="structamrex_1_1IParserExecutor_1aeb375d98be4c7143ec6c3d1f6c20484a" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type>__host__ __device__</type>
+        <definition>__host__ __device__ amrex::IParserExecutor&lt; N &gt;::operator bool</definition>
         <argsstring>() const</argsstring>
         <name>operator bool</name>
         <qualifiedname>amrex::IParserExecutor::operator bool</qualifiedname>
@@ -135,10 +135,10 @@
     <listofallmembers>
       <member refid="structamrex_1_1IParserExecutor_1a47e58b2ffa31fa7664608518e4887c5e" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>m_device_executor</name></member>
       <member refid="structamrex_1_1IParserExecutor_1aebb2811410391a0199dce35e55edcafa" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>m_host_executor</name></member>
-      <member refid="structamrex_1_1IParserExecutor_1aa9a4f3b1d1294b2d9ee3c11690ca4c08" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator bool</name></member>
-      <member refid="structamrex_1_1IParserExecutor_1adb9b5a32bd60f0e12c25dea36a515b7a" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1IParserExecutor_1a5593257dbfc286cb4f740c432d9a6c39" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1IParserExecutor_1a4c3267155e90c9b58523f0b562d4ae96" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1IParserExecutor_1aeb375d98be4c7143ec6c3d1f6c20484a" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1IParserExecutor_1a5b368e6fa741782f5b0f685a9b45339f" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1IParserExecutor_1ade0afe4a6ef491770a1444f30072215c" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1IParserExecutor_1a0532f34eedf8465baf431815b8807182" prot="public" virt="non-virtual"><scope>amrex::IParserExecutor</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

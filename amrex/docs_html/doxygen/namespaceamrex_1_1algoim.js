@@ -1,8 +1,8 @@
 var namespaceamrex_1_1algoim =
 [
     [ "detail", "namespaceamrex_1_1algoim_1_1detail.html", [
-      [ "determineSigns", "namespaceamrex_1_1algoim_1_1detail.html#a8faf5a6ffdc4ce9947820dca5b901140", null ],
-      [ "swap", "namespaceamrex_1_1algoim_1_1detail.html#a71b582d94d1c5cd614711ec7b7853192", null ]
+      [ "determineSigns", "namespaceamrex_1_1algoim_1_1detail.html#aebcb33675ae001225c84e7ca5caa6fe2", null ],
+      [ "swap", "namespaceamrex_1_1algoim_1_1detail.html#a3bf6c2ef474dff0d291702437a087443", null ]
     ] ],
     [ "BoundingBox", "structamrex_1_1algoim_1_1BoundingBox.html", "structamrex_1_1algoim_1_1BoundingBox" ],
     [ "EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", "structamrex_1_1algoim_1_1EBPlane" ],
@@ -15,10 +15,10 @@ var namespaceamrex_1_1algoim =
     [ "compute_integrals", "namespaceamrex_1_1algoim.html#a3ccdff6c18c04f2fb7aa460f885333ba", null ],
     [ "compute_surface_integrals", "namespaceamrex_1_1algoim.html#a2c8ca6ff2da3fdde81370a1dd00c9416", null ],
     [ "compute_surface_integrals", "namespaceamrex_1_1algoim.html#a73c808c0927111a6a5391aaad9f7c1e9", null ],
-    [ "quadGen", "namespaceamrex_1_1algoim.html#a05434c8a13201e8af0f5dab5420e33d2", null ],
-    [ "quadGenSurf", "namespaceamrex_1_1algoim.html#ae4ae5a6514e4fdd7deb24725de0b3444", null ],
-    [ "set_regular", "namespaceamrex_1_1algoim.html#a9ddd20373173f3218e9adf472a02f119", null ],
-    [ "set_regular_surface", "namespaceamrex_1_1algoim.html#a1d243dc8981384f1c0cb8b266c042735", null ],
+    [ "quadGen", "namespaceamrex_1_1algoim.html#a64f23bafec666142720ee3b7e0ba7b01", null ],
+    [ "quadGenSurf", "namespaceamrex_1_1algoim.html#a38a4cce5a4990d42e478a035d7d2ac0e", null ],
+    [ "set_regular", "namespaceamrex_1_1algoim.html#a4319d9bcdd56e89aac40e57b428d6997", null ],
+    [ "set_regular_surface", "namespaceamrex_1_1algoim.html#aec42466bfbfa3c3cb4144855089c669d", null ],
     [ "i_B_x", "namespaceamrex_1_1algoim.html#aa2dc15a8317387997b7599ac5dfb3b36", null ],
     [ "i_B_x_y", "namespaceamrex_1_1algoim.html#a75831abb7b9935c452d91372042675cb", null ],
     [ "i_B_x_z", "namespaceamrex_1_1algoim.html#a7b1a77da2c5246064f18bb002865a9f5", null ],

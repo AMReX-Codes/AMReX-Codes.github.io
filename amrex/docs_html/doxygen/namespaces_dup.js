@@ -107,7 +107,11 @@ var namespaces_dup =
     [ "amrex_mllinop_nd_module", "namespaceamrex__mllinop__nd__module.html", [
       [ "amrex_mllinop_apply_bc", "namespaceamrex__mllinop__nd__module.html#a198adb293f84d85a8b1c8293e428b88c", null ],
       [ "xhi_dir", "namespaceamrex__mllinop__nd__module.html#a64d2e08ddf33f4e1ea55ca8bbb41bf03", null ],
-      [ "xlo_dir", "namespaceamrex__mllinop__nd__module.html#aa8093488a6a576b9204a41a2c3b14612", null ]
+      [ "xlo_dir", "namespaceamrex__mllinop__nd__module.html#aa8093488a6a576b9204a41a2c3b14612", null ],
+      [ "yhi_dir", "namespaceamrex__mllinop__nd__module.html#a9d85b659e0792c78125c562690a48f5b", null ],
+      [ "ylo_dir", "namespaceamrex__mllinop__nd__module.html#ad6d583017d9434a425e0f88e6b72b662", null ],
+      [ "zhi_dir", "namespaceamrex__mllinop__nd__module.html#a2db4a18b206ec1c24ba128ae22ab279c", null ],
+      [ "zlo_dir", "namespaceamrex__mllinop__nd__module.html#a5690dc95a320456e2f6709f67cca7d17", null ]
     ] ],
     [ "amrex_omp_module", "namespaceamrex__omp__module.html", [
       [ "omp_get_max_threads", "namespaceamrex__omp__module.html#a88c4536a09e2cc9d9edff5cd040814db", null ],
@@ -119,6 +123,5 @@ var namespaces_dup =
     [ "amrex_paralleldescriptor_module", "namespaceamrex__paralleldescriptor__module.html", "namespaceamrex__paralleldescriptor__module" ],
     [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", "namespaceamrex__parmparse__module" ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", "namespaceamrex__string__module" ],
-    [ "detail", "namespacedetail.html", "namespacedetail" ],
-    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ]
+    [ "detail", "namespacedetail.html", "namespacedetail" ]
 ];

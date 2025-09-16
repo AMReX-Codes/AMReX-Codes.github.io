@@ -1,11 +1,10 @@
 var structamrex_1_1CurlCurlDirichletInfo =
 [
-    [ "is_dirichlet_edge", "structamrex_1_1CurlCurlDirichletInfo.html#a462be2c962cc7ba2efdf8003b1192e61", null ],
-    [ "is_dirichlet_node", "structamrex_1_1CurlCurlDirichletInfo.html#a43c18defca914c519e773fdf104c4956", null ],
-    [ "is_dirichlet_x_edge", "structamrex_1_1CurlCurlDirichletInfo.html#ac36b247b6a7baf4f880d55225615223f", null ],
-    [ "is_dirichlet_y_edge", "structamrex_1_1CurlCurlDirichletInfo.html#aa9beb0253ffa199754255b047cce7409", null ],
-    [ "is_dirichlet_z_edge", "structamrex_1_1CurlCurlDirichletInfo.html#a734cfa013c0578c158c64cd8bb22691d", null ],
-    [ "coord", "structamrex_1_1CurlCurlDirichletInfo.html#af90c94c1f26d5bba4e06719e69929328", null ],
+    [ "is_dirichlet_edge", "structamrex_1_1CurlCurlDirichletInfo.html#a6cc5e6d9777ad6af9f860e8b11c9c297", null ],
+    [ "is_dirichlet_node", "structamrex_1_1CurlCurlDirichletInfo.html#ae1ad2216b14c5ec0488b0970ce26374d", null ],
+    [ "is_dirichlet_x_edge", "structamrex_1_1CurlCurlDirichletInfo.html#a56154ae39619ef08a49c7a711980efa8", null ],
+    [ "is_dirichlet_y_edge", "structamrex_1_1CurlCurlDirichletInfo.html#acb8173004e642429b96df8c30e288da2", null ],
+    [ "is_dirichlet_z_edge", "structamrex_1_1CurlCurlDirichletInfo.html#a35ed4e70c900df6d2faae0f09328eca0", null ],
     [ "dirichlet_hi", "structamrex_1_1CurlCurlDirichletInfo.html#aa1322afdd0c679a263cb5637732121f5", null ],
     [ "dirichlet_lo", "structamrex_1_1CurlCurlDirichletInfo.html#ab41d14427ee6aa987dec1a6777f089c9", null ]
 ];

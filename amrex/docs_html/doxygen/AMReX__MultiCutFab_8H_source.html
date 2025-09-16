@@ -31,7 +31,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="resize_AMReX_logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="amrex_logo_tiny.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Block-Structured AMR Software Framework
    </div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiCutFab_8H_source.html','')
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classamrex_1_1BaseFab.html#a9236f2f88feff79c1d50b9b830750f91">dptr</a> != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> FArrayBox::copyFromMem&lt;run_on, BUF&gt;(dstbox, dstcomp, numcomp, src);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(BUF)*<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(dstbox.<a class="code hl_function" href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">numPts</a>()*numcomp);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(BUF)*<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(dstbox.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>()*numcomp);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 </div>
@@ -283,9 +283,9 @@ $(document).ready(function(){initNavTree('AMReX__MultiCutFab_8H_source.html','')
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a6ffc31b194f5484eef777a47862ddfac"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a6ffc31b194f5484eef777a47862ddfac">amrex::BaseFab&lt; Real &gt;::value_type</a></div><div class="ttdeci">Real value_type</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:188</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a9236f2f88feff79c1d50b9b830750f91"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a9236f2f88feff79c1d50b9b830750f91">amrex::BaseFab&lt; Real &gt;::dptr</a></div><div class="ttdeci">Real * dptr</div><div class="ttdoc">The data pointer.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:1157</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_ae16c6f70417dc8f84e2196afe27b2b15"><div class="ttname"><a href="classamrex_1_1BaseFab.html#ae16c6f70417dc8f84e2196afe27b2b15">amrex::BaseFab&lt; Real &gt;::nComp</a></div><div class="ttdeci">int nComp() const noexcept</div><div class="ttdoc">Returns the number of components.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:273</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:550</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; AMREX_SPACEDIM &gt;</a></div></div>
-<div class="ttc" id="aclassamrex_1_1BoxND_html_aef3b99c4f131a12120b93bfbed5bc08e"><div class="ttname"><a href="classamrex_1_1BoxND.html#aef3b99c4f131a12120b93bfbed5bc08e">amrex::BoxND::numPts</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Long numPts() const noexcept</div><div class="ttdoc">Returns the number of points contained in the BoxND.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:346</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:551</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aclassamrex_1_1BoxND_html_a5a7273bc39d5a40bd004396852893761"><div class="ttname"><a href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">amrex::BoxND::numPts</a></div><div class="ttdeci">__host__ __device__ Long numPts() const noexcept</div><div class="ttdoc">Returns the number of points contained in the BoxND.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:346</div></div>
 <div class="ttc" id="aclassamrex_1_1CutFab_html"><div class="ttname"><a href="classamrex_1_1CutFab.html">amrex::CutFab</a></div><div class="ttdef"><b>Definition</b> AMReX_MultiCutFab.H:13</div></div>
 <div class="ttc" id="aclassamrex_1_1CutFab_html_a00f9ebdd73a417f0d0ecc03a77b52ac2"><div class="ttname"><a href="classamrex_1_1CutFab.html#a00f9ebdd73a417f0d0ecc03a77b52ac2">amrex::CutFab::copy</a></div><div class="ttdeci">CutFab &amp; copy(const CutFab &amp;src, const Box &amp;bx, SrcComp scomp, DestComp dcomp, NumComps ncomp)</div><div class="ttdef"><b>Definition</b> AMReX_MultiCutFab.H:71</div></div>
 <div class="ttc" id="aclassamrex_1_1CutFab_html_a56fab88ffa10cfe7c902ed882a04d2a5"><div class="ttname"><a href="classamrex_1_1CutFab.html#a56fab88ffa10cfe7c902ed882a04d2a5">amrex::CutFab::CutFab</a></div><div class="ttdeci">CutFab(Arena *ar)</div><div class="ttdef"><b>Definition</b> AMReX_MultiCutFab.H:18</div></div>

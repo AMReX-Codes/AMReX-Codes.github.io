@@ -7,6 +7,7 @@
     <includes refid="AMReX__EBCellFlag_8H" local="no">AMReX_EBCellFlag.H</includes>
     <includes refid="AMReX__EB2__Graph_8H" local="no">AMReX_EB2_Graph.H</includes>
     <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
+    <includes refid="AMReX__EB2__3D__C_8H" local="no">AMReX_EB2_3D_C.H</includes>
     <includedby refid="AMReX__EB2__2D__C_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp</includedby>
     <includedby refid="AMReX__EB2__3D__C_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp</includedby>
     <includedby refid="AMReX__EB2__Level_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.H</includedby>
@@ -1684,6 +1685,12 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="149">
+        <label>AMReX_EB2_3D_C.H</label>
+        <link refid="AMReX__EB2__3D__C_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H</label>
         <link refid="AMReX__EB2__C_8H"/>
@@ -1696,6 +1703,8 @@
         <childnode refid="144" relation="include">
         </childnode>
         <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
         </childnode>
       </node>
       <node id="144">
@@ -1888,6 +1897,64 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="12">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_Amr.cpp</label>
+        <link refid="AMReX__Amr_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.H</label>
+        <link refid="AMReX__AmrLevel_8H"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.cpp</label>
+        <link refid="AMReX__AmrLevel_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_LevelBld.H</label>
+        <link refid="AMReX__LevelBld_8H"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
+        <link refid="AMReX__AmrParticles_8H"/>
+      </node>
+      <node id="7">
+        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H</label>
+        <link refid="AMReX__FillPatchUtil_8H"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp</label>
+        <link refid="AMReX__FillPatchUtil_8cpp"/>
+      </node>
+      <node id="10">
+        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatcher.H</label>
+        <link refid="AMReX__FillPatcher_8H"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp</label>
+        <link refid="AMReX_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.cpp</label>
+        <link refid="AMReX__FabArrayBase_8cpp"/>
+      </node>
       <node id="5">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H</label>
         <link refid="AMReX__EB2_8H"/>
@@ -1895,11 +1962,13 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -1907,8 +1976,16 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
       </node>
-      <node id="6">
+      <node id="16">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp</label>
         <link refid="AMReX__EB2_8cpp"/>
       </node>
@@ -1929,34 +2006,34 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="17">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.H</label>
         <link refid="AMReX__EB2__IndexSpace__STL_8H"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="18">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp</label>
         <link refid="AMReX__EB2__IndexSpace__STL_8cpp"/>
       </node>
-      <node id="9">
+      <node id="19">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_chkpt_file.H</label>
         <link refid="AMReX__EB2__IndexSpace__chkpt__file_8H"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="20">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_chkpt_file.cpp</label>
         <link refid="AMReX__EB2__IndexSpace__chkpt__file_8cpp"/>
       </node>
@@ -1965,120 +2042,124 @@
         <link refid="AMReX__EB2__Level_8H"/>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.cpp</label>
+        <link refid="AMReX__EB2__Level_8cpp"/>
+      </node>
+      <node id="35">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.H</label>
+        <link refid="AMReX__EB2__Level__STL_8H"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.cpp</label>
+        <link refid="AMReX__EB2__Level__STL_8cpp"/>
+      </node>
+      <node id="37">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.H</label>
+        <link refid="AMReX__EB2__Level__chkpt__file_8H"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.cpp</label>
+        <link refid="AMReX__EB2__Level__chkpt__file_8cpp"/>
+      </node>
+      <node id="40">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.cpp</label>
+        <link refid="AMReX__EB2__MultiGFab_8cpp"/>
+      </node>
+      <node id="41">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp</label>
+        <link refid="AMReX__EB2__ND__C_8cpp"/>
+      </node>
+      <node id="39">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</label>
+        <link refid="AMReX__EBDataCollection_8cpp"/>
+      </node>
+      <node id="21">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFabFactory.cpp</label>
+        <link refid="AMReX__EBFabFactory_8cpp"/>
+      </node>
+      <node id="23">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp</label>
+        <link refid="AMReX__EB__FluxRedistribute_8cpp"/>
+      </node>
+      <node id="22">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H</label>
+        <link refid="AMReX__EB__Redistribution_8H"/>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.cpp</label>
-        <link refid="AMReX__EB2__Level_8cpp"/>
-      </node>
-      <node id="24">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.H</label>
-        <link refid="AMReX__EB2__Level__STL_8H"/>
-        <childnode refid="7" relation="include">
-        </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-      </node>
-      <node id="25">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.cpp</label>
-        <link refid="AMReX__EB2__Level__STL_8cpp"/>
-      </node>
-      <node id="26">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.H</label>
-        <link refid="AMReX__EB2__Level__chkpt__file_8H"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-      </node>
-      <node id="27">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.cpp</label>
-        <link refid="AMReX__EB2__Level__chkpt__file_8cpp"/>
-      </node>
-      <node id="29">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_MultiGFab.cpp</label>
-        <link refid="AMReX__EB2__MultiGFab_8cpp"/>
-      </node>
-      <node id="30">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp</label>
-        <link refid="AMReX__EB2__ND__C_8cpp"/>
-      </node>
-      <node id="28">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</label>
-        <link refid="AMReX__EBDataCollection_8cpp"/>
-      </node>
-      <node id="11">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFabFactory.cpp</label>
-        <link refid="AMReX__EBFabFactory_8cpp"/>
-      </node>
-      <node id="13">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp</label>
-        <link refid="AMReX__EB__FluxRedistribute_8cpp"/>
-      </node>
-      <node id="12">
-        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H</label>
-        <link refid="AMReX__EB__Redistribution_8H"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="24">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp</label>
         <link refid="AMReX__EB__Redistribution_8cpp"/>
       </node>
-      <node id="15">
+      <node id="25">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp</label>
         <link refid="AMReX__EB__RedistributionApply_8cpp"/>
       </node>
-      <node id="16">
+      <node id="26">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp</label>
         <link refid="AMReX__EB__StateRedistItracker_8cpp"/>
       </node>
-      <node id="17">
+      <node id="27">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp</label>
         <link refid="AMReX__EB__StateRedistUtils_8cpp"/>
       </node>
-      <node id="18">
+      <node id="28">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp</label>
         <link refid="AMReX__EB__StateRedistribute_8cpp"/>
       </node>
-      <node id="19">
+      <node id="29">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H</label>
         <link refid="AMReX__EB__utils_8H"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="30">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp</label>
         <link refid="AMReX__EB__utils_8cpp"/>
       </node>
-      <node id="21">
+      <node id="31">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp</label>
         <link refid="AMReX__WriteEBSurface_8cpp"/>
       </node>
-      <node id="22">
+      <node id="32">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp</label>
         <link refid="AMReX__algoim_8cpp"/>
+      </node>
+      <node id="33">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBNodeFDLaplacian.cpp</label>
+        <link refid="AMReX__MLEBNodeFDLaplacian_8cpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
@@ -2107,72 +2188,72 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a8791492ceba31d5d14372a20721e3695" kindref="member">build_faces</ref><sp/>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ae1195a8207adec39078924367ba73385" kindref="member">build_faces</ref><sp/>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>interx,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>intery,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcx,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcy,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a91c7961fb393b168237a0a232b5c6f72" kindref="member">apx</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a179d9a9a68c2cdc936f35ed7657c88cd" kindref="member">apy</ref>,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a3f604dc3a2da1ffc7be935e3738454a2" kindref="member">fcx</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7acff05319c59aeaccf13bce08d1b09b85" kindref="member">fcy</ref>,</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dx,</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>problo,</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cover_multiple_cuts,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>nsmallfaces)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ab93166de851db0edebb5ae2569b88cc1" kindref="member">build_cells</ref><sp/>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a2a35d1c70aaff4926d2d64bba610333a" kindref="member">build_cells</ref><sp/>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a91c7961fb393b168237a0a232b5c6f72" kindref="member">apx</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a179d9a9a68c2cdc936f35ed7657c88cd" kindref="member">apy</ref>,</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dx,</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vfrac,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vcent,</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>barea,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcent,</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bnorm,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>small_volfrac,<sp/>Geometry<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>geom,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a900c8b65fe13dca2d107ec8ae396b7b7" kindref="member">extend_domain_face</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1ad6568bc5df052e827cc522b2c19fd663a6dd32a6bb73958d819ccc0459816a66f" kindref="member">bnorm</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>small_volfrac,<sp/>Geometry<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>geom,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1aacfb27dff7f9916a9ff6b261672ca715" kindref="member">extend_domain_face</ref>,</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>nsmallcells,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmulticuts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a82d4783a176cefd7ff69a7d61215a8c9" kindref="member">set_connection_flags</ref>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg1,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a82d4783a176cefd7ff69a7d61215a8c9" kindref="member">set_connection_flags</ref>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg1,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a8791492ceba31d5d14372a20721e3695" kindref="member">build_faces</ref><sp/>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ae1195a8207adec39078924367ba73385" kindref="member">build_faces</ref><sp/>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fz,<sp/>Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ex,</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ey,<sp/>Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ez,</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>interx,</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>intery,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>interz,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apz,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcx,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcy,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcz,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a91c7961fb393b168237a0a232b5c6f72" kindref="member">apx</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a179d9a9a68c2cdc936f35ed7657c88cd" kindref="member">apy</ref>,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ade108e19e410b0443c23eeac7dc64fb2" kindref="member">apz</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a3f604dc3a2da1ffc7be935e3738454a2" kindref="member">fcx</ref>,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7acff05319c59aeaccf13bce08d1b09b85" kindref="member">fcy</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7aba006ba7669bb3b52655be17abaae963" kindref="member">fcz</ref>,</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2x,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2y,</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2z,</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dx,</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>problo,</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cover_multiple_cuts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ab93166de851db0edebb5ae2569b88cc1" kindref="member">build_cells</ref><sp/>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a2a35d1c70aaff4926d2d64bba610333a" kindref="member">build_cells</ref><sp/>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fz,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apz,</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcx,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcy,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fcz,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2x,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fz,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a91c7961fb393b168237a0a232b5c6f72" kindref="member">apx</ref>,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a179d9a9a68c2cdc936f35ed7657c88cd" kindref="member">apy</ref>,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7ade108e19e410b0443c23eeac7dc64fb2" kindref="member">apz</ref>,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7a3f604dc3a2da1ffc7be935e3738454a2" kindref="member">fcx</ref>,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7acff05319c59aeaccf13bce08d1b09b85" kindref="member">fcy</ref>,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1aea45874f350ec5ab95a6918255ecdba7aba006ba7669bb3b52655be17abaae963" kindref="member">fcz</ref>,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2x,</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2y,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>m2z,</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dx,</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vfrac,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vcent,</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>barea,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcent,</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bnorm,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="namespaceamrex_1ad6568bc5df052e827cc522b2c19fd663a6dd32a6bb73958d819ccc0459816a66f" kindref="member">bnorm</ref>,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp,</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,<sp/>Real<sp/>small_volfrac,<sp/>Geometry<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>geom,</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a900c8b65fe13dca2d107ec8ae396b7b7" kindref="member">extend_domain_face</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cover_multiple_cuts,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1aacfb27dff7f9916a9ff6b261672ca715" kindref="member">extend_domain_face</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cover_multiple_cuts,</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>nsmallcells,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>nmulticuts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a82d4783a176cefd7ff69a7d61215a8c9" kindref="member">set_connection_flags</ref>(<ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/><ref refid="namespaceamrex_1a222089e49ba211b37cf7a4a8ae7eb186" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg1,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a82d4783a176cefd7ff69a7d61215a8c9" kindref="member">set_connection_flags</ref>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg1,</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell,<sp/>Array4&lt;EBCellFlag&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp,</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,<sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fz)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ae800250c2c38174f8c7e09534afa8f72" kindref="member">intercept_to_edge_centroid</ref><sp/>(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>excent,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1ab9b8d6b918f50d07b8c94ab212879a31" kindref="member">intercept_to_edge_centroid</ref><sp/>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>excent,</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>eycent,</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ezcent),</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fx,</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fy,</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Type_t<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fz),</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>levset,</highlight></codeline>

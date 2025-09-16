@@ -5,10 +5,10 @@ var namespaceamrex_1_1EB2 =
       [ "num_cuts", "namespaceamrex_1_1EB2_1_1detail.html#a76809ed0a10c6280707ab5537db08545", null ]
     ] ],
     [ "IIF_detail", "namespaceamrex_1_1EB2_1_1IIF__detail.html", [
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a1225d3d0c40e87671ca59b99ab2a1ad9", null ],
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a98384a091e8bcbad296ebdb24482eae9", null ],
       [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#ab29fda705d6e62fff3c0966fc83c76ff", null ],
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a9dc63be087b2fee2a4676c0a93153ce3", null ]
+      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a9dc63be087b2fee2a4676c0a93153ce3", null ],
+      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a956f3a59ddcae928dc973d87a5b29950", null ],
+      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a57421223e1bdbe1aa94435de8408b9fd", null ]
     ] ],
     [ "Type", "namespaceamrex_1_1EB2_1_1Type.html", [
       [ "covered", "namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0", null ],
@@ -17,10 +17,10 @@ var namespaceamrex_1_1EB2 =
       [ "unknown", "namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a", null ]
     ] ],
     [ "UIF_detail", "namespaceamrex_1_1EB2_1_1UIF__detail.html", [
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a4fa49cfdef8a23efa57c4bcfa3fbda70", null ],
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a59adebd826dfbb225f8bf5340d912854", null ],
       [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a86b60fd4fdacdf4921afa5d00a8239e5", null ],
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#aa47b9897a45b3b31c4a2b323e111d2e8", null ]
+      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#aa47b9897a45b3b31c4a2b323e111d2e8", null ],
+      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a19bde3da2b0f903e05b82a367ed29f3b", null ],
+      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a55b5dcce9d53c12c3a8c895e063f3593", null ]
     ] ],
     [ "AllRegularIF", "classamrex_1_1EB2_1_1AllRegularIF.html", "classamrex_1_1EB2_1_1AllRegularIF" ],
     [ "BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", "classamrex_1_1EB2_1_1BoxIF" ],
@@ -81,15 +81,15 @@ var namespaceamrex_1_1EB2 =
     [ "addRegularCoarseLevels", "namespaceamrex_1_1EB2.html#a0847e43de0f68d0a78bb75f9a6fefcd9", null ],
     [ "amrex_eb2_build_types", "namespaceamrex_1_1EB2.html#aefdb7b36e49b26a7d9d6c13f381bf5ea", null ],
     [ "amrex_eb2_build_types", "namespaceamrex_1_1EB2.html#a202c73f9ebfcb787c75aad17804f9490", null ],
-    [ "BrentRootFinder", "namespaceamrex_1_1EB2.html#afe01e9165cc64a28a0b7e9ca72fc43ca", null ],
+    [ "BrentRootFinder", "namespaceamrex_1_1EB2.html#a1e3ff60d9d306a069c6f8f3556655f81", null ],
     [ "Build", "namespaceamrex_1_1EB2.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
     [ "Build", "namespaceamrex_1_1EB2.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#a97bb46ef943ca61f6c69345a636c8f91", null ],
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#ad4baf361d00889173d59e758d4db781a", null ],
-    [ "build_cells", "namespaceamrex_1_1EB2.html#ab93166de851db0edebb5ae2569b88cc1", null ],
-    [ "build_cells", "namespaceamrex_1_1EB2.html#a679c49e19ddd76e1b5193718e37bf6c1", null ],
-    [ "build_faces", "namespaceamrex_1_1EB2.html#a8791492ceba31d5d14372a20721e3695", null ],
-    [ "build_faces", "namespaceamrex_1_1EB2.html#aceb9b2336e3a1251dca7ab15420dbfcd", null ],
+    [ "build_cells", "namespaceamrex_1_1EB2.html#a2a35d1c70aaff4926d2d64bba610333a", null ],
+    [ "build_cells", "namespaceamrex_1_1EB2.html#a77242e5e0a78f4f4767f203d7797c950", null ],
+    [ "build_faces", "namespaceamrex_1_1EB2.html#ae1195a8207adec39078924367ba73385", null ],
+    [ "build_faces", "namespaceamrex_1_1EB2.html#a29f0349cafbc751e242c4c8f52016531", null ],
     [ "BuildFromChkptFile", "namespaceamrex_1_1EB2.html#afb0afb98a8713d8031d524dd41ef94de", null ],
     [ "check_mvmc", "namespaceamrex_1_1EB2.html#af82727cbe02923f0e85c79498083ac33", null ],
     [ "coarsen_from_fine", "namespaceamrex_1_1EB2.html#a1f2e881daa9ff0a537137a2e09129db9", null ],
@@ -97,9 +97,9 @@ var namespaceamrex_1_1EB2 =
     [ "ExtendDomainFace", "namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765", null ],
     [ "extrude", "namespaceamrex_1_1EB2.html#a626a4a8b4491ce5841d36073b1106e2d", null ],
     [ "Finalize", "namespaceamrex_1_1EB2.html#afd3e2ed9a69b9e53f5b68eca49ee6fe6", null ],
-    [ "IF_f", "namespaceamrex_1_1EB2.html#a26665fe0c584ed57e499dbbcd2ace388", null ],
+    [ "IF_f", "namespaceamrex_1_1EB2.html#a65b86626c3ffdafd4b75d2d24b7fd97f", null ],
     [ "Initialize", "namespaceamrex_1_1EB2.html#a44d269eae8c3bc0c9c0aff8961ed61be", null ],
-    [ "intercept_to_edge_centroid", "namespaceamrex_1_1EB2.html#ae800250c2c38174f8c7e09534afa8f72", null ],
+    [ "intercept_to_edge_centroid", "namespaceamrex_1_1EB2.html#ab9b8d6b918f50d07b8c94ab212879a31", null ],
     [ "lathe", "namespaceamrex_1_1EB2.html#a0c67902fe3875f5f8507b219fea04f7b", null ],
     [ "makeComplement", "namespaceamrex_1_1EB2.html#aa3173c6e0e35482e10a5f23ff74bc66c", null ],
     [ "makeDifference", "namespaceamrex_1_1EB2.html#a024696926e0bd36bdf623e361774fde2", null ],
@@ -118,7 +118,7 @@ var namespaceamrex_1_1EB2 =
     [ "TopIndexSpaceIfPresent", "namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385", null ],
     [ "translate", "namespaceamrex_1_1EB2.html#a12c9130dbff8389ed10957c652da6ca7", null ],
     [ "useEB2", "namespaceamrex_1_1EB2.html#ad7f55d0b557cb48b84323df22a77d9d0", null ],
-    [ "extend_domain_face", "namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7", null ],
-    [ "max_grid_size", "namespaceamrex_1_1EB2.html#a0e86c3c8bf9f242ddba11fbe8db60e66", null ],
-    [ "num_coarsen_opt", "namespaceamrex_1_1EB2.html#aa6d8b9ccdeea03640db903d130f9af47", null ]
+    [ "extend_domain_face", "namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715", null ],
+    [ "max_grid_size", "namespaceamrex_1_1EB2.html#a6a03e6a896276bd89190ad6eee9566e1", null ],
+    [ "num_coarsen_opt", "namespaceamrex_1_1EB2.html#a87408955c0fa835eb58386e859dcd4f6", null ]
 ];
