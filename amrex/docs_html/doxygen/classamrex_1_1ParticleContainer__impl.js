@@ -40,6 +40,7 @@ var classamrex_1_1ParticleContainer__impl =
     [ "AssignCellDensitySingleLevel", "classamrex_1_1ParticleContainer__impl.html#a722e91dba53fa628b8ae421a2637ef02", null ],
     [ "AssignDensity", "classamrex_1_1ParticleContainer__impl.html#a0521b81db32f27b22d9d6d627bb47688", null ],
     [ "ByteSpread", "classamrex_1_1ParticleContainer__impl.html#ae66736cd613a47f851269128336e533f", null ],
+    [ "CapacityOfParticlesInGrid", "classamrex_1_1ParticleContainer__impl.html#ad6ec46d8f67c96c690591cc5b950493c", null ],
     [ "Checkpoint", "classamrex_1_1ParticleContainer__impl.html#a53896bd985c853c947a38f910c63af2e", null ],
     [ "Checkpoint", "classamrex_1_1ParticleContainer__impl.html#a0e34ff12a872e7b4f1a3e1ea4092f75d", null ],
     [ "Checkpoint", "classamrex_1_1ParticleContainer__impl.html#a27c1365779e42101977956a8b1a52a14", null ],

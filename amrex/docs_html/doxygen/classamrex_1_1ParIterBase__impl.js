@@ -17,6 +17,7 @@ var classamrex_1_1ParIterBase__impl =
     [ "SoARef", "classamrex_1_1ParIterBase__impl.html#a064fd9ec04dc771d3749d2ce27281ea9", null ],
     [ "ParIterBase_impl", "classamrex_1_1ParIterBase__impl.html#afaf6edbba5eee7ad8ec59e92e4971efc", null ],
     [ "ParIterBase_impl", "classamrex_1_1ParIterBase__impl.html#ac21aae96f4f5422d636525b0572777b6", null ],
+    [ "capacity", "classamrex_1_1ParIterBase__impl.html#ad415d3e1597ffc1e5dcf35d3e281d382", null ],
     [ "Geom", "classamrex_1_1ParIterBase__impl.html#a2e8cea37340fcf3a55aa50dd52b3d11c", null ],
     [ "GetArrayOfStructs", "classamrex_1_1ParIterBase__impl.html#a71c746f6d3c895885b57ee891b828959", null ],
     [ "GetLevel", "classamrex_1_1ParIterBase__impl.html#afadb79a7a8d207c7218311f08c07e16e", null ],

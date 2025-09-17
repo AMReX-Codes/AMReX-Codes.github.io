@@ -32,6 +32,7 @@ var classamrex_1_1FabArray =
     [ "atLocalIdx", "classamrex_1_1FabArray.html#ae8c5abda122a8836e3ac7c5713644aa8", null ],
     [ "build_arrays", "classamrex_1_1FabArray.html#ad37c52d123770b902efbb42a7ba56578", null ],
     [ "BuildMask", "classamrex_1_1FabArray.html#a4f4a269de9e494ef89075265e5b8ecb2", null ],
+    [ "capacityOfFabs", "classamrex_1_1FabArray.html#aaba76508c1e643baeda02417ccf12286", null ],
     [ "clear", "classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa", null ],
     [ "clear_arrays", "classamrex_1_1FabArray.html#a3d078863cd6f3c8fc6ee8929573be274", null ],
     [ "CMD_local_setVal_gpu", "classamrex_1_1FabArray.html#a202d8ada102cc6fc40749039c0e1f3a7", null ],

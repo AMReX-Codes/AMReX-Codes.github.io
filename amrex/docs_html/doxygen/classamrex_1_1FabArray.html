@@ -434,6 +434,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a24591060d4412dddb8298001e5f580c5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a24591060d4412dddb8298001e5f580c5">setDomainBndry</a> (<a class="el" href="classamrex_1_1FabArray.html#a10cae7bd6a702d1909a7801f53d990cd">value_type</a> val, int strt_comp, int ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="memdesc:a24591060d4412dddb8298001e5f580c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ncomp values outside the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> domain to val, starting at start_comp.  <br /></td></tr>
 <tr class="separator:a24591060d4412dddb8298001e5f580c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba76508c1e643baeda02417ccf12286" id="r_aaba76508c1e643baeda02417ccf12286"><td class="memTemplParams" colspan="2">template&lt;typename I , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>  = FAB, std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">IsBaseFab</a>&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;::value &amp;&amp;std::is_integral_v&lt; I &gt; &amp;&amp;(sizeof(I) &gt;=sizeof(Long)), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aaba76508c1e643baeda02417ccf12286"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#aaba76508c1e643baeda02417ccf12286">capacityOfFabs</a> (<a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; I &gt; &amp;mem) const</td></tr>
+<tr class="memdesc:aaba76508c1e643baeda02417ccf12286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get capacity of the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>.  <br /></td></tr>
+<tr class="separator:aaba76508c1e643baeda02417ccf12286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a025b813208a188552aba514a69a3b480" id="r_a025b813208a188552aba514a69a3b480"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>  = FAB, std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">IsBaseFab</a>&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;::value, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a025b813208a188552aba514a69a3b480"><td class="memTemplItemLeft" align="right" valign="top">F::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a025b813208a188552aba514a69a3b480">sum</a> (int comp, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;nghost, bool local=false) const</td></tr>
 <tr class="memdesc:a025b813208a188552aba514a69a3b480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp".  <br /></td></tr>
@@ -2048,6 +2052,30 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaba76508c1e643baeda02417ccf12286" name="aaba76508c1e643baeda02417ccf12286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba76508c1e643baeda02417ccf12286">&#9670;&#160;</a></span>capacityOfFabs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB &gt; </div>
+<div class="memtemplate">
+template&lt;typename I , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">IsBaseFab</a>&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;::value &amp;&amp;std::is_integral_v&lt; I &gt; &amp;&amp;(sizeof(I) &gt;=sizeof(Long)), int &gt; FOO&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray</a>&lt; FAB &gt;::capacityOfFabs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; I &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mem</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get capacity of the <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. </p>
 
 </div>
 </div>

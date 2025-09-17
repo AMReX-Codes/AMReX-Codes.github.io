@@ -1184,12 +1184,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>    Vector&lt;TagT&gt; recv_tags;</div>
 <div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span> </div>
 <div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>    <span class="keywordflow">if</span> (N_rcvs &gt; 0) {</div>
-<div class="foldopen" id="foldopen01070" data-start="{" data-end="}">
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a91d4e639cd2eca22c25e9625de833b3a"> 1070</a></span> </div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span> </div>
 <div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> imf = 0; imf &lt; nmfs; ++imf) {</div>
 <div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>            <span class="keywordflow">if</span> (cmds[imf]) {</div>
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tags = *(cmds[imf]-&gt;m_RcvTags);</div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : tags) {</div>
+<div class="foldopen" id="foldopen01074" data-start="{" data-end="}">
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a91d4e639cd2eca22c25e9625de833b3a"> 1074</a></span>                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : tags) {</div>
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>                    recv_from.push_back(kv.first);</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>                }</div>
 <div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>            }</div>
@@ -1202,8 +1202,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span> </div>
 <div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>        recv_tags.reserve(N_rcvs);</div>
 <div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span> </div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;Vector&lt;std::size_t&gt;</a> &gt; recv_offset(nrecv);</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>        Vector&lt;Vector&lt;std::size_t&gt; &gt; recv_offset(nrecv);</div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>        Vector&lt;std::size_t&gt; <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
 <div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>        recv_size.reserve(nrecv);</div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>        <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>.reserve(nrecv);</div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>        std::size_t TotalRcvsVolume = 0;</div>
@@ -1214,12 +1214,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tags = *(cmds[imf]-&gt;m_RcvTags);</div>
 <div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>                    <span class="keyword">auto</span> it = tags.find(recv_from[i]);</div>
 <div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>                    <span class="keywordflow">if</span> (it != tags.end()) {</div>
-<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cct : it-&gt;second) {</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cct : it-&gt;<a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>) {</div>
 <div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>                            <span class="keyword">auto</span>&amp; dfab = (*mf[imf])[cct.dstIndex];</div>
 <div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>                            recv_offset[i].push_back(nbytes);</div>
 <div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>                            recv_tags.push_back({dfab.array(scomp[imf],ncomp[imf]),</div>
 <div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>                                                 makeArray4&lt;T const&gt;(<span class="keyword">nullptr</span>,cct.dbox,ncomp[imf]),</div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>                                                 cct.dbox, <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a>{0,0,0}});</div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>                                                 cct.dbox, Dim3{0,0,0}});</div>
 <div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>                            nbytes += dfab.nBytes(cct.dbox,ncomp[imf]);</div>
 <div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>                        }</div>
 <div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>                    }</div>
@@ -1265,12 +1265,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>                    send_rank.push_back(kv.first);</div>
 <div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>                }</div>
 <div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>            }</div>
-<div class="foldopen" id="foldopen01150" data-start="{" data-end="}">
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a31ac8478feaa72ab3960bb08c69b082b"> 1150</a></span>        }</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>        }</div>
 <div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>        <a class="code hl_function" href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a>(send_rank);</div>
 <div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> nsend = send_rank.size();</div>
 <div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span> </div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>        send_data.resize(nsend, <span class="keyword">nullptr</span>);</div>
+<div class="foldopen" id="foldopen01154" data-start="{" data-end="}">
+<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a31ac8478feaa72ab3960bb08c69b082b"> 1154</a></span>        send_data.resize(nsend, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>        send_reqs.resize(nsend, MPI_REQUEST_NULL);</div>
 <div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span> </div>
 <div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;TagT&gt;</a> send_tags;</div>
