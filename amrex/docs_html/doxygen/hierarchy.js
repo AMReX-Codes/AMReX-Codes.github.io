@@ -234,7 +234,7 @@ var hierarchy =
     ] ],
     [ "amrex::BoxIndexerND< dim >", "structamrex_1_1BoxIndexerND.html", null ],
     [ "amrex::BoxIndexerND< 1 >", "structamrex_1_1BoxIndexerND_3_011_01_4.html", null ],
-    [ "amrex::BoxIterator", "classamrex_1_1BoxIterator.html", null ],
+    [ "amrex::BoxIteratorND< dim >", "classamrex_1_1BoxIteratorND.html", null ],
     [ "amrex::BoxList", "classamrex_1_1BoxList.html", [
       [ "amrex::BoxDomain", "classamrex_1_1BoxDomain.html", null ]
     ] ],

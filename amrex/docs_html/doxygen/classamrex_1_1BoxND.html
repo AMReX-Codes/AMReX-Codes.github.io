@@ -409,6 +409,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac32c020e2a151d9cf7e95e34c04a7449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32736c2dd3f45b7234200fa3ec670a8d" id="r_a32736c2dd3f45b7234200fa3ec670a8d"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1BoxND.html">BoxND</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxND.html#a32736c2dd3f45b7234200fa3ec670a8d">makeSlab</a> (int direction, int slab_index) noexcept</td></tr>
 <tr class="separator:a32736c2dd3f45b7234200fa3ec670a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74af9b5b4e59bd0fe14f57da88243584" id="r_a74af9b5b4e59bd0fe14f57da88243584"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxND.html#a74af9b5b4e59bd0fe14f57da88243584">iterator</a> () const noexcept</td></tr>
+<tr class="memdesc:a74af9b5b4e59bd0fe14f57da88243584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classamrex_1_1BoxIteratorND.html" title="iterates through the IntVects of a Box">BoxIteratorND</a> that can be used to loop over the IntVects contained by the <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a>.  <br /></td></tr>
+<tr class="separator:a74af9b5b4e59bd0fe14f57da88243584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac71080a09ec9e3db4cbf2a2a194f3fa7" id="r_ac71080a09ec9e3db4cbf2a2a194f3fa7"><td class="memTemplParams" colspan="2">template&lt;int new_dim&gt; </td></tr>
 <tr class="memitem:ac71080a09ec9e3db4cbf2a2a194f3fa7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxND.html#ac71080a09ec9e3db4cbf2a2a194f3fa7">shrink</a> () const noexcept</td></tr>
 <tr class="memdesc:ac71080a09ec9e3db4cbf2a2a194f3fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a> of dimension new_dim and assigns the first new_dim dimension of this <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a> to it.  <br /></td></tr>
@@ -2009,6 +2012,44 @@ template&lt;int dim&gt; </div>
 </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a74af9b5b4e59bd0fe14f57da88243584" name="a74af9b5b4e59bd0fe14f57da88243584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74af9b5b4e59bd0fe14f57da88243584">&#9670;&#160;</a></span>iterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a>&lt; dim &gt; <a class="el" href="classamrex_1_1BoxND.html">amrex::BoxND</a>&lt; dim &gt;::iterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="classamrex_1_1BoxIteratorND.html" title="iterates through the IntVects of a Box">BoxIteratorND</a> that can be used to loop over the IntVects contained by the <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a>. </p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
+<div class="line">...</div>
+<div class="line">for (<a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> iv : <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>.<a class="code hl_function" href="classamrex_1_1BoxND.html#a74af9b5b4e59bd0fe14f57da88243584">iterator</a>()) {</div>
+<div class="line">    <span class="comment">// do operations involving iv</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aclassamrex_1_1BoxND_html_a74af9b5b4e59bd0fe14f57da88243584"><div class="ttname"><a href="classamrex_1_1BoxND.html#a74af9b5b4e59bd0fe14f57da88243584">amrex::BoxND::iterator</a></div><div class="ttdeci">BoxIteratorND&lt; dim &gt; iterator() const noexcept</div><div class="ttdoc">Returns a BoxIteratorND that can be used to loop over the IntVects contained by the BoxND.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:800</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">amrex::CurlCurlStateType::b</a></div><div class="ttdeci">@ b</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a9eebfcd8ac4307bd4bced22c350e00eb" name="a9eebfcd8ac4307bd4bced22c350e00eb"></a>

@@ -244,10 +244,10 @@ var NAVTREEINDEX19 =
 "AMReX__ParticlesHDF5_8H_source.html":[4,0,0,5,0,1],
 "AMReX__Particles_8H.html":[4,0,0,8,30],
 "AMReX__Particles_8H_source.html":[4,0,0,8,30],
-"AMReX__Partition_8H.html":[4,0,0,2,221],
-"AMReX__Partition_8H.html#a1214d3602cac3f99cebc60c951dbb938":[4,0,0,2,221,4],
-"AMReX__Partition_8H.html#a3b8c7b9108d9ccbc108689fb9b8b2a7e":[4,0,0,2,221,3],
-"AMReX__Partition_8H.html#a52a83682c1d3c6b56f1fba2bbaaed439":[4,0,0,2,221,5],
-"AMReX__Partition_8H.html#a57310fe9971a6396f436f596efa45226":[4,0,0,2,221,6],
-"AMReX__Partition_8H.html#a685da3e1082796b88fdcd226e6cd923d":[4,0,0,2,221,1]
+"AMReX__Partition_8H.html":[4,0,0,2,220],
+"AMReX__Partition_8H.html#a1214d3602cac3f99cebc60c951dbb938":[4,0,0,2,220,4],
+"AMReX__Partition_8H.html#a3b8c7b9108d9ccbc108689fb9b8b2a7e":[4,0,0,2,220,3],
+"AMReX__Partition_8H.html#a52a83682c1d3c6b56f1fba2bbaaed439":[4,0,0,2,220,5],
+"AMReX__Partition_8H.html#a57310fe9971a6396f436f596efa45226":[4,0,0,2,220,6],
+"AMReX__Partition_8H.html#a685da3e1082796b88fdcd226e6cd923d":[4,0,0,2,220,1]
 };

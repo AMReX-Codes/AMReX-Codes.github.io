@@ -107,148 +107,164 @@ $(document).ready(function(){initNavTree('AMReX__BoxIterator_8H_source.html','')
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;AMReX_Config.H&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__Box_8H.html">AMReX_Box.H</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__REAL_8H.html">AMReX_REAL.H</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__SPACE_8H.html">AMReX_SPACE.H</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__IntVect_8H.html">AMReX_IntVect.H</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html">   32</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1BoxIterator.html">BoxIterator</a></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a7d4f7fc99b5c3fe06e9a0b2118ad9f20">   40</a></span>    <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7d4f7fc99b5c3fe06e9a0b2118ad9f20">BoxIterator</a> () noexcept = default;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    explicit <a class="code hl_class" href="classamrex_1_1BoxIterator.html">BoxIterator</a> (const <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; a_bx) noexcept;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a1f9a7e4c07b451d03fbcc905145005b7">setBox</a> (const <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; a_bx) noexcept;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__REAL_8H.html">AMReX_REAL.H</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__SPACE_8H.html">AMReX_SPACE.H</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="AMReX__IntVect_8H.html">AMReX_IntVect.H</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex.html">amrex</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> dim&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>BoxND;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> dim&gt;</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html">   50</a></span><span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7a4a243bcd9c8e5066eddda908833d08">define</a> (const <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; a_bx) noexcept;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a1d9e1a9beb8ee25f51022681cdb8ce6f">   58</a></span>    <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a1d9e1a9beb8ee25f51022681cdb8ce6f">BoxIteratorND</a> () noexcept = default;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7">begin</a> () noexcept;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a8034c76f7cc8e7966f170538268d0be6">reset</a> () noexcept;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> operator ++ () noexcept;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761">next</a> () noexcept;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    [[nodiscard]] const <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>&amp; operator () () const noexcept;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#ab5719a740695d359628be6f552ba6a3a">ok</a> () noexcept;</div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#af575b2d6ec0d8da023cb2381602f656b">   65</a></span>    explicit <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a> (const <a class="code hl_class" href="classamrex_1_1BoxND.html">BoxND</a>&lt;dim&gt;&amp; a_bx) noexcept {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a45cfed571ea9a5e0320a0857b16248aa">define</a>(a_bx);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a2520e4ef281dd7dee943fd48feea4a20">   69</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a2520e4ef281dd7dee943fd48feea4a20">setBox</a> (<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">BoxND&lt;dim&gt;</a>&amp; a_bx) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a45cfed571ea9a5e0320a0857b16248aa">define</a>(a_bx);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a45cfed571ea9a5e0320a0857b16248aa">   78</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a45cfed571ea9a5e0320a0857b16248aa">define</a> (<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxND.html">BoxND&lt;dim&gt;</a>&amp; a_bx) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (a_bx.ok()) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a> = a_bx.smallEnd();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>   = a_bx.smallEnd();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>   = a_bx.bigEnd();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a> = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911">IntVectND&lt;dim&gt;::TheUnitVector</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>   = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911">IntVectND&lt;dim&gt;::TheUnitVector</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>   = <a class="code hl_function" href="classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83">IntVectND&lt;dim&gt;::TheZeroVector</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a1fd6574e2d3f342a6b5b2aed6ae73749">   94</a></span>    <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a1fd6574e2d3f342a6b5b2aed6ae73749">begin</a> () noexcept {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a> = <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  protected:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">  100</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a> = <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>::TheUnitVector();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">  101</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a>   = <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>::TheUnitVector();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">  102</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>   = <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>::TheZeroVector();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  };</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#ae8d94f95356b36132a8fb1732d6f4394">  103</a></span>    [[nodiscard]] <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#ae8d94f95356b36132a8fb1732d6f4394">end</a> () const noexcept {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a> ret = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="comment">// set current of end to the past-the-end IntVect</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        ret.<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a> = <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>.allLE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>)) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            ret.<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>[dim-1] = <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>[dim-1] + 1;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  inline</div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#ad67f55da89142e3527f16fac6a5bcade">  106</a></span>  <a class="code hl_class" href="classamrex_1_1BoxIterator.html">BoxIterator</a>::<a class="code hl_class" href="classamrex_1_1BoxIterator.html">BoxIterator</a> (const <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>&amp; a_bx) noexcept</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7a4a243bcd9c8e5066eddda908833d08">define</a>(a_bx);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#af9c4b01f9103450b908fe2857d205b69">  117</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#af9c4b01f9103450b908fe2857d205b69">reset</a> () noexcept {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a1fd6574e2d3f342a6b5b2aed6ae73749">begin</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">inline</span></div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7">  112</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7">BoxIterator::begin</a> () noexcept</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a> &lt;= <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>) { <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a> = <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a>; }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
-</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">inline</span></div>
-<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a8034c76f7cc8e7966f170538268d0be6">  118</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a8034c76f7cc8e7966f170538268d0be6">BoxIterator::reset</a> () noexcept</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7">begin</a>();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
-</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">inline</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a1eb1f7dc12b228e2893a693691781ab4">  124</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a1eb1f7dc12b228e2893a693691781ab4">BoxIterator::operator ++ </a>() noexcept</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761">next</a>();</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#aee8d00c3537a3665bf126eb147ec2701">  124</a></span>    <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a>&amp; <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#aee8d00c3537a3665bf126eb147ec2701">operator++ </a>() noexcept {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a241e9643186cad2b5fa16ae8f157854e">next</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
 </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">inline</span></div>
-<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761">  130</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761">BoxIterator::next</a> () noexcept</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[0]++;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#if AMREX_SPACEDIM &gt;= 2</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[0] &gt; <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>[0])</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[0] = <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a>[0];</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[1]++;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#if AMREX_SPACEDIM &gt;= 3</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[1] &gt; <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>[1])</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>          {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[1] = <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a>[1];</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>[2]++;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a241e9643186cad2b5fa16ae8f157854e">  132</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a241e9643186cad2b5fa16ae8f157854e">next</a> () noexcept {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;dim; ++i) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            ++<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>[i];</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">if</span> ((i+1&lt;dim) &amp;&amp; <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>[i] &gt; <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>[i]) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>[i] = <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>[i];</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
 </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">inline</span></div>
-<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#a43c937c4689f4b5388b9a0f5e77cb15b">  150</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>&amp; <a class="code hl_function" href="classamrex_1_1BoxIterator.html#a43c937c4689f4b5388b9a0f5e77cb15b">BoxIterator::operator () </a>() const noexcept</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a> &lt;= <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a> &gt;= <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">m_boxLo</a>);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a9dd414e94a7d191cf386da738427c3fa">  146</a></span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;dim&gt;</a>&amp; <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a9dd414e94a7d191cf386da738427c3fa">operator () </a>() const noexcept {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>.allLE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>));</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>.allGE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>));</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
 </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keyword">inline</span></div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIterator.html#ab5719a740695d359628be6f552ba6a3a">  158</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classamrex_1_1BoxIterator.html#ab5719a740695d359628be6f552ba6a3a">BoxIterator::ok</a> () noexcept</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">m_current</a>  &lt;= <a class="code hl_variable" href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">m_boxHi</a>);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a23987b16a62e818ad05ffbd3b2cd4a12">  155</a></span>    [[nodiscard]] <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;dim&gt;</a> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#a23987b16a62e818ad05ffbd3b2cd4a12">operator* </a>() const noexcept {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>.allLE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>));</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>.allGE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="comment">// Returning by value gives cleaner assembly output.</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#ab3c54393d98f2fcd3faadabcc3633efd">  165</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classamrex_1_1BoxIteratorND.html#ab3c54393d98f2fcd3faadabcc3633efd">ok</a> () const noexcept {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a>.allLE(<a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    [[nodiscard]] <span class="keyword">friend</span></div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="};">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a0c5612b4aebc9a74872f814730ae871e">  175</a></span>    <span class="keywordtype">bool</span> <a class="code hl_friend" href="classamrex_1_1BoxIteratorND.html#a0c5612b4aebc9a74872f814730ae871e">operator != </a>(<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a>&amp; b1, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND</a>&amp; b2) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="comment">// Only check one value for better performance.</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">return</span> b1.m_current[dim-1] != b2.m_current[dim-1];</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">  181</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;dim&gt;</a> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">m_current</a> = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911">IntVectND&lt;dim&gt;::TheUnitVector</a>();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">  182</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;dim&gt;</a> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">m_boxLo</a>   = <a class="code hl_function" href="classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911">IntVectND&lt;dim&gt;::TheUnitVector</a>();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">  183</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;dim&gt;</a> <a class="code hl_variable" href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">m_boxHi</a>   = <a class="code hl_function" href="classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83">IntVectND&lt;dim&gt;::TheZeroVector</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>};</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ae0e92af73c506a4ab3bf4c4939d613f4">  186</a></span><span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIterator</a> = <a class="code hl_class" href="classamrex_1_1BoxIteratorND.html">BoxIteratorND&lt;AMREX_SPACEDIM&gt;</a>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html"><div class="ttname"><a href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a></div></div>
-<div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:39</div></div>
-<div class="ttc" id="aAMReX__Box_8H_html"><div class="ttname"><a href="AMReX__Box_8H.html">AMReX_Box.H</a></div></div>
+<div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__IntVect_8H_html"><div class="ttname"><a href="AMReX__IntVect_8H.html">AMReX_IntVect.H</a></div></div>
 <div class="ttc" id="aAMReX__REAL_8H_html"><div class="ttname"><a href="AMReX__REAL_8H.html">AMReX_REAL.H</a></div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html"><div class="ttname"><a href="AMReX__SPACE_8H.html">AMReX_SPACE.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html"><div class="ttname"><a href="classamrex_1_1BoxIterator.html">amrex::BoxIterator</a></div><div class="ttdoc">iterates through the IntVects of a Box</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:33</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a1eb1f7dc12b228e2893a693691781ab4"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a1eb1f7dc12b228e2893a693691781ab4">amrex::BoxIterator::operator++</a></div><div class="ttdeci">void operator++() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:124</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a1f9a7e4c07b451d03fbcc905145005b7"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a1f9a7e4c07b451d03fbcc905145005b7">amrex::BoxIterator::setBox</a></div><div class="ttdeci">void setBox(const Box &amp;a_bx) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.cpp:21</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a28bfb4eb34ce4273b9948f0c3e2451a4"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a28bfb4eb34ce4273b9948f0c3e2451a4">amrex::BoxIterator::m_boxHi</a></div><div class="ttdeci">IntVect m_boxHi</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:102</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a43c937c4689f4b5388b9a0f5e77cb15b"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a43c937c4689f4b5388b9a0f5e77cb15b">amrex::BoxIterator::operator()</a></div><div class="ttdeci">const IntVect &amp; operator()() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:150</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a7a4a243bcd9c8e5066eddda908833d08"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a7a4a243bcd9c8e5066eddda908833d08">amrex::BoxIterator::define</a></div><div class="ttdeci">void define(const Box &amp;a_bx) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.cpp:5</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a7d4f7fc99b5c3fe06e9a0b2118ad9f20"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a7d4f7fc99b5c3fe06e9a0b2118ad9f20">amrex::BoxIterator::BoxIterator</a></div><div class="ttdeci">BoxIterator() noexcept=default</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a7f3c17e356fa82fa08928ed417493761"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761">amrex::BoxIterator::next</a></div><div class="ttdeci">void next() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:130</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a8034c76f7cc8e7966f170538268d0be6"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a8034c76f7cc8e7966f170538268d0be6">amrex::BoxIterator::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:118</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_a84175ad1f780ae9de83dc5f4c71b67e0"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0">amrex::BoxIterator::m_current</a></div><div class="ttdeci">IntVect m_current</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:100</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_ab5719a740695d359628be6f552ba6a3a"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#ab5719a740695d359628be6f552ba6a3a">amrex::BoxIterator::ok</a></div><div class="ttdeci">bool ok() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:158</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_ac7faa53e27c1da649d1ce401be5edd8d"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#ac7faa53e27c1da649d1ce401be5edd8d">amrex::BoxIterator::m_boxLo</a></div><div class="ttdeci">IntVect m_boxLo</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:101</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxIterator_html_af75e04838970facf1335f10eb67cdeb7"><div class="ttname"><a href="classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7">amrex::BoxIterator::begin</a></div><div class="ttdeci">void begin() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:112</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
-<div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html">amrex::BoxIteratorND</a></div><div class="ttdoc">iterates through the IntVects of a Box</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:51</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a09aec00e5a59527be451c1dce4eca913"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913">amrex::BoxIteratorND::m_current</a></div><div class="ttdeci">IntVectND&lt; dim &gt; m_current</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:181</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a0c5612b4aebc9a74872f814730ae871e"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a0c5612b4aebc9a74872f814730ae871e">amrex::BoxIteratorND::operator!=</a></div><div class="ttdeci">friend bool operator!=(const BoxIteratorND &amp;b1, const BoxIteratorND &amp;b2) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:175</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a1d9e1a9beb8ee25f51022681cdb8ce6f"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a1d9e1a9beb8ee25f51022681cdb8ce6f">amrex::BoxIteratorND::BoxIteratorND</a></div><div class="ttdeci">BoxIteratorND() noexcept=default</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a1fd6574e2d3f342a6b5b2aed6ae73749"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a1fd6574e2d3f342a6b5b2aed6ae73749">amrex::BoxIteratorND::begin</a></div><div class="ttdeci">BoxIteratorND begin() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:94</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a2089ada36b181eab06fc253188ba5192"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192">amrex::BoxIteratorND::m_boxHi</a></div><div class="ttdeci">IntVectND&lt; dim &gt; m_boxHi</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:183</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a23987b16a62e818ad05ffbd3b2cd4a12"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a23987b16a62e818ad05ffbd3b2cd4a12">amrex::BoxIteratorND::operator*</a></div><div class="ttdeci">IntVectND&lt; dim &gt; operator*() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:155</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a241e9643186cad2b5fa16ae8f157854e"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a241e9643186cad2b5fa16ae8f157854e">amrex::BoxIteratorND::next</a></div><div class="ttdeci">void next() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:132</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a2520e4ef281dd7dee943fd48feea4a20"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a2520e4ef281dd7dee943fd48feea4a20">amrex::BoxIteratorND::setBox</a></div><div class="ttdeci">void setBox(const BoxND&lt; dim &gt; &amp;a_bx) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:69</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a45cfed571ea9a5e0320a0857b16248aa"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a45cfed571ea9a5e0320a0857b16248aa">amrex::BoxIteratorND::define</a></div><div class="ttdeci">void define(const BoxND&lt; dim &gt; &amp;a_bx) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:78</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_a9dd414e94a7d191cf386da738427c3fa"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#a9dd414e94a7d191cf386da738427c3fa">amrex::BoxIteratorND::operator()</a></div><div class="ttdeci">const IntVectND&lt; dim &gt; &amp; operator()() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:146</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_ab3c54393d98f2fcd3faadabcc3633efd"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#ab3c54393d98f2fcd3faadabcc3633efd">amrex::BoxIteratorND::ok</a></div><div class="ttdeci">bool ok() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:165</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_adf7be1f388b8c0d0a8ea6ed5fcb959f5"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5">amrex::BoxIteratorND::m_boxLo</a></div><div class="ttdeci">IntVectND&lt; dim &gt; m_boxLo</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:182</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_ae8d94f95356b36132a8fb1732d6f4394"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#ae8d94f95356b36132a8fb1732d6f4394">amrex::BoxIteratorND::end</a></div><div class="ttdeci">BoxIteratorND end() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:103</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_aee8d00c3537a3665bf126eb147ec2701"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#aee8d00c3537a3665bf126eb147ec2701">amrex::BoxIteratorND::operator++</a></div><div class="ttdeci">BoxIteratorND &amp; operator++() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:124</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxIteratorND_html_af9c4b01f9103450b908fe2857d205b69"><div class="ttname"><a href="classamrex_1_1BoxIteratorND.html#af9c4b01f9103450b908fe2857d205b69">amrex::BoxIteratorND::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BoxIterator.H:117</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:46</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND</a></div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:48</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html_a7471cfc6c0cf387e351e462827fb0911"><div class="ttname"><a href="classamrex_1_1IntVectND.html#a7471cfc6c0cf387e351e462827fb0911">amrex::IntVectND::TheUnitVector</a></div><div class="ttdeci">__host__ static __device__ constexpr IntVectND&lt; dim &gt; TheUnitVector() noexcept</div><div class="ttdoc">This static member function returns a reference to a constant IntVectND object, all of whose dim argu...</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:680</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html_ab2506f9097ba1cf1c59e8f8fe933ed83"><div class="ttname"><a href="classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83">amrex::IntVectND::TheZeroVector</a></div><div class="ttdeci">__host__ static __device__ constexpr IntVectND&lt; dim &gt; TheZeroVector() noexcept</div><div class="ttdoc">This static member function returns a reference to a constant IntVectND object, all of whose dim argu...</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:670</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

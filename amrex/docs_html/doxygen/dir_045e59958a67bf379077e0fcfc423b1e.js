@@ -44,7 +44,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_BoxArray.H", "AMReX__BoxArray_8H.html", "AMReX__BoxArray_8H" ],
     [ "AMReX_BoxDomain.cpp", "AMReX__BoxDomain_8cpp.html", "AMReX__BoxDomain_8cpp" ],
     [ "AMReX_BoxDomain.H", "AMReX__BoxDomain_8H.html", "AMReX__BoxDomain_8H" ],
-    [ "AMReX_BoxIterator.cpp", "AMReX__BoxIterator_8cpp.html", null ],
     [ "AMReX_BoxIterator.H", "AMReX__BoxIterator_8H.html", "AMReX__BoxIterator_8H" ],
     [ "AMReX_BoxList.cpp", "AMReX__BoxList_8cpp.html", "AMReX__BoxList_8cpp" ],
     [ "AMReX_BoxList.H", "AMReX__BoxList_8H.html", "AMReX__BoxList_8H" ],

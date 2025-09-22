@@ -1,5 +1,14 @@
 var NAVTREEINDEX100 =
 {
+"namespaceamrex_1_1ParallelAllReduce.html#a22a60add9d9c9a8d562a9417d297f9bc":[2,0,0,33,5],
+"namespaceamrex_1_1ParallelAllReduce.html#a52cd6d76e8a30d6a2dd9ff1835f036dc":[2,0,0,33,2],
+"namespaceamrex_1_1ParallelAllReduce.html#a647e136efea8ad3d3e88887700c5f1af":[2,0,0,33,14],
+"namespaceamrex_1_1ParallelAllReduce.html#a76a17125c15adaa1757aa8acb110a56b":[2,0,0,33,7],
+"namespaceamrex_1_1ParallelAllReduce.html#a809a9a78d9cfb7c86a0dd7b72a212fd7":[2,0,0,33,0],
+"namespaceamrex_1_1ParallelAllReduce.html#a82726330e66e765f09dbc81f10f812ec":[2,0,0,33,6],
+"namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877":[2,0,0,33,12],
+"namespaceamrex_1_1ParallelAllReduce.html#a93a9a9427252098f6da83a7116c4219d":[2,0,0,33,13],
+"namespaceamrex_1_1ParallelAllReduce.html#a9a24ed2b1803fba71b1ab93b44db7a98":[2,0,0,33,9],
 "namespaceamrex_1_1ParallelAllReduce.html#ab295f18b74675ea0f559d2563eace87d":[2,0,0,33,8],
 "namespaceamrex_1_1ParallelAllReduce.html#ab75655a29ac29049cb6b1fafbd12a7f7":[2,0,0,33,10],
 "namespaceamrex_1_1ParallelAllReduce.html#abc654239660dfc6eb557813ef5314650":[2,0,0,33,3],
@@ -240,14 +249,5 @@ var NAVTREEINDEX100 =
 "namespaceamrex_1_1Reduce.html#adae163b6d167d018ba6ec7cf821b97a8":[2,0,0,46,8],
 "namespaceamrex_1_1Reduce.html#ae179b14741cc532f08816fceabea24f5":[2,0,0,46,9],
 "namespaceamrex_1_1Reduce.html#af362eac7caa17fd8a2f7ee3831236367":[2,0,0,46,2],
-"namespaceamrex_1_1Reduce.html#afac1250d786b98bab8d8d2cf5c06411e":[2,0,0,46,10],
-"namespaceamrex_1_1Reduce_1_1detail.html":[2,0,0,46,0],
-"namespaceamrex_1_1Reduce_1_1detail.html#a0f0a988c3cb2a6264bff640de9655097":[2,0,0,46,0,7],
-"namespaceamrex_1_1Reduce_1_1detail.html#a10c95f9a9c676b9cf7116eac65065444":[2,0,0,46,0,3],
-"namespaceamrex_1_1Reduce_1_1detail.html#a22868fad1bcc762c58db7e786b599966":[2,0,0,46,0,8],
-"namespaceamrex_1_1Reduce_1_1detail.html#a2afdb99ecedce3adcd8c55f5151b8694":[2,0,0,46,0,5],
-"namespaceamrex_1_1Reduce_1_1detail.html#a4bc66d3b444df3c1c27641078ba6ff1c":[2,0,0,46,0,4],
-"namespaceamrex_1_1Reduce_1_1detail.html#a571f477028aa30d18b40b8f24f937e5a":[2,0,0,46,0,2],
-"namespaceamrex_1_1Reduce_1_1detail.html#a60408b435e35dde1e125e77939b9ebb5":[2,0,0,46,0,6],
-"namespaceamrex_1_1Reduce_1_1detail.html#aa873799c17be8869dc644fb5a3ae7149":[2,0,0,46,0,9]
+"namespaceamrex_1_1Reduce.html#afac1250d786b98bab8d8d2cf5c06411e":[2,0,0,46,10]
 };

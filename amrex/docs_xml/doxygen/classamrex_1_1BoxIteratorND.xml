@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classamrex_1_1BoxIteratorND" kind="class" language="C++" prot="public">
+    <compoundname>amrex::BoxIteratorND</compoundname>
+    <includes refid="AMReX__BoxIterator_8H" local="no">AMReX_BoxIterator.H</includes>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>dim</declname>
+        <defname>dim</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1BoxIteratorND_1a09aec00e5a59527be451c1dce4eca913" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt;dim&gt; amrex::BoxIteratorND&lt; dim &gt;::m_current</definition>
+        <argsstring></argsstring>
+        <name>m_current</name>
+        <qualifiedname>amrex::BoxIteratorND::m_current</qualifiedname>
+        <initializer>= <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt;dim&gt;::TheUnitVector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="181" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BoxIteratorND_1adf7be1f388b8c0d0a8ea6ed5fcb959f5" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt;dim&gt; amrex::BoxIteratorND&lt; dim &gt;::m_boxLo</definition>
+        <argsstring></argsstring>
+        <name>m_boxLo</name>
+        <qualifiedname>amrex::BoxIteratorND::m_boxLo</qualifiedname>
+        <initializer>= <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt;dim&gt;::TheUnitVector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="182" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BoxIteratorND_1a2089ada36b181eab06fc253188ba5192" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt;dim&gt; amrex::BoxIteratorND&lt; dim &gt;::m_boxHi</definition>
+        <argsstring></argsstring>
+        <name>m_boxHi</name>
+        <qualifiedname>amrex::BoxIteratorND::m_boxHi</qualifiedname>
+        <initializer>= <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt;dim&gt;::TheZeroVector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="183" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="183" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a1d9e1a9beb8ee25f51022681cdb8ce6f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BoxIteratorND&lt; dim &gt;::BoxIteratorND</definition>
+        <argsstring>() noexcept=default</argsstring>
+        <name>BoxIteratorND</name>
+        <qualifiedname>amrex::BoxIteratorND::BoxIteratorND</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default constructor. This constructs an invalid iterator. The user must call define before using. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="58" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1af575b2d6ec0d8da023cb2381602f656b" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BoxIteratorND&lt; dim &gt;::BoxIteratorND</definition>
+        <argsstring>(const BoxND&lt; dim &gt; &amp;a_bx) noexcept</argsstring>
+        <name>BoxIteratorND</name>
+        <qualifiedname>amrex::BoxIteratorND::BoxIteratorND</qualifiedname>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; dim &gt; &amp;</type>
+          <declname>a_bx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> and associates it with a Box. Arguments: a_bx (not modified) the Box to iterate over. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="65" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a2520e4ef281dd7dee943fd48feea4a20" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BoxIteratorND&lt; dim &gt;::setBox</definition>
+        <argsstring>(const BoxND&lt; dim &gt; &amp;a_bx) noexcept</argsstring>
+        <name>setBox</name>
+        <qualifiedname>amrex::BoxIteratorND::setBox</qualifiedname>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; dim &gt; &amp;</type>
+          <declname>a_bx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="69" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a45cfed571ea9a5e0320a0857b16248aa" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BoxIteratorND&lt; dim &gt;::define</definition>
+        <argsstring>(const BoxND&lt; dim &gt; &amp;a_bx) noexcept</argsstring>
+        <name>define</name>
+        <qualifiedname>amrex::BoxIteratorND::define</qualifiedname>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; dim &gt; &amp;</type>
+          <declname>a_bx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Associates a Box with this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref>. Arguments: a_bx (not modified) the Box to iterate over. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="78" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a1fd6574e2d3f342a6b5b2aed6ae73749" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref></type>
+        <definition>BoxIteratorND amrex::BoxIteratorND&lt; dim &gt;::begin</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>begin</name>
+        <qualifiedname>amrex::BoxIteratorND::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> to the first IntVect in its Box. This is the smallEnd vector of the Box. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="94" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1ae8d94f95356b36132a8fb1732d6f4394" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref></type>
+        <definition>BoxIteratorND amrex::BoxIteratorND&lt; dim &gt;::end</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>end</name>
+        <qualifiedname>amrex::BoxIteratorND::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a BoxIteratorND with its vector set to the end of the Box. Should only be used internally by a range-based for loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="103" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="103" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1af9c4b01f9103450b908fe2857d205b69" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BoxIteratorND&lt; dim &gt;::reset</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>reset</name>
+        <qualifiedname>amrex::BoxIteratorND::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> to the first IntVect in its Box. This is the smallEnd vector of the Box. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="117" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1aee8d00c3537a3665bf126eb147ec2701" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> &amp;</type>
+        <definition>BoxIteratorND &amp; amrex::BoxIteratorND&lt; dim &gt;::operator++</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>operator++</name>
+        <qualifiedname>amrex::BoxIteratorND::operator++</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Modifies this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> to set it to the next location in its Box. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="124" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a241e9643186cad2b5fa16ae8f157854e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BoxIteratorND&lt; dim &gt;::next</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>next</name>
+        <qualifiedname>amrex::BoxIteratorND::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Modifies this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> to set it to the next location in its Box. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="132" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="132" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a9dd414e94a7d191cf386da738427c3fa" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+        <definition>const IntVectND&lt; dim &gt; &amp; amrex::BoxIteratorND&lt; dim &gt;::operator()</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::BoxIteratorND::operator()</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the value of the InVect for the current location of this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="146" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="146" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1a23987b16a62e818ad05ffbd3b2cd4a12" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>IntVectND&lt; dim &gt; amrex::BoxIteratorND&lt; dim &gt;::operator*</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator*</name>
+        <qualifiedname>amrex::BoxIteratorND::operator*</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the value of the InVect for the current location of this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="155" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="155" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BoxIteratorND_1ab3c54393d98f2fcd3faadabcc3633efd" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::BoxIteratorND&lt; dim &gt;::ok</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ok</name>
+        <qualifiedname>amrex::BoxIteratorND::ok</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if this <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref>&apos;s location is within its Box. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="165" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="165" bodyend="167"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1BoxIteratorND_1a0c5612b4aebc9a74872f814730ae871e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const BoxIteratorND &amp;b1, const BoxIteratorND &amp;b2) noexcept</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>amrex::BoxIteratorND::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> &amp;</type>
+          <declname>b1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> &amp;</type>
+          <declname>b2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Special operator for range-based for loops. Only checks inequality of the last dimension of the current position for better performance. Should only be used internally by a range-based for loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="175" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="175" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>iterates through the IntVects of a Box </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> iterates through the IntVects of a box in the same order as a series of nested for loops with the innermost loop iterating over the first dimension.</para>
+<para>Typical usage using a range-based for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>(<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref><sp/>iv<sp/>:<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.iterator())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>operations<sp/>involving<sp/>iv</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>Using a traditional for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">BoxIterator<sp/>bit<sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(bit.begin();<sp/>bit.ok();<sp/>++bit)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref><sp/>iv<sp/>=<sp/>bit();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>operations<sp/>involving<sp/>iv</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>Note that while regular iteration of the range-based version is reasonably performant, neither version is compatible with omp parallel for or simd autovectorization. </para>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" line="50" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxIterator.H" bodystart="51" bodyend="184"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1BoxIteratorND_1a1fd6574e2d3f342a6b5b2aed6ae73749" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>begin</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a1d9e1a9beb8ee25f51022681cdb8ce6f" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>BoxIteratorND</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1af575b2d6ec0d8da023cb2381602f656b" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>BoxIteratorND</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a45cfed571ea9a5e0320a0857b16248aa" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>define</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1ae8d94f95356b36132a8fb1732d6f4394" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>end</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a2089ada36b181eab06fc253188ba5192" prot="private" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>m_boxHi</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1adf7be1f388b8c0d0a8ea6ed5fcb959f5" prot="private" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>m_boxLo</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a09aec00e5a59527be451c1dce4eca913" prot="private" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>m_current</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a241e9643186cad2b5fa16ae8f157854e" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>next</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1ab3c54393d98f2fcd3faadabcc3633efd" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>ok</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a0c5612b4aebc9a74872f814730ae871e" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>operator!=</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a9dd414e94a7d191cf386da738427c3fa" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a23987b16a62e818ad05ffbd3b2cd4a12" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>operator*</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1aee8d00c3537a3665bf126eb147ec2701" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>operator++</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1af9c4b01f9103450b908fe2857d205b69" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>reset</name></member>
+      <member refid="classamrex_1_1BoxIteratorND_1a2520e4ef281dd7dee943fd48feea4a20" prot="public" virt="non-virtual"><scope>amrex::BoxIteratorND</scope><name>setBox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

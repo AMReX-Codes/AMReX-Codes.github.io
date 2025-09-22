@@ -47,6 +47,7 @@ var classamrex_1_1BoxND =
     [ "intersects", "classamrex_1_1BoxND.html#ae9f20fec53f48c31f84e3a1972038456", null ],
     [ "isEmpty", "classamrex_1_1BoxND.html#a272f940786c20ed15ee72cd87590b0f7", null ],
     [ "isSquare", "classamrex_1_1BoxND.html#a467c77fc1613fb828bac7f3e12587b5c", null ],
+    [ "iterator", "classamrex_1_1BoxND.html#a74af9b5b4e59bd0fe14f57da88243584", null ],
     [ "ixType", "classamrex_1_1BoxND.html#a9eebfcd8ac4307bd4bced22c350e00eb", null ],
     [ "length", "classamrex_1_1BoxND.html#a62ffe8e69e7e23665dccb1a46912b35b", null ],
     [ "length", "classamrex_1_1BoxND.html#af34451808e59f931b2b30a525b9f1410", null ],

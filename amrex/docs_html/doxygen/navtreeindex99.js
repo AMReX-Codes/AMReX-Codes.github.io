@@ -1,5 +1,14 @@
 var NAVTREEINDEX99 =
 {
+"namespaceamrex_1_1Font.html#a0a6af2cfc3d3c8e71bd2d45f6e3362fa":[2,0,0,13,4],
+"namespaceamrex_1_1Font.html#a1e8bd2419b493e639ae861c50e93e50e":[2,0,0,13,2],
+"namespaceamrex_1_1Font.html#a5126c521e95014c65f2b536273860a28":[2,0,0,13,5],
+"namespaceamrex_1_1Font.html#ac22ce3b2fbbb155d2706d522d445fbf0":[2,0,0,13,0],
+"namespaceamrex_1_1Font.html#acbd1501cb1d6930cf314592a22e5319f":[2,0,0,13,3],
+"namespaceamrex_1_1Font.html#aec25a4181c246941fa29e862e4443b85":[2,0,0,13,1],
+"namespaceamrex_1_1Gpu.html":[2,0,0,15],
+"namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91":[2,0,0,15,80],
+"namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25":[2,0,0,15,123],
 "namespaceamrex_1_1Gpu.html#a0238e6657139393e8a65f7a3d160e128":[2,0,0,15,116],
 "namespaceamrex_1_1Gpu.html#a07a19c7e52caa0c033b7003a90d267a9":[2,0,0,15,57],
 "namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be":[2,0,0,15,117],
@@ -240,14 +249,5 @@ var NAVTREEINDEX99 =
 "namespaceamrex_1_1ParallelAllGather.html#a1ea9d029b1a0e862f2cf90ee0679ab65":[2,0,0,32,0],
 "namespaceamrex_1_1ParallelAllGather.html#aaeea1cff72579eabfe1778d22f0c5b35":[2,0,0,32,1],
 "namespaceamrex_1_1ParallelAllReduce.html":[2,0,0,33],
-"namespaceamrex_1_1ParallelAllReduce.html#a220eeb19edc1365466cc0acfec9ee3d7":[2,0,0,33,11],
-"namespaceamrex_1_1ParallelAllReduce.html#a22a60add9d9c9a8d562a9417d297f9bc":[2,0,0,33,5],
-"namespaceamrex_1_1ParallelAllReduce.html#a52cd6d76e8a30d6a2dd9ff1835f036dc":[2,0,0,33,2],
-"namespaceamrex_1_1ParallelAllReduce.html#a647e136efea8ad3d3e88887700c5f1af":[2,0,0,33,14],
-"namespaceamrex_1_1ParallelAllReduce.html#a76a17125c15adaa1757aa8acb110a56b":[2,0,0,33,7],
-"namespaceamrex_1_1ParallelAllReduce.html#a809a9a78d9cfb7c86a0dd7b72a212fd7":[2,0,0,33,0],
-"namespaceamrex_1_1ParallelAllReduce.html#a82726330e66e765f09dbc81f10f812ec":[2,0,0,33,6],
-"namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877":[2,0,0,33,12],
-"namespaceamrex_1_1ParallelAllReduce.html#a93a9a9427252098f6da83a7116c4219d":[2,0,0,33,13],
-"namespaceamrex_1_1ParallelAllReduce.html#a9a24ed2b1803fba71b1ab93b44db7a98":[2,0,0,33,9]
+"namespaceamrex_1_1ParallelAllReduce.html#a220eeb19edc1365466cc0acfec9ee3d7":[2,0,0,33,11]
 };

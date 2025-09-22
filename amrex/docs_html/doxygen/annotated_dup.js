@@ -336,7 +336,7 @@ var annotated_dup =
       [ "BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
       [ "BoxIndexerND", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
       [ "BoxIndexerND< 1 >", "structamrex_1_1BoxIndexerND_3_011_01_4.html", "structamrex_1_1BoxIndexerND_3_011_01_4" ],
-      [ "BoxIterator", "classamrex_1_1BoxIterator.html", "classamrex_1_1BoxIterator" ],
+      [ "BoxIteratorND", "classamrex_1_1BoxIteratorND.html", "classamrex_1_1BoxIteratorND" ],
       [ "BoxList", "classamrex_1_1BoxList.html", "classamrex_1_1BoxList" ],
       [ "BoxND", "classamrex_1_1BoxND.html", "classamrex_1_1BoxND" ],
       [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],

@@ -53,7 +53,7 @@ var searchData=
   ['boxif_50',['BoxIF',['../classamrex_1_1EB2_1_1BoxIF.html',1,'amrex::EB2']]],
   ['boxindexernd_51',['BoxIndexerND',['../structamrex_1_1BoxIndexerND.html',1,'amrex']]],
   ['boxindexernd_3c_201_20_3e_52',['BoxIndexerND&lt; 1 &gt;',['../structamrex_1_1BoxIndexerND_3_011_01_4.html',1,'amrex']]],
-  ['boxiterator_53',['BoxIterator',['../classamrex_1_1BoxIterator.html',1,'amrex']]],
+  ['boxiteratornd_53',['BoxIteratorND',['../classamrex_1_1BoxIteratorND.html',1,'amrex']]],
   ['boxlist_54',['BoxList',['../classamrex_1_1BoxList.html',1,'amrex']]],
   ['boxnd_55',['BoxND',['../classamrex_1_1BoxND.html',1,'amrex']]],
   ['boxnd_3c_203_20_3e_56',['BoxND&lt; 3 &gt;',['../classamrex_1_1BoxND.html',1,'amrex']]],
