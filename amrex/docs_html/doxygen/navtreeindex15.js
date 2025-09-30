@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"AMReX__Machine_8cpp.html#a578c9b214c4e8dfa2f753181f21d5720":[4,0,0,2,165,2],
+"AMReX__Machine_8cpp.html#a9502e811fea27e3d1e3af407834b04b1":[4,0,0,2,165,0],
 "AMReX__MakeParticle_8H.html":[4,0,0,8,3],
 "AMReX__MakeParticle_8H_source.html":[4,0,0,8,3],
 "AMReX__MakeType_8H.html":[4,0,0,2,167],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "AMReX__NVector__MultiFab_8H.html":[4,0,0,5,3,1],
 "AMReX__NVector__MultiFab_8H.html#a172d3aca9af3d26ebab984b9e83867e4":[4,0,0,5,3,1,10],
 "AMReX__NVector__MultiFab_8H.html#a2693737b0c6d2fb672f908a2071db447":[4,0,0,5,3,1,27],
-"AMReX__NVector__MultiFab_8H.html#a274b6694786c359f2ce4126500540c5b":[4,0,0,5,3,1,31],
-"AMReX__NVector__MultiFab_8H.html#a2ae8a56c86fee6f45dd629d97deb6df2":[4,0,0,5,3,1,9],
-"AMReX__NVector__MultiFab_8H.html#a30ec9cd2f1a76af33a703fcd09c40943":[4,0,0,5,3,1,25]
+"AMReX__NVector__MultiFab_8H.html#a274b6694786c359f2ce4126500540c5b":[4,0,0,5,3,1,31]
 };

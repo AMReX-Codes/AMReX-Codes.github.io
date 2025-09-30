@@ -3068,6 +3068,8 @@ var namespaceamrex =
     [ "transformParticles", "namespaceamrex.html#a6f4df8f3df0bb529d0f348e93afdb949", null ],
     [ "transformParticles", "namespaceamrex.html#a5926a5d20c4f511675c02ec18cc7c87a", null ],
     [ "transformParticles", "namespaceamrex.html#a6c20549dd945261df4167a72c1c4dacb", null ],
+    [ "transposeCtoF", "namespaceamrex.html#a66180cb7652c231d66901a5ff7dcb804", null ],
+    [ "transposeCtoF", "namespaceamrex.html#a145b9fc071ef1dcce318e0652c226e02", null ],
     [ "tridiagonal_solve", "namespaceamrex.html#a63d04ae23dbdf2dca8ffcf688ff8058e", null ],
     [ "tridiagonal_solve", "namespaceamrex.html#af22ee7ef618f1af46c92ad6e759715b0", null ],
     [ "trim", "namespaceamrex.html#a3171bdd61dc2e905052d3396dcc93970", null ],

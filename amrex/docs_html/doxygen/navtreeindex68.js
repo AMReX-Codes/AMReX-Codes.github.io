@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"classamrex_1_1MLNodeTensorLaplacian.html#ac894d59c3a515130711a775b5fd73fc7":[2,0,0,401,0],
+"classamrex_1_1MLNodeTensorLaplacian.html#ad850b403691ecac17689a7408af245b6":[2,0,0,401,5],
 "classamrex_1_1MLNodeTensorLaplacian.html#ad850b403691ecac17689a7408af245b6":[3,0,0,367,5],
 "classamrex_1_1MLNodeTensorLaplacian.html#ad8c26ff67ae05f0dcdf8b886d856209a":[2,0,0,401,1],
 "classamrex_1_1MLNodeTensorLaplacian.html#ad8c26ff67ae05f0dcdf8b886d856209a":[3,0,0,367,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX68 =
 "classamrex_1_1MemProfiler.html#a68cb3cd35ae7cc4bc40b4f9cfd44d016":[2,0,0,368,9],
 "classamrex_1_1MemProfiler.html#a6dd906af9d999ab3e04b156b38605bbf":[2,0,0,368,16],
 "classamrex_1_1MemProfiler.html#a6dd906af9d999ab3e04b156b38605bbf":[3,0,0,334,16],
-"classamrex_1_1MemProfiler.html#a73169e8989fdc455491bad2002a15403":[2,0,0,368,14],
-"classamrex_1_1MemProfiler.html#a73169e8989fdc455491bad2002a15403":[3,0,0,334,14],
-"classamrex_1_1MemProfiler.html#a7f665368612f734b0bd1f15aa71e517a":[3,0,0,334,4]
+"classamrex_1_1MemProfiler.html#a73169e8989fdc455491bad2002a15403":[2,0,0,368,14]
 };
