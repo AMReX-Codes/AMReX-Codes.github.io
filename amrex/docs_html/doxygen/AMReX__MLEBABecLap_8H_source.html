@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBABecLap_8H_source.html','')
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    [[nodiscard]] std::unique_ptr&lt;Hypre&gt; <a class="code hl_function" href="namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d">makeHypre</a> (<a class="code hl_enumeration" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">Hypre::Interface</a> hypre_interface) <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#ifdef AMREX_USE_PETSC</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#if defined(AMREX_USE_PETSC) &amp;&amp; (AMREX_SPACEDIM &gt; 1)</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    [[nodiscard]] std::unique_ptr&lt;PETScABecLap&gt; makePETSc () <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>

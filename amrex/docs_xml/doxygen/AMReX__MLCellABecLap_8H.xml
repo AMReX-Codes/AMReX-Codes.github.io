@@ -2888,7 +2888,7 @@
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::unique_ptr&lt;Hypre&gt;<sp/><ref refid="namespaceamrex_1af5a050719637ed453c73af4d4ca48c8d" kindref="member">makeHypre</ref><sp/>(<ref refid="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13f" kindref="member">Hypre::Interface</ref><sp/>hypre_interface)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_PETSC)<sp/>&amp;&amp;<sp/>(AMREX_SPACEDIM<sp/>&gt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::unique_ptr&lt;PETScABecLap&gt;<sp/>makePETSc<sp/>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
@@ -3537,7 +3537,7 @@
 <codeline lineno="726"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="728"><highlight class="normal"></highlight></codeline>
-<codeline lineno="729"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_PETSC)<sp/>&amp;&amp;<sp/>(AMREX_SPACEDIM<sp/>&gt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="730"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
 <codeline lineno="731"><highlight class="normal">std::unique_ptr&lt;PETScABecLap&gt;</highlight></codeline>
 <codeline lineno="732"><highlight class="normal">MLCellABecLapT&lt;MF&gt;::makePETSc<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>

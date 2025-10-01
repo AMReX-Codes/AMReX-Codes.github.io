@@ -1182,7 +1182,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>        hypre_node_solver.reset();</div>
 <div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span> </div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span><span class="preprocessor">#ifdef AMREX_USE_PETSC</span></div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span><span class="preprocessor">#if defined(AMREX_USE_PETSC) &amp;&amp; (AMREX_SPACEDIM &gt; 1)</span></div>
 <div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>        petsc_solver.reset();</div>
 <div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>        petsc_bndry.reset();</div>
 <div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span><span class="preprocessor">#endif</span></div>
