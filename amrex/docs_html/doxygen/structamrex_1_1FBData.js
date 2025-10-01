@@ -1,5 +1,6 @@
 var structamrex_1_1FBData =
 [
+    [ "deterministic", "structamrex_1_1FBData.html#a2e1499401a9a8ed6c22e9ff054f8d529", null ],
     [ "fb", "structamrex_1_1FBData.html#a12405182d3038f333d621aaf7ba0de9f", null ],
     [ "ncomp", "structamrex_1_1FBData.html#ad2ab165dff9bdbdedaf65405a2bee07a", null ],
     [ "recv_data", "structamrex_1_1FBData.html#a56b9327ba0b96235d8296bb1b1716872", null ],

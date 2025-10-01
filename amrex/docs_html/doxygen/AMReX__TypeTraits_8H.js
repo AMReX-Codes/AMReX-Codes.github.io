@@ -13,6 +13,8 @@ var AMReX__TypeTraits_8H =
     [ "amrex::HasAtomicAdd< unsigned long long >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html", null ],
     [ "amrex::HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],
     [ "amrex::HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
+    [ "amrex::IsAddAssignable< T, Enable >", "structamrex_1_1IsAddAssignable.html", null ],
+    [ "amrex::IsAddAssignable< T, std::void_t< decltype(std::declval< T & >()+=std::declval< T >())> >", "structamrex_1_1IsAddAssignable_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_7db52e59378635f71f087c923eca3035.html", null ],
     [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ],
     [ "amrex::IsParticleIterator< T >", "structamrex_1_1IsParticleIterator.html", null ],
     [ "amrex::IsParticleContainer< T >", "structamrex_1_1IsParticleContainer.html", null ],

@@ -5,6 +5,7 @@ var AMReX__FBI_8H =
     [ "detail::CellStore< T0, T1 >", "structdetail_1_1CellStore.html", "structdetail_1_1CellStore" ],
     [ "detail::CellAdd< T0, T1 >", "structdetail_1_1CellAdd.html", "structdetail_1_1CellAdd" ],
     [ "detail::CellAtomicAdd< T0, T1 >", "structdetail_1_1CellAtomicAdd.html", "structdetail_1_1CellAtomicAdd" ],
+    [ "deterministic_fab_to_fab", "AMReX__FBI_8H.html#a2d4b6eaddecafa79f6bbc48384123a50", null ],
     [ "fab_to_fab", "AMReX__FBI_8H.html#a6fd0b0eaa86bb8985f5471f13b76ce44", null ],
     [ "fab_to_fab", "AMReX__FBI_8H.html#a64fb439cf906e12eddb15e737070a293", null ],
     [ "fab_to_fab_atomic_add", "AMReX__FBI_8H.html#ab1edc85caabaea9ac0a3b1e5cf851f17", null ],

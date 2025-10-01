@@ -8,6 +8,7 @@ var AMReX__IntVect_8H =
     [ "coarsen", "AMReX__IntVect_8H.html#af2723b915f123a3f32cd897cf833bf69", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#a17a6d2c86ceb1c67c5d2c5cbb307341e", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#ae9367398c2b10ca46766342351728ac0", null ],
+    [ "coarsen", "AMReX__IntVect_8H.html#ab9479d7642672db1aaf6d34cb6a65e33", null ],
     [ "coarsen", "AMReX__IntVect_8H.html#a230af13573521ea69547e437b8c1f1db", null ],
     [ "diagShift", "AMReX__IntVect_8H.html#ab87918cb61bda004ec466cbe8d329252", null ],
     [ "elemwiseMax", "AMReX__IntVect_8H.html#ab0bcad1359af90f2e0d38a3051eb94b4", null ],

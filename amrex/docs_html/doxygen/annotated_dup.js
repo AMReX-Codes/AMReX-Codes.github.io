@@ -538,6 +538,8 @@ var annotated_dup =
       [ "IParserExeSUB_VP", "structamrex_1_1IParserExeSUB__VP.html", "structamrex_1_1IParserExeSUB__VP" ],
       [ "IParserExeSymbol", "structamrex_1_1IParserExeSymbol.html", "structamrex_1_1IParserExeSymbol" ],
       [ "is_soa_particle", "structamrex_1_1is__soa__particle.html", null ],
+      [ "IsAddAssignable", "structamrex_1_1IsAddAssignable.html", null ],
+      [ "IsAddAssignable< T, std::void_t< decltype(std::declval< T & >()+=std::declval< T >())> >", "structamrex_1_1IsAddAssignable_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_7db52e59378635f71f087c923eca3035.html", null ],
       [ "IsAlgVector", "structamrex_1_1IsAlgVector.html", null ],
       [ "IsAlgVector< V, std::enable_if_t< std::is_same_v< AlgVector< typename V::value_type, typename V::allocator_type >, V > > >", "structamrex_1_1IsAlgVector_3_01V_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01AlgVector_b40b2816d789aedc6f50e789de689e7c.html", null ],
       [ "IsArenaAllocator", "structamrex_1_1IsArenaAllocator.html", null ],

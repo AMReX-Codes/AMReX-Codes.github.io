@@ -88,7 +88,7 @@ var searchData=
   ['noutfilesprepost_85',['nOutFilesPrePost',['../classamrex_1_1ParticleContainer__impl.html#a1f6eee153647b98b534ef908e86ae03f',1,'amrex::ParticleContainer_impl']]],
   ['nparticlesatlevelprepost_86',['nParticlesAtLevelPrePost',['../classamrex_1_1ParticleContainer__impl.html#a0a0a8965a9936565a35f699f67df9554',1,'amrex::ParticleContainer_impl']]],
   ['nparticlesprepost_87',['nparticlesPrePost',['../classamrex_1_1ParticleContainer__impl.html#a9579f1b170547de35dcb4a0b4d84d0c0',1,'amrex::ParticleContainer_impl']]],
-  ['nprocs_88',['nprocs',['../classamrex_1_1NFilesIter.html#a78880a4ba0c24b3fe3ee88bc7a10e71b',1,'amrex::NFilesIter::nProcs'],['../structamrex_1_1FFT_1_1Info.html#ad5f4264ae4f5dad78b49e35d187156c7',1,'amrex::FFT::Info::nprocs']]],
+  ['nprocs_88',['nprocs',['../structamrex_1_1FFT_1_1Info.html#ad5f4264ae4f5dad78b49e35d187156c7',1,'amrex::FFT::Info::nprocs'],['../classamrex_1_1NFilesIter.html#a78880a4ba0c24b3fe3ee88bc7a10e71b',1,'amrex::NFilesIter::nProcs']]],
   ['npts_89',['npts',['../structamrex_1_1BoxIndexerND_3_011_01_4.html#a5bc70c52fae0fe8f54d3acd2b1338808',1,'amrex::BoxIndexerND&lt; 1 &gt;::npts'],['../structamrex_1_1BoxIndexerND.html#aebcf0e258d72df8bb95c67d428de6127',1,'amrex::BoxIndexerND::npts']]],
   ['nreal_90',['nreal',['../structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7',1,'amrex::Particle::NReal'],['../structamrex_1_1SoAParticleBase.html#ac17dffaf26b21aaec1ca753ac781f04b',1,'amrex::SoAParticleBase::NReal']]],
   ['nregular_91',['nregular',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html#ae58c0b7189a097d963bb36dfff3a88f6',1,'amrex::EBCellFlagFab::NumCells']]],

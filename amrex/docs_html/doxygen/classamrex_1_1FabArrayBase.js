@@ -78,7 +78,7 @@ var classamrex_1_1FabArrayBase =
     [ "getAllocSingleChunk", "classamrex_1_1FabArrayBase.html#a26c57d9e401fcc56f720c50f5bfdeb06", null ],
     [ "getBDKey", "classamrex_1_1FabArrayBase.html#aa0cb5039380dc0545d40ac5ac6589943", null ],
     [ "getCPC", "classamrex_1_1FabArrayBase.html#a7f25519392700e82648562d6bca4c586", null ],
-    [ "getFB", "classamrex_1_1FabArrayBase.html#a32cfe5e79d95d32ccfd29740a6e6806b", null ],
+    [ "getFB", "classamrex_1_1FabArrayBase.html#a57374fb88afd9bf88809afdee11d9a72", null ],
     [ "getNextCommMetaDataId", "classamrex_1_1FabArrayBase.html#ae20b077acadfa00ea36c0209f20ed61d", null ],
     [ "getParForInfo", "classamrex_1_1FabArrayBase.html#a872d7172ab37377ea10097fa1a8c963a", null ],
     [ "getPolarB", "classamrex_1_1FabArrayBase.html#afb5e5edb04762e07920b354fa202da22", null ],
