@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SUNDIALS and Time Integrators &mdash; amrex 25.10-dev documentation</title>
+  <title>SUNDIALS and Time Integrators &mdash; amrex 25.11-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
@@ -14,9 +14,10 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=45af6d02"></script>
+      <script src="_static/documentation_options.js?v=b8df5244"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -90,21 +91,22 @@
              
   <section id="sundials-and-time-integrators">
 <span id="tutorials-sundials"></span><h1>SUNDIALS and Time Integrators<a class="headerlink" href="#sundials-and-time-integrators" title="Link to this heading"></a></h1>
-<p>This example code shows how to use the AMReX TimeIntegrator class
-with SUNDIALS backend for integration. It also include two example
-of AMReX native integrators, Forward Euler, and Explicit Runge Kutta.
-Each integration type can be chosen by selecting the corresponding
-inputs file:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">inputs_forward_euler</span></code> – Native AMReX Forward Euler integrator</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">inputs_rk3</span></code> – Native AMReX Explicit Runge Kutta</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">inputs_sundials_erk</span></code> – SUNDIALS backend</p></li>
-</ul>
-</div></blockquote>
-<p>Both Runge Kutta and SUNDIALS have additional options which can
-be set by modifying the inputs file. Please see each respective inputs
-file or <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/TimeIntegration_Chapter.html#">AMReX User Guide:Time Integration</a> for more details.</p>
+<p>These example codes demonstrate how to use the AMReX TimeIntegrator class
+with SUNDIALS backend for integration.</p>
+<p>The first example code at <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/SUNDIALS/Single-Rate</span></code>
+solves the heat equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = \nabla^2\phi.\]</div>
+<p>The inputs file contains a template for single process time integration strategies.</p>
+<p>The second example code at <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/SUNDIALS/Reaction-Diffusion</span></code>
+solves the reaction-diffusion equation, where <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(D\)</span> are
+user-supplied reaction and diffusion coefficients:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = D \nabla^2\phi - R \phi.\]</div>
+<p>The inputs file contains a template for MRI approaches, where the diffusion process
+can be treated as a “fast” partition relative to the reaction process.
+Please see each respective inputs file or
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/TimeIntegration_Chapter.html#">AMReX User Guide:Time Integration</a> for more details.</p>
 </section>
 
 
