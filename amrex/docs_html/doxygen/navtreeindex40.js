@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classamrex_1_1EB2_1_1GFab.html#a36a9d31d19b7bd740a6cf31ea76a60bc":[3,0,0,4,14,6],
 "classamrex_1_1EB2_1_1GFab.html#a7132c8605772de2e2e9f02eff57cb08b":[2,0,0,7,18,4],
 "classamrex_1_1EB2_1_1GFab.html#a7132c8605772de2e2e9f02eff57cb08b":[3,0,0,4,14,4],
 "classamrex_1_1EB2_1_1GFab.html#a77e77da87b9d4f5b1b3dae27cc4c543c":[2,0,0,7,18,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classamrex_1_1EB2_1_1IntersectionIF.html#ac953fe2cb4312628b6ae8dea7c7fd74d":[2,0,0,7,24,0],
 "classamrex_1_1EB2_1_1LatheIF.html":[3,0,0,4,34],
 "classamrex_1_1EB2_1_1LatheIF.html":[2,0,0,7,38],
-"classamrex_1_1EB2_1_1LatheIF.html#a1466ff0ebcf2550a7708fc97ad00038d":[2,0,0,7,38,0],
-"classamrex_1_1EB2_1_1LatheIF.html#a1466ff0ebcf2550a7708fc97ad00038d":[3,0,0,4,34,0]
+"classamrex_1_1EB2_1_1LatheIF.html#a1466ff0ebcf2550a7708fc97ad00038d":[2,0,0,7,38,0]
 };
