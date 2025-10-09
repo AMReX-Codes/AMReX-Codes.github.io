@@ -13,49 +13,33 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Buffer_1aeec4be8fd894735d9acaa7de8c62d63a" prot="private" static="no" mutable="no">
-        <type>std::size_t</type>
-        <definition>std::size_t amrex::Gpu::Buffer&lt; T, &gt;::m_size</definition>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Buffer_1a46a07020c127909f75b18f1964d752b1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">DeviceVector</ref>&lt; T &gt;</type>
+        <definition>DeviceVector&lt;T&gt; amrex::Gpu::Buffer&lt; T, &gt;::d_vect</definition>
         <argsstring></argsstring>
-        <name>m_size</name>
-        <qualifiedname>amrex::Gpu::Buffer::m_size</qualifiedname>
+        <name>d_vect</name>
+        <qualifiedname>amrex::Gpu::Buffer::d_vect</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="98" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="98" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="163" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="163" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Buffer_1a6c0016dc5cea22d25e6d9946f88c40d2" prot="private" static="no" mutable="no">
-        <type>T *</type>
-        <definition>T* amrex::Gpu::Buffer&lt; T, &gt;::d_data</definition>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Buffer_1a8fb05e0773a44936080b5083c4a5dc65" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">PinnedVector</ref>&lt; T &gt;</type>
+        <definition>PinnedVector&lt;T&gt; amrex::Gpu::Buffer&lt; T, &gt;::h_vect</definition>
         <argsstring></argsstring>
-        <name>d_data</name>
-        <qualifiedname>amrex::Gpu::Buffer::d_data</qualifiedname>
-        <initializer>= nullptr</initializer>
+        <name>h_vect</name>
+        <qualifiedname>amrex::Gpu::Buffer::h_vect</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="99" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="99" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Buffer_1af613bc8ff56b5c8e598e90cd8c61f6b0" prot="private" static="no" mutable="no">
-        <type>T *</type>
-        <definition>T* amrex::Gpu::Buffer&lt; T, &gt;::h_data</definition>
-        <argsstring></argsstring>
-        <name>h_data</name>
-        <qualifiedname>amrex::Gpu::Buffer::h_data</qualifiedname>
-        <initializer>= nullptr</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="100" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="100" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="164" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="164" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -75,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="20" bodyend="37"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="21" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="21" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a77b4ab537b9786fb353beb7dc77a0620" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -97,30 +81,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="39" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="39" bodyend="56"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="30" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="30" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a3388e4bd09fa27a3a03274acfa8be487" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>amrex::Gpu::Buffer&lt; T, &gt;::~Buffer</definition>
-        <argsstring>()</argsstring>
-        <name>~Buffer</name>
-        <qualifiedname>amrex::Gpu::Buffer::~Buffer</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="58" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="58" bodyend="58"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a4a67356e6f7cf6772d47b81ec7b91e60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1ae9664de2a6df4eda96d2281ba0f2e1f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::Gpu::Buffer&lt; T, &gt;::Buffer</definition>
-        <argsstring>(Buffer const &amp;)=delete</argsstring>
+        <argsstring>(const std::size_t n)</argsstring>
         <name>Buffer</name>
         <qualifiedname>amrex::Gpu::Buffer::Buffer</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">Buffer</ref> const &amp;</type>
+          <type>const std::size_t</type>
+          <declname>n</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -128,58 +99,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="60" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="39" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="39" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a8da30f072b1f36168523d0db2e1f8330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1aefdebad606513094532022f6d91fc330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::Gpu::Buffer&lt; T, &gt;::Buffer</definition>
-        <argsstring>(Buffer &amp;&amp;)=delete</argsstring>
+        <argsstring>()=default</argsstring>
         <name>Buffer</name>
         <qualifiedname>amrex::Gpu::Buffer::Buffer</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">Buffer</ref> &amp;&amp;</type>
-        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="61" column="5"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a08731a4a086f5a19ce8b0303d73b38f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::operator=</definition>
-        <argsstring>(Buffer const &amp;)=delete</argsstring>
-        <name>operator=</name>
-        <qualifiedname>amrex::Gpu::Buffer::operator=</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">Buffer</ref> const &amp;</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="62" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1abca1f758989aa579fa68900a014619fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::operator=</definition>
-        <argsstring>(Buffer &amp;&amp;)=delete</argsstring>
-        <name>operator=</name>
-        <qualifiedname>amrex::Gpu::Buffer::operator=</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">Buffer</ref> &amp;&amp;</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="63" column="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="43" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a2a802687649d1ba35ba51969252f00f0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T const *</type>
@@ -193,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="65" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="65" bodyend="65"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="45" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="45" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a55c42a21af9dc3a0890cc5ce3d6cbb61" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T *</type>
@@ -207,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="66" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="66" bodyend="66"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="48" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="48" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a4e3bf3e1ab489768d77b3b121c835368" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T const *</type>
@@ -221,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="68" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="68" bodyend="68"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="52" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="52" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1afe6a9fbe215652160ab263fc45b2b8bd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T *</type>
@@ -235,7 +169,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="69" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="69" bodyend="69"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="53" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a7c447cc27c0f48f8625f07562072da37" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; amrex::Gpu::Buffer&lt; T, &gt;::operator[]</definition>
+        <argsstring>(const std::size_t i) noexcept</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>amrex::Gpu::Buffer::operator[]</qualifiedname>
+        <param>
+          <type>const std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Changes the value of an element of the host (CPU) vector. Does not update the device (GPU) vector, so <ref refid="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" kindref="member">copyToDeviceAsync()</ref> needs to be called before accessing the data on the GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">amrex::Gpu::Buffer&lt;int&gt;</ref><sp/>buf;</highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1ac59285902ac00703d262ba4121b949b0" kindref="member">resize</ref>(n);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;n;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>buf[i]<sp/>=<sp/>i*i;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" kindref="member">copyToDeviceAsync</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>=<sp/>buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1a2a802687649d1ba35ba51969252f00f0" kindref="member">data</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>ptr<sp/>inside<sp/>ParallelFor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>optional:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Change<sp/>values<sp/>of<sp/>ptr<sp/>inside<sp/>ParallelFor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1aa4d1688b85ebda041a2873ff48594232" kindref="member">copyToHost</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>buf.hostData()<sp/>or<sp/>buf[]<sp/>on<sp/>the<sp/>CPU</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="74" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a55a842c0de51fe71438a798bcb6c67ad" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; amrex::Gpu::Buffer&lt; T, &gt;::operator[]</definition>
+        <argsstring>(const std::size_t i) const noexcept</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>amrex::Gpu::Buffer::operator[]</qualifiedname>
+        <param>
+          <type>const std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="78" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="78" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1aca5acc3051c0c94e3668e5e5b5f17c17" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>std::size_t</type>
@@ -249,12 +233,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="71" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="71" bodyend="71"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="82" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="82" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a0c2925413d162cb501be4a6270a94754" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1aabedcd98bccbccc156a4345fc37dbb98" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::Buffer&lt; T, &gt;::empty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>empty</name>
+        <qualifiedname>amrex::Gpu::Buffer::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="84" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1ac59285902ac00703d262ba4121b949b0" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::resize</definition>
+        <argsstring>(const std::size_t n) noexcept</argsstring>
+        <name>resize</name>
+        <qualifiedname>amrex::Gpu::Buffer::resize</qualifiedname>
+        <param>
+          <type>const std::size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="86" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="86" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1adcef9d4e3b11d97d9d53fab5f44e917e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::Gpu::Buffer&lt; T, &gt;::clear</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() noexcept</argsstring>
         <name>clear</name>
         <qualifiedname>amrex::Gpu::Buffer::clear</qualifiedname>
         <briefdescription>
@@ -263,12 +279,90 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="73" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="73" bodyend="83"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="93" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="93" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1aeb429ae897559209dc15fcccbffed6a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a8e5586f1fadc97c2d419ba0754b2099c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::shrink_to_fit</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>shrink_to_fit</name>
+        <qualifiedname>amrex::Gpu::Buffer::shrink_to_fit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a36318c0fcffb655c81557cf28124aafb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::reserve</definition>
+        <argsstring>(const std::size_t n) noexcept</argsstring>
+        <name>reserve</name>
+        <qualifiedname>amrex::Gpu::Buffer::reserve</qualifiedname>
+        <param>
+          <type>const std::size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="103" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1a3f1c0e00575a3963efe2ab48688794c1" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Buffer&lt; T, &gt;::push_back</definition>
+        <argsstring>(const T &amp;value) noexcept</argsstring>
+        <name>push_back</name>
+        <qualifiedname>amrex::Gpu::Buffer::push_back</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Adds an element to the back of the host (CPU) vector. Does not update the device (GPU) vector, so <ref refid="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" kindref="member">copyToDeviceAsync()</ref> needs to be called before accessing the data on the GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Buffer" kindref="compound">amrex::Gpu::Buffer&lt;int&gt;</ref><sp/>buf;</highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1a36318c0fcffb655c81557cf28124aafb" kindref="member">reserve</ref>(n);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;n;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1a3f1c0e00575a3963efe2ab48688794c1" kindref="member">push_back</ref>(i*i);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" kindref="member">copyToDeviceAsync</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>ptr<sp/>=<sp/>buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1a2a802687649d1ba35ba51969252f00f0" kindref="member">data</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>ptr<sp/>inside<sp/>ParallelFor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>optional:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Change<sp/>values<sp/>of<sp/>ptr<sp/>inside<sp/>ParallelFor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">buf.<ref refid="classamrex_1_1Gpu_1_1Buffer_1aa4d1688b85ebda041a2873ff48594232" kindref="member">copyToHost</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Use<sp/>buf.hostData()<sp/>or<sp/>buf[]<sp/>on<sp/>the<sp/>CPU</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="129" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * amrex::Gpu::Buffer&lt; T, &gt;::copyToDeviceAsync</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>copyToDeviceAsync</name>
+        <qualifiedname>amrex::Gpu::Buffer::copyToDeviceAsync</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="133" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="133" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1aa4d1688b85ebda041a2873ff48594232" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T *</type>
         <definition>T * amrex::Gpu::Buffer&lt; T, &gt;::copyToHost</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() noexcept</argsstring>
         <name>copyToHost</name>
         <qualifiedname>amrex::Gpu::Buffer::copyToHost</qualifiedname>
         <briefdescription>
@@ -277,32 +371,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="85" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="85" bodyend="95"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="145" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="145" bodyend="155"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Buffer_1ab19291501765ae52f49d238b703fd7a8" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::Buffer&lt; T, &gt;::useDVect</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>useDVect</name>
+        <qualifiedname>amrex::Gpu::Buffer::useDVect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="159" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="159" bodyend="161"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="16" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="17" bodyend="101"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuBuffer.H" bodystart="18" bodyend="165"/>
     <listofallmembers>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1a3f55c45f384966160f9b9538d732593d" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1a77b4ab537b9786fb353beb7dc77a0620" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a4a67356e6f7cf6772d47b81ec7b91e60" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a8da30f072b1f36168523d0db2e1f8330" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a0c2925413d162cb501be4a6270a94754" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>clear</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1aeb429ae897559209dc15fcccbffed6a6" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>copyToHost</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a6c0016dc5cea22d25e6d9946f88c40d2" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>d_data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1ae9664de2a6df4eda96d2281ba0f2e1f4" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1aefdebad606513094532022f6d91fc330" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>Buffer</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1adcef9d4e3b11d97d9d53fab5f44e917e" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>clear</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1acc8283b2ebe85a8dc6666c6a3061508d" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>copyToDeviceAsync</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1aa4d1688b85ebda041a2873ff48594232" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>copyToHost</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a46a07020c127909f75b18f1964d752b1" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>d_vect</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1a2a802687649d1ba35ba51969252f00f0" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>data</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1a55c42a21af9dc3a0890cc5ce3d6cbb61" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>data</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1af613bc8ff56b5c8e598e90cd8c61f6b0" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>h_data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1aabedcd98bccbccc156a4345fc37dbb98" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>empty</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a8fb05e0773a44936080b5083c4a5dc65" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>h_vect</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1a4e3bf3e1ab489768d77b3b121c835368" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>hostData</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1afe6a9fbe215652160ab263fc45b2b8bd" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>hostData</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1aeec4be8fd894735d9acaa7de8c62d63a" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>m_size</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a08731a4a086f5a19ce8b0303d73b38f5" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1abca1f758989aa579fa68900a014619fe" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a7c447cc27c0f48f8625f07562072da37" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a55a842c0de51fe71438a798bcb6c67ad" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a3f1c0e00575a3963efe2ab48688794c1" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>push_back</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a36318c0fcffb655c81557cf28124aafb" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>reserve</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1ac59285902ac00703d262ba4121b949b0" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>resize</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1a8e5586f1fadc97c2d419ba0754b2099c" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>shrink_to_fit</name></member>
       <member refid="classamrex_1_1Gpu_1_1Buffer_1aca5acc3051c0c94e3668e5e5b5f17c17" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>size</name></member>
-      <member refid="classamrex_1_1Gpu_1_1Buffer_1a3388e4bd09fa27a3a03274acfa8be487" prot="public" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>~Buffer</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Buffer_1ab19291501765ae52f49d238b703fd7a8" prot="private" virt="non-virtual"><scope>amrex::Gpu::Buffer</scope><name>useDVect</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

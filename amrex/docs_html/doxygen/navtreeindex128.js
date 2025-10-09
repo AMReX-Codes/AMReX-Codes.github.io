@@ -1,5 +1,15 @@
 var NAVTREEINDEX128 =
 {
+"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a313ceedcd16a31e4c5f78f5269df80bb":[2,0,0,5,14,0],
+"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a313ceedcd16a31e4c5f78f5269df80bb":[3,0,0,3,14,0],
+"structamrex_1_1detail_1_1tuple__cat__result.html":[3,0,0,3,20],
+"structamrex_1_1detail_1_1tuple__cat__result.html":[2,0,0,5,20],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[2,0,0,5,21],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[3,0,0,3,21],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#a46c7e0785b108d253abb4b1ec6ea20ff":[3,0,0,3,21,0],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#a46c7e0785b108d253abb4b1ec6ea20ff":[2,0,0,5,21,0],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,5,22],
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,22],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#aef72b2d08d889341ad4644c15efa5bbd":[3,0,0,3,22,0],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#aef72b2d08d889341ad4644c15efa5bbd":[2,0,0,5,22,0],
 "structamrex_1_1detail_1_1unwrap.html":[2,0,0,5,26],
@@ -239,15 +249,5 @@ var NAVTREEINDEX128 =
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a099e7982fa40fadf696e38cc01ce2006":[2,0,16,2,40],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a099e7982fa40fadf696e38cc01ce2006":[3,0,7,2,40],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a12a8f6fb29747586cd5440ee529cc3ef":[3,0,7,2,22],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a12a8f6fb29747586cd5440ee529cc3ef":[2,0,16,2,22],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a16ad34a12a2206fcd6ac36e97c31a940":[2,0,16,2,5],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a16ad34a12a2206fcd6ac36e97c31a940":[3,0,7,2,5],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a19e712c0f68bfbb10372d83a8ba1122d":[3,0,7,2,11],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a19e712c0f68bfbb10372d83a8ba1122d":[2,0,16,2,11],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[3,0,7,2,34],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[3,0,7,2,33],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[3,0,7,2,32],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[3,0,7,2,31],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[2,0,16,2,34],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1c06cc2e0753eab7e75a6a50a401fefb":[2,0,16,2,33]
+"structamrex__parmparse__module_1_1amrex__parmparse.html#a12a8f6fb29747586cd5440ee529cc3ef":[2,0,16,2,22]
 };

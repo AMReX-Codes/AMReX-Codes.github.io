@@ -1,5 +1,15 @@
 var NAVTREEINDEX89 =
 {
+"interfaceamrex__mempool__module_1_1amrex__real__array__init.html":[2,0,12,4],
+"interfaceamrex__mempool__module_1_1amrex__real__array__init.html":[3,0,5,4],
+"interfaceamrex__mempool__module_1_1amrex__real__array__init.html#ae554aa5f1988218666af9ecf97875026":[2,0,12,4,0],
+"interfaceamrex__mempool__module_1_1amrex__real__array__init.html#ae554aa5f1988218666af9ecf97875026":[3,0,5,4,0],
+"interfaceamrex__mempool__module_1_1bl__allocate.html":[2,0,12,5],
+"interfaceamrex__mempool__module_1_1bl__allocate.html":[3,0,5,5],
+"interfaceamrex__mempool__module_1_1bl__allocate.html#a1b10764ffdbc27f785230c38110f515f":[2,0,12,5,11],
+"interfaceamrex__mempool__module_1_1bl__allocate.html#a1b10764ffdbc27f785230c38110f515f":[3,0,5,5,11],
+"interfaceamrex__mempool__module_1_1bl__allocate.html#a2d50549e4b4739326733c60cb1ceae67":[2,0,12,5,8],
+"interfaceamrex__mempool__module_1_1bl__allocate.html#a2d50549e4b4739326733c60cb1ceae67":[3,0,5,5,8],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a483da24e5876535560d6bde44de2d3cd":[2,0,12,5,12],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a483da24e5876535560d6bde44de2d3cd":[3,0,5,5,12],
 "interfaceamrex__mempool__module_1_1bl__allocate.html#a4f4a275401f9fab0feba1a172b517ec6":[2,0,12,5,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX89 =
 "namespaceamrex.html#a05f8f2e7a25233863ab81a91bc2ea220":[2,0,0,1627],
 "namespaceamrex.html#a064d90077e1d86d6ba81b5b546bb7438":[2,0,0,1927],
 "namespaceamrex.html#a06c7d8be23a5be388c18c150287b4560":[2,0,0,1800],
-"namespaceamrex.html#a06dd62adc2d175177f6daf327040e6c8":[2,0,0,2349],
-"namespaceamrex.html#a06efd28ba557e6a2227349018b12ab9d":[2,0,0,973],
-"namespaceamrex.html#a0701946897169892c662a898e6523224":[2,0,0,2106],
-"namespaceamrex.html#a0718da697f64bda3be2152538b70d4c5":[2,0,0,2457],
-"namespaceamrex.html#a072608d6bf753001563975d5a8fe4fbd":[2,0,0,2097],
-"namespaceamrex.html#a072fbbbbfef3a81a5397f7089e8168c1":[2,0,0,1722],
-"namespaceamrex.html#a07315aba6826805030c5f6fd847fc370":[2,0,0,2274],
-"namespaceamrex.html#a07499fc06f1137386e318ccccca0b5bc":[2,0,0,924],
-"namespaceamrex.html#a078658f433f21a921eaee99b9bb2423f":[2,0,0,917],
-"namespaceamrex.html#a07c05999fda899bbfc802ac73e64e8a3":[2,0,0,2509],
-"namespaceamrex.html#a08504c49c5cfc9f8c51abbe834877aba":[2,0,0,1015]
+"namespaceamrex.html#a06dd62adc2d175177f6daf327040e6c8":[2,0,0,2349]
 };

@@ -1,5 +1,15 @@
 var NAVTREEINDEX107 =
 {
+"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[2,0,0,102,3],
+"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[3,0,0,68,3],
+"structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49":[2,0,0,102,2],
+"structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49":[3,0,0,68,2],
+"structamrex_1_1BARef.html#a84abc9205427ea622295e2a73ae43983":[3,0,0,68,18],
+"structamrex_1_1BARef.html#a84abc9205427ea622295e2a73ae43983":[2,0,0,102,18],
+"structamrex_1_1BARef.html#a850d8df48213b59d82ab683351d2805e":[3,0,0,68,4],
+"structamrex_1_1BARef.html#a850d8df48213b59d82ab683351d2805e":[2,0,0,102,4],
+"structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f":[3,0,0,68,1],
+"structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f":[2,0,0,102,1],
 "structamrex_1_1BARef.html#a88374d21f3cf26914235a3136df641f7":[2,0,0,102,20],
 "structamrex_1_1BARef.html#a88374d21f3cf26914235a3136df641f7":[3,0,0,68,20],
 "structamrex_1_1BARef.html#a983668be1ab6a935c4bd6bdf22d5c8bb":[3,0,0,68,12],
@@ -239,15 +249,5 @@ var NAVTREEINDEX107 =
 "structamrex_1_1BinMapper.html#a0bdfe085f70a09645c9eddde11af73cc":[3,0,0,79,0],
 "structamrex_1_1BinMapper.html#a0bdfe085f70a09645c9eddde11af73cc":[2,0,0,113,0],
 "structamrex_1_1BinMapper.html#a0c3ffb962a03c3307030e52e384688ef":[3,0,0,79,5],
-"structamrex_1_1BinMapper.html#a0c3ffb962a03c3307030e52e384688ef":[2,0,0,113,5],
-"structamrex_1_1BinMapper.html#a1421ce8c5ba41da8fc45307701e2efac":[2,0,0,113,7],
-"structamrex_1_1BinMapper.html#a1421ce8c5ba41da8fc45307701e2efac":[3,0,0,79,7],
-"structamrex_1_1BinMapper.html#a32a3a6e1b23801796736f10c13fe0600":[2,0,0,113,2],
-"structamrex_1_1BinMapper.html#a32a3a6e1b23801796736f10c13fe0600":[3,0,0,79,2],
-"structamrex_1_1BinMapper.html#a64387b045d204383bf43d1daf728d4a2":[2,0,0,113,6],
-"structamrex_1_1BinMapper.html#a64387b045d204383bf43d1daf728d4a2":[3,0,0,79,6],
-"structamrex_1_1BinMapper.html#ac0b3fb9316619000f59eaf4b31cc0e30":[3,0,0,79,1],
-"structamrex_1_1BinMapper.html#ac0b3fb9316619000f59eaf4b31cc0e30":[2,0,0,113,1],
-"structamrex_1_1BinMapper.html#ae7a81a8ad4dc351e27b5cc5bea4faf3e":[2,0,0,113,3],
-"structamrex_1_1BinMapper.html#ae7a81a8ad4dc351e27b5cc5bea4faf3e":[3,0,0,79,3]
+"structamrex_1_1BinMapper.html#a0c3ffb962a03c3307030e52e384688ef":[2,0,0,113,5]
 };

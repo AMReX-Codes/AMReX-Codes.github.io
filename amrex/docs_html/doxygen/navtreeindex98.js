@@ -1,5 +1,15 @@
 var NAVTREEINDEX98 =
 {
+"namespaceamrex.html#af32b91948787281bd9c0c691f3f355dd":[2,0,0,2302],
+"namespaceamrex.html#af335937a7c7f6e30fb69365120d56062":[2,0,0,1271],
+"namespaceamrex.html#af33973994600415fe6caffbde704244e":[2,0,0,1189],
+"namespaceamrex.html#af35078e515133d4f3b9734d13ad54d22":[2,0,0,1866],
+"namespaceamrex.html#af37f380f72af598af4865070235664c2":[2,0,0,932],
+"namespaceamrex.html#af382239a16f86597c9c6e68ec73879b2":[2,0,0,1864],
+"namespaceamrex.html#af38b18c6e189237b8fb7c7d6076c5601":[2,0,0,1244],
+"namespaceamrex.html#af3c3186e1ed40653258d9ce5b6a6645d":[2,0,0,1360],
+"namespaceamrex.html#af3ee66042454b6246d2e887a5710435d":[2,0,0,1175],
+"namespaceamrex.html#af3fb9885c1f54f8b809657e2c03e83d5":[2,0,0,766],
 "namespaceamrex.html#af42436c4813e6fedd6dd7a5c73581b63":[2,0,0,2194],
 "namespaceamrex.html#af430d0620bbdb319aa9520b5e9a54423":[2,0,0,2215],
 "namespaceamrex.html#af4403352ed0655573e15f4001fd317e9":[2,0,0,2031],
@@ -239,15 +249,5 @@ var NAVTREEINDEX98 =
 "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70ae61120a0b13890f759569a04b035054a":[2,0,0,10,23,4],
 "namespaceamrex_1_1FFT.html#ab9840e2620314d60691e6438e5b8bde3":[2,0,0,10,29],
 "namespaceamrex_1_1FFT.html#aef4353cee9c5e67d665ae0ce48d26a16":[2,0,0,10,28],
-"namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81":[2,0,0,10,17],
-"namespaceamrex_1_1FFT_1_1detail.html":[2,0,0,10,0],
-"namespaceamrex_1_1FFT_1_1detail.html#a25881b5f0cdccef7ba2901436f1afbb4":[2,0,0,10,0,5],
-"namespaceamrex_1_1FFT_1_1detail.html#a258f882280d4e676b3762d374619601c":[2,0,0,10,0,2],
-"namespaceamrex_1_1FFT_1_1detail.html#a6b0c2b958fded09bf8458edbb27153ff":[2,0,0,10,0,6],
-"namespaceamrex_1_1FFT_1_1detail.html#a864c4b4a96065b1cf5959fe6fc1cfc54":[2,0,0,10,0,3],
-"namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c":[2,0,0,10,0,4],
-"namespaceamrex_1_1FFT_1_1detail.html#ae58a96a62f833329517b17fe27e8b803":[2,0,0,10,0,7],
-"namespaceamrex_1_1FFT_1_1fft__poisson__detail.html":[2,0,0,10,1],
-"namespaceamrex_1_1FGColor.html":[2,0,0,11],
-"namespaceamrex_1_1FGColor.html#a06499b8d0da3f3ab7bd99745820f6f33":[2,0,0,11,9]
+"namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81":[2,0,0,10,17]
 };

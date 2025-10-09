@@ -1,5 +1,15 @@
 var NAVTREEINDEX127 =
 {
+"structamrex_1_1algoim_1_1EBPlane.html#a3ae6123f45aee26c756d2105c8c903ab":[3,0,0,0,1,6],
+"structamrex_1_1algoim_1_1EBPlane.html#a3ae6123f45aee26c756d2105c8c903ab":[2,0,0,0,2,6],
+"structamrex_1_1algoim_1_1EBPlane.html#a6b0f93e5fb91576aa742ead76b287f28":[2,0,0,0,2,4],
+"structamrex_1_1algoim_1_1EBPlane.html#a6b0f93e5fb91576aa742ead76b287f28":[3,0,0,0,1,4],
+"structamrex_1_1algoim_1_1EBPlane.html#a99b33ff9062162a71e2f1533c76c3a3e":[2,0,0,0,2,0],
+"structamrex_1_1algoim_1_1EBPlane.html#a99b33ff9062162a71e2f1533c76c3a3e":[3,0,0,0,1,0],
+"structamrex_1_1algoim_1_1EBPlane.html#adc46c5c27ad7c283881c7443f212402e":[3,0,0,0,1,5],
+"structamrex_1_1algoim_1_1EBPlane.html#adc46c5c27ad7c283881c7443f212402e":[2,0,0,0,2,5],
+"structamrex_1_1algoim_1_1EBPlane.html#ae9c6ab23dcae359d1ef2a241be06bcd7":[2,0,0,0,2,2],
+"structamrex_1_1algoim_1_1EBPlane.html#ae9c6ab23dcae359d1ef2a241be06bcd7":[3,0,0,0,1,2],
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,2,7],
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[3,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[3,0,0,0,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX127 =
 "structamrex_1_1detail_1_1invoke__result.html":[2,0,0,5,13],
 "structamrex_1_1detail_1_1invoke__result.html":[3,0,0,3,13],
 "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[3,0,0,3,14],
-"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[2,0,0,5,14],
-"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a313ceedcd16a31e4c5f78f5269df80bb":[2,0,0,5,14,0],
-"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a313ceedcd16a31e4c5f78f5269df80bb":[3,0,0,3,14,0],
-"structamrex_1_1detail_1_1tuple__cat__result.html":[3,0,0,3,20],
-"structamrex_1_1detail_1_1tuple__cat__result.html":[2,0,0,5,20],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[2,0,0,5,21],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[3,0,0,3,21],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#a46c7e0785b108d253abb4b1ec6ea20ff":[3,0,0,3,21,0],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#a46c7e0785b108d253abb4b1ec6ea20ff":[2,0,0,5,21,0],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,5,22],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,22]
+"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[2,0,0,5,14]
 };

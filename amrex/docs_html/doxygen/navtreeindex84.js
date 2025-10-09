@@ -1,5 +1,15 @@
 var NAVTREEINDEX84 =
 {
+"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[3,0,0,519,13],
+"classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa":[3,0,0,519,1],
+"classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa":[2,0,0,553,1],
+"classamrex_1_1SundialsIntegrator.html#a07c7c9b9fd21fd9560151c2bfbfd7571":[2,0,0,553,14],
+"classamrex_1_1SundialsIntegrator.html#a07c7c9b9fd21fd9560151c2bfbfd7571":[3,0,0,519,14],
+"classamrex_1_1SundialsIntegrator.html#a0862a27d637da1ef2c30bb6b10e794fb":[3,0,0,519,5],
+"classamrex_1_1SundialsIntegrator.html#a0862a27d637da1ef2c30bb6b10e794fb":[2,0,0,553,5],
+"classamrex_1_1SundialsIntegrator.html#a087e94cde6334000eb049095f8aeb60f":[3,0,0,519,29],
+"classamrex_1_1SundialsIntegrator.html#a087e94cde6334000eb049095f8aeb60f":[2,0,0,553,29],
+"classamrex_1_1SundialsIntegrator.html#a0c1646fa8a69b59044dfa202fb6a2e9e":[2,0,0,553,42],
 "classamrex_1_1SundialsIntegrator.html#a0c1646fa8a69b59044dfa202fb6a2e9e":[3,0,0,519,42],
 "classamrex_1_1SundialsIntegrator.html#a0c61a5a223227b0242549533ea23ffda":[2,0,0,553,8],
 "classamrex_1_1SundialsIntegrator.html#a0c61a5a223227b0242549533ea23ffda":[3,0,0,519,8],
@@ -239,15 +249,5 @@ var NAVTREEINDEX84 =
 "classamrex_1_1TimeIntegrator.html#a241adc8cc400c943cb6999cccab66e47":[2,0,0,567,14],
 "classamrex_1_1TimeIntegrator.html#a2dcb9287cd56e0febfcdf00b3725aee7":[2,0,0,567,5],
 "classamrex_1_1TimeIntegrator.html#a2dcb9287cd56e0febfcdf00b3725aee7":[3,0,0,533,5],
-"classamrex_1_1TimeIntegrator.html#a35f3f508708be4b72388384a46b3b6a3":[3,0,0,533,10],
-"classamrex_1_1TimeIntegrator.html#a35f3f508708be4b72388384a46b3b6a3":[2,0,0,567,10],
-"classamrex_1_1TimeIntegrator.html#a3d73596da85ccd3dbc7b5046533dc3f2":[3,0,0,533,25],
-"classamrex_1_1TimeIntegrator.html#a3d73596da85ccd3dbc7b5046533dc3f2":[2,0,0,567,25],
-"classamrex_1_1TimeIntegrator.html#a4d0707cf54102788e27bbd70e3d4e6c0":[3,0,0,533,19],
-"classamrex_1_1TimeIntegrator.html#a4d0707cf54102788e27bbd70e3d4e6c0":[2,0,0,567,19],
-"classamrex_1_1TimeIntegrator.html#a5aec68476188bb41118352fe8c2c947e":[2,0,0,567,0],
-"classamrex_1_1TimeIntegrator.html#a5aec68476188bb41118352fe8c2c947e":[3,0,0,533,0],
-"classamrex_1_1TimeIntegrator.html#a63b4a8514fe939f9639442f7ff8d527b":[2,0,0,567,7],
-"classamrex_1_1TimeIntegrator.html#a63b4a8514fe939f9639442f7ff8d527b":[3,0,0,533,7],
-"classamrex_1_1TimeIntegrator.html#a6d0fb57fd367079315ef253fdf422ad1":[3,0,0,533,20]
+"classamrex_1_1TimeIntegrator.html#a35f3f508708be4b72388384a46b3b6a3":[3,0,0,533,10]
 };

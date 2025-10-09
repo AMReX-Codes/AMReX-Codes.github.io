@@ -1,5 +1,15 @@
 var NAVTREEINDEX118 =
 {
+"structamrex_1_1MemProfiler_1_1Bytes.html":[2,0,0,370,1],
+"structamrex_1_1MemProfiler_1_1Bytes.html":[3,0,0,336,1],
+"structamrex_1_1MemProfiler_1_1Bytes.html#ae97a8af2e85ff53fc98d90d294693657":[3,0,0,336,1,1],
+"structamrex_1_1MemProfiler_1_1Bytes.html#ae97a8af2e85ff53fc98d90d294693657":[2,0,0,370,1,1],
+"structamrex_1_1MemProfiler_1_1Bytes.html#af005129839d5b950c0e09b1e38a6a751":[3,0,0,336,1,0],
+"structamrex_1_1MemProfiler_1_1Bytes.html#af005129839d5b950c0e09b1e38a6a751":[2,0,0,370,1,0],
+"structamrex_1_1MemProfiler_1_1MemInfo.html":[3,0,0,336,2],
+"structamrex_1_1MemProfiler_1_1MemInfo.html":[2,0,0,370,2],
+"structamrex_1_1MemProfiler_1_1MemInfo.html#a821bd45f3af572df6c5dad7f24de66fc":[2,0,0,370,2,0],
+"structamrex_1_1MemProfiler_1_1MemInfo.html#a821bd45f3af572df6c5dad7f24de66fc":[3,0,0,336,2,0],
 "structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0":[3,0,0,336,2,1],
 "structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0":[2,0,0,370,2,1],
 "structamrex_1_1MemProfiler_1_1NBuildsInfo.html":[3,0,0,336,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX118 =
 "structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876":[2,0,0,29,2,0],
 "structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876":[3,0,0,11,1,0],
 "structamrex_1_1NonLocalBC_1_1CommData.html#a482a19ba37661846afa0f40688702f95":[3,0,0,11,1,7],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a482a19ba37661846afa0f40688702f95":[2,0,0,29,2,7],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a4e23f4023dc19cf04cce947add6a27a8":[3,0,0,11,1,5],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a4e23f4023dc19cf04cce947add6a27a8":[2,0,0,29,2,5],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a543e95dcf88e9bc9ec1a944364639037":[3,0,0,11,1,8],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a543e95dcf88e9bc9ec1a944364639037":[2,0,0,29,2,8],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a573a26d67508d26764a924cc21a9e755":[2,0,0,29,2,2],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a573a26d67508d26764a924cc21a9e755":[3,0,0,11,1,2],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a7043829d46fc0b8fe144d8f94a2d8580":[2,0,0,29,2,4],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a7043829d46fc0b8fe144d8f94a2d8580":[3,0,0,11,1,4],
-"structamrex_1_1NonLocalBC_1_1CommData.html#adacc0eb8f4427cd400d829a713149d17":[3,0,0,11,1,3],
-"structamrex_1_1NonLocalBC_1_1CommData.html#adacc0eb8f4427cd400d829a713149d17":[2,0,0,29,2,3]
+"structamrex_1_1NonLocalBC_1_1CommData.html#a482a19ba37661846afa0f40688702f95":[2,0,0,29,2,7]
 };
