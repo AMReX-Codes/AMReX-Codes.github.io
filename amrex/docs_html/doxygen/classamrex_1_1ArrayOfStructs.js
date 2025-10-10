@@ -33,6 +33,7 @@ var classamrex_1_1ArrayOfStructs =
     [ "operator[]", "classamrex_1_1ArrayOfStructs.html#a1e0e50dbc45c09a351a2a2d23fad747c", null ],
     [ "pop_back", "classamrex_1_1ArrayOfStructs.html#aa1831ea3b91c1a77740583f99542ee26", null ],
     [ "push_back", "classamrex_1_1ArrayOfStructs.html#a58e47ec80be71f10f50fe234408ed886", null ],
+    [ "reserve", "classamrex_1_1ArrayOfStructs.html#a1fc6537d715883c1a1f01f9580069b15", null ],
     [ "resize", "classamrex_1_1ArrayOfStructs.html#ac161821048b627db36b021dc2671ede0", null ],
     [ "setNumNeighbors", "classamrex_1_1ArrayOfStructs.html#a3b1f7c4d9324b6ce179d86299b1ba853", null ],
     [ "size", "classamrex_1_1ArrayOfStructs.html#af332a589a51f1028800331fe10fc9985", null ],

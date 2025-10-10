@@ -55,6 +55,7 @@ var structamrex_1_1ParticleTile =
     [ "push_back_real", "structamrex_1_1ParticleTile.html#a2ac59039f3803da57f27367c22c71c12", null ],
     [ "push_back_real", "structamrex_1_1ParticleTile.html#af54fdaaae348f3ef6c4f9ec72ed5d7aa", null ],
     [ "push_back_real", "structamrex_1_1ParticleTile.html#ad62dabd419e0030589fc00e5e1880f5a", null ],
+    [ "reserve", "structamrex_1_1ParticleTile.html#a41faa5891517110755a2937ba237c9ec", null ],
     [ "resize", "structamrex_1_1ParticleTile.html#aad932266bb874a93f00fc2920ff69548", null ],
     [ "setNumNeighbors", "structamrex_1_1ParticleTile.html#a3418dd871a28056a9d8aa3ba12a016f6", null ],
     [ "shrink_to_fit", "structamrex_1_1ParticleTile.html#a7ff65a82757f35dd00d2ce7435be5a71", null ],

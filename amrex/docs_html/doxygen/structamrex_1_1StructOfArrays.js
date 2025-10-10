@@ -31,6 +31,7 @@ var structamrex_1_1StructOfArrays =
     [ "numRealParticles", "structamrex_1_1StructOfArrays.html#ac6d3cee84ea6fbae0bf95bcd36c536fa", null ],
     [ "numTotalParticles", "structamrex_1_1StructOfArrays.html#a15e05a661b50a2637a764ccadfb23f53", null ],
     [ "realarray", "structamrex_1_1StructOfArrays.html#a86133f61aaa7ed7e960392622810ee01", null ],
+    [ "reserve", "structamrex_1_1StructOfArrays.html#ad03c5ed2c6815c8329260c4627a02984", null ],
     [ "resize", "structamrex_1_1StructOfArrays.html#a4c13115f149d9491c7b58e8086d6d4b5", null ],
     [ "setNumNeighbors", "structamrex_1_1StructOfArrays.html#a06cb98e187a840616cfd0c681f596ab2", null ],
     [ "size", "structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725", null ],
