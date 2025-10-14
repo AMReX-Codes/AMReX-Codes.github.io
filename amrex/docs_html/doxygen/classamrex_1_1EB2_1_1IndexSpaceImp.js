@@ -2,6 +2,7 @@ var classamrex_1_1EB2_1_1IndexSpaceImp =
 [
     [ "F", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a025225cea3416a0f7b91e3c5e8424f59", null ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ad6b841229e1fb87dc97f4ee2845ec152", null ],
+    [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ac2c7e2d7151b706ead3a23fe1b739b8a", null ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a6797ef86d23bba92fa8a6479d8bfac51", null ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ac2dc5fdef32fb9bbd2843e6b2d91ac97", null ],
     [ "~IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a558c69009ebc8f80f380a6578604e27c", null ],

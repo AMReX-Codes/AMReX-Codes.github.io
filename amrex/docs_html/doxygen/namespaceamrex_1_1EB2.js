@@ -83,6 +83,7 @@ var namespaceamrex_1_1EB2 =
     [ "amrex_eb2_build_types", "namespaceamrex_1_1EB2.html#a202c73f9ebfcb787c75aad17804f9490", null ],
     [ "BrentRootFinder", "namespaceamrex_1_1EB2.html#a1e3ff60d9d306a069c6f8f3556655f81", null ],
     [ "Build", "namespaceamrex_1_1EB2.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
+    [ "Build", "namespaceamrex_1_1EB2.html#a62ef1fe11bf576349a002c3f9e2a8502", null ],
     [ "Build", "namespaceamrex_1_1EB2.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#a97bb46ef943ca61f6c69345a636c8f91", null ],
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#ad4baf361d00889173d59e758d4db781a", null ],
