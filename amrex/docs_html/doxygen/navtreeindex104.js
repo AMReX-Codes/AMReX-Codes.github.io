@@ -1,5 +1,7 @@
 var NAVTREEINDEX104 =
 {
+"namespaceamrex__io__module.html#a3a0e0d4d2a87976db19e24b101aad226":[2,0,9,6],
+"namespaceamrex__io__module.html#a3b8b5b3a05b268a9c3ef5e43f60ca582":[2,0,9,10],
 "namespaceamrex__io__module.html#a60b6d1a7ebbeef734c0ad2b2d1f67e31":[2,0,9,9],
 "namespaceamrex__io__module.html#a656089521bc62d04b85ee2b856936426":[2,0,9,4],
 "namespaceamrex__io__module.html#a6fcead01fd17200da7dcfbfcb381b90a":[2,0,9,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX104 =
 "structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2":[2,0,0,63,0,2],
 "structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2":[3,0,0,29,0,2],
 "structamrex_1_1AMRErrorTag_1_1UserFunc.html#afe1f17ac88a79724bd1ebe9e6d2231fe":[2,0,0,63,0,5],
-"structamrex_1_1AMRErrorTag_1_1UserFunc.html#afe1f17ac88a79724bd1ebe9e6d2231fe":[3,0,0,29,0,5],
-"structamrex_1_1AlgPartition_1_1Ref.html":[3,0,0,22,0],
-"structamrex_1_1AlgPartition_1_1Ref.html":[2,0,0,56,0]
+"structamrex_1_1AMRErrorTag_1_1UserFunc.html#afe1f17ac88a79724bd1ebe9e6d2231fe":[3,0,0,29,0,5]
 };

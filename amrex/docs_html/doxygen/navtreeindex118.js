@@ -1,5 +1,7 @@
 var NAVTREEINDEX118 =
 {
+"structamrex_1_1MaybeHostDeviceRunnable.html":[2,0,0,369],
+"structamrex_1_1MaybeHostDeviceRunnable.html":[3,0,0,335],
 "structamrex_1_1MemProfiler_1_1Builds.html":[3,0,0,336,0],
 "structamrex_1_1MemProfiler_1_1Builds.html":[2,0,0,370,0],
 "structamrex_1_1MemProfiler_1_1Builds.html#a2756a5fbf45d016bd03416184543526b":[2,0,0,370,0,0],
@@ -238,16 +240,14 @@ var NAVTREEINDEX118 =
 "structamrex_1_1Neighbors_1_1iterator.html#addee6064337eb7978fcbd9f7984bc294":[3,0,0,383,1,0],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html":[2,0,0,29,1],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html":[3,0,0,11,0],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a86713118d056b9b6aecf7c588915b7a4":[2,0,0,29,1,0],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a86713118d056b9b6aecf7c588915b7a4":[3,0,0,11,0,0],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a961b07dcb0ecaf46a06c9e792f6e451f":[2,0,0,29,1,1],
+"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a86713118d056b9b6aecf7c588915b7a4":[2,0,0,29,1,0],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a961b07dcb0ecaf46a06c9e792f6e451f":[3,0,0,11,0,1],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[3,0,0,11,0,3],
+"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a961b07dcb0ecaf46a06c9e792f6e451f":[2,0,0,29,1,1],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[2,0,0,29,1,3],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7":[2,0,0,29,1,2],
+"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[3,0,0,11,0,3],
 "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7":[3,0,0,11,0,2],
+"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7":[2,0,0,29,1,2],
 "structamrex_1_1NonLocalBC_1_1CommData.html":[3,0,0,11,1],
-"structamrex_1_1NonLocalBC_1_1CommData.html":[2,0,0,29,2],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b":[3,0,0,11,1,6],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b":[2,0,0,29,2,6]
+"structamrex_1_1NonLocalBC_1_1CommData.html":[2,0,0,29,2]
 };

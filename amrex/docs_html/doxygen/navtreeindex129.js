@@ -1,5 +1,7 @@
 var NAVTREEINDEX129 =
 {
+"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[2,0,0,49,2,0],
+"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[3,0,0,20,1,0],
 "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html":[2,0,0,49,0,0],
 "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html":[3,0,0,20,0,0],
 "structamrex__parmparse__module_1_1amrex__parmparse.html":[2,0,16,2],

@@ -140,7 +140,7 @@ var searchData=
   ['regridonrestart_137',['RegridOnRestart',['../classamrex_1_1Amr.html#ad53f5b3b15f3195ea75068dccda30380',1,'amrex::Amr']]],
   ['release_138',['release',['../classamrex_1_1BaseFab.html#a4390286fe2327bd5f0561a75ee14499b',1,'amrex::BaseFab::release()'],['../classamrex_1_1FabArray.html#a1ce924408e644295f8e00fff0adee69d',1,'amrex::FabArray::release(int K)'],['../classamrex_1_1FabArray.html#adc8f4b32f6a7930d08d332b6be9b21ab',1,'amrex::FabArray::release(const MFIter &amp;mfi)']]],
   ['remakelevel_139',['remakelevel',['../classamrex_1_1Amr.html#a049915f7354e20184509a6ddb5bf4a6b',1,'amrex::Amr::RemakeLevel()'],['../classamrex_1_1AmrCore.html#a89b690a6f834d76bf96f8f1facc356c4',1,'amrex::AmrCore::RemakeLevel()']]],
-  ['remove_140',['remove',['../namespaceamrex_1_1FileSystem.html#a1887698566ebd58596be3b1a96ad2e9a',1,'amrex::FileSystem::Remove()'],['../classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81',1,'amrex::ParmParse::remove()']]],
+  ['remove_140',['remove',['../namespaceamrex_1_1FileSystem.html#a1887698566ebd58596be3b1a96ad2e9a',1,'amrex::FileSystem::Remove()'],['../classamrex_1_1ParmParse.html#aa779227a7006a8408506327917fd16c1',1,'amrex::ParmParse::remove()']]],
   ['removeall_141',['RemoveAll',['../namespaceamrex_1_1FileSystem.html#a53bbe4a421536a453fcb97d3c8219a55',1,'amrex::FileSystem']]],
   ['removedupdoit_142',['removeDupDoit',['../namespaceamrex_1_1detail.html#ae9c414dd7bc47e48d6fe4e6361b1b723',1,'amrex::detail']]],
   ['removeduplicates_143',['removeduplicates',['../namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d',1,'amrex::RemoveDuplicates(Vector&lt; T &gt; &amp;vec)'],['../namespaceamrex.html#a7c59b1fe9bc7b0498852cb74d7df5a76',1,'amrex::RemoveDuplicates(Vector&lt; T &gt; &amp;vec)']]],

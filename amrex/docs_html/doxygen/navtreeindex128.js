@@ -1,5 +1,7 @@
 var NAVTREEINDEX128 =
 {
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html":[3,0,0,3,11],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html":[2,0,0,5,11],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[2,0,0,5,11,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[3,0,0,3,11,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a2a0e1d6ab3b7c9ea94631a06b23a3f12":[2,0,0,5,11,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX128 =
 "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html#a84722f62be0d703ae6fa578093431728":[3,0,0,16,1,0],
 "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html#a84722f62be0d703ae6fa578093431728":[2,0,0,44,1,0],
 "structamrex_1_1simd_1_1Vectorized.html":[3,0,0,20,1],
-"structamrex_1_1simd_1_1Vectorized.html":[2,0,0,49,2],
-"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[2,0,0,49,2,0],
-"structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5":[3,0,0,20,1,0]
+"structamrex_1_1simd_1_1Vectorized.html":[2,0,0,49,2]
 };

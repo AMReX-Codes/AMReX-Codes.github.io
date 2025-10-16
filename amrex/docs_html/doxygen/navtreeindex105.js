@@ -1,5 +1,7 @@
 var NAVTREEINDEX105 =
 {
+"structamrex_1_1AlgPartition_1_1Ref.html":[3,0,0,22,0],
+"structamrex_1_1AlgPartition_1_1Ref.html":[2,0,0,56,0],
 "structamrex_1_1AlgPartition_1_1Ref.html#a086459c9d0206a272f148c045901f1fd":[2,0,0,56,0,0],
 "structamrex_1_1AlgPartition_1_1Ref.html#a086459c9d0206a272f148c045901f1fd":[3,0,0,22,0,0],
 "structamrex_1_1AlgPartition_1_1Ref.html#a255660e3951a74b5631258e9dcff0b7b":[3,0,0,22,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX105 =
 "structamrex_1_1Array3D.html#a5e67916dd642d9999fa0c0a234a3f486":[2,0,0,86,0],
 "structamrex_1_1Array3D.html#a5e67916dd642d9999fa0c0a234a3f486":[3,0,0,52,0],
 "structamrex_1_1Array3D.html#a613b6ce6d43bceb04b5ff8519c7ca197":[2,0,0,86,3],
-"structamrex_1_1Array3D.html#a613b6ce6d43bceb04b5ff8519c7ca197":[3,0,0,52,3],
-"structamrex_1_1Array3D.html#a6f9df7151532e4a2020670bc05c091db":[2,0,0,86,4],
-"structamrex_1_1Array3D.html#a6f9df7151532e4a2020670bc05c091db":[3,0,0,52,4]
+"structamrex_1_1Array3D.html#a613b6ce6d43bceb04b5ff8519c7ca197":[3,0,0,52,3]
 };

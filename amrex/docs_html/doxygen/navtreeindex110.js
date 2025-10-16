@@ -1,5 +1,7 @@
 var NAVTREEINDEX110 =
 {
+"structamrex_1_1Divides.html#a4c3c102f0b2705ba865a9b373dc02082":[3,0,0,148,0],
+"structamrex_1_1Divides.html#a4c3c102f0b2705ba865a9b373dc02082":[2,0,0,182,0],
 "structamrex_1_1DynamicTiling.html":[2,0,0,183],
 "structamrex_1_1DynamicTiling.html":[3,0,0,149],
 "structamrex_1_1DynamicTiling.html#a9b6c938ca6b52d48ecf4baba551ecc64":[3,0,0,149,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX110 =
 "structamrex_1_1FFT_1_1Plan.html#ad4f3391872b14cacc0e2e3cca2f5a548":[2,0,0,10,6,4],
 "structamrex_1_1FFT_1_1Plan.html#ad4f3391872b14cacc0e2e3cca2f5a548":[3,0,0,5,6,4],
 "structamrex_1_1FFT_1_1Plan.html#adcb6a055c0d510ef07b9dbb7da1621a4":[2,0,0,10,6,18],
-"structamrex_1_1FFT_1_1Plan.html#adcb6a055c0d510ef07b9dbb7da1621a4":[3,0,0,5,6,18],
-"structamrex_1_1FFT_1_1Plan.html#ae0328039c31339c8e6d522bafa448c43":[3,0,0,5,6,16],
-"structamrex_1_1FFT_1_1Plan.html#ae0328039c31339c8e6d522bafa448c43":[2,0,0,10,6,16]
+"structamrex_1_1FFT_1_1Plan.html#adcb6a055c0d510ef07b9dbb7da1621a4":[3,0,0,5,6,18]
 };
