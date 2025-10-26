@@ -1107,6 +1107,7 @@ var hierarchy =
     [ "amrex::TransformerVirt", "structamrex_1_1TransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
     [ "amrex::FFT::fft_poisson_detail::Tri_Uniform< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform.html", null ],
+    [ "amrex::FFT::fft_poisson_detail::Tri_Zero< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Zero.html", null ],
     [ "amrex::FFT::fft_poisson_detail::TriA< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA.html", null ],
     [ "amrex::STLtools::Triangle", "structamrex_1_1STLtools_1_1Triangle.html", null ],
     [ "amrex::FFT::fft_poisson_detail::TriC< T >", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC.html", null ],
