@@ -3915,25 +3915,35 @@
 <codeline lineno="1384"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tmpmf<sp/>=<sp/>detail::reduce_to_plane&lt;Op&gt;(direction,<sp/>domain,<sp/>mf,<sp/>f);</highlight></codeline>
 <codeline lineno="1386"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxND" kindref="compound">Box</ref><sp/>domain2d<sp/>=<sp/><ref refid="namespaceamrex_1a0b3cd8bfa7c301f5ebd96c126737a0ef" kindref="member">amrex::convert</ref>(domain,<sp/>mf.<ref refid="classamrex_1_1BoxND_1a9eebfcd8ac4307bd4bced22c350e00eb" kindref="member">ixType</ref>());</highlight></codeline>
-<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/>domain2d.<ref refid="classamrex_1_1BoxND_1ab02f3a6f43c5718cdb886dfb0f770aed" kindref="member">setRange</ref>(direction,<sp/>0);</highlight></codeline>
-<codeline lineno="1389"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref><sp/>ba2d(domain2d);</highlight></codeline>
-<codeline lineno="1391"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2d.<ref refid="classamrex_1_1BoxArray_1aebefb23ed05e76ffc8ec0c3af718652e" kindref="member">maxSize</ref>(mf.boxArray()[0].length());</highlight></codeline>
-<codeline lineno="1392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref><sp/>dm2d(ba2d);</highlight></codeline>
-<codeline lineno="1393"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1394"><highlight class="normal"><sp/><sp/><sp/><sp/>FA<sp/>mf2d(ba2d,<sp/>dm2d,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="1395"><highlight class="normal"><sp/><sp/><sp/><sp/>mf2d.setVal(initval);</highlight></codeline>
-<codeline lineno="1396"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(std::is_same_v&lt;Op,<sp/>ReduceOpSum&gt;,<sp/></highlight><highlight class="stringliteral">&quot;Currently<sp/>only<sp/>ReduceOpSum<sp/>is<sp/>supported.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/>mf2d.ParallelAdd(tmpmf);</highlight></codeline>
-<codeline lineno="1399"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair(std::move(tmpmf),<sp/>std::move(mf2d));</highlight></codeline>
-<codeline lineno="1401"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1402"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1403"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1404"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1405"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList" kindref="compound">BoxList</ref><sp/>bl2d(mf.ixType());</highlight></codeline>
+<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>procmap2d;</highlight></codeline>
+<codeline lineno="1389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ba3d<sp/>=<sp/>mf.boxArray();</highlight></codeline>
+<codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dm3d<sp/>=<sp/>mf.DistributionMap();</highlight></codeline>
+<codeline lineno="1391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dlo<sp/>=<sp/>domain.<ref refid="classamrex_1_1BoxND_1afce229aa5b1d8e2edd7c36846a5fdd41" kindref="member">smallEnd</ref>(direction);</highlight></codeline>
+<codeline lineno="1392"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>mf.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxND" kindref="compound">Box</ref><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref><sp/>=<sp/>ba3d[i];</highlight></codeline>
+<codeline lineno="1394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.smallEnd(direction)<sp/>&lt;=<sp/>dlo<sp/>&amp;&amp;<sp/>dlo<sp/>&lt;=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.bigEnd(direction))<sp/>{</highlight></codeline>
+<codeline lineno="1395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.<ref refid="classamrex_1_1BoxND_1ab02f3a6f43c5718cdb886dfb0f770aed" kindref="member">setRange</ref>(direction,<sp/>0);</highlight></codeline>
+<codeline lineno="1396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl2d.<ref refid="classamrex_1_1BoxList_1aaf9cf5350e31edefe87e9e8b2f2278ef" kindref="member">push_back</ref>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>);</highlight></codeline>
+<codeline lineno="1397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>procmap2d.push_back(dm3d[i]);</highlight></codeline>
+<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1401"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref><sp/>ba2d(std::move(bl2d));</highlight></codeline>
+<codeline lineno="1402"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref><sp/>dm2d(std::move(procmap2d));</highlight></codeline>
+<codeline lineno="1403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1404"><highlight class="normal"><sp/><sp/><sp/><sp/>FA<sp/>mf2d(ba2d,<sp/>dm2d,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="1405"><highlight class="normal"><sp/><sp/><sp/><sp/>mf2d.setVal(initval);</highlight></codeline>
+<codeline lineno="1406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(std::is_same_v&lt;Op,<sp/>ReduceOpSum&gt;,<sp/></highlight><highlight class="stringliteral">&quot;Currently<sp/>only<sp/>ReduceOpSum<sp/>is<sp/>supported.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/>mf2d.ParallelAdd(tmpmf);</highlight></codeline>
+<codeline lineno="1409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair(std::move(tmpmf),<sp/>std::move(mf2d));</highlight></codeline>
+<codeline lineno="1411"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1413"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1415"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H"/>
   </compounddef>
