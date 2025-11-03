@@ -12,7 +12,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "freeMemAvailable", "classamrex_1_1Gpu_1_1Device.html#a92efa21af9b7ae2cb3ee5710922c8bac", null ],
     [ "gpuStream", "classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f", null ],
     [ "grid_stride_threads_and_blocks", "classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf", null ],
-    [ "Initialize", "classamrex_1_1Gpu_1_1Device.html#af5a38d462689510b758e8183148c2a24", null ],
+    [ "Initialize", "classamrex_1_1Gpu_1_1Device.html#ac61ee1378b2c03ab7868234247eca5df", null ],
     [ "initialize_gpu", "classamrex_1_1Gpu_1_1Device.html#aec08005bbd7f17ae45fa38ad3adc5dc0", null ],
     [ "maxBlocksPerGrid", "classamrex_1_1Gpu_1_1Device.html#a4cfc840b226f8d1ac5f4fed24fd86bf5", null ],
     [ "maxBlocksPerLaunch", "classamrex_1_1Gpu_1_1Device.html#a3ac36df8a47931d90abeb1b1d1f85c15", null ],
