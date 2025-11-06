@@ -657,6 +657,7 @@ var namespaceamrex =
     [ "GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "GpuTupleSize", "structamrex_1_1GpuTupleSize.html", null ],
     [ "GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "GrowthStrategy_EnumTraits", "structamrex_1_1GrowthStrategy__EnumTraits.html", "structamrex_1_1GrowthStrategy__EnumTraits" ],
     [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],
     [ "HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
     [ "HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],
@@ -1146,6 +1147,11 @@ var namespaceamrex =
       [ "overflow", "namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2ca0bd9f6dd716003f3818d15d2e211ee73", null ],
       [ "all", "namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2caa181a603769c1f98ad927e7367c7aa51", null ]
     ] ],
+    [ "GrowthStrategy", "namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5a", [
+      [ "Poisson", "namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e", null ],
+      [ "Exact", "namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b", null ],
+      [ "Geometric", "namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d", null ]
+    ] ],
     [ "HypreSolverID", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eb", [
       [ "BoomerAMG", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eba811f4c4b8bd73ca4249517d43fc1bfac", null ],
       [ "SSAMG", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16ebaedb458d93d1aa8663ae63f153d911a81", null ]
@@ -1455,6 +1461,7 @@ var namespaceamrex =
     [ "amrex_flux_redistribute", "namespaceamrex.html#a2997746786ac52f67e2d900ad628b54e", null ],
     [ "amrex_flux_redistribute", "namespaceamrex.html#a8cb738d9f1f698007c0f56b7a0088083", null ],
     [ "AMREX_FORT_NAME", "namespaceamrex.html#a6f6fae4428a3e15f113ba80d2523a634", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a252c26c15fb6b8a071dae269722ff428", null ],
     [ "amrex_iparser_delete", "namespaceamrex.html#a79e084d7248e50fe5cd9f6037db2b2e1", null ],
     [ "amrex_iparser_delete_ptrs", "namespaceamrex.html#ac85a8c5774724410d75b322c745b221a", null ],
     [ "amrex_iparser_new", "namespaceamrex.html#a414ba7de5a008178d4fa0953a6e69073", null ],
@@ -1896,7 +1903,7 @@ var namespaceamrex =
     [ "grow", "namespaceamrex.html#aeed4c890f5bc317598e165d61b85ab5e", null ],
     [ "grow", "namespaceamrex.html#ac0f0db5587c264e8397139733225a229", null ],
     [ "grow", "namespaceamrex.html#a86cadfdb86c9a1dd0966cf2b9eb8721f", null ],
-    [ "grow_podvector_capacity", "namespaceamrex.html#a2f4638d60c8d8f8c0779db39bb2ae1f6", null ],
+    [ "grow_podvector_capacity", "namespaceamrex.html#aca9bb3d9f6396c046913fa2cf25799a9", null ],
     [ "growHi", "namespaceamrex.html#a67ce753c7346099f4ef7e53bd297b731", null ],
     [ "growHi", "namespaceamrex.html#ae5c2ef8f1acebfe9c10a0c80a3413da6", null ],
     [ "growLo", "namespaceamrex.html#af1c94c12b8dd4d6b08ff5f4a7a8ed9fa", null ],
@@ -3142,7 +3149,7 @@ var namespaceamrex =
     [ "yafluxreg_crseadd", "namespaceamrex.html#a19c36629f1e2e2c51a4a34645a0392d9", null ],
     [ "yafluxreg_crseadd", "namespaceamrex.html#afde521e34abc0ebc65d2a6d94e229b58", null ],
     [ "yafluxreg_fineadd", "namespaceamrex.html#a0a173c89471f4f14911c39fe24fcf9b9", null ],
-    [ "amrex_get_enum_traits", "namespaceamrex.html#a0576ab0125ec3e674f74cc848d9c111b", null ],
+    [ "amrex_get_enum_traits", "namespaceamrex.html#a6b6e7fff85fe86fe78dbaec33da1d249", null ],
     [ "atomic_total_bytes_allocated_in_fabs", "namespaceamrex.html#a9a502210430a0780c1ee189758385a60", null ],
     [ "atomic_total_bytes_allocated_in_fabs_hwm", "namespaceamrex.html#a05893af4b8f7c472a5f0d5afe9fddcde", null ],
     [ "atomic_total_cells_allocated_in_fabs", "namespaceamrex.html#aaff9d22bb4535133682d1608e85655e0", null ],

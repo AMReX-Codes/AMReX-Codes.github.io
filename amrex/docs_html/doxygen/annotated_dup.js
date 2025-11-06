@@ -461,6 +461,7 @@ var annotated_dup =
       [ "GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
       [ "GpuTupleSize", "structamrex_1_1GpuTupleSize.html", null ],
       [ "GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+      [ "GrowthStrategy_EnumTraits", "structamrex_1_1GrowthStrategy__EnumTraits.html", "structamrex_1_1GrowthStrategy__EnumTraits" ],
       [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],
       [ "HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
       [ "HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],

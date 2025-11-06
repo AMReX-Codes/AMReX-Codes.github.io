@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['tagval_0',['TagVal',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffa',1,'amrex::TagBox']]],
-  ['test_1',['TEST',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5',1,'amrex::AMRErrorTag']]],
-  ['timecenter_2',['TimeCenter',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434',1,'amrex::StateDescriptor']]],
-  ['timelevel_3',['TimeLevel',['../classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33a',1,'amrex::AmrLevel']]],
-  ['timer_5ftypes_4',['timer_types',['../classamrex_1_1MLMGT.html#ac3f33b5865628fb4fbb9e39b278358fd',1,'amrex::MLMGT']]],
-  ['type_5',['Type',['../classamrex_1_1MLCGSolverT.html#abfa2bc8d81a4f4c9a4a05f82ab18312f',1,'amrex::MLCGSolverT']]]
+  ['side_0',['Side',['../classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410',1,'amrex::Orientation']]],
+  ['statemode_1',['StateMode',['../structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8',1,'amrex::LinOpEnumType']]],
+  ['strategy_2',['strategy',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8',1,'amrex::DistributionMapping::Strategy'],['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282',1,'amrex::ForkJoin::Strategy']]]
 ];

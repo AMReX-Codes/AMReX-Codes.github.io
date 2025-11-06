@@ -39,7 +39,7 @@ var searchData=
   ['amrex_5fbc_5fuser_5f2_36',['amrex_bc_user_2',['../namespaceamrex__bc__types__module.html#ac1c3de7d685d0c5cc937edf5f33b710e',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5fuser_5f3_37',['amrex_bc_user_3',['../namespaceamrex__bc__types__module.html#a9134a7214942f29edbd3d922b77d434a',1,'amrex_bc_types_module']]],
   ['amrex_5fc_5fnull_5fchar_5farray_38',['amrex_c_null_char_array',['../namespaceamrex__string__module.html#a624a8f56ebfb3afaeb6658ef1c343616',1,'amrex_string_module']]],
-  ['amrex_5fget_5fenum_5ftraits_39',['amrex_get_enum_traits',['../namespaceamrex.html#a0576ab0125ec3e674f74cc848d9c111b',1,'amrex::amrex_get_enum_traits'],['../namespaceamrex_1_1FFT.html#a030f0cdd98372793256e2e4d0cf9711c',1,'amrex::FFT::amrex_get_enum_traits']]],
+  ['amrex_5fget_5fenum_5ftraits_39',['amrex_get_enum_traits',['../namespaceamrex_1_1FFT.html#a030f0cdd98372793256e2e4d0cf9711c',1,'amrex::FFT::amrex_get_enum_traits'],['../namespaceamrex.html#a6b6e7fff85fe86fe78dbaec33da1d249',1,'amrex::amrex_get_enum_traits']]],
   ['amrex_5fiparserin_40',['amrex_iparserin',['../amrex__iparser_8lex_8h.html#ac60a190542795c8a79dc931fd31273b4',1,'amrex_iparser.lex.h']]],
   ['amrex_5fiparserleng_41',['amrex_iparserleng',['../amrex__iparser_8lex_8h.html#ab57ed29f7a1eac71d396783c26a002fe',1,'amrex_iparser.lex.h']]],
   ['amrex_5fiparserlineno_42',['amrex_iparserlineno',['../amrex__iparser_8lex_8h.html#ac24550152ec4ec319397e063643a18d1',1,'amrex_iparser.lex.h']]],

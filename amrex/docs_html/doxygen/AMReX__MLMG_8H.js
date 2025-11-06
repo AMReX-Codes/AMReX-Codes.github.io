@@ -9,5 +9,5 @@ var AMReX__MLMG_8H =
       [ "bnorm", "AMReX__MLMG_8H.html#ad6568bc5df052e827cc522b2c19fd663a6dd32a6bb73958d819ccc0459816a66f", null ],
       [ "resnorm", "AMReX__MLMG_8H.html#ad6568bc5df052e827cc522b2c19fd663a0966276f0cacce122761e4b56ba1ebb5", null ]
     ] ],
-    [ "amrex_get_enum_traits", "AMReX__MLMG_8H.html#a0576ab0125ec3e674f74cc848d9c111b", null ]
+    [ "amrex_get_enum_traits", "AMReX__MLMG_8H.html#a252c26c15fb6b8a071dae269722ff428", null ]
 ];

@@ -92,5 +92,6 @@ var searchData=
   ['periodic_89',['periodic',['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee',1,'amrex::FFT']]],
   ['petsc_90',['petsc',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f',1,'amrex']]],
   ['point_91',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
-  ['pow_92',['pow',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_parser.tab.h']]]
+  ['poisson_92',['Poisson',['../namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e',1,'amrex']]],
+  ['pow_93',['pow',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a2f4ddc85dd27c0d03482e36ec69479a7',1,'POW:&#160;amrex_parser.tab.h']]]
 ];

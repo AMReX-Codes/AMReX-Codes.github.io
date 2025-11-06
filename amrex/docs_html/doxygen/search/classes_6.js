@@ -55,7 +55,8 @@ var searchData=
   ['gputuplesize_3c_20gputuple_3c_20ts_2e_2e_2e_20_3e_20_3e_52',['GpuTupleSize&lt; GpuTuple&lt; Ts... &gt; &gt;',['../structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html',1,'amrex']]],
   ['graphsafeguard_53',['GraphSafeGuard',['../structamrex_1_1Gpu_1_1GraphSafeGuard.html',1,'amrex::Gpu']]],
   ['gridsize_54',['GridSize',['../structamrex_1_1Gpu_1_1GridSize.html',1,'amrex::Gpu']]],
-  ['gshoplevel_55',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
-  ['gshoplevel_3c_20chkptfile_20_3e_56',['GShopLevel&lt; ChkptFile &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
-  ['gshoplevel_3c_20stltools_20_3e_57',['GShopLevel&lt; STLtools &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]]
+  ['growthstrategy_5fenumtraits_55',['GrowthStrategy_EnumTraits',['../structamrex_1_1GrowthStrategy__EnumTraits.html',1,'amrex']]],
+  ['gshoplevel_56',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
+  ['gshoplevel_3c_20chkptfile_20_3e_57',['GShopLevel&lt; ChkptFile &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
+  ['gshoplevel_3c_20stltools_20_3e_58',['GShopLevel&lt; STLtools &gt;',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]]
 ];

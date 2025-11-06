@@ -598,6 +598,7 @@ var hierarchy =
     [ "amrex::GpuTupleSize< T >", "structamrex_1_1GpuTupleSize.html", null ],
     [ "amrex::Gpu::GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", null ],
     [ "amrex::Gpu::GridSize", "structamrex_1_1Gpu_1_1GridSize.html", null ],
+    [ "amrex::GrowthStrategy_EnumTraits", "structamrex_1_1GrowthStrategy__EnumTraits.html", null ],
     [ "amrex::Gpu::Handler", "structamrex_1_1Gpu_1_1Handler.html", null ],
     [ "amrex::CArena::Node::hash", "structamrex_1_1CArena_1_1Node_1_1hash.html", null ],
     [ "amrex::VisMF::Header", "structamrex_1_1VisMF_1_1Header.html", null ],
