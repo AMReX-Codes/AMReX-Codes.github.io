@@ -1,5 +1,9 @@
 var NAVTREEINDEX127 =
 {
+"structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203":[3,0,0,548,1],
+"structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203":[2,0,0,582,1],
+"structamrex_1_1algoim_1_1BoundingBox.html":[2,0,0,0,1],
+"structamrex_1_1algoim_1_1BoundingBox.html":[3,0,0,0,0],
 "structamrex_1_1algoim_1_1BoundingBox.html#a12d172b57d7ec240c1b12600be045820":[3,0,0,0,0,4],
 "structamrex_1_1algoim_1_1BoundingBox.html#a12d172b57d7ec240c1b12600be045820":[2,0,0,0,1,4],
 "structamrex_1_1algoim_1_1BoundingBox.html#a3c3f359df5bd3913dc9354862b8902e4":[2,0,0,0,1,2],
@@ -92,8 +96,8 @@ var NAVTREEINDEX127 =
 "structamrex_1_1algoim_1_1QuadratureRule.html#ad47ba3066274b8b2570045a32345d0b5":[2,0,0,0,7,2],
 "structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12":[2,0,0,0,7,4],
 "structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12":[3,0,0,0,6,4],
-"structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[3,0,0,0,6,5],
 "structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[2,0,0,0,7,5],
+"structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[3,0,0,0,6,5],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[2,0,0,0,7,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[3,0,0,0,6,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[2,0,0,0,7,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX127 =
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a33dfcf0ade1a0d7f43ce7a1249a48c54":[3,0,0,3,9,3],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a33dfcf0ade1a0d7f43ce7a1249a48c54":[2,0,0,5,9,3],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a92871fbadc5d83cf854ac97d12ec1399":[2,0,0,5,9,1],
-"structamrex_1_1detail_1_1gpu__tuple__element.html#a92871fbadc5d83cf854ac97d12ec1399":[3,0,0,3,9,1],
-"structamrex_1_1detail_1_1gpu__tuple__impl.html":[2,0,0,5,10],
-"structamrex_1_1detail_1_1gpu__tuple__impl.html":[3,0,0,3,10],
-"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html":[2,0,0,5,12],
-"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html":[3,0,0,3,12]
+"structamrex_1_1detail_1_1gpu__tuple__element.html#a92871fbadc5d83cf854ac97d12ec1399":[3,0,0,3,9,1]
 };

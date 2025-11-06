@@ -1896,6 +1896,7 @@ var namespaceamrex =
     [ "grow", "namespaceamrex.html#aeed4c890f5bc317598e165d61b85ab5e", null ],
     [ "grow", "namespaceamrex.html#ac0f0db5587c264e8397139733225a229", null ],
     [ "grow", "namespaceamrex.html#a86cadfdb86c9a1dd0966cf2b9eb8721f", null ],
+    [ "grow_podvector_capacity", "namespaceamrex.html#a2f4638d60c8d8f8c0779db39bb2ae1f6", null ],
     [ "growHi", "namespaceamrex.html#a67ce753c7346099f4ef7e53bd297b731", null ],
     [ "growHi", "namespaceamrex.html#ae5c2ef8f1acebfe9c10a0c80a3413da6", null ],
     [ "growLo", "namespaceamrex.html#af1c94c12b8dd4d6b08ff5f4a7a8ed9fa", null ],
