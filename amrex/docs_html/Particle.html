@@ -371,6 +371,18 @@ In general, however, users may need to call <code class="code highlight cpp c++ 
 particles, if the processes generate particles they don’t own (for example, if
 the particle positions are perturbed from the cell centers and thus end up
 outside their parent grid).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above code snippet, which successively calls <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">push_back</span></code> on the particle
+vectors, assumes you have compiled AMReX for CPU execution.
+For GPU codes, one can either generate particles on the host and copy them
+to the device, or generate the particles directly on the GPU. For the first
+approach, please see the sample code <a class="reference external" href="https://github.com/AMReX-Codes/amrex/blob/development/Tests/Particles/Redistribute/main.cpp#L81">here</a>.
+For an example of generating a variable number of particles in each cell
+directly on the GPU, please see
+<a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/blob/main/ExampleCodes/Particles/ElectromagneticPIC/Source/EMParticleContainerInit.cpp#L48">this</a>
+Electromagnetic Particle-in-Cell tutorial</p>
+</div>
 </section>
 <section id="adding-particle-components-at-runtime">
 <span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Permalink to this heading"></a></h1>
@@ -472,68 +484,84 @@ hard-to-debug incompatibilities between floating point types.</p>
 <p>It is common to want to have the mesh communicate information to the particles
 and vice versa. For example, in Particle-in-Cell calculations, the particles
 deposit their charges onto the mesh, and later, the electric fields computed on
-the mesh are interpolated back to the particles. Below, we show examples of
-both these sorts of operations.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Ex</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">gm</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
-<span class="n">Ey</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">gm</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
-<span class="n">Ez</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">gm</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MyParIter</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">MyPC</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+the mesh are interpolated back to the particles.</p>
+<p>To help perform these sorts of operations, we provide the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleToMesh</span></code>
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MeshToParticles</span></code> functions. These functions operate on an entire
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> at once, interpolating data back and forth between
+an input <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>. A user-provided lambda function is passed in that
+specifies the kind of interpolation to perform. Any needed parallel communication
+(from particles that contribute some of their weight to guard cells, for example)
+is performed internally. Additionally, these methods support both a single-grid
+(the particles and the mesh use the same boxes and distribution mappings) and dual-grid
+(the particles and mesh have different layouts) formalism. In the latter case,
+the needed parallel communication is also performed internally.</p>
+<p>We show examples of these types of operations below. The first snippet shows
+how to deposit a particle quantiy from the first real component of the particle
+data to the first component of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> using linear interpolation.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">plo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">ProbLoArray</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">dxi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">InvCellSizeArray</span><span class="p">();</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">myPC</span><span class="p">,</span><span class="w"> </span><span class="n">partMF</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                      </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">ParticleTileType</span><span class="o">::</span><span class="n">ConstParticleTileDataType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                                            </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rho</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">particles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">();</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nstride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">particles</span><span class="p">.</span><span class="n">dataShape</span><span class="p">().</span><span class="n">first</span><span class="p">;</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">np</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
-
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FArrayBox</span><span class="o">&amp;</span><span class="w"> </span><span class="n">exfab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ex</span><span class="p">[</span><span class="n">pti</span><span class="p">];</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FArrayBox</span><span class="o">&amp;</span><span class="w"> </span><span class="n">eyfab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ey</span><span class="p">[</span><span class="n">pti</span><span class="p">];</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">FArrayBox</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ezfab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ex</span><span class="p">[</span><span class="n">pti</span><span class="p">];</span>
-
-<span class="w">    </span><span class="n">interpolate_cic</span><span class="p">(</span><span class="n">particles</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">nstride</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span>
-<span class="w">                    </span><span class="n">exfab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">(),</span><span class="w"> </span><span class="n">eyfab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">(),</span><span class="w"> </span><span class="n">ezfab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">(),</span>
-<span class="w">                    </span><span class="n">box</span><span class="p">.</span><span class="n">loVect</span><span class="p">(),</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="n">hiVect</span><span class="p">(),</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ng</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">        </span><span class="n">interp</span><span class="p">.</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">part</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comp</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span><span class="n">part</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">comp</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
-<p>Here, <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">interpolate_cic</span></code> is a Fortran subroutine that actually performs
-the interpolation on a single box. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Ex</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Ey</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Ez</span></code> are
-MultiFabs that contain the electric field data. These MultiFabs must be defined
-with the correct number of ghost cells to perform the desired type of
-interpolation, and we call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code> prior to the Fortran call so
-that those ghost cells will be up-to-date.</p>
-<p>In this example, we have assumed that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span><span class="w"> </span><span class="n">MyPC</span></code> has
-been defined on the same grids as the electric field MultiFabs, so that we use
-the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParIter</span></code> to index into the MultiFabs to get the data associated with
-current tile. If this is not the case, then an additional copy will need to be
-performed. However, if the particles are distributed in an extremely uneven
-fashion, it is possible that the load balancing improvements associated with
-the two-grid approach are worth the cost of the extra copy.</p>
 <p>The inverse operation, in which the particles communicate data <em>to</em> the mesh,
 is quite similar:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">ng</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MyParIter</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Box</span><span class="o">&amp;</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">MeshToParticle</span><span class="p">(</span><span class="n">myPC</span><span class="p">,</span><span class="w"> </span><span class="n">acceleration</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">acc</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">particles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">();</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nstride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">particles</span><span class="p">.</span><span class="n">dataShape</span><span class="p">().</span><span class="n">first</span><span class="p">;</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">np</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">FArrayBox</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rhofab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">rho</span><span class="p">[</span><span class="n">lev</span><span class="p">])[</span><span class="n">pti</span><span class="p">];</span>
-
-<span class="w">    </span><span class="n">deposit_cic</span><span class="p">(</span><span class="n">particles</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">nstride</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">rhofab</span><span class="p">.</span><span class="n">dataPtr</span><span class="p">(),</span>
-<span class="w">                </span><span class="n">box</span><span class="p">.</span><span class="n">loVect</span><span class="p">(),</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="n">hiVect</span><span class="p">(),</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dx</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="n">rho</span><span class="p">.</span><span class="n">SumBoundary</span><span class="p">(</span><span class="n">gm</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+<span class="w">        </span><span class="n">interp</span><span class="p">.</span><span class="n">MeshToParticle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">+</span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span>
+<span class="w">                </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">,</span>
+<span class="w">                                      </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comp</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">comp</span><span class="p">);</span><span class="w">  </span><span class="c1">// no weighting</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">part</span><span class="p">,</span>
+<span class="w">                                      </span><span class="kt">int</span><span class="w"> </span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">part</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">comp</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ParticleReal</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
 </pre></div>
 </div>
-<p>As before, we loop over all our particles, calling a Fortran routine that
-deposits them on to the appropriate <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"> </span><span class="n">rhofab</span></code>. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">rhofab</span></code>
-must have enough ghost cells to cover the support of all the particles
-associated with them. Note that we call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">SumBoundary</span></code> instead of
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code> after performing the deposition, to add up the charge in
-the ghost cells surrounding each Fab into the corresponding valid cells.</p>
-<p>For a complete example of an electrostatic PIC calculation that includes static
-mesh refinement, please see the <cite>Electrostatic PIC tutorial</cite>.</p>
+<p>In this case, we linearly interpolate <cite>AMREX_SPACEDIM</cite> values starting from the 0th
+component of the input <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> to the particles, writing them starting at
+particle component 1. Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">MeshToParticle</span></code> takes <em>two</em>
+lambda functions, one that generates the particle quantity to interpolate and another
+that shows how to update the mesh value.</p>
+<p>Finally, the snippet below shows how to use this function to simply count the number
+of particles in each cell (i.e. to deposit using “nearest neighbor” interpolation)</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">myPC</span><span class="p">,</span><span class="w"> </span><span class="n">partiMF</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">SuperParticleType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+<span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">ParticleInterpolator</span><span class="o">::</span><span class="n">Nearest</span><span class="w"> </span><span class="nf">interp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">plo</span><span class="p">,</span><span class="w"> </span><span class="n">dxi</span><span class="p">);</span>
+
+<span class="w">     </span><span class="n">interp</span><span class="p">.</span><span class="n">ParticleToMesh</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MyParticleContainer</span><span class="o">::</span><span class="n">ParticleType</span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*p*/</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="cm">/*comp*/</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">         </span><span class="p">{</span>
+<span class="w">             </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// just count the particles per cell</span>
+<span class="w">         </span><span class="p">});</span>
+<span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>For more complex examples of interacting with mesh data, we refer readers to
+our <a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/ExampleCodes/Particles/ElectromagneticPIC">Electromagnetic PIC tutorial</a></p>
+<p>Or, for a complete example of an electrostatic PIC calculation that includes static
+mesh refinement, please see the <a class="reference external" href="https://github.com/AMReX-Codes/amrex-tutorials/tree/main/ExampleCodes/Particles/ElectrostaticPIC">Electrostatic PIC tutorial</a>.</p>
 </section>
 <section id="short-range-forces">
 <span id="sec-particles-shortrange"></span><h1>Short Range Forces<a class="headerlink" href="#short-range-forces" title="Permalink to this heading"></a></h1>
