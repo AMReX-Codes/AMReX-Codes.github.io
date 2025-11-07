@@ -12,6 +12,7 @@ var classamrex_1_1ParmParse =
     [ "add", "classamrex_1_1ParmParse.html#a19241026c4f2654f951404dce86785e3", null ],
     [ "add", "classamrex_1_1ParmParse.html#a0dd75517a78caef27f6e62e3aa560511", null ],
     [ "add", "classamrex_1_1ParmParse.html#a1aee06fbd17916b54603aca28189d95f", null ],
+    [ "add", "classamrex_1_1ParmParse.html#aadbe6b7f5efd29a4e93c02a41d6d2c28", null ],
     [ "addarr", "classamrex_1_1ParmParse.html#a92bf823f92a3e3537f209010df60f2fc", null ],
     [ "addarr", "classamrex_1_1ParmParse.html#af42585578aed7c21b5d72009862dccea", null ],
     [ "addarr", "classamrex_1_1ParmParse.html#a7ab6d21b45b055e97c50137b0c6e6762", null ],

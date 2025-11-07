@@ -1,5 +1,7 @@
 var NAVTREEINDEX127 =
 {
+"structamrex_1_1WeightedBoxList.html#a847e4c82e77b1879f0a265106f2969ac":[3,0,0,548,11],
+"structamrex_1_1WeightedBoxList.html#a847e4c82e77b1879f0a265106f2969ac":[2,0,0,582,11],
 "structamrex_1_1WeightedBoxList.html#a8e02e1702d53c5b8a60b341aceadb929":[3,0,0,548,10],
 "structamrex_1_1WeightedBoxList.html#a8e02e1702d53c5b8a60b341aceadb929":[2,0,0,582,10],
 "structamrex_1_1WeightedBoxList.html#abae9b2b0024cc419d008ddc686c25b97":[2,0,0,582,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX127 =
 "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[2,0,0,5,24,0],
 "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[3,0,0,3,24,0],
 "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,25],
-"structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,5,25],
-"structamrex_1_1detail_1_1apply__result.html":[2,0,0,5,0],
-"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,0]
+"structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,5,25]
 };
