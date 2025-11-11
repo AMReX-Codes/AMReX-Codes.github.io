@@ -136,23 +136,37 @@ most basic particle data structure is the particle itself:</p>
 <p>This is a templated data type, designed to allow flexibility in the number and
 type of components that the particles carry. The first template parameter is the
 number of extra <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span></code> variables this particle will have (either single or
-double precision <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>), while the second is the number of extra integer
+double precision <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>), while the second is the number of extra integer
 variables.  It is important to note that this is the number of <em>extra</em> real and
-integer variables; a particle will always have at least <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_SPACEDIM</span></code> real
-components that store the particle’s position and 2 integer components that
-store the particle’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span></code> numbers. <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
-<p>The particle struct is designed to store these variables in a way that
-minimizes padding, which in practice means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span></code> components
-always come first, and the integer components second. Additionally, the
-required particle variables are stored before the optional ones, for both the
-real and the integer components. For example, say we want to define a particle
-type that stores a mass, three velocity components, and two extra integer
-flags. Our particle struct would be set up like:</p>
+integer variables; a particle will always have at least <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code> real
+components that store the particle’s position and one 64-bit integer component that
+stores a combination of the particle’s unique <cite>id</cite> and <cite>cpu</cite> numbers.</p>
+<p>The particle struct is stored such that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span></code> components come first
+and the integer component second. Additionally, the required particle variables
+are stored before the optional ones, for both the real and the integer components.
+For example, say we want to define a particle type that stores a mass, three velocity
+components, and two extra integer flags. Our particle struct would be declared like:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>and the order of the particle components in would be (assuming <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_SPACEDIM</span></code> is 3):
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="n">vz</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">cpu</span><span class="w"> </span><span class="n">flag1</span><span class="w"> </span><span class="n">flag2</span></code>.  <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
+<p>and the order of the particle components in would be (assuming <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code> is 3):
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="n">vz</span><span class="w"> </span><span class="n">idcpu</span><span class="w"> </span><span class="n">flag1</span><span class="w"> </span><span class="n">flag2</span></code>.  <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>The <cite>idcpu</cite> variable stores a combination of the MPI process a particle was generated on
+(the <cite>cpu</cite>) and an identification number that is specific to that process (the <cite>id</cite>).
+The combination of these numbers is unique across processes. This is done to facilitate
+the creation of particle initial conditions in parallel. In storing these
+identifying numbers, 39 bits are devoted to the <cite>id</cite>, allowing approximately 550 billion
+possible <em>local</em> <cite>id</cite> numbers, and 24 bits are used to store the <cite>cpu</cite>, allowing about 16.8 million
+unique (MPI) processes.
+One bit is devoted to mark a particle valid or invalid.</p>
+<p>To pack and unpack these numbers, one uses the following syntax:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">p</span><span class="p">.</span><span class="n">cpu</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">m_idcpu</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 9223372036871553024</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">cpu</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1 0</span>
+</pre></div>
+</div>
 <section id="setting-particle-data">
 <h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Permalink to this heading"></a></h2>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Particle</span></code> struct provides a number of methods for getting and setting
@@ -208,7 +222,7 @@ memory, and each component is stored in a separate array. For convenience, we
 (arbitrarily) refer to the components in the particle struct as particle
 <em>data</em>, and components stored in the Struct-of-Arrays as particle <em>attributes</em>.
 See the figure <a class="reference internal" href="#fig-particles-particle-arrays"><span class="std std-ref">below</span></a> for an illustration.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id5">
 <span id="fig-particles-particle-arrays"></span><img alt="_images/particle_arrays.png" src="_images/particle_arrays.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">An illustration of how the particle data for a single tile is arranged in
@@ -222,7 +236,7 @@ labelled the extra real data member of the particle struct to be
 labeled <code class="docutils literal notranslate"><span class="pre">p</span></code>, and <code class="docutils literal notranslate"><span class="pre">s</span></code>, for “phase” and “state”. The variables in
 the real and integer arrays are labelled <code class="docutils literal notranslate"><span class="pre">foo</span></code>, <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">n</span></code>, respectively. We have assumed that the particles are double
-precision.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+precision.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>To see why the distinction between AoS and SoA data is important, consider the
@@ -468,8 +482,7 @@ example:</p>
 <span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">amrex_particle_real</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pos</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">amrex_particle_real</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">amrex_particle_real</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">acc</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">id</span>
-<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">cpu</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int64_t</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">idcpu</span>
 <span class="k">end type </span><span class="n">particle_t</span>
 </pre></div>
 </div>
@@ -578,7 +591,7 @@ interaction radius of the particles, you can capture all of the neighbors that
 can possibly influence the particles in the valid region of the tile. The
 forces on the particles on different tiles can then be computed independently
 of each other using a variety of methods.</p>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id6">
 <span id="fig-particles-neighbor-particles"></span><a class="reference internal image-reference" href="_images/neighbor_particles.png"><img alt="_images/neighbor_particles.png" src="_images/neighbor_particles.png" style="width: 75.0%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">: An illustration of filling neighbor particles for short-range force
@@ -590,7 +603,7 @@ neighbor buffer. These particles can then be included in the force
 calculation. If the domain is periodic, particles in the grown region for
 the blue tile that lie on the other side of the domain will also be copied,
 and their positions will modified so that a naive distance calculation
-between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>For a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> that does this neighbor finding, please see
@@ -659,7 +672,7 @@ and neighbor particles, as follows:</p>
 particles on a tile is avoided by binning the particles by cell and building a neighbor
 list.  The data structure used to represent
 the neighbor lists is illustrated in <a class="reference internal" href="#fig-particles-neighbor-list"><span class="std std-numref">Fig. 10</span></a>.</p>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id7">
 <span id="fig-particles-neighbor-list"></span><img alt="_images/neighbor_list.png" src="_images/neighbor_list.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">: An illustration of the neighbor list data structure used by AMReX. The
@@ -669,7 +682,7 @@ collision partners for the first particle on this tile, while the second is
 the number of collision partners from nearby tiles in the neighbor buffer.
 Based on the number of collision partners, the next several entries are the
 indices of the collision partners in the real and neighbor particle arrays,
-respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This array can then be used to compute the forces on all the particles in one
@@ -796,16 +809,12 @@ boundary in which no aggregation should be performed.</p></td>
 </tr>
 </tbody>
 </table>
-<aside class="footnote brackets" id="id4" role="note">
+<aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Particles default to double precision for their real data. To use single precision, compile your code with <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE</span></code>.</p>
 </aside>
-<aside class="footnote brackets" id="id5" role="note">
+<aside class="footnote brackets" id="id4" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span></code> stores the number of the process the particle was <em>generated</em> on, not the one it’s currently assigned to. This number is set on initialization and never changes, just like the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span></code>. In essence, the particles have two integer id numbers, and only the combination of the two is unique. This was done to facilitate the creation of particle initial conditions in parallel.</p>
-</aside>
-<aside class="footnote brackets" id="id6" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Note that for the extra particle components, which component refers to which
 variable is an application-specific convention - the particles have 4 extra real comps, but which one is “mass” is up
 to the user. We suggest using an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">enum</span></code> to keep these indices straight; please
