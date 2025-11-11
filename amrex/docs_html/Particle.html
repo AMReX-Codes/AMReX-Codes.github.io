@@ -76,7 +76,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#initializing-particle-data">Initializing Particle Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-particle-components-at-runtime">Adding particle components at runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#iterating-over-particles">Iterating over Particles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#passing-particle-data-into-fortran-routines">Passing particle data into Fortran routines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passing-particle-data-into-fortran-routines">Passing particle data into Fortran routines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pure-struct-of-array-particles">Pure Struct-of-Array Particles</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#interacting-with-mesh-data">Interacting with Mesh Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#short-range-forces">Short Range Forces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particle-io">Particle IO</a></li>
@@ -239,23 +242,16 @@ and <code class="docutils literal notranslate"><span class="pre">n</span></code>
 precision.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>To see why the distinction between AoS and SoA data is important, consider the
-following extreme case. Say you have particles that carry 100 different
-components, but that most of the time, you only need to do calculations
-involving 3 of them (say, the particle positions) at once. In this case,
-storing all 100 particle variables in the particle struct is clearly
-inefficient, since most of the time you are reading 97 extra variables into
-cache that you will never use. By splitting up the particle variables into
-stuff that gets used all the time (stored in the AoS) and stuff that only gets
-used infrequently (stored in the SoA), you can in principle achieve much better
-cache reuse. Of course, the usage pattern of your application likely won’t be
-so clear-cut. Flexibility in how the particle data is stored also makes it
-easier to interface between AMReX and already-existing Fortran subroutines.</p>
-<p>Note that while “extra” particle data can be stored in either the SoA or AoS
-style, the particle positions and id numbers are <strong>always</strong> stored in the
-particle structs. This is because these particle variables are special and used
-internally by AMReX to assign the particles to grids and to mark particles as
-valid or invalid, respectively.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The ability to store particle data in AoS form is provided for backward
+compatibility and convenience; however, for performance reasons, whether
+targeting CPU or GPU execution, we recommend storing extra particle variables in SoA form.
+Additionally, starting in AMReX version 23.05, the ability to store <em>all</em> particle
+data, including the particle positions and <cite>idcpu</cite> numbers, is provided via the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleContainerPureSoA</span></code> class. Details on using pure SoA particles
+are provided in the Section on <a class="reference internal" href="#sec-particles-puresoa"><span class="std std-ref">Pure Struct-of-Array Particles</span></a>.</p>
+</div>
 </section>
 <section id="constructing-particlecontainers">
 <h2>Constructing ParticleContainers<a class="headerlink" href="#constructing-particlecontainers" title="Permalink to this heading"></a></h2>
@@ -491,6 +487,34 @@ example:</p>
 on whether <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or not. We recommend
 always using this type in Fortran routines that work on particle data to avoid
 hard-to-debug incompatibilities between floating point types.</p>
+<section id="pure-struct-of-array-particles">
+<span id="sec-particles-puresoa"></span><h2>Pure Struct-of-Array Particles<a class="headerlink" href="#pure-struct-of-array-particles" title="Permalink to this heading"></a></h2>
+<p>Beginning with AMReX version 24.05, the requirement that the particle positions
+and ids be stored in AoS form has been lifted. Users can now use the class
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParticleContainerPureSoA</span></code>, which stores all components in SoA form.
+When using data layout, it is assumed that the first <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code> <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span></code>
+components store the particle position variables, which are used internally to map
+particle coordinates to grids and cells.</p>
+<p>For the most part, functions that work on the standard <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code> will
+also work on <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainerPureSoA</span></code>. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTile</span></code> can be used to access
+the underlying <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">StructOfArrays</span></code>, which can be used as before. However, it is
+particlularly convenient to use the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">[]</span></code> operator of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleTileData</span></code>, which
+allows the same code to work with both AoS and pure SoA particles. For example, within
+a <code class="docutils literal notranslate"><span class="pre">ParIter</span></code> loop, one can do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Iterating over SoA Particles</span>
+<span class="n">ParticleTileDataType</span><span class="w"> </span><span class="n">ptd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetParticleTile</span><span class="p">().</span><span class="n">getParticleTileData</span><span class="p">();</span>
+
+<span class="n">ParallelFor</span><span class="p">(</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">ip</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ParticleType</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptd</span><span class="p">[</span><span class="n">ip</span><span class="p">];</span><span class="w">  </span><span class="c1">// p will be a different type for AoS and pure SoA</span>
+<span class="w">    </span><span class="c1">// use p.pos(0), p.id(), etc.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this way, code can be written that is agnostic as to the data layout. For more examples
+of pure SoA particles, please see the SOA tests in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">/</span><span class="n">Tests</span><span class="o">/</span><span class="n">Particles</span><span class="o">/</span></code>, or refer
+to <a class="reference external" href="https://github.com/BLAST-WarpX/warpx">WarpX</a>, <a class="reference external" href="https://github.com/Hi-PACE/hipace">Hipace++</a>, or <a class="reference external" href="https://github.com/BLAST-ImpactX/impactx">ImpactX</a>, which use this type of particle container.</p>
+</section>
 </section>
 <section id="interacting-with-mesh-data">
 <span id="sec-particles-interacting"></span><h1>Interacting with Mesh Data<a class="headerlink" href="#interacting-with-mesh-data" title="Permalink to this heading"></a></h1>
