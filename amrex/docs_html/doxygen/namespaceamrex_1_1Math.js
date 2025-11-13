@@ -11,6 +11,8 @@ var namespaceamrex_1_1Math =
     [ "cospi", "namespaceamrex_1_1Math.html#a58a968cda54d7709f770dce3a3072d73", null ],
     [ "pi", "namespaceamrex_1_1Math.html#a2d522eb2d366ecb5383529269e417457", null ],
     [ "powi", "namespaceamrex_1_1Math.html#ac73f6dfd5ae205dfe7340b826994b6a7", null ],
+    [ "rsqrt", "namespaceamrex_1_1Math.html#ac33ae33c86a7cefb98dcf990b0b867b8", null ],
+    [ "rsqrt", "namespaceamrex_1_1Math.html#a9e5fd25d336296cb63a23fb13f0321b2", null ],
     [ "sincos", "namespaceamrex_1_1Math.html#a982c4b3204ef371831cfa755111cedcb", null ],
     [ "sincos", "namespaceamrex_1_1Math.html#a21ccf14b84c98ae83de6f8e9efb45d45", null ],
     [ "sincospi", "namespaceamrex_1_1Math.html#a3c35c52ce1cf31103992e7383be8e7fb", null ],

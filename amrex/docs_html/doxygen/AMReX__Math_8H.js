@@ -13,6 +13,8 @@ var AMReX__Math_8H =
     [ "cospi", "AMReX__Math_8H.html#a58a968cda54d7709f770dce3a3072d73", null ],
     [ "pi", "AMReX__Math_8H.html#a2d522eb2d366ecb5383529269e417457", null ],
     [ "powi", "AMReX__Math_8H.html#ac73f6dfd5ae205dfe7340b826994b6a7", null ],
+    [ "rsqrt", "AMReX__Math_8H.html#ac33ae33c86a7cefb98dcf990b0b867b8", null ],
+    [ "rsqrt", "AMReX__Math_8H.html#a9e5fd25d336296cb63a23fb13f0321b2", null ],
     [ "sincos", "AMReX__Math_8H.html#a982c4b3204ef371831cfa755111cedcb", null ],
     [ "sincos", "AMReX__Math_8H.html#ae90d24776b0c98840c89b92d31816918", null ],
     [ "sincos", "AMReX__Math_8H.html#a21ccf14b84c98ae83de6f8e9efb45d45", null ],
