@@ -284,6 +284,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d596021574d699fd925b664a9c1bf7c" id="r_a3d596021574d699fd925b664a9c1bf7c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a3d596021574d699fd925b664a9c1bf7c">derive</a> (const std::string &amp;name, Real time, int lev, int ngrow)</td></tr>
 <tr class="memdesc:a3d596021574d699fd925b664a9c1bf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve derived data. User is responsible for deleting pointer.  <br /></td></tr>
 <tr class="separator:a3d596021574d699fd925b664a9c1bf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084c6a8bac2ece3f077f74399de8bb21" id="r_a084c6a8bac2ece3f077f74399de8bb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a084c6a8bac2ece3f077f74399de8bb21">derive</a> (const std::string &amp;name, Real time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, int dcomp)</td></tr>
+<tr class="separator:a084c6a8bac2ece3f077f74399de8bb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace10003024e11e4501362aa7e2f8c61" id="r_aace10003024e11e4501362aa7e2f8c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#aace10003024e11e4501362aa7e2f8c61">derive</a> (const std::string &amp;name, amrex::Real time, int ngrow)</td></tr>
+<tr class="memdesc:aace10003024e11e4501362aa7e2f8c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute derived data on all levels and return as a vector of <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> pointers.  <br /></td></tr>
+<tr class="separator:aace10003024e11e4501362aa7e2f8c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6872196ff8f7a6cd8f4000104b979734" id="r_a6872196ff8f7a6cd8f4000104b979734"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6872196ff8f7a6cd8f4000104b979734">theRestartFile</a> () const noexcept</td></tr>
 <tr class="memdesc:a6872196ff8f7a6cd8f4000104b979734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the restart chkpoint file.  <br /></td></tr>
 <tr class="separator:a6872196ff8f7a6cd8f4000104b979734"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1855,8 +1860,85 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aace10003024e11e4501362aa7e2f8c61" name="aace10003024e11e4501362aa7e2f8c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace10003024e11e4501362aa7e2f8c61">&#9670;&#160;</a></span>derive() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt; amrex::Amr::derive </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ngrow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute derived data on all levels and return as a vector of <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> pointers. </p>
+
+</div>
+</div>
+<a id="a084c6a8bac2ece3f077f74399de8bb21" name="a084c6a8bac2ece3f077f74399de8bb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084c6a8bac2ece3f077f74399de8bb21">&#9670;&#160;</a></span>derive() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Amr::derive </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dcomp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute derived data on all levels and store in the dcompth component of each Multifab in mf </p>
+
+</div>
+</div>
 <a id="a3d596021574d699fd925b664a9c1bf7c" name="a3d596021574d699fd925b664a9c1bf7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d596021574d699fd925b664a9c1bf7c">&#9670;&#160;</a></span>derive()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d596021574d699fd925b664a9c1bf7c">&#9670;&#160;</a></span>derive() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

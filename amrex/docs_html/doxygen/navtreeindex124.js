@@ -1,5 +1,9 @@
 var NAVTREEINDEX124 =
 {
+"structamrex_1_1STLtools_1_1Triangle.html#a6b301a1c15117340fbb999bfee7dd5a2":[3,0,0,517,1,3],
+"structamrex_1_1STLtools_1_1Triangle.html#a6b301a1c15117340fbb999bfee7dd5a2":[2,0,0,551,1,3],
+"structamrex_1_1STLtools_1_1Triangle.html#ab4af12af8d6c359d4870d0d93a9d07b5":[3,0,0,517,1,4],
+"structamrex_1_1STLtools_1_1Triangle.html#ab4af12af8d6c359d4870d0d93a9d07b5":[2,0,0,551,1,4],
 "structamrex_1_1STLtools_1_1Triangle.html#af390b554b32c2f68002d003f47d2179b":[3,0,0,517,1,1],
 "structamrex_1_1STLtools_1_1Triangle.html#af390b554b32c2f68002d003f47d2179b":[2,0,0,551,1,1],
 "structamrex_1_1Same.html":[2,0,0,536],
@@ -245,9 +249,5 @@ var NAVTREEINDEX124 =
 "structamrex_1_1SrcComp.html#aa5c3f7babca38810fa13e9b419f9649b":[3,0,0,512,1],
 "structamrex_1_1SrcComp.html#aa5c3f7babca38810fa13e9b419f9649b":[2,0,0,546,1],
 "structamrex_1_1Stack.html":[2,0,0,547],
-"structamrex_1_1Stack.html":[3,0,0,513],
-"structamrex_1_1Stack.html#a17dc6a44a8a7ebeda4dd4bf436d64934":[3,0,0,513,7],
-"structamrex_1_1Stack.html#a17dc6a44a8a7ebeda4dd4bf436d64934":[2,0,0,547,7],
-"structamrex_1_1Stack.html#a470f67478b996cf9eda28cc684d81948":[2,0,0,547,3],
-"structamrex_1_1Stack.html#a470f67478b996cf9eda28cc684d81948":[3,0,0,513,3]
+"structamrex_1_1Stack.html":[3,0,0,513]
 };

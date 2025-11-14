@@ -1,5 +1,9 @@
 var NAVTREEINDEX113 =
 {
+"structamrex_1_1FabArrayBase_1_1meminfo.html#a9fa43b62c55d186548b19ea58a2e351b":[2,0,0,199,10,1],
+"structamrex_1_1FabArrayBase_1_1meminfo.html#a9fa43b62c55d186548b19ea58a2e351b":[3,0,0,165,10,1],
+"structamrex_1_1FabArray_1_1FABType.html":[3,0,0,164,0],
+"structamrex_1_1FabArray_1_1FABType.html":[2,0,0,198,0],
 "structamrex_1_1FabArray_1_1FABType.html#a652d8be3c46448addbe48ef3e56e7c78":[2,0,0,198,0,0],
 "structamrex_1_1FabArray_1_1FABType.html#a652d8be3c46448addbe48ef3e56e7c78":[3,0,0,164,0,0],
 "structamrex_1_1FabArray_1_1ShMem.html":[2,0,0,198,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX113 =
 "structamrex_1_1GetParticleBin.html#abbe4e5c9824e8d9ccfaf7a524ddac32b":[3,0,0,202,2],
 "structamrex_1_1GetParticleBin.html#abbe4e5c9824e8d9ccfaf7a524ddac32b":[2,0,0,236,2],
 "structamrex_1_1GetSendBufferOffset.html":[3,0,0,204],
-"structamrex_1_1GetSendBufferOffset.html":[2,0,0,238],
-"structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[2,0,0,238,2],
-"structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[3,0,0,204,2],
-"structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[2,0,0,238,4],
-"structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[3,0,0,204,4]
+"structamrex_1_1GetSendBufferOffset.html":[2,0,0,238]
 };

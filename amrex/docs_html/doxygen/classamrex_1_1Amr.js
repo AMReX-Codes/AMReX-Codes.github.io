@@ -33,6 +33,8 @@ var classamrex_1_1Amr =
     [ "deleteDerivePlotVar", "classamrex_1_1Amr.html#a1eaf7d49c3fdfa17035d39cf047d5874", null ],
     [ "deleteDeriveSmallPlotVar", "classamrex_1_1Amr.html#a9a6b2ab66182008060baa72d4702f321", null ],
     [ "deleteStatePlotVar", "classamrex_1_1Amr.html#ab72037810d96a60c15358d42c780d92e", null ],
+    [ "derive", "classamrex_1_1Amr.html#aace10003024e11e4501362aa7e2f8c61", null ],
+    [ "derive", "classamrex_1_1Amr.html#a084c6a8bac2ece3f077f74399de8bb21", null ],
     [ "derive", "classamrex_1_1Amr.html#a3d596021574d699fd925b664a9c1bf7c", null ],
     [ "derivePlotVars", "classamrex_1_1Amr.html#aee3d3599d94d75b34276fadd16c75ddf", null ],
     [ "deriveSmallPlotVars", "classamrex_1_1Amr.html#a055cc33d3455d7569cd5461f837a0bbd", null ],
