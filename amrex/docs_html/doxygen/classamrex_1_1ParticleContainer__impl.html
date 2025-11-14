@@ -491,7 +491,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a935197ee3cb7a3665b16ec8ded3ea0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e8f05b4ed5423af853e90b6ea04c38" id="r_a13e8f05b4ed5423af853e90b6ea04c38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a13e8f05b4ed5423af853e90b6ea04c38">ResizeRuntimeIntComp</a> (int new_size, bool communicate)</td></tr>
 <tr class="separator:a13e8f05b4ed5423af853e90b6ea04c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec14ad85cd735ad9aeaa4b51e26fff6a" id="r_aec14ad85cd735ad9aeaa4b51e26fff6a"><td class="memTemplParams" colspan="2">template&lt;template&lt; class &gt; class NewAllocator = amrex::DefaultAllocator&gt; </td></tr>
+<tr class="memitem:aec14ad85cd735ad9aeaa4b51e26fff6a" id="r_aec14ad85cd735ad9aeaa4b51e26fff6a"><td class="memTemplParams" colspan="2">template&lt;template&lt; class &gt; class NewAllocator = Allocator&gt; </td></tr>
 <tr class="memitem:aec14ad85cd735ad9aeaa4b51e26fff6a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a4ad32bd643f611ee9d4b501b4a572069">ContainerLike</a>&lt; NewAllocator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#aec14ad85cd735ad9aeaa4b51e26fff6a">make_alike</a> () const</td></tr>
 <tr class="separator:aec14ad85cd735ad9aeaa4b51e26fff6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfeb22c8b5b4266834fea14b1444703c" id="r_acfeb22c8b5b4266834fea14b1444703c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#acfeb22c8b5b4266834fea14b1444703c">WriteParticles</a> (int level, std::ofstream &amp;ofs, int fnum, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;which, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;count, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Long &gt; &amp;where, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::map&lt; std::pair&lt; int, int &gt;, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#acc301a126a29e5a25eba6ae159190ff4">IntVector</a> &gt; &gt; &amp;particle_io_flags, bool is_checkpoint) const</td></tr>
@@ -3855,7 +3855,7 @@ template&lt;typename P &gt; </div>
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;template&lt; class &gt; class NewAllocator = amrex::DefaultAllocator&gt; </div>
+template&lt;template&lt; class &gt; class NewAllocator = Allocator&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3874,10 +3874,10 @@ template&lt;template&lt; class &gt; class NewAllocator = amrex::DefaultAllocator
 </table>
 </div><div class="memdoc">
 <p>Create an empty particle container</p>
-<p>This creates a new <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> particle container type with same compile-time and run-time attributes. But, it can change its allocator. This is helpful when creating temporary particle buffers for filter operations and device-to-host copies.</p>
+<p>This creates a new <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> particle container type with same compile-time and run-time attributes. But, it can change its allocator (default: same allocator). This is helpful when creating temporary particle buffers for filter operations and device-to-host copies.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Allocator</td><td><a class="el" href="classamrex_1_1AMReX.html">AMReX</a> allocator, e.g., <a class="el" href="classamrex_1_1PinnedArenaAllocator.html">amrex::PinnedArenaAllocator</a> </td></tr>
+    <tr><td class="paramname">Allocator</td><td><a class="el" href="classamrex_1_1AMReX.html">AMReX</a> allocator, e.g., <a class="el" href="classamrex_1_1PinnedArenaAllocator.html">amrex::PinnedArenaAllocator</a>, default: same allocator as the creating PC </td></tr>
   </table>
   </dd>
 </dl>

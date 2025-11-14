@@ -5332,7 +5332,7 @@
             <type>template&lt; class &gt; class</type>
             <declname>NewAllocator</declname>
             <defname>NewAllocator</defname>
-            <defval><ref refid="namespaceamrex_1a179fafc569924202b166896b608cd5c2" kindref="member">amrex::DefaultAllocator</ref></defval>
+            <defval>Allocator</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classamrex_1_1ParticleContainer__impl_1a4ad32bd643f611ee9d4b501b4a572069" kindref="member">ContainerLike</ref>&lt; NewAllocator &gt;</type>
@@ -5344,13 +5344,13 @@
         </briefdescription>
         <detaileddescription>
 <para>Create an empty particle container</para>
-<para>This creates a new <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> particle container type with same compile-time and run-time attributes. But, it can change its allocator. This is helpful when creating temporary particle buffers for filter operations and device-to-host copies.</para>
+<para>This creates a new <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> particle container type with same compile-time and run-time attributes. But, it can change its allocator (default: same allocator). This is helpful when creating temporary particle buffers for filter operations and device-to-host copies.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Allocator</parametername>
 </parameternamelist>
 <parameterdescription>
-<para><ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> allocator, e.g., <ref refid="classamrex_1_1PinnedArenaAllocator" kindref="compound">amrex::PinnedArenaAllocator</ref> </para>
+<para><ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> allocator, e.g., <ref refid="classamrex_1_1PinnedArenaAllocator" kindref="compound">amrex::PinnedArenaAllocator</ref>, default: same allocator as the creating PC </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
