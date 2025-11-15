@@ -675,8 +675,15 @@ to <code class="code highlight cpp c++ docutils literal highlight-c++"><span cla
 <p>In <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>, a large amount of GPU device memory is
 allocated and is kept in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span></code>.  The default is 3/4 of the
 total device memory, and it can be changed with a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code>
-parameter, <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size</span></code>, in the unit of bytes.  The default
-initial size for other arenas is 8388608 (i.e., 8 MB).  For
+parameter, <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_init_size</span></code>, in the unit of bytes. The default
+can also be changed with an environment variable
+<code class="docutils literal notranslate"><span class="pre">AMREX_THE_ARENA_INIT_SIZE=X</span></code>, where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the number of bytes. When
+both the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span></code> parameter and the environment variable are
+present, the former will override the latter. In both cases, the number
+string could have optional single quotes <code class="docutils literal notranslate"><span class="pre">'</span></code> as separators (e.g.,
+<code class="docutils literal notranslate"><span class="pre">10'000'000'000</span></code>). It may also use floating-point notation (<code class="docutils literal notranslate"><span class="pre">2.5e10</span></code>),
+as long as converting it does not introduce any loss of precision.</p>
+<p>The default initial size for other arenas is 8388608 (i.e., 8 MB).  For
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Managed_Arena</span><span class="p">()</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Device_Arena</span><span class="p">()</span></code>, it can be changed
 with <code class="docutils literal notranslate"><span class="pre">amrex.the_managed_arena_init_size</span></code> and
 <code class="docutils literal notranslate"><span class="pre">amrex.the_device_arena_init_size</span></code>, respectively, if they are not an alias
