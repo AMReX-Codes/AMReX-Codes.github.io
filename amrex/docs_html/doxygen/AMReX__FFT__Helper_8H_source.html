@@ -511,7 +511,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Helper_8H_source.html','')
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        strides[0] = 0;</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        strides[ndims] = 1;</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = ndims-1; i &gt;= 1; --i) {</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            strides[i] = strides[i+1] * len[ndims-1-i];</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            strides[i] = strides[i+1] * len[i];</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        }</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="preprocessor">#ifndef AMREX_USE_MKL_DFTI_2024</span></div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES, strides);</div>

@@ -2632,7 +2632,7 @@
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strides[0]<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strides[ndims]<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>ndims-1;<sp/>i<sp/>&gt;=<sp/>1;<sp/>--i)<sp/>{</highlight></codeline>
-<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strides[i]<sp/>=<sp/>strides[i+1]<sp/>*<sp/>len[ndims-1-i];</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strides[i]<sp/>=<sp/>strides[i+1]<sp/>*<sp/>len[i];</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="407"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_USE_MKL_DFTI_2024</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>-&gt;set_value(oneapi::mkl::dft::config_param::FWD_STRIDES,<sp/>strides);</highlight></codeline>
