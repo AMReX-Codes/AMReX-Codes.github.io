@@ -160,8 +160,13 @@ The combination of these numbers is unique across processes. This is done to fac
 the creation of particle initial conditions in parallel. In storing these
 identifying numbers, 39 bits are devoted to the <cite>id</cite>, allowing approximately 550 billion
 possible <em>local</em> <cite>id</cite> numbers, and 24 bits are used to store the <cite>cpu</cite>, allowing about 16.8 million
-unique (MPI) processes.
-One bit is devoted to mark a particle valid or invalid.</p>
+unique (MPI) processes.</p>
+<p>One bit is devoted to mark a particle valid or invalid. This is often used to remove particles from a
+simulation. During <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Redistribute</span><span class="p">()</span></code>, particles with
+invalid ids are removed from the simulation by default, although this behavior is customizable. Particles
+with invalid ids are also not written out during plotfile writes or checkpoint / restart operations.
+The allowed values for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">()</span></code> are <cite>0</cite> to <cite>2**39 - 1</cite>, and the allowed values for <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">p</span><span class="p">.</span><span class="n">cpu</span><span class="p">()</span></code> are
+<cite>0</cite> to <cite>2**24 - 1</cite>.</p>
 <p>To pack and unpack these numbers, one uses the following syntax:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="w"> </span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>

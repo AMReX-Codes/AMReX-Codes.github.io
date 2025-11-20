@@ -243,6 +243,8 @@ to the device and pass a device pointer function object <cite>DevicePtrIF</cite>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
+<p><strong>Q.</strong> I’m getting errors when running with GPU-aware MPI</p>
+<p><strong>A.</strong> While other problems may exist. One thing to check, if the machine is using Slurm, is the <cite>cgroup.conf</cite> file. If it contains <cite>ConstrainDevices=yes</cite>, then IPC can be impacted, which means bindings such as <cite>–gpu-bind=closest</cite> should not be used. Instead try <cite>–gpu-bind=none</cite>.</p>
 <section id="more-questions">
 <h2>More Questions<a class="headerlink" href="#more-questions" title="Permalink to this heading"></a></h2>
 <p>If your question was not addressed here, you are encouraged to
