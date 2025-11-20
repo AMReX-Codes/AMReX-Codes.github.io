@@ -22,6 +22,7 @@ var AMReX__ParticleUtil_8H =
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a9624cde7b9ad11a1692714a8a2cf4d5c", null ],
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a16b2ad610aeda065996254dcb64e1210", null ],
     [ "numTilesInBox", "AMReX__ParticleUtil_8H.html#a5ab3a59d9c5c4f66d4bfd4f3f511c8a8", null ],
+    [ "partitionParticles", "AMReX__ParticleUtil_8H.html#a0faf1158bb54fdef7f76709ea803add0", null ],
     [ "partitionParticles", "AMReX__ParticleUtil_8H.html#ac8c341f9e253720288265d6112c4ab9e", null ],
     [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#ad0dd82a87ca66833b4809d6f495e399d", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ad434592fa38d501d9db9bfb648bb9140", null ],

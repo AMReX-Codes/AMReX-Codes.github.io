@@ -2873,6 +2873,7 @@ var namespaceamrex =
     [ "Partition", "namespaceamrex.html#ae3a47d7e7e8f7a66ddf15cdd606dbb8f", null ],
     [ "Partition", "namespaceamrex.html#a3b8c7b9108d9ccbc108689fb9b8b2a7e", null ],
     [ "Partition", "namespaceamrex.html#a1214d3602cac3f99cebc60c951dbb938", null ],
+    [ "partitionParticles", "namespaceamrex.html#a0faf1158bb54fdef7f76709ea803add0", null ],
     [ "partitionParticles", "namespaceamrex.html#ac8c341f9e253720288265d6112c4ab9e", null ],
     [ "partitionParticlesByDest", "namespaceamrex.html#ad0dd82a87ca66833b4809d6f495e399d", null ],
     [ "pcg_solve", "namespaceamrex.html#aac08264ab15fc21e532fcc106f4c00ac", null ],
