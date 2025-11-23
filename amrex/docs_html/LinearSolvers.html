@@ -381,7 +381,7 @@ biconjugate gradient stabilized method, but can easily be changed with the <code
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setBottomSolver</span><span class="w"> </span><span class="p">(</span><span class="n">BottomSolver</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Available choices are</p>
+<p>Available choices the bottom solver are</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span></code>: The default.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">cg</span></code>: The conjugate gradient method.  The
@@ -394,16 +394,29 @@ if cg fails.  The matrix must be symmetric.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span></code>: One of the solvers available through hypre;
 see the section below on External Solvers</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">petsc</span></code>: Currently for cell-centered only.</p></li>
+</ul>
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span></code> class can be used control the agglomeration and
+consolidation strategy for multigrid coarsening.</p>
+<ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setAgglomeration</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default true) can be used
-continue to coarsen the multigrid by copying what would have been the
-bottom solver to a new <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> with a new <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> with
-fewer, larger grids, to allow for additional coarsening.</p></li>
+to copy the current level of multigrid data to fewer, larger
+boxes. Two advantages of using this option is that the bottom solver will become
+smaller, and communication overhead is reduced.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setAgglomerationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> controls the grid-length
+threshold used for agglomeration. By default, the threshold length is set
+to 32 for GPU builds, and 8, 16 and 32 for CPU builds in 1D, 2D and 3D,
+respectively. The corresponding volume threshold is <span class="math notranslate nohighlight">\(L^D\)</span>, where
+<span class="math notranslate nohighlight">\(L\)</span> is the length threshold and <span class="math notranslate nohighlight">\(D\)</span> is
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_SPACEDIM</span></code>. When the average box volume falls below this volume
+threshold, boxes are agglomerated until this is no longer the case. Note
+that this action is recursive and can happen at several different levels
+in the multigrid hierarchy.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidation</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default true) can be used
 continue to transfer a multigrid problem to fewer MPI ranks.
 There are more setting such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationRatio</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationStrategy</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, to give control over how this
-process works.</p></li>
+process works.  If agglomeration is used, consolidation is ignored.</p></li>
 </ul>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setThrowException</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> controls whether multigrid failure results
 in aborting (default) or throwing an exception, whereby control will return to the calling
