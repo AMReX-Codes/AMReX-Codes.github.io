@@ -9,6 +9,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "devicePropMinor", "classamrex_1_1Gpu_1_1Device.html#a53e232320568f93d7c3dece18c9d6807", null ],
     [ "deviceVendor", "classamrex_1_1Gpu_1_1Device.html#a756e125c87b0efc96386031d3eae7402", null ],
     [ "Finalize", "classamrex_1_1Gpu_1_1Device.html#a5bf574c7d8adff1fc0593e06d9007078", null ],
+    [ "freeAsync", "classamrex_1_1Gpu_1_1Device.html#a1e74751d797e87cfc0fd9800829d1718", null ],
     [ "freeMemAvailable", "classamrex_1_1Gpu_1_1Device.html#a92efa21af9b7ae2cb3ee5710922c8bac", null ],
     [ "gpuStream", "classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f", null ],
     [ "grid_stride_threads_and_blocks", "classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf", null ],
@@ -42,8 +43,8 @@ var classamrex_1_1Gpu_1_1Device =
     [ "totalGlobalMem", "classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a", null ],
     [ "device_id", "classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648", null ],
     [ "device_prop", "classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4", null ],
-    [ "gpu_stream", "classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666", null ],
-    [ "gpu_stream_pool", "classamrex_1_1Gpu_1_1Device.html#a367f9e7d41a6be0c7822f3dc358b0e4e", null ],
+    [ "gpu_stream_index", "classamrex_1_1Gpu_1_1Device.html#a7597ccddda1c2ce70af5449165309554", null ],
+    [ "gpu_stream_pool", "classamrex_1_1Gpu_1_1Device.html#a9f2f6a620c5431ab2357b367b0c0927b", null ],
     [ "max_blocks_per_launch", "classamrex_1_1Gpu_1_1Device.html#ade4fd28a778c5764f258744e57ef4f66", null ],
     [ "max_gpu_streams", "classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e", null ],
     [ "memory_pools_supported", "classamrex_1_1Gpu_1_1Device.html#ad02a046eadc84fc6671e2eec8477421b", null ],
@@ -52,6 +53,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "numBlocksOverride", "classamrex_1_1Gpu_1_1Device.html#a728f2480b00dbe80a716bc81f42f8508", null ],
     [ "numThreadsMin", "classamrex_1_1Gpu_1_1Device.html#a73de48a30b914ee4dc994e261e36be8f", null ],
     [ "numThreadsOverride", "classamrex_1_1Gpu_1_1Device.html#a8b511fa5992f49c3e027153931c354b4", null ],
+    [ "StreamManager", "classamrex_1_1Gpu_1_1Device.html#a89a61f586630986caee79c8712f669e0", null ],
     [ "verbose", "classamrex_1_1Gpu_1_1Device.html#a725fb9c29db07764d1a95c03dedf3df5", null ],
     [ "warp_size", "classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926", null ]
 ];

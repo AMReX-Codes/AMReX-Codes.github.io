@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1Gpu_1_1Device.html','');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classamrex_1_1Gpu_1_1Device-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::Gpu::Device Class Reference</div></div>
@@ -145,6 +146,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a67c55a7d25eb5f5fdec62ffcc9c0dccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95bff02196b80d848b89b92166e704b9" id="r_a95bff02196b80d848b89b92166e704b9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a95bff02196b80d848b89b92166e704b9">streamSynchronizeAll</a> () noexcept</td></tr>
 <tr class="separator:a95bff02196b80d848b89b92166e704b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e74751d797e87cfc0fd9800829d1718" id="r_a1e74751d797e87cfc0fd9800829d1718"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a1e74751d797e87cfc0fd9800829d1718">freeAsync</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *arena, void *mem) noexcept</td></tr>
+<tr class="separator:a1e74751d797e87cfc0fd9800829d1718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a607313a3ee1bfc5baff8da183edd4b46" id="r_a607313a3ee1bfc5baff8da183edd4b46"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a607313a3ee1bfc5baff8da183edd4b46">mem_advise_set_preferred</a> (void *p, std::size_t sz, int device)</td></tr>
 <tr class="separator:a607313a3ee1bfc5baff8da183edd4b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246378e3da5672c3a23a3dadc117edee" id="r_a246378e3da5672c3a23a3dadc117edee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a246378e3da5672c3a23a3dadc117edee">mem_advise_set_readonly</a> (void *p, std::size_t sz)</td></tr>
@@ -202,6 +205,11 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:aec08005bbd7f17ae45fa38ad3adc5dc0" id="r_aec08005bbd7f17ae45fa38ad3adc5dc0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#aec08005bbd7f17ae45fa38ad3adc5dc0">initialize_gpu</a> (bool minimal)</td></tr>
 <tr class="separator:aec08005bbd7f17ae45fa38ad3adc5dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a89a61f586630986caee79c8712f669e0" id="r_a89a61f586630986caee79c8712f669e0"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a89a61f586630986caee79c8712f669e0">StreamManager</a></td></tr>
+<tr class="separator:a89a61f586630986caee79c8712f669e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:adf89d2ef6829289ef4e4f9ea2bd6a648" id="r_adf89d2ef6829289ef4e4f9ea2bd6a648"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648">device_id</a> = 0</td></tr>
@@ -220,10 +228,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a728f2480b00dbe80a716bc81f42f8508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b511fa5992f49c3e027153931c354b4" id="r_a8b511fa5992f49c3e027153931c354b4"><td class="memItemLeft" align="right" valign="top">static dim3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a8b511fa5992f49c3e027153931c354b4">numThreadsOverride</a> = dim3(0, 0, 0)</td></tr>
 <tr class="separator:a8b511fa5992f49c3e027153931c354b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a367f9e7d41a6be0c7822f3dc358b0e4e" id="r_a367f9e7d41a6be0c7822f3dc358b0e4e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a367f9e7d41a6be0c7822f3dc358b0e4e">gpu_stream_pool</a></td></tr>
-<tr class="separator:a367f9e7d41a6be0c7822f3dc358b0e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b4d2d558f0b94c682dcc9a26f7e666" id="r_a44b4d2d558f0b94c682dcc9a26f7e666"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666">gpu_stream</a></td></tr>
-<tr class="separator:a44b4d2d558f0b94c682dcc9a26f7e666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2f6a620c5431ab2357b367b0c0927b" id="r_a9f2f6a620c5431ab2357b367b0c0927b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html">StreamManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a9f2f6a620c5431ab2357b367b0c0927b">gpu_stream_pool</a></td></tr>
+<tr class="separator:a9f2f6a620c5431ab2357b367b0c0927b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7597ccddda1c2ce70af5449165309554" id="r_a7597ccddda1c2ce70af5449165309554"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a7597ccddda1c2ce70af5449165309554">gpu_stream_index</a></td></tr>
+<tr class="separator:a7597ccddda1c2ce70af5449165309554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe1c34bea3aec80c5dabd98aea542d4" id="r_affe1c34bea3aec80c5dabd98aea542d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#a2235406f46755fe4275db8b042b0da92">gpuDeviceProp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4">device_prop</a></td></tr>
 <tr class="separator:affe1c34bea3aec80c5dabd98aea542d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad02a046eadc84fc6671e2eec8477421b" id="r_ad02a046eadc84fc6671e2eec8477421b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#ad02a046eadc84fc6671e2eec8477421b">memory_pools_supported</a> = 0</td></tr>
@@ -504,6 +512,42 @@ Static Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e74751d797e87cfc0fd9800829d1718" name="a1e74751d797e87cfc0fd9800829d1718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e74751d797e87cfc0fd9800829d1718">&#9670;&#160;</a></span>freeAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::Device::freeAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td>
+          <td class="paramname"><em>arena</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1423,8 +1467,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a44b4d2d558f0b94c682dcc9a26f7e666" name="a44b4d2d558f0b94c682dcc9a26f7e666"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44b4d2d558f0b94c682dcc9a26f7e666">&#9670;&#160;</a></span>gpu_stream</h2>
+<a id="a7597ccddda1c2ce70af5449165309554" name="a7597ccddda1c2ce70af5449165309554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7597ccddda1c2ce70af5449165309554">&#9670;&#160;</a></span>gpu_stream_index</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1433,7 +1477,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> &gt; amrex::Gpu::Device::gpu_stream</td>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; amrex::Gpu::Device::gpu_stream_index</td>
         </tr>
       </table>
   </td>
@@ -1445,8 +1489,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a367f9e7d41a6be0c7822f3dc358b0e4e" name="a367f9e7d41a6be0c7822f3dc358b0e4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a367f9e7d41a6be0c7822f3dc358b0e4e">&#9670;&#160;</a></span>gpu_stream_pool</h2>
+<a id="a9f2f6a620c5431ab2357b367b0c0927b" name="a9f2f6a620c5431ab2357b367b0c0927b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2f6a620c5431ab2357b367b0c0927b">&#9670;&#160;</a></span>gpu_stream_pool</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1455,7 +1499,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> &gt; amrex::Gpu::Device::gpu_stream_pool</td>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html">StreamManager</a> &gt; amrex::Gpu::Device::gpu_stream_pool</td>
         </tr>
       </table>
   </td>
@@ -1637,6 +1681,28 @@ Static Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89a61f586630986caee79c8712f669e0" name="a89a61f586630986caee79c8712f669e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a61f586630986caee79c8712f669e0">&#9670;&#160;</a></span>StreamManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend amrex::Gpu::Device::StreamManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

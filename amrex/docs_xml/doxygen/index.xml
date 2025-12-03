@@ -3139,11 +3139,12 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1a73de48a30b914ee4dc994e261e36be8f" kind="variable"><name>numThreadsMin</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a728f2480b00dbe80a716bc81f42f8508" kind="variable"><name>numBlocksOverride</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a8b511fa5992f49c3e027153931c354b4" kind="variable"><name>numThreadsOverride</name></member>
-    <member refid="classamrex_1_1Gpu_1_1Device_1a367f9e7d41a6be0c7822f3dc358b0e4e" kind="variable"><name>gpu_stream_pool</name></member>
-    <member refid="classamrex_1_1Gpu_1_1Device_1a44b4d2d558f0b94c682dcc9a26f7e666" kind="variable"><name>gpu_stream</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a9f2f6a620c5431ab2357b367b0c0927b" kind="variable"><name>gpu_stream_pool</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a7597ccddda1c2ce70af5449165309554" kind="variable"><name>gpu_stream_index</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1affe1c34bea3aec80c5dabd98aea542d4" kind="variable"><name>device_prop</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1ad02a046eadc84fc6671e2eec8477421b" kind="variable"><name>memory_pools_supported</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1ade4fd28a778c5764f258744e57ef4f66" kind="variable"><name>max_blocks_per_launch</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a89a61f586630986caee79c8712f669e0" kind="variable"><name>StreamManager</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1ac61ee1378b2c03ab7868234247eca5df" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a5bf574c7d8adff1fc0593e06d9007078" kind="function"><name>Finalize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kind="function"><name>gpuStream</name></member>
@@ -3160,6 +3161,7 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kind="function"><name>synchronize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a67c55a7d25eb5f5fdec62ffcc9c0dccf" kind="function"><name>streamSynchronize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a95bff02196b80d848b89b92166e704b9" kind="function"><name>streamSynchronizeAll</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a1e74751d797e87cfc0fd9800829d1718" kind="function"><name>freeAsync</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a607313a3ee1bfc5baff8da183edd4b46" kind="function"><name>mem_advise_set_preferred</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a246378e3da5672c3a23a3dadc117edee" kind="function"><name>mem_advise_set_readonly</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" kind="function"><name>setNumThreadsMin</name></member>
@@ -5292,6 +5294,7 @@
     <member refid="classamrex_1_1HypreIJIface_1ae6fb3e32e3041f2cee891a7b52f7088e" kind="function"><name>run_hypre_solve</name></member>
     <member refid="classamrex_1_1HypreIJIface_1a7b457116878fa9bca83d6710ae7f6dde" kind="function"><name>boomeramg_precond_configure</name></member>
     <member refid="classamrex_1_1HypreIJIface_1af635b8debb95a35dc7f5201129d4cd5b" kind="function"><name>euclid_precond_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1aa8bbcf36aac7e17afb0ed19895149f68" kind="function"><name>ilu_precond_configure</name></member>
     <member refid="classamrex_1_1HypreIJIface_1a2a13d67a9f8e03517f861c984457c537" kind="function"><name>boomeramg_solver_configure</name></member>
     <member refid="classamrex_1_1HypreIJIface_1a27bb5a9047943afd18cf194c141d20ea" kind="function"><name>gmres_solver_configure</name></member>
     <member refid="classamrex_1_1HypreIJIface_1a83a673d85745391688b653887ebc51a8" kind="function"><name>cogmres_solver_configure</name></member>
@@ -10066,6 +10069,7 @@
     <member refid="classamrex_1_1PODVector_1a0a7816dc33596de1484ed0b56a83cf62" kind="function"><name>reserve</name></member>
     <member refid="classamrex_1_1PODVector_1a3cff4b6aa7fd45c59b2225de7f72f979" kind="function"><name>shrink_to_fit</name></member>
     <member refid="classamrex_1_1PODVector_1a20b9cc552a434d343fd01e5c62b39ef2" kind="function"><name>swap</name></member>
+    <member refid="classamrex_1_1PODVector_1a7b46e47ebd8f3287b4610740502460bf" kind="function"><name>free_async</name></member>
     <member refid="classamrex_1_1PODVector_1a7c58a3967c2b552287c57287bc562655" kind="function"><name>reserve_doit</name></member>
     <member refid="classamrex_1_1PODVector_1a4731233b08ab3019e0f71a2e9a78a16a" kind="function"><name>nBytes</name></member>
     <member refid="classamrex_1_1PODVector_1a60bd0f3726b18f1015e6bebece37f679" kind="function"><name>GetNewCapacityForPush</name></member>
@@ -11270,6 +11274,14 @@
     <member refid="structamrex_1_1Gpu_1_1StreamItInfo_1af984c422b61b1c2fa85896df7635e8e8" kind="variable"><name>device_sync</name></member>
     <member refid="structamrex_1_1Gpu_1_1StreamItInfo_1a4de687fc827f6b0fd1960b07435be1ba" kind="function"><name>StreamItInfo</name></member>
     <member refid="structamrex_1_1Gpu_1_1StreamItInfo_1a5cd10382e14ba6fe750825ad52a53870" kind="function"><name>DisableDeviceSync</name></member>
+  </compound>
+  <compound refid="classamrex_1_1Gpu_1_1StreamManager" kind="class"><name>amrex::Gpu::StreamManager</name>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1adc17fc41937b32d5d17433992806d50a" kind="variable"><name>m_stream</name></member>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1a8cc160d56bc6b1ab2e9aa4e53c6f930b" kind="variable"><name>m_mutex</name></member>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1a10e3fd936dd80fed75784ac041881b36" kind="variable"><name>m_free_wait_list</name></member>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1a385e62681cb40d6728beac1c3ae0594f" kind="function"><name>get</name></member>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1a8ceab6b26a62e5f59dd7dc083218c1b3" kind="function"><name>sync</name></member>
+    <member refid="classamrex_1_1Gpu_1_1StreamManager_1ad1e1ccdbc61c5f41a2e3d600388ac654" kind="function"><name>free_async</name></member>
   </compound>
   <compound refid="classamrex_1_1StreamRetry" kind="class"><name>amrex::StreamRetry</name>
     <member refid="classamrex_1_1StreamRetry_1ade275d3bbc75ea3549c7249d97e74f33" kind="variable"><name>tries</name></member>
@@ -14849,6 +14861,7 @@
     <member refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kind="function"><name>synchronize</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kind="function"><name>streamSynchronize</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" kind="function"><name>streamSynchronizeAll</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a2e573a00e2c0d0bff8097bd9f3dd422e" kind="function"><name>freeAsync</name></member>
     <member refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kind="function"><name>htod_memcpy_async</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kind="function"><name>dtoh_memcpy_async</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" kind="function"><name>dtod_memcpy_async</name></member>

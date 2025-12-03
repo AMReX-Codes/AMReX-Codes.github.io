@@ -19,6 +19,7 @@ var classamrex_1_1HypreIJIface =
     [ "getNumIters", "classamrex_1_1HypreIJIface.html#a7a0cff28901a012c347fa1d4339ffd1f", null ],
     [ "gmres_solver_configure", "classamrex_1_1HypreIJIface.html#a27bb5a9047943afd18cf194c141d20ea", null ],
     [ "hybrid_solver_configure", "classamrex_1_1HypreIJIface.html#a457d2b6f6174b9705ebc60f9fa034388", null ],
+    [ "ilu_precond_configure", "classamrex_1_1HypreIJIface.html#aa8bbcf36aac7e17afb0ed19895149f68", null ],
     [ "init_preconditioner", "classamrex_1_1HypreIJIface.html#afd785510c002ae90c0406adea27abb4e", null ],
     [ "init_solver", "classamrex_1_1HypreIJIface.html#ad7072916b39b7d8c98e19a4d6e23dd6e", null ],
     [ "lgmres_solver_configure", "classamrex_1_1HypreIJIface.html#a2dce11a296890cc9e974d2e9102eba29", null ],

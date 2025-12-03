@@ -45,6 +45,7 @@ var classamrex_1_1PODVector =
     [ "end", "classamrex_1_1PODVector.html#a834016620c6c540a3af5cbe7a2637bed", null ],
     [ "erase", "classamrex_1_1PODVector.html#aa99bd0cb7a274579760788af8dbd2dea", null ],
     [ "erase", "classamrex_1_1PODVector.html#a1299b5a44efad2f0c8966d45ad0b61f5", null ],
+    [ "free_async", "classamrex_1_1PODVector.html#a7b46e47ebd8f3287b4610740502460bf", null ],
     [ "front", "classamrex_1_1PODVector.html#af1770759d0e5ea2ad7faba94315be269", null ],
     [ "front", "classamrex_1_1PODVector.html#aa0ef3959898de3ca6c262b2a2036d8df", null ],
     [ "get_allocator", "classamrex_1_1PODVector.html#a67de98b5efe335d818e6bc91911418ff", null ],

@@ -175,6 +175,7 @@ var annotated_dup =
         [ "SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", "structamrex_1_1Gpu_1_1SingleStreamRegion" ],
         [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html", "classamrex_1_1Gpu_1_1StreamIter" ],
         [ "StreamItInfo", "structamrex_1_1Gpu_1_1StreamItInfo.html", "structamrex_1_1Gpu_1_1StreamItInfo" ],
+        [ "StreamManager", "classamrex_1_1Gpu_1_1StreamManager.html", "classamrex_1_1Gpu_1_1StreamManager" ],
         [ "warpReduce", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ]
       ] ],
       [ "Math", "namespaceamrex_1_1Math.html", [

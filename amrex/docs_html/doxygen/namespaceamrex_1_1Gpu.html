@@ -206,6 +206,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1StreamItInfo.html">StreamItInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html">StreamManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1warpReduce.html">warpReduce</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -308,6 +310,8 @@ Functions</h2></td></tr>
 <tr class="separator:a67a618504ee5fb94bd65a5d393e344b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78acbb676e94c674fa5ec73508cef459" id="r_a78acbb676e94c674fa5ec73508cef459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a78acbb676e94c674fa5ec73508cef459">streamSynchronizeAll</a> () noexcept</td></tr>
 <tr class="separator:a78acbb676e94c674fa5ec73508cef459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e573a00e2c0d0bff8097bd9f3dd422e" id="r_a2e573a00e2c0d0bff8097bd9f3dd422e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">freeAsync</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *arena, void *mem) noexcept</td></tr>
+<tr class="separator:a2e573a00e2c0d0bff8097bd9f3dd422e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacefe17a39734cb2475a36199ab1370b" id="r_aacefe17a39734cb2475a36199ab1370b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">htod_memcpy_async</a> (void *p_d, const void *p_h, const std::size_t sz) noexcept</td></tr>
 <tr class="separator:aacefe17a39734cb2475a36199ab1370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cb0d90b937d4749b2219ad0e9fa8277" id="r_a6cb0d90b937d4749b2219ad0e9fa8277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">dtoh_memcpy_async</a> (void *p_h, const void *p_d, const std::size_t sz) noexcept</td></tr>
@@ -2004,6 +2008,50 @@ template&lt;typename IT , typename <a class="el" href="namespaceamrex.html#a1e47
     <tr><td class="paramname">first</td><td>the inclusive first in the range [first, last) </td></tr>
     <tr><td class="paramname">last</td><td>the exclusive last in the range [first, last) </td></tr>
     <tr><td class="paramname">f</td><td>the callable with the function signature of void(T&amp;, Long), where T is the element type and the Long parameter is the index for the element to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e573a00e2c0d0bff8097bd9f3dd422e" name="a2e573a00e2c0d0bff8097bd9f3dd422e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e573a00e2c0d0bff8097bd9f3dd422e">&#9670;&#160;</a></span>freeAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::freeAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td>
+          <td class="paramname"><em>arena</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Deallocate memory belonging to an arena asynchronously. Memory deallocated in this way is held in a pool and will not be reused until the next <a class="el" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize()</a>. GPU kernels that were already launched on the currently active stream can still continue to use the memory after this function is called. There is no need to use this function for CPU-only memory or with The_Async_Arena.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arena</td><td>the arena the memory belongs to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mem</td><td>pointer to the memory to be freed </td></tr>
   </table>
   </dd>
 </dl>

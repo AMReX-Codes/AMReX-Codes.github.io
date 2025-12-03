@@ -258,6 +258,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3cff4b6aa7fd45c59b2225de7f72f979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20b9cc552a434d343fd01e5c62b39ef2" id="r_a20b9cc552a434d343fd01e5c62b39ef2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PODVector.html#a20b9cc552a434d343fd01e5c62b39ef2">swap</a> (<a class="el" href="classamrex_1_1PODVector.html">PODVector</a>&lt; T, Allocator &gt; &amp;a_vector) noexcept</td></tr>
 <tr class="separator:a20b9cc552a434d343fd01e5c62b39ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b46e47ebd8f3287b4610740502460bf" id="r_a7b46e47ebd8f3287b4610740502460bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PODVector.html#a7b46e47ebd8f3287b4610740502460bf">free_async</a> () noexcept</td></tr>
+<tr class="separator:a7b46e47ebd8f3287b4610740502460bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -1457,6 +1459,34 @@ template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b46e47ebd8f3287b4610740502460bf" name="a7b46e47ebd8f3287b4610740502460bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b46e47ebd8f3287b4610740502460bf">&#9670;&#160;</a></span>free_async()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; T, Allocator &gt;::free_async </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Deallocate the memory of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> using <a class="el" href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">amrex::Gpu::freeAsync</a>. Memory deallocated in this way is held in a pool and will not be reused until the next <a class="el" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize()</a>. GPU kernels that were already launched on the currently active stream can still continue to use the memory after this function is called. </p>
 
 </div>
 </div>
