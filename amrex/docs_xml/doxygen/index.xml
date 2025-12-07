@@ -984,11 +984,13 @@
     <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" kind="function"><name>align</name></member>
     <member refid="classamrex_1_1Arena_1ad3c30247b7f738cc4e292f781a503ce9" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1Arena_1ada0c93d4aa3a9adce127ba381c652ac6" kind="function"><name>PrintUsage</name></member>
+    <member refid="classamrex_1_1Arena_1af8dfd674efa1da179629083236d2ad50" kind="function"><name>PrintUsageToStream</name></member>
     <member refid="classamrex_1_1Arena_1aa1cfbcfa1c41ac7e45bf469e93db7402" kind="function"><name>PrintUsageToFiles</name></member>
     <member refid="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" kind="function"><name>Finalize</name></member>
     <member refid="classamrex_1_1Arena_1a881f97d5676c4784f52d6f4c702da696" kind="function"><name>freeUnused_protected</name></member>
     <member refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" kind="function"><name>allocate_system</name></member>
     <member refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" kind="function"><name>deallocate_system</name></member>
+    <member refid="classamrex_1_1Arena_1a87a617ddebe957a11b9614915640d912" kind="function"><name>out_of_memory_abort</name></member>
   </compound>
   <compound refid="classamrex_1_1ArenaAllocator" kind="class"><name>amrex::ArenaAllocator</name>
   </compound>
@@ -6581,6 +6583,7 @@
   <compound refid="structamrex_1_1TinyProfiler_1_1MemProcStats" kind="struct"><name>amrex::TinyProfiler::MemProcStats</name>
     <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1a330cc4e231f61e998afb4546138fa0c3" kind="variable"><name>nalloc</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1ab2c0f6adf1de06d4e718a0165b63b373" kind="variable"><name>nfree</name></member>
+    <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1a7fd15a2d810c1676a11751e2d05288a2" kind="variable"><name>curmem_max</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1ad4b57ac73f4f081e9dd6a4cb04a7256d" kind="variable"><name>avgmem_min</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1a294ace43655d2f9f98de17aa39ae94ed" kind="variable"><name>avgmem_avg</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1MemProcStats_1a84205dd6fc19fda21f2932003ee62a85" kind="variable"><name>avgmem_max</name></member>
@@ -11674,6 +11677,7 @@
     <member refid="classamrex_1_1TinyProfiler_1a55b136d8859480b76a1311cff89009a0" kind="variable"><name>ttstack</name></member>
     <member refid="classamrex_1_1TinyProfiler_1ac803023249064c812474a5aa120ef397" kind="variable"><name>statsmap</name></member>
     <member refid="classamrex_1_1TinyProfiler_1abcb523d4f35aced1936bf2f559577201" kind="variable"><name>t_init</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a58d4b9a8815bf4a8de34026cf4a80208" kind="variable"><name>t_memory_init</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a15ae68038b556fc6fa24170d5cb0d5b5" kind="variable"><name>device_synchronize_around_region</name></member>
     <member refid="classamrex_1_1TinyProfiler_1af5020b8e813ceea3418f07d2529ae2cd" kind="variable"><name>n_print_tabs</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a42fc975e27a744624c255b0fad3f8cd7" kind="variable"><name>verbose</name></member>
@@ -11705,9 +11709,10 @@
     <member refid="classamrex_1_1TinyProfiler_1abf8db78796b24b46b0483e5b61ed1d84" kind="function"><name>StartRegion</name></member>
     <member refid="classamrex_1_1TinyProfiler_1ac96b507c36165550f9a2bf115aedc5fb" kind="function"><name>StopRegion</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a8a14bcc37603ec472c17a644428d3686" kind="function"><name>PrintCallStack</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a30e8fa165c689f81253f46ab847ac944" kind="function"><name>PrintMemoryUsage</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a179ed9477bf3c19ddd7678a6277230c1" kind="function"><name>get_output_file</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a77843e1433ce6bede350d2dd35eb02a3" kind="function"><name>PrintStats</name></member>
-    <member refid="classamrex_1_1TinyProfiler_1a18a5eb16b85aa8cc252a58b24a6ac763" kind="function"><name>PrintMemStats</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a96815e29b57f780eaa5209461fe4190f" kind="function"><name>PrintMemStats</name></member>
   </compound>
   <compound refid="classamrex_1_1TinyProfileRegion" kind="class"><name>amrex::TinyProfileRegion</name>
     <member refid="classamrex_1_1TinyProfileRegion_1ae8f1674b3d50716ce74d4d05074c5551" kind="variable"><name>regname</name></member>

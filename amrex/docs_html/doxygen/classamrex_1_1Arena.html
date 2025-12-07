@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1Arena.html',''); initRes
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classamrex_1_1Arena-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::Arena Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -196,6 +197,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad3c30247b7f738cc4e292f781a503ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0c93d4aa3a9adce127ba381c652ac6" id="r_ada0c93d4aa3a9adce127ba381c652ac6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ada0c93d4aa3a9adce127ba381c652ac6">PrintUsage</a> (bool print_max_usage=false)</td></tr>
 <tr class="separator:ada0c93d4aa3a9adce127ba381c652ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8dfd674efa1da179629083236d2ad50" id="r_af8dfd674efa1da179629083236d2ad50"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#af8dfd674efa1da179629083236d2ad50">PrintUsageToStream</a> (std::ostream &amp;os, std::string const &amp;space)</td></tr>
+<tr class="separator:af8dfd674efa1da179629083236d2ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1cfbcfa1c41ac7e45bf469e93db7402" id="r_aa1cfbcfa1c41ac7e45bf469e93db7402"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402">PrintUsageToFiles</a> (std::string const &amp;filename, std::string const &amp;message)</td></tr>
 <tr class="separator:aa1cfbcfa1c41ac7e45bf469e93db7402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06dd6197d2081d7dd4c1bed308edd387" id="r_a06dd6197d2081d7dd4c1bed308edd387"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a06dd6197d2081d7dd4c1bed308edd387">Finalize</a> ()</td></tr>
@@ -214,6 +217,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:afc721e195430f79b2d1b287c490ef0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac07ba8cda253cddee3cab1168ac65694" id="r_ac07ba8cda253cddee3cab1168ac65694"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694">deallocate_system</a> (void *p, std::size_t nbytes)</td></tr>
 <tr class="separator:ac07ba8cda253cddee3cab1168ac65694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a87a617ddebe957a11b9614915640d912" id="r_a87a617ddebe957a11b9614915640d912"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a87a617ddebe957a11b9614915640d912">out_of_memory_abort</a> (std::string const &amp;memory_type, std::size_t nbytes, std::string const &amp;error_msg)</td></tr>
+<tr class="separator:a87a617ddebe957a11b9614915640d912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -927,6 +935,48 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a87a617ddebe957a11b9614915640d912" name="a87a617ddebe957a11b9614915640d912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a617ddebe957a11b9614915640d912">&#9670;&#160;</a></span>out_of_memory_abort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Arena::out_of_memory_abort </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>memory_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>error_msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ada0c93d4aa3a9adce127ba381c652ac6" name="ada0c93d4aa3a9adce127ba381c652ac6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada0c93d4aa3a9adce127ba381c652ac6">&#9670;&#160;</a></span>PrintUsage()</h2>
 
@@ -973,6 +1023,42 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8dfd674efa1da179629083236d2ad50" name="af8dfd674efa1da179629083236d2ad50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8dfd674efa1da179629083236d2ad50">&#9670;&#160;</a></span>PrintUsageToStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Arena::PrintUsageToStream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

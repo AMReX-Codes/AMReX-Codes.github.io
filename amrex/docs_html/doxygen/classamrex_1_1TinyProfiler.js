@@ -23,7 +23,8 @@ var classamrex_1_1TinyProfiler =
     [ "operator=", "classamrex_1_1TinyProfiler.html#ada78a4f656254e716d24eec760df09ef", null ],
     [ "operator=", "classamrex_1_1TinyProfiler.html#a7302c20bc98f1a54da0608b4b9a209c3", null ],
     [ "PrintCallStack", "classamrex_1_1TinyProfiler.html#a8a14bcc37603ec472c17a644428d3686", null ],
-    [ "PrintMemStats", "classamrex_1_1TinyProfiler.html#a18a5eb16b85aa8cc252a58b24a6ac763", null ],
+    [ "PrintMemoryUsage", "classamrex_1_1TinyProfiler.html#a30e8fa165c689f81253f46ab847ac944", null ],
+    [ "PrintMemStats", "classamrex_1_1TinyProfiler.html#a96815e29b57f780eaa5209461fe4190f", null ],
     [ "PrintStats", "classamrex_1_1TinyProfiler.html#a77843e1433ce6bede350d2dd35eb02a3", null ],
     [ "RegisterArena", "classamrex_1_1TinyProfiler.html#a0ee76d52f5f79b4295db066f8145bea1", null ],
     [ "start", "classamrex_1_1TinyProfiler.html#aa79d79de0a3a1e592808ea80448e1637", null ],
@@ -46,6 +47,7 @@ var classamrex_1_1TinyProfiler =
     [ "stats", "classamrex_1_1TinyProfiler.html#a5205c680d2a8d3fd69195aab83ce3b7a", null ],
     [ "statsmap", "classamrex_1_1TinyProfiler.html#ac803023249064c812474a5aa120ef397", null ],
     [ "t_init", "classamrex_1_1TinyProfiler.html#abcb523d4f35aced1936bf2f559577201", null ],
+    [ "t_memory_init", "classamrex_1_1TinyProfiler.html#a58d4b9a8815bf4a8de34026cf4a80208", null ],
     [ "ttstack", "classamrex_1_1TinyProfiler.html#a55b136d8859480b76a1311cff89009a0", null ],
     [ "verbose", "classamrex_1_1TinyProfiler.html#a42fc975e27a744624c255b0fad3f8cd7", null ]
 ];
