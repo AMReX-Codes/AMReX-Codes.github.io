@@ -98,7 +98,7 @@ var searchData=
   ['dtinmax_95',['dtinmax',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#aba8890827f1d77d1a04fda2971170ffe',1,'amrex::TinyProfiler::ProcStats']]],
   ['dtinmin_96',['dtinmin',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#ad9c2c49d8b22ac959def10c90dd3ed30',1,'amrex::TinyProfiler::ProcStats']]],
   ['dtos_97',['dtos',['../structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7',1,'amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever']]],
-  ['dx_98',['dx',['../classamrex_1_1SplineDistFcnElement2d.html#a6dc7a3f96e7d9b912a500fb17abb9a83',1,'amrex::SplineDistFcnElement2d::Dx'],['../structamrex_1_1GeometryData.html#a292951327bd08f8c0f357087ebdabb19',1,'amrex::GeometryData::dx'],['../classamrex_1_1CoordSys.html#aa2676bc29494b78f2dc42aeba76cf2f3',1,'amrex::CoordSys::dx']]],
+  ['dx_98',['dx',['../structamrex_1_1GeometryData.html#a292951327bd08f8c0f357087ebdabb19',1,'amrex::GeometryData::dx'],['../classamrex_1_1CoordSys.html#aa2676bc29494b78f2dc42aeba76cf2f3',1,'amrex::CoordSys::dx'],['../classamrex_1_1SplineDistFcnElement2d.html#a6dc7a3f96e7d9b912a500fb17abb9a83',1,'amrex::SplineDistFcnElement2d::Dx']]],
   ['dxi_99',['dxi',['../structamrex_1_1GetParticleBin.html#a7e5a69b6426c884ba4595da42b0d374d',1,'amrex::GetParticleBin']]],
   ['dy_100',['Dy',['../classamrex_1_1SplineDistFcnElement2d.html#a9ef7c332f4ef1f1409c3dfec141c016a',1,'amrex::SplineDistFcnElement2d']]],
   ['dynamic_101',['dynamic',['../structamrex_1_1DynamicTiling.html#ada6090f6c7ce7cb692304ca36611204e',1,'amrex::DynamicTiling::dynamic'],['../classamrex_1_1MFIter.html#a16fa2d144bcc71d665056de5938c4b32',1,'amrex::MFIter::dynamic'],['../structamrex_1_1MFItInfo.html#af8c9a28c98c151eb32f0352334376536',1,'amrex::MFItInfo::dynamic']]]

@@ -66,6 +66,7 @@ var namespaceamrex_1_1Gpu =
     [ "blockReduceMin", "namespaceamrex_1_1Gpu.html#a395b74319a24844a731df0eb22ffa8ee", null ],
     [ "blockReduceSum", "namespaceamrex_1_1Gpu.html#afb8251b45e6f236ac283f3f5e5363f27", null ],
     [ "blockReduceSum", "namespaceamrex_1_1Gpu.html#aeb619fda3e94a275e0a214533b95d0fe", null ],
+    [ "clearFreeAsyncBuffer", "namespaceamrex_1_1Gpu.html#a1bf19fc1b716c9c9ceb66bf61067e8c1", null ],
     [ "copy", "namespaceamrex_1_1Gpu.html#afb3bc7b25afb38fc8f371f3bc4966483", null ],
     [ "copy", "namespaceamrex_1_1Gpu.html#abea324bd9a4533e4f54614f6a7d410d1", null ],
     [ "copy", "namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb", null ],

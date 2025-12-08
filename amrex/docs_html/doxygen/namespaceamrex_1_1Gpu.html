@@ -312,6 +312,8 @@ Functions</h2></td></tr>
 <tr class="separator:a78acbb676e94c674fa5ec73508cef459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e573a00e2c0d0bff8097bd9f3dd422e" id="r_a2e573a00e2c0d0bff8097bd9f3dd422e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">freeAsync</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *arena, void *mem) noexcept</td></tr>
 <tr class="separator:a2e573a00e2c0d0bff8097bd9f3dd422e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf19fc1b716c9c9ceb66bf61067e8c1" id="r_a1bf19fc1b716c9c9ceb66bf61067e8c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a1bf19fc1b716c9c9ceb66bf61067e8c1">clearFreeAsyncBuffer</a> () noexcept</td></tr>
+<tr class="separator:a1bf19fc1b716c9c9ceb66bf61067e8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacefe17a39734cb2475a36199ab1370b" id="r_aacefe17a39734cb2475a36199ab1370b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">htod_memcpy_async</a> (void *p_d, const void *p_h, const std::size_t sz) noexcept</td></tr>
 <tr class="separator:aacefe17a39734cb2475a36199ab1370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cb0d90b937d4749b2219ad0e9fa8277" id="r_a6cb0d90b937d4749b2219ad0e9fa8277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">dtoh_memcpy_async</a> (void *p_h, const void *p_d, const std::size_t sz) noexcept</td></tr>
@@ -845,6 +847,32 @@ template&lt;int BLOCKDIMX, typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1bf19fc1b716c9c9ceb66bf61067e8c1" name="a1bf19fc1b716c9c9ceb66bf61067e8c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bf19fc1b716c9c9ceb66bf61067e8c1">&#9670;&#160;</a></span>clearFreeAsyncBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::clearFreeAsyncBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Clear the temporary buffer used by freeAsync. This is done by synchronizing the stream in case there is memory in the buffer. Returns true if some memory could be freed. </p>
 
 </div>
 </div>

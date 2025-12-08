@@ -2,6 +2,7 @@ var classamrex_1_1Gpu_1_1Device =
 [
     [ "c_comps_threads_and_blocks", "classamrex_1_1Gpu_1_1Device.html#ad50ffc68d86b60f6c4abea01215ecd80", null ],
     [ "c_threads_and_blocks", "classamrex_1_1Gpu_1_1Device.html#a287c97156ce50cfda229da5b2d9a00a8", null ],
+    [ "clearFreeAsyncBuffer", "classamrex_1_1Gpu_1_1Device.html#ad0fb6a93a46d877f555cc72e95d61da4", null ],
     [ "cudaStream", "classamrex_1_1Gpu_1_1Device.html#a659a046032f304e13547b3b633e7c10a", null ],
     [ "deviceId", "classamrex_1_1Gpu_1_1Device.html#aa5bf7f476f4a8c0ed917932d2cbdf9a4", null ],
     [ "deviceName", "classamrex_1_1Gpu_1_1Device.html#a63664c0cdd03b7ebcc475e542c45282d", null ],

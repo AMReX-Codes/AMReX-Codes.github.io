@@ -1,5 +1,11 @@
 var NAVTREEINDEX120 =
 {
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,35,2,4],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[3,0,0,14,1,4],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,35,2,2],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[3,0,0,14,1,2],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[2,0,0,35,3],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[3,0,0,14,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html#a4025a275e81686205f71df80a1833bcc":[3,0,0,14,2,0],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html#a4025a275e81686205f71df80a1833bcc":[2,0,0,35,3,0],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html":[3,0,0,14,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX120 =
 "structamrex_1_1ParserExeSymbol.html#a8c997d8cdc27b43d7f0914cae4e375eb":[2,0,0,477,0],
 "structamrex_1_1ParserExeSymbol.html#a8c997d8cdc27b43d7f0914cae4e375eb":[3,0,0,443,0],
 "structamrex_1_1ParserExeUserFn.html":[2,0,0,478],
-"structamrex_1_1ParserExeUserFn.html":[3,0,0,444],
-"structamrex_1_1ParserExeUserFn.html#a1ec2abf9162357bbc2eaa9e2eaf841f1":[2,0,0,478,1],
-"structamrex_1_1ParserExeUserFn.html#a1ec2abf9162357bbc2eaa9e2eaf841f1":[3,0,0,444,1],
-"structamrex_1_1ParserExeUserFn.html#a4a76133790ea52ee5ac0f4a220889d36":[2,0,0,478,0],
-"structamrex_1_1ParserExeUserFn.html#a4a76133790ea52ee5ac0f4a220889d36":[3,0,0,444,0],
-"structamrex_1_1ParserExeUserFn.html#a82b570455f769916553a7c1c2006f5a0":[3,0,0,444,2],
-"structamrex_1_1ParserExeUserFn.html#a82b570455f769916553a7c1c2006f5a0":[2,0,0,478,2]
+"structamrex_1_1ParserExeUserFn.html":[3,0,0,444]
 };

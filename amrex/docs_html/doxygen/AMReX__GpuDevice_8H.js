@@ -4,6 +4,7 @@ var AMReX__GpuDevice_8H =
     [ "amrex::Gpu::Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
     [ "AMREX_GPU_MAX_STREAMS", "AMReX__GpuDevice_8H.html#a81556578d460ebcebf8baf3163a36949", null ],
     [ "gpuDeviceProp_t", "AMReX__GpuDevice_8H.html#a2235406f46755fe4275db8b042b0da92", null ],
+    [ "clearFreeAsyncBuffer", "AMReX__GpuDevice_8H.html#a1bf19fc1b716c9c9ceb66bf61067e8c1", null ],
     [ "dtod_memcpy", "AMReX__GpuDevice_8H.html#ab695bddeb3cc727225d95a1826472ae4", null ],
     [ "dtod_memcpy_async", "AMReX__GpuDevice_8H.html#a00026ef5f8505586ed52acbbc11fdf91", null ],
     [ "dtoh_memcpy", "AMReX__GpuDevice_8H.html#aa443a27f05e81db793b131d3fc0b101c", null ],

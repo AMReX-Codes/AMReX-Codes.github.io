@@ -1,5 +1,11 @@
 var NAVTREEINDEX119 =
 {
+"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#a9c0de4b09bf5398064924b22bc1ae654":[2,0,0,417,5,3],
+"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#a9c0de4b09bf5398064924b22bc1ae654":[3,0,0,383,5,3],
+"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#ac124f082ce98a9d25b4212b94b68a316":[2,0,0,417,5,0],
+"structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html#ac124f082ce98a9d25b4212b94b68a316":[3,0,0,383,5,0],
+"structamrex_1_1NeighborUnpackPolicy.html":[3,0,0,385],
+"structamrex_1_1NeighborUnpackPolicy.html":[2,0,0,419],
 "structamrex_1_1NeighborUnpackPolicy.html#a11a020cd1f085ecbf8bb084ba1770723":[3,0,0,385,0],
 "structamrex_1_1NeighborUnpackPolicy.html#a11a020cd1f085ecbf8bb084ba1770723":[2,0,0,419,0],
 "structamrex_1_1Neighbors.html":[2,0,0,418],
@@ -243,11 +249,5 @@ var NAVTREEINDEX119 =
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a222be3c3299e1dbe44ef192f7681a822":[2,0,0,35,2,1],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a222be3c3299e1dbe44ef192f7681a822":[3,0,0,14,1,1],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[2,0,0,35,2,3],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[3,0,0,14,1,3],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,35,2,4],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[3,0,0,14,1,4],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,35,2,2],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[3,0,0,14,1,2],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[2,0,0,35,3],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[3,0,0,14,2]
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[3,0,0,14,1,3]
 };
