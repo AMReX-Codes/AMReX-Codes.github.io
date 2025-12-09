@@ -244,6 +244,8 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Reduce.H", "AMReX__Reduce_8H.html", "AMReX__Reduce_8H" ],
     [ "AMReX_RKIntegrator.H", "AMReX__RKIntegrator_8H.html", "AMReX__RKIntegrator_8H" ],
     [ "AMReX_RungeKutta.H", "AMReX__RungeKutta_8H.html", "AMReX__RungeKutta_8H" ],
+    [ "AMReX_SArena.cpp", "AMReX__SArena_8cpp.html", null ],
+    [ "AMReX_SArena.H", "AMReX__SArena_8H.html", "AMReX__SArena_8H" ],
     [ "AMReX_Scan.H", "AMReX__Scan_8H.html", "AMReX__Scan_8H" ],
     [ "AMReX_SIMD.H", "AMReX__SIMD_8H.html", "AMReX__SIMD_8H" ],
     [ "AMReX_Slopes_K.H", "AMReX__Slopes__K_8H.html", "AMReX__Slopes__K_8H" ],

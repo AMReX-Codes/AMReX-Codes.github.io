@@ -103,6 +103,7 @@ var hierarchy =
       [ "amrex::BArena", "classamrex_1_1BArena.html", null ],
       [ "amrex::CArena", "classamrex_1_1CArena.html", null ],
       [ "amrex::PArena", "classamrex_1_1PArena.html", null ],
+      [ "amrex::SArena", "classamrex_1_1SArena.html", null ],
       [ "amrex::detail::SingleChunkArena", "classamrex_1_1detail_1_1SingleChunkArena.html", null ]
     ] ],
     [ "amrex::ArenaAllocatorBase< T, AR >", "structamrex_1_1ArenaAllocatorBase.html", [

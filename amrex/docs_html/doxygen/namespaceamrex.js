@@ -943,6 +943,7 @@ var namespaceamrex =
     [ "RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
     [ "Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", "structamrex_1_1Same_3_01T_00_01U_01_4" ],
+    [ "SArena", "classamrex_1_1SArena.html", "classamrex_1_1SArena" ],
     [ "SIMDindex", "structamrex_1_1SIMDindex.html", "structamrex_1_1SIMDindex" ],
     [ "SmallMatrix", "structamrex_1_1SmallMatrix.html", "structamrex_1_1SmallMatrix" ],
     [ "SoAParticle", "structamrex_1_1SoAParticle.html", "structamrex_1_1SoAParticle" ],
