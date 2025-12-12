@@ -1,5 +1,7 @@
 var NAVTREEINDEX113 =
 {
+"structamrex_1_1FabArrayBase_1_1PolarB.html":[3,0,0,165,12],
+"structamrex_1_1FabArrayBase_1_1PolarB.html#a12e01cdb22ecb858691ad5a17517eb62":[2,0,0,199,12,1],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#a12e01cdb22ecb858691ad5a17517eb62":[3,0,0,165,12,1],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#a4728c08d238e8a553b30e672643776a2":[3,0,0,165,12,2],
 "structamrex_1_1FabArrayBase_1_1PolarB.html#a4728c08d238e8a553b30e672643776a2":[2,0,0,199,12,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX113 =
 "structamrex_1_1ForkJoin_1_1MFFork.html#af278943e6089937c826f0bd0967a264f":[3,0,0,197,1,12],
 "structamrex_1_1GPUable.html":[2,0,0,242],
 "structamrex_1_1GPUable.html":[3,0,0,208],
-"structamrex_1_1GeometryData.html":[2,0,0,234],
-"structamrex_1_1GeometryData.html":[3,0,0,200],
-"structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68":[2,0,0,234,10]
+"structamrex_1_1GeometryData.html":[2,0,0,234]
 };

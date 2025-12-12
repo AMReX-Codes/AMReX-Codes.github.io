@@ -1,5 +1,7 @@
 var NAVTREEINDEX130 =
 {
+"structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[3,0,16,8],
+"structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4":[3,0,16,4],
 "structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[3,0,16,7],
 "structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c":[3,0,16,5],
 "structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[3,0,16,10],

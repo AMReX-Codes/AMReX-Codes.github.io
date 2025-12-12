@@ -1,5 +1,7 @@
 var NAVTREEINDEX114 =
 {
+"structamrex_1_1GeometryData.html":[3,0,0,200],
+"structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68":[2,0,0,234,10],
 "structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68":[3,0,0,200,10],
 "structamrex_1_1GeometryData.html#a114285a2667fb15f21cb7287175888b4":[2,0,0,234,8],
 "structamrex_1_1GeometryData.html#a114285a2667fb15f21cb7287175888b4":[3,0,0,200,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX114 =
 "structamrex_1_1Gpu_1_1GraphSafeGuard.html":[2,0,0,15,19],
 "structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[3,0,0,6,17,1],
 "structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[2,0,0,15,19,1],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[3,0,0,6,17,2],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[2,0,0,15,19,2],
-"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a982a397f67b04e0cbf321b1e9ed77ea6":[3,0,0,6,17,0]
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[3,0,0,6,17,2]
 };
