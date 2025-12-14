@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview of AMReX GPU Strategy &mdash; amrex 25.01-dev documentation</title>
+  <title>Overview of AMReX GPU Support &mdash; amrex 25.01-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -67,7 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="FFT_Chapter.html">Discrete Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TimeIntegration_Chapter.html">Time Integration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="GPU_Chapter.html">GPU</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview of AMReX GPU Strategy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview of AMReX GPU Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-gpu-support">Building GPU Support</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building-with-gnu-make">Building with GNU Make</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#sycl-configuration-variables">SYCL configuration variables</a></li>
@@ -139,7 +139,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="GPU_Chapter.html">GPU</a></li>
-      <li class="breadcrumb-item active">Overview of AMReX GPU Strategy</li>
+      <li class="breadcrumb-item active">Overview of AMReX GPU Support</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/GPU.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,43 +149,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="overview-of-amrex-gpu-strategy">
-<span id="sec-gpu-overview"></span><h1>Overview of AMReX GPU Strategy<a class="headerlink" href="#overview-of-amrex-gpu-strategy" title="Permalink to this heading"></a></h1>
-<p>AMReX’s GPU strategy focuses on providing performant GPU support
-with minimal changes and maximum flexibility.  This allows
-application teams to get running on GPUs quickly while allowing
-long term performance tuning and programming model selection.  AMReX
-uses the native programming language for GPUs: CUDA for NVIDIA, HIP
+  <section id="overview-of-amrex-gpu-support">
+<span id="sec-gpu-overview"></span><h1>Overview of AMReX GPU Support<a class="headerlink" href="#overview-of-amrex-gpu-support" title="Permalink to this heading"></a></h1>
+<p>AMReX’s GPU support focuses on providing performance portability
+across a range of important architectures with minimal
+code changes required at the application level. This allows
+application teams to use a single, maintainable codebase that works
+on a variety of platforms while allowing for the performance tuning of specific,
+high-impact kernels if desired.</p>
+<p>Internally, AMReX uses the native programming languages for GPUs: CUDA for NVIDIA, HIP
 for AMD and SYCL for Intel. This will be designated with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>
 throughout the documentation.  However, application teams can also use
 OpenACC or OpenMP in their individual codes.</p>
 <p>At this time, AMReX does not support cross-native language compilation
 (HIP for non-AMD systems and SYCL for non Intel systems).  It may work with
 a given version, but AMReX does not track or guarantee such functionality.</p>
-<p>When running AMReX on a CPU system, the parallelization strategy is a
-combination of MPI and OpenMP using tiling, as detailed in
-<a class="reference internal" href="Basics.html#sec-basics-mfiter-tiling"><span class="std std-ref">MFIter with Tiling</span></a>. However, tiling is ineffective on GPUs
-due to the overhead associated with kernel launching.  Instead,
-efficient use of the GPU’s resources is the primary concern.  Improving
-resource efficiency allows a larger percentage of GPU threads to work
-simultaneously, increasing effective parallelism and decreasing the time
-to solution.</p>
-<p>When running on CPUs, AMReX uses an <code class="docutils literal notranslate"><span class="pre">MPI+X</span></code> strategy where the <code class="docutils literal notranslate"><span class="pre">X</span></code>
-threads are used to perform parallelization techniques, like tiling.
-The most common <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>.  On GPUs, AMReX requires <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>
-and can be further combined with other parallel GPU languages, including
-<code class="docutils literal notranslate"><span class="pre">OpenACC</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>, to control the offloading of subroutines
-to the GPU.  This <code class="docutils literal notranslate"><span class="pre">MPI+X+Y</span></code> GPU strategy has been developed
-to give users the maximum flexibility to find the best combination of
-portability, readability and performance for their applications.</p>
+<p>AMReX uses an <code class="docutils literal notranslate"><span class="pre">MPI+X</span></code> approach to hierarchical parallelism. When running on
+CPUs, <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>, and threads are used to process tiles assigned to the
+same MPI rank concurrently, as detailed in <a class="reference internal" href="Basics.html#sec-basics-mfiter-tiling"><span class="std std-ref">MFIter with Tiling</span></a>. On GPUs,
+<code class="docutils literal notranslate"><span class="pre">X</span></code> is one of <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>, and tiling is disabled by default
+to mitigate the overhead associated with kernel launching. Instead, kernels are usually
+launched at the <code class="docutils literal notranslate"><span class="pre">Box</span></code> level, and one or more cells
+in a given <code class="docutils literal notranslate"><span class="pre">Box</span></code> are mapped to each GPU thread, as detailed in <a class="reference internal" href="#fig-gpu-threads"><span class="std std-numref">Table 12</span></a>
+below.</p>
 <p>Presented here is an overview of important features of AMReX’s GPU strategy.
 Additional information that is required for creating GPU applications is
 detailed throughout the rest of this chapter:</p>
 <ul class="simple">
-<li><p>Each MPI rank offloads its work to a single GPU. <code class="docutils literal notranslate"><span class="pre">(MPI</span> <span class="pre">ranks</span> <span class="pre">==</span> <span class="pre">Number</span> <span class="pre">of</span> <span class="pre">GPUs)</span></code></p></li>
-<li><p>Calculations that can be offloaded efficiently to GPUs use GPU threads
-to parallelize over a valid box at a time.  This is done by launching over
-a large number GPU threads that only work on a few cells each. This work
+<li><p>Each MPI rank offloads its work to a single GPU. Multiple ranks can share the
+same device, but for best performance we usually recommend <code class="docutils literal notranslate"><span class="pre">(MPI</span> <span class="pre">ranks</span> <span class="pre">==</span> <span class="pre">Number</span> <span class="pre">of</span> <span class="pre">GPUs)</span></code>.</p></li>
+<li><p>To provide performance portability, GPU kernels are usually launched through <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> looping constructs
+that use GPU extended lambdas to specify the work to be performed on each loop element. When compiled with GPU
+support, these constructs launch kernels with a large number of GPU threads that only work on a few cells each. This work
 distribution is illustrated in <a class="reference internal" href="#fig-gpu-threads"><span class="std std-numref">Table 12</span></a>.</p></li>
 </ul>
 <span id="fig-gpu-threads"></span><table class="docutils align-default" id="id1">
@@ -206,28 +201,24 @@ thread, each thread using a box with lo = hi.</p></td>
 </tbody>
 </table>
 <ul>
-<li><p>C++ macros and GPU extended lambdas are used to provide performance
-portability while making the code as understandable as possible to
-science-focused code teams.</p></li>
+<li><p>These kernels are usually launched inside AMReX’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParIter</span></code>
+loops, since in AMReX’s approach to parallelism it is assumed that separate <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> objects
+can be processed independently. However, AMReX also provides a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> version
+of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> that can process an entire level worth of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code> objects in
+a single kernel launch when it is safe to do so.</p></li>
 <li><p>AMReX can utilize GPU managed memory to automatically handle memory
 movement for mesh and particle data.  Simple data structures, such
 as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span></code>s can be passed by value and complex data structures, such as
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code>es, have specialized AMReX classes to handle the
-data movement for the user.  Tests have shown CUDA managed memory
-to be efficient and reliable, especially when applications remove
-any unnecessary data accesses. However, managed memory is not used by
+data movement for the user. This particularly useful for the early stages
+of porting an application to GPUs. However, for best performance on a
+variety of platforms, we recommend disabling managed memory and handling
+host/device data migration explicitly. managed memory is not used by
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> by default.</p></li>
-<li><p>Application teams should strive to keep mesh and particle data structures
+<li><p>Best performance is usually achieved when keeping mesh and particle data structures
 on the GPU for as long as possible, minimizing movement back to the CPU.
-This strategy lends itself to AMReX applications readily; the mesh and
-particle data can stay on the GPU for most subroutines except for
-of redistribution, communication and I/O operations.</p></li>
-<li><p>AMReX’s GPU strategy is focused on launching GPU kernels inside AMReX’s
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParIter</span></code> loops.  By performing GPU work within
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParIter</span></code> loops, GPU work is isolated to independent
-data sets on well-established AMReX data objects, providing consistency and safety
-that also matches AMReX’s coding methodology.  Similar tools are also available for
-launching work outside of AMReX loops.</p></li>
+In many AMReX applications, the mesh and particle data can stay on the GPU for most
+subroutines except for I/O operations.</p></li>
 <li><p>AMReX further parallelizes GPU applications by utilizing streams.
 Streams guarantee execution order of kernels within the same stream, while
 allowing different streams to run simultaneously. AMReX places each iteration
@@ -717,7 +708,7 @@ SUNDIALS CUDA vector:</p>
 </section>
 <section id="gpu-safe-classes-and-functions">
 <span id="sec-gpu-classes"></span><h1>GPU Safe Classes and Functions<a class="headerlink" href="#gpu-safe-classes-and-functions" title="Permalink to this heading"></a></h1>
-<p>AMReX GPU work takes place inside of MFIter and particle loops.
+<p>AMReX GPU work takes place inside of MFIter and ParIter loops.
 Therefore, there are two ways classes and functions have been modified
 to interact with the GPU:</p>
 <p>1. A number of functions used within these loops are labelled using
@@ -726,7 +717,7 @@ functions, such as <code class="code highlight cpp c++ docutils literal highligh
 such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">min</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">max</span></code>. In specialized cases,
 classes are labeled such that the object can be constructed, destructed
 and its functions can be implemented on the device, including <code class="docutils literal notranslate"><span class="pre">IntVect</span></code>.</p>
-<p>2. Functions that contain MFIter or particle loops have been rewritten
+<p>2. Functions that contain MFIter or ParIter loops have been rewritten
 to contain device launches. For example, the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code>
 function cannot be called from device code, but calling it from
 CPU will launch GPU kernels if AMReX is compiled with GPU support.</p>
@@ -1379,7 +1370,7 @@ the performance or are designing more complex workflows that require OpenMP.</p>
 </section>
 <section id="stream-and-synchronization">
 <span id="sec-gpu-stream"></span><h1>Stream and Synchronization<a class="headerlink" href="#stream-and-synchronization" title="Permalink to this heading"></a></h1>
-<p>As mentioned in Section <a class="reference internal" href="#sec-gpu-overview"><span class="std std-ref">Overview of AMReX GPU Strategy</span></a>, AMReX uses a number of GPU
+<p>As mentioned in Section <a class="reference internal" href="#sec-gpu-overview"><span class="std std-ref">Overview of AMReX GPU Support</span></a>, AMReX uses a number of GPU
 streams that are either CUDA streams or HIP streams or SYCL queues.  Many
 GPU functions (e.g., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span></code>) are
 asynchronous with respect to the host.  To facilitate synchronization that
@@ -1525,11 +1516,29 @@ error. This error-checking macro will not return any information for SYCL.</p>
 </section>
 <section id="particle-support">
 <h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this heading"></a></h1>
-<p id="sec-gpu-particle">As with <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, particle data stored in AMReX <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> classes are
-stored in GPU memory when AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. This means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">dataPtr</span></code> associated with particles
+<p id="sec-gpu-particle">As with <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, particle data stored in AMReX <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> classes can be
+stored in GPU-accessible memory when AMReX is compiled with GPU support.  The type of memory used by a given <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> can be controlled
+by the <code class="docutils literal notranslate"><span class="pre">Allocator</span></code> template parameter. By default, when compiled with GPU support <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> uses <code class="docutils literal notranslate"><span class="pre">The_Arena()</span></code>. This means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">dataPtr</span></code> associated with particle data
 can be passed into GPU kernels. These kernels can be launched with a variety of approaches,
-including Cuda C / Fortran and OpenACC. An example Fortran particle subroutine offloaded via OpenACC might
-look like the following:</p>
+including AMReX’s native kernel launching mechanisms as well OpenMP and OpenACC. Using AMReX’s C++ syntax, a kernel launch involving particle data might look like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">MyParIter</span><span class="w"> </span><span class="n">pti</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span><span class="w"> </span><span class="n">lev</span><span class="p">);</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">pti</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ptile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pti</span><span class="p">.</span><span class="n">GetParticleTile</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ptd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="n">getParticleTileData</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
+<span class="w">    </span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="w"> </span><span class="n">np</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ptd</span><span class="p">.</span><span class="n">id</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">make_invalid</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above code simply invalidates all particle on all particle tiles. The <code class="docutils literal notranslate"><span class="pre">ParticleTileData</span></code>
+object is analogous to <code class="docutils literal notranslate"><span class="pre">Array4</span></code> in that it stores pointers to particle data and can be used
+on either the host or the device. This is a convenient way to pass particle data into GPU kernels
+because the same object can be used regardless of whether the data layout is AoS or SoA.</p>
+<p>An example Fortran particle subroutine offloaded via OpenACC might look like the following:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">push_position_boris</span><span class="p">(</span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">structs</span><span class="p">,</span><span class="w"> </span><span class="n">uxp</span><span class="p">,</span><span class="w"> </span><span class="n">uyp</span><span class="p">,</span><span class="w"> </span><span class="n">uzp</span><span class="p">,</span><span class="w"> </span><span class="n">gaminv</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span>
 
 <span class="k">use </span><span class="n">em_particle_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">particle_t</span>
