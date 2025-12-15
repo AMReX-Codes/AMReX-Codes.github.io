@@ -2538,6 +2538,13 @@ owners overriding non-owners.</p>
 <span class="n">mf</span><span class="p">.</span><span class="n">OverrideSync</span><span class="p">(</span><span class="o">*</span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
 </pre></div>
 </div>
+<p>This version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OverrideSync</span></code> offers the flexibility of providing a custom mask.
+However, when a custom mask is not needed, we can synchronize the data also with</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// non-cell-centered</span>
+<span class="n">mf</span><span class="p">.</span><span class="n">OverrideSync</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>This version of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OverrideSync</span></code> has better performance than the previous one.</p>
 <p>To compute the dot product of two nodal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s, we can use a
 mask to avoid double counting.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf1</span><span class="p">(...);</span>
