@@ -1402,6 +1402,47 @@ minimize the number of synchronization calls.  For example,</p>
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">synchronize</span><span class="p">()</span></code> that will perform a device wide synchronization.
 However, a device wide synchronization is usually too excessive and it might
 interfere with other libraries (e.g., MPI).</p>
+<p>AMReX functions can exhibit different synchronization behaviors. Functions
+that launch user-provided GPU kernels are typically asynchronous. For
+example, GPU kernels launched by the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> family of functions
+(including variants for 1D arrays, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>es, and an entire
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> in a single kernel) are asynchronous with respect to the
+host.</p>
+<p>The only exception in the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> family is
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelForRNG</span></code>, which is used when random number generation is
+required inside the GPU kernel. It contains an implicit stream
+synchronization to avoid potential race conditions. Many member functions of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span></code> are also asynchronous. However, implicit
+synchronizations occur in a number of situations. Some are unavoidable. For
+example, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Reduce</span><span class="o">::</span><span class="n">Sum</span></code> returns a value on the host, and therefore must
+perform an implicit synchronization. Another example is the communication
+functions such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code>. Since MPI has no notion of GPU
+streams, the data must be synchronized before being passed to MPI calls.</p>
+<p>Other synchronizations are introduced for safety. A notable example is
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span></code>, which performs implicit synchronizations at both the
+beginning and end of the loop (as a whole, not on each iteration). These
+synchronizations can be disabled using with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFItInfo</span></code>. For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// There is no implicit synchronization in the following loop.</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">MFItInfo</span><span class="p">{}.</span><span class="n">DisableDeviceSync</span><span class="p">());</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+<span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>One could also use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">NoSyncRegion</span></code>, as shown below:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="n">Gpu</span><span class="o">::</span><span class="n">NoSyncRegion</span><span class="w"> </span><span class="n">no_sync</span><span class="p">{};</span><span class="w"> </span><span class="c1">// No implicit GPU synchronization in the</span>
+<span class="w">                               </span><span class="c1">// current scope</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Gpu::streamSynchronize(); Explicit synchronization is allowed.</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">MFIter</span><span class="w"> </span><span class="n">mfi</span><span class="p">(</span><span class="n">mf2</span><span class="p">);</span><span class="w"> </span><span class="n">mfi</span><span class="p">.</span><span class="n">isValid9</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">mfi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">....</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This approach suppresses implicit synchronization for all operations within
+the scoped region and restores the previous synchronization setting upon
+exiting.</p>
 </section>
 <section id="an-example-of-migrating-to-gpu">
 <span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this heading"></a></h1>
