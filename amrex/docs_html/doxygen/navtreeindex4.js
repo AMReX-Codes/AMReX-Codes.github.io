@@ -94,6 +94,7 @@ var NAVTREEINDEX4 =
 "AMReX__EB__Slopes__2D__K_8H.html#a0f67f0b78f49d5678613a02673976e0f":[4,0,0,4,58,7],
 "AMReX__EB__Slopes__2D__K_8H.html#a29b3da1f1384339ad8a7a8bf6fe22621":[4,0,0,4,58,8],
 "AMReX__EB__Slopes__2D__K_8H.html#a4e19233868880ebf901b60ca82a19349":[4,0,0,4,58,5],
+"AMReX__EB__Slopes__2D__K_8H.html#a4eafc120d785d04630de68aa524bf9d4":[4,0,0,4,58,12],
 "AMReX__EB__Slopes__2D__K_8H.html#a63fda7d3d3f0a09b9ffcfed43e2d5d6a":[4,0,0,4,58,1],
 "AMReX__EB__Slopes__2D__K_8H.html#a6c3aa667ad493677ef6d5482dad0b5bb":[4,0,0,4,58,11],
 "AMReX__EB__Slopes__2D__K_8H.html#a7db468a0412d03d0f756872c7e66f0a4":[4,0,0,4,58,3],
@@ -111,6 +112,7 @@ var NAVTREEINDEX4 =
 "AMReX__EB__Slopes__3D__K_8H.html#a2949df32041ff5e86b29d37b8f1688b9":[4,0,0,4,59,6],
 "AMReX__EB__Slopes__3D__K_8H.html#a2ac626a329adae8c5554932607e35cf5":[4,0,0,4,59,3],
 "AMReX__EB__Slopes__3D__K_8H.html#a3996e2ae360e51db5ea06bf0189ec1df":[4,0,0,4,59,0],
+"AMReX__EB__Slopes__3D__K_8H.html#a4eafc120d785d04630de68aa524bf9d4":[4,0,0,4,59,12],
 "AMReX__EB__Slopes__3D__K_8H.html#a63fda7d3d3f0a09b9ffcfed43e2d5d6a":[4,0,0,4,59,1],
 "AMReX__EB__Slopes__3D__K_8H.html#a6d6309e12cba3e7101e4c4c4731b13f6":[4,0,0,4,59,11],
 "AMReX__EB__Slopes__3D__K_8H.html#a785be1aae989dfa4a82aef4eb70bcc9c":[4,0,0,4,59,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "AMReX__FFT_8H.html#a3eea92efd3c682f5f23770f47af7c14b":[4,0,0,6,1,3],
 "AMReX__FFT_8H.html#a7a2c62799856b7bb8a987aaba0e405a3":[4,0,0,6,1,1],
 "AMReX__FFT_8H.html#a86dd685e0ef82d7a3b6a25097fe08318":[4,0,0,6,1,2],
-"AMReX__FFT_8H_source.html":[4,0,0,6,1],
-"AMReX__FFT_8cpp.html":[4,0,0,6,0],
-"AMReX__FFT_8cpp.html#a247121292130aadfdd97b2c5b9b518ad":[4,0,0,6,0,2]
+"AMReX__FFT_8H_source.html":[4,0,0,6,1]
 };
