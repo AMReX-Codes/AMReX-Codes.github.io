@@ -12,5 +12,5 @@ var AMReX__EB__Slopes__3D__K_8H =
     [ "amrex_lim_slopes_extdir_eb", "AMReX__EB__Slopes__3D__K_8H.html#a0569881fecda6f60d4cd8ed4f47cb103", null ],
     [ "amrex_overwrite_with_regular_slopes", "AMReX__EB__Slopes__3D__K_8H.html#aa9bc44f211b3d0f68705e020b837d20d", null ],
     [ "amrex_overwrite_with_regular_slopes_extdir", "AMReX__EB__Slopes__3D__K_8H.html#a6d6309e12cba3e7101e4c4c4731b13f6", null ],
-    [ "calc_slopes_eb", "AMReX__EB__Slopes__3D__K_8H.html#a4eafc120d785d04630de68aa524bf9d4", null ]
+    [ "calc_slopes_eb", "AMReX__EB__Slopes__3D__K_8H.html#a3b8a2109a66020a71c09d12def4da9d7", null ]
 ];
