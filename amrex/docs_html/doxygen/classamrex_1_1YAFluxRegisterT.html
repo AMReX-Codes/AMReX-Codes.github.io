@@ -163,6 +163,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac9027c1a21fd7ec198393939ff2d4be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a278cbdb5d26d92153834df80c5bb26" id="r_a6a278cbdb5d26d92153834df80c5bb26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1YAFluxRegisterT.html#a6a278cbdb5d26d92153834df80c5bb26">setCrseVolume</a> (MF const *cvol)</td></tr>
 <tr class="separator:a6a278cbdb5d26d92153834df80c5bb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6476be881fae37006b851cf8f9fcad" id="r_a7c6476be881fae37006b851cf8f9fcad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1YAFluxRegisterT.html#a7c6476be881fae37006b851cf8f9fcad">setDeterministic</a> (bool flag)</td></tr>
+<tr class="separator:a7c6476be881fae37006b851cf8f9fcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af592f447eb27ce2001a509585ff691ad" id="r_af592f447eb27ce2001a509585ff691ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1YAFluxRegisterT.html#af592f447eb27ce2001a509585ff691ad">getDeterministic</a> () const</td></tr>
+<tr class="separator:af592f447eb27ce2001a509585ff691ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -194,6 +198,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:af33672ac47d288fbe42c788ddb8f953a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58d0c8eb8bdaf808e5462cfa75b76b3f" id="r_a58d0c8eb8bdaf808e5462cfa75b76b3f"><td class="memItemLeft" align="right" valign="top">MF const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1YAFluxRegisterT.html#a58d0c8eb8bdaf808e5462cfa75b76b3f">m_cvol</a> = nullptr</td></tr>
 <tr class="separator:a58d0c8eb8bdaf808e5462cfa75b76b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99e398014bcb3fee38e6cf90c044b0d" id="r_ae99e398014bcb3fee38e6cf90c044b0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1YAFluxRegisterT.html#ae99e398014bcb3fee38e6cf90c044b0d">m_deterministic</a> = false</td></tr>
+<tr class="separator:ae99e398014bcb3fee38e6cf90c044b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename MF&gt;<br />
@@ -762,6 +768,33 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="af592f447eb27ce2001a509585ff691ad" name="af592f447eb27ce2001a509585ff691ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af592f447eb27ce2001a509585ff691ad">&#9670;&#160;</a></span>getDeterministic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1YAFluxRegisterT.html">amrex::YAFluxRegisterT</a>&lt; MF &gt;::getDeterministic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a00e42aad2911705689a1abd3857146bb" name="a00e42aad2911705689a1abd3857146bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00e42aad2911705689a1abd3857146bb">&#9670;&#160;</a></span>getFineData()</h2>
 
@@ -898,6 +931,35 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>For curvilinear coordinates only. In that case, the flux passed to YAFluxRegister is assumed to have been multiplied by area. Note that YAFluxRegister does NOT make a copy of the volume data. So the coarse volume MF must be alive during the life time of YAFluxRegister. </p>
+
+</div>
+</div>
+<a id="a7c6476be881fae37006b851cf8f9fcad" name="a7c6476be881fae37006b851cf8f9fcad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6476be881fae37006b851cf8f9fcad">&#9670;&#160;</a></span>setDeterministic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1YAFluxRegisterT.html">amrex::YAFluxRegisterT</a>&lt; MF &gt;::setDeterministic </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Enable deterministic mode for GPU operations. When enabled, uses deterministic reduction for parallel additions. </p>
 
 </div>
 </div>
@@ -1111,6 +1173,30 @@ template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">MF const* <a class="el" href="classamrex_1_1YAFluxRegisterT.html">amrex::YAFluxRegisterT</a>&lt; MF &gt;::m_cvol = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae99e398014bcb3fee38e6cf90c044b0d" name="ae99e398014bcb3fee38e6cf90c044b0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99e398014bcb3fee38e6cf90c044b0d">&#9670;&#160;</a></span>m_deterministic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1YAFluxRegisterT.html">amrex::YAFluxRegisterT</a>&lt; MF &gt;::m_deterministic = false</td>
         </tr>
       </table>
   </td>
