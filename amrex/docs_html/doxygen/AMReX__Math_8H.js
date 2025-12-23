@@ -11,6 +11,8 @@ var AMReX__Math_8H =
     [ "comp_ellint_2", "AMReX__Math_8H.html#aacdfee6976b6c744254567be3b78f24b", null ],
     [ "cospi", "AMReX__Math_8H.html#a432fec91e1e245a27f7e53004b5aa84e", null ],
     [ "cospi", "AMReX__Math_8H.html#a58a968cda54d7709f770dce3a3072d73", null ],
+    [ "exp10", "AMReX__Math_8H.html#a58ad8a699b545ffe6fa7d9d956d42d73", null ],
+    [ "exp10", "AMReX__Math_8H.html#a7e56b8f1bc049730f72de2354c62d04b", null ],
     [ "pi", "AMReX__Math_8H.html#a2d522eb2d366ecb5383529269e417457", null ],
     [ "powi", "AMReX__Math_8H.html#ac73f6dfd5ae205dfe7340b826994b6a7", null ],
     [ "rsqrt", "AMReX__Math_8H.html#ac33ae33c86a7cefb98dcf990b0b867b8", null ],
