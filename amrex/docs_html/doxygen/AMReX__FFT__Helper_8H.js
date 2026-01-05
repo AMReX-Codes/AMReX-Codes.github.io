@@ -40,11 +40,11 @@ var AMReX__FFT__Helper_8H =
       [ "r2r_eo", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "AMReX__FFT__Helper_8H.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
-    [ "add_vendor_plan_d", "AMReX__FFT__Helper_8H.html#a6cb9d5c30fd6357eb758299f3abd61d2", null ],
-    [ "add_vendor_plan_f", "AMReX__FFT__Helper_8H.html#a59e01f27497fe7be2f0826c2d2aaa40e", null ],
+    [ "add_vendor_plan_d", "AMReX__FFT__Helper_8H.html#ab096e6043d6902f66518b67f98ce0a8b", null ],
+    [ "add_vendor_plan_f", "AMReX__FFT__Helper_8H.html#ae44bf5923e52f86b8bfd38bdb7777d62", null ],
     [ "get_fab", "AMReX__FFT__Helper_8H.html#a864c4b4a96065b1cf5959fe6fc1cfc54", null ],
-    [ "get_vendor_plan_d", "AMReX__FFT__Helper_8H.html#aef4353cee9c5e67d665ae0ce48d26a16", null ],
-    [ "get_vendor_plan_f", "AMReX__FFT__Helper_8H.html#ab9840e2620314d60691e6438e5b8bde3", null ],
+    [ "get_vendor_plan_d", "AMReX__FFT__Helper_8H.html#a041de86dabf0d75cc7996e37619664d5", null ],
+    [ "get_vendor_plan_f", "AMReX__FFT__Helper_8H.html#a7b4eb28b018be59a3816f2d83e14ad35", null ],
     [ "make_iota_distromap", "AMReX__FFT__Helper_8H.html#ae40f1092f78a0a8f53357a35ddeab89c", null ],
     [ "make_mfs_share", "AMReX__FFT__Helper_8H.html#a25881b5f0cdccef7ba2901436f1afbb4", null ],
     [ "amrex_get_enum_traits", "AMReX__FFT__Helper_8H.html#a030f0cdd98372793256e2e4d0cf9711c", null ]

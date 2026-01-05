@@ -49,12 +49,5 @@ var namespaceamrex_1_1FFT =
       [ "r2r_eo", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
-    [ "add_vendor_plan_d", "namespaceamrex_1_1FFT.html#a6cb9d5c30fd6357eb758299f3abd61d2", null ],
-    [ "add_vendor_plan_f", "namespaceamrex_1_1FFT.html#a59e01f27497fe7be2f0826c2d2aaa40e", null ],
-    [ "Clear", "namespaceamrex_1_1FFT.html#a247121292130aadfdd97b2c5b9b518ad", null ],
-    [ "Finalize", "namespaceamrex_1_1FFT.html#a7a2c62799856b7bb8a987aaba0e405a3", null ],
-    [ "get_vendor_plan_d", "namespaceamrex_1_1FFT.html#aef4353cee9c5e67d665ae0ce48d26a16", null ],
-    [ "get_vendor_plan_f", "namespaceamrex_1_1FFT.html#ab9840e2620314d60691e6438e5b8bde3", null ],
-    [ "Initialize", "namespaceamrex_1_1FFT.html#a2976e074e2b759ec5813edcccce23341", null ],
     [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a030f0cdd98372793256e2e4d0cf9711c", null ]
 ];
