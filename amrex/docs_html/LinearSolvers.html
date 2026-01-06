@@ -73,6 +73,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tensor-solve">Tensor Solve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curl-curl">Curl-Curl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gmres">GMRES</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
@@ -127,7 +130,8 @@ system using the geometric multigrid method.  The constructor of
 class of various linear operator
 classes, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span></code>, etc.  We choose the type of linear operator
-class according to the type the linear system to solve.</p>
+class according to the type of linear system to solve. Examples of the
+linear operators include</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLABecLaplacian</span></code> for cell-centered canonical form (equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>).</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code> for cell-centered constant coefficient Poisson’s
@@ -293,10 +297,15 @@ if we want to do a linear solve where the boundary conditions on the
 coarsest AMR level of the solve come from a coarser level (e.g. the
 base AMR level of the solve is &gt; 0 and does not cover the entire domain),
 we must explicitly provide the coarser data.  Boundary conditions from a
-coarser level are always Dirichlet.</p>
+coarser level are Dirichlet by default and can be changed to homogeneous
+Neumann (i.e., <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span></code>).</p>
 <p>Note that this step, if needed, must be performed before the step below.
 The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span></code> member function for this step is</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setCoarseFineBC</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">crse</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">crse_ratio</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setCoarseFineBC</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">crse</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">crse_ratio</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">LinOpBCType</span><span class="w"> </span><span class="n">bc_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setCoarseFineBC</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">crse</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">crse_ratio</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">LinOpBCType</span><span class="w"> </span><span class="n">bc_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Here <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">crse</span></code> contains the Dirichlet boundary
@@ -353,7 +362,7 @@ store the numerical values in the condition,
 <p>There are many parameters that can be set.  Here we discuss some
 commonly used ones.</p>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span><span class="o">::</span><span class="n">setVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> and
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="nl">MLMG</span><span class="p">:</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> control the verbosity of the
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> control the verbosity of the
 linear operator, multigrid solver and the bottom solver, respectively.</p>
 <p>The multigrid solver is an iterative solver.  The maximal number of
 iterations can be changed with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setMaxIter</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>.  We can
@@ -381,7 +390,7 @@ biconjugate gradient stabilized method, but can easily be changed with the <code
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">setBottomSolver</span><span class="w"> </span><span class="p">(</span><span class="n">BottomSolver</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Available choices the bottom solver are</p>
+<p>Available choices of the bottom solver are</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span></code>: The default.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">cg</span></code>: The conjugate gradient method.  The
@@ -395,7 +404,7 @@ if cg fails.  The matrix must be symmetric.</p></li>
 see the section below on External Solvers</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">petsc</span></code>: Currently for cell-centered only.</p></li>
 </ul>
-<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span></code> class can be used control the agglomeration and
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span></code> class can be used to control the agglomeration and
 consolidation strategy for multigrid coarsening.</p>
 <ul class="simple">
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setAgglomeration</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span></code> (by default true) can be used
@@ -743,6 +752,68 @@ The remaining coarse nodes are updates by restriction.</span><a class="headerlin
 </li>
 </ul>
 <p>See <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/LinearSolvers/MultiComponent</span></code> for a complete working example.</p>
+</section>
+<section id="curl-curl">
+<h1>Curl-Curl<a class="headerlink" href="#curl-curl" title="Permalink to this heading"></a></h1>
+<p>The curl-curl solver supports solving the linear system arising from the
+discretized form of</p>
+<div class="math notranslate nohighlight">
+\[\nabla \times (\alpha \nabla \times \vec{E}) + \beta \vec{E} = \vec{f},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{E}\)</span> and <span class="math notranslate nohighlight">\(\vec{f}\)</span> are defined on cell edges,
+<span class="math notranslate nohighlight">\(\alpha\)</span> is a positive scalar, and <span class="math notranslate nohighlight">\(\beta\)</span> is a non-negative
+scalar (either a constant or a field). An <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array</span></code> of three
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s is used to store the components of <span class="math notranslate nohighlight">\(\vec{E}\)</span> and
+<span class="math notranslate nohighlight">\(\vec{f}\)</span>. It’s the user’s responsibility to ensure that the
+right-hand-side data are consistent on edges shared by multiple
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span></code>es.  If needed, you can call <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLCurlCurl</span><span class="o">::</span><span class="n">prepareRHS</span></code> to
+perform this synchronization.</p>
+<p>The solver supports 1D, 2D and 3D. Note that even in the 1D and 2D cases,
+<span class="math notranslate nohighlight">\(\vec{E}\)</span> still has three components, one for each spatial
+direction.</p>
+</section>
+<section id="open-boundary-poisson-solver">
+<h1>Open Boundary Poisson Solver<a class="headerlink" href="#open-boundary-poisson-solver" title="Permalink to this heading"></a></h1>
+<p>To solve Poisson’s equation for isolated sources (i.e., no sources outside
+the boundary), there are several options. One option is to use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code>
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLPoisson</span></code> with Dirichlet boundary conditions. The Dirichlet
+boundary values can be computed using the multipole method, as done in the
+Castro code (see e.g.,
+<a class="reference external" href="https://amrex-astro.github.io/Castro/docs/file/Gravity_8H.html#_CPPv49multipole">https://amrex-astro.github.io/Castro/docs/file/Gravity_8H.html#_CPPv49multipole</a>).
+Another option is to use the FFT based solver
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">FFT</span><span class="o">::</span><span class="n">PoissonOpenBC</span></code> (see chapter <a class="reference internal" href="FFT_Chapter.html#chap-fft"><span class="std std-ref">Discrete Fourier Transform</span></a>). A third
+option is <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">OpenBCSolver</span></code>, which implements the James’s method
+(“The Solution of Poisson’s Equation for Isolated Source
+Distributions”, R. A. James, 1977, Journal of Computational Physics, 25,
+71). Below are some of the member functions of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">OpenBCSolver</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">OpenBCSolver</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_geom</span><span class="p">,</span>
+<span class="w">              </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_grids</span><span class="p">,</span>
+<span class="w">              </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a_dmap</span><span class="p">,</span>
+<span class="w">              </span><span class="k">const</span><span class="w"> </span><span class="n">LPInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LPInfo</span><span class="p">());</span>
+
+<span class="n">Real</span><span class="w"> </span><span class="nf">solve</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_sol</span><span class="p">,</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">a_rhs</span><span class="p">,</span>
+<span class="w">             </span><span class="n">Real</span><span class="w"> </span><span class="n">a_tol_rel</span><span class="p">,</span><span class="w"> </span><span class="n">Real</span><span class="w"> </span><span class="n">a_tol_abs</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="gmres">
+<h1>GMRES<a class="headerlink" href="#gmres" title="Permalink to this heading"></a></h1>
+<p>AMReX provides a template implementation of the generalized minimal residual
+method (GMRES). The class template parameters are <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">V</span></code> for a linear
+algebra vector class and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">M</span></code> for a linear operator class. The linear
+algebra vector class can contain one or several <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>s, or your
+own data container. The linear operator class represents a matrix
+conceptually. Although it does not need to store the matrix explicitly, it
+must be able to apply the matrix vector product for a given vector. It also
+must provide some basic operations such as dot product and linear
+combination. For the full set of requirements on the operator class, see
+<a class="reference external" href="https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1GMRES.html#details">https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1GMRES.html#details</a>.</p>
+<p>An example of using GMRES combined with a Jacobi preconditioner to solve
+Poisson’s equation can be found at
+<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html</a>.</p>
+<p>AMReX also provides <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">GMRESMLMGT</span></code>, a class template that solves the
+linear system in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> using GMRES with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span></code> itself serving as
+the preconditioner.</p>
 </section>
 
 

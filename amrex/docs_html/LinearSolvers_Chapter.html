@@ -70,6 +70,9 @@
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#external-solvers">External Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#tensor-solve">Tensor Solve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#curl-curl">Curl-Curl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#gmres">GMRES</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
@@ -118,12 +121,14 @@
   <section id="linear-solvers">
 <span id="chap-linearsolvers"></span><h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this heading"></a></h1>
 <p>AMReX supports both single-level solves and composite solves on multiple AMR levels,
-with the scalar solution to the linear system defined on either cell centers or nodes.
+with the solution to the linear system defined on cell centers, edges or nodes.
 AMReX also supports solution of linear systems with embedded boundaries.
 (See chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details on the embedded boundary representation of
-complex geometry.)</p>
-<p>The default solution technique is geometric multigrid, but AMReX includes native
-BiCGStab solvers for a single level as well as interfaces to the hypre library.</p>
+complex geometry.) In addition to the iterative solvers discussed in this
+chapter, AMReX also supports solving Poisson equations using Fast Fourier
+Transform (FFT) (see chapter <a class="reference internal" href="FFT_Chapter.html#chap-fft"><span class="std std-ref">Discrete Fourier Transform</span></a> for more information).</p>
+<p>The default solution technique is geometric multigrid. AMReX also provides
+BiCGStab solvers, GMRES, and interfaces to the hypre and PETSc libraries.</p>
 <p>In this Chapter we give an overview of the linear solvers in AMReX
 that solve linear systems in the canonical form</p>
 <div class="math notranslate nohighlight" id="equation-eqn-abeclap">
@@ -147,7 +152,8 @@ and <span class="math notranslate nohighlight">\(\beta\)</span> (which we later 
 to calculate the viscous terms that appear in the compressible Navier-Stokes
 equations.  In these solves, all components of the velocity field are solved
 for simultaneously.  The tensor solve functionality is only available for
-cell-centered velocity.</p>
+cell-centered velocity. AMReX also supports the curl-curl operator, with
+solutions defined on cell edges.</p>
 <p>The tutorials in <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/LinearSolvers_Tutorial.html">Linear Solvers</a> show examples of
 using the solvers.  The tutorial
 <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX3_C</span></code> shows how to solve the
@@ -164,6 +170,9 @@ how to add linear solvers into the build system.</p>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#external-solvers">External Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#tensor-solve">Tensor Solve</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#curl-curl">Curl-Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#open-boundary-poisson-solver">Open Boundary Poisson Solver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#gmres">GMRES</a></li>
 </ul>
 </div>
 </section>
