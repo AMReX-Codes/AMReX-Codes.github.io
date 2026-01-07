@@ -80,22 +80,5 @@ var searchData=
   ['amrex_3a_3atri_5fgeom_5fops_77',['tri_geom_ops',['../namespaceamrex_1_1tri__geom__ops.html',1,'amrex']]],
   ['amrex_3a_3atwod_78',['TwoD',['../namespaceamrex_1_1TwoD.html',1,'amrex']]],
   ['amrex_3a_3avectorgrowthstrategy_79',['VectorGrowthStrategy',['../namespaceamrex_1_1VectorGrowthStrategy.html',1,'amrex']]],
-  ['amrex_3a_3avectorgrowthstrategy_3a_3adetail_80',['detail',['../namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html',1,'amrex::VectorGrowthStrategy']]],
-  ['amrex_5facc_5fmodule_81',['amrex_acc_module',['../namespaceamrex__acc__module.html',1,'']]],
-  ['amrex_5fbc_5ftypes_5fmodule_82',['amrex_bc_types_module',['../namespaceamrex__bc__types__module.html',1,'']]],
-  ['amrex_5fconstants_5fmodule_83',['amrex_constants_module',['../namespaceamrex__constants__module.html',1,'']]],
-  ['amrex_5feb_5fflux_5freg_5fnd_5fmodule_84',['amrex_eb_flux_reg_nd_module',['../namespaceamrex__eb__flux__reg__nd__module.html',1,'']]],
-  ['amrex_5febcellflag_5fmodule_85',['amrex_ebcellflag_module',['../namespaceamrex__ebcellflag__module.html',1,'']]],
-  ['amrex_5ferror_5fmodule_86',['amrex_error_module',['../namespaceamrex__error__module.html',1,'']]],
-  ['amrex_5ffilcc_5fmodule_87',['amrex_filcc_module',['../namespaceamrex__filcc__module.html',1,'']]],
-  ['amrex_5ffort_5fmodule_88',['amrex_fort_module',['../namespaceamrex__fort__module.html',1,'']]],
-  ['amrex_5fio_5fmodule_89',['amrex_io_module',['../namespaceamrex__io__module.html',1,'']]],
-  ['amrex_5flo_5fbctypes_5fmodule_90',['amrex_lo_bctypes_module',['../namespaceamrex__lo__bctypes__module.html',1,'']]],
-  ['amrex_5flo_5futil_5fmodule_91',['amrex_lo_util_module',['../namespaceamrex__lo__util__module.html',1,'']]],
-  ['amrex_5fmempool_5fmodule_92',['amrex_mempool_module',['../namespaceamrex__mempool__module.html',1,'']]],
-  ['amrex_5fmllinop_5fnd_5fmodule_93',['amrex_mllinop_nd_module',['../namespaceamrex__mllinop__nd__module.html',1,'']]],
-  ['amrex_5fomp_5fmodule_94',['amrex_omp_module',['../namespaceamrex__omp__module.html',1,'']]],
-  ['amrex_5fparalleldescriptor_5fmodule_95',['amrex_paralleldescriptor_module',['../namespaceamrex__paralleldescriptor__module.html',1,'']]],
-  ['amrex_5fparmparse_5fmodule_96',['amrex_parmparse_module',['../namespaceamrex__parmparse__module.html',1,'']]],
-  ['amrex_5fstring_5fmodule_97',['amrex_string_module',['../namespaceamrex__string__module.html',1,'']]]
+  ['amrex_3a_3avectorgrowthstrategy_3a_3adetail_80',['detail',['../namespaceamrex_1_1VectorGrowthStrategy_1_1detail.html',1,'amrex::VectorGrowthStrategy']]]
 ];

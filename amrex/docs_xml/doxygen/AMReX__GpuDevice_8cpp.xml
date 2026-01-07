@@ -1597,9 +1597,9 @@
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openacc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__acc__module_1a7eb8614e7eeb5eca0fea6ecaf6ad999a" kindref="member">amrex_initialize_acc</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__acc__module_1a7537721c18f228fca42f0db3e75a4470" kindref="member">amrex_finalize_acc</ref><sp/>();</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__acc__module_1ae6e5f688f216b146a2cc609ec638a462" kindref="member">amrex_set_acc_stream</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_initialize_acc<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_finalize_acc<sp/>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_set_acc_stream<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
@@ -1876,7 +1876,7 @@
 <codeline lineno="321"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="322"><highlight class="normal"></highlight></codeline>
 <codeline lineno="323"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex__acc__module_1a7eb8614e7eeb5eca0fea6ecaf6ad999a" kindref="member">amrex_initialize_acc</ref>(<ref refid="classamrex_1_1Gpu_1_1Device_1adf89d2ef6829289ef4e4f9ea2bd6a648" kindref="member">device_id</ref>);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex_initialize_acc(<ref refid="classamrex_1_1Gpu_1_1Device_1adf89d2ef6829289ef4e4f9ea2bd6a648" kindref="member">device_id</ref>);</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aec08005bbd7f17ae45fa38ad3adc5dc0" kindref="member">initialize_gpu</ref>(minimal);</highlight></codeline>
@@ -2026,7 +2026,7 @@
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a7597ccddda1c2ce70af5449165309554" kindref="member">gpu_stream_index</ref>.clear();</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"></highlight></codeline>
 <codeline lineno="473"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex__acc__module_1a7537721c18f228fca42f0db3e75a4470" kindref="member">amrex_finalize_acc</ref>();</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex_finalize_acc();</highlight></codeline>
 <codeline lineno="475"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="476"><highlight class="normal"></highlight></codeline>
 <codeline lineno="477"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -2268,7 +2268,7 @@
 <codeline lineno="713"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/>gpu_stream_index[<ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>()]<sp/>=<sp/>idx<sp/>%<sp/>max_gpu_streams;</highlight></codeline>
 <codeline lineno="715"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex__acc__module_1ae6e5f688f216b146a2cc609ec638a462" kindref="member">amrex_set_acc_stream</ref>(idx<sp/>%<sp/>max_gpu_streams);</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex_set_acc_stream(idx<sp/>%<sp/>max_gpu_streams);</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="718"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="719"><highlight class="normal">}</highlight></codeline>

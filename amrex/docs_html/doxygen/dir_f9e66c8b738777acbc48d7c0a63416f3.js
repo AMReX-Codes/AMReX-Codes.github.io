@@ -14,8 +14,6 @@ var dir_f9e66c8b738777acbc48d7c0a63416f3 =
     [ "AMReX_InterpBndryData_K.H", "AMReX__InterpBndryData__K_8H.html", null ],
     [ "AMReX_LO_BCTYPES.cpp", "AMReX__LO__BCTYPES_8cpp.html", "AMReX__LO__BCTYPES_8cpp" ],
     [ "AMReX_LO_BCTYPES.H", "AMReX__LO__BCTYPES_8H.html", "AMReX__LO__BCTYPES_8H" ],
-    [ "AMReX_lo_bctypes_mod.F90", "AMReX__lo__bctypes__mod_8F90.html", "AMReX__lo__bctypes__mod_8F90" ],
-    [ "AMReX_LO_UTIL.F90", "AMReX__LO__UTIL_8F90.html", "AMReX__LO__UTIL_8F90" ],
     [ "AMReX_LOUtil_K.H", "AMReX__LOUtil__K_8H.html", "AMReX__LOUtil__K_8H" ],
     [ "AMReX_Mask.cpp", "AMReX__Mask_8cpp.html", "AMReX__Mask_8cpp" ],
     [ "AMReX_Mask.H", "AMReX__Mask_8H.html", "AMReX__Mask_8H" ],
