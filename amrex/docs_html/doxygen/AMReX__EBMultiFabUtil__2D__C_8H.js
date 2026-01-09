@@ -15,6 +15,6 @@ var AMReX__EBMultiFabUtil__2D__C_8H =
     [ "eb_interp_cc2facecent_y", "AMReX__EBMultiFabUtil__2D__C_8H.html#a73b11c51f5f0aa260196fe89f98f538e", null ],
     [ "eb_interp_centroid2facecent_x", "AMReX__EBMultiFabUtil__2D__C_8H.html#a822283508598ea31f199a72fb96cfb39", null ],
     [ "eb_interp_centroid2facecent_y", "AMReX__EBMultiFabUtil__2D__C_8H.html#a9150aac9a5746c289eede0a8d456a638", null ],
-    [ "eb_set_covered_nodes", "AMReX__EBMultiFabUtil__2D__C_8H.html#a4675ef20781dd5f7901aad7adf57cf83", null ],
+    [ "eb_set_covered_nodes", "AMReX__EBMultiFabUtil__2D__C_8H.html#af648d2b646bbfe5b2e30a1820c76fcee", null ],
     [ "eb_set_covered_nodes", "AMReX__EBMultiFabUtil__2D__C_8H.html#a7be0ad634754dd1e3c3d5c0a49a1bdee", null ]
 ];

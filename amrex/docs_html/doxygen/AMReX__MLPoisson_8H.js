@@ -1,5 +1,4 @@
 var AMReX__MLPoisson_8H =
 [
-    [ "amrex::MLPoissonT< MF >", "classamrex_1_1MLPoissonT.html", "classamrex_1_1MLPoissonT" ],
-    [ "MLPoisson", "AMReX__MLPoisson_8H.html#a339ac1b3381df4095a659ec2b7980cb3", null ]
+    [ "MLPoisson", "AMReX__MLPoisson_8H.html#ga339ac1b3381df4095a659ec2b7980cb3", null ]
 ];

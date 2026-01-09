@@ -1,9 +1,11 @@
 var namespaceamrex_1_1sundials =
 [
     [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ],
+    [ "N_VectorContent_MultiFab_notptr", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr" ],
+    [ "N_VectorContent_MultiFab", "namespaceamrex_1_1sundials.html#aacd9d03c80720d9c92fa2a4335b2bfcd", null ],
     [ "Finalize", "namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18", null ],
     [ "getArena", "namespaceamrex_1_1sundials.html#a2f78139576a1e190225299ed2e120962", null ],
-    [ "getMFptr", "namespaceamrex_1_1sundials.html#aea0161d7bf0da79a1bb92a13999f7a17", null ],
+    [ "getMFptr", "namespaceamrex_1_1sundials.html#acfd06e00bdb48e5a55e6f585199928dc", null ],
     [ "Initialize", "namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d", null ],
     [ "N_VAbs_MultiFab", "namespaceamrex_1_1sundials.html#a3adcad5ac518df241183684b9d8eb0ab", null ],
     [ "N_VAddConst_MultiFab", "namespaceamrex_1_1sundials.html#a63e923f8d464b3ebd97acf0ca3ee309d", null ],
@@ -18,8 +20,8 @@ var namespaceamrex_1_1sundials =
     [ "N_VGetContent_MultiFab", "namespaceamrex_1_1sundials.html#a6bfd29fc821ae740836f40595e8479b8", null ],
     [ "N_VGetLength_MultiFab", "namespaceamrex_1_1sundials.html#a48461856ef0250658c5a2ebf41d98edc", null ],
     [ "N_VGetOwnMF_MultiFab", "namespaceamrex_1_1sundials.html#a83ab40ea0b031a6e4bd372e4eb2ee2f1", null ],
-    [ "N_VGetVectorAlias_MultiFab", "namespaceamrex_1_1sundials.html#a2e8955698d384f25c4019a0e22060caf", null ],
-    [ "N_VGetVectorPointer_MultiFab", "namespaceamrex_1_1sundials.html#a0270dd318150f1cef7ca4a38937ae27c", null ],
+    [ "N_VGetVectorAlias_MultiFab", "namespaceamrex_1_1sundials.html#ac836c3a3e47d698c5e113184aaf3e0dc", null ],
+    [ "N_VGetVectorPointer_MultiFab", "namespaceamrex_1_1sundials.html#aee3c17f9cf73b54b6c7a15015904efa3", null ],
     [ "N_VInv_MultiFab", "namespaceamrex_1_1sundials.html#aba2fa6d2aa9b8cd855d83759e3ed65dd", null ],
     [ "N_VInvTest_MultiFab", "namespaceamrex_1_1sundials.html#aa8f8163d4f0f443bbe7e99756b2c39d4", null ],
     [ "N_VL1Norm_MultiFab", "namespaceamrex_1_1sundials.html#abed0b53c3ca780e46a31fe986d659ac9", null ],

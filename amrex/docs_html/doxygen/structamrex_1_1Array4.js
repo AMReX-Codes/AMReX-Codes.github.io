@@ -31,5 +31,5 @@ var structamrex_1_1Array4 =
     [ "kstride", "structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e", null ],
     [ "ncomp", "structamrex_1_1Array4.html#a58a49cd7aec26094f9a5dda9ee795cca", null ],
     [ "nstride", "structamrex_1_1Array4.html#af34de268f8d40135be4374144dd2b34a", null ],
-    [ "p", "structamrex_1_1Array4.html#abecbdc4b33af06f30325783ca02d9510", null ]
+    [ "p", "structamrex_1_1Array4.html#a674fde18598ff1fec4d214f46b2b1987", null ]
 ];

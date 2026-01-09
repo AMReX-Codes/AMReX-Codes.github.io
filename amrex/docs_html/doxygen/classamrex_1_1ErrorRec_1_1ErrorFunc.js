@@ -7,7 +7,7 @@ var classamrex_1_1ErrorRec_1_1ErrorFunc =
     [ "ErrorFunc", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a53f51625afac95ad21c2b44edf7fef76", null ],
     [ "ErrorFunc", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a0038d07e8efa6df3c696f47cc8ae5d09", null ],
     [ "clone", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a13339314e8d87bdcbc26fbc4d74c270a", null ],
-    [ "operator()", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a6248c805a2c4965a0db817e5a302f701", null ],
+    [ "operator()", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a98ccf57cbc49c7059334c97de691d3d6", null ],
     [ "operator()", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#ae9e899a6e621a194470e4c30fdb2810b", null ],
     [ "operator=", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a4c6d57de03bde1d3000b2874046d8037", null ],
     [ "operator=", "classamrex_1_1ErrorRec_1_1ErrorFunc.html#aaebd762890262a13832191504c91386e", null ],

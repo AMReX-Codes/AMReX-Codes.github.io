@@ -3,6 +3,7 @@
   <compounddef id="AMReX__LO__BCTYPES_8H" kind="file" language="C++">
     <compoundname>AMReX_LO_BCTYPES.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
+    <includes local="no">iosfwd</includes>
     <includedby refid="AMReX__BndryRegister_8H" local="no">/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryRegister.H</includedby>
     <includedby refid="AMReX__LO__BCTYPES_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Boundary/AMReX_LO_BCTYPES.cpp</includedby>
     <includedby refid="AMReX__Habec__K_8H" local="no">/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H</includedby>
@@ -19,9 +20,14 @@
         <link refid="AMReX__LO__BCTYPES_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>AMReX_Config.H</label>
+      </node>
+      <node id="3">
+        <label>iosfwd</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -580,6 +586,7 @@
         </childnode>
       </node>
     </invincdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <sectiondef kind="define">
       <memberdef kind="define" id="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" prot="public" static="no">
         <name>AMREX_LO_DIRICHLET</name>
@@ -729,22 +736,22 @@
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iosfwd&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/>LinOpBCType<sp/>:<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>interior<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dirichlet<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref>,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Neumann<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>,</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reflect_odd<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a911e22551a8578fcc62588ad4232a1b1" kindref="member">AMREX_LO_REFLECT_ODD</ref>,</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Marshak<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1ac0d064dddf0a13f91f3ce99090e4bad4" kindref="member">AMREX_LO_MARSHAK</ref>,</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SanchezPomraning<sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1acb24c91365aea47c8c5e66ef6a3d32be" kindref="member">AMREX_LO_SANCHEZ_POMRANING</ref>,</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inflow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1abb28e2063a5f29dd10f42d856e8c6af6" kindref="member">AMREX_LO_INFLOW</ref>,</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inhomogNeumann<sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a873f2ffbe89507cff0a0c11b6f1a48ae" kindref="member">AMREX_LO_INHOMOG_NEUMANN</ref>,</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Robin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1adad7113c509303a8c8da66ef2f1c786d" kindref="member">AMREX_LO_ROBIN</ref>,</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>symmetry<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1aa49301ea0899710eb43fa5d992589166" kindref="member">AMREX_LO_SYMMETRY</ref>,</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Periodic<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a70e18776a02a5caf3faea16632d60a6c" kindref="member">AMREX_LO_PERIODIC</ref>,</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bogus<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a969fe17351200623de86808d7d02de1a" kindref="member">AMREX_LO_BOGUS</ref></highlight></codeline>
+<codeline lineno="22" refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>struct</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435" kindref="member">LinOpBCType</ref><sp/>:<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435ab79de4fb00edbedc3a2e300603b2be38" kindref="member">interior</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435abac152b762896edff34ed668ae1a546f" kindref="member">Dirichlet</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a874725e18b8a17a13d2200cea4c11c47" kindref="member">AMREX_LO_DIRICHLET</ref>,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435ab8537a769dbc90cb1762215441212152" kindref="member">Neumann</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a0f804066c7b2b4d304482ea1751def60" kindref="member">AMREX_LO_NEUMANN</ref>,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a07d6d90bb05e400efe2060e963ae72d3" kindref="member">reflect_odd</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a911e22551a8578fcc62588ad4232a1b1" kindref="member">AMREX_LO_REFLECT_ODD</ref>,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a1f37e0765dcd71fa0903b7a933b079ea" kindref="member">Marshak</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1ac0d064dddf0a13f91f3ce99090e4bad4" kindref="member">AMREX_LO_MARSHAK</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a69d261a097aef0c3275fed19b278eeab" kindref="member">SanchezPomraning</ref><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1acb24c91365aea47c8c5e66ef6a3d32be" kindref="member">AMREX_LO_SANCHEZ_POMRANING</ref>,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435ad37e67db17cfd059f2852e2673b9e8ef" kindref="member">inflow</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1abb28e2063a5f29dd10f42d856e8c6af6" kindref="member">AMREX_LO_INFLOW</ref>,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435ac8a3f2dafe3d2cac8f54a832d5f3e50d" kindref="member">inhomogNeumann</ref><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a873f2ffbe89507cff0a0c11b6f1a48ae" kindref="member">AMREX_LO_INHOMOG_NEUMANN</ref>,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a22d5d814d801d8b3e1a1c3fc36796de9" kindref="member">Robin</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1adad7113c509303a8c8da66ef2f1c786d" kindref="member">AMREX_LO_ROBIN</ref>,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2" kindref="member">symmetry</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1aa49301ea0899710eb43fa5d992589166" kindref="member">AMREX_LO_SYMMETRY</ref>,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435acdcc32a064503184053bd2018d1c0e7e" kindref="member">Periodic</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a70e18776a02a5caf3faea16632d60a6c" kindref="member">AMREX_LO_PERIODIC</ref>,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435a90affbd9a1954ec9ff029b7ad7183a16" kindref="member">bogus</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="AMReX__LO__BCTYPES_8H_1a969fe17351200623de86808d7d02de1a" kindref="member">AMREX_LO_BOGUS</ref></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ostream&amp;<sp/><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>amrex::LinOpBCType&amp;<sp/>t);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ostream&amp;<sp/><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8365a84c73dc019f863f57bfcb9a6435" kindref="member">amrex::LinOpBCType</ref>&amp;<sp/>t);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>

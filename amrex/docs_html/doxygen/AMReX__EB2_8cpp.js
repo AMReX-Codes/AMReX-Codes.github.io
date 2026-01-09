@@ -2,7 +2,7 @@ var AMReX__EB2_8cpp =
 [
     [ "addFineLevels", "AMReX__EB2_8cpp.html#a72554dbd2be4d423812d6207b9c61aa3", null ],
     [ "addRegularCoarseLevels", "AMReX__EB2_8cpp.html#a0847e43de0f68d0a78bb75f9a6fefcd9", null ],
-    [ "Build", "AMReX__EB2_8cpp.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
+    [ "Build", "AMReX__EB2_8cpp.html#gab84e44ba11cf1770598ed29c7bc4889e", null ],
     [ "BuildFromChkptFile", "AMReX__EB2_8cpp.html#afb0afb98a8713d8031d524dd41ef94de", null ],
     [ "ExtendDomainFace", "AMReX__EB2_8cpp.html#a2258b3042676370ae01a2968e6962765", null ],
     [ "Finalize", "AMReX__EB2_8cpp.html#afd3e2ed9a69b9e53f5b68eca49ee6fe6", null ],

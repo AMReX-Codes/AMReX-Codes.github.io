@@ -89,7 +89,7 @@ var searchData=
   ['parser_5fusrfn_86',['PARSER_USRFN',['../namespaceamrex.html#ad9039fea6c6d400df4ca8e5fef35b883a8067bb61cc55aa174217d3807396dee8',1,'amrex']]],
   ['parser_5fyn_87',['PARSER_YN',['../namespaceamrex.html#a0075507273391e5967b9d869daed98bca54ca5d1224b56477f77d07fdeccd8469',1,'amrex']]],
   ['pencil_88',['pencil',['../namespaceamrex_1_1FFT.html#a5e1db35696b96f6c8dcd2308027ce845aa8f6830bce790a8a67fc2e84e12093ba',1,'amrex::FFT']]],
-  ['periodic_89',['periodic',['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee',1,'amrex::FFT']]],
+  ['periodic_89',['periodic',['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435acdcc32a064503184053bd2018d1c0e7e',1,'amrex::Periodic'],['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee',1,'amrex::FFT::periodic']]],
   ['petsc_90',['petsc',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f',1,'amrex']]],
   ['point_91',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
   ['poisson_92',['Poisson',['../namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e',1,'amrex']]],

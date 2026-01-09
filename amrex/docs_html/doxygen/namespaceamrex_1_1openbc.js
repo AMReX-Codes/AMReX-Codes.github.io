@@ -3,7 +3,7 @@ var namespaceamrex_1_1openbc =
     [ "Moments", "structamrex_1_1openbc_1_1Moments.html", "structamrex_1_1openbc_1_1Moments" ],
     [ "MomTag", "structamrex_1_1openbc_1_1MomTag.html", "structamrex_1_1openbc_1_1MomTag" ],
     [ "block_potential", "namespaceamrex_1_1openbc.html#aed0e701c8f24f5d9147a78a36b750291", null ],
-    [ "interp_coef", "namespaceamrex_1_1openbc.html#a2f8de5934a95813023c5474849f19ed9", null ],
+    [ "interp_coef", "namespaceamrex_1_1openbc.html#a7f97cbe5acaa0c3cf5a21dddb7c46fde", null ],
     [ "interpccx", "namespaceamrex_1_1openbc.html#af93fe585a10d0999853bf4f0f71545ff", null ],
     [ "interpccy", "namespaceamrex_1_1openbc.html#ab4c67538303c22b954628dfff216a152", null ],
     [ "interpccz", "namespaceamrex_1_1openbc.html#ac89b85e745bed150463d3bba56e516ad", null ],

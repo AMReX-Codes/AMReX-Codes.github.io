@@ -1,0 +1,707 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__amrex__collectives" kind="group">
+    <compoundname>amrex_collectives</compoundname>
+    <title>Reductions and Scans</title>
+    <innerclass refid="structamrex_1_1ReduceOpSum" prot="public">amrex::ReduceOpSum</innerclass>
+    <innerclass refid="structamrex_1_1ReduceOpMin" prot="public">amrex::ReduceOpMin</innerclass>
+    <innerclass refid="structamrex_1_1ReduceOpMax" prot="public">amrex::ReduceOpMax</innerclass>
+    <innerclass refid="structamrex_1_1ReduceOpLogicalAnd" prot="public">amrex::ReduceOpLogicalAnd</innerclass>
+    <innerclass refid="structamrex_1_1ReduceOpLogicalOr" prot="public">amrex::ReduceOpLogicalOr</innerclass>
+    <innerclass refid="classamrex_1_1ReduceData" prot="public">amrex::ReduceData</innerclass>
+    <innerclass refid="classamrex_1_1ReduceOps" prot="public">amrex::ReduceOps</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__amrex__collectives_1gafac1250d786b98bab8d8d2cf5c06411e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Sum</definition>
+        <argsstring>(N n, T const *v, T init_val=0)</argsstring>
+        <name>Sum</name>
+        <qualifiedname>amrex::Reduce::Sum</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="754" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="754" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gae179b14741cc532f08816fceabea24f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Sum</definition>
+        <argsstring>(N n, F const &amp;f, T init_val=0)</argsstring>
+        <name>Sum</name>
+        <qualifiedname>amrex::Reduce::Sum</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="767" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="767" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga07365bcdfaa9fe246330e8d91f71ecc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Min</definition>
+        <argsstring>(N n, T const *v, T init_val=std::numeric_limits&lt; T &gt;::max())</argsstring>
+        <name>Min</name>
+        <qualifiedname>amrex::Reduce::Min</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>std::numeric_limits&lt; T &gt;::max()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="779" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="779" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga8e8a5dd1862e4f8c8eb70e4601edd281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Min</definition>
+        <argsstring>(N n, F const &amp;f, T init_val=std::numeric_limits&lt; T &gt;::max())</argsstring>
+        <name>Min</name>
+        <qualifiedname>amrex::Reduce::Min</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>std::numeric_limits&lt; T &gt;::max()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="792" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="792" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga7ac8075282193aef5024b3a7092a0f3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Max</definition>
+        <argsstring>(N n, T const *v, T init_val=std::numeric_limits&lt; T &gt;::lowest())</argsstring>
+        <name>Max</name>
+        <qualifiedname>amrex::Reduce::Max</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>std::numeric_limits&lt; T &gt;::lowest()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="804" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="804" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gabb357d8fcc6dd0426249ee962166fdd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Reduce::Max</definition>
+        <argsstring>(N n, F const &amp;f, T init_val=std::numeric_limits&lt; T &gt;::lowest())</argsstring>
+        <name>Max</name>
+        <qualifiedname>amrex::Reduce::Max</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>init_val</declname>
+          <defval>std::numeric_limits&lt; T &gt;::lowest()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="817" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="817" bodyend="825"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gadae163b6d167d018ba6ec7cf821b97a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::pair&lt; T, T &gt;</type>
+        <definition>std::pair&lt; T, T &gt; amrex::Reduce::MinMax</definition>
+        <argsstring>(N n, T const *v)</argsstring>
+        <name>MinMax</name>
+        <qualifiedname>amrex::Reduce::MinMax</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="829" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="829" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gac1dab3efd41294be3534dceac0c145b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::pair&lt; T, T &gt;</type>
+        <definition>std::pair&lt; T, T &gt; amrex::Reduce::MinMax</definition>
+        <argsstring>(N n, F const &amp;f)</argsstring>
+        <name>MinMax</name>
+        <qualifiedname>amrex::Reduce::MinMax</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>F const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="844" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="844" bodyend="855"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gaf362eac7caa17fd8a2f7ee3831236367" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename P</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::Reduce::AnyOf</definition>
+        <argsstring>(N n, T const *v, P const &amp;pred)</argsstring>
+        <name>AnyOf</name>
+        <qualifiedname>amrex::Reduce::AnyOf</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>P const &amp;</type>
+          <declname>pred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="859" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="859" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga14f4ad196e92e318437fba27909ea581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::Reduce::AnyOf</definition>
+        <argsstring>(Box const &amp;box, P const &amp;pred)</argsstring>
+        <name>AnyOf</name>
+        <qualifiedname>amrex::Reduce::AnyOf</qualifiedname>
+        <param>
+          <type>Box const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>P const &amp;</type>
+          <declname>pred</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="916" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="916" bodyend="984"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gad7ef336709704a3b8b05b00b9432059d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename FIN</type>
+          </param>
+          <param>
+            <type>typename FOUT</type>
+          </param>
+          <param>
+            <type>typename TYPE</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt; &amp;&amp;                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Scan::PrefixSum</definition>
+        <argsstring>(N n, FIN const &amp;fin, FOUT const &amp;fout, TYPE, RetSum a_ret_sum=retSum)</argsstring>
+        <name>PrefixSum</name>
+        <qualifiedname>amrex::Scan::PrefixSum</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>FIN const &amp;</type>
+          <declname>fin</declname>
+        </param>
+        <param>
+          <type>FOUT const &amp;</type>
+          <declname>fout</declname>
+        </param>
+        <param>
+          <type>TYPE</type>
+        </param>
+        <param>
+          <type>RetSum</type>
+          <declname>a_ret_sum</declname>
+          <defval>retSum</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="961" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="961" bodyend="1201"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga252adc550a6d7b6ff5e31b6be3b2f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Scan::InclusiveSum</definition>
+        <argsstring>(N n, T const *in, T *out, RetSum a_ret_sum=retSum)</argsstring>
+        <name>InclusiveSum</name>
+        <qualifiedname>amrex::Scan::InclusiveSum</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>T *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>RetSum</type>
+          <declname>a_ret_sum</declname>
+          <defval>retSum</defval>
+        </param>
+        <briefdescription>
+<para>Inclusive sum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_ret_sum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>control the return value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>return the total sum if <computeroutput>a_ret_sum</computeroutput> is true </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="1217" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="1217" bodyend="1274"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga375a3f04c8c0b11c577d168dbff3c9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;N&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T amrex::Scan::ExclusiveSum</definition>
+        <argsstring>(N n, T const *in, T *out, RetSum a_ret_sum=retSum)</argsstring>
+        <name>ExclusiveSum</name>
+        <qualifiedname>amrex::Scan::ExclusiveSum</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>T const *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>T *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>RetSum</type>
+          <declname>a_ret_sum</declname>
+          <defval>retSum</defval>
+        </param>
+        <briefdescription>
+<para>Exclusive sum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of elements </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_ret_sum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>control the return value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>return the total sum if <computeroutput>a_ret_sum</computeroutput> is true </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="1288" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="1288" bodyend="1358"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1gab4e0fa80e6873e53208d917854f37129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>OutIter</type>
+        <definition>OutIter amrex::Gpu::inclusive_scan</definition>
+        <argsstring>(InIter begin, InIter end, OutIter result)</argsstring>
+        <name>inclusive_scan</name>
+        <qualifiedname>amrex::Gpu::inclusive_scan</qualifiedname>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="1420" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="1420" bodyend="1434"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__collectives_1ga3f116832e254a3422729b3455b22f18c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>OutIter</type>
+        <definition>OutIter amrex::Gpu::exclusive_scan</definition>
+        <argsstring>(InIter begin, InIter end, OutIter result)</argsstring>
+        <name>exclusive_scan</name>
+        <qualifiedname>amrex::Gpu::exclusive_scan</qualifiedname>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="1438" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="1438" bodyend="1461"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Performance-portable reduction and scan operations in AMReX. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These interfaces provide reductions (e.g., sum, min, max) and scan operations (prefix sums) over index spaces and ranges on both CPUs and GPUs. They do not use MPI and operate on data local to the process.</para>
+<para>Key functions and classes include:<itemizedlist>
+<listitem><para><ref refid="structamrex_1_1ReduceOpSum" kindref="compound">amrex::ReduceOpSum</ref></para>
+</listitem><listitem><para><ref refid="structamrex_1_1ReduceOpMin" kindref="compound">amrex::ReduceOpMin</ref></para>
+</listitem><listitem><para><ref refid="structamrex_1_1ReduceOpMax" kindref="compound">amrex::ReduceOpMax</ref></para>
+</listitem><listitem><para><ref refid="structamrex_1_1ReduceOpLogicalAnd" kindref="compound">amrex::ReduceOpLogicalAnd</ref></para>
+</listitem><listitem><para><ref refid="structamrex_1_1ReduceOpLogicalOr" kindref="compound">amrex::ReduceOpLogicalOr</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1ReduceOps" kindref="compound">amrex::ReduceOps</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1ReduceData" kindref="compound">amrex::ReduceData</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1gafac1250d786b98bab8d8d2cf5c06411e" kindref="member">amrex::Reduce::Sum</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1ga07365bcdfaa9fe246330e8d91f71ecc0" kindref="member">amrex::Reduce::Min</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1ga7ac8075282193aef5024b3a7092a0f3c" kindref="member">amrex::Reduce::Max</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1gadae163b6d167d018ba6ec7cf821b97a8" kindref="member">amrex::Reduce::MinMax</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1gaf362eac7caa17fd8a2f7ee3831236367" kindref="member">amrex::Reduce::AnyOf</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1gad7ef336709704a3b8b05b00b9432059d" kindref="member">amrex::Scan::PrefixSum</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1ga252adc550a6d7b6ff5e31b6be3b2f12f" kindref="member">amrex::Scan::InclusiveSum</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1ga375a3f04c8c0b11c577d168dbff3c9fd" kindref="member">amrex::Scan::ExclusiveSum</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1gab4e0fa80e6873e53208d917854f37129" kindref="member">amrex::Gpu::inclusive_scan</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__collectives_1ga3f116832e254a3422729b3455b22f18c" kindref="member">amrex::Gpu::exclusive_scan</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

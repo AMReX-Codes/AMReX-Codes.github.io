@@ -1,7 +1,5 @@
 var AMReX__IndexType_8H =
 [
-    [ "amrex::CellIndexEnum", "structamrex_1_1CellIndexEnum.html", "structamrex_1_1CellIndexEnum" ],
-    [ "amrex::IndexTypeND< dim >", "classamrex_1_1IndexTypeND.html", "classamrex_1_1IndexTypeND" ],
     [ "std::tuple_size< amrex::IndexTypeND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4" ],
     [ "std::tuple_element< s, amrex::IndexTypeND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4" ],
     [ "index_type_read", "AMReX__IndexType_8H.html#ae1db1fc5feb5005eee61aeeeb926a478", null ],

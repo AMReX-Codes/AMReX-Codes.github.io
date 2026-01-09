@@ -1,7 +1,7 @@
 var dir_55eec958e272d6cfff0ea35b0f5787ca =
 [
     [ "AMReX_AmrCore.cpp", "AMReX__AmrCore_8cpp.html", null ],
-    [ "AMReX_AmrCore.H", "AMReX__AmrCore_8H.html", "AMReX__AmrCore_8H" ],
+    [ "AMReX_AmrCore.H", "AMReX__AmrCore_8H.html", null ],
     [ "AMReX_AmrCoreFwd.H", "AMReX__AmrCoreFwd_8H.html", null ],
     [ "AMReX_AmrMesh.cpp", "AMReX__AmrMesh_8cpp.html", "AMReX__AmrMesh_8cpp" ],
     [ "AMReX_AmrMesh.H", "AMReX__AmrMesh_8H.html", "AMReX__AmrMesh_8H" ],

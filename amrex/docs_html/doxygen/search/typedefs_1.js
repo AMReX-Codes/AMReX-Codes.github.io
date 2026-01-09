@@ -10,7 +10,7 @@ var searchData=
   ['bndrybatransformer_7',['BndryBATransformer',['../namespaceamrex.html#af2ed2dc1168064ab4409c918ad0dfce6',1,'amrex']]],
   ['bndrydata_8',['BndryData',['../namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32',1,'amrex']]],
   ['bndryfunc3ddefault_9',['BndryFunc3DDefault',['../namespaceamrex.html#a5e4a902f699c144a9823d30d6dbb7236',1,'amrex']]],
-  ['bndryfuncdefault_10',['BndryFuncDefault',['../namespaceamrex.html#a8b7e34da6fddd1312471a5962bf774cd',1,'amrex']]],
+  ['bndryfuncdefault_10',['BndryFuncDefault',['../namespaceamrex.html#a26ea5196cb8a6a557d58495a7628207f',1,'amrex']]],
   ['bndryfuncfabdefault_11',['BndryFuncFabDefault',['../namespaceamrex.html#a33a085eaa4c95d211f6fce74e9440ff9',1,'amrex']]],
   ['bndryregister_12',['BndryRegister',['../namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168',1,'amrex']]],
   ['bottomsolver_13',['BottomSolver',['../classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708',1,'amrex::MLMGT']]],

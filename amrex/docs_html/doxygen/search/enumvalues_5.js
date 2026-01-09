@@ -25,7 +25,8 @@ var searchData=
   ['fine_5fcell_22',['fine_cell',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca4438d5a5594d291716164dd529a902cd',1,'amrex::YAFluxRegisterT']]],
   ['first_23',['FIRST',['../classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c',1,'amrex::ParmParse']]],
   ['flrdiv_24',['FLRDIV',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda35586d007dd65f75cd20ebadd1622590',1,'amrex_iparser.tab.h']]],
-  ['forward_25',['forward',['../namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8',1,'amrex::FFT']]],
-  ['forwardeuler_26',['forwardeuler',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a779b3131986acb907c287cdaf371d578',1,'amrex::ForwardEuler'],['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599ea779b3131986acb907c287cdaf371d578',1,'amrex::ForwardEuler']]],
-  ['full_27',['full',['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcae9dc924f238fa6cc29465942875fe8f0',1,'amrex']]]
+  ['foextrap_25',['foextrap',['../namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6a4c471dec10d8ab97bee81f7d4dc731db',1,'amrex::BCType']]],
+  ['forward_26',['forward',['../namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8',1,'amrex::FFT']]],
+  ['forwardeuler_27',['forwardeuler',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a779b3131986acb907c287cdaf371d578',1,'amrex::ForwardEuler'],['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599ea779b3131986acb907c287cdaf371d578',1,'amrex::ForwardEuler']]],
+  ['full_28',['full',['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcae9dc924f238fa6cc29465942875fe8f0',1,'amrex']]]
 ];

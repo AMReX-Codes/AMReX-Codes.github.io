@@ -8,6 +8,6 @@ var AMReX__PhysBCFunct_8H =
     [ "amrex::PhysBCFunctUseCoarseGhost", "classamrex_1_1PhysBCFunctUseCoarseGhost.html", "classamrex_1_1PhysBCFunctUseCoarseGhost" ],
     [ "amrex::PhysBCFunct< F >", "classamrex_1_1PhysBCFunct.html", "classamrex_1_1PhysBCFunct" ],
     [ "BndryFunc3DDefault", "AMReX__PhysBCFunct_8H.html#a5e4a902f699c144a9823d30d6dbb7236", null ],
-    [ "BndryFuncDefault", "AMReX__PhysBCFunct_8H.html#a8b7e34da6fddd1312471a5962bf774cd", null ],
+    [ "BndryFuncDefault", "AMReX__PhysBCFunct_8H.html#a26ea5196cb8a6a557d58495a7628207f", null ],
     [ "UserFillBox", "AMReX__PhysBCFunct_8H.html#a88781af4a5d3f8271de2b3129cc49393", null ]
 ];

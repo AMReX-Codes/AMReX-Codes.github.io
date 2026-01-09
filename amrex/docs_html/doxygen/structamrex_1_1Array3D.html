@@ -564,15 +564,15 @@ template&lt;class T , int XLO, int XHI, int YLO, int YHI, int ZLO, int ZHI, <a c
   </dd>
 </dl>
 <p>This can be used, for instance, to calculate the sum over the <em>z</em> dimension of an <a class="el" href="structamrex_1_1Array3D.html">Array3D</a> object that was instantiated as </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structamrex_1_1Array3D.html">Array3D&lt;amrex::Real, 1, M, 1, N, 1, K&gt;</a> array;</div>
-<div class="ttc" id="astructamrex_1_1Array3D_html"><div class="ttname"><a href="structamrex_1_1Array3D.html">amrex::Array3D</a></div><div class="ttdef"><b>Definition</b> AMReX_Array.H:648</div></div>
+<div class="ttc" id="astructamrex_1_1Array3D_html"><div class="ttname"><a href="structamrex_1_1Array3D.html">amrex::Array3D</a></div><div class="ttdef"><b>Definition</b> AMReX_Array.H:654</div></div>
 </div><!-- fragment --><p>One could instantiate an <a class="el" href="structamrex_1_1Array2D.html">Array2D</a> object to hold the results, </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structamrex_1_1Array2D.html">Array2D&lt;amrex::Real, 1, M, 1, N&gt;</a> mat;</div>
-<div class="ttc" id="astructamrex_1_1Array2D_html"><div class="ttname"><a href="structamrex_1_1Array2D.html">amrex::Array2D</a></div><div class="ttdef"><b>Definition</b> AMReX_Array.H:341</div></div>
+<div class="ttc" id="astructamrex_1_1Array2D_html"><div class="ttname"><a href="structamrex_1_1Array2D.html">amrex::Array2D</a></div><div class="ttdef"><b>Definition</b> AMReX_Array.H:347</div></div>
 </div><!-- fragment --><p> and then perform the summation for each element of the resulting matrix. </p><div class="fragment"><div class="line"><span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = 1; j &lt;= N; ++j) {</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= M; ++i) {</div>
 <div class="line">        mat(i,j) = array.<a class="code hl_function" href="structamrex_1_1Array3D.html#a58b2e9e407ccb9cb4886bbaf37e90056">sum</a>(2,i,j)</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="astructamrex_1_1Array3D_html_a58b2e9e407ccb9cb4886bbaf37e90056"><div class="ttname"><a href="structamrex_1_1Array3D.html#a58b2e9e407ccb9cb4886bbaf37e90056">amrex::Array3D::sum</a></div><div class="ttdeci">__host__ __device__ constexpr T sum() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:820</div></div>
+<div class="ttc" id="astructamrex_1_1Array3D_html_a58b2e9e407ccb9cb4886bbaf37e90056"><div class="ttname"><a href="structamrex_1_1Array3D.html#a58b2e9e407ccb9cb4886bbaf37e90056">amrex::Array3D::sum</a></div><div class="ttdeci">__host__ __device__ constexpr T sum() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:826</div></div>
 </div><!-- fragment --><p> In this example, the axis is 2 and the location indices are <code>loc0</code> = <code>i</code> and <code>loc1</code> = <code>j</code>. For axis = 0, the location indices are treated as <code>loc0</code> = <code>j</code> and <code>loc1</code> = <code>k</code>; for axis = 1, <code>loc0</code> = <code>i</code> and <code>loc1</code> = <code>k</code>. </p>
 
 </div>

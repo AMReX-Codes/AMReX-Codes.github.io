@@ -1,6 +1,5 @@
 var AMReX__VisMF_8H =
 [
-    [ "amrex::VisMF", "classamrex_1_1VisMF.html", "classamrex_1_1VisMF" ],
     [ "amrex::VisMF::FabOnDisk", "structamrex_1_1VisMF_1_1FabOnDisk.html", "structamrex_1_1VisMF_1_1FabOnDisk" ],
     [ "amrex::VisMF::Header", "structamrex_1_1VisMF_1_1Header.html", "structamrex_1_1VisMF_1_1Header" ],
     [ "amrex::VisMF::FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html", "structamrex_1_1VisMF_1_1FabReadLink" ],

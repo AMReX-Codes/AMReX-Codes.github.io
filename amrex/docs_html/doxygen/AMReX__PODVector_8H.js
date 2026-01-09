@@ -1,7 +1,6 @@
 var AMReX__PODVector_8H =
 [
     [ "amrex::GrowthStrategy_EnumTraits", "structamrex_1_1GrowthStrategy__EnumTraits.html", "structamrex_1_1GrowthStrategy__EnumTraits" ],
-    [ "amrex::PODVector< T, Allocator >", "classamrex_1_1PODVector.html", "classamrex_1_1PODVector" ],
     [ "GrowthStrategy", "AMReX__PODVector_8H.html#a65ab2bb30531f06fffb874d874125a5a", [
       [ "Poisson", "AMReX__PODVector_8H.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e", null ],
       [ "Exact", "AMReX__PODVector_8H.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b", null ],

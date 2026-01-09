@@ -8,7 +8,6 @@ var AMReX__BoxArray_8H =
     [ "amrex::BATbndryReg", "structamrex_1_1BATbndryReg.html", "structamrex_1_1BATbndryReg" ],
     [ "amrex::BATransformer", "structamrex_1_1BATransformer.html", "structamrex_1_1BATransformer" ],
     [ "amrex::BATransformer::BATOp", "unionamrex_1_1BATransformer_1_1BATOp.html", "unionamrex_1_1BATransformer_1_1BATOp" ],
-    [ "amrex::BoxArray", "classamrex_1_1BoxArray.html", "classamrex_1_1BoxArray" ],
     [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", "structamrex_1_1BoxArray_1_1RefID" ],
     [ "BndryBATransformer", "AMReX__BoxArray_8H.html#af2ed2dc1168064ab4409c918ad0dfce6", null ],
     [ "boxComplement", "AMReX__BoxArray_8H.html#af4b25f1a81ffa836ed7356d6da7e814e", null ],

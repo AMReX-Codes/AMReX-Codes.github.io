@@ -5,7 +5,7 @@
     <includes refid="AMReX__ErrorList_8H" local="no">AMReX_ErrorList.H</includes>
     <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a3e10daec10c4fe4ffb4c4dfc44191fae" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a42bd26e7d0da54d65837c31f4d03576f" kindref="member">ErrorFunc2Default</ref></type>
+        <type><ref refid="namespaceamrex_1a0a9c33e947d3c4b36eeb8c382d9f66cc" kindref="member">ErrorFunc2Default</ref></type>
         <definition>ErrorFunc2Default amrex::ErrorRec::ErrorFunc2::m_func</definition>
         <argsstring></argsstring>
         <name>m_func</name>
@@ -43,7 +43,7 @@
         <name>ErrorFunc2</name>
         <qualifiedname>amrex::ErrorRec::ErrorFunc2::ErrorFunc2</qualifiedname>
         <param>
-          <type><ref refid="namespaceamrex_1a42bd26e7d0da54d65837c31f4d03576f" kindref="member">ErrorFunc2Default</ref></type>
+          <type><ref refid="namespaceamrex_1a0a9c33e947d3c4b36eeb8c382d9f66cc" kindref="member">ErrorFunc2Default</ref></type>
           <declname>inFunc</declname>
         </param>
         <briefdescription>
@@ -163,10 +163,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_ErrorList.H" line="216" column="20"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a4d92e57562f4077cc2e7d218ac39b540" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a30c514d7d669c58c3d21bc235a89b140" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void amrex::ErrorRec::ErrorFunc2::operator()</definition>
-        <argsstring>(int *tag, AMREX_ARLIM_P(tlo), AMREX_ARLIM_P(thi), const int *tagval, const int *clearval, Real *data, AMREX_ARLIM_P(data_lo), AMREX_ARLIM_P(data_hi), const int *lo, const int *hi, const int *nvar, const int *domain_lo, const int *domain_hi, const Real *dx, const int *level, const Real *avg) const</argsstring>
+        <argsstring>(int *tag, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *tagval, const int *clearval, Real *data, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int &amp;, const int *lo, const int *hi, const int *nvar, const int *domain_lo, const int *domain_hi, const Real *dx, const int *level, const Real *avg) const</argsstring>
         <name>operator()</name>
         <qualifiedname>amrex::ErrorRec::ErrorFunc2::operator()</qualifiedname>
         <param>
@@ -174,10 +174,28 @@
           <declname>tag</declname>
         </param>
         <param>
-          <type>AMREX_ARLIM_P(tlo)</type>
+          <type>const int &amp;</type>
+          <defname>tlo0</defname>
         </param>
         <param>
-          <type>AMREX_ARLIM_P(thi)</type>
+          <type>const int &amp;</type>
+          <defname>tlo1</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>tlo2</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>thi0</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>thi1</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>thi2</defname>
         </param>
         <param>
           <type>const int *</type>
@@ -188,14 +206,32 @@
           <declname>clearval</declname>
         </param>
         <param>
-          <type>Real *</type>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *</type>
           <declname>data</declname>
         </param>
         <param>
-          <type>AMREX_ARLIM_P(data_lo)</type>
+          <type>const int &amp;</type>
+          <defname>dlo0</defname>
         </param>
         <param>
-          <type>AMREX_ARLIM_P(data_hi)</type>
+          <type>const int &amp;</type>
+          <defname>dlo1</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>dlo2</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>dhi0</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>dhi1</defname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <defname>dhi2</defname>
         </param>
         <param>
           <type>const int *</type>
@@ -218,7 +254,7 @@
           <declname>domain_hi</declname>
         </param>
         <param>
-          <type>const Real *</type>
+          <type>const <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *</type>
           <declname>dx</declname>
         </param>
         <param>
@@ -226,7 +262,7 @@
           <declname>level</declname>
         </param>
         <param>
-          <type>const Real *</type>
+          <type>const <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> *</type>
           <declname>avg</declname>
         </param>
         <briefdescription>
@@ -251,7 +287,7 @@
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a7e17b9c4b95d2c52127ca66a0e9aa707" prot="public" virt="non-virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>ErrorFunc2</name></member>
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a7950d1179f7e53bc2932a492f5e3866d" prot="public" virt="non-virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>ErrorFunc2</name></member>
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a3e10daec10c4fe4ffb4c4dfc44191fae" prot="protected" virt="non-virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>m_func</name></member>
-      <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a4d92e57562f4077cc2e7d218ac39b540" prot="public" virt="virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a30c514d7d669c58c3d21bc235a89b140" prot="public" virt="virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>operator()</name></member>
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a28485d52725045148c8ba041cace1f6c" prot="public" virt="non-virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>operator=</name></member>
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a366a8b723c12148759b7e4918695beca" prot="public" virt="non-virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>operator=</name></member>
       <member refid="classamrex_1_1ErrorRec_1_1ErrorFunc2_1a0a96ab151cdade77a13d8742e58fced0" prot="public" virt="virtual"><scope>amrex::ErrorRec::ErrorFunc2</scope><name>~ErrorFunc2</name></member>

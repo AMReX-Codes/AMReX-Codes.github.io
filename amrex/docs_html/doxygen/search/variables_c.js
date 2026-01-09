@@ -5,7 +5,7 @@ var searchData=
   ['last_5fplotfile_2',['last_plotfile',['../classamrex_1_1Amr.html#a8bdd58e0f251c3097ae6631621a32253',1,'amrex::Amr']]],
   ['last_5fsmallplotfile_3',['last_smallplotfile',['../classamrex_1_1Amr.html#ac3c786f18b9e2b297f07f10e28852bbf',1,'amrex::Amr']]],
   ['lastparticleid_4',['LastParticleID',['../namespaceamrex_1_1LongParticleIds.html#ae79136bdcc97d46650c8098fe7c9334d',1,'amrex::LongParticleIds']]],
-  ['length_5',['length',['../structN__VectorContent__MultiFab__notptr.html#a7a833bea16a8f29bab8bc283d5eb4c23',1,'N_VectorContent_MultiFab_notptr']]],
+  ['length_5',['length',['../structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html#a10de883c78b5570bd1b8462c9a734894',1,'amrex::sundials::N_VectorContent_MultiFab_notptr']]],
   ['level_6',['level',['../classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4',1,'amrex::AmrLevel::level'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ae72224f4b411313148d1db9fc0572bd5',1,'amrex::NeighborParticleContainer::NeighborCopyTag::level']]],
   ['level_5fcount_7',['level_count',['../classamrex_1_1Amr.html#a1a1d9a33774055f267ad5297b2846ecc',1,'amrex::Amr']]],
   ['level_5fid_8',['level_id',['../structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html#a5ef18c3bf10553a03c1ebc12106f3226',1,'amrex::NeighborParticleContainer::NeighborCommTag']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_5fvectorcontent_5fmultifab_5fnotptr_0',['N_VectorContent_MultiFab_notptr',['../structN__VectorContent__MultiFab__notptr.html',1,'']]],
+  ['n_5fvectorcontent_5fmultifab_5fnotptr_0',['N_VectorContent_MultiFab_notptr',['../structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html',1,'amrex::sundials']]],
   ['nbuildsinfo_1',['NBuildsInfo',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html',1,'amrex::MemProfiler']]],
   ['nearest_2',['Nearest',['../structamrex_1_1ParticleInterpolator_1_1Nearest.html',1,'amrex::ParticleInterpolator']]],
   ['neighbor_3',['Neighbor',['../structamrex_1_1EB2_1_1Neighbor.html',1,'amrex::EB2']]],

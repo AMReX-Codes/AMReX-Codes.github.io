@@ -1,7 +1,6 @@
 var AMReX__Geometry_8H =
 [
     [ "amrex::GeometryData", "structamrex_1_1GeometryData.html", "structamrex_1_1GeometryData" ],
-    [ "amrex::Geometry", "classamrex_1_1Geometry.html", "classamrex_1_1Geometry" ],
     [ "coarsen", "AMReX__Geometry_8H.html#abf0376e5e15137aa9ec711295e7bf6bf", null ],
     [ "coarsen", "AMReX__Geometry_8H.html#adbc2cc619f36c517e2d0c6cbc5a40068", null ],
     [ "DefaultGeometry", "AMReX__Geometry_8H.html#aa5b2bd23abee24f752611a40efe3046c", null ],

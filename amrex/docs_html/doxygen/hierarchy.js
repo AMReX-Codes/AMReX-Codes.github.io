@@ -788,7 +788,7 @@ var hierarchy =
     [ "amrex::MultiCutFab", "classamrex_1_1MultiCutFab.html", null ],
     [ "amrex::MultiMask", "classamrex_1_1MultiMask.html", null ],
     [ "amrex::Multiplies< T >", "structamrex_1_1Multiplies.html", null ],
-    [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", null ],
+    [ "amrex::sundials::N_VectorContent_MultiFab_notptr", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html", null ],
     [ "amrex::MemProfiler::NBuildsInfo", "structamrex_1_1MemProfiler_1_1NBuildsInfo.html", null ],
     [ "amrex::EB2::Neighbor", "structamrex_1_1EB2_1_1Neighbor.html", null ],
     [ "amrex::NeighborCode", "structamrex_1_1NeighborCode.html", null ],

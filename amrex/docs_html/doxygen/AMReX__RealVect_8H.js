@@ -1,6 +1,5 @@
 var AMReX__RealVect_8H =
 [
-    [ "amrex::RealVectND< dim >", "classamrex_1_1RealVectND.html", "classamrex_1_1RealVectND" ],
     [ "std::tuple_size< amrex::RealVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4" ],
     [ "std::tuple_element< s, amrex::RealVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4" ],
     [ "BASISREALV", "AMReX__RealVect_8H.html#a5dd2e4543d49f17274e278e5da8e07dd", null ],

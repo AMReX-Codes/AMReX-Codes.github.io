@@ -5,7 +5,6 @@ var AMReX__FabArray_8H =
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", "structamrex_1_1FBData" ],
     [ "amrex::PCData< FAB >", "structamrex_1_1PCData.html", "structamrex_1_1PCData" ],
     [ "amrex::MultiArray4< T >", "structamrex_1_1MultiArray4.html", "structamrex_1_1MultiArray4" ],
-    [ "amrex::FabArray< FAB >", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
     [ "amrex::FabArray< FAB >::FABType", "structamrex_1_1FabArray_1_1FABType.html", "structamrex_1_1FabArray_1_1FABType" ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", "structamrex_1_1FabArray_1_1ShMem" ],
     [ "cMultiFab", "AMReX__FabArray_8H.html#a4289ef331ecdec2063953232e045534a", null ],

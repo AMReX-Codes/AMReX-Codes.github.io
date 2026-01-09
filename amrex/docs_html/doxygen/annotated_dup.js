@@ -264,7 +264,8 @@ var annotated_dup =
         [ "Vectorized", "structamrex_1_1simd_1_1Vectorized.html", "structamrex_1_1simd_1_1Vectorized" ]
       ] ],
       [ "sundials", "namespaceamrex_1_1sundials.html", [
-        [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ]
+        [ "MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", "classamrex_1_1sundials_1_1MemoryHelper" ],
+        [ "N_VectorContent_MultiFab_notptr", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr" ]
       ] ],
       [ "AlgPartition", "classamrex_1_1AlgPartition.html", "classamrex_1_1AlgPartition" ],
       [ "AlgVector", "classamrex_1_1AlgVector.html", "classamrex_1_1AlgVector" ],
@@ -818,7 +819,6 @@ var annotated_dup =
     [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", "unionAMREX__IPARSERSTYPE" ],
     [ "AMREX_PARSERSTYPE", "unionAMREX__PARSERSTYPE.html", "unionAMREX__PARSERSTYPE" ],
     [ "FabCopyTag", "structFabCopyTag.html", "structFabCopyTag" ],
-    [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", "structN__VectorContent__MultiFab__notptr" ],
     [ "VoidCopyTag", "structVoidCopyTag.html", "structVoidCopyTag" ],
     [ "yy_buffer_state", "structyy__buffer__state.html", "structyy__buffer__state" ]
 ];

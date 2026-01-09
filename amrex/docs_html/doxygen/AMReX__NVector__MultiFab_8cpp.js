@@ -1,6 +1,6 @@
 var AMReX__NVector__MultiFab_8cpp =
 [
-    [ "getMFptr", "AMReX__NVector__MultiFab_8cpp.html#aea0161d7bf0da79a1bb92a13999f7a17", null ],
+    [ "getMFptr", "AMReX__NVector__MultiFab_8cpp.html#acfd06e00bdb48e5a55e6f585199928dc", null ],
     [ "N_VAbs_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a3adcad5ac518df241183684b9d8eb0ab", null ],
     [ "N_VAddConst_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a63e923f8d464b3ebd97acf0ca3ee309d", null ],
     [ "N_VClone_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a1ca520b2e907a435625fdb9c78e78d33", null ],
@@ -14,8 +14,8 @@ var AMReX__NVector__MultiFab_8cpp =
     [ "N_VGetContent_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a6bfd29fc821ae740836f40595e8479b8", null ],
     [ "N_VGetLength_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a48461856ef0250658c5a2ebf41d98edc", null ],
     [ "N_VGetOwnMF_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a83ab40ea0b031a6e4bd372e4eb2ee2f1", null ],
-    [ "N_VGetVectorAlias_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a2e8955698d384f25c4019a0e22060caf", null ],
-    [ "N_VGetVectorPointer_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#a0270dd318150f1cef7ca4a38937ae27c", null ],
+    [ "N_VGetVectorAlias_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#ac836c3a3e47d698c5e113184aaf3e0dc", null ],
+    [ "N_VGetVectorPointer_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#aee3c17f9cf73b54b6c7a15015904efa3", null ],
     [ "N_VInv_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#aba2fa6d2aa9b8cd855d83759e3ed65dd", null ],
     [ "N_VInvTest_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#aa8f8163d4f0f443bbe7e99756b2c39d4", null ],
     [ "N_VL1Norm_MultiFab", "AMReX__NVector__MultiFab_8cpp.html#abed0b53c3ca780e46a31fe986d659ac9", null ],

@@ -1,6 +1,5 @@
 var AMReX__IntVect_8H =
 [
-    [ "amrex::IntVectND< dim >", "classamrex_1_1IntVectND.html", "classamrex_1_1IntVectND" ],
     [ "amrex::IntVectND< dim >::shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", "structamrex_1_1IntVectND_1_1shift__hasher" ],
     [ "std::tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
     [ "std::tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],

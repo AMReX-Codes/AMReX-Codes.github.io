@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__amrex__linear__containers" kind="group">
+    <compoundname>amrex_linear_containers</compoundname>
+    <title>Linear Containers</title>
+    <innerclass refid="structamrex_1_1GpuArray" prot="public">amrex::GpuArray</innerclass>
+    <innerclass refid="classamrex_1_1PODVector" prot="public">amrex::PODVector</innerclass>
+    <innerclass refid="classamrex_1_1GpuTuple" prot="public">amrex::GpuTuple</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1gafe930d74045516fece8591f173e57007" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>std::array&lt; T, N &gt;</type>
+        <definition>using amrex::Array = typedef std::array&lt;T,N&gt;</definition>
+        <argsstring></argsstring>
+        <name>Array</name>
+        <qualifiedname>amrex::Array</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="25" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1ga99e1f048890efc1c275606cb9bdc41c7" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, ArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::DeviceVector = typedef PODVector&lt;T, ArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>DeviceVector</name>
+        <qualifiedname>amrex::Gpu::DeviceVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses the standard memory <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref>. Note that the memory might or might not be managed depending on the amrex.the_arena_is_managed <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="24" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1ga2388c83afe31a41fc38fab133d98a1be" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, DeviceArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::NonManagedDeviceVector = typedef PODVector&lt;T, DeviceArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>NonManagedDeviceVector</name>
+        <qualifiedname>amrex::Gpu::NonManagedDeviceVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses the non-managed device memory arena. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="32" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1gab2661b6ddd9751b7e197a9d619dabc7b" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, ManagedArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::ManagedVector = typedef PODVector&lt;T, ManagedArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>ManagedVector</name>
+        <qualifiedname>amrex::Gpu::ManagedVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses the managed memory arena. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="40" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1ga6e76d121ad2e1030d86ccbc9a47f6fde" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, PinnedArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::PinnedVector = typedef PODVector&lt;T, PinnedArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>PinnedVector</name>
+        <qualifiedname>amrex::Gpu::PinnedVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses the pinned memory arena. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="48" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1gaf0ed55b80609bd8e66da4d0c435894d0" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, AsyncArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::AsyncVector = typedef PODVector&lt;T, AsyncArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>AsyncVector</name>
+        <qualifiedname>amrex::Gpu::AsyncVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses the async memory arena. Maybe useful for temporary vectors inside MFIters that are accessed on the device. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="58" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1ga337aceb06d1f93486e6593ff058c0a93" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PinnedVector&lt; T &gt;</type>
+        <definition>using amrex::Gpu::HostVector = typedef PinnedVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>HostVector</name>
+        <qualifiedname>amrex::Gpu::HostVector</qualifiedname>
+        <briefdescription>
+<para>A <ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref> that uses pinned host memory. <ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as PinnedVector. For a vector class that uses std::allocator by default, see <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="67" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__amrex__linear__containers_1gaf22f411b79da7033051cdfa1539e21be" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>PODVector&lt; T, ManagedArenaAllocator&lt; T &gt; &gt;</type>
+        <definition>using amrex::Gpu::ManagedDeviceVector = typedef PODVector&lt;T, ManagedArenaAllocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>ManagedDeviceVector</name>
+        <qualifiedname>amrex::Gpu::ManagedDeviceVector</qualifiedname>
+        <briefdescription>
+<para>This is identical to ManagedVector&lt;T&gt;. The ManagedDeviceVector form is deprecated and will be removed in a future release. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="76" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>One-dimensional and small fixed-size containers used throughout AMReX. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Central types include:<itemizedlist>
+<listitem><para><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1gafe930d74045516fece8591f173e57007" kindref="member">amrex::Array</ref></para>
+</listitem><listitem><para><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1GpuTuple" kindref="compound">amrex::GpuTuple</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1ga99e1f048890efc1c275606cb9bdc41c7" kindref="member">amrex::Gpu::DeviceVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1ga2388c83afe31a41fc38fab133d98a1be" kindref="member">amrex::Gpu::NonManagedDeviceVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1gab2661b6ddd9751b7e197a9d619dabc7b" kindref="member">amrex::Gpu::ManagedVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1gaf22f411b79da7033051cdfa1539e21be" kindref="member">amrex::Gpu::ManagedDeviceVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1ga337aceb06d1f93486e6593ff058c0a93" kindref="member">amrex::Gpu::HostVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1ga6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">amrex::Gpu::PinnedVector</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__linear__containers_1gaf0ed55b80609bd8e66da4d0c435894d0" kindref="member">amrex::Gpu::AsyncVector</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

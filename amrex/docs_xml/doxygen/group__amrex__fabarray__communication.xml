@@ -1,0 +1,1281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__amrex__fabarray__communication" kind="group">
+    <compoundname>amrex_fabarray_communication</compoundname>
+    <title>Communication for Distributed Fab Data</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga3991ba7fcd5f937da838387b027ce7ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename BUF</type>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundary</definition>
+        <argsstring>(bool cross=false)</argsstring>
+        <name>FillBoundary</name>
+        <qualifiedname>amrex::FabArray::FillBoundary</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>cross</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Copy on intersection within a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Data is copied from valid regions to intersecting regions of definition. The purpose is to fill in the boundary regions of each FAB in the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. If cross=true, corner cells are not filled. If the length of periodic is provided, periodic boundaries are also filled. Note that <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> itself does not contains any periodicity information. FillBoundary expects that its cell-centered version of its <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is non-overlapping. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1121" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3380" bodyend="3387"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga73c4ba8aa5ed4620734ba6bbc09bfa6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename BUF</type>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundary</definition>
+        <argsstring>(const Periodicity &amp;period, bool cross=false)</argsstring>
+        <name>FillBoundary</name>
+        <qualifiedname>amrex::FabArray::FillBoundary</qualifiedname>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cross</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1125" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3392" bodyend="3399"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga7c3bcb50994c05df7dbfcd3d63a41249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename BUF</type>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundary</definition>
+        <argsstring>(int scomp, int ncomp, bool cross=false)</argsstring>
+        <name>FillBoundary</name>
+        <qualifiedname>amrex::FabArray::FillBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cross</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as <ref refid="classamrex_1_1FabArrayBase_1ae11e4187caa383605cab8f4d54ce115c" kindref="member">FillBoundary()</ref>, but only copies ncomp components starting at scomp. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1133" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3418" bodyend="3425"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gae0a03b23f179e0c50e162387e35ea00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename BUF</type>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundary</definition>
+        <argsstring>(int scomp, int ncomp, const Periodicity &amp;period, bool cross=false)</argsstring>
+        <name>FillBoundary</name>
+        <qualifiedname>amrex::FabArray::FillBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cross</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1137" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3430" bodyend="3437"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga59c47cdc663d31e529ec89d3a10c2969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename BUF</type>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundary</definition>
+        <argsstring>(int scomp, int ncomp, const IntVect &amp;nghost, const Periodicity &amp;period, bool cross=false)</argsstring>
+        <name>FillBoundary</name>
+        <qualifiedname>amrex::FabArray::FillBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const IntVect &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cross</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1141" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3442" bodyend="3452"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga84ce4d97367dcb2da8be8bddfac2ef4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundaryAndSync</definition>
+        <argsstring>(const Periodicity &amp;period=Periodicity::NonPeriodic())</argsstring>
+        <name>FillBoundaryAndSync</name>
+        <qualifiedname>amrex::FabArray::FillBoundaryAndSync</qualifiedname>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <briefdescription>
+<para>Fill ghost cells and synchronize nodal data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ghost regions are filled with data from the intersecting valid regions. The synchronization will override valid regions by the intersecting valid regions with a higher precedence. The smaller the global box index is, the higher precedence the box has. With periodic boundaries, for cells in the same box, those near the lower corner have higher precedence than those near the upper corner.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>periodic length if it&apos;s non-zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3488" bodyend="3495"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga6a2ee6a93d9d13d4f4a1f864f3c767cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::FillBoundaryAndSync</definition>
+        <argsstring>(int scomp, int ncomp, const IntVect &amp;nghost, const Periodicity &amp;period)</argsstring>
+        <name>FillBoundaryAndSync</name>
+        <qualifiedname>amrex::FabArray::FillBoundaryAndSync</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const IntVect &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Fill ghost cells and synchronize nodal data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ghost regions are filled with data from the intersecting valid regions. The synchronization will override valid regions by the intersecting valid regions with a higher precedence. The smaller the global box index is, the higher precedence the box has. With periodic boundaries, for cells in the same box, those near the lower corner have higher precedence than those near the upper corner.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost cells to fill </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>periodic length if it&apos;s non-zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1198" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3499" bodyend="3507"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga37eadd5f219d50c8f1c3422f2fa81eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::OverrideSync</definition>
+        <argsstring>(const Periodicity &amp;period=Periodicity::NonPeriodic())</argsstring>
+        <name>OverrideSync</name>
+        <qualifiedname>amrex::FabArray::OverrideSync</qualifiedname>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <briefdescription>
+<para>Synchronize nodal data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The synchronization will override valid regions by the intersecting valid regions with a higher precedence. The smaller the global box index is, the higher precedence the box has. With periodic boundaries, for cells in the same box, those near the lower corner have higher precedence than those near the upper corner.</para>
+<para>Example: Suppose there is a valid point that is shared by 4 boxes. Some operation assigns values a, b, c, and d to the 4 points in the 4 boxes. We then call SumBoundary to add the 4 values and store the result in the 4 boxes. The value in box 0 might be the result of a+b+c+d, the value in box 1 might be the result of b+c+d+a, etc. The resulting data could be out of sync across boxes due to roundoff errors. OverrideSync synchronizes the data by overriding all values with one value (e.g., the value from box 0).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>periodic length if it&apos;s non-zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1226" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3535" bodyend="3542"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga4f7ee90203e2af36c474d9b2234c8cae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::OverrideSync</definition>
+        <argsstring>(int scomp, int ncomp, const Periodicity &amp;period)</argsstring>
+        <name>OverrideSync</name>
+        <qualifiedname>amrex::FabArray::OverrideSync</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Synchronize nodal data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The synchronization will override valid regions by the intersecting valid regions with a higher precedence. The smaller the global box index is, the higher precedence the box has. With periodic boundaries, for cells in the same box, those near the lower corner have higher precedence than those near the upper corner.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>periodic length if it&apos;s non-zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1241" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3546" bodyend="3553"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gaa3f916865d887cd0dd92e99e919f3059" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::SumBoundary</definition>
+        <argsstring>(const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</argsstring>
+        <name>SumBoundary</name>
+        <qualifiedname>amrex::FabArray::SumBoundary</qualifiedname>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>deterministic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Sum values in overlapped cells. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The destination is limited to valid cells. Note that being deterministic is not the same as data consistency on shared nodes. If you want data consistency on shared nodes, you can call OverrideSync after this. Sometimes, you can also wait till you need to do ghost cell exchanges, and you can then call FillBoundaryAndSync to do both. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1256" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3580" bodyend="3583"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga311f4acae65c8d6b9b720ab687a67635" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::SumBoundary</definition>
+        <argsstring>(int scomp, int ncomp, const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</argsstring>
+        <name>SumBoundary</name>
+        <qualifiedname>amrex::FabArray::SumBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>deterministic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1259" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3587" bodyend="3590"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga33de3e606d07252276a70684a25bc3da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::SumBoundary</definition>
+        <argsstring>(int scomp, int ncomp, IntVect const &amp;nghost, const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</argsstring>
+        <name>SumBoundary</name>
+        <qualifiedname>amrex::FabArray::SumBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>IntVect const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>deterministic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Sum values in overlapped cells. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The destination is limited to valid + ngrow cells. Note that being deterministic is not the same as data consistency on shared nodes. If you want data consistency on shared nodes, you can call OverrideSync after this. Sometimes, you can also wait till you need to do ghost cell exchanges, and you can then call FillBoundaryAndSync to do both. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1276" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3594" bodyend="3597"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gaaeaac94eb6e3e1e1a836c096053186c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::SumBoundary</definition>
+        <argsstring>(int scomp, int ncomp, IntVect const &amp;src_nghost, IntVect const &amp;dst_nghost, const Periodicity &amp;period=Periodicity::NonPeriodic(), bool deterministic=false)</argsstring>
+        <name>SumBoundary</name>
+        <qualifiedname>amrex::FabArray::SumBoundary</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>IntVect const &amp;</type>
+          <declname>src_nghost</declname>
+        </param>
+        <param>
+          <type>IntVect const &amp;</type>
+          <declname>dst_nghost</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>deterministic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Sum values in overlapped cells. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For computing the overlap, the dst is grown by dst_ngrow, while the src uses src_ngrow. Note that being deterministic is not the same as data consistency on shared nodes. If you want data consistency on shared nodes, you can call OverrideSync after this. Sometimes, you can also wait till you need to do ghost cell exchanges, and you can then call FillBoundaryAndSync to do both. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1294" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3601" bodyend="3607"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gadb282b42c0eb97cbb55037bc7bdea04a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::EnforcePeriodicity</definition>
+        <argsstring>(const Periodicity &amp;period)</argsstring>
+        <name>EnforcePeriodicity</name>
+        <qualifiedname>amrex::FabArray::EnforcePeriodicity</qualifiedname>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Fill ghost cells with values from their corresponding cells across periodic boundaries, regardless of whether the corresponding cells are valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This differs from FillBoundary, which only fills from valid cells, and does not fill from ghost cells. The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is allowed to be overlapping. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1312" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3653" bodyend="3660"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gaecf0e342dcbe19b9bb23e73c326155ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::EnforcePeriodicity</definition>
+        <argsstring>(int scomp, int ncomp, const Periodicity &amp;period)</argsstring>
+        <name>EnforcePeriodicity</name>
+        <qualifiedname>amrex::FabArray::EnforcePeriodicity</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1314" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3664" bodyend="3671"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga076781df7b9077c51fecd6a62172ed74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabArray&lt; FAB &gt;::EnforcePeriodicity</definition>
+        <argsstring>(int scomp, int ncomp, const IntVect &amp;nghost, const Periodicity &amp;period)</argsstring>
+        <name>EnforcePeriodicity</name>
+        <qualifiedname>amrex::FabArray::EnforcePeriodicity</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const IntVect &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1316" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3675" bodyend="3683"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga48dc35bc87c8b41129bdff1e0cf9af05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+            <defval>FAB</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &gt;::value, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>F::value_type</type>
+        <definition>F::value_type amrex::FabArray&lt; FAB &gt;::norminf</definition>
+        <argsstring>(int comp, int ncomp, IntVect const &amp;nghost, bool local=false, bool ignore_covered=false) const</argsstring>
+        <name>norminf</name>
+        <qualifiedname>amrex::FabArray::norminf</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>IntVect const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ignore_covered</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Return infinity norm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost cells </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>local</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, MPI communication is skipped. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ignore_covered</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ignore covered cells. Only relevant for cell-centered EB data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1449" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3848" bodyend="3934"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gaea595d71e8f04b18bc48aaca29acfe77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IFAB</type>
+          </param>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+            <defval>FAB</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &gt;::value, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>F::value_type</type>
+        <definition>F::value_type amrex::FabArray&lt; FAB &gt;::norminf</definition>
+        <argsstring>(FabArray&lt; IFAB &gt; const &amp;mask, int comp, int ncomp, IntVect const &amp;nghost, bool local=false) const</argsstring>
+        <name>norminf</name>
+        <qualifiedname>amrex::FabArray::norminf</qualifiedname>
+        <param>
+          <type>FabArray&lt; IFAB &gt; const &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>IntVect const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Return infinity norm in masked region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>only mask=true region is included </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost cells </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>local</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, MPI communication is skipped. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1464" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="3939" bodyend="3990"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga9d57175907c89a969b9b5392631e65cf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norminf</definition>
+        <argsstring>(int comp=0, int nghost=0, bool local=false, bool ignore_covered=false) const</argsstring>
+        <name>norminf</name>
+        <qualifiedname>amrex::MultiFab::norminf</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ignore_covered</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="187" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="187" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gabc7329288ae6f73f8fd7eda95e49b8ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norminf</definition>
+        <argsstring>(const iMultiFab &amp;mask, int comp=0, int nghost=0, bool local=false) const</argsstring>
+        <name>norminf</name>
+        <qualifiedname>amrex::MultiFab::norminf</qualifiedname>
+        <param>
+          <type>const iMultiFab &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="193" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga7d3280950fb8a9b1ed17e73ee5df3c43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector&lt; Real &gt;</type>
+        <definition>Vector&lt; Real &gt; amrex::MultiFab::norminf</definition>
+        <argsstring>(const Vector&lt; int &gt; &amp;comps, int nghost=0, bool local=false, bool ignore_covered=false) const</argsstring>
+        <name>norminf</name>
+        <qualifiedname>amrex::MultiFab::norminf</qualifiedname>
+        <param>
+          <type>const Vector&lt; int &gt; &amp;</type>
+          <declname>comps</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ignore_covered</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="208" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="208" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gafcdc4aaf73896a44ad364520af9a7398" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norm1</definition>
+        <argsstring>(int comp=0, int ngrow=0, bool local=false) const</argsstring>
+        <name>norm1</name>
+        <qualifiedname>amrex::MultiFab::norm1</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the L1 norm of component <computeroutput>comp</computeroutput> over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. <computeroutput>ngrow</computeroutput> ghost cells are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="223" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1165" bodyend="1200"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gae4ba8fc4756c0621e3872055ffce31b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector&lt; Real &gt;</type>
+        <definition>Vector&lt; Real &gt; amrex::MultiFab::norm1</definition>
+        <argsstring>(const Vector&lt; int &gt; &amp;comps, int ngrow=0, bool local=false) const</argsstring>
+        <name>norm1</name>
+        <qualifiedname>amrex::MultiFab::norm1</qualifiedname>
+        <param>
+          <type>const Vector&lt; int &gt; &amp;</type>
+          <declname>comps</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the L1 norm of each component of &quot;comps&quot; over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. ngrow ghost cells are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="229" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1203" bodyend="1220"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gaa0b6bb4fb2ee206356cd613ed8458b8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norm2</definition>
+        <argsstring>(int comp=0) const</argsstring>
+        <name>norm2</name>
+        <qualifiedname>amrex::MultiFab::norm2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns the L2 norm of component <computeroutput>comp</computeroutput> over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. No ghost cells are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="235" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1065" bodyend="1072"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gacc29a136f07efb39a2d9acafc04cf9e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norm2</definition>
+        <argsstring>(int comp, int numcomp) const</argsstring>
+        <name>norm2</name>
+        <qualifiedname>amrex::MultiFab::norm2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numcomp</declname>
+        </param>
+        <briefdescription>
+<para>Returns the L2 norm of <computeroutput>numcomp</computeroutput> components starting from <computeroutput>comp</computeroutput> component over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. No ghost cells are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="241" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1075" bodyend="1082"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga0982c02422dcb603d1c5129d744d6611" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::norm2</definition>
+        <argsstring>(int comp, const Periodicity &amp;period) const</argsstring>
+        <name>norm2</name>
+        <qualifiedname>amrex::MultiFab::norm2</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Returns the L2 norm of component <computeroutput>comp</computeroutput> over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. No ghost cells are used. This version has no double counting for nodal data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="247" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1085" bodyend="1124"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga933d1dd75c4441bf922f8c5baa931be4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector&lt; Real &gt;</type>
+        <definition>Vector&lt; Real &gt; amrex::MultiFab::norm2</definition>
+        <argsstring>(const Vector&lt; int &gt; &amp;comps) const</argsstring>
+        <name>norm2</name>
+        <qualifiedname>amrex::MultiFab::norm2</qualifiedname>
+        <param>
+          <type>const Vector&lt; int &gt; &amp;</type>
+          <declname>comps</declname>
+        </param>
+        <briefdescription>
+<para>Returns the L2 norm of each component of &quot;comps&quot; over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. No ghost cells are used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="253" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1127" bodyend="1140"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga62669a27ec4a577f0bef72dc2a1243aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::sum</definition>
+        <argsstring>(int comp=0, bool local=false) const</argsstring>
+        <name>sum</name>
+        <qualifiedname>amrex::MultiFab::sum</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the sum of component &quot;comp&quot; over the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> <ndash/> no ghost cells are included. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="258" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1223" bodyend="1226"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga623e2f01e2a7695e835d258d1a8067b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::sum</definition>
+        <argsstring>(Box const &amp;region, int comp=0, bool local=false) const</argsstring>
+        <name>sum</name>
+        <qualifiedname>amrex::MultiFab::sum</qualifiedname>
+        <param>
+          <type>Box const &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the sum of component &quot;comp&quot; in the given &quot;region&quot;. <ndash/> no ghost cells are included. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="263" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1229" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gafe7c47dff8cf8e0fb550d0e78c7b5375" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::sum_unique</definition>
+        <argsstring>(int comp=0, bool local=false, const Periodicity &amp;period=Periodicity::NonPeriodic()) const</argsstring>
+        <name>sum_unique</name>
+        <qualifiedname>amrex::MultiFab::sum_unique</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const Periodicity &amp;</type>
+          <declname>period</declname>
+          <defval>Periodicity::NonPeriodic()</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as sum with <computeroutput>local</computeroutput> =false, but for non-cell-centered data, this only adds non-unique points that are owned by multiple boxes once. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="272" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1271" bodyend="1321"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1gab351d9250414508cf086635f54e2e2ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>IntVect</type>
+        <definition>IntVect amrex::MultiFab::minIndex</definition>
+        <argsstring>(int comp, int nghost=0) const</argsstring>
+        <name>minIndex</name>
+        <qualifiedname>amrex::MultiFab::minIndex</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="442" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1013" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga642f844c834d6fb714e3e0fc6eb75e56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>IntVect</type>
+        <definition>IntVect amrex::MultiFab::maxIndex</definition>
+        <argsstring>(int comp, int nghost=0) const</argsstring>
+        <name>maxIndex</name>
+        <qualifiedname>amrex::MultiFab::maxIndex</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="446" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1021" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga5397e3c5e4cbb69279db604d3f1f2a60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::Dot</definition>
+        <argsstring>(const MultiFab &amp;x, int xcomp, const MultiFab &amp;y, int ycomp, int numcomp, int nghost, bool local=false)</argsstring>
+        <name>Dot</name>
+        <qualifiedname>amrex::MultiFab::Dot</qualifiedname>
+        <param>
+          <type>const MultiFab &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type>const MultiFab &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ycomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the dot product of two MultiFabs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="492" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="37" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga87437456f64f8610e6d34d17929fdb4f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::Dot</definition>
+        <argsstring>(const MultiFab &amp;x, int xcomp, int numcomp, int nghost, bool local=false)</argsstring>
+        <name>Dot</name>
+        <qualifiedname>amrex::MultiFab::Dot</qualifiedname>
+        <param>
+          <type>const MultiFab &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the dot product of a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with itself. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="500" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="45" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fabarray__communication_1ga115acdf454f3e0732ee54de9d5ff2057" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::Dot</definition>
+        <argsstring>(const iMultiFab &amp;mask, const MultiFab &amp;x, int xcomp, const MultiFab &amp;y, int ycomp, int numcomp, int nghost, bool local=false)</argsstring>
+        <name>Dot</name>
+        <qualifiedname>amrex::MultiFab::Dot</qualifiedname>
+        <param>
+          <type>const iMultiFab &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const MultiFab &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type>const MultiFab &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ycomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="504" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="91" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>MPI data movement operations for <ref refid="classamrex_1_1FabArray" kindref="compound">amrex::FabArray</ref> based containers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These operations may use MPI when AMReX is built with MPI support. Central interfaces include:<itemizedlist>
+<listitem><para><ref refid="group__amrex__fabarray__communication_1ga3991ba7fcd5f937da838387b027ce7ef" kindref="member">amrex::FabArray::FillBoundary</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga84ce4d97367dcb2da8be8bddfac2ef4e" kindref="member">amrex::FabArray::FillBoundaryAndSync</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1FabArray_1a0f2716c666d8cd0546009503e890f807" kindref="member">amrex::FabArray::ParallelCopy</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1FabArray_1a4e8ff0027c22d9451a6edff7272fb29a" kindref="member">amrex::FabArray::ParallelAdd</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1gaa3f916865d887cd0dd92e99e919f3059" kindref="member">amrex::FabArray::SumBoundary</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga37eadd5f219d50c8f1c3422f2fa81eb2" kindref="member">amrex::FabArray::OverrideSync</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1gadb282b42c0eb97cbb55037bc7bdea04a" kindref="member">amrex::FabArray::EnforcePeriodicity</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga48dc35bc87c8b41129bdff1e0cf9af05" kindref="member">amrex::FabArray::norminf</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga9d57175907c89a969b9b5392631e65cf" kindref="member">amrex::MultiFab::norminf</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1MultiFab_1a5879f0308ed537286037a041e32fd810" kindref="member">amrex::MultiFab::norm1</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1gaa0b6bb4fb2ee206356cd613ed8458b8f" kindref="member">amrex::MultiFab::norm2</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga62669a27ec4a577f0bef72dc2a1243aa" kindref="member">amrex::MultiFab::sum</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1gafe7c47dff8cf8e0fb550d0e78c7b5375" kindref="member">amrex::MultiFab::sum_unique</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1MultiFab_1abb92462276ca55cd70f16507118f63ad" kindref="member">amrex::MultiFab::max</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1MultiFab_1a540eb1714a5eece782de2a4afdd62c8e" kindref="member">amrex::MultiFab::min</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga5397e3c5e4cbb69279db604d3f1f2a60" kindref="member">amrex::MultiFab::Dot</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1gab351d9250414508cf086635f54e2e2ce" kindref="member">amrex::MultiFab::minIndex</ref></para>
+</listitem><listitem><para><ref refid="group__amrex__fabarray__communication_1ga642f844c834d6fb714e3e0fc6eb75e56" kindref="member">amrex::MultiFab::maxIndex</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

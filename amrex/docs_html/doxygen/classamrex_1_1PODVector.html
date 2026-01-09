@@ -105,9 +105,12 @@ $(document).ready(function(){initNavTree('classamrex_1_1PODVector.html',''); ini
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1PODVector-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::PODVector&lt; T, Allocator &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::PODVector&lt; T, Allocator &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__amrex__data__containers.html">Data Containers</a> &raquo; <a class="el" href="group__amrex__linear__containers.html">Linear Containers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Dynamically allocated vector for trivially copyable data.  
+ <a href="classamrex_1_1PODVector.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__PODVector_8H_source.html">AMReX_PODVector.H</a>&gt;</code></p>
 <div class="dynheader">
@@ -287,7 +290,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ab34b6361d0ed17fe5d62a6a11dc21174" id="r_ab34b6361d0ed17fe5d62a6a11dc21174"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1PODVector.html#a9303944a518a80618dd3f19c92a8a0f2">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PODVector.html#ab34b6361d0ed17fe5d62a6a11dc21174">m_capacity</a> {0}</td></tr>
 <tr class="separator:ab34b6361d0ed17fe5d62a6a11dc21174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class Allocator = std::allocator&lt;T&gt;&gt;<br />
+class amrex::PODVector&lt; T, Allocator &gt;</div><p>Dynamically allocated vector for trivially copyable data. </p>
+<p>Unlike std::vector, the data in <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> are uninitialized by default. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af9a80a3988ccc51fd593974ea6b21df2" name="af9a80a3988ccc51fd593974ea6b21df2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9a80a3988ccc51fd593974ea6b21df2">&#9670;&#160;</a></span>allocator_type</h2>
 
@@ -1486,7 +1493,7 @@ template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Deallocate the memory of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> using <a class="el" href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">amrex::Gpu::freeAsync</a>. Memory deallocated in this way is held in a pool and will not be reused until the next <a class="el" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize()</a>. GPU kernels that were already launched on the currently active stream can still continue to use the memory after this function is called. </p>
+<p>Deallocate the memory of the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> using <a class="el" href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">amrex::Gpu::freeAsync</a>. Memory deallocated in this way is held in a pool and will not be reused until the next <a class="el" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize()</a>. GPU kernels that were already launched on the currently active stream can still continue to use the memory after this function is called. </p>
 
 </div>
 </div>
@@ -2139,15 +2146,15 @@ template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets the capacity of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> to at least a_capacity without changing the size. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested one. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
+<p>Sets the capacity of the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> to at least a_capacity without changing the size. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested one. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
 <ul>
 <li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e">GrowthStrategy::Poisson</a> (Default) Sets the new capacity to a_capacity + 3*sqrt(a_capacity). This is useful for vectors that store particle data, with particles moving between tiles due to a thermal process. In this case the expected number of particles per tile follows a Poisson distribution, which has a standard deviation of sqrt(n). Adding three sigma to the size greatly minimizes reallocations in Redistribute() of successive timesteps.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested a_capacity. Can be used if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> will never be resized to a bigger size.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_capacity), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested a_capacity. Can be used if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> will never be resized to a bigger size.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_capacity), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a_capacity</td><td>the new minimum capacity of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_capacity</td><td>the new minimum capacity of the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">strategy</td><td>the growth strategy to set the new capacity </td></tr>
   </table>
   </dd>
@@ -2224,15 +2231,15 @@ template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Resizes the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> to a_new_size elements. New elements are set to a_val. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested size. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
+<p>Resizes the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> to a_new_size elements. New elements are set to a_val. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested size. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
 <ul>
 <li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e">GrowthStrategy::Poisson</a> (Default) Sets the new capacity to a_new_size + 3*sqrt(a_new_size). This is useful for vectors that store particle data, with particles moving between tiles due to a thermal process. In this case the expected number of particles per tile follows a Poisson distribution, which has a standard deviation of sqrt(n). Adding three sigma to the size greatly minimizes reallocations in Redistribute() of successive timesteps.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested size. Can be used if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> will never be resized to a bigger size.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_new_size), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested size. Can be used if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> will never be resized to a bigger size.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_new_size), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a_new_size</td><td>the new size of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_new_size</td><td>the new size of the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_val</td><td>the value of the new elements </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">strategy</td><td>the growth strategy to set the new capacity </td></tr>
   </table>
@@ -2276,15 +2283,15 @@ template&lt;class T , class Allocator  = std::allocator&lt;T&gt;&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Resizes the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> to a_new_size elements. New elements are either uninitialized or, if amrex.init_snan is set to true, initialized to NaN. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested size. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
+<p>Resizes the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> to a_new_size elements. New elements are either uninitialized or, if amrex.init_snan is set to true, initialized to NaN. To minimize reallocations, the capacity of the vector may be increased to a value larger than the requested size. This behavior can be controlled using the strategy parameter. Available strategies are:</p>
 <ul>
 <li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e">GrowthStrategy::Poisson</a> (Default) Sets the new capacity to a_new_size + 3*sqrt(a_new_size). This is useful for vectors that store particle data, with particles moving between tiles due to a thermal process. In this case the expected number of particles per tile follows a Poisson distribution, which has a standard deviation of sqrt(n). Adding three sigma to the size greatly minimizes reallocations in Redistribute() of successive timesteps.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested size. Can be used if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> will never be resized to a bigger size.</li>
-<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_new_size), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aa1649aed298f99d587e2eb30c1db5946b">GrowthStrategy::Exact</a> Sets the new capacity exactly to the requested size. Can be used if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> will never be resized to a bigger size.</li>
+<li><a class="el" href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aaadf9f772a73f364e4ce6c52b9fae740d">GrowthStrategy::Geometric</a> Sets the new capacity to max(growth_factor * old_capacity, a_new_size), where growth_factor is 1.5 by default and can be adjusted with amrex.vector_growth_factor. This strategy is needed to guarantee O(n) runtime if the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> is resized in a loop to consecutively increasing sizes up to n. In contrast, the Poisson and Exact strategies would have O(n*sqrt(n)) and O(n^2) runtimes, respectively. However, it is not recommended to use a <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> this way. Instead, the reserve function should be used once upfront.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a_new_size</td><td>the new size of the <a class="el" href="classamrex_1_1PODVector.html">PODVector</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_new_size</td><td>the new size of the <a class="el" href="classamrex_1_1PODVector.html" title="Dynamically allocated vector for trivially copyable data.">PODVector</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">strategy</td><td>the growth strategy to set the new capacity </td></tr>
   </table>
   </dd>

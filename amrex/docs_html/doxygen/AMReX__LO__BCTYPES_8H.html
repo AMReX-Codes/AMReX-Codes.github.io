@@ -100,14 +100,23 @@ $(document).ready(function(){initNavTree('AMReX__LO__BCTYPES_8H.html',''); initR
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AMReX_LO_BCTYPES.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
+<code>#include &lt;iosfwd&gt;</code><br />
 </div>
 <p><a href="AMReX__LO__BCTYPES_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a874725e18b8a17a13d2200cea4c11c47" id="r_a874725e18b8a17a13d2200cea4c11c47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__LO__BCTYPES_8H.html#a874725e18b8a17a13d2200cea4c11c47">AMREX_LO_DIRICHLET</a>&#160;&#160;&#160;101</td></tr>
@@ -132,6 +141,32 @@ Macros</h2></td></tr>
 <tr class="separator:a70e18776a02a5caf3faea16632d60a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a969fe17351200623de86808d7d02de1a" id="r_a969fe17351200623de86808d7d02de1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__LO__BCTYPES_8H.html#a969fe17351200623de86808d7d02de1a">AMREX_LO_BOGUS</a>&#160;&#160;&#160;1729</td></tr>
 <tr class="separator:a969fe17351200623de86808d7d02de1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a8365a84c73dc019f863f57bfcb9a6435" id="r_a8365a84c73dc019f863f57bfcb9a6435"><td class="memItemLeft" align="right" valign="top">enum struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435">amrex::LinOpBCType</a> : int { <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435ab79de4fb00edbedc3a2e300603b2be38">amrex::interior</a> = 0
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435abac152b762896edff34ed668ae1a546f">amrex::Dirichlet</a> = 101
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435ab8537a769dbc90cb1762215441212152">amrex::Neumann</a> = 102
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a07d6d90bb05e400efe2060e963ae72d3">amrex::reflect_odd</a> = 103
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a1f37e0765dcd71fa0903b7a933b079ea">amrex::Marshak</a> = 104
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a69d261a097aef0c3275fed19b278eeab">amrex::SanchezPomraning</a> = 105
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435ad37e67db17cfd059f2852e2673b9e8ef">amrex::inflow</a> = 106
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435ac8a3f2dafe3d2cac8f54a832d5f3e50d">amrex::inhomogNeumann</a> = 107
+, <br />
+&#160;&#160;<a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a22d5d814d801d8b3e1a1c3fc36796de9">amrex::Robin</a> = 108
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2">amrex::symmetry</a> = 109
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435acdcc32a064503184053bd2018d1c0e7e">amrex::Periodic</a> = 200
+, <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a90affbd9a1954ec9ff029b7ad7183a16">amrex::bogus</a> = 1729
+<br />
+ }</td></tr>
+<tr class="separator:a8365a84c73dc019f863f57bfcb9a6435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac25ebc9a1d8831acf4cd0213da8694ee" id="r_ac25ebc9a1d8831acf4cd0213da8694ee"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac25ebc9a1d8831acf4cd0213da8694ee">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435">LinOpBCType</a> &amp;t)</td></tr>
+<tr class="separator:ac25ebc9a1d8831acf4cd0213da8694ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a969fe17351200623de86808d7d02de1a" name="a969fe17351200623de86808d7d02de1a"></a>

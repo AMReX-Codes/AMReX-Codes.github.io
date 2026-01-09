@@ -39,7 +39,7 @@ var namespaceamrex_1_1detail =
       [ "land", "namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da1543dab5fc332f7f6a146da7718c486d", null ]
     ] ],
     [ "allocate_in_place", "namespaceamrex_1_1detail.html#ac05b5bef8cc6ac4861152e46104f68f7", null ],
-    [ "amrex_partition_helper", "namespaceamrex_1_1detail.html#aa107ea63101b52d862e65de0d86dd24a", null ],
+    [ "amrex_partition_helper", "namespaceamrex_1_1detail.html#a0831c042e251208c14e4a3628de7165b", null ],
     [ "amrex_stable_partition_helper", "namespaceamrex_1_1detail.html#a685da3e1082796b88fdcd226e6cd923d", null ],
     [ "AnyCTO_helper1", "namespaceamrex_1_1detail.html#a095902c599d3f8b4683acf1fc2dc43ca", null ],
     [ "AnyCTO_helper2", "namespaceamrex_1_1detail.html#a8a6471ac95c2027491ef2aef47e2e988", null ],

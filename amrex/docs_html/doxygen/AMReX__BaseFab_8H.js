@@ -3,7 +3,6 @@ var AMReX__BaseFab_8H =
     [ "amrex::SrcComp", "structamrex_1_1SrcComp.html", "structamrex_1_1SrcComp" ],
     [ "amrex::DestComp", "structamrex_1_1DestComp.html", "structamrex_1_1DestComp" ],
     [ "amrex::NumComps", "structamrex_1_1NumComps.html", "structamrex_1_1NumComps" ],
-    [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
     [ "BaseFab_Finalize", "AMReX__BaseFab_8H.html#a67b24cef9df62e8cced041445b239e86", null ],
     [ "BaseFab_Initialize", "AMReX__BaseFab_8H.html#a652bd22fb8cfcdfeaa4ac62e81a41fe6", null ],
     [ "makeArray4", "AMReX__BaseFab_8H.html#a210f2e40437f79c38535ce7cf847642a", null ],

@@ -3,7 +3,6 @@ var AMReX__Tuple_8H =
     [ "amrex::detail::gpu_tuple_element< I, T >", "structamrex_1_1detail_1_1gpu__tuple__element.html", "structamrex_1_1detail_1_1gpu__tuple__element" ],
     [ "amrex::detail::gpu_tuple_impl< I, Head, Tail... >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4" ],
     [ "amrex::detail::gpu_tuple_impl< I, Head >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4" ],
-    [ "amrex::GpuTuple< Ts >", "classamrex_1_1GpuTuple.html", "classamrex_1_1GpuTuple" ],
     [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "amrex::GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "amrex::GpuTupleElement< 0, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],

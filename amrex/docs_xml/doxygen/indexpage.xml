@@ -29,8 +29,8 @@
         <reference>indexpage_1amrex_explained</reference>
     </tocsect>
       <tocsect>
-        <name>Migration from BoxLib</name>
-        <reference>indexpage_1migration_from_boxlib</reference>
+        <name>API Topics</name>
+        <reference>indexpage_1api_topics</reference>
     </tocsect>
     </tableofcontents>
     </tocsect>
@@ -44,7 +44,7 @@
 <sect2 id="index_1Overview">
 <title>Overview</title>
 <para>AMReX is a software framework containing all the functionality to write massively parallel, block-structured adaptive mesh refinement (AMR) applications. AMReX is freely available on Github at <ulink url="https://github.com/AMReX-Codes/amrex">AMReX-Codes/amrex</ulink>.</para>
-<para>AMReX is developed at LBNL.</para>
+<para>AMReX is a project of the <ulink url="https://hpsf.io/">High Performance Software Foundation (HPSF)</ulink>, which is part of the nonprofit <ulink url="https://www.linuxfoundation.org/">Linux Foundation</ulink>.</para>
 </sect2>
 <sect2 id="index_1development">
 <title>Development</title>
@@ -61,10 +61,30 @@
 <sect2 id="index_1amrex_explained">
 <title>AMReX Explained</title>
 <para>For users who are starting out on their own development, additional documentation is provided at <ulink url="https://amrex-codes.github.io/amrex/docs_html">AMReX Source Documentation</ulink>. In these docs you will find a thorough introduction and discussion of AMReX features.</para>
+<para><simplesect kind="note"><para>AMReX supports one-, two-, and three-dimensional applications. This technical reference is generated with <computeroutput>AMREX_SPACEDIM = 3</computeroutput>, and therefore for dimension-dependent types only three-dimensional instantiations are shown.</para>
+</simplesect>
+</para>
 </sect2>
-<sect2 id="index_1migration_from_boxlib">
-<title>Migration from BoxLib</title>
-<para>Documentation on migration from BoxLib is available in the AMReX repository at <ulink url="https://github.com/AMReX-Codes/amrex/blob/development/Docs/Migration/Migration.md">Docs/Migration</ulink>. </para>
+<sect2 id="index_1api_topics">
+<title>API Topics</title>
+<para>Below is a list of major API topics:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="group__amrex__arithmetic__types" kindref="compound">Arithmetic Types</ref> This topic covers fundamental scalar arithmetic types used throughout AMReX, including <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref>, <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">amrex::Long</ref>, and <ref refid="structamrex_1_1GpuComplex" kindref="compound">amrex::GpuComplex</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__index__space" kindref="compound">Integer Index Space</ref> This topic covers integer index space types, including <ref refid="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" kindref="member">amrex::IndexType</ref>, <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">amrex::IntVect</ref> and <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">amrex::Box</ref>, as well as operations such as <ref refid="group__amrex__index__space_1gae102526cec1dc978897cc1d9a4ebae65" kindref="member">amrex::refine</ref> and <ref refid="group__amrex__index__space_1ga5af1ac4b7471ba90a59e111dd0dd2b22" kindref="member">amrex::coarsen</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__real__space" kindref="compound">Real Space</ref> This topic covers real space coordinate types and operations, including <ref refid="namespaceamrex_1a9a66cb310efdbc12b9b4d5f170470726" kindref="member">amrex::RealVect</ref>, <ref refid="classamrex_1_1RealBox" kindref="compound">amrex::RealBox</ref>, <ref refid="classamrex_1_1Geometry" kindref="compound">amrex::Geometry</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__domain__decomposition" kindref="compound">Domain Decomposition</ref> This topic covers domain decomposition and distribution, including <ref refid="classamrex_1_1BoxArray" kindref="compound">amrex::BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">amrex::DistributionMapping</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__data__containers" kindref="compound">Data Containers</ref> This topic covers AMReX data containers, from linear containers such as <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref> to box-based and distributed field data containers such as <ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__execution" kindref="compound">Execution and Kernel Launch</ref> This topic covers performance-portable execution and kernel launch interfaces including various amrex::ParallelFor functions.</para>
+</listitem><listitem><para><ref refid="group__amrex__collectives" kindref="compound">Reductions and Scans</ref> This topic covers performance-portable reductions and scans, including <ref refid="group__amrex__collectives_1gafac1250d786b98bab8d8d2cf5c06411e" kindref="member">amrex::Reduce::Sum</ref>, <ref refid="group__amrex__collectives_1gad7ef336709704a3b8b05b00b9432059d" kindref="member">amrex::Scan::PrefixSum</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__mpi" kindref="compound">MPI Communication</ref> This topic covers MPI based communication capabilities in AMReX.</para>
+</listitem><listitem><para><ref refid="group__amrex__amr" kindref="compound">Adaptive Mesh Refinement</ref> This topic covers adaptive mesh refine (AMR) interfaces, including both <ref refid="group__amrex__amrcore" kindref="compound">AmrCore-based AMR</ref> and <ref refid="group__amrex__amrlevel" kindref="compound">AmrLevel-based AMR</ref> approaches.</para>
+</listitem><listitem><para><ref refid="group__amrex__linear__solvers" kindref="compound">Linear System Solvers</ref> This topic covers linear system solver interfaces in AMReX, including <ref refid="group__amrex__solver__mlmg_1ga77b48f471801c4f6a597804a89c3b543" kindref="member">amrex::MLMG</ref> and <ref refid="classamrex_1_1GMRES" kindref="compound">amrex::GMRES</ref>.</para>
+</listitem><listitem><para><ref refid="group__amrex__particles" kindref="compound">Particles</ref> This topic covers particle data structures in AMReX.</para>
+</listitem><listitem><para><ref refid="group__amrex__eb" kindref="compound">Embedded Boundary</ref> This topic covers the embedded boundary capabilities in AMReX, including geometry generation, EB data structures and solvers</para>
+</listitem><listitem><para><ref refid="group__amrex__fft" kindref="compound">Fast Fourier Transform (FFT)</ref> This topic covers parallel Fast Fourier Transform (FFT) interfaces in AMReX, including FFT operations and FFT-based solvers.</para>
+</listitem><listitem><para><ref refid="group__amrex__io" kindref="compound">Input/Output</ref> This topic covers I/O interfaces in AMReX. </para>
+</listitem></itemizedlist>
+</para>
 </sect2>
 </sect1>
     </detaileddescription>

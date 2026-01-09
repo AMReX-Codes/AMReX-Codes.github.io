@@ -6,6 +6,6 @@ var index =
       [ "Contribute", "index.html#contribute", null ],
       [ "Tutorials for New Users", "index.html#tutorials", null ],
       [ "AMReX Explained", "index.html#amrex_explained", null ],
-      [ "Migration from BoxLib", "index.html#migration_from_boxlib", null ]
+      [ "API Topics", "index.html#api_topics", null ]
     ] ]
 ];

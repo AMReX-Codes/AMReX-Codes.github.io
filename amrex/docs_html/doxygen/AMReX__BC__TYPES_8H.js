@@ -1,18 +1,27 @@
 var AMReX__BC__TYPES_8H =
 [
-    [ "BOGUS_BC", "AMReX__BC__TYPES_8H.html#ab783b95b6d96f08d8ec4680ae5c47879", null ],
-    [ "EXT_DIR", "AMReX__BC__TYPES_8H.html#aab37e552c88a7ebe4df8c39cbd04b8f7", null ],
-    [ "EXT_DIR_CC", "AMReX__BC__TYPES_8H.html#a0ec2ece811cb32cfd0ed7224af0a5104", null ],
-    [ "FOEXTRAP", "AMReX__BC__TYPES_8H.html#aa7be6070c4e0ff8a1efa011bb352ed5b", null ],
-    [ "HOEXTRAP", "AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292", null ],
-    [ "HOEXTRAPCC", "AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681", null ],
-    [ "Inflow", "AMReX__BC__TYPES_8H.html#a0efccdae3245127eec10857ef17fb644", null ],
-    [ "INT_DIR", "AMReX__BC__TYPES_8H.html#a4f00309ab34c93e7da0255fd956dfce3", null ],
-    [ "Interior", "AMReX__BC__TYPES_8H.html#a3bacd0aec168d8803a36ec4e7809539e", null ],
-    [ "NoSlipWall", "AMReX__BC__TYPES_8H.html#ac2dab611e4ed2408bce31896fd83a9d4", null ],
-    [ "Outflow", "AMReX__BC__TYPES_8H.html#a074cf210a9dd1472db2a2811976abb88", null ],
-    [ "REFLECT_EVEN", "AMReX__BC__TYPES_8H.html#a3084fca6e965f4bac15cee757a39915e", null ],
-    [ "REFLECT_ODD", "AMReX__BC__TYPES_8H.html#af3aeaaa2c4f177482545bae75d04656f", null ],
-    [ "SlipWall", "AMReX__BC__TYPES_8H.html#ab7772f51c4ecaa9d12aaa1ca2d381ad4", null ],
-    [ "Symmetry", "AMReX__BC__TYPES_8H.html#accd2f3c4d52a3931acd886e0ad0ab461", null ]
+    [ "mathematicalBndryTypes", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6", [
+      [ "bogus", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6ab670570c445d08fa2d585dff25473c0a", null ],
+      [ "reflect_odd", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6acc4996b629bf76870086d2318f1d4050", null ],
+      [ "int_dir", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f", null ],
+      [ "reflect_even", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6ac31921ae073643a0a7deb0b5ef7a2180", null ],
+      [ "foextrap", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a4c471dec10d8ab97bee81f7d4dc731db", null ],
+      [ "ext_dir", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a7bb9c3dd7c79a84ec4faf10163fbd016", null ],
+      [ "hoextrap", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6ada16209cc73dfa31af56264cccb73395", null ],
+      [ "hoextrapcc", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a72825c69b88277a33fe73180bb9449ca", null ],
+      [ "ext_dir_cc", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6af06d8c559c3b933a8965253a2bc35c4a", null ],
+      [ "direction_dependent", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a33febad5ade4c7a863265e89b8d0ac57", null ],
+      [ "user_1", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6ab196dad8018a269226f26e1d9d43f371", null ],
+      [ "user_2", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a74c1489536703781cbd819b1bbcce99e", null ],
+      [ "user_3", "AMReX__BC__TYPES_8H.html#a2842d1189d57039c0e3551676c9910e6a242ed3ed0569c84fa7429b299c07c95c", null ]
+    ] ],
+    [ "physicalBndryTypes", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421", [
+      [ "interior", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a017a10d18361f1ccd7b8e715e51296a9", null ],
+      [ "inflow", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a7c8c718a2fb299849425a3fd171df9fe", null ],
+      [ "outflow", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a4fd0e63b2ebc8098867bd0030831238b", null ],
+      [ "symmetry", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35", null ],
+      [ "slipwall", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a2c4d5a14a50a60d36ba4ffe8d3459e77", null ],
+      [ "noslipwall", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421a7a1473abb964cc6a7838e8abc5ce546d", null ],
+      [ "inflowoutflow", "AMReX__BC__TYPES_8H.html#a720adc3e4011f065a9a5d61cf5c13421adf426899b5a92e73ea5225e97fa332ea", null ]
+    ] ]
 ];

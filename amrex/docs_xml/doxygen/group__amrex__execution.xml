@@ -1,0 +1,1817 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__amrex__execution" kind="group">
+    <compoundname>amrex_execution</compoundname>
+    <title>Execution and Kernel Launch</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__amrex__execution_1ga04c5802123f70da48b28edc03aaa7a00" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForOMP</definition>
+        <argsstring>(T n, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForOMP</name>
+        <qualifiedname>amrex::ParallelForOMP</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with optional <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For GPU builds and for CPU builds without <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> support, this is the same as ParalleFor. For CPU builds with <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> enabled, this function uses <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="257" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="257" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga3aae358bff466d224feb83e88581f818" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForOMP</definition>
+        <argsstring>(Box const &amp;box, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForOMP</name>
+        <qualifiedname>amrex::ParallelForOMP</qualifiedname>
+        <param>
+          <type>Box const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with optional <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For GPU builds and for CPU builds without <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> support, this is the same as ParalleFor. For CPU builds with <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> enabled, this function uses <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="271" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gaf0cfb9300117e9ffda0bd23a9768aebd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForOMP</definition>
+        <argsstring>(Box const &amp;box, T ncomp, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForOMP</name>
+        <qualifiedname>amrex::ParallelForOMP</qualifiedname>
+        <param>
+          <type>Box const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with optional <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For GPU builds and for CPU builds without <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> support, this is the same as ParalleFor. For CPU builds with <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> enabled, this function uses <ref refid="namespaceamrex_1_1OpenMP" kindref="compound">OpenMP</ref> threading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="285" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="285" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga7a4f23cc16489ffdc9bbde645e72fce9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, T n, L const &amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="797" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="797" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gac687b01ac371abacd573e07248573c96" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box, L const &amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="825" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="825" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga7f4c17203131669131e08c31388a132f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box, T ncomp, L const &amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="852" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="852" bodyend="871"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gad9476499ddef9f1ecbcb1b8716df4c14" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelForRNG</definition>
+        <argsstring>(T n, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <qualifiedname>amrex::ParallelForRNG</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with random number generation support. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="880" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="880" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga5af25315f4422ff8092cd79af21f186b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelForRNG</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <qualifiedname>amrex::ParallelForRNG</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with random number generation support. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="906" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="906" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gac5c300849a3bbe31f22e6b94e25113ef" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelForRNG</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, T ncomp, L const &amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <qualifiedname>amrex::ParallelForRNG</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function with random number generation support. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="934" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="934" bodyend="953"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga2999ea165bfa82788ef9b729391e5223" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box1, BoxND&lt; dim &gt; const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="961" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="961" bodyend="984"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga785daad8d78a29b6a452555cc874072c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box1, BoxND&lt; dim &gt; const &amp;box2, BoxND&lt; dim &gt; const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="992" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="992" bodyend="1021"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga4cdc8c22b8a396026cb159ecb54778a3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1031" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1031" bodyend="1055"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga64441e4f8352310ca63b7ca1772a3365" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M3</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;, BoxND&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, BoxND&lt; dim &gt; const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>T3</type>
+          <declname>ncomp3</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1066" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1066" bodyend="1096"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga5213be0d4e9269a26c30628042ba96ec" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, T n, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1118" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1118" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga2d48bfbb8ec6d1cda3e8936caf51d791" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1129" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1129" bodyend="1132"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga1a35b6c7aa3b27a1b45e38424982a2be" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1140" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1140" bodyend="1143"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga8e207b794feb8ec5a45c9bdeecfe6e7e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box1, BoxND&lt; dim &gt; const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1151" bodyend="1156"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga64a88b871bda19b096d4d875e441e93d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box1, BoxND&lt; dim &gt; const &amp;box2, BoxND&lt; dim &gt; const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1164" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1164" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga4d63f819b9792e308d9f45e82379fa63" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1180" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1180" bodyend="1186"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gaedc2c324b6f7f21927374bef21968d55" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M3</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; MaybeDeviceRunnable&lt; L1 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L2 &gt;::value &amp;&amp;MaybeDeviceRunnable&lt; L3 &gt;::value &gt; amrex::ParallelFor</definition>
+        <argsstring>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, BoxND&lt; dim &gt; const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>Gpu::KernelInfo const &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>T3</type>
+          <declname>ncomp3</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1197" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1197" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gaff9b2ebd167a621c7784769618bda4c6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1328" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1328" bodyend="1331"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga072608d6bf753001563975d5a8fe4fbd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="190" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="190" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga028e20eac95c13e9663226246e72f7bf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1348" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1348" bodyend="1351"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga48c30f3939e6a0577acf93eca7ee74e8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="338" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="338" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga1338030001b43e68961d1da354429df8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1368" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1368" bodyend="1371"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gaeb25c11f900fd632e0fbf0bfceb1e941" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="465" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="465" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga4285c8b85f60e60e3a39da94f10244d3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, BoxND&lt; dim &gt; const  &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="641" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="641" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga65be6ab5286c866d56e425a66cb14620" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, BoxND&lt; dim &gt; const  &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="648" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="648" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga345d853c34161b740da9bfed2cf9980b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, BoxND&lt; dim &gt; const  &amp;box2, BoxND&lt; dim &gt; const  &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="669" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="669" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1gad586d7b2eed6de95b9e92d9cf69c762c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, BoxND&lt; dim &gt; const  &amp;box2, BoxND&lt; dim &gt; const  &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="677" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="677" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga45b9da75fb97b1e7917f940d42061d55" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="701" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="701" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga76aa378c8e16e19e82db9b3b0d660bfe" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="711" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="711" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga99029a09e703f51860ddab84f8e1c490" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M3</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, BoxND&lt; dim &gt; const  &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>T3</type>
+          <declname>ncomp3</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="746" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="746" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__execution_1ga7569e8a1b6793f4203adfbe3c32e90e5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+          <param>
+            <type>typename T3</type>
+          </param>
+          <param>
+            <type>typename L1</type>
+          </param>
+          <param>
+            <type>typename L2</type>
+          </param>
+          <param>
+            <type>typename L3</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>typename M1</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M2</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;</defval>
+          </param>
+          <param>
+            <type>typename M3</type>
+            <defval>std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(BoxND&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, BoxND&lt; dim &gt; const  &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
+        <name>ParallelFor</name>
+        <qualifiedname>amrex::ParallelFor</qualifiedname>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box1</declname>
+        </param>
+        <param>
+          <type>T1</type>
+          <declname>ncomp1</declname>
+        </param>
+        <param>
+          <type>L1 &amp;&amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box2</declname>
+        </param>
+        <param>
+          <type>T2</type>
+          <declname>ncomp2</declname>
+        </param>
+        <param>
+          <type>L2 &amp;&amp;</type>
+          <declname>f2</declname>
+        </param>
+        <param>
+          <type>BoxND&lt; dim &gt; const &amp;</type>
+          <declname>box3</declname>
+        </param>
+        <param>
+          <type>T3</type>
+          <declname>ncomp3</declname>
+        </param>
+        <param>
+          <type>L3 &amp;&amp;</type>
+          <declname>f3</declname>
+        </param>
+        <briefdescription>
+<para>Performance-portable kernel launch function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="759" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="759" bodyend="767"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Facilities for expressing parallel computation and launching performance-portable kernels in AMReX. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These interfaces provide a unified way to execute computational kernels on CPUs and GPUs without exposing backend-specific programming models.</para>
+<para>Key functions and classes include:<itemizedlist>
+<listitem><para>amrex::ParallelFor</para>
+</listitem><listitem><para><ref refid="group__amrex__execution_1ga04c5802123f70da48b28edc03aaa7a00" kindref="member">amrex::ParallelForOMP</ref></para>
+</listitem><listitem><para><ref refid="namespaceamrex_1ae3514c3f8c4b2a78c2ddc9b49d8cca6c" kindref="member">amrex::ParallelForRNG</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
