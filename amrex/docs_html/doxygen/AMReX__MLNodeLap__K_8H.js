@@ -6,8 +6,5 @@ var AMReX__MLNodeLap__K_8H =
     [ "mlndlap_jacobi_sten", "AMReX__MLNodeLap__K_8H.html#a06c7d8be23a5be388c18c150287b4560", null ],
     [ "mlndlap_normalize_sten", "AMReX__MLNodeLap__K_8H.html#a16ca4943ef3a57c5f02670476ed8fa6a", null ],
     [ "mlndlap_scale_neumann_bc", "AMReX__MLNodeLap__K_8H.html#a92e8607b288c653cde2c0b4366ceaabd", null ],
-    [ "mlndlap_unimpose_neumann_bc", "AMReX__MLNodeLap__K_8H.html#a26ba68cec4edb45c83611e6d72478355", null ],
-    [ "almostone", "AMReX__MLNodeLap__K_8H.html#af026ac788ba341757f682018261b97ea", null ],
-    [ "almostzero", "AMReX__MLNodeLap__K_8H.html#a92ac78510ed74b78c4c22749ba236cc7", null ],
-    [ "eps", "AMReX__MLNodeLap__K_8H.html#acf673ebaf5379183e526bd2bbc4c665e", null ]
+    [ "mlndlap_unimpose_neumann_bc", "AMReX__MLNodeLap__K_8H.html#a26ba68cec4edb45c83611e6d72478355", null ]
 ];

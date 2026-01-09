@@ -3,7 +3,7 @@ var dir_0557320ef9ddaaefe9ef89d62a016b5e =
     [ "AMReX_Habec_1D_K.H", "AMReX__Habec__1D__K_8H.html", "AMReX__Habec__1D__K_8H" ],
     [ "AMReX_Habec_2D_K.H", "AMReX__Habec__2D__K_8H.html", "AMReX__Habec__2D__K_8H" ],
     [ "AMReX_Habec_3D_K.H", "AMReX__Habec__3D__K_8H.html", "AMReX__Habec__3D__K_8H" ],
-    [ "AMReX_Habec_K.H", "AMReX__Habec__K_8H.html", "AMReX__Habec__K_8H" ],
+    [ "AMReX_Habec_K.H", "AMReX__Habec__K_8H.html", null ],
     [ "AMReX_Hypre.cpp", "AMReX__Hypre_8cpp.html", "AMReX__Hypre_8cpp" ],
     [ "AMReX_Hypre.H", "AMReX__Hypre_8H.html", "AMReX__Hypre_8H" ],
     [ "AMReX_HypreABecLap.cpp", "AMReX__HypreABecLap_8cpp.html", null ],

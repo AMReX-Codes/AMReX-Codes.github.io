@@ -1,7 +1,5 @@
 var classamrex_1_1MLCellLinOpT =
 [
-    [ "BCTL", "structamrex_1_1MLCellLinOpT_1_1BCTL.html", "structamrex_1_1MLCellLinOpT_1_1BCTL" ],
-    [ "BndryCondLoc", "classamrex_1_1MLCellLinOpT_1_1BndryCondLoc.html", "classamrex_1_1MLCellLinOpT_1_1BndryCondLoc" ],
     [ "BCMode", "classamrex_1_1MLCellLinOpT.html#a5f24e3a713313778626619bfd96ebc96", null ],
     [ "BCTuple", "classamrex_1_1MLCellLinOpT.html#a7c8592688da4476a2c936dc34a11d9d1", null ],
     [ "BCType", "classamrex_1_1MLCellLinOpT.html#a507cfffa6d7098331e08cc35e7c19e18", null ],

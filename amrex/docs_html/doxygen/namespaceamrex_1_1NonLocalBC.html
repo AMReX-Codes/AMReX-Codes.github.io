@@ -100,7 +100,6 @@ $(document).ready(function(){initNavTree('namespaceamrex_1_1NonLocalBC.html','')
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -109,11 +108,6 @@ $(document).ready(function(){initNavTree('namespaceamrex_1_1NonLocalBC.html','')
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceamrex_1_1NonLocalBC_1_1detail" id="r_namespaceamrex_1_1NonLocalBC_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC_1_1detail.html">detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html">ApplyDtosAndProjectionOnReciever</a></td></tr>
@@ -596,9 +590,9 @@ template&lt;typename FAB , typename DTOS , typename Proj  = Identity&gt; </div>
 <p>This fills ghost cells of a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. This function is supposed to be used together with makeFillBoundaryMetaData as follows. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> cmd = <a class="code hl_function" href="namespaceamrex_1_1NonLocalBC.html#a63e34d87c5d71c8c025c7d2adc3b0600">makeFillBoundaryMetaData</a>(mf, mf.nGrowVect, geom, dtos);</div>
 <div class="line"><span class="comment">// The metadata cmd can be cached and reused on a MultiFab/FabArray with</span></div>
 <div class="line"><span class="comment">// the same BoxArray and DistributionMapping.</span></div>
-<div class="line"><a class="code hl_function" href="AMReX__FabArrayCommI_8H.html#a9cb00ad4bde060a7a7ad1309561016fd">FillBoundary</a>(mf, cmd, scomp, ncomp, dtos, proj);</div>
-<div class="ttc" id="aAMReX__FabArrayCommI_8H_html_a9cb00ad4bde060a7a7ad1309561016fd"><div class="ttname"><a href="AMReX__FabArrayCommI_8H.html#a9cb00ad4bde060a7a7ad1309561016fd">FillBoundary</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillBoundary(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayCommI.H:1047</div></div>
+<div class="line"><a class="code hl_function" href="namespaceamrex.html#a3af1dbed7575d3877b5b64882a384f12">FillBoundary</a>(mf, cmd, scomp, ncomp, dtos, proj);</div>
 <div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a63e34d87c5d71c8c025c7d2adc3b0600"><div class="ttname"><a href="namespaceamrex_1_1NonLocalBC.html#a63e34d87c5d71c8c025c7d2adc3b0600">amrex::NonLocalBC::makeFillBoundaryMetaData</a></div><div class="ttdeci">std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;() &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;(), FabArrayBase::CommMetaData &gt; makeFillBoundaryMetaData(FabArray&lt; FAB &gt; &amp;mf, IntVect const &amp;nghost, Geometry const &amp;geom, DTOS const &amp;dtos)</div><div class="ttdoc">Make metadata for FillBoundary.</div></div>
+<div class="ttc" id="anamespaceamrex_html_a3af1dbed7575d3877b5b64882a384f12"><div class="ttname"><a href="namespaceamrex.html#a3af1dbed7575d3877b5b64882a384f12">amrex::FillBoundary</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillBoundary(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayCommI.H:1050</div></div>
 </div><!-- fragment --><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">

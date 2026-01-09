@@ -1,6 +1,5 @@
 var classamrex_1_1IParser =
 [
-    [ "Data", "structamrex_1_1IParser_1_1Data.html", "structamrex_1_1IParser_1_1Data" ],
     [ "IParser", "classamrex_1_1IParser.html#aec5f0bb22e4084d50b12adbda2cc56ff", null ],
     [ "IParser", "classamrex_1_1IParser.html#ac4ce16b2a7b27e417a149740858b3482", null ],
     [ "compile", "classamrex_1_1IParser.html#a79d909101604badec3afaa59b688a031", null ],

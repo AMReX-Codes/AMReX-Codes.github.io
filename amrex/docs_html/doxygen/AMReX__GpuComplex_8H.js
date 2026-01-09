@@ -2,7 +2,6 @@ var AMReX__GpuComplex_8H =
 [
     [ "abs", "AMReX__GpuComplex_8H.html#a9f75dcaea40fb24f23f6540e51976ec8", null ],
     [ "arg", "AMReX__GpuComplex_8H.html#a1d4a9589e4112856cf8735a07e02dc05", null ],
-    [ "complex_pow_unsigned", "AMReX__GpuComplex_8H.html#a4b44e8d92002c7ad2566411ba33d318c", null ],
     [ "exp", "AMReX__GpuComplex_8H.html#aae8cf126d10650f57ee30d33f675b77c", null ],
     [ "log", "AMReX__GpuComplex_8H.html#a7e727d6241c95fa0514893568385c279", null ],
     [ "norm", "AMReX__GpuComplex_8H.html#a1fbb153d0895a40b78bf9a7499f1f9f6", null ],

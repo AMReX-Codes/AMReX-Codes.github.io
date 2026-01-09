@@ -88,15 +88,6 @@ var group__amrex__solver__mlmg =
       [ "m_overset_mask", "classamrex_1_1MLCellABecLapT.html#aa1bc328cdef65e6dfab478914c2913d7", null ]
     ] ],
     [ "amrex::MLLinOpT< MF >", "classamrex_1_1MLLinOpT.html", [
-      [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html", [
-        [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html#afbc562ac9c5f1face5cd5a2859737f29", null ],
-        [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html#aaaa07cc3148c8b79bc8f5e6f62ab7d4b", null ],
-        [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html#af19b040e0a57ccd8d2b5893ef817aca0", null ],
-        [ "~CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html#a42b220f522310f21612b93d2e06a3968", null ],
-        [ "operator=", "structamrex_1_1MLLinOpT_1_1CommContainer.html#a95da5ea5091bbb8e061bba5cd0e61b7f", null ],
-        [ "operator=", "structamrex_1_1MLLinOpT_1_1CommContainer.html#a09a4c464169281aeb1ea6e97b34087d5", null ],
-        [ "comm", "structamrex_1_1MLLinOpT_1_1CommContainer.html#a92df0514b6b2e35b39f4b69f56553994", null ]
-      ] ],
       [ "BCMode", "classamrex_1_1MLLinOpT.html#ad3f214e6e55b5de314dd5725a4148467", null ],
       [ "BCType", "classamrex_1_1MLLinOpT.html#a6dce9b9c92850fb742b131ba66f934d6", null ],
       [ "FAB", "classamrex_1_1MLLinOpT.html#a6266e785b547d5c2632730beeedbd91c", null ],

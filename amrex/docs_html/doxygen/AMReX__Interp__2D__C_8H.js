@@ -8,8 +8,5 @@ var AMReX__Interp__2D__C_8H =
     [ "facediv_int", "AMReX__Interp__2D__C_8H.html#aa680a025b785905e626e40b68822158f", null ],
     [ "nodebilin_interp", "AMReX__Interp__2D__C_8H.html#aa2337ff21f41e5dcc30bf06d383632dd", null ],
     [ "nodebilin_slopes", "AMReX__Interp__2D__C_8H.html#a5e92a1ee2e37d142635ea409100d193b", null ],
-    [ "pcinterp_interp", "AMReX__Interp__2D__C_8H.html#a3034af8bff0108d3524f06e4ca8f8513", null ],
-    [ "ix", "AMReX__Interp__2D__C_8H.html#a69c17d57cbc7538401740c1eb5a438ad", null ],
-    [ "ixy", "AMReX__Interp__2D__C_8H.html#acedf6cd7d27760da7d209fa4849a18c3", null ],
-    [ "iy", "AMReX__Interp__2D__C_8H.html#a390d2521c2368811a821a0cd3e499e31", null ]
+    [ "pcinterp_interp", "AMReX__Interp__2D__C_8H.html#a3034af8bff0108d3524f06e4ca8f8513", null ]
 ];

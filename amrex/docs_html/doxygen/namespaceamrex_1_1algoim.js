@@ -1,9 +1,5 @@
 var namespaceamrex_1_1algoim =
 [
-    [ "detail", "namespaceamrex_1_1algoim_1_1detail.html", [
-      [ "determineSigns", "namespaceamrex_1_1algoim_1_1detail.html#aebcb33675ae001225c84e7ca5caa6fe2", null ],
-      [ "swap", "namespaceamrex_1_1algoim_1_1detail.html#a3bf6c2ef474dff0d291702437a087443", null ]
-    ] ],
     [ "BoundingBox", "structamrex_1_1algoim_1_1BoundingBox.html", "structamrex_1_1algoim_1_1BoundingBox" ],
     [ "EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", "structamrex_1_1algoim_1_1EBPlane" ],
     [ "ImplicitIntegral", "structamrex_1_1algoim_1_1ImplicitIntegral.html", "structamrex_1_1algoim_1_1ImplicitIntegral" ],

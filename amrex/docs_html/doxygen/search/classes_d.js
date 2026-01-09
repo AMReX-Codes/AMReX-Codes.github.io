@@ -18,9 +18,8 @@ var searchData=
   ['node_15',['node',['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html',1,'amrex::algoim::QuadratureRule::Node'],['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena::Node']]],
   ['nodebilinear_16',['NodeBilinear',['../classamrex_1_1NodeBilinear.html',1,'amrex']]],
   ['nolocalcopy_17',['NoLocalCopy',['../structamrex_1_1NonLocalBC_1_1NoLocalCopy.html',1,'amrex::NonLocalBC']]],
-  ['nonesuch_18',['Nonesuch',['../structamrex_1_1detail_1_1Nonesuch.html',1,'amrex::detail']]],
-  ['nosyncregion_19',['NoSyncRegion',['../structamrex_1_1Gpu_1_1NoSyncRegion.html',1,'amrex::Gpu']]],
-  ['nullinterphook_20',['NullInterpHook',['../structamrex_1_1NullInterpHook.html',1,'amrex']]],
-  ['numcells_21',['NumCells',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html',1,'amrex::EBCellFlagFab']]],
-  ['numcomps_22',['NumComps',['../structamrex_1_1NumComps.html',1,'amrex']]]
+  ['nosyncregion_18',['NoSyncRegion',['../structamrex_1_1Gpu_1_1NoSyncRegion.html',1,'amrex::Gpu']]],
+  ['nullinterphook_19',['NullInterpHook',['../structamrex_1_1NullInterpHook.html',1,'amrex']]],
+  ['numcells_20',['NumCells',['../structamrex_1_1EBCellFlagFab_1_1NumCells.html',1,'amrex::EBCellFlagFab']]],
+  ['numcomps_21',['NumComps',['../structamrex_1_1NumComps.html',1,'amrex']]]
 ];

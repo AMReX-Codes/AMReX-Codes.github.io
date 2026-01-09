@@ -1,22 +1,13 @@
 var AMReX__TypeList_8H =
 [
     [ "amrex::TypeList< Ts >", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
-    [ "amrex::detail::TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
-    [ "amrex::detail::TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
     [ "amrex::TypeArray< T, N >", "structamrex_1_1TypeArray.html", "structamrex_1_1TypeArray" ],
     [ "TypeAt", "AMReX__TypeList_8H.html#a11fcc5e72789252d6182a7d15233725f", null ],
     [ "TypeMultiplier", "AMReX__TypeList_8H.html#ad9a6d3e0ecd435bde5a280d288b185dc", null ],
     [ "CartesianProduct", "AMReX__TypeList_8H.html#a9d736b217af3b87bef2bffd4dd55edff", null ],
-    [ "for_each_impl", "AMReX__TypeList_8H.html#af378b35270a3e9fbab911a6fe0058eb5", null ],
-    [ "for_each_until_impl", "AMReX__TypeList_8H.html#a8e84dd049acffc06333882e476f741ce", null ],
     [ "ForEach", "AMReX__TypeList_8H.html#aca65f803ae9e0c199552d38482b6dbdc", null ],
     [ "ForEachUntil", "AMReX__TypeList_8H.html#ad482086094efe1bf5748ee81c759d86e", null ],
     [ "operator*", "AMReX__TypeList_8H.html#a79754df2fe2ff8642af6d3a015518866", null ],
     [ "operator+", "AMReX__TypeList_8H.html#a71e196fc8e75b8176182de8d994ff62a", null ],
-    [ "single_product", "AMReX__TypeList_8H.html#aad1bedfbf5b00ed85060a201b5e19ffb", null ],
-    [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#af01333ae8cd22a78600a759f8cc32089", null ],
-    [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#ab5675d735314e418d7eb80a17ef3f135", null ],
-    [ "SingleTypeMultiplier", "AMReX__TypeList_8H.html#ad2a45b8966cebe365a3b497c9c9be44c", null ],
-    [ "SingleTypeMultiplier_impl", "AMReX__TypeList_8H.html#ad867a3bb23fa15988044c68bf1266b7c", null ],
-    [ "TApply", "AMReX__TypeList_8H.html#ad5568d6d500edc6ee5938dca76c1caa8", null ]
+    [ "single_product", "AMReX__TypeList_8H.html#aad1bedfbf5b00ed85060a201b5e19ffb", null ]
 ];

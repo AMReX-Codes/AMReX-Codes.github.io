@@ -309,13 +309,13 @@ $(document).ready(function(){initNavTree('AMReX__SmallMatrix_8H_source.html','')
 <div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="structamrex_1_1SmallMatrix.html#af2bb6b2a2877664a689394e5f38fcd8a">  244</a></span>        <a class="code hl_function" href="structamrex_1_1SmallMatrix.html#af2bb6b2a2877664a689394e5f38fcd8a">transpose</a> ()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <a class="code hl_struct" href="structamrex_1_1SmallMatrix.html">SmallMatrix&lt;T,NCols,NRows,ORDER,StartIndex&gt;</a> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <a class="code hl_struct" href="structamrex_1_1SmallMatrix.html">SmallMatrix&lt;T,NCols,NRows,ORDER,StartIndex&gt;</a> r;</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = StartIndex; j &lt; NRows+StartIndex; ++j) {</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = StartIndex; i &lt; NCols+StartIndex; ++i) {</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>(i,j) = (*this)(j,i);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    r(i,j) = (*this)(j,i);</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                }</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> r;</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
 </div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
@@ -467,11 +467,11 @@ $(document).ready(function(){initNavTree('AMReX__SmallMatrix_8H_source.html','')
 <div class="foldopen" id="foldopen00390" data-start="{" data-end="}">
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno"><a class="line" href="structamrex_1_1SmallMatrix.html#ada3eaa4aab88dde733f24b73954dfae1">  390</a></span>        T <a class="code hl_function" href="structamrex_1_1SmallMatrix.html#ada3eaa4aab88dde733f24b73954dfae1">dot</a> (<a class="code hl_struct" href="structamrex_1_1SmallMatrix.html">SmallMatrix&lt;T,NRows,NCols,ORDER,StartIndex&gt;</a> <span class="keyword">const</span>&amp; rhs)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            T <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = 0;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            T r = 0;</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; NRows*NCols; ++n) {</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>                <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> += <a class="code hl_variable" href="structamrex_1_1SmallMatrix.html#a32448f0826904fa7d77c008793cbc0f1">m_mat</a>[n] * rhs.<a class="code hl_variable" href="structamrex_1_1SmallMatrix.html#a32448f0826904fa7d77c008793cbc0f1">m_mat</a>[n];</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>                r += <a class="code hl_variable" href="structamrex_1_1SmallMatrix.html#a32448f0826904fa7d77c008793cbc0f1">m_mat</a>[n] * rhs.<a class="code hl_variable" href="structamrex_1_1SmallMatrix.html#a32448f0826904fa7d77c008793cbc0f1">m_mat</a>[n];</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>            }</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            <span class="keywordflow">return</span> r;</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        }</div>
 </div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
@@ -498,32 +498,32 @@ $(document).ready(function(){initNavTree('AMReX__SmallMatrix_8H_source.html','')
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        <span class="keyword">static_assert</span>(SI == 0 || SI == 1);</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <span class="keyword">using </span>P = <span class="keyword">decltype</span>(std::declval&lt;U&gt;() * std::declval&lt;V&gt;());</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <a class="code hl_struct" href="structamrex_1_1SmallMatrix.html">SmallMatrix&lt;P,N1,N3,Ord,SI&gt;</a> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <a class="code hl_struct" href="structamrex_1_1SmallMatrix.html">SmallMatrix&lt;P,N1,N3,Ord,SI&gt;</a> r;</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Ord == <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">Order::F</a>) {</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = SI; j &lt; N3+SI; ++j) {</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                constexpr_for&lt;SI,N1+SI&gt;([&amp;] (<span class="keywordtype">int</span> i) { <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>(i,j) = P(0); });</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                constexpr_for&lt;SI,N1+SI&gt;([&amp;] (<span class="keywordtype">int</span> i) { r(i,j) = P(0); });</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = SI; k &lt; N2+SI; ++k) {</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = rhs(k,j);</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                    <span class="keyword">auto</span> b = rhs(k,j);</div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>                    constexpr_for&lt;SI,N1+SI&gt;([&amp;] (<span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>                    {</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>                        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>(i,j) += lhs(i,k) * <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>                        r(i,j) += lhs(i,k) * b;</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>                    });</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>                }</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>            }</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = SI; i &lt; N1+SI; ++i) {</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                constexpr_for&lt;SI,N3+SI&gt;([&amp;] (<span class="keywordtype">int</span> j) { <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>(i,j) = P(0); });</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                constexpr_for&lt;SI,N3+SI&gt;([&amp;] (<span class="keywordtype">int</span> j) { r(i,j) = P(0); });</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = SI; k &lt; N2+SI; ++k) {</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>                    <span class="keyword">auto</span> a = lhs(i,k);</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>                    constexpr_for&lt;SI,N3+SI&gt;([&amp;] (<span class="keywordtype">int</span> j)</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>                    {</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>                        <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>(i,j) += a * rhs(k,j);</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>                        r(i,j) += a * rhs(k,j);</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>                    });</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                }</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>            }</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>        }</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        <span class="keywordflow">return</span> r;</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>    }</div>
 </div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
@@ -599,8 +599,6 @@ $(document).ready(function(){initNavTree('AMReX__SmallMatrix_8H_source.html','')
 <div class="ttc" id="anamespaceamrex_html_a1c182abe7695240cd35e1ba3d4477758"><div class="ttname"><a href="namespaceamrex.html#a1c182abe7695240cd35e1ba3d4477758">amrex::Swap</a></div><div class="ttdeci">__host__ __device__ void Swap(T &amp;t1, T &amp;t2) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:75</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">amrex::Order</a></div><div class="ttdeci">Order</div><div class="ttdef"><b>Definition</b> AMReX_Order.H:7</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
-<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">amrex::CurlCurlStateType::r</a></div><div class="ttdeci">@ r</div></div>
-<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">amrex::CurlCurlStateType::b</a></div><div class="ttdeci">@ b</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae4eb9d3fef37595defb201fde203bae6"><div class="ttname"><a href="namespaceamrex.html#ae4eb9d3fef37595defb201fde203bae6">amrex::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</div><div class="ttdef"><b>Definition</b> AMReX_AmrMesh.cpp:1236</div></div>
 <div class="ttc" id="astructamrex_1_1SmallMatrix_html"><div class="ttname"><a href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a></div><div class="ttdoc">Matrix class with compile-time size.</div><div class="ttdef"><b>Definition</b> AMReX_SmallMatrix.H:36</div></div>

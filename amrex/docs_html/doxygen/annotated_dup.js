@@ -18,36 +18,6 @@ var annotated_dup =
         [ "OpenMPBinPolicy", "structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html", null ],
         [ "SerialBinPolicy", "structamrex_1_1BinPolicy_1_1SerialBinPolicy.html", null ]
       ] ],
-      [ "detail", "namespaceamrex_1_1detail.html", [
-        [ "apply_result", "structamrex_1_1detail_1_1apply__result.html", null ],
-        [ "apply_result< F, GpuTuple< Ts... > >", "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
-        [ "clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ],
-        [ "clzl_tag", "structamrex_1_1detail_1_1clzl__tag.html", null ],
-        [ "clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", null ],
-        [ "CTOWrapper", "structamrex_1_1detail_1_1CTOWrapper.html", "structamrex_1_1detail_1_1CTOWrapper" ],
-        [ "CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", "classamrex_1_1detail_1_1CutFabFactory" ],
-        [ "Detector", "structamrex_1_1detail_1_1Detector.html", "structamrex_1_1detail_1_1Detector" ],
-        [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ],
-        [ "gpu_tuple_element", "structamrex_1_1detail_1_1gpu__tuple__element.html", "structamrex_1_1detail_1_1gpu__tuple__element" ],
-        [ "gpu_tuple_impl", "structamrex_1_1detail_1_1gpu__tuple__impl.html", null ],
-        [ "gpu_tuple_impl< I, Head >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4" ],
-        [ "gpu_tuple_impl< I, Head, Tail... >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4" ],
-        [ "invoke_result", "structamrex_1_1detail_1_1invoke__result.html", null ],
-        [ "invoke_result< decltype(void(INVOKE(std::declval< F >(), std::declval< Args >()...))), F, Args... >", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b" ],
-        [ "IsConvertibleImp", "structamrex_1_1detail_1_1IsConvertibleImp.html", null ],
-        [ "IsConvertibleImp< T, U, std::enable_if_t< is_convertible< T >(U{})> >", "structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html", null ],
-        [ "Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", "structamrex_1_1detail_1_1Nonesuch" ],
-        [ "SingleChunkArena", "classamrex_1_1detail_1_1SingleChunkArena.html", "classamrex_1_1detail_1_1SingleChunkArena" ],
-        [ "SplitIndexList", "structamrex_1_1detail_1_1SplitIndexList.html", "structamrex_1_1detail_1_1SplitIndexList" ],
-        [ "tuple_cat_result", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
-        [ "tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" ],
-        [ "tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
-        [ "TypeListGet", "structamrex_1_1detail_1_1TypeListGet.html", null ],
-        [ "TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
-        [ "TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
-        [ "unwrap", "structamrex_1_1detail_1_1unwrap.html", "structamrex_1_1detail_1_1unwrap" ],
-        [ "unwrap< std::reference_wrapper< T > >", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4" ]
-      ] ],
       [ "EB2", "namespaceamrex_1_1EB2.html", [
         [ "AllRegularIF", "classamrex_1_1EB2_1_1AllRegularIF.html", "classamrex_1_1EB2_1_1AllRegularIF" ],
         [ "BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", "classamrex_1_1EB2_1_1BoxIF" ],
@@ -103,17 +73,6 @@ var annotated_dup =
         [ "Vertex", "structamrex_1_1EB2_1_1Vertex.html", "structamrex_1_1EB2_1_1Vertex" ]
       ] ],
       [ "FFT", "namespaceamrex_1_1FFT.html", [
-        [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", [
-          [ "FFTPhysBCTag", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag.html", "structamrex_1_1FFT_1_1detail_1_1FFTPhysBCTag" ],
-          [ "SubHelper", "structamrex_1_1FFT_1_1detail_1_1SubHelper.html", "structamrex_1_1FFT_1_1detail_1_1SubHelper" ]
-        ] ],
-        [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", [
-          [ "Tri_Uniform", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Uniform" ],
-          [ "Tri_Zero", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Zero.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1Tri__Zero" ],
-          [ "TriA", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriA" ],
-          [ "TriC", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC.html", "structamrex_1_1FFT_1_1fft__poisson__detail_1_1TriC" ]
-        ] ],
-        [ "Boundary_EnumTraits", "structamrex_1_1FFT_1_1Boundary__EnumTraits.html", "structamrex_1_1FFT_1_1Boundary__EnumTraits" ],
         [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
         [ "LocalR2C", "classamrex_1_1FFT_1_1LocalR2C.html", "classamrex_1_1FFT_1_1LocalR2C" ],
         [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html", "classamrex_1_1FFT_1_1OpenBCSolver" ],
@@ -122,16 +81,9 @@ var annotated_dup =
         [ "PoissonHybrid", "classamrex_1_1FFT_1_1PoissonHybrid.html", "classamrex_1_1FFT_1_1PoissonHybrid" ],
         [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
         [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
-        [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
-        [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
-        [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
-        [ "Swap01", "structamrex_1_1FFT_1_1Swap01.html", "structamrex_1_1FFT_1_1Swap01" ],
-        [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ]
+        [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ]
       ] ],
       [ "Gpu", "namespaceamrex_1_1Gpu.html", [
-        [ "range_detail", "namespaceamrex_1_1Gpu_1_1range__detail.html", [
-          [ "range_impl", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl" ]
-        ] ],
         [ "AsyncArray", "classamrex_1_1Gpu_1_1AsyncArray.html", "classamrex_1_1Gpu_1_1AsyncArray" ],
         [ "AtomicAdd", "structamrex_1_1Gpu_1_1AtomicAdd.html", "structamrex_1_1Gpu_1_1AtomicAdd" ],
         [ "AtomicLogicalAnd", "structamrex_1_1Gpu_1_1AtomicLogicalAnd.html", "structamrex_1_1Gpu_1_1AtomicLogicalAnd" ],
@@ -139,7 +91,6 @@ var annotated_dup =
         [ "AtomicMax", "structamrex_1_1Gpu_1_1AtomicMax.html", "structamrex_1_1Gpu_1_1AtomicMax" ],
         [ "AtomicMin", "structamrex_1_1Gpu_1_1AtomicMin.html", "structamrex_1_1Gpu_1_1AtomicMin" ],
         [ "Buffer", "classamrex_1_1Gpu_1_1Buffer.html", "classamrex_1_1Gpu_1_1Buffer" ],
-        [ "ComponentBox", "structamrex_1_1Gpu_1_1ComponentBox.html", "structamrex_1_1Gpu_1_1ComponentBox" ],
         [ "Deleter", "structamrex_1_1Gpu_1_1Deleter.html", "structamrex_1_1Gpu_1_1Deleter" ],
         [ "Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
         [ "DeviceScalar", "structamrex_1_1Gpu_1_1DeviceScalar.html", "structamrex_1_1Gpu_1_1DeviceScalar" ],
@@ -149,7 +100,6 @@ var annotated_dup =
         [ "ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", "structamrex_1_1Gpu_1_1ExecConfig" ],
         [ "ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", "structamrex_1_1Gpu_1_1ExecutionConfig" ],
         [ "GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", "structamrex_1_1Gpu_1_1GraphSafeGuard" ],
-        [ "GridSize", "structamrex_1_1Gpu_1_1GridSize.html", "structamrex_1_1Gpu_1_1GridSize" ],
         [ "Handler", "structamrex_1_1Gpu_1_1Handler.html", "structamrex_1_1Gpu_1_1Handler" ],
         [ "HostToDevice", "structamrex_1_1Gpu_1_1HostToDevice.html", null ],
         [ "KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", "classamrex_1_1Gpu_1_1KernelInfo" ],
@@ -181,10 +131,6 @@ var annotated_dup =
       [ "Math", "namespaceamrex_1_1Math.html", [
         [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ]
       ] ],
-      [ "MFUtil", "namespaceamrex_1_1MFUtil.html", [
-        [ "AsymmetricGhost", "structamrex_1_1MFUtil_1_1AsymmetricGhost.html", "structamrex_1_1MFUtil_1_1AsymmetricGhost" ],
-        [ "SymmetricGhost", "structamrex_1_1MFUtil_1_1SymmetricGhost.html", "structamrex_1_1MFUtil_1_1SymmetricGhost" ]
-      ] ],
       [ "mpidatatypes", "namespaceamrex_1_1mpidatatypes.html", [
         [ "MPI_Status", "structamrex_1_1mpidatatypes_1_1MPI__Status.html", null ]
       ] ],
@@ -211,10 +157,6 @@ var annotated_dup =
         [ "SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" ],
         [ "SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" ]
       ] ],
-      [ "openbc", "namespaceamrex_1_1openbc.html", [
-        [ "Moments", "structamrex_1_1openbc_1_1Moments.html", "structamrex_1_1openbc_1_1Moments" ],
-        [ "MomTag", "structamrex_1_1openbc_1_1MomTag.html", "structamrex_1_1openbc_1_1MomTag" ]
-      ] ],
       [ "ParallelContext", "namespaceamrex_1_1ParallelContext.html", [
         [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html", "classamrex_1_1ParallelContext_1_1Frame" ]
       ] ],
@@ -230,27 +172,10 @@ var annotated_dup =
         [ "Linear", "structamrex_1_1ParticleInterpolator_1_1Linear.html", "structamrex_1_1ParticleInterpolator_1_1Linear" ],
         [ "Nearest", "structamrex_1_1ParticleInterpolator_1_1Nearest.html", "structamrex_1_1ParticleInterpolator_1_1Nearest" ]
       ] ],
-      [ "ppdetail", "namespaceamrex_1_1ppdetail.html", [
-        [ "ArithmeticOptional_TT", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT.html", null ],
-        [ "ArithmeticOptional_TT< std::optional< T >, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac.html", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01std_1_1optional_3_01T_01_4_00_01std_1_1enab4f56f7972e96cd506ee631fce7d5eac" ],
-        [ "ArithmeticOptional_TT< T, std::enable_if_t< std::is_arithmetic_v< T > > >", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f.html", "structamrex_1_1ppdetail_1_1ArithmeticOptional__TT_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is_7c3fb6f4fd99b8c14ba54247f995ec7f" ]
-      ] ],
-      [ "Reduce", "namespaceamrex_1_1Reduce.html", [
-        [ "detail", "namespaceamrex_1_1Reduce_1_1detail.html", [
-          [ "iterate_box", "structamrex_1_1Reduce_1_1detail_1_1iterate__box.html", null ],
-          [ "iterate_box_comp", "structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html", null ]
-        ] ]
-      ] ],
       [ "RungeKutta", "namespaceamrex_1_1RungeKutta.html", [
         [ "PostStageNoOp", "structamrex_1_1RungeKutta_1_1PostStageNoOp.html", "structamrex_1_1RungeKutta_1_1PostStageNoOp" ]
       ] ],
       [ "Scan", "namespaceamrex_1_1Scan.html", [
-        [ "detail", "namespaceamrex_1_1Scan_1_1detail.html", [
-          [ "BlockStatus", "structamrex_1_1Scan_1_1detail_1_1BlockStatus.html", null ],
-          [ "BlockStatus< T, false >", "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html", "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4" ],
-          [ "BlockStatus< T, true >", "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html", "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4" ],
-          [ "STVA", "structamrex_1_1Scan_1_1detail_1_1STVA.html", "structamrex_1_1Scan_1_1detail_1_1STVA" ]
-        ] ],
         [ "Type", "namespaceamrex_1_1Scan_1_1Type.html", [
           [ "Exclusive", "structamrex_1_1Scan_1_1Type_1_1Exclusive.html", null ],
           [ "Inclusive", "structamrex_1_1Scan_1_1Type_1_1Inclusive.html", null ]
@@ -258,9 +183,6 @@ var annotated_dup =
         [ "RetSum", "structamrex_1_1Scan_1_1RetSum.html", "structamrex_1_1Scan_1_1RetSum" ]
       ] ],
       [ "simd", "namespaceamrex_1_1simd.html", [
-        [ "detail", "namespaceamrex_1_1simd_1_1detail.html", [
-          [ "InternalVectorized", "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html", null ]
-        ] ],
         [ "Vectorized", "structamrex_1_1simd_1_1Vectorized.html", "structamrex_1_1simd_1_1Vectorized" ]
       ] ],
       [ "sundials", "namespaceamrex_1_1sundials.html", [
@@ -277,11 +199,6 @@ var annotated_dup =
       [ "AMRErrorTag", "classamrex_1_1AMRErrorTag.html", "classamrex_1_1AMRErrorTag" ],
       [ "AMRErrorTagInfo", "structamrex_1_1AMRErrorTagInfo.html", "structamrex_1_1AMRErrorTagInfo" ],
       [ "AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
-      [ "amrex_iparser", "structamrex_1_1amrex__iparser.html", "structamrex_1_1amrex__iparser" ],
-      [ "amrex_KSP", "structamrex_1_1amrex__KSP.html", "structamrex_1_1amrex__KSP" ],
-      [ "amrex_Mat", "structamrex_1_1amrex__Mat.html", "structamrex_1_1amrex__Mat" ],
-      [ "amrex_parser", "structamrex_1_1amrex__parser.html", "structamrex_1_1amrex__parser" ],
-      [ "amrex_Vec", "structamrex_1_1amrex__Vec.html", "structamrex_1_1amrex__Vec" ],
       [ "AmrInfo", "structamrex_1_1AmrInfo.html", "structamrex_1_1AmrInfo" ],
       [ "AmrLevel", "classamrex_1_1AmrLevel.html", "classamrex_1_1AmrLevel" ],
       [ "AmrMesh", "classamrex_1_1AmrMesh.html", "classamrex_1_1AmrMesh" ],
@@ -312,16 +229,10 @@ var annotated_dup =
       [ "AssignGridFilter", "structamrex_1_1AssignGridFilter.html", "structamrex_1_1AssignGridFilter" ],
       [ "AsyncArenaAllocator", "classamrex_1_1AsyncArenaAllocator.html", null ],
       [ "AsyncArenaWrapper", "structamrex_1_1AsyncArenaWrapper.html", "structamrex_1_1AsyncArenaWrapper" ],
+      [ "AuxBoundaryData", "classamrex_1_1AuxBoundaryData.html", "classamrex_1_1AuxBoundaryData" ],
       [ "BackgroundThread", "classamrex_1_1BackgroundThread.html", "classamrex_1_1BackgroundThread" ],
-      [ "BARef", "structamrex_1_1BARef.html", "structamrex_1_1BARef" ],
       [ "BArena", "classamrex_1_1BArena.html", "classamrex_1_1BArena" ],
       [ "BaseFab", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
-      [ "BATbndryReg", "structamrex_1_1BATbndryReg.html", "structamrex_1_1BATbndryReg" ],
-      [ "BATcoarsenRatio", "structamrex_1_1BATcoarsenRatio.html", "structamrex_1_1BATcoarsenRatio" ],
-      [ "BATindexType", "structamrex_1_1BATindexType.html", "structamrex_1_1BATindexType" ],
-      [ "BATindexType_coarsenRatio", "structamrex_1_1BATindexType__coarsenRatio.html", "structamrex_1_1BATindexType__coarsenRatio" ],
-      [ "BATnull", "structamrex_1_1BATnull.html", "structamrex_1_1BATnull" ],
-      [ "BATransformer", "structamrex_1_1BATransformer.html", "structamrex_1_1BATransformer" ],
       [ "BCRec", "classamrex_1_1BCRec.html", "classamrex_1_1BCRec" ],
       [ "BinIterator", "structamrex_1_1BinIterator.html", "structamrex_1_1BinIterator" ],
       [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
@@ -334,7 +245,6 @@ var annotated_dup =
       [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html", "classamrex_1_1BndryRegisterT" ],
       [ "BoundCond", "classamrex_1_1BoundCond.html", "classamrex_1_1BoundCond" ],
       [ "BoxArray", "classamrex_1_1BoxArray.html", "classamrex_1_1BoxArray" ],
-      [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html", "classamrex_1_1BoxCommHelper" ],
       [ "BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
       [ "BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
       [ "BoxIndexerND", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
@@ -365,8 +275,6 @@ var annotated_dup =
       [ "ConstSoAParticle", "structamrex_1_1ConstSoAParticle.html", "structamrex_1_1ConstSoAParticle" ],
       [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ],
       [ "CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", "classamrex_1_1CpuBndryFuncFab" ],
-      [ "CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", "structamrex_1_1CurlCurlDirichletInfo" ],
-      [ "CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", "structamrex_1_1CurlCurlSymmetryInfo" ],
       [ "CutFab", "classamrex_1_1CutFab.html", "classamrex_1_1CutFab" ],
       [ "DataAllocator", "structamrex_1_1DataAllocator.html", "structamrex_1_1DataAllocator" ],
       [ "DataDeleter", "structamrex_1_1DataDeleter.html", "structamrex_1_1DataDeleter" ],
@@ -414,6 +322,7 @@ var annotated_dup =
       [ "FabArrayCopyDescriptor", "classamrex_1_1FabArrayCopyDescriptor.html", "classamrex_1_1FabArrayCopyDescriptor" ],
       [ "FabArrayId", "classamrex_1_1FabArrayId.html", "classamrex_1_1FabArrayId" ],
       [ "FabCopyDescriptor", "structamrex_1_1FabCopyDescriptor.html", "structamrex_1_1FabCopyDescriptor" ],
+      [ "FabCopyTag", "structamrex_1_1FabCopyTag.html", "structamrex_1_1FabCopyTag" ],
       [ "FabDataType", "structamrex_1_1FabDataType.html", null ],
       [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< T > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4" ],
       [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< typename T::value_type > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4" ],
@@ -463,7 +372,6 @@ var annotated_dup =
       [ "GpuTupleElement< I, GpuTuple< Head, Tail... > >", "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
       [ "GpuTupleSize", "structamrex_1_1GpuTupleSize.html", null ],
       [ "GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
-      [ "GrowthStrategy_EnumTraits", "structamrex_1_1GrowthStrategy__EnumTraits.html", "structamrex_1_1GrowthStrategy__EnumTraits" ],
       [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],
       [ "HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
       [ "HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],
@@ -499,48 +407,7 @@ var annotated_dup =
       [ "IntVectND", "classamrex_1_1IntVectND.html", "classamrex_1_1IntVectND" ],
       [ "IOFormatSaver", "classamrex_1_1IOFormatSaver.html", "classamrex_1_1IOFormatSaver" ],
       [ "IParser", "classamrex_1_1IParser.html", "classamrex_1_1IParser" ],
-      [ "iparser_assign", "structamrex_1_1iparser__assign.html", "structamrex_1_1iparser__assign" ],
-      [ "iparser_f1", "structamrex_1_1iparser__f1.html", "structamrex_1_1iparser__f1" ],
-      [ "iparser_f2", "structamrex_1_1iparser__f2.html", "structamrex_1_1iparser__f2" ],
-      [ "iparser_f3", "structamrex_1_1iparser__f3.html", "structamrex_1_1iparser__f3" ],
-      [ "iparser_node", "structamrex_1_1iparser__node.html", "structamrex_1_1iparser__node" ],
-      [ "iparser_number", "structamrex_1_1iparser__number.html", "structamrex_1_1iparser__number" ],
-      [ "iparser_nvp", "unionamrex_1_1iparser__nvp.html", "unionamrex_1_1iparser__nvp" ],
-      [ "iparser_symbol", "structamrex_1_1iparser__symbol.html", "structamrex_1_1iparser__symbol" ],
-      [ "IParserExeADD", "structamrex_1_1IParserExeADD.html", "structamrex_1_1IParserExeADD" ],
-      [ "IParserExeADD_PN", "structamrex_1_1IParserExeADD__PN.html", "structamrex_1_1IParserExeADD__PN" ],
-      [ "IParserExeADD_PP", "structamrex_1_1IParserExeADD__PP.html", "structamrex_1_1IParserExeADD__PP" ],
-      [ "IParserExeADD_VN", "structamrex_1_1IParserExeADD__VN.html", "structamrex_1_1IParserExeADD__VN" ],
-      [ "IParserExeADD_VP", "structamrex_1_1IParserExeADD__VP.html", "structamrex_1_1IParserExeADD__VP" ],
       [ "IParserExecutor", "structamrex_1_1IParserExecutor.html", "structamrex_1_1IParserExecutor" ],
-      [ "IParserExeDIV_B", "structamrex_1_1IParserExeDIV__B.html", "structamrex_1_1IParserExeDIV__B" ],
-      [ "IParserExeDIV_F", "structamrex_1_1IParserExeDIV__F.html", "structamrex_1_1IParserExeDIV__F" ],
-      [ "IParserExeDIV_NV", "structamrex_1_1IParserExeDIV__NV.html", "structamrex_1_1IParserExeDIV__NV" ],
-      [ "IParserExeDIV_PN", "structamrex_1_1IParserExeDIV__PN.html", "structamrex_1_1IParserExeDIV__PN" ],
-      [ "IParserExeDIV_PP", "structamrex_1_1IParserExeDIV__PP.html", "structamrex_1_1IParserExeDIV__PP" ],
-      [ "IParserExeDIV_PV", "structamrex_1_1IParserExeDIV__PV.html", "structamrex_1_1IParserExeDIV__PV" ],
-      [ "IParserExeDIV_VN", "structamrex_1_1IParserExeDIV__VN.html", "structamrex_1_1IParserExeDIV__VN" ],
-      [ "IParserExeDIV_VP", "structamrex_1_1IParserExeDIV__VP.html", "structamrex_1_1IParserExeDIV__VP" ],
-      [ "IParserExeF1", "structamrex_1_1IParserExeF1.html", "structamrex_1_1IParserExeF1" ],
-      [ "IParserExeF2_B", "structamrex_1_1IParserExeF2__B.html", "structamrex_1_1IParserExeF2__B" ],
-      [ "IParserExeF2_F", "structamrex_1_1IParserExeF2__F.html", "structamrex_1_1IParserExeF2__F" ],
-      [ "IParserExeIF", "structamrex_1_1IParserExeIF.html", "structamrex_1_1IParserExeIF" ],
-      [ "IParserExeJUMP", "structamrex_1_1IParserExeJUMP.html", "structamrex_1_1IParserExeJUMP" ],
-      [ "IParserExeMUL", "structamrex_1_1IParserExeMUL.html", "structamrex_1_1IParserExeMUL" ],
-      [ "IParserExeMUL_PN", "structamrex_1_1IParserExeMUL__PN.html", "structamrex_1_1IParserExeMUL__PN" ],
-      [ "IParserExeMUL_PP", "structamrex_1_1IParserExeMUL__PP.html", "structamrex_1_1IParserExeMUL__PP" ],
-      [ "IParserExeMUL_VN", "structamrex_1_1IParserExeMUL__VN.html", "structamrex_1_1IParserExeMUL__VN" ],
-      [ "IParserExeMUL_VP", "structamrex_1_1IParserExeMUL__VP.html", "structamrex_1_1IParserExeMUL__VP" ],
-      [ "IParserExeNEG", "structamrex_1_1IParserExeNEG.html", "structamrex_1_1IParserExeNEG" ],
-      [ "IParserExeNEG_P", "structamrex_1_1IParserExeNEG__P.html", "structamrex_1_1IParserExeNEG__P" ],
-      [ "IParserExeNull", "structamrex_1_1IParserExeNull.html", "structamrex_1_1IParserExeNull" ],
-      [ "IParserExeNumber", "structamrex_1_1IParserExeNumber.html", "structamrex_1_1IParserExeNumber" ],
-      [ "IParserExeSUB", "structamrex_1_1IParserExeSUB.html", "structamrex_1_1IParserExeSUB" ],
-      [ "IParserExeSUB_PN", "structamrex_1_1IParserExeSUB__PN.html", "structamrex_1_1IParserExeSUB__PN" ],
-      [ "IParserExeSUB_PP", "structamrex_1_1IParserExeSUB__PP.html", "structamrex_1_1IParserExeSUB__PP" ],
-      [ "IParserExeSUB_VN", "structamrex_1_1IParserExeSUB__VN.html", "structamrex_1_1IParserExeSUB__VN" ],
-      [ "IParserExeSUB_VP", "structamrex_1_1IParserExeSUB__VP.html", "structamrex_1_1IParserExeSUB__VP" ],
-      [ "IParserExeSymbol", "structamrex_1_1IParserExeSymbol.html", "structamrex_1_1IParserExeSymbol" ],
       [ "is_soa_particle", "structamrex_1_1is__soa__particle.html", null ],
       [ "IsAddAssignable", "structamrex_1_1IsAddAssignable.html", null ],
       [ "IsAddAssignable< T, std::void_t< decltype(std::declval< T & >()+=std::declval< T >())> >", "structamrex_1_1IsAddAssignable_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_7db52e59378635f71f087c923eca3035.html", null ],
@@ -605,12 +472,7 @@ var annotated_dup =
       [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", "classamrex_1_1MLEBNodeFDLaplacian" ],
       [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ],
       [ "MLLinOpT", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
-      [ "MLMGABCEBTag", "structamrex_1_1MLMGABCEBTag.html", "structamrex_1_1MLMGABCEBTag" ],
-      [ "MLMGABCTag", "structamrex_1_1MLMGABCTag.html", "structamrex_1_1MLMGABCTag" ],
       [ "MLMGBndryT", "classamrex_1_1MLMGBndryT.html", "classamrex_1_1MLMGBndryT" ],
-      [ "MLMGNormType_EnumTraits", "structamrex_1_1MLMGNormType__EnumTraits.html", "structamrex_1_1MLMGNormType__EnumTraits" ],
-      [ "MLMGPSEBTag", "structamrex_1_1MLMGPSEBTag.html", "structamrex_1_1MLMGPSEBTag" ],
-      [ "MLMGPSTag", "structamrex_1_1MLMGPSTag.html", "structamrex_1_1MLMGPSTag" ],
       [ "MLMGT", "classamrex_1_1MLMGT.html", "classamrex_1_1MLMGT" ],
       [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ],
       [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", "classamrex_1_1MLNodeLaplacian" ],
@@ -646,50 +508,7 @@ var annotated_dup =
       [ "ParIterBase_impl", "classamrex_1_1ParIterBase__impl.html", "classamrex_1_1ParIterBase__impl" ],
       [ "ParmParse", "classamrex_1_1ParmParse.html", "classamrex_1_1ParmParse" ],
       [ "Parser", "classamrex_1_1Parser.html", "classamrex_1_1Parser" ],
-      [ "parser_assign", "structamrex_1_1parser__assign.html", "structamrex_1_1parser__assign" ],
-      [ "parser_f1", "structamrex_1_1parser__f1.html", "structamrex_1_1parser__f1" ],
-      [ "parser_f2", "structamrex_1_1parser__f2.html", "structamrex_1_1parser__f2" ],
-      [ "parser_f3", "structamrex_1_1parser__f3.html", "structamrex_1_1parser__f3" ],
-      [ "parser_node", "structamrex_1_1parser__node.html", "structamrex_1_1parser__node" ],
-      [ "parser_number", "structamrex_1_1parser__number.html", "structamrex_1_1parser__number" ],
-      [ "parser_symbol", "structamrex_1_1parser__symbol.html", "structamrex_1_1parser__symbol" ],
-      [ "parser_usrf1", "structamrex_1_1parser__usrf1.html", "structamrex_1_1parser__usrf1" ],
-      [ "parser_usrf2", "structamrex_1_1parser__usrf2.html", "structamrex_1_1parser__usrf2" ],
-      [ "parser_usrfn", "structamrex_1_1parser__usrfn.html", "structamrex_1_1parser__usrfn" ],
-      [ "ParserExeADD", "structamrex_1_1ParserExeADD.html", "structamrex_1_1ParserExeADD" ],
-      [ "ParserExeADD_PN", "structamrex_1_1ParserExeADD__PN.html", "structamrex_1_1ParserExeADD__PN" ],
-      [ "ParserExeADD_PP", "structamrex_1_1ParserExeADD__PP.html", "structamrex_1_1ParserExeADD__PP" ],
-      [ "ParserExeADD_VN", "structamrex_1_1ParserExeADD__VN.html", "structamrex_1_1ParserExeADD__VN" ],
-      [ "ParserExeADD_VP", "structamrex_1_1ParserExeADD__VP.html", "structamrex_1_1ParserExeADD__VP" ],
       [ "ParserExecutor", "structamrex_1_1ParserExecutor.html", "structamrex_1_1ParserExecutor" ],
-      [ "ParserExeDIV_B", "structamrex_1_1ParserExeDIV__B.html", "structamrex_1_1ParserExeDIV__B" ],
-      [ "ParserExeDIV_F", "structamrex_1_1ParserExeDIV__F.html", "structamrex_1_1ParserExeDIV__F" ],
-      [ "ParserExeDIV_PN", "structamrex_1_1ParserExeDIV__PN.html", "structamrex_1_1ParserExeDIV__PN" ],
-      [ "ParserExeDIV_PP", "structamrex_1_1ParserExeDIV__PP.html", "structamrex_1_1ParserExeDIV__PP" ],
-      [ "ParserExeDIV_VN", "structamrex_1_1ParserExeDIV__VN.html", "structamrex_1_1ParserExeDIV__VN" ],
-      [ "ParserExeDIV_VP", "structamrex_1_1ParserExeDIV__VP.html", "structamrex_1_1ParserExeDIV__VP" ],
-      [ "ParserExeF1", "structamrex_1_1ParserExeF1.html", "structamrex_1_1ParserExeF1" ],
-      [ "ParserExeF2_B", "structamrex_1_1ParserExeF2__B.html", "structamrex_1_1ParserExeF2__B" ],
-      [ "ParserExeF2_F", "structamrex_1_1ParserExeF2__F.html", "structamrex_1_1ParserExeF2__F" ],
-      [ "ParserExeIF", "structamrex_1_1ParserExeIF.html", "structamrex_1_1ParserExeIF" ],
-      [ "ParserExeJUMP", "structamrex_1_1ParserExeJUMP.html", "structamrex_1_1ParserExeJUMP" ],
-      [ "ParserExeMUL", "structamrex_1_1ParserExeMUL.html", "structamrex_1_1ParserExeMUL" ],
-      [ "ParserExeMUL_PN", "structamrex_1_1ParserExeMUL__PN.html", "structamrex_1_1ParserExeMUL__PN" ],
-      [ "ParserExeMUL_PP", "structamrex_1_1ParserExeMUL__PP.html", "structamrex_1_1ParserExeMUL__PP" ],
-      [ "ParserExeMUL_VN", "structamrex_1_1ParserExeMUL__VN.html", "structamrex_1_1ParserExeMUL__VN" ],
-      [ "ParserExeMUL_VP", "structamrex_1_1ParserExeMUL__VP.html", "structamrex_1_1ParserExeMUL__VP" ],
-      [ "ParserExeNull", "structamrex_1_1ParserExeNull.html", "structamrex_1_1ParserExeNull" ],
-      [ "ParserExeNumber", "structamrex_1_1ParserExeNumber.html", "structamrex_1_1ParserExeNumber" ],
-      [ "ParserExePOWI", "structamrex_1_1ParserExePOWI.html", "structamrex_1_1ParserExePOWI" ],
-      [ "ParserExeSquare", "structamrex_1_1ParserExeSquare.html", "structamrex_1_1ParserExeSquare" ],
-      [ "ParserExeSUB_B", "structamrex_1_1ParserExeSUB__B.html", "structamrex_1_1ParserExeSUB__B" ],
-      [ "ParserExeSUB_F", "structamrex_1_1ParserExeSUB__F.html", "structamrex_1_1ParserExeSUB__F" ],
-      [ "ParserExeSUB_PN", "structamrex_1_1ParserExeSUB__PN.html", "structamrex_1_1ParserExeSUB__PN" ],
-      [ "ParserExeSUB_PP", "structamrex_1_1ParserExeSUB__PP.html", "structamrex_1_1ParserExeSUB__PP" ],
-      [ "ParserExeSUB_VN", "structamrex_1_1ParserExeSUB__VN.html", "structamrex_1_1ParserExeSUB__VN" ],
-      [ "ParserExeSUB_VP", "structamrex_1_1ParserExeSUB__VP.html", "structamrex_1_1ParserExeSUB__VP" ],
-      [ "ParserExeSymbol", "structamrex_1_1ParserExeSymbol.html", "structamrex_1_1ParserExeSymbol" ],
-      [ "ParserExeUserFn", "structamrex_1_1ParserExeUserFn.html", "structamrex_1_1ParserExeUserFn" ],
       [ "Particle", "structamrex_1_1Particle.html", "structamrex_1_1Particle" ],
       [ "ParticleArray", "structamrex_1_1ParticleArray.html", "structamrex_1_1ParticleArray" ],
       [ "ParticleArrayAccessor", "structamrex_1_1ParticleArrayAccessor.html", "structamrex_1_1ParticleArrayAccessor" ],
@@ -793,15 +612,9 @@ var annotated_dup =
       [ "VectorTag", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],
       [ "VisMF", "classamrex_1_1VisMF.html", "classamrex_1_1VisMF" ],
       [ "VisMFBuffer", "classamrex_1_1VisMFBuffer.html", "classamrex_1_1VisMFBuffer" ],
-      [ "WeightedBox", "classamrex_1_1WeightedBox.html", "classamrex_1_1WeightedBox" ],
-      [ "WeightedBoxList", "structamrex_1_1WeightedBoxList.html", "structamrex_1_1WeightedBoxList" ],
+      [ "VoidCopyTag", "structamrex_1_1VoidCopyTag.html", "structamrex_1_1VoidCopyTag" ],
       [ "XDim3", "structamrex_1_1XDim3.html", "structamrex_1_1XDim3" ],
       [ "YAFluxRegisterT", "classamrex_1_1YAFluxRegisterT.html", "classamrex_1_1YAFluxRegisterT" ]
-    ] ],
-    [ "detail", "namespacedetail.html", [
-      [ "CellAdd", "structdetail_1_1CellAdd.html", "structdetail_1_1CellAdd" ],
-      [ "CellAtomicAdd", "structdetail_1_1CellAtomicAdd.html", "structdetail_1_1CellAtomicAdd" ],
-      [ "CellStore", "structdetail_1_1CellStore.html", "structdetail_1_1CellStore" ]
     ] ],
     [ "std", null, [
       [ "tuple_element< N, amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex > >", "structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html", "structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4" ],
@@ -815,10 +628,5 @@ var annotated_dup =
       [ "tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
       [ "tuple_size< amrex::RealVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4" ],
       [ "tuple_size< amrex::SmallMatrix< T, NRows, NCols, ORDER, StartIndex > >", "structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html", null ]
-    ] ],
-    [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", "unionAMREX__IPARSERSTYPE" ],
-    [ "AMREX_PARSERSTYPE", "unionAMREX__PARSERSTYPE.html", "unionAMREX__PARSERSTYPE" ],
-    [ "FabCopyTag", "structFabCopyTag.html", "structFabCopyTag" ],
-    [ "VoidCopyTag", "structVoidCopyTag.html", "structVoidCopyTag" ],
-    [ "yy_buffer_state", "structyy__buffer__state.html", "structyy__buffer__state" ]
+    ] ]
 ];

@@ -11,6 +11,5 @@ var AMReX__VisMF_8H =
     [ "operator>>", "AMReX__VisMF_8H.html#abbd06906c35c69c96f95404ef3837e15", null ],
     [ "operator>>", "AMReX__VisMF_8H.html#abd04f69e01ce3c15f6788670823386e5", null ],
     [ "Read", "AMReX__VisMF_8H.html#abd0af45ba1623e2da1dc0f0832c4071b", null ],
-    [ "read_fab", "AMReX__VisMF_8H.html#aa3870bf45fd14f87c3674a996cae2752", null ],
     [ "Write", "AMReX__VisMF_8H.html#a35f8fe03ac85bb16b4594cc5822820b6", null ]
 ];

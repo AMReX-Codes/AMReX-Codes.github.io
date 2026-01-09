@@ -1,8 +1,15 @@
 var namespaceamrex_1_1FFT =
 [
-    [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", "namespaceamrex_1_1FFT_1_1detail" ],
-    [ "fft_poisson_detail", "namespaceamrex_1_1FFT_1_1fft__poisson__detail.html", "namespaceamrex_1_1FFT_1_1fft__poisson__detail" ],
-    [ "Boundary_EnumTraits", "structamrex_1_1FFT_1_1Boundary__EnumTraits.html", "structamrex_1_1FFT_1_1Boundary__EnumTraits" ],
+    [ "detail", "namespaceamrex_1_1FFT_1_1detail.html", [
+      [ "add_vendor_plan_d", "namespaceamrex_1_1FFT_1_1detail.html#ab096e6043d6902f66518b67f98ce0a8b", null ],
+      [ "add_vendor_plan_f", "namespaceamrex_1_1FFT_1_1detail.html#ae44bf5923e52f86b8bfd38bdb7777d62", null ],
+      [ "Clear", "namespaceamrex_1_1FFT_1_1detail.html#a60bd08f449280adfd6f4a20898c312f2", null ],
+      [ "Finalize", "namespaceamrex_1_1FFT_1_1detail.html#a41218ba442bd784ba9aa52d602f8fde1", null ],
+      [ "get_vendor_plan_d", "namespaceamrex_1_1FFT_1_1detail.html#a041de86dabf0d75cc7996e37619664d5", null ],
+      [ "get_vendor_plan_f", "namespaceamrex_1_1FFT_1_1detail.html#a7b4eb28b018be59a3816f2d83e14ad35", null ],
+      [ "Initialize", "namespaceamrex_1_1FFT_1_1detail.html#aebe6c31861c128228d43fd72b89d51dc", null ],
+      [ "make_iota_distromap", "namespaceamrex_1_1FFT_1_1detail.html#ae40f1092f78a0a8f53357a35ddeab89c", null ]
+    ] ],
     [ "Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "LocalR2C", "classamrex_1_1FFT_1_1LocalR2C.html", "classamrex_1_1FFT_1_1LocalR2C" ],
     [ "OpenBCSolver", "classamrex_1_1FFT_1_1OpenBCSolver.html", "classamrex_1_1FFT_1_1OpenBCSolver" ],
@@ -12,10 +19,6 @@ var namespaceamrex_1_1FFT =
     [ "PoissonOpenBC", "classamrex_1_1FFT_1_1PoissonOpenBC.html", "classamrex_1_1FFT_1_1PoissonOpenBC" ],
     [ "R2C", "classamrex_1_1FFT_1_1R2C.html", "classamrex_1_1FFT_1_1R2C" ],
     [ "R2X", "classamrex_1_1FFT_1_1R2X.html", "classamrex_1_1FFT_1_1R2X" ],
-    [ "RotateBwd", "structamrex_1_1FFT_1_1RotateBwd.html", "structamrex_1_1FFT_1_1RotateBwd" ],
-    [ "RotateFwd", "structamrex_1_1FFT_1_1RotateFwd.html", "structamrex_1_1FFT_1_1RotateFwd" ],
-    [ "Swap01", "structamrex_1_1FFT_1_1Swap01.html", "structamrex_1_1FFT_1_1Swap01" ],
-    [ "Swap02", "structamrex_1_1FFT_1_1Swap02.html", "structamrex_1_1FFT_1_1Swap02" ],
     [ "C2C", "namespaceamrex_1_1FFT.html#a7ea6b8813a6e8c5f457601900d8d2ae8", null ],
     [ "Key", "namespaceamrex_1_1FFT.html#af2da8d3e9633d475da772b0769ce3b81", null ],
     [ "PlanD", "namespaceamrex_1_1FFT.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
@@ -49,5 +52,5 @@ var namespaceamrex_1_1FFT =
       [ "r2r_eo", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70acd22f1d30583eed691425160cda56334", null ],
       [ "r2r_oe", "namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70a4ee907351a59cc0ee8d584bf9a38d71b", null ]
     ] ],
-    [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a030f0cdd98372793256e2e4d0cf9711c", null ]
+    [ "amrex_get_enum_traits", "namespaceamrex_1_1FFT.html#a542661e8b1666720daf3bd3c0149d829", null ]
 ];

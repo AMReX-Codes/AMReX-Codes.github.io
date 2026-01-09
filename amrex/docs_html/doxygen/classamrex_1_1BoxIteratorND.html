@@ -158,17 +158,16 @@ Friends</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int dim&gt;<br />
 class amrex::BoxIteratorND&lt; dim &gt;</div><p>iterates through the IntVects of a Box </p>
 <p><a class="el" href="classamrex_1_1BoxIteratorND.html" title="iterates through the IntVects of a Box">BoxIteratorND</a> iterates through the IntVects of a box in the same order as a series of nested for loops with the innermost loop iterating over the first dimension.</p>
-<p>Typical usage using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
+<p>Typical usage using a range-based for loop: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> b;</div>
 <div class="line">...</div>
-<div class="line">for (<a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> iv : <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>.iterator()) {</div>
+<div class="line">for (<a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> iv : b.iterator()) {</div>
 <div class="line">    <span class="comment">// do operations involving iv</span></div>
 <div class="line">}</div>
 <div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
 <div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND&lt; 3 &gt;</a></div></div>
-<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">amrex::CurlCurlStateType::b</a></div><div class="ttdeci">@ b</div></div>
-</div><!-- fragment --><p>Using a traditional for loop: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
+</div><!-- fragment --><p>Using a traditional for loop: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> b;</div>
 <div class="line">...</div>
-<div class="line">BoxIterator bit (<a class="code hl_enumvalue" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>);</div>
+<div class="line">BoxIterator bit (b);</div>
 <div class="line"><span class="keywordflow">for</span> (bit.begin(); bit.ok(); ++bit)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> iv = bit();</div>

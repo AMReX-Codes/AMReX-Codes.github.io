@@ -1,7 +1,5 @@
 var classamrex_1_1MemProfiler =
 [
-    [ "Builds", "structamrex_1_1MemProfiler_1_1Builds.html", "structamrex_1_1MemProfiler_1_1Builds" ],
-    [ "Bytes", "structamrex_1_1MemProfiler_1_1Bytes.html", "structamrex_1_1MemProfiler_1_1Bytes" ],
     [ "MemInfo", "structamrex_1_1MemProfiler_1_1MemInfo.html", "structamrex_1_1MemProfiler_1_1MemInfo" ],
     [ "NBuildsInfo", "structamrex_1_1MemProfiler_1_1NBuildsInfo.html", "structamrex_1_1MemProfiler_1_1NBuildsInfo" ],
     [ "MemProfiler", "classamrex_1_1MemProfiler.html#a7f665368612f734b0bd1f15aa71e517a", null ],

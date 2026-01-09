@@ -20,8 +20,6 @@ var AMReX__ParallelDescriptor_8H =
     [ "Bcast", "AMReX__ParallelDescriptor_8H.html#a9e67de311d5153ce34e743c7792de733", null ],
     [ "Comm_dup", "AMReX__ParallelDescriptor_8H.html#ab513eb7f98a3f225eda4e3dc0d2ec2b7", null ],
     [ "Communicator", "AMReX__ParallelDescriptor_8H.html#a0f53686fc6a6b7dca69c230fd1336e44", null ],
-    [ "DoAllReduce", "AMReX__ParallelDescriptor_8H.html#a52f1e5a72bb76dae00cfdcd3bb9c7a07", null ],
-    [ "DoReduce", "AMReX__ParallelDescriptor_8H.html#a818763835d911ca86537be4604cc10ce", null ],
     [ "doTeamReduce", "AMReX__ParallelDescriptor_8H.html#a6a675ddfa6ba286e367461bdca0de992", null ],
     [ "EndParallel", "AMReX__ParallelDescriptor_8H.html#a990d0a17b08dcd68a0d77a7b35cfebaf", null ],
     [ "EndTeams", "AMReX__ParallelDescriptor_8H.html#a1f1780bd83ee339ade2a2dd702473e20", null ],

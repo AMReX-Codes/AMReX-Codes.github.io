@@ -1026,11 +1026,11 @@
 <codeline lineno="29"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator &lt;&lt; </ref>(std::ostream<sp/>&amp;os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RealBox&amp;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator &lt;&lt; </ref>(std::ostream<sp/>&amp;os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>RealBox&amp;<sp/>b)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(RealBox<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.lo(i)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.hi(i)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>b.lo(i)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>b.hi(i)<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
@@ -1042,9 +1042,9 @@
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_IGNORE_MAX<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator &gt;&gt; </ref>(std::istream<sp/>&amp;is,<sp/>RealBox&amp;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="namespaceamrex_1adb7fdc4e49a1cc9001bbee2b985c56f1" kindref="member">operator &gt;&gt; </ref>(std::istream<sp/>&amp;is,<sp/>RealBox&amp;<sp/>b)</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__Box_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,</highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__CoordSys_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,</highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>s;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
@@ -1071,9 +1071,9 @@
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__Box_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__CoordSys_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref><sp/>=<sp/>RealBox(lo,hi);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>b<sp/>=<sp/>RealBox(lo,hi);</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
 <codeline lineno="82"><highlight class="normal">}</highlight></codeline>
@@ -1086,9 +1086,9 @@
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM<sp/>&amp;&amp;<sp/>almost_equal;<sp/>++i)</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>almost_equal<sp/>=<sp/>almost_equal<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(std::abs(box1.lo(i)<sp/>-<sp/>box2.lo(i))<sp/>&lt;=<sp/><ref refid="namespaceamrex_1_1nodelap__detail_1acf673ebaf5379183e526bd2bbc4c665e" kindref="member">eps</ref><sp/>||<sp/><ref refid="namespaceamrex_1a8defcf36ddf219cae1fed871e05e78e3" kindref="member">amrex::almostEqual</ref>(box1.lo(i),box2.lo(i)));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(std::abs(box1.lo(i)<sp/>-<sp/>box2.lo(i))<sp/>&lt;=<sp/>eps<sp/>||<sp/><ref refid="namespaceamrex_1a8defcf36ddf219cae1fed871e05e78e3" kindref="member">amrex::almostEqual</ref>(box1.lo(i),box2.lo(i)));</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>almost_equal<sp/>=<sp/>almost_equal<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(std::abs(box1.hi(i)<sp/>-<sp/>box2.hi(i))<sp/>&lt;=<sp/><ref refid="namespaceamrex_1_1nodelap__detail_1acf673ebaf5379183e526bd2bbc4c665e" kindref="member">eps</ref><sp/>||<sp/><ref refid="namespaceamrex_1a8defcf36ddf219cae1fed871e05e78e3" kindref="member">amrex::almostEqual</ref>(box1.hi(i),box2.hi(i)));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(std::abs(box1.hi(i)<sp/>-<sp/>box2.hi(i))<sp/>&lt;=<sp/>eps<sp/>||<sp/><ref refid="namespaceamrex_1a8defcf36ddf219cae1fed871e05e78e3" kindref="member">amrex::almostEqual</ref>(box1.hi(i),box2.hi(i)));</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>almost_equal;</highlight></codeline>
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>

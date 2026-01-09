@@ -6,7 +6,7 @@ var dir_ff6ba31e3d9b9a1f9a0b82367f037326 =
     [ "AMReX_AmrLevel.cpp", "AMReX__AmrLevel_8cpp.html", null ],
     [ "AMReX_AmrLevel.H", "AMReX__AmrLevel_8H.html", "AMReX__AmrLevel_8H" ],
     [ "AMReX_AuxBoundaryData.cpp", "AMReX__AuxBoundaryData_8cpp.html", null ],
-    [ "AMReX_AuxBoundaryData.H", "AMReX__AuxBoundaryData_8H.html", null ],
+    [ "AMReX_AuxBoundaryData.H", "AMReX__AuxBoundaryData_8H.html", "AMReX__AuxBoundaryData_8H" ],
     [ "AMReX_Derive.cpp", "AMReX__Derive_8cpp.html", null ],
     [ "AMReX_Derive.H", "AMReX__Derive_8H.html", "AMReX__Derive_8H" ],
     [ "AMReX_Extrapolater.cpp", "AMReX__Extrapolater_8cpp.html", "AMReX__Extrapolater_8cpp" ],

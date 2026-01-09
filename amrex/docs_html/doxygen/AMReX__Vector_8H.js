@@ -16,7 +16,6 @@ var AMReX__Vector_8H =
     [ "GetVecOfPtrs", "AMReX__Vector_8H.html#a1cd4530f1ff191f23f734bb93594bfe2", null ],
     [ "GetVecOfPtrs", "AMReX__Vector_8H.html#a9f6600475654838eaad331bff6121d0b", null ],
     [ "GetVecOfVecOfPtrs", "AMReX__Vector_8H.html#ab58a5175e344b8182c92032bfdd0c0c5", null ],
-    [ "removeDupDoit", "AMReX__Vector_8H.html#ae9c414dd7bc47e48d6fe4e6361b1b723", null ],
     [ "RemoveDuplicates", "AMReX__Vector_8H.html#adc731523d4241d981e7279b29c5d7a6d", null ],
     [ "RemoveDuplicates", "AMReX__Vector_8H.html#a7c59b1fe9bc7b0498852cb74d7df5a76", null ]
 ];

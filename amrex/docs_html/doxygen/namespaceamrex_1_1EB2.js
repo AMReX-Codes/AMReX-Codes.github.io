@@ -1,26 +1,10 @@
 var namespaceamrex_1_1EB2 =
 [
-    [ "detail", "namespaceamrex_1_1EB2_1_1detail.html", [
-      [ "coarsen_edge_cent", "namespaceamrex_1_1EB2_1_1detail.html#ad283835a3b06a13137f260b1be1d2f6e", null ],
-      [ "num_cuts", "namespaceamrex_1_1EB2_1_1detail.html#a76809ed0a10c6280707ab5537db08545", null ]
-    ] ],
-    [ "IIF_detail", "namespaceamrex_1_1EB2_1_1IIF__detail.html", [
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#ab29fda705d6e62fff3c0966fc83c76ff", null ],
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a9dc63be087b2fee2a4676c0a93153ce3", null ],
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a956f3a59ddcae928dc973d87a5b29950", null ],
-      [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a57421223e1bdbe1aa94435de8408b9fd", null ]
-    ] ],
     [ "Type", "namespaceamrex_1_1EB2_1_1Type.html", [
       [ "covered", "namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0", null ],
       [ "irregular", "namespaceamrex_1_1EB2_1_1Type.html#ad02e320d1e8e105e0f531f235bd8fce4", null ],
       [ "regular", "namespaceamrex_1_1EB2_1_1Type.html#a4e8ececf7cf081d7a2125f18f3ba6642", null ],
       [ "unknown", "namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a", null ]
-    ] ],
-    [ "UIF_detail", "namespaceamrex_1_1EB2_1_1UIF__detail.html", [
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a86b60fd4fdacdf4921afa5d00a8239e5", null ],
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#aa47b9897a45b3b31c4a2b323e111d2e8", null ],
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a19bde3da2b0f903e05b82a367ed29f3b", null ],
-      [ "do_max", "namespaceamrex_1_1EB2_1_1UIF__detail.html#a55b5dcce9d53c12c3a8c895e063f3593", null ]
     ] ],
     [ "AllRegularIF", "classamrex_1_1EB2_1_1AllRegularIF.html", "classamrex_1_1EB2_1_1AllRegularIF" ],
     [ "BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", "classamrex_1_1EB2_1_1BoxIF" ],

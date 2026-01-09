@@ -1,6 +1,5 @@
 var AMReX__FillPatchUtil__I_8H =
 [
-    [ "call_interp_hook", "AMReX__FillPatchUtil__I_8H.html#aaa2f442d8ea72f80f2d543e12c5f8a1a", null ],
     [ "FillPatchInterp", "AMReX__FillPatchUtil__I_8H.html#afa9a7f1a8a6c3759671645a9295d6326", null ],
     [ "FillPatchInterp", "AMReX__FillPatchUtil__I_8H.html#a1bb7a2fc324d4f235ab27027e12d1b8c", null ],
     [ "FillPatchInterp", "AMReX__FillPatchUtil__I_8H.html#a93b8e270e0c8360ed35815598a5b7f46", null ],
@@ -16,8 +15,6 @@ var AMReX__FillPatchUtil__I_8H =
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil__I_8H.html#a5b5440802e0895fcba37e6b295116585", null ],
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil__I_8H.html#ac62cac089968552ebdbfffed1803a64b", null ],
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil__I_8H.html#a3f8f5f13146586dfaa0fb8d082132f12", null ],
-    [ "FillPatchTwoLevels_doit", "AMReX__FillPatchUtil__I_8H.html#a2e6cc793669bbcc472124d53917b5724", null ],
-    [ "FillPatchTwoLevels_doit", "AMReX__FillPatchUtil__I_8H.html#a16008d0df1c03023495a12e6cd27e50a", null ],
     [ "InterpFace", "AMReX__FillPatchUtil__I_8H.html#a846207ec88f79f3019dc051899e10e3d", null ],
     [ "InterpFace", "AMReX__FillPatchUtil__I_8H.html#a3e5469c515ce2b8c5907105be4c9d6a2", null ],
     [ "InterpFromCoarseLevel", "AMReX__FillPatchUtil__I_8H.html#af3c3186e1ed40653258d9ce5b6a6645d", null ],
@@ -26,12 +23,5 @@ var AMReX__FillPatchUtil__I_8H =
     [ "InterpFromCoarseLevel", "AMReX__FillPatchUtil__I_8H.html#ac07ae2ebcb4a8b75ec50eb979a26ef9f", null ],
     [ "InterpFromCoarseLevel", "AMReX__FillPatchUtil__I_8H.html#aa081e015e8252796d1f7675189020446", null ],
     [ "InterpFromCoarseLevel", "AMReX__FillPatchUtil__I_8H.html#a6fa430e1648835f9dea38b7568d79506", null ],
-    [ "make_mf_crse_mask", "AMReX__FillPatchUtil__I_8H.html#a34617f70eaffc9dd42ef30e75602e4e3", null ],
-    [ "make_mf_crse_patch", "AMReX__FillPatchUtil__I_8H.html#a1f1cf618eec93f3f663f4eab80c283a5", null ],
-    [ "make_mf_crse_patch", "AMReX__FillPatchUtil__I_8H.html#a34a42876ed5cec17cb6852ce43b710b7", null ],
-    [ "make_mf_fine_patch", "AMReX__FillPatchUtil__I_8H.html#a10de83755b69f93f5403c69c1de02300", null ],
-    [ "make_mf_fine_patch", "AMReX__FillPatchUtil__I_8H.html#a2b92d0ed9f799213702e12a02f9585d7", null ],
-    [ "make_mf_refined_patch", "AMReX__FillPatchUtil__I_8H.html#a18788233897dcea378a821f83c7dd90a", null ],
-    [ "mf_set_domain_bndry", "AMReX__FillPatchUtil__I_8H.html#a12a52d34749a2924b4dc8f3d82f7f94d", null ],
     [ "ProperlyNested", "AMReX__FillPatchUtil__I_8H.html#a36b10976708081700c810d70417da8c9", null ]
 ];

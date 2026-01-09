@@ -105,123 +105,95 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtilI_8H_source.html','
 <a href="AMReX__MultiFabUtilI_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Used by EB_LSCore only.  Might be removed in the future.  So don&#39;t use.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex_1_1MFUtil.html">amrex::MFUtil</a> {</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>amrex::MFUtil {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html">   12</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html">SymmetricGhost</a> {</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">   13</a></span>            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                target.ParallelCopy(source, 0, 0, nc, ng, ng);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            }</div>
-</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
-</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">// T can be either MultiFab or iMultiFab</span></div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html">   23</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html">AsymmetricGhost</a> {</div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">   24</a></span>            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                target.ParallelCopy(source, 0, 0, nc, 0, ng);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
-</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        };</div>
-</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>Cpy&gt;</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html#a9b34553675e4bbe3e7e6108780d34975">   36</a></span>        T <a class="code hl_function" href="namespaceamrex_1_1MFUtil.html#a9b34553675e4bbe3e7e6108780d34975">duplicate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; ba, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp; dm, <span class="keyword">const</span> T &amp; mf_in) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            T mf_out(ba, dm, nc, ng);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">struct </span>SymmetricGhost {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                target.ParallelCopy(source, 0, 0, nc, ng, ng);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">// T can be either MultiFab or iMultiFab</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">struct </span>AsymmetricGhost {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                target.ParallelCopy(source, 0, 0, nc, 0, ng);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>Cpy&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        T duplicate(<span class="keyword">const</span> BoxArray &amp; ba, <span class="keyword">const</span> DistributionMapping &amp; dm, <span class="keyword">const</span> T &amp; mf_in) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            Cpy&lt;T&gt;::copy(mf_out, mf_in, nc, ng);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            T mf_out(ba, dm, nc, ng);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">return</span> mf_out;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
-</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>Cpy&gt;</div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html#a69b29ecaacdc25da8869a005da585ef2">   56</a></span>        T <a class="code hl_function" href="namespaceamrex_1_1MFUtil.html#a9b34553675e4bbe3e7e6108780d34975">duplicate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; ba, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp; dm, <span class="keyword">const</span> T &amp; mf_in,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp; periodicity) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            T mf_out = duplicate&lt;T, Cpy&gt;(ba, dm, mf_in);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            mf_out.FillBoundary(periodicity);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> mf_out;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36">   71</a></span>        T <a class="code hl_function" href="namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36">regrid</a>(<span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; ba, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp; dm,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                 <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span> (regrid_ghost) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                T mf_out = duplicate&lt;T, SymmetricGhost&gt;(ba, dm, mf_in);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">return</span> mf_out;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                T mf_out = duplicate&lt;T, AsymmetricGhost&gt;(ba, dm, mf_in);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> mf_out;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html#a9c04768eaa499d2b837f0732d1316e6c">   90</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36">regrid</a>( T &amp; mf_out, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; ba, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp; dm,</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                     <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            mf_out.define(ba, dm, nc, ng);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (regrid_ghost) { <a class="code hl_function" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">SymmetricGhost&lt;T&gt;::copy</a>(mf_out, mf_in, nc, ng); }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">else</span>              { <a class="code hl_function" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">AsymmetricGhost&lt;T&gt;::copy</a>(mf_out, mf_in, nc, ng); }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
-</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1MFUtil.html#a0d2b028d5b4be5e38a0e4f8fc778c523">  107</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36">regrid</a>( T &amp; mf_out, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; ba, <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp; dm,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                     <span class="keyword">const</span> <a class="code hl_class" href="classamrex_1_1FabFactory.html">FabFactory&lt;FArrayBox&gt;</a> &amp; eb_factory,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                     <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            mf_out.define(ba, dm, nc, ng, <a class="code hl_struct" href="structamrex_1_1MFInfo.html">MFInfo</a>(), eb_factory);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordflow">if</span> (regrid_ghost) {  <a class="code hl_function" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">SymmetricGhost&lt;T&gt;::copy</a>(mf_out, mf_in, nc, ng); }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">else</span>              { <a class="code hl_function" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">AsymmetricGhost&lt;T&gt;::copy</a>(mf_out, mf_in, nc, ng); }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
-</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-</div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:553</div></div>
-<div class="ttc" id="aclassamrex_1_1DistributionMapping_html"><div class="ttname"><a href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a></div><div class="ttdoc">Calculates the distribution of FABs to MPI processes.</div><div class="ttdef"><b>Definition</b> AMReX_DistributionMapping.H:43</div></div>
-<div class="ttc" id="aclassamrex_1_1FabFactory_html"><div class="ttname"><a href="classamrex_1_1FabFactory.html">amrex::FabFactory</a></div><div class="ttdef"><b>Definition</b> AMReX_FabFactory.H:50</div></div>
-<div class="ttc" id="aclassamrex_1_1Periodicity_html"><div class="ttname"><a href="classamrex_1_1Periodicity.html">amrex::Periodicity</a></div><div class="ttdoc">This provides length of period for periodic domains. 0 means it is not periodic in that direction....</div><div class="ttdef"><b>Definition</b> AMReX_Periodicity.H:17</div></div>
-<div class="ttc" id="anamespaceamrex_1_1MFUtil_html"><div class="ttname"><a href="namespaceamrex_1_1MFUtil.html">amrex::MFUtil</a></div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:4</div></div>
-<div class="ttc" id="anamespaceamrex_1_1MFUtil_html_a9b34553675e4bbe3e7e6108780d34975"><div class="ttname"><a href="namespaceamrex_1_1MFUtil.html#a9b34553675e4bbe3e7e6108780d34975">amrex::MFUtil::duplicate</a></div><div class="ttdeci">T duplicate(const BoxArray &amp;ba, const DistributionMapping &amp;dm, const T &amp;mf_in)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:36</div></div>
-<div class="ttc" id="anamespaceamrex_1_1MFUtil_html_afe644ed72607173bbcef31867f6a0c36"><div class="ttname"><a href="namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36">amrex::MFUtil::regrid</a></div><div class="ttdeci">T regrid(const BoxArray &amp;ba, const DistributionMapping &amp;dm, const T &amp;mf_in, bool regrid_ghost=false)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:71</div></div>
-<div class="ttc" id="astructamrex_1_1MFInfo_html"><div class="ttname"><a href="structamrex_1_1MFInfo.html">amrex::MFInfo</a></div><div class="ttdoc">FabArray memory allocation information.</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:66</div></div>
-<div class="ttc" id="astructamrex_1_1MFUtil_1_1AsymmetricGhost_html"><div class="ttname"><a href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html">amrex::MFUtil::AsymmetricGhost</a></div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:23</div></div>
-<div class="ttc" id="astructamrex_1_1MFUtil_1_1AsymmetricGhost_html_ae14758bcc9f0460aa024c1ca702d24b6"><div class="ttname"><a href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">amrex::MFUtil::AsymmetricGhost::copy</a></div><div class="ttdeci">static void copy(T &amp;target, const T &amp;source, int nc, int ng)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:24</div></div>
-<div class="ttc" id="astructamrex_1_1MFUtil_1_1SymmetricGhost_html"><div class="ttname"><a href="structamrex_1_1MFUtil_1_1SymmetricGhost.html">amrex::MFUtil::SymmetricGhost</a></div><div class="ttdoc">General collection of MultiFab utilities.</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:12</div></div>
-<div class="ttc" id="astructamrex_1_1MFUtil_1_1SymmetricGhost_html_aa8f8f59b8584105f5e5d317b6ac7efe9"><div class="ttname"><a href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">amrex::MFUtil::SymmetricGhost::copy</a></div><div class="ttdeci">static void copy(T &amp;target, const T &amp;source, int nc, int ng)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtilI.H:13</div></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            Cpy&lt;T&gt;::copy(mf_out, mf_in, nc, ng);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> mf_out;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>Cpy&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        T duplicate(<span class="keyword">const</span> BoxArray &amp; ba, <span class="keyword">const</span> DistributionMapping &amp; dm, <span class="keyword">const</span> T &amp; mf_in,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    <span class="keyword">const</span> Periodicity &amp; periodicity) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            T mf_out = duplicate&lt;T, Cpy&gt;(ba, dm, mf_in);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            mf_out.FillBoundary(periodicity);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">return</span> mf_out;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        T regrid(<span class="keyword">const</span> BoxArray &amp; ba, <span class="keyword">const</span> DistributionMapping &amp; dm,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                 <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (regrid_ghost) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                T mf_out = duplicate&lt;T, SymmetricGhost&gt;(ba, dm, mf_in);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">return</span> mf_out;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                T mf_out = duplicate&lt;T, AsymmetricGhost&gt;(ba, dm, mf_in);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">return</span> mf_out;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordtype">void</span> regrid( T &amp; mf_out, <span class="keyword">const</span> BoxArray &amp; ba, <span class="keyword">const</span> DistributionMapping &amp; dm,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                     <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            mf_out.define(ba, dm, nc, ng);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (regrid_ghost) { SymmetricGhost&lt;T&gt;::copy(mf_out, mf_in, nc, ng); }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">else</span>              { AsymmetricGhost&lt;T&gt;::copy(mf_out, mf_in, nc, ng); }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> regrid( T &amp; mf_out, <span class="keyword">const</span> BoxArray &amp; ba, <span class="keyword">const</span> DistributionMapping &amp; dm,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                     <span class="keyword">const</span> FabFactory&lt;FArrayBox&gt; &amp; eb_factory,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                     <span class="keyword">const</span> T &amp; mf_in, <span class="keywordtype">bool</span> regrid_ghost = <span class="keyword">false</span> ) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordtype">int</span> ng = mf_in.nGrow();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordtype">int</span> nc = mf_in.nComp();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            mf_out.define(ba, dm, nc, ng, MFInfo(), eb_factory);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">if</span> (regrid_ghost) {  SymmetricGhost&lt;T&gt;::copy(mf_out, mf_in, nc, ng); }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">else</span>              { AsymmetricGhost&lt;T&gt;::copy(mf_out, mf_in, nc, ng); }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_a2c1110b22670288daa9e2a01cbb70fbb"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">amrex::Gpu::copy</a></div><div class="ttdeci">void copy(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</div><div class="ttdoc">A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous st...</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:128</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

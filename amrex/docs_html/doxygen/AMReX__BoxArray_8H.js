@@ -1,13 +1,5 @@
 var AMReX__BoxArray_8H =
 [
-    [ "amrex::BARef", "structamrex_1_1BARef.html", "structamrex_1_1BARef" ],
-    [ "amrex::BATnull", "structamrex_1_1BATnull.html", "structamrex_1_1BATnull" ],
-    [ "amrex::BATindexType", "structamrex_1_1BATindexType.html", "structamrex_1_1BATindexType" ],
-    [ "amrex::BATcoarsenRatio", "structamrex_1_1BATcoarsenRatio.html", "structamrex_1_1BATcoarsenRatio" ],
-    [ "amrex::BATindexType_coarsenRatio", "structamrex_1_1BATindexType__coarsenRatio.html", "structamrex_1_1BATindexType__coarsenRatio" ],
-    [ "amrex::BATbndryReg", "structamrex_1_1BATbndryReg.html", "structamrex_1_1BATbndryReg" ],
-    [ "amrex::BATransformer", "structamrex_1_1BATransformer.html", "structamrex_1_1BATransformer" ],
-    [ "amrex::BATransformer::BATOp", "unionamrex_1_1BATransformer_1_1BATOp.html", "unionamrex_1_1BATransformer_1_1BATOp" ],
     [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", "structamrex_1_1BoxArray_1_1RefID" ],
     [ "BndryBATransformer", "AMReX__BoxArray_8H.html#af2ed2dc1168064ab4409c918ad0dfce6", null ],
     [ "boxComplement", "AMReX__BoxArray_8H.html#af4b25f1a81ffa836ed7356d6da7e814e", null ],

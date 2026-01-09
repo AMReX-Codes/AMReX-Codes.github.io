@@ -1,7 +1,5 @@
 var AMReX__DistributionMapping_8cpp =
 [
-    [ "amrex::WeightedBox", "classamrex_1_1WeightedBox.html", "classamrex_1_1WeightedBox" ],
-    [ "amrex::WeightedBoxList", "structamrex_1_1WeightedBoxList.html", "structamrex_1_1WeightedBoxList" ],
     [ "MakeSimilarDM", "AMReX__DistributionMapping_8cpp.html#adc0569d3487d998596b2a11392bddaca", null ],
     [ "MakeSimilarDM", "AMReX__DistributionMapping_8cpp.html#aca8ca3ed7e01a5c954d6c70cae7b94a0", null ],
     [ "operator<<", "AMReX__DistributionMapping_8cpp.html#a6e9865ac3868b0b19a46f021f2db2421", null ],

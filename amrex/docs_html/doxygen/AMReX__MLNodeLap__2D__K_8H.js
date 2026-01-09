@@ -68,15 +68,5 @@ var AMReX__MLNodeLap__2D__K_8H =
     [ "mlndlap_sum_Df", "AMReX__MLNodeLap__2D__K_8H.html#ac3aa4c26949852604ab5e27065f452bf", null ],
     [ "mlndlap_zero_fine", "AMReX__MLNodeLap__2D__K_8H.html#a7c0ab4702ea443c09737b03c5670de97", null ],
     [ "neumann_scale", "AMReX__MLNodeLap__2D__K_8H.html#a75c61186249008edf708a929688beefe", null ],
-    [ "tridiagonal_solve", "AMReX__MLNodeLap__2D__K_8H.html#a63d04ae23dbdf2dca8ffcf688ff8058e", null ],
-    [ "i_B_x", "AMReX__MLNodeLap__2D__K_8H.html#a8cc425c6a51c52a909454c3e5fa3c693", null ],
-    [ "i_B_xy", "AMReX__MLNodeLap__2D__K_8H.html#aeae26472a34e1e06d5be65bfb5091339", null ],
-    [ "i_B_y", "AMReX__MLNodeLap__2D__K_8H.html#a56f405e6a08003aeda285119c129abb7", null ],
-    [ "i_S_x", "AMReX__MLNodeLap__2D__K_8H.html#a6fad95f27294d4be63f68b33526c1a5f", null ],
-    [ "i_S_x2", "AMReX__MLNodeLap__2D__K_8H.html#ae7c683eec30f5ee114d5cd7ae3c2f12c", null ],
-    [ "i_S_xy", "AMReX__MLNodeLap__2D__K_8H.html#a8c2412652febe2487b02c61a925c5991", null ],
-    [ "i_S_y", "AMReX__MLNodeLap__2D__K_8H.html#ab3f0a88ac3dc810eafc5c0198a19421b", null ],
-    [ "i_S_y2", "AMReX__MLNodeLap__2D__K_8H.html#ad43ba85f97e3f8eb3f7d2efedc3463ec", null ],
-    [ "n_Bintg", "AMReX__MLNodeLap__2D__K_8H.html#acd06dcdc0da05b08b9b0b6ea267f8476", null ],
-    [ "n_Sintg", "AMReX__MLNodeLap__2D__K_8H.html#ab91da98a743cea42f80468461e601593", null ]
+    [ "tridiagonal_solve", "AMReX__MLNodeLap__2D__K_8H.html#a63d04ae23dbdf2dca8ffcf688ff8058e", null ]
 ];

@@ -1,6 +1,5 @@
 var AMReX__SIMD_8H =
 [
-    [ "amrex::simd::detail::InternalVectorized", "structamrex_1_1simd_1_1detail_1_1InternalVectorized.html", null ],
     [ "amrex::simd::Vectorized< SIMD_WIDTH >", "structamrex_1_1simd_1_1Vectorized.html", "structamrex_1_1simd_1_1Vectorized" ],
     [ "SIMDIdCpu", "AMReX__SIMD_8H.html#a13bc9efaf58e1af807347f918fff24a9", null ],
     [ "SIMDParticleReal", "AMReX__SIMD_8H.html#a945cac56e2e229159839e79047422383", null ],

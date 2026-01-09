@@ -280,15 +280,15 @@
     </briefdescription>
     <detaileddescription>
 <para><ref refid="classamrex_1_1BoxIteratorND" kindref="compound">BoxIteratorND</ref> iterates through the IntVects of a box in the same order as a series of nested for loops with the innermost loop iterating over the first dimension.</para>
-<para>Typical usage using a range-based for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
+<para>Typical usage using a range-based for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>b;</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal">for<sp/>(<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref><sp/>iv<sp/>:<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.iterator())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>(<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref><sp/>iv<sp/>:<sp/>b.iterator())<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>operations<sp/>involving<sp/>iv</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para>Using a traditional for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
+<para>Using a traditional for loop: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>b;</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal">BoxIterator<sp/>bit<sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>);</highlight></codeline>
+<codeline><highlight class="normal">BoxIterator<sp/>bit<sp/>(b);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(bit.begin();<sp/>bit.ok();<sp/>++bit)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref><sp/>iv<sp/>=<sp/>bit();</highlight></codeline>

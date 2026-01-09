@@ -1,7 +1,5 @@
 var AMReX__GpuLaunch_8H =
 [
-    [ "amrex::Gpu::ComponentBox", "structamrex_1_1Gpu_1_1ComponentBox.html", "structamrex_1_1Gpu_1_1ComponentBox" ],
-    [ "amrex::Gpu::GridSize", "structamrex_1_1Gpu_1_1GridSize.html", "structamrex_1_1Gpu_1_1GridSize" ],
     [ "amrex::Gpu::ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", "structamrex_1_1Gpu_1_1ExecutionConfig" ],
     [ "amrex::Gpu::ExecConfig", "structamrex_1_1Gpu_1_1ExecConfig.html", "structamrex_1_1Gpu_1_1ExecConfig" ],
     [ "AMREX_GPU_NCELLS_PER_THREAD", "AMReX__GpuLaunch_8H.html#aa17614e5b3183f76e0bbb003a8a5e139", null ],

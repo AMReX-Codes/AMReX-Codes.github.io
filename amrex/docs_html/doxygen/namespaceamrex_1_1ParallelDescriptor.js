@@ -1,9 +1,5 @@
 var namespaceamrex_1_1ParallelDescriptor =
 [
-    [ "detail", "namespaceamrex_1_1ParallelDescriptor_1_1detail.html", [
-      [ "DoAllReduce", "namespaceamrex_1_1ParallelDescriptor_1_1detail.html#a52f1e5a72bb76dae00cfdcd3bb9c7a07", null ],
-      [ "DoReduce", "namespaceamrex_1_1ParallelDescriptor_1_1detail.html#a818763835d911ca86537be4604cc10ce", null ]
-    ] ],
     [ "Message", "classamrex_1_1ParallelDescriptor_1_1Message.html", "classamrex_1_1ParallelDescriptor_1_1Message" ],
     [ "Mpi_typemap", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap" ],
     [ "Mpi_typemap< GpuComplex< T > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4" ],

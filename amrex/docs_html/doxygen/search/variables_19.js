@@ -1,17 +1,5 @@
 var searchData=
 [
-  ['y_0',['y',['../structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203',1,'amrex::XDim3::y'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a',1,'amrex::algoim::QuadratureRule::Node::y'],['../structamrex_1_1openbc_1_1Moments.html#adb6657fa49f022a5f02ab1a51fafeac0',1,'amrex::openbc::Moments::y'],['../structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b',1,'amrex::Dim3::y']]],
-  ['yellow_1',['yellow',['../namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56',1,'amrex::BGColor::Yellow'],['../namespaceamrex_1_1FGColor.html#a080b20c9b78c553919c4563ddd75ff1e',1,'amrex::FGColor::Yellow']]],
-  ['yy_5fat_5fbol_2',['yy_at_bol',['../structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f',1,'yy_buffer_state']]],
-  ['yy_5fbs_5fcolumn_3',['yy_bs_column',['../structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307',1,'yy_buffer_state']]],
-  ['yy_5fbs_5flineno_4',['yy_bs_lineno',['../structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199',1,'yy_buffer_state']]],
-  ['yy_5fbuf_5fpos_5',['yy_buf_pos',['../structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0',1,'yy_buffer_state']]],
-  ['yy_5fbuf_5fsize_6',['yy_buf_size',['../structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4',1,'yy_buffer_state']]],
-  ['yy_5fbuffer_5fstatus_7',['yy_buffer_status',['../structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c',1,'yy_buffer_state']]],
-  ['yy_5fch_5fbuf_8',['yy_ch_buf',['../structyy__buffer__state.html#a0d25458e69eb22207fc633a1255d099d',1,'yy_buffer_state']]],
-  ['yy_5ffill_5fbuffer_9',['yy_fill_buffer',['../structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d',1,'yy_buffer_state']]],
-  ['yy_5finput_5ffile_10',['yy_input_file',['../structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda',1,'yy_buffer_state']]],
-  ['yy_5fis_5finteractive_11',['yy_is_interactive',['../structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490',1,'yy_buffer_state']]],
-  ['yy_5fis_5four_5fbuffer_12',['yy_is_our_buffer',['../structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465',1,'yy_buffer_state']]],
-  ['yy_5fn_5fchars_13',['yy_n_chars',['../structyy__buffer__state.html#a06406208824817acfec2183b79080945',1,'yy_buffer_state']]]
+  ['y_0',['y',['../structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b',1,'amrex::Dim3::y'],['../structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203',1,'amrex::XDim3::y'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a',1,'amrex::algoim::QuadratureRule::Node::y']]],
+  ['yellow_1',['yellow',['../namespaceamrex_1_1FGColor.html#a080b20c9b78c553919c4563ddd75ff1e',1,'amrex::FGColor::Yellow'],['../namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56',1,'amrex::BGColor::Yellow']]]
 ];

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['battype_0',['BATType',['../structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feb',1,'amrex::BATransformer']]],
-  ['bcmode_1',['BCMode',['../structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627',1,'amrex::LinOpEnumType']]],
-  ['bottomsolver_2',['BottomSolver',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4',1,'amrex']]],
-  ['boundary_3',['Boundary',['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964',1,'amrex::FFT']]],
-  ['butchertableautypes_4',['ButcherTableauTypes',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564',1,'amrex']]]
+  ['cellindex_0',['CellIndex',['../structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3',1,'amrex::CellIndexEnum']]],
+  ['celltype_1',['CellType',['../classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763c',1,'amrex::YAFluxRegisterT']]],
+  ['cfstrategy_2',['CFStrategy',['../classamrex_1_1MLMGT.html#a96d1fcb72314606739f67225750197b9',1,'amrex::MLMGT']]],
+  ['coarseningstrategy_3',['CoarseningStrategy',['../classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82',1,'amrex::MLNodeLinOp']]],
+  ['coordtype_4',['CoordType',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806eba',1,'amrex::CoordSys']]],
+  ['cpop_5',['CpOp',['../classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff',1,'amrex::FabArrayBase']]]
 ];

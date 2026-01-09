@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('AMReX__Any_8H_source.html',''); initRe
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>              std::enable_if_t&lt;!std::is_same_v&lt;Any,std::decay_t&lt;MF&gt;&gt;,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#a131293f3371ec68e9b9b274c54436512">   32</a></span>    <a class="code hl_function" href="classamrex_1_1Any.html#a131293f3371ec68e9b9b274c54436512">Any</a> (MF &amp;&amp; mf) <span class="comment">// NOLINT(bugprone-forwarding-reference-overload)</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        : <a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>(std::make_unique&lt;<a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards</a>&lt;MF&gt; &gt;(std::forward&lt;MF&gt;(mf)))</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        : <a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>(std::make_unique&lt;innards&lt;MF&gt; &gt;(std::forward&lt;MF&gt;(mf)))</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        {}</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
@@ -156,10 +156,10 @@ $(document).ready(function(){initNavTree('AMReX__Any_8H_source.html',''); initRe
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
 <div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">   55</a></span>    [[nodiscard]] MF&amp; <a class="code hl_function" href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">get</a> () {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> p0 = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards&lt;MF&gt;</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> p0 = <span class="keyword">dynamic_cast&lt;</span>innards&lt;MF&gt;*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> p0-&gt;m_mf;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards&lt;MF&amp;&gt;</a>&amp;<span class="keyword">&gt;</span>(*m_ptr).<a class="code hl_variable" href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">m_mf</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>innards&lt;MF&amp;&gt;&amp;<span class="keyword">&gt;</span>(*m_ptr).m_mf;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
@@ -167,12 +167,12 @@ $(document).ready(function(){initNavTree('AMReX__Any_8H_source.html',''); initRe
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
 <div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#a8cce42f6e1ed6d271d8190c38e638059">   65</a></span>    [[nodiscard]] MF <span class="keyword">const</span>&amp; <a class="code hl_function" href="classamrex_1_1Any.html#a8cce42f6e1ed6d271d8190c38e638059">get</a> ()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> p0 = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards&lt;MF&gt;</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> p0 = <span class="keyword">dynamic_cast&lt;</span>innards&lt;MF&gt;*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span> p0-&gt;m_mf;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span> p1 = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards&lt;MF&amp;&gt;</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span> p1 = <span class="keyword">dynamic_cast&lt;</span>innards&lt;MF&amp;&gt;*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>.get())) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">return</span> p1-&gt;m_mf;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards&lt;MF const&amp;&gt;</a> const&amp;<span class="keyword">&gt;</span>(*m_ptr).<a class="code hl_variable" href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">m_mf</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>innards&lt;MF const&amp;&gt; const&amp;<span class="keyword">&gt;</span>(*m_ptr).m_mf;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 </div>
@@ -183,43 +183,38 @@ $(document).ready(function(){initNavTree('AMReX__Any_8H_source.html',''); initRe
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#a7b20f835a46c1aba635c2159391f53f1">   78</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classamrex_1_1Any.html#a7b20f835a46c1aba635c2159391f53f1">hasValue</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a> != <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">private</span>:</div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards__base.html">   81</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards__base.html">innards_base</a> <span class="comment">// NOLINT(cppcoreguidelines-special-member-functions)</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards__base.html#a159bb17925d971fe00fdbb5f42d42726">   83</a></span>        [[nodiscard]] <span class="keyword">virtual</span> <span class="keyword">const</span> std::type_info&amp; <a class="code hl_function" href="structamrex_1_1Any_1_1innards__base.html#a159bb17925d971fe00fdbb5f42d42726">Type</a> () <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards__base.html#ac2a0d84b48c0f50c6c608405c442d3ee">   84</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="structamrex_1_1Any_1_1innards__base.html#ac2a0d84b48c0f50c6c608405c442d3ee">~innards_base</a> () = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    };</div>
-</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="};">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards.html">   88</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Any_1_1innards.html">innards</a> final : <a class="code hl_struct" href="structamrex_1_1Any_1_1innards__base.html">innards_base</a> <span class="comment">// NOLINT(cppcoreguidelines-special-member-functions)</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards.html#aacaac28ad77795a2c5443a992e3701ad">   90</a></span>        <a class="code hl_function" href="structamrex_1_1Any_1_1innards.html#aacaac28ad77795a2c5443a992e3701ad">innards</a> (MF &amp;&amp; mf)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            : <a class="code hl_variable" href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">m_mf</a>(std::move(mf))</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            {}</div>
-</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards.html#acf57e0e26f9a76b9294ddf56de3ff002">   94</a></span>        <a class="code hl_function" href="structamrex_1_1Any_1_1innards.html#acf57e0e26f9a76b9294ddf56de3ff002">~innards</a> () final = default;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards.html#ac1d326230133d95a6a0bd121bb4fdaa9">   96</a></span>        [[nodiscard]] const std::type_info&amp; <a class="code hl_function" href="structamrex_1_1Any_1_1innards.html#ac1d326230133d95a6a0bd121bb4fdaa9">Type</a> () const final {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">return</span> <span class="keyword">typeid</span>(MF);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
-</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">  100</a></span>        MF <a class="code hl_variable" href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">m_mf</a>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    };</div>
-</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">struct </span>innards_base <span class="comment">// NOLINT(cppcoreguidelines-special-member-functions)</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        [[nodiscard]] <span class="keyword">virtual</span> <span class="keyword">const</span> std::type_info&amp; Type () <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">virtual</span> ~innards_base () = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    };</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">struct </span>innards final : innards_base <span class="comment">// NOLINT(cppcoreguidelines-special-member-functions)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        innards (MF &amp;&amp; mf)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            : m_mf(std::move(mf))</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        ~innards () final = default;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        [[nodiscard]] const std::type_info&amp; Type () const final {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">return</span> <span class="keyword">typeid</span>(MF);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">  103</a></span>    std::unique_ptr&lt;innards_base&gt; <a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
-</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        MF m_mf;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    };</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">  108</a></span>    std::unique_ptr&lt;innards_base&gt; <a class="code hl_variable" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">m_ptr</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassamrex_1_1Any_html"><div class="ttname"><a href="classamrex_1_1Any.html">amrex::Any</a></div><div class="ttdef"><b>Definition</b> AMReX_Any.H:17</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_a131293f3371ec68e9b9b274c54436512"><div class="ttname"><a href="classamrex_1_1Any.html#a131293f3371ec68e9b9b274c54436512">amrex::Any::Any</a></div><div class="ttdeci">Any(MF &amp;&amp;mf)</div><div class="ttdoc">Constructs by moving the given object.</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:32</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_a6756f5c90f3bab7334449702da7ae003"><div class="ttname"><a href="classamrex_1_1Any.html#a6756f5c90f3bab7334449702da7ae003">amrex::Any::is</a></div><div class="ttdeci">bool is() const</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:76</div></div>
@@ -228,20 +223,12 @@ $(document).ready(function(){initNavTree('AMReX__Any_8H_source.html',''); initRe
 <div class="ttc" id="aclassamrex_1_1Any_html_a794f63d073e59619a7fed27e8e40e2ba"><div class="ttname"><a href="classamrex_1_1Any.html#a794f63d073e59619a7fed27e8e40e2ba">amrex::Any::Any</a></div><div class="ttdeci">Any()=default</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_a7b20f835a46c1aba635c2159391f53f1"><div class="ttname"><a href="classamrex_1_1Any.html#a7b20f835a46c1aba635c2159391f53f1">amrex::Any::hasValue</a></div><div class="ttdeci">bool hasValue() const</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:78</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_a8cce42f6e1ed6d271d8190c38e638059"><div class="ttname"><a href="classamrex_1_1Any.html#a8cce42f6e1ed6d271d8190c38e638059">amrex::Any::get</a></div><div class="ttdeci">MF const &amp; get() const</div><div class="ttdoc">Returns a const reference to the contained object.</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:65</div></div>
-<div class="ttc" id="aclassamrex_1_1Any_html_ae7a9bb6b1bb859d01987340327e8d570"><div class="ttname"><a href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">amrex::Any::m_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; innards_base &gt; m_ptr</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:103</div></div>
+<div class="ttc" id="aclassamrex_1_1Any_html_ae7a9bb6b1bb859d01987340327e8d570"><div class="ttname"><a href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">amrex::Any::m_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; innards_base &gt; m_ptr</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:108</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_ae915306df72dfed331dfa3c2be646012"><div class="ttname"><a href="classamrex_1_1Any.html#ae915306df72dfed331dfa3c2be646012">amrex::Any::operator=</a></div><div class="ttdeci">Any &amp; operator=(Any const &amp;rhs)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_aec65884a36085f19e3f957fcf78d2c17"><div class="ttname"><a href="classamrex_1_1Any.html#aec65884a36085f19e3f957fcf78d2c17">amrex::Any::get</a></div><div class="ttdeci">MF &amp; get()</div><div class="ttdoc">Returns a reference to the contained object.</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:55</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_afc3bc0660243e8d8719884a2f81a2a3a"><div class="ttname"><a href="classamrex_1_1Any.html#afc3bc0660243e8d8719884a2f81a2a3a">amrex::Any::Any</a></div><div class="ttdeci">Any(Any const &amp;rhs)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1Any_html_aff8ca6a4b83b6cef467c7899d658aa47"><div class="ttname"><a href="classamrex_1_1Any.html#aff8ca6a4b83b6cef467c7899d658aa47">amrex::Any::Any</a></div><div class="ttdeci">Any(Any &amp;&amp;rhs)=default</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards__base_html"><div class="ttname"><a href="structamrex_1_1Any_1_1innards__base.html">amrex::Any::innards_base</a></div><div class="ttdef"><b>Definition</b> AMReX_Any.H:82</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards__base_html_a159bb17925d971fe00fdbb5f42d42726"><div class="ttname"><a href="structamrex_1_1Any_1_1innards__base.html#a159bb17925d971fe00fdbb5f42d42726">amrex::Any::innards_base::Type</a></div><div class="ttdeci">virtual const std::type_info &amp; Type() const =0</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards__base_html_ac2a0d84b48c0f50c6c608405c442d3ee"><div class="ttname"><a href="structamrex_1_1Any_1_1innards__base.html#ac2a0d84b48c0f50c6c608405c442d3ee">amrex::Any::innards_base::~innards_base</a></div><div class="ttdeci">virtual ~innards_base()=default</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards_html"><div class="ttname"><a href="structamrex_1_1Any_1_1innards.html">amrex::Any::innards</a></div><div class="ttdef"><b>Definition</b> AMReX_Any.H:89</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards_html_a764850492da1fd11e69854a0a6d511cf"><div class="ttname"><a href="structamrex_1_1Any_1_1innards.html#a764850492da1fd11e69854a0a6d511cf">amrex::Any::innards::m_mf</a></div><div class="ttdeci">MF m_mf</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:100</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards_html_aacaac28ad77795a2c5443a992e3701ad"><div class="ttname"><a href="structamrex_1_1Any_1_1innards.html#aacaac28ad77795a2c5443a992e3701ad">amrex::Any::innards::innards</a></div><div class="ttdeci">innards(MF &amp;&amp;mf)</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:90</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards_html_ac1d326230133d95a6a0bd121bb4fdaa9"><div class="ttname"><a href="structamrex_1_1Any_1_1innards.html#ac1d326230133d95a6a0bd121bb4fdaa9">amrex::Any::innards::Type</a></div><div class="ttdeci">const std::type_info &amp; Type() const final</div><div class="ttdef"><b>Definition</b> AMReX_Any.H:96</div></div>
-<div class="ttc" id="astructamrex_1_1Any_1_1innards_html_acf57e0e26f9a76b9294ddf56de3ff002"><div class="ttname"><a href="structamrex_1_1Any_1_1innards.html#acf57e0e26f9a76b9294ddf56de3ff002">amrex::Any::innards::~innards</a></div><div class="ttdeci">~innards() final=default</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

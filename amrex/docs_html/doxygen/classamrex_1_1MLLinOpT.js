@@ -1,6 +1,5 @@
 var classamrex_1_1MLLinOpT =
 [
-    [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html", "structamrex_1_1MLLinOpT_1_1CommContainer" ],
     [ "BCMode", "classamrex_1_1MLLinOpT.html#ad3f214e6e55b5de314dd5725a4148467", null ],
     [ "BCType", "classamrex_1_1MLLinOpT.html#a6dce9b9c92850fb742b131ba66f934d6", null ],
     [ "FAB", "classamrex_1_1MLLinOpT.html#a6266e785b547d5c2632730beeedbd91c", null ],

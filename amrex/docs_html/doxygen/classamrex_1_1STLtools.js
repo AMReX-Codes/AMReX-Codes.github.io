@@ -1,7 +1,5 @@
 var classamrex_1_1STLtools =
 [
-    [ "BVHNodeT", "structamrex_1_1STLtools_1_1BVHNodeT.html", "structamrex_1_1STLtools_1_1BVHNodeT" ],
-    [ "Triangle", "structamrex_1_1STLtools_1_1Triangle.html", "structamrex_1_1STLtools_1_1Triangle" ],
     [ "Node", "classamrex_1_1STLtools.html#a5e4b2f7bb8d632ea0128bcddfddb6dc0", null ],
     [ "build_bvh", "classamrex_1_1STLtools.html#afcec3c63f5854b95aa657693322a8643", null ],
     [ "bvh_size", "classamrex_1_1STLtools.html#a0473b066498d4c0df39749018a3babcd", null ],

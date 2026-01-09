@@ -1,15 +1,5 @@
 var AMReX__GpuLaunchFunctsG_8H =
 [
-    [ "call_f_intvect", "AMReX__GpuLaunchFunctsG_8H.html#aa05aeb114ce9ecd66760d831ae2471f8", null ],
-    [ "call_f_intvect_engine", "AMReX__GpuLaunchFunctsG_8H.html#acd22cc8e7edfa53f2cf129c76d8745ea", null ],
-    [ "call_f_intvect_handler", "AMReX__GpuLaunchFunctsG_8H.html#a405f588558bf5afc228a55ebe21303a1", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsG_8H.html#a1e5d59f318e4a3288329abfc2327ad9d", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsG_8H.html#a7b0378fbfb01165d7ca8e1e379c43f81", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsG_8H.html#a5c97e24447d9887bed04b8e7ecf13cc8", null ],
-    [ "call_f_intvect_ncomp", "AMReX__GpuLaunchFunctsG_8H.html#a9724b4915ce5a6c9e9766a4e0a221723", null ],
-    [ "call_f_intvect_ncomp_engine", "AMReX__GpuLaunchFunctsG_8H.html#af281321d89351c33fe9ac9804527741a", null ],
-    [ "call_f_intvect_ncomp_handler", "AMReX__GpuLaunchFunctsG_8H.html#a2c5b6087ddf712ba78b4adb8a1baea78", null ],
-    [ "call_f_scalar_handler", "AMReX__GpuLaunchFunctsG_8H.html#a90aaa100d2d55f47c63bf669ba307022", null ],
     [ "For", "AMReX__GpuLaunchFunctsG_8H.html#ad35f3db1603e73e8e8d7f652bb6865eb", null ],
     [ "For", "AMReX__GpuLaunchFunctsG_8H.html#a2c997958875b66c29beaa428de3d8660", null ],
     [ "For", "AMReX__GpuLaunchFunctsG_8H.html#a82a13be7442ff8f47fe56b3fdd1665c2", null ],

@@ -1,8 +1,5 @@
 var AMReX__Algorithm_8H =
 [
-    [ "amrex::detail::clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", null ],
-    [ "amrex::detail::clzl_tag", "structamrex_1_1detail_1_1clzl__tag.html", null ],
-    [ "amrex::detail::clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ],
     [ "almostEqual", "AMReX__Algorithm_8H.html#a8defcf36ddf219cae1fed871e05e78e3", null ],
     [ "bisect", "AMReX__Algorithm_8H.html#a7d59f8eb44002bb99f5b72dc715f9e96", null ],
     [ "bisect", "AMReX__Algorithm_8H.html#a00bdafca20ac708320d704d4da6976f0", null ],

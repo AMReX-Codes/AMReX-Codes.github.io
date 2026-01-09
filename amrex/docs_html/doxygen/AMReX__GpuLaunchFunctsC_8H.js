@@ -1,14 +1,6 @@
 var AMReX__GpuLaunchFunctsC_8H =
 [
     [ "amrex::SIMDindex< WIDTH, N >", "structamrex_1_1SIMDindex.html", "structamrex_1_1SIMDindex" ],
-    [ "call_f_intvect_engine", "AMReX__GpuLaunchFunctsC_8H.html#abf33e4589ea5adab841f76cf4ba8fec2", null ],
-    [ "call_f_intvect_handler", "AMReX__GpuLaunchFunctsC_8H.html#a046cf7f7c280ba419ad77e7d97f61d88", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsC_8H.html#ade8d882f6ba75270a6ea576d8bba3577", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsC_8H.html#a64ebcc6c0abdb545a519a9d378dca174", null ],
-    [ "call_f_intvect_inner", "AMReX__GpuLaunchFunctsC_8H.html#a36c4819d0af66858bf09a3dd588fca74", null ],
-    [ "call_f_intvect_ncomp_engine", "AMReX__GpuLaunchFunctsC_8H.html#acdccebd8d9e6a4c1db19363438a5cba2", null ],
-    [ "call_f_intvect_ncomp_handler", "AMReX__GpuLaunchFunctsC_8H.html#a1d5d1924885f09d0c057d56268dfb895", null ],
-    [ "call_f_scalar_handler", "AMReX__GpuLaunchFunctsC_8H.html#aa004283e3920e413c389c093161cad79", null ],
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#ad35f3db1603e73e8e8d7f652bb6865eb", null ],
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#a0d978e5f393e8e667b075e736636f1c4", null ],
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#a82a13be7442ff8f47fe56b3fdd1665c2", null ],
@@ -37,8 +29,6 @@ var AMReX__GpuLaunchFunctsC_8H =
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#a7cea287f0304e88558d9ca04a4c36ed8", null ],
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#a22c6c19b7533ed5219ce1853d5aa625d", null ],
     [ "For", "AMReX__GpuLaunchFunctsC_8H.html#adb038d495d77c299406ea33380d0f548", null ],
-    [ "For_impND", "AMReX__GpuLaunchFunctsC_8H.html#a3fed1f766f2a246764a7880eecc640c8", null ],
-    [ "For_impND", "AMReX__GpuLaunchFunctsC_8H.html#af64c8e0dcca83824d84b736217db75a6", null ],
     [ "HostDeviceFor", "AMReX__GpuLaunchFunctsC_8H.html#a3189a2b23e96e8168b832bf046f9ffcc", null ],
     [ "HostDeviceFor", "AMReX__GpuLaunchFunctsC_8H.html#a310f80bb86e77de79b992eb3a5611060", null ],
     [ "HostDeviceFor", "AMReX__GpuLaunchFunctsC_8H.html#ad7f374c1219aa3622e64b4be6dfb02b5", null ],
@@ -125,13 +115,9 @@ var AMReX__GpuLaunchFunctsC_8H =
     [ "ParallelFor", "AMReX__GpuLaunchFunctsC_8H.html#afc6cc810bf41a81eface49f9cc852316", null ],
     [ "ParallelFor", "AMReX__GpuLaunchFunctsC_8H.html#ga072608d6bf753001563975d5a8fe4fbd", null ],
     [ "ParallelFor", "AMReX__GpuLaunchFunctsC_8H.html#af60d0d1ff2d8e4b50ece6b220764f064", null ],
-    [ "ParallelFor_impND", "AMReX__GpuLaunchFunctsC_8H.html#abbcccb7a439192126cc04a4980052d70", null ],
-    [ "ParallelFor_impND", "AMReX__GpuLaunchFunctsC_8H.html#a9806a4f60e5ec27fadcda28a97df3806", null ],
     [ "ParallelForRNG", "AMReX__GpuLaunchFunctsC_8H.html#a63990001fd080e6f727c689437f5668e", null ],
     [ "ParallelForRNG", "AMReX__GpuLaunchFunctsC_8H.html#a521bdccaadc0600f798cb1ffbb083e86", null ],
     [ "ParallelForRNG", "AMReX__GpuLaunchFunctsC_8H.html#ae3514c3f8c4b2a78c2ddc9b49d8cca6c", null ],
-    [ "ParallelForRNG_impND", "AMReX__GpuLaunchFunctsC_8H.html#aa9178db9a47be24aee36f3c72d0ed274", null ],
-    [ "ParallelForRNG_impND", "AMReX__GpuLaunchFunctsC_8H.html#a80bc7ba0eaf66754172d9d1d172eeacc", null ],
     [ "ParallelForSIMD", "AMReX__GpuLaunchFunctsC_8H.html#a7329f7a3e903d5a9abcd5f8603def1a1", null ],
     [ "single_task", "AMReX__GpuLaunchFunctsC_8H.html#aa785b3b07c24c864604e8de72a0bb919", null ]
 ];

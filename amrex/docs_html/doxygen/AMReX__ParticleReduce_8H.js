@@ -1,6 +1,5 @@
 var AMReX__ParticleReduce_8H =
 [
-    [ "call_f", "AMReX__ParticleReduce_8H.html#a67781cea5d141deb050b98d4501f0acf", null ],
     [ "ParticleReduce", "AMReX__ParticleReduce_8H.html#a8d32380d1bccbedf1b24bd2c1bb7a1da", null ],
     [ "ParticleReduce", "AMReX__ParticleReduce_8H.html#af42436c4813e6fedd6dd7a5c73581b63", null ],
     [ "ParticleReduce", "AMReX__ParticleReduce_8H.html#a3762aae68593d892d48ede3cb6e317a7", null ],

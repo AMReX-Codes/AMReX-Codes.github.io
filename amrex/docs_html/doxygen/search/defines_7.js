@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['putarray_0',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
+  ['strip_0',['strip',['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP:&#160;AMReX_Amr.cpp'],['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP:&#160;AMReX_Amr.cpp']]]
 ];

@@ -1,19 +1,10 @@
 var AMReX__ParallelReduce_8H =
 [
-    [ "ReduceOp", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569d", [
-      [ "max", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265", null ],
-      [ "min", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0", null ],
-      [ "sum", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52", null ],
-      [ "lor", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569da9409354542db34fb149ecb3c91ebb8bd", null ],
-      [ "land", "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569da1543dab5fc332f7f6a146da7718c486d", null ]
-    ] ],
     [ "AllGather", "AMReX__ParallelReduce_8H.html#ga1ea9d029b1a0e862f2cf90ee0679ab65", null ],
     [ "AllGather", "AMReX__ParallelReduce_8H.html#gaaeea1cff72579eabfe1778d22f0c5b35", null ],
     [ "And", "AMReX__ParallelReduce_8H.html#gaa0de4c8be25f053f86f82505350e61de", null ],
     [ "And", "AMReX__ParallelReduce_8H.html#ga809a9a78d9cfb7c86a0dd7b72a212fd7", null ],
-    [ "Gather", "AMReX__ParallelReduce_8H.html#aac087974da543982e53f9b3f1da42005", null ],
     [ "Gather", "AMReX__ParallelReduce_8H.html#gac500e0120b76d32a349a73f8ebfd36b2", null ],
-    [ "Gather", "AMReX__ParallelReduce_8H.html#a6ea7eeaafa369d6246da405045b73208", null ],
     [ "Gather", "AMReX__ParallelReduce_8H.html#gaccad75ceb30d24dd985037a1dddb72fa", null ],
     [ "Max", "AMReX__ParallelReduce_8H.html#ga6c3ee948e758158f19ccce52a7865c92", null ],
     [ "Max", "AMReX__ParallelReduce_8H.html#gae1d56156af0262c668411501ef5f2592", null ],
@@ -37,9 +28,6 @@ var AMReX__ParallelReduce_8H =
     [ "Min", "AMReX__ParallelReduce_8H.html#gab75655a29ac29049cb6b1fafbd12a7f7", null ],
     [ "Or", "AMReX__ParallelReduce_8H.html#ga5f7fc55ae2bbfbbc7f2b026b754c30c1", null ],
     [ "Or", "AMReX__ParallelReduce_8H.html#ga220eeb19edc1365466cc0acfec9ee3d7", null ],
-    [ "Reduce", "AMReX__ParallelReduce_8H.html#a11b496ac41b8e46fe7f1adf74392dcfb", null ],
-    [ "Reduce", "AMReX__ParallelReduce_8H.html#a2d9a622392a0eee879ac8180cb2371e6", null ],
-    [ "Reduce", "AMReX__ParallelReduce_8H.html#a59bb763ea3df042d86d6906cc9ccfc77", null ],
     [ "Sum", "AMReX__ParallelReduce_8H.html#gabe2f46b96ea5d1752c49cfb8a44b55b9", null ],
     [ "Sum", "AMReX__ParallelReduce_8H.html#ga8f0fba40aa737060c0ac09832c9bf877", null ],
     [ "Sum", "AMReX__ParallelReduce_8H.html#ga84377e96c4ecb57c17fe8e83aea0e04e", null ],

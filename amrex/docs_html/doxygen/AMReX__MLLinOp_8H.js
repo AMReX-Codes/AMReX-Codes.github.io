@@ -2,7 +2,6 @@ var AMReX__MLLinOp_8H =
 [
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", "structamrex_1_1LPInfo" ],
     [ "amrex::LinOpEnumType", "structamrex_1_1LinOpEnumType.html", "structamrex_1_1LinOpEnumType" ],
-    [ "amrex::MLLinOpT< MF >::CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html", "structamrex_1_1MLLinOpT_1_1CommContainer" ],
     [ "MLLinOp", "AMReX__MLLinOp_8H.html#ga6cfa07a78393bb456aa7d33ced04fb46", null ],
     [ "BottomSolver", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4", [
       [ "Default", "AMReX__MLLinOp_8H.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67", null ],

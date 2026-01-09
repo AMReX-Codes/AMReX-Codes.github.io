@@ -1,9 +1,5 @@
 var namespaceamrex_1_1Math =
 [
-    [ "detail", "namespaceamrex_1_1Math_1_1detail.html", [
-      [ "sincos", "namespaceamrex_1_1Math_1_1detail.html#ae90d24776b0c98840c89b92d31816918", null ],
-      [ "sincosf", "namespaceamrex_1_1Math_1_1detail.html#a8d1db4f57a915d8f313a4076b42af91f", null ]
-    ] ],
     [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
     [ "comp_ellint_1", "namespaceamrex_1_1Math.html#a89fd39408f46d02491ae4f5df53a0840", null ],
     [ "comp_ellint_2", "namespaceamrex_1_1Math.html#aacdfee6976b6c744254567be3b78f24b", null ],

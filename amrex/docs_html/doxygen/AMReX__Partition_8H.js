@@ -1,7 +1,5 @@
 var AMReX__Partition_8H =
 [
-    [ "amrex_partition_helper", "AMReX__Partition_8H.html#a0831c042e251208c14e4a3628de7165b", null ],
-    [ "amrex_stable_partition_helper", "AMReX__Partition_8H.html#a685da3e1082796b88fdcd226e6cd923d", null ],
     [ "Partition", "AMReX__Partition_8H.html#ae3a47d7e7e8f7a66ddf15cdd606dbb8f", null ],
     [ "Partition", "AMReX__Partition_8H.html#a3b8c7b9108d9ccbc108689fb9b8b2a7e", null ],
     [ "Partition", "AMReX__Partition_8H.html#a1214d3602cac3f99cebc60c951dbb938", null ],

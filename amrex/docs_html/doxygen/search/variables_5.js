@@ -14,14 +14,12 @@ var searchData=
   ['end_11',['end',['../structamrex_1_1Table2D.html#a90068786b718833feac893cc831dd061',1,'amrex::Table2D::end'],['../structamrex_1_1Table3D.html#a99916092c93df93da10a0bb582222174',1,'amrex::Table3D::end'],['../structamrex_1_1Table4D.html#aee1a2d8e68a6221b68959f46f2bfad58',1,'amrex::Table4D::end'],['../structamrex_1_1Table1D.html#accabc1f0f0d39d05a414c9bdc9edaf7f',1,'amrex::Table1D::end'],['../structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9',1,'amrex::Array4::end']]],
   ['endindex_12',['endIndex',['../classamrex_1_1MFIter.html#a427faab13c7d1f9d72b476452df519e1',1,'amrex::MFIter']]],
   ['enforcesingularsolvable_13',['enforceSingularSolvable',['../classamrex_1_1MLLinOpT.html#adb9b0f44a3e66fbefa2310385747427b',1,'amrex::MLLinOpT']]],
-  ['enum_5fnames_14',['enum_names',['../structamrex_1_1MLMGNormType__EnumTraits.html#a6f160fd60c192bd5166793958293c547',1,'amrex::MLMGNormType_EnumTraits::enum_names'],['../structamrex_1_1FFT_1_1Boundary__EnumTraits.html#a8ffb9e66480ce06a541ab59d2a9b439b',1,'amrex::FFT::Boundary_EnumTraits::enum_names'],['../structamrex_1_1GrowthStrategy__EnumTraits.html#ab4f091cb3d19e4098b5ee1cef237fa4d',1,'amrex::GrowthStrategy_EnumTraits::enum_names']]],
-  ['eps_15',['eps',['../namespaceamrex_1_1nodelap__detail.html#acf673ebaf5379183e526bd2bbc4c665e',1,'amrex::nodelap_detail']]],
-  ['err_5ffunc_16',['err_func',['../classamrex_1_1ErrorRec.html#accb4208e8504753dcddef021c9250e88',1,'amrex::ErrorRec']]],
-  ['err_5ffunc2_17',['err_func2',['../classamrex_1_1ErrorRec.html#ad72e6621e0e65cba0d636c244ac5d53b',1,'amrex::ErrorRec']]],
-  ['err_5ftype_18',['err_type',['../classamrex_1_1ErrorRec.html#abc0afb5043187b59f1a7219c50a62cec',1,'amrex::ErrorRec']]],
-  ['error_5fhandler_19',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
-  ['exclusive_20',['exclusive',['../namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc',1,'amrex::Scan::Type']]],
-  ['exename_21',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]],
-  ['extend_5fdomain_5fface_22',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]],
-  ['extended_5fweights_23',['extended_weights',['../classamrex_1_1RKIntegrator.html#a41e0f57f4b5dac966a3beb173e3d6286',1,'amrex::RKIntegrator']]]
+  ['err_5ffunc_14',['err_func',['../classamrex_1_1ErrorRec.html#accb4208e8504753dcddef021c9250e88',1,'amrex::ErrorRec']]],
+  ['err_5ffunc2_15',['err_func2',['../classamrex_1_1ErrorRec.html#ad72e6621e0e65cba0d636c244ac5d53b',1,'amrex::ErrorRec']]],
+  ['err_5ftype_16',['err_type',['../classamrex_1_1ErrorRec.html#abc0afb5043187b59f1a7219c50a62cec',1,'amrex::ErrorRec']]],
+  ['error_5fhandler_17',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
+  ['exclusive_18',['exclusive',['../namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc',1,'amrex::Scan::Type']]],
+  ['exename_19',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]],
+  ['extend_5fdomain_5fface_20',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]],
+  ['extended_5fweights_21',['extended_weights',['../classamrex_1_1RKIntegrator.html#a41e0f57f4b5dac966a3beb173e3d6286',1,'amrex::RKIntegrator']]]
 ];

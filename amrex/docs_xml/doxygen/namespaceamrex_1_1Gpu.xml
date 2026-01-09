@@ -9,7 +9,6 @@
     <innerclass refid="structamrex_1_1Gpu_1_1AtomicMax" prot="public">amrex::Gpu::AtomicMax</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1AtomicMin" prot="public">amrex::Gpu::AtomicMin</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Buffer" prot="public">amrex::Gpu::Buffer</innerclass>
-    <innerclass refid="structamrex_1_1Gpu_1_1ComponentBox" prot="public">amrex::Gpu::ComponentBox</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1Deleter" prot="public">amrex::Gpu::Deleter</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Device" prot="public">amrex::Gpu::Device</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1DeviceScalar" prot="public">amrex::Gpu::DeviceScalar</innerclass>
@@ -19,7 +18,6 @@
     <innerclass refid="structamrex_1_1Gpu_1_1ExecConfig" prot="public">amrex::Gpu::ExecConfig</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1ExecutionConfig" prot="public">amrex::Gpu::ExecutionConfig</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1GraphSafeGuard" prot="public">amrex::Gpu::GraphSafeGuard</innerclass>
-    <innerclass refid="structamrex_1_1Gpu_1_1GridSize" prot="public">amrex::Gpu::GridSize</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1Handler" prot="public">amrex::Gpu::Handler</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1HostToDevice" prot="public">amrex::Gpu::HostToDevice</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1KernelInfo" prot="public">amrex::Gpu::KernelInfo</innerclass>
@@ -48,8 +46,6 @@
     <innerclass refid="classamrex_1_1Gpu_1_1StreamManager" prot="public">amrex::Gpu::StreamManager</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1warpReduce" prot="public">amrex::Gpu::warpReduce</innerclass>
     <innernamespace refid="namespaceamrex_1_1Gpu_1_1Atomic">amrex::Gpu::Atomic</innernamespace>
-    <innernamespace refid="namespaceamrex_1_1Gpu_1_1detail">amrex::Gpu::detail</innernamespace>
-    <innernamespace refid="namespaceamrex_1_1Gpu_1_1range__detail">amrex::Gpu::range_detail</innernamespace>
     <sectiondef kind="typedef">
       <member refid="group__amrex__linear__containers_1ga99e1f048890efc1c275606cb9bdc41c7" kind="typedef"><name>DeviceVector</name></member>
       <member refid="group__amrex__linear__containers_1ga2388c83afe31a41fc38fab133d98a1be" kind="typedef"><name>NonManagedDeviceVector</name></member>
@@ -243,7 +239,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -326,7 +322,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -409,7 +405,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -492,7 +488,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -575,7 +571,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -658,7 +654,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.begin());</highlight></codeline>
+Example usage: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>,<sp/>a.begin(),<sp/>a.end(),<sp/>b.begin());</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
@@ -854,7 +850,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </briefdescription>
         <detaileddescription>
 <para>Enable/disable GPU kernel launches.</para>
-<para><simplesect kind="note"><para>This will only switch from GPU to CPU for kernels launched with macros. Functions like <computeroutput>amrex::ParallelFor</computeroutput> will be unaffected. Therefore it should not be used for comparing GPU to non-GPU performance or behavior.</para>
+<para><simplesect kind="note"><para>This will only switch from GPU to CPU for kernels launched with macros. Functions like <computeroutput><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">amrex::ParallelFor</ref></computeroutput> will be unaffected. Therefore it should not be used for comparing GPU to non-GPU performance or behavior.</para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a9f755b4680ecd261e7416fda7ca2b5bb" kindref="member">Gpu::setLaunchRegion</ref>(0);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -1390,7 +1386,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="110" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="110" bodyend="127"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="94" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="94" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ac21b6d1625e2f56c27d364434a5c49f4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1415,7 +1411,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="164" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="164" bodyend="176"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="148" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="148" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a96329917c7544347d421e3a216fb58a1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1440,7 +1436,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="180" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="180" bodyend="183"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="164" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="164" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a847a3d9567ae4e8ac078cad1ac555d20" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1465,7 +1461,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="192" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="192" bodyend="218"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="176" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="176" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a28a5a940451f82dac8c84f09e5f89fea" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1495,7 +1491,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="221" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="221" bodyend="224"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" line="205" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="205" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a0238e6657139393e8a65f7a3d160e128" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1503,7 +1499,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>__host__ __device__ <ref refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl" kindref="compound">range_detail::range_impl</ref>&lt; T &gt;</type>
+        <type>__host__ __device__ range_detail::range_impl&lt; T &gt;</type>
         <definition>__host__ __device__ range_detail::range_impl&lt; T &gt; amrex::Gpu::Range</definition>
         <argsstring>(T const &amp;b) noexcept</argsstring>
         <name>Range</name>
@@ -1518,7 +1514,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuRange.H" line="125" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuRange.H" bodystart="125" bodyend="125"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuRange.H" line="127" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuRange.H" bodystart="127" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a227a928fd27304426892b246e6f4d055" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1549,7 +1545,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="606" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="606" bodyend="621" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="32" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="604" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="604" bodyend="619" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="32" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ac7aea9aca3e05f9f1eb95e484d220ee7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1580,7 +1576,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="625" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="625" bodyend="640" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="36" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="623" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="623" bodyend="638" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="36" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5e9bd542c0c9e7ea73a017de372712d6" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1611,7 +1607,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="644" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="644" bodyend="659" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="40" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="642" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="642" bodyend="657" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="40" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a6dfc0047b812e0f99119ff36dda58bb7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__device__ void</type>
@@ -1637,7 +1633,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="662" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="662" bodyend="677" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="43" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="660" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="660" bodyend="675" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="43" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a8b13e3dd450bafceb06a1f17c16eb56b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__device__ void</type>
@@ -1663,7 +1659,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="680" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="680" bodyend="695" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="46" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="678" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="678" bodyend="693" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" declline="46" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a2efa52db2812020e4a2dca110f4d62a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1702,7 +1698,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="312" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="312" bodyend="329"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="314" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="314" bodyend="331"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a34cbe61ca1607c0a4c216406d97a751c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -1752,7 +1748,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="333" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="333" bodyend="343"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="335" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="335" bodyend="345"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1afb8251b45e6f236ac283f3f5e5363f27" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1775,7 +1771,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="348" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="348" bodyend="352"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="350" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="350" bodyend="354"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aaca543c46a47848547c66514745569db" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1802,7 +1798,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="356" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="356" bodyend="360"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="358" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="358" bodyend="362"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aeb619fda3e94a275e0a214533b95d0fe" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1830,7 +1826,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="365" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="365" bodyend="385"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="367" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="367" bodyend="387"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1adf189da09ec8860b8b3743e749e86547" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1862,7 +1858,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="389" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="389" bodyend="393"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="391" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="391" bodyend="395"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a589404293403cf894b2532d5b61df482" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1885,7 +1881,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="398" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="398" bodyend="402"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="400" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="400" bodyend="404"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1abea9163d293b31e86bcce543d3e75896" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1912,7 +1908,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="406" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="406" bodyend="410"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="408" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="408" bodyend="412"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a395b74319a24844a731df0eb22ffa8ee" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1940,7 +1936,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="415" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="415" bodyend="440"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="417" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="417" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ac9d231dcecbad167ab0c6c6aaac9c651" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1972,7 +1968,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="444" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="444" bodyend="448"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="446" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="446" bodyend="450"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a4f5839eee64bdce0a2880c67a704ab02" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1995,7 +1991,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="453" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="453" bodyend="457"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="455" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="455" bodyend="459"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5fe82b7247c5f8ada5de5d979a84514c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -2022,7 +2018,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="461" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="461" bodyend="465"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="463" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="463" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a07a19c7e52caa0c033b7003a90d267a9" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -2050,7 +2046,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="470" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="470" bodyend="494"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="472" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="472" bodyend="496"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa7cafbe7f4b2582d1401652a262a46de" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -2082,7 +2078,195 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="norma
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="498" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="498" bodyend="502"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="500" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="500" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5e7acbf4ee0f4a06b5ec22bf20732555" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__device__ int</type>
+        <definition>__device__ int amrex::Gpu::blockReduceLogicalAnd</definition>
+        <argsstring>(int source) noexcept</argsstring>
+        <name>blockReduceLogicalAnd</name>
+        <qualifiedname>amrex::Gpu::blockReduceLogicalAnd</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="508" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="508" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a317f91536f2368d134464998a3b46266" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::Gpu::deviceReduceLogicalAnd_full</definition>
+        <argsstring>(int *dest, int source) noexcept</argsstring>
+        <name>deviceReduceLogicalAnd_full</name>
+        <qualifiedname>amrex::Gpu::deviceReduceLogicalAnd_full</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="515" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="515" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ac4f22a83fcd1f601dafa2d372547be35" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>BLOCKDIMX</declname>
+            <defname>BLOCKDIMX</defname>
+          </param>
+        </templateparamlist>
+        <type>__device__ int</type>
+        <definition>__device__ int amrex::Gpu::blockReduceLogicalAnd</definition>
+        <argsstring>(int source) noexcept</argsstring>
+        <name>blockReduceLogicalAnd</name>
+        <qualifiedname>amrex::Gpu::blockReduceLogicalAnd</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="524" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="524" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a78dcf9fb275e8d66186cb7ccf0098afe" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>BLOCKDIMX</declname>
+            <defname>BLOCKDIMX</defname>
+          </param>
+        </templateparamlist>
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::Gpu::deviceReduceLogicalAnd_full</definition>
+        <argsstring>(int *dest, int source) noexcept</argsstring>
+        <name>deviceReduceLogicalAnd_full</name>
+        <qualifiedname>amrex::Gpu::deviceReduceLogicalAnd_full</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="548" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="548" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a40ff25ac9402be7e41afd682c4534d5a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__device__ int</type>
+        <definition>__device__ int amrex::Gpu::blockReduceLogicalOr</definition>
+        <argsstring>(int source) noexcept</argsstring>
+        <name>blockReduceLogicalOr</name>
+        <qualifiedname>amrex::Gpu::blockReduceLogicalOr</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="556" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="556" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1accb04f43ace517ebfd660e3107f46a63" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::Gpu::deviceReduceLogicalOr_full</definition>
+        <argsstring>(int *dest, int source) noexcept</argsstring>
+        <name>deviceReduceLogicalOr_full</name>
+        <qualifiedname>amrex::Gpu::deviceReduceLogicalOr_full</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="563" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="563" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a614733a47c1353af81e44eea2a926f38" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>BLOCKDIMX</declname>
+            <defname>BLOCKDIMX</defname>
+          </param>
+        </templateparamlist>
+        <type>__device__ int</type>
+        <definition>__device__ int amrex::Gpu::blockReduceLogicalOr</definition>
+        <argsstring>(int source) noexcept</argsstring>
+        <name>blockReduceLogicalOr</name>
+        <qualifiedname>amrex::Gpu::blockReduceLogicalOr</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="572" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="572" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a23b714e5b0f2617206575f60b3d2f79e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>BLOCKDIMX</declname>
+            <defname>BLOCKDIMX</defname>
+          </param>
+        </templateparamlist>
+        <type>__device__ void</type>
+        <definition>__device__ void amrex::Gpu::deviceReduceLogicalOr_full</definition>
+        <argsstring>(int *dest, int source) noexcept</argsstring>
+        <name>deviceReduceLogicalOr_full</name>
+        <qualifiedname>amrex::Gpu::deviceReduceLogicalOr_full</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" line="596" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="596" bodyend="600"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a2af1b1d0436a3dd8440988b7a79545c6" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>

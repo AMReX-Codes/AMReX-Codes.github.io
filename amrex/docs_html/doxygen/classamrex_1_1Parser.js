@@ -1,6 +1,5 @@
 var classamrex_1_1Parser =
 [
-    [ "Data", "structamrex_1_1Parser_1_1Data.html", "structamrex_1_1Parser_1_1Data" ],
     [ "Parser", "classamrex_1_1Parser.html#a9829ccc584238c1042b7c1ef25b69685", null ],
     [ "Parser", "classamrex_1_1Parser.html#a979ec2bb844542bdd274c04010282c19", null ],
     [ "compile", "classamrex_1_1Parser.html#a84c2f77f7586faf9e89ef87489297bfa", null ],

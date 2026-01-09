@@ -9,9 +9,5 @@ var AMReX__Interp__3D__C_8H =
     [ "facediv_int", "AMReX__Interp__3D__C_8H.html#aa680a025b785905e626e40b68822158f", null ],
     [ "nodebilin_interp", "AMReX__Interp__3D__C_8H.html#aa2337ff21f41e5dcc30bf06d383632dd", null ],
     [ "nodebilin_slopes", "AMReX__Interp__3D__C_8H.html#a5e92a1ee2e37d142635ea409100d193b", null ],
-    [ "pcinterp_interp", "AMReX__Interp__3D__C_8H.html#a3034af8bff0108d3524f06e4ca8f8513", null ],
-    [ "ixyz", "AMReX__Interp__3D__C_8H.html#af8b6df2fce20e85dd23c5c3349d44fae", null ],
-    [ "ixz", "AMReX__Interp__3D__C_8H.html#ab4ce75e915291922fab6bb6e4f04b002", null ],
-    [ "iyz", "AMReX__Interp__3D__C_8H.html#a77157e26ce600fbc5ce9298f23730af4", null ],
-    [ "iz", "AMReX__Interp__3D__C_8H.html#a3346865339c6c4741bfbe4fc93d22621", null ]
+    [ "pcinterp_interp", "AMReX__Interp__3D__C_8H.html#a3034af8bff0108d3524f06e4ca8f8513", null ]
 ];

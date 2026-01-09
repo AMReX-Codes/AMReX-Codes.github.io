@@ -1,7 +1,6 @@
 var AMReX__FabArrayBase_8H =
 [
     [ "amrex::FabArrayBase", "classamrex_1_1FabArrayBase.html", "classamrex_1_1FabArrayBase" ],
-    [ "amrex::FabArrayBase::CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html", "structamrex_1_1FabArrayBase_1_1CacheStats" ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", "structamrex_1_1FabArrayBase_1_1CopyComTag" ],
     [ "amrex::FabArrayBase::BDKey", "structamrex_1_1FabArrayBase_1_1BDKey.html", "structamrex_1_1FabArrayBase_1_1BDKey" ],
     [ "amrex::FabArrayBase::TileArray", "structamrex_1_1FabArrayBase_1_1TileArray.html", "structamrex_1_1FabArrayBase_1_1TileArray" ],
@@ -18,7 +17,6 @@ var AMReX__FabArrayBase_8H =
     [ "amrex::FabArrayBase::PolarB", "structamrex_1_1FabArrayBase_1_1PolarB.html", "structamrex_1_1FabArrayBase_1_1PolarB" ],
     [ "amrex::FabArrayBase::ParForInfo", "structamrex_1_1FabArrayBase_1_1ParForInfo.html", "structamrex_1_1FabArrayBase_1_1ParForInfo" ],
     [ "amrex::FabArrayBase::FabArrayStats", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html", "structamrex_1_1FabArrayBase_1_1FabArrayStats" ],
-    [ "amrex::detail::SingleChunkArena", "classamrex_1_1detail_1_1SingleChunkArena.html", "classamrex_1_1detail_1_1SingleChunkArena" ],
     [ "boxArray", "AMReX__FabArrayBase_8H.html#af69fc0af80dbc4a91b1532451e9533c9", null ],
     [ "DistributionMap", "AMReX__FabArrayBase_8H.html#a21a1acd7c1fc44aa5ce27ab461aded41", null ],
     [ "nComp", "AMReX__FabArrayBase_8H.html#a0cef8b304e3c55a8d985c2a8907da9e4", null ],

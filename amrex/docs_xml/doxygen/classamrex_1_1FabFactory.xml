@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classamrex_1_1FabFactory" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::FabFactory</compoundname>
-    <derivedcompoundref refid="classamrex_1_1DefaultFabFactory" prot="public" virt="non-virtual">amrex::DefaultFabFactory&lt; CutFab &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1DefaultFabFactory" prot="public" virt="non-virtual">amrex::DefaultFabFactory&lt; FAB &gt;</derivedcompoundref>
     <includes refid="AMReX__FabFactory_8H" local="no">AMReX_FabFactory.H</includes>
     <templateparamlist>
@@ -114,8 +113,6 @@
         <name>create</name>
         <qualifiedname>amrex::FabFactory::create</qualifiedname>
         <reimplementedby refid="classamrex_1_1EBFArrayBoxFactory_1af4895e37eae210a93ca7d2b0493a250e">create</reimplementedby>
-        <reimplementedby refid="classamrex_1_1detail_1_1CutFabFactory_1ae2de73aaec64dd9cb594eb676a8c05a4">create</reimplementedby>
-        <reimplementedby refid="classamrex_1_1DefaultFabFactory_1a36aaa85b384c796b25a27e0b0a3d34ed">create</reimplementedby>
         <reimplementedby refid="classamrex_1_1DefaultFabFactory_1a36aaa85b384c796b25a27e0b0a3d34ed">create</reimplementedby>
         <param>
           <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
@@ -194,8 +191,6 @@
         <qualifiedname>amrex::FabFactory::clone</qualifiedname>
         <reimplementedby refid="classamrex_1_1EBFArrayBoxFactory_1a2d942d0e7c5fa2e3dc6c4ef56d52f53d">clone</reimplementedby>
         <reimplementedby refid="classamrex_1_1DefaultFabFactory_1ae70db0d40a6c0cde8644d67730304e71">clone</reimplementedby>
-        <reimplementedby refid="classamrex_1_1DefaultFabFactory_1ae70db0d40a6c0cde8644d67730304e71">clone</reimplementedby>
-        <reimplementedby refid="classamrex_1_1detail_1_1CutFabFactory_1a6fcf030c8e6d458ba58b4b0e11bd6819">clone</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -210,7 +205,6 @@
         <argsstring>(const Box &amp;box, int ncomps, int) const</argsstring>
         <name>nBytes</name>
         <qualifiedname>amrex::FabFactory::nBytes</qualifiedname>
-        <reimplementedby refid="classamrex_1_1detail_1_1CutFabFactory_1a1de2d4b0ba8cd44abdf26a4f8beac3eb">nBytes</reimplementedby>
         <param>
           <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> &amp;</type>
           <declname>box</declname>
@@ -237,12 +231,6 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>amrex::DefaultFabFactory&lt; CutFab &gt;</label>
-        <link refid="classamrex_1_1DefaultFabFactory"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
         <label>amrex::DefaultFabFactory&lt; FAB &gt;</label>
         <link refid="classamrex_1_1DefaultFabFactory"/>
         <childnode refid="1" relation="public-inheritance">
@@ -251,12 +239,6 @@
       <node id="1">
         <label>amrex::FabFactory&lt; FAB &gt;</label>
         <link refid="classamrex_1_1FabFactory"/>
-      </node>
-      <node id="3">
-        <label>amrex::detail::CutFabFactory</label>
-        <link refid="classamrex_1_1detail_1_1CutFabFactory"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabFactory.H" line="49" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabFactory.H" bodystart="50" bodyend="71"/>

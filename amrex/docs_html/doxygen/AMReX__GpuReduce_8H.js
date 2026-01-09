@@ -3,6 +3,10 @@ var AMReX__GpuReduce_8H =
     [ "amrex::Gpu::warpReduce< warpSize, T, F >", "structamrex_1_1Gpu_1_1warpReduce.html", "structamrex_1_1Gpu_1_1warpReduce" ],
     [ "blockReduce", "AMReX__GpuReduce_8H.html#a2efa52db2812020e4a2dca110f4d62a4", null ],
     [ "blockReduce_partial", "AMReX__GpuReduce_8H.html#a34cbe61ca1607c0a4c216406d97a751c", null ],
+    [ "blockReduceLogicalAnd", "AMReX__GpuReduce_8H.html#a5e7acbf4ee0f4a06b5ec22bf20732555", null ],
+    [ "blockReduceLogicalAnd", "AMReX__GpuReduce_8H.html#ac4f22a83fcd1f601dafa2d372547be35", null ],
+    [ "blockReduceLogicalOr", "AMReX__GpuReduce_8H.html#a40ff25ac9402be7e41afd682c4534d5a", null ],
+    [ "blockReduceLogicalOr", "AMReX__GpuReduce_8H.html#a614733a47c1353af81e44eea2a926f38", null ],
     [ "blockReduceMax", "AMReX__GpuReduce_8H.html#a4f5839eee64bdce0a2880c67a704ab02", null ],
     [ "blockReduceMax", "AMReX__GpuReduce_8H.html#a07a19c7e52caa0c033b7003a90d267a9", null ],
     [ "blockReduceMin", "AMReX__GpuReduce_8H.html#a589404293403cf894b2532d5b61df482", null ],
@@ -10,7 +14,11 @@ var AMReX__GpuReduce_8H =
     [ "blockReduceSum", "AMReX__GpuReduce_8H.html#afb8251b45e6f236ac283f3f5e5363f27", null ],
     [ "blockReduceSum", "AMReX__GpuReduce_8H.html#aeb619fda3e94a275e0a214533b95d0fe", null ],
     [ "deviceReduceLogicalAnd", "AMReX__GpuReduce_8H.html#a6dfc0047b812e0f99119ff36dda58bb7", null ],
+    [ "deviceReduceLogicalAnd_full", "AMReX__GpuReduce_8H.html#a317f91536f2368d134464998a3b46266", null ],
+    [ "deviceReduceLogicalAnd_full", "AMReX__GpuReduce_8H.html#a78dcf9fb275e8d66186cb7ccf0098afe", null ],
     [ "deviceReduceLogicalOr", "AMReX__GpuReduce_8H.html#a8b13e3dd450bafceb06a1f17c16eb56b", null ],
+    [ "deviceReduceLogicalOr_full", "AMReX__GpuReduce_8H.html#accb04f43ace517ebfd660e3107f46a63", null ],
+    [ "deviceReduceLogicalOr_full", "AMReX__GpuReduce_8H.html#a23b714e5b0f2617206575f60b3d2f79e", null ],
     [ "deviceReduceMax", "AMReX__GpuReduce_8H.html#a5e9bd542c0c9e7ea73a017de372712d6", null ],
     [ "deviceReduceMax_full", "AMReX__GpuReduce_8H.html#a5fe82b7247c5f8ada5de5d979a84514c", null ],
     [ "deviceReduceMax_full", "AMReX__GpuReduce_8H.html#aa7cafbe7f4b2582d1401652a262a46de", null ],
@@ -19,7 +27,5 @@ var AMReX__GpuReduce_8H =
     [ "deviceReduceMin_full", "AMReX__GpuReduce_8H.html#ac9d231dcecbad167ab0c6c6aaac9c651", null ],
     [ "deviceReduceSum", "AMReX__GpuReduce_8H.html#a227a928fd27304426892b246e6f4d055", null ],
     [ "deviceReduceSum_full", "AMReX__GpuReduce_8H.html#aaca543c46a47848547c66514745569db", null ],
-    [ "deviceReduceSum_full", "AMReX__GpuReduce_8H.html#adf189da09ec8860b8b3743e749e86547", null ],
-    [ "multi_shuffle_down", "AMReX__GpuReduce_8H.html#a7b09d0f31cfe26211334e4bb33c459f6", null ],
-    [ "shuffle_down", "AMReX__GpuReduce_8H.html#a271984e67cef42426d0c9045c63a2c4c", null ]
+    [ "deviceReduceSum_full", "AMReX__GpuReduce_8H.html#adf189da09ec8860b8b3743e749e86547", null ]
 ];

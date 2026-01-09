@@ -1,7 +1,6 @@
 var classamrex_1_1FabArrayBase =
 [
     [ "BDKey", "structamrex_1_1FabArrayBase_1_1BDKey.html", "structamrex_1_1FabArrayBase_1_1BDKey" ],
-    [ "CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html", "structamrex_1_1FabArrayBase_1_1CacheStats" ],
     [ "CFinfo", "structamrex_1_1FabArrayBase_1_1CFinfo.html", "structamrex_1_1FabArrayBase_1_1CFinfo" ],
     [ "CommMetaData", "structamrex_1_1FabArrayBase_1_1CommMetaData.html", "structamrex_1_1FabArrayBase_1_1CommMetaData" ],
     [ "CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", "structamrex_1_1FabArrayBase_1_1CopyComTag" ],

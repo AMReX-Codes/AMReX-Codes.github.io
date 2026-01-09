@@ -468,21 +468,6 @@
         <label>vector</label>
       </node>
     </incdepgraph>
-    <innernamespace refid="namespaceamrex">amrex</innernamespace>
-    <innernamespace refid="namespaceamrex_1_1detail">amrex::detail</innernamespace>
-    <sectiondef kind="define">
-      <memberdef kind="define" id="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" prot="public" static="no">
-        <name>BL_IGNORE_MAX</name>
-        <initializer>100000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" line="28" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp" bodystart="28" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -494,51 +479,51 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1_1detail" kindref="compound">amrex::detail</ref><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><ref refid="namespaceamrex_1_1detail_1ab00f37e64a03e8049a6890215b22817a" kindref="member">index_type_write</ref><sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim)</highlight></codeline>
-<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(((iv<sp/>&amp;<sp/>1U)<sp/>!=<sp/>0)<sp/>?<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(((iv<sp/>&amp;<sp/>(1U&lt;&lt;i))<sp/>!=<sp/>0)<sp/>?<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::flush;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;,IndexType&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copied<sp/>from<sp/>&lt;Utility.H&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_IGNORE_MAX<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><ref refid="namespaceamrex_1_1detail_1ae1db1fc5feb5005eee61aeeeb926a478" kindref="member">index_type_read</ref><sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>t<sp/>=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__Box_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>?<sp/>(iv<sp/>|=<sp/>1U)<sp/>:<sp/>(iv<sp/>&amp;=<sp/>~1U);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__Box_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>?<sp/>(iv<sp/>|=<sp/>(1U<sp/>&lt;&lt;<sp/>i))<sp/>:<sp/>(iv<sp/>&amp;=<sp/>~(1U<sp/>&lt;&lt;<sp/>i));</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__Box_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(ostream&amp;,IndexType&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">amrex::detail<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">index_type_write<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(((iv<sp/>&amp;<sp/>1U)<sp/>!=<sp/>0)<sp/>?<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(((iv<sp/>&amp;<sp/>(1U&lt;&lt;i))<sp/>!=<sp/>0)<sp/>?<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;C&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::flush;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;,IndexType&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copied<sp/>from<sp/>&lt;Utility.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_IGNORE_MAX<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">std::istream&amp;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">index_type_read<sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>t<sp/>=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__CoordSys_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>?<sp/>(iv<sp/>|=<sp/>1U)<sp/>:<sp/>(iv<sp/>&amp;=<sp/>~1U);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;dim;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__CoordSys_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal"><sp/>?<sp/>(iv<sp/>|=<sp/>(1U<sp/>&lt;&lt;<sp/>i))<sp/>:<sp/>(iv<sp/>&amp;=<sp/>~(1U<sp/>&lt;&lt;<sp/>i));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__CoordSys_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(ostream&amp;,IndexType&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IndexType.cpp"/>
   </compounddef>

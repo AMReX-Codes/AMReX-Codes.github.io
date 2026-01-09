@@ -11,8 +11,6 @@ var AMReX__GpuAtomic_8H =
     [ "Add_device", "AMReX__GpuAtomic_8H.html#ac5c9109594061b3a1d85e3ab239a4729", null ],
     [ "Add_Host", "AMReX__GpuAtomic_8H.html#ab28f06907144755716b87f5fd5319a67", null ],
     [ "AddNoRet", "AMReX__GpuAtomic_8H.html#a5e61fa764ee1ff23e40f4c350f041e7e", null ],
-    [ "atomic_op", "AMReX__GpuAtomic_8H.html#a6014aa75aa8fa03ce76d16411ef77c44", null ],
-    [ "atomic_op_if", "AMReX__GpuAtomic_8H.html#aeb81701cf2b0e3e1df0e4295bfe1328d", null ],
     [ "CAS", "AMReX__GpuAtomic_8H.html#a3ce888fd227e6f79d3e3fd829b218207", null ],
     [ "Divide", "AMReX__GpuAtomic_8H.html#afdca16aa5ab3f498bbe2e219862d9b1f", null ],
     [ "Divide_device", "AMReX__GpuAtomic_8H.html#a2c0f72bc179319a7b7f23a61eff19ccd", null ],

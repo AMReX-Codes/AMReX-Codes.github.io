@@ -1,6 +1,5 @@
 var AMReX__MLMG_8H =
 [
-    [ "amrex::MLMGNormType_EnumTraits", "structamrex_1_1MLMGNormType__EnumTraits.html", "structamrex_1_1MLMGNormType__EnumTraits" ],
     [ "amrex::MLMGT< MF >::error", "classamrex_1_1MLMGT_1_1error.html", null ],
     [ "MLMG", "AMReX__MLMG_8H.html#ga77b48f471801c4f6a597804a89c3b543", null ],
     [ "MLMGNormType", "AMReX__MLMG_8H.html#ad6568bc5df052e827cc522b2c19fd663", [

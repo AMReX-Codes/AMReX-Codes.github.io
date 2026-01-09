@@ -15,10 +15,7 @@ var AMReX__RealVect_8H =
     [ "operator/", "AMReX__RealVect_8H.html#afceb776acb796d299ba7597ba55560dc", null ],
     [ "operator<<", "AMReX__RealVect_8H.html#a1d825ed0dc6e2e83cdab3fa3c14edbe2", null ],
     [ "operator>>", "AMReX__RealVect_8H.html#aae45b8b99e4750cebf23c2ba9266aec5", null ],
-    [ "real_vector_read", "AMReX__RealVect_8H.html#af8b32f47381c856a24526c7094f59b08", null ],
-    [ "real_vector_write", "AMReX__RealVect_8H.html#a177c7c95c391c6f66768e9941de3f5b5", null ],
     [ "RealVectCat", "AMReX__RealVect_8H.html#aa67a8238696a99cff35b79626ce1bf14", null ],
-    [ "RealVectCat_imp", "AMReX__RealVect_8H.html#a44d99d856461a070003dc0a977e740ad", null ],
     [ "RealVectExpand", "AMReX__RealVect_8H.html#a03347a48d7cb04abafb29ef9dd6e5490", null ],
     [ "RealVectND", "AMReX__RealVect_8H.html#a9524db1799cdcd7a1ef97f21c7813aa6", null ],
     [ "RealVectND", "AMReX__RealVect_8H.html#ae0523d865efae22d3cdca72c35798a4a", null ],
@@ -26,7 +23,5 @@ var AMReX__RealVect_8H =
     [ "RealVectResize", "AMReX__RealVect_8H.html#aa7815aa57d20ba7d7e4ce77467895a20", null ],
     [ "RealVectShrink", "AMReX__RealVect_8H.html#ae6f05984af2dc312573e7caef773610d", null ],
     [ "RealVectSplit", "AMReX__RealVect_8H.html#aa586c12919f1f3eed7413fd302e16d40", null ],
-    [ "RealVectSplit_imp", "AMReX__RealVect_8H.html#a95b60abcbf5c6d43826b3dd48076583b", null ],
-    [ "RealVectSplit_imp2", "AMReX__RealVect_8H.html#a83ec66b8cea7cb849b3054b579de132c", null ],
     [ "scale", "AMReX__RealVect_8H.html#aca11dc3d307957eadf8d380ebf5cc38b", null ]
 ];

@@ -7,7 +7,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_NeighborList.H", "AMReX__NeighborList_8H.html", "AMReX__NeighborList_8H" ],
     [ "AMReX_NeighborParticles.H", "AMReX__NeighborParticles_8H.html", "AMReX__NeighborParticles_8H" ],
     [ "AMReX_NeighborParticlesCPUImpl.H", "AMReX__NeighborParticlesCPUImpl_8H.html", null ],
-    [ "AMReX_NeighborParticlesGPUImpl.H", "AMReX__NeighborParticlesGPUImpl_8H.html", "AMReX__NeighborParticlesGPUImpl_8H" ],
+    [ "AMReX_NeighborParticlesGPUImpl.H", "AMReX__NeighborParticlesGPUImpl_8H.html", null ],
     [ "AMReX_NeighborParticlesI.H", "AMReX__NeighborParticlesI_8H.html", null ],
     [ "AMReX_ParGDB.H", "AMReX__ParGDB_8H.html", "AMReX__ParGDB_8H" ],
     [ "AMReX_ParIter.H", "AMReX__ParIter_8H.html", "AMReX__ParIter_8H" ],

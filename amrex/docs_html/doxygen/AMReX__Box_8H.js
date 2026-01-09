@@ -1,6 +1,5 @@
 var AMReX__Box_8H =
 [
-    [ "amrex::BoxCommHelper", "classamrex_1_1BoxCommHelper.html", "classamrex_1_1BoxCommHelper" ],
     [ "amrex::BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
     [ "amrex::BoxIndexerND< dim >", "structamrex_1_1BoxIndexerND.html", "structamrex_1_1BoxIndexerND" ],
     [ "amrex::BoxIndexerND< 1 >", "structamrex_1_1BoxIndexerND_3_011_01_4.html", "structamrex_1_1BoxIndexerND_3_011_01_4" ],
@@ -14,14 +13,11 @@ var AMReX__Box_8H =
     [ "bdryNode", "AMReX__Box_8H.html#a9889c3e5147768e9b0e014a85d8fe5cd", null ],
     [ "begin", "AMReX__Box_8H.html#a6a67d23bf90db71610ec5144cbae8f7c", null ],
     [ "begin_iv", "AMReX__Box_8H.html#a6f0d0bcf60c6a23dd7a821c20bdacc79", null ],
-    [ "box_read", "AMReX__Box_8H.html#a23e1d95e3ebccd77fdb4d988b280c0cd", null ],
-    [ "box_write", "AMReX__Box_8H.html#a5ad2e1914e7d42fdb76f380b4a29e2ae", null ],
     [ "BoxCat", "AMReX__Box_8H.html#a96262cf818d11ac4fbe83c2537be0f7c", null ],
     [ "BoxExpand", "AMReX__Box_8H.html#acd0207594dab5726379edcd1397ce595", null ],
     [ "BoxResize", "AMReX__Box_8H.html#a63f4219b3f3f3b188db1f0a36ac53ef9", null ],
     [ "BoxShrink", "AMReX__Box_8H.html#a7937e30c57cd590ef09a9b13a5764175", null ],
     [ "BoxSplit", "AMReX__Box_8H.html#afa05f68db47f50d3184089867e849678", null ],
-    [ "BoxSplit_imp", "AMReX__Box_8H.html#aec934d6208dc69b9a6f855bc10c60dbb", null ],
     [ "coarsen", "AMReX__Box_8H.html#gaafcf63c353b1bed97e75246c2cb87e89", null ],
     [ "coarsen", "AMReX__Box_8H.html#ga5af1ac4b7471ba90a59e111dd0dd2b22", null ],
     [ "convert", "AMReX__Box_8H.html#a673d85342b2f336a13105aa3e58f65b4", null ],

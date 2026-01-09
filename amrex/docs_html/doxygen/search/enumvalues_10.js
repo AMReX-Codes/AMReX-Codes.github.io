@@ -20,8 +20,6 @@ var searchData=
   ['ssprk3_17',['SSPRK3',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564ab65603b0c54c1b7114d61811751ccf42',1,'amrex']]],
   ['standard_18',['Standard',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143',1,'amrex::ErrorRec']]],
   ['structed_19',['structed',['../classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6',1,'amrex::Hypre']]],
-  ['sum_20',['sum',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52',1,'amrex::detail']]],
-  ['sundials_21',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
-  ['symbol_22',['symbol',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fdae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1ae3d30ffaffa3c06ed917e565dda1fbc5',1,'SYMBOL:&#160;amrex_parser.tab.h']]],
-  ['symmetry_23',['symmetry',['../namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35',1,'amrex::PhysBCType::symmetry'],['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2',1,'amrex::symmetry']]]
+  ['sundials_20',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
+  ['symmetry_21',['symmetry',['../namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35',1,'amrex::PhysBCType::symmetry'],['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2',1,'amrex::symmetry']]]
 ];

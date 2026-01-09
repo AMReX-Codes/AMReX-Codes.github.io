@@ -8,10 +8,8 @@ var AMReX__algoim__K_8H =
     [ "amrex::algoim::Interval", "structamrex_1_1algoim_1_1Interval.html", "structamrex_1_1algoim_1_1Interval" ],
     [ "amrex::algoim::ImplicitIntegral< M, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral.html", "structamrex_1_1algoim_1_1ImplicitIntegral" ],
     [ "amrex::algoim::ImplicitIntegral< 0, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4" ],
-    [ "determineSigns", "AMReX__algoim__K_8H.html#aebcb33675ae001225c84e7ca5caa6fe2", null ],
     [ "quadGen", "AMReX__algoim__K_8H.html#a64f23bafec666142720ee3b7e0ba7b01", null ],
     [ "quadGenSurf", "AMReX__algoim__K_8H.html#a38a4cce5a4990d42e478a035d7d2ac0e", null ],
     [ "set_regular", "AMReX__algoim__K_8H.html#a4319d9bcdd56e89aac40e57b428d6997", null ],
-    [ "set_regular_surface", "AMReX__algoim__K_8H.html#aec42466bfbfa3c3cb4144855089c669d", null ],
-    [ "swap", "AMReX__algoim__K_8H.html#a3bf6c2ef474dff0d291702437a087443", null ]
+    [ "set_regular_surface", "AMReX__algoim__K_8H.html#aec42466bfbfa3c3cb4144855089c669d", null ]
 ];

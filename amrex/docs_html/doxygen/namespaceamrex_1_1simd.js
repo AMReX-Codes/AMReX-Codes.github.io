@@ -1,6 +1,5 @@
 var namespaceamrex_1_1simd =
 [
-    [ "detail", "namespaceamrex_1_1simd_1_1detail.html", "namespaceamrex_1_1simd_1_1detail" ],
     [ "stdx", "namespaceamrex_1_1simd_1_1stdx.html", [
       [ "any_of", "namespaceamrex_1_1simd_1_1stdx.html#a9382bd831a3c3e7bae4dbe9a50cd4fc2", null ]
     ] ],

@@ -1,8 +1,5 @@
 var namespaceamrex_1_1NonLocalBC =
 [
-    [ "detail", "namespaceamrex_1_1NonLocalBC_1_1detail.html", [
-      [ "split_boxes", "namespaceamrex_1_1NonLocalBC_1_1detail.html#a5e2828c1791468964c1eee471e874eaa", null ]
-    ] ],
     [ "ApplyDtosAndProjectionOnReciever", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" ],
     [ "CommData", "structamrex_1_1NonLocalBC_1_1CommData.html", "structamrex_1_1NonLocalBC_1_1CommData" ],
     [ "CommHandler", "structamrex_1_1NonLocalBC_1_1CommHandler.html", "structamrex_1_1NonLocalBC_1_1CommHandler" ],

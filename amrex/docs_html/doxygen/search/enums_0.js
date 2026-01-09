@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['amrex_5fiparsertokentype_0',['amrex_iparsertokentype',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fd',1,'amrex_iparser.tab.h']]],
-  ['amrex_5fparsertokentype_1',['amrex_parsertokentype',['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1',1,'amrex_parser.tab.h']]]
+  ['bcmode_0',['BCMode',['../structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627',1,'amrex::LinOpEnumType']]],
+  ['bottomsolver_1',['BottomSolver',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4',1,'amrex']]],
+  ['boundary_2',['Boundary',['../namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964',1,'amrex::FFT']]],
+  ['butchertableautypes_3',['ButcherTableauTypes',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564',1,'amrex']]]
 ];

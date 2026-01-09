@@ -48,8 +48,6 @@ var AMReX__MultiFabUtil_8H =
     [ "NormHelper", "AMReX__MultiFabUtil_8H.html#a7ef9aec0b2f67456f1467c71e043025c", null ],
     [ "periodicShift", "AMReX__MultiFabUtil_8H.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
     [ "print_state", "AMReX__MultiFabUtil_8H.html#aac09e7e5e074f207deb9fae3b4e9148f", null ],
-    [ "reduce_to_plane", "AMReX__MultiFabUtil_8H.html#a000ed35d0c246f3d833140b732696dce", null ],
-    [ "reduce_to_plane", "AMReX__MultiFabUtil_8H.html#ade17c15318059947f1833b705cea0bcd", null ],
     [ "ReduceToPlane", "AMReX__MultiFabUtil_8H.html#a364dfb9be3b959cfdb2509f4680ecd6f", null ],
     [ "ReduceToPlaneMF", "AMReX__MultiFabUtil_8H.html#a40c2c0500c3c5f5b536616ca66a968da", null ],
     [ "ReduceToPlaneMF2", "AMReX__MultiFabUtil_8H.html#a372b4c6fd8af2bdf17bb3d790e03f64d", null ],

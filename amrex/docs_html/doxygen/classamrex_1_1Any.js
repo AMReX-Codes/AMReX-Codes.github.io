@@ -1,7 +1,5 @@
 var classamrex_1_1Any =
 [
-    [ "innards", "structamrex_1_1Any_1_1innards.html", "structamrex_1_1Any_1_1innards" ],
-    [ "innards_base", "structamrex_1_1Any_1_1innards__base.html", "structamrex_1_1Any_1_1innards__base" ],
     [ "Any", "classamrex_1_1Any.html#a794f63d073e59619a7fed27e8e40e2ba", null ],
     [ "~Any", "classamrex_1_1Any.html#a75f911e1b2a254db4b6626bf98fa1923", null ],
     [ "Any", "classamrex_1_1Any.html#afc3bc0660243e8d8719884a2f81a2a3a", null ],
