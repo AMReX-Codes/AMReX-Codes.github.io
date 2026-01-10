@@ -13,7 +13,5 @@ var classamrex_1_1LayoutData =
     [ "operator[]", "classamrex_1_1LayoutData.html#aec5812bf6d4e980cfcf9984ae2d45e66", null ],
     [ "operator[]", "classamrex_1_1LayoutData.html#af56efc4a9e1ade3309346c41e088a118", null ],
     [ "operator[]", "classamrex_1_1LayoutData.html#ad78ba5ce82779257647536a28444ac3c", null ],
-    [ "operator[]", "classamrex_1_1LayoutData.html#ad5f4c3197fb2327e6042cd9419846506", null ],
-    [ "m_data", "classamrex_1_1LayoutData.html#a3f97242387a9bccf0cb2aaeb5dbbfe5a", null ],
-    [ "m_need_to_clear_bd", "classamrex_1_1LayoutData.html#a442eca7b5bcd7984d38f7bd3ad9240b6", null ]
+    [ "operator[]", "classamrex_1_1LayoutData.html#ad5f4c3197fb2327e6042cd9419846506", null ]
 ];

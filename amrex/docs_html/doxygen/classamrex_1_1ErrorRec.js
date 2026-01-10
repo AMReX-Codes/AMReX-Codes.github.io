@@ -18,10 +18,5 @@ var classamrex_1_1ErrorRec =
     [ "name", "classamrex_1_1ErrorRec.html#a9fcabb5a67a004d3001fa8987ef6c1d8", null ],
     [ "nGrow", "classamrex_1_1ErrorRec.html#a4caa93d2bc0ad73faf33ca05ae0b5933", null ],
     [ "operator=", "classamrex_1_1ErrorRec.html#a5cb11158d9e1c4644b24e9d8196ca9e5", null ],
-    [ "operator=", "classamrex_1_1ErrorRec.html#a439032fe0843d95b2a6a99a5d76ade4b", null ],
-    [ "derive_name", "classamrex_1_1ErrorRec.html#ab6d9228aa813bc973c657510edc9b365", null ],
-    [ "err_func", "classamrex_1_1ErrorRec.html#accb4208e8504753dcddef021c9250e88", null ],
-    [ "err_func2", "classamrex_1_1ErrorRec.html#ad72e6621e0e65cba0d636c244ac5d53b", null ],
-    [ "err_type", "classamrex_1_1ErrorRec.html#abc0afb5043187b59f1a7219c50a62cec", null ],
-    [ "ngrow", "classamrex_1_1ErrorRec.html#a07e4582c7d12d9c0af8972fcbf214b89", null ]
+    [ "operator=", "classamrex_1_1ErrorRec.html#a439032fe0843d95b2a6a99a5d76ade4b", null ]
 ];

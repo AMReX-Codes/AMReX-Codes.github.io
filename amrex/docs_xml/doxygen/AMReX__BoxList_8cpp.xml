@@ -866,37 +866,37 @@
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a1b546c6d1a623b0335f40983e1d46b8a" kindref="member">BoxList::clear</ref><sp/>()</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.clear();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.clear();</highlight></codeline>
 <codeline lineno="68"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1af1451e74b2d7de70b58b9979e21aeb49" kindref="member">BoxList::join</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>blist)</highlight></codeline>
 <codeline lineno="72"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(blist.size()<sp/>==<sp/>0<sp/>||<sp/><ref refid="classamrex_1_1BoxList_1a25986c43e3bd0e8b7043955680879e16" kindref="member">ixType</ref>()<sp/>==<sp/>blist.<ref refid="classamrex_1_1IndexTypeND_1a042a6d6988a3f2ce079d145a086e0515" kindref="member">ixType</ref>());</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.insert(std::end(<ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>),<sp/>std::begin(blist),<sp/>std::end(blist));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.insert(std::end(m_lbox),<sp/>std::begin(blist),<sp/>std::end(blist));</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1af1451e74b2d7de70b58b9979e21aeb49" kindref="member">BoxList::join</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Box&gt;&amp;<sp/>barr)</highlight></codeline>
 <codeline lineno="79"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(barr.empty()<sp/>||<sp/><ref refid="classamrex_1_1BoxList_1a25986c43e3bd0e8b7043955680879e16" kindref="member">ixType</ref>()<sp/>==<sp/>barr[0].<ref refid="classamrex_1_1BoxList_1a25986c43e3bd0e8b7043955680879e16" kindref="member">ixType</ref>());</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.insert(std::end(<ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>),<sp/>std::begin(barr),<sp/>std::end(barr));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.insert(std::end(m_lbox),<sp/>std::begin(barr),<sp/>std::end(barr));</highlight></codeline>
 <codeline lineno="82"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a5401acc7f967b93eb6e755966491aa58" kindref="member">BoxList::catenate</ref><sp/>(BoxList&amp;<sp/>blist)</highlight></codeline>
 <codeline lineno="86"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(blist.size()<sp/>==<sp/>0<sp/>||<sp/><ref refid="classamrex_1_1BoxList_1a25986c43e3bd0e8b7043955680879e16" kindref="member">ixType</ref>()<sp/>==<sp/>blist.<ref refid="classamrex_1_1IndexTypeND_1a042a6d6988a3f2ce079d145a086e0515" kindref="member">ixType</ref>());</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.insert(std::end(<ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>),<sp/>std::begin(blist),<sp/>std::end(blist));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.insert(std::end(m_lbox),<sp/>std::begin(blist),<sp/>std::end(blist));</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>blist.m_lbox.clear();</highlight></codeline>
 <codeline lineno="90"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1abf4644145ceb9882c2e06be03148da11" kindref="member">BoxList::removeEmpty</ref>()</highlight></codeline>
 <codeline lineno="94"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.erase(std::remove_if(<ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.begin(),<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.end(),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.erase(std::remove_if(m_lbox.begin(),<sp/>m_lbox.end(),</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>)<sp/>{<sp/>return<sp/>x.isEmpty();<sp/>}),</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>.end());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lbox.end());</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>

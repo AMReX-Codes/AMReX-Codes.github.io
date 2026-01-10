@@ -6,7 +6,5 @@ var structamrex_1_1ParticleArrayAccessor =
     [ "ParticleArrayAccessor", "structamrex_1_1ParticleArrayAccessor.html#ad27aa85c57de2acbd9936f84108365c9", null ],
     [ "operator[]", "structamrex_1_1ParticleArrayAccessor.html#a76f0cbee666d09f3f64b4996ac957516", null ],
     [ "size", "structamrex_1_1ParticleArrayAccessor.html#a711708b5f15442a4dbf9127d6354c409", null ],
-    [ "data_layout", "structamrex_1_1ParticleArrayAccessor.html#af573478aee535409b3c2bffd8d16dd24", null ],
-    [ "m_data", "structamrex_1_1ParticleArrayAccessor.html#ac6fd95b2e7f736db5408bbdc3e44cbe4", null ],
-    [ "m_size", "structamrex_1_1ParticleArrayAccessor.html#a22fdbcda4f3aba7fe5a29d9137589c4b", null ]
+    [ "data_layout", "structamrex_1_1ParticleArrayAccessor.html#af573478aee535409b3c2bffd8d16dd24", null ]
 ];

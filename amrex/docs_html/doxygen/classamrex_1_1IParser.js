@@ -12,6 +12,5 @@ var classamrex_1_1IParser =
     [ "print", "classamrex_1_1IParser.html#a0e00f4a1a90b536068669ad8ed9c5b80", null ],
     [ "registerVariables", "classamrex_1_1IParser.html#a800553a4a96fee85528a07f4cdec4c3e", null ],
     [ "setConstant", "classamrex_1_1IParser.html#a3c8c7c907890aaec6fdecdd249d24cff", null ],
-    [ "symbols", "classamrex_1_1IParser.html#a26e093287bc4437907d8762fa40bbaaa", null ],
-    [ "m_data", "classamrex_1_1IParser.html#aa09937d7246ba1774e216bf9c1367332", null ]
+    [ "symbols", "classamrex_1_1IParser.html#a26e093287bc4437907d8762fa40bbaaa", null ]
 ];

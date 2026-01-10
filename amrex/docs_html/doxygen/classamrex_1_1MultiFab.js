@@ -1,7 +1,5 @@
 var classamrex_1_1MultiFab =
 [
-    [ "CopyComTagsContainer", "classamrex_1_1MultiFab.html#a1124d24928511321f4381ebd60b0c15b", null ],
-    [ "MapOfCopyComTagContainers", "classamrex_1_1MultiFab.html#a26137d0a3c8a4a024bf811fbaac6208d", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#abcce72db937ae8e326d2cb14cb114e7d", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#a19ec88a3ec56e2af03e7d127f8edb79e", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#a89ca350582ac479d9278fa2e0ec1a9c2", null ],
@@ -34,7 +32,6 @@ var classamrex_1_1MultiFab =
     [ "Dot", "group__amrex__fabarray__communication.html#ga87437456f64f8610e6d34d17929fdb4f", null ],
     [ "Finalize", "classamrex_1_1MultiFab.html#ae7a5398061b1bffdd1679a3a78f8b741", null ],
     [ "Initialize", "classamrex_1_1MultiFab.html#a7d869f54f3d6f4e3ede7eb0103954a9e", null ],
-    [ "initVal", "classamrex_1_1MultiFab.html#aa4f9b9a2a37baa29e7767a80f6856dcd", null ],
     [ "invert", "classamrex_1_1MultiFab.html#a773e797a62924f1a23e4774c11b97f6f", null ],
     [ "invert", "classamrex_1_1MultiFab.html#abc88cd9b7b451baaea2d53b97d20368a", null ],
     [ "invert", "classamrex_1_1MultiFab.html#a1151850ade9c29c2c657b173ad4a29c3", null ],

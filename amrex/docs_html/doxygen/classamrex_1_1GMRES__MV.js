@@ -20,8 +20,5 @@ var classamrex_1_1GMRES__MV =
     [ "setPrecond", "classamrex_1_1GMRES__MV.html#aff5dcd4e78bd5e241c44569af7f87318", null ],
     [ "setToZero", "classamrex_1_1GMRES__MV.html#ab86646b279c7a86ac36dda28de740f2d", null ],
     [ "setVerbose", "classamrex_1_1GMRES__MV.html#a435604aac5c43aef49984b414f0ace89", null ],
-    [ "solve", "classamrex_1_1GMRES__MV.html#a97faded45dc40096429df41d9fb78889", null ],
-    [ "m_gmres", "classamrex_1_1GMRES__MV.html#adcf264633423cdffddff341539f4bd69", null ],
-    [ "m_mat", "classamrex_1_1GMRES__MV.html#ae9996d59ae66b9a5771451bd817cbf1f", null ],
-    [ "m_pc", "classamrex_1_1GMRES__MV.html#a183670877bcc214fc83609afd448dce6", null ]
+    [ "solve", "classamrex_1_1GMRES__MV.html#a97faded45dc40096429df41d9fb78889", null ]
 ];

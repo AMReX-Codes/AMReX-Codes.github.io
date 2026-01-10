@@ -1851,34 +1851,34 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_DEBUG)<sp/>||<sp/>defined(AMREX_TESTING)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IArrayBox_1a775df7bf092a1173c172bd7ec7dd3f37" kindref="member">IArrayBox::do_initval</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IArrayBox::do_initval<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IArrayBox_1a775df7bf092a1173c172bd7ec7dd3f37" kindref="member">IArrayBox::do_initval</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IArrayBox::do_initval<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">std::unique_ptr&lt;IFABio&gt;<sp/><ref refid="classamrex_1_1IArrayBox_1aebc54540f561b7e5cdb0a92a14ead5ba" kindref="member">IArrayBox::ifabio</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">std::unique_ptr&lt;IFABio&gt;<sp/>IArrayBox::ifabio;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><ref refid="classamrex_1_1IArrayBox_1aff085ec8097788fc08d663f81062154e" kindref="member">IArrayBox::Initialize</ref><sp/>()</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialized)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IArrayBox_1aebc54540f561b7e5cdb0a92a14ead5ba" kindref="member">ifabio</ref><sp/>=<sp/>std::make_unique&lt;IFABio&gt;();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>ifabio<sp/>=<sp/>std::make_unique&lt;IFABio&gt;();</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad321a3965621a748d4c08e80c42b7af3" kindref="member">amrex::ExecOnFinalize</ref>(<ref refid="classamrex_1_1IArrayBox_1a9fe8b1d3b2da351d3701dd7c44ca1139" kindref="member">IArrayBox::Finalize</ref>);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><ref refid="classamrex_1_1IArrayBox_1a9fe8b1d3b2da351d3701dd7c44ca1139" kindref="member">IArrayBox::Finalize</ref><sp/>()</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IArrayBox_1aebc54540f561b7e5cdb0a92a14ead5ba" kindref="member">ifabio</ref>.reset();</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>ifabio.reset();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><ref refid="classamrex_1_1IArrayBox_1a1f0eab6dcd0046a0bd3bf6097cc6e05a" kindref="member">IArrayBox::IArrayBox</ref><sp/>(Arena*<sp/>ar)<sp/>noexcept</highlight></codeline>

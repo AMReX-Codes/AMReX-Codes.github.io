@@ -11,9 +11,5 @@ var classamrex_1_1Print =
     [ "operator=", "classamrex_1_1Print.html#a68cfd83b965ea2d55601193ccaa5b70b", null ],
     [ "operator=", "classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf", null ],
     [ "SetPrecision", "classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939", null ],
-    [ "AllProcs", "classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b", null ],
-    [ "comm", "classamrex_1_1Print.html#a6bf798b3678aa43c4bcc819b794b7d1a", null ],
-    [ "os", "classamrex_1_1Print.html#a8cde9f73108377cda6aa9be7fe4f2dab", null ],
-    [ "rank", "classamrex_1_1Print.html#a7fd9cdeb58318bfc38b9381ca3ab3b01", null ],
-    [ "ss", "classamrex_1_1Print.html#abfc9a46813216f47dd6fd4ef6fb90c36", null ]
+    [ "AllProcs", "classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b", null ]
 ];

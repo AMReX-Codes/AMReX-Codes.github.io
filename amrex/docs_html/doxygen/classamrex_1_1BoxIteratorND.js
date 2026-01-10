@@ -12,8 +12,5 @@ var classamrex_1_1BoxIteratorND =
     [ "operator++", "classamrex_1_1BoxIteratorND.html#aee8d00c3537a3665bf126eb147ec2701", null ],
     [ "reset", "classamrex_1_1BoxIteratorND.html#af9c4b01f9103450b908fe2857d205b69", null ],
     [ "setBox", "classamrex_1_1BoxIteratorND.html#a2520e4ef281dd7dee943fd48feea4a20", null ],
-    [ "operator!=", "classamrex_1_1BoxIteratorND.html#a0c5612b4aebc9a74872f814730ae871e", null ],
-    [ "m_boxHi", "classamrex_1_1BoxIteratorND.html#a2089ada36b181eab06fc253188ba5192", null ],
-    [ "m_boxLo", "classamrex_1_1BoxIteratorND.html#adf7be1f388b8c0d0a8ea6ed5fcb959f5", null ],
-    [ "m_current", "classamrex_1_1BoxIteratorND.html#a09aec00e5a59527be451c1dce4eca913", null ]
+    [ "operator!=", "classamrex_1_1BoxIteratorND.html#a0c5612b4aebc9a74872f814730ae871e", null ]
 ];

@@ -11,7 +11,6 @@ var searchData=
   ['noslipwall_8',['noslipwall',['../namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a7a1473abb964cc6a7838e8abc5ce546d',1,'amrex::PhysBCType']]],
   ['not_5fcovered_9',['not_covered',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288',1,'amrex::BndryDataT']]],
   ['noteambarrier_10',['NoTeamBarrier',['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14',1,'amrex::MFIter']]],
-  ['ntimers_11',['ntimers',['../classamrex_1_1MLMGT.html#ac3f33b5865628fb4fbb9e39b278358fda24039153a091a3526d8f692a1ae67709',1,'amrex::MLMGT']]],
-  ['nummaskvals_12',['NumMaskVals',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7',1,'amrex::BndryDataT']]],
-  ['numtypes_13',['NumTypes',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a86e30d8e0831512671e7ed103ad7c457',1,'amrex']]]
+  ['nummaskvals_11',['NumMaskVals',['../classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7',1,'amrex::BndryDataT']]],
+  ['numtypes_12',['NumTypes',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a86e30d8e0831512671e7ed103ad7c457',1,'amrex']]]
 ];

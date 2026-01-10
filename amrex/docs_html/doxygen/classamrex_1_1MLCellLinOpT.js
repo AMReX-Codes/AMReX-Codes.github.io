@@ -22,11 +22,8 @@ var classamrex_1_1MLCellLinOpT =
     [ "beginPrecondBC", "classamrex_1_1MLCellLinOpT.html#a8e5ccd586a36ca73071a893fd369a5b8", null ],
     [ "compFlux", "classamrex_1_1MLCellLinOpT.html#ac70f639cae69c7e3d3476b486808e246", null ],
     [ "compGrad", "classamrex_1_1MLCellLinOpT.html#a327aa7293e5af66814ed13b51531660d", null ],
-    [ "computeVolInv", "classamrex_1_1MLCellLinOpT.html#af28f1c33141158bd515093c3741d7124", null ],
     [ "correctionResidual", "classamrex_1_1MLCellLinOpT.html#a51480d2022ad9346d6eb11f3cbfd631a", null ],
     [ "define", "classamrex_1_1MLCellLinOpT.html#aa6df034e49814000ac0304a3579890b6", null ],
-    [ "defineAuxData", "classamrex_1_1MLCellLinOpT.html#a95432ea80c81e30e58ffda678f2d926d", null ],
-    [ "defineBC", "classamrex_1_1MLCellLinOpT.html#a3b583520578b832e04ea2baf3ea48917", null ],
     [ "dotProductPrecond", "classamrex_1_1MLCellLinOpT.html#a37110a6d5cf422efd25f1a966dcd3af5", null ],
     [ "endPrecondBC", "classamrex_1_1MLCellLinOpT.html#a3edbe84b38cdfad3b9de1710151ba787", null ],
     [ "Fapply", "classamrex_1_1MLCellLinOpT.html#a3841e981caa197033fcd74eee93f0daf", null ],
@@ -68,11 +65,9 @@ var classamrex_1_1MLCellLinOpT =
     [ "m_crse_sol_br", "classamrex_1_1MLCellLinOpT.html#adf51879b81fbd24f9ccb7b9f0142d63b", null ],
     [ "m_fluxreg", "classamrex_1_1MLCellLinOpT.html#a22cdf5d6b191ab3c883b7167e9f94ebe", null ],
     [ "m_has_metric_term", "classamrex_1_1MLCellLinOpT.html#ada8bf2b1964f2023282e23ac54a948f4", null ],
-    [ "m_interpbndry_halfwidth", "classamrex_1_1MLCellLinOpT.html#ab5b6c73fee0004ac732f74350cc72bab", null ],
     [ "m_maskvals", "classamrex_1_1MLCellLinOpT.html#afc7ca30a55c5e8fe02ac7d5dabf1d21f", null ],
     [ "m_norm_fine_mask", "classamrex_1_1MLCellLinOpT.html#af29ed070015666e58d890685cb491900", null ],
     [ "m_robin_bcval", "classamrex_1_1MLCellLinOpT.html#a95a0dd3f6700b3da5b020a66ef726dff", null ],
     [ "m_undrrelxr", "classamrex_1_1MLCellLinOpT.html#ab50c53ea7ff9c53bf37ac816e0663406", null ],
-    [ "m_use_gauss_seidel", "classamrex_1_1MLCellLinOpT.html#add77293caacd09584aa8b5f0fd7f923a", null ],
-    [ "m_volinv", "classamrex_1_1MLCellLinOpT.html#ad73d9eed28e8d9d32cf54327e21c5225", null ]
+    [ "m_use_gauss_seidel", "classamrex_1_1MLCellLinOpT.html#add77293caacd09584aa8b5f0fd7f923a", null ]
 ];

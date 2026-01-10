@@ -6,6 +6,5 @@ var classamrex_1_1DescriptorList =
     [ "resetComponentBCs", "classamrex_1_1DescriptorList.html#a4385d3bbdf3ae152ec830b25f4c080c3", null ],
     [ "setComponent", "classamrex_1_1DescriptorList.html#a509cf3b858a16175331faf1281adfd9d", null ],
     [ "setComponent", "classamrex_1_1DescriptorList.html#aeeb4f83f275e3e879481880afd516c50", null ],
-    [ "size", "classamrex_1_1DescriptorList.html#a9facef73a0d5a831733696abfa55f1f8", null ],
-    [ "desc", "classamrex_1_1DescriptorList.html#adf6d6dc0b7328fa6527754931874f685", null ]
+    [ "size", "classamrex_1_1DescriptorList.html#a9facef73a0d5a831733696abfa55f1f8", null ]
 ];

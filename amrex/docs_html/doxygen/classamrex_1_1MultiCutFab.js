@@ -28,7 +28,5 @@ var classamrex_1_1MultiCutFab =
     [ "operator[]", "classamrex_1_1MultiCutFab.html#ad40ab7b9d5f3dde32c3d973c3cbc4384", null ],
     [ "ParallelCopy", "classamrex_1_1MultiCutFab.html#a212f1455dd8018d3cd773107db0df62d", null ],
     [ "setVal", "classamrex_1_1MultiCutFab.html#a22eb86768e17886d036bc065094ce343", null ],
-    [ "ToMultiFab", "classamrex_1_1MultiCutFab.html#ac5f3026221c3cafbcb0e19f6583cfd9d", null ],
-    [ "m_cellflags", "classamrex_1_1MultiCutFab.html#acf458e03eaefec6d963a0b0e3b0453da", null ],
-    [ "m_data", "classamrex_1_1MultiCutFab.html#aa57d6c13b3ffbf9dcc2bf1d3c3496852", null ]
+    [ "ToMultiFab", "classamrex_1_1MultiCutFab.html#ac5f3026221c3cafbcb0e19f6583cfd9d", null ]
 ];

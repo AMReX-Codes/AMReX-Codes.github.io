@@ -10,7 +10,6 @@ var classamrex_1_1AmrCore =
     [ "ClearLevel", "classamrex_1_1AmrCore.html#a26c39ed62cd9f3383f3936f1fcdb65b3", null ],
     [ "ErrorEst", "classamrex_1_1AmrCore.html#a88c72a4b4558c782239743af1f3b0789", null ],
     [ "GetParGDB", "classamrex_1_1AmrCore.html#a93943d20543db47e8c61870b30fc854b", null ],
-    [ "InitAmrCore", "classamrex_1_1AmrCore.html#af614cfbec1f40953a32b0786d25f5f6f", null ],
     [ "InitFromScratch", "classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d", null ],
     [ "MakeNewLevelFromCoarse", "classamrex_1_1AmrCore.html#af472acf05bea1145b67f7022de16a664", null ],
     [ "MakeNewLevelFromScratch", "classamrex_1_1AmrCore.html#a2612f7a3cf58e16e8f9ddd27e81e9a8c", null ],

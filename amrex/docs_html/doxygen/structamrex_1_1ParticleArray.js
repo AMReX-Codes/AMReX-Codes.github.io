@@ -10,6 +10,5 @@ var structamrex_1_1ParticleArray =
     [ "push_back", "structamrex_1_1ParticleArray.html#ac63a647b8a7225d490ce30caaf1105b3", null ],
     [ "resize", "structamrex_1_1ParticleArray.html#a05d3b903f74ef52b4246ec959002057a", null ],
     [ "size", "structamrex_1_1ParticleArray.html#a164daf80e9951556f38dc0887e804c78", null ],
-    [ "data_layout", "structamrex_1_1ParticleArray.html#a33468992649bd9b5e503cd8aa99f7682", null ],
-    [ "m_data", "structamrex_1_1ParticleArray.html#a0b11b0f597e0de5ea793492eaef23cd1", null ]
+    [ "data_layout", "structamrex_1_1ParticleArray.html#a33468992649bd9b5e503cd8aa99f7682", null ]
 ];

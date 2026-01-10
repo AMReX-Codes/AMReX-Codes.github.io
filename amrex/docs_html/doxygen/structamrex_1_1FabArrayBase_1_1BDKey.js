@@ -5,7 +5,5 @@ var structamrex_1_1FabArrayBase_1_1BDKey =
     [ "operator!=", "structamrex_1_1FabArrayBase_1_1BDKey.html#acdae3eee27022bd69a6c207d800e497e", null ],
     [ "operator<", "structamrex_1_1FabArrayBase_1_1BDKey.html#ab36d9acc122e0741d84185b67e7e7493", null ],
     [ "operator==", "structamrex_1_1FabArrayBase_1_1BDKey.html#a8525a0bfb72343d71c8730cce94b7e72", null ],
-    [ "operator<<", "structamrex_1_1FabArrayBase_1_1BDKey.html#add62de8cc9f63000057ea4c330660149", null ],
-    [ "m_ba_id", "structamrex_1_1FabArrayBase_1_1BDKey.html#a72b32342670aa4c490e3362b75943633", null ],
-    [ "m_dm_id", "structamrex_1_1FabArrayBase_1_1BDKey.html#ad4cad04286d0ad719cfe6125b146932e", null ]
+    [ "operator<<", "structamrex_1_1FabArrayBase_1_1BDKey.html#add62de8cc9f63000057ea4c330660149", null ]
 ];

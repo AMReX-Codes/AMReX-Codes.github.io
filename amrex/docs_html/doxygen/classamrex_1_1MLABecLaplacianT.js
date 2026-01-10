@@ -18,7 +18,6 @@ var classamrex_1_1MLABecLaplacianT =
     [ "copyNSolveSolution", "classamrex_1_1MLABecLaplacianT.html#adfd3a48893737214b12ed5e95b17f1e3", null ],
     [ "define", "classamrex_1_1MLABecLaplacianT.html#a5ef449849f31f17897b4742cd730c646", null ],
     [ "define", "classamrex_1_1MLABecLaplacianT.html#a295b5ec5f403268462a04e18f2fae62f", null ],
-    [ "define_ab_coeffs", "classamrex_1_1MLABecLaplacianT.html#a73c64bfadff728bad13d0f0dcf406ca4", null ],
     [ "Fapply", "classamrex_1_1MLABecLaplacianT.html#af9734ef15b9914e58c3e22a9d4ad7288", null ],
     [ "FFlux", "classamrex_1_1MLABecLaplacianT.html#a90f4aad6faad839f315cc29f4c073018", null ],
     [ "FFlux", "classamrex_1_1MLABecLaplacianT.html#a245f41c86d0fdd8cccb34cd8c4290922", null ],
@@ -45,14 +44,12 @@ var classamrex_1_1MLABecLaplacianT =
     [ "supportNSolve", "classamrex_1_1MLABecLaplacianT.html#ae2d89f07a4d5145cef15ab891b8c1086", null ],
     [ "supportRobinBC", "classamrex_1_1MLABecLaplacianT.html#a4fda1e7c51f0f57be99c0d9a8d94f9f9", null ],
     [ "update", "classamrex_1_1MLABecLaplacianT.html#af3a21bba5cafce9e1c1c75194f37ca93", null ],
-    [ "update_singular_flags", "classamrex_1_1MLABecLaplacianT.html#a33149b38d0c384a6ea3e324962847ef8", null ],
     [ "m_a_coeffs", "classamrex_1_1MLABecLaplacianT.html#acd74fe42cd460e0e8cc50fae5550233e", null ],
     [ "m_a_scalar", "classamrex_1_1MLABecLaplacianT.html#a6238682285be8b4464de6531f73d5cd8", null ],
     [ "m_acoef_set", "classamrex_1_1MLABecLaplacianT.html#ac6489a20e89c720a91f81ae8d29496f2", null ],
     [ "m_b_coeffs", "classamrex_1_1MLABecLaplacianT.html#a356ff3aa88390ad3f921380df7af23c0", null ],
     [ "m_b_scalar", "classamrex_1_1MLABecLaplacianT.html#a539516410949fb84f32bdf408fdd2e18", null ],
     [ "m_is_singular", "classamrex_1_1MLABecLaplacianT.html#aa0125d9d8e480d38f2b3798bff1f0616", null ],
-    [ "m_ncomp", "classamrex_1_1MLABecLaplacianT.html#a1d9a5429f6674a76b4137e4631578413", null ],
     [ "m_needs_update", "classamrex_1_1MLABecLaplacianT.html#ab3dca372fae6a1446f43a056d410f165", null ],
     [ "m_scalars_set", "classamrex_1_1MLABecLaplacianT.html#a9ef257d12dd2d94c4a70ff5fb5d8f534", null ]
 ];

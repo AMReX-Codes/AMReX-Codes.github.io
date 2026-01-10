@@ -10,10 +10,8 @@ var classamrex_1_1TimeIntegrator =
     [ "initialize_integrator", "classamrex_1_1TimeIntegrator.html#a63b4a8514fe939f9639442f7ff8d527b", null ],
     [ "integrate", "classamrex_1_1TimeIntegrator.html#a0eae9b06298e069eab80098118fe239d", null ],
     [ "map_data", "classamrex_1_1TimeIntegrator.html#a1cf98d54388171aa821affc5af092394", null ],
-    [ "read_parameters", "classamrex_1_1TimeIntegrator.html#a35f3f508708be4b72388384a46b3b6a3", null ],
     [ "set_adaptive_fast_step", "classamrex_1_1TimeIntegrator.html#a0cc5e3e9b92660532ad6885f98707c87", null ],
     [ "set_adaptive_step", "classamrex_1_1TimeIntegrator.html#a0b9f79016ad5d674f261835f9292b65a", null ],
-    [ "set_default_functions", "classamrex_1_1TimeIntegrator.html#add05ec6cd5ca348d5c542f67f26bdd25", null ],
     [ "set_fast_rhs", "classamrex_1_1TimeIntegrator.html#a241adc8cc400c943cb6999cccab66e47", null ],
     [ "set_fast_time_step", "classamrex_1_1TimeIntegrator.html#ae68306a3a401327a691cd1125441e56f", null ],
     [ "set_fast_tolerances", "classamrex_1_1TimeIntegrator.html#ae00d77a5b0a48d3a93d43eab74afe4f1", null ],
@@ -26,6 +24,5 @@ var classamrex_1_1TimeIntegrator =
     [ "set_rhs", "classamrex_1_1TimeIntegrator.html#a795b506a4093cc3de3fb42bb594c751b", null ],
     [ "set_time_step", "classamrex_1_1TimeIntegrator.html#aa447937fa3bb442c94ce46cca5facd50", null ],
     [ "set_tolerances", "classamrex_1_1TimeIntegrator.html#a3d73596da85ccd3dbc7b5046533dc3f2", null ],
-    [ "time_interpolate", "classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b", null ],
-    [ "integrator_ptr", "classamrex_1_1TimeIntegrator.html#a945c0ab164fee73db3dcc6cdc38fe216", null ]
+    [ "time_interpolate", "classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b", null ]
 ];

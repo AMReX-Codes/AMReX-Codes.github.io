@@ -101,7 +101,6 @@ $(document).ready(function(){initNavTree('classamrex_1_1Gpu_1_1StreamManager.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1Gpu_1_1StreamManager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::Gpu::StreamManager Class Reference</div></div>
 </div><!--header-->
@@ -119,15 +118,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1e1ccdbc61c5f41a2e3d600388ac654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57a0d79e1355972193c71b39ac2a3e04" id="r_a57a0d79e1355972193c71b39ac2a3e04"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html#a57a0d79e1355972193c71b39ac2a3e04">wait_list_size</a> ()</td></tr>
 <tr class="separator:a57a0d79e1355972193c71b39ac2a3e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:adc17fc41937b32d5d17433992806d50a" id="r_adc17fc41937b32d5d17433992806d50a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html#adc17fc41937b32d5d17433992806d50a">m_stream</a></td></tr>
-<tr class="separator:adc17fc41937b32d5d17433992806d50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cc160d56bc6b1ab2e9aa4e53c6f930b" id="r_a8cc160d56bc6b1ab2e9aa4e53c6f930b"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html#a8cc160d56bc6b1ab2e9aa4e53c6f930b">m_mutex</a></td></tr>
-<tr class="separator:a8cc160d56bc6b1ab2e9aa4e53c6f930b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e3fd936dd80fed75784ac041881b36" id="r_a10e3fd936dd80fed75784ac041881b36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::pair&lt; <a class="el" href="classamrex_1_1Arena.html">Arena</a> *, void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1StreamManager.html#a10e3fd936dd80fed75784ac041881b36">m_free_wait_list</a></td></tr>
-<tr class="separator:a10e3fd936dd80fed75784ac041881b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad1e1ccdbc61c5f41a2e3d600388ac654" name="ad1e1ccdbc61c5f41a2e3d600388ac654"></a>
@@ -205,73 +195,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a10e3fd936dd80fed75784ac041881b36" name="a10e3fd936dd80fed75784ac041881b36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e3fd936dd80fed75784ac041881b36">&#9670;&#160;</a></span>m_free_wait_list</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;std::pair&lt;<a class="el" href="classamrex_1_1Arena.html">Arena</a>*, void*&gt; &gt; amrex::Gpu::StreamManager::m_free_wait_list</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8cc160d56bc6b1ab2e9aa4e53c6f930b" name="a8cc160d56bc6b1ab2e9aa4e53c6f930b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cc160d56bc6b1ab2e9aa4e53c6f930b">&#9670;&#160;</a></span>m_mutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::mutex amrex::Gpu::StreamManager::m_mutex</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adc17fc41937b32d5d17433992806d50a" name="adc17fc41937b32d5d17433992806d50a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc17fc41937b32d5d17433992806d50a">&#9670;&#160;</a></span>m_stream</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> amrex::Gpu::StreamManager::m_stream</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

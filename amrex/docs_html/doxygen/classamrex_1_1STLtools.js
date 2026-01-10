@@ -1,8 +1,6 @@
 var classamrex_1_1STLtools =
 [
     [ "Node", "classamrex_1_1STLtools.html#a5e4b2f7bb8d632ea0128bcddfddb6dc0", null ],
-    [ "build_bvh", "classamrex_1_1STLtools.html#afcec3c63f5854b95aa657693322a8643", null ],
-    [ "bvh_size", "classamrex_1_1STLtools.html#a0473b066498d4c0df39749018a3babcd", null ],
     [ "fill", "classamrex_1_1STLtools.html#a84b77230eb00f0ebb682f6751fc5184b", null ],
     [ "fillFab", "classamrex_1_1STLtools.html#aefcdeb44ca0770702422b5f7eb289234", null ],
     [ "fillSignedDistance", "classamrex_1_1STLtools.html#a49aa91ffdb45cf5d5bd15664e163eb1f", null ],
@@ -10,24 +8,13 @@ var classamrex_1_1STLtools =
     [ "getIntercept", "classamrex_1_1STLtools.html#a8a5ad77846edd000868b50429642735e", null ],
     [ "isGPUable", "classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858", null ],
     [ "prepare", "classamrex_1_1STLtools.html#a8036d07cde7c16212fb98e08c1408a85", null ],
-    [ "read_ascii_stl_file", "classamrex_1_1STLtools.html#addf47db1e1abc59b6ac84e8042ac5f9d", null ],
-    [ "read_binary_stl_file", "classamrex_1_1STLtools.html#aa230c243869c15b3c0b42c2b424e6fd6", null ],
     [ "read_stl_file", "classamrex_1_1STLtools.html#abde98e341a2edf239bfa987ce47ed2be", null ],
     [ "setBVHOptimization", "classamrex_1_1STLtools.html#abfa10179458910f9d08c44c9385c03ad", null ],
     [ "updateIntercept", "classamrex_1_1STLtools.html#a1e2fc38293a765792b73452009ebe255", null ],
     [ "allcovered", "classamrex_1_1STLtools.html#ad56ce2bf01da43520e270f2ae570f29a", null ],
     [ "allregular", "classamrex_1_1STLtools.html#a071a8fb28babb5af263c2aa74a0d979b", null ],
-    [ "m_boundry_is_outside", "classamrex_1_1STLtools.html#ae50a6d985147b0ae607e688e120f2935", null ],
     [ "m_bvh_max_size", "classamrex_1_1STLtools.html#a2e7418a1e57f61cf7154c966f5ced655", null ],
     [ "m_bvh_max_splits", "classamrex_1_1STLtools.html#a401996bf07e630652925eb7478369d04", null ],
     [ "m_bvh_max_stack_size", "classamrex_1_1STLtools.html#a07f80cd69640a2e642f686cc4ac99b46", null ],
-    [ "m_bvh_nodes", "classamrex_1_1STLtools.html#a4d33bde9a9fb3ecd32f19faf74c6e36f", null ],
-    [ "m_bvh_optimization", "classamrex_1_1STLtools.html#a7fc4e4a3a6c2b96639d17a9d97f7483e", null ],
-    [ "m_num_tri", "classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534", null ],
-    [ "m_ptmax", "classamrex_1_1STLtools.html#a135d25559bca9a4ec5dca07f1d08378b", null ],
-    [ "m_ptmin", "classamrex_1_1STLtools.html#aeeee47c9bfc52a2c01f6b6ad38043b49", null ],
-    [ "m_ptref", "classamrex_1_1STLtools.html#ab287060a4866170710f23abb884afe91", null ],
-    [ "m_tri_normals_d", "classamrex_1_1STLtools.html#accd39d6fb1aca77a857b0a4ad1e51ce4", null ],
-    [ "m_tri_pts_d", "classamrex_1_1STLtools.html#afe0f0661535402979c4c346235b957fc", null ],
     [ "mixedcells", "classamrex_1_1STLtools.html#ad0e62c6693f9f0100b33547ddef29fa2", null ]
 ];

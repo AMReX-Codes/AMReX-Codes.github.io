@@ -12,6 +12,5 @@ var classamrex_1_1Any =
     [ "operator=", "classamrex_1_1Any.html#a9dc1f192391a9be666e24d5982969d0c", null ],
     [ "operator=", "classamrex_1_1Any.html#ae915306df72dfed331dfa3c2be646012", null ],
     [ "operator=", "classamrex_1_1Any.html#af3f1faf2eac5238bbe5c8f6b10fb676b", null ],
-    [ "Type", "classamrex_1_1Any.html#a7578212031e7bf77412b5573c37dfde2", null ],
-    [ "m_ptr", "classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570", null ]
+    [ "Type", "classamrex_1_1Any.html#a7578212031e7bf77412b5573c37dfde2", null ]
 ];

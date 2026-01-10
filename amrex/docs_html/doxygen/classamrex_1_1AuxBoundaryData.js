@@ -19,9 +19,5 @@ var classamrex_1_1AuxBoundaryData =
     [ "operator[]", "classamrex_1_1AuxBoundaryData.html#a43aa03eb7d3b1f2cd992bcfb74af4516", null ],
     [ "operator[]", "classamrex_1_1AuxBoundaryData.html#abcaf5c33fa9fe28997ac2c942c252aac", null ],
     [ "setVal", "classamrex_1_1AuxBoundaryData.html#af6918e405dc3e6fef1e5eb0b2ef3c848", null ],
-    [ "size", "classamrex_1_1AuxBoundaryData.html#a519b6701a280d495aeca13774cf2eaff", null ],
-    [ "m_empty", "classamrex_1_1AuxBoundaryData.html#a90e7fae3e3859c75b87ff70e900a6d26", null ],
-    [ "m_fabs", "classamrex_1_1AuxBoundaryData.html#a54379d4b45d0356ecfa8bff1b3bc4d98", null ],
-    [ "m_initialized", "classamrex_1_1AuxBoundaryData.html#aabaa15678fc8d0cb71fee0e259b27bf7", null ],
-    [ "m_ngrow", "classamrex_1_1AuxBoundaryData.html#a848aeff112f09354c6d3fd1adde04832", null ]
+    [ "size", "classamrex_1_1AuxBoundaryData.html#a519b6701a280d495aeca13774cf2eaff", null ]
 ];

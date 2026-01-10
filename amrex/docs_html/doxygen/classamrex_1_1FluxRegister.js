@@ -36,8 +36,5 @@ var classamrex_1_1FluxRegister =
     [ "Reflux", "classamrex_1_1FluxRegister.html#aeebc09565fcf23f6050ad9b55275c1b1", null ],
     [ "refRatio", "classamrex_1_1FluxRegister.html#acee4de5e4f610fb4bc86bdae1ac7fd49", null ],
     [ "SumReg", "classamrex_1_1FluxRegister.html#a8eb3103253e2e3aba75f6d67574243f1", null ],
-    [ "write", "classamrex_1_1FluxRegister.html#a0c8efd8e75a881af49dbfc1e6bdc5184", null ],
-    [ "fine_level", "classamrex_1_1FluxRegister.html#a43c7c6ca83e0c49296f131ecf5eb8b0e", null ],
-    [ "ncomp", "classamrex_1_1FluxRegister.html#a311b5caaf3b58835f84598f46315953d", null ],
-    [ "ratio", "classamrex_1_1FluxRegister.html#a8d33188a1ba19154997256c66083b10e", null ]
+    [ "write", "classamrex_1_1FluxRegister.html#a0c8efd8e75a881af49dbfc1e6bdc5184", null ]
 ];

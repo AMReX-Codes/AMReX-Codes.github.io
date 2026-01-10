@@ -14,9 +14,5 @@ var classamrex_1_1SparseBins =
     [ "offsetsPtr", "classamrex_1_1SparseBins.html#a5ac3a41811d9e969a4a0d6b8a631e636", null ],
     [ "offsetsPtr", "classamrex_1_1SparseBins.html#afbbc114a358f54c33d0b13b2f79ff23a", null ],
     [ "permutationPtr", "classamrex_1_1SparseBins.html#a915d35a9900e4b249ca3d197e6e815d1", null ],
-    [ "permutationPtr", "classamrex_1_1SparseBins.html#a03e1a2615cba85dbc4ea2509de572191", null ],
-    [ "m_bins", "classamrex_1_1SparseBins.html#afaba6cf4d3a98c920b0ba530d461c94f", null ],
-    [ "m_items", "classamrex_1_1SparseBins.html#aed3575613242ea883eda555b4cdedb83", null ],
-    [ "m_offsets", "classamrex_1_1SparseBins.html#a61877be196b17888cd8222578d4ddf02", null ],
-    [ "m_perm", "classamrex_1_1SparseBins.html#a0c8ada8a50d63270eee76dd43195a8ff", null ]
+    [ "permutationPtr", "classamrex_1_1SparseBins.html#a03e1a2615cba85dbc4ea2509de572191", null ]
 ];

@@ -6,6 +6,5 @@ var structamrex_1_1FabArrayBase_1_1RegionTag =
     [ "RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a8c002005b0ed39bb186e7ce020b9815f", null ],
     [ "~RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a12bfc559a8015e55f1564d0571c79f28", null ],
     [ "operator=", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a39f7066a584b8c05a7492fa9931ae783", null ],
-    [ "operator=", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a510db401557251e9a9298b0a087e3d24", null ],
-    [ "tagged", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a18861d2c89c00308cd93273d54ccaabf", null ]
+    [ "operator=", "structamrex_1_1FabArrayBase_1_1RegionTag.html#a510db401557251e9a9298b0a087e3d24", null ]
 ];

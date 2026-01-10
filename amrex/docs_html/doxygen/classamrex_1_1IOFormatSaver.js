@@ -6,10 +6,5 @@ var classamrex_1_1IOFormatSaver =
     [ "IOFormatSaver", "classamrex_1_1IOFormatSaver.html#a85f1c64c1f0097b5e5900148ae4f1d3f", null ],
     [ "IOFormatSaver", "classamrex_1_1IOFormatSaver.html#af6e784ede2112c392acd2dc0547725b3", null ],
     [ "operator=", "classamrex_1_1IOFormatSaver.html#a48654cddd1a41bd614bca93dafe03efb", null ],
-    [ "operator=", "classamrex_1_1IOFormatSaver.html#a61085a026d0f1e9e64cae74fc853c71e", null ],
-    [ "m_fill", "classamrex_1_1IOFormatSaver.html#afda7b7a617ea00f5bee3cbda41b44ded", null ],
-    [ "m_flags", "classamrex_1_1IOFormatSaver.html#a6043b6d17b152ee3fef31bae756e872e", null ],
-    [ "m_ios", "classamrex_1_1IOFormatSaver.html#a02c0471d5e4760f97445517e4c0197da", null ],
-    [ "m_precision", "classamrex_1_1IOFormatSaver.html#a00214e6bce0efd4ab1d5a1a8ca7f3f83", null ],
-    [ "m_width", "classamrex_1_1IOFormatSaver.html#a7407b165f10e3efeb9551ecc1c8d6080", null ]
+    [ "operator=", "classamrex_1_1IOFormatSaver.html#a61085a026d0f1e9e64cae74fc853c71e", null ]
 ];

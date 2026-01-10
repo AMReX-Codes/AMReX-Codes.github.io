@@ -45,6 +45,5 @@ var classamrex_1_1FabSetT =
     [ "size", "classamrex_1_1FabSetT.html#ac701dad264a80003de6f61480b98a869", null ],
     [ "write", "classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2", null ],
     [ "FabSetIter", "classamrex_1_1FabSetT.html#a04d9b65884e6bbe0e494af350ee9fe70", null ],
-    [ "FluxRegister", "classamrex_1_1FabSetT.html#a73a0f9bfd301cc69846f78fbbbec0527", null ],
-    [ "m_mf", "classamrex_1_1FabSetT.html#a8b03f36aa484c3096470892346337619", null ]
+    [ "FluxRegister", "classamrex_1_1FabSetT.html#a73a0f9bfd301cc69846f78fbbbec0527", null ]
 ];

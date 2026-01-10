@@ -1464,52 +1464,12 @@
         </childnode>
         <childnode refid="169" relation="include">
         </childnode>
-        <childnode refid="172" relation="include">
-        </childnode>
-      </node>
-      <node id="172">
-        <label>AMReX_MultiFabUtilI.H</label>
-        <link refid="AMReX__MultiFabUtilI_8H"/>
-      </node>
-      <node id="171">
-        <label>AMReX_MultiFabUtil_3D_C.H</label>
-        <link refid="AMReX__MultiFabUtil__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="102" relation="include">
-        </childnode>
-        <childnode refid="165" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-      </node>
-      <node id="169">
-        <label>AMReX_MultiFabUtil_C.H</label>
-        <link refid="AMReX__MultiFabUtil__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="170" relation="include">
-        </childnode>
-        <childnode refid="171" relation="include">
         </childnode>
       </node>
       <node id="170">
-        <label>AMReX_MultiFabUtil_nd_C.H</label>
-        <link refid="AMReX__MultiFabUtil__nd__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="102" relation="include">
-        </childnode>
-        <childnode refid="144" relation="include">
-        </childnode>
-        <childnode refid="165" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
+        <label>AMReX_MultiFabUtilI.H</label>
+        <link refid="AMReX__MultiFabUtilI_8H"/>
       </node>
       <node id="167">
         <label>AMReX_NonLocalBC.H</label>
@@ -2168,6 +2128,9 @@
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
+      <node id="169">
+        <label>AMReX_MultiFabUtil_C.H</label>
+      </node>
       <node id="38">
         <label>algorithm</label>
       </node>
@@ -2335,7 +2298,7 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -2527,17 +2490,17 @@
 <codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><ref refid="classamrex_1_1iMultiFab_1a04e68d07c0aae11be5946e24023b17d3" kindref="member">iMultiFab::Initialize</ref><sp/>()</highlight></codeline>
 <codeline lineno="211"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialized)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad321a3965621a748d4c08e80c42b7af3" kindref="member">amrex::ExecOnFinalize</ref>(<ref refid="classamrex_1_1iMultiFab_1a30306fc1aaa921993a9667b639ec26c5" kindref="member">iMultiFab::Finalize</ref>);</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"></highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><ref refid="classamrex_1_1iMultiFab_1a30306fc1aaa921993a9667b639ec26c5" kindref="member">iMultiFab::Finalize</ref><sp/>()</highlight></codeline>
 <codeline lineno="221"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="223"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><ref refid="classamrex_1_1iMultiFab_1a4030a757a6ad60d4e54fc4b39c486f90" kindref="member">iMultiFab::iMultiFab</ref><sp/>(Arena*<sp/>a)<sp/>noexcept</highlight></codeline>

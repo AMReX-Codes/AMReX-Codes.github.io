@@ -20,6 +20,5 @@ var classamrex_1_1PlotFileData =
     [ "syncDistributionMap", "classamrex_1_1PlotFileData.html#a0cc0ef78ac5a9ed1d7ad288cf6774723", null ],
     [ "syncDistributionMap", "classamrex_1_1PlotFileData.html#a686e711350524cacaaeb3177337742c8", null ],
     [ "time", "classamrex_1_1PlotFileData.html#ad827fbbd6757ac18eb39a4c5ce37ef95", null ],
-    [ "varNames", "classamrex_1_1PlotFileData.html#a02a8a14ddee9b341ce53ed3af0b20b01", null ],
-    [ "m_impl", "classamrex_1_1PlotFileData.html#a120c87042788ba7040ced33bbff0dcf5", null ]
+    [ "varNames", "classamrex_1_1PlotFileData.html#a02a8a14ddee9b341ce53ed3af0b20b01", null ]
 ];

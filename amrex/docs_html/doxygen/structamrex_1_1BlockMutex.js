@@ -7,7 +7,5 @@ var structamrex_1_1BlockMutex =
     [ "init_states", "structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396", null ],
     [ "lock", "structamrex_1_1BlockMutex.html#a02180fd8808d67e28668b4ab78a7841b", null ],
     [ "operator=", "structamrex_1_1BlockMutex.html#a3eb4aec3fa8021b4fcb50768365ca52f", null ],
-    [ "unlock", "structamrex_1_1BlockMutex.html#a2007ff58d5b6238fc61a6677fefec6fb", null ],
-    [ "m_nstates", "structamrex_1_1BlockMutex.html#a5dd0ffbdeea32e60081285deaf2923ec", null ],
-    [ "m_state", "structamrex_1_1BlockMutex.html#ab5a49fbd49c206ff3f03ee616e60b990", null ]
+    [ "unlock", "structamrex_1_1BlockMutex.html#a2007ff58d5b6238fc61a6677fefec6fb", null ]
 ];

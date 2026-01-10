@@ -1,10 +1,5 @@
 var classamrex_1_1NeighborParticleContainer =
 [
-    [ "InverseCopyTag", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag" ],
-    [ "MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
-    [ "NeighborCommTag", "structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag" ],
-    [ "NeighborCopyTag", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag" ],
-    [ "NeighborIndexMap", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap" ],
     [ "NeighborTask", "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborTask" ],
     [ "AoS", "classamrex_1_1NeighborParticleContainer.html#a41c79512efbfbf1a4145948c6a680d5c", null ],
     [ "IntVector", "classamrex_1_1NeighborParticleContainer.html#a60a40e557410a932b8adc0275a5d019f", null ],

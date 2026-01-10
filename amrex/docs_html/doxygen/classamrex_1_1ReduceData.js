@@ -16,11 +16,5 @@ var classamrex_1_1ReduceData =
     [ "operator=", "classamrex_1_1ReduceData.html#a44cea26614b1b5af1ff9729f554d94c3", null ],
     [ "updateMaxStreamIndex", "classamrex_1_1ReduceData.html#a434609107e7998739f79cb1e7409f06c", null ],
     [ "value", "classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54", null ],
-    [ "value", "classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746", null ],
-    [ "m_device_tuple", "classamrex_1_1ReduceData.html#acdd88eae26f790899fa6d061102875d0", null ],
-    [ "m_fn_value", "classamrex_1_1ReduceData.html#ae683e1c583e7cf07816bca2d45bb3044", null ],
-    [ "m_host_tuple", "classamrex_1_1ReduceData.html#a45d8b95de17a37ca2b1a02df500f2035", null ],
-    [ "m_max_blocks", "classamrex_1_1ReduceData.html#a95441a0edc24955aa9f0c83e21c34cad", null ],
-    [ "m_max_stream_index", "classamrex_1_1ReduceData.html#a8c68dd84973b0f9d3ab7c7d5a3c81fd6", null ],
-    [ "m_nblocks", "classamrex_1_1ReduceData.html#a9b4fcec2d441d88b77dc7053301ea5fb", null ]
+    [ "value", "classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746", null ]
 ];

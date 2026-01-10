@@ -10,7 +10,5 @@ var classamrex_1_1Gpu_1_1AsyncArray =
     [ "data", "classamrex_1_1Gpu_1_1AsyncArray.html#a2ecda4ba26cc8a9f8a28fdadf99a6894", null ],
     [ "data", "classamrex_1_1Gpu_1_1AsyncArray.html#aef6af3a84b1434a23a674c67f5864bfb", null ],
     [ "operator=", "classamrex_1_1Gpu_1_1AsyncArray.html#ae70344e048d89311ae808a9485fd8b8f", null ],
-    [ "operator=", "classamrex_1_1Gpu_1_1AsyncArray.html#ac6b94ba54d0f143f579690a55fd1150a", null ],
-    [ "d_data", "classamrex_1_1Gpu_1_1AsyncArray.html#a8faf9b9425340e64e8849fad230ca590", null ],
-    [ "h_data", "classamrex_1_1Gpu_1_1AsyncArray.html#a51d329542fc90dfadcbe838a312a5470", null ]
+    [ "operator=", "classamrex_1_1Gpu_1_1AsyncArray.html#ac6b94ba54d0f143f579690a55fd1150a", null ]
 ];

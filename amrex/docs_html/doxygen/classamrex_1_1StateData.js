@@ -1,6 +1,5 @@
 var classamrex_1_1StateData =
 [
-    [ "TimeInterval", "structamrex_1_1StateData_1_1TimeInterval.html", "structamrex_1_1StateData_1_1TimeInterval" ],
     [ "StateData", "classamrex_1_1StateData.html#a947b62feb1753b7ebe6c604066b1d494", null ],
     [ "StateData", "classamrex_1_1StateData.html#ae0dbe25ac3e59b6bfb42e24f8fa8cf9c", null ],
     [ "~StateData", "classamrex_1_1StateData.html#a3d5f27474f7f24ed6995b4735150be55", null ],
@@ -47,7 +46,6 @@ var classamrex_1_1StateData =
     [ "reset", "classamrex_1_1StateData.html#ad51ab660eddbb7e6d4b51f53101a5509", null ],
     [ "restart", "classamrex_1_1StateData.html#aa6591b111a02fd2bc24bf77c7d2e41e2", null ],
     [ "restart", "classamrex_1_1StateData.html#a34ec54719f6bb5ab1f546f425b53c009", null ],
-    [ "restartDoit", "classamrex_1_1StateData.html#ae0c6a25c6e4470142b535f3ef3f9abf9", null ],
     [ "setArena", "classamrex_1_1StateData.html#ae83ccc99cebafd9a616419f206acfc72", null ],
     [ "setBoxArray", "classamrex_1_1StateData.html#ac4858379a15e9ba3dcb42fe16edeb61d", null ],
     [ "setDistributionMap", "classamrex_1_1StateData.html#a74036cca3383362145e0dd06a14a65ad", null ],
@@ -58,17 +56,5 @@ var classamrex_1_1StateData =
     [ "setTimeLevel", "classamrex_1_1StateData.html#a8e6217ecac0e2a8d99ce273835b20e91", null ],
     [ "swapTimeLevels", "classamrex_1_1StateData.html#ac6dd29902982ccf98c08a09c793a49be", null ],
     [ "syncNewTimeLevel", "classamrex_1_1StateData.html#a6a65bf767c55f02b3c1ebbc0b35d3bf1", null ],
-    [ "StateDataPhysBCFunct", "classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce", null ],
-    [ "arena", "classamrex_1_1StateData.html#a79cbe7313de5292d236958355ff878dd", null ],
-    [ "desc", "classamrex_1_1StateData.html#a5201a1b8230055d506cef5f265a8b8e2", null ],
-    [ "dmap", "classamrex_1_1StateData.html#aa537bc30a17ee4576c5490ca30da94c1", null ],
-    [ "domain", "classamrex_1_1StateData.html#a51e767063a27b4c6941e585193242bde", null ],
-    [ "fabArrayHeaderNames", "classamrex_1_1StateData.html#af35f43aa012590a264cbb08405ff5c1f", null ],
-    [ "faHeaderMap", "classamrex_1_1StateData.html#a60cd1a78a793b7a4ce54e70da0f0dd55", null ],
-    [ "grids", "classamrex_1_1StateData.html#af7a3b275665dcd4803b3780a02e36b48", null ],
-    [ "m_factory", "classamrex_1_1StateData.html#ac29954add581987ecf4948fb9090b2d6", null ],
-    [ "new_data", "classamrex_1_1StateData.html#a08b05c680ad59e2ac04f8178d52cf3a0", null ],
-    [ "new_time", "classamrex_1_1StateData.html#ad6b519ebb5a60157c412e833587b12b3", null ],
-    [ "old_data", "classamrex_1_1StateData.html#a9702465fcc6db1bb193b1a82222b0e1c", null ],
-    [ "old_time", "classamrex_1_1StateData.html#a49bf88f51c149857686027e44513f4f8", null ]
+    [ "StateDataPhysBCFunct", "classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce", null ]
 ];

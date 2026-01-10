@@ -37,6 +37,5 @@ var AMReX__Utility_8H =
     [ "UtilCreateCleanDirectory", "AMReX__Utility_8H.html#a832f4ad883cbc470d76cde70a099e912", null ],
     [ "UtilCreateDirectory", "AMReX__Utility_8H.html#a913fd7ccf7cab45bc7d8e2a09ddd2824", null ],
     [ "UtilCreateDirectoryDestructive", "AMReX__Utility_8H.html#aebce007d4152715af0cf44f3ab94d1fe", null ],
-    [ "UtilRenameDirectoryToOld", "AMReX__Utility_8H.html#ae2d0c6a2a5153df0d38d7cde07a89c73", null ],
-    [ "gcc_map_node_extra_bytes", "AMReX__Utility_8H.html#ae9f4a54b51971f15803c95c7f677c1b8", null ]
+    [ "UtilRenameDirectoryToOld", "AMReX__Utility_8H.html#ae2d0c6a2a5153df0d38d7cde07a89c73", null ]
 ];

@@ -6,7 +6,6 @@ var classamrex_1_1IntegratorBase =
     [ "advance", "classamrex_1_1IntegratorBase.html#a4d714675069097ce07c843145e45d465", null ],
     [ "evolve", "classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9", null ],
     [ "get_time_step", "classamrex_1_1IntegratorBase.html#a4e271bb0dfa0e7bee049e3b8dfcbfec4", null ],
-    [ "initialize_base_parameters", "classamrex_1_1IntegratorBase.html#a2aa5bd913a65baae7135ef4945c4c327", null ],
     [ "map_data", "classamrex_1_1IntegratorBase.html#a9a0b2271de694f1ea0903339931578ec", null ],
     [ "set_adaptive_fast_step", "classamrex_1_1IntegratorBase.html#a49c90c36c565d4499bd64662416f4d0d", null ],
     [ "set_adaptive_step", "classamrex_1_1IntegratorBase.html#a100f797cb82abd1ec8563c591ebe823a", null ],

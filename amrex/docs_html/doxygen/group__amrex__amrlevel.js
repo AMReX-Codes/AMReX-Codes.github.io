@@ -1,7 +1,6 @@
 var group__amrex__amrlevel =
 [
     [ "amrex::Amr", "classamrex_1_1Amr.html", [
-      [ "BoundaryPointList", "classamrex_1_1Amr.html#aabc768c5ab96cbd1408c58af3b5c88b9", null ],
       [ "Amr", "classamrex_1_1Amr.html#a8a39d13c1163b1e2bb81ea1494479301", null ],
       [ "Amr", "classamrex_1_1Amr.html#a6775cf62918686cc49888b7e6fdf04f8", null ],
       [ "Amr", "classamrex_1_1Amr.html#a850f1090f6ca9e8b954eeb61dff6ddb1", null ],
@@ -139,7 +138,6 @@ var group__amrex__amrlevel =
       [ "updateInSitu", "classamrex_1_1Amr.html#a8a6cfcdb14e8d28779382ac6406ab2ca", null ],
       [ "UsingPrecreateDirectories", "classamrex_1_1Amr.html#af0ab98386ac1b7aac739c65a8c3f2d95", null ],
       [ "writePlotFile", "group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18", null ],
-      [ "writePlotFileDoit", "classamrex_1_1Amr.html#a1ed3ee4ce3c8cc59e0b64767105cd936", null ],
       [ "writePlotNow", "classamrex_1_1Amr.html#ac56504a819c5f48033a0c10f94dc64ce", null ],
       [ "writeSmallPlotFile", "classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8", null ],
       [ "writeSmallPlotNow", "classamrex_1_1Amr.html#a79963ad1530c1e895fed27bfd77f2131", null ],
@@ -247,7 +245,6 @@ var group__amrex__amrlevel =
       [ "FillPatch", "classamrex_1_1AmrLevel.html#a55c1a2d0040ba28bf022fb293113a5f2", null ],
       [ "FillPatchAdd", "classamrex_1_1AmrLevel.html#aa72cce79d9f341c7f9a11addfcaec95f", null ],
       [ "FillPatcherFill", "classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618", null ],
-      [ "FillRKPatch", "classamrex_1_1AmrLevel.html#a262e295c3b6e661f434303f502c9d442", null ],
       [ "fineRatio", "classamrex_1_1AmrLevel.html#a3c94cb9318ca878ae41529469753c91a", null ],
       [ "finishConstructor", "classamrex_1_1AmrLevel.html#a954293930715e389153026f726dbd960", null ],
       [ "FlushFPICache", "classamrex_1_1AmrLevel.html#ac96bd5573c5f63e798aa682a7d5756ae", null ],
@@ -303,7 +300,6 @@ var group__amrex__amrlevel =
       [ "setPostStepRegrid", "classamrex_1_1AmrLevel.html#a3740e0877382738d1cd8d382909ef855", null ],
       [ "setSmallPlotVariables", "classamrex_1_1AmrLevel.html#adf299b915ff9411e6684762c72da84bc", null ],
       [ "setTimeLevel", "classamrex_1_1AmrLevel.html#a5b311a4d4139cce9025d1c41d28586b1", null ],
-      [ "storeRKCoarseData", "classamrex_1_1AmrLevel.html#ab3d554a4e9e4b98aae59f88ebba1e288", null ],
       [ "thePlotFileType", "classamrex_1_1AmrLevel.html#aafabc1e8a1b6e1b96230fbf6debe2465", null ],
       [ "UpdateDistributionMaps", "classamrex_1_1AmrLevel.html#a69fdf4e347142373696281d9269c6799", null ],
       [ "which_time", "classamrex_1_1AmrLevel.html#a58f60bcd444acf5b3acfe94db3981969", null ],
@@ -321,7 +317,6 @@ var group__amrex__amrlevel =
       [ "derive_lst", "classamrex_1_1AmrLevel.html#a792f148ee0bb20432a4acefa1c2cac9a", null ],
       [ "desc_lst", "classamrex_1_1AmrLevel.html#acb5f9e8c8d903d3a700d2cc11be500e5", null ],
       [ "dmap", "classamrex_1_1AmrLevel.html#ab0ab7555be82910d8100d7bc3aa55d1d", null ],
-      [ "edge_grids", "classamrex_1_1AmrLevel.html#a09cad6972df92e6e8a0f9da903e64784", null ],
       [ "fine_ratio", "classamrex_1_1AmrLevel.html#a109f988dd098fdb2a6b854a742015397", null ],
       [ "geom", "classamrex_1_1AmrLevel.html#a571b97b176d8618fba71f56c8b44a7c8", null ],
       [ "grids", "classamrex_1_1AmrLevel.html#a5ffc98d138f381698b2a61fc6cb2ce01", null ],
@@ -335,7 +330,6 @@ var group__amrex__amrlevel =
       [ "m_eb_volume_grow_cells", "classamrex_1_1AmrLevel.html#a20c8b78590eae07e4562367b1ca47a2f", null ],
       [ "m_factory", "classamrex_1_1AmrLevel.html#a948320fb29597814dca7906e314a2c13", null ],
       [ "m_fillpatcher", "classamrex_1_1AmrLevel.html#a28bc1fbc65e6522419abb88ac1fa8706", null ],
-      [ "nodal_grids", "classamrex_1_1AmrLevel.html#a4672d7cd3c482aedb037347c1fddc0ff", null ],
       [ "parent", "classamrex_1_1AmrLevel.html#aeb2c20016c60209d0bc5112f262957c2", null ],
       [ "post_step_regrid", "classamrex_1_1AmrLevel.html#a9ef7971fd5d7dd152886c202feb7d806", null ],
       [ "state", "classamrex_1_1AmrLevel.html#ac00306c6990dffb14241578a8f4aa281", null ]

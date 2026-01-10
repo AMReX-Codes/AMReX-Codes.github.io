@@ -25,10 +25,5 @@ var classamrex_1_1RealDescriptor =
     [ "orderarray", "classamrex_1_1RealDescriptor.html#a15088522b061b0e6c504ea1175a783f2", null ],
     [ "SetFixDenormals", "classamrex_1_1RealDescriptor.html#adbd417c0e8ee1019ce39cc3c35d0b06d", null ],
     [ "SetReadBufferSize", "classamrex_1_1RealDescriptor.html#a0e8add3f679863e8b4e09d5a681f3bd4", null ],
-    [ "SetWriteBufferSize", "classamrex_1_1RealDescriptor.html#aae779778e03e99a52811ac1e3460f4d2", null ],
-    [ "bAlwaysFixDenormals", "classamrex_1_1RealDescriptor.html#aaa3172ecb27298323dd87d8c72204eb2", null ],
-    [ "fr", "classamrex_1_1RealDescriptor.html#ae4c7fcfb3c69266545dd3f84af9b1115", null ],
-    [ "ord", "classamrex_1_1RealDescriptor.html#afcfec860496e4fc3bb85266a72321efa", null ],
-    [ "readBufferSize", "classamrex_1_1RealDescriptor.html#aad58178e786c29c8513d8549b20e0e6b", null ],
-    [ "writeBufferSize", "classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966", null ]
+    [ "SetWriteBufferSize", "classamrex_1_1RealDescriptor.html#aae779778e03e99a52811ac1e3460f4d2", null ]
 ];

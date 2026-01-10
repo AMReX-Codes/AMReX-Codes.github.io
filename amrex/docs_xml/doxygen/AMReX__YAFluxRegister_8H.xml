@@ -6,7 +6,7 @@
     <includes refid="AMReX__MultiFab_8H" local="no">AMReX_MultiFab.H</includes>
     <includes refid="AMReX__iMultiFab_8H" local="no">AMReX_iMultiFab.H</includes>
     <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
-    <includes refid="AMReX__YAFluxRegister__K_8H" local="no">AMReX_YAFluxRegister_K.H</includes>
+    <includes local="no">AMReX_YAFluxRegister_K.H</includes>
     <includedby refid="AMReX__EBFluxRegister_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H</includedby>
     <includedby refid="AMReX__EB__FluxRedistribute_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp</includedby>
     <includedby refid="AMReX__MLCellLinOp_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H</includedby>
@@ -2011,22 +2011,6 @@
         <childnode refid="168" relation="include">
         </childnode>
       </node>
-      <node id="169">
-        <label>AMReX_YAFluxRegister_3D_K.H</label>
-        <link refid="AMReX__YAFluxRegister__3D__K_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-      </node>
-      <node id="168">
-        <label>AMReX_YAFluxRegister_K.H</label>
-        <link refid="AMReX__YAFluxRegister__K_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="169" relation="include">
-        </childnode>
-      </node>
       <node id="157">
         <label>AMReX_EBCellFlag.H</label>
         <link refid="AMReX__EBCellFlag_8H"/>
@@ -2099,6 +2083,9 @@
       </node>
       <node id="2">
         <label>AMReX_Config.H</label>
+      </node>
+      <node id="168">
+        <label>AMReX_YAFluxRegister_K.H</label>
       </node>
       <node id="37">
         <label>algorithm</label>
@@ -2296,7 +2283,7 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
@@ -2307,16 +2294,16 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="18">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.H</label>
         <link refid="AMReX__MLEBABecLap_8H"/>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -2327,19 +2314,19 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.cpp</label>
         <link refid="AMReX__MLEBABecLap__F_8cpp"/>
       </node>
-      <node id="20">
+      <node id="19">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.H</label>
         <link refid="AMReX__MLEBTensorOp_8H"/>
+        <childnode refid="20" relation="include">
+        </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
       </node>
-      <node id="21">
+      <node id="20">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp</label>
         <link refid="AMReX__MLEBTensorOp_8cpp"/>
       </node>
-      <node id="22">
+      <node id="21">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp_bc.cpp</label>
         <link refid="AMReX__MLEBTensorOp__bc_8cpp"/>
       </node>
@@ -2376,18 +2363,10 @@
         <link refid="AMReX__OpenBC_8H"/>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
       </node>
       <node id="17">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.cpp</label>
         <link refid="AMReX__OpenBC_8cpp"/>
-      </node>
-      <node id="18">
-        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC_K.H</label>
-        <link refid="AMReX__OpenBC__K_8H"/>
-        <childnode refid="17" relation="include">
-        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classamrex_1_1YAFluxRegisterT" prot="public">amrex::YAFluxRegisterT</innerclass>
@@ -2404,7 +2383,7 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFab_8H" kindref="compound">AMReX_MultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__iMultiFab_8H" kindref="compound">AMReX_iMultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Geometry_8H" kindref="compound">AMReX_Geometry.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__YAFluxRegister__K_8H" kindref="compound">AMReX_YAFluxRegister_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_YAFluxRegister_K.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -2779,7 +2758,7 @@
 <codeline lineno="397"><highlight class="normal"></highlight></codeline>
 <codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a2c1652a738f35c5b1769bedd0d6a0602" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</ref><sp/>(<sp/>runon,<sp/>bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1afde521e34abc0ebc65d2a6d94e229b58" kindref="member">yafluxreg_crseadd</ref>(tbx,<sp/>dest_arr,<sp/>flag,<sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(fxarr,fyarr,fzarr),</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yafluxreg_crseadd(tbx,<sp/>dest_arr,<sp/>flag,<sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(fxarr,fyarr,fzarr),</highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(dtdx,dtdy,dtdz),numcomp);</highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="403"><highlight class="normal">}</highlight></codeline>
@@ -2868,7 +2847,7 @@
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;T const&gt;</ref><sp/>farr<sp/>=<sp/>f-&gt;const_array(fluxcomp);</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a2c1652a738f35c5b1769bedd0d6a0602" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</ref>(runon,<sp/>lobx_is,<sp/>tmpbox,</highlight></codeline>
 <codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a173c89471f4f14911c39fe24fcf9b9" kindref="member">yafluxreg_fineadd</ref>(tmpbox,<sp/>d,<sp/>farr,<sp/>dtdxs,<sp/>numcomp,<sp/>dirside,<sp/>rr);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yafluxreg_fineadd(tmpbox,<sp/>d,<sp/>farr,<sp/>dtdxs,<sp/>numcomp,<sp/>dirside,<sp/>rr);</highlight></codeline>
 <codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2883,7 +2862,7 @@
 <codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;T const&gt;</ref><sp/>farr<sp/>=<sp/>f-&gt;const_array(fluxcomp);</highlight></codeline>
 <codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a2c1652a738f35c5b1769bedd0d6a0602" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</ref>(runon,<sp/>hibx_is,<sp/>tmpbox,</highlight></codeline>
 <codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a173c89471f4f14911c39fe24fcf9b9" kindref="member">yafluxreg_fineadd</ref>(tmpbox,<sp/>d,<sp/>farr,<sp/>dtdxs,<sp/>numcomp,<sp/>dirside,<sp/>rr);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yafluxreg_fineadd(tmpbox,<sp/>d,<sp/>farr,<sp/>dtdxs,<sp/>numcomp,<sp/>dirside,<sp/>rr);</highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

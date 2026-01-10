@@ -36,20 +36,5 @@ var classamrex_1_1DeriveRec =
     [ "operator=", "classamrex_1_1DeriveRec.html#a5e94bbf1852900d22588982fcce8d4bd", null ],
     [ "TheSameBox", "classamrex_1_1DeriveRec.html#a84376910b355f3a4b74220bbdf410328", null ],
     [ "variableName", "classamrex_1_1DeriveRec.html#a390fb97e437dd3b2fc3b5be48804dd0d", null ],
-    [ "DeriveList", "classamrex_1_1DeriveRec.html#a955d7a4da11a875f2d5129baf943397c", null ],
-    [ "bcr", "classamrex_1_1DeriveRec.html#a222aca825f0b80bc8de5522d155ba0e7", null ],
-    [ "bcr3D", "classamrex_1_1DeriveRec.html#a34c2f0068a7832ca670a0476cea011fc", null ],
-    [ "bx_map", "classamrex_1_1DeriveRec.html#adbe5143a11f68ea45e237f5d650ba69f", null ],
-    [ "der_type", "classamrex_1_1DeriveRec.html#a9d57d46fa6d94f5e72b31c5a00cc92bd", null ],
-    [ "derive_name", "classamrex_1_1DeriveRec.html#a77433a32f069c939a91530330272b36d", null ],
-    [ "func", "classamrex_1_1DeriveRec.html#a10804ba5e49805dde6c9343a0998b475", null ],
-    [ "func_3d", "classamrex_1_1DeriveRec.html#a540136f9f500bb35628b3e034161bd51", null ],
-    [ "func_fab", "classamrex_1_1DeriveRec.html#af68c5991f26f4c0642a77d0c03009f3e", null ],
-    [ "func_mf", "classamrex_1_1DeriveRec.html#a1771b2a939059eb7f6c19b064d633ea4", null ],
-    [ "mapper", "classamrex_1_1DeriveRec.html#aa07835dc9dafb5110f5bfebf9291e72b", null ],
-    [ "n_derive", "classamrex_1_1DeriveRec.html#a37c756f3c98d63ce682589e6abf3a6c4", null ],
-    [ "n_state", "classamrex_1_1DeriveRec.html#a2cc67c5168b67d6772586e58d5e2c5a3", null ],
-    [ "nsr", "classamrex_1_1DeriveRec.html#a5dd47ecd89eca47c1a2da2a3cee0675f", null ],
-    [ "rng", "classamrex_1_1DeriveRec.html#aef8dca7a34e2c3e59d330ad5de2c35dc", null ],
-    [ "variable_names", "classamrex_1_1DeriveRec.html#afef1822a23261763c6da7cc5dbe644b5", null ]
+    [ "DeriveList", "classamrex_1_1DeriveRec.html#a955d7a4da11a875f2d5129baf943397c", null ]
 ];

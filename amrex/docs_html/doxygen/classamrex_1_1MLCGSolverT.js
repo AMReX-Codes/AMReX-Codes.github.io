@@ -27,15 +27,5 @@ var classamrex_1_1MLCGSolverT =
     [ "setVerbose", "classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1", null ],
     [ "solve", "classamrex_1_1MLCGSolverT.html#aad8e08ec70f7e680e43b8fa108a08e39", null ],
     [ "solve_bicgstab", "classamrex_1_1MLCGSolverT.html#a7e4df044793281aa42b1943cb720e3c0", null ],
-    [ "solve_cg", "classamrex_1_1MLCGSolverT.html#a56708cd7b832c09b21bb39fb35d61c5c", null ],
-    [ "amrlev", "classamrex_1_1MLCGSolverT.html#a68c9f3778780bf9f4b88f0a8cb3f34eb", null ],
-    [ "initial_vec_zeroed", "classamrex_1_1MLCGSolverT.html#a69d27f7696e48a507b2840029ed6881b", null ],
-    [ "iter", "classamrex_1_1MLCGSolverT.html#a0fa5976e3bee03e63b07a0848c74380f", null ],
-    [ "Lp", "classamrex_1_1MLCGSolverT.html#a16d88d529344d6a6f99d66a99e122443", null ],
-    [ "maxiter", "classamrex_1_1MLCGSolverT.html#a98e289422bb9545526d029a73b9df214", null ],
-    [ "mglev", "classamrex_1_1MLCGSolverT.html#a3210f3ff9e55a7746a24d849cf9c39b2", null ],
-    [ "nghost", "classamrex_1_1MLCGSolverT.html#a3389add6565681ffce22be42b4101fe2", null ],
-    [ "print_ident", "classamrex_1_1MLCGSolverT.html#aae7a915944318bfe244170496d8743c7", null ],
-    [ "solver_type", "classamrex_1_1MLCGSolverT.html#af2a29b081fce0743089c448703b6da3a", null ],
-    [ "verbose", "classamrex_1_1MLCGSolverT.html#a0f7eb83547164209035b1dd1d8a5409c", null ]
+    [ "solve_cg", "classamrex_1_1MLCGSolverT.html#a56708cd7b832c09b21bb39fb35d61c5c", null ]
 ];

@@ -7,6 +7,5 @@ var structamrex_1_1DistributionMapping_1_1RefID =
     [ "operator<", "structamrex_1_1DistributionMapping_1_1RefID.html#acf88511a112b6bcc2cba29a585f5ac13", null ],
     [ "operator==", "structamrex_1_1DistributionMapping_1_1RefID.html#a4a4237a4808d5f1bbd7266cc847e4952", null ],
     [ "PrintPtr", "structamrex_1_1DistributionMapping_1_1RefID.html#a614a6f4d10ea61b0dc126aa932d1ab27", null ],
-    [ "operator<<", "structamrex_1_1DistributionMapping_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ],
-    [ "data", "structamrex_1_1DistributionMapping_1_1RefID.html#a83d7d3288a3b51ffca12886346794042", null ]
+    [ "operator<<", "structamrex_1_1DistributionMapping_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ]
 ];

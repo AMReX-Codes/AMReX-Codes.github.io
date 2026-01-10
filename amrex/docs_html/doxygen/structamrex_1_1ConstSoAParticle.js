@@ -14,8 +14,6 @@ var structamrex_1_1ConstSoAParticle =
     [ "UnprotectedNextID", "structamrex_1_1ConstSoAParticle.html#adf0b591e84350f6fd8e805949784afdf", null ],
     [ "is_constsoa_particle", "structamrex_1_1ConstSoAParticle.html#aaf21bca4c9343441d6769e0caf0e3162", null ],
     [ "is_soa_particle", "structamrex_1_1ConstSoAParticle.html#ae496c194b170d1cf830b34138e9bdcef", null ],
-    [ "m_constparticle_tile_data", "structamrex_1_1ConstSoAParticle.html#a5df5fad9c993924a97176760e588e175", null ],
-    [ "m_index", "structamrex_1_1ConstSoAParticle.html#aabe16c4205ba7567728db00191bdb3e8", null ],
     [ "NArrayInt", "structamrex_1_1ConstSoAParticle.html#a5981f78d812f2041269921a8e314924d", null ],
     [ "NArrayReal", "structamrex_1_1ConstSoAParticle.html#a2cf0e656973af4978ffcfb13a8fc7920", null ]
 ];

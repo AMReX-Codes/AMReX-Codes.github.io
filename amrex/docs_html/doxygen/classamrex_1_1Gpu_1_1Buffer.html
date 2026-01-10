@@ -101,8 +101,6 @@ $(document).ready(function(){initNavTree('classamrex_1_1Gpu_1_1Buffer.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1Gpu_1_1Buffer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::Gpu::Buffer&lt; T, &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -152,18 +150,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acc8283b2ebe85a8dc6666c6a3061508d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d1688b85ebda041a2873ff48594232" id="r_aa4d1688b85ebda041a2873ff48594232"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#aa4d1688b85ebda041a2873ff48594232">copyToHost</a> () noexcept</td></tr>
 <tr class="separator:aa4d1688b85ebda041a2873ff48594232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab19291501765ae52f49d238b703fd7a8" id="r_ab19291501765ae52f49d238b703fd7a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#ab19291501765ae52f49d238b703fd7a8">useDVect</a> () const noexcept</td></tr>
-<tr class="separator:ab19291501765ae52f49d238b703fd7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a46a07020c127909f75b18f1964d752b1" id="r_a46a07020c127909f75b18f1964d752b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">DeviceVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#a46a07020c127909f75b18f1964d752b1">d_vect</a></td></tr>
-<tr class="separator:a46a07020c127909f75b18f1964d752b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb05e0773a44936080b5083c4a5dc65" id="r_a8fb05e0773a44936080b5083c4a5dc65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__linear__containers.html#ga6e76d121ad2e1030d86ccbc9a47f6fde">PinnedVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#a8fb05e0773a44936080b5083c4a5dc65">h_vect</a></td></tr>
-<tr class="separator:a8fb05e0773a44936080b5083c4a5dc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3f55c45f384966160f9b9538d732593d" name="a3f55c45f384966160f9b9538d732593d"></a>
@@ -727,82 +713,6 @@ template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab19291501765ae52f49d238b703fd7a8" name="ab19291501765ae52f49d238b703fd7a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab19291501765ae52f49d238b703fd7a8">&#9670;&#160;</a></span>useDVect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, int &gt;  = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a>&lt; T, &gt;::useDVect </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a46a07020c127909f75b18f1964d752b1" name="a46a07020c127909f75b18f1964d752b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46a07020c127909f75b18f1964d752b1">&#9670;&#160;</a></span>d_vect</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, int &gt;  = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__amrex__linear__containers.html#ga99e1f048890efc1c275606cb9bdc41c7">DeviceVector</a>&lt;T&gt; <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a>&lt; T, &gt;::d_vect</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8fb05e0773a44936080b5083c4a5dc65" name="a8fb05e0773a44936080b5083c4a5dc65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fb05e0773a44936080b5083c4a5dc65">&#9670;&#160;</a></span>h_vect</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, int &gt;  = 0&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__amrex__linear__containers.html#ga6e76d121ad2e1030d86ccbc9a47f6fde">PinnedVector</a>&lt;T&gt; <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a>&lt; T, &gt;::h_vect</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

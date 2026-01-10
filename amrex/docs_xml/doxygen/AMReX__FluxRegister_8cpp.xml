@@ -4,27 +4,11 @@
     <compoundname>AMReX_FluxRegister.cpp</compoundname>
     <includes refid="AMReX__BArena_8H" local="no">AMReX_BArena.H</includes>
     <includes refid="AMReX__FluxRegister_8H" local="no">AMReX_FluxRegister.H</includes>
-    <includes refid="AMReX__FluxReg__C_8H" local="no">AMReX_FluxReg_C.H</includes>
+    <includes local="no">AMReX_FluxReg_C.H</includes>
     <includes refid="AMReX__ParallelDescriptor_8H" local="no">AMReX_ParallelDescriptor.H</includes>
     <includes refid="AMReX__BLProfiler_8H" local="no">AMReX_BLProfiler.H</includes>
     <includes refid="AMReX__iMultiFab_8H" local="no">AMReX_iMultiFab.H</includes>
     <incdepgraph>
-      <node id="177">
-        <label>AMReX_FluxReg_3D_C.H</label>
-        <link refid="AMReX__FluxReg__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="144" relation="include">
-        </childnode>
-      </node>
-      <node id="176">
-        <label>AMReX_FluxReg_C.H</label>
-        <link refid="AMReX__FluxReg__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="177" relation="include">
-        </childnode>
-      </node>
       <node id="34">
         <label>AMReX_FluxRegister.H</label>
         <link refid="AMReX__FluxRegister_8H"/>
@@ -50,7 +34,7 @@
         </childnode>
         <childnode refid="79" relation="include">
         </childnode>
-        <childnode refid="178" relation="include">
+        <childnode refid="177" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -1289,7 +1273,7 @@
         <childnode refid="97" relation="include">
         </childnode>
       </node>
-      <node id="179">
+      <node id="178">
         <label>AMReX_IArrayBox.H</label>
         <link refid="AMReX__IArrayBox_8H"/>
         <childnode refid="3" relation="include">
@@ -2105,14 +2089,14 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="178">
+      <node id="177">
         <label>AMReX_iMultiFab.H</label>
         <link refid="AMReX__iMultiFab_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="178" relation="include">
         </childnode>
         <childnode refid="147" relation="include">
         </childnode>
@@ -2239,6 +2223,9 @@
       </node>
       <node id="3">
         <label>AMReX_Config.H</label>
+      </node>
+      <node id="176">
+        <label>AMReX_FluxReg_C.H</label>
       </node>
       <node id="50">
         <label>algorithm</label>
@@ -2394,7 +2381,7 @@
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BArena_8H" kindref="compound">AMReX_BArena.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FluxRegister_8H" kindref="compound">AMReX_FluxRegister.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FluxReg__C_8H" kindref="compound">AMReX_FluxReg_C.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_FluxReg_C.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParallelDescriptor_8H" kindref="compound">AMReX_ParallelDescriptor.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLProfiler_8H" kindref="compound">AMReX_BLProfiler.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__iMultiFab_8H" kindref="compound">AMReX_iMultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -2403,9 +2390,9 @@
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a935b4c43c77115935fcf76b3e4a6e009" kindref="member">FluxRegister::FluxRegister</ref><sp/>()</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref><sp/>=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref><sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref><sp/>=<sp/><ref refid="classamrex_1_1IntVectND_1a7471cfc6c0cf387e351e462827fb0911" kindref="member">IntVect::TheUnitVector</ref>();</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref>.<ref refid="classamrex_1_1IntVectND_1ab6ffea95df85419e0921b73b53911997" kindref="member">scale</ref>(-1);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>fine_level<sp/>=<sp/>ncomp<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>ratio<sp/>=<sp/><ref refid="classamrex_1_1IntVectND_1a7471cfc6c0cf387e351e462827fb0911" kindref="member">IntVect::TheUnitVector</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>ratio.<ref refid="classamrex_1_1IntVectND_1ab6ffea95df85419e0921b73b53911997" kindref="member">scale</ref>(-1);</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a935b4c43c77115935fcf76b3e4a6e009" kindref="member">FluxRegister::FluxRegister</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine_boxes,</highlight></codeline>
@@ -2420,25 +2407,25 @@
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>&amp;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1acee4de5e4f610fb4bc86bdae1ac7fd49" kindref="member">FluxRegister::refRatio</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ratio;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a7aa00b34c175fadfdb6bae33c68bf5d1" kindref="member">FluxRegister::fineLevel</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fine_level;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1aef5f291512ba1c3e9208ff5c8216f3ab" kindref="member">FluxRegister::crseLevel</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
 <codeline lineno="41"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref>-1;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fine_level-1;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1af8c25dc77c81cfd2e133f1ed79fe0032" kindref="member">FluxRegister::nComp</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ncomp;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;</highlight></codeline>
@@ -2457,12 +2444,12 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(fine_boxes.isDisjoint());</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(<ref refid="classamrex_1_1BndryRegisterT_1a3661eefa8a7bc8f810c39fdc6f8fb350" kindref="member">grids</ref>.<ref refid="classamrex_1_1BoxArray_1ae71159edaa4456e59699f01955144d97" kindref="member">empty</ref>());</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ref_ratio;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref><sp/>=<sp/>fine_lev;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nvar;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>ratio<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ref_ratio;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>fine_level<sp/>=<sp/>fine_lev;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>ncomp<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nvar;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a3661eefa8a7bc8f810c39fdc6f8fb350" kindref="member">grids</ref><sp/>=<sp/>fine_boxes;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a3661eefa8a7bc8f810c39fdc6f8fb350" kindref="member">grids</ref>.<ref refid="classamrex_1_1BoxArray_1ab905a7751a6378467cf96c78c1ac880d" kindref="member">coarsen</ref>(<ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegisterT_1a3661eefa8a7bc8f810c39fdc6f8fb350" kindref="member">grids</ref>.<ref refid="classamrex_1_1BoxArray_1ab905a7751a6378467cf96c78c1ac880d" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir<sp/>=<sp/>0;<sp/>dir<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>dir++)</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2560,7 +2547,7 @@
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FrOp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>op)</highlight></codeline>
 <codeline lineno="168"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(srccomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>srccomp+numcomp<sp/>&lt;=<sp/>mflx.nComp());</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/>ncomp);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face_lo(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face_hi(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
@@ -2662,7 +2649,7 @@
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FrOp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>op)</highlight></codeline>
 <codeline lineno="270"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(srccomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>srccomp+numcomp<sp/>&lt;=<sp/>mflx.nComp());</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/>ncomp);</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"></highlight></codeline>
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>area(mflx.boxArray(),<sp/>mflx.DistributionMap(),<sp/>1,<sp/>0,</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo(),<sp/>mflx.Factory());</highlight></codeline>
@@ -2683,7 +2670,7 @@
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom)</highlight></codeline>
 <codeline lineno="291"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(srccomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>srccomp+numcomp<sp/>&lt;=<sp/>mflx.nComp());</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/>ncomp);</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"></highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face_lo(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face_hi(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
@@ -2738,7 +2725,7 @@
 <codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom)</highlight></codeline>
 <codeline lineno="346"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(srccomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>srccomp+numcomp<sp/>&lt;=<sp/>mflx.nComp());</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(destcomp<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>destcomp+numcomp<sp/>&lt;=<sp/>ncomp);</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight></codeline>
 <codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>area(mflx.boxArray(),<sp/>mflx.DistributionMap(),<sp/>1,<sp/>0,</highlight></codeline>
 <codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo(),<sp/>mflx.Factory());</highlight></codeline>
@@ -2813,21 +2800,21 @@
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a224e4236496017e5f5cbcec29e94c379" kindref="member">AMREX_LAUNCH_DEVICE_LAMBDA</ref></highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>lobox,<sp/>tlobx,</highlight></codeline>
 <codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90343f2eb461e0ec854cc449b137a5bb" kindref="member">fluxreg_fineadd</ref>(tlobx,<sp/>loarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineadd(tlobx,<sp/>loarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
 <codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hibox,<sp/>thibx,</highlight></codeline>
 <codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90343f2eb461e0ec854cc449b137a5bb" kindref="member">fluxreg_fineadd</ref>(thibx,<sp/>hiarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineadd(thibx,<sp/>hiarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
 <codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90343f2eb461e0ec854cc449b137a5bb" kindref="member">fluxreg_fineadd</ref>(lobox,<sp/>loarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineadd(lobox,<sp/>loarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
-<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90343f2eb461e0ec854cc449b137a5bb" kindref="member">fluxreg_fineadd</ref>(hibox,<sp/>hiarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineadd(hibox,<sp/>hiarr,<sp/>destcomp,<sp/>farr,<sp/>srccomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="440"><highlight class="normal">}</highlight></codeline>
@@ -2862,13 +2849,13 @@
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a224e4236496017e5f5cbcec29e94c379" kindref="member">AMREX_LAUNCH_DEVICE_LAMBDA</ref></highlight></codeline>
 <codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>lobox,<sp/>tlobx,</highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab67ccd56223162d8b09b9c97d1eb94bf" kindref="member">fluxreg_fineareaadd</ref>(tlobx,<sp/>loarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineareaadd(tlobx,<sp/>loarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aarr,<sp/>farr,<sp/>srccomp,</highlight></codeline>
 <codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
 <codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hibox,<sp/>thibx,</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab67ccd56223162d8b09b9c97d1eb94bf" kindref="member">fluxreg_fineareaadd</ref>(thibx,<sp/>hiarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineareaadd(thibx,<sp/>hiarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aarr,<sp/>farr,<sp/>srccomp,</highlight></codeline>
 <codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2876,10 +2863,10 @@
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab67ccd56223162d8b09b9c97d1eb94bf" kindref="member">fluxreg_fineareaadd</ref>(lobox,<sp/>loarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineareaadd(lobox,<sp/>loarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aarr,<sp/>farr,<sp/>srccomp,</highlight></codeline>
 <codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab67ccd56223162d8b09b9c97d1eb94bf" kindref="member">fluxreg_fineareaadd</ref>(hibox,<sp/>hiarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_fineareaadd(hibox,<sp/>hiarr,<sp/>destcomp,<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-suspicious-call-argument)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aarr,<sp/>farr,<sp/>srccomp,</highlight></codeline>
 <codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numcomp,<sp/>dir,<sp/>local_ratio,<sp/>mult);</highlight></codeline>
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3009,7 +2996,7 @@
 <codeline lineno="616"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(k);</highlight></codeline>
 <codeline lineno="618"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a3a7ad4262646646fa90b8b7d03469c98" kindref="member">fluxreg_reflux</ref>(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>(<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k)),<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k))),</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_reflux(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>(<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k)),<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k))),</highlight></codeline>
 <codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sma[box_no],<sp/>dcomp,<sp/>fma[box_no],<sp/>vma[box_no],<sp/>nc,<sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref>,<sp/>face);</highlight></codeline>
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
@@ -3027,7 +3014,7 @@
 <codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vfab<sp/>=<sp/><ref refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c" kindref="member">volume</ref>.const_array(mfi);</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8nolint_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a3a7ad4262646646fa90b8b7d03469c98" kindref="member">fluxreg_reflux</ref>(tbx,<sp/>sfab,<sp/>dcomp,<sp/>ffab,<sp/>vfab,<sp/>nc,<sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref>,<sp/>face);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fluxreg_reflux(tbx,<sp/>sfab,<sp/>dcomp,<sp/>ffab,<sp/>vfab,<sp/>nc,<sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref>,<sp/>face);</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3275,9 +3262,9 @@
 <codeline lineno="882"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__amrex__mpi_1gac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>ratio<sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>fine_level<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>ncomp<sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="889"><highlight class="normal"></highlight></codeline>
 <codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a51a3951b54ca3db6bf891ebc2f867168" kindref="member">BndryRegister</ref>*<sp/>br<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
@@ -3289,7 +3276,7 @@
 <codeline lineno="896"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="897"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a13861fcb5290d2ce4fe7e6510d3fee34" kindref="member">FluxRegister::read</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>std::istream&amp;<sp/>is)</highlight></codeline>
 <codeline lineno="898"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref><sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ncomp<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;FluxRegister::read:<sp/>FluxRegister<sp/>not<sp/>defined&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="902"><highlight class="normal"></highlight></codeline>
@@ -3301,7 +3288,7 @@
 <codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>fine_level_in;</highlight></codeline>
 <codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>ncomp_in;</highlight></codeline>
 <codeline lineno="910"><highlight class="normal"></highlight></codeline>
-<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ratio_in<sp/>!=<sp/><ref refid="classamrex_1_1FluxRegister_1a8d33188a1ba19154997256c66083b10e" kindref="member">ratio</ref><sp/>||<sp/>fine_level_in<sp/>!=<sp/><ref refid="classamrex_1_1FluxRegister_1a43c7c6ca83e0c49296f131ecf5eb8b0e" kindref="member">fine_level</ref><sp/>||<sp/>ncomp_in<sp/>!=<sp/><ref refid="classamrex_1_1FluxRegister_1a311b5caaf3b58835f84598f46315953d" kindref="member">ncomp</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ratio_in<sp/>!=<sp/>ratio<sp/>||<sp/>fine_level_in<sp/>!=<sp/>fine_level<sp/>||<sp/>ncomp_in<sp/>!=<sp/>ncomp)<sp/>{</highlight></codeline>
 <codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;FluxRegister::read:<sp/>predefined<sp/>FluxRegister<sp/>does<sp/>not<sp/>match<sp/>the<sp/>one<sp/>in<sp/>istream&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="914"><highlight class="normal"></highlight></codeline>

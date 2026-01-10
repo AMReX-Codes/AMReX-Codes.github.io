@@ -1,6 +1,5 @@
 var classamrex_1_1Amr =
 [
-    [ "BoundaryPointList", "classamrex_1_1Amr.html#aabc768c5ab96cbd1408c58af3b5c88b9", null ],
     [ "Amr", "classamrex_1_1Amr.html#a8a39d13c1163b1e2bb81ea1494479301", null ],
     [ "Amr", "classamrex_1_1Amr.html#a6775cf62918686cc49888b7e6fdf04f8", null ],
     [ "Amr", "classamrex_1_1Amr.html#a850f1090f6ca9e8b954eeb61dff6ddb1", null ],
@@ -138,7 +137,6 @@ var classamrex_1_1Amr =
     [ "updateInSitu", "classamrex_1_1Amr.html#a8a6cfcdb14e8d28779382ac6406ab2ca", null ],
     [ "UsingPrecreateDirectories", "classamrex_1_1Amr.html#af0ab98386ac1b7aac739c65a8c3f2d95", null ],
     [ "writePlotFile", "group__amrex__io.html#ga1913d5ba8be07f02e9ae1f1b2c667a18", null ],
-    [ "writePlotFileDoit", "classamrex_1_1Amr.html#a1ed3ee4ce3c8cc59e0b64767105cd936", null ],
     [ "writePlotNow", "classamrex_1_1Amr.html#ac56504a819c5f48033a0c10f94dc64ce", null ],
     [ "writeSmallPlotFile", "classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8", null ],
     [ "writeSmallPlotNow", "classamrex_1_1Amr.html#a79963ad1530c1e895fed27bfd77f2131", null ],

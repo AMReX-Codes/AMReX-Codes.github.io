@@ -8,20 +8,11 @@ var dir_f9e66c8b738777acbc48d7c0a63416f3 =
     [ "AMReX_EdgeFluxRegister.H", "AMReX__EdgeFluxRegister_8H.html", "AMReX__EdgeFluxRegister_8H" ],
     [ "AMReX_FabSet.H", "AMReX__FabSet_8H.html", "AMReX__FabSet_8H" ],
     [ "AMReX_InterpBndryData.H", "AMReX__InterpBndryData_8H.html", "AMReX__InterpBndryData_8H" ],
-    [ "AMReX_InterpBndryData_1D_K.H", "AMReX__InterpBndryData__1D__K_8H.html", "AMReX__InterpBndryData__1D__K_8H" ],
-    [ "AMReX_InterpBndryData_2D_K.H", "AMReX__InterpBndryData__2D__K_8H.html", "AMReX__InterpBndryData__2D__K_8H" ],
-    [ "AMReX_InterpBndryData_3D_K.H", "AMReX__InterpBndryData__3D__K_8H.html", "AMReX__InterpBndryData__3D__K_8H" ],
-    [ "AMReX_InterpBndryData_K.H", "AMReX__InterpBndryData__K_8H.html", null ],
     [ "AMReX_LO_BCTYPES.cpp", "AMReX__LO__BCTYPES_8cpp.html", "AMReX__LO__BCTYPES_8cpp" ],
     [ "AMReX_LO_BCTYPES.H", "AMReX__LO__BCTYPES_8H.html", "AMReX__LO__BCTYPES_8H" ],
-    [ "AMReX_LOUtil_K.H", "AMReX__LOUtil__K_8H.html", "AMReX__LOUtil__K_8H" ],
     [ "AMReX_Mask.cpp", "AMReX__Mask_8cpp.html", "AMReX__Mask_8cpp" ],
     [ "AMReX_Mask.H", "AMReX__Mask_8H.html", "AMReX__Mask_8H" ],
     [ "AMReX_MultiMask.cpp", "AMReX__MultiMask_8cpp.html", null ],
     [ "AMReX_MultiMask.H", "AMReX__MultiMask_8H.html", "AMReX__MultiMask_8H" ],
-    [ "AMReX_YAFluxRegister.H", "AMReX__YAFluxRegister_8H.html", "AMReX__YAFluxRegister_8H" ],
-    [ "AMReX_YAFluxRegister_1D_K.H", "AMReX__YAFluxRegister__1D__K_8H.html", "AMReX__YAFluxRegister__1D__K_8H" ],
-    [ "AMReX_YAFluxRegister_2D_K.H", "AMReX__YAFluxRegister__2D__K_8H.html", "AMReX__YAFluxRegister__2D__K_8H" ],
-    [ "AMReX_YAFluxRegister_3D_K.H", "AMReX__YAFluxRegister__3D__K_8H.html", "AMReX__YAFluxRegister__3D__K_8H" ],
-    [ "AMReX_YAFluxRegister_K.H", "AMReX__YAFluxRegister__K_8H.html", "AMReX__YAFluxRegister__K_8H" ]
+    [ "AMReX_YAFluxRegister.H", "AMReX__YAFluxRegister_8H.html", "AMReX__YAFluxRegister_8H" ]
 ];

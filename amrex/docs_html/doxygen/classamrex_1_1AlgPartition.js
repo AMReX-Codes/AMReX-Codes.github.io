@@ -1,6 +1,5 @@
 var classamrex_1_1AlgPartition =
 [
-    [ "Ref", "structamrex_1_1AlgPartition_1_1Ref.html", "structamrex_1_1AlgPartition_1_1Ref" ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#a1948eb08e3021a2068d8e984dfb88d93", null ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#a2d89af6c0da1b862c1a71a69b5e218ad", null ],
     [ "AlgPartition", "classamrex_1_1AlgPartition.html#afba6c38742af762699b08ce4db35d01e", null ],
@@ -14,6 +13,5 @@ var classamrex_1_1AlgPartition =
     [ "numGlobalRows", "classamrex_1_1AlgPartition.html#a0fe323102fafe817bd8a5c6c496b4588", null ],
     [ "operator!=", "classamrex_1_1AlgPartition.html#ab6757cfd0672aef79bbc9c9b743d704f", null ],
     [ "operator==", "classamrex_1_1AlgPartition.html#a2711e3d64b2739631a2717c4c6e004d6", null ],
-    [ "operator[]", "classamrex_1_1AlgPartition.html#abec1ce33631eaa65a9188f53550a9ff8", null ],
-    [ "m_ref", "classamrex_1_1AlgPartition.html#a04f6d51db96d29829498922a229aa817", null ]
+    [ "operator[]", "classamrex_1_1AlgPartition.html#abec1ce33631eaa65a9188f53550a9ff8", null ]
 ];

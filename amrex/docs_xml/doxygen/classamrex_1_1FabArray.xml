@@ -263,7 +263,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1559" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="1559" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1FabArray_1a4be8117f0879a668e9906ac818e9a2a9" prot="private" static="no" mutable="no">
-        <type>std::map&lt; <ref refid="classamrex_1_1FabArray_1aaf405d372875eda63d54bcb7bb90e192" kindref="member">RecvSendCopyHandlerKey</ref>, std::unique_ptr&lt; <ref refid="structamrex_1_1TagVector" kindref="compound">TagVector</ref>&lt; <ref refid="structamrex_1_1CommRecvBufTag" kindref="compound">CommRecvBufTag</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt; &gt; &gt; &gt;</type>
+        <type>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; <ref refid="structamrex_1_1TagVector" kindref="compound">TagVector</ref>&lt; <ref refid="structamrex_1_1CommRecvBufTag" kindref="compound">CommRecvBufTag</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt; &gt; &gt; &gt;</type>
         <definition>std::map&lt;RecvSendCopyHandlerKey, std::unique_ptr&lt;TagVector&lt;CommRecvBufTag&lt;value_type&gt; &gt; &gt; &gt; amrex::FabArray&lt; FAB &gt;::m_recv_copy_handler</definition>
         <argsstring></argsstring>
         <name>m_recv_copy_handler</name>
@@ -277,7 +277,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1564" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="1564" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1FabArray_1a24e0c1e9cdca81d616e61594fe98a33c" prot="private" static="no" mutable="yes">
-        <type>std::map&lt; <ref refid="classamrex_1_1FabArray_1aaf405d372875eda63d54bcb7bb90e192" kindref="member">RecvSendCopyHandlerKey</ref>, std::unique_ptr&lt; <ref refid="structamrex_1_1TagVector" kindref="compound">TagVector</ref>&lt; <ref refid="structamrex_1_1CommSendBufTag" kindref="compound">CommSendBufTag</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt; &gt; &gt; &gt;</type>
+        <type>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; <ref refid="structamrex_1_1TagVector" kindref="compound">TagVector</ref>&lt; <ref refid="structamrex_1_1CommSendBufTag" kindref="compound">CommSendBufTag</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt; &gt; &gt; &gt;</type>
         <definition>std::map&lt;RecvSendCopyHandlerKey, std::unique_ptr&lt;TagVector&lt;CommSendBufTag&lt;value_type&gt; &gt; &gt; &gt; amrex::FabArray&lt; FAB &gt;::m_send_copy_handler</definition>
         <argsstring></argsstring>
         <name>m_send_copy_handler</name>
@@ -6497,87 +6497,41 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="49">
+      <node id="38">
         <label>amrex::Array4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1Array4"/>
-        <childnode refid="50" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="52">
+      <node id="41">
         <label>amrex::Array4&lt; value_type const &gt;</label>
         <link refid="structamrex_1_1Array4"/>
-        <childnode refid="50" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="59">
-        <label>amrex::Array4CopyTag&lt; value_type &gt;</label>
-        <link refid="structamrex_1_1Array4CopyTag"/>
-        <childnode refid="49" relation="usage">
-          <edgelabel>dfab</edgelabel>
-        </childnode>
-        <childnode refid="52" relation="usage">
-          <edgelabel>sfab</edgelabel>
-        </childnode>
-        <childnode refid="60" relation="usage">
-          <edgelabel>dbox</edgelabel>
-        </childnode>
-        <childnode refid="50" relation="usage">
-          <edgelabel>offset</edgelabel>
-        </childnode>
-      </node>
-      <node id="60">
-        <label>amrex::BoxND&lt; 3 &gt;</label>
-        <link refid="classamrex_1_1BoxND"/>
-      </node>
-      <node id="64">
-        <label>amrex::CommRecvBufTag&lt; value_type &gt;</label>
-        <link refid="structamrex_1_1CommRecvBufTag"/>
-        <childnode refid="49" relation="usage">
-          <edgelabel>dfab</edgelabel>
-        </childnode>
-        <childnode refid="60" relation="usage">
-          <edgelabel>bx</edgelabel>
-        </childnode>
-      </node>
-      <node id="68">
-        <label>amrex::CommSendBufTag&lt; value_type &gt;</label>
-        <link refid="structamrex_1_1CommSendBufTag"/>
-        <childnode refid="52" relation="usage">
-          <edgelabel>sfab</edgelabel>
-        </childnode>
-        <childnode refid="60" relation="usage">
-          <edgelabel>bx</edgelabel>
-        </childnode>
-      </node>
-      <node id="18">
-        <label>amrex::IndexTypeND&lt; 3 &gt;</label>
-        <link refid="classamrex_1_1IndexTypeND"/>
-        <childnode refid="19" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="26">
+      <node id="17">
         <label>amrex::IntVectND&lt; 3 &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="5">
         <label>K</label>
       </node>
-      <node id="48">
+      <node id="37">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
-        <childnode refid="49" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>dp</edgelabel>
           <edgelabel>hp</edgelabel>
         </childnode>
       </node>
-      <node id="51">
+      <node id="40">
         <label>amrex::MultiArray4&lt; value_type const &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
-        <childnode refid="52" relation="usage">
+        <childnode refid="41" relation="usage">
           <edgelabel>dp</edgelabel>
           <edgelabel>hp</edgelabel>
         </childnode>
@@ -6585,144 +6539,72 @@
       <node id="6">
         <label>T</label>
       </node>
-      <node id="58">
-        <label>amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt;</label>
-        <link refid="structamrex_1_1TagVector"/>
-        <childnode refid="59" relation="usage">
-          <edgelabel>d_tags</edgelabel>
-        </childnode>
-      </node>
-      <node id="63">
-        <label>amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt;</label>
-        <link refid="structamrex_1_1TagVector"/>
-        <childnode refid="64" relation="usage">
-          <edgelabel>d_tags</edgelabel>
-        </childnode>
-      </node>
-      <node id="67">
-        <label>amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt;</label>
-        <link refid="structamrex_1_1TagVector"/>
-        <childnode refid="68" relation="usage">
-          <edgelabel>d_tags</edgelabel>
-        </childnode>
-      </node>
-      <node id="16">
-        <label>amrex::Vector&lt; amrex::BoxND &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="17" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
+      <node id="14">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="24" relation="public-inheritance">
+        <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="53">
+      <node id="42">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="54" relation="public-inheritance">
+        <childnode refid="43" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
+      <node id="28">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="40" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
-        <childnode refid="41" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>m_profiler</edgelabel>
         </childnode>
       </node>
-      <node id="41">
+      <node id="30">
         <label>amrex::Arena::ArenaProfiler</label>
         <link refid="structamrex_1_1Arena_1_1ArenaProfiler"/>
-        <childnode refid="42" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>m_arena_profiler_mutex</edgelabel>
         </childnode>
-        <childnode refid="43" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>m_profiling_stats</edgelabel>
         </childnode>
-        <childnode refid="45" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>m_currently_allocated</edgelabel>
         </childnode>
       </node>
-      <node id="40">
+      <node id="29">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
       <node id="12">
         <label>amrex::BoxArray</label>
         <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="13" relation="usage">
-          <edgelabel>m_ref</edgelabel>
-        </childnode>
-        <childnode refid="14" relation="usage">
-          <edgelabel>m_simplified_list</edgelabel>
-        </childnode>
       </node>
-      <node id="28">
-        <label>amrex::BoxArray::RefID</label>
-        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
-      </node>
-      <node id="33">
+      <node id="22">
         <label>amrex::BoxIndexerND&lt; dim &gt;</label>
         <link refid="structamrex_1_1BoxIndexerND"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="23" relation="usage">
           <edgelabel>fdm</edgelabel>
         </childnode>
       </node>
-      <node id="15">
-        <label>amrex::BoxList</label>
-        <link refid="classamrex_1_1BoxList"/>
-        <childnode refid="16" relation="usage">
-          <edgelabel>m_lbox</edgelabel>
-        </childnode>
-        <childnode refid="18" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
-      </node>
-      <node id="19">
-        <label>amrex::CellIndexEnum</label>
-        <link refid="structamrex_1_1CellIndexEnum"/>
-      </node>
-      <node id="38">
+      <node id="27">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="39" relation="usage">
+        <childnode refid="28" relation="usage">
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
-      <node id="50">
+      <node id="39">
         <label>amrex::Dim3</label>
         <link refid="structamrex_1_1Dim3"/>
       </node>
-      <node id="20">
+      <node id="13">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
-        <childnode refid="21" relation="usage">
-          <edgelabel>m_ref</edgelabel>
-        </childnode>
       </node>
-      <node id="22">
-        <label>amrex::DistributionMapping::Ref</label>
-        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="23" relation="usage">
-          <edgelabel>m_index_array</edgelabel>
-          <edgelabel>m_pmap</edgelabel>
-        </childnode>
-        <childnode refid="25" relation="usage">
-          <edgelabel>m_ownership</edgelabel>
-        </childnode>
-      </node>
-      <node id="29">
-        <label>amrex::DistributionMapping::RefID</label>
-        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="22" relation="usage">
-          <edgelabel>data</edgelabel>
-        </childnode>
-      </node>
-      <node id="55">
+      <node id="44">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
@@ -6731,46 +6613,37 @@
         <link refid="classamrex_1_1FabArray"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="37" relation="usage">
+        <childnode refid="26" relation="usage">
           <edgelabel>m_factory</edgelabel>
         </childnode>
-        <childnode refid="38" relation="usage">
+        <childnode refid="27" relation="usage">
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
-        <childnode refid="46" relation="usage">
+        <childnode refid="35" relation="usage">
           <edgelabel>m_single_chunk_arena</edgelabel>
         </childnode>
-        <childnode refid="47" relation="usage">
+        <childnode refid="36" relation="usage">
           <edgelabel>m_fabs_v</edgelabel>
         </childnode>
-        <childnode refid="48" relation="usage">
+        <childnode refid="37" relation="usage">
           <edgelabel>m_arrays</edgelabel>
         </childnode>
-        <childnode refid="51" relation="usage">
+        <childnode refid="40" relation="usage">
           <edgelabel>m_const_arrays</edgelabel>
         </childnode>
-        <childnode refid="53" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="55" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>shmem</edgelabel>
         </childnode>
-        <childnode refid="56" relation="usage">
-          <edgelabel>m_fb_local_copy_handler</edgelabel>
-        </childnode>
-        <childnode refid="61" relation="usage">
-          <edgelabel>m_recv_copy_handler</edgelabel>
-        </childnode>
-        <childnode refid="65" relation="usage">
-          <edgelabel>m_send_copy_handler</edgelabel>
-        </childnode>
-        <childnode refid="69" relation="usage">
+        <childnode refid="45" relation="usage">
           <edgelabel>fbd</edgelabel>
         </childnode>
-        <childnode refid="70" relation="usage">
+        <childnode refid="46" relation="usage">
           <edgelabel>pcd</edgelabel>
         </childnode>
-        <childnode refid="71" relation="usage">
+        <childnode refid="47" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
       </node>
@@ -6799,56 +6672,50 @@
         <childnode refid="12" relation="usage">
           <edgelabel>boxarray</edgelabel>
         </childnode>
-        <childnode refid="20" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>distributionMap</edgelabel>
         </childnode>
-        <childnode refid="23" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>indexArray</edgelabel>
         </childnode>
-        <childnode refid="25" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>ownership</edgelabel>
         </childnode>
-        <childnode refid="26" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>n_filled</edgelabel>
           <edgelabel>n_grow</edgelabel>
         </childnode>
-        <childnode refid="27" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>m_bdkey</edgelabel>
         </childnode>
-        <childnode refid="30" relation="usage">
+        <childnode refid="19" relation="usage">
           <edgelabel>m_TheTileArrayCache</edgelabel>
         </childnode>
-        <childnode refid="31" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>m_TheParForCache</edgelabel>
         </childnode>
-        <childnode refid="35" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>m_BD_count</edgelabel>
         </childnode>
-        <childnode refid="36" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>m_FA_stats</edgelabel>
         </childnode>
       </node>
-      <node id="27">
+      <node id="18">
         <label>amrex::FabArrayBase::BDKey</label>
         <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
-        <childnode refid="28" relation="usage">
-          <edgelabel>m_ba_id</edgelabel>
-        </childnode>
-        <childnode refid="29" relation="usage">
-          <edgelabel>m_dm_id</edgelabel>
-        </childnode>
       </node>
-      <node id="36">
+      <node id="25">
         <label>amrex::FabArrayBase::FabArrayStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
       </node>
-      <node id="32">
+      <node id="21">
         <label>amrex::FabArrayBase::ParForInfo</label>
         <link refid="structamrex_1_1FabArrayBase_1_1ParForInfo"/>
-        <childnode refid="26" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>m_ng</edgelabel>
         </childnode>
-        <childnode refid="33" relation="usage">
+        <childnode refid="22" relation="usage">
           <edgelabel>m_boxes</edgelabel>
         </childnode>
       </node>
@@ -6860,29 +6727,17 @@
         <label>amrex::IntVectND&lt; dim &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
-      <node id="34">
+      <node id="23">
         <label>amrex::Math::FastDivmodU64</label>
         <link refid="structamrex_1_1Math_1_1FastDivmodU64"/>
       </node>
-      <node id="44">
+      <node id="33">
         <label>amrex::MemStat</label>
         <link refid="structamrex_1_1MemStat"/>
       </node>
-      <node id="61">
-        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
-        <childnode refid="62" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="65">
-        <label>std::map&lt; RecvSendCopyHandlerKey, std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt; &gt;</label>
-        <childnode refid="66" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="35">
+      <node id="24">
         <label>std::map&lt; amrex::FabArrayBase::BDKey, int &gt;</label>
-        <childnode refid="27" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
       </node>
@@ -6895,49 +6750,28 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="43">
+      <node id="32">
         <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
         <childnode refid="8" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="44" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="56">
-        <label>std::map&lt; std::uint64_t, std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt; &gt;</label>
-        <childnode refid="57" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="31">
+      <node id="20">
         <label>std::multimap&lt; amrex::FabArrayBase::BDKey, amrex::FabArrayBase::ParForInfo * &gt;</label>
-        <childnode refid="27" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="32" relation="usage">
+        <childnode refid="21" relation="usage">
           <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="13">
-        <label>std::shared_ptr&lt; BARef &gt;</label>
-      </node>
-      <node id="14">
-        <label>std::shared_ptr&lt; amrex::BoxList &gt;</label>
-        <childnode refid="15" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="21">
-        <label>std::shared_ptr&lt; amrex::DistributionMapping::Ref &gt;</label>
-        <childnode refid="22" relation="usage">
-          <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
       <node id="9">
         <label>std::basic_string&lt; Char &gt;</label>
       </node>
-      <node id="30">
+      <node id="19">
         <label>std::map&lt; K, T &gt;</label>
         <childnode refid="5" relation="usage">
           <edgelabel>keys</edgelabel>
@@ -6955,7 +6789,7 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="42">
+      <node id="31">
         <label>std::mutex</label>
       </node>
       <node id="8">
@@ -6963,64 +6797,40 @@
         <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="15">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="24">
+      <node id="43">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-      </node>
-      <node id="54">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="69">
-        <label>std::unique_ptr&lt; amrex::FBData&lt; FAB &gt; &gt;</label>
-      </node>
-      <node id="71">
-        <label>std::unique_ptr&lt; amrex::FabArray&lt; FAB &gt; &gt;</label>
-      </node>
-      <node id="37">
-        <label>std::unique_ptr&lt; amrex::FabFactory&lt; FAB &gt; &gt;</label>
-      </node>
-      <node id="70">
-        <label>std::unique_ptr&lt; amrex::PCData&lt; FAB &gt; &gt;</label>
-      </node>
-      <node id="57">
-        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::Array4CopyTag&lt; value_type &gt; &gt; &gt;</label>
-        <childnode refid="58" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="62">
-        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommRecvBufTag&lt; value_type &gt; &gt; &gt;</label>
-        <childnode refid="63" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="66">
-        <label>std::unique_ptr&lt; amrex::TagVector&lt; amrex::CommSendBufTag&lt; value_type &gt; &gt; &gt;</label>
-        <childnode refid="67" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="46">
-        <label>std::unique_ptr&lt; detail::SingleChunkArena &gt;</label>
       </node>
       <node id="45">
-        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+        <label>std::unique_ptr&lt; amrex::FBData&lt; FAB &gt; &gt;</label>
       </node>
       <node id="47">
+        <label>std::unique_ptr&lt; amrex::FabArray&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="26">
+        <label>std::unique_ptr&lt; amrex::FabFactory&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="46">
+        <label>std::unique_ptr&lt; amrex::PCData&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="35">
+        <label>std::unique_ptr&lt; detail::SingleChunkArena &gt;</label>
+      </node>
+      <node id="34">
+        <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
+      </node>
+      <node id="36">
         <label>std::vector&lt; FAB * &gt;</label>
       </node>
-      <node id="25">
+      <node id="16">
         <label>std::vector&lt; bool &gt;</label>
       </node>
       <node id="11">
@@ -7145,10 +6955,6 @@
       <member refid="classamrex_1_1FabArray_1abad0254090cd345d31ab5bb0cb7a82b6" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>FillBoundaryAndSync_nowait</name></member>
       <member refid="classamrex_1_1FabArrayBase_1ae281696e28cac4d5387cdb5660d9aa3d" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>Finalize</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a713c123f38e7c4666b28628d59c6e0c9" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushCFinfo</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1a16c472ffe97ca76e2ffa59ffceec0931" prot="private" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushCPC</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1a3212be804b64d0f051f907c75fbad3d6" prot="private" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushCPCache</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1ad0036a8cccab0b66956ebdb8fb07d16f" prot="private" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushFB</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1afafdcf4e581478be608bb916274857d5" prot="private" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushFBCache</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a793ba5ae5a1533bae6a98b901df96664" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushFPinfo</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aa110cab57dad7efdba62902db05d9479" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushParForCache</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a38c437b445b30f872df4f5ed6232e9a1" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>flushParForInfo</name></member>

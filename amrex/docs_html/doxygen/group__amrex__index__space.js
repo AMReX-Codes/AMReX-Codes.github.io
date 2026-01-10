@@ -115,10 +115,7 @@ var group__amrex__index__space =
       [ "type", "classamrex_1_1BoxND.html#aee0e6b25ddc78ce610799c1f47441fd5", null ],
       [ "volume", "classamrex_1_1BoxND.html#a428ae5614c1ec5e0a7d6b567a411dfc9", null ],
       [ "BoxCommHelper", "classamrex_1_1BoxND.html#af5c898c7b3635a504124819032a025fe", null ],
-      [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e", null ],
-      [ "bigend", "classamrex_1_1BoxND.html#a822ca5acdd7847e703455af3b3cf9b05", null ],
-      [ "btype", "classamrex_1_1BoxND.html#a1f32aecec416cfb1cae97aa816745455", null ],
-      [ "smallend", "classamrex_1_1BoxND.html#a0cc8b0304a0f5c4b663f348a3b50bedf", null ]
+      [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e", null ]
     ] ],
     [ "amrex::IndexTypeND< dim >", "classamrex_1_1IndexTypeND.html", [
       [ "value_type", "classamrex_1_1IndexTypeND.html#a6e80e66cb5f6381e43a226ddee681939", null ],
@@ -137,7 +134,6 @@ var group__amrex__index__space =
       [ "isize", "classamrex_1_1IndexTypeND.html#a2a4de688a23c7da001daf388fe39b512", null ],
       [ "ixType", "classamrex_1_1IndexTypeND.html#a2f03b624a67f0fc6db41a8f7b8288311", null ],
       [ "ixType", "classamrex_1_1IndexTypeND.html#a042a6d6988a3f2ce079d145a086e0515", null ],
-      [ "mask", "classamrex_1_1IndexTypeND.html#ac2481963d2e8fc3e267483ccecc2f513", null ],
       [ "nodeCentered", "classamrex_1_1IndexTypeND.html#ac276520f6660091f86aacac95fdd3608", null ],
       [ "nodeCentered", "classamrex_1_1IndexTypeND.html#a8adc691480875c2c93d0cac085224d51", null ],
       [ "ok", "classamrex_1_1IndexTypeND.html#a6b6d62bcd56a95845e2261499a5edaf2", null ],
@@ -155,8 +151,7 @@ var group__amrex__index__space =
       [ "TheCellType", "classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686", null ],
       [ "TheNodeType", "classamrex_1_1IndexTypeND.html#af6e5e568750b9404f7057fe9c3c1781d", null ],
       [ "toIntVect", "classamrex_1_1IndexTypeND.html#a2739aa7f265285cb7101f431f13d9e47", null ],
-      [ "unset", "classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff", null ],
-      [ "itype", "classamrex_1_1IndexTypeND.html#a262096e612e5ca57ea2b3a097ea40ffe", null ]
+      [ "unset", "classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff", null ]
     ] ],
     [ "amrex::IntVectND< dim >", "classamrex_1_1IntVectND.html", [
       [ "shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", [
@@ -246,7 +241,6 @@ var group__amrex__index__space =
       [ "TheZeroVector", "classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83", null ],
       [ "toArray", "classamrex_1_1IntVectND.html#acd1e1c9ea23c1d2ea7725c388cd43208", null ],
       [ "Unit", "classamrex_1_1IntVectND.html#a84dd86e62e013bbff67a10ffe6aab940", null ],
-      [ "vect", "classamrex_1_1IntVectND.html#af2d620609a5de880b2cd8c8cbf63d1c3", null ],
       [ "Zero", "classamrex_1_1IntVectND.html#ac9be7906eed9686b378081b582db248e", null ]
     ] ],
     [ "amrex::coarsen", "group__amrex__index__space.html#gaafcf63c353b1bed97e75246c2cb87e89", null ],

@@ -19,6 +19,5 @@ var classamrex_1_1BCRec =
     [ "setLo", "classamrex_1_1BCRec.html#a9e129477429bab2c49de73c41964c5fa", null ],
     [ "vect", "classamrex_1_1BCRec.html#a0bd8779fb0529f60bb7c0aae9ddbc72e", null ],
     [ "vect", "classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640", null ],
-    [ "operator<<", "classamrex_1_1BCRec.html#a9581c3a2335a29038935fd0897e288c2", null ],
-    [ "bc", "classamrex_1_1BCRec.html#acd3cc14f58d5b646f9baef5eeee57253", null ]
+    [ "operator<<", "classamrex_1_1BCRec.html#a9581c3a2335a29038935fd0897e288c2", null ]
 ];

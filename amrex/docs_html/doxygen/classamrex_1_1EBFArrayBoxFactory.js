@@ -30,10 +30,5 @@ var classamrex_1_1EBFArrayBoxFactory =
     [ "isAllRegular", "classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f", null ],
     [ "maxCoarseningLevel", "classamrex_1_1EBFArrayBoxFactory.html#a7d3828f723daae924387dbd3c9eb1073", null ],
     [ "operator=", "classamrex_1_1EBFArrayBoxFactory.html#ac2ef27dcc169567d633f60798e406c66", null ],
-    [ "operator=", "classamrex_1_1EBFArrayBoxFactory.html#ab702397ee1802e68d2b0c0cf64f53b60", null ],
-    [ "m_eb_data", "classamrex_1_1EBFArrayBoxFactory.html#ac2f3df308dba2c5d7d8a6443c56db3da", null ],
-    [ "m_ebdc", "classamrex_1_1EBFArrayBoxFactory.html#a0495e6651f6bc2531a88c903354da409", null ],
-    [ "m_geom", "classamrex_1_1EBFArrayBoxFactory.html#a0dece5de11da52cba439675d6f632976", null ],
-    [ "m_parent", "classamrex_1_1EBFArrayBoxFactory.html#a9077580d8ff605511c26c67b023364e8", null ],
-    [ "m_support", "classamrex_1_1EBFArrayBoxFactory.html#a0121434aeeb0ad87903dd1401803c1ba", null ]
+    [ "operator=", "classamrex_1_1EBFArrayBoxFactory.html#ab702397ee1802e68d2b0c0cf64f53b60", null ]
 ];

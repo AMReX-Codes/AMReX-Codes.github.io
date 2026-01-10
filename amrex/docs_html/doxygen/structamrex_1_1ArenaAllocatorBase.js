@@ -8,6 +8,5 @@ var structamrex_1_1ArenaAllocatorBase =
     [ "allocate_in_place", "structamrex_1_1ArenaAllocatorBase.html#aacfd8a11b41714538a068f8a0003d0b0", null ],
     [ "arena", "structamrex_1_1ArenaAllocatorBase.html#a24a11021c80c7510b0a30170a9f43ea4", null ],
     [ "deallocate", "structamrex_1_1ArenaAllocatorBase.html#aff48c37eec55fef7a4e4013dd98cb1bc", null ],
-    [ "shrink_in_place", "structamrex_1_1ArenaAllocatorBase.html#a68247e75792d1b25fad0b379ec2ac116", null ],
-    [ "m_ar", "structamrex_1_1ArenaAllocatorBase.html#a67effac8e5c965d78a9914ff4f1649c5", null ]
+    [ "shrink_in_place", "structamrex_1_1ArenaAllocatorBase.html#a68247e75792d1b25fad0b379ec2ac116", null ]
 ];

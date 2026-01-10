@@ -108,8 +108,5 @@ var classamrex_1_1BoxND =
     [ "type", "classamrex_1_1BoxND.html#aee0e6b25ddc78ce610799c1f47441fd5", null ],
     [ "volume", "classamrex_1_1BoxND.html#a428ae5614c1ec5e0a7d6b567a411dfc9", null ],
     [ "BoxCommHelper", "classamrex_1_1BoxND.html#af5c898c7b3635a504124819032a025fe", null ],
-    [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e", null ],
-    [ "bigend", "classamrex_1_1BoxND.html#a822ca5acdd7847e703455af3b3cf9b05", null ],
-    [ "btype", "classamrex_1_1BoxND.html#a1f32aecec416cfb1cae97aa816745455", null ],
-    [ "smallend", "classamrex_1_1BoxND.html#a0cc8b0304a0f5c4b663f348a3b50bedf", null ]
+    [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1BoxND.html#adccd37eeac931837d637545e8eba842e", null ]
 ];

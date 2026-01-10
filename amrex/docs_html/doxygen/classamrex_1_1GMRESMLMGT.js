@@ -24,12 +24,5 @@ var classamrex_1_1GMRESMLMGT =
     [ "setVerbose", "classamrex_1_1GMRESMLMGT.html#a51b0cd328dd0bb2bf71ff67d266b673b", null ],
     [ "solve", "classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502", null ],
     [ "solve", "classamrex_1_1GMRESMLMGT.html#a426ed87c81b983227af0b6f87abfd536", null ],
-    [ "usePrecond", "classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed", null ],
-    [ "m_gmres", "classamrex_1_1GMRESMLMGT.html#a32ef8424897f89206ea72f7f3affbdd0", null ],
-    [ "m_linop", "classamrex_1_1GMRESMLMGT.html#aade37c46d216449063107a555d33010e", null ],
-    [ "m_mlmg", "classamrex_1_1GMRESMLMGT.html#ac6bdd073a8562762729e78088cf2bbb9", null ],
-    [ "m_nlevels", "classamrex_1_1GMRESMLMGT.html#acb0d8e20bd2889da65c0b99fab9894fe", null ],
-    [ "m_precond_niters", "classamrex_1_1GMRESMLMGT.html#a199c70c91ab83732cc2982f3712411e1", null ],
-    [ "m_use_precond", "classamrex_1_1GMRESMLMGT.html#ab701de7cf398139b6f8804adb3eddd55", null ],
-    [ "m_verbose", "classamrex_1_1GMRESMLMGT.html#ab68d6b10069f5606a8152c8b5416ea5f", null ]
+    [ "usePrecond", "classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed", null ]
 ];

@@ -41,8 +41,6 @@ var searchData=
   ['copycomtag_38',['CopyComTag',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html',1,'amrex::FabArrayBase']]],
   ['cpc_39',['CPC',['../structamrex_1_1FabArrayBase_1_1CPC.html',1,'amrex::FabArrayBase']]],
   ['cpubndryfuncfab_40',['CpuBndryFuncFab',['../classamrex_1_1CpuBndryFuncFab.html',1,'amrex']]],
-  ['csr_41',['CSR',['../structamrex_1_1SpMatrix_1_1CSR.html',1,'amrex::SpMatrix']]],
-  ['csr_3c_20amrex_3a_3apodvector_20_3e_42',['CSR&lt; amrex::PODVector &gt;',['../structamrex_1_1SpMatrix_1_1CSR.html',1,'amrex::SpMatrix']]],
-  ['cutfab_43',['CutFab',['../classamrex_1_1CutFab.html',1,'amrex']]],
-  ['cylinderif_44',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]]
+  ['cutfab_41',['CutFab',['../classamrex_1_1CutFab.html',1,'amrex']]],
+  ['cylinderif_42',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]]
 ];

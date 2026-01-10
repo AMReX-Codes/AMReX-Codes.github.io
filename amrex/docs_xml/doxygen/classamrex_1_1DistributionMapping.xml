@@ -148,7 +148,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" line="355" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" bodystart="355" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1DistributionMapping_1aea78b384d1325786fc3738a66cb16a32" prot="private" static="yes" mutable="no">
-        <type><ref refid="classamrex_1_1DistributionMapping_1ae7db7ce924b3d22ba729d57da40f2262" kindref="member">PVMF</ref></type>
+        <type>PVMF</type>
         <definition>DistributionMapping::PVMF amrex::DistributionMapping::m_BuildMap</definition>
         <argsstring></argsstring>
         <name>m_BuildMap</name>
@@ -1104,7 +1104,7 @@
         <param>
           <type>int</type>
           <declname>root</declname>
-          <defval><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>()</defval>
+          <defval><ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>()</defval>
         </param>
         <param>
           <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
@@ -1332,7 +1332,7 @@
         <param>
           <type>int</type>
           <declname>root</declname>
-          <defval><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>()</defval>
+          <defval><ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>()</defval>
         </param>
         <briefdescription>
 <para>Computes a new distribution mapping by distributing input costs according to a <computeroutput>space filling curve</computeroutput> (SFC) algorithm. </para>
@@ -1608,7 +1608,7 @@
           <declname>nprocs</declname>
         </param>
         <param>
-          <type>std::vector&lt; <ref refid="classamrex_1_1DistributionMapping_1a8bc191492d7a25e16f586ef1e625649c" kindref="member">LIpair</ref> &gt; *</type>
+          <type>std::vector&lt; LIpair &gt; *</type>
           <declname>LIpairV</declname>
           <defval>nullptr</defval>
         </param>
@@ -1732,7 +1732,7 @@
         <name>Sort</name>
         <qualifiedname>amrex::DistributionMapping::Sort</qualifiedname>
         <param>
-          <type>std::vector&lt; <ref refid="classamrex_1_1DistributionMapping_1a8bc191492d7a25e16f586ef1e625649c" kindref="member">LIpair</ref> &gt; &amp;</type>
+          <type>std::vector&lt; LIpair &gt; &amp;</type>
           <declname>vec</declname>
         </param>
         <param>
@@ -1808,50 +1808,6 @@
     <detaileddescription>
 <para>This class calculates the distribution of FABs to MPI processes in a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> in a multi-processor environment. By distribution is meant what MPI process in the multi-processor environment owns what FAB. Only the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on which the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> is built is used in determining the distribution. The three types of distributions supported are round-robin, knapsack, and SFC. In the round-robin distribution FAB i is owned by CPU iN where N is total number of CPUs. In the knapsack distribution the FABs are partitioned across CPUs such that the total volume of the Boxes in the underlying <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> are as equal across CPUs as is possible. The SFC distribution is based on a space filling curve. </para>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="6">
-        <label>T</label>
-      </node>
-      <node id="4">
-        <label>amrex::Vector&lt; int &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>amrex::DistributionMapping</label>
-        <link refid="classamrex_1_1DistributionMapping"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>m_ref</edgelabel>
-        </childnode>
-      </node>
-      <node id="3">
-        <label>amrex::DistributionMapping::Ref</label>
-        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_index_array</edgelabel>
-          <edgelabel>m_pmap</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_ownership</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>std::shared_ptr&lt; amrex::DistributionMapping::Ref &gt;</label>
-        <childnode refid="3" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="5">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>std::vector&lt; bool &gt;</label>
-      </node>
-    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" bodystart="43" bodyend="382"/>
     <listofallmembers>
       <member refid="classamrex_1_1DistributionMapping_1ae88ca91d12a18c9eae7c36348e7c99fd" prot="public" virt="non-virtual"><scope>amrex::DistributionMapping</scope><name>capacity</name></member>

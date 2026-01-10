@@ -12,7 +12,6 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ParGDB.H", "AMReX__ParGDB_8H.html", "AMReX__ParGDB_8H" ],
     [ "AMReX_ParIter.H", "AMReX__ParIter_8H.html", "AMReX__ParIter_8H" ],
     [ "AMReX_Particle.H", "AMReX__Particle_8H.html", "AMReX__Particle_8H" ],
-    [ "AMReX_Particle_mod_K.H", "AMReX__Particle__mod__K_8H.html", "AMReX__Particle__mod__K_8H" ],
     [ "AMReX_ParticleArray.H", "AMReX__ParticleArray_8H.html", "AMReX__ParticleArray_8H" ],
     [ "AMReX_ParticleBufferMap.cpp", "AMReX__ParticleBufferMap_8cpp.html", null ],
     [ "AMReX_ParticleBufferMap.H", "AMReX__ParticleBufferMap_8H.html", "AMReX__ParticleBufferMap_8H" ],
@@ -37,7 +36,6 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ParticleUtil.H", "AMReX__ParticleUtil_8H.html", "AMReX__ParticleUtil_8H" ],
     [ "AMReX_SparseBins.H", "AMReX__SparseBins_8H.html", "AMReX__SparseBins_8H" ],
     [ "AMReX_StructOfArrays.H", "AMReX__StructOfArrays_8H.html", "AMReX__StructOfArrays_8H" ],
-    [ "AMReX_TracerParticle_mod_K.H", "AMReX__TracerParticle__mod__K_8H.html", "AMReX__TracerParticle__mod__K_8H" ],
     [ "AMReX_TracerParticles.cpp", "AMReX__TracerParticles_8cpp.html", null ],
     [ "AMReX_TracerParticles.H", "AMReX__TracerParticles_8H.html", "AMReX__TracerParticles_8H" ],
     [ "AMReX_WriteBinaryParticleData.H", "AMReX__WriteBinaryParticleData_8H.html", "AMReX__WriteBinaryParticleData_8H" ]

@@ -121,7 +121,7 @@
         </childnode>
         <childnode refid="183" relation="include">
         </childnode>
-        <childnode refid="193" relation="include">
+        <childnode refid="192" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
@@ -135,7 +135,7 @@
         </childnode>
         <childnode refid="126" relation="include">
         </childnode>
-        <childnode refid="194" relation="include">
+        <childnode refid="193" relation="include">
         </childnode>
         <childnode refid="155" relation="include">
         </childnode>
@@ -143,7 +143,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="195" relation="include">
+        <childnode refid="194" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
@@ -2313,29 +2313,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="192" relation="include">
-        </childnode>
-      </node>
-      <node id="190">
-        <label>AMReX_EB2_3D_C.H</label>
-        <link refid="AMReX__EB2__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="189">
-        <label>AMReX_EB2_C.H</label>
-        <link refid="AMReX__EB2__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="158" relation="include">
-        </childnode>
-        <childnode refid="171" relation="include">
-        </childnode>
-        <childnode refid="148" relation="include">
-        </childnode>
-        <childnode refid="140" relation="include">
-        </childnode>
-        <childnode refid="190" relation="include">
+        <childnode refid="191" relation="include">
         </childnode>
       </node>
       <node id="146">
@@ -2382,7 +2360,7 @@
         <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="191">
+      <node id="190">
         <label>AMReX_EB2_IF_AllRegular.H</label>
         <link refid="AMReX__EB2__IF__AllRegular_8H"/>
         <childnode refid="3" relation="include">
@@ -2404,7 +2382,7 @@
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="192">
+      <node id="191">
         <label>AMReX_EB2_IndexSpaceI.H</label>
         <link refid="AMReX__EB2__IndexSpaceI_8H"/>
       </node>
@@ -2435,7 +2413,7 @@
         </childnode>
         <childnode refid="189" relation="include">
         </childnode>
-        <childnode refid="191" relation="include">
+        <childnode refid="190" relation="include">
         </childnode>
         <childnode refid="80" relation="include">
         </childnode>
@@ -2547,6 +2525,9 @@
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
+      <node id="189">
+        <label>AMReX_EB2_C.H</label>
+      </node>
       <node id="152">
         <label>AMReX_IParser_Exe.H</label>
       </node>
@@ -2565,7 +2546,7 @@
       <node id="17">
         <label>cassert</label>
       </node>
-      <node id="193">
+      <node id="192">
         <label>cfenv</label>
       </node>
       <node id="36">
@@ -2652,7 +2633,7 @@
       <node id="79">
         <label>mutex</label>
       </node>
-      <node id="194">
+      <node id="193">
         <label>new</label>
       </node>
       <node id="68">
@@ -2685,7 +2666,7 @@
       <node id="5">
         <label>sys/types.h</label>
       </node>
-      <node id="195">
+      <node id="194">
         <label>thread</label>
       </node>
       <node id="62">
@@ -2819,7 +2800,7 @@
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal">std::vector&lt;std::unique_ptr&lt;AMReX&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">AMReX::m_instance</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">std::vector&lt;std::unique_ptr&lt;AMReX&gt;<sp/>&gt;<sp/>AMReX::m_instance;</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="102" refid="namespaceamrex_1_1system" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">system</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">{</highlight></codeline>
@@ -3405,7 +3386,7 @@
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>random<sp/>seed<sp/>after<sp/>we&apos;re<sp/>running<sp/>in<sp/>parallel.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!initialization_by_init_minimal)<sp/>{</highlight></codeline>
-<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">amrex::InitRandom</ref>(ParallelDescriptor::MyProc()+1,<sp/>ParallelDescriptor::NProcs());</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__utilities_1ga1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">amrex::InitRandom</ref>(ParallelDescriptor::MyProc()+1,<sp/>ParallelDescriptor::NProcs());</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"></highlight></codeline>
 <codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>thread<sp/>safety,<sp/>we<sp/>should<sp/>do<sp/>these<sp/>initializations<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
@@ -3687,30 +3668,30 @@
 <codeline lineno="965"><highlight class="normal"></highlight></codeline>
 <codeline lineno="966"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aadaaabd7881bbce62f2b282789482259" kindref="member">AMReX::~AMReX</ref><sp/>()</highlight></codeline>
 <codeline lineno="967"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AMReX_1a723c404098736351072f4a99daf9bddb" kindref="member">m_geom</ref>;</highlight></codeline>
+<codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_geom;</highlight></codeline>
 <codeline lineno="969"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="970"><highlight class="normal"></highlight></codeline>
 <codeline lineno="971"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="972"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aacd757c228bab84f39dc148cc5777624" kindref="member">AMReX::push</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
 <codeline lineno="973"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
+<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(m_instance.begin(),<sp/>m_instance.end(),</highlight></codeline>
 <codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
-<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.emplace_back(pamrex);</highlight></codeline>
-<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r+1<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::rotate(r,<sp/>r+1,<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end());</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>m_instance.end())<sp/>{</highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_instance.emplace_back(pamrex);</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r+1<sp/>!=<sp/>m_instance.end())<sp/>{</highlight></codeline>
+<codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::rotate(r,<sp/>r+1,<sp/>m_instance.end());</highlight></codeline>
 <codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="982"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="983"><highlight class="normal"></highlight></codeline>
 <codeline lineno="984"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="985"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1a745d2d5f1157d1c3cb6b620f5544e01d" kindref="member">AMReX::erase</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
 <codeline lineno="986"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
+<codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(m_instance.begin(),<sp/>m_instance.end(),</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
-<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.erase(r);</highlight></codeline>
+<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/>m_instance.end())<sp/>{</highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_instance.erase(r);</highlight></codeline>
 <codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="993"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="994"><highlight class="normal"></highlight></codeline>

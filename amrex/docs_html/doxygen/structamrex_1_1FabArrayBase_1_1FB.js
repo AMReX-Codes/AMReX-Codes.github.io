@@ -2,11 +2,6 @@ var structamrex_1_1FabArrayBase_1_1FB =
 [
     [ "FB", "structamrex_1_1FabArrayBase_1_1FB.html#a721ec24a4b6eadf3ae9974c76afa6701", null ],
     [ "bytes", "structamrex_1_1FabArrayBase_1_1FB.html#a7350ce3c86017261950af6f94802d343", null ],
-    [ "define_epo", "structamrex_1_1FabArrayBase_1_1FB.html#a53df06970b8cf1cb353ec184bb5422ef", null ],
-    [ "define_fb", "structamrex_1_1FabArrayBase_1_1FB.html#a782fbc8576a01acde04fd3e8c6686c4b", null ],
-    [ "define_os", "structamrex_1_1FabArrayBase_1_1FB.html#a2f92b0b744eb605c14a46ab090c244eb", null ],
-    [ "define_sb", "structamrex_1_1FabArrayBase_1_1FB.html#ab43e2979ee7c080fa472164f5562b1ff", null ],
-    [ "tag_one_box", "structamrex_1_1FabArrayBase_1_1FB.html#a84c6f47e0b249a91417306bbd7dab42a", null ],
     [ "m_cross", "structamrex_1_1FabArrayBase_1_1FB.html#a5dabbd852ff0a3516c1d7b2b40496773", null ],
     [ "m_crse_ratio", "structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1", null ],
     [ "m_epo", "structamrex_1_1FabArrayBase_1_1FB.html#aa8992473f3d960f9f118c57122a349ea", null ],

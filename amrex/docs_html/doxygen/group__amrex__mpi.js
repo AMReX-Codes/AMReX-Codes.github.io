@@ -11,6 +11,7 @@ var group__amrex__mpi =
     [ "amrex::ParallelDescriptor::Gather", "group__amrex__mpi.html#ga4da7886feab927435847190270cd879c", null ],
     [ "amrex::ParallelDescriptor::IOProcessor", "group__amrex__mpi.html#gac7fb3467af4aabf15e61cb9c27e916d9", null ],
     [ "amrex::ParallelDescriptor::IOProcessor", "group__amrex__mpi.html#ga8780ee1130870c2cd65de891c71b9b76", null ],
+    [ "amrex::ParallelDescriptor::IOProcessorNumber", "group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a", null ],
     [ "amrex::ParallelDescriptor::IOProcessorNumber", "group__amrex__mpi.html#ga9397b95ec0069183061d45372eed1287", null ],
     [ "amrex::ParallelReduce::Max", "group__amrex__mpi.html#ga6c3ee948e758158f19ccce52a7865c92", null ],
     [ "amrex::ParallelAllReduce::Max", "group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592", null ],
@@ -108,6 +109,5 @@ var group__amrex__mpi =
     [ "amrex::ParallelReduce::Sum", "group__amrex__mpi.html#ga84377e96c4ecb57c17fe8e83aea0e04e", null ],
     [ "amrex::ParallelAllReduce::Sum", "group__amrex__mpi.html#ga93a9a9427252098f6da83a7116c4219d", null ],
     [ "amrex::ParallelReduce::Sum", "group__amrex__mpi.html#ga83b6af463895bccfbf4ae0606041cd33", null ],
-    [ "amrex::ParallelAllReduce::Sum", "group__amrex__mpi.html#ga647e136efea8ad3d3e88887700c5f1af", null ],
-    [ "amrex::ParallelDescriptor::ioProcessor", "group__amrex__mpi.html#ga170c7ee692d457514ef07c0d6206f7e2", null ]
+    [ "amrex::ParallelAllReduce::Sum", "group__amrex__mpi.html#ga647e136efea8ad3d3e88887700c5f1af", null ]
 ];

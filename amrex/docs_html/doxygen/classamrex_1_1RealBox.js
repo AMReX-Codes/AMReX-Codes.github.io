@@ -26,7 +26,5 @@ var classamrex_1_1RealBox =
     [ "setLo", "classamrex_1_1RealBox.html#ad17a084669ca15c44ee367f21a9ffc68", null ],
     [ "setLo", "classamrex_1_1RealBox.html#ad513c995fcf5ff2ca68ea4a1ca78a9f7", null ],
     [ "setLo", "classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55", null ],
-    [ "volume", "classamrex_1_1RealBox.html#a93db6fe21fbffe66f89ca56e42197175", null ],
-    [ "xhi", "classamrex_1_1RealBox.html#a2a8beb0d249fef26ad726aa32563b823", null ],
-    [ "xlo", "classamrex_1_1RealBox.html#a4f9c8d6e2a72c25360195de819831fd0", null ]
+    [ "volume", "classamrex_1_1RealBox.html#a93db6fe21fbffe66f89ca56e42197175", null ]
 ];

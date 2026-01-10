@@ -1,15 +1,6 @@
 var annotated_dup =
 [
     [ "amrex", "namespaceamrex.html", [
-      [ "algoim", "namespaceamrex_1_1algoim.html", [
-        [ "BoundingBox", "structamrex_1_1algoim_1_1BoundingBox.html", "structamrex_1_1algoim_1_1BoundingBox" ],
-        [ "EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", "structamrex_1_1algoim_1_1EBPlane" ],
-        [ "ImplicitIntegral", "structamrex_1_1algoim_1_1ImplicitIntegral.html", "structamrex_1_1algoim_1_1ImplicitIntegral" ],
-        [ "ImplicitIntegral< 0, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4" ],
-        [ "Interval", "structamrex_1_1algoim_1_1Interval.html", "structamrex_1_1algoim_1_1Interval" ],
-        [ "PsiCode", "structamrex_1_1algoim_1_1PsiCode.html", "structamrex_1_1algoim_1_1PsiCode" ],
-        [ "QuadratureRule", "structamrex_1_1algoim_1_1QuadratureRule.html", "structamrex_1_1algoim_1_1QuadratureRule" ]
-      ] ],
       [ "AsyncOut", "namespaceamrex_1_1AsyncOut.html", [
         [ "WriteInfo", "structamrex_1_1AsyncOut_1_1WriteInfo.html", "structamrex_1_1AsyncOut_1_1WriteInfo" ]
       ] ],
@@ -342,8 +333,6 @@ var annotated_dup =
       [ "FatPtr", "structamrex_1_1FatPtr.html", "structamrex_1_1FatPtr" ],
       [ "FBData", "structamrex_1_1FBData.html", "structamrex_1_1FBData" ],
       [ "FEIntegrator", "classamrex_1_1FEIntegrator.html", "classamrex_1_1FEIntegrator" ],
-      [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ],
-      [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ],
       [ "FillBoxId", "classamrex_1_1FillBoxId.html", "classamrex_1_1FillBoxId" ],
       [ "FillPatcher", "classamrex_1_1FillPatcher.html", "classamrex_1_1FillPatcher" ],
       [ "FillPatchIterator", "classamrex_1_1FillPatchIterator.html", "classamrex_1_1FillPatchIterator" ],

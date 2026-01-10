@@ -36,7 +36,6 @@ var structamrex_1_1SmallMatrix =
     [ "operator+", "structamrex_1_1SmallMatrix.html#adff9083c0609d04bf3c1fb5a6cc0db4d", null ],
     [ "operator-", "structamrex_1_1SmallMatrix.html#a2c7c289ab070ae26303253e161b3bdba", null ],
     [ "column_size", "structamrex_1_1SmallMatrix.html#ad27953e4ba231ae72eee1d04bfcbad71", null ],
-    [ "m_mat", "structamrex_1_1SmallMatrix.html#a32448f0826904fa7d77c008793cbc0f1", null ],
     [ "ordering", "structamrex_1_1SmallMatrix.html#a3a52e4625ed98c93b816e56a376e283a", null ],
     [ "row_size", "structamrex_1_1SmallMatrix.html#a16884af63d24ace53c32c2b304f28cb1", null ],
     [ "starting_index", "structamrex_1_1SmallMatrix.html#a54c3d4215f2fdfccfcd326386572f1f2", null ]

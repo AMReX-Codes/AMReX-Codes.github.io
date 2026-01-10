@@ -102,8 +102,6 @@ $(document).ready(function(){initNavTree('classamrex_1_1MultiFab.html',''); init
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classamrex_1_1MultiFab-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::MultiFab Class Reference<div class="ingroups"><a class="el" href="group__amrex__data__containers.html">Data Containers</a> &raquo; <a class="el" href="group__amrex__multifab__containers.html">Distributed Fab Data</a></div></div></div>
 </div><!--header-->
@@ -981,19 +979,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae20b077acadfa00ea36c0209f20ed61d inherit pub_static_methods_classamrex_1_1FabArrayBase" id="r_ae20b077acadfa00ea36c0209f20ed61d"><td class="memItemLeft" align="right" valign="top">static std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArrayBase.html#ae20b077acadfa00ea36c0209f20ed61d">getNextCommMetaDataId</a> ()</td></tr>
 <tr class="separator:ae20b077acadfa00ea36c0209f20ed61d inherit pub_static_methods_classamrex_1_1FabArrayBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a1124d24928511321f4381ebd60b0c15b" id="r_a1124d24928511321f4381ebd60b0c15b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a1124d24928511321f4381ebd60b0c15b">CopyComTagsContainer</a> = <a class="el" href="classamrex_1_1FabArrayBase.html#a9bdd65ce61ce9ee5ca52c6b387dd4800">FabArrayBase::CopyComTagsContainer</a></td></tr>
-<tr class="memdesc:a1124d24928511321f4381ebd60b0c15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some useful typedefs.  <br /></td></tr>
-<tr class="separator:a1124d24928511321f4381ebd60b0c15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26137d0a3c8a4a024bf811fbaac6208d" id="r_a26137d0a3c8a4a024bf811fbaac6208d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a26137d0a3c8a4a024bf811fbaac6208d">MapOfCopyComTagContainers</a> = <a class="el" href="classamrex_1_1FabArrayBase.html#aa36883196eb7b1d039fd1941966a4310">FabArrayBase::MapOfCopyComTagContainers</a></td></tr>
-<tr class="separator:a26137d0a3c8a4a024bf811fbaac6208d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:aa4f9b9a2a37baa29e7767a80f6856dcd" id="r_aa4f9b9a2a37baa29e7767a80f6856dcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#aa4f9b9a2a37baa29e7767a80f6856dcd">initVal</a> ()</td></tr>
-<tr class="separator:aa4f9b9a2a37baa29e7767a80f6856dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classamrex_1_1FabArray"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classamrex_1_1FabArray')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray&lt; FArrayBox &gt;</a></td></tr>
@@ -1153,54 +1138,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>A collection (stored as an array) of <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a> objects. </p>
 <p>This class is useful for storing floating point data on a domain defined by a union of rectangular regions embedded in a uniform index space. <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> class extends the function of the underlying <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a> class just as the <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a> class extends the function of <a class="el" href="classamrex_1_1BaseFab.html">BaseFab&lt;Real&gt;</a>. Additional member functions are defined for I/O and simple arithmetic operations on these aggregate objects.</p>
 <p>This class does NOT provide a copy constructor or assignment operator. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a1124d24928511321f4381ebd60b0c15b" name="a1124d24928511321f4381ebd60b0c15b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1124d24928511321f4381ebd60b0c15b">&#9670;&#160;</a></span>CopyComTagsContainer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1MultiFab.html#a1124d24928511321f4381ebd60b0c15b">amrex::MultiFab::CopyComTagsContainer</a> =  <a class="el" href="classamrex_1_1FabArrayBase.html#a9bdd65ce61ce9ee5ca52c6b387dd4800">FabArrayBase::CopyComTagsContainer</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Some useful typedefs. </p>
-
-</div>
-</div>
-<a id="a26137d0a3c8a4a024bf811fbaac6208d" name="a26137d0a3c8a4a024bf811fbaac6208d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26137d0a3c8a4a024bf811fbaac6208d">&#9670;&#160;</a></span>MapOfCopyComTagContainers</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1MultiFab.html#a26137d0a3c8a4a024bf811fbaac6208d">amrex::MultiFab::MapOfCopyComTagContainers</a> =  <a class="el" href="classamrex_1_1FabArrayBase.html#aa36883196eb7b1d039fd1941966a4310">FabArrayBase::MapOfCopyComTagContainers</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abcce72db937ae8e326d2cb14cb114e7d" name="abcce72db937ae8e326d2cb14cb114e7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcce72db937ae8e326d2cb14cb114e7d">&#9670;&#160;</a></span>MultiFab() <span class="overload">[1/7]</span></h2>
 
@@ -2431,31 +2369,6 @@ Additional Inherited Members</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa4f9b9a2a37baa29e7767a80f6856dcd" name="aa4f9b9a2a37baa29e7767a80f6856dcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4f9b9a2a37baa29e7767a80f6856dcd">&#9670;&#160;</a></span>initVal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::MultiFab::initVal </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

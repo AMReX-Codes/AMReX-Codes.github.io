@@ -22,6 +22,5 @@ var classamrex_1_1MultiMask =
     [ "operator=", "classamrex_1_1MultiMask.html#a1b462cb533ad39dadb12898be4f1bc35", null ],
     [ "operator[]", "classamrex_1_1MultiMask.html#a0bdf7a2c48cb1e59047b3c2e330891ac", null ],
     [ "operator[]", "classamrex_1_1MultiMask.html#aad68ce2cef0cc99bf89395d8687cfd3a", null ],
-    [ "MultiMaskIter", "classamrex_1_1MultiMask.html#a543302181bedff3235f600544f96197f", null ],
-    [ "m_fa", "classamrex_1_1MultiMask.html#a30aad956b0f19c6b897f697915ebf80e", null ]
+    [ "MultiMaskIter", "classamrex_1_1MultiMask.html#a543302181bedff3235f600544f96197f", null ]
 ];

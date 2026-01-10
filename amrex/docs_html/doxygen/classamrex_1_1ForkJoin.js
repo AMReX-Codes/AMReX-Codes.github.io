@@ -1,7 +1,6 @@
 var classamrex_1_1ForkJoin =
 [
     [ "ComponentSet", "structamrex_1_1ForkJoin_1_1ComponentSet.html", "structamrex_1_1ForkJoin_1_1ComponentSet" ],
-    [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html", "structamrex_1_1ForkJoin_1_1MFFork" ],
     [ "Intent", "classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466", [
       [ "in", "classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf", null ],
       [ "out", "classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466ac68271a63ddbc431c307beb7d2918275", null ],
@@ -16,15 +15,9 @@ var classamrex_1_1ForkJoin =
     [ "ForkJoin", "classamrex_1_1ForkJoin.html#aac9106c8fc6d9be62cf1a73f2db0e820", null ],
     [ "ForkJoin", "classamrex_1_1ForkJoin.html#a2d8bbf7d8eb515f4249b97829a733c33", null ],
     [ "ComponentBounds", "classamrex_1_1ForkJoin.html#a9dda141f12088bebd3b62ae96407ecdf", null ],
-    [ "copy_data_from_tasks", "classamrex_1_1ForkJoin.html#ad79ddeb1fdd7d6a72546c66728b3ccd8", null ],
-    [ "copy_data_to_tasks", "classamrex_1_1ForkJoin.html#a76a2bb1b6fb5ffd97b28020531b6f3f6", null ],
-    [ "create_task_output_dir", "classamrex_1_1ForkJoin.html#ad4b77ac1de1547c3903014ba22c0306b", null ],
     [ "fork_join", "classamrex_1_1ForkJoin.html#a2f557068fd57a8cd131263fa6769b631", null ],
-    [ "get_dm", "classamrex_1_1ForkJoin.html#ac35ec951548cc1e54dfc60b0d65df8e8", null ],
-    [ "get_io_filename", "classamrex_1_1ForkJoin.html#aecdcd8a490ce68812e19ba6e6f17d320", null ],
     [ "get_mf", "classamrex_1_1ForkJoin.html#a4d40b087fb84afece2a6c99813b960b0", null ],
     [ "get_mf_vec", "classamrex_1_1ForkJoin.html#aa4378ad3ff20fb1b4a0416c39b4eda56", null ],
-    [ "init", "classamrex_1_1ForkJoin.html#af6b2818bec6a86128f3594b6684d4a42", null ],
     [ "modify_ngrow", "classamrex_1_1ForkJoin.html#a96e939e22bb7efb14a07a6f9260cce89", null ],
     [ "modify_ngrow", "classamrex_1_1ForkJoin.html#a89798a7caff182b9c8e3d5803842fd5c", null ],
     [ "modify_split", "classamrex_1_1ForkJoin.html#acd674b9f0159c359a040afa7e3ba4fe8", null ],
@@ -41,13 +34,5 @@ var classamrex_1_1ForkJoin =
     [ "set_task_output_dir", "classamrex_1_1ForkJoin.html#a9bda4e24001c99d756c6104f67925e72", null ],
     [ "set_task_output_file", "classamrex_1_1ForkJoin.html#acc05284c00f1aafed90fb1c2a2fd6386", null ],
     [ "SetVerbose", "classamrex_1_1ForkJoin.html#ac9e1d5f47bb112898e4bf7f56d738f0a", null ],
-    [ "split_tasks", "classamrex_1_1ForkJoin.html#af28d2dad955c8aeeb067472559794d86", null ],
-    [ "Verbose", "classamrex_1_1ForkJoin.html#ab1ed7e37b6df653a97423cd2402d4817", null ],
-    [ "data", "classamrex_1_1ForkJoin.html#a1223321add76c9d8eb7dc032c051012d", null ],
-    [ "dms", "classamrex_1_1ForkJoin.html#a710675d78fd400523b979d941930b56e", null ],
-    [ "flag_invoked", "classamrex_1_1ForkJoin.html#ad9801acca834dcbc7ec55dd3c34f48aa", null ],
-    [ "flag_verbose", "classamrex_1_1ForkJoin.html#a943794e0f810e216579ad8156d11cd20", null ],
-    [ "split_bounds", "classamrex_1_1ForkJoin.html#a696ffed713794753cb3d42f63eaad6ab", null ],
-    [ "task_me", "classamrex_1_1ForkJoin.html#ac7e00cc0d9436d4445b3e338b46dd003", null ],
-    [ "task_output_dir", "classamrex_1_1ForkJoin.html#ac17370c5ba5f31bf037c5ca3992c3f66", null ]
+    [ "Verbose", "classamrex_1_1ForkJoin.html#ab1ed7e37b6df653a97423cd2402d4817", null ]
 ];

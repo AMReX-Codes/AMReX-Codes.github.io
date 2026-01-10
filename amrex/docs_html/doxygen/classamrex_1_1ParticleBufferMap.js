@@ -16,18 +16,5 @@ var classamrex_1_1ParticleBufferMap =
     [ "numBoxesOnProc", "classamrex_1_1ParticleBufferMap.html#a9d44c9aef58425660048d08aac5fa5d0", null ],
     [ "numBuckets", "classamrex_1_1ParticleBufferMap.html#a7501a3f06e15addeaf092e25212224f7", null ],
     [ "numLevels", "classamrex_1_1ParticleBufferMap.html#aa02e2945eb222fe38e71402e706865a4", null ],
-    [ "procID", "classamrex_1_1ParticleBufferMap.html#a9d9a110ac74b755f5c90ac8f803e1f6f", null ],
-    [ "d_bucket_to_pid", "classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15", null ],
-    [ "d_lev_gid_to_bucket", "classamrex_1_1ParticleBufferMap.html#a22ef66dc732fb28117376c5a3cf60c9a", null ],
-    [ "d_lev_offsets", "classamrex_1_1ParticleBufferMap.html#a4d6a055510febbd0115e3cc4fcb77e71", null ],
-    [ "m_ba", "classamrex_1_1ParticleBufferMap.html#a97b3de417e81c1776fe44e33ef9923d2", null ],
-    [ "m_bucket_to_gid", "classamrex_1_1ParticleBufferMap.html#aea0220c77ce964ed8fde473e51e90343", null ],
-    [ "m_bucket_to_lev", "classamrex_1_1ParticleBufferMap.html#af13d545be94a3e379ce0193f3f57d6b2", null ],
-    [ "m_bucket_to_pid", "classamrex_1_1ParticleBufferMap.html#a33351037aaa2977e86fa377eaeb0a67e", null ],
-    [ "m_defined", "classamrex_1_1ParticleBufferMap.html#add127c532a232ec6ffde039f284dcf98", null ],
-    [ "m_dm", "classamrex_1_1ParticleBufferMap.html#a990b67e8bf90b3e0a7c137bb67eee236", null ],
-    [ "m_lev_gid_to_bucket", "classamrex_1_1ParticleBufferMap.html#a7fbd0ee9e9b5a85ed8c759880d0603e0", null ],
-    [ "m_lev_offsets", "classamrex_1_1ParticleBufferMap.html#ab5443e45483c897f9d54a9f63e8d4e20", null ],
-    [ "m_proc_box_counts", "classamrex_1_1ParticleBufferMap.html#abc5ce29ac4025b099cc18ee6308b4b0f", null ],
-    [ "m_proc_box_offsets", "classamrex_1_1ParticleBufferMap.html#a65d85d75d30b1f67500bfa62aff5b162", null ]
+    [ "procID", "classamrex_1_1ParticleBufferMap.html#a9d9a110ac74b755f5c90ac8f803e1f6f", null ]
 ];

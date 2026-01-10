@@ -11,9 +11,5 @@ var classamrex_1_1CArena_1_1Node =
     [ "operator==", "classamrex_1_1CArena_1_1Node.html#a88b16dbe8f6f315955cdde15cbd71e7e", null ],
     [ "owner", "classamrex_1_1CArena_1_1Node.html#a813253c8573663ae3266a72ffdc8ad16", null ],
     [ "size", "classamrex_1_1CArena_1_1Node.html#a1bc2b9b503ccabb172ffe16f554519cf", null ],
-    [ "size", "classamrex_1_1CArena_1_1Node.html#a736fe7c725b517fece9136f39e983765", null ],
-    [ "m_block", "classamrex_1_1CArena_1_1Node.html#a999ce0f54f3eae13c2533caabe5acc89", null ],
-    [ "m_owner", "classamrex_1_1CArena_1_1Node.html#a8d1a994928ff734df597327f22db12dd", null ],
-    [ "m_size", "classamrex_1_1CArena_1_1Node.html#a3eefad51a3f5c77dfba6bfa8f42e8909", null ],
-    [ "m_stat", "classamrex_1_1CArena_1_1Node.html#a0a7a1c0cd13749231991a5b7361fa2b6", null ]
+    [ "size", "classamrex_1_1CArena_1_1Node.html#a736fe7c725b517fece9136f39e983765", null ]
 ];

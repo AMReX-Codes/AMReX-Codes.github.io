@@ -19,12 +19,5 @@ var classamrex_1_1ParallelContext_1_1Frame =
     [ "operator=", "classamrex_1_1ParallelContext_1_1Frame.html#a4126d26b776642fbb6b80fc38a8d2398", null ],
     [ "set_ofs_name", "classamrex_1_1ParallelContext_1_1Frame.html#a1bc1579142503db5584556389166c169", null ],
     [ "comm", "classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f", null ],
-    [ "group", "classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9", null ],
-    [ "m_id", "classamrex_1_1ParallelContext_1_1Frame.html#a72eda643c9080e17e52e8aea8756cd35", null ],
-    [ "m_io_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a2b4c46fb1ac3129d8c997f52241de7a1", null ],
-    [ "m_mpi_tag", "classamrex_1_1ParallelContext_1_1Frame.html#a0c03450ec8650e511181fb540b42e880", null ],
-    [ "m_nranks", "classamrex_1_1ParallelContext_1_1Frame.html#a31bfd44f2e4c7e7fe623b14eb62b81c6", null ],
-    [ "m_out", "classamrex_1_1ParallelContext_1_1Frame.html#a9137c45cc574cabfd0194ab8ed082116", null ],
-    [ "m_out_filename", "classamrex_1_1ParallelContext_1_1Frame.html#a3ae9cdc97369e2f1381f095af24e497e", null ],
-    [ "m_rank_me", "classamrex_1_1ParallelContext_1_1Frame.html#aa5b185e14618f1bef2f4a7bbd9be3f35", null ]
+    [ "group", "classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9", null ]
 ];

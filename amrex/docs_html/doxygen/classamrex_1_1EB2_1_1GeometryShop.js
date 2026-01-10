@@ -21,8 +21,6 @@ var classamrex_1_1EB2_1_1GeometryShop =
     [ "allregular", "classamrex_1_1EB2_1_1GeometryShop.html#ad0c200b86624e027898eca991f5ded1c", null ],
     [ "in_body", "classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a", null ],
     [ "in_fluid", "classamrex_1_1EB2_1_1GeometryShop.html#a637784ea6d4098867d78ad901750937a", null ],
-    [ "m_f", "classamrex_1_1EB2_1_1GeometryShop.html#afdb3f4220acfb2353d91feed84482169", null ],
-    [ "m_resource", "classamrex_1_1EB2_1_1GeometryShop.html#a70005a334b1a0d87aa5a94c43ad7ce8a", null ],
     [ "mixedcells", "classamrex_1_1EB2_1_1GeometryShop.html#abfd9f7b8c8225ddc6df0078ac4277ccd", null ],
     [ "on_boundary", "classamrex_1_1EB2_1_1GeometryShop.html#adacbc0ec9d750f6bbbcae77a23dbd127", null ]
 ];

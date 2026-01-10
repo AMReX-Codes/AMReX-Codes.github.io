@@ -9,6 +9,5 @@ var classamrex_1_1Periodicity =
     [ "isPeriodic", "classamrex_1_1Periodicity.html#ab263804d56d1280b7ece30109482ecee", null ],
     [ "NonPeriodic", "classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5", null ],
     [ "operator==", "classamrex_1_1Periodicity.html#aa8f0c58703d74ff60d7fde603725e54c", null ],
-    [ "shiftIntVect", "classamrex_1_1Periodicity.html#a3a1f48c918140f80aac690cc10d20cdb", null ],
-    [ "period", "classamrex_1_1Periodicity.html#ace8592786e8de8bb2dc6ac31716adc7e", null ]
+    [ "shiftIntVect", "classamrex_1_1Periodicity.html#a3a1f48c918140f80aac690cc10d20cdb", null ]
 ];

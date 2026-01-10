@@ -9,6 +9,5 @@ var structamrex_1_1Gpu_1_1DeviceScalar =
     [ "dataPtr", "structamrex_1_1Gpu_1_1DeviceScalar.html#ab05f2b740c65ee82e5d4679e237a2887", null ],
     [ "dataValue", "structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989", null ],
     [ "operator=", "structamrex_1_1Gpu_1_1DeviceScalar.html#a09ce14e97aa618c00bcc778e9337fd4f", null ],
-    [ "operator=", "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178", null ],
-    [ "dp", "structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02", null ]
+    [ "operator=", "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178", null ]
 ];

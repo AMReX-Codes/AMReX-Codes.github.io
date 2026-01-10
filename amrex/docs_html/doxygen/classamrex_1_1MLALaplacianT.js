@@ -31,12 +31,5 @@ var classamrex_1_1MLALaplacianT =
     [ "prepareForSolve", "classamrex_1_1MLALaplacianT.html#a72d228dbde4801d9b4086a2dc94779c6", null ],
     [ "setACoeffs", "classamrex_1_1MLALaplacianT.html#aeb79fc965578886e2a266fc7404fd54e", null ],
     [ "setScalars", "classamrex_1_1MLALaplacianT.html#a41aaec43d94c9d9246f9f2a8219b0b33", null ],
-    [ "update", "classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c", null ],
-    [ "updateSingularFlag", "classamrex_1_1MLALaplacianT.html#aeb46c77177cf2f29c1cabac3d7edb1ad", null ],
-    [ "m_a_coeffs", "classamrex_1_1MLALaplacianT.html#a09836660facdfeea8daba978902f9673", null ],
-    [ "m_a_scalar", "classamrex_1_1MLALaplacianT.html#a4c4cc805f15b8f9dd1fa694f00110a1d", null ],
-    [ "m_b_scalar", "classamrex_1_1MLALaplacianT.html#a26517485398ff391981892885e511f94", null ],
-    [ "m_is_singular", "classamrex_1_1MLALaplacianT.html#aaabb766cd6deb544d0f29b9a304c4445", null ],
-    [ "m_ncomp", "classamrex_1_1MLALaplacianT.html#a602e57dc56518cf767d65a236dffe0d1", null ],
-    [ "m_needs_update", "classamrex_1_1MLALaplacianT.html#af29f1000f607cefa4da6f1b1ee30090a", null ]
+    [ "update", "classamrex_1_1MLALaplacianT.html#a47b92deed478d2df8e6a92070437a17c", null ]
 ];

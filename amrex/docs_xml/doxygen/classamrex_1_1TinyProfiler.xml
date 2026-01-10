@@ -52,7 +52,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" line="120" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1TinyProfiler_1a5205c680d2a8d3fd69195aab83ce3b7a" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="structamrex_1_1TinyProfiler_1_1Stats" kindref="compound">Stats</ref> * &gt;</type>
+        <type>std::vector&lt; Stats * &gt;</type>
         <definition>std::vector&lt;Stats*&gt; amrex::TinyProfiler::stats</definition>
         <argsstring></argsstring>
         <name>stats</name>
@@ -138,7 +138,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" line="137" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1TinyProfiler_1ac803023249064c812474a5aa120ef397" prot="private" static="yes" mutable="no">
-        <type>std::map&lt; std::string, std::map&lt; std::string, <ref refid="structamrex_1_1TinyProfiler_1_1Stats" kindref="compound">Stats</ref> &gt; &gt;</type>
+        <type>std::map&lt; std::string, std::map&lt; std::string, Stats &gt; &gt;</type>
         <definition>std::map&lt; std::string, std::map&lt; std::string, TinyProfiler::Stats &gt; &gt; amrex::TinyProfiler::statsmap</definition>
         <argsstring></argsstring>
         <name>statsmap</name>
@@ -756,7 +756,7 @@
         <name>PrintStats</name>
         <qualifiedname>amrex::TinyProfiler::PrintStats</qualifiedname>
         <param>
-          <type>std::map&lt; std::string, <ref refid="structamrex_1_1TinyProfiler_1_1Stats" kindref="compound">Stats</ref> &gt; &amp;</type>
+          <type>std::map&lt; std::string, Stats &gt; &amp;</type>
           <declname>regstats</declname>
         </param>
         <param>
@@ -819,93 +819,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="9">
-        <label>amrex::MemStat</label>
-        <link refid="structamrex_1_1MemStat"/>
-      </node>
-      <node id="1">
-        <label>amrex::TinyProfiler</label>
-        <link refid="classamrex_1_1TinyProfiler"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>fname</edgelabel>
-          <edgelabel>output_file</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>stats</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>mem_stack</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>all_memstats</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
-          <edgelabel>all_memnames</edgelabel>
-          <edgelabel>regionstack</edgelabel>
-        </childnode>
-        <childnode refid="11" relation="usage">
-          <edgelabel>ttstack</edgelabel>
-        </childnode>
-        <childnode refid="12" relation="usage">
-          <edgelabel>statsmap</edgelabel>
-        </childnode>
-      </node>
-      <node id="5">
-        <label>amrex::TinyProfiler::Stats</label>
-        <link refid="structamrex_1_1TinyProfiler_1_1Stats"/>
-      </node>
-      <node id="6">
-        <label>std::deque&lt; const amrex::TinyProfiler * &gt;</label>
-        <childnode refid="1" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>std::deque&lt; std::tuple&lt; double, double, std::string * &gt; &gt;</label>
-      </node>
-      <node id="8">
-        <label>std::map&lt; std::string, amrex::MemStat &gt;</label>
-        <childnode refid="2" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="12">
-        <label>std::map&lt; std::string, std::map&lt; std::string, amrex::TinyProfiler::Stats &gt; &gt;</label>
-        <childnode refid="2" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
-      </node>
-      <node id="3">
-        <label>std::basic_string&lt; Char &gt;</label>
-      </node>
-      <node id="2">
-        <label>std::string</label>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>std::vector&lt; amrex::TinyProfiler::Stats * &gt;</label>
-        <childnode refid="5" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>std::vector&lt; std::map&lt; std::string, amrex::MemStat &gt; * &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="10">
-        <label>std::vector&lt; std::string &gt;</label>
-        <childnode refid="2" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H" bodystart="31" bodyend="155"/>
     <listofallmembers>
       <member refid="classamrex_1_1TinyProfiler_1a4c5a66e30e341fc78c3e29f260fb7904" prot="private" virt="non-virtual"><scope>amrex::TinyProfiler</scope><name>all_memnames</name></member>

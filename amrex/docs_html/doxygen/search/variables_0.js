@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['_5fptr_0',['_ptr',['../classamrex_1_1ref__wrapper.html#ad6587c3974bf67afc32e7d313432b20e',1,'amrex::ref_wrapper']]]
+  ['abort_5fon_5fstream_5fretry_5ffailure_0',['abort_on_stream_retry_failure',['../classamrex_1_1Amr.html#a98d00dad9a4ef2a681aaafdf2a59cb0b',1,'amrex::Amr']]],
+  ['abort_5fon_5funused_5finputs_1',['abort_on_unused_inputs',['../namespaceamrex_1_1system.html#a2eda4706e013a6175e7cadcc33ba5c6e',1,'amrex::system']]],
+  ['abs_5ftol_2',['abs_tol',['../classamrex_1_1IntegratorBase.html#afad6554d52e651fc45b533d34a96c135',1,'amrex::IntegratorBase']]],
+  ['acoefs_3',['acoefs',['../classamrex_1_1Hypre.html#a1ab65d249a3254eb6540bedcc9ebf285',1,'amrex::Hypre']]],
+  ['actual_5fn_5frcvs_4',['actual_n_rcvs',['../structamrex_1_1PCData.html#a0dc2ad0aabd8037f621c34347101d234',1,'amrex::PCData']]],
+  ['agg_5fgrid_5fsize_5',['agg_grid_size',['../structamrex_1_1LPInfo.html#ac46e08d33dd242d0b6d79ae7db01b2c0',1,'amrex::LPInfo']]],
+  ['align_5fsize_6',['align_size',['../classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7',1,'amrex::Arena']]],
+  ['allcovered_7',['allcovered',['../classamrex_1_1STLtools.html#ad56ce2bf01da43520e270f2ae570f29a',1,'amrex::STLtools::allcovered'],['../classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1',1,'amrex::EB2::GeometryShop::allcovered']]],
+  ['alloc_8',['alloc',['../structamrex_1_1FabArray_1_1ShMem.html#ac36d589efc67807c91dadd18b01ad39d',1,'amrex::FabArray::ShMem::alloc'],['../structamrex_1_1FabInfo.html#a826adbd1c96b9aab9f1826b69a894459',1,'amrex::FabInfo::alloc'],['../structamrex_1_1MFInfo.html#a61ae5fd154086ea2849fe236e1dce794',1,'amrex::MFInfo::alloc']]],
+  ['alloc_5fsingle_5fchunk_9',['alloc_single_chunk',['../structamrex_1_1MFInfo.html#a9c2c1c22be713eb697b304968e90eff5',1,'amrex::MFInfo']]],
+  ['alloc_5fstream_10',['alloc_stream',['../classamrex_1_1BaseFab.html#a0b228a35989fd32f481b43adfa43a2ec',1,'amrex::BaseFab']]],
+  ['allow_5fmultiple_5fmfiters_11',['allow_multiple_mfiters',['../classamrex_1_1MFIter.html#ab2fc387b6146040c8efcef278b258f78',1,'amrex::MFIter']]],
+  ['allprocs_12',['allprocs',['../classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b',1,'amrex::Print::AllProcs'],['../classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc',1,'amrex::PrintToFile::AllProcs']]],
+  ['allregular_13',['allregular',['../classamrex_1_1EB2_1_1GeometryShop.html#ad0c200b86624e027898eca991f5ded1c',1,'amrex::EB2::GeometryShop::allregular'],['../classamrex_1_1STLtools.html#a071a8fb28babb5af263c2aa74a0d979b',1,'amrex::STLtools::allregular']]],
+  ['amr_5flevel_14',['amr_level',['../classamrex_1_1Amr.html#a48ea3d37aac2f07a6488cb599f45fc8b',1,'amrex::Amr']]],
+  ['arena_15',['arena',['../structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2',1,'amrex::MFInfo::arena'],['../structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec',1,'amrex::FabInfo::arena']]],
+  ['arena_5finfo_16',['arena_info',['../classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1',1,'amrex::Arena']]],
+  ['arr_17',['arr',['../structamrex_1_1GpuArray.html#ab2d250b3a7efdbbf597bd50a771f3e3c',1,'amrex::GpuArray::arr'],['../structamrex_1_1Array1D.html#a3fbb7068c4f65f7830c903a57e3df5a7',1,'amrex::Array1D::arr'],['../structamrex_1_1Array2D.html#ad663a1d8bd1165b26303ff63b0cfafbe',1,'amrex::Array2D::arr'],['../structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0',1,'amrex::Array3D::arr']]],
+  ['avgmem_18',['avgmem',['../structamrex_1_1MemStat.html#af46944491d4efca70face3a494959165',1,'amrex::MemStat']]]
 ];

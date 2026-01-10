@@ -7,8 +7,7 @@ var group__amrex__domain__decomposition =
         [ "operator!=", "structamrex_1_1BoxArray_1_1RefID.html#ab9afafb3f06bd646649bc865668e874a", null ],
         [ "operator<", "structamrex_1_1BoxArray_1_1RefID.html#a6e0ad88f090537be644ffd04d1e729c8", null ],
         [ "operator==", "structamrex_1_1BoxArray_1_1RefID.html#ac87a2a13371616bc353f2f0ab21a95d1", null ],
-        [ "operator<<", "structamrex_1_1BoxArray_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ],
-        [ "data", "structamrex_1_1BoxArray_1_1RefID.html#ad5adc4256ccddb386c4d491ae958c5c6", null ]
+        [ "operator<<", "structamrex_1_1BoxArray_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ]
       ] ],
       [ "BoxArray", "classamrex_1_1BoxArray.html#a16d5410c4beb4a7376d57d6d17b7d201", null ],
       [ "BoxArray", "classamrex_1_1BoxArray.html#ae51fad2f4cc75e0d49934bd8cbbec39a", null ],
@@ -52,9 +51,6 @@ var group__amrex__domain__decomposition =
       [ "Finalize", "classamrex_1_1BoxArray.html#a16062c68a56d66f78af7d8cdaf61e330", null ],
       [ "get", "classamrex_1_1BoxArray.html#ac4e1bbf1c88985b380f9e9df11be7354", null ],
       [ "getCellCenteredBox", "classamrex_1_1BoxArray.html#a8366f694b15adc33374df70cdd56d0b5", null ],
-      [ "getDoiHi", "classamrex_1_1BoxArray.html#a6884438231c020a69d778c573c16b9e7", null ],
-      [ "getDoiLo", "classamrex_1_1BoxArray.html#a505e85adf7cf632051028a779afb02d9", null ],
-      [ "getHashMap", "classamrex_1_1BoxArray.html#a64bcc84783a1477aa898e6f8f6d55ae7", null ],
       [ "getRefID", "classamrex_1_1BoxArray.html#a0c8df27bfc6981d3e50784b64026a249", null ],
       [ "getSharedRef", "classamrex_1_1BoxArray.html#a252b092079d72947a731ad9f01d0897e", null ],
       [ "getSharedRef", "classamrex_1_1BoxArray.html#a83557d9e18e5adfcf34e9b432acbbbeb", null ],
@@ -107,23 +103,13 @@ var group__amrex__domain__decomposition =
       [ "surroundingNodes", "classamrex_1_1BoxArray.html#abf9bf4fe5d5ddb8ae3498893bc2253c8", null ],
       [ "surroundingNodes", "classamrex_1_1BoxArray.html#ae3ca0eb36b4308574b2f0dfc1fdd3562", null ],
       [ "transformer", "classamrex_1_1BoxArray.html#a88cd64a084e68534607b2463a28081f3", null ],
-      [ "type_update", "classamrex_1_1BoxArray.html#a9f2c23e3d3ccd73f1045f2bca61f7a11", null ],
       [ "uniqify", "classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c", null ],
       [ "writeOn", "classamrex_1_1BoxArray.html#a20e70e6b9fe276e04f66520bb2f56931", null ],
       [ "AmrMesh", "classamrex_1_1BoxArray.html#abffb5edfa79d13ec2e7f77a2a150cc7d", null ],
       [ "FabArrayBase", "classamrex_1_1BoxArray.html#a4636f955857e2be478f7e1a6a43305ee", null ],
-      [ "initialized", "classamrex_1_1BoxArray.html#a88d35757727faba3973cc46625237e74", null ],
-      [ "m_bat", "classamrex_1_1BoxArray.html#a416da5b2620e5c9cad12ab2fd73d349b", null ],
-      [ "m_ref", "classamrex_1_1BoxArray.html#aaf44041b956612401793f474280e5e2f", null ],
-      [ "m_simplified_list", "classamrex_1_1BoxArray.html#a6111d0d59d47fcfe76123cc90bfa2f9c", null ]
+      [ "initialized", "classamrex_1_1BoxArray.html#a88d35757727faba3973cc46625237e74", null ]
     ] ],
     [ "amrex::DistributionMapping", "classamrex_1_1DistributionMapping.html", [
-      [ "LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", [
-        [ "operator()", "structamrex_1_1DistributionMapping_1_1LIpairGT.html#a99082f49ab07519b28572cf77064832e", null ]
-      ] ],
-      [ "LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", [
-        [ "operator()", "structamrex_1_1DistributionMapping_1_1LIpairLT.html#ad2e3150718e10a60670b28b1b77c02be", null ]
-      ] ],
       [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", [
         [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#a1dcb03b5134dc17a5304929686a573dc", null ],
         [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html#a8c0cd18f1293d7587f04cdfbe0282095", null ],
@@ -142,11 +128,8 @@ var group__amrex__domain__decomposition =
         [ "operator<", "structamrex_1_1DistributionMapping_1_1RefID.html#acf88511a112b6bcc2cba29a585f5ac13", null ],
         [ "operator==", "structamrex_1_1DistributionMapping_1_1RefID.html#a4a4237a4808d5f1bbd7266cc847e4952", null ],
         [ "PrintPtr", "structamrex_1_1DistributionMapping_1_1RefID.html#a614a6f4d10ea61b0dc126aa932d1ab27", null ],
-        [ "operator<<", "structamrex_1_1DistributionMapping_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ],
-        [ "data", "structamrex_1_1DistributionMapping_1_1RefID.html#a83d7d3288a3b51ffca12886346794042", null ]
+        [ "operator<<", "structamrex_1_1DistributionMapping_1_1RefID.html#a0a9c036b70f92f7b043d2e3af67c7135", null ]
       ] ],
-      [ "LIpair", "classamrex_1_1DistributionMapping.html#a8bc191492d7a25e16f586ef1e625649c", null ],
-      [ "PVMF", "classamrex_1_1DistributionMapping.html#ae7db7ce924b3d22ba729d57da40f2262", null ],
       [ "Strategy", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8", [
         [ "UNDEFINED", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6ad808286f21d2e4851a30703a30d063", null ],
         [ "ROUNDROBIN", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a787ff5451e57a2271607a0143b75a38d", null ],
@@ -170,17 +153,11 @@ var group__amrex__domain__decomposition =
       [ "define", "classamrex_1_1DistributionMapping.html#a368e1c7d60259f1f979299bf15f7c22f", null ],
       [ "empty", "classamrex_1_1DistributionMapping.html#a3e7cd82f169573dfa29f3d453a9a40b9", null ],
       [ "Finalize", "classamrex_1_1DistributionMapping.html#ac8ce7dd033d1e5a163617b7b06d1fab0", null ],
-      [ "getIndexArray", "classamrex_1_1DistributionMapping.html#aa680d94d22fd2dc0e9e6ab1c224113ff", null ],
-      [ "getOwnerShip", "classamrex_1_1DistributionMapping.html#a8eb230cc640400a27702a048a611b0af", null ],
       [ "getRefID", "classamrex_1_1DistributionMapping.html#ac2246f88f7497945a0441732235d77b0", null ],
       [ "getWeakRef", "classamrex_1_1DistributionMapping.html#acf32f7c6f98df5de54768787c012760f", null ],
       [ "Initialize", "classamrex_1_1DistributionMapping.html#a03ecb8f0d75887ecef410b64566586bc", null ],
-      [ "KnapSackDoIt", "classamrex_1_1DistributionMapping.html#a1f6ec86cb567ef3c761c2cf693aa870d", null ],
-      [ "KnapSackProcessorMap", "classamrex_1_1DistributionMapping.html#adee3630696a974eb1b9c22046f0dc653", null ],
       [ "KnapSackProcessorMap", "classamrex_1_1DistributionMapping.html#adb7cc64952dda946670088e88945ddf7", null ],
       [ "KnapSackProcessorMap", "classamrex_1_1DistributionMapping.html#a81213361ea03e78e411076a30ed683da", null ],
-      [ "LeastUsedCPUs", "classamrex_1_1DistributionMapping.html#acbe214292ef7da8223f4318919642ace", null ],
-      [ "LeastUsedTeams", "classamrex_1_1DistributionMapping.html#a55134783f651fecac1282ea2029428f3", null ],
       [ "linkCount", "classamrex_1_1DistributionMapping.html#a0e6e72d37c4f23eecead5b448e4d94f1", null ],
       [ "makeKnapSack", "classamrex_1_1DistributionMapping.html#ae9c31399ed9426f497edfda2dafb0b2d", null ],
       [ "makeKnapSack", "classamrex_1_1DistributionMapping.html#a0704dfa27b86490adf8d30ddf4cd54f6", null ],
@@ -201,28 +178,18 @@ var group__amrex__domain__decomposition =
       [ "operator[]", "classamrex_1_1DistributionMapping.html#a051c0211689621d68f3565becf7adddd", null ],
       [ "ProcessorMap", "classamrex_1_1DistributionMapping.html#ac1cd8ab03f5ec883f167f4e1148d29ee", null ],
       [ "readFrom", "classamrex_1_1DistributionMapping.html#af4cb165d9e60aff6ad22b20d44ec22dd", null ],
-      [ "RoundRobinDoIt", "classamrex_1_1DistributionMapping.html#ac6b32a50939eeecba284d301e75e4976", null ],
-      [ "RoundRobinProcessorMap", "classamrex_1_1DistributionMapping.html#a2f4b44ca0d107e8f4a140df9d04a6c14", null ],
       [ "RoundRobinProcessorMap", "classamrex_1_1DistributionMapping.html#a32466e58df8610e7918c671c7e389b7f", null ],
       [ "RoundRobinProcessorMap", "classamrex_1_1DistributionMapping.html#aa289abff3bb4de779c8cafc2036ead9c", null ],
-      [ "RRSFCDoIt", "classamrex_1_1DistributionMapping.html#a2a57f52831edc3b6ebf3facf3a065933", null ],
-      [ "RRSFCProcessorMap", "classamrex_1_1DistributionMapping.html#a0e9524ab8bf5f4d8165c501ecc5cc5bb", null ],
       [ "SameRefs", "classamrex_1_1DistributionMapping.html#a1c20460d2e7b2eaec474e933113575d9", null ],
       [ "SFC_Threshold", "classamrex_1_1DistributionMapping.html#a2da18b37a31f8c679aa06df2e0f5d697", null ],
       [ "SFC_Threshold", "classamrex_1_1DistributionMapping.html#a63653fe42e3932487e1f5ae3665d8c2e", null ],
       [ "SFCProcessorMap", "classamrex_1_1DistributionMapping.html#abbce89f9e0c8bfb34b02b516b75a3482", null ],
       [ "SFCProcessorMap", "classamrex_1_1DistributionMapping.html#a3abd803a3f6d55816621735d7a7c1ed6", null ],
-      [ "SFCProcessorMap", "classamrex_1_1DistributionMapping.html#a1960a437a27e870cd41e9e837c196a57", null ],
-      [ "SFCProcessorMapDoIt", "classamrex_1_1DistributionMapping.html#a13273515e111009ee6d6ade3e0581c30", null ],
       [ "size", "classamrex_1_1DistributionMapping.html#a0eebc2b29efd96d23accd706ab5f6930", null ],
-      [ "Sort", "classamrex_1_1DistributionMapping.html#a65d02277c7532c3befd7d24aeda66a0d", null ],
       [ "strategy", "classamrex_1_1DistributionMapping.html#ac41e6c0536cc22b8c0d71c0450e58df2", null ],
       [ "strategy", "classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba", null ],
       [ "writeOn", "classamrex_1_1DistributionMapping.html#a4e2f034c17bb24bb7a98e164c213f03b", null ],
       [ "FabArray", "classamrex_1_1DistributionMapping.html#a387a5ebdcf8845ac218d335706651b06", null ],
-      [ "FabArrayBase", "classamrex_1_1DistributionMapping.html#a4636f955857e2be478f7e1a6a43305ee", null ],
-      [ "m_BuildMap", "classamrex_1_1DistributionMapping.html#aea78b384d1325786fc3738a66cb16a32", null ],
-      [ "m_ref", "classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885", null ],
-      [ "m_Strategy", "classamrex_1_1DistributionMapping.html#a5aadb0f378774b462229052551cd2db8", null ]
+      [ "FabArrayBase", "classamrex_1_1DistributionMapping.html#a4636f955857e2be478f7e1a6a43305ee", null ]
     ] ]
 ];

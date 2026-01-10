@@ -115,7 +115,5 @@ var searchData=
   ['pp_5fentry_112',['PP_entry',['../structamrex_1_1ParmParse_1_1PP__entry.html',1,'amrex::ParmParse']]],
   ['print_113',['Print',['../classamrex_1_1Print.html',1,'amrex']]],
   ['printtofile_114',['PrintToFile',['../classamrex_1_1PrintToFile.html',1,'amrex']]],
-  ['processteam_115',['ProcessTeam',['../structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html',1,'amrex::ParallelDescriptor']]],
-  ['procstats_116',['ProcStats',['../structamrex_1_1TinyProfiler_1_1ProcStats.html',1,'amrex::TinyProfiler']]],
-  ['psicode_117',['PsiCode',['../structamrex_1_1algoim_1_1PsiCode.html',1,'amrex::algoim']]]
+  ['processteam_115',['ProcessTeam',['../structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html',1,'amrex::ParallelDescriptor']]]
 ];

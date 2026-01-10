@@ -68,12 +68,9 @@ var classamrex_1_1BoxList =
     [ "shiftHalf", "classamrex_1_1BoxList.html#ab7f6f44784766807b294541ab761df61", null ],
     [ "shiftHalf", "classamrex_1_1BoxList.html#a212f2fed6ea24374e6eab8924370f83c", null ],
     [ "simplify", "classamrex_1_1BoxList.html#a827d337283d6b99be9feff0887409674", null ],
-    [ "simplify_doit", "classamrex_1_1BoxList.html#aaf1b93b74700437fde78c1cecfba7283", null ],
     [ "size", "classamrex_1_1BoxList.html#ac4030d4780cc8ca926857c82819c1c42", null ],
     [ "surroundingNodes", "classamrex_1_1BoxList.html#a90b7a6656171c845e6f3b9761babf173", null ],
     [ "surroundingNodes", "classamrex_1_1BoxList.html#ae0859bd8531420c10412435d6674856e", null ],
     [ "swap", "classamrex_1_1BoxList.html#a9d63414afae1383f87a0fa6bda4c3cc7", null ],
-    [ "BoxDomain", "classamrex_1_1BoxList.html#ad02d5a19433d5484dee5fb260bbc9f06", null ],
-    [ "btype", "classamrex_1_1BoxList.html#a70df1b0aadeb1c7f0360299f0e2b2fc4", null ],
-    [ "m_lbox", "classamrex_1_1BoxList.html#adeadcf55bf1de6d0a14007817795bfbf", null ]
+    [ "BoxDomain", "classamrex_1_1BoxList.html#ad02d5a19433d5484dee5fb260bbc9f06", null ]
 ];

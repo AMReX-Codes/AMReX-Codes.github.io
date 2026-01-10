@@ -2,7 +2,7 @@ var searchData=
 [
   ['manageddevicevector_0',['ManagedDeviceVector',['../group__amrex__linear__containers.html#gaf22f411b79da7033051cdfa1539e21be',1,'amrex::Gpu']]],
   ['managedvector_1',['ManagedVector',['../group__amrex__linear__containers.html#gab2661b6ddd9751b7e197a9d619dabc7b',1,'amrex::Gpu']]],
-  ['mapofcopycomtagcontainers_2',['mapofcopycomtagcontainers',['../classamrex_1_1FabArrayBase.html#aa36883196eb7b1d039fd1941966a4310',1,'amrex::FabArrayBase::MapOfCopyComTagContainers'],['../classamrex_1_1MultiFab.html#a26137d0a3c8a4a024bf811fbaac6208d',1,'amrex::MultiFab::MapOfCopyComTagContainers'],['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e',1,'amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers']]],
+  ['mapofcopycomtagcontainers_2',['mapofcopycomtagcontainers',['../classamrex_1_1FabArrayBase.html#aa36883196eb7b1d039fd1941966a4310',1,'amrex::FabArrayBase::MapOfCopyComTagContainers'],['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e',1,'amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers']]],
   ['mat_3',['MAT',['../classamrex_1_1GMRES__MV.html#ab602ed172f36a35ddcfd4bc8f6def8e4',1,'amrex::GMRES_MV']]],
   ['maxressteadyclock_4',['MaxResSteadyClock',['../namespaceamrex.html#a3e90f0304ff639b230b6b502e8546b88',1,'amrex']]],
   ['mf_5',['mf',['../classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94',1,'amrex::FFT::OpenBCSolver::MF'],['../classamrex_1_1FFT_1_1R2C.html#a07c18ab14d0df660208544c3ce8c0a94',1,'amrex::FFT::R2C::MF'],['../classamrex_1_1FFT_1_1R2X.html#a1ad8b2010b2dd7e6107786d468665799',1,'amrex::FFT::R2X::MF'],['../classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05',1,'amrex::MLCurlCurl::MF']]],

@@ -13,11 +13,5 @@ var classamrex_1_1SplineDistFcnElement2d =
     [ "print_spline", "classamrex_1_1SplineDistFcnElement2d.html#a5da55e4a3464f1a04eb34beffd638600", null ],
     [ "set_bc_points", "classamrex_1_1SplineDistFcnElement2d.html#afbaf7389cb10c9e735d8528b49e9f555", null ],
     [ "set_control_points", "classamrex_1_1SplineDistFcnElement2d.html#a46ac59d2d62435816d113653dfde733d", null ],
-    [ "single_spline_cpdist", "classamrex_1_1SplineDistFcnElement2d.html#a3722851ada457f53ade7e28e84acfe79", null ],
-    [ "bc_pt_end", "classamrex_1_1SplineDistFcnElement2d.html#acf0af49643ea92e7bf5cddc7aa649058", null ],
-    [ "bc_pt_start", "classamrex_1_1SplineDistFcnElement2d.html#a893b3a26f68475031476e02fca6246c7", null ],
-    [ "control_points_x", "classamrex_1_1SplineDistFcnElement2d.html#ac1c23f1058ddc5e09b1d859e3cba904a", null ],
-    [ "control_points_y", "classamrex_1_1SplineDistFcnElement2d.html#a3662f00f13decf4a4ad983e1cc19c2f9", null ],
-    [ "Dx", "classamrex_1_1SplineDistFcnElement2d.html#a6dc7a3f96e7d9b912a500fb17abb9a83", null ],
-    [ "Dy", "classamrex_1_1SplineDistFcnElement2d.html#a9ef7c332f4ef1f1409c3dfec141c016a", null ]
+    [ "single_spline_cpdist", "classamrex_1_1SplineDistFcnElement2d.html#a3722851ada457f53ade7e28e84acfe79", null ]
 ];

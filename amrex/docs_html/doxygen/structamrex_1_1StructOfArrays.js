@@ -35,13 +35,5 @@ var structamrex_1_1StructOfArrays =
     [ "resize", "structamrex_1_1StructOfArrays.html#a55b3557dc6f6d9477d8ab785cf40d2b2", null ],
     [ "setNumNeighbors", "structamrex_1_1StructOfArrays.html#a06cb98e187a840616cfd0c681f596ab2", null ],
     [ "size", "structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725", null ],
-    [ "m_defined", "structamrex_1_1StructOfArrays.html#a27f4405dacee92bf69d837b35ca6d238", null ],
-    [ "m_idata", "structamrex_1_1StructOfArrays.html#a017be53b64346d557da975c2a473a5a3", null ],
-    [ "m_idata_names", "structamrex_1_1StructOfArrays.html#abec42b7902984cbbc77ec79a5fe73a0e", null ],
-    [ "m_idcpu", "structamrex_1_1StructOfArrays.html#a62679baf18972e398b3c6f5148fc9087", null ],
-    [ "m_num_neighbor_particles", "structamrex_1_1StructOfArrays.html#a8c77c12736c976f0848d534b810cdc34", null ],
-    [ "m_rdata", "structamrex_1_1StructOfArrays.html#aaffa30601135a22b5e4f9ac283b06aa1", null ],
-    [ "m_rdata_names", "structamrex_1_1StructOfArrays.html#aa4d174d7f6e936cb75addf07e0cfa793", null ],
-    [ "m_runtime_idata", "structamrex_1_1StructOfArrays.html#a10ad5fb2e51e43137e1b26ce70119735", null ],
-    [ "m_runtime_rdata", "structamrex_1_1StructOfArrays.html#a179e1b7074dc1c6f3fe55ee3222839de", null ]
+    [ "m_num_neighbor_particles", "structamrex_1_1StructOfArrays.html#a8c77c12736c976f0848d534b810cdc34", null ]
 ];

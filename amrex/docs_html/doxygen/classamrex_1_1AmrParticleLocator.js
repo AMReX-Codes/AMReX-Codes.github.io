@@ -9,8 +9,5 @@ var classamrex_1_1AmrParticleLocator =
     [ "getGridAssignor", "classamrex_1_1AmrParticleLocator.html#a4a717dad5c9ce9b8653e99830fc4cb61", null ],
     [ "isValid", "classamrex_1_1AmrParticleLocator.html#ad954d4298fca06d4702dd2e0b97db95f", null ],
     [ "isValid", "classamrex_1_1AmrParticleLocator.html#ac8dc82560e4b24adc9e5490f8f03e068", null ],
-    [ "setGeometry", "classamrex_1_1AmrParticleLocator.html#ad0aae403343af35030ffeae40a77b82d", null ],
-    [ "m_defined", "classamrex_1_1AmrParticleLocator.html#a137731a88dc832f6c1b0d1a48136b612", null ],
-    [ "m_grid_assignors", "classamrex_1_1AmrParticleLocator.html#a095e51d1001dbc1f5923c5b00606b1b3", null ],
-    [ "m_locators", "classamrex_1_1AmrParticleLocator.html#af4776b256bae40168f42b72208fbbd1f", null ]
+    [ "setGeometry", "classamrex_1_1AmrParticleLocator.html#ad0aae403343af35030ffeae40a77b82d", null ]
 ];

@@ -228,7 +228,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                       <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,2&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                       <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,2&gt;</a> <span class="keyword">const</span>&amp; a_end) noexcept</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        : <a class="code hl_variable" href="structamrex_1_1Table2D.html#a2108e29ddb89a3220ca3c03f78a66cff">p</a>(a_p),</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>          <a class="code hl_variable" href="structamrex_1_1Table2D.html#acd2464cad98d33e77dbf181904ef9749">stride1</a>(<a class="code hl_function" href="structamrex_1_1Table2D.html#a2a93394c3acf4245fe4a27b808adac99">len0</a>(a_begin,a_end)),</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>          <a class="code hl_variable" href="structamrex_1_1Table2D.html#acd2464cad98d33e77dbf181904ef9749">stride1</a>(len0(a_begin,a_end)),</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>          <a class="code hl_variable" href="structamrex_1_1Table2D.html#ac1b696dc13b05c84b613ae77eeb4c24c">begin</a>(a_begin),</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          <a class="code hl_variable" href="structamrex_1_1Table2D.html#a90068786b718833feac893cc831dd061">end</a>(a_end)</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {}</div>
@@ -276,8 +276,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="structamrex_1_1Table2D.html#a2a93394c3acf4245fe4a27b808adac99">  160</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table2D.html#a2a93394c3acf4245fe4a27b808adac99">len0</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,2&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len0 (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,2&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,2&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    {</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (ORDER == <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">Order::F</a>) {</div>
@@ -286,7 +285,6 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">return</span> a_end[1] - a_begin[1];</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
-</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>};</div>
 </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
@@ -372,8 +370,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="structamrex_1_1Table3D.html#accb55d2deb7abdb2c5fe9afd0f27046c">  246</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table3D.html#accb55d2deb7abdb2c5fe9afd0f27046c">len0</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len0 (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    {</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (ORDER == Order::F) {</div>
@@ -382,15 +379,12 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> a_end[2] - a_begin[2];</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
-</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="structamrex_1_1Table3D.html#a8da09138b8d2468cc9898ba75700cdd1">  256</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table3D.html#a8da09138b8d2468cc9898ba75700cdd1">len1</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,3&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len1 (GpuArray&lt;int,3&gt; <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                               GpuArray&lt;int,3&gt; <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    {</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">return</span> a_end[1] - a_begin[1];</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
-</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>};</div>
 </div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
@@ -481,8 +475,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="foldopen" id="foldopen00343" data-start="{" data-end="}">
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="structamrex_1_1Table4D.html#a3668191c352566d1d1c5835102b69e8c">  343</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table4D.html#a3668191c352566d1d1c5835102b69e8c">len0</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len0 (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    {</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (ORDER == Order::F) {</div>
@@ -491,11 +484,9 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            <span class="keywordflow">return</span> a_end[3] - a_begin[3];</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        }</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    }</div>
-</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
-<div class="foldopen" id="foldopen00353" data-start="{" data-end="}">
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="structamrex_1_1Table4D.html#a24f8a04409c92b85616e68e23ed0cb15">  353</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table4D.html#a24f8a04409c92b85616e68e23ed0cb15">len1</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len1 (GpuArray&lt;int,4&gt; <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                               GpuArray&lt;int,4&gt; <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    {</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (ORDER == Order::F) {</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            <span class="keywordflow">return</span> a_end[1] - a_begin[1];</div>
@@ -503,11 +494,9 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            <span class="keywordflow">return</span> a_end[2] - a_begin[2];</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        }</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    }</div>
-</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="foldopen" id="foldopen00363" data-start="{" data-end="}">
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno"><a class="line" href="structamrex_1_1Table4D.html#a346a4f218664dc863f9082a7f1a13f6b">  363</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1Table4D.html#a346a4f218664dc863f9082a7f1a13f6b">len2</a> (<a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_begin,</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                               <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray&lt;int,4&gt;</a> <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> len2 (GpuArray&lt;int,4&gt; <span class="keyword">const</span>&amp; a_begin,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                               GpuArray&lt;int,4&gt; <span class="keyword">const</span>&amp; a_end) <span class="keyword">noexcept</span></div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    {</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (ORDER == Order::F) {</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            <span class="keywordflow">return</span> a_end[2] - a_begin[2];</div>
@@ -515,7 +504,6 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            <span class="keywordflow">return</span> a_end[1] - a_begin[1];</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        }</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    }</div>
-</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>};</div>
 </div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
@@ -573,11 +561,11 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span> </div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <span class="keywordtype">void</span> define ();</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span> </div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#afdf4938ce386a4308e372944a4b5a394">  465</a></span>    T* m_dptr = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#ad4346ff5843f027fe798ba9dfa0ebe51">  466</a></span>    <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<span class="keywordtype">int</span>,N&gt; m_lo;</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#a418711dcd50105d05161524f9137bb5d">  467</a></span>    <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<span class="keywordtype">int</span>,N&gt; m_hi;</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#afe2cef7f8d8260130dc5640520f4062b">  468</a></span>    <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> m_truesize = 0L;</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#a343632bf7caa49187def50cae53bf757">  469</a></span>    <span class="keywordtype">bool</span> m_ptr_owner = false;</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    T* m_dptr = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<span class="keywordtype">int</span>,N&gt; m_lo;</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt;<span class="keywordtype">int</span>,N&gt; m_hi;</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> m_truesize = 0L;</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="keywordtype">bool</span> m_ptr_owner = false;</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>};</div>
 </div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span> </div>
@@ -694,8 +682,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, Order ORDER&gt;</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen00571" data-start="{" data-end="}">
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="classamrex_1_1TableData.html#a980519b19e7ba7540cafbb896cc92484">  571</a></span><a class="code hl_class" href="classamrex_1_1TableData.html">TableData&lt;T,N,ORDER&gt;::define</a> ()</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><a class="code hl_class" href="classamrex_1_1TableData.html">TableData&lt;T,N,ORDER&gt;::define</a> ()</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>{</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    m_truesize = size();</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(m_truesize &gt;= 0);</div>
@@ -706,12 +693,11 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        m_dptr = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(this-&gt;alloc(m_truesize*<span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    }</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>}</div>
-</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="keyword">namespace </span>detail {</div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Order&gt;</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <a class="code hl_struct" href="structamrex_1_1Table1D.html">Table1D&lt;T&gt;</a> make_table (T* p, <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array&lt;int,1&gt;</a> <span class="keyword">const</span>&amp; lo, <a class="code hl_typedef" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array&lt;int,1&gt;</a> <span class="keyword">const</span>&amp; hi) {</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structamrex_1_1Table1D.html">Table1D&lt;T&gt;</a>(p, lo[0], hi[0]+1);</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    Table1D&lt;T&gt; make_table (T* p, Array&lt;int,1&gt; <span class="keyword">const</span>&amp; lo, Array&lt;int,1&gt; <span class="keyword">const</span>&amp; hi) {</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        <span class="keywordflow">return</span> Table1D&lt;T&gt;(p, lo[0], hi[0]+1);</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    }</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Order ORDER&gt;</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    Table2D&lt;T,ORDER&gt; make_table (T* p, Array&lt;int,2&gt; <span class="keyword">const</span>&amp; lo, Array&lt;int,2&gt; <span class="keyword">const</span>&amp; hi) {</div>
@@ -820,7 +806,6 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="ttc" id="astructamrex_1_1Table1D_html_aeb46e3e94740ca99982d2e602ca01952"><div class="ttname"><a href="structamrex_1_1Table1D.html#aeb46e3e94740ca99982d2e602ca01952">amrex::Table1D::operator()</a></div><div class="ttdeci">__host__ __device__ U &amp; operator()(IDX i) const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:47</div></div>
 <div class="ttc" id="astructamrex_1_1Table2D_html"><div class="ttname"><a href="structamrex_1_1Table2D.html">amrex::Table2D</a></div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:93</div></div>
 <div class="ttc" id="astructamrex_1_1Table2D_html_a2108e29ddb89a3220ca3c03f78a66cff"><div class="ttname"><a href="structamrex_1_1Table2D.html#a2108e29ddb89a3220ca3c03f78a66cff">amrex::Table2D::p</a></div><div class="ttdeci">T *__restrict__ p</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:94</div></div>
-<div class="ttc" id="astructamrex_1_1Table2D_html_a2a93394c3acf4245fe4a27b808adac99"><div class="ttname"><a href="structamrex_1_1Table2D.html#a2a93394c3acf4245fe4a27b808adac99">amrex::Table2D::len0</a></div><div class="ttdeci">static constexpr int len0(GpuArray&lt; int, 2 &gt; const &amp;a_begin, GpuArray&lt; int, 2 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:160</div></div>
 <div class="ttc" id="astructamrex_1_1Table2D_html_a39417841a68ab3c8b3fc853fbf0d29f0"><div class="ttname"><a href="structamrex_1_1Table2D.html#a39417841a68ab3c8b3fc853fbf0d29f0">amrex::Table2D::Table2D</a></div><div class="ttdeci">constexpr Table2D() noexcept=default</div></div>
 <div class="ttc" id="astructamrex_1_1Table2D_html_a827f5ac6d5c40d22fdce1c25b8a4e7a6"><div class="ttname"><a href="structamrex_1_1Table2D.html#a827f5ac6d5c40d22fdce1c25b8a4e7a6">amrex::Table2D::Table2D</a></div><div class="ttdeci">__host__ __device__ constexpr Table2D(T *a_p, GpuArray&lt; int, 2 &gt; const &amp;a_begin, GpuArray&lt; int, 2 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:111</div></div>
 <div class="ttc" id="astructamrex_1_1Table2D_html_a90068786b718833feac893cc831dd061"><div class="ttname"><a href="structamrex_1_1Table2D.html#a90068786b718833feac893cc831dd061">amrex::Table2D::end</a></div><div class="ttdeci">GpuArray&lt; int, 2 &gt; end</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:97</div></div>
@@ -829,14 +814,9 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="ttc" id="astructamrex_1_1Table2D_html_ad9492b90e7daad0df88a83bf4904c39a"><div class="ttname"><a href="structamrex_1_1Table2D.html#ad9492b90e7daad0df88a83bf4904c39a">amrex::Table2D::operator()</a></div><div class="ttdeci">__host__ __device__ U &amp; operator()(int i, int j) const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:125</div></div>
 <div class="ttc" id="astructamrex_1_1Table3D_html"><div class="ttname"><a href="structamrex_1_1Table3D.html">amrex::Table3D</a></div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:173</div></div>
 <div class="ttc" id="astructamrex_1_1Table3D_html_a3df237f63ba761b2845818f82dfeb9c9"><div class="ttname"><a href="structamrex_1_1Table3D.html#a3df237f63ba761b2845818f82dfeb9c9">amrex::Table3D::Table3D</a></div><div class="ttdeci">__host__ __device__ constexpr Table3D(T *a_p, GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:193</div></div>
-<div class="ttc" id="astructamrex_1_1Table3D_html_a8da09138b8d2468cc9898ba75700cdd1"><div class="ttname"><a href="structamrex_1_1Table3D.html#a8da09138b8d2468cc9898ba75700cdd1">amrex::Table3D::len1</a></div><div class="ttdeci">static constexpr int len1(GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:256</div></div>
 <div class="ttc" id="astructamrex_1_1Table3D_html_a994877eb9b7819106bd25c3fb2932398"><div class="ttname"><a href="structamrex_1_1Table3D.html#a994877eb9b7819106bd25c3fb2932398">amrex::Table3D::Table3D</a></div><div class="ttdeci">constexpr Table3D() noexcept=default</div></div>
-<div class="ttc" id="astructamrex_1_1Table3D_html_accb55d2deb7abdb2c5fe9afd0f27046c"><div class="ttname"><a href="structamrex_1_1Table3D.html#accb55d2deb7abdb2c5fe9afd0f27046c">amrex::Table3D::len0</a></div><div class="ttdeci">static constexpr int len0(GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:246</div></div>
 <div class="ttc" id="astructamrex_1_1Table4D_html"><div class="ttname"><a href="structamrex_1_1Table4D.html">amrex::Table4D</a></div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:265</div></div>
-<div class="ttc" id="astructamrex_1_1Table4D_html_a24f8a04409c92b85616e68e23ed0cb15"><div class="ttname"><a href="structamrex_1_1Table4D.html#a24f8a04409c92b85616e68e23ed0cb15">amrex::Table4D::len1</a></div><div class="ttdeci">static constexpr int len1(GpuArray&lt; int, 4 &gt; const &amp;a_begin, GpuArray&lt; int, 4 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:353</div></div>
 <div class="ttc" id="astructamrex_1_1Table4D_html_a264e4a4265aee9986c1da7486a96a747"><div class="ttname"><a href="structamrex_1_1Table4D.html#a264e4a4265aee9986c1da7486a96a747">amrex::Table4D::Table4D</a></div><div class="ttdeci">constexpr Table4D() noexcept=default</div></div>
-<div class="ttc" id="astructamrex_1_1Table4D_html_a346a4f218664dc863f9082a7f1a13f6b"><div class="ttname"><a href="structamrex_1_1Table4D.html#a346a4f218664dc863f9082a7f1a13f6b">amrex::Table4D::len2</a></div><div class="ttdeci">static constexpr int len2(GpuArray&lt; int, 4 &gt; const &amp;a_begin, GpuArray&lt; int, 4 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:363</div></div>
-<div class="ttc" id="astructamrex_1_1Table4D_html_a3668191c352566d1d1c5835102b69e8c"><div class="ttname"><a href="structamrex_1_1Table4D.html#a3668191c352566d1d1c5835102b69e8c">amrex::Table4D::len0</a></div><div class="ttdeci">static constexpr int len0(GpuArray&lt; int, 4 &gt; const &amp;a_begin, GpuArray&lt; int, 4 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:343</div></div>
 <div class="ttc" id="astructamrex_1_1Table4D_html_abf1f7ba7bf8b291d2650b2dae172e008"><div class="ttname"><a href="structamrex_1_1Table4D.html#abf1f7ba7bf8b291d2650b2dae172e008">amrex::Table4D::Table4D</a></div><div class="ttdeci">__host__ __device__ constexpr Table4D(T *a_p, GpuArray&lt; int, 4 &gt; const &amp;a_begin, GpuArray&lt; int, 4 &gt; const &amp;a_end) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:287</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -14,18 +14,11 @@ var classamrex_1_1DenseBins =
     [ "build", "classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5", null ],
     [ "build", "classamrex_1_1DenseBins.html#a97b2a646e5d6e068f0aef8827724c083", null ],
     [ "build", "classamrex_1_1DenseBins.html#ac7b31f16c880c16927e8a3e2e75c6481", null ],
-    [ "call_f", "classamrex_1_1DenseBins.html#ab517b08ff91655fc83e4cb9e58f2bb57", null ],
     [ "getBinIteratorFactory", "classamrex_1_1DenseBins.html#a45e940a7b8ffaa8d2e4c47ef17da2605", null ],
     [ "numBins", "classamrex_1_1DenseBins.html#af98199a3fd0f724083761ddea28e4606", null ],
     [ "numItems", "classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3", null ],
     [ "offsetsPtr", "classamrex_1_1DenseBins.html#abcc199e92b18c182b7637ed51dfb2eb0", null ],
     [ "offsetsPtr", "classamrex_1_1DenseBins.html#a55e4778b175fce2017b454571c234a13", null ],
     [ "permutationPtr", "classamrex_1_1DenseBins.html#a2e420f7f6219091116beeb846cc62008", null ],
-    [ "permutationPtr", "classamrex_1_1DenseBins.html#a6dc43be102fcb4e745b26d38a17282e3", null ],
-    [ "m_bins", "classamrex_1_1DenseBins.html#af1561b37e307d49631e3fc2ee1b68212", null ],
-    [ "m_counts", "classamrex_1_1DenseBins.html#af113e9e077a9aed3c6696adabcefa899", null ],
-    [ "m_items", "classamrex_1_1DenseBins.html#a2bb6a0e5dc6b40b73fd0221f633a1f84", null ],
-    [ "m_local_offsets", "classamrex_1_1DenseBins.html#a489cbe99cd70050a8d0d5d0de2aa2fe4", null ],
-    [ "m_offsets", "classamrex_1_1DenseBins.html#ad70b443fd8e65a368e1fed776614b0e4", null ],
-    [ "m_perm", "classamrex_1_1DenseBins.html#ad40e15a5e019a0a7afa527c6226e7675", null ]
+    [ "permutationPtr", "classamrex_1_1DenseBins.html#a6dc43be102fcb4e745b26d38a17282e3", null ]
 ];

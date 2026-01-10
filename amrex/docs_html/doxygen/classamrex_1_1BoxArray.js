@@ -43,9 +43,6 @@ var classamrex_1_1BoxArray =
     [ "Finalize", "classamrex_1_1BoxArray.html#a16062c68a56d66f78af7d8cdaf61e330", null ],
     [ "get", "classamrex_1_1BoxArray.html#ac4e1bbf1c88985b380f9e9df11be7354", null ],
     [ "getCellCenteredBox", "classamrex_1_1BoxArray.html#a8366f694b15adc33374df70cdd56d0b5", null ],
-    [ "getDoiHi", "classamrex_1_1BoxArray.html#a6884438231c020a69d778c573c16b9e7", null ],
-    [ "getDoiLo", "classamrex_1_1BoxArray.html#a505e85adf7cf632051028a779afb02d9", null ],
-    [ "getHashMap", "classamrex_1_1BoxArray.html#a64bcc84783a1477aa898e6f8f6d55ae7", null ],
     [ "getRefID", "classamrex_1_1BoxArray.html#a0c8df27bfc6981d3e50784b64026a249", null ],
     [ "getSharedRef", "classamrex_1_1BoxArray.html#a252b092079d72947a731ad9f01d0897e", null ],
     [ "getSharedRef", "classamrex_1_1BoxArray.html#a83557d9e18e5adfcf34e9b432acbbbeb", null ],
@@ -98,13 +95,9 @@ var classamrex_1_1BoxArray =
     [ "surroundingNodes", "classamrex_1_1BoxArray.html#abf9bf4fe5d5ddb8ae3498893bc2253c8", null ],
     [ "surroundingNodes", "classamrex_1_1BoxArray.html#ae3ca0eb36b4308574b2f0dfc1fdd3562", null ],
     [ "transformer", "classamrex_1_1BoxArray.html#a88cd64a084e68534607b2463a28081f3", null ],
-    [ "type_update", "classamrex_1_1BoxArray.html#a9f2c23e3d3ccd73f1045f2bca61f7a11", null ],
     [ "uniqify", "classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c", null ],
     [ "writeOn", "classamrex_1_1BoxArray.html#a20e70e6b9fe276e04f66520bb2f56931", null ],
     [ "AmrMesh", "classamrex_1_1BoxArray.html#abffb5edfa79d13ec2e7f77a2a150cc7d", null ],
     [ "FabArrayBase", "classamrex_1_1BoxArray.html#a4636f955857e2be478f7e1a6a43305ee", null ],
-    [ "initialized", "classamrex_1_1BoxArray.html#a88d35757727faba3973cc46625237e74", null ],
-    [ "m_bat", "classamrex_1_1BoxArray.html#a416da5b2620e5c9cad12ab2fd73d349b", null ],
-    [ "m_ref", "classamrex_1_1BoxArray.html#aaf44041b956612401793f474280e5e2f", null ],
-    [ "m_simplified_list", "classamrex_1_1BoxArray.html#a6111d0d59d47fcfe76123cc90bfa2f9c", null ]
+    [ "initialized", "classamrex_1_1BoxArray.html#a88d35757727faba3973cc46625237e74", null ]
 ];

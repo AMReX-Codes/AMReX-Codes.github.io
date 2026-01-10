@@ -4,7 +4,7 @@ var searchData=
   ['launchsafeguard_1',['LaunchSafeGuard',['../structamrex_1_1Gpu_1_1LaunchSafeGuard.html',1,'amrex::Gpu']]],
   ['layoutdata_2',['LayoutData',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20amrex_3a_3apodvector_3c_20hypre_5fint_20_3e_20_3e_3',['LayoutData&lt; amrex::PODVector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
-  ['layoutdata_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_4',['layoutdata&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; int &gt; &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; Int &gt; &gt;']]],
+  ['layoutdata_3c_20amrex_3a_3apodvector_3c_20int_20_3e_20_3e_4',['layoutdata&lt; amrex::podvector&lt; int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; Int &gt; &gt;'],['../classamrex_1_1LayoutData.html',1,'amrex::LayoutData&lt; amrex::PODVector&lt; int &gt; &gt;']]],
   ['layoutdata_3c_20amrex_3a_3avector_3c_20amrex_3a_3avector_3c_20amrex_3a_3aboundcond_20_3e_20_3e_20_3e_5',['LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20gfab_20_3e_6',['LayoutData&lt; GFab &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20hypre_5fint_20_3e_7',['LayoutData&lt; HYPRE_Int &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
@@ -16,12 +16,10 @@ var searchData=
   ['linear_13',['Linear',['../structamrex_1_1ParticleInterpolator_1_1Linear.html',1,'amrex::ParticleInterpolator']]],
   ['linedistfcnelement2d_14',['LineDistFcnElement2d',['../classamrex_1_1LineDistFcnElement2d.html',1,'amrex']]],
   ['linopenumtype_15',['LinOpEnumType',['../structamrex_1_1LinOpEnumType.html',1,'amrex']]],
-  ['lipairgt_16',['LIpairGT',['../structamrex_1_1DistributionMapping_1_1LIpairGT.html',1,'amrex::DistributionMapping']]],
-  ['lipairlt_17',['LIpairLT',['../structamrex_1_1DistributionMapping_1_1LIpairLT.html',1,'amrex::DistributionMapping']]],
-  ['localr2c_18',['LocalR2C',['../classamrex_1_1FFT_1_1LocalR2C.html',1,'amrex::FFT']]],
-  ['logicaland_19',['LogicalAnd',['../structamrex_1_1LogicalAnd.html',1,'amrex']]],
-  ['logicalor_20',['LogicalOr',['../structamrex_1_1LogicalOr.html',1,'amrex']]],
-  ['lpinfo_21',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
-  ['lusolver_22',['LUSolver',['../classamrex_1_1LUSolver.html',1,'amrex']]],
-  ['lusolver_3c_203_20_2a2_2c_20rt_20_3e_23',['LUSolver&lt; 3 *2, RT &gt;',['../classamrex_1_1LUSolver.html',1,'amrex']]]
+  ['localr2c_16',['LocalR2C',['../classamrex_1_1FFT_1_1LocalR2C.html',1,'amrex::FFT']]],
+  ['logicaland_17',['LogicalAnd',['../structamrex_1_1LogicalAnd.html',1,'amrex']]],
+  ['logicalor_18',['LogicalOr',['../structamrex_1_1LogicalOr.html',1,'amrex']]],
+  ['lpinfo_19',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
+  ['lusolver_20',['LUSolver',['../classamrex_1_1LUSolver.html',1,'amrex']]],
+  ['lusolver_3c_203_20_2a2_2c_20rt_20_3e_21',['LUSolver&lt; 3 *2, RT &gt;',['../classamrex_1_1LUSolver.html',1,'amrex']]]
 ];

@@ -12,7 +12,6 @@ var classamrex_1_1TableData =
     [ "clear", "classamrex_1_1TableData.html#afc56cd7ec5f96ca6966a277ea67e5641", null ],
     [ "const_table", "classamrex_1_1TableData.html#a47894641211c75ff39ae19d25f894848", null ],
     [ "copy", "classamrex_1_1TableData.html#a782cfc237fbff9c3baa8793a6ee988cd", null ],
-    [ "define", "classamrex_1_1TableData.html#a980519b19e7ba7540cafbb896cc92484", null ],
     [ "dim", "classamrex_1_1TableData.html#a78d40ceae2fb38ee7ca043a081231556", null ],
     [ "hi", "classamrex_1_1TableData.html#a5496be34e7f80cfaed8ae45c38463aba", null ],
     [ "lo", "classamrex_1_1TableData.html#ab3f6dd0ef38c029fa67f4253fe0cd319", null ],
@@ -22,10 +21,5 @@ var classamrex_1_1TableData =
     [ "size", "classamrex_1_1TableData.html#a95cfb01202068efe699062fad7263bb6", null ],
     [ "table", "classamrex_1_1TableData.html#a83a37d5f24b2a4cffeb5f658ca0bda78", null ],
     [ "table", "classamrex_1_1TableData.html#afeffb10e16b9f5ef9e1f806bb5940796", null ],
-    [ "TableData", "classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a", null ],
-    [ "m_dptr", "classamrex_1_1TableData.html#afdf4938ce386a4308e372944a4b5a394", null ],
-    [ "m_hi", "classamrex_1_1TableData.html#a418711dcd50105d05161524f9137bb5d", null ],
-    [ "m_lo", "classamrex_1_1TableData.html#ad4346ff5843f027fe798ba9dfa0ebe51", null ],
-    [ "m_ptr_owner", "classamrex_1_1TableData.html#a343632bf7caa49187def50cae53bf757", null ],
-    [ "m_truesize", "classamrex_1_1TableData.html#afe2cef7f8d8260130dc5640520f4062b", null ]
+    [ "TableData", "classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a", null ]
 ];

@@ -12,14 +12,13 @@ var searchData=
   ['smoother_9',['smoother',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4aa24fa9dac0801f55f51de06cd8f9d132',1,'amrex']]],
   ['soa_10',['SoA',['../namespaceamrex.html#a83d03eb75adb29c552bae0a3d625895ba7df366f0036440c84928f057941f8dad',1,'amrex']]],
   ['solution_11',['Solution',['../structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8a49b21ad0d38942f635877e7bbc5d7a1e',1,'amrex::LinOpEnumType']]],
-  ['solve_5ftime_12',['solve_time',['../classamrex_1_1MLMGT.html#ac3f33b5865628fb4fbb9e39b278358fdafe6893b283399428e6511e5ce0780e7c',1,'amrex::MLMGT']]],
-  ['special_13',['Special',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dab844c3099506080d12c1145ccdafa585',1,'amrex::ErrorRec']]],
-  ['spherical_14',['SPHERICAL',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaaa0c55dfafca5806f988babd974f5b158',1,'amrex::CoordSys']]],
-  ['split_15',['split',['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282aeefec303079ad17405c889e092e105b0',1,'amrex::ForkJoin']]],
-  ['ssamg_16',['SSAMG',['../namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16ebaedb458d93d1aa8663ae63f153d911a81',1,'amrex']]],
-  ['ssprk3_17',['SSPRK3',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564ab65603b0c54c1b7114d61811751ccf42',1,'amrex']]],
-  ['standard_18',['Standard',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143',1,'amrex::ErrorRec']]],
-  ['structed_19',['structed',['../classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6',1,'amrex::Hypre']]],
-  ['sundials_20',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
-  ['symmetry_21',['symmetry',['../namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35',1,'amrex::PhysBCType::symmetry'],['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2',1,'amrex::symmetry']]]
+  ['special_12',['Special',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dab844c3099506080d12c1145ccdafa585',1,'amrex::ErrorRec']]],
+  ['spherical_13',['SPHERICAL',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaaa0c55dfafca5806f988babd974f5b158',1,'amrex::CoordSys']]],
+  ['split_14',['split',['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282aeefec303079ad17405c889e092e105b0',1,'amrex::ForkJoin']]],
+  ['ssamg_15',['SSAMG',['../namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16ebaedb458d93d1aa8663ae63f153d911a81',1,'amrex']]],
+  ['ssprk3_16',['SSPRK3',['../namespaceamrex.html#afa67f210f2e6c338d52553562f72c564ab65603b0c54c1b7114d61811751ccf42',1,'amrex']]],
+  ['standard_17',['Standard',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143',1,'amrex::ErrorRec']]],
+  ['structed_18',['structed',['../classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6',1,'amrex::Hypre']]],
+  ['sundials_19',['Sundials',['../namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d',1,'amrex']]],
+  ['symmetry_20',['symmetry',['../namespaceamrex_1_1PhysBCType.html#a720adc3e4011f065a9a5d61cf5c13421a1137859cd2b35a27527833b6ed8f9d35',1,'amrex::PhysBCType::symmetry'],['../namespaceamrex.html#a8365a84c73dc019f863f57bfcb9a6435a40e712f30d56083318ab20a2402921d2',1,'amrex::symmetry']]]
 ];

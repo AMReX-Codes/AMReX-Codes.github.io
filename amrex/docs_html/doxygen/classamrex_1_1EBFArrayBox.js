@@ -18,8 +18,5 @@ var classamrex_1_1EBFArrayBox =
     [ "getLevelSetData", "classamrex_1_1EBFArrayBox.html#af20bd253ed486ac97c8345b9623f7b33", null ],
     [ "getVolFracData", "classamrex_1_1EBFArrayBox.html#a664f3aa3e8611a56d1919072c26b7331", null ],
     [ "operator=", "classamrex_1_1EBFArrayBox.html#a47721c8111fe2639ee7ed9dab4544a2a", null ],
-    [ "operator=", "classamrex_1_1EBFArrayBox.html#ae732268c858bcd1f84e91af14fcbb718", null ],
-    [ "m_box_index", "classamrex_1_1EBFArrayBox.html#ade5ede9a60831d6a2bc97125cb11f18a", null ],
-    [ "m_ebcellflag", "classamrex_1_1EBFArrayBox.html#adb16573267dc8b4b6dca43cc2f4d23d9", null ],
-    [ "m_factory", "classamrex_1_1EBFArrayBox.html#aeaf68dbc1a5bddd5bacfa81efe966e0c", null ]
+    [ "operator=", "classamrex_1_1EBFArrayBox.html#ae732268c858bcd1f84e91af14fcbb718", null ]
 ];

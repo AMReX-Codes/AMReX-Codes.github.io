@@ -13,5 +13,6 @@ var topics =
     [ "Particles", "group__amrex__particles.html", "group__amrex__particles" ],
     [ "Embedded Boundary", "group__amrex__eb.html", "group__amrex__eb" ],
     [ "Fast Fourier Transform (FFT)", "group__amrex__fft.html", "group__amrex__fft" ],
-    [ "Input/Output", "group__amrex__io.html", "group__amrex__io" ]
+    [ "Input/Output", "group__amrex__io.html", "group__amrex__io" ],
+    [ "Utilities", "group__amrex__utilities.html", "group__amrex__utilities" ]
 ];

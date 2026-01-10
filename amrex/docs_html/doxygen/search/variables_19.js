@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y_0',['y',['../structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b',1,'amrex::Dim3::y'],['../structamrex_1_1XDim3.html#af3bfd0ccbd1587f808089bee50e4a203',1,'amrex::XDim3::y'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a',1,'amrex::algoim::QuadratureRule::Node::y']]],
-  ['yellow_1',['yellow',['../namespaceamrex_1_1FGColor.html#a080b20c9b78c553919c4563ddd75ff1e',1,'amrex::FGColor::Yellow'],['../namespaceamrex_1_1BGColor.html#a946b44d2b8a57793025b006f14222e56',1,'amrex::BGColor::Yellow']]]
+  ['z_0',['z',['../structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90',1,'amrex::Dim3::z'],['../structamrex_1_1XDim3.html#ab7d76c217833bd5f7ac309ae9b32b2ed',1,'amrex::XDim3::z']]],
+  ['zero_1',['zero',['../classamrex_1_1IntVectND.html#ac9be7906eed9686b378081b582db248e',1,'amrex::IntVectND::Zero'],['../classamrex_1_1RealVectND.html#ac4286c6d8d6d8e0a948d8b8ef6d41d24',1,'amrex::RealVectND::Zero']]]
 ];

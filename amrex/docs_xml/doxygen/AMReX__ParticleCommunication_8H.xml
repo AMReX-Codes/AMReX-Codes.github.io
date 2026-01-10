@@ -2326,12 +2326,6 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H</label>
-        <link refid="AMReX__TracerParticle__mod__K_8H"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
       <node id="13">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.H</label>
         <link refid="AMReX__TracerParticles_8H"/>
@@ -2339,10 +2333,8 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
       </node>
-      <node id="15">
+      <node id="14">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.cpp</label>
         <link refid="AMReX__TracerParticles_8cpp"/>
       </node>
@@ -2496,14 +2488,14 @@
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleCopyPlan::build&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" kindref="member">m_local</ref><sp/>=<sp/>local;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_local<sp/>=<sp/>local;</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ngrow<sp/>=<sp/>1;<sp/><sp/></highlight><highlight class="comment">//<sp/>note<sp/>-<sp/>fix</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_levels<sp/>=<sp/>op.<ref refid="structamrex_1_1ParticleCopyOp_1a2f919f166a2034f65af90c480a914a0e" kindref="member">numLevels</ref>();</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_buckets<sp/>=<sp/>pc.BufferMap().numBuckets();</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" kindref="member">m_local</ref>)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_local)</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a1eeb92e8809fe6c87b84c777c42323e6" kindref="member">m_neighbor_procs</ref><sp/>=<sp/>pc.NeighborProcs(ngrow);</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2625,7 +2617,7 @@
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a439daadd96aa6868c30e13e8baf8be18" kindref="member">m_superparticle_size</ref><sp/>+=<sp/>num_real_comm_comp<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::ParticleType::RealType)</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>num_int_comm_comp<sp/><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a884ad6151242fd6708bec5c2662f13e5" kindref="member">buildMPIStart</ref>(pc.BufferMap(),<sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a439daadd96aa6868c30e13e8baf8be18" kindref="member">m_superparticle_size</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buildMPIStart(pc.BufferMap(),<sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a439daadd96aa6868c30e13e8baf8be18" kindref="member">m_superparticle_size</ref>);</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a234bad9d87162a94aaa8d75b0c0490de" kindref="member">clear</ref><sp/>();</highlight></codeline>
@@ -2634,34 +2626,34 @@
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"></highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a884ad6151242fd6708bec5c2662f13e5" kindref="member">buildMPIStart</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParticleBufferMap" kindref="compound">ParticleBufferMap</ref>&amp;<sp/>map,<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>psize);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buildMPIStart<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParticleBufferMap" kindref="compound">ParticleBufferMap</ref>&amp;<sp/>map,<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>psize);</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Snds<sp/>-<sp/>a<sp/>Vector<sp/>with<sp/>the<sp/>number<sp/>of<sp/>bytes<sp/>that<sp/>is<sp/>process<sp/>will<sp/>send<sp/>to<sp/>each<sp/>proc.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rcvs<sp/>-<sp/>a<sp/>Vector<sp/>that,<sp/>after<sp/>calling<sp/>this<sp/>method,<sp/>will<sp/>contain<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>number<sp/>of<sp/>bytes<sp/>this<sp/>process<sp/>will<sp/>receive<sp/>from<sp/>each<sp/>proc.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1ac4a638b58d7e4f87eccf13b9e1c6fa87" kindref="member">doHandShake</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doHandShake<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>the<sp/>local<sp/>version<sp/>of<sp/>this<sp/>method,<sp/>each<sp/>proc<sp/>knows<sp/>which<sp/>other</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>procs<sp/>it<sp/>could<sp/>possibly<sp/>receive<sp/>messages<sp/>from,<sp/>meaning<sp/>we<sp/>can<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>purely<sp/>with<sp/>point-to-point<sp/>communication.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a75312d5254d02499edba483ee2925178" kindref="member">doHandShakeLocal</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doHandShakeLocal<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>the<sp/>global<sp/>version,<sp/>we<sp/>don&apos;t<sp/>know<sp/>who<sp/>we&apos;ll<sp/>receive<sp/>from,<sp/>so<sp/>we</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>need<sp/>to<sp/>do<sp/>some<sp/>collective<sp/>communication<sp/>first.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a5e14dec8bd837aac5995c60231debf81" kindref="member">doHandShakeGlobal</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doHandShakeGlobal<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Another<sp/>version<sp/>of<sp/>the<sp/>above<sp/>that<sp/>is<sp/>implemented<sp/>using<sp/>MPI<sp/>All-to-All</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a77722ca014d6803cc68dbd6898810cd4" kindref="member">doHandShakeAllToAll</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doHandShakeAllToAll<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Snds,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Long&gt;</ref>&amp;<sp/>Rcvs);</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"></highlight></codeline>
-<codeline lineno="304" refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" kindref="member">m_local</ref>;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_local;</highlight></codeline>
 <codeline lineno="305"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
 <codeline lineno="307" refid="structamrex_1_1GetSendBufferOffset" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1GetSendBufferOffset" kindref="compound">GetSendBufferOffset</ref></highlight></codeline>

@@ -37,6 +37,5 @@ var classamrex_1_1BndryDataT =
     [ "geom", "classamrex_1_1BndryDataT.html#ae4436ce0d60dc60cd15ff3ab3c2ed7a7", null ],
     [ "m_defined", "classamrex_1_1BndryDataT.html#a1c152f39fdeb4881636df629cc0d8077", null ],
     [ "m_ncomp", "classamrex_1_1BndryDataT.html#adabe55330d4668477240acc170ab6032", null ],
-    [ "masks", "classamrex_1_1BndryDataT.html#abb734566f5eab0761ad80aec4f7dfa3d", null ],
-    [ "NTangHalfWidth", "classamrex_1_1BndryDataT.html#af24fa42fa7ee1bcbb9fb775c5ab192d6", null ]
+    [ "masks", "classamrex_1_1BndryDataT.html#abb734566f5eab0761ad80aec4f7dfa3d", null ]
 ];

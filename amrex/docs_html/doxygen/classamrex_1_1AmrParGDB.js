@@ -25,7 +25,6 @@ var classamrex_1_1AmrParGDB =
     [ "SetParticleBoxArray", "classamrex_1_1AmrParGDB.html#a8fa510470316026fa5b4ac4cf18a29c5", null ],
     [ "SetParticleDistributionMap", "classamrex_1_1AmrParGDB.html#a88824bfe0471d8b133c5aa798b87c25f", null ],
     [ "SetParticleGeometry", "classamrex_1_1AmrParGDB.html#ace841700df06aa193ec553e98c6fb600", null ],
-    [ "AmrCore", "classamrex_1_1AmrParGDB.html#abb1b359f54a282d950166418754b6749", null ],
     [ "m_amrcore", "classamrex_1_1AmrParGDB.html#a00e116c7e99b0d8be6a4db40bfb3b45b", null ],
     [ "m_ba", "classamrex_1_1AmrParGDB.html#a38a28db75d6cca9d3c87ad9931084f09", null ],
     [ "m_dmap", "classamrex_1_1AmrParGDB.html#ac64ebd19d0afad8663e01819448c4760", null ],

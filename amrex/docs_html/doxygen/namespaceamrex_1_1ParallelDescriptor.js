@@ -44,7 +44,7 @@ var namespaceamrex_1_1ParallelDescriptor =
     [ "Initialize", "namespaceamrex_1_1ParallelDescriptor.html#a916170832821539e49f051409018ffcb", null ],
     [ "IOProcessor", "group__amrex__mpi.html#gac7fb3467af4aabf15e61cb9c27e916d9", null ],
     [ "IOProcessor", "group__amrex__mpi.html#ga8780ee1130870c2cd65de891c71b9b76", null ],
-    [ "IOProcessorNumber", "namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a", null ],
+    [ "IOProcessorNumber", "group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a", null ],
     [ "IOProcessorNumber", "group__amrex__mpi.html#ga9397b95ec0069183061d45372eed1287", null ],
     [ "IProbe", "namespaceamrex_1_1ParallelDescriptor.html#aa6542637438eaa734790f6ab8ae83ce0", null ],
     [ "IProbe", "namespaceamrex_1_1ParallelDescriptor.html#a0d0639c2781f6e40af7d1b507d3a7a2b", null ],
@@ -164,17 +164,5 @@ var namespaceamrex_1_1ParallelDescriptor =
     [ "Wait", "namespaceamrex_1_1ParallelDescriptor.html#a307e6fc3b7df510cca76aff2fda29435", null ],
     [ "Waitall", "namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9", null ],
     [ "Waitany", "namespaceamrex_1_1ParallelDescriptor.html#a201290543de69eac17ee181475285844", null ],
-    [ "Waitsome", "namespaceamrex_1_1ParallelDescriptor.html#a3a66ca3d4d64098f62c7aa9c92dcffbb", null ],
-    [ "ioProcessor", "group__amrex__mpi.html#ga170c7ee692d457514ef07c0d6206f7e2", null ],
-    [ "m_comm", "namespaceamrex_1_1ParallelDescriptor.html#af87612855c6b73a8cc9f11ed5bd0d3f9", null ],
-    [ "m_MaxTag", "namespaceamrex_1_1ParallelDescriptor.html#a1582152747831aa49cac881d1bbec9ad", null ],
-    [ "m_MinTag", "namespaceamrex_1_1ParallelDescriptor.html#a715b18055542b3909b818a2eb81ff469", null ],
-    [ "m_mpi_ops", "namespaceamrex_1_1ParallelDescriptor.html#a3461c9bae69de0e75d147ae431f938d4", null ],
-    [ "m_mpi_types", "namespaceamrex_1_1ParallelDescriptor.html#a1b5ef1a376307bde13dbe55d2f88da41", null ],
-    [ "m_nprocs_per_node", "namespaceamrex_1_1ParallelDescriptor.html#af0e63015f10ce1de8ca6463ab0fe5012", null ],
-    [ "m_nprocs_per_processor", "namespaceamrex_1_1ParallelDescriptor.html#a8ba86d93a757d33984ab4bc6d9922408", null ],
-    [ "m_rank_in_node", "namespaceamrex_1_1ParallelDescriptor.html#ae6d40a93f7f5f4998abf870731b1a02f", null ],
-    [ "m_rank_in_processor", "namespaceamrex_1_1ParallelDescriptor.html#a6eb72ca98c6e15d67c15e28cb398c255", null ],
-    [ "m_Team", "namespaceamrex_1_1ParallelDescriptor.html#a9a80b6d86037c06fed7ef5fb0d2a8d28", null ],
-    [ "use_gpu_aware_mpi", "namespaceamrex_1_1ParallelDescriptor.html#ac6b7fade1db0951b4fb1f0dec0ab4363", null ]
+    [ "Waitsome", "namespaceamrex_1_1ParallelDescriptor.html#a3a66ca3d4d64098f62c7aa9c92dcffbb", null ]
 ];

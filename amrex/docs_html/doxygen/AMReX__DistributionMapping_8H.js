@@ -1,8 +1,6 @@
 var AMReX__DistributionMapping_8H =
 [
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", "structamrex_1_1DistributionMapping_1_1Ref" ],
-    [ "amrex::DistributionMapping::LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", "structamrex_1_1DistributionMapping_1_1LIpairLT" ],
-    [ "amrex::DistributionMapping::LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", "structamrex_1_1DistributionMapping_1_1LIpairGT" ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", "structamrex_1_1DistributionMapping_1_1RefID" ],
     [ "DMRef", "AMReX__DistributionMapping_8H.html#a8ea864a3a9595a340c24658e4bfa24a9", null ],
     [ "MakeSimilarDM", "AMReX__DistributionMapping_8H.html#adc0569d3487d998596b2a11392bddaca", null ],

@@ -2,9 +2,6 @@ var AMReX__FFT__Helper_8H =
 [
     [ "amrex::FFT::Info", "structamrex_1_1FFT_1_1Info.html", "structamrex_1_1FFT_1_1Info" ],
     [ "amrex::FFT::Plan< T >", "structamrex_1_1FFT_1_1Plan.html", "structamrex_1_1FFT_1_1Plan" ],
-    [ "Key", "AMReX__FFT__Helper_8H.html#af2da8d3e9633d475da772b0769ce3b81", null ],
-    [ "PlanD", "AMReX__FFT__Helper_8H.html#a65fad3db3b9fe3b85174dc3a4ba8330e", null ],
-    [ "PlanF", "AMReX__FFT__Helper_8H.html#a5e2fe5e29b662f9d24d3a4b769acde11", null ],
     [ "Boundary", "AMReX__FFT__Helper_8H.html#a2a5b9696bd31b9e62eb1fda9e2bb9964", [
       [ "periodic", "AMReX__FFT__Helper_8H.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee", null ],
       [ "even", "AMReX__FFT__Helper_8H.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138", null ],

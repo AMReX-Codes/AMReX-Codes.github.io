@@ -11,7 +11,5 @@ var classamrex_1_1AMReX =
     [ "operator=", "classamrex_1_1AMReX.html#af607b0f085bd129d4c76cbbd54715a04", null ],
     [ "push", "classamrex_1_1AMReX.html#aacd757c228bab84f39dc148cc5777624", null ],
     [ "size", "classamrex_1_1AMReX.html#a42bc947424343bc3814de983a6218d26", null ],
-    [ "top", "classamrex_1_1AMReX.html#af6f68e16ede4b981b1649a3d222a24c7", null ],
-    [ "m_geom", "classamrex_1_1AMReX.html#a723c404098736351072f4a99daf9bddb", null ],
-    [ "m_instance", "classamrex_1_1AMReX.html#ad7909bf4e2448edc26489e346cb367ac", null ]
+    [ "top", "classamrex_1_1AMReX.html#af6f68e16ede4b981b1649a3d222a24c7", null ]
 ];

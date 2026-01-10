@@ -18,8 +18,5 @@ var classamrex_1_1Gpu_1_1Buffer =
     [ "reserve", "classamrex_1_1Gpu_1_1Buffer.html#a36318c0fcffb655c81557cf28124aafb", null ],
     [ "resize", "classamrex_1_1Gpu_1_1Buffer.html#ac59285902ac00703d262ba4121b949b0", null ],
     [ "shrink_to_fit", "classamrex_1_1Gpu_1_1Buffer.html#a8e5586f1fadc97c2d419ba0754b2099c", null ],
-    [ "size", "classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17", null ],
-    [ "useDVect", "classamrex_1_1Gpu_1_1Buffer.html#ab19291501765ae52f49d238b703fd7a8", null ],
-    [ "d_vect", "classamrex_1_1Gpu_1_1Buffer.html#a46a07020c127909f75b18f1964d752b1", null ],
-    [ "h_vect", "classamrex_1_1Gpu_1_1Buffer.html#a8fb05e0773a44936080b5083c4a5dc65", null ]
+    [ "size", "classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17", null ]
 ];

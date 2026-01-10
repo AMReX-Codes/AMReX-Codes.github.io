@@ -18,19 +18,5 @@ var classamrex_1_1EBDataCollection =
     [ "getVolFrac", "classamrex_1_1EBDataCollection.html#a9cfca800c4df32f884205e7b0cfa5b4f", null ],
     [ "operator=", "classamrex_1_1EBDataCollection.html#a4d50e87a1efb6d1e64b661afa053c99b", null ],
     [ "operator=", "classamrex_1_1EBDataCollection.html#a9f87d7b55521ca94cf041b854bd3be94", null ],
-    [ "EBFArrayBoxFactory", "classamrex_1_1EBDataCollection.html#add1cd92ef1acf80b7731a873ba626923", null ],
-    [ "m_areafrac", "classamrex_1_1EBDataCollection.html#a036bbb0e7b0d7ee88c33978716dec8f9", null ],
-    [ "m_bndryarea", "classamrex_1_1EBDataCollection.html#a8d677f5c06ce1520cd23addf9d22d5ef", null ],
-    [ "m_bndrycent", "classamrex_1_1EBDataCollection.html#a8a3dfc8b1b1cf5d19c7538d630a4b44b", null ],
-    [ "m_bndrynorm", "classamrex_1_1EBDataCollection.html#a586018b239d0fd75d2a920b4e7d8fa40", null ],
-    [ "m_cellflags", "classamrex_1_1EBDataCollection.html#a3f3aed898f6ec10c9f141be194499cac", null ],
-    [ "m_centroid", "classamrex_1_1EBDataCollection.html#af218d8cf84d1ad47414a36663b2c1b36", null ],
-    [ "m_cutcellmask", "classamrex_1_1EBDataCollection.html#a319997acfc8739b7d32879751198026b", null ],
-    [ "m_edgecent", "classamrex_1_1EBDataCollection.html#a8f84274dfda311f0e685de8889fe4140", null ],
-    [ "m_facecent", "classamrex_1_1EBDataCollection.html#a8ae044a5a36f5193689e860e3d403f23", null ],
-    [ "m_geom", "classamrex_1_1EBDataCollection.html#a4e9d5ca2618309d4445ac8fa75fafc1f", null ],
-    [ "m_levelset", "classamrex_1_1EBDataCollection.html#ab3e6789efd39bd7d39bd01cf97c85b07", null ],
-    [ "m_ngrow", "classamrex_1_1EBDataCollection.html#a8c1e66f34abde299d2379f0261cfcb53", null ],
-    [ "m_support", "classamrex_1_1EBDataCollection.html#a9d7fc23809662b01ce10290962d272e8", null ],
-    [ "m_volfrac", "classamrex_1_1EBDataCollection.html#ab87f9babcf2b30b23ea7a36ee621538e", null ]
+    [ "EBFArrayBoxFactory", "classamrex_1_1EBDataCollection.html#add1cd92ef1acf80b7731a873ba626923", null ]
 ];

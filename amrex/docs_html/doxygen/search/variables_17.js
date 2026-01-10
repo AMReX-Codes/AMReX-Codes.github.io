@@ -1,17 +1,4 @@
 var searchData=
 [
-  ['w_0',['w',['../structamrex_1_1ParticleInterpolator_1_1Base.html#a5e658795689d17cacf75bdb7c46675ac',1,'amrex::ParticleInterpolator::Base::w'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455',1,'amrex::algoim::QuadratureRule::Node::w']]],
-  ['w_5flower_5fmask_1',['w_lower_mask',['../classamrex_1_1EBCellFlag.html#a9978159e62e9a5f1a9ba4a55019dc7dc',1,'amrex::EBCellFlag']]],
-  ['w_5fnumvofs_2',['w_numvofs',['../classamrex_1_1EBCellFlag.html#a0a1397794bc5591a597619e3632ad878',1,'amrex::EBCellFlag']]],
-  ['w_5ftype_3',['w_type',['../classamrex_1_1EBCellFlag.html#a68904d39b391c9345ebbb57ca42df263',1,'amrex::EBCellFlag']]],
-  ['warp_5fsize_4',['warp_size',['../classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926',1,'amrex::Gpu::Device']]],
-  ['weights_5',['weights',['../classamrex_1_1RKIntegrator.html#abd571d996d1adea0300fb76372fce6bf',1,'amrex::RKIntegrator::weights'],['../structamrex_1_1ParticleInterpolator_1_1Nearest.html#a7c90861b5b36a3cc7ffc95ca3484915e',1,'amrex::ParticleInterpolator::Nearest::weights'],['../structamrex_1_1ParticleInterpolator_1_1Linear.html#ad310f842476426c90a428403ea4a47a0',1,'amrex::ParticleInterpolator::Linear::weights']]],
-  ['whereprepost_6',['wherePrePost',['../classamrex_1_1ParticleContainer__impl.html#a19cc9a46b7d9e49c478bc9f26714ee0b',1,'amrex::ParticleContainer_impl']]],
-  ['which_5flevel_5fbeing_5fadvanced_7',['which_level_being_advanced',['../classamrex_1_1Amr.html#a71368e4ccbd5ee723f8675ee9ba4abf5',1,'amrex::Amr']]],
-  ['whichprepost_8',['whichPrePost',['../classamrex_1_1ParticleContainer__impl.html#a163a2894a9c1d9ff00c278ee873d2497',1,'amrex::ParticleContainer_impl']]],
-  ['white_9',['white',['../namespaceamrex_1_1FGColor.html#a4f800964745dee2d1547730d621dcbbf',1,'amrex::FGColor::White'],['../namespaceamrex_1_1BGColor.html#a14b91fdfbbf6f0d385b6348887870d18',1,'amrex::BGColor::White']]],
-  ['width_10',['width',['../structamrex_1_1SIMDindex.html#a95a073aef6d29dc3fc24c1fc7be5bbeb',1,'amrex::SIMDindex']]],
-  ['write_5fplotfile_5fwith_5fcheckpoint_11',['write_plotfile_with_checkpoint',['../classamrex_1_1Amr.html#acb645a1952db1d77152149cba281a244',1,'amrex::Amr']]],
-  ['writebuffersize_12',['writeBufferSize',['../classamrex_1_1RealDescriptor.html#a1e67eb076409779a54695afdf2c0a966',1,'amrex::RealDescriptor']]],
-  ['writetag_13',['writeTag',['../classamrex_1_1NFilesIter.html#a85f34f8f85d278c2a003b7861afc62c0',1,'amrex::NFilesIter']]]
+  ['x_0',['x',['../structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1',1,'amrex::Dim3::x'],['../structamrex_1_1XDim3.html#a7355367151105a356ebfa4ecb841a86c',1,'amrex::XDim3::x']]]
 ];

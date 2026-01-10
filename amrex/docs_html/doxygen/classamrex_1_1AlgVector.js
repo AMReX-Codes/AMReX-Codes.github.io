@@ -37,9 +37,5 @@ var classamrex_1_1AlgVector =
     [ "setValAsync", "classamrex_1_1AlgVector.html#a2c76b64b1e2a8f6a5d890c49e51bc497", null ],
     [ "sum", "classamrex_1_1AlgVector.html#ad2ffc656a21514e67aa52a446ae31549", null ],
     [ "view", "classamrex_1_1AlgVector.html#a0ffe2ec80128d0661bb48d02a3e6a522", null ],
-    [ "view", "classamrex_1_1AlgVector.html#adac888fcd4ead6a1b88c32ca23dc14c3", null ],
-    [ "m_begin", "classamrex_1_1AlgVector.html#a7acd190663efe93f298681d0c54c7fbf", null ],
-    [ "m_data", "classamrex_1_1AlgVector.html#abeb51e51652929d674c92eeae1544e83", null ],
-    [ "m_end", "classamrex_1_1AlgVector.html#a7ef4e1eaac74c4823d7c25633cf44f92", null ],
-    [ "m_partition", "classamrex_1_1AlgVector.html#a5b73dcd9fc1ccfe460d2d10e8baa112e", null ]
+    [ "view", "classamrex_1_1AlgVector.html#adac888fcd4ead6a1b88c32ca23dc14c3", null ]
 ];

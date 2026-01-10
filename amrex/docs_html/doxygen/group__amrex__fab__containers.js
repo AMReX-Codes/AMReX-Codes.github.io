@@ -287,8 +287,6 @@ var group__amrex__fab__containers =
       [ "operator=", "classamrex_1_1IArrayBox.html#add58d47d87d67a2140449805c9b82a73", null ],
       [ "readFrom", "classamrex_1_1IArrayBox.html#a3a19e0c558360ae380fba44e0aec9086", null ],
       [ "resize", "classamrex_1_1IArrayBox.html#aa3b1edf0b241a6c722dea0ceced6b102", null ],
-      [ "IFABio", "classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd", null ],
-      [ "do_initval", "classamrex_1_1IArrayBox.html#a775df7bf092a1173c172bd7ec7dd3f37", null ],
-      [ "ifabio", "classamrex_1_1IArrayBox.html#aebc54540f561b7e5cdb0a92a14ead5ba", null ]
+      [ "IFABio", "classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd", null ]
     ] ]
 ];

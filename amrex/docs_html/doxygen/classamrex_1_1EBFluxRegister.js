@@ -17,6 +17,5 @@ var classamrex_1_1EBFluxRegister =
     [ "getCrseFlag", "classamrex_1_1EBFluxRegister.html#a92ca40754149fd10dd4a1d49ef87beb0", null ],
     [ "Reflux", "classamrex_1_1EBFluxRegister.html#ad3cff9ff950fe42244a5a6da860c302d", null ],
     [ "Reflux", "classamrex_1_1EBFluxRegister.html#a03dd763c1ebb0a67b2fd52ded49b1f53", null ],
-    [ "Reflux", "classamrex_1_1EBFluxRegister.html#a9b9a3280e49a1eeb9436099e11097e8f", null ],
-    [ "m_cfp_inside_mask", "classamrex_1_1EBFluxRegister.html#ae202afe28157891442668596f24fe460", null ]
+    [ "Reflux", "classamrex_1_1EBFluxRegister.html#a9b9a3280e49a1eeb9436099e11097e8f", null ]
 ];

@@ -10,9 +10,5 @@ var classamrex_1_1ParallelDescriptor_1_1Message =
     [ "tag", "classamrex_1_1ParallelDescriptor_1_1Message.html#a099cb5eb1b61ff860ad6fbd1fe1b5d94", null ],
     [ "test", "classamrex_1_1ParallelDescriptor_1_1Message.html#a42d6517959dbf89018b970cb1c0cf66e", null ],
     [ "type", "classamrex_1_1ParallelDescriptor_1_1Message.html#a20021c8fa972de865da57cfd5d14fb81", null ],
-    [ "wait", "classamrex_1_1ParallelDescriptor_1_1Message.html#a94e427eb0ffccce4adcf6a7bc0954c91", null ],
-    [ "m_finished", "classamrex_1_1ParallelDescriptor_1_1Message.html#af157f73a152b86a9b3205859e2601b51", null ],
-    [ "m_req", "classamrex_1_1ParallelDescriptor_1_1Message.html#a6dd614e3778be9c2c607de3c7fa4881d", null ],
-    [ "m_stat", "classamrex_1_1ParallelDescriptor_1_1Message.html#a6a697134ff54d12d0cfd9302c2a3d4db", null ],
-    [ "m_type", "classamrex_1_1ParallelDescriptor_1_1Message.html#abf21a1cad8c8f6f18b02971ed68051ed", null ]
+    [ "wait", "classamrex_1_1ParallelDescriptor_1_1Message.html#a94e427eb0ffccce4adcf6a7bc0954c91", null ]
 ];

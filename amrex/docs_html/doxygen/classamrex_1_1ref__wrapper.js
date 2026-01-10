@@ -10,6 +10,5 @@ var classamrex_1_1ref__wrapper =
     [ "operator T&", "classamrex_1_1ref__wrapper.html#a209af18dd71749368090a7a5f513de7b", null ],
     [ "operator=", "classamrex_1_1ref__wrapper.html#a81f44d1949d6ef403bcd0221b9f03070", null ],
     [ "operator=", "classamrex_1_1ref__wrapper.html#ac171c640ed48ea5635556d45dfa306b7", null ],
-    [ "operator=", "classamrex_1_1ref__wrapper.html#a757e28cb407029b9747185fcb4e8c3cd", null ],
-    [ "_ptr", "classamrex_1_1ref__wrapper.html#ad6587c3974bf67afc32e7d313432b20e", null ]
+    [ "operator=", "classamrex_1_1ref__wrapper.html#a757e28cb407029b9747185fcb4e8c3cd", null ]
 ];

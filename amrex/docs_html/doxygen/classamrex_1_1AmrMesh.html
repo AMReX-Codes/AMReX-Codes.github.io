@@ -103,8 +103,6 @@ $(document).ready(function(){initNavTree('classamrex_1_1AmrMesh.html',''); initR
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1AmrMesh-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::AmrMesh Class Reference<div class="ingroups"><a class="el" href="group__amrex__amr.html">Adaptive Mesh Refinement</a> &raquo; <a class="el" href="group__amrex__amrcore.html">AmrCore-based AMR</a></div></div></div>
@@ -336,16 +334,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7caf591556b0da33b2a44a7726706395 inherit pro_attribs_structamrex_1_1AmrInfo"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a937e0b9dc3689884b262936e6c3c0b7d inherit pro_attribs_structamrex_1_1AmrInfo" id="r_a937e0b9dc3689884b262936e6c3c0b7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a937e0b9dc3689884b262936e6c3c0b7d">iterate_on_new_grids</a> = true</td></tr>
 <tr class="separator:a937e0b9dc3689884b262936e6c3c0b7d inherit pro_attribs_structamrex_1_1AmrInfo"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab789a53b0b0d3e5bddbf489ed751aee2" id="r_ab789a53b0b0d3e5bddbf489ed751aee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#ab789a53b0b0d3e5bddbf489ed751aee2">InitAmrMesh</a> (int max_level_in, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;n_cell_in, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; refrat=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt;(), const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> *rb=nullptr, int coord=-1, const int *is_per=nullptr)</td></tr>
-<tr class="separator:ab789a53b0b0d3e5bddbf489ed751aee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a5d98352aa6b18ea3223300ceaae596d9" id="r_a5d98352aa6b18ea3223300ceaae596d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a5d98352aa6b18ea3223300ceaae596d9">ProjPeriodic</a> (<a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;blout, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;domain, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; int, 3 &gt; const &amp;is_per)</td></tr>
-<tr class="separator:a5d98352aa6b18ea3223300ceaae596d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -1221,66 +1209,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ab789a53b0b0d3e5bddbf489ed751aee2" name="ab789a53b0b0d3e5bddbf489ed751aee2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab789a53b0b0d3e5bddbf489ed751aee2">&#9670;&#160;</a></span>InitAmrMesh()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::AmrMesh::InitAmrMesh </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_level_in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>n_cell_in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt;&#160;</td>
-          <td class="paramname"><em>refrat</em> = <code><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&gt;()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> *&#160;</td>
-          <td class="paramname"><em>rb</em> = <code>nullptr</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>coord</em> = <code>-1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>is_per</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a472f37d544bf28e75d2c05630969e554" name="a472f37d544bf28e75d2c05630969e554"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a472f37d544bf28e75d2c05630969e554">&#9670;&#160;</a></span>LevelDefined()</h2>
 
@@ -1775,48 +1703,6 @@ Friends</h2></td></tr>
 <p>Apply some user-defined changes the to base grids.</p>
 <p>This function is only called by MakeNewGrids after computing a box array for the coarsest level and before calling MakeNewLevelFromScratch.</p>
 <p>For example, use this function if you want to remove covered grids on the coarsest refinement level. </p>
-
-</div>
-</div>
-<a id="a5d98352aa6b18ea3223300ceaae596d9" name="a5d98352aa6b18ea3223300ceaae596d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d98352aa6b18ea3223300ceaae596d9">&#9670;&#160;</a></span>ProjPeriodic()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::AmrMesh::ProjPeriodic </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;&#160;</td>
-          <td class="paramname"><em>blout</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td>
-          <td class="paramname"><em>domain</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; int, 3 &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>is_per</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

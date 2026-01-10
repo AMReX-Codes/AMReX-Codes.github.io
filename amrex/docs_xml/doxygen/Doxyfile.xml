@@ -64,11 +64,11 @@
   <option  id='INLINE_GROUPED_CLASSES' default='yes' type='bool'><value>NO</value></option>
   <option  id='INLINE_SIMPLE_STRUCTS' default='yes' type='bool'><value>NO</value></option>
   <option  id='TYPEDEF_HIDES_STRUCT' default='yes' type='bool'><value>NO</value></option>
-  <option  id='LOOKUP_CACHE_SIZE' default='yes' type='int'><value>0</value></option>
-  <option  id='NUM_PROC_THREADS' default='yes' type='int'><value>1</value></option>
+  <option  id='LOOKUP_CACHE_SIZE' default='no' type='int'><value>1</value></option>
+  <option  id='NUM_PROC_THREADS' default='no' type='int'><value>2</value></option>
   <option  id='TIMESTAMP' default='yes' type='string'><value>NO</value></option>
   <option  id='EXTRACT_ALL' default='no' type='bool'><value>YES</value></option>
-  <option  id='EXTRACT_PRIVATE' default='no' type='bool'><value>YES</value></option>
+  <option  id='EXTRACT_PRIVATE' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTRACT_PRIV_VIRTUAL' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTRACT_PACKAGE' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTRACT_STATIC' default='no' type='bool'><value>YES</value></option>
@@ -164,12 +164,18 @@
     <value><![CDATA[*/Base/Parser/*_Y.cpp]]></value>
     <value><![CDATA[*/Base/Parser/*_Exe.H]]></value>
     <value><![CDATA[*/Base/Parser/*_Exe.cpp]]></value>
+    <value><![CDATA[*/EB/*D_C.cpp]]></value>
+    <value><![CDATA[*_K.H]]></value>
+    <value><![CDATA[*_C.H]]></value>
     <value><![CDATA[*.F]]></value>
     <value><![CDATA[*.f]]></value>
     <value><![CDATA[*.F90]]></value>
     <value><![CDATA[*.f90]]></value>
   </option>
-  <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
+  <option  id='EXCLUDE_SYMBOLS' default='no' type='stringlist'>
+    <value><![CDATA[amrex::detail]]></value>
+    <value><![CDATA[amrex::*::detail]]></value>
+    <value><![CDATA[amrex::*_detail]]></value>
   </option>
   <option  id='EXAMPLE_PATH' default='yes' type='stringlist'>
   </option>

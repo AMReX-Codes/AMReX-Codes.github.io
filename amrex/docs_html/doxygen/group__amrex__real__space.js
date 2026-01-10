@@ -50,7 +50,6 @@ var group__amrex__real__space =
       [ "ProbLoArray", "classamrex_1_1Geometry.html#ae8ac41d397fd2989e14fa7b98b7cecf9", null ],
       [ "ProbLoArrayInParticleReal", "classamrex_1_1Geometry.html#a0b90789aab3fd3bd09fd9ed007f95e3c", null ],
       [ "ProbSize", "classamrex_1_1Geometry.html#ad215766309286d88d85b4d78f7280f4c", null ],
-      [ "read_params", "classamrex_1_1Geometry.html#aa0385aea8391d0b59b6adfb910cffbf4", null ],
       [ "refine", "classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3", null ],
       [ "ResetDefaultCoord", "classamrex_1_1Geometry.html#afacf607bf05ea6d4588954f09b391d37", null ],
       [ "ResetDefaultPeriodicity", "classamrex_1_1Geometry.html#aef457246cf837d0faebf2c2dfc74e807", null ],
@@ -60,12 +59,7 @@ var group__amrex__real__space =
       [ "setPeriodicity", "classamrex_1_1Geometry.html#a4c9d4fe7b2dc2354a5bbac866ad035d0", null ],
       [ "Setup", "classamrex_1_1Geometry.html#a9b691763a32026e16671e3213068f745", null ],
       [ "Volume", "classamrex_1_1Geometry.html#a3945d7b55c1a8ceeaa71c6ea0392c4ba", null ],
-      [ "operator>>", "classamrex_1_1Geometry.html#a4ccad3512782698f0060d316e51599b0", null ],
-      [ "domain", "classamrex_1_1Geometry.html#a52477661ac7c7ccbd93f397340176c74", null ],
-      [ "is_periodic", "classamrex_1_1Geometry.html#a3dee6d474bb3415f1db543249d91894f", null ],
-      [ "prob_domain", "classamrex_1_1Geometry.html#af62cd34804aea5643a6fc2205495b7a2", null ],
-      [ "roundoff_hi", "classamrex_1_1Geometry.html#a32a63513f0d4b999b93a79e0b2918634", null ],
-      [ "roundoff_lo", "classamrex_1_1Geometry.html#a4802101dae6f6a20585a8a664474b2df", null ]
+      [ "operator>>", "classamrex_1_1Geometry.html#a4ccad3512782698f0060d316e51599b0", null ]
     ] ],
     [ "amrex::RealBox", "classamrex_1_1RealBox.html", [
       [ "RealBox", "classamrex_1_1RealBox.html#a0c94da578ae78f612f3c7a1295edb272", null ],
@@ -94,9 +88,7 @@ var group__amrex__real__space =
       [ "setLo", "classamrex_1_1RealBox.html#ad17a084669ca15c44ee367f21a9ffc68", null ],
       [ "setLo", "classamrex_1_1RealBox.html#ad513c995fcf5ff2ca68ea4a1ca78a9f7", null ],
       [ "setLo", "classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55", null ],
-      [ "volume", "classamrex_1_1RealBox.html#a93db6fe21fbffe66f89ca56e42197175", null ],
-      [ "xhi", "classamrex_1_1RealBox.html#a2a8beb0d249fef26ad726aa32563b823", null ],
-      [ "xlo", "classamrex_1_1RealBox.html#a4f9c8d6e2a72c25360195de819831fd0", null ]
+      [ "volume", "classamrex_1_1RealBox.html#a93db6fe21fbffe66f89ca56e42197175", null ]
     ] ],
     [ "amrex::RealVectND< dim >", "classamrex_1_1RealVectND.html", [
       [ "value_type", "classamrex_1_1RealVectND.html#ae0a0cb29f737b147dd363ba8fbcbaf41", null ],

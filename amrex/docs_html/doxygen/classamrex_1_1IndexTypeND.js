@@ -16,7 +16,6 @@ var classamrex_1_1IndexTypeND =
     [ "isize", "classamrex_1_1IndexTypeND.html#a2a4de688a23c7da001daf388fe39b512", null ],
     [ "ixType", "classamrex_1_1IndexTypeND.html#a2f03b624a67f0fc6db41a8f7b8288311", null ],
     [ "ixType", "classamrex_1_1IndexTypeND.html#a042a6d6988a3f2ce079d145a086e0515", null ],
-    [ "mask", "classamrex_1_1IndexTypeND.html#ac2481963d2e8fc3e267483ccecc2f513", null ],
     [ "nodeCentered", "classamrex_1_1IndexTypeND.html#ac276520f6660091f86aacac95fdd3608", null ],
     [ "nodeCentered", "classamrex_1_1IndexTypeND.html#a8adc691480875c2c93d0cac085224d51", null ],
     [ "ok", "classamrex_1_1IndexTypeND.html#a6b6d62bcd56a95845e2261499a5edaf2", null ],
@@ -34,6 +33,5 @@ var classamrex_1_1IndexTypeND =
     [ "TheCellType", "classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686", null ],
     [ "TheNodeType", "classamrex_1_1IndexTypeND.html#af6e5e568750b9404f7057fe9c3c1781d", null ],
     [ "toIntVect", "classamrex_1_1IndexTypeND.html#a2739aa7f265285cb7101f431f13d9e47", null ],
-    [ "unset", "classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff", null ],
-    [ "itype", "classamrex_1_1IndexTypeND.html#a262096e612e5ca57ea2b3a097ea40ffe", null ]
+    [ "unset", "classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff", null ]
 ];

@@ -2219,29 +2219,7 @@
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="190" relation="include">
-        </childnode>
-      </node>
-      <node id="188">
-        <label>AMReX_EB2_3D_C.H</label>
-        <link refid="AMReX__EB2__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="187">
-        <label>AMReX_EB2_C.H</label>
-        <link refid="AMReX__EB2__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="142" relation="include">
-        </childnode>
-        <childnode refid="164" relation="include">
-        </childnode>
-        <childnode refid="174" relation="include">
-        </childnode>
-        <childnode refid="138" relation="include">
-        </childnode>
-        <childnode refid="188" relation="include">
+        <childnode refid="189" relation="include">
         </childnode>
       </node>
       <node id="172">
@@ -2288,7 +2266,7 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="189">
+      <node id="188">
         <label>AMReX_EB2_IF_AllRegular.H</label>
         <link refid="AMReX__EB2__IF__AllRegular_8H"/>
         <childnode refid="3" relation="include">
@@ -2310,7 +2288,7 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="190">
+      <node id="189">
         <label>AMReX_EB2_IndexSpaceI.H</label>
         <link refid="AMReX__EB2__IndexSpaceI_8H"/>
       </node>
@@ -2341,7 +2319,7 @@
         </childnode>
         <childnode refid="187" relation="include">
         </childnode>
-        <childnode refid="189" relation="include">
+        <childnode refid="188" relation="include">
         </childnode>
         <childnode refid="63" relation="include">
         </childnode>
@@ -2452,6 +2430,9 @@
       </node>
       <node id="3">
         <label>AMReX_Config.H</label>
+      </node>
+      <node id="187">
+        <label>AMReX_EB2_C.H</label>
       </node>
       <node id="132">
         <label>AMReX_IParser_Exe.H</label>
@@ -2705,15 +2686,15 @@
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/>comm_meta_data_id<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="92"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a4581192d404c43071aaa653b2bbf28e3" kindref="member">FabArrayBase::Initialize</ref><sp/>()</highlight></codeline>
 <codeline lineno="96"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(initialized)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse<sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;fabarray&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
@@ -2846,7 +2827,7 @@
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(MapOfCopyComTagContainers));</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>it<sp/>:<sp/>m)<sp/>{</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(it.first))<sp/>+<sp/><ref refid="namespaceamrex_1a47858cf7af589491140828d44dca8737" kindref="member">amrex::bytesOf</ref>(it.second)</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1ae9f4a54b51971f15803c95c7f677c1b8" kindref="member">amrex::gcc_map_node_extra_bytes</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>amrex::gcc_map_node_extra_bytes;</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">}</highlight></codeline>
@@ -4955,7 +4936,7 @@
 <codeline lineno="2337"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2338"><highlight class="normal"><sp/><sp/><sp/><sp/>m_FA_stats<sp/>=<sp/>FabArrayStats();</highlight></codeline>
 <codeline lineno="2339"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2340"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2340"><highlight class="normal"><sp/><sp/><sp/><sp/>initialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="2341"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2342"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2343"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase::TileArray*</highlight></codeline>

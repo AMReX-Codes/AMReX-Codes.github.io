@@ -48,7 +48,6 @@ var classamrex_1_1MLNodeLinOp =
     [ "m_dirichlet_mask", "classamrex_1_1MLNodeLinOp.html#aaa52abefe4405ee59158a27c112ccfa9", null ],
     [ "m_has_fine_bndry", "classamrex_1_1MLNodeLinOp.html#a76a73246b9e7679b93591f2093a857c3", null ],
     [ "m_in_solution_mode", "classamrex_1_1MLNodeLinOp.html#a28e2b90709541cf46d64d3d382e6ade7", null ],
-    [ "m_is_bottom_singular", "classamrex_1_1MLNodeLinOp.html#a51345471274acc0bdd0b5477285d4db1", null ],
     [ "m_masks_built", "classamrex_1_1MLNodeLinOp.html#a2bb5e031c87b6bdf67618f9c25dc6945", null ],
     [ "m_nd_fine_mask", "classamrex_1_1MLNodeLinOp.html#a034b72948cecb00630515b6a2de77109", null ],
     [ "m_norm_fine_mask", "classamrex_1_1MLNodeLinOp.html#aac3b69575b67cb155459d699783d537f", null ],

@@ -4,7 +4,6 @@ var classamrex_1_1BoxDomain =
     [ "BoxDomain", "classamrex_1_1BoxDomain.html#a47079914541e9badea37cd84a4eb8511", null ],
     [ "BoxDomain", "classamrex_1_1BoxDomain.html#adf430e5f38acc600c84e559bb68dc5d2", null ],
     [ "BoxDomain", "classamrex_1_1BoxDomain.html#a64ee738d97ad6b873205801db2689a09", null ],
-    [ "BoxDomain", "classamrex_1_1BoxDomain.html#a378ee4b07d91023565d794005b1e7869", null ],
     [ "accrete", "classamrex_1_1BoxDomain.html#a20c090a963f6f3fb6db35d43bb0cce3f", null ],
     [ "add", "classamrex_1_1BoxDomain.html#afe56e5629c6f85bd01429ac8469eb038", null ],
     [ "add", "classamrex_1_1BoxDomain.html#af68c7f595490816f50871a46efbbeded", null ],
