@@ -2650,7 +2650,7 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_scalar_handler<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>N<sp/>i,<sp/>Gpu::Handler<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;)</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(f(0))</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(i);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(i);</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
@@ -2658,7 +2658,7 @@
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_scalar_handler<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>N<sp/>i,<sp/>Gpu::Handler<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>handler)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(f(0,Gpu::Handler{}))</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(i,<sp/>handler);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(i,<sp/>handler);</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call_f_intvect_inner</highlight><highlight class="normal"></highlight></codeline>
@@ -2668,7 +2668,7 @@
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_inner<sp/>(std::index_sequence&lt;Ns...&gt;,<sp/>F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;1&gt;<sp/>iv,<sp/>Args...args)</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>noexcept<sp/>-&gt;<sp/>decltype(f(0,<sp/>0,<sp/>0,<sp/>args...))</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(iv[0],<sp/>0,<sp/>0,<sp/>args...);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(iv[0],<sp/>0,<sp/>0,<sp/>args...);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>,<sp/>std::size_t...Ns,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...Args&gt;</highlight></codeline>
@@ -2676,7 +2676,7 @@
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_inner<sp/>(std::index_sequence&lt;Ns...&gt;,<sp/>F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;2&gt;<sp/>iv,<sp/>Args...args)</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>noexcept<sp/>-&gt;<sp/>decltype(f(0,<sp/>0,<sp/>0,<sp/>args...))</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(iv[0],<sp/>iv[1],<sp/>0,<sp/>args...);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(iv[0],<sp/>iv[1],<sp/>0,<sp/>args...);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim,<sp/>std::size_t...Ns,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...Args&gt;</highlight></codeline>
@@ -2684,7 +2684,7 @@
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_inner<sp/>(std::index_sequence&lt;Ns...&gt;,<sp/>F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv,<sp/>Args...args)</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>noexcept<sp/>-&gt;<sp/>decltype(f(iv,<sp/>args...))</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(iv,<sp/>args...);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(iv,<sp/>args...);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim,<sp/>std::size_t...Ns,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...Args&gt;</highlight></codeline>
@@ -2692,7 +2692,7 @@
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_inner<sp/>(std::index_sequence&lt;Ns...&gt;,<sp/>F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv,<sp/>Args...args)</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>noexcept<sp/>-&gt;<sp/>decltype(f(iv[Ns]...,<sp/>args...))</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f(iv[Ns]...,<sp/>args...);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f(iv[Ns]...,<sp/>args...);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call_f_intvect</highlight><highlight class="normal"></highlight></codeline>
@@ -2702,7 +2702,7 @@
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv)</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv))</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call_f_intvect_engine</highlight><highlight class="normal"></highlight></codeline>
@@ -2712,7 +2712,7 @@
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_engine<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv,<sp/>RandomEngine<sp/>engine)</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>engine))</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>engine);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>engine);</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call_f_intvect_handler</highlight><highlight class="normal"></highlight></codeline>
@@ -2722,7 +2722,7 @@
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_handler<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv,<sp/>Gpu::Handler<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;)</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv))</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dim&gt;</highlight></codeline>
@@ -2730,7 +2730,7 @@
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>call_f_intvect_handler<sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/>IntVectND&lt;dim&gt;<sp/>iv,<sp/>Gpu::Handler<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>handler)</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>Gpu::Handler{}))</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>handler);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>call_f_intvect_inner(std::make_index_sequence&lt;dim&gt;(),<sp/>f,<sp/>iv,<sp/>handler);</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call_f_intvect_ncomp</highlight><highlight class="normal"></highlight></codeline>

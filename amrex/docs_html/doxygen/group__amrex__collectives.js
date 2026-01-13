@@ -47,8 +47,8 @@ var group__amrex__collectives =
       [ "value", "classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746", null ]
     ] ],
     [ "amrex::ReduceOps< Ps >", "classamrex_1_1ReduceOps.html", [
-      [ "eval", "classamrex_1_1ReduceOps.html#a705e92f33933692615787d722642c37c", null ],
-      [ "eval", "classamrex_1_1ReduceOps.html#a58753cc90f873de11316249189d438ca", null ],
+      [ "eval", "classamrex_1_1ReduceOps.html#a36a3a539c2891b3201cdc375306371f7", null ],
+      [ "eval", "classamrex_1_1ReduceOps.html#a9d76cb405e0c732aca607cf3c3766bb3", null ],
       [ "eval", "classamrex_1_1ReduceOps.html#a76c9c4a303db128f0e416889bc54aef6", null ],
       [ "eval", "classamrex_1_1ReduceOps.html#abd087f77766eb9d1ce66bebe0d32c28a", null ],
       [ "eval", "classamrex_1_1ReduceOps.html#acf76d5c7c3027a29928d07b2572475a8", null ],
@@ -56,7 +56,7 @@ var group__amrex__collectives =
       [ "resetResultReadiness", "classamrex_1_1ReduceOps.html#aa9f7ed138e607372624eb46fb43e9c85", null ],
       [ "value", "classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434", null ]
     ] ],
-    [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#ga14f4ad196e92e318437fba27909ea581", null ],
+    [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#ga1f8f5e42f31c1af5afd5655bf9e92fe5", null ],
     [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367", null ],
     [ "amrex::Gpu::exclusive_scan", "group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c", null ],
     [ "amrex::Scan::ExclusiveSum", "group__amrex__collectives.html#ga375a3f04c8c0b11c577d168dbff3c9fd", null ],

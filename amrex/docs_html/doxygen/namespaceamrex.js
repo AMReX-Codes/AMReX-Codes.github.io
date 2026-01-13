@@ -210,7 +210,7 @@ var namespaceamrex =
       ] ]
     ] ],
     [ "Reduce", "namespaceamrex_1_1Reduce.html", [
-      [ "AnyOf", "group__amrex__collectives.html#ga14f4ad196e92e318437fba27909ea581", null ],
+      [ "AnyOf", "group__amrex__collectives.html#ga1f8f5e42f31c1af5afd5655bf9e92fe5", null ],
       [ "AnyOf", "group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367", null ],
       [ "Max", "group__amrex__collectives.html#gabb357d8fcc6dd0426249ee962166fdd3", null ],
       [ "Max", "group__amrex__collectives.html#ga7ac8075282193aef5024b3a7092a0f3c", null ],
