@@ -60,6 +60,7 @@ var classamrex_1_1MLEBABecLap =
     [ "m_beta_loc", "classamrex_1_1MLEBABecLap.html#afc12bcb23ed82f37ceae7da2d6f44eea", null ],
     [ "m_cc_mask", "classamrex_1_1MLEBABecLap.html#a820de6c415b8f6911cf96c94788cb102", null ],
     [ "m_eb_b_coeffs", "classamrex_1_1MLEBABecLap.html#a1644cbea6bac7ad1b9ae4a039cf96cc4", null ],
+    [ "m_eb_bc_tags", "classamrex_1_1MLEBABecLap.html#ac54fb55b9157acc54a4c5c8ad9b0a19b", null ],
     [ "m_eb_phi", "classamrex_1_1MLEBABecLap.html#a25296274131127e2be522bd86b57be2c", null ],
     [ "m_is_eb_inhomog", "classamrex_1_1MLEBABecLap.html#a11297b15320727df4d9e32d3b8085c06", null ],
     [ "m_is_singular", "classamrex_1_1MLEBABecLap.html#a69f0aa528f3437aed6e5fbc26d3f1820", null ],

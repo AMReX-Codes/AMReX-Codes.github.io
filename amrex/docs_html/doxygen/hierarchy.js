@@ -629,6 +629,8 @@ var hierarchy =
     [ "amrex::MLLinOpT< Array< MultiFab, 3 > >", "classamrex_1_1MLLinOpT.html", [
       [ "amrex::MLCurlCurl", "classamrex_1_1MLCurlCurl.html", null ]
     ] ],
+    [ "amrex::MLMGABCEBTag< T >", "structamrex_1_1MLMGABCEBTag.html", null ],
+    [ "amrex::MLMGABCEBTag< RT >", "structamrex_1_1MLMGABCEBTag.html", null ],
     [ "amrex::MLMGT< MF >", "classamrex_1_1MLMGT.html", null ],
     [ "amrex::mpidatatypes::MPI_Status", "structamrex_1_1mpidatatypes_1_1MPI__Status.html", null ],
     [ "amrex::ParallelDescriptor::Mpi_typemap< T >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", null ],
@@ -839,6 +841,7 @@ var hierarchy =
     [ "amrex::TagVector< amrex::Array4CopyTag< value_type > >", "structamrex_1_1TagVector.html", null ],
     [ "amrex::TagVector< amrex::CommRecvBufTag< value_type > >", "structamrex_1_1TagVector.html", null ],
     [ "amrex::TagVector< amrex::CommSendBufTag< value_type > >", "structamrex_1_1TagVector.html", null ],
+    [ "amrex::TagVector< amrex::MLMGABCEBTag< RT > >", "structamrex_1_1TagVector.html", null ],
     [ "amrex::TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", null ],
     [ "amrex::ThisParticleTileHasNoAoS", "structamrex_1_1ThisParticleTileHasNoAoS.html", null ],
     [ "amrex::ThisParticleTileHasNoParticleVector", "structamrex_1_1ThisParticleTileHasNoParticleVector.html", null ],
@@ -1023,6 +1026,8 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< amrex::iMultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::MultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::MultiFab > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::TagVector< amrex::MLMGABCEBTag< RT > > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::TagVector< amrex::MLMGABCEBTag< RT > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< double >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::LayoutData< int > > >", "classamrex_1_1Vector.html", null ],
