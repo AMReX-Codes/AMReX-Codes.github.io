@@ -40,6 +40,7 @@
         <argsstring></argsstring>
         <name>device_sync</name>
         <qualifiedname>amrex::MFItInfo::device_sync</qualifiedname>
+        <initializer>= true</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -48,12 +49,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="23" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="23" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1MFItInfo_1a0db9178bd13b45f862fe31e197f75ec8" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int amrex::MFItInfo::num_streams</definition>
+      <memberdef kind="variable" id="structamrex_1_1MFItInfo_1ac2899035f6d8a9b3d4e9b7957c3a5cfe" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::MFItInfo::device_sync_pre</definition>
         <argsstring></argsstring>
-        <name>num_streams</name>
-        <qualifiedname>amrex::MFItInfo::num_streams</qualifiedname>
+        <name>device_sync_pre</name>
+        <qualifiedname>amrex::MFItInfo::device_sync_pre</qualifiedname>
+        <initializer>= true</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -61,6 +63,36 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="24" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MFItInfo_1a867a080dba3dde930661194afa943f5c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::MFItInfo::device_sync_post</definition>
+        <argsstring></argsstring>
+        <name>device_sync_post</name>
+        <qualifiedname>amrex::MFItInfo::device_sync_post</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="25" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MFItInfo_1a0db9178bd13b45f862fe31e197f75ec8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MFItInfo::num_streams</definition>
+        <argsstring></argsstring>
+        <name>num_streams</name>
+        <qualifiedname>amrex::MFItInfo::num_streams</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="26" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1MFItInfo_1a8926b61d823e5a23f6bbf00814afba13" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref></type>
@@ -74,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="25" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="25" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="27" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="27" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -90,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="26" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="26" bodyend="28"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="28" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="28" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1ab567abf7a674c6b7e88fc1970b2d42dd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -109,7 +141,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="29" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="29" bodyend="33"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="31" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1MFItInfo_1ad26e30e5bfc4cd1b71784cb1100940f2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
+        <definition>MFItInfo &amp; amrex::MFItInfo::SetTiling</definition>
+        <argsstring>(bool f) noexcept</argsstring>
+        <name>SetTiling</name>
+        <qualifiedname>amrex::MFItInfo::SetTiling</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="36" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="36" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1a20147ffba2889ba5927f7be4115d95ed" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -127,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="34" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="34" bodyend="37"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="40" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1a01cf7c6e5ccc55d63bc7d03a27816fa1" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -141,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="38" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="38" bodyend="41"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="44" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1a08edf1424574c8c70f7cf5dbdc4d5400" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -159,7 +209,71 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="42" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="42" bodyend="45"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="48" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1MFItInfo_1aca75752faec637a421cf4e89b4903fbd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
+        <definition>MFItInfo &amp; amrex::MFItInfo::DisableDeviceSyncPre</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>DisableDeviceSyncPre</name>
+        <qualifiedname>amrex::MFItInfo::DisableDeviceSyncPre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="52" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1MFItInfo_1a9b9f1d26a69011669d1d40eb7d17b7a2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
+        <definition>MFItInfo &amp; amrex::MFItInfo::SetDeviceSyncPre</definition>
+        <argsstring>(bool f) noexcept</argsstring>
+        <name>SetDeviceSyncPre</name>
+        <qualifiedname>amrex::MFItInfo::SetDeviceSyncPre</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="56" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1MFItInfo_1a700c78dd762024ce4fb12805bb83d7db" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
+        <definition>MFItInfo &amp; amrex::MFItInfo::DisableDeviceSyncPost</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>DisableDeviceSyncPost</name>
+        <qualifiedname>amrex::MFItInfo::DisableDeviceSyncPost</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="60" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1MFItInfo_1a21d8e3ae17d0a50ea13ed02c4694999d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
+        <definition>MFItInfo &amp; amrex::MFItInfo::SetDeviceSyncPost</definition>
+        <argsstring>(bool f) noexcept</argsstring>
+        <name>SetDeviceSyncPost</name>
+        <qualifiedname>amrex::MFItInfo::SetDeviceSyncPost</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="64" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="64" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1a7d8aa4e1509b02ff35dbe1ebfcb28de4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -177,7 +291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="46" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="46" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="68" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1MFItInfo_1abf6f886f3a3d2ce44c95611dff459511" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MFItInfo" kindref="compound">MFItInfo</ref> &amp;</type>
@@ -191,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="50" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="50" bodyend="53"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="72" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="72" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -211,18 +325,25 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="20" bodyend="54"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFIter.H" bodystart="20" bodyend="76"/>
     <listofallmembers>
       <member refid="structamrex_1_1MFItInfo_1ab11997c86f3b753d6e0219696f17c2f7" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>device_sync</name></member>
+      <member refid="structamrex_1_1MFItInfo_1a867a080dba3dde930661194afa943f5c" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>device_sync_post</name></member>
+      <member refid="structamrex_1_1MFItInfo_1ac2899035f6d8a9b3d4e9b7957c3a5cfe" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>device_sync_pre</name></member>
       <member refid="structamrex_1_1MFItInfo_1a01cf7c6e5ccc55d63bc7d03a27816fa1" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>DisableDeviceSync</name></member>
+      <member refid="structamrex_1_1MFItInfo_1a700c78dd762024ce4fb12805bb83d7db" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>DisableDeviceSyncPost</name></member>
+      <member refid="structamrex_1_1MFItInfo_1aca75752faec637a421cf4e89b4903fbd" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>DisableDeviceSyncPre</name></member>
       <member refid="structamrex_1_1MFItInfo_1aa0e640aaf2bcd0cf8904c0ed0ceaf75f" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>do_tiling</name></member>
       <member refid="structamrex_1_1MFItInfo_1af8c9a28c98c151eb32f0352334376536" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>dynamic</name></member>
       <member refid="structamrex_1_1MFItInfo_1ab567abf7a674c6b7e88fc1970b2d42dd" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>EnableTiling</name></member>
       <member refid="structamrex_1_1MFItInfo_1a5f89e1c4d34b2a9bd9651665fbe84587" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>MFItInfo</name></member>
       <member refid="structamrex_1_1MFItInfo_1a0db9178bd13b45f862fe31e197f75ec8" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>num_streams</name></member>
       <member refid="structamrex_1_1MFItInfo_1a08edf1424574c8c70f7cf5dbdc4d5400" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetDeviceSync</name></member>
+      <member refid="structamrex_1_1MFItInfo_1a21d8e3ae17d0a50ea13ed02c4694999d" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetDeviceSyncPost</name></member>
+      <member refid="structamrex_1_1MFItInfo_1a9b9f1d26a69011669d1d40eb7d17b7a2" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetDeviceSyncPre</name></member>
       <member refid="structamrex_1_1MFItInfo_1a20147ffba2889ba5927f7be4115d95ed" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetDynamic</name></member>
       <member refid="structamrex_1_1MFItInfo_1a7d8aa4e1509b02ff35dbe1ebfcb28de4" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetNumStreams</name></member>
+      <member refid="structamrex_1_1MFItInfo_1ad26e30e5bfc4cd1b71784cb1100940f2" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>SetTiling</name></member>
       <member refid="structamrex_1_1MFItInfo_1a8926b61d823e5a23f6bbf00814afba13" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>tilesize</name></member>
       <member refid="structamrex_1_1MFItInfo_1abf6f886f3a3d2ce44c95611dff459511" prot="public" virt="non-virtual"><scope>amrex::MFItInfo</scope><name>UseDefaultStream</name></member>
     </listofallmembers>

@@ -48,6 +48,8 @@ var classamrex_1_1MFIter =
     [ "currentIndex", "classamrex_1_1MFIter.html#abfba09b9f27138141e9758d1a8ea2e4b", null ],
     [ "depth", "classamrex_1_1MFIter.html#a46b0a938c3d5f41c379d0adc7bf19c0d", null ],
     [ "device_sync", "classamrex_1_1MFIter.html#a55734d57f0abbb384833f35c1a5422ef", null ],
+    [ "device_sync_post", "classamrex_1_1MFIter.html#aa21f4abce8419f5c51967c263f3bb158", null ],
+    [ "device_sync_pre", "classamrex_1_1MFIter.html#a1d54cdcbc14cd521be822a01d1417e9d", null ],
     [ "dynamic", "classamrex_1_1MFIter.html#a16fa2d144bcc71d665056de5938c4b32", null ],
     [ "endIndex", "classamrex_1_1MFIter.html#a427faab13c7d1f9d72b476452df519e1", null ],
     [ "fabArray", "classamrex_1_1MFIter.html#afd2ce3907fa6c9f7aa4773ea39a65cd2", null ],

@@ -10,7 +10,7 @@ var searchData=
   ['variablesetup_7',['variableSetUp',['../classamrex_1_1LevelBld.html#ab7638fd4ea5c9153a4c81797034b6688',1,'amrex::LevelBld']]],
   ['variablesetupfornewcompprocs_8',['variableSetUpForNewCompProcs',['../classamrex_1_1LevelBld.html#af5b8be4ad0e53d191561488d2f1136d3',1,'amrex::LevelBld']]],
   ['varnames_9',['varnames',['../classamrex_1_1PlotFileDataImpl.html#ad35d8f1509165e1b3a374f467be8529d',1,'amrex::PlotFileDataImpl::varNames()'],['../classamrex_1_1PlotFileData.html#a02a8a14ddee9b341ce53ed3af0b20b01',1,'amrex::PlotFileData::varNames()']]],
-  ['vec_10',['vec',['../classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9',1,'amrex::GMRESMLMGT::VEC'],['../classamrex_1_1GMRES__MV.html#a5ed47359ac5c07d84942f391299c0ec2',1,'amrex::GMRES_MV::VEC'],['../classamrex_1_1AlgVector.html#ac6dc9512d8d02b209a03c4bb190deb69',1,'amrex::AlgVector::Vec']]],
+  ['vec_10',['vec',['../classamrex_1_1AlgVector.html#ac6dc9512d8d02b209a03c4bb190deb69',1,'amrex::AlgVector::Vec'],['../classamrex_1_1GMRESMLMGT.html#a4026a664e44c7fb70195946b2aff6fc9',1,'amrex::GMRESMLMGT::VEC'],['../classamrex_1_1GMRES__MV.html#a5ed47359ac5c07d84942f391299c0ec2',1,'amrex::GMRES_MV::VEC']]],
   ['vect_11',['vect',['../classamrex_1_1RealVectND.html#a8b0c15f36a810af4974757509ad003df',1,'amrex::RealVectND::vect'],['../classamrex_1_1BCRec.html#a853953b57bb4580004a23d1e725f1640',1,'amrex::BCRec::vect() const &amp;noexcept'],['../classamrex_1_1BCRec.html#a0bd8779fb0529f60bb7c0aae9ddbc72e',1,'amrex::BCRec::vect() &amp;&amp;=delete']]],
   ['vector_12',['Vector',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3abcrec_20_3e_13',['Vector&lt; amrex::BCRec &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],

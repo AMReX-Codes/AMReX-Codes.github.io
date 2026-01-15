@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"namespaceamrex_1_1ParallelDescriptor.html#a8403e066a858c0a624e69241359c5255":[2,0,0,28,14],
+"namespaceamrex_1_1ParallelDescriptor.html#a84c9d7d438ae259036461c6db6100a27":[2,0,0,28,36],
 "namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701":[2,0,0,28,146],
 "namespaceamrex_1_1ParallelDescriptor.html#a916170832821539e49f051409018ffcb":[2,0,0,28,41],
 "namespaceamrex_1_1ParallelDescriptor.html#a95032768c19f94a64196f85fefeee239":[2,0,0,28,35],
@@ -91,8 +93,8 @@ var NAVTREEINDEX63 =
 "namespaceamrex_1_1literals.html":[2,0,0,15],
 "namespaceamrex_1_1literals.html#a1861634be476a453e55e120446d5f5c3":[2,0,0,15,2],
 "namespaceamrex_1_1literals.html#a1861634be476a453e55e120446d5f5c3":[2,0,0,1174],
-"namespaceamrex_1_1literals.html#a2d338f06019dd9bb99be91a8b06afd8e":[2,0,0,1175],
 "namespaceamrex_1_1literals.html#a2d338f06019dd9bb99be91a8b06afd8e":[2,0,0,15,3],
+"namespaceamrex_1_1literals.html#a2d338f06019dd9bb99be91a8b06afd8e":[2,0,0,1175],
 "namespaceamrex_1_1literals.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[2,0,0,15,1],
 "namespaceamrex_1_1literals.html#aa5ea41090480dfcc8cf4081da0bbe5ef":[2,0,0,1173],
 "namespaceamrex_1_1literals.html#afa55b8b85820d2c1306ae0a65fedb680":[2,0,0,15,0],
@@ -196,8 +198,8 @@ var NAVTREEINDEX63 =
 "namespaceamrex_1_1system.html#ae1d6711c50c87572893a9c863cbaa2e2":[2,0,0,41,12],
 "namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95":[2,0,0,41,2],
 "namespaceamrex_1_1system.html#af45a569ae94df30241dc84c2a2a2d619":[2,0,0,41,11],
-"namespacemembers.html":[2,1,0],
 "namespacemembers.html":[2,1,0,0],
+"namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -206,8 +208,8 @@ var NAVTREEINDEX63 =
 "namespacemembers_enum.html":[2,1,4],
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
-"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func.html":[2,1,1],
+"namespacemembers_func.html":[2,1,1,0],
 "namespacemembers_func_a.html":[2,1,1,1],
 "namespacemembers_func_b.html":[2,1,1,2],
 "namespacemembers_func_c.html":[2,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "namespacemembers_t.html":[2,1,0,20],
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,21],
-"namespacemembers_v.html":[2,1,0,22],
-"namespacemembers_vars.html":[2,1,2],
-"namespacemembers_w.html":[2,1,0,23]
+"namespacemembers_v.html":[2,1,0,22]
 };
