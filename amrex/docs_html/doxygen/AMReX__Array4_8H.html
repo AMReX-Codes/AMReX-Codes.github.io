@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H.html',''); initResiza
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">AMReX_Array4.H File Reference</div></div>
 </div><!--header-->
@@ -110,6 +111,7 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H.html',''); initResiza
 <code>#include &lt;<a class="el" href="AMReX_8H_source.html">AMReX.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__IntVect_8H_source.html">AMReX_IntVect.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuPrint_8H_source.html">AMReX_GpuPrint.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__ConstexprFor_8H_source.html">AMReX_ConstexprFor.H</a>&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div>
@@ -119,7 +121,8 @@ $(document).ready(function(){initNavTree('AMReX__Array4_8H.html',''); initResiza
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html">amrex::CellData&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Array4.html">amrex::Array4&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND&lt; T, N, last_dim_component &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A multidimensional array accessor.  <a href="structamrex_1_1ArrayND.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1HasMultiComp.html">amrex::HasMultiComp&lt; A, Enable &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,25 +134,43 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex" id="r_namespaceamrex"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8c21d74d3472963108631a36d5dbef0f" id="r_a8c21d74d3472963108631a36d5dbef0f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8c21d74d3472963108631a36d5dbef0f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">amrex::Array4</a> = <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, 4, true &gt;</td></tr>
+<tr class="separator:a8c21d74d3472963108631a36d5dbef0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7fc4d595346e62ab8ef7f38dafa3bada" id="r_a7fc4d595346e62ab8ef7f38dafa3bada"><td class="memTemplParams" colspan="2">template&lt;class Tto , class Tfrom &gt; </td></tr>
-<tr class="memitem:a7fc4d595346e62ab8ef7f38dafa3bada"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Tto &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7fc4d595346e62ab8ef7f38dafa3bada">amrex::ToArray4</a> (<a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Tfrom &gt; const &amp;a_in) noexcept</td></tr>
-<tr class="separator:a7fc4d595346e62ab8ef7f38dafa3bada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb610e50ec9d0311a2a0b0531484ecc" id="r_a4eb610e50ec9d0311a2a0b0531484ecc"><td class="memTemplParams" colspan="2">template&lt;typename T , int N&gt; </td></tr>
+<tr class="memitem:a4eb610e50ec9d0311a2a0b0531484ecc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4eb610e50ec9d0311a2a0b0531484ecc">amrex::ArrayND</a> (T *, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; N &gt; const &amp;) -&gt; <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N, false &gt;</td></tr>
+<tr class="separator:a4eb610e50ec9d0311a2a0b0531484ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab343fd634872754a3158b329def6e0d6" id="r_ab343fd634872754a3158b329def6e0d6"><td class="memTemplParams" colspan="2">template&lt;typename T , int N&gt; </td></tr>
+<tr class="memitem:ab343fd634872754a3158b329def6e0d6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab343fd634872754a3158b329def6e0d6">amrex::ArrayND</a> (T *, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; N &gt; const &amp;, int) -&gt; <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N+1, true &gt;</td></tr>
+<tr class="separator:ab343fd634872754a3158b329def6e0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1b278ff6bd0c975123f7ec21411a34" id="r_acf1b278ff6bd0c975123f7ec21411a34"><td class="memTemplParams" colspan="2">template&lt;typename T , int N&gt; </td></tr>
+<tr class="memitem:acf1b278ff6bd0c975123f7ec21411a34"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#acf1b278ff6bd0c975123f7ec21411a34">amrex::ArrayND</a> (T *, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;) -&gt; <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N, false &gt;</td></tr>
+<tr class="separator:acf1b278ff6bd0c975123f7ec21411a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20f42ed2d48cfb0865f73b0c3e01103" id="r_af20f42ed2d48cfb0865f73b0c3e01103"><td class="memTemplParams" colspan="2">template&lt;typename T , int N&gt; </td></tr>
+<tr class="memitem:af20f42ed2d48cfb0865f73b0c3e01103"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af20f42ed2d48cfb0865f73b0c3e01103">amrex::ArrayND</a> (T *, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;, int) -&gt; <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N+1, true &gt;</td></tr>
+<tr class="separator:af20f42ed2d48cfb0865f73b0c3e01103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69dab39f98b607ded324831b726e424f" id="r_a69dab39f98b607ded324831b726e424f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a69dab39f98b607ded324831b726e424f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a69dab39f98b607ded324831b726e424f">amrex::ArrayND</a> (T *, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;, int) -&gt; <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, 4, true &gt;</td></tr>
+<tr class="separator:a69dab39f98b607ded324831b726e424f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad6a65d8f99b00c14e8de32e2806fd7" id="r_afad6a65d8f99b00c14e8de32e2806fd7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:afad6a65d8f99b00c14e8de32e2806fd7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a> (<a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
+<tr class="memitem:afad6a65d8f99b00c14e8de32e2806fd7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a> (<a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
 <tr class="separator:afad6a65d8f99b00c14e8de32e2806fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00ddc55986bb8cc48ba98491e5d5ba52" id="r_a00ddc55986bb8cc48ba98491e5d5ba52"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a00ddc55986bb8cc48ba98491e5d5ba52"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a> (<a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
+<tr class="memitem:a00ddc55986bb8cc48ba98491e5d5ba52"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a> (<a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
 <tr class="separator:a00ddc55986bb8cc48ba98491e5d5ba52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3078c8f88bd6a4f625b7057c7370f7cc" id="r_a3078c8f88bd6a4f625b7057c7370f7cc"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a3078c8f88bd6a4f625b7057c7370f7cc"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3078c8f88bd6a4f625b7057c7370f7cc">amrex::length</a> (<a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
+<tr class="memitem:a3078c8f88bd6a4f625b7057c7370f7cc"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3078c8f88bd6a4f625b7057c7370f7cc">amrex::length</a> (<a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;a) noexcept</td></tr>
 <tr class="separator:a3078c8f88bd6a4f625b7057c7370f7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af966ad44ce8323b86bf1238910fb522d" id="r_af966ad44ce8323b86bf1238910fb522d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af966ad44ce8323b86bf1238910fb522d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af966ad44ce8323b86bf1238910fb522d">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; &amp;a)</td></tr>
-<tr class="separator:af966ad44ce8323b86bf1238910fb522d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c0202f94cace534ac4555aff7c841d" id="r_a41c0202f94cace534ac4555aff7c841d"><td class="memTemplParams" colspan="2">template&lt;typename T , int N, bool C&gt; </td></tr>
+<tr class="memitem:a41c0202f94cace534ac4555aff7c841d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a41c0202f94cace534ac4555aff7c841d">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; T, N, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &gt; &amp;a)</td></tr>
+<tr class="separator:a41c0202f94cace534ac4555aff7c841d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1efaa3873e5b9015cfd7b4ede4ba1f5" id="r_ad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">amrex::makePolymorphic</a> (<a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;a)</td></tr>
+<tr class="memitem:ad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1PolymorphicArray4.html">PolymorphicArray4</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad1efaa3873e5b9015cfd7b4ede4ba1f5">amrex::makePolymorphic</a> (<a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt; const &amp;a)</td></tr>
 <tr class="separator:ad1efaa3873e5b9015cfd7b4ede4ba1f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

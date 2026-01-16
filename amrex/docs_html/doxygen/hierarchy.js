@@ -5,7 +5,7 @@ var hierarchy =
     [ "std::allocator< T >", null, [
       [ "amrex::PODVector< index_type >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::AssignGrid< BinIteratorFactory > >", "classamrex_1_1PODVector.html", null ],
-      [ "amrex::PODVector< amrex::Array4< Real const > >", "classamrex_1_1PODVector.html", null ],
+      [ "amrex::PODVector< amrex::ArrayND< Real const > >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< int >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::IntVectND >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< std::size_t >", "classamrex_1_1PODVector.html", null ],
@@ -90,17 +90,6 @@ var hierarchy =
     [ "amrex::Array2D< RT, 0, N-1, 0, N-1, Order::C >", "structamrex_1_1Array2D.html", null ],
     [ "amrex::Array2D< T, 0, N-1, 0, N-1, Order::C >", "structamrex_1_1Array2D.html", null ],
     [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", null ],
-    [ "amrex::Array4< T >", "structamrex_1_1Array4.html", [
-      [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
-    ] ],
-    [ "amrex::Array4< amrex::EBCellFlag const >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< int >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< Real const >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< T const >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< T0 >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< T0 const >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< value_type >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< value_type const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4BoxOffsetTag< T >", "structamrex_1_1Array4BoxOffsetTag.html", null ],
     [ "amrex::Array4BoxOrientationTag< T >", "structamrex_1_1Array4BoxOrientationTag.html", null ],
     [ "amrex::Array4BoxTag< T >", "structamrex_1_1Array4BoxTag.html", null ],
@@ -110,6 +99,18 @@ var hierarchy =
     [ "amrex::Array4MaskCopyTag< T0, T1 >", "structamrex_1_1Array4MaskCopyTag.html", null ],
     [ "amrex::Array4PairTag< T >", "structamrex_1_1Array4PairTag.html", null ],
     [ "amrex::Array4Tag< T >", "structamrex_1_1Array4Tag.html", null ],
+    [ "amrex::ArrayND< T, N, last_dim_component >", "structamrex_1_1ArrayND.html", [
+      [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
+    ] ],
+    [ "amrex::ArrayND< amrex::EBCellFlag const >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< int >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< Real const >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< T >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< T const >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< T0 >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< T0 const >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< value_type >", "structamrex_1_1ArrayND.html", null ],
+    [ "amrex::ArrayND< value_type const >", "structamrex_1_1ArrayND.html", null ],
     [ "amrex::ArrayOfStructs< T_ParticleType, Allocator >", "classamrex_1_1ArrayOfStructs.html", null ],
     [ "amrex::AssignGrid< BinIteratorFactory >", "structamrex_1_1AssignGrid.html", null ],
     [ "amrex::AssignGrid< amrex::DenseBinIteratorFactory< amrex::BoxND > >", "structamrex_1_1AssignGrid.html", null ],
@@ -540,6 +541,7 @@ var hierarchy =
     [ "amrex::InterpFaceRegister", "classamrex_1_1InterpFaceRegister.html", null ],
     [ "amrex::IntVectND< dim >", "classamrex_1_1IntVectND.html", null ],
     [ "amrex::IntVectND< 3 >", "classamrex_1_1IntVectND.html", null ],
+    [ "amrex::IntVectND< N >", "classamrex_1_1IntVectND.html", null ],
     [ "amrex::IOFormatSaver< CharT, Traits >", "classamrex_1_1IOFormatSaver.html", null ],
     [ "amrex::IParser", "classamrex_1_1IParser.html", null ],
     [ "amrex::IParserExecutor< N >", "structamrex_1_1IParserExecutor.html", null ],
@@ -857,6 +859,9 @@ var hierarchy =
       [ "amrex::Conjunction< IsDetected< LocalCopy_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, const FabArrayBase::CopyComTagsContainer & >, IsDetected< PrepareSendBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PrepareRecvBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PackSendBuffers_t, DP &, const FabArray< FAB > &, CommData & >, IsDetected< UnpackRecvBuffers_t, DP &, FabArray< FAB > &, CommData & > >", "structamrex_1_1Conjunction.html", null ],
       [ "amrex::Conjunction< IsCallableR< Dim3, IndexMap &, const Dim3 & >, HasInverseMemFn< const IndexMap & > >", "structamrex_1_1Conjunction.html", [
         [ "amrex::NonLocalBC::IsIndexMapping< IndexMap >", "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html", null ]
+      ] ],
+      [ "amrex::detail::IsNarrowingConversionImp< From, To >", null, [
+        [ "amrex::IsNarrowingConversion< From, To >", "structamrex_1_1IsNarrowingConversion.html", null ]
       ] ],
       [ "amrex::Conjunction<... >", "structamrex_1_1Conjunction.html", [
         [ "amrex::NonLocalBC::IsDataPacking< DP, FAB >", "structamrex_1_1NonLocalBC_1_1IsDataPacking.html", null ]

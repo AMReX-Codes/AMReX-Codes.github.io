@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"AMReX__BoxDomain_8H.html#a3fb0e9220f2aa85a365f7ec254f2e3d7":[4,0,0,2,39,4],
+"AMReX__BoxDomain_8H.html#a417fa2fe3545ffe81b848760bbe1bcd9":[4,0,0,2,39,3],
+"AMReX__BoxDomain_8H.html#aa7fdcd82c18fdf6c33f4194da8e7da46":[4,0,0,2,39,2],
+"AMReX__BoxDomain_8H.html#af32b91948787281bd9c0c691f3f355dd":[4,0,0,2,39,6],
+"AMReX__BoxDomain_8H_source.html":[4,0,0,2,39],
 "AMReX__BoxDomain_8cpp.html":[4,0,0,2,38],
 "AMReX__BoxDomain_8cpp.html#a15969b1b7e5e1431ce9aea3b513ec98a":[4,0,0,2,38,0],
 "AMReX__BoxDomain_8cpp.html#a227c6302f26efd6a5c8fef40c77906f6":[4,0,0,2,38,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__EB2__IF__Scale_8H_source.html":[4,0,0,4,24],
 "AMReX__EB2__IF__Sphere_8H.html":[4,0,0,4,25],
 "AMReX__EB2__IF__Sphere_8H_source.html":[4,0,0,4,25],
-"AMReX__EB2__IF__Spline_8H.html":[4,0,0,4,26],
-"AMReX__EB2__IF__Spline_8H_source.html":[4,0,0,4,26],
-"AMReX__EB2__IF__Torus_8H.html":[4,0,0,4,27],
-"AMReX__EB2__IF__Torus_8H_source.html":[4,0,0,4,27],
-"AMReX__EB2__IF__Translation_8H.html":[4,0,0,4,28],
-"AMReX__EB2__IF__Translation_8H.html#a12c9130dbff8389ed10957c652da6ca7":[4,0,0,4,28,2]
+"AMReX__EB2__IF__Spline_8H.html":[4,0,0,4,26]
 };

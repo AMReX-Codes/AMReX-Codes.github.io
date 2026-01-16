@@ -1,7 +1,7 @@
 var AMReX__EB__Redistribution_8H =
 [
-    [ "amrex_flux_redistribute", "AMReX__EB__Redistribution_8H.html#a8cb738d9f1f698007c0f56b7a0088083", null ],
-    [ "apply_flux_redistribution", "AMReX__EB__Redistribution_8H.html#a343494dfc1c9121c4d236ed0f774e39a", null ],
+    [ "amrex_flux_redistribute", "AMReX__EB__Redistribution_8H.html#a2997746786ac52f67e2d900ad628b54e", null ],
+    [ "apply_flux_redistribution", "AMReX__EB__Redistribution_8H.html#aefd8bdd7a185cff23fc99fb94a8a17d0", null ],
     [ "ApplyInitialRedistribution", "AMReX__EB__Redistribution_8H.html#a315b48edb351e2d406384deec70d228a", null ],
     [ "ApplyMLRedistribution", "AMReX__EB__Redistribution_8H.html#a3f8f8683a45019b95339504aef4c7f0f", null ],
     [ "ApplyRedistribution", "AMReX__EB__Redistribution_8H.html#a0e0b59317b972387489d090670ab24fd", null ],

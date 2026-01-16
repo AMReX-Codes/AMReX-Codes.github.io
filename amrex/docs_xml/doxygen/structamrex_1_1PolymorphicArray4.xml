@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structamrex_1_1PolymorphicArray4" kind="struct" language="C++" prot="public">
     <compoundname>amrex::PolymorphicArray4</compoundname>
-    <basecompoundref refid="structamrex_1_1Array4" prot="public" virt="non-virtual">amrex::Array4&lt; T &gt;</basecompoundref>
+    <basecompoundref refid="structamrex_1_1ArrayND" prot="public" virt="non-virtual">amrex::ArrayND&lt; T &gt;</basecompoundref>
     <includes refid="AMReX__Array4_8H" local="no">AMReX_Array4.H</includes>
     <templateparamlist>
       <param>
@@ -17,7 +17,7 @@
         <name>PolymorphicArray4</name>
         <qualifiedname>amrex::PolymorphicArray4::PolymorphicArray4</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="356" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="356" bodyend="357"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="825" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="825" bodyend="826"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1PolymorphicArray4_1aecf60a82c9742933f0d7916558624b43" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ T &amp;</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="360" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="360" bodyend="362"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="829" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="829" bodyend="831"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1PolymorphicArray4_1ae8c8630aa06bb3561b89c622766ea99b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="367" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="367" bodyend="369"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="836" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="836" bodyend="838"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1PolymorphicArray4_1a835733e5f0a2fb9ef417cee74d88b32f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="373" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="373" bodyend="375"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="842" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="842" bodyend="844"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -141,8 +141,8 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>amrex::Array4&lt; T &gt;</label>
-        <link refid="structamrex_1_1Array4"/>
+        <label>Array4&lt; T &gt;</label>
+        <link refid="structamrex_1_1ArrayND"/>
       </node>
       <node id="1">
         <label>amrex::PolymorphicArray4&lt; T &gt;</label>
@@ -153,16 +153,19 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>amrex::Array4&lt; T &gt;</label>
-        <link refid="structamrex_1_1Array4"/>
+        <label>Array4&lt; T &gt;</label>
+        <link refid="structamrex_1_1ArrayND"/>
         <childnode refid="3" relation="usage">
+          <edgelabel>nstride</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::Dim3</label>
-        <link refid="structamrex_1_1Dim3"/>
+      <node id="4">
+        <label>amrex::IntVectND&lt; N &gt;</label>
+        <link refid="classamrex_1_1IntVectND"/>
       </node>
       <node id="1">
         <label>amrex::PolymorphicArray4&lt; T &gt;</label>
@@ -170,43 +173,52 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>std::array&lt; Long, N-1 &gt;</label>
+      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="352" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="354" bodyend="376"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="821" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="823" bodyend="845"/>
     <listofallmembers>
-      <member refid="structamrex_1_1Array4_1a5a625143d2022ec1c53a9330e4cdccf3" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1a9d5e7fb260eb6907c7feb338fd167370" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1a4d464dd349cd0bbcdbbfaf1329ddaeb9" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1a84edc315754294397f374dca9d115e73" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1ad9c87c00215afb2c9829133af721cf3a" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1a866f2c12eb3e3d6a26399866f355e088" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>begin</name></member>
-      <member refid="structamrex_1_1Array4_1a362a923341ff8a845e4a1a2eef73b61c" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>cellData</name></member>
-      <member refid="structamrex_1_1Array4_1a3002e52059e15dd0184172446bb1c4a2" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
-      <member refid="structamrex_1_1Array4_1a6bfa4a4176676e1a5c69c51c7fa46e01" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
-      <member refid="structamrex_1_1Array4_1afa456813f60b182958067dab3ff87b1a" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
-      <member refid="structamrex_1_1Array4_1a30636a80cebef5e779f22ed7728ed494" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>dataPtr</name></member>
-      <member refid="structamrex_1_1Array4_1ae3e6ea18e90f4b382a90da961a93d8e9" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>end</name></member>
-      <member refid="structamrex_1_1Array4_1ac5874d9946c7fab10b8baccf17852150" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>jstride</name></member>
-      <member refid="structamrex_1_1Array4_1a2f847bb967235ec601258fe8726ec83e" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>kstride</name></member>
-      <member refid="structamrex_1_1Array4_1a58a49cd7aec26094f9a5dda9ee795cca" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ncomp</name></member>
-      <member refid="structamrex_1_1Array4_1a93d28feba79ff0f0fbd1fd6483e68392" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>nComp</name></member>
-      <member refid="structamrex_1_1Array4_1af34de268f8d40135be4374144dd2b34a" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>nstride</name></member>
-      <member refid="structamrex_1_1Array4_1a8317a7e67a07cbb3948e7b7c9ce7a4bc" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1ArrayND_1ab6aea4dcd0c135457f0a6a0bcc6b7aaa" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1a5be84f53b466157c4df1abbaa2a0a947" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1afdfbac3e7ff9fd58099444646b908b06" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1aa1d830d7c6bdecae6458f45f008b84c2" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1adff857497b75a646745786e5c6015629" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1aac2a6876f06153080abdbdb06ee5bba4" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1a4c75bfb079aa29fb75bdbf4eef89bf2f" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae1cdb5da5d403fe89b695a176bc7cab5" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1adbc7d0640bbb400930975a9cf2eb8f45" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1a86d89b9976a2c5b9414c44b58b7fe697" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>begin</name></member>
+      <member refid="structamrex_1_1ArrayND_1af202a9cf8670a7a1e8313ef3f9da1347" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>cellData</name></member>
+      <member refid="structamrex_1_1ArrayND_1a49ab836802891bf5de80272e11112b22" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1af13f89cbc4616f95b7fe7d82a5c003d9" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1a2cf078b2ea4abfc89604842aebfeeaeb" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1aaebfe4b3038a7c087752bd4857a83040" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1a6ca2ba13a4a3755b4dc0d5549efbc66f" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>dataPtr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a7b0a4f6ee8a14026bd83ec59e95c342d" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>end</name></member>
+      <member refid="structamrex_1_1ArrayND_1a090cb244c20bb2564b8b595d03363caa" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>get_offset</name></member>
+      <member refid="structamrex_1_1ArrayND_1a36803f28a511a045ffa685907e8f7068" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>get_offset</name></member>
+      <member refid="structamrex_1_1ArrayND_1aa662cc92ad4d59d34beab82e4797fc23" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>LastDimComponent</name></member>
+      <member refid="structamrex_1_1ArrayND_1a6afb8a5d140cf4bb06e4e8b9ef390c0b" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>nComp</name></member>
+      <member refid="structamrex_1_1ArrayND_1ab9842ea4c2fe7797384ba841410364f9" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>nstride</name></member>
+      <member refid="structamrex_1_1ArrayND_1a1be8338cbec481d30aedb2fccbd60628" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ok</name></member>
+      <member refid="structamrex_1_1ArrayND_1a7cf315f68c5724f0acafb14222449b36" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>operator bool</name></member>
       <member refid="structamrex_1_1PolymorphicArray4_1aecf60a82c9742933f0d7916558624b43" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
       <member refid="structamrex_1_1PolymorphicArray4_1ae8c8630aa06bb3561b89c622766ea99b" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
       <member refid="structamrex_1_1PolymorphicArray4_1a835733e5f0a2fb9ef417cee74d88b32f" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Array4_1afa5823b500e444c12e4df9f91206cbcd" prot="public" virt="non-virtual" ambiguityscope="amrex::Array4::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Array4_1a027d499c3286a400e6eba8893a302916" prot="public" virt="non-virtual" ambiguityscope="amrex::Array4::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Array4_1a2c3d63a6d0542c512c626127831c2e9b" prot="public" virt="non-virtual" ambiguityscope="amrex::Array4::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Array4_1a019596109273e237727cad9ad677ad12" prot="public" virt="non-virtual" ambiguityscope="amrex::Array4::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Array4_1a674fde18598ff1fec4d214f46b2b1987" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>p</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae5ad74210ea56935c5d20db9a402f5e0" prot="public" virt="non-virtual" ambiguityscope="amrex::ArrayND::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae9fe01e968a84ff0e97f51ca0cc942b0" prot="public" virt="non-virtual" ambiguityscope="amrex::ArrayND::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a7ebba19fc9d1d3a9029ca298bd54fc9f" prot="public" virt="non-virtual" ambiguityscope="amrex::ArrayND::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a276ae296619e8bbfc5f6e0118915af3f" prot="public" virt="non-virtual" ambiguityscope="amrex::ArrayND::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a1d5ffd4e466edd41f4f1a39e001d9bd0" prot="public" virt="non-virtual" ambiguityscope="amrex::ArrayND::"><scope>amrex::PolymorphicArray4</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a3f266fa8a00a2828fd5fd72583b1531f" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>p</name></member>
       <member refid="structamrex_1_1PolymorphicArray4_1a14db281b4af9950fa5643cc8e6fdc3d8" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>PolymorphicArray4</name></member>
-      <member refid="structamrex_1_1Array4_1aaaae2059e183c331a12d2c3c3731de99" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a3be688ccaac37d2e45d8126b52ab288c" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a50c13869de572ef6462171d976c60cc7" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a0fc1ece7864456f1db8f8a453929b13e" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a57a5a17a2002a5694e257954f9590a77" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a502e30c7c72b061f1aed49f1fedede7a" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1Array4_1a186c06714414e11899155c2952675b01" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>size</name></member>
+      <member refid="structamrex_1_1ArrayND_1a4ff4c4f72aac788ab11090e98f424c3a" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1af528f8f674531137fa4b26e7c5c341d0" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a6edf99b53d43baeb5e7d49d75cb2ee42" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a0fc35e032d2ee5d16ac1936a790e886d" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a234b637c19b15e6ff2dc9ef9378aa001" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a2cc1358129bd60907b78cc8b95cb0390" prot="public" virt="non-virtual"><scope>amrex::PolymorphicArray4</scope><name>size</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

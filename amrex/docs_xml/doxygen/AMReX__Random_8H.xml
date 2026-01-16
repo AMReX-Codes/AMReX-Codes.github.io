@@ -121,6 +121,8 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
         <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="45" relation="include">
@@ -218,6 +220,18 @@
         <childnode refid="56" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>AMReX_ConstexprFor.H</label>
+        <link refid="AMReX__ConstexprFor_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="36">
@@ -471,19 +485,19 @@
         </childnode>
         <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="64" relation="include">
-        </childnode>
         <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="66" relation="include">
+        <childnode refid="67" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="67" relation="include">
+        <childnode refid="68" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
@@ -509,7 +523,7 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="68" relation="include">
+        <childnode refid="69" relation="include">
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
@@ -518,7 +532,7 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="68">
+      <node id="69">
         <label>AMReX_RandomEngine.H</label>
         <link refid="AMReX__RandomEngine_8H"/>
         <childnode refid="2" relation="include">
@@ -527,9 +541,9 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="69" relation="include">
-        </childnode>
         <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
         </childnode>
       </node>
       <node id="38">
@@ -637,7 +651,7 @@
       <node id="44">
         <label>array</label>
       </node>
-      <node id="64">
+      <node id="65">
         <label>atomic</label>
       </node>
       <node id="8">
@@ -655,7 +669,7 @@
       <node id="39">
         <label>cmath</label>
       </node>
-      <node id="65">
+      <node id="66">
         <label>csignal</label>
       </node>
       <node id="13">
@@ -670,10 +684,10 @@
       <node id="14">
         <label>cstring</label>
       </node>
-      <node id="69">
+      <node id="70">
         <label>curand.h</label>
       </node>
-      <node id="70">
+      <node id="71">
         <label>curand_kernel.h</label>
       </node>
       <node id="15">
@@ -691,7 +705,7 @@
       <node id="17">
         <label>memory</label>
       </node>
-      <node id="66">
+      <node id="67">
         <label>numeric</label>
       </node>
       <node id="45">
@@ -712,7 +726,7 @@
       <node id="19">
         <label>type_traits</label>
       </node>
-      <node id="67">
+      <node id="68">
         <label>typeinfo</label>
       </node>
       <node id="31">
@@ -4053,8 +4067,8 @@
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a0b5cc6671c574fc82057046c73789ee5" kindref="member">FillRandomNormal</ref><sp/>(<ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>*<sp/>p,<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>N,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>mean,<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>stddev);</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">detail<sp/>{</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>ULong<sp/>DefaultGpuSeed<sp/>()<sp/>{</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ParallelDescriptor::MyProc()*1234567ULL<sp/>+<sp/>12345ULL;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1ga0ef9da92db8cd88b857393b3b7b611b7" kindref="member">ULong</ref><sp/>DefaultGpuSeed<sp/>()<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__amrex__mpi_1ga33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>()*1234567ULL<sp/>+<sp/>12345ULL;</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="260"></codeline>

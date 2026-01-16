@@ -10,9 +10,10 @@ var searchData=
   ['amrex_5fulong_7',['amrex_ulong',['../AMReX__INT_8H.html#a905ae07300b0ac4323b397be328e30cd',1,'AMReX_INT.H']]],
   ['amrparticlecontainer_8',['AmrParticleContainer',['../namespaceamrex.html#a419832e55be898fd5de9051fdf08cb05',1,'amrex']]],
   ['aos_9',['aos',['../classamrex_1_1ParConstIter__impl.html#a16cd3b4f2109ac557d4e7b31519f6aa6',1,'amrex::ParConstIter_impl::AoS'],['../classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf',1,'amrex::ParticleContainer_impl::AoS'],['../structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216',1,'amrex::ParticleTile::AoS'],['../classamrex_1_1ParIter__impl.html#a11715dcb8fbb5bafe0905e0657cbded6',1,'amrex::ParIter_impl::AoS'],['../classamrex_1_1ParIterBase__impl.html#abe3648d60d09f07210ff0fa5efef4ea0',1,'amrex::ParIterBase_impl::AoS'],['../classamrex_1_1NeighborParticleContainer.html#a41c79512efbfbf1a4145948c6a680d5c',1,'amrex::NeighborParticleContainer::AoS']]],
-  ['aos_5fptr_10',['aos_ptr',['../structamrex_1_1ParticleTileData.html#a804776036d9b9728c58c31db18a66b27',1,'amrex::ParticleTileData::AOS_PTR'],['../structamrex_1_1ConstParticleTileData.html#a95d03c7e7e65783c67fe284a325bbbaf',1,'amrex::ConstParticleTileData::AOS_PTR']]],
+  ['aos_5fptr_10',['aos_ptr',['../structamrex_1_1ConstParticleTileData.html#a95d03c7e7e65783c67fe284a325bbbaf',1,'amrex::ConstParticleTileData::AOS_PTR'],['../structamrex_1_1ParticleTileData.html#a804776036d9b9728c58c31db18a66b27',1,'amrex::ParticleTileData::AOS_PTR']]],
   ['arena_5fwrapper_5ftype_11',['arena_wrapper_type',['../structamrex_1_1ArenaAllocatorBase.html#a3013f3e6be3447fa80b47378bb289421',1,'amrex::ArenaAllocatorBase']]],
   ['array_12',['Array',['../group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007',1,'amrex']]],
-  ['asyncvector_13',['AsyncVector',['../group__amrex__linear__containers.html#gaf0ed55b80609bd8e66da4d0c435894d0',1,'amrex::Gpu']]],
-  ['atomicint_14',['AtomicInt',['../classamrex_1_1HypreNodeLap.html#a011b59863c3356d7d808e56f47386d4c',1,'amrex::HypreNodeLap']]]
+  ['array4_13',['Array4',['../namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f',1,'amrex']]],
+  ['asyncvector_14',['AsyncVector',['../group__amrex__linear__containers.html#gaf0ed55b80609bd8e66da4d0c435894d0',1,'amrex::Gpu']]],
+  ['atomicint_15',['AtomicInt',['../classamrex_1_1HypreNodeLap.html#a011b59863c3356d7d808e56f47386d4c',1,'amrex::HypreNodeLap']]]
 ];

@@ -744,8 +744,9 @@
     <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
     <includes id="AMReX__IntVect_8H" name="AMReX_IntVect.H" local="no" import="no" module="no" objc="no">AMReX_IntVect.H</includes>
     <includes id="AMReX__GpuPrint_8H" name="AMReX_GpuPrint.H" local="no" import="no" module="no" objc="no">AMReX_GpuPrint.H</includes>
+    <includes id="AMReX__ConstexprFor_8H" name="AMReX_ConstexprFor.H" local="no" import="no" module="no" objc="no">AMReX_ConstexprFor.H</includes>
     <class kind="struct">amrex::CellData</class>
-    <class kind="struct">amrex::Array4</class>
+    <class kind="struct">amrex::ArrayND</class>
     <class kind="struct">amrex::HasMultiComp</class>
     <class kind="struct">amrex::HasMultiComp&lt; B, std::enable_if_t&lt; B().size() &gt;=1 &gt;</class>
     <class kind="struct">amrex::PolymorphicArray4</class>
@@ -5496,6 +5497,7 @@
     <class kind="struct">amrex::Disjunction&lt; B1 &gt;</class>
     <class kind="struct">amrex::Disjunction&lt; B1, Bn... &gt;</class>
     <class kind="struct">amrex::IsConvertible</class>
+    <class kind="struct">amrex::IsNarrowingConversion</class>
     <class kind="struct">amrex::IsStoreAtomic</class>
     <namespace>amrex</namespace>
     <member kind="define">
@@ -13873,235 +13875,6 @@
     </member>
   </compound>
   <compound kind="struct">
-    <name>amrex::Array4</name>
-    <filename>structamrex_1_1Array4.html</filename>
-    <templarg>typename T</templarg>
-    <member kind="function">
-      <type>__host__ __device__ constexpr</type>
-      <name>Array4</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a5a625143d2022ec1c53a9330e4cdccf3</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ constexpr</type>
-      <name>Array4</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a9d5e7fb260eb6907c7feb338fd167370</anchor>
-      <arglist>(Array4&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ constexpr</type>
-      <name>Array4</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a4d464dd349cd0bbcdbbfaf1329ddaeb9</anchor>
-      <arglist>(T *a_p, Dim3 const &amp;a_begin, Dim3 const &amp;a_end, int a_ncomp) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ constexpr</type>
-      <name>Array4</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a84edc315754294397f374dca9d115e73</anchor>
-      <arglist>(Array4&lt; U &gt; const &amp;rhs, int start_comp) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ constexpr</type>
-      <name>Array4</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>ad9c87c00215afb2c9829133af721cf3a</anchor>
-      <arglist>(Array4&lt; U &gt; const &amp;rhs, int start_comp, int num_comps) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__</type>
-      <name>operator bool</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a8317a7e67a07cbb3948e7b7c9ce7a4bc</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a546f12d67d36578b2fd14b44b26a3ed3</anchor>
-      <arglist>(int i, int j, int k) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>abf3151143b34696618def00420d730fa</anchor>
-      <arglist>(int i, int j, int k, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>aaaae2059e183c331a12d2c3c3731de99</anchor>
-      <arglist>(int i, int j, int k) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a3be688ccaac37d2e45d8126b52ab288c</anchor>
-      <arglist>(int i, int j, int k, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>afa5823b500e444c12e4df9f91206cbcd</anchor>
-      <arglist>(IntVect const &amp;iv) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a027d499c3286a400e6eba8893a302916</anchor>
-      <arglist>(IntVect const &amp;iv, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a50c13869de572ef6462171d976c60cc7</anchor>
-      <arglist>(IntVect const &amp;iv) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a0fc1ece7864456f1db8f8a453929b13e</anchor>
-      <arglist>(IntVect const &amp;iv, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a2c3d63a6d0542c512c626127831c2e9b</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a019596109273e237727cad9ad677ad12</anchor>
-      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a57a5a17a2002a5694e257954f9590a77</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a502e30c7c72b061f1aed49f1fedede7a</anchor>
-      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>dataPtr</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a30636a80cebef5e779f22ed7728ed494</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ std::size_t</type>
-      <name>size</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a186c06714414e11899155c2952675b01</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ int</type>
-      <name>nComp</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a93d28feba79ff0f0fbd1fd6483e68392</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ bool</type>
-      <name>contains</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a3002e52059e15dd0184172446bb1c4a2</anchor>
-      <arglist>(int i, int j, int k) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ bool</type>
-      <name>contains</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a6bfa4a4176676e1a5c69c51c7fa46e01</anchor>
-      <arglist>(IntVect const &amp;iv) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ bool</type>
-      <name>contains</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>afa456813f60b182958067dab3ff87b1a</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ CellData&lt; T &gt;</type>
-      <name>cellData</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a362a923341ff8a845e4a1a2eef73b61c</anchor>
-      <arglist>(int i, int j, int k) const noexcept</arglist>
-    </member>
-    <member kind="variable">
-      <type>T *__restrict__</type>
-      <name>p</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a674fde18598ff1fec4d214f46b2b1987</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Long</type>
-      <name>jstride</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>ac5874d9946c7fab10b8baccf17852150</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Long</type>
-      <name>kstride</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a2f847bb967235ec601258fe8726ec83e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Long</type>
-      <name>nstride</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>af34de268f8d40135be4374144dd2b34a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Dim3</type>
-      <name>begin</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a866f2c12eb3e3d6a26399866f355e088</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Dim3</type>
-      <name>end</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>ae3e6ea18e90f4b382a90da961a93d8e9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>int</type>
-      <name>ncomp</name>
-      <anchorfile>structamrex_1_1Array4.html</anchorfile>
-      <anchor>a58a49cd7aec26094f9a5dda9ee795cca</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
     <name>amrex::Array4BoxOffsetTag</name>
     <filename>structamrex_1_1Array4BoxOffsetTag.html</filename>
     <templarg>class T</templarg>
@@ -14371,6 +14144,265 @@
       <name>dfab</name>
       <anchorfile>structamrex_1_1Array4Tag.html</anchorfile>
       <anchor>a04cb8b343be42109c1257d014e594982</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ArrayND</name>
+    <filename>structamrex_1_1ArrayND.html</filename>
+    <templarg>typename T</templarg>
+    <templarg>int N</templarg>
+    <templarg>bool last_dim_component</templarg>
+    <member kind="typedef">
+      <type>std::integral_constant&lt; bool, last_dim_component &gt;</type>
+      <name>LastDimComponent</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aa662cc92ad4d59d34beab82e4797fc23</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ab6aea4dcd0c135457f0a6a0bcc6b7aaa</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a5be84f53b466157c4df1abbaa2a0a947</anchor>
+      <arglist>(ArrayND&lt; std::remove_const_t&lt; T &gt;, N, last_dim_component &gt; const &amp;rhs) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>afdfbac3e7ff9fd58099444646b908b06</anchor>
+      <arglist>(T *a_p, BoxND&lt; N &gt; const &amp;box) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aa1d830d7c6bdecae6458f45f008b84c2</anchor>
+      <arglist>(T *a_p, BoxND&lt; M &gt; const &amp;box, int ncomp) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>adff857497b75a646745786e5c6015629</anchor>
+      <arglist>(T *a_p, IntVectND&lt; N &gt; const &amp;a_begin, IntVectND&lt; N &gt; const &amp;a_end) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aac2a6876f06153080abdbdb06ee5bba4</anchor>
+      <arglist>(T *a_p, Dim3 const &amp;a_begin, Dim3 const &amp;a_end, int a_ncomp) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a4c75bfb079aa29fb75bdbf4eef89bf2f</anchor>
+      <arglist>(T *a_p, IntVectND&lt; M &gt; const &amp;a_begin, IntVectND&lt; M &gt; const &amp;a_end, int ncomp) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae1cdb5da5d403fe89b695a176bc7cab5</anchor>
+      <arglist>(ArrayND&lt; U, N, last_dim_component &gt; const &amp;rhs, int start_comp) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>ArrayND</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>adbc7d0640bbb400930975a9cf2eb8f45</anchor>
+      <arglist>(ArrayND&lt; U, N, last_dim_component &gt; const &amp;rhs, int start_comp, int num_comp) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr</type>
+      <name>operator bool</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a7cf315f68c5724f0acafb14222449b36</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr bool</type>
+      <name>ok</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a1be8338cbec481d30aedb2fccbd60628</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae5ad74210ea56935c5d20db9a402f5e0</anchor>
+      <arglist>(idx... i) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae9fe01e968a84ff0e97f51ca0cc942b0</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a7ebba19fc9d1d3a9029ca298bd54fc9f</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a276ae296619e8bbfc5f6e0118915af3f</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a1d5ffd4e466edd41f4f1a39e001d9bd0</anchor>
+      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a4ff4c4f72aac788ab11090e98f424c3a</anchor>
+      <arglist>(idx... i) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>af528f8f674531137fa4b26e7c5c341d0</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a6edf99b53d43baeb5e7d49d75cb2ee42</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a0fc35e032d2ee5d16ac1936a790e886d</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ T *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a234b637c19b15e6ff2dc9ef9378aa001</anchor>
+      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr T *</type>
+      <name>dataPtr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a6ca2ba13a4a3755b4dc0d5549efbc66f</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr int</type>
+      <name>nComp</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a6afb8a5d140cf4bb06e4e8b9ef390c0b</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr std::size_t</type>
+      <name>size</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a2cc1358129bd60907b78cc8b95cb0390</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a49ab836802891bf5de80272e11112b22</anchor>
+      <arglist>(idx... i) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>af13f89cbc4616f95b7fe7d82a5c003d9</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a2cf078b2ea4abfc89604842aebfeeaeb</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aaebfe4b3038a7c087752bd4857a83040</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ CellData&lt; T &gt;</type>
+      <name>cellData</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>af202a9cf8670a7a1e8313ef3f9da1347</anchor>
+      <arglist>(int i, int j, int k) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr Long</type>
+      <name>get_offset</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a090cb244c20bb2564b8b595d03363caa</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr Long</type>
+      <name>get_offset</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a36803f28a511a045ffa685907e8f7068</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="variable">
+      <type>T *__restrict__</type>
+      <name>p</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a3f266fa8a00a2828fd5fd72583b1531f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::array&lt; Long, N-1 &gt;</type>
+      <name>nstride</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ab9842ea4c2fe7797384ba841410364f9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>IntVectND&lt; N &gt;</type>
+      <name>begin</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a86d89b9976a2c5b9414c44b58b7fe697</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>IntVectND&lt; N &gt;</type>
+      <name>end</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a7b0a4f6ee8a14026bd83ec59e95c342d</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -38632,6 +38664,12 @@
     <templarg>class M</templarg>
   </compound>
   <compound kind="struct">
+    <name>amrex::IsNarrowingConversion</name>
+    <filename>structamrex_1_1IsNarrowingConversion.html</filename>
+    <templarg>typename From</templarg>
+    <templarg>typename To</templarg>
+  </compound>
+  <compound kind="struct">
     <name>amrex::IsParticleContainer</name>
     <filename>structamrex_1_1IsParticleContainer.html</filename>
     <templarg>typename T</templarg>
@@ -59020,7 +59058,7 @@
     <name>amrex::PolymorphicArray4</name>
     <filename>structamrex_1_1PolymorphicArray4.html</filename>
     <templarg>typename T</templarg>
-    <base>amrex::Array4</base>
+    <base>amrex::ArrayND</base>
     <member kind="function">
       <type>__host__ __device__</type>
       <name>PolymorphicArray4</name>
@@ -67939,7 +67977,6 @@
     <class kind="struct">amrex::Array1D</class>
     <class kind="struct">amrex::Array2D</class>
     <class kind="struct">amrex::Array3D</class>
-    <class kind="struct">amrex::Array4</class>
     <class kind="struct">amrex::Array4BoxOffsetTag</class>
     <class kind="struct">amrex::Array4BoxOrientationTag</class>
     <class kind="struct">amrex::Array4BoxTag</class>
@@ -67948,6 +67985,7 @@
     <class kind="struct">amrex::Array4MaskCopyTag</class>
     <class kind="struct">amrex::Array4PairTag</class>
     <class kind="struct">amrex::Array4Tag</class>
+    <class kind="struct">amrex::ArrayND</class>
     <class kind="class">amrex::ArrayOfStructs</class>
     <class kind="struct">amrex::AssignGrid</class>
     <class kind="struct">amrex::AssignGridFilter</class>
@@ -68147,6 +68185,7 @@
     <class kind="struct">amrex::IsMultiFabIterator</class>
     <class kind="struct">amrex::IsMultiFabLike</class>
     <class kind="struct">amrex::IsMultiFabLike&lt; M, std::enable_if_t&lt; IsFabArray_v&lt; M &gt; &amp;&amp;IsBaseFab_v&lt; typename M::fab_type &gt; &gt; &gt;</class>
+    <class kind="struct">amrex::IsNarrowingConversion</class>
     <class kind="struct">amrex::IsParticleContainer</class>
     <class kind="struct">amrex::IsParticleIterator</class>
     <class kind="struct">amrex::IsPolymorphicArenaAllocator</class>
@@ -68434,6 +68473,13 @@
       <name>IntArray</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a09e5ad26a3e07988dc74fece187da7b0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>ArrayND&lt; T, 4, true &gt;</type>
+      <name>Array4</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a8c21d74d3472963108631a36d5dbef0f</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -69896,11 +69942,39 @@
       <arglist>(const Array&lt; Real, 3 &gt; &amp;a) noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ Array4&lt; Tto &gt;</type>
-      <name>ToArray4</name>
+      <type></type>
+      <name>ArrayND</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a7fc4d595346e62ab8ef7f38dafa3bada</anchor>
-      <arglist>(Array4&lt; Tfrom &gt; const &amp;a_in) noexcept</arglist>
+      <anchor>a4eb610e50ec9d0311a2a0b0531484ecc</anchor>
+      <arglist>(T *, BoxND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ArrayND</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ab343fd634872754a3158b329def6e0d6</anchor>
+      <arglist>(T *, BoxND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ArrayND</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>acf1b278ff6bd0c975123f7ec21411a34</anchor>
+      <arglist>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ArrayND</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>af20f42ed2d48cfb0865f73b0c3e01103</anchor>
+      <arglist>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ArrayND</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a69dab39f98b607ded324831b726e424f</anchor>
+      <arglist>(T *, Dim3 const &amp;, Dim3 const &amp;, int) -&gt; ArrayND&lt; T, 4, true &gt;</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
@@ -69927,8 +70001,8 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>af966ad44ce8323b86bf1238910fb522d</anchor>
-      <arglist>(std::ostream &amp;os, const Array4&lt; T &gt; &amp;a)</arglist>
+      <anchor>a41c0202f94cace534ac4555aff7c841d</anchor>
+      <arglist>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</arglist>
     </member>
     <member kind="function">
       <type>PolymorphicArray4&lt; T &gt;</type>
@@ -75427,6 +75501,20 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>apply_flux_redistribution</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aefd8bdd7a185cff23fc99fb94a8a17d0</anchor>
+      <arglist>(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;div, amrex::Array4&lt; amrex::Real const &gt; const &amp;divc, amrex::Array4&lt; amrex::Real const &gt; const &amp;wt, int icomp, int ncomp, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag_arr, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, const amrex::Geometry &amp;geom, bool use_wts_in_divnc)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>amrex_flux_redistribute</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a2997746786ac52f67e2d900ad628b54e</anchor>
+      <arglist>(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;dqdt, amrex::Array4&lt; amrex::Real const &gt; const &amp;divc, amrex::Array4&lt; amrex::Real const &gt; const &amp;wt, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, int as_crse, amrex::Array4&lt; amrex::Real &gt; const &amp;rr_drho_crse, amrex::Array4&lt; int const &gt; const &amp;rr_flag_crse, int as_fine, amrex::Array4&lt; amrex::Real &gt; const &amp;dm_as_fine, amrex::Array4&lt; int const &gt; const &amp;levmsk, const amrex::Geometry &amp;geom, bool use_wts_in_divnc, int level_mask_not_covered, int icomp, int ncomp, amrex::Real dt)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>ApplyRedistribution</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a0e0b59317b972387489d090670ab24fd</anchor>
@@ -75473,6 +75561,55 @@
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a1415c2b7be8fa468b572da6a5b8ce2dc</anchor>
       <arglist>(amrex::Box const &amp;bx, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::Array4&lt; int const &gt; const &amp;itracker, amrex::Array4&lt; amrex::Real &gt; const &amp;nrs, amrex::Array4&lt; amrex::Real &gt; const &amp;alpha, amrex::Array4&lt; amrex::Real &gt; const &amp;nbhd_vol, amrex::Array4&lt; amrex::Real &gt; const &amp;cent_hat, amrex::Geometry const &amp;geom, amrex::Real target_volfrac)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ApplyRedistribution</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>aaefa4d8cac62bdddcc47cdc8899ed79f</anchor>
+      <arglist>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;dUdt_out, Array4&lt; Real &gt; const &amp;dUdt_in, Array4&lt; Real const &gt; const &amp;U_in, Array4&lt; Real &gt; const &amp;scratch, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; amrex::Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, Real dt, std::string const &amp;redistribution_type, bool use_wts_in_divnc, int srd_max_order, amrex::Real target_volfrac, Array4&lt; Real const &gt; const &amp;srd_update_scale)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ApplyMLRedistribution</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a58aa0dc758c7ecd393d806a4c857d86d</anchor>
+      <arglist>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;dUdt_out, Array4&lt; Real &gt; const &amp;dUdt_in, Array4&lt; Real const &gt; const &amp;U_in, Array4&lt; Real &gt; const &amp;scratch, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; amrex::Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, Real dt, std::string const &amp;redistribution_type, int as_crse, Array4&lt; Real &gt; const &amp;rr_drho_crse, Array4&lt; int const &gt; const &amp;rr_flag_crse, int as_fine, Array4&lt; Real &gt; const &amp;dm_as_fine, Array4&lt; int const &gt; const &amp;levmsk, int level_mask_not_covered, Real fac_for_deltaR, bool use_wts_in_divnc, int icomp, int srd_max_order, amrex::Real target_volfrac, Array4&lt; Real const &gt; const &amp;srd_update_scale)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ApplyInitialRedistribution</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a77da2d6e77a20b8116fe59dc6c985902</anchor>
+      <arglist>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, std::string const &amp;redistribution_type, int srd_max_order, amrex::Real target_volfrac)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MakeITracker</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a3f219b1b6441230fabcba77af291dfcf</anchor>
+      <arglist>(Box const &amp;bx, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; int &gt; const &amp;itracker, Geometry const &amp;lev_geom, Real target_volfrac)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MLStateRedistribute</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>ac56e16be64737e115b1c3a6b26341835</anchor>
+      <arglist>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real const &gt; const &amp;nrs, Array4&lt; Real const &gt; const &amp;alpha, Array4&lt; Real const &gt; const &amp;nbhd_vol, Array4&lt; Real const &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, int as_crse, Array4&lt; Real &gt; const &amp;drho_as_crse, Array4&lt; int const &gt; const &amp;flag_as_crse, int as_fine, Array4&lt; Real &gt; const &amp;dm_as_fine, Array4&lt; int const &gt; const &amp;levmsk, int is_ghost_cell, Real fac_for_deltaR, int max_order)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>StateRedistribute</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a341c54898b42c5df206709ab80c6d349</anchor>
+      <arglist>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real const &gt; const &amp;nrs, Array4&lt; Real const &gt; const &amp;alpha, Array4&lt; Real const &gt; const &amp;nbhd_vol, Array4&lt; Real const &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, int max_order)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MakeStateRedistUtils</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a0472d1147267486256bc020afa8670d2</anchor>
+      <arglist>(Box const &amp;bx, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real &gt; const &amp;nrs, Array4&lt; Real &gt; const &amp;alpha, Array4&lt; Real &gt; const &amp;nbhd_vol, Array4&lt; Real &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, Real target_vol)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -76830,6 +76967,20 @@
       <name>IsConvertible_v</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a6c0ad9de6dc5e0ca9324f19210bd62b9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr bool</type>
+      <name>IsNarrowingConversion_v</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a2633fb41c81d41e25ded4da987274ed5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr bool</type>
+      <name>IsNonNarrowingConversion_v</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a5f567f08e64064aad355331c6cbe79ef</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" static="yes">

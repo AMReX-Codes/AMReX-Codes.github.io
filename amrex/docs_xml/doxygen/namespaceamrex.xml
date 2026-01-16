@@ -28,7 +28,6 @@
     <innerclass refid="structamrex_1_1Array1D" prot="public">amrex::Array1D</innerclass>
     <innerclass refid="structamrex_1_1Array2D" prot="public">amrex::Array2D</innerclass>
     <innerclass refid="structamrex_1_1Array3D" prot="public">amrex::Array3D</innerclass>
-    <innerclass refid="structamrex_1_1Array4" prot="public">amrex::Array4</innerclass>
     <innerclass refid="structamrex_1_1Array4BoxOffsetTag" prot="public">amrex::Array4BoxOffsetTag</innerclass>
     <innerclass refid="structamrex_1_1Array4BoxOrientationTag" prot="public">amrex::Array4BoxOrientationTag</innerclass>
     <innerclass refid="structamrex_1_1Array4BoxTag" prot="public">amrex::Array4BoxTag</innerclass>
@@ -37,6 +36,7 @@
     <innerclass refid="structamrex_1_1Array4MaskCopyTag" prot="public">amrex::Array4MaskCopyTag</innerclass>
     <innerclass refid="structamrex_1_1Array4PairTag" prot="public">amrex::Array4PairTag</innerclass>
     <innerclass refid="structamrex_1_1Array4Tag" prot="public">amrex::Array4Tag</innerclass>
+    <innerclass refid="structamrex_1_1ArrayND" prot="public">amrex::ArrayND</innerclass>
     <innerclass refid="classamrex_1_1ArrayOfStructs" prot="public">amrex::ArrayOfStructs</innerclass>
     <innerclass refid="structamrex_1_1AssignGrid" prot="public">amrex::AssignGrid</innerclass>
     <innerclass refid="structamrex_1_1AssignGridFilter" prot="public">amrex::AssignGridFilter</innerclass>
@@ -236,6 +236,7 @@
     <innerclass refid="structamrex_1_1IsMultiFabIterator" prot="public">amrex::IsMultiFabIterator</innerclass>
     <innerclass refid="structamrex_1_1IsMultiFabLike" prot="public">amrex::IsMultiFabLike</innerclass>
     <innerclass refid="structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d" prot="public">amrex::IsMultiFabLike&lt; M, std::enable_if_t&lt; IsFabArray_v&lt; M &gt; &amp;&amp;IsBaseFab_v&lt; typename M::fab_type &gt; &gt; &gt;</innerclass>
+    <innerclass refid="structamrex_1_1IsNarrowingConversion" prot="public">amrex::IsNarrowingConversion</innerclass>
     <innerclass refid="structamrex_1_1IsParticleContainer" prot="public">amrex::IsParticleContainer</innerclass>
     <innerclass refid="structamrex_1_1IsParticleIterator" prot="public">amrex::IsParticleIterator</innerclass>
     <innerclass refid="structamrex_1_1IsPolymorphicArenaAllocator" prot="public">amrex::IsPolymorphicArenaAllocator</innerclass>
@@ -2601,6 +2602,25 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="28" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="28" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</ref>&lt; T, 4, true &gt;</type>
+        <definition>using amrex::Array4 = typedef ArrayND&lt;T,4, true&gt;</definition>
+        <argsstring></argsstring>
+        <name>Array4</name>
+        <qualifiedname>amrex::Array4</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="777" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="777" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" prot="public" static="no">
         <type><ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; 3 &gt;</type>
         <definition>typedef BoxND&lt; 3 &gt; amrex::Box</definition>
@@ -2614,7 +2634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="27" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" prot="public" static="no">
         <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; 3 &gt;</type>
@@ -2629,7 +2649,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="30" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a7e095993c9b3f5a4c2abddd839d800e2" prot="public" static="no">
         <type><ref refid="classamrex_1_1IndexTypeND" kindref="compound">IndexTypeND</ref>&lt; 3 &gt;</type>
@@ -2644,7 +2664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="33" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a84f6a9f0c716bec64ecbbae55ed83ae7" prot="public" static="no">
         <type><ref refid="structamrex_1_1BoxIndexerND" kindref="compound">BoxIndexerND</ref>&lt; 3 &gt;</type>
@@ -2892,7 +2912,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="22" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a88781af4a5d3f8271de2b3129cc49393" prot="public" static="no">
-        <type>void(*)(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const  &amp;bx, <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const  &amp;dest, int dcomp, int numcomp, <ref refid="structamrex_1_1GeometryData" kindref="compound">GeometryData</ref> const  &amp;geom, <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> time, const <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> *bcr, int bcomp, int orig_comp)</type>
+        <type>void(*)(<ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const  &amp;bx, <ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const  &amp;dest, int dcomp, int numcomp, <ref refid="structamrex_1_1GeometryData" kindref="compound">GeometryData</ref> const  &amp;geom, <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> time, const <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> *bcr, int bcomp, int orig_comp)</type>
         <definition>using amrex::UserFillBox = typedef void (*)(Box const&amp; bx, Array4&lt;Real&gt; const&amp; dest, int dcomp, int numcomp, GeometryData const&amp; geom, Real time, const BCRec* bcr, int bcomp, int orig_comp)</definition>
         <argsstring></argsstring>
         <name>UserFillBox</name>
@@ -4175,6 +4195,52 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="276" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a2633fb41c81d41e25ded4da987274ed5" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename From</type>
+          </param>
+          <param>
+            <type>typename To</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::IsNarrowingConversion_v</definition>
+        <argsstring></argsstring>
+        <name>IsNarrowingConversion_v</name>
+        <qualifiedname>amrex::IsNarrowingConversion_v</qualifiedname>
+        <initializer>= <ref refid="structamrex_1_1IsNarrowingConversion" kindref="compound">IsNarrowingConversion</ref>&lt;From, To&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="290" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a5f567f08e64064aad355331c6cbe79ef" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename From</type>
+          </param>
+          <param>
+            <type>typename To</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::IsNonNarrowingConversion_v</definition>
+        <argsstring></argsstring>
+        <name>IsNonNarrowingConversion_v</name>
+        <qualifiedname>amrex::IsNonNarrowingConversion_v</qualifiedname>
+        <initializer>= !<ref refid="structamrex_1_1IsNarrowingConversion" kindref="compound">IsNarrowingConversion</ref>&lt;From, To&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="293" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="293" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1a2ab2963a7b15880c02fa58394f4b8d1f" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr std::array&lt; <ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>, 3 &gt;</type>
@@ -11794,23 +11860,27 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1037" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1037" bodyend="1046"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a7fc4d595346e62ab8ef7f38dafa3bada" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4eb610e50ec9d0311a2a0b0531484ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>class Tto</type>
+            <type>typename T</type>
           </param>
           <param>
-            <type>class Tfrom</type>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
           </param>
         </templateparamlist>
-        <type>__host__ __device__ <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Tto &gt;</type>
-        <definition>__host__ __device__ Array4&lt; Tto &gt; amrex::ToArray4</definition>
-        <argsstring>(Array4&lt; Tfrom &gt; const &amp;a_in) noexcept</argsstring>
-        <name>ToArray4</name>
-        <qualifiedname>amrex::ToArray4</qualifiedname>
+        <type></type>
+        <definition>amrex::ArrayND</definition>
+        <argsstring>(T *, BoxND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</argsstring>
+        <name>ArrayND</name>
+        <qualifiedname>amrex::ArrayND</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Tfrom &gt; const &amp;</type>
-          <declname>a_in</declname>
+          <type>T *</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; N &gt; const &amp;</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -11818,7 +11888,140 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="305" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="305" bodyend="308"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="757" column="5" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" declline="757" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ab343fd634872754a3158b329def6e0d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>amrex::ArrayND</definition>
+        <argsstring>(T *, BoxND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</argsstring>
+        <name>ArrayND</name>
+        <qualifiedname>amrex::ArrayND</qualifiedname>
+        <param>
+          <type>T *</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; N &gt; const &amp;</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="762" column="5" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" declline="762" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1acf1b278ff6bd0c975123f7ec21411a34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>amrex::ArrayND</definition>
+        <argsstring>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;) -&gt; ArrayND&lt; T, N, false &gt;</argsstring>
+        <name>ArrayND</name>
+        <qualifiedname>amrex::ArrayND</qualifiedname>
+        <param>
+          <type>T *</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt; const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="766" column="5" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" declline="766" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1af20f42ed2d48cfb0865f73b0c3e01103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>amrex::ArrayND</definition>
+        <argsstring>(T *, IntVectND&lt; N &gt; const &amp;, IntVectND&lt; N &gt; const &amp;, int) -&gt; ArrayND&lt; T, N+1, true &gt;</argsstring>
+        <name>ArrayND</name>
+        <qualifiedname>amrex::ArrayND</qualifiedname>
+        <param>
+          <type>T *</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt; const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt; const &amp;</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="770" column="5" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" declline="770" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a69dab39f98b607ded324831b726e424f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>amrex::ArrayND</definition>
+        <argsstring>(T *, Dim3 const &amp;, Dim3 const &amp;, int) -&gt; ArrayND&lt; T, 4, true &gt;</argsstring>
+        <name>ArrayND</name>
+        <qualifiedname>amrex::ArrayND</qualifiedname>
+        <param>
+          <type>T *</type>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="774" column="5" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" declline="774" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afad6a65d8f99b00c14e8de32e2806fd7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -11832,7 +12035,7 @@
         <name>lbound</name>
         <qualifiedname>amrex::lbound</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -11841,7 +12044,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="312" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="312" bodyend="315"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="781" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="781" bodyend="784"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a00ddc55986bb8cc48ba98491e5d5ba52" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -11855,7 +12058,7 @@
         <name>ubound</name>
         <qualifiedname>amrex::ubound</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -11864,7 +12067,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="319" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="319" bodyend="322"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="788" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="788" bodyend="791"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3078c8f88bd6a4f625b7057c7370f7cc" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -11878,7 +12081,7 @@
         <name>length</name>
         <qualifiedname>amrex::length</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -11887,17 +12090,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="326" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="326" bodyend="329"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="795" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="795" bodyend="798"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af966ad44ce8323b86bf1238910fb522d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a41c0202f94cace534ac4555aff7c841d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+          <param>
+            <type>bool</type>
+            <declname>C</declname>
+            <defname>C</defname>
+          </param>
         </templateparamlist>
         <type>std::ostream &amp;</type>
         <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
-        <argsstring>(std::ostream &amp;os, const Array4&lt; T &gt; &amp;a)</argsstring>
+        <argsstring>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</argsstring>
         <name>operator&lt;&lt;</name>
         <qualifiedname>amrex::operator&lt;&lt;</qualifiedname>
         <param>
@@ -11905,7 +12118,7 @@
           <declname>os</declname>
         </param>
         <param>
-          <type>const <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</ref>&lt; T, N, <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref> &gt; &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -11914,7 +12127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="332" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="332" bodyend="335"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="801" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="801" bodyend="804"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad1efaa3873e5b9015cfd7b4ede4ba1f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -11928,7 +12141,7 @@
         <name>makePolymorphic</name>
         <qualifiedname>amrex::makePolymorphic</qualifiedname>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -11937,7 +12150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="380" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="380" bodyend="383"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="849" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="849" bodyend="852"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a652bd22fb8cfcdfeaa4ac62e81a41fe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -12095,7 +12308,7 @@
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>__host__ __device__ <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt;</type>
+        <type>__host__ __device__ <ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; T &gt;</type>
         <definition>__host__ __device__ Array4&lt; T &gt; amrex::makeArray4</definition>
         <argsstring>(T *p, Box const &amp;bx, int ncomp) noexcept</argsstring>
         <name>makeArray4</name>
@@ -20667,7 +20880,7 @@
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>qn</declname>
         </param>
         <param>
@@ -20707,7 +20920,7 @@
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>qn</declname>
         </param>
         <param>
@@ -20747,7 +20960,7 @@
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>qn</declname>
         </param>
         <param>
@@ -40751,23 +40964,23 @@ Returns the index of the first element for which f is 0. </para>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>dqdt</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>divc</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>wt</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
@@ -40775,11 +40988,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>rr_drho_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>rr_flag_crse</declname>
         </param>
         <param>
@@ -40787,11 +41000,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>dm_as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>levmsk</declname>
         </param>
         <param>
@@ -40824,7 +41037,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" bodystart="13" bodyend="293" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="40" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" bodystart="13" bodyend="293"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a343494dfc1c9121c4d236ed0f774e39a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -40837,15 +41050,15 @@ Returns the index of the first element for which f is 0. </para>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>div</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>divc</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>wt</declname>
         </param>
         <param>
@@ -40857,11 +41070,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag_arr</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
@@ -40878,7 +41091,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" line="299" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" bodystart="299" bodyend="322" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="29" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" line="299" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp" bodystart="299" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aecd68c74730a0886f68632b4a343682c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41017,6 +41230,146 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp" bodystart="103" bodyend="112" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="20" declcolumn="10"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aefd8bdd7a185cff23fc99fb94a8a17d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::apply_flux_redistribution</definition>
+        <argsstring>(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;div, amrex::Array4&lt; amrex::Real const &gt; const &amp;divc, amrex::Array4&lt; amrex::Real const &gt; const &amp;wt, int icomp, int ncomp, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag_arr, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, const amrex::Geometry &amp;geom, bool use_wts_in_divnc)</argsstring>
+        <name>apply_flux_redistribution</name>
+        <qualifiedname>amrex::apply_flux_redistribution</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">amrex::Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <declname>div</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>divc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>wt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag_arr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">amrex::Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_wts_in_divnc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="29" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="29" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2997746786ac52f67e2d900ad628b54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::amrex_flux_redistribute</definition>
+        <argsstring>(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;dqdt, amrex::Array4&lt; amrex::Real const &gt; const &amp;divc, amrex::Array4&lt; amrex::Real const &gt; const &amp;wt, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, int as_crse, amrex::Array4&lt; amrex::Real &gt; const &amp;rr_drho_crse, amrex::Array4&lt; int const &gt; const &amp;rr_flag_crse, int as_fine, amrex::Array4&lt; amrex::Real &gt; const &amp;dm_as_fine, amrex::Array4&lt; int const &gt; const &amp;levmsk, const amrex::Geometry &amp;geom, bool use_wts_in_divnc, int level_mask_not_covered, int icomp, int ncomp, amrex::Real dt)</argsstring>
+        <name>amrex_flux_redistribute</name>
+        <qualifiedname>amrex::amrex_flux_redistribute</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">amrex::Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <declname>dqdt</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>divc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>wt</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <declname>rr_drho_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>rr_flag_crse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <declname>dm_as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>levmsk</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">amrex::Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_wts_in_divnc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level_mask_not_covered</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="40" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="40" declcolumn="10"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0e0b59317b972387489d090670ab24fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::ApplyRedistribution</definition>
@@ -41032,55 +41385,55 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>dUdt_out</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>dUdt_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>U_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>scratch</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccc</declname>
         </param>
         <param>
@@ -41115,7 +41468,7 @@ Returns the index of the first element for which f is 0. </para>
           <defval>0.5_rt</defval>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>update_scale</declname>
           <defval>{}</defval>
         </param>
@@ -41125,7 +41478,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="13" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="13" bodyend="53" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="58" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="58" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="58" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3f8f8683a45019b95339504aef4c7f0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41142,55 +41495,55 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>dUdt_out</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>dUdt_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>U_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>scratch</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccc</declname>
         </param>
         <param>
@@ -41214,11 +41567,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>rr_drho_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>rr_flag_crse</declname>
         </param>
         <param>
@@ -41226,11 +41579,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>dm_as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>levmsk</declname>
         </param>
         <param>
@@ -41263,7 +41616,7 @@ Returns the index of the first element for which f is 0. </para>
           <defval>0.5_rt</defval>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>update_scale</declname>
           <defval>{}</defval>
         </param>
@@ -41273,7 +41626,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="56" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="56" bodyend="229" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="81" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="81" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="81" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a315b48edb351e2d406384deec70d228a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41290,47 +41643,47 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_out</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccc</declname>
         </param>
         <param>
@@ -41361,7 +41714,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="232" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="232" bodyend="313" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="113" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="113" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="113" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acd6c32c9119d102132df8b470bd35828" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41378,35 +41731,35 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_out</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccent</declname>
         </param>
         <param>
@@ -41414,23 +41767,23 @@ Returns the index of the first element for which f is 0. </para>
           <declname>d_bcrec_ptr</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>itracker</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>nrs</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>alpha</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>nbhd_vol</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>cent_hat</declname>
         </param>
         <param>
@@ -41448,7 +41801,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" line="379" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" bodystart="379" bodyend="652" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="131" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="131" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="131" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad8e316a7633806e4b6d26f0842f3cb82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41465,35 +41818,35 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_out</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>U_in</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>fcz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccent</declname>
         </param>
         <param>
@@ -41501,23 +41854,23 @@ Returns the index of the first element for which f is 0. </para>
           <declname>d_bcrec_ptr</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>itracker</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>nrs</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>alpha</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>nbhd_vol</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>cent_hat</declname>
         </param>
         <param>
@@ -41529,11 +41882,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>drho_as_crse</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>flag_as_crse</declname>
         </param>
         <param>
@@ -41541,11 +41894,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
           <declname>dm_as_fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>levmsk</declname>
         </param>
         <param>
@@ -41567,7 +41920,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" bodystart="13" bodyend="376" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="149" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="149" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="149" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1adf782b114ef7fc3ea3dd5e42009836ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41580,23 +41933,23 @@ Returns the index of the first element for which f is 0. </para>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>apz</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int &gt; const &amp;</type>
           <declname>itracker</declname>
         </param>
         <param>
@@ -41613,7 +41966,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp" line="228" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp" bodystart="228" bodyend="734" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="175" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="175" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="175" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1415c2b7be8fa468b572da6a5b8ce2dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41626,35 +41979,35 @@ Returns the index of the first element for which f is 0. </para>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">amrex::EBCellFlag</ref> const &gt; const &amp;</type>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>vfrac</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
           <declname>ccent</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int const &gt; const &amp;</type>
           <declname>itracker</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>nrs</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>alpha</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>nbhd_vol</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> &gt; const &amp;</type>
           <declname>cent_hat</declname>
         </param>
         <param>
@@ -41671,7 +42024,649 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp" bodystart="10" bodyend="236" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="184" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" line="184" column="10" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H" declline="184" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aaefa4d8cac62bdddcc47cdc8899ed79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ApplyRedistribution</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;dUdt_out, Array4&lt; Real &gt; const &amp;dUdt_in, Array4&lt; Real const &gt; const &amp;U_in, Array4&lt; Real &gt; const &amp;scratch, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; amrex::Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, Real dt, std::string const &amp;redistribution_type, bool use_wts_in_divnc, int srd_max_order, amrex::Real target_volfrac, Array4&lt; Real const &gt; const &amp;srd_update_scale)</argsstring>
+        <name>ApplyRedistribution</name>
+        <qualifiedname>amrex::ApplyRedistribution</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dUdt_out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dUdt_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>U_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>scratch</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>ccc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BCRec" kindref="compound">amrex::BCRec</ref> const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>redistribution_type</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_wts_in_divnc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>srd_max_order</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
+          <declname>target_volfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>srd_update_scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="13" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="13" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a58aa0dc758c7ecd393d806a4c857d86d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ApplyMLRedistribution</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;dUdt_out, Array4&lt; Real &gt; const &amp;dUdt_in, Array4&lt; Real const &gt; const &amp;U_in, Array4&lt; Real &gt; const &amp;scratch, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; amrex::Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, Real dt, std::string const &amp;redistribution_type, int as_crse, Array4&lt; Real &gt; const &amp;rr_drho_crse, Array4&lt; int const &gt; const &amp;rr_flag_crse, int as_fine, Array4&lt; Real &gt; const &amp;dm_as_fine, Array4&lt; int const &gt; const &amp;levmsk, int level_mask_not_covered, Real fac_for_deltaR, bool use_wts_in_divnc, int icomp, int srd_max_order, amrex::Real target_volfrac, Array4&lt; Real const &gt; const &amp;srd_update_scale)</argsstring>
+        <name>ApplyMLRedistribution</name>
+        <qualifiedname>amrex::ApplyMLRedistribution</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dUdt_out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dUdt_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>U_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>scratch</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>ccc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BCRec" kindref="compound">amrex::BCRec</ref> const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>redistribution_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>rr_drho_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>rr_flag_crse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dm_as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>levmsk</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level_mask_not_covered</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>fac_for_deltaR</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_wts_in_divnc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>srd_max_order</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
+          <declname>target_volfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>srd_update_scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="56" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="56" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a77da2d6e77a20b8116fe59dc6c985902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ApplyInitialRedistribution</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::BCRec const *d_bcrec_ptr, Geometry const &amp;lev_geom, std::string const &amp;redistribution_type, int srd_max_order, amrex::Real target_volfrac)</argsstring>
+        <name>ApplyInitialRedistribution</name>
+        <qualifiedname>amrex::ApplyInitialRedistribution</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>apy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>apz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>fcy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>fcz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref> const &gt; const &amp;</type>
+          <declname>ccc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BCRec" kindref="compound">amrex::BCRec</ref> const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>redistribution_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>srd_max_order</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">amrex::Real</ref></type>
+          <declname>target_volfrac</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" line="232" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp" bodystart="232" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a3f219b1b6441230fabcba77af291dfcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MakeITracker</definition>
+        <argsstring>(Box const &amp;bx, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;apz, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; int &gt; const &amp;itracker, Geometry const &amp;lev_geom, Real target_volfrac)</argsstring>
+        <name>MakeITracker</name>
+        <qualifiedname>amrex::MakeITracker</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>apz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int &gt; const &amp;</type>
+          <declname>itracker</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>target_volfrac</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp" line="228" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp" bodystart="228" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ac56e16be64737e115b1c3a6b26341835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLStateRedistribute</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real const &gt; const &amp;nrs, Array4&lt; Real const &gt; const &amp;alpha, Array4&lt; Real const &gt; const &amp;nbhd_vol, Array4&lt; Real const &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, int as_crse, Array4&lt; Real &gt; const &amp;drho_as_crse, Array4&lt; int const &gt; const &amp;flag_as_crse, int as_fine, Array4&lt; Real &gt; const &amp;dm_as_fine, Array4&lt; int const &gt; const &amp;levmsk, int is_ghost_cell, Real fac_for_deltaR, int max_order)</argsstring>
+        <name>MLStateRedistribute</name>
+        <qualifiedname>amrex::MLStateRedistribute</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>ccent</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BCRec" kindref="compound">amrex::BCRec</ref> const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>itracker</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>nrs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>nbhd_vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>cent_hat</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>drho_as_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>flag_as_crse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>dm_as_fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>levmsk</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>is_ghost_cell</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>fac_for_deltaR</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_order</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" bodystart="13" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a341c54898b42c5df206709ab80c6d349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateRedistribute</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Array4&lt; Real &gt; const &amp;U_out, Array4&lt; Real &gt; const &amp;U_in, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real const &gt; const &amp;nrs, Array4&lt; Real const &gt; const &amp;alpha, Array4&lt; Real const &gt; const &amp;nbhd_vol, Array4&lt; Real const &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, int max_order)</argsstring>
+        <name>StateRedistribute</name>
+        <qualifiedname>amrex::StateRedistribute</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_out</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>U_in</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>fcz</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>ccent</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BCRec" kindref="compound">amrex::BCRec</ref> const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>itracker</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>nrs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>nbhd_vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>cent_hat</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_order</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" line="379" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp" bodystart="379" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a0472d1147267486256bc020afa8670d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MakeStateRedistUtils</definition>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;vfrac, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; int const &gt; const &amp;itracker, Array4&lt; Real &gt; const &amp;nrs, Array4&lt; Real &gt; const &amp;alpha, Array4&lt; Real &gt; const &amp;nbhd_vol, Array4&lt; Real &gt; const &amp;cent_hat, Geometry const &amp;lev_geom, Real target_vol)</argsstring>
+        <name>MakeStateRedistUtils</name>
+        <qualifiedname>amrex::MakeStateRedistUtils</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> const &gt; const &amp;</type>
+          <declname>ccent</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; int const &gt; const &amp;</type>
+          <declname>itracker</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>nrs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>nbhd_vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref> &gt; const &amp;</type>
+          <declname>cent_hat</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>lev_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></type>
+          <declname>target_vol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp" bodystart="10" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae21d913402ed0c78cccf9819ea8a69c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -49993,7 +50988,7 @@ Example usage: <programlisting filename=".cpp"><codeline><highlight class="keywo
           <declname>p</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; int &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref>&lt; int &gt; const &amp;</type>
           <declname>mask</declname>
         </param>
         <param>

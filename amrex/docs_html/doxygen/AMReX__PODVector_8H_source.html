@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(count, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Size i) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    data[i] = value;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                });</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#ifdef _WIN32</span></div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                        data[i] = value;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    });</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
@@ -194,8 +194,8 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RunOnGpu&lt;Allocator&lt;T&gt;&gt;::value)</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                Gpu::htod_memcpy_async(data, std::data(list), count);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(data, std::data(list), count);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (IsPolymorphicArenaAllocator&lt;Allocator&lt;T&gt;&gt;::value)</div>
@@ -203,8 +203,8 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">if</span> (allocator.arena()-&gt;isManaged() ||</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    allocator.arena()-&gt;isDevice())</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    Gpu::htod_memcpy_async(data, std::data(list), count);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(data, std::data(list), count);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                }</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
@@ -226,7 +226,7 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(count, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Size i) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    dst[i] = src[i];</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                });</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                Gpu::Device::streamSynchronize();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <a class="code hl_function" href="classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf">Gpu::Device::streamSynchronize</a>();</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#ifdef _WIN32</span></div>
@@ -242,7 +242,7 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                    {</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                        dst[i] = src[i];</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    });</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            }</div>
@@ -263,8 +263,8 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RunOnGpu&lt;Allocator&gt;::value)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                Gpu::dtod_memcpy_async(dst, src, count);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">if</span> (sync) { Gpu::streamSynchronize(); }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dst, src, count);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">if</span> (sync) { <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>(); }</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            }</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (IsPolymorphicArenaAllocator&lt;Allocator&gt;::value)</div>
@@ -276,13 +276,13 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">if</span> (dst_on_device || src_on_device)</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                {</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    <span class="keywordflow">if</span> (dst_on_device &amp;&amp; src_on_device) {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                        Gpu::dtod_memcpy_async(dst, src, count);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                        <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dst, src, count);</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dst_on_device) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        Gpu::htod_memcpy_async(dst, src, count);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(dst, src, count);</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                        Gpu::dtoh_memcpy_async(dst, src, count);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                        <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(dst, src, count);</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    <span class="keywordflow">if</span> (sync) { Gpu::streamSynchronize(); }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    <span class="keywordflow">if</span> (sync) { <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>(); }</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                }</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            }</div>
@@ -298,9 +298,9 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RunOnGpu&lt;Allocator&gt;::value)</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            {</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <span class="keyword">auto</span>* tmp = <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(count);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                Gpu::dtod_memcpy_async(tmp, src, count);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                Gpu::dtod_memcpy_async(dst, tmp, count);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(tmp, src, count);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dst, tmp, count);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(tmp);</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            }</div>
@@ -310,9 +310,9 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    allocator.arena()-&gt;isDevice())</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                {</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                    <span class="keyword">auto</span>* tmp = <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(count);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    Gpu::dtod_memcpy_async(tmp, src, count);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    Gpu::dtod_memcpy_async(dst, tmp, count);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(tmp, src, count);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">Gpu::dtod_memcpy_async</a>(dst, tmp, count);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                    <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(tmp);</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                }</div>
@@ -331,14 +331,14 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                   <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (RunOnGpu&lt;Allocator&lt;T&gt;&gt;::value) {</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                       amrex::fill_snan&lt;RunOn::Device&gt;(data, count);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                       Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                       <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                       <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (IsPolymorphicArenaAllocator&lt;Allocator&lt;T&gt;&gt;::value) {</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                       <span class="keywordflow">if</span> (allocator.arena()-&gt;isManaged() ||</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                           allocator.arena()-&gt;isDevice())</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                       {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                           amrex::fill_snan&lt;RunOn::Device&gt;(data, count);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                           Gpu::streamSynchronize();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                           <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                           <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                       }</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                   }</div>
@@ -1030,6 +1030,7 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0c7e0730574c98febb6ddca2712cb515"><div class="ttname"><a href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">amrex::Arena::free</a></div><div class="ttdeci">virtual void free(void *pt)=0</div><div class="ttdoc">A pure virtual function for deleting the arena pointed to by pt.</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0fa2cdc35eb9da4a03fedf53f6484c86"><div class="ttname"><a href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div></div>
+<div class="ttc" id="aclassamrex_1_1Gpu_1_1Device_html_a67c55a7d25eb5f5fdec62ffcc9c0dccf"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf">amrex::Gpu::Device::streamSynchronize</a></div><div class="ttdeci">static void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.cpp:757</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html"><div class="ttname"><a href="classamrex_1_1PODVector.html">amrex::PODVector</a></div><div class="ttdoc">Dynamically allocated vector for trivially copyable data.</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:308</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html_a02e18e4e17cc3356084fa3be3c3f44b3"><div class="ttname"><a href="classamrex_1_1PODVector.html#a02e18e4e17cc3356084fa3be3c3f44b3">amrex::PODVector::PODVector</a></div><div class="ttdeci">PODVector(std::initializer_list&lt; T &gt; a_initializer_list, const allocator_type &amp;a_allocator=Allocator())</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:369</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html_a0384ebf38ab1dbf96a080ff6abaf45c7"><div class="ttname"><a href="classamrex_1_1PODVector.html#a0384ebf38ab1dbf96a080ff6abaf45c7">amrex::PODVector::insert</a></div><div class="ttdeci">iterator insert(const_iterator a_pos, T &amp;&amp;a_item)</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:526</div></div>
@@ -1097,8 +1098,11 @@ $(document).ready(function(){initNavTree('AMReX__PODVector_8H_source.html',''); 
 <div class="ttc" id="aclassamrex_1_1PODVector_html_af89cd4b6f177740be608d75ccf9eb045"><div class="ttname"><a href="classamrex_1_1PODVector.html#af89cd4b6f177740be608d75ccf9eb045">amrex::PODVector::push_back</a></div><div class="ttdeci">void push_back(const T &amp;a_value)</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:629</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html_af9a80a3988ccc51fd593974ea6b21df2"><div class="ttname"><a href="classamrex_1_1PODVector.html#af9a80a3988ccc51fd593974ea6b21df2">amrex::PODVector::allocator_type</a></div><div class="ttdeci">Allocator allocator_type</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:318</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_a00026ef5f8505586ed52acbbc11fdf91"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91">amrex::Gpu::dtod_memcpy_async</a></div><div class="ttdeci">void dtod_memcpy_async(void *p_d_dst, const void *p_d_src, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:329</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a2e573a00e2c0d0bff8097bd9f3dd422e"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a2e573a00e2c0d0bff8097bd9f3dd422e">amrex::Gpu::freeAsync</a></div><div class="ttdeci">void freeAsync(Arena *arena, void *mem) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:284</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:263</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_a6cb0d90b937d4749b2219ad0e9fa8277"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">amrex::Gpu::dtoh_memcpy_async</a></div><div class="ttdeci">void dtoh_memcpy_async(void *p_h, const void *p_d, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:315</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_aacefe17a39734cb2475a36199ab1370b"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">amrex::Gpu::htod_memcpy_async</a></div><div class="ttdeci">void htod_memcpy_async(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:301</div></div>
 <div class="ttc" id="anamespaceamrex_1_1VectorGrowthStrategy_html_a220176c8289f1b22577adf0500f09561"><div class="ttname"><a href="namespaceamrex_1_1VectorGrowthStrategy.html#a220176c8289f1b22577adf0500f09561">amrex::VectorGrowthStrategy::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.cpp:36</div></div>
 <div class="ttc" id="anamespaceamrex_1_1VectorGrowthStrategy_html_a2afcd7a898bfccec154ad83db5165aab"><div class="ttname"><a href="namespaceamrex_1_1VectorGrowthStrategy.html#a2afcd7a898bfccec154ad83db5165aab">amrex::VectorGrowthStrategy::growth_factor</a></div><div class="ttdeci">Real growth_factor</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.cpp:7</div></div>
 <div class="ttc" id="anamespaceamrex_1_1VectorGrowthStrategy_html_a8ef1324687971e98cff6d9df253b95fa"><div class="ttname"><a href="namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa">amrex::VectorGrowthStrategy::GetGrowthFactor</a></div><div class="ttdeci">Real GetGrowthFactor()</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:255</div></div>

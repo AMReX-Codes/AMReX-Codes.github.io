@@ -32,6 +32,7 @@ var AMReX__TypeTraits_8H =
     [ "amrex::Disjunction< B1 >", "structamrex_1_1Disjunction_3_01B1_01_4.html", null ],
     [ "amrex::Disjunction< B1, Bn... >", "structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html", null ],
     [ "amrex::IsConvertible< T, Args >", "structamrex_1_1IsConvertible.html", "structamrex_1_1IsConvertible" ],
+    [ "amrex::IsNarrowingConversion< From, To >", "structamrex_1_1IsNarrowingConversion.html", null ],
     [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
     [ "AMREX_IS_TRIVIALLY_COPYABLE", "AMReX__TypeTraits_8H.html#adc50ea9983407ec975c6c594c92bae5d", null ],
     [ "AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE", "AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b", null ],
@@ -44,5 +45,7 @@ var AMReX__TypeTraits_8H =
     [ "IsBaseFab_v", "AMReX__TypeTraits_8H.html#aa264b7308102fabb2a7356eea1800644", null ],
     [ "IsConvertible_v", "AMReX__TypeTraits_8H.html#a6c0ad9de6dc5e0ca9324f19210bd62b9", null ],
     [ "IsFabArray_v", "AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515", null ],
-    [ "IsMultiFabLike_v", "AMReX__TypeTraits_8H.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce", null ]
+    [ "IsMultiFabLike_v", "AMReX__TypeTraits_8H.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce", null ],
+    [ "IsNarrowingConversion_v", "AMReX__TypeTraits_8H.html#a2633fb41c81d41e25ded4da987274ed5", null ],
+    [ "IsNonNarrowingConversion_v", "AMReX__TypeTraits_8H.html#a5f567f08e64064aad355331c6cbe79ef", null ]
 ];
