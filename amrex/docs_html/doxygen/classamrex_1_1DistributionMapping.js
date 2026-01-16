@@ -20,6 +20,7 @@ var classamrex_1_1DistributionMapping =
     [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a940ddab8afa610cdbfddc60ce7f5d6c2", null ],
     [ "capacity", "classamrex_1_1DistributionMapping.html#ae88ca91d12a18c9eae7c36348e7c99fd", null ],
     [ "ComputeDistributionMappingEfficiency", "classamrex_1_1DistributionMapping.html#afc9afe0964cc8f6f2aa4e0fb70838f87", null ],
+    [ "ConvertCostRealToLong", "classamrex_1_1DistributionMapping.html#a68bdff30bc43f13f0e93a44913734507", null ],
     [ "define", "classamrex_1_1DistributionMapping.html#a13b8da5248f3f1d03708e1b313345847", null ],
     [ "define", "classamrex_1_1DistributionMapping.html#a96e7ada9652464ab1d4b27d7af839c62", null ],
     [ "define", "classamrex_1_1DistributionMapping.html#a368e1c7d60259f1f979299bf15f7c22f", null ],

@@ -4059,500 +4059,467 @@
 <codeline lineno="1585"><highlight class="normal"><sp/><sp/><sp/><sp/>RRSFCDoIt(boxes,nprocs);</highlight></codeline>
 <codeline lineno="1586"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1587"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1588"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1589"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
+<codeline lineno="1588"><highlight class="normal">Vector&lt;Long&gt;</highlight></codeline>
+<codeline lineno="1589"><highlight class="normal">DistributionMapping::ConvertCostRealToLong<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost)</highlight></codeline>
 <codeline lineno="1590"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1591"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1591"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
 <codeline lineno="1592"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1594"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1595"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
-<codeline lineno="1596"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1597"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1598"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
+<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
+<codeline lineno="1594"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
+<codeline lineno="1595"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Long<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
+<codeline lineno="1598"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1599"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1602"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1603"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1605"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>eff;</highlight></codeline>
-<codeline lineno="1606"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1607"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1608"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1609"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1610"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cost;</highlight></codeline>
+<codeline lineno="1601"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1603"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1604"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
+<codeline lineno="1605"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1606"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1608"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1610"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
 <codeline lineno="1611"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1612"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1613"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
-<codeline lineno="1614"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1615"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1613"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>eff;</highlight></codeline>
+<codeline lineno="1614"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1615"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
 <codeline lineno="1616"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1617"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1618"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1619"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
-<codeline lineno="1620"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1621"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1622"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
-<codeline lineno="1623"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1624"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1626"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1627"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1628"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1629"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1630"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax,<sp/>sort);</highlight></codeline>
-<codeline lineno="1631"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1633"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1634"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1635"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1636"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LayoutData&lt;Real&gt;&amp;<sp/>rcost_local,</highlight></codeline>
-<codeline lineno="1637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&amp;<sp/>currentEfficiency,<sp/>Real&amp;<sp/>proposedEfficiency,</highlight></codeline>
-<codeline lineno="1638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>broadcastToAll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>root,</highlight></codeline>
-<codeline lineno="1639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>keep_ratio)</highlight></codeline>
-<codeline lineno="1640"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1641"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1642"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1643"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Proposed<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>from<sp/>global<sp/>vector<sp/>of<sp/>costs<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1644"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>required<sp/>information<sp/>is<sp/>gathered<sp/>on<sp/>root<sp/>from<sp/>the<sp/>layoutData<sp/>information</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1645"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1646"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Two<sp/>main<sp/>steps:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1647"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>collect<sp/>from<sp/>rcost_local<sp/>into<sp/>the<sp/>global<sp/>cost<sp/>vector<sp/>rcost;<sp/>then<sp/>rcost<sp/>is</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1648"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>complete<sp/>(only)<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1649"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>(optional;<sp/>default<sp/>true)<sp/>Broadcast<sp/>processor<sp/>map<sp/>of<sp/>the<sp/>new<sp/>dm<sp/>to<sp/>others</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1650"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1651"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(rcost_local.size());</highlight></codeline>
-<codeline lineno="1652"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
-<codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1654"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
-<codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
-<codeline lineno="1659"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
-<codeline lineno="1662"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1666"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keep_ratio<sp/>&gt;<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>(0.0))<sp/>{</highlight></codeline>
-<codeline lineno="1668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(rcost_local.DistributionMap(),<sp/>cost,<sp/>keep_ratio,</highlight></codeline>
-<codeline lineno="1669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentEfficiency,<sp/>proposedEfficiency,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
-<codeline lineno="1672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,nprocs,&amp;proposedEfficiency,</highlight><highlight class="keyword">true</highlight><highlight class="normal">,nmax,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
-<codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,<sp/>&amp;currentEfficiency);</highlight></codeline>
-<codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1679"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1680"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1681"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load-balanced<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>on<sp/>root;<sp/>broadcast<sp/>the<sp/>cost</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1682"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>all<sp/>proc<sp/>(optional)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1683"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(broadcastToAll)</highlight></codeline>
-<codeline lineno="1684"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
-<codeline lineno="1686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
-<codeline lineno="1688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pmap.data()),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
+<codeline lineno="1617"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1618"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1619"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1620"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1621"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
+<codeline lineno="1622"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1623"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1624"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1625"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1627"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1628"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1631"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax,<sp/>sort);</highlight></codeline>
+<codeline lineno="1632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1634"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1636"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1637"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LayoutData&lt;Real&gt;&amp;<sp/>rcost_local,</highlight></codeline>
+<codeline lineno="1638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&amp;<sp/>currentEfficiency,<sp/>Real&amp;<sp/>proposedEfficiency,</highlight></codeline>
+<codeline lineno="1639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>broadcastToAll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>root,</highlight></codeline>
+<codeline lineno="1640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>keep_ratio)</highlight></codeline>
+<codeline lineno="1641"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1642"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1644"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Proposed<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>from<sp/>global<sp/>vector<sp/>of<sp/>costs<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1645"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>required<sp/>information<sp/>is<sp/>gathered<sp/>on<sp/>root<sp/>from<sp/>the<sp/>layoutData<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1646"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1647"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Two<sp/>main<sp/>steps:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1648"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>collect<sp/>from<sp/>rcost_local<sp/>into<sp/>the<sp/>global<sp/>cost<sp/>vector<sp/>rcost;<sp/>then<sp/>rcost<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1649"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>complete<sp/>(only)<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1650"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>(optional;<sp/>default<sp/>true)<sp/>Broadcast<sp/>processor<sp/>map<sp/>of<sp/>the<sp/>new<sp/>dm<sp/>to<sp/>others</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1652"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(rcost_local.size());</highlight></codeline>
+<codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
+<codeline lineno="1654"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1655"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
+<codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1660"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keep_ratio<sp/>&gt;<sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref>(0.0))<sp/>{</highlight></codeline>
+<codeline lineno="1662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(rcost_local.DistributionMap(),<sp/>cost,<sp/>keep_ratio,</highlight></codeline>
+<codeline lineno="1663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentEfficiency,<sp/>proposedEfficiency,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
+<codeline lineno="1666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,nprocs,&amp;proposedEfficiency,</highlight><highlight class="keyword">true</highlight><highlight class="normal">,nmax,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
+<codeline lineno="1670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,<sp/>&amp;currentEfficiency);</highlight></codeline>
+<codeline lineno="1671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1672"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1673"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1674"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load-balanced<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>on<sp/>root;<sp/>broadcast<sp/>the<sp/>cost</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>all<sp/>proc<sp/>(optional)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(broadcastToAll)</highlight></codeline>
+<codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
+<codeline lineno="1680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
+<codeline lineno="1682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pmap.data()),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
+<codeline lineno="1683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
+<codeline lineno="1687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
+<codeline lineno="1688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
 <codeline lineno="1689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1690"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
-<codeline lineno="1693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
-<codeline lineno="1694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
-<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1696"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1697"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1698"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
-<codeline lineno="1699"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1700"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1701"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1702"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1703"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1704"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1705"><highlight class="normal">Vector&lt;Long&gt;</highlight></codeline>
-<codeline lineno="1706"><highlight class="normal">gather_weights<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight)</highlight></codeline>
-<codeline lineno="1707"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1708"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/>LayoutData&lt;Real&gt;<sp/>costld(weight.boxArray(),weight.DistributionMap());</highlight></codeline>
-<codeline lineno="1710"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1711"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1712"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1713"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(weight);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
-<codeline lineno="1714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>costld[mfi]<sp/>=<sp/>weight[mfi].sum&lt;RunOn::Device&gt;(mfi.validbox(),0);</highlight></codeline>
-<codeline lineno="1715"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(weight.size());</highlight></codeline>
-<codeline lineno="1717"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector(costld,<sp/>rcost,</highlight></codeline>
-<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelContext::IOProcessorNumberSub());</highlight></codeline>
-<codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(rcost.data(),<sp/>rcost.size(),<sp/>ParallelContext::IOProcessorNumberSub());</highlight></codeline>
-<codeline lineno="1720"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1721"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
-<codeline lineno="1722"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>lcost(rcost.size());</highlight></codeline>
-<codeline lineno="1723"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lcost[i]<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(rcost[i]*<ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref>)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lcost;</highlight></codeline>
-<codeline lineno="1727"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Vector&lt;Long&gt;(weight.size(),<sp/>1L);</highlight></codeline>
-<codeline lineno="1729"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1730"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1690"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1691"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1692"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
+<codeline lineno="1693"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1694"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1696"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1697"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1698"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1699"><highlight class="normal">Vector&lt;Long&gt;</highlight></codeline>
+<codeline lineno="1700"><highlight class="normal">gather_weights<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight)</highlight></codeline>
+<codeline lineno="1701"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1702"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1703"><highlight class="normal"><sp/><sp/><sp/><sp/>LayoutData&lt;Real&gt;<sp/>costld(weight.boxArray(),weight.DistributionMap());</highlight></codeline>
+<codeline lineno="1704"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1705"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1706"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1707"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(weight);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
+<codeline lineno="1708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>costld[mfi]<sp/>=<sp/>weight[mfi].sum&lt;RunOn::Device&gt;(mfi.validbox(),0);</highlight></codeline>
+<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1710"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(weight.size());</highlight></codeline>
+<codeline lineno="1711"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector(costld,<sp/>rcost,</highlight></codeline>
+<codeline lineno="1712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelContext::IOProcessorNumberSub());</highlight></codeline>
+<codeline lineno="1713"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(rcost.data(),<sp/>rcost.size(),<sp/>ParallelContext::IOProcessorNumberSub());</highlight></codeline>
+<codeline lineno="1714"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DistributionMapping::ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1715"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Vector&lt;Long&gt;(weight.size(),<sp/>1L);</highlight></codeline>
+<codeline lineno="1717"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1718"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1719"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1721"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1722"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
+<codeline lineno="1723"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1724"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>eff;</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1729"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1730"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="1731"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1732"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1733"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1734"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
+<codeline lineno="1734"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
 <codeline lineno="1735"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1736"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1738"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1739"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>eff;</highlight></codeline>
-<codeline lineno="1740"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1741"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1742"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1743"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1744"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1745"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1746"><highlight class="normal">DistributionMapping::makeKnapSack<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmax)</highlight></codeline>
-<codeline lineno="1747"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
-<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1751"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1752"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1754"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1755"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1756"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1757"><highlight class="normal">DistributionMapping::makeRoundRobin<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight)</highlight></codeline>
-<codeline lineno="1758"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeRoundRobin&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
-<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1762"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1763"><highlight class="normal"><sp/><sp/><sp/><sp/>r.RoundRobinProcessorMap(cost,<sp/>nprocs);</highlight></codeline>
-<codeline lineno="1764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1765"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1766"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1767"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1768"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
-<codeline lineno="1769"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
-<codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1776"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1777"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1778"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1779"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
-<codeline lineno="1780"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1781"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1782"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
-<codeline lineno="1783"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1784"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1785"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
-<codeline lineno="1786"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1787"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1788"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1789"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1790"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
-<codeline lineno="1791"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1792"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1793"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1794"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1795"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1796"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
+<codeline lineno="1739"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1740"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1741"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1742"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1743"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1744"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1745"><highlight class="normal">DistributionMapping::makeRoundRobin<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight)</highlight></codeline>
+<codeline lineno="1746"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeRoundRobin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal"><sp/><sp/><sp/><sp/>r.RoundRobinProcessorMap(cost,<sp/>nprocs);</highlight></codeline>
+<codeline lineno="1752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1753"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1754"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1755"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1756"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
+<codeline lineno="1757"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
+<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1762"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
+<codeline lineno="1763"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1764"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1765"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1766"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1767"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>weight,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
+<codeline lineno="1768"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
+<codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1775"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1776"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1777"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1778"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
+<codeline lineno="1779"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1780"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1782"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1783"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1784"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1785"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1786"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1787"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1788"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
+<codeline lineno="1789"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1790"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1791"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1792"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1793"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1794"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
+<codeline lineno="1795"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1796"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1797"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1798"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1799"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
-<codeline lineno="1800"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1801"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1804"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1806"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1807"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
+<codeline lineno="1798"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1799"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1800"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1801"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1802"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="1803"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1804"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
+<codeline lineno="1805"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1806"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1807"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1808"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1809"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1810"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1811"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1812"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1813"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Real&gt;&amp;<sp/>rcost,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/>Real&amp;<sp/>eff,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sort)</highlight></codeline>
-<codeline lineno="1814"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1815"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1816"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1817"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1818"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1819"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
-<codeline lineno="1820"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1821"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1822"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
+<codeline lineno="1809"><highlight class="normal">DistributionMapping</highlight></codeline>
+<codeline lineno="1810"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LayoutData&lt;Real&gt;&amp;<sp/>rcost_local,</highlight></codeline>
+<codeline lineno="1811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&amp;<sp/>currentEfficiency,<sp/>Real&amp;<sp/>proposedEfficiency,</highlight></codeline>
+<codeline lineno="1812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>broadcastToAll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>root)</highlight></codeline>
+<codeline lineno="1813"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1814"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1815"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Proposed<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>from<sp/>global<sp/>vector<sp/>of<sp/>costs<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1817"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>required<sp/>information<sp/>is<sp/>gathered<sp/>on<sp/>root<sp/>from<sp/>the<sp/>layoutData<sp/>information</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1818"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1819"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Two<sp/>main<sp/>steps:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1820"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>collect<sp/>from<sp/>rcost_local<sp/>into<sp/>the<sp/>global<sp/>cost<sp/>vector<sp/>rcost;<sp/>then<sp/>rcost<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1821"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>complete<sp/>(only)<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1822"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>(optional;<sp/>default<sp/>true)<sp/>Broadcast<sp/>processor<sp/>map<sp/>of<sp/>the<sp/>new<sp/>dm<sp/>to<sp/>others</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1823"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1824"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1826"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1824"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(rcost_local.size());</highlight></codeline>
+<codeline lineno="1825"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
+<codeline lineno="1826"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1827"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1828"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="1829"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1830"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
-<codeline lineno="1831"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1832"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1833"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1834"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1835"><highlight class="normal">DistributionMapping</highlight></codeline>
-<codeline lineno="1836"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LayoutData&lt;Real&gt;&amp;<sp/>rcost_local,</highlight></codeline>
-<codeline lineno="1837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&amp;<sp/>currentEfficiency,<sp/>Real&amp;<sp/>proposedEfficiency,</highlight></codeline>
-<codeline lineno="1838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>broadcastToAll,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>root)</highlight></codeline>
-<codeline lineno="1839"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1840"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1841"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1842"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Proposed<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>from<sp/>global<sp/>vector<sp/>of<sp/>costs<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1843"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>required<sp/>information<sp/>is<sp/>gathered<sp/>on<sp/>root<sp/>from<sp/>the<sp/>layoutData<sp/>information</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1844"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1845"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Two<sp/>main<sp/>steps:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1846"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>collect<sp/>from<sp/>rcost_local<sp/>into<sp/>the<sp/>global<sp/>cost<sp/>vector<sp/>rcost;<sp/>then<sp/>rcost<sp/>is</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1847"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>complete<sp/>(only)<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1848"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>(optional;<sp/>default<sp/>true)<sp/>Broadcast<sp/>processor<sp/>map<sp/>of<sp/>the<sp/>new<sp/>dm<sp/>to<sp/>others</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1849"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1850"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>rcost(rcost_local.size());</highlight></codeline>
-<codeline lineno="1851"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
-<codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1828"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1829"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
+<codeline lineno="1830"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>ConvertCostRealToLong(rcost);</highlight></codeline>
+<codeline lineno="1832"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
+<codeline lineno="1836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.SFCProcessorMap(rcost_local.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>proposedEfficiency,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1837"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
+<codeline lineno="1839"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,</highlight></codeline>
+<codeline lineno="1840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;currentEfficiency);</highlight></codeline>
+<codeline lineno="1841"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1842"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1843"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1844"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load-balanced<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>on<sp/>root;<sp/>broadcast<sp/>the<sp/>cost</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1845"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>all<sp/>proc<sp/>(optional)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1846"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(broadcastToAll)</highlight></codeline>
+<codeline lineno="1847"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
+<codeline lineno="1849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
+<codeline lineno="1850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
+<codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1853"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
-<codeline lineno="1856"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
-<codeline lineno="1858"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>wmax<sp/>=<sp/>*std::max_element(rcost.begin(),<sp/>rcost.end());</highlight></codeline>
-<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/><ref refid="namespaceamrex_1af533a1273f7c0b8493c8da3884081862" kindref="member">scale</ref><sp/>=<sp/>(wmax<sp/>==<sp/>0)<sp/>?<sp/>1.e9_rt<sp/>:<sp/>1.e9_rt/wmax;</highlight></codeline>
-<codeline lineno="1861"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>rcost.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cost[i]<sp/>=<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(rcost[i]*scale)<sp/>+<sp/>1L;</highlight></codeline>
-<codeline lineno="1864"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1865"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1866"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelDescriptor::NProcs();</highlight></codeline>
-<codeline lineno="1869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.SFCProcessorMap(rcost_local.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>proposedEfficiency,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1870"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
-<codeline lineno="1872"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,</highlight></codeline>
-<codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;currentEfficiency);</highlight></codeline>
-<codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1875"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1876"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load-balanced<sp/>distribution<sp/>mapping<sp/>is<sp/>computed<sp/>on<sp/>root;<sp/>broadcast<sp/>the<sp/>cost</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>all<sp/>proc<sp/>(optional)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(broadcastToAll)</highlight></codeline>
+<codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Broadcast<sp/>vector<sp/>from<sp/>which<sp/>to<sp/>construct<sp/>new<sp/>distribution<sp/>mapping</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
+<codeline lineno="1856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>!=<sp/>root)</highlight></codeline>
+<codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(pmap);</highlight></codeline>
+<codeline lineno="1859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1861"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1862"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
+<codeline lineno="1863"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1864"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1865"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1866"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1867"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1868"><highlight class="normal">std::vector&lt;std::vector&lt;int&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="1869"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_box_vol,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs)</highlight></codeline>
+<codeline lineno="1870"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1871"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1872"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ba.size());</highlight></codeline>
+<codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;SFCToken&gt;<sp/>tokens;</highlight></codeline>
+<codeline lineno="1875"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Long&gt;<sp/>wgts;</highlight></codeline>
+<codeline lineno="1876"><highlight class="normal"><sp/><sp/><sp/><sp/>tokens.reserve(N);</highlight></codeline>
+<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/>wgts.reserve(N);</highlight></codeline>
+<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>vol_sum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
-<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>==<sp/>root)</highlight></codeline>
-<codeline lineno="1883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
-<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1886"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Broadcast<sp/>vector<sp/>from<sp/>which<sp/>to<sp/>construct<sp/>new<sp/>distribution<sp/>mapping</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Bcast(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
-<codeline lineno="1889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::MyProc()<sp/>!=<sp/>root)</highlight></codeline>
-<codeline lineno="1890"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(pmap);</highlight></codeline>
-<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1893"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1894"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1895"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
-<codeline lineno="1896"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>ba[i];</highlight></codeline>
+<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tokens.push_back(makeSFCToken(i,<sp/>bx.smallEnd()));</highlight></codeline>
+<codeline lineno="1883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>v<sp/>=<sp/>use_box_vol<sp/>?<sp/>bx.numPts()<sp/>:<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(1);</highlight></codeline>
+<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol_sum<sp/>+=<sp/>v;</highlight></codeline>
+<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgts.push_back(v);</highlight></codeline>
+<codeline lineno="1886"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1887"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1888"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Put&apos;m<sp/>in<sp/>Morton<sp/>space<sp/>filling<sp/>curve<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1889"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1890"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(tokens.begin(),<sp/>tokens.end(),<sp/>SFCToken::Compare());</highlight></codeline>
+<codeline lineno="1891"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>volper<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vol_sum)<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nprocs);</highlight></codeline>
+<codeline lineno="1893"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1894"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/>r(nprocs);</highlight></codeline>
+<codeline lineno="1895"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1896"><highlight class="normal"><sp/><sp/><sp/><sp/>Distribute(tokens,<sp/>wgts,<sp/>nprocs,<sp/>volper,<sp/>r);</highlight></codeline>
 <codeline lineno="1897"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1898"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="1899"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1900"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1901"><highlight class="normal">std::vector&lt;std::vector&lt;int&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="1902"><highlight class="normal">DistributionMapping::makeSFC<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_box_vol,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs)</highlight></codeline>
+<codeline lineno="1901"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;</highlight></codeline>
+<codeline lineno="1902"><highlight class="normal">DistributionMapping::getIndexArray<sp/>()</highlight></codeline>
 <codeline lineno="1903"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1904"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1905"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ba.size());</highlight></codeline>
-<codeline lineno="1907"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;SFCToken&gt;<sp/>tokens;</highlight></codeline>
-<codeline lineno="1908"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Long&gt;<sp/>wgts;</highlight></codeline>
-<codeline lineno="1909"><highlight class="normal"><sp/><sp/><sp/><sp/>tokens.reserve(N);</highlight></codeline>
-<codeline lineno="1910"><highlight class="normal"><sp/><sp/><sp/><sp/>wgts.reserve(N);</highlight></codeline>
-<codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>vol_sum<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="1912"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
-<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>bx<sp/>=<sp/>ba[i];</highlight></codeline>
-<codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tokens.push_back(makeSFCToken(i,<sp/>bx.smallEnd()));</highlight></codeline>
-<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>v<sp/>=<sp/>use_box_vol<sp/>?<sp/>bx.numPts()<sp/>:<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>(1);</highlight></codeline>
-<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol_sum<sp/>+=<sp/>v;</highlight></codeline>
-<codeline lineno="1918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgts.push_back(v);</highlight></codeline>
-<codeline lineno="1919"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1920"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1921"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Put&apos;m<sp/>in<sp/>Morton<sp/>space<sp/>filling<sp/>curve<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1922"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1923"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(tokens.begin(),<sp/>tokens.end(),<sp/>SFCToken::Compare());</highlight></codeline>
-<codeline lineno="1924"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1925"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref><sp/>volper<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vol_sum)<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1ga00d9113947d2ea92bbdbfe7db24d81f2" kindref="member">Real</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nprocs);</highlight></codeline>
+<codeline lineno="1904"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_index_array.empty())</highlight></codeline>
+<codeline lineno="1905"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
+<codeline lineno="1907"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_ref-&gt;m_pmap.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/>m_ref-&gt;m_pmap[i];</highlight></codeline>
+<codeline lineno="1910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::sameTeam(rank))<sp/>{</highlight></codeline>
+<codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_index_array.push_back(i);</highlight></codeline>
+<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
+<codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_ref-&gt;m_index_array;</highlight></codeline>
+<codeline lineno="1918"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1919"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1920"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;bool&gt;&amp;</highlight></codeline>
+<codeline lineno="1921"><highlight class="normal">DistributionMapping::getOwnerShip<sp/>()</highlight></codeline>
+<codeline lineno="1922"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1923"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_ownership.empty())</highlight></codeline>
+<codeline lineno="1924"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1925"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
 <codeline lineno="1926"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1927"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/>r(nprocs);</highlight></codeline>
-<codeline lineno="1928"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1929"><highlight class="normal"><sp/><sp/><sp/><sp/>Distribute(tokens,<sp/>wgts,<sp/>nprocs,<sp/>volper,<sp/>r);</highlight></codeline>
-<codeline lineno="1930"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1931"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1932"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1933"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1934"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;</highlight></codeline>
-<codeline lineno="1935"><highlight class="normal">DistributionMapping::getIndexArray<sp/>()</highlight></codeline>
-<codeline lineno="1936"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1937"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_index_array.empty())</highlight></codeline>
-<codeline lineno="1938"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1939"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
-<codeline lineno="1940"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1941"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_ref-&gt;m_pmap.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1942"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/>m_ref-&gt;m_pmap[i];</highlight></codeline>
-<codeline lineno="1943"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::sameTeam(rank))<sp/>{</highlight></codeline>
-<codeline lineno="1944"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1945"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_index_array.push_back(i);</highlight></codeline>
-<codeline lineno="1946"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
-<codeline lineno="1947"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1948"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1949"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1950"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_ref-&gt;m_index_array;</highlight></codeline>
-<codeline lineno="1951"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1952"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1953"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;bool&gt;&amp;</highlight></codeline>
-<codeline lineno="1954"><highlight class="normal">DistributionMapping::getOwnerShip<sp/>()</highlight></codeline>
-<codeline lineno="1955"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1956"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_ownership.empty())</highlight></codeline>
-<codeline lineno="1957"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/>ParallelDescriptor::MyProc();</highlight></codeline>
-<codeline lineno="1959"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1960"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_ref-&gt;m_pmap.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1961"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/>m_ref-&gt;m_pmap[i];</highlight></codeline>
-<codeline lineno="1962"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::sameTeam(rank))<sp/>{</highlight></codeline>
-<codeline lineno="1963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1964"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_index_array.push_back(i);</highlight></codeline>
-<codeline lineno="1965"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
-<codeline lineno="1966"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1967"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1968"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1969"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_ref-&gt;m_ownership;</highlight></codeline>
+<codeline lineno="1927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_ref-&gt;m_pmap.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1928"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/>m_ref-&gt;m_pmap[i];</highlight></codeline>
+<codeline lineno="1929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ParallelDescriptor::sameTeam(rank))<sp/>{</highlight></codeline>
+<codeline lineno="1930"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_index_array.push_back(i);</highlight></codeline>
+<codeline lineno="1932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
+<codeline lineno="1933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1935"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1936"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_ref-&gt;m_ownership;</highlight></codeline>
+<codeline lineno="1937"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1938"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1939"><highlight class="normal">std::weak_ptr&lt;DMRef&gt;</highlight></codeline>
+<codeline lineno="1940"><highlight class="normal">DistributionMapping::getWeakRef<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1941"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1942"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::weak_ptr&lt;DMRef&gt;{m_ref};</highlight></codeline>
+<codeline lineno="1943"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1944"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1945"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1946"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="1947"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>pmap)</highlight></codeline>
+<codeline lineno="1948"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1949"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(DistributionMapping&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1950"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1951"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>pmap.ProcessorMap().size();<sp/>++i)</highlight></codeline>
+<codeline lineno="1952"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;m_pmap[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pmap.ProcessorMap()[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1954"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1955"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1956"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1957"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="1959"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream<sp/>&amp;,<sp/>DistributionMapping<sp/>&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1960"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1961"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1962"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1963"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1964"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1965"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1966"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping::RefID&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1967"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1968"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
+<codeline lineno="1969"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
 <codeline lineno="1970"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1971"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1972"><highlight class="normal">std::weak_ptr&lt;DMRef&gt;</highlight></codeline>
-<codeline lineno="1973"><highlight class="normal">DistributionMapping::getWeakRef<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1974"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1975"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::weak_ptr&lt;DMRef&gt;{m_ref};</highlight></codeline>
-<codeline lineno="1976"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1977"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1978"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1979"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="1980"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>pmap)</highlight></codeline>
-<codeline lineno="1981"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1982"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(DistributionMapping&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1983"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>pmap.ProcessorMap().size();<sp/>++i)</highlight></codeline>
-<codeline lineno="1985"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1986"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;m_pmap[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pmap.ProcessorMap()[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1987"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1988"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1989"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1990"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1991"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
-<codeline lineno="1992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream<sp/>&amp;,<sp/>DistributionMapping<sp/>&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1993"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1994"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1995"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1996"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1997"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1998"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1999"><highlight class="normal">operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping::RefID&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="2000"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2001"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
-<codeline lineno="2002"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="2003"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2004"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2005"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="2006"><highlight class="normal">DistributionMapping::readFrom<sp/>(std::istream&amp;<sp/>is)</highlight></codeline>
-<codeline lineno="2007"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2008"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(size()<sp/>==<sp/>0);</highlight></codeline>
-<codeline lineno="2009"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;clear();</highlight></codeline>
-<codeline lineno="2010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>m_ref-&gt;m_pmap;</highlight></codeline>
-<codeline lineno="2011"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2012"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
-<codeline lineno="2013"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>n;</highlight></codeline>
-<codeline lineno="2014"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(n<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n<sp/>&lt;<sp/>std::numeric_limits&lt;int&gt;::max());</highlight></codeline>
-<codeline lineno="2015"><highlight class="normal"><sp/><sp/><sp/><sp/>pmap.resize(n);</highlight></codeline>
-<codeline lineno="2016"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>pmap)<sp/>{</highlight></codeline>
-<codeline lineno="2017"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>;</highlight></codeline>
-<codeline lineno="2018"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2019"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2020"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="2021"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::readFrom(istream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2022"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2023"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
-<codeline lineno="2024"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2025"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2026"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="2027"><highlight class="normal">DistributionMapping::writeOn<sp/>(std::ostream&amp;<sp/>os)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="2028"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2029"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>size()<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2030"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="2031"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>(*this)[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2032"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2033"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2034"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
-<codeline lineno="2035"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::writeOn(ostream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2036"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2037"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="2038"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2039"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2040"><highlight class="normal">DistributionMapping<sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight></codeline>
-<codeline lineno="2041"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2042"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>mf_dm<sp/>=<sp/>mf.DistributionMap();</highlight></codeline>
-<codeline lineno="2043"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>mf_ba<sp/>=<sp/><ref refid="namespaceamrex_1a0b3cd8bfa7c301f5ebd96c126737a0ef" kindref="member">convert</ref>(mf.boxArray(),ba.ixType());</highlight></codeline>
-<codeline lineno="2044"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref>(ba,<sp/>mf_ba,<sp/>mf_dm,<sp/>ng);</highlight></codeline>
-<codeline lineno="2045"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2046"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2047"><highlight class="normal">DistributionMapping<sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>src_ba,</highlight></codeline>
-<codeline lineno="2048"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>src_dm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight></codeline>
-<codeline lineno="2049"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2050"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a8013eb3b1fc596632383f1bb7c40e92c" kindref="member">AMREX_ASSERT_WITH_MESSAGE</ref>(ba.ixType()<sp/>==<sp/>src_ba.ixType(),</highlight></codeline>
-<codeline lineno="2051"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;input<sp/>BoxArrays<sp/>must<sp/>have<sp/>the<sp/>same<sp/>centering.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="2052"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2053"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(ba.size());</highlight></codeline>
-<codeline lineno="2054"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>static_cast&lt;int&gt;(ba.size());<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="2055"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>box<sp/>=<sp/>ba[i];</highlight></codeline>
-<codeline lineno="2056"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box.<ref refid="classamrex_1_1BoxND_1a146940a2fab021d83f1c8d59be0f947a" kindref="member">grow</ref>(ng);</highlight></codeline>
-<codeline lineno="2057"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="2058"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>isects<sp/>=<sp/>src_ba.intersections(box,<sp/>first_only,<sp/>ng);</highlight></codeline>
-<codeline lineno="2059"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects.empty())<sp/>{</highlight></codeline>
-<codeline lineno="2060"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>intersection<sp/>found,<sp/>revert<sp/>to<sp/>round-robin</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2061"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
-<codeline lineno="2062"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap[i]<sp/>=<sp/>i<sp/>%<sp/>nprocs;</highlight></codeline>
-<codeline lineno="2063"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="2064"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>max_overlap<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2065"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_overlap_index<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="2066"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>isect<sp/>:<sp/>isects)<sp/>{</highlight></codeline>
-<codeline lineno="2067"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>isect.first;</highlight></codeline>
-<codeline lineno="2068"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>isect_box<sp/>=<sp/>isect.second;</highlight></codeline>
-<codeline lineno="2069"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect_box.numPts()<sp/>&gt;<sp/>max_overlap)<sp/>{</highlight></codeline>
-<codeline lineno="2070"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_overlap<sp/>=<sp/>isect_box.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
-<codeline lineno="2071"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_overlap_index<sp/>=<sp/>gid;</highlight></codeline>
-<codeline lineno="2072"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2073"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2074"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(max_overlap<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>max_overlap_index<sp/>&gt;=<sp/>0);</highlight></codeline>
-<codeline lineno="2075"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap[i]<sp/>=<sp/>src_dm[max_overlap_index];</highlight></codeline>
-<codeline lineno="2076"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2077"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2078"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
-<codeline lineno="2079"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2080"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2081"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1972"><highlight class="normal">std::istream&amp;</highlight></codeline>
+<codeline lineno="1973"><highlight class="normal">DistributionMapping::readFrom<sp/>(std::istream&amp;<sp/>is)</highlight></codeline>
+<codeline lineno="1974"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1975"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(size()<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="1976"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;clear();</highlight></codeline>
+<codeline lineno="1977"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>m_ref-&gt;m_pmap;</highlight></codeline>
+<codeline lineno="1978"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1979"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="1980"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>n;</highlight></codeline>
+<codeline lineno="1981"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(n<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n<sp/>&lt;<sp/>std::numeric_limits&lt;int&gt;::max());</highlight></codeline>
+<codeline lineno="1982"><highlight class="normal"><sp/><sp/><sp/><sp/>pmap.resize(n);</highlight></codeline>
+<codeline lineno="1983"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>pmap)<sp/>{</highlight></codeline>
+<codeline lineno="1984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="1985"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1986"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1987"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="1988"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::readFrom(istream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1989"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="1991"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1992"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1993"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1994"><highlight class="normal">DistributionMapping::writeOn<sp/>(std::ostream&amp;<sp/>os)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1995"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1996"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>size()<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1997"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1998"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>(*this)[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1999"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2000"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2001"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="2002"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::writeOn(ostream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2003"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2004"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="2005"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2006"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2007"><highlight class="normal">DistributionMapping<sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight></codeline>
+<codeline lineno="2008"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2009"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>mf_dm<sp/>=<sp/>mf.DistributionMap();</highlight></codeline>
+<codeline lineno="2010"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>mf_ba<sp/>=<sp/><ref refid="namespaceamrex_1a0b3cd8bfa7c301f5ebd96c126737a0ef" kindref="member">convert</ref>(mf.boxArray(),ba.ixType());</highlight></codeline>
+<codeline lineno="2011"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref>(ba,<sp/>mf_ba,<sp/>mf_dm,<sp/>ng);</highlight></codeline>
+<codeline lineno="2012"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2013"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2014"><highlight class="normal">DistributionMapping<sp/><ref refid="namespaceamrex_1aca8ca3ed7e01a5c954d6c70cae7b94a0" kindref="member">MakeSimilarDM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>src_ba,</highlight></codeline>
+<codeline lineno="2015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>src_dm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight></codeline>
+<codeline lineno="2016"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2017"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a8013eb3b1fc596632383f1bb7c40e92c" kindref="member">AMREX_ASSERT_WITH_MESSAGE</ref>(ba.ixType()<sp/>==<sp/>src_ba.ixType(),</highlight></codeline>
+<codeline lineno="2018"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;input<sp/>BoxArrays<sp/>must<sp/>have<sp/>the<sp/>same<sp/>centering.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="2019"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2020"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(ba.size());</highlight></codeline>
+<codeline lineno="2021"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>static_cast&lt;int&gt;(ba.size());<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="2022"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>box<sp/>=<sp/>ba[i];</highlight></codeline>
+<codeline lineno="2023"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box.<ref refid="classamrex_1_1BoxND_1a146940a2fab021d83f1c8d59be0f947a" kindref="member">grow</ref>(ng);</highlight></codeline>
+<codeline lineno="2024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2025"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>isects<sp/>=<sp/>src_ba.intersections(box,<sp/>first_only,<sp/>ng);</highlight></codeline>
+<codeline lineno="2026"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects.empty())<sp/>{</highlight></codeline>
+<codeline lineno="2027"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>no<sp/>intersection<sp/>found,<sp/>revert<sp/>to<sp/>round-robin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2028"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>ParallelContext::NProcsSub();</highlight></codeline>
+<codeline lineno="2029"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap[i]<sp/>=<sp/>i<sp/>%<sp/>nprocs;</highlight></codeline>
+<codeline lineno="2030"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="2031"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>max_overlap<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2032"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_overlap_index<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="2033"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>isect<sp/>:<sp/>isects)<sp/>{</highlight></codeline>
+<codeline lineno="2034"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>isect.first;</highlight></codeline>
+<codeline lineno="2035"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref>&amp;<sp/>isect_box<sp/>=<sp/>isect.second;</highlight></codeline>
+<codeline lineno="2036"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect_box.numPts()<sp/>&gt;<sp/>max_overlap)<sp/>{</highlight></codeline>
+<codeline lineno="2037"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_overlap<sp/>=<sp/>isect_box.<ref refid="classamrex_1_1BoxND_1a5a7273bc39d5a40bd004396852893761" kindref="member">numPts</ref>();</highlight></codeline>
+<codeline lineno="2038"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_overlap_index<sp/>=<sp/>gid;</highlight></codeline>
+<codeline lineno="2039"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2040"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2041"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(max_overlap<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>max_overlap_index<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="2042"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap[i]<sp/>=<sp/>src_dm[max_overlap_index];</highlight></codeline>
+<codeline lineno="2043"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2044"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2045"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
+<codeline lineno="2046"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2047"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2048"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp"/>
   </compounddef>
