@@ -4,6 +4,7 @@ var structamrex_1_1AmrInfo =
     [ "check_input", "structamrex_1_1AmrInfo.html#aa5055bd91d26288e720771986e3ae06f", null ],
     [ "grid_eff", "structamrex_1_1AmrInfo.html#a8932f2846ed22b769126d4783f76107a", null ],
     [ "iterate_on_new_grids", "structamrex_1_1AmrInfo.html#a937e0b9dc3689884b262936e6c3c0b7d", null ],
+    [ "max_grid_iterations", "structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025", null ],
     [ "max_grid_size", "structamrex_1_1AmrInfo.html#ad3142cf009fdd8667c2352c39fb2c522", null ],
     [ "max_level", "structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93", null ],
     [ "n_error_buf", "structamrex_1_1AmrInfo.html#aa78fef1ea7608723c281debe971d460e", null ],
