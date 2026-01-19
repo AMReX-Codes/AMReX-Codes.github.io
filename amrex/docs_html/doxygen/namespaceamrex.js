@@ -547,6 +547,7 @@ var namespaceamrex =
     [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ],
     [ "MLLinOpT", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
     [ "MLMGABCEBTag", "structamrex_1_1MLMGABCEBTag.html", null ],
+    [ "MLMGABCTag", "structamrex_1_1MLMGABCTag.html", null ],
     [ "MLMGBndryT", "classamrex_1_1MLMGBndryT.html", "classamrex_1_1MLMGBndryT" ],
     [ "MLMGT", "classamrex_1_1MLMGT.html", "classamrex_1_1MLMGT" ],
     [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ],
