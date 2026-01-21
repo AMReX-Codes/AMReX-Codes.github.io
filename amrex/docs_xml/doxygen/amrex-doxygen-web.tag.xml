@@ -14865,6 +14865,13 @@
       <anchor>a87d91479ddcd7e9a311164a66c752a8e</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>collectVectors</name>
+      <anchorfile>classamrex_1_1ArrayOfStructs.html</anchorfile>
+      <anchor>ac09c33e12e37c390200d68d3d53d0ff6</anchor>
+      <arglist>(Vector&lt; ParticleVector * &gt; &amp;pvs)</arglist>
+    </member>
     <member kind="variable">
       <type>int</type>
       <name>m_num_neighbor_particles</name>
@@ -55942,6 +55949,13 @@
       <arglist>(int lev_min=0, int lev_max=-1, int nGrow=0, int local=0, bool remove_negative=true)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>ReserveForRedistribute</name>
+      <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
+      <anchor>ab768bb58cd8097d33416b88e95701059</anchor>
+      <arglist>(ParticleCopyPlan const &amp;plan)</arglist>
+    </member>
+    <member kind="function">
       <type>Long</type>
       <name>superParticleSize</name>
       <anchorfile>classamrex_1_1ParticleContainer__impl.html</anchorfile>
@@ -57514,6 +57528,13 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>typename AoS::ParticleVector</type>
+      <name>ParticleVector</name>
+      <anchorfile>structamrex_1_1ParticleTile.html</anchorfile>
+      <anchor>a0c94c1320ba32281e402090222e27a03</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>std::conditional_t&lt; ParticleType::is_soa_particle, StructOfArrays&lt; NArrayReal, NArrayInt, Allocator, true &gt;, StructOfArrays&lt; NArrayReal, NArrayInt, Allocator, false &gt; &gt;</type>
       <name>SoA</name>
       <anchorfile>structamrex_1_1ParticleTile.html</anchorfile>
@@ -57904,6 +57925,20 @@
       <anchorfile>structamrex_1_1ParticleTile.html</anchorfile>
       <anchor>a7e6f09a853acf5ffd1d4d365ebd60d35</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>collectVectors</name>
+      <anchorfile>structamrex_1_1ParticleTile.html</anchorfile>
+      <anchor>aa4599022d1bd33517b300472ecad4fa8</anchor>
+      <arglist>(Vector&lt; ParticleVector * &gt; &amp;pv, Vector&lt; typename SoA::IdCPU * &gt; &amp;idcpuv, Vector&lt; RealVector * &gt; &amp;rv, Vector&lt; IntVector * &gt; &amp;iv)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>reserve</name>
+      <anchorfile>structamrex_1_1ParticleTile.html</anchorfile>
+      <anchor>af55b7ccd27dc611a6046a84c58eea87d</anchor>
+      <arglist>(std::map&lt; ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt; *, int &gt; const &amp;addsizes)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static constexpr int</type>
@@ -60209,6 +60244,20 @@
       <name>m_typehint</name>
       <anchorfile>structamrex_1_1ParmParse_1_1PP__entry.html</anchorfile>
       <anchor>a0081bdb6d4c3fac74cb4357b4a39c407</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::vector&lt; std::variant&lt; bool, int, long, long long, float, double &gt; &gt;</type>
+      <name>m_last_vals</name>
+      <anchorfile>structamrex_1_1ParmParse_1_1PP__entry.html</anchorfile>
+      <anchor>ae6b0cced7b0d1c0ad49121ab9f26c97d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>m_parsed</name>
+      <anchorfile>structamrex_1_1ParmParse_1_1PP__entry.html</anchorfile>
+      <anchor>af515c2325486dab511644e1ec47dc12e</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -65853,6 +65902,13 @@
       <anchorfile>structamrex_1_1StructOfArrays.html</anchorfile>
       <anchor>a5ef6c5e04ab6260b3503d0c5b5edd5d1</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>collectVectors</name>
+      <anchorfile>structamrex_1_1StructOfArrays.html</anchorfile>
+      <anchor>a4d539a47221567e890f366741de7ccba</anchor>
+      <arglist>(Vector&lt; IdCPU * &gt; &amp;idcpuv, Vector&lt; RealVector * &gt; &amp;rv, Vector&lt; IntVector * &gt; &amp;iv)</arglist>
     </member>
     <member kind="variable">
       <type>int</type>

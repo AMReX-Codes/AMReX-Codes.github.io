@@ -11,6 +11,7 @@ var classamrex_1_1ArrayOfStructs =
     [ "begin", "classamrex_1_1ArrayOfStructs.html#a075eae591eb5b0de619099aaa3e18119", null ],
     [ "cbegin", "classamrex_1_1ArrayOfStructs.html#a36e94e3ffe5960cc40d35b5e9c23d072", null ],
     [ "cend", "classamrex_1_1ArrayOfStructs.html#a87d91479ddcd7e9a311164a66c752a8e", null ],
+    [ "collectVectors", "classamrex_1_1ArrayOfStructs.html#ac09c33e12e37c390200d68d3d53d0ff6", null ],
     [ "data", "classamrex_1_1ArrayOfStructs.html#a13804a97ff2e974bb0afa6b35aac90e6", null ],
     [ "data", "classamrex_1_1ArrayOfStructs.html#a1937a6e7fc01a7b5c355346f9f01fd8f", null ],
     [ "dataPtr", "classamrex_1_1ArrayOfStructs.html#a91c4662f167aaf43fab670bad92e8ad2", null ],

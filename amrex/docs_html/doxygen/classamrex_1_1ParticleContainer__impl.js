@@ -111,6 +111,7 @@ var classamrex_1_1ParticleContainer__impl =
     [ "RemoveParticlesNotAtFinestLevel", "classamrex_1_1ParticleContainer__impl.html#ac94552c20fc683c201073a40e3c363e1", null ],
     [ "ReorderParticles", "classamrex_1_1ParticleContainer__impl.html#a11b7e58536c0018fec367cae73c564cb", null ],
     [ "reserveData", "classamrex_1_1ParticleContainer__impl.html#af3cf62158c41dbaee7e1529179f86c84", null ],
+    [ "ReserveForRedistribute", "classamrex_1_1ParticleContainer__impl.html#ab768bb58cd8097d33416b88e95701059", null ],
     [ "Reset", "classamrex_1_1ParticleContainer__impl.html#ad20adffbe4b4746c86ea9fc41034e860", null ],
     [ "resizeData", "classamrex_1_1ParticleContainer__impl.html#a907ddeaea4ca42fcb1c485d701013d27", null ],
     [ "ResizeRuntimeIntComp", "classamrex_1_1ParticleContainer__impl.html#a13e8f05b4ed5423af853e90b6ea04c38", null ],

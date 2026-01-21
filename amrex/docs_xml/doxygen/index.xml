@@ -974,6 +974,7 @@
     <member refid="classamrex_1_1ArrayOfStructs_1a873f640763a9782db4c3b207c11e01ff" kind="function"><name>end</name></member>
     <member refid="classamrex_1_1ArrayOfStructs_1aa2a7d293afbee43a583574e79e025ef4" kind="function"><name>end</name></member>
     <member refid="classamrex_1_1ArrayOfStructs_1a87d91479ddcd7e9a311164a66c752a8e" kind="function"><name>cend</name></member>
+    <member refid="classamrex_1_1ArrayOfStructs_1ac09c33e12e37c390200d68d3d53d0ff6" kind="function"><name>collectVectors</name></member>
   </compound>
   <compound refid="structamrex_1_1AssignGrid" kind="struct"><name>amrex::AssignGrid</name>
     <member refid="structamrex_1_1AssignGrid_1a77181b274a07f3858b98e49e102d95b7" kind="variable"><name>m_bif</name></member>
@@ -8389,6 +8390,7 @@
     <member refid="classamrex_1_1ParticleContainer__impl_1aae309f81887fa1f35e89af02581df42a" kind="function"><name>GetUseUnlink</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1a2d404cca389bc501cd8388997a62507a" kind="function"><name>RedistributeCPU</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1abb2694fa742ba11d0c8dac15cc9c2831" kind="function"><name>RedistributeGPU</name></member>
+    <member refid="classamrex_1_1ParticleContainer__impl_1ab768bb58cd8097d33416b88e95701059" kind="function"><name>ReserveForRedistribute</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1acc0e05b69f7bc04b034f32697edd73f3" kind="function"><name>superParticleSize</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1ae2d11ae7c001e15f3972b81fb5dc209f" kind="function"><name>AddRealComp</name></member>
     <member refid="classamrex_1_1ParticleContainer__impl_1af0579fbeb5709e05fe1ac750d25494ca" kind="function"><name>AddRealComp</name></member>
@@ -8613,6 +8615,7 @@
     <member refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" kind="typedef"><name>RealType</name></member>
     <member refid="structamrex_1_1ParticleTile_1acdece46bb48b940977bf9efe198779c4" kind="typedef"><name>SuperParticleType</name></member>
     <member refid="structamrex_1_1ParticleTile_1aecc824f28d4d4735eb5ca3cb0d763216" kind="typedef"><name>AoS</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a0c94c1320ba32281e402090222e27a03" kind="typedef"><name>ParticleVector</name></member>
     <member refid="structamrex_1_1ParticleTile_1a22d017997751335e72bad98b42931cfc" kind="typedef"><name>SoA</name></member>
     <member refid="structamrex_1_1ParticleTile_1adf1dfc735a7f9d3508e434da7e87b632" kind="typedef"><name>RealVector</name></member>
     <member refid="structamrex_1_1ParticleTile_1ab198bf3467e469c8c1bfa13f1c53799a" kind="typedef"><name>IntVector</name></member>
@@ -8685,6 +8688,8 @@
     <member refid="structamrex_1_1ParticleTile_1a86eb1ec5508c3b90a8c473b7fdb74103" kind="function"><name>swap</name></member>
     <member refid="structamrex_1_1ParticleTile_1a4f939dec8914785b6fbc7b02f5d0b202" kind="function"><name>getParticleTileData</name></member>
     <member refid="structamrex_1_1ParticleTile_1a7e6f09a853acf5ffd1d4d365ebd60d35" kind="function"><name>getConstParticleTileData</name></member>
+    <member refid="structamrex_1_1ParticleTile_1aa4599022d1bd33517b300472ecad4fa8" kind="function"><name>collectVectors</name></member>
+    <member refid="structamrex_1_1ParticleTile_1af55b7ccd27dc611a6046a84c58eea87d" kind="function"><name>reserve</name></member>
   </compound>
   <compound refid="structamrex_1_1ParticleTileData" kind="struct"><name>amrex::ParticleTileData</name>
     <member refid="structamrex_1_1ParticleTileData_1a6732de69363d6c0c39ae2d462b1cc57e" kind="typedef"><name>ParticleType</name></member>
@@ -9125,6 +9130,8 @@
     <member refid="structamrex_1_1ParmParse_1_1PP__entry_1a735a0d1d9af362200a39ed6eeb6dca1b" kind="variable"><name>m_vals</name></member>
     <member refid="structamrex_1_1ParmParse_1_1PP__entry_1ac90fb768114ea1322dd367d59c515c31" kind="variable"><name>m_count</name></member>
     <member refid="structamrex_1_1ParmParse_1_1PP__entry_1a0081bdb6d4c3fac74cb4357b4a39c407" kind="variable"><name>m_typehint</name></member>
+    <member refid="structamrex_1_1ParmParse_1_1PP__entry_1ae6b0cced7b0d1c0ad49121ab9f26c97d" kind="variable"><name>m_last_vals</name></member>
+    <member refid="structamrex_1_1ParmParse_1_1PP__entry_1af515c2325486dab511644e1ec47dc12e" kind="variable"><name>m_parsed</name></member>
   </compound>
   <compound refid="classamrex_1_1Print" kind="class"><name>amrex::Print</name>
     <member refid="classamrex_1_1Print_1ac54860bd8ad68a5551e588ff8e01aa3b" kind="variable"><name>AllProcs</name></member>
@@ -10256,6 +10263,7 @@
     <member refid="structamrex_1_1StructOfArrays_1a5d43527805990e770bfb7ee00cd7a2c8" kind="function"><name>idcpuarray</name></member>
     <member refid="structamrex_1_1StructOfArrays_1a86133f61aaa7ed7e960392622810ee01" kind="function"><name>realarray</name></member>
     <member refid="structamrex_1_1StructOfArrays_1a5ef6c5e04ab6260b3503d0c5b5edd5d1" kind="function"><name>intarray</name></member>
+    <member refid="structamrex_1_1StructOfArrays_1a4d539a47221567e890f366741de7ccba" kind="function"><name>collectVectors</name></member>
   </compound>
   <compound refid="classamrex_1_1SundialsIntegrator" kind="class"><name>amrex::SundialsIntegrator</name>
     <member refid="classamrex_1_1SundialsIntegrator_1a7b4248dc9ad4bec4ce2359e1669faa27" kind="typedef"><name>BaseT</name></member>
@@ -10900,7 +10908,7 @@
   </compound>
   <compound refid="namespace_0d129" kind="namespace"><name>@129</name>
   </compound>
-  <compound refid="namespace_0d193" kind="namespace"><name>@193</name>
+  <compound refid="namespace_0d192" kind="namespace"><name>@192</name>
   </compound>
   <compound refid="namespace_0d209" kind="namespace"><name>@209</name>
   </compound>
@@ -10908,9 +10916,9 @@
   </compound>
   <compound refid="namespace_0d277" kind="namespace"><name>@277</name>
   </compound>
-  <compound refid="namespace_0d350" kind="namespace"><name>@350</name>
+  <compound refid="namespace_0d349" kind="namespace"><name>@349</name>
   </compound>
-  <compound refid="namespace_0d47" kind="namespace"><name>@47</name>
+  <compound refid="namespace_0d46" kind="namespace"><name>@46</name>
   </compound>
   <compound refid="namespace_0d94" kind="namespace"><name>@94</name>
   </compound>
@@ -12233,6 +12241,8 @@
     <member refid="namespaceamrex_1a0ae53a1cff148618baac2e866aff997c" kind="function"><name>WriteBinaryParticleDataSync</name></member>
     <member refid="namespaceamrex_1adfa45855b612cc6482e004b045247bbd" kind="function"><name>WriteBinaryParticleDataAsync</name></member>
   </compound>
+  <compound refid="namespaceamrex_1_1_0d104" kind="namespace"><name>amrex::@104</name>
+  </compound>
   <compound refid="namespaceamrex_1_1_0d105" kind="namespace"><name>amrex::@105</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d106" kind="namespace"><name>amrex::@106</name>
@@ -12241,7 +12251,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d114" kind="namespace"><name>amrex::@114</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d169" kind="namespace"><name>amrex::@169</name>
+  <compound refid="namespaceamrex_1_1_0d170" kind="namespace"><name>amrex::@170</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d172" kind="namespace"><name>amrex::@172</name>
   </compound>
@@ -12255,7 +12265,7 @@
     <member refid="namespaceamrex_1_1_0d229_1a55180dbe8adbe658be5bb82c3454b283afd94c6a26d6b6571e8d9398446227ae8" kind="enumvalue"><name>unused</name></member>
     <member refid="namespaceamrex_1_1_0d229_1a55180dbe8adbe658be5bb82c3454b283a1aec9c5d0644e11fd9dd0f9fb36009fb" kind="enumvalue"><name>used</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d232" kind="namespace"><name>amrex::@232</name>
+  <compound refid="namespaceamrex_1_1_0d233" kind="namespace"><name>amrex::@233</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d240" kind="namespace"><name>amrex::@240</name>
   </compound>
@@ -12274,9 +12284,9 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d381" kind="namespace"><name>amrex::@381</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d4" kind="namespace"><name>amrex::@4</name>
+  <compound refid="namespaceamrex_1_1_0d39" kind="namespace"><name>amrex::@39</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d40" kind="namespace"><name>amrex::@40</name>
+  <compound refid="namespaceamrex_1_1_0d4" kind="namespace"><name>amrex::@4</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d404" kind="namespace"><name>amrex::@404</name>
   </compound>
@@ -12291,6 +12301,8 @@
   <compound refid="namespaceamrex_1_1_0d5" kind="namespace"><name>amrex::@5</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d52" kind="namespace"><name>amrex::@52</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0d53" kind="namespace"><name>amrex::@53</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d63" kind="namespace"><name>amrex::@63</name>
   </compound>
@@ -12395,6 +12407,8 @@
     <member refid="namespaceamrex_1_1EB2_1a9df657737496b52f73cbd1b5abc1f4e8" kind="function"><name>scale</name></member>
     <member refid="namespaceamrex_1_1EB2_1a12c9130dbff8389ed10957c652da6ca7" kind="function"><name>translate</name></member>
     <member refid="namespaceamrex_1_1EB2_1a3274debe16b7ba538e264790ed9f05c3" kind="function"><name>makeUnion</name></member>
+  </compound>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0d312" kind="namespace"><name>amrex::EB2::@312</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0d313" kind="namespace"><name>amrex::EB2::@313</name>
   </compound>

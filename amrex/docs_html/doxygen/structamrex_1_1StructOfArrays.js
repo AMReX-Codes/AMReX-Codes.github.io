@@ -3,6 +3,7 @@ var structamrex_1_1StructOfArrays =
     [ "IdCPU", "structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7", null ],
     [ "IntVector", "structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d", null ],
     [ "RealVector", "structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59", null ],
+    [ "collectVectors", "structamrex_1_1StructOfArrays.html#a4d539a47221567e890f366741de7ccba", null ],
     [ "define", "structamrex_1_1StructOfArrays.html#aba55c8bf9e86486264f1da269fe39be5", null ],
     [ "empty", "structamrex_1_1StructOfArrays.html#a193e31f7db819b274b09730561007716", null ],
     [ "GetIdCPUData", "structamrex_1_1StructOfArrays.html#a4eeedc79f949fba5b4eea934fed6e7aa", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX56 =
 {
+"group__amrex__fabarray__communication.html#ga7d3280950fb8a9b1ed17e73ee5df3c43":[1,4,2,0,22],
+"group__amrex__fabarray__communication.html#ga84ce4d97367dcb2da8be8bddfac2ef4e":[1,4,2,0,11],
+"group__amrex__fabarray__communication.html#ga87437456f64f8610e6d34d17929fdb4f":[1,4,2,0,2],
 "group__amrex__fabarray__communication.html#ga933d1dd75c4441bf922f8c5baa931be4":[1,4,2,0,17],
 "group__amrex__fabarray__communication.html#ga9d57175907c89a969b9b5392631e65cf":[1,4,2,0,25],
 "group__amrex__fabarray__communication.html#gaa0b6bb4fb2ee206356cd613ed8458b8f":[1,4,2,0,20],
@@ -246,8 +249,5 @@ var NAVTREEINDEX56 =
 "namespaceamrex.html#a0a1ab0a65a603d33befa6ab7ab2f6ee1":[2,0,0,1624],
 "namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6":[2,0,0,573],
 "namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a0a2bb4bcb2051ae3a06f94b5c1768e90":[2,0,0,573,1],
-"namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba":[2,0,0,573,0],
-"namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5":[2,0,0,1024],
-"namespaceamrex.html#a0a570bc96bd20a1baa3ba4c9a2451f90":[2,0,0,1473],
-"namespaceamrex.html#a0a9c33e947d3c4b36eeb8c382d9f66cc":[2,0,0,498]
+"namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba":[2,0,0,573,0]
 };
