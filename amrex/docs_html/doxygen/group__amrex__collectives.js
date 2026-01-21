@@ -57,18 +57,23 @@ var group__amrex__collectives =
       [ "value", "classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434", null ]
     ] ],
     [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#ga1f8f5e42f31c1af5afd5655bf9e92fe5", null ],
+    [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#ga7b2d7fdfac3b2baa56c47284058cf7a9", null ],
     [ "amrex::Reduce::AnyOf", "group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367", null ],
     [ "amrex::Gpu::exclusive_scan", "group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c", null ],
     [ "amrex::Scan::ExclusiveSum", "group__amrex__collectives.html#ga375a3f04c8c0b11c577d168dbff3c9fd", null ],
     [ "amrex::Gpu::inclusive_scan", "group__amrex__collectives.html#gab4e0fa80e6873e53208d917854f37129", null ],
     [ "amrex::Scan::InclusiveSum", "group__amrex__collectives.html#ga252adc550a6d7b6ff5e31b6be3b2f12f", null ],
     [ "amrex::Reduce::Max", "group__amrex__collectives.html#gabb357d8fcc6dd0426249ee962166fdd3", null ],
+    [ "amrex::Reduce::Max", "group__amrex__collectives.html#gadd66f730ffc2ebb9d6653bd56e625e9b", null ],
     [ "amrex::Reduce::Max", "group__amrex__collectives.html#ga7ac8075282193aef5024b3a7092a0f3c", null ],
     [ "amrex::Reduce::Min", "group__amrex__collectives.html#ga8e8a5dd1862e4f8c8eb70e4601edd281", null ],
+    [ "amrex::Reduce::Min", "group__amrex__collectives.html#ga97d25722c44d8a7b3f8413e0d6833aae", null ],
     [ "amrex::Reduce::Min", "group__amrex__collectives.html#ga07365bcdfaa9fe246330e8d91f71ecc0", null ],
     [ "amrex::Reduce::MinMax", "group__amrex__collectives.html#gac1dab3efd41294be3534dceac0c145b7", null ],
+    [ "amrex::Reduce::MinMax", "group__amrex__collectives.html#gae2dd405fee3ce46eb11db8e67fc1557c", null ],
     [ "amrex::Reduce::MinMax", "group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8", null ],
     [ "amrex::Scan::PrefixSum", "group__amrex__collectives.html#gad7ef336709704a3b8b05b00b9432059d", null ],
     [ "amrex::Reduce::Sum", "group__amrex__collectives.html#gae179b14741cc532f08816fceabea24f5", null ],
+    [ "amrex::Reduce::Sum", "group__amrex__collectives.html#gaa27e01b8606eb821affe5972c09eaf2d", null ],
     [ "amrex::Reduce::Sum", "group__amrex__collectives.html#gafac1250d786b98bab8d8d2cf5c06411e", null ]
 ];

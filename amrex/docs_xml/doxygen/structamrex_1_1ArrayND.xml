@@ -20,20 +20,36 @@
         <defval>false</defval>
       </param>
     </templateparamlist>
-    <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="structamrex_1_1ArrayND_1aa662cc92ad4d59d34beab82e4797fc23" prot="public" static="no">
-        <type>std::integral_constant&lt; bool, last_dim_component &gt;</type>
-        <definition>using amrex::ArrayND&lt; T, N, last_dim_component &gt;::LastDimComponent =  std::integral_constant&lt;bool, last_dim_component&gt;</definition>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structamrex_1_1ArrayND_1a561d0a0b8fc3dca5a2b077c0a1336036" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::IsLastDimComponent_v</definition>
         <argsstring></argsstring>
-        <name>LastDimComponent</name>
-        <qualifiedname>amrex::ArrayND::LastDimComponent</qualifiedname>
+        <name>IsLastDimComponent_v</name>
+        <qualifiedname>amrex::ArrayND::IsLastDimComponent_v</qualifiedname>
+        <initializer>= last_dim_component</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="215" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="215" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="228" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::IsArray4_v</definition>
+        <argsstring></argsstring>
+        <name>IsArray4_v</name>
+        <qualifiedname>amrex::ArrayND::IsArray4_v</qualifiedname>
+        <initializer>= (N==4 &amp;&amp; last_dim_component)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="229" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="229" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -50,14 +66,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="217" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="217" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="231" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="231" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ArrayND_1ab9842ea4c2fe7797384ba841410364f9" prot="public" static="no" mutable="no">
-        <type>std::array&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>, N-1 &gt;</type>
-        <definition>std::array&lt;Long, N-1&gt; amrex::ArrayND&lt; T, N, last_dim_component &gt;::nstride</definition>
+      <memberdef kind="variable" id="structamrex_1_1ArrayND_1a5cfd0761a06af4aa82a69a566b699666" prot="public" static="no" mutable="no">
+        <type>detail::Stride&lt; N-1 &gt;</type>
+        <definition>detail::Stride&lt;N-1&gt; amrex::ArrayND&lt; T, N, last_dim_component &gt;::stride</definition>
         <argsstring></argsstring>
-        <name>nstride</name>
-        <qualifiedname>amrex::ArrayND::nstride</qualifiedname>
+        <name>stride</name>
+        <qualifiedname>amrex::ArrayND::stride</qualifiedname>
         <initializer>{}</initializer>
         <briefdescription>
         </briefdescription>
@@ -65,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="218" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="218" bodyend="218"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="232" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="232" bodyend="232"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ArrayND_1a86d89b9976a2c5b9414c44b58b7fe697" prot="public" static="no" mutable="no">
         <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt;</type>
@@ -80,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="219" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="219" bodyend="219"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="233" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="233" bodyend="233"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ArrayND_1a7b0a4f6ee8a14026bd83ec59e95c342d" prot="public" static="no" mutable="no">
         <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; N &gt;</type>
@@ -95,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="220" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="220" bodyend="220"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="234" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="234" bodyend="234"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -111,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="223" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="223" bodyend="223"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="237" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="237" bodyend="237"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a5be84f53b466157c4df1abbaa2a0a947" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -139,9 +155,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="227" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="227" bodyend="228"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="241" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="241" bodyend="242"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1afdfbac3e7ff9fd58099444646b908b06" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a2b5db56534f3f07137ef9682ab216811" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>bool</type>
+            <declname>C</declname>
+            <defname>C</defname>
+            <defval>last_dim_component</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!<ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type>__host__ __device__</type>
         <definition>__host__ __device__ amrex::ArrayND&lt; T, N, last_dim_component &gt;::ArrayND</definition>
         <argsstring>(T *a_p, BoxND&lt; N &gt; const &amp;box) noexcept</argsstring>
@@ -180,7 +208,7 @@ TODO: Make <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> funct
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="238" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="238" bodyend="240"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="253" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="253" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1aa1d830d7c6bdecae6458f45f008b84c2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -190,7 +218,7 @@ TODO: Make <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> funct
             <defname>M</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt;(M+1==N) &amp;&amp;last_dim_component, int &gt;</type>
+            <type>std::enable_if_t&lt;((M+1==N)||(N==4 &amp;&amp;M==3)) &amp;&amp;last_dim_component, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -244,9 +272,21 @@ TODO: Make <ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref> funct
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="252" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="252" bodyend="254"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="268" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="268" bodyend="270"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1adff857497b75a646745786e5c6015629" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1ab479e0fa1d2ee18033f781a18de6a36c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>bool</type>
+            <declname>C</declname>
+            <defname>C</defname>
+            <defval>last_dim_component</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!<ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type>__host__ __device__ constexpr</type>
         <definition>__host__ __device__ constexpr amrex::ArrayND&lt; T, N, last_dim_component &gt;::ArrayND</definition>
         <argsstring>(T *a_p, IntVectND&lt; N &gt; const &amp;a_begin, IntVectND&lt; N &gt; const &amp;a_end) noexcept</argsstring>
@@ -297,18 +337,18 @@ This constructor specifies begin and end indices using <ref refid="classamrex_1_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="266" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="266" bodyend="277"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="283" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="283" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1aac2a6876f06153080abdbdb06ee5bba4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>int</type>
-            <declname>M</declname>
-            <defname>M</defname>
-            <defval>N</defval>
+            <type>bool</type>
+            <declname>B</declname>
+            <defname>B</defname>
+            <defval><ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref></defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;</type>
+            <type>std::enable_if_t&lt; B, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -374,7 +414,7 @@ Typically used for standard (i, j, k, n) access in 3D simulations. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="290" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="290" bodyend="299"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="300" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="300" bodyend="304"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a4c75bfb079aa29fb75bdbf4eef89bf2f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -450,7 +490,7 @@ Pads intermediate dimensions with [0,1) and sets the last dimension to [0, ncomp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="313" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="313" bodyend="334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="318" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="318" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1ae1cdb5da5d403fe89b695a176bc7cab5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -500,7 +540,7 @@ Creates a new <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</re
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="348" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="348" bodyend="356"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="346" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="346" bodyend="354"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1adbc7d0640bbb400930975a9cf2eb8f45" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -562,7 +602,7 @@ Creates a new <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</re
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="371" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="371" bodyend="379"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="369" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="369" bodyend="377"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a7cf315f68c5724f0acafb14222449b36" prot="public" static="no" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ constexpr</type>
@@ -580,7 +620,7 @@ Creates a new <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</re
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="386" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="386" bodyend="386"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="384" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="384" bodyend="384"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a1be8338cbec481d30aedb2fccbd60628" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ constexpr bool</type>
@@ -598,7 +638,7 @@ Creates a new <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</re
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="394" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="394" bodyend="394"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="392" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="392" bodyend="392"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1ae5ad74210ea56935c5d20db9a402f5e0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -612,7 +652,7 @@ Creates a new <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</re
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -654,7 +694,7 @@ This operator is only enabled when the number of indices provided matches the di
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="413" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="413" bodyend="419"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="411" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="411" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1ae9fe01e968a84ff0e97f51ca0cc942b0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -668,7 +708,7 @@ This operator is only enabled when the number of indices provided matches the di
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)))), int &gt;</type>
+            <type>std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;last_dim_component &amp;&amp;(M+1==N))), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -707,13 +747,13 @@ This operator is only enabled when the number of indices provided matches the di
 </simplesect>
 This function handles access via:<orderedlist>
 <listitem><para>Full dimension vector (M == N).</para>
-</listitem><listitem><para>Spatial dimension vector (M == N-1 or (M == AMREX_SPACEDIM) &amp;&amp; N == 4) (only enabled if last_dim_component is true). </para>
+</listitem><listitem><para>Spatial dimension vector (M == N-1) &amp;&amp; !IsArray4_v (only enabled if last_dim_component is true). </para>
 </listitem></orderedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="436" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="436" bodyend="441"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="434" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="434" bodyend="439"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a7ebba19fc9d1d3a9029ca298bd54fc9f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -727,7 +767,7 @@ This function handles access via:<orderedlist>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;</type>
+            <type>std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M+1==N), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -780,101 +820,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="457" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="457" bodyend="462"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1a276ae296619e8bbfc5f6e0118915af3f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class U</type>
-            <defval>T</defval>
-          </param>
-          <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;((N==4 &amp;&amp;last_dim_component)||(N==3 &amp;&amp;!last_dim_component)), int &gt;</type>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>__host__ __device__ U &amp;</type>
-        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
-        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
-        <name>operator()</name>
-        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
-        <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <briefdescription>
-<para>Access element by <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>cell</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Reference to the element. Only enabled when N=4 and last_dim_component == true or N=3 and last_dim_component == false. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="473" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="473" bodyend="475"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1a1d5ffd4e466edd41f4f1a39e001d9bd0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class U</type>
-            <defval>T</defval>
-          </param>
-          <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;(N==4), int &gt;</type>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>__host__ __device__ U &amp;</type>
-        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
-        <argsstring>(Dim3 const &amp;cell, int n) const noexcept</argsstring>
-        <name>operator()</name>
-        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
-        <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>n</declname>
-        </param>
-        <briefdescription>
-<para>Access element by <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> and component index (only when N=4). </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>cell</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>n</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Component index (last dimension). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Reference to the element. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="486" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="486" bodyend="488"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="455" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="455" bodyend="460"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a4ff4c4f72aac788ab11090e98f424c3a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -888,7 +834,7 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -929,7 +875,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="499" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="499" bodyend="505"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="472" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="472" bodyend="478"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1af528f8f674531137fa4b26e7c5c341d0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -939,7 +885,7 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defname>M</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3))), int &gt;</type>
+            <type>std::enable_if_t&lt;(M==N)||(!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -978,13 +924,13 @@ This overload is enabled only when last_dim_component is true and M represents t
 </simplesect>
 This function handles access via:<orderedlist>
 <listitem><para>Full dimension vector (M == N).</para>
-</listitem><listitem><para>Spatial dimension vector (M == N-1 or M == AMREX_SPACEDIM) (only enabled if last_dim_component is true). </para>
+</listitem><listitem><para>Spatial dimension vector (M == N-1) &amp;&amp; !IsArray4_v (only enabled if last_dim_component is true). </para>
 </listitem></orderedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="521" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="521" bodyend="526"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="494" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="494" bodyend="499"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a6edf99b53d43baeb5e7d49d75cb2ee42" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -994,7 +940,7 @@ This function handles access via:<orderedlist>
             <defname>M</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;</type>
+            <type>std::enable_if_t&lt; last_dim_component &amp;&amp;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M+1==N), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1047,105 +993,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="541" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="541" bodyend="546"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1a0fc35e032d2ee5d16ac1936a790e886d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>int</type>
-            <declname>M</declname>
-            <defname>M</defname>
-            <defval>N</defval>
-          </param>
-          <param>
-            <type>std::enable_if_t&lt;(M==4 &amp;&amp;last_dim_component)||(M==3 &amp;&amp;!last_dim_component), int &gt;</type>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>__host__ __device__ T *</type>
-        <definition>__host__ __device__ T * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
-        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
-        <name>ptr</name>
-        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
-        <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <briefdescription>
-<para>Access pointer by <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>cell</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Pointer to the element. Only enabled when N=4 and last_dim_component == true or N=3 and last_dim_component == false. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="557" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="557" bodyend="559"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1a234b637c19b15e6ff2dc9ef9378aa001" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>int</type>
-            <declname>M</declname>
-            <defname>M</defname>
-            <defval>N</defval>
-          </param>
-          <param>
-            <type>std::enable_if_t&lt;(M==4) &amp;&amp;last_dim_component, int &gt;</type>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>__host__ __device__ T *</type>
-        <definition>__host__ __device__ T * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
-        <argsstring>(Dim3 const &amp;cell, int n) const noexcept</argsstring>
-        <name>ptr</name>
-        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
-        <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>n</declname>
-        </param>
-        <briefdescription>
-<para>Access pointer by <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> and component index (only when N=4 and last_dim_component == true). </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>cell</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>n</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Component index (last dimension). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Pointer to the element. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="569" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="569" bodyend="571"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="514" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="514" bodyend="519"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a6ca2ba13a4a3755b4dc0d5549efbc66f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ constexpr T *</type>
@@ -1163,7 +1011,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="578" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="578" bodyend="580"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="526" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="526" bodyend="528"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a6afb8a5d140cf4bb06e4e8b9ef390c0b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ constexpr int</type>
@@ -1181,7 +1029,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="587" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="587" bodyend="593"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="535" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="535" bodyend="541"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a2cc1358129bd60907b78cc8b95cb0390" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>__host__ __device__ constexpr std::size_t</type>
@@ -1195,7 +1043,32 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="596" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="596" bodyend="606"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="544" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="544" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1ab4ca3e121e6856e84309515cbdf2f972" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>d</declname>
+            <defname>d</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(d&lt; N) &amp;&amp;(d &gt;=0), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ constexpr <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+        <definition>__host__ __device__ constexpr Long amrex::ArrayND&lt; T, N, last_dim_component &gt;::get_stride</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>get_stride</name>
+        <qualifiedname>amrex::ArrayND::get_stride</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="558" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="558" bodyend="564"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a49ab836802891bf5de80272e11112b22" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1205,7 +1078,7 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defname>idx</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt; detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
+            <type>std::enable_if_t&lt;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1224,7 +1097,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="611" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="611" bodyend="614"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="569" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="569" bodyend="572"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1af13f89cbc4616f95b7fe7d82a5c003d9" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1234,7 +1107,7 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defname>M</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;(M+1==N||(N==4 &amp;&amp;M==3))), int &gt;</type>
+            <type>std::enable_if_t&lt;(M==N)||(!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1253,7 +1126,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="619" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="619" bodyend="625"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="577" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="577" bodyend="583"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a2cf078b2ea4abfc89604842aebfeeaeb" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1263,7 +1136,7 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defname>M</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;</type>
+            <type>std::enable_if_t&lt; last_dim_component &amp;&amp;!<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M+1==N), int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1286,9 +1159,9 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="630" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="630" bodyend="637"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="588" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="588" bodyend="595"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1aaebfe4b3038a7c087752bd4857a83040" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a56293b4fede95d852a6b175fe6d99641" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -1297,37 +1170,13 @@ This overload is enabled only when last_dim_component is true and M represents t
             <defval>N</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;</type>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>__host__ __device__ constexpr bool</type>
-        <definition>__host__ __device__ constexpr bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::contains</definition>
-        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
-        <name>contains</name>
-        <qualifiedname>amrex::ArrayND::contains</qualifiedname>
-        <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="641" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="641" bodyend="643"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ArrayND_1af202a9cf8670a7a1e8313ef3f9da1347" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>int</type>
-            <declname>M</declname>
-            <defname>M</defname>
-            <defval>N</defval>
+            <type>bool</type>
+            <declname>B</declname>
+            <defname>B</defname>
+            <defval><ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref></defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;</type>
+            <type>std::enable_if_t&lt; B, int &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1354,7 +1203,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="647" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="647" bodyend="650"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="599" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="599" bodyend="602"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a090cb244c20bb2564b8b595d03363caa" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1383,7 +1232,7 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="655" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="655" bodyend="671"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="607" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="607" bodyend="625"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ArrayND_1a36803f28a511a045ffa685907e8f7068" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1416,7 +1265,532 @@ This overload is enabled only when last_dim_component is true and M represents t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="676" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="676" bodyend="684"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="630" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="630" bodyend="638"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1ae56ed081660114edaa624aea200e6bdd" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="721" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="721" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a70155dbd49eec48483d8b966639b9735" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k, int n) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="740" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="740" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1ae9fe01e968a84ff0e97f51ca0cc942b0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M==3||M==3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; M &gt; const &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="761" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="761" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a7ebba19fc9d1d3a9029ca298bd54fc9f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M==3||M==3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; M &gt; const &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="779" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="779" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a276ae296619e8bbfc5f6e0118915af3f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <declname>cell</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="796" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="796" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a1d5ffd4e466edd41f4f1a39e001d9bd0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U &amp;</type>
+        <definition>__host__ __device__ U &amp; amrex::ArrayND&lt; T, N, last_dim_component &gt;::operator()</definition>
+        <argsstring>(Dim3 const &amp;cell, int n) const noexcept</argsstring>
+        <name>operator()</name>
+        <qualifiedname>amrex::ArrayND::operator()</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <declname>cell</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="802" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="802" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1ae60eb07ac2b1fa2ef004c442310a6d3f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="808" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="808" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1aa2841e17943b165f55cbf1987638ad16" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(int i, int j, int k, int n) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="827" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="827" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a034069d777a3d8667098ced1cac004d8" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M==3||M==3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; M &gt; const &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="848" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="848" bodyend="861"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a846f01283e0f9930839e242fc4ccb643" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M==3||M==3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; M &gt; const &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="866" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="866" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a0f74fd55e7fa51c273dde8cdc4258f51" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <declname>cell</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="883" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="883" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1af328fce6ba8c1c75fc1118e16c01ece9" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+            <defval>T</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref>, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ U *</type>
+        <definition>__host__ __device__ U * amrex::ArrayND&lt; T, N, last_dim_component &gt;::ptr</definition>
+        <argsstring>(Dim3 const &amp;cell, int n) const noexcept</argsstring>
+        <name>ptr</name>
+        <qualifiedname>amrex::ArrayND::ptr</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <declname>cell</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="889" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="889" bodyend="891"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a355cf192f39c070c8d17986853f94be0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>bool</type>
+            <declname>B</declname>
+            <defname>B</defname>
+            <defval><ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref></defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; B, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::contains</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>contains</name>
+        <qualifiedname>amrex::ArrayND::contains</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="895" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="895" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a546d22d5c050d7d4aeb3ce945e4321f6" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref> &amp;&amp;(M==3||M==3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::contains</definition>
+        <argsstring>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</argsstring>
+        <name>contains</name>
+        <qualifiedname>amrex::ArrayND::contains</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; M &gt; const &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="903" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="903" bodyend="916"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a6c67c6b1e8cbdde7962880338fb9f83d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>bool</type>
+            <declname>B</declname>
+            <defname>B</defname>
+            <defval><ref refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" kindref="member">IsArray4_v</ref></defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; B, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ bool</type>
+        <definition>__host__ __device__ bool amrex::ArrayND&lt; T, N, last_dim_component &gt;::contains</definition>
+        <argsstring>(Dim3 const &amp;cell) const noexcept</argsstring>
+        <name>contains</name>
+        <qualifiedname>amrex::ArrayND::contains</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <declname>cell</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="920" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="920" bodyend="924"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structamrex_1_1ArrayND_1a828c41cd54e5a14a7e3ff608236a2878" prot="private" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>__host__ __device__ constexpr void</type>
+        <definition>__host__ __device__ constexpr void amrex::ArrayND&lt; T, N, last_dim_component &gt;::set_stride</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>set_stride</name>
+        <qualifiedname>amrex::ArrayND::set_stride</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="959" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="959" bodyend="968"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1468,48 +1842,55 @@ This overload is enabled only when last_dim_component is true and M represents t
         <label>amrex::IntVectND&lt; N &gt;</label>
         <link refid="classamrex_1_1IntVectND"/>
       </node>
+      <node id="2">
+        <label>amrex::detail::Stride&lt; N-1 &gt;</label>
+      </node>
       <node id="1">
         <label>amrex::ArrayND&lt; T, N, last_dim_component &gt;</label>
         <link refid="structamrex_1_1ArrayND"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>nstride</edgelabel>
+          <edgelabel>stride</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="2">
-        <label>std::array&lt; Long, N-1 &gt;</label>
-      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="209" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="210" bodyend="752"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="223" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="224" bodyend="969"/>
     <listofallmembers>
       <member refid="structamrex_1_1ArrayND_1ab6aea4dcd0c135457f0a6a0bcc6b7aaa" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1a5be84f53b466157c4df1abbaa2a0a947" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
-      <member refid="structamrex_1_1ArrayND_1afdfbac3e7ff9fd58099444646b908b06" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1a2b5db56534f3f07137ef9682ab216811" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1aa1d830d7c6bdecae6458f45f008b84c2" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
-      <member refid="structamrex_1_1ArrayND_1adff857497b75a646745786e5c6015629" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
+      <member refid="structamrex_1_1ArrayND_1ab479e0fa1d2ee18033f781a18de6a36c" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1aac2a6876f06153080abdbdb06ee5bba4" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1a4c75bfb079aa29fb75bdbf4eef89bf2f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1ae1cdb5da5d403fe89b695a176bc7cab5" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1adbc7d0640bbb400930975a9cf2eb8f45" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ArrayND</name></member>
       <member refid="structamrex_1_1ArrayND_1a86d89b9976a2c5b9414c44b58b7fe697" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>begin</name></member>
-      <member refid="structamrex_1_1ArrayND_1af202a9cf8670a7a1e8313ef3f9da1347" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>cellData</name></member>
+      <member refid="structamrex_1_1ArrayND_1a56293b4fede95d852a6b175fe6d99641" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>cellData</name></member>
       <member refid="structamrex_1_1ArrayND_1a49ab836802891bf5de80272e11112b22" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
       <member refid="structamrex_1_1ArrayND_1af13f89cbc4616f95b7fe7d82a5c003d9" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
       <member refid="structamrex_1_1ArrayND_1a2cf078b2ea4abfc89604842aebfeeaeb" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
-      <member refid="structamrex_1_1ArrayND_1aaebfe4b3038a7c087752bd4857a83040" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1a355cf192f39c070c8d17986853f94be0" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1a546d22d5c050d7d4aeb3ce945e4321f6" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
+      <member refid="structamrex_1_1ArrayND_1a6c67c6b1e8cbdde7962880338fb9f83d" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>contains</name></member>
       <member refid="structamrex_1_1ArrayND_1a6ca2ba13a4a3755b4dc0d5549efbc66f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>dataPtr</name></member>
       <member refid="structamrex_1_1ArrayND_1a7b0a4f6ee8a14026bd83ec59e95c342d" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>end</name></member>
       <member refid="structamrex_1_1ArrayND_1a090cb244c20bb2564b8b595d03363caa" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>get_offset</name></member>
       <member refid="structamrex_1_1ArrayND_1a36803f28a511a045ffa685907e8f7068" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>get_offset</name></member>
-      <member refid="structamrex_1_1ArrayND_1aa662cc92ad4d59d34beab82e4797fc23" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>LastDimComponent</name></member>
+      <member refid="structamrex_1_1ArrayND_1ab4ca3e121e6856e84309515cbdf2f972" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>get_stride</name></member>
+      <member refid="structamrex_1_1ArrayND_1a0dd63ff1da243a2942d3157ab0e71600" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>IsArray4_v</name></member>
+      <member refid="structamrex_1_1ArrayND_1a561d0a0b8fc3dca5a2b077c0a1336036" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>IsLastDimComponent_v</name></member>
       <member refid="structamrex_1_1ArrayND_1a6afb8a5d140cf4bb06e4e8b9ef390c0b" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>nComp</name></member>
-      <member refid="structamrex_1_1ArrayND_1ab9842ea4c2fe7797384ba841410364f9" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>nstride</name></member>
       <member refid="structamrex_1_1ArrayND_1a1be8338cbec481d30aedb2fccbd60628" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ok</name></member>
       <member refid="structamrex_1_1ArrayND_1a7cf315f68c5724f0acafb14222449b36" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator bool</name></member>
       <member refid="structamrex_1_1ArrayND_1ae5ad74210ea56935c5d20db9a402f5e0" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae9fe01e968a84ff0e97f51ca0cc942b0" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a7ebba19fc9d1d3a9029ca298bd54fc9f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae56ed081660114edaa624aea200e6bdd" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1ArrayND_1a70155dbd49eec48483d8b966639b9735" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
       <member refid="structamrex_1_1ArrayND_1ae9fe01e968a84ff0e97f51ca0cc942b0" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
       <member refid="structamrex_1_1ArrayND_1a7ebba19fc9d1d3a9029ca298bd54fc9f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
       <member refid="structamrex_1_1ArrayND_1a276ae296619e8bbfc5f6e0118915af3f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>operator()</name></member>
@@ -1518,9 +1899,15 @@ This overload is enabled only when last_dim_component is true and M represents t
       <member refid="structamrex_1_1ArrayND_1a4ff4c4f72aac788ab11090e98f424c3a" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
       <member refid="structamrex_1_1ArrayND_1af528f8f674531137fa4b26e7c5c341d0" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
       <member refid="structamrex_1_1ArrayND_1a6edf99b53d43baeb5e7d49d75cb2ee42" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1ArrayND_1a0fc35e032d2ee5d16ac1936a790e886d" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
-      <member refid="structamrex_1_1ArrayND_1a234b637c19b15e6ff2dc9ef9378aa001" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1ae60eb07ac2b1fa2ef004c442310a6d3f" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1aa2841e17943b165f55cbf1987638ad16" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a034069d777a3d8667098ced1cac004d8" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a846f01283e0f9930839e242fc4ccb643" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a0f74fd55e7fa51c273dde8cdc4258f51" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1af328fce6ba8c1c75fc1118e16c01ece9" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>ptr</name></member>
+      <member refid="structamrex_1_1ArrayND_1a828c41cd54e5a14a7e3ff608236a2878" prot="private" virt="non-virtual"><scope>amrex::ArrayND</scope><name>set_stride</name></member>
       <member refid="structamrex_1_1ArrayND_1a2cc1358129bd60907b78cc8b95cb0390" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>size</name></member>
+      <member refid="structamrex_1_1ArrayND_1a5cfd0761a06af4aa82a69a566b699666" prot="public" virt="non-virtual"><scope>amrex::ArrayND</scope><name>stride</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

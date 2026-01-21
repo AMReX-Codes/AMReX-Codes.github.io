@@ -241,6 +241,7 @@ var group__amrex__index__space =
       [ "TheZeroVector", "classamrex_1_1IntVectND.html#ab2506f9097ba1cf1c59e8f8fe933ed83", null ],
       [ "toArray", "classamrex_1_1IntVectND.html#a47365c1369d698859a7541ed2741567d", null ],
       [ "Unit", "classamrex_1_1IntVectND.html#a84dd86e62e013bbff67a10ffe6aab940", null ],
+      [ "vect", "classamrex_1_1IntVectND.html#af2d620609a5de880b2cd8c8cbf63d1c3", null ],
       [ "Zero", "classamrex_1_1IntVectND.html#ac9be7906eed9686b378081b582db248e", null ]
     ] ],
     [ "amrex::coarsen", "group__amrex__index__space.html#gaafcf63c353b1bed97e75246c2cb87e89", null ],

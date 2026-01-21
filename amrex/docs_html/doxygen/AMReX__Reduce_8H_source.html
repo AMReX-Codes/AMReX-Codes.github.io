@@ -1491,9 +1491,53 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>}</div>
 </div>
 <div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span> </div>
-<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>}</div>
+<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span><span class="keyword">namespace </span>Reduce {</div>
 <div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span> </div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen01349" data-start="{" data-end="}">
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#gaa27e01b8606eb821affe5972c09eaf2d"> 1349</a></span>T Sum (N n, T* v, T init_val = 0)</div>
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>{</div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>    <span class="keywordflow">return</span> Sum(n, (T <span class="keyword">const</span>*)v, init_val);</div>
+<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>}</div>
+</div>
+<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span> </div>
+<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen01356" data-start="{" data-end="}">
+<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#ga97d25722c44d8a7b3f8413e0d6833aae"> 1356</a></span>T Min (N n, T* v, T init_val = std::numeric_limits&lt;T&gt;::max())</div>
+<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>{</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>    <span class="keywordflow">return</span> Min(n, (T <span class="keyword">const</span>*)v, init_val);</div>
+<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>}</div>
+</div>
+<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span> </div>
+<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen01363" data-start="{" data-end="}">
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#gadd66f730ffc2ebb9d6653bd56e625e9b"> 1363</a></span>T Max (N n, T* v, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>{</div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>    <span class="keywordflow">return</span> Max(n, (T <span class="keyword">const</span>*)v, init_val);</div>
+<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>}</div>
+</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span> </div>
+<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen01370" data-start="{" data-end="}">
+<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#gae2dd405fee3ce46eb11db8e67fc1557c"> 1370</a></span>std::pair&lt;T,T&gt; <a class="code hl_function" href="group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8">MinMax</a> (N n, T* v)</div>
+<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>{</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8">MinMax</a>(n, (T <span class="keyword">const</span>*)v);</div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>}</div>
+</div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span> </div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> P, <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;N&gt;&gt; &gt;</div>
+<div class="foldopen" id="foldopen01377" data-start="{" data-end="}">
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"><a class="line" href="group__amrex__collectives.html#ga7b2d7fdfac3b2baa56c47284058cf7a9"> 1377</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367">AnyOf</a> (N n, T* v, P <span class="keyword">const</span>&amp; pred)</div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>{</div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367">AnyOf</a>(n, (T <span class="keyword">const</span>*)v, pred);</div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>}</div>
+</div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span> </div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>}</div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span> </div>
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>}</div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span> </div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
@@ -1555,7 +1599,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a5e7acbf4ee0f4a06b5ec22bf20732555"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a5e7acbf4ee0f4a06b5ec22bf20732555">amrex::Gpu::blockReduceLogicalAnd</a></div><div class="ttdeci">__device__ int blockReduceLogicalAnd(int source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuReduce.H:508</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_afb8251b45e6f236ac283f3f5e5363f27"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#afb8251b45e6f236ac283f3f5e5363f27">amrex::Gpu::blockReduceSum</a></div><div class="ttdeci">__device__ T blockReduceSum(T source) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuReduce.H:350</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
-<div class="ttc" id="anamespaceamrex_html_a00ddc55986bb8cc48ba98491e5d5ba52"><div class="ttname"><a href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a></div><div class="ttdeci">__host__ __device__ Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:788</div></div>
+<div class="ttc" id="anamespaceamrex_html_a00ddc55986bb8cc48ba98491e5d5ba52"><div class="ttname"><a href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a></div><div class="ttdeci">__host__ __device__ Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1005</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737">amrex::RunOn::Device</a></div><div class="ttdeci">@ Device</div></div>
@@ -1567,7 +1611,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="anamespaceamrex_html_adb038d495d77c299406ea33380d0f548"><div class="ttname"><a href="namespaceamrex.html#adb038d495d77c299406ea33380d0f548">amrex::For</a></div><div class="ttdeci">AMREX_ATTRIBUTE_FLATTEN_FOR void For(T n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:154</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
-<div class="ttc" id="anamespaceamrex_html_afad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:781</div></div>
+<div class="ttc" id="anamespaceamrex_html_afad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:998</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html">amrex::BoxIndexerND</a></div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2152</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html_a2d02d3bf63ef6be14c58f21430cb5201"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html#a2d02d3bf63ef6be14c58f21430cb5201">amrex::BoxIndexerND::intVect</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; intVect(std::uint64_t icell) const</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2169</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html_a73113db142ec55b3822b1594c2ca831e"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html#a73113db142ec55b3822b1594c2ca831e">amrex::BoxIndexerND::numPts</a></div><div class="ttdeci">__host__ __device__ std::uint64_t numPts() const</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2193</div></div>

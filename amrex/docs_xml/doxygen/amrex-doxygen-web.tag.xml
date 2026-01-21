@@ -14160,13 +14160,6 @@
     <templarg>typename T</templarg>
     <templarg>int N</templarg>
     <templarg>bool last_dim_component</templarg>
-    <member kind="typedef">
-      <type>std::integral_constant&lt; bool, last_dim_component &gt;</type>
-      <name>LastDimComponent</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>aa662cc92ad4d59d34beab82e4797fc23</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function">
       <type>__host__ __device__ constexpr</type>
       <name>ArrayND</name>
@@ -14185,7 +14178,7 @@
       <type>__host__ __device__</type>
       <name>ArrayND</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>afdfbac3e7ff9fd58099444646b908b06</anchor>
+      <anchor>a2b5db56534f3f07137ef9682ab216811</anchor>
       <arglist>(T *a_p, BoxND&lt; N &gt; const &amp;box) noexcept</arglist>
     </member>
     <member kind="function">
@@ -14199,7 +14192,7 @@
       <type>__host__ __device__ constexpr</type>
       <name>ArrayND</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>adff857497b75a646745786e5c6015629</anchor>
+      <anchor>ab479e0fa1d2ee18033f781a18de6a36c</anchor>
       <arglist>(T *a_p, IntVectND&lt; N &gt; const &amp;a_begin, IntVectND&lt; N &gt; const &amp;a_end) noexcept</arglist>
     </member>
     <member kind="function">
@@ -14266,20 +14259,6 @@
       <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>a276ae296619e8bbfc5f6e0118915af3f</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ U &amp;</type>
-      <name>operator()</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>a1d5ffd4e466edd41f4f1a39e001d9bd0</anchor>
-      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
       <type>__host__ __device__ T *</type>
       <name>ptr</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
@@ -14301,20 +14280,6 @@
       <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>a0fc35e032d2ee5d16ac1936a790e886d</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>__host__ __device__ T *</type>
-      <name>ptr</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>a234b637c19b15e6ff2dc9ef9378aa001</anchor>
-      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
-    </member>
-    <member kind="function">
       <type>__host__ __device__ constexpr T *</type>
       <name>dataPtr</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
@@ -14333,6 +14298,13 @@
       <name>size</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
       <anchor>a2cc1358129bd60907b78cc8b95cb0390</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr Long</type>
+      <name>get_stride</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ab4ca3e121e6856e84309515cbdf2f972</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -14357,17 +14329,10 @@
       <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>__host__ __device__ constexpr bool</type>
-      <name>contains</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>aaebfe4b3038a7c087752bd4857a83040</anchor>
-      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
-    </member>
-    <member kind="function">
       <type>__host__ __device__ CellData&lt; T &gt;</type>
       <name>cellData</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>af202a9cf8670a7a1e8313ef3f9da1347</anchor>
+      <anchor>a56293b4fede95d852a6b175fe6d99641</anchor>
       <arglist>(int i, int j, int k) const noexcept</arglist>
     </member>
     <member kind="function">
@@ -14384,6 +14349,111 @@
       <anchor>a36803f28a511a045ffa685907e8f7068</anchor>
       <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
     </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae56ed081660114edaa624aea200e6bdd</anchor>
+      <arglist>(int i, int j, int k) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a70155dbd49eec48483d8b966639b9735</anchor>
+      <arglist>(int i, int j, int k, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae9fe01e968a84ff0e97f51ca0cc942b0</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a7ebba19fc9d1d3a9029ca298bd54fc9f</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a276ae296619e8bbfc5f6e0118915af3f</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U &amp;</type>
+      <name>operator()</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a1d5ffd4e466edd41f4f1a39e001d9bd0</anchor>
+      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>ae60eb07ac2b1fa2ef004c442310a6d3f</anchor>
+      <arglist>(int i, int j, int k) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>aa2841e17943b165f55cbf1987638ad16</anchor>
+      <arglist>(int i, int j, int k, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a034069d777a3d8667098ced1cac004d8</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a846f01283e0f9930839e242fc4ccb643</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a0f74fd55e7fa51c273dde8cdc4258f51</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ U *</type>
+      <name>ptr</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>af328fce6ba8c1c75fc1118e16c01ece9</anchor>
+      <arglist>(Dim3 const &amp;cell, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a355cf192f39c070c8d17986853f94be0</anchor>
+      <arglist>(int i, int j, int k) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a546d22d5c050d7d4aeb3ce945e4321f6</anchor>
+      <arglist>(IntVectND&lt; M &gt; const &amp;iv) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ bool</type>
+      <name>contains</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a6c67c6b1e8cbdde7962880338fb9f83d</anchor>
+      <arglist>(Dim3 const &amp;cell) const noexcept</arglist>
+    </member>
     <member kind="variable">
       <type>T *__restrict__</type>
       <name>p</name>
@@ -14392,10 +14462,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>std::array&lt; Long, N-1 &gt;</type>
-      <name>nstride</name>
+      <type>detail::Stride&lt; N-1 &gt;</type>
+      <name>stride</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>ab9842ea4c2fe7797384ba841410364f9</anchor>
+      <anchor>a5cfd0761a06af4aa82a69a566b699666</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -14410,6 +14480,20 @@
       <name>end</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
       <anchor>a7b0a4f6ee8a14026bd83ec59e95c342d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>IsLastDimComponent_v</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a561d0a0b8fc3dca5a2b077c0a1336036</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>IsArray4_v</name>
+      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
+      <anchor>a0dd63ff1da243a2942d3157ab0e71600</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -38271,6 +38355,13 @@
       <anchorfile>classamrex_1_1IntVectND.html</anchorfile>
       <anchor>ad64cce332e406f575b97179e1ab5addb</anchor>
       <arglist>() noexcept</arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>vect</name>
+      <anchorfile>classamrex_1_1IntVectND.html</anchorfile>
+      <anchor>af2d620609a5de880b2cd8c8cbf63d1c3</anchor>
+      <arglist>[dim]</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static const IntVectND&lt; dim &gt;</type>
@@ -73553,6 +73644,20 @@
       <arglist>(const IntVectND&lt; old_dim &gt; &amp;iv, int fill_extra=0) noexcept</arglist>
     </member>
     <member kind="function">
+      <type>__host__ __device__ constexpr int</type>
+      <name>get</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>afbad2005fb348eb3e7a873b731210d68</anchor>
+      <arglist>(IntVectND&lt; dim &gt; const &amp;iv) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ constexpr auto</type>
+      <name>Apply</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a8713eaf51d40bea946248f0aa25fc9b1</anchor>
+      <arglist>(F &amp;&amp;f, IntVectND&lt; dim &gt; const &amp;iv)</arglist>
+    </member>
+    <member kind="function">
       <type>__host__ __device__ void</type>
       <name>Loop</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -81774,6 +81879,41 @@
       <anchor>ga1f8f5e42f31c1af5afd5655bf9e92fe5</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;box, P const &amp;pred)</arglist>
     </member>
+    <member kind="function">
+      <type>T</type>
+      <name>Sum</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gaa27e01b8606eb821affe5972c09eaf2d</anchor>
+      <arglist>(N n, T *v, T init_val=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>Min</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>ga97d25722c44d8a7b3f8413e0d6833aae</anchor>
+      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::max())</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>Max</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gadd66f730ffc2ebb9d6653bd56e625e9b</anchor>
+      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::lowest())</arglist>
+    </member>
+    <member kind="function">
+      <type>std::pair&lt; T, T &gt;</type>
+      <name>MinMax</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gae2dd405fee3ce46eb11db8e67fc1557c</anchor>
+      <arglist>(N n, T *v)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AnyOf</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>ga7b2d7fdfac3b2baa56c47284058cf7a9</anchor>
+      <arglist>(N n, T *v, P const &amp;pred)</arglist>
+    </member>
   </compound>
   <compound kind="namespace">
     <name>amrex::RungeKutta</name>
@@ -83241,6 +83381,41 @@
       <anchorfile>group__amrex__collectives.html</anchorfile>
       <anchor>ga1f8f5e42f31c1af5afd5655bf9e92fe5</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;box, P const &amp;pred)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>amrex::Reduce::Sum</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gaa27e01b8606eb821affe5972c09eaf2d</anchor>
+      <arglist>(N n, T *v, T init_val=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>amrex::Reduce::Min</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>ga97d25722c44d8a7b3f8413e0d6833aae</anchor>
+      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::max())</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>amrex::Reduce::Max</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gadd66f730ffc2ebb9d6653bd56e625e9b</anchor>
+      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::lowest())</arglist>
+    </member>
+    <member kind="function">
+      <type>std::pair&lt; T, T &gt;</type>
+      <name>amrex::Reduce::MinMax</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>gae2dd405fee3ce46eb11db8e67fc1557c</anchor>
+      <arglist>(N n, T *v)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>amrex::Reduce::AnyOf</name>
+      <anchorfile>group__amrex__collectives.html</anchorfile>
+      <anchor>ga7b2d7fdfac3b2baa56c47284058cf7a9</anchor>
+      <arglist>(N n, T *v, P const &amp;pred)</arglist>
     </member>
     <member kind="function">
       <type>T</type>

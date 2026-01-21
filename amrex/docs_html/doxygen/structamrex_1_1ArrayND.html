@@ -100,9 +100,9 @@ $(document).ready(function(){initNavTree('structamrex_1_1ArrayND.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structamrex_1_1ArrayND-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">amrex::ArrayND&lt; T, N, last_dim_component &gt; Struct Template Reference</div></div>
 </div><!--header-->
@@ -122,11 +122,6 @@ Inheritance diagram for amrex::ArrayND&lt; T, N, last_dim_component &gt;:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:aa662cc92ad4d59d34beab82e4797fc23" id="r_aa662cc92ad4d59d34beab82e4797fc23"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#aa662cc92ad4d59d34beab82e4797fc23">LastDimComponent</a> = std::integral_constant&lt; bool, last_dim_component &gt;</td></tr>
-<tr class="separator:aa662cc92ad4d59d34beab82e4797fc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab6aea4dcd0c135457f0a6a0bcc6b7aaa" id="r_ab6aea4dcd0c135457f0a6a0bcc6b7aaa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ab6aea4dcd0c135457f0a6a0bcc6b7aaa">ArrayND</a> () noexcept</td></tr>
@@ -134,17 +129,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5be84f53b466157c4df1abbaa2a0a947" id="r_a5be84f53b466157c4df1abbaa2a0a947"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a5be84f53b466157c4df1abbaa2a0a947"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a5be84f53b466157c4df1abbaa2a0a947">ArrayND</a> (<a class="el" href="structamrex_1_1ArrayND.html">ArrayND</a>&lt; std::remove_const_t&lt; T &gt;, N, last_dim_component &gt; const &amp;rhs) noexcept</td></tr>
 <tr class="separator:a5be84f53b466157c4df1abbaa2a0a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdfbac3e7ff9fd58099444646b908b06" id="r_afdfbac3e7ff9fd58099444646b908b06"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#afdfbac3e7ff9fd58099444646b908b06">ArrayND</a> (T *a_p, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; N &gt; const &amp;box) noexcept</td></tr>
-<tr class="memdesc:afdfbac3e7ff9fd58099444646b908b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a>.  <br /></td></tr>
-<tr class="separator:afdfbac3e7ff9fd58099444646b908b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1d830d7c6bdecae6458f45f008b84c2" id="r_aa1d830d7c6bdecae6458f45f008b84c2"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M+1==N) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2b5db56534f3f07137ef9682ab216811" id="r_a2b5db56534f3f07137ef9682ab216811"><td class="memTemplParams" colspan="2">template&lt;bool C = last_dim_component, std::enable_if_t&lt;!<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2b5db56534f3f07137ef9682ab216811"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a2b5db56534f3f07137ef9682ab216811">ArrayND</a> (T *a_p, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; N &gt; const &amp;box) noexcept</td></tr>
+<tr class="memdesc:a2b5db56534f3f07137ef9682ab216811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a>.  <br /></td></tr>
+<tr class="separator:a2b5db56534f3f07137ef9682ab216811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d830d7c6bdecae6458f45f008b84c2" id="r_aa1d830d7c6bdecae6458f45f008b84c2"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;((M+1==N)||(N==4 &amp;&amp;M==3)) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aa1d830d7c6bdecae6458f45f008b84c2"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#aa1d830d7c6bdecae6458f45f008b84c2">ArrayND</a> (T *a_p, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; M &gt; const &amp;box, int ncomp) noexcept</td></tr>
 <tr class="memdesc:aa1d830d7c6bdecae6458f45f008b84c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="classamrex_1_1BoxND.html" title="A Rectangular Domain on an Integer Lattice.">BoxND</a>.  <br /></td></tr>
 <tr class="separator:aa1d830d7c6bdecae6458f45f008b84c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adff857497b75a646745786e5c6015629" id="r_adff857497b75a646745786e5c6015629"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#adff857497b75a646745786e5c6015629">ArrayND</a> (T *a_p, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;a_begin, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;a_end) noexcept</td></tr>
-<tr class="memdesc:adff857497b75a646745786e5c6015629"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND&lt;N&gt;</a> constructor.  <br /></td></tr>
-<tr class="separator:adff857497b75a646745786e5c6015629"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac2a6876f06153080abdbdb06ee5bba4" id="r_aac2a6876f06153080abdbdb06ee5bba4"><td class="memTemplParams" colspan="2">template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ab479e0fa1d2ee18033f781a18de6a36c" id="r_ab479e0fa1d2ee18033f781a18de6a36c"><td class="memTemplParams" colspan="2">template&lt;bool C = last_dim_component, std::enable_if_t&lt;!<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ab479e0fa1d2ee18033f781a18de6a36c"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ab479e0fa1d2ee18033f781a18de6a36c">ArrayND</a> (T *a_p, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;a_begin, <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt; const &amp;a_end) noexcept</td></tr>
+<tr class="memdesc:ab479e0fa1d2ee18033f781a18de6a36c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND&lt;N&gt;</a> constructor.  <br /></td></tr>
+<tr class="separator:ab479e0fa1d2ee18033f781a18de6a36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2a6876f06153080abdbdb06ee5bba4" id="r_aac2a6876f06153080abdbdb06ee5bba4"><td class="memTemplParams" colspan="2">template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aac2a6876f06153080abdbdb06ee5bba4"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#aac2a6876f06153080abdbdb06ee5bba4">ArrayND</a> (T *a_p, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;a_begin, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;a_end, int a_ncomp) noexcept</td></tr>
 <tr class="memdesc:aac2a6876f06153080abdbdb06ee5bba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for N=4 using <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>.  <br /></td></tr>
 <tr class="separator:aac2a6876f06153080abdbdb06ee5bba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,46 +163,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1be8338cbec481d30aedb2fccbd60628" id="r_a1be8338cbec481d30aedb2fccbd60628"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a1be8338cbec481d30aedb2fccbd60628">ok</a> () const noexcept</td></tr>
 <tr class="memdesc:a1be8338cbec481d30aedb2fccbd60628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="structamrex_1_1ArrayND.html" title="A multidimensional array accessor.">ArrayND</a> pointer is valid and bounds are valid.  <br /></td></tr>
 <tr class="separator:a1be8338cbec481d30aedb2fccbd60628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5ad74210ea56935c5d20db9a402f5e0" id="r_ae5ad74210ea56935c5d20db9a402f5e0"><td class="memTemplParams" colspan="2">template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae5ad74210ea56935c5d20db9a402f5e0" id="r_ae5ad74210ea56935c5d20db9a402f5e0"><td class="memTemplParams" colspan="2">template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ae5ad74210ea56935c5d20db9a402f5e0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ae5ad74210ea56935c5d20db9a402f5e0">operator()</a> (idx... i) const noexcept</td></tr>
 <tr class="memdesc:ae5ad74210ea56935c5d20db9a402f5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-index operator() for accessing elements.  <br /></td></tr>
 <tr class="separator:ae5ad74210ea56935c5d20db9a402f5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9fe01e968a84ff0e97f51ca0cc942b0" id="r_ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)))), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae9fe01e968a84ff0e97f51ca0cc942b0" id="r_ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N))), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ae9fe01e968a84ff0e97f51ca0cc942b0">operator()</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
 <tr class="memdesc:ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a>.  <br /></td></tr>
 <tr class="separator:ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ebba19fc9d1d3a9029ca298bd54fc9f" id="r_a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a7ebba19fc9d1d3a9029ca298bd54fc9f" id="r_a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a7ebba19fc9d1d3a9029ca298bd54fc9f">operator()</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
 <tr class="memdesc:a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by spatial <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> and component index.  <br /></td></tr>
 <tr class="separator:a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a276ae296619e8bbfc5f6e0118915af3f" id="r_a276ae296619e8bbfc5f6e0118915af3f"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;((N==4 &amp;&amp;last_dim_component)||(N==3 &amp;&amp;!last_dim_component)), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a276ae296619e8bbfc5f6e0118915af3f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a276ae296619e8bbfc5f6e0118915af3f">operator()</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
-<tr class="memdesc:a276ae296619e8bbfc5f6e0118915af3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>.  <br /></td></tr>
-<tr class="separator:a276ae296619e8bbfc5f6e0118915af3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d5ffd4e466edd41f4f1a39e001d9bd0" id="r_a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;(N==4), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a1d5ffd4e466edd41f4f1a39e001d9bd0">operator()</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell, int n) const noexcept</td></tr>
-<tr class="memdesc:a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access element by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> and component index (only when N=4).  <br /></td></tr>
-<tr class="separator:a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff4c4f72aac788ab11090e98f424c3a" id="r_a4ff4c4f72aac788ab11090e98f424c3a"><td class="memTemplParams" colspan="2">template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a4ff4c4f72aac788ab11090e98f424c3a" id="r_a4ff4c4f72aac788ab11090e98f424c3a"><td class="memTemplParams" colspan="2">template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a4ff4c4f72aac788ab11090e98f424c3a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a4ff4c4f72aac788ab11090e98f424c3a">ptr</a> (idx... i) const noexcept</td></tr>
 <tr class="memdesc:a4ff4c4f72aac788ab11090e98f424c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-index <a class="el" href="structamrex_1_1ArrayND.html#a4ff4c4f72aac788ab11090e98f424c3a" title="Multi-index ptr() for accessing pointer to element.">ptr()</a> for accessing pointer to element.  <br /></td></tr>
 <tr class="separator:a4ff4c4f72aac788ab11090e98f424c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af528f8f674531137fa4b26e7c5c341d0" id="r_af528f8f674531137fa4b26e7c5c341d0"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3))), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:af528f8f674531137fa4b26e7c5c341d0" id="r_af528f8f674531137fa4b26e7c5c341d0"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:af528f8f674531137fa4b26e7c5c341d0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#af528f8f674531137fa4b26e7c5c341d0">ptr</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
 <tr class="memdesc:af528f8f674531137fa4b26e7c5c341d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer by <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a>.  <br /></td></tr>
 <tr class="separator:af528f8f674531137fa4b26e7c5c341d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6edf99b53d43baeb5e7d49d75cb2ee42" id="r_a6edf99b53d43baeb5e7d49d75cb2ee42"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a6edf99b53d43baeb5e7d49d75cb2ee42" id="r_a6edf99b53d43baeb5e7d49d75cb2ee42"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a6edf99b53d43baeb5e7d49d75cb2ee42"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a6edf99b53d43baeb5e7d49d75cb2ee42">ptr</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
 <tr class="memdesc:a6edf99b53d43baeb5e7d49d75cb2ee42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer by spatial <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> and component index.  <br /></td></tr>
 <tr class="separator:a6edf99b53d43baeb5e7d49d75cb2ee42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fc35e032d2ee5d16ac1936a790e886d" id="r_a0fc35e032d2ee5d16ac1936a790e886d"><td class="memTemplParams" colspan="2">template&lt;int M = N, std::enable_if_t&lt;(M==4 &amp;&amp;last_dim_component)||(M==3 &amp;&amp;!last_dim_component), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a0fc35e032d2ee5d16ac1936a790e886d"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a0fc35e032d2ee5d16ac1936a790e886d">ptr</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
-<tr class="memdesc:a0fc35e032d2ee5d16ac1936a790e886d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>.  <br /></td></tr>
-<tr class="separator:a0fc35e032d2ee5d16ac1936a790e886d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a234b637c19b15e6ff2dc9ef9378aa001" id="r_a234b637c19b15e6ff2dc9ef9378aa001"><td class="memTemplParams" colspan="2">template&lt;int M = N, std::enable_if_t&lt;(M==4) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a234b637c19b15e6ff2dc9ef9378aa001"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a234b637c19b15e6ff2dc9ef9378aa001">ptr</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell, int n) const noexcept</td></tr>
-<tr class="memdesc:a234b637c19b15e6ff2dc9ef9378aa001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> and component index (only when N=4 and last_dim_component == true).  <br /></td></tr>
-<tr class="separator:a234b637c19b15e6ff2dc9ef9378aa001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca2ba13a4a3755b4dc0d5549efbc66f" id="r_a6ca2ba13a4a3755b4dc0d5549efbc66f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a6ca2ba13a4a3755b4dc0d5549efbc66f">dataPtr</a> () const noexcept</td></tr>
 <tr class="memdesc:a6ca2ba13a4a3755b4dc0d5549efbc66f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get raw data pointer.  <br /></td></tr>
 <tr class="separator:a6ca2ba13a4a3755b4dc0d5549efbc66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,38 +195,90 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6afb8a5d140cf4bb06e4e8b9ef390c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cc1358129bd60907b78cc8b95cb0390" id="r_a2cc1358129bd60907b78cc8b95cb0390"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a2cc1358129bd60907b78cc8b95cb0390">size</a> () const noexcept</td></tr>
 <tr class="separator:a2cc1358129bd60907b78cc8b95cb0390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ab836802891bf5de80272e11112b22" id="r_a49ab836802891bf5de80272e11112b22"><td class="memTemplParams" colspan="2">template&lt;typename... idx, std::enable_if_t&lt; detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ab4ca3e121e6856e84309515cbdf2f972" id="r_ab4ca3e121e6856e84309515cbdf2f972"><td class="memTemplParams" colspan="2">template&lt;int d, std::enable_if_t&lt;(d&lt; N) &amp;&amp;(d &gt;=0), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ab4ca3e121e6856e84309515cbdf2f972"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ab4ca3e121e6856e84309515cbdf2f972">get_stride</a> () const noexcept</td></tr>
+<tr class="separator:ab4ca3e121e6856e84309515cbdf2f972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ab836802891bf5de80272e11112b22" id="r_a49ab836802891bf5de80272e11112b22"><td class="memTemplParams" colspan="2">template&lt;typename... idx, std::enable_if_t&lt;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a49ab836802891bf5de80272e11112b22"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a49ab836802891bf5de80272e11112b22">contains</a> (idx... i) const noexcept</td></tr>
 <tr class="separator:a49ab836802891bf5de80272e11112b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13f89cbc4616f95b7fe7d82a5c003d9" id="r_af13f89cbc4616f95b7fe7d82a5c003d9"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;(M+1==N||(N==4 &amp;&amp;M==3))), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:af13f89cbc4616f95b7fe7d82a5c003d9" id="r_af13f89cbc4616f95b7fe7d82a5c003d9"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:af13f89cbc4616f95b7fe7d82a5c003d9"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#af13f89cbc4616f95b7fe7d82a5c003d9">contains</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
 <tr class="separator:af13f89cbc4616f95b7fe7d82a5c003d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cf078b2ea4abfc89604842aebfeeaeb" id="r_a2cf078b2ea4abfc89604842aebfeeaeb"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2cf078b2ea4abfc89604842aebfeeaeb" id="r_a2cf078b2ea4abfc89604842aebfeeaeb"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a2cf078b2ea4abfc89604842aebfeeaeb"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a2cf078b2ea4abfc89604842aebfeeaeb">contains</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
 <tr class="separator:a2cf078b2ea4abfc89604842aebfeeaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaebfe4b3038a7c087752bd4857a83040" id="r_aaebfe4b3038a7c087752bd4857a83040"><td class="memTemplParams" colspan="2">template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aaebfe4b3038a7c087752bd4857a83040"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#aaebfe4b3038a7c087752bd4857a83040">contains</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
-<tr class="separator:aaebfe4b3038a7c087752bd4857a83040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af202a9cf8670a7a1e8313ef3f9da1347" id="r_af202a9cf8670a7a1e8313ef3f9da1347"><td class="memTemplParams" colspan="2">template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:af202a9cf8670a7a1e8313ef3f9da1347"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1CellData.html">CellData</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#af202a9cf8670a7a1e8313ef3f9da1347">cellData</a> (int i, int j, int k) const noexcept</td></tr>
-<tr class="separator:af202a9cf8670a7a1e8313ef3f9da1347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56293b4fede95d852a6b175fe6d99641" id="r_a56293b4fede95d852a6b175fe6d99641"><td class="memTemplParams" colspan="2">template&lt;int M = N, bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a56293b4fede95d852a6b175fe6d99641"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1CellData.html">CellData</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a56293b4fede95d852a6b175fe6d99641">cellData</a> (int i, int j, int k) const noexcept</td></tr>
+<tr class="separator:a56293b4fede95d852a6b175fe6d99641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a090cb244c20bb2564b8b595d03363caa" id="r_a090cb244c20bb2564b8b595d03363caa"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;(M+1==N||M==3)), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a090cb244c20bb2564b8b595d03363caa"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a090cb244c20bb2564b8b595d03363caa">get_offset</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
 <tr class="separator:a090cb244c20bb2564b8b595d03363caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36803f28a511a045ffa685907e8f7068" id="r_a36803f28a511a045ffa685907e8f7068"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a36803f28a511a045ffa685907e8f7068"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a36803f28a511a045ffa685907e8f7068">get_offset</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
 <tr class="separator:a36803f28a511a045ffa685907e8f7068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56ed081660114edaa624aea200e6bdd" id="r_ae56ed081660114edaa624aea200e6bdd"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae56ed081660114edaa624aea200e6bdd"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ae56ed081660114edaa624aea200e6bdd">operator()</a> (int i, int j, int k) const noexcept</td></tr>
+<tr class="separator:ae56ed081660114edaa624aea200e6bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70155dbd49eec48483d8b966639b9735" id="r_a70155dbd49eec48483d8b966639b9735"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a70155dbd49eec48483d8b966639b9735"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a70155dbd49eec48483d8b966639b9735">operator()</a> (int i, int j, int k, int n) const noexcept</td></tr>
+<tr class="separator:a70155dbd49eec48483d8b966639b9735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9fe01e968a84ff0e97f51ca0cc942b0" id="r_ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ae9fe01e968a84ff0e97f51ca0cc942b0">operator()</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
+<tr class="separator:ae9fe01e968a84ff0e97f51ca0cc942b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebba19fc9d1d3a9029ca298bd54fc9f" id="r_a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a7ebba19fc9d1d3a9029ca298bd54fc9f">operator()</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
+<tr class="separator:a7ebba19fc9d1d3a9029ca298bd54fc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276ae296619e8bbfc5f6e0118915af3f" id="r_a276ae296619e8bbfc5f6e0118915af3f"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a276ae296619e8bbfc5f6e0118915af3f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a276ae296619e8bbfc5f6e0118915af3f">operator()</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
+<tr class="separator:a276ae296619e8bbfc5f6e0118915af3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5ffd4e466edd41f4f1a39e001d9bd0" id="r_a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a1d5ffd4e466edd41f4f1a39e001d9bd0">operator()</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell, int n) const noexcept</td></tr>
+<tr class="separator:a1d5ffd4e466edd41f4f1a39e001d9bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60eb07ac2b1fa2ef004c442310a6d3f" id="r_ae60eb07ac2b1fa2ef004c442310a6d3f"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae60eb07ac2b1fa2ef004c442310a6d3f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ae60eb07ac2b1fa2ef004c442310a6d3f">ptr</a> (int i, int j, int k) const noexcept</td></tr>
+<tr class="separator:ae60eb07ac2b1fa2ef004c442310a6d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2841e17943b165f55cbf1987638ad16" id="r_aa2841e17943b165f55cbf1987638ad16"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aa2841e17943b165f55cbf1987638ad16"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#aa2841e17943b165f55cbf1987638ad16">ptr</a> (int i, int j, int k, int n) const noexcept</td></tr>
+<tr class="separator:aa2841e17943b165f55cbf1987638ad16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a034069d777a3d8667098ced1cac004d8" id="r_a034069d777a3d8667098ced1cac004d8"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a034069d777a3d8667098ced1cac004d8"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a034069d777a3d8667098ced1cac004d8">ptr</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
+<tr class="separator:a034069d777a3d8667098ced1cac004d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846f01283e0f9930839e242fc4ccb643" id="r_a846f01283e0f9930839e242fc4ccb643"><td class="memTemplParams" colspan="2">template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a846f01283e0f9930839e242fc4ccb643"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a846f01283e0f9930839e242fc4ccb643">ptr</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv, int n) const noexcept</td></tr>
+<tr class="separator:a846f01283e0f9930839e242fc4ccb643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f74fd55e7fa51c273dde8cdc4258f51" id="r_a0f74fd55e7fa51c273dde8cdc4258f51"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a0f74fd55e7fa51c273dde8cdc4258f51"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a0f74fd55e7fa51c273dde8cdc4258f51">ptr</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
+<tr class="separator:a0f74fd55e7fa51c273dde8cdc4258f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af328fce6ba8c1c75fc1118e16c01ece9" id="r_af328fce6ba8c1c75fc1118e16c01ece9"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:af328fce6ba8c1c75fc1118e16c01ece9"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#af328fce6ba8c1c75fc1118e16c01ece9">ptr</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell, int n) const noexcept</td></tr>
+<tr class="separator:af328fce6ba8c1c75fc1118e16c01ece9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355cf192f39c070c8d17986853f94be0" id="r_a355cf192f39c070c8d17986853f94be0"><td class="memTemplParams" colspan="2">template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a355cf192f39c070c8d17986853f94be0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a355cf192f39c070c8d17986853f94be0">contains</a> (int i, int j, int k) const noexcept</td></tr>
+<tr class="separator:a355cf192f39c070c8d17986853f94be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546d22d5c050d7d4aeb3ce945e4321f6" id="r_a546d22d5c050d7d4aeb3ce945e4321f6"><td class="memTemplParams" colspan="2">template&lt;int M, std::enable_if_t&lt; <a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a546d22d5c050d7d4aeb3ce945e4321f6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a546d22d5c050d7d4aeb3ce945e4321f6">contains</a> (<a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;iv) const noexcept</td></tr>
+<tr class="separator:a546d22d5c050d7d4aeb3ce945e4321f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c67c6b1e8cbdde7962880338fb9f83d" id="r_a6c67c6b1e8cbdde7962880338fb9f83d"><td class="memTemplParams" colspan="2">template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a6c67c6b1e8cbdde7962880338fb9f83d"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a6c67c6b1e8cbdde7962880338fb9f83d">contains</a> (<a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;cell) const noexcept</td></tr>
+<tr class="separator:a6c67c6b1e8cbdde7962880338fb9f83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3f266fa8a00a2828fd5fd72583b1531f" id="r_a3f266fa8a00a2828fd5fd72583b1531f"><td class="memItemLeft" align="right" valign="top">T *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a3f266fa8a00a2828fd5fd72583b1531f">p</a> = nullptr</td></tr>
 <tr class="separator:a3f266fa8a00a2828fd5fd72583b1531f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9842ea4c2fe7797384ba841410364f9" id="r_ab9842ea4c2fe7797384ba841410364f9"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>, N-1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#ab9842ea4c2fe7797384ba841410364f9">nstride</a> {}</td></tr>
-<tr class="separator:ab9842ea4c2fe7797384ba841410364f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cfd0761a06af4aa82a69a566b699666" id="r_a5cfd0761a06af4aa82a69a566b699666"><td class="memItemLeft" align="right" valign="top">detail::Stride&lt; N-1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a5cfd0761a06af4aa82a69a566b699666">stride</a> {}</td></tr>
+<tr class="separator:a5cfd0761a06af4aa82a69a566b699666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d89b9976a2c5b9414c44b58b7fe697" id="r_a86d89b9976a2c5b9414c44b58b7fe697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a86d89b9976a2c5b9414c44b58b7fe697">begin</a> {1}</td></tr>
 <tr class="separator:a86d89b9976a2c5b9414c44b58b7fe697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b0a4f6ee8a14026bd83ec59e95c342d" id="r_a7b0a4f6ee8a14026bd83ec59e95c342d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d">end</a> {0}</td></tr>
 <tr class="separator:a7b0a4f6ee8a14026bd83ec59e95c342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a561d0a0b8fc3dca5a2b077c0a1336036" id="r_a561d0a0b8fc3dca5a2b077c0a1336036"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a561d0a0b8fc3dca5a2b077c0a1336036">IsLastDimComponent_v</a> = last_dim_component</td></tr>
+<tr class="separator:a561d0a0b8fc3dca5a2b077c0a1336036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd63ff1da243a2942d3157ab0e71600" id="r_a0dd63ff1da243a2942d3157ab0e71600"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> = (N==4 &amp;&amp; last_dim_component)</td></tr>
+<tr class="separator:a0dd63ff1da243a2942d3157ab0e71600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, int N, bool last_dim_component = false&gt;<br />
@@ -260,24 +293,7 @@ struct amrex::ArrayND&lt; T, N, last_dim_component &gt;</div><p>A multidimension
 </dl>
 <p><a class="el" href="structamrex_1_1ArrayND.html" title="A multidimensional array accessor.">ArrayND</a> is a lightweight, non-owning wrapper around a pointer that provides multidimensional indexing into a contiguous memory block. It is trivially copyable and designed to be passed by value into GPU kernels. Note, <a class="el" href="structamrex_1_1ArrayND.html" title="A multidimensional array accessor.">ArrayND</a> follows fortran-style column-major ordering.</p>
 <p>It stores the pointer, stride information, and the bounds (begin and end) of the array. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aa662cc92ad4d59d34beab82e4797fc23" name="aa662cc92ad4d59d34beab82e4797fc23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa662cc92ad4d59d34beab82e4797fc23">&#9670;&#160;</a></span>LastDimComponent</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::LastDimComponent =  std::integral_constant&lt;bool, last_dim_component&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab6aea4dcd0c135457f0a6a0bcc6b7aaa" name="ab6aea4dcd0c135457f0a6a0bcc6b7aaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6aea4dcd0c135457f0a6a0bcc6b7aaa">&#9670;&#160;</a></span>ArrayND() <span class="overload">[1/9]</span></h2>
 
@@ -335,13 +351,15 @@ template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &
 
 </div>
 </div>
-<a id="afdfbac3e7ff9fd58099444646b908b06" name="afdfbac3e7ff9fd58099444646b908b06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdfbac3e7ff9fd58099444646b908b06">&#9670;&#160;</a></span>ArrayND() <span class="overload">[3/9]</span></h2>
+<a id="a2b5db56534f3f07137ef9682ab216811" name="a2b5db56534f3f07137ef9682ab216811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5db56534f3f07137ef9682ab216811">&#9670;&#160;</a></span>ArrayND() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;bool C = last_dim_component, std::enable_if_t&lt;!<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -391,7 +409,7 @@ template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, std::enable_if_t&lt;(M+1==N) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
+template&lt;int M, std::enable_if_t&lt;((M+1==N)||(N==4 &amp;&amp;M==3)) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -440,13 +458,15 @@ template&lt;int M, std::enable_if_t&lt;(M+1==N) &amp;&amp;last_dim_component, in
 
 </div>
 </div>
-<a id="adff857497b75a646745786e5c6015629" name="adff857497b75a646745786e5c6015629"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adff857497b75a646745786e5c6015629">&#9670;&#160;</a></span>ArrayND() <span class="overload">[5/9]</span></h2>
+<a id="ab479e0fa1d2ee18033f781a18de6a36c" name="ab479e0fa1d2ee18033f781a18de6a36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab479e0fa1d2ee18033f781a18de6a36c">&#9670;&#160;</a></span>ArrayND() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;bool C = last_dim_component, std::enable_if_t&lt;!<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -503,7 +523,7 @@ template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
+template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -731,15 +751,15 @@ template&lt;class U , std::enable_if_t&lt; std::is_same_v&lt; std::remove_const_
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af202a9cf8670a7a1e8313ef3f9da1347" name="af202a9cf8670a7a1e8313ef3f9da1347"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af202a9cf8670a7a1e8313ef3f9da1347">&#9670;&#160;</a></span>cellData()</h2>
+<a id="a56293b4fede95d852a6b175fe6d99641" name="a56293b4fede95d852a6b175fe6d99641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56293b4fede95d852a6b175fe6d99641">&#9670;&#160;</a></span>cellData()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
+template&lt;int M = N, bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -777,21 +797,21 @@ template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, i
 
 </div>
 </div>
-<a id="aaebfe4b3038a7c087752bd4857a83040" name="aaebfe4b3038a7c087752bd4857a83040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaebfe4b3038a7c087752bd4857a83040">&#9670;&#160;</a></span>contains() <span class="overload">[1/4]</span></h2>
+<a id="a6c67c6b1e8cbdde7962880338fb9f83d" name="a6c67c6b1e8cbdde7962880338fb9f83d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c67c6b1e8cbdde7962880338fb9f83d">&#9670;&#160;</a></span>contains() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
+template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::contains </td>
+          <td class="memname">__host__ __device__ bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::contains </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;&#160;</td>
           <td class="paramname"><em>cell</em></td><td>)</td>
@@ -800,7 +820,7 @@ template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, i
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -808,14 +828,14 @@ template&lt;int M = N, std::enable_if_t&lt; M==4 &amp;&amp;last_dim_component, i
 </div>
 </div>
 <a id="a49ab836802891bf5de80272e11112b22" name="a49ab836802891bf5de80272e11112b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49ab836802891bf5de80272e11112b22">&#9670;&#160;</a></span>contains() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ab836802891bf5de80272e11112b22">&#9670;&#160;</a></span>contains() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;typename... idx, std::enable_if_t&lt; detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
+template&lt;typename... idx, std::enable_if_t&lt;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -837,15 +857,61 @@ template&lt;typename... idx, std::enable_if_t&lt; detail::ArrayNDIndexCheck_impl
 
 </div>
 </div>
-<a id="af13f89cbc4616f95b7fe7d82a5c003d9" name="af13f89cbc4616f95b7fe7d82a5c003d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af13f89cbc4616f95b7fe7d82a5c003d9">&#9670;&#160;</a></span>contains() <span class="overload">[3/4]</span></h2>
+<a id="a355cf192f39c070c8d17986853f94be0" name="a355cf192f39c070c8d17986853f94be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355cf192f39c070c8d17986853f94be0">&#9670;&#160;</a></span>contains() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;(M+1==N||(N==4 &amp;&amp;M==3))), int &gt;  = 0&gt; </div>
+template&lt;bool B = IsArray4_v, std::enable_if_t&lt; B, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af13f89cbc4616f95b7fe7d82a5c003d9" name="af13f89cbc4616f95b7fe7d82a5c003d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13f89cbc4616f95b7fe7d82a5c003d9">&#9670;&#160;</a></span>contains() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, std::enable_if_t&lt;(M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -867,15 +933,45 @@ template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;(M+
 
 </div>
 </div>
-<a id="a2cf078b2ea4abfc89604842aebfeeaeb" name="a2cf078b2ea4abfc89604842aebfeeaeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cf078b2ea4abfc89604842aebfeeaeb">&#9670;&#160;</a></span>contains() <span class="overload">[4/4]</span></h2>
+<a id="a546d22d5c050d7d4aeb3ce945e4321f6" name="a546d22d5c050d7d4aeb3ce945e4321f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a546d22d5c050d7d4aeb3ce945e4321f6">&#9670;&#160;</a></span>contains() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </div>
+template&lt;int M, std::enable_if_t&lt; <a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>iv</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cf078b2ea4abfc89604842aebfeeaeb" name="a2cf078b2ea4abfc89604842aebfeeaeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf078b2ea4abfc89604842aebfeeaeb">&#9670;&#160;</a></span>contains() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1007,6 +1103,35 @@ template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||
 
 </div>
 </div>
+<a id="ab4ca3e121e6856e84309515cbdf2f972" name="ab4ca3e121e6856e84309515cbdf2f972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ca3e121e6856e84309515cbdf2f972">&#9670;&#160;</a></span>get_stride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int d, std::enable_if_t&lt;(d&lt; N) &amp;&amp;(d &gt;=0), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ constexpr <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::get_stride </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6afb8a5d140cf4bb06e4e8b9ef390c0b" name="a6afb8a5d140cf4bb06e4e8b9ef390c0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6afb8a5d140cf4bb06e4e8b9ef390c0b">&#9670;&#160;</a></span>nComp()</h2>
 
@@ -1098,14 +1223,14 @@ template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 </div>
 </div>
 <a id="a276ae296619e8bbfc5f6e0118915af3f" name="a276ae296619e8bbfc5f6e0118915af3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a276ae296619e8bbfc5f6e0118915af3f">&#9670;&#160;</a></span>operator()() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a276ae296619e8bbfc5f6e0118915af3f">&#9670;&#160;</a></span>operator()() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;((N==4 &amp;&amp;last_dim_component)||(N==3 &amp;&amp;!last_dim_component)), int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1125,26 +1250,17 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&a
 </table>
 </div><div class="memdoc">
 
-<p>Access element by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cell</td><td><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the element. Only enabled when N=4 and last_dim_component == true or N=3 and last_dim_component == false. </dd></dl>
-
 </div>
 </div>
 <a id="a1d5ffd4e466edd41f4f1a39e001d9bd0" name="a1d5ffd4e466edd41f4f1a39e001d9bd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d5ffd4e466edd41f4f1a39e001d9bd0">&#9670;&#160;</a></span>operator()() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5ffd4e466edd41f4f1a39e001d9bd0">&#9670;&#160;</a></span>operator()() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;(N==4), int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1174,27 +1290,17 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&a
 </table>
 </div><div class="memdoc">
 
-<p>Access element by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> and component index (only when N=4). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cell</td><td><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> </td></tr>
-    <tr><td class="paramname">n</td><td>Component index (last dimension). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the element. </dd></dl>
-
 </div>
 </div>
 <a id="ae5ad74210ea56935c5d20db9a402f5e0" name="ae5ad74210ea56935c5d20db9a402f5e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5ad74210ea56935c5d20db9a402f5e0">&#9670;&#160;</a></span>operator()() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ad74210ea56935c5d20db9a402f5e0">&#9670;&#160;</a></span>operator()() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
+template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1233,15 +1339,113 @@ template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&l
 
 </div>
 </div>
-<a id="ae9fe01e968a84ff0e97f51ca0cc942b0" name="ae9fe01e968a84ff0e97f51ca0cc942b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9fe01e968a84ff0e97f51ca0cc942b0">&#9670;&#160;</a></span>operator()() <span class="overload">[4/5]</span></h2>
+<a id="ae56ed081660114edaa624aea200e6bdd" name="ae56ed081660114edaa624aea200e6bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56ed081660114edaa624aea200e6bdd">&#9670;&#160;</a></span>operator()() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)))), int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70155dbd49eec48483d8b966639b9735" name="a70155dbd49eec48483d8b966639b9735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70155dbd49eec48483d8b966639b9735">&#9670;&#160;</a></span>operator()() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9fe01e968a84ff0e97f51ca0cc942b0" name="ae9fe01e968a84ff0e97f51ca0cc942b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9fe01e968a84ff0e97f51ca0cc942b0">&#9670;&#160;</a></span>operator()() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;((M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N))), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1277,20 +1481,50 @@ template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt;
 <dl class="section return"><dt>Returns</dt><dd>Reference to the element.</dd></dl>
 <p>This function handles access via:</p><ol type="1">
 <li>Full dimension vector (M == N).</li>
-<li>Spatial dimension vector (M == N-1 or (M == AMREX_SPACEDIM) &amp;&amp; N == 4) (only enabled if last_dim_component is true). </li>
+<li>Spatial dimension vector (M == N-1) &amp;&amp; !IsArray4_v (only enabled if last_dim_component is true). </li>
 </ol>
 
 </div>
 </div>
-<a id="a7ebba19fc9d1d3a9029ca298bd54fc9f" name="a7ebba19fc9d1d3a9029ca298bd54fc9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ebba19fc9d1d3a9029ca298bd54fc9f">&#9670;&#160;</a></span>operator()() <span class="overload">[5/5]</span></h2>
+<a id="ae9fe01e968a84ff0e97f51ca0cc942b0" name="ae9fe01e968a84ff0e97f51ca0cc942b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9fe01e968a84ff0e97f51ca0cc942b0">&#9670;&#160;</a></span>operator()() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </div>
+template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>iv</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ebba19fc9d1d3a9029ca298bd54fc9f" name="a7ebba19fc9d1d3a9029ca298bd54fc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebba19fc9d1d3a9029ca298bd54fc9f">&#9670;&#160;</a></span>operator()() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt; &amp;&amp;last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1339,21 +1573,61 @@ template&lt;int M, class U  = T, std::enable_if_t&lt; !std::is_void_v&lt; U &gt;
 
 </div>
 </div>
-<a id="a0fc35e032d2ee5d16ac1936a790e886d" name="a0fc35e032d2ee5d16ac1936a790e886d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fc35e032d2ee5d16ac1936a790e886d">&#9670;&#160;</a></span>ptr() <span class="overload">[1/5]</span></h2>
+<a id="a7ebba19fc9d1d3a9029ca298bd54fc9f" name="a7ebba19fc9d1d3a9029ca298bd54fc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebba19fc9d1d3a9029ca298bd54fc9f">&#9670;&#160;</a></span>operator()() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M = N, std::enable_if_t&lt;(M==4 &amp;&amp;last_dim_component)||(M==3 &amp;&amp;!last_dim_component), int &gt;  = 0&gt; </div>
+template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ T * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>iv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f74fd55e7fa51c273dde8cdc4258f51" name="a0f74fd55e7fa51c273dde8cdc4258f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f74fd55e7fa51c273dde8cdc4258f51">&#9670;&#160;</a></span>ptr() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;&#160;</td>
           <td class="paramname"><em>cell</em></td><td>)</td>
@@ -1367,32 +1641,23 @@ template&lt;int M = N, std::enable_if_t&lt;(M==4 &amp;&amp;last_dim_component)||
 </table>
 </div><div class="memdoc">
 
-<p>Access pointer by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cell</td><td><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the element. Only enabled when N=4 and last_dim_component == true or N=3 and last_dim_component == false. </dd></dl>
-
 </div>
 </div>
-<a id="a234b637c19b15e6ff2dc9ef9378aa001" name="a234b637c19b15e6ff2dc9ef9378aa001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a234b637c19b15e6ff2dc9ef9378aa001">&#9670;&#160;</a></span>ptr() <span class="overload">[2/5]</span></h2>
+<a id="af328fce6ba8c1c75fc1118e16c01ece9" name="af328fce6ba8c1c75fc1118e16c01ece9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af328fce6ba8c1c75fc1118e16c01ece9">&#9670;&#160;</a></span>ptr() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M = N, std::enable_if_t&lt;(M==4) &amp;&amp;last_dim_component, int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ T * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;&#160;</td>
           <td class="paramname"><em>cell</em>, </td>
@@ -1416,27 +1681,17 @@ template&lt;int M = N, std::enable_if_t&lt;(M==4) &amp;&amp;last_dim_component, 
 </table>
 </div><div class="memdoc">
 
-<p>Access pointer by <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> and component index (only when N=4 and last_dim_component == true). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cell</td><td><a class="el" href="structamrex_1_1Dim3.html">Dim3</a> </td></tr>
-    <tr><td class="paramname">n</td><td>Component index (last dimension). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the element. </dd></dl>
-
 </div>
 </div>
 <a id="a4ff4c4f72aac788ab11090e98f424c3a" name="a4ff4c4f72aac788ab11090e98f424c3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff4c4f72aac788ab11090e98f424c3a">&#9670;&#160;</a></span>ptr() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff4c4f72aac788ab11090e98f424c3a">&#9670;&#160;</a></span>ptr() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
+template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;detail::ArrayNDIndexCheck_impl_v&lt; N, last_dim_component, idx... &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1473,15 +1728,113 @@ template&lt;typename... idx, class U  = T, std::enable_if_t&lt;!std::is_void_v&l
 
 </div>
 </div>
-<a id="af528f8f674531137fa4b26e7c5c341d0" name="af528f8f674531137fa4b26e7c5c341d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af528f8f674531137fa4b26e7c5c341d0">&#9670;&#160;</a></span>ptr() <span class="overload">[4/5]</span></h2>
+<a id="ae60eb07ac2b1fa2ef004c442310a6d3f" name="ae60eb07ac2b1fa2ef004c442310a6d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60eb07ac2b1fa2ef004c442310a6d3f">&#9670;&#160;</a></span>ptr() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3))), int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2841e17943b165f55cbf1987638ad16" name="aa2841e17943b165f55cbf1987638ad16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2841e17943b165f55cbf1987638ad16">&#9670;&#160;</a></span>ptr() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a>, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af528f8f674531137fa4b26e7c5c341d0" name="af528f8f674531137fa4b26e7c5c341d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af528f8f674531137fa4b26e7c5c341d0">&#9670;&#160;</a></span>ptr() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, std::enable_if_t&lt;(M==N)||(!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;last_dim_component &amp;&amp;(M+1==N)), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1517,20 +1870,50 @@ template&lt;int M, std::enable_if_t&lt;(M==N)||(last_dim_component &amp;&amp;((M
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the element.</dd></dl>
 <p>This function handles access via:</p><ol type="1">
 <li>Full dimension vector (M == N).</li>
-<li>Spatial dimension vector (M == N-1 or M == AMREX_SPACEDIM) (only enabled if last_dim_component is true). </li>
+<li>Spatial dimension vector (M == N-1) &amp;&amp; !IsArray4_v (only enabled if last_dim_component is true). </li>
 </ol>
 
 </div>
 </div>
-<a id="a6edf99b53d43baeb5e7d49d75cb2ee42" name="a6edf99b53d43baeb5e7d49d75cb2ee42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6edf99b53d43baeb5e7d49d75cb2ee42">&#9670;&#160;</a></span>ptr() <span class="overload">[5/5]</span></h2>
+<a id="a034069d777a3d8667098ced1cac004d8" name="a034069d777a3d8667098ced1cac004d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a034069d777a3d8667098ced1cac004d8">&#9670;&#160;</a></span>ptr() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 <div class="memtemplate">
-template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||(N==4 &amp;&amp;M==3)), int &gt;  = 0&gt; </div>
+template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>iv</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6edf99b53d43baeb5e7d49d75cb2ee42" name="a6edf99b53d43baeb5e7d49d75cb2ee42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edf99b53d43baeb5e7d49d75cb2ee42">&#9670;&#160;</a></span>ptr() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;!<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M+1==N), int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1576,6 +1959,46 @@ template&lt;int M, std::enable_if_t&lt; last_dim_component &amp;&amp;((M+1==N)||
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the element.</dd></dl>
 <p>This overload is enabled only when last_dim_component is true and M represents the spatial dimensions (either N-1 or AMREX_SPACEDIM). </p>
+
+</div>
+</div>
+<a id="a846f01283e0f9930839e242fc4ccb643" name="a846f01283e0f9930839e242fc4ccb643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846f01283e0f9930839e242fc4ccb643">&#9670;&#160;</a></span>ptr() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<div class="memtemplate">
+template&lt;int M, class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt; &amp;&amp;<a class="el" href="structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600">IsArray4_v</a> &amp;&amp;(M==3||M==3), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ U * <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; M &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>iv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1639,18 +2062,50 @@ template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
 
 </div>
 </div>
-<a id="ab9842ea4c2fe7797384ba841410364f9" name="ab9842ea4c2fe7797384ba841410364f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9842ea4c2fe7797384ba841410364f9">&#9670;&#160;</a></span>nstride</h2>
+<a id="a0dd63ff1da243a2942d3157ab0e71600" name="a0dd63ff1da243a2942d3157ab0e71600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd63ff1da243a2942d3157ab0e71600">&#9670;&#160;</a></span>IsArray4_v</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>, N-1&gt; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::nstride {}</td>
+          <td class="memname">constexpr bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::IsArray4_v = (N==4 &amp;&amp; last_dim_component)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a561d0a0b8fc3dca5a2b077c0a1336036" name="a561d0a0b8fc3dca5a2b077c0a1336036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561d0a0b8fc3dca5a2b077c0a1336036">&#9670;&#160;</a></span>IsLastDimComponent_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::IsLastDimComponent_v = last_dim_component</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1665,6 +2120,22 @@ template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T* __restrict__ <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::p = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cfd0761a06af4aa82a69a566b699666" name="a5cfd0761a06af4aa82a69a566b699666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cfd0761a06af4aa82a69a566b699666">&#9670;&#160;</a></span>stride</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int N, bool last_dim_component = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">detail::Stride&lt;N-1&gt; <a class="el" href="structamrex_1_1ArrayND.html">amrex::ArrayND</a>&lt; T, N, last_dim_component &gt;::stride {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
