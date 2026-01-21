@@ -1983,6 +1983,14 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
+      <node id="165">
+        <label>AMReX_AlgVecUtil.H</label>
+        <link refid="AMReX__AlgVecUtil_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
       <node id="102">
         <label>AMReX_AlgVector.H</label>
         <link refid="AMReX__AlgVector_8H"/>
@@ -2004,6 +2012,8 @@
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
       </node>
       <node id="100">
         <label>AMReX_Algebra.H</label>
@@ -2015,6 +2025,30 @@
         <childnode refid="165" relation="include">
         </childnode>
         <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>AMReX_CSR.H</label>
+        <link refid="AMReX__CSR_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -2044,12 +2078,12 @@
         </childnode>
         <childnode refid="100" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="172" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="168">
+      <node id="172">
         <label>AMReX_Smoother_MV.H</label>
         <link refid="AMReX__Smoother__MV_8H"/>
         <childnode refid="100" relation="include">
@@ -2057,21 +2091,29 @@
         <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="166">
+      <node id="171">
         <label>AMReX_SpMV.H</label>
         <link refid="AMReX__SpMV_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="102" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
-        </childnode>
         <childnode refid="165" relation="include">
         </childnode>
-        <childnode refid="167" relation="include">
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
         </childnode>
       </node>
-      <node id="165">
+      <node id="170">
+        <label>AMReX_SpMatUtil.H</label>
+        <link refid="AMReX__SpMatUtil_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
         <label>AMReX_SpMatrix.H</label>
         <link refid="AMReX__SpMatrix_8H"/>
         <childnode refid="3" relation="include">
@@ -2080,17 +2122,21 @@
         </childnode>
         <childnode refid="102" relation="include">
         </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
         <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
         </childnode>
         <childnode refid="72" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -2141,6 +2187,9 @@
       <node id="20">
         <label>cstring</label>
       </node>
+      <node id="168">
+        <label>cub/cub.cuh</label>
+      </node>
       <node id="121">
         <label>cuda.h</label>
       </node>
@@ -2153,7 +2202,7 @@
       <node id="91">
         <label>curand_kernel.h</label>
       </node>
-      <node id="167">
+      <node id="169">
         <label>cusparse.h</label>
       </node>
       <node id="135">
@@ -2358,25 +2407,25 @@
 <codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="126" refid="classamrex_1_1GMRES__MV_1a09744f18b0feb9507546ba2e18485d0d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GMRES__MV_1a09744f18b0feb9507546ba2e18485d0d" kindref="member">GMRES_MV&lt;T&gt;::assign</ref><sp/>(<ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref>&amp;<sp/>lhs,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs)</highlight></codeline>
 <codeline lineno="127"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>lhs.<ref refid="classamrex_1_1AlgVector_1aeec33e48498ffb35bddc813a3b5637c5" kindref="member">copyAsync</ref>(rhs);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>lhs.<ref refid="classamrex_1_1AlgVector_1aa334fc9606bcc2f61dadfc2e45085114" kindref="member">copyAsync</ref>(rhs);</highlight></codeline>
 <codeline lineno="129"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="132" refid="classamrex_1_1GMRES__MV_1ac381bf5db27b170489f4a5a7c56a3e84" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GMRES__MV_1ac381bf5db27b170489f4a5a7c56a3e84" kindref="member">GMRES_MV&lt;T&gt;::increment</ref><sp/>(<ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref>&amp;<sp/>lhs,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs,<sp/>T<sp/>a)</highlight></codeline>
 <codeline lineno="133"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8d608f0e60e86a8a8e1c1f2feae1f653" kindref="member">amrex::Axpy</ref>(lhs,<sp/>a,<sp/>rhs,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae2972dbaa0589e933c9a52ce4191008c" kindref="member">amrex::Axpy</ref>(lhs,<sp/>a,<sp/>rhs);</highlight></codeline>
 <codeline lineno="135"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="138" refid="classamrex_1_1GMRES__MV_1a9cf5f17a151771501ff4da4d4ea78810" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GMRES__MV_1a9cf5f17a151771501ff4da4d4ea78810" kindref="member">GMRES_MV&lt;T&gt;::linComb</ref><sp/>(<ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref>&amp;<sp/>lhs,<sp/>T<sp/>a,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs_a,<sp/>T<sp/>b,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs_b)</highlight></codeline>
 <codeline lineno="139"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a932a04b3088166f5be65d24d2de33213" kindref="member">amrex::LinComb</ref>(lhs,<sp/>a,<sp/>rhs_a,<sp/>b,<sp/>rhs_b,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a932a04b3088166f5be65d24d2de33213" kindref="member">amrex::LinComb</ref>(lhs,<sp/>a,<sp/>rhs_a,<sp/>b,<sp/>rhs_b);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="144" refid="classamrex_1_1GMRES__MV_1a710e9f7b8703fe6939cbef9dedd8ba94" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GMRES__MV_1a710e9f7b8703fe6939cbef9dedd8ba94" kindref="member">GMRES_MV&lt;T&gt;::apply</ref><sp/>(<ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref>&amp;<sp/>lhs,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">VEC</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="145"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5497760fe0dddbe8b0ef6dc10521a843" kindref="member">amrex::SpMV</ref>(lhs,<sp/>*m_mat,<sp/>rhs);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ace0808388e851eff31416adb29d889a0" kindref="member">amrex::SpMV</ref>(lhs,<sp/>*m_mat,<sp/>rhs);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
@@ -2385,7 +2434,7 @@
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_pc)<sp/>{</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pc(lhs,<sp/>rhs);</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lhs.<ref refid="classamrex_1_1AlgVector_1aeec33e48498ffb35bddc813a3b5637c5" kindref="member">copyAsync</ref>(rhs);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lhs.<ref refid="classamrex_1_1AlgVector_1aa334fc9606bcc2f61dadfc2e45085114" kindref="member">copyAsync</ref>(rhs);</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>

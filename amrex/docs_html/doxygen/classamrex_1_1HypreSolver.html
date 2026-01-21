@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1HypreSolver.html',''); i
 </div><!--header-->
 <div class="contents">
 
-<p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (CSR) format.  
+<p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (<a class="el" href="structamrex_1_1CSR.html">CSR</a>) format.  
  <a href="classamrex_1_1HypreSolver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__HypreSolver_8H_source.html">AMReX_HypreSolver.H</a>&gt;</code></p>
@@ -147,7 +147,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int MSS&gt;<br />
-class amrex::HypreSolver&lt; MSS &gt;</div><p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (CSR) format. </p>
+class amrex::HypreSolver&lt; MSS &gt;</div><p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (<a class="el" href="structamrex_1_1CSR.html">CSR</a>) format. </p>
 <p>An example of using <a class="el" href="classamrex_1_1HypreSolver.html" title="Solve Ax = b using HYPRE&#39;s generic IJ matrix format where A is a sparse matrix specified using the co...">HypreSolver</a> to solve Poisson's equation is located in Tests/LinearSolvers/Hypre </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a040c586415a3e08b8d7c329cc6e861f5" name="a040c586415a3e08b8d7c329cc6e861f5"></a>
@@ -231,7 +231,7 @@ template&lt;class Marker , class Filler &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_dmap</td><td><a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">a_marker</td><td>functor that returns whether the variable n at (i,j,k) in Box boxno (local index) is valid (i.e., not exactly on Dirichlet boundary). function signature: <div class="fragment"><div class="line">(<span class="keywordtype">int</span> boxno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) -&gt; bool</div>
 </div><!-- fragment --> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a_filler</td><td>functor that fills the row in the matrix A for variable n at (i,j,k) in Box boxno (local index) using the CSR format. function signature: <div class="fragment"><div class="line"><span class="comment">// [in ] gid    gid[n] is the id for variable n at (i,j,k)</span></div>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_filler</td><td>functor that fills the row in the matrix A for variable n at (i,j,k) in Box boxno (local index) using the <a class="el" href="structamrex_1_1CSR.html">CSR</a> format. function signature: <div class="fragment"><div class="line"><span class="comment">// [in ] gid    gid[n] is the id for variable n at (i,j,k)</span></div>
 <div class="line"><span class="comment">// [out] ncols  # of non-zero columns in this row.</span></div>
 <div class="line"><span class="comment">// [out] cols   array of indices of columns with a non-zero matrix element in this row.</span></div>
 <div class="line"><span class="comment">// [out] mat    array of (non-zero) matrix elements in this row.</span></div>

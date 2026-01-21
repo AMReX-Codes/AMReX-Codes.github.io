@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "amrex::AlgPartition", "classamrex_1_1AlgPartition.html", null ],
     [ "amrex::AlgVector< T, Allocator >", "classamrex_1_1AlgVector.html", null ],
+    [ "amrex::AlgVector< T, AllocT >", "classamrex_1_1AlgVector.html", null ],
     [ "std::allocator< T >", null, [
       [ "amrex::PODVector< index_type >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::AssignGrid< BinIteratorFactory > >", "classamrex_1_1PODVector.html", null ],
@@ -26,6 +27,9 @@ var hierarchy =
       [ "amrex::PODVector< Node >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< Long >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< T, Allocator >", "classamrex_1_1PODVector.html", null ]
+    ] ],
+    [ "AllocT", null, [
+      [ "amrex::PODVector< T, AllocT >", "classamrex_1_1PODVector.html", null ]
     ] ],
     [ "amrex::AmrAssignGrid< BinIteratorFactory >", "structamrex_1_1AmrAssignGrid.html", null ],
     [ "amrex::AmrAssignGrid< amrex::DenseBinIteratorFactory< amrex::BoxND > >", "structamrex_1_1AmrAssignGrid.html", null ],
@@ -187,10 +191,12 @@ var hierarchy =
       [ "amrex::FabArrayBase::RB90", "structamrex_1_1FabArrayBase_1_1RB90.html", null ],
       [ "amrex::NonLocalBC::MultiBlockCommMetaData", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html", null ]
     ] ],
+    [ "amrex::SpMatrix< T, Allocator >::CommMV", "structamrex_1_1SpMatrix_1_1CommMV.html", null ],
     [ "amrex::CommRecvBufTag< T >", "structamrex_1_1CommRecvBufTag.html", null ],
     [ "amrex::CommRecvBufTag< value_type >", "structamrex_1_1CommRecvBufTag.html", null ],
     [ "amrex::CommSendBufTag< T >", "structamrex_1_1CommSendBufTag.html", null ],
     [ "amrex::CommSendBufTag< value_type >", "structamrex_1_1CommSendBufTag.html", null ],
+    [ "amrex::SpMatrix< T, Allocator >::CommTR", "structamrex_1_1SpMatrix_1_1CommTR.html", null ],
     [ "amrex::CompileTimeOptions< ctr >", "structamrex_1_1CompileTimeOptions.html", null ],
     [ "amrex::EB2::ComplementIF< F >", "classamrex_1_1EB2_1_1ComplementIF.html", null ],
     [ "amrex::ForkJoin::ComponentSet", "structamrex_1_1ForkJoin_1_1ComponentSet.html", null ],
@@ -209,6 +215,11 @@ var hierarchy =
     [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
+    [ "amrex::CSR< T, V >", "structamrex_1_1CSR.html", null ],
+    [ "amrex::CSR< T, container_type >", "structamrex_1_1CSR.html", null ],
+    [ "amrex::CsrSorted", "structamrex_1_1CsrSorted.html", null ],
+    [ "amrex::CsrValid", "structamrex_1_1CsrValid.html", null ],
+    [ "amrex::CsrView< T >", "structamrex_1_1CsrView.html", null ],
     [ "amrex::DataAllocator", "structamrex_1_1DataAllocator.html", [
       [ "amrex::BaseFab< EBCellFlag >", "classamrex_1_1BaseFab.html", [
         [ "amrex::EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html", null ]
@@ -577,6 +588,7 @@ var hierarchy =
     [ "amrex::FFT::LocalR2C< T, D, M >", "classamrex_1_1FFT_1_1LocalR2C.html", null ],
     [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", null ],
     [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", null ],
+    [ "amrex::MC::LookUpTable", "structamrex_1_1MC_1_1LookUpTable.html", null ],
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", null ],
     [ "amrex::LUSolver< N, T >", "classamrex_1_1LUSolver.html", null ],
     [ "amrex::LUSolver< 3 *2, RT >", "classamrex_1_1LUSolver.html", null ],
@@ -586,6 +598,7 @@ var hierarchy =
     [ "amrex::ManagedArenaWrapper", "structamrex_1_1ManagedArenaWrapper.html", null ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", null ],
     [ "amrex::Maximum< T >", "structamrex_1_1Maximum.html", null ],
+    [ "amrex::MC::MCFab", "classamrex_1_1MC_1_1MCFab.html", null ],
     [ "amrex::FabArrayBase::meminfo", "structamrex_1_1FabArrayBase_1_1meminfo.html", null ],
     [ "amrex::MemProfiler::MemInfo", "structamrex_1_1MemProfiler_1_1MemInfo.html", null ],
     [ "amrex::sundials::MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", null ],
@@ -672,6 +685,7 @@ var hierarchy =
     [ "amrex::NonLocalBC::PackComponents", "structamrex_1_1NonLocalBC_1_1PackComponents.html", [
       [ "amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever< DTOS, FabProj >", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html", null ]
     ] ],
+    [ "amrex::ParCsr< T >", "structamrex_1_1ParCsr.html", null ],
     [ "amrex::FabArrayBase::ParForInfo", "structamrex_1_1FabArrayBase_1_1ParForInfo.html", null ],
     [ "amrex::ParGDBBase", "classamrex_1_1ParGDBBase.html", [
       [ "amrex::AmrParGDB", "classamrex_1_1AmrParGDB.html", null ],
@@ -858,6 +872,7 @@ var hierarchy =
     [ "amrex::TransformerGhost", "structamrex_1_1TransformerGhost.html", null ],
     [ "amrex::TransformerVirt", "structamrex_1_1TransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
+    [ "amrex::MC::Triangle", "structamrex_1_1MC_1_1Triangle.html", null ],
     [ "std::true_type", null, [
       [ "amrex::Conjunction< IsDetected< LocalCopy_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, const FabArrayBase::CopyComTagsContainer & >, IsDetected< PrepareSendBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PrepareRecvBuffers_t, DP &, FabArray< FAB > &, const FabArray< FAB > &, CommData &, const FabArrayBase::MapOfCopyComTagContainers & >, IsDetected< PackSendBuffers_t, DP &, const FabArray< FAB > &, CommData & >, IsDetected< UnpackRecvBuffers_t, DP &, FabArray< FAB > &, CommData & > >", "structamrex_1_1Conjunction.html", null ],
       [ "amrex::Conjunction< IsCallableR< Dim3, IndexMap &, const Dim3 & >, HasInverseMemFn< const IndexMap & > >", "structamrex_1_1Conjunction.html", [
@@ -1065,6 +1080,8 @@ var hierarchy =
       [ "amrex::Vector< std::unique_ptr< amrex::VisMF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::array< int, 2 > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::array< Long, 4 > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::StateDescriptor::BndryFunc > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::InterpBase * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::FArrayBox * > >", "classamrex_1_1Vector.html", null ],
@@ -1076,6 +1093,7 @@ var hierarchy =
     ] ],
     [ "amrex::VectorTag< T >", "structamrex_1_1VectorTag.html", null ],
     [ "amrex::EB2::Vertex", "structamrex_1_1EB2_1_1Vertex.html", null ],
+    [ "amrex::MC::Vertex", "structamrex_1_1MC_1_1Vertex.html", null ],
     [ "amrex::VisMFBuffer", "classamrex_1_1VisMFBuffer.html", [
       [ "amrex::VisMF", "classamrex_1_1VisMF.html", null ]
     ] ],

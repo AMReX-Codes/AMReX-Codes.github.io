@@ -1,4 +1,6 @@
 var AMReX__SpMV_8H =
 [
-    [ "SpMV", "AMReX__SpMV_8H.html#a5497760fe0dddbe8b0ef6dc10521a843", null ]
+    [ "computeResidual", "AMReX__SpMV_8H.html#a886f6737dede1d359dcd80b55000f9a2", null ],
+    [ "SpMV", "AMReX__SpMV_8H.html#a287bbdc94930142a9cefe738a5b79002", null ],
+    [ "SpMV", "AMReX__SpMV_8H.html#ace0808388e851eff31416adb29d889a0", null ]
 ];

@@ -1982,6 +1982,14 @@
         <childnode refid="27" relation="include">
         </childnode>
       </node>
+      <node id="164">
+        <label>AMReX_AlgVecUtil.H</label>
+        <link refid="AMReX__AlgVecUtil_8H"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
       <node id="71">
         <label>AMReX_AlgVector.H</label>
         <link refid="AMReX__AlgVector_8H"/>
@@ -2003,6 +2011,8 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>AMReX_Algebra.H</label>
@@ -2015,6 +2025,30 @@
         </childnode>
         <childnode refid="165" relation="include">
         </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>AMReX_CSR.H</label>
+        <link refid="AMReX__CSR_8H"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H</label>
@@ -2024,21 +2058,29 @@
         <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="165">
+      <node id="170">
         <label>AMReX_SpMV.H</label>
         <link refid="AMReX__SpMV_8H"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="71" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
-        </childnode>
         <childnode refid="164" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
         </childnode>
       </node>
-      <node id="164">
+      <node id="169">
+        <label>AMReX_SpMatUtil.H</label>
+        <link refid="AMReX__SpMatUtil_8H"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
         <label>AMReX_SpMatrix.H</label>
         <link refid="AMReX__SpMatrix_8H"/>
         <childnode refid="4" relation="include">
@@ -2047,17 +2089,21 @@
         </childnode>
         <childnode refid="71" relation="include">
         </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
         <childnode refid="108" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
         </childnode>
         <childnode refid="83" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -2108,6 +2154,9 @@
       <node id="24">
         <label>cstring</label>
       </node>
+      <node id="167">
+        <label>cub/cub.cuh</label>
+      </node>
       <node id="119">
         <label>cuda.h</label>
       </node>
@@ -2120,7 +2169,7 @@
       <node id="98">
         <label>curand_kernel.h</label>
       </node>
-      <node id="166">
+      <node id="168">
         <label>cusparse.h</label>
       </node>
       <node id="133">
@@ -2243,36 +2292,39 @@
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15" refid="classamrex_1_1JacobiSmoother_1a3e0d7974487c8e736f1780b1b81bf847" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1JacobiSmoother_1a3e0d7974487c8e736f1780b1b81bf847" kindref="member">setNumIters</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_niters)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::exchange(m_niters,<sp/>a_niters);<sp/>}</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17" refid="classamrex_1_1JacobiSmoother_1a81c81e2bc6d4aac684bf5902d3d7ac24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1JacobiSmoother_1a81c81e2bc6d4aac684bf5902d3d7ac24" kindref="member">operator() </ref>(<ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref>&amp;<sp/>xvec,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvec)</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>diag<sp/>=<sp/>m_A-&gt;diagonalVector();</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref><sp/>Axvec(xvec.<ref refid="classamrex_1_1AlgVector_1a150ee1df3562d17f841220fa2ce2f1ab" kindref="member">partition</ref>());</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" kindref="member">setVal</ref>(0);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iter<sp/>=<sp/>0;<sp/>iter<sp/>&lt;<sp/>m_niters;<sp/>++iter)<sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Axvec.<ref refid="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" kindref="member">setVal</ref>(0);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5497760fe0dddbe8b0ef6dc10521a843" kindref="member">SpMV</ref>(Axvec,<sp/>*m_A,<sp/>xvec);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca65f803ae9e0c199552d38482b6dbdc" kindref="member">ForEach</ref>(xvec,<sp/>Axvec,<sp/>bvec,<sp/>diag,</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(T&amp;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ax,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>d)</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d<sp/>!=<sp/>T(0))<sp/>{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>+=<sp/>(b-ax)/d<sp/>*<sp/>T(2./3.);<sp/></highlight><highlight class="comment">//<sp/>weighted<sp/>Jacobi</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix&lt;T&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>m_A;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_niters<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="17" refid="classamrex_1_1JacobiSmoother_1a8275aedea555e8a7f135a752801878a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1JacobiSmoother_1a8275aedea555e8a7f135a752801878a0" kindref="member">operator() </ref>(<ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref>&amp;<sp/>xvec,<sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bvec,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>with_initial_guess<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>diag<sp/>=<sp/>m_A-&gt;diagonalVector();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector&lt;T&gt;</ref><sp/>Axvec(xvec.<ref refid="classamrex_1_1AlgVector_1a150ee1df3562d17f841220fa2ce2f1ab" kindref="member">partition</ref>());</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>with_initial_guess)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" kindref="member">setVal</ref>(0);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iter<sp/>=<sp/>0;<sp/>iter<sp/>&lt;<sp/>m_niters;<sp/>++iter)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((iter<sp/>==<sp/>0)<sp/>&amp;&amp;<sp/>!<sp/>with_initial_guess)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Axvec.<ref refid="classamrex_1_1AlgVector_1a002f73390a4ad26f7a25b8d2b5fb00fb" kindref="member">setVal</ref>(0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ace0808388e851eff31416adb29d889a0" kindref="member">SpMV</ref>(Axvec,<sp/>*m_A,<sp/>xvec);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca65f803ae9e0c199552d38482b6dbdc" kindref="member">ForEach</ref>(xvec,<sp/>Axvec,<sp/>bvec,<sp/>diag,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(T&amp;<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ax,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>d)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d<sp/>!=<sp/>T(0))<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>+=<sp/>(b-ax)/d<sp/>*<sp/>T(2./3.);<sp/></highlight><highlight class="comment">//<sp/>weighted<sp/>Jacobi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix&lt;T&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>m_A;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_niters<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H"/>
   </compounddef>

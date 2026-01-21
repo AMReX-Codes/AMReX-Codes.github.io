@@ -16,6 +16,7 @@ var classamrex_1_1EB2_1_1IndexSpace =
     [ "operator=", "classamrex_1_1EB2_1_1IndexSpace.html#a8e563c8fd91426e5eb07c22b2e5b49d7", null ],
     [ "pop", "classamrex_1_1EB2_1_1IndexSpace.html#a45b714be9d0d45f3ecb339085a73c6ec", null ],
     [ "push", "classamrex_1_1EB2_1_1IndexSpace.html#a5a3c0ce524a4c0bff9901548d9e8648d", null ],
+    [ "push", "classamrex_1_1EB2_1_1IndexSpace.html#ae86278262bb2ae200d8f58c0f68c01d6", null ],
     [ "setShift", "classamrex_1_1EB2_1_1IndexSpace.html#ae4c7ef0e00904d9edb4d575bbb66c6ff", null ],
     [ "size", "classamrex_1_1EB2_1_1IndexSpace.html#aa263203c4d632942992a81436d22d658", null ],
     [ "top", "classamrex_1_1EB2_1_1IndexSpace.html#af74968526bd39d50fef8d945440d7fab", null ],

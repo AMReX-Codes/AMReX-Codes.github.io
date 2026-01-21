@@ -4,7 +4,9 @@
     <compoundname>AMReX_Algebra.H</compoundname>
     <includes refid="AMReX__AlgPartition_8H" local="no">AMReX_AlgPartition.H</includes>
     <includes refid="AMReX__AlgVector_8H" local="no">AMReX_AlgVector.H</includes>
+    <includes refid="AMReX__AlgVecUtil_8H" local="no">AMReX_AlgVecUtil.H</includes>
     <includes refid="AMReX__SpMatrix_8H" local="no">AMReX_SpMatrix.H</includes>
+    <includes refid="AMReX__SpMatUtil_8H" local="no">AMReX_SpMatUtil.H</includes>
     <includes refid="AMReX__SpMV_8H" local="no">AMReX_SpMV.H</includes>
     <includedby refid="AMReX__GMRES__MV_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MV.H</includedby>
     <includedby refid="AMReX__Smoother__MV_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Smoother_MV.H</includedby>
@@ -1985,6 +1987,14 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
+      <node id="163">
+        <label>AMReX_AlgVecUtil.H</label>
+        <link refid="AMReX__AlgVecUtil_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
       <node id="70">
         <label>AMReX_AlgVector.H</label>
         <link refid="AMReX__AlgVector_8H"/>
@@ -2006,6 +2016,8 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Algebra.H</label>
@@ -2018,22 +2030,54 @@
         </childnode>
         <childnode refid="164" relation="include">
         </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
       </node>
-      <node id="164">
+      <node id="165">
+        <label>AMReX_CSR.H</label>
+        <link refid="AMReX__CSR_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
         <label>AMReX_SpMV.H</label>
         <link refid="AMReX__SpMV_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="70" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
         <childnode refid="163" relation="include">
         </childnode>
-        <childnode refid="165" relation="include">
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
         </childnode>
       </node>
-      <node id="163">
+      <node id="168">
+        <label>AMReX_SpMatUtil.H</label>
+        <link refid="AMReX__SpMatUtil_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="164">
         <label>AMReX_SpMatrix.H</label>
         <link refid="AMReX__SpMatrix_8H"/>
         <childnode refid="3" relation="include">
@@ -2042,17 +2086,21 @@
         </childnode>
         <childnode refid="70" relation="include">
         </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
         <childnode refid="107" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
         <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
         </childnode>
         <childnode refid="82" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -2103,6 +2151,9 @@
       <node id="23">
         <label>cstring</label>
       </node>
+      <node id="166">
+        <label>cub/cub.cuh</label>
+      </node>
       <node id="118">
         <label>cuda.h</label>
       </node>
@@ -2115,7 +2166,7 @@
       <node id="97">
         <label>curand_kernel.h</label>
       </node>
-      <node id="165">
+      <node id="167">
         <label>cusparse.h</label>
       </node>
       <node id="132">
@@ -2233,10 +2284,12 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AlgPartition_8H" kindref="compound">AMReX_AlgPartition.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AlgVector_8H" kindref="compound">AMReX_AlgVector.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__SpMatrix_8H" kindref="compound">AMReX_SpMatrix.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__SpMV_8H" kindref="compound">AMReX_SpMV.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AlgVecUtil_8H" kindref="compound">AMReX_AlgVecUtil.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__SpMatrix_8H" kindref="compound">AMReX_SpMatrix.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__SpMatUtil_8H" kindref="compound">AMReX_SpMatUtil.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__SpMV_8H" kindref="compound">AMReX_SpMV.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_Algebra.H"/>
   </compounddef>

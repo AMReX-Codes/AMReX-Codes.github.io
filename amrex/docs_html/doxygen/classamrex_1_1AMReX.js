@@ -10,6 +10,7 @@ var classamrex_1_1AMReX =
     [ "operator=", "classamrex_1_1AMReX.html#a0ce08ec3f506e57a0c8786367ae23b7d", null ],
     [ "operator=", "classamrex_1_1AMReX.html#af607b0f085bd129d4c76cbbd54715a04", null ],
     [ "push", "classamrex_1_1AMReX.html#aacd757c228bab84f39dc148cc5777624", null ],
+    [ "push", "classamrex_1_1AMReX.html#a13be48e2a828d136ea61f89bd10068c6", null ],
     [ "size", "classamrex_1_1AMReX.html#a42bc947424343bc3814de983a6218d26", null ],
     [ "top", "classamrex_1_1AMReX.html#af6f68e16ede4b981b1649a3d222a24c7", null ]
 ];

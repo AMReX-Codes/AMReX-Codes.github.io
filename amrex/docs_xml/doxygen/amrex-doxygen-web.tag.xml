@@ -2796,6 +2796,13 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>AMREX_CUSPARSE_SAFE_CALL</name>
+      <anchorfile>AMReX__GpuError_8H.html</anchorfile>
+      <anchor>a0753104458b2ab5a745238bf57309b9d</anchor>
+      <arglist>(call)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>AMREX_GPU_ERROR_CHECK</name>
       <anchorfile>AMReX__GpuError_8H.html</anchorfile>
       <anchor>aff2d29ad26ba217734430c3d36f42dd1</anchor>
@@ -5977,6 +5984,7 @@
     <includes id="AMReX__EB2_8H" name="AMReX_EB2.H" local="no" import="no" module="no" objc="no">AMReX_EB2.H</includes>
     <includes id="AMReX__EB2__IndexSpace__STL_8H" name="AMReX_EB2_IndexSpace_STL.H" local="no" import="no" module="no" objc="no">AMReX_EB2_IndexSpace_STL.H</includes>
     <includes id="AMReX__EB2__IndexSpace__chkpt__file_8H" name="AMReX_EB2_IndexSpace_chkpt_file.H" local="no" import="no" module="no" objc="no">AMReX_EB2_IndexSpace_chkpt_file.H</includes>
+    <includes id="AMReX__MarchingCubes_8H" name="AMReX_MarchingCubes.H" local="no" import="no" module="no" objc="no">AMReX_MarchingCubes.H</includes>
     <includes id="AMReX__ParmParse_8H" name="AMReX_ParmParse.H" local="no" import="no" module="no" objc="no">AMReX_ParmParse.H</includes>
     <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
     <namespace>amrex</namespace>
@@ -6347,6 +6355,7 @@
     <includes id="AMReX__Array_8H" name="AMReX_Array.H" local="no" import="no" module="no" objc="no">AMReX_Array.H</includes>
     <includes id="AMReX__EBCellFlag_8H" name="AMReX_EBCellFlag.H" local="no" import="no" module="no" objc="no">AMReX_EBCellFlag.H</includes>
     <includes id="AMReX__MultiCutFab_8H" name="AMReX_MultiCutFab.H" local="no" import="no" module="no" objc="no">AMReX_MultiCutFab.H</includes>
+    <includes id="AMReX__MarchingCubes_8H" name="AMReX_MarchingCubes.H" local="no" import="no" module="no" objc="no">AMReX_MarchingCubes.H</includes>
     <includes id="AMReX__EB2__MultiGFab_8H" name="AMReX_EB2_MultiGFab.H" local="no" import="no" module="no" objc="no">AMReX_EB2_MultiGFab.H</includes>
     <includes id="AMReX__EB2__IF__AllRegular_8H" name="AMReX_EB2_IF_AllRegular.H" local="no" import="no" module="no" objc="no">AMReX_EB2_IF_AllRegular.H</includes>
     <class kind="class">amrex::EB2::Level</class>
@@ -6782,6 +6791,40 @@
     <includes id="AMReX__Box_8H" name="AMReX_Box.H" local="no" import="no" module="no" objc="no">AMReX_Box.H</includes>
     <class kind="class">amrex::EBToPVD</class>
     <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_MarchingCubes.cpp</name>
+    <path>/home/runner/work/amrex/amrex/Src/EB/</path>
+    <filename>AMReX__MarchingCubes_8cpp.html</filename>
+    <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
+    <includes id="AMReX__BLProfiler_8H" name="AMReX_BLProfiler.H" local="no" import="no" module="no" objc="no">AMReX_BLProfiler.H</includes>
+    <includes id="AMReX__Gpu_8H" name="AMReX_Gpu.H" local="no" import="no" module="no" objc="no">AMReX_Gpu.H</includes>
+    <includes id="AMReX__ParallelDescriptor_8H" name="AMReX_ParallelDescriptor.H" local="no" import="no" module="no" objc="no">AMReX_ParallelDescriptor.H</includes>
+    <includes id="AMReX__MarchingCubes_8H" name="AMReX_MarchingCubes.H" local="no" import="no" module="no" objc="no">AMReX_MarchingCubes.H</includes>
+    <includes id="AMReX__mc__jgt__table_8H" name="AMReX_mc_jgt_table.H" local="no" import="no" module="no" objc="no">AMReX_mc_jgt_table.H</includes>
+    <namespace>amrex</namespace>
+    <namespace>amrex::MC</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_MarchingCubes.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/EB/</path>
+    <filename>AMReX__MarchingCubes_8H.html</filename>
+    <includes id="AMReX__FArrayBox_8H" name="AMReX_FArrayBox.H" local="no" import="no" module="no" objc="no">AMReX_FArrayBox.H</includes>
+    <includes id="AMReX__Geometry_8H" name="AMReX_Geometry.H" local="no" import="no" module="no" objc="no">AMReX_Geometry.H</includes>
+    <includes id="AMReX__GpuContainers_8H" name="AMReX_GpuContainers.H" local="no" import="no" module="no" objc="no">AMReX_GpuContainers.H</includes>
+    <class kind="struct">amrex::MC::Vertex</class>
+    <class kind="struct">amrex::MC::Triangle</class>
+    <class kind="class">amrex::MC::MCFab</class>
+    <namespace>amrex</namespace>
+    <namespace>amrex::MC</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_mc_jgt_table.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/EB/</path>
+    <filename>AMReX__mc__jgt__table_8H.html</filename>
+    <class kind="struct">amrex::MC::LookUpTable</class>
+    <namespace>amrex</namespace>
+    <namespace>amrex::MC</namespace>
   </compound>
   <compound kind="file">
     <name>AMReX_MultiCutFab.cpp</name>
@@ -7435,7 +7478,9 @@
     <filename>AMReX__Algebra_8H.html</filename>
     <includes id="AMReX__AlgPartition_8H" name="AMReX_AlgPartition.H" local="no" import="no" module="no" objc="no">AMReX_AlgPartition.H</includes>
     <includes id="AMReX__AlgVector_8H" name="AMReX_AlgVector.H" local="no" import="no" module="no" objc="no">AMReX_AlgVector.H</includes>
+    <includes id="AMReX__AlgVecUtil_8H" name="AMReX_AlgVecUtil.H" local="no" import="no" module="no" objc="no">AMReX_AlgVecUtil.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
+    <includes id="AMReX__SpMatUtil_8H" name="AMReX_SpMatUtil.H" local="no" import="no" module="no" objc="no">AMReX_SpMatUtil.H</includes>
     <includes id="AMReX__SpMV_8H" name="AMReX_SpMV.H" local="no" import="no" module="no" objc="no">AMReX_SpMV.H</includes>
   </compound>
   <compound kind="file">
@@ -7465,8 +7510,26 @@
     <includes id="AMReX__LayoutData_8H" name="AMReX_LayoutData.H" local="no" import="no" module="no" objc="no">AMReX_LayoutData.H</includes>
     <includes id="AMReX__TableData_8H" name="AMReX_TableData.H" local="no" import="no" module="no" objc="no">AMReX_TableData.H</includes>
     <class kind="class">amrex::AlgVector</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_AlgVecUtil.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__AlgVecUtil_8H.html</filename>
+    <includes id="AMReX__AlgVector_8H" name="AMReX_AlgVector.H" local="no" import="no" module="no" objc="no">AMReX_AlgVector.H</includes>
     <class kind="struct">amrex::IsAlgVector</class>
     <class kind="struct">amrex::IsAlgVector&lt; V, std::enable_if_t&lt; std::is_same_v&lt; AlgVector&lt; typename V::value_type, typename V::allocator_type &gt;, V &gt; &gt; &gt;</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_CSR.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__CSR_8H.html</filename>
+    <includes id="AMReX__Gpu_8H" name="AMReX_Gpu.H" local="no" import="no" module="no" objc="no">AMReX_Gpu.H</includes>
+    <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
+    <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
+    <class kind="struct">amrex::CsrView</class>
+    <class kind="struct">amrex::CSR</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7514,10 +7577,22 @@
     <filename>AMReX__SpMatrix_8H.html</filename>
     <includes id="AMReX__AlgPartition_8H" name="AMReX_AlgPartition.H" local="no" import="no" module="no" objc="no">AMReX_AlgPartition.H</includes>
     <includes id="AMReX__AlgVector_8H" name="AMReX_AlgVector.H" local="no" import="no" module="no" objc="no">AMReX_AlgVector.H</includes>
+    <includes id="AMReX__CSR_8H" name="AMReX_CSR.H" local="no" import="no" module="no" objc="no">AMReX_CSR.H</includes>
     <includes id="AMReX__Gpu_8H" name="AMReX_Gpu.H" local="no" import="no" module="no" objc="no">AMReX_Gpu.H</includes>
-    <includes id="AMReX__INT_8H" name="AMReX_INT.H" local="no" import="no" module="no" objc="no">AMReX_INT.H</includes>
     <includes id="AMReX__Scan_8H" name="AMReX_Scan.H" local="no" import="no" module="no" objc="no">AMReX_Scan.H</includes>
+    <class kind="struct">amrex::ParCsr</class>
+    <class kind="struct">amrex::CsrSorted</class>
+    <class kind="struct">amrex::CsrValid</class>
     <class kind="class">amrex::SpMatrix</class>
+    <class kind="struct">amrex::SpMatrix::CommMV</class>
+    <class kind="struct">amrex::SpMatrix::CommTR</class>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_SpMatUtil.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
+    <filename>AMReX__SpMatUtil_8H.html</filename>
+    <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -7525,6 +7600,7 @@
     <path>/home/runner/work/amrex/amrex/Src/LinearSolvers/</path>
     <filename>AMReX__SpMV_8H.html</filename>
     <includes id="AMReX__AlgVector_8H" name="AMReX_AlgVector.H" local="no" import="no" module="no" objc="no">AMReX_AlgVector.H</includes>
+    <includes id="AMReX__AlgVecUtil_8H" name="AMReX_AlgVecUtil.H" local="no" import="no" module="no" objc="no">AMReX_AlgVecUtil.H</includes>
     <includes id="AMReX__GpuComplex_8H" name="AMReX_GpuComplex.H" local="no" import="no" module="no" objc="no">AMReX_GpuComplex.H</includes>
     <includes id="AMReX__SpMatrix_8H" name="AMReX_SpMatrix.H" local="no" import="no" module="no" objc="no">AMReX_SpMatrix.H</includes>
     <namespace>amrex</namespace>
@@ -8701,29 +8777,29 @@
       <type>void</type>
       <name>copy</name>
       <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
-      <anchor>a846f59b80f60b59aa5d44bd197ea4ff5</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;rhs)</arglist>
+      <anchor>a21a73c6b8d00d5fd11b83af384b0c342</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; const &amp;rhs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyAsync</name>
       <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
-      <anchor>aeec33e48498ffb35bddc813a3b5637c5</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;rhs)</arglist>
+      <anchor>aa334fc9606bcc2f61dadfc2e45085114</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; const &amp;rhs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>plus</name>
       <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
-      <anchor>a4b359421e3b45e6f5b94be28d9d8f523</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;rhs)</arglist>
+      <anchor>aca24cfcc5d83447dccc0b670c6ac1a13</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; const &amp;rhs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>plusAsync</name>
       <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
-      <anchor>a8b078df9ccec709ce5a238e447636f75</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;rhs)</arglist>
+      <anchor>a63123340a5a4faec818bcbb217b4b36e</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; const &amp;rhs)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -8755,9 +8831,23 @@
     </member>
     <member kind="function">
       <type>T</type>
+      <name>norm1</name>
+      <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
+      <anchor>ae15151c81b180620a82b82596b87a522</anchor>
+      <arglist>(bool local=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
       <name>norm2</name>
       <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
       <anchor>a971568b54a27d655ce491e6f2649407d</anchor>
+      <arglist>(bool local=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::pair&lt; T, T &gt;</type>
+      <name>norm1and2</name>
+      <anchorfile>classamrex_1_1AlgVector.html</anchorfile>
+      <anchor>a483ece8a534c5f3f02a9f087a8a52ea9</anchor>
       <arglist>(bool local=false) const</arglist>
     </member>
     <member kind="function">
@@ -10851,6 +10941,13 @@
       <anchorfile>classamrex_1_1AMReX.html</anchorfile>
       <anchor>aacd757c228bab84f39dc148cc5777624</anchor>
       <arglist>(AMReX *pamrex)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>push</name>
+      <anchorfile>classamrex_1_1AMReX.html</anchorfile>
+      <anchor>a13be48e2a828d136ea61f89bd10068c6</anchor>
+      <arglist>(std::unique_ptr&lt; AMReX &gt; pamrex)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
@@ -21545,6 +21642,94 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::SpMatrix::CommMV</name>
+    <filename>structamrex_1_1SpMatrix_1_1CommMV.html</filename>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>send_to</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>ac8360652eecf499a540827ac87647be0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>send_counts</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>aa1f5fe6d6d39afd73d3aa6b252361d2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Long &gt;</type>
+      <name>send_indices</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>ab97eaf25adb3de68cf91ea21a1c9e700</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>recv_from</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a9234850656368d466ec6a374d525cf5b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>recv_counts</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a6d19786a2a9e8730408c1bd9f0ca648f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; MPI_Request &gt;</type>
+      <name>send_reqs</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>ae193292df62abdd2d5d750c79906b834</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>send_buffer</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a4139fc7189147d290f9a4d018552718f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>total_counts_send</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>ab46c9113698a3b67925cf368e1cbbaa7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; MPI_Request &gt;</type>
+      <name>recv_reqs</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>abdbbaaf095a6ceb4edfd93ffdbe952ea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>recv_buffer</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a9a10587192db4e812684a673367cf74c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>total_counts_recv</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a6e68f06330de9ca19ed4d96facc58e76</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>prepared</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommMV.html</anchorfile>
+      <anchor>a5d4eb03648d28b642315b62e3aa68636</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::CommRecvBufTag</name>
     <filename>structamrex_1_1CommRecvBufTag.html</filename>
     <templarg>class T</templarg>
@@ -21607,6 +21792,101 @@
       <name>bx</name>
       <anchorfile>structamrex_1_1CommSendBufTag.html</anchorfile>
       <anchor>adfe4a7c919f086852de5023135ca64e7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::SpMatrix::CommTR</name>
+    <filename>structamrex_1_1SpMatrix_1_1CommTR.html</filename>
+    <member kind="variable">
+      <type>CsrView&lt; T &gt;</type>
+      <name>csrt</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>ab63d052b0ac02fed56ed64ea35252cf9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>send_to</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a4b0bb1b4aa697b34363e749140c2195a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::array&lt; int, 2 &gt; &gt;</type>
+      <name>send_counts</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a09b4c7d8e84f4631d36b7f7b30f437b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; MPI_Request &gt;</type>
+      <name>send_reqs</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a1cb2aa67730793f432c170a57bc2ae65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; int &gt;</type>
+      <name>recv_from</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>ae962b75c432845279cd862d810019cae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::array&lt; int, 2 &gt; &gt;</type>
+      <name>recv_counts</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a989558009b0be672e903231c76ebc9f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; MPI_Request &gt;</type>
+      <name>recv_reqs</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a295e471e5f8372e20c97f98e9fd603c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::array&lt; Long, 2 &gt;</type>
+      <name>total_counts_recv</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a53e6ab0a625eb8d89ba47ef7b4d8c251</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vector&lt; std::array&lt; Long, 4 &gt; &gt;</type>
+      <name>recv_buffer_offset</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>ae1cad13435d657fce79a14c0667e6d4e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>recv_buffer_mat</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>adc74e66ba9f813547f7950f807ed04ed</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long *</type>
+      <name>recv_buffer_col_index</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a19edf999473a4f3260aafa08090409bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long *</type>
+      <name>recv_buffer_row_offset</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>a5c7313c9145954ce52eea6584bd4fb45</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long *</type>
+      <name>recv_buffer_idx_map</name>
+      <anchorfile>structamrex_1_1SpMatrix_1_1CommTR.html</anchorfile>
+      <anchor>af5ec7b9bdeb2d5e0c7a2e619b362e9e4</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -22831,6 +23111,172 @@
       <name>f_user</name>
       <anchorfile>classamrex_1_1CpuBndryFuncFab.html</anchorfile>
       <anchor>a44a9eb954199def1d1965689f79c0801</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::CSR</name>
+    <filename>structamrex_1_1CSR.html</filename>
+    <templarg>typename T</templarg>
+    <templarg>template&lt; typename &gt; class V</templarg>
+    <member kind="function">
+      <type>Long</type>
+      <name>nrows</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a18b101cb7e0664f93f301977de119721</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resize</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>aa90b4ba039e83525b70488e05b0381b9</anchor>
+      <arglist>(Long num_rows, Long num_non_zeros)</arglist>
+    </member>
+    <member kind="function">
+      <type>CsrView&lt; T &gt;</type>
+      <name>view</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a4a34f06a9cf07e3edf8c366eae0106c3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>CsrView&lt; T const &gt;</type>
+      <name>view</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a71aa9124500de25ca8b5aa7d5ca6cda7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CsrView&lt; T const &gt;</type>
+      <name>const_view</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>aa1220730b524c228ad37124657a9bad0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sort</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a3fcae393814a57f524359a8afb9ec247</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sort_on_host</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a6bddafe65cfec0b8d32677822c494ee9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>V&lt; T &gt;</type>
+      <name>mat</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>af2c2314538225088beb843462674a23c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>V&lt; Long &gt;</type>
+      <name>col_index</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>aaac0c8c414b30a929ddf1f53b8ca7f15</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>V&lt; Long &gt;</type>
+      <name>row_offset</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a06653c4b7b26a613fae4facaaf77a4e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nnz</name>
+      <anchorfile>structamrex_1_1CSR.html</anchorfile>
+      <anchor>a2a43bad46b745724c24f7d22b3645b63</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::CsrSorted</name>
+    <filename>structamrex_1_1CsrSorted.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>operator bool</name>
+      <anchorfile>structamrex_1_1CsrSorted.html</anchorfile>
+      <anchor>accd255918af67b8f9c4e401f63c8c729</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>b</name>
+      <anchorfile>structamrex_1_1CsrSorted.html</anchorfile>
+      <anchor>a7b38ec772579b4a8fbb272607bf1392a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::CsrValid</name>
+    <filename>structamrex_1_1CsrValid.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>operator bool</name>
+      <anchorfile>structamrex_1_1CsrValid.html</anchorfile>
+      <anchor>a93755b687180778b7743d5e494478a94</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>b</name>
+      <anchorfile>structamrex_1_1CsrValid.html</anchorfile>
+      <anchor>a4cc144aa1d8470a740884c43b2faf40a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::CsrView</name>
+    <filename>structamrex_1_1CsrView.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="typedef">
+      <type>std::conditional_t&lt; std::is_const_v&lt; T &gt;, Long const, Long &gt;</type>
+      <name>U</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>a2955aa95d62e24615ff461c50ec31820</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T *__restrict__</type>
+      <name>mat</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>a4ab2f39055422c8479b4d58c4ab954ef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>U *__restrict__</type>
+      <name>col_index</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>ac297730e915b96f0d480017aadb82b7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>U *__restrict__</type>
+      <name>row_offset</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>ab4d269bbe7564688c9f0c05a3a866fd3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nnz</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>aa14464ea75ab8883d01636f16df39f50</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>nrows</name>
+      <anchorfile>structamrex_1_1CsrView.html</anchorfile>
+      <anchor>a89655c70e404616c29ecca988c93a01e</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -34423,6 +34869,13 @@
       <anchor>a014eda53f91496efc4cbf702c944ca00</anchor>
       <arglist>(G const &amp;gshop, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define_fine_mvmc</name>
+      <anchorfile>classamrex_1_1EB2_1_1GShopLevel.html</anchorfile>
+      <anchor>a51e2f478cf8264ad5d390b4482d6e773</anchor>
+      <arglist>(GS const &amp;gshop, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static GShopLevel&lt; G &gt;</type>
       <name>makeAllRegular</name>
@@ -36352,6 +36805,13 @@
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
+      <name>push</name>
+      <anchorfile>classamrex_1_1EB2_1_1IndexSpace.html</anchorfile>
+      <anchor>ae86278262bb2ae200d8f58c0f68c01d6</anchor>
+      <arglist>(std::unique_ptr&lt; IndexSpace &gt; ispace)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
       <name>erase</name>
       <anchorfile>classamrex_1_1EB2_1_1IndexSpace.html</anchorfile>
       <anchor>aff6283995254b7660c80cd420d99886b</anchor>
@@ -36594,8 +37054,8 @@
       <type></type>
       <name>IndexSpaceSTL</name>
       <anchorfile>classamrex_1_1EB2_1_1IndexSpaceSTL.html</anchorfile>
-      <anchor>ae531b8586503ec67f4d3ddf8ae4397d4</anchor>
-      <arglist>(const std::string &amp;stl_file, Real stl_scale, Array&lt; Real, 3 &gt; const &amp;stl_center, int stl_reverse_normal, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool extend_domain_face, int num_coarsen_opt, bool bvh_optimization)</arglist>
+      <anchor>af8b24bccee20e0e8cdb9ef15cacfc4d4</anchor>
+      <arglist>(const std::string &amp;stl_file, Real stl_scale, Array&lt; Real, 3 &gt; const &amp;stl_center, int stl_reverse_normal, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool extend_domain_face, int num_coarsen_opt, bool bvh_optimization, bool support_mvmc)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -38897,8 +39357,8 @@
       <type>void</type>
       <name>operator()</name>
       <anchorfile>classamrex_1_1JacobiSmoother.html</anchorfile>
-      <anchor>a81c81e2bc6d4aac684bf5902d3d7ac24</anchor>
-      <arglist>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec)</arglist>
+      <anchor>a8275aedea555e8a7f135a752801878a0</anchor>
+      <arglist>(AlgVector&lt; T &gt; &amp;xvec, AlgVector&lt; T &gt; const &amp;bvec, bool with_initial_guess=false)</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -39352,6 +39812,20 @@
       <name>m_dmap</name>
       <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
       <anchor>ad8da3b86620279f872f604f11e603bbc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>MultiFab</type>
+      <name>m_sdf</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>ab3ad66dc044dca1c8f59ea1446ff48f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::map&lt; int, std::unique_ptr&lt; MC::MCFab &gt; &gt;</type>
+      <name>m_marching_cubes</name>
+      <anchorfile>classamrex_1_1EB2_1_1Level.html</anchorfile>
+      <anchor>a6d161c52a8bc991092be0780826cd5ad</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -39816,6 +40290,339 @@
       <anchorfile>structamrex_1_1LogicalOr.html</anchorfile>
       <anchor>a2c58f13f24e524ecceb55f0baabff240</anchor>
       <arglist>(const T &amp;lhs, const T &amp;rhs) const</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::MC::LookUpTable</name>
+    <filename>structamrex_1_1MC_1_1LookUpTable.html</filename>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>cases</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a30755f6e2d5a5262df66a9b417197834</anchor>
+      <arglist>[256][2]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a1e7a4fc82a7fd4f527a71e8bfb40e0e8</anchor>
+      <arglist>[16][3]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>afcc913f3174436f50cd4928ebb282c5c</anchor>
+      <arglist>[24][6]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test3</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aabf8c256833a7432d7a738ef8588d059</anchor>
+      <arglist>[24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling3_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a81c0178d6cf5eccbddbb3bcb5e1a4d8b</anchor>
+      <arglist>[24][6]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling3_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a7241efe5febbd3afb93bff4fcd0790f6</anchor>
+      <arglist>[24][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test4</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a7332f7066152862bbb9f216d09c901a9</anchor>
+      <arglist>[8]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling4_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aaefd07326b3628d868a90cbe06210c37</anchor>
+      <arglist>[8][6]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling4_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a50afb09111a3c70ae3e73de4464f82b7</anchor>
+      <arglist>[8][18]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling5</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a622e97d4f8b761c107994e922cd936fe</anchor>
+      <arglist>[48][9]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test6</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a87414180a4ed7954f49846993e2cffce</anchor>
+      <arglist>[48][3]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling6_1_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a8bd3daf56e4921250a2952595d8bb0a1</anchor>
+      <arglist>[48][9]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling6_1_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a580ceeb1b4784273a9470c6c5fc36bfd</anchor>
+      <arglist>[48][27]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling6_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a0d91a42db76c59dda462f8daddf54b60</anchor>
+      <arglist>[48][15]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test7</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ae1e80c17a03d5edc45a01166f55c5394</anchor>
+      <arglist>[16][5]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling7_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ad626d9f945583b7b23f7b46f0101835c</anchor>
+      <arglist>[16][9]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling7_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a656c922e1a5da874c19e57eca6ef0ad0</anchor>
+      <arglist>[16][3][15]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling7_3</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a614c93aa76cb67fa41e54315f57319b2</anchor>
+      <arglist>[16][3][27]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling7_4_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a6509a12df9c626e495766d1462f738c9</anchor>
+      <arglist>[16][15]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling7_4_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a1999cd9e61ed64542a64dcf966b5b06a</anchor>
+      <arglist>[16][27]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling8</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aa0d7097d81dec4fef966ac2f33787c95</anchor>
+      <arglist>[6][6]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling9</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a7da0577db2aefc7c80127bb3310409e3</anchor>
+      <arglist>[8][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test10</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ae7308d4cc5aadd36a77d41269d1274e3</anchor>
+      <arglist>[6][3]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling10_1_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a9528489b0ac87eb06923e05a0202d6d2</anchor>
+      <arglist>[6][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling10_1_1_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ad85da51574baf14b7bca87c753d283ba</anchor>
+      <arglist>[6][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling10_1_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aab74ef6ba9d5c1076448b0f487cf7c32</anchor>
+      <arglist>[6][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling10_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ad7480cd059a4f251f8af260a100ac22c</anchor>
+      <arglist>[6][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling10_2_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a5d3608c2a6dcdeff186440a585e7bbd0</anchor>
+      <arglist>[6][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling11</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aa53dbd5f6234ba97230508791f21133e</anchor>
+      <arglist>[12][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test12</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ab701314633151542aef1adda6bb13263</anchor>
+      <arglist>[24][4]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling12_1_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>abe8656d4358a15d33528978403d04074</anchor>
+      <arglist>[24][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling12_1_1_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>aac33b329c0eebff97256dcf35b0f9642</anchor>
+      <arglist>[24][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling12_1_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a92df957a17102ddd966f7b18eb27695b</anchor>
+      <arglist>[24][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling12_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a46ca7ed24233751b21b815297cd2addc</anchor>
+      <arglist>[24][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling12_2_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ad92e00e8edc5bbbfc7f48bb5ef607d8f</anchor>
+      <arglist>[24][24]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>test13</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ac58e0777ade432a75d7e61e3efcd7ad0</anchor>
+      <arglist>[2][7]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>subconfig13</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a5332c858ae55775212b9b46e94576a7b</anchor>
+      <arglist>[64]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a16a45b9377259b8cabf7f6f889cc31e5</anchor>
+      <arglist>[2][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_1_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>acc2018ebe84a79bf86a90c577d7582d8</anchor>
+      <arglist>[2][12]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a1f337b1165dfcaa2ff0970f41e354ae2</anchor>
+      <arglist>[2][6][18]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_2_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>af4c10d0b8f27eff23bf7684d5e391721</anchor>
+      <arglist>[2][6][18]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_3</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>ad0f08679d75fdb563c8b111f155dbc95</anchor>
+      <arglist>[2][12][30]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_3_</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a39e3bfc9e308da4e2043ca3399e242b9</anchor>
+      <arglist>[2][12][30]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_4</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a50fb310133b937f4709d95e0779caaf1</anchor>
+      <arglist>[2][4][36]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_5_1</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>acc5aeef04419b474d4c151588342dfdc</anchor>
+      <arglist>[2][4][18]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling13_5_2</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a45cb0e3d5c7362202f36886516b04575</anchor>
+      <arglist>[2][4][30]</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::int8_t</type>
+      <name>tiling14</name>
+      <anchorfile>structamrex_1_1MC_1_1LookUpTable.html</anchorfile>
+      <anchor>a6aebab2677dfbeb048aa4c7d61ae6157</anchor>
+      <arglist>[12][12]</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -40391,6 +41198,24 @@
     <filename>structamrex_1_1MaybeHostDeviceRunnable.html</filename>
     <templarg>class T</templarg>
     <templarg>class Enable</templarg>
+  </compound>
+  <compound kind="class">
+    <name>amrex::MC::MCFab</name>
+    <filename>classamrex_1_1MC_1_1MCFab.html</filename>
+    <member kind="variable">
+      <type>Triangle</type>
+      <name>m_triangles</name>
+      <anchorfile>classamrex_1_1MC_1_1MCFab.html</anchorfile>
+      <anchor>afb963bb52a305359fe13e0c86df0f0cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Vertex</type>
+      <name>m_vertices</name>
+      <anchorfile>classamrex_1_1MC_1_1MCFab.html</anchorfile>
+      <anchor>a9ae9cc75b9a3e98b3192dfd331833ab2</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::FabArrayBase::meminfo</name>
@@ -51174,6 +51999,53 @@
       <anchorfile>classamrex_1_1ParConstIter__impl.html</anchorfile>
       <anchor>ab9fdad990241bb4c86fc0695fc367fb4</anchor>
       <arglist>(ContainerType const &amp;pc, int level, MFItInfo &amp;info)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ParCsr</name>
+    <filename>structamrex_1_1ParCsr.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="variable">
+      <type>CsrView&lt; T &gt;</type>
+      <name>csr0</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>af781419bfc6e8ae9b05e4afc78d4e33f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>CsrView&lt; T &gt;</type>
+      <name>csr1</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>a7c1e18e3578e97454936215224dcfbdd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>row_begin</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>a98eae63f20f63972d700fd13a1df886a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long</type>
+      <name>col_begin</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>a7cf8f9472c6e105fd45a8f5eb4d929c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long const  *__restrict__</type>
+      <name>row_map</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>a5de6fc1216744103f06d5b53482b9bd1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Long const  *__restrict__</type>
+      <name>col_map</name>
+      <anchorfile>structamrex_1_1ParCsr.html</anchorfile>
+      <anchor>a2b0b2a95211bc9c77422267331ad0698</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -63253,11 +64125,41 @@
     <filename>classamrex_1_1SpMatrix.html</filename>
     <templarg>typename T</templarg>
     <templarg>template&lt; typename &gt; class Allocator</templarg>
+    <class kind="struct">amrex::SpMatrix::CommMV</class>
+    <class kind="struct">amrex::SpMatrix::CommTR</class>
     <member kind="typedef">
       <type>T</type>
       <name>value_type</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>a504664ae5a23f2b4e1902abde214be8d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Allocator&lt; U &gt;</type>
+      <name>allocator_type</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a6df34af39ea6b5b6e0cb92a54d228904</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>PODVector&lt; U, Allocator&lt; U &gt; &gt;</type>
+      <name>container_type</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a9df4e61fe7d6fe954c0521c797a3765a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>CSR&lt; T, container_type &gt;</type>
+      <name>csr_type</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a99d240b05d485779904b603b7c36f404</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Allocator&lt; T &gt;</type>
+      <name>AllocT</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>ad81d80620e420da2e2939d3c2006b2e7</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -63271,8 +64173,15 @@
       <type></type>
       <name>SpMatrix</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a7dbc78cd50e654f7777ba994a4317613</anchor>
-      <arglist>(AlgPartition partition, int nnz)</arglist>
+      <anchor>af41eef917f3698fc3755956941789c09</anchor>
+      <arglist>(AlgPartition partition, int nnz_per_row)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SpMatrix</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>aba2d591afc3e5d8e369e525fae4d9905</anchor>
+      <arglist>(AlgPartition partition, csr_type csr)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -63313,21 +64222,35 @@
       <type>void</type>
       <name>define</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a2aadf47e5ee2adb0eb4bce51d3e40286</anchor>
-      <arglist>(AlgPartition partition, int nnz)</arglist>
+      <anchor>aff9b77125ea939d1fd1b54b72ebc95ec</anchor>
+      <arglist>(AlgPartition partition, int nnz_per_row)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>define</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a9f2ed7ae22b0ddca998ffbed80ec2141</anchor>
-      <arglist>(AlgPartition partition, T const *mat, Long const *col_index, Long nnz, Long const *row_index)</arglist>
+      <anchor>aca74c985f3c661327634b07322f8812f</anchor>
+      <arglist>(AlgPartition partition, T const *mat, Long const *col_index, Long nentries, Long const *row_offset, CsrSorted is_sorted, CsrValid is_valid)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>define</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>ab19cae4c8c0ccc8e3f8ceb75cb05968d</anchor>
+      <arglist>(AlgPartition partition, csr_type csr, CsrSorted is_sorted)</arglist>
     </member>
     <member kind="function">
       <type>AlgPartition const &amp;</type>
       <name>partition</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>ab5d7ec6bbdeee94ca40a31e42cf73d4d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AlgPartition const &amp;</type>
+      <name>columnPartition</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a93ed7d198dfccc2ce19279b907d203ac</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -63346,9 +64269,9 @@
     </member>
     <member kind="function">
       <type>Long</type>
-      <name>numLocalNonZero</name>
+      <name>numLocalNonZeros</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>abda56fec08a151f1bcea7328e8e011a6</anchor>
+      <anchor>a7418e93a177244d566e05ff1ff83e2b0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -63366,13 +64289,6 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>T const *</type>
-      <name>data</name>
-      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a62845ddfac08ad330daeb71e09f769fe</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
       <type>T *</type>
       <name>data</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
@@ -63380,25 +64296,11 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>Long const *</type>
-      <name>columnIndex</name>
-      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a76f9be075d45fa6dc35435330443f05c</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
       <type>Long *</type>
       <name>columnIndex</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
       <anchor>ac30f6cc408abda37a6ab47dfb17119f2</anchor>
       <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Long const *</type>
-      <name>rowOffset</name>
-      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a245ce698d4abf49f277eb1d60853d2b1</anchor>
-      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>Long *</type>
@@ -63418,50 +64320,169 @@
       <type>void</type>
       <name>setVal</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a16ca8a2fecb5c53dba07ec3e2f8192a9</anchor>
-      <arglist>(F const &amp;f)</arglist>
+      <anchor>afe2b2519b8fcdd315d30806b205050d3</anchor>
+      <arglist>(F const &amp;f, CsrSorted is_sorted)</arglist>
     </member>
     <member kind="function">
-      <type>AlgVector&lt; T &gt; const &amp;</type>
+      <type>void</type>
+      <name>sortCSR</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a1ec63faea0cd864e3e1903208f6887d8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>AlgVector&lt; T, AllocT &gt; const &amp;</type>
       <name>diagonalVector</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>adca4ae46a4f355c74288a283a60d6889</anchor>
+      <anchor>abe85a4b17b88afe29d870fa2910191c9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AlgVector&lt; T, AllocT &gt;</type>
+      <name>rowSum</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a7e52eb4d6ba150d1b57b88f3906228bb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ParCsr&lt; T &gt;</type>
+      <name>parcsr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>aa4c38dee4f8ed6eb7bfaf206acdce0e8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ParCsr&lt; T const &gt;</type>
+      <name>parcsr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>aea7a391d509f61becff1318d41cd8886</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ParCsr&lt; T const &gt;</type>
+      <name>const_parcsr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a981205bddbdc98138d5fe73ad74cd198</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>define_doit</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>af1eac58242d09a806cb7acb361f8c979</anchor>
-      <arglist>(int nnz)</arglist>
+      <anchor>a35d13284a266853384c62c6af85de1b7</anchor>
+      <arglist>(int nnz_per_row)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>prepare_comm</name>
+      <name>define_and_filter_doit</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a0c3d3dee5adc619c1fe493f62694590b</anchor>
-      <arglist>()</arglist>
+      <anchor>a150cbb11944dcbe666065e75250a7627</anchor>
+      <arglist>(T const *mat, Long const *col_index, Long nentries, Long const *row_offset)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>pack_buffer</name>
+      <name>startComm_mv</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>aff7e59959f717801f580e1be96726fba</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;v)</arglist>
+      <anchor>aebf110ef081b1bb0f839065bd181d6ba</anchor>
+      <arglist>(AlgVector&lt; T, AllocT &gt; const &amp;x)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>unpack_buffer</name>
+      <name>finishComm_mv</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>a9c4a072949b3268201c4997b7ccad1fa</anchor>
-      <arglist>(AlgVector&lt; T &gt; &amp;v)</arglist>
+      <anchor>acb86105f8e1205543fe9c898d48ea1d2</anchor>
+      <arglist>(AlgVector&lt; T, AllocT &gt; &amp;y)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>startComm_tr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a32d2cdec02dae628fc4e7ae84087a584</anchor>
+      <arglist>(AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>finishComm_tr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a02280d102dd6d9ade782893375c3f2af</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; &amp;AT)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>split_csr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a08b78104989b2861381f15ba4ddee119</anchor>
+      <arglist>(AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update_remote_col_index</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a2d710a548583b3454e55b9b4cb6d1474</anchor>
+      <arglist>(C &amp;csrr, bool in_device_memory)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>prepare_comm_mv</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>ae4dc8ca4710a168784566194a72d77f8</anchor>
+      <arglist>(AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>pack_buffer_mv</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a222893bb8a2ea52113d18a1c23924ad9</anchor>
+      <arglist>(AlgVector&lt; T, AllocT &gt; const &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>unpack_buffer_mv</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a280ad0828d0f576b7456730a74be5c17</anchor>
+      <arglist>(AlgVector&lt; T, AllocT &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>unpack_buffer_tr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>aef2f699cfdf92c270337b2d2484fb7ce</anchor>
+      <arglist>(CommTR const &amp;ctr, AlgPartition const &amp;col_partition)</arglist>
+    </member>
+    <member kind="variable">
+      <type>struct amrex::SpMatrix::CommMV</type>
+      <name>m_comm_mv</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a7817a91aa8d5dedbba23e74252309ef7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>struct amrex::SpMatrix::CommTR</type>
+      <name>m_comm_tr</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>adcf965b93de644398b57ebf6458d61c1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend class</type>
+      <name>AMG</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a39d05803320f1008d0f1abbbe049a58a</anchor>
+      <arglist></arglist>
     </member>
     <member kind="friend">
       <type>friend void</type>
       <name>SpMV</name>
       <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
-      <anchor>aaa80f8c734406537f80dd0787fb9df7f</anchor>
-      <arglist>(AlgVector&lt; U &gt; &amp;y, SpMatrix&lt; U &gt; const &amp;A, AlgVector&lt; U &gt; const &amp;x)</arglist>
+      <anchor>af2f318a03ebd3b2a25ff1cbc98512d4d</anchor>
+      <arglist>(AlgVector&lt; U, N &gt; &amp;y, SpMatrix&lt; U, M &gt; const &amp;A, AlgVector&lt; U, N &gt; const &amp;x)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend SpMatrix&lt; U, M &gt;</type>
+      <name>transpose</name>
+      <anchorfile>classamrex_1_1SpMatrix.html</anchorfile>
+      <anchor>a4dd66fb131710a5961a8a74a14914674</anchor>
+      <arglist>(SpMatrix&lt; U, M &gt; const &amp;A, AlgPartition col_partition)</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -64270,8 +65291,8 @@
       <type></type>
       <name>STLLevel</name>
       <anchorfile>classamrex_1_1EB2_1_1STLLevel.html</anchorfile>
-      <anchor>a70a0b01e9f80fc8d3053c7df91feeaef</anchor>
-      <arglist>(IndexSpace const *is, STLtools const &amp;stl_tools, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt)</arglist>
+      <anchor>a8c2cebcfdbfefecc466c849e28b9fcd5</anchor>
+      <arglist>(IndexSpace const *is, STLtools const &amp;stl_tools, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt, bool support_mvmc)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -66642,6 +67663,45 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::MC::Triangle</name>
+    <filename>structamrex_1_1MC_1_1Triangle.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>resize</name>
+      <anchorfile>structamrex_1_1MC_1_1Triangle.html</anchorfile>
+      <anchor>aee080713b872fc6cdaa17c5e379945a8</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>GpuArray&lt; int *, 3 &gt;</type>
+      <name>dataPtrs</name>
+      <anchorfile>structamrex_1_1MC_1_1Triangle.html</anchorfile>
+      <anchor>a2f6fa1e4951e4fefd9036a229da3f7dc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; int &gt;</type>
+      <name>v1</name>
+      <anchorfile>structamrex_1_1MC_1_1Triangle.html</anchorfile>
+      <anchor>a42159f9107a87e28b7547023c62731b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; int &gt;</type>
+      <name>v2</name>
+      <anchorfile>structamrex_1_1MC_1_1Triangle.html</anchorfile>
+      <anchor>a760cc3005794082be94b3b457790f935</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; int &gt;</type>
+      <name>v3</name>
+      <anchorfile>structamrex_1_1MC_1_1Triangle.html</anchorfile>
+      <anchor>a53460870995f979a613227a676c73c6e</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>std::tuple_element&lt; N, amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt; &gt;</name>
     <filename>structstd_1_1tuple__element_3_01N_00_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html</filename>
     <templarg>std::size_t N</templarg>
@@ -67070,6 +68130,66 @@
       <name>m_edges</name>
       <anchorfile>structamrex_1_1EB2_1_1Vertex.html</anchorfile>
       <anchor>ac91b64f531bb3c5cf456af74b4000dd8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::MC::Vertex</name>
+    <filename>structamrex_1_1MC_1_1Vertex.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>resize</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>a1a32411468c70b1487f7c70ad39e1fb0</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>GpuArray&lt; Real *, 6 &gt;</type>
+      <name>dataPtrs</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>a990e9cef44268dda4d43b0af740e7004</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>x</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>a23757029f3eecb3e833f4afebd08c1fb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>y</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>ab3e23d3f9cc73e6e423fefa57a2a191e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>z</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>ad1b75f703db519d4059b71dd78a92cd7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>nx</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>a6fcb734a35e301824a82b1b631a39e9e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>ny</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>a1fe1f8617ac4342b496f7b98142ef426</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Gpu::DeviceVector&lt; Real &gt;</type>
+      <name>nz</name>
+      <anchorfile>structamrex_1_1MC_1_1Vertex.html</anchorfile>
+      <anchor>ae3f5a23efe0570f375b19273826b2368</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -68037,6 +69157,7 @@
     <namespace>amrex::LongParticleIds</namespace>
     <namespace>amrex::Machine</namespace>
     <namespace>amrex::Math</namespace>
+    <namespace>amrex::MC</namespace>
     <namespace>amrex::Morton</namespace>
     <namespace>amrex::mpidatatypes</namespace>
     <namespace>amrex::MPMD</namespace>
@@ -68147,6 +69268,10 @@
     <class kind="struct">amrex::ConstSoAParticle</class>
     <class kind="class">amrex::CoordSys</class>
     <class kind="class">amrex::CpuBndryFuncFab</class>
+    <class kind="struct">amrex::CSR</class>
+    <class kind="struct">amrex::CsrSorted</class>
+    <class kind="struct">amrex::CsrValid</class>
+    <class kind="struct">amrex::CsrView</class>
     <class kind="class">amrex::CutFab</class>
     <class kind="struct">amrex::DataAllocator</class>
     <class kind="struct">amrex::DataDeleter</class>
@@ -68374,6 +69499,7 @@
     <class kind="class">amrex::Orientation</class>
     <class kind="class">amrex::OrientationIter</class>
     <class kind="class">amrex::ParConstIter_impl</class>
+    <class kind="struct">amrex::ParCsr</class>
     <class kind="class">amrex::PArena</class>
     <class kind="class">amrex::ParGDB</class>
     <class kind="class">amrex::ParGDBBase</class>
@@ -76146,29 +77272,71 @@
       <type>T</type>
       <name>Dot</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aad71029d21b80e949017215cf30d0f7c</anchor>
-      <arglist>(AlgVector&lt; T &gt; const &amp;x, AlgVector&lt; T &gt; const &amp;y, bool local=false)</arglist>
+      <anchor>a1dcb08f05499fc97db5048542f59f4d2</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; const &amp;x, AlgVector&lt; T, Allocator &gt; const &amp;y, bool local=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>Axpy</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a8d608f0e60e86a8a8e1c1f2feae1f653</anchor>
-      <arglist>(AlgVector&lt; T &gt; &amp;y, T a, AlgVector&lt; T &gt; const &amp;x, bool async=false)</arglist>
+      <anchor>ae2972dbaa0589e933c9a52ce4191008c</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Xpay</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>af5289a85de87dbc4ba3e3201f8a93637</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;x)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>LinComb</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>ad1a8a2c601af00a5189517163b863d05</anchor>
-      <arglist>(AlgVector&lt; T &gt; &amp;y, T a, AlgVector&lt; T &gt; const &amp;xa, T b, AlgVector&lt; T &gt; const &amp;xb, bool async=false)</arglist>
+      <anchor>ac2a53aa6f507d3106dc3403b710232e3</anchor>
+      <arglist>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;xa, T b, AlgVector&lt; T, Allocator &gt; const &amp;xb)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>duplicateCSR</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a77f49a01806906728a13f177be83dc29</anchor>
+      <arglist>(C c, CSR&lt; T, AD &gt; &amp;dst, CSR&lt; T, AS &gt; const &amp;src)</arglist>
+    </member>
+    <member kind="function">
+      <type>CSR&lt; T, V &gt;</type>
+      <name>transpose</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a9c9de63773fd664ef9d182ef1cc5964e</anchor>
+      <arglist>(CSR&lt; T, V &gt; const &amp;csr, Long ncols)</arglist>
+    </member>
+    <member kind="function">
+      <type>SpMatrix&lt; T, Allocator &gt;</type>
+      <name>transpose</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a16bfd501a58a528c61e0ef1412e23912</anchor>
+      <arglist>(SpMatrix&lt; T, Allocator &gt; const &amp;A, AlgPartition col_partition)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SpMV</name>
       <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a5497760fe0dddbe8b0ef6dc10521a843</anchor>
-      <arglist>(AlgVector&lt; T &gt; &amp;y, SpMatrix&lt; T &gt; const &amp;A, AlgVector&lt; T &gt; const &amp;x)</arglist>
+      <anchor>ace0808388e851eff31416adb29d889a0</anchor>
+      <arglist>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const &gt; const &amp;A, T const *__restrict__ px)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SpMV</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a287bbdc94930142a9cefe738a5b79002</anchor>
+      <arglist>(AlgVector&lt; T, AllocV &gt; &amp;y, SpMatrix&lt; T, AllocM &gt; const &amp;A, AlgVector&lt; T, AllocV &gt; const &amp;x)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>computeResidual</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a886f6737dede1d359dcd80b55000f9a2</anchor>
+      <arglist>(AlgVector&lt; T, AllocV &gt; &amp;res, SpMatrix&lt; T, AllocM &gt; const &amp;A, AlgVector&lt; T, AllocV &gt; const &amp;x, AlgVector&lt; T, AllocV &gt; const &amp;b)</arglist>
     </member>
     <member kind="function">
       <type>MLMGNormType_EnumTraits</type>
@@ -77758,8 +78926,8 @@
       <type>void</type>
       <name>Build</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gab84e44ba11cf1770598ed29c7bc4889e</anchor>
-      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
+      <anchor>ga973e5a7fce78c777b54c3945ef167110</anchor>
+      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt(), bool support_mvmc=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -77795,6 +78963,13 @@
       <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
       <anchor>acb02398d0c8b02dae840acf4f35b886c</anchor>
       <arglist>(IndexSpace const *ebis, const Geometry &amp;geom)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>BuildMultiValuedMultiCut</name>
+      <anchorfile>namespaceamrex_1_1EB2.html</anchorfile>
+      <anchor>a7e417707fc6cfba90a83294e6844e17e</anchor>
+      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening, bool a_extend_domain_face, int a_num_coarsen_opt)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -79464,6 +80639,42 @@
       <anchorfile>namespaceamrex_1_1Math.html</anchorfile>
       <anchor>a7e56b8f1bc049730f72de2354c62d04b</anchor>
       <arglist>(float x)</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>amrex::MC</name>
+    <filename>namespaceamrex_1_1MC.html</filename>
+    <class kind="struct">amrex::MC::LookUpTable</class>
+    <class kind="class">amrex::MC::MCFab</class>
+    <class kind="struct">amrex::MC::Triangle</class>
+    <class kind="struct">amrex::MC::Vertex</class>
+    <member kind="function">
+      <type>void</type>
+      <name>Initialize</name>
+      <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
+      <anchor>ae6a8cd4fbcc012daa472d5ee8f4c9544</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Finalize</name>
+      <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
+      <anchor>ad71928b605de06d33178b26dc3e68a56</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>marching_cubes</name>
+      <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
+      <anchor>a8bcee6a085ee2a4c2c2163d742234d29</anchor>
+      <arglist>(Geometry const &amp;geom, FArrayBox &amp;sdf_fab, MCFab &amp;mc_fab)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write_stl</name>
+      <anchorfile>namespaceamrex_1_1MC.html</anchorfile>
+      <anchor>a6f6a8c824ff44b98d4dd22f062ff8a3b</anchor>
+      <arglist>(std::string const &amp;filename, std::map&lt; int, std::unique_ptr&lt; MCFab &gt; &gt; const &amp;mc_fabs)</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -84363,8 +85574,8 @@
       <type>void</type>
       <name>amrex::EB2::Build</name>
       <anchorfile>group__amrex__eb.html</anchorfile>
-      <anchor>gab84e44ba11cf1770598ed29c7bc4889e</anchor>
-      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt())</arglist>
+      <anchor>ga973e5a7fce78c777b54c3945ef167110</anchor>
+      <arglist>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true, bool extend_domain_face=ExtendDomainFace(), int num_coarsen_opt=NumCoarsenOpt(), bool support_mvmc=false)</arglist>
     </member>
     <member kind="function">
       <type>std::unique_ptr&lt; EBFArrayBoxFactory &gt;</type>

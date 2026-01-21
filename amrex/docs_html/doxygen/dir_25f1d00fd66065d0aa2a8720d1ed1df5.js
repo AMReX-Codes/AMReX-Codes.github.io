@@ -6,10 +6,13 @@ var dir_25f1d00fd66065d0aa2a8720d1ed1df5 =
     [ "AMReX_AlgPartition.cpp", "AMReX__AlgPartition_8cpp.html", null ],
     [ "AMReX_AlgPartition.H", "AMReX__AlgPartition_8H.html", "AMReX__AlgPartition_8H" ],
     [ "AMReX_AlgVector.H", "AMReX__AlgVector_8H.html", "AMReX__AlgVector_8H" ],
+    [ "AMReX_AlgVecUtil.H", "AMReX__AlgVecUtil_8H.html", "AMReX__AlgVecUtil_8H" ],
+    [ "AMReX_CSR.H", "AMReX__CSR_8H.html", "AMReX__CSR_8H" ],
     [ "AMReX_GMRES.H", "AMReX__GMRES_8H.html", null ],
     [ "AMReX_GMRES_MLMG.H", "AMReX__GMRES__MLMG_8H.html", "AMReX__GMRES__MLMG_8H" ],
     [ "AMReX_GMRES_MV.H", "AMReX__GMRES__MV_8H.html", "AMReX__GMRES__MV_8H" ],
     [ "AMReX_Smoother_MV.H", "AMReX__Smoother__MV_8H.html", "AMReX__Smoother__MV_8H" ],
     [ "AMReX_SpMatrix.H", "AMReX__SpMatrix_8H.html", "AMReX__SpMatrix_8H" ],
+    [ "AMReX_SpMatUtil.H", "AMReX__SpMatUtil_8H.html", "AMReX__SpMatUtil_8H" ],
     [ "AMReX_SpMV.H", "AMReX__SpMV_8H.html", "AMReX__SpMV_8H" ]
 ];

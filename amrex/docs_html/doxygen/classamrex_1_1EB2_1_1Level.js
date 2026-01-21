@@ -50,10 +50,12 @@ var classamrex_1_1EB2_1_1Level =
     [ "m_grids", "classamrex_1_1EB2_1_1Level.html#a5417de191837a4807397f9dd9acffbc4", null ],
     [ "m_has_eb_info", "classamrex_1_1EB2_1_1Level.html#a8ca77bd2758bddbc9d71e12a1c317418", null ],
     [ "m_levelset", "classamrex_1_1EB2_1_1Level.html#a999ca961f5c742f5d61cbace2d88535d", null ],
+    [ "m_marching_cubes", "classamrex_1_1EB2_1_1Level.html#a6d161c52a8bc991092be0780826cd5ad", null ],
     [ "m_mgf", "classamrex_1_1EB2_1_1Level.html#a1313168a355b46b2d03060c450036477", null ],
     [ "m_ngrow", "classamrex_1_1EB2_1_1Level.html#a4b580f495f97633950d9a0822c940fe8", null ],
     [ "m_ok", "classamrex_1_1EB2_1_1Level.html#acdef1c2b11c62f8e02b1a4806de74376", null ],
     [ "m_parent", "classamrex_1_1EB2_1_1Level.html#a4e89aa75cb75a863666efa8df2f74e9b", null ],
+    [ "m_sdf", "classamrex_1_1EB2_1_1Level.html#ab3ad66dc044dca1c8f59ea1446ff48f6", null ],
     [ "m_shift", "classamrex_1_1EB2_1_1Level.html#a1866cb5d3a50409ea2d006074442b57e", null ],
     [ "m_volfrac", "classamrex_1_1EB2_1_1Level.html#a0fd8fbb0ff5ceb71c27249153f70a53f", null ]
 ];

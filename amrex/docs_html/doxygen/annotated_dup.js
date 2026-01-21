@@ -122,6 +122,12 @@ var annotated_dup =
       [ "Math", "namespaceamrex_1_1Math.html", [
         [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ]
       ] ],
+      [ "MC", "namespaceamrex_1_1MC.html", [
+        [ "LookUpTable", "structamrex_1_1MC_1_1LookUpTable.html", "structamrex_1_1MC_1_1LookUpTable" ],
+        [ "MCFab", "classamrex_1_1MC_1_1MCFab.html", "classamrex_1_1MC_1_1MCFab" ],
+        [ "Triangle", "structamrex_1_1MC_1_1Triangle.html", "structamrex_1_1MC_1_1Triangle" ],
+        [ "Vertex", "structamrex_1_1MC_1_1Vertex.html", "structamrex_1_1MC_1_1Vertex" ]
+      ] ],
       [ "mpidatatypes", "namespaceamrex_1_1mpidatatypes.html", [
         [ "MPI_Status", "structamrex_1_1mpidatatypes_1_1MPI__Status.html", null ]
       ] ],
@@ -266,6 +272,10 @@ var annotated_dup =
       [ "ConstSoAParticle", "structamrex_1_1ConstSoAParticle.html", "structamrex_1_1ConstSoAParticle" ],
       [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ],
       [ "CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", "classamrex_1_1CpuBndryFuncFab" ],
+      [ "CSR", "structamrex_1_1CSR.html", "structamrex_1_1CSR" ],
+      [ "CsrSorted", "structamrex_1_1CsrSorted.html", "structamrex_1_1CsrSorted" ],
+      [ "CsrValid", "structamrex_1_1CsrValid.html", "structamrex_1_1CsrValid" ],
+      [ "CsrView", "structamrex_1_1CsrView.html", "structamrex_1_1CsrView" ],
       [ "CutFab", "classamrex_1_1CutFab.html", "classamrex_1_1CutFab" ],
       [ "DataAllocator", "structamrex_1_1DataAllocator.html", "structamrex_1_1DataAllocator" ],
       [ "DataDeleter", "structamrex_1_1DataDeleter.html", "structamrex_1_1DataDeleter" ],
@@ -493,6 +503,7 @@ var annotated_dup =
       [ "Orientation", "classamrex_1_1Orientation.html", "classamrex_1_1Orientation" ],
       [ "OrientationIter", "classamrex_1_1OrientationIter.html", "classamrex_1_1OrientationIter" ],
       [ "ParConstIter_impl", "classamrex_1_1ParConstIter__impl.html", "classamrex_1_1ParConstIter__impl" ],
+      [ "ParCsr", "structamrex_1_1ParCsr.html", "structamrex_1_1ParCsr" ],
       [ "PArena", "classamrex_1_1PArena.html", "classamrex_1_1PArena" ],
       [ "ParGDB", "classamrex_1_1ParGDB.html", "classamrex_1_1ParGDB" ],
       [ "ParGDBBase", "classamrex_1_1ParGDBBase.html", "classamrex_1_1ParGDBBase" ],

@@ -1,0 +1,1423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structamrex_1_1MC_1_1LookUpTable" kind="struct" language="C++" prot="public">
+    <compoundname>amrex::MC::LookUpTable</compoundname>
+    <includes refid="AMReX__mc__jgt__table_8H" local="no">AMReX_mc_jgt_table.H</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a30755f6e2d5a5262df66a9b417197834" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::cases[256][2]</definition>
+        <argsstring>[256][2]</argsstring>
+        <name>cases</name>
+        <qualifiedname>amrex::MC::LookUpTable::cases</qualifiedname>
+        <briefdescription>
+<para><ref refid="structamrex_1_1MC_1_1LookUpTable" kindref="compound">LookUpTable</ref> for the MarchingCubes 33 Algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Thomas Lewiner <ulink url="mailto:thomas.lewiner@polytechnique.org">thomas.lewiner@polytechnique.org</ulink> </para>
+</simplesect>
+<simplesect kind="author"><para><ref refid="namespaceamrex_1_1Math" kindref="compound">Math</ref> Dept, PUC-Rio </para>
+</simplesect>
+<simplesect kind="version"><para>0.2 </para>
+</simplesect>
+<simplesect kind="date"><para>12/08/2002</para>
+</simplesect>
+case mapping For each of the possible vertex states listed in this table there is a specific triangulation of the edge intersection points. The table lists all of them in the form of 0-5 edge triples with the list terminated by the invalid value -1. For example: case[3] list the 2 triangles formed when cube[0] and cube[1] are inside of the surface, but the rest of the cube is not.</para>
+<para>Cube description: 7 ________ 6 _____6__ ________ /| /| 7/| /| /| /| / | / | / | /5 | / 6 / | 4 /_______ / | /__4____ / 10 /_______3/ | | | |5 | | 11 | | | | | 2 | | 3|__|_____|2 | |__|__2__| | 4 |__|_____| | / | / 8 3/ 9 / | / | / | / | / | / | /1 | / 5 / |/_______|/ |/___0___|/ |/_1_____|/ 0 1 0 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="46" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="46" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a1e7a4fc82a7fd4f527a71e8bfb40e0e8" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling1[16][3]</definition>
+        <argsstring>[16][3]</argsstring>
+        <name>tiling1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling1</qualifiedname>
+        <initializer>= {
+  {  0,  8,  3 },
+  {  0,  1,  9 },
+  {  1,  2, 10 },
+  {  3, 11,  2 },
+  {  4,  7,  8 },
+  {  9,  5,  4 },
+  { 10,  6,  5 },
+  {  7,  6, 11 },
+  {  7, 11,  6 },
+  { 10,  5,  6 },
+  {  9,  4,  5 },
+  {  4,  8,  7 },
+  {  3,  2, 11 },
+  {  1, 10,  2 },
+  {  0,  9,  1 },
+  {  0,  3,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="318" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="318" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1afcc913f3174436f50cd4928ebb282c5c" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling2[24][6]</definition>
+        <argsstring>[24][6]</argsstring>
+        <name>tiling2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling2</qualifiedname>
+        <initializer>= {
+  {  1,  8,  3,  9,  8,  1 },
+  {  0, 11,  2,  8, 11,  0 },
+  {  4,  3,  0,  7,  3,  4 },
+  {  9,  2, 10,  0,  2,  9 },
+  {  0,  5,  4,  1,  5,  0 },
+  {  3, 10,  1, 11, 10,  3 },
+  {  1,  6,  5,  2,  6,  1 },
+  {  7,  2,  3,  6,  2,  7 },
+  {  9,  7,  8,  5,  7,  9 },
+  {  6,  8,  4, 11,  8,  6 },
+  { 10,  4,  9,  6,  4, 10 },
+  { 11,  5, 10,  7,  5, 11 },
+  { 11, 10,  5,  7, 11,  5 },
+  { 10,  9,  4,  6, 10,  4 },
+  {  6,  4,  8, 11,  6,  8 },
+  {  9,  8,  7,  5,  9,  7 },
+  {  7,  3,  2,  6,  7,  2 },
+  {  1,  5,  6,  2,  1,  6 },
+  {  3,  1, 10, 11,  3, 10 },
+  {  0,  4,  5,  1,  0,  5 },
+  {  9, 10,  2,  0,  9,  2 },
+  {  4,  0,  3,  7,  4,  3 },
+  {  0,  2, 11,  8,  0, 11 },
+  {  1,  3,  8,  9,  1,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="350" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="350" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aabf8c256833a7432d7a738ef8588d059" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test3[24]</definition>
+        <argsstring>[24]</argsstring>
+        <name>test3</name>
+        <qualifiedname>amrex::MC::LookUpTable::test3</qualifiedname>
+        <initializer>= {
+    5,
+    1,
+    4,
+    5,
+    1,
+    2,
+    2,
+    3,
+    4,
+    3,
+    6,
+    6,
+   -6,
+   -6,
+   -3,
+   -4,
+   -3,
+   -2,
+   -2,
+   -1,
+   -5,
+   -4,
+   -1,
+   -5
+}</initializer>
+        <briefdescription>
+<para>test table for case 3 One face to test When the test on the specified face is positive : 4 first triangles When the test on the specified face is negative : 2 last triangles </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="393" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="393" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a81c0178d6cf5eccbddbb3bcb5e1a4d8b" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling3_1[24][6]</definition>
+        <argsstring>[24][6]</argsstring>
+        <name>tiling3_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling3_1</qualifiedname>
+        <initializer>= {
+  {  0,  8,  3,  1,  2, 10 },
+  {  9,  5,  4,  0,  8,  3 },
+  {  3,  0,  8, 11,  7,  6 },
+  {  1,  9,  0,  2,  3, 11 },
+  {  0,  1,  9,  8,  4,  7 },
+  {  9,  0,  1,  5, 10,  6 },
+  {  1,  2, 10,  9,  5,  4 },
+  { 10,  1,  2,  6, 11,  7 },
+  {  8,  4,  7,  3, 11,  2 },
+  {  2,  3, 11, 10,  6,  5 },
+  {  5, 10,  6,  4,  7,  8 },
+  {  4,  9,  5,  7,  6, 11 },
+  {  5,  9,  4, 11,  6,  7 },
+  {  6, 10,  5,  8,  7,  4 },
+  { 11,  3,  2,  5,  6, 10 },
+  {  7,  4,  8,  2, 11,  3 },
+  {  2,  1, 10,  7, 11,  6 },
+  { 10,  2,  1,  4,  5,  9 },
+  {  1,  0,  9,  6, 10,  5 },
+  {  9,  1,  0,  7,  4,  8 },
+  {  0,  9,  1, 11,  3,  2 },
+  {  8,  0,  3,  6,  7, 11 },
+  {  4,  5,  9,  3,  8,  0 },
+  {  3,  8,  0, 10,  2,  1 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 3.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="431" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="431" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a7241efe5febbd3afb93bff4fcd0790f6" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling3_2[24][12]</definition>
+        <argsstring>[24][12]</argsstring>
+        <name>tiling3_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling3_2</qualifiedname>
+        <initializer>= {
+  { 10,  3,  2, 10,  8,  3, 10,  1,  0,  8, 10,  0 },
+  {  3,  4,  8,  3,  5,  4,  3,  0,  9,  5,  3,  9 },
+  {  6,  8,  7,  6,  0,  8,  6, 11,  3,  0,  6,  3 },
+  { 11,  0,  3, 11,  9,  0, 11,  2,  1,  9, 11,  1 },
+  {  7,  9,  4,  7,  1,  9,  7,  8,  0,  1,  7,  0 },
+  {  6,  1, 10,  6,  0,  1,  9,  0,  6,  9,  6,  5 },
+  {  4, 10,  5,  4,  2, 10,  4,  9,  1,  2,  4,  1 },
+  {  7,  2, 11,  7,  1,  2,  7,  6, 10,  1,  7, 10 },
+  {  2,  7, 11,  2,  4,  7,  2,  3,  8,  4,  2,  8 },
+  {  5, 11,  6,  5,  3, 11,  5, 10,  2,  3,  5,  2 },
+  {  8,  6,  7,  8, 10,  6,  8,  4,  5, 10,  8,  5 },
+  { 11,  5,  6, 11,  9,  5, 11,  7,  4,  9, 11,  4 },
+  {  6,  5, 11,  5,  9, 11,  4,  7, 11,  4, 11,  9 },
+  {  7,  6,  8,  6, 10,  8,  5,  4,  8,  5,  8, 10 },
+  {  6, 11,  5, 11,  3,  5,  2, 10,  5,  2,  5,  3 },
+  { 11,  7,  2,  7,  4,  2,  8,  3,  2,  8,  2,  4 },
+  { 11,  2,  7,  2,  1,  7, 10,  6,  7, 10,  7,  1 },
+  {  5, 10,  4, 10,  2,  4,  1,  9,  4,  1,  4,  2 },
+  { 10,  1,  6,  1,  0,  6,  6,  0,  9,  5,  6,  9 },
+  {  4,  9,  7,  9,  1,  7,  0,  8,  7,  0,  7,  1 },
+  {  3,  0, 11,  0,  9, 11,  1,  2, 11,  1, 11,  9 },
+  {  7,  8,  6,  8,  0,  6,  3, 11,  6,  3,  6,  0 },
+  {  8,  4,  3,  4,  5,  3,  9,  0,  3,  9,  3,  5 },
+  {  2,  3, 10,  3,  8, 10,  0,  1, 10,  0, 10,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 3.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="469" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="469" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a7332f7066152862bbb9f216d09c901a9" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test4[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>test4</name>
+        <qualifiedname>amrex::MC::LookUpTable::test4</qualifiedname>
+        <initializer>= {
+   7,
+   7,
+   7,
+   7,
+  -7,
+  -7,
+  -7,
+  -7
+}</initializer>
+        <briefdescription>
+<para>test table for case 4 Interior to test When the test on the interior is negative : 2 first triangles When the test on the interior is positive : 6 last triangles </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="514" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="514" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aaefd07326b3628d868a90cbe06210c37" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling4_1[8][6]</definition>
+        <argsstring>[8][6]</argsstring>
+        <name>tiling4_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling4_1</qualifiedname>
+        <initializer>= {
+  {  0,  8,  3,  5, 10,  6 },
+  {  0,  1,  9, 11,  7,  6 },
+  {  1,  2, 10,  8,  4,  7 },
+  {  9,  5,  4,  2,  3, 11 },
+  {  4,  5,  9, 11,  3,  2 },
+  { 10,  2,  1,  7,  4,  8 },
+  {  9,  1,  0,  6,  7, 11 },
+  {  3,  8,  0,  6, 10,  5 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 4.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="536" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="536" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a50afb09111a3c70ae3e73de4464f82b7" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling4_2[8][18]</definition>
+        <argsstring>[8][18]</argsstring>
+        <name>tiling4_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling4_2</qualifiedname>
+        <initializer>= {
+  {  8,  5,  0,  5,  8,  6,  3,  6,  8,  6,  3, 10,  0, 10,  3, 10,  0,  5 },
+  {  9,  6,  1,  6,  9,  7,  0,  7,  9,  7,  0, 11,  1, 11,  0, 11,  1,  6 },
+  { 10,  7,  2,  7, 10,  4,  1,  4, 10,  4,  1,  8,  2,  8,  1,  8,  2,  7 },
+  { 11,  4,  3,  4, 11,  5,  2,  5, 11,  5,  2,  9,  3,  9,  2,  9,  3,  4 },
+  {  3,  4, 11,  5, 11,  4, 11,  5,  2,  9,  2,  5,  2,  9,  3,  4,  3,  9 },
+  {  2,  7, 10,  4, 10,  7, 10,  4,  1,  8,  1,  4,  1,  8,  2,  7,  2,  8 },
+  {  1,  6,  9,  7,  9,  6,  9,  7,  0, 11,  0,  7,  0, 11,  1,  6,  1, 11 },
+  {  0,  5,  8,  6,  8,  5,  8,  6,  3, 10,  3,  6,  3, 10,  0,  5,  0, 10 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 4.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="558" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="558" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a622e97d4f8b761c107994e922cd936fe" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling5[48][9]</definition>
+        <argsstring>[48][9]</argsstring>
+        <name>tiling5</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling5</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 5 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="582" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="582" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a87414180a4ed7954f49846993e2cffce" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test6[48][3]</definition>
+        <argsstring>[48][3]</argsstring>
+        <name>test6</name>
+        <qualifiedname>amrex::MC::LookUpTable::test6</qualifiedname>
+        <briefdescription>
+<para>test table for case 6 1 face to test + eventually the interior When the test on the specified face is positive : 5 first triangles When the test on the specified face is negative : </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>if the test on the interior is negative : 3 middle triangles</para>
+</listitem><listitem><para>if the test on the interior is positive : 8 last triangles The support edge for the interior test is marked as the 3rd column.</para>
+</listitem></itemizedlist>
+</para>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="653" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="653" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a8bd3daf56e4921250a2952595d8bb0a1" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling6_1_1[48][9]</definition>
+        <argsstring>[48][9]</argsstring>
+        <name>tiling6_1_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling6_1_1</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 6.1.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="715" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="715" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a580ceeb1b4784273a9470c6c5fc36bfd" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling6_1_2[48][27]</definition>
+        <argsstring>[48][27]</argsstring>
+        <name>tiling6_1_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling6_1_2</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 6.1.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="777" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="777" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a0d91a42db76c59dda462f8daddf54b60" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling6_2[48][15]</definition>
+        <argsstring>[48][15]</argsstring>
+        <name>tiling6_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling6_2</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 6.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="839" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="839" bodyend="888"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ae1e80c17a03d5edc45a01166f55c5394" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test7[16][5]</definition>
+        <argsstring>[16][5]</argsstring>
+        <name>test7</name>
+        <qualifiedname>amrex::MC::LookUpTable::test7</qualifiedname>
+        <initializer>= {
+  {  1,  2,  5,  7,   1 },
+  {  3,  4,  5,  7,   3 },
+  {  4,  1,  6,  7,   4 },
+  {  4,  1,  5,  7,   0 },
+  {  2,  3,  5,  7,   2 },
+  {  1,  2,  6,  7,   5 },
+  {  2,  3,  6,  7,   6 },
+  {  3,  4,  6,  7,   7 },
+  { -3, -4, -6, -7,   7 },
+  { -2, -3, -6, -7,   6 },
+  { -1, -2, -6, -7,   5 },
+  { -2, -3, -5, -7,   2 },
+  { -4, -1, -5, -7,   0 },
+  { -4, -1, -6, -7,   4 },
+  { -3, -4, -5, -7,   3 },
+  { -1, -2, -5, -7,   1 }
+}</initializer>
+        <briefdescription>
+<para>test table for case 7 3 faces to test + eventually the interior When the tests on the 3 specified faces are positive : </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>if the test on the interior is positive : 5 first triangles</para>
+</listitem><listitem><para>if the test on the interior is negative : 9 next triangles When the tests on the first and the second specified faces are positive : 9 next triangles When the tests on the first and the third specified faces are positive : 9 next triangles When the tests on the second and the third specified faces are positive : 9 next triangles When the test on the first specified face is positive : 5 next triangles When the test on the second specified face is positive : 5 next triangles When the test on the third specified face is positive : 5 next triangles When the tests on the 3 specified faces are negative : 3 last triangles The support edge for the interior test is marked as the 5th column.</para>
+</listitem></itemizedlist>
+</para>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="917" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="917" bodyend="934"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ad626d9f945583b7b23f7b46f0101835c" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling7_1[16][9]</definition>
+        <argsstring>[16][9]</argsstring>
+        <name>tiling7_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling7_1</qualifiedname>
+        <initializer>= {
+  {  9,  5,  4, 10,  1,  2,  8,  3,  0 },
+  { 11,  7,  6,  8,  3,  0, 10,  1,  2 },
+  {  3,  0,  8,  5,  4,  9,  7,  6, 11 },
+  {  8,  4,  7,  9,  0,  1, 11,  2,  3 },
+  { 10,  6,  5, 11,  2,  3,  9,  0,  1 },
+  {  0,  1,  9,  6,  5, 10,  4,  7,  8 },
+  {  1,  2, 10,  7,  6, 11,  5,  4,  9 },
+  {  2,  3, 11,  4,  7,  8,  6,  5, 10 },
+  { 11,  3,  2,  8,  7,  4, 10,  5,  6 },
+  { 10,  2,  1, 11,  6,  7,  9,  4,  5 },
+  {  9,  1,  0, 10,  5,  6,  8,  7,  4 },
+  {  5,  6, 10,  3,  2, 11,  1,  0,  9 },
+  {  7,  4,  8,  1,  0,  9,  3,  2, 11 },
+  {  8,  0,  3,  9,  4,  5, 11,  6,  7 },
+  {  6,  7, 11,  0,  3,  8,  2,  1, 10 },
+  {  4,  5,  9,  2,  1, 10,  0,  3,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 7.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="947" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="947" bodyend="964"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a656c922e1a5da874c19e57eca6ef0ad0" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling7_2[16][3][15]</definition>
+        <argsstring>[16][3][15]</argsstring>
+        <name>tiling7_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling7_2</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 7.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="977" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="977" bodyend="1057"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a614c93aa76cb67fa41e54315f57319b2" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling7_3[16][3][27]</definition>
+        <argsstring>[16][3][27]</argsstring>
+        <name>tiling7_3</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling7_3</qualifiedname>
+        <briefdescription>
+<para>tiling table for case 7.3 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1070" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1070" bodyend="1150"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a6509a12df9c626e495766d1462f738c9" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling7_4_1[16][15]</definition>
+        <argsstring>[16][15]</argsstring>
+        <name>tiling7_4_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling7_4_1</qualifiedname>
+        <initializer>= {
+  {  3,  4,  8,  4,  3, 10,  2, 10,  3,  4, 10,  5,  9,  1,  0 },
+  {  1,  6, 10,  6,  1,  8,  0,  8,  1,  6,  8,  7, 11,  3,  2 },
+  { 11,  3,  6,  9,  6,  3,  6,  9,  5,  0,  9,  3,  7,  4,  8 },
+  {  2,  7, 11,  7,  2,  9,  1,  9,  2,  7,  9,  4,  8,  0,  3 },
+  {  0,  5,  9,  5,  0, 11,  3, 11,  0,  5, 11,  6, 10,  2,  1 },
+  {  8,  0,  7, 10,  7,  0,  7, 10,  6,  1, 10,  0,  4,  5,  9 },
+  {  9,  1,  4, 11,  4,  1,  4, 11,  7,  2, 11,  1,  5,  6, 10 },
+  { 10,  2,  5,  8,  5,  2,  5,  8,  4,  3,  8,  2,  6,  7, 11 },
+  {  5,  2, 10,  2,  5,  8,  4,  8,  5,  2,  8,  3, 11,  7,  6 },
+  {  4,  1,  9,  1,  4, 11,  7, 11,  4,  1, 11,  2, 10,  6,  5 },
+  {  7,  0,  8,  0,  7, 10,  6, 10,  7,  0, 10,  1,  9,  5,  4 },
+  {  9,  5,  0, 11,  0,  5,  0, 11,  3,  6, 11,  5,  1,  2, 10 },
+  { 11,  7,  2,  9,  2,  7,  2,  9,  1,  4,  9,  7,  3,  0,  8 },
+  {  6,  3, 11,  3,  6,  9,  5,  9,  6,  3,  9,  0,  8,  4,  7 },
+  { 10,  6,  1,  8,  1,  6,  1,  8,  0,  7,  8,  6,  2,  3, 11 },
+  {  8,  4,  3, 10,  3,  4,  3, 10,  2,  5, 10,  4,  0,  1,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 7.4.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1163" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1163" bodyend="1180"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a1999cd9e61ed64542a64dcf966b5b06a" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling7_4_2[16][27]</definition>
+        <argsstring>[16][27]</argsstring>
+        <name>tiling7_4_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling7_4_2</qualifiedname>
+        <initializer>= {
+  {   9,  4,  8,  4,  9,  5, 10,  5,  9,  1, 10,  9, 10,  1,  2,  0,  2,  1,  2,  0,  3,  8,  3,  0,  9,  8,  0 },
+  {  11,  6, 10,  6, 11,  7,  8,  7, 11,  3,  8, 11,  8,  3,  0,  2,  0,  3,  0,  2,  1, 10,  1,  2, 11, 10,  2 },
+  {  11,  3,  8,  0,  8,  3,  8,  0,  9,  8,  9,  4,  5,  4,  9,  4,  5,  7,  6,  7,  5,  7,  6, 11,  7, 11,  8 },
+  {   8,  7, 11,  7,  8,  4,  9,  4,  8,  0,  9,  8,  9,  0,  1,  3,  1,  0,  1,  3,  2, 11,  2,  3,  8, 11,  3 },
+  {  10,  5,  9,  5, 10,  6, 11,  6, 10,  2, 11, 10, 11,  2,  3,  1,  3,  2,  3,  1,  0,  9,  0,  1, 10,  9,  1 },
+  {   8,  0,  9,  1,  9,  0,  9,  1, 10,  9, 10,  5,  6,  5, 10,  5,  6,  4,  7,  4,  6,  4,  7,  8,  4,  8,  9 },
+  {   9,  1, 10,  2, 10,  1, 10,  2, 11, 10, 11,  6,  7,  6, 11,  6,  7,  5,  4,  5,  7,  5,  4,  9,  5,  9, 10 },
+  {  10,  2, 11,  3, 11,  2, 11,  3,  8, 11,  8,  7,  4,  7,  8,  7,  4,  6,  5,  6,  4,  6,  5, 10,  6, 10, 11 },
+  {  11,  2, 10,  2, 11,  3,  8,  3, 11,  7,  8, 11,  8,  7,  4,  6,  4,  7,  4,  6,  5, 10,  5,  6, 11, 10,  6 },
+  {  10,  1,  9,  1, 10,  2, 11,  2, 10,  6, 11, 10, 11,  6,  7,  5,  7,  6,  7,  5,  4,  9,  4,  5, 10,  9,  5 },
+  {   9,  0,  8,  0,  9,  1, 10,  1,  9,  5, 10,  9, 10,  5,  6,  4,  6,  5,  6,  4,  7,  8,  7,  4,  9,  8,  4 },
+  {   9,  5, 10,  6, 10,  5, 10,  6, 11, 10, 11,  2,  3,  2, 11,  2,  3,  1,  0,  1,  3,  1,  0,  9,  1,  9, 10 },
+  {  11,  7,  8,  4,  8,  7,  8,  4,  9,  8,  9,  0,  1,  0,  9,  0,  1,  3,  2,  3,  1,  3,  2, 11,  3, 11,  8 },
+  {   8,  3, 11,  3,  8,  0,  9,  0,  8,  4,  9,  8,  9,  4,  5,  7,  5,  4,  5,  7,  6, 11,  6,  7,  8, 11,  7 },
+  {  10,  6, 11,  7, 11,  6, 11,  7,  8, 11,  8,  3,  0,  3,  8,  3,  0,  2,  1,  2,  0,  2,  1, 10,  2, 10, 11 },
+  {   8,  4,  9,  5,  9,  4,  9,  5, 10,  9, 10,  1,  2,  1, 10,  1,  2,  0,  3,  0,  2,  0,  3,  8,  0,  8,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 7.4.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1193" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1193" bodyend="1210"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aa0d7097d81dec4fef966ac2f33787c95" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling8[6][6]</definition>
+        <argsstring>[6][6]</argsstring>
+        <name>tiling8</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling8</qualifiedname>
+        <initializer>= {
+  { 9,  8, 10, 10,  8, 11 },
+  { 1,  5,  3,  3,  5,  7 },
+  { 0,  4,  2,  4,  6,  2 },
+  { 0,  2,  4,  4,  2,  6 },
+  { 1,  3,  5,  3,  7,  5 },
+  { 9, 10,  8, 10, 11,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 8 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1225" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1225" bodyend="1232"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a7da0577db2aefc7c80127bb3310409e3" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling9[8][12]</definition>
+        <argsstring>[8][12]</argsstring>
+        <name>tiling9</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling9</qualifiedname>
+        <initializer>= {
+  {  2, 10,  5,  3,  2,  5,  3,  5,  4,  3,  4,  8 },
+  {  4,  7, 11,  9,  4, 11,  9, 11,  2,  9,  2,  1 },
+  { 10,  7,  6,  1,  7, 10,  1,  8,  7,  1,  0,  8 },
+  {  3,  6, 11,  0,  6,  3,  0,  5,  6,  0,  9,  5 },
+  {  3, 11,  6,  0,  3,  6,  0,  6,  5,  0,  5,  9 },
+  { 10,  6,  7,  1, 10,  7,  1,  7,  8,  1,  8,  0 },
+  {  4, 11,  7,  9, 11,  4,  9,  2, 11,  9,  1,  2 },
+  {  2,  5, 10,  3,  5,  2,  3,  4,  5,  3,  8,  4 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 9 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1247" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1247" bodyend="1256"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ae7308d4cc5aadd36a77d41269d1274e3" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test10[6][3]</definition>
+        <argsstring>[6][3]</argsstring>
+        <name>test10</name>
+        <qualifiedname>amrex::MC::LookUpTable::test10</qualifiedname>
+        <initializer>= {
+  {  2,  4,  7 },
+  {  5,  6,  7 },
+  {  1,  3,  7 },
+  {  1,  3,  7 },
+  {  5,  6,  7 },
+  {  2,  4,  7 }
+}</initializer>
+        <briefdescription>
+<para>test table for case 10 2 faces to test + eventually the interior When the tests on both specified faces are positive : 4 middle triangles (1) When the test on the first specified face is positive : 8 first triangles When the test on the second specified face is positive : 8 next triangles When the tests on both specified faces are negative : </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>if the test on the interior is negative : 4 middle triangles</para>
+</listitem><listitem><para>if the test on the interior is positive : 8 last triangles</para>
+</listitem></itemizedlist>
+</para>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1280" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1280" bodyend="1287"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a9528489b0ac87eb06923e05a0202d6d2" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling10_1_1[6][12]</definition>
+        <argsstring>[6][12]</argsstring>
+        <name>tiling10_1_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling10_1_1</qualifiedname>
+        <initializer>= {
+  {  5, 10,  7, 11,  7, 10,  8,  1,  9,  1,  8,  3 },
+  {  1,  2,  5,  6,  5,  2,  4,  3,  0,  3,  4,  7 },
+  { 11,  0,  8,  0, 11,  2,  4,  9,  6, 10,  6,  9 },
+  {  9,  0, 10,  2, 10,  0,  6,  8,  4,  8,  6, 11 },
+  {  7,  2,  3,  2,  7,  6,  0,  1,  4,  5,  4,  1 },
+  {  7,  9,  5,  9,  7,  8, 10,  1, 11,  3, 11,  1 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 10.1.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1300" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1300" bodyend="1307"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ad85da51574baf14b7bca87c753d283ba" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling10_1_1_[6][12]</definition>
+        <argsstring>[6][12]</argsstring>
+        <name>tiling10_1_1_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling10_1_1_</qualifiedname>
+        <initializer>= {
+  {  5,  9,  7,  8,  7,  9, 11,  1, 10,  1, 11,  3 },
+  {  3,  2,  7,  6,  7,  2,  4,  1,  0,  1,  4,  5 },
+  { 10,  0,  9,  0, 10,  2,  4,  8,  6, 11,  6,  8 },
+  {  8,  0, 11,  2, 11,  0,  6,  9,  4,  9,  6, 10 },
+  {  5,  2,  1,  2,  5,  6,  0,  3,  4,  7,  4,  3 },
+  {  7, 10,  5, 10,  7, 11,  9,  1,  8,  3,  8,  1 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 10.1.1 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1320" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1320" bodyend="1327"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aab74ef6ba9d5c1076448b0f487cf7c32" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling10_1_2[6][24]</definition>
+        <argsstring>[6][24]</argsstring>
+        <name>tiling10_1_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling10_1_2</qualifiedname>
+        <initializer>= {
+  {  3, 11,  7,  3,  7,  8,  9,  8,  7,  5,  9,  7,  9,  5, 10,  9, 10,  1,  3,  1, 10, 11,  3, 10 },
+  {  7,  6,  5,  7,  5,  4,  0,  4,  5,  1,  0,  5,  0,  1,  2,  0,  2,  3,  7,  3,  2,  6,  7,  2 },
+  { 11,  2, 10,  6, 11, 10, 11,  6,  4, 11,  4,  8,  0,  8,  4,  9,  0,  4,  0,  9, 10,  0, 10,  2 },
+  { 11,  2, 10, 11, 10,  6,  4,  6, 10,  9,  4, 10,  4,  9,  0,  4,  0,  8, 11,  8,  0,  2, 11,  0 },
+  {  7,  6,  5,  4,  7,  5,  7,  4,  0,  7,  0,  3,  2,  3,  0,  1,  2,  0,  2,  1,  5,  2,  5,  6 },
+  {  7,  8,  3, 11,  7,  3,  7, 11, 10,  7, 10,  5,  9,  5, 10,  1,  9, 10,  9,  1,  3,  9,  3,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 10.1.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1340" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1340" bodyend="1347"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ad7480cd059a4f251f8af260a100ac22c" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling10_2[6][24]</definition>
+        <argsstring>[6][24]</argsstring>
+        <name>tiling10_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling10_2</qualifiedname>
+        <initializer>= {
+  { 12,  5,  9, 12,  9,  8, 12,  8,  3, 12,  3,  1, 12,  1, 10, 12, 10, 11, 12, 11,  7, 12,  7,  5 },
+  { 12,  1,  0, 12,  0,  4, 12,  4,  7, 12,  7,  3, 12,  3,  2, 12,  2,  6, 12,  6,  5, 12,  5,  1 },
+  {  4,  8, 12,  6,  4, 12, 10,  6, 12,  9, 10, 12,  0,  9, 12,  2,  0, 12, 11,  2, 12,  8, 11, 12 },
+  { 12,  9,  4, 12,  4,  6, 12,  6, 11, 12, 11,  8, 12,  8,  0, 12,  0,  2, 12,  2, 10, 12, 10,  9 },
+  {  0,  3, 12,  4,  0, 12,  5,  4, 12,  1,  5, 12,  2,  1, 12,  6,  2, 12,  7,  6, 12,  3,  7, 12 },
+  { 10,  5, 12, 11, 10, 12,  3, 11, 12,  1,  3, 12,  9,  1, 12,  8,  9, 12,  7,  8, 12,  5,  7, 12 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 10.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1360" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1360" bodyend="1367"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a5d3608c2a6dcdeff186440a585e7bbd0" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling10_2_[6][24]</definition>
+        <argsstring>[6][24]</argsstring>
+        <name>tiling10_2_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling10_2_</qualifiedname>
+        <initializer>= {
+  {  8,  7, 12,  9,  8, 12,  1,  9, 12,  3,  1, 12, 11,  3, 12, 10, 11, 12,  5, 10, 12,  7,  5, 12 },
+  {  4,  5, 12,  0,  4, 12,  3,  0, 12,  7,  3, 12,  6,  7, 12,  2,  6, 12,  1,  2, 12,  5,  1, 12 },
+  { 12, 11,  6, 12,  6,  4, 12,  4,  9, 12,  9, 10, 12, 10,  2, 12,  2,  0, 12,  0,  8, 12,  8, 11 },
+  {  6, 10, 12,  4,  6, 12,  8,  4, 12, 11,  8, 12,  2, 11, 12,  0,  2, 12,  9,  0, 12, 10,  9, 12 },
+  { 12,  7,  4, 12,  4,  0, 12,  0,  1, 12,  1,  5, 12,  5,  6, 12,  6,  2, 12,  2,  3, 12,  3,  7 },
+  { 12,  7, 11, 12, 11, 10, 12, 10,  1, 12,  1,  3, 12,  3,  8, 12,  8,  9, 12,  9,  5, 12,  5,  7 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 10.2 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1380" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1380" bodyend="1387"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aa53dbd5f6234ba97230508791f21133e" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling11[12][12]</definition>
+        <argsstring>[12][12]</argsstring>
+        <name>tiling11</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling11</qualifiedname>
+        <initializer>= {
+  { 2, 10,  9,  2,  9,  7,  2,  7,  3,  7,  9,  4 },
+  { 1,  6,  2,  1,  8,  6,  1,  9,  8,  8,  7,  6 },
+  { 8,  3,  1,  8,  1,  6,  8,  6,  4,  6,  1, 10 },
+  { 0,  8, 11,  0, 11,  5,  0,  5,  1,  5, 11,  6 },
+  { 9,  5,  7,  9,  7,  2,  9,  2,  0,  2,  7, 11 },
+  { 5,  0,  4,  5, 11,  0,  5, 10, 11, 11,  3,  0 },
+  { 5,  4,  0,  5,  0, 11,  5, 11, 10, 11,  0,  3 },
+  { 9,  7,  5,  9,  2,  7,  9,  0,  2,  2, 11,  7 },
+  { 0, 11,  8,  0,  5, 11,  0,  1,  5,  5,  6, 11 },
+  { 8,  1,  3,  8,  6,  1,  8,  4,  6,  6, 10,  1 },
+  { 1,  2,  6,  1,  6,  8,  1,  8,  9,  8,  6,  7 },
+  { 2,  9, 10,  2,  7,  9,  2,  3,  7,  7,  4,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 11 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1402" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1402" bodyend="1415"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ab701314633151542aef1adda6bb13263" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test12[24][4]</definition>
+        <argsstring>[24][4]</argsstring>
+        <name>test12</name>
+        <qualifiedname>amrex::MC::LookUpTable::test12</qualifiedname>
+        <initializer>= {
+  {  4,  3,  7,  11 },
+  {  3,  2,  7,  10 },
+  {  2,  6,  7,   5 },
+  {  6,  4,  7,   7 },
+  {  2,  1,  7,   9 },
+  {  5,  2,  7,   1 },
+  {  5,  3,  7,   2 },
+  {  5,  1,  7,   0 },
+  {  5,  4,  7,   3 },
+  {  6,  3,  7,   6 },
+  {  1,  6,  7,   4 },
+  {  1,  4,  7,   8 },
+  {  4,  1,  7,   8 },
+  {  6,  1,  7,   4 },
+  {  3,  6,  7,   6 },
+  {  4,  5,  7,   3 },
+  {  1,  5,  7,   0 },
+  {  3,  5,  7,   2 },
+  {  2,  5,  7,   1 },
+  {  1,  2,  7,   9 },
+  {  4,  6,  7,   7 },
+  {  6,  2,  7,   5 },
+  {  2,  3,  7,  10 },
+  {  3,  4,  7,  11 }
+}</initializer>
+        <briefdescription>
+<para>test table for case 12 2 faces to test + eventually the interior When the tests on both specified faces are positive : 4 middle triangles (1) When the test on the first specified face is positive : 8 first triangles When the test on the second specified face is positive : 8 next triangles When the tests on both specified faces are negative : </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>if the test on the interior is negative : 4 middle triangles</para>
+</listitem><listitem><para>if the test on the interior is positive : 8 last triangles The support edge for the interior test is marked as the 4th column.</para>
+</listitem></itemizedlist>
+</para>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1439" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1439" bodyend="1464"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1abe8656d4358a15d33528978403d04074" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling12_1_1[24][12]</definition>
+        <argsstring>[24][12]</argsstring>
+        <name>tiling12_1_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling12_1_1</qualifiedname>
+        <initializer>= {
+  {  7,  6, 11, 10,  3,  2,  3, 10,  8,  9,  8, 10 },
+  {  6,  5, 10,  9,  2,  1,  2,  9, 11,  8, 11,  9 },
+  { 10,  6,  5,  7,  9,  4,  9,  7,  1,  3,  1,  7 },
+  {  7,  6, 11,  4,  8,  5,  3,  5,  8,  5,  3,  1 },
+  {  5,  4,  9,  8,  1,  0,  1,  8, 10, 11, 10,  8 },
+  {  1,  2, 10,  0,  9,  3,  5,  3,  9,  3,  5,  7 },
+  { 10,  1,  2,  0, 11,  3, 11,  0,  6,  4,  6,  0 },
+  {  8,  3,  0,  2,  9,  1,  9,  2,  4,  6,  4,  2 },
+  {  3,  0,  8,  2, 11,  1,  7,  1, 11,  1,  7,  5 },
+  {  6,  5, 10,  7, 11,  4,  2,  4, 11,  4,  2,  0 },
+  {  9,  5,  4,  6,  8,  7,  8,  6,  0,  2,  0,  6 },
+  {  8,  3,  0,  7,  4, 11,  9, 11,  4, 11,  9, 10 },
+  {  4,  7,  8, 11,  0,  3,  0, 11,  9, 10,  9, 11 },
+  {  4,  7,  8,  5,  9,  6,  0,  6,  9,  6,  0,  2 },
+  { 11,  7,  6,  4, 10,  5, 10,  4,  2,  0,  2,  4 },
+  { 11,  2,  3,  1,  8,  0,  8,  1,  7,  5,  7,  1 },
+  {  0,  1,  9,  3,  8,  2,  4,  2,  8,  2,  4,  6 },
+  {  2,  3, 11,  1, 10,  0,  6,  0, 10,  0,  6,  4 },
+  {  9,  0,  1,  3, 10,  2, 10,  3,  5,  7,  5,  3 },
+  {  9,  0,  1,  4,  5,  8, 10,  8,  5,  8, 10, 11 },
+  {  8,  4,  7,  5, 11,  6, 11,  5,  3,  1,  3,  5 },
+  {  5,  4,  9,  6, 10,  7,  1,  7, 10,  7,  1,  3 },
+  { 10,  1,  2,  5,  6,  9, 11,  9,  6,  9, 11,  8 },
+  { 11,  2,  3,  6,  7, 10,  8, 10,  7, 10,  8,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 12.1.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1477" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1477" bodyend="1502"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1aac33b329c0eebff97256dcf35b0f9642" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling12_1_1_[24][12]</definition>
+        <argsstring>[24][12]</argsstring>
+        <name>tiling12_1_1_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling12_1_1_</qualifiedname>
+        <initializer>= {
+  {  3,  2, 11, 10,  7,  6,  7, 10,  8,  9,  8, 10 },
+  {  2,  1, 10,  9,  6,  5,  6,  9, 11,  8, 11,  9 },
+  {  9,  4,  5,  7, 10,  6, 10,  7,  1,  3,  1,  7 },
+  {  7,  4,  8,  6, 11,  5,  3,  5, 11,  5,  3,  1 },
+  {  1,  0,  9,  8,  5,  4,  5,  8, 10, 11, 10,  8 },
+  {  1,  0,  9,  2, 10,  3,  5,  3, 10,  3,  5,  7 },
+  { 11,  3,  2,  0, 10,  1, 10,  0,  6,  4,  6,  0 },
+  {  9,  1,  0,  2,  8,  3,  8,  2,  4,  6,  4,  2 },
+  {  3,  2, 11,  0,  8,  1,  7,  1,  8,  1,  7,  5 },
+  {  6,  7, 11,  5, 10,  4,  2,  4, 10,  4,  2,  0 },
+  {  8,  7,  4,  6,  9,  5,  9,  6,  0,  2,  0,  6 },
+  {  8,  7,  4,  3,  0, 11,  9, 11,  0, 11,  9, 10 },
+  {  0,  3,  8, 11,  4,  7,  4, 11,  9, 10,  9, 11 },
+  {  4,  5,  9,  7,  8,  6,  0,  6,  8,  6,  0,  2 },
+  { 10,  5,  6,  4, 11,  7, 11,  4,  2,  0,  2,  4 },
+  {  8,  0,  3,  1, 11,  2, 11,  1,  7,  5,  7,  1 },
+  {  0,  3,  8,  1,  9,  2,  4,  2,  9,  2,  4,  6 },
+  {  2,  1, 10,  3, 11,  0,  6,  0, 11,  0,  6,  4 },
+  { 10,  2,  1,  3,  9,  0,  9,  3,  5,  7,  5,  3 },
+  {  9,  4,  5,  0,  1,  8, 10,  8,  1,  8, 10, 11 },
+  { 11,  6,  7,  5,  8,  4,  8,  5,  3,  1,  3,  5 },
+  {  5,  6, 10,  4,  9,  7,  1,  7,  9,  7,  1,  3 },
+  { 10,  5,  6,  1,  2,  9, 11,  9,  2,  9, 11,  8 },
+  { 11,  6,  7,  2,  3, 10,  8, 10,  3, 10,  8,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 12.1.1 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1515" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1515" bodyend="1540"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a92df957a17102ddd966f7b18eb27695b" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling12_1_2[24][24]</definition>
+        <argsstring>[24][24]</argsstring>
+        <name>tiling12_1_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling12_1_2</qualifiedname>
+        <initializer>= {
+  {  7,  3, 11,  3,  7,  8,  9,  8,  7,  6,  9,  7,  9,  6, 10,  2, 10,  6, 11,  2,  6,  2, 11,  3 },
+  {  6,  2, 10,  2,  6, 11,  8, 11,  6,  5,  8,  6,  8,  5,  9,  1,  9,  5, 10,  1,  5,  1, 10,  2 },
+  { 10,  9,  5,  9, 10,  1,  3,  1, 10,  6,  3, 10,  3,  6,  7,  4,  7,  6,  5,  4,  6,  4,  5,  9 },
+  {  7,  8, 11,  3, 11,  8, 11,  3,  1, 11,  1,  6,  5,  6,  1,  6,  5,  4,  6,  4,  7,  8,  7,  4 },
+  {  5,  1,  9,  1,  5, 10, 11, 10,  5,  4, 11,  5, 11,  4,  8,  0,  8,  4,  9,  0,  4,  0,  9,  1 },
+  {  1,  9, 10,  5, 10,  9, 10,  5,  7, 10,  7,  2,  3,  2,  7,  2,  3,  0,  2,  0,  1,  9,  1,  0 },
+  { 10, 11,  2, 11, 10,  6,  4,  6, 10,  1,  4, 10,  4,  1,  0,  3,  0,  1,  2,  3,  1,  3,  2, 11 },
+  {  8,  9,  0,  9,  8,  4,  6,  4,  8,  3,  6,  8,  6,  3,  2,  1,  2,  3,  0,  1,  3,  1,  0,  9 },
+  {  3, 11,  8,  7,  8, 11,  8,  7,  5,  8,  5,  0,  1,  0,  5,  0,  1,  2,  0,  2,  3, 11,  3,  2 },
+  {  6, 11, 10,  2, 10, 11, 10,  2,  0, 10,  0,  5,  4,  5,  0,  5,  4,  7,  5,  7,  6, 11,  6,  7 },
+  {  9,  8,  4,  8,  9,  0,  2,  0,  9,  5,  2,  9,  2,  5,  6,  7,  6,  5,  4,  7,  5,  7,  4,  8 },
+  {  8,  4,  0,  9,  0,  4,  0,  9, 10,  0, 10,  3, 11,  3, 10,  3, 11,  7,  3,  7,  8,  4,  8,  7 },
+  {  4,  0,  8,  0,  4,  9, 10,  9,  4,  7, 10,  4, 10,  7, 11,  3, 11,  7,  8,  3,  7,  3,  8,  0 },
+  {  4,  9,  8,  0,  8,  9,  8,  0,  2,  8,  2,  7,  6,  7,  2,  7,  6,  5,  7,  5,  4,  9,  4,  5 },
+  { 11, 10,  6, 10, 11,  2,  0,  2, 11,  7,  0, 11,  0,  7,  4,  5,  4,  7,  6,  5,  7,  5,  6, 10 },
+  { 11,  8,  3,  8, 11,  7,  5,  7, 11,  2,  5, 11,  5,  2,  1,  0,  1,  2,  3,  0,  2,  0,  3,  8 },
+  {  0,  8,  9,  4,  9,  8,  9,  4,  6,  9,  6,  1,  2,  1,  6,  1,  2,  3,  1,  3,  0,  8,  0,  3 },
+  {  2, 10, 11,  6, 11, 10, 11,  6,  4, 11,  4,  3,  0,  3,  4,  3,  0,  1,  3,  1,  2, 10,  2,  1 },
+  {  9, 10,  1, 10,  9,  5,  7,  5,  9,  0,  7,  9,  7,  0,  3,  2,  3,  0,  1,  2,  0,  2,  1, 10 },
+  {  9,  5,  1, 10,  1,  5,  1, 10, 11,  1, 11,  0,  8,  0, 11,  0,  8,  4,  0,  4,  9,  5,  9,  4 },
+  {  8, 11,  7, 11,  8,  3,  1,  3,  8,  4,  1,  8,  1,  4,  5,  6,  5,  4,  7,  6,  4,  6,  7, 11 },
+  {  5, 10,  9,  1,  9, 10,  9,  1,  3,  9,  3,  4,  7,  4,  3,  4,  7,  6,  4,  6,  5, 10,  5,  6 },
+  { 10,  6,  2, 11,  2,  6,  2, 11,  8,  2,  8,  1,  9,  1,  8,  1,  9,  5,  1,  5, 10,  6, 10,  5 },
+  { 11,  7,  3,  8,  3,  7,  3,  8,  9,  3,  9,  2, 10,  2,  9,  2, 10,  6,  2,  6, 11,  7, 11,  6 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 12.1.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1553" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1553" bodyend="1578"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a46ca7ed24233751b21b815297cd2addc" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling12_2[24][24]</definition>
+        <argsstring>[24][24]</argsstring>
+        <name>tiling12_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling12_2</qualifiedname>
+        <initializer>= {
+  {   9,  8, 12, 10,  9, 12,  2, 10, 12,  3,  2, 12, 11,  3, 12,  6, 11, 12,  7,  6, 12,  8,  7, 12 },
+  {   8, 11, 12,  9,  8, 12,  1,  9, 12,  2,  1, 12, 10,  2, 12,  5, 10, 12,  6,  5, 12, 11,  6, 12 },
+  {   3,  1, 12,  7,  3, 12,  4,  7, 12,  9,  4, 12,  5,  9, 12,  6,  5, 12, 10,  6, 12,  1, 10, 12 },
+  {  12,  3,  1, 12,  1,  5, 12,  5,  6, 12,  6, 11, 12, 11,  7, 12,  7,  4, 12,  4,  8, 12,  8,  3 },
+  {  11, 10, 12,  8, 11, 12,  0,  8, 12,  1,  0, 12,  9,  1, 12,  4,  9, 12,  5,  4, 12, 10,  5, 12 },
+  {  12,  5,  7, 12,  7,  3, 12,  3,  2, 12,  2, 10, 12, 10,  1, 12,  1,  0, 12,  0,  9, 12,  9,  5 },
+  {   4,  6, 12,  0,  4, 12,  1,  0, 12, 10,  1, 12,  2, 10, 12,  3,  2, 12, 11,  3, 12,  6, 11, 12 },
+  {   6,  4, 12,  2,  6, 12,  3,  2, 12,  8,  3, 12,  0,  8, 12,  1,  0, 12,  9,  1, 12,  4,  9, 12 },
+  {  12,  7,  5, 12,  5,  1, 12,  1,  0, 12,  0,  8, 12,  8,  3, 12,  3,  2, 12,  2, 11, 12, 11,  7 },
+  {  12,  2,  0, 12,  0,  4, 12,  4,  5, 12,  5, 10, 12, 10,  6, 12,  6,  7, 12,  7, 11, 12, 11,  2 },
+  {   2,  0, 12,  6,  2, 12,  7,  6, 12,  8,  7, 12,  4,  8, 12,  5,  4, 12,  9,  5, 12,  0,  9, 12 },
+  {  12,  9, 10, 12, 10, 11, 12, 11,  7, 12,  7,  4, 12,  4,  8, 12,  8,  3, 12,  3,  0, 12,  0,  9 },
+  {  10,  9, 12, 11, 10, 12,  7, 11, 12,  4,  7, 12,  8,  4, 12,  3,  8, 12,  0,  3, 12,  9,  0, 12 },
+  {  12,  0,  2, 12,  2,  6, 12,  6,  7, 12,  7,  8, 12,  8,  4, 12,  4,  5, 12,  5,  9, 12,  9,  0 },
+  {   0,  2, 12,  4,  0, 12,  5,  4, 12, 10,  5, 12,  6, 10, 12,  7,  6, 12, 11,  7, 12,  2, 11, 12 },
+  {   5,  7, 12,  1,  5, 12,  0,  1, 12,  8,  0, 12,  3,  8, 12,  2,  3, 12, 11,  2, 12,  7, 11, 12 },
+  {  12,  4,  6, 12,  6,  2, 12,  2,  3, 12,  3,  8, 12,  8,  0, 12,  0,  1, 12,  1,  9, 12,  9,  4 },
+  {  12,  6,  4, 12,  4,  0, 12,  0,  1, 12,  1, 10, 12, 10,  2, 12,  2,  3, 12,  3, 11, 12, 11,  6 },
+  {   7,  5, 12,  3,  7, 12,  2,  3, 12, 10,  2, 12,  1, 10, 12,  0,  1, 12,  9,  0, 12,  5,  9, 12 },
+  {  12, 10, 11, 12, 11,  8, 12,  8,  0, 12,  0,  1, 12,  1,  9, 12,  9,  4, 12,  4,  5, 12,  5, 10 },
+  {   1,  3, 12,  5,  1, 12,  6,  5, 12, 11,  6, 12,  7, 11, 12,  4,  7, 12,  8,  4, 12,  3,  8, 12 },
+  {  12,  1,  3, 12,  3,  7, 12,  7,  4, 12,  4,  9, 12,  9,  5, 12,  5,  6, 12,  6, 10, 12, 10,  1 },
+  {  12, 11,  8, 12,  8,  9, 12,  9,  1, 12,  1,  2, 12,  2, 10, 12, 10,  5, 12,  5,  6, 12,  6, 11 },
+  {  12,  8,  9, 12,  9, 10, 12, 10,  2, 12,  2,  3, 12,  3, 11, 12, 11,  6, 12,  6,  7, 12,  7,  8 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 12.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1591" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1591" bodyend="1616"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ad92e00e8edc5bbbfc7f48bb5ef607d8f" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling12_2_[24][24]</definition>
+        <argsstring>[24][24]</argsstring>
+        <name>tiling12_2_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling12_2_</qualifiedname>
+        <initializer>= {
+  { 12,  2, 11, 12, 11,  7, 12,  7,  6, 12,  6, 10, 12, 10,  9, 12,  9,  8, 12,  8,  3, 12,  3,  2 },
+  { 12,  1, 10, 12, 10,  6, 12,  6,  5, 12,  5,  9, 12,  9,  8, 12,  8, 11, 12, 11,  2, 12,  2,  1 },
+  { 12,  4,  5, 12,  5, 10, 12, 10,  6, 12,  6,  7, 12,  7,  3, 12,  3,  1, 12,  1,  9, 12,  9,  4 },
+  {  7,  6, 12,  8,  7, 12,  4,  8, 12,  5,  4, 12,  1,  5, 12,  3,  1, 12, 11,  3, 12,  6, 11, 12 },
+  { 12,  0,  9, 12,  9,  5, 12,  5,  4, 12,  4,  8, 12,  8, 11, 12, 11, 10, 12, 10,  1, 12,  1,  0 },
+  {  1,  2, 12,  9,  1, 12,  0,  9, 12,  3,  0, 12,  7,  3, 12,  5,  7, 12, 10,  5, 12,  2, 10, 12 },
+  { 12,  1,  2, 12,  2, 11, 12, 11,  3, 12,  3,  0, 12,  0,  4, 12,  4,  6, 12,  6, 10, 12, 10,  1 },
+  { 12,  3,  0, 12,  0,  9, 12,  9,  1, 12,  1,  2, 12,  2,  6, 12,  6,  4, 12,  4,  8, 12,  8,  3 },
+  {  3,  0, 12, 11,  3, 12,  2, 11, 12,  1,  2, 12,  5,  1, 12,  7,  5, 12,  8,  7, 12,  0,  8, 12 },
+  {  6,  5, 12, 11,  6, 12,  7, 11, 12,  4,  7, 12,  0,  4, 12,  2,  0, 12, 10,  2, 12,  5, 10, 12 },
+  { 12,  7,  4, 12,  4,  9, 12,  9,  5, 12,  5,  6, 12,  6,  2, 12,  2,  0, 12,  0,  8, 12,  8,  7 },
+  {  8,  7, 12,  0,  8, 12,  3,  0, 12, 11,  3, 12, 10, 11, 12,  9, 10, 12,  4,  9, 12,  7,  4, 12 },
+  { 12,  7,  8, 12,  8,  0, 12,  0,  3, 12,  3, 11, 12, 11, 10, 12, 10,  9, 12,  9,  4, 12,  4,  7 },
+  {  4,  7, 12,  9,  4, 12,  5,  9, 12,  6,  5, 12,  2,  6, 12,  0,  2, 12,  8,  0, 12,  7,  8, 12 },
+  { 12,  5,  6, 12,  6, 11, 12, 11,  7, 12,  7,  4, 12,  4,  0, 12,  0,  2, 12,  2, 10, 12, 10,  5 },
+  { 12,  0,  3, 12,  3, 11, 12, 11,  2, 12,  2,  1, 12,  1,  5, 12,  5,  7, 12,  7,  8, 12,  8,  0 },
+  {  0,  3, 12,  9,  0, 12,  1,  9, 12,  2,  1, 12,  6,  2, 12,  4,  6, 12,  8,  4, 12,  3,  8, 12 },
+  {  2,  1, 12, 11,  2, 12,  3, 11, 12,  0,  3, 12,  4,  0, 12,  6,  4, 12, 10,  6, 12,  1, 10, 12 },
+  { 12,  2,  1, 12,  1,  9, 12,  9,  0, 12,  0,  3, 12,  3,  7, 12,  7,  5, 12,  5, 10, 12, 10,  2 },
+  {  9,  0, 12,  5,  9, 12,  4,  5, 12,  8,  4, 12, 11,  8, 12, 10, 11, 12,  1, 10, 12,  0,  1, 12 },
+  { 12,  6,  7, 12,  7,  8, 12,  8,  4, 12,  4,  5, 12,  5,  1, 12,  1,  3, 12,  3, 11, 12, 11,  6 },
+  {  5,  4, 12, 10,  5, 12,  6, 10, 12,  7,  6, 12,  3,  7, 12,  1,  3, 12,  9,  1, 12,  4,  9, 12 },
+  { 10,  1, 12,  6, 10, 12,  5,  6, 12,  9,  5, 12,  8,  9, 12, 11,  8, 12,  2, 11, 12,  1,  2, 12 },
+  { 11,  2, 12,  7, 11, 12,  6,  7, 12, 10,  6, 12,  9, 10, 12,  8,  9, 12,  3,  8, 12,  2,  3, 12 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 12.2 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1629" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1629" bodyend="1654"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ac58e0777ade432a75d7e61e3efcd7ad0" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::test13[2][7]</definition>
+        <argsstring>[2][7]</argsstring>
+        <name>test13</name>
+        <qualifiedname>amrex::MC::LookUpTable::test13</qualifiedname>
+        <initializer>= {
+  { 1,2,3,4,5,6,7 },
+  { 2,3,4,1,5,6,7 },
+}</initializer>
+        <briefdescription>
+<para>test table for case 13 All faces are to be tested </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1673" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1673" bodyend="1676"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a5332c858ae55775212b9b46e94576a7b" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::subconfig13[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>subconfig13</name>
+        <qualifiedname>amrex::MC::LookUpTable::subconfig13</qualifiedname>
+        <briefdescription>
+<para>subconfiguration table for case 13 Hard-coded tests for the subconfiguration determination </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1694" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1694" bodyend="1759"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a16a45b9377259b8cabf7f6f889cc31e5" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_1[2][12]</definition>
+        <argsstring>[2][12]</argsstring>
+        <name>tiling13_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_1</qualifiedname>
+        <initializer>= {
+  { 11,  7,  6,  1,  2, 10,  8,  3,  0,  9,  5, 4 },
+  {  8,  4,  7,  2,  3, 11,  9,  0,  1, 10,  6, 5 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 13.1 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1774" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1774" bodyend="1777"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1acc2018ebe84a79bf86a90c577d7582d8" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_1_[2][12]</definition>
+        <argsstring>[2][12]</argsstring>
+        <name>tiling13_1_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_1_</qualifiedname>
+        <initializer>= {
+  { 7,  4,  8, 11,  3,  2,  1,  0,  9,  5,  6, 10 },
+  { 6,  7, 11, 10,  2,  1,  0,  3,  8,  4,  5,  9 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 13.1 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1791" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1791" bodyend="1794"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a1f337b1165dfcaa2ff0970f41e354ae2" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_2[2][6][18]</definition>
+        <argsstring>[2][6][18]</argsstring>
+        <name>tiling13_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_2</qualifiedname>
+        <initializer>= {
+  {
+  { 1,  2, 10, 11,  7,  6,  3,  4,  8,  4,  3,  5,  0,  5,  3,  5,  0,  9 },
+  { 8,  3,  0, 11,  7,  6,  9,  1,  4,  2,  4,  1,  4,  2,  5, 10,  5,  2 },
+  { 9,  5,  4,  8,  3,  0,  1,  6, 10,  6,  1,  7,  2,  7,  1,  7,  2, 11 },
+  { 9,  5,  4,  1,  2, 10, 11,  3,  6,  0,  6,  3,  6,  0,  7,  8,  7,  0 },
+  { 9,  5,  4, 11,  7,  6,  0, 10,  1, 10,  0,  8, 10,  8,  2,  3,  2,  8 },
+  { 1,  2, 10,  3,  0,  8,  4,  9,  7, 11,  7,  9,  5, 11,  9, 11,  5,  6 }
+},
+  {
+  { 2,  3, 11,  8,  4,  7,  0,  5,  9,  5,  0,  6,  1,  6,  0,  6,  1, 10 },
+  { 9,  0,  1,  8,  4,  7, 10,  2,  5,  3,  5,  2,  5,  3,  6, 11,  6,  3 },
+  { 6,  5, 10,  9,  0,  1,  2,  7, 11,  7,  2,  4,  3,  4,  2,  4,  3,  8 },
+  { 6,  5, 10,  2,  3, 11,  8,  0,  7,  1,  7,  0,  7,  1,  4,  9,  4,  1 },
+  { 6,  5, 10,  8,  4,  7,  1, 11,  2, 11,  1,  9, 11,  9,  3,  0,  3,  9 },
+  { 2,  3, 11,  0,  1,  9,  5, 10,  4,  8,  4, 10,  6,  8, 10,  8,  6,  7 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1808" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1808" bodyend="1824"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1af4c10d0b8f27eff23bf7684d5e391721" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_2_[2][6][18]</definition>
+        <argsstring>[2][6][18]</argsstring>
+        <name>tiling13_2_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_2_</qualifiedname>
+        <initializer>= {
+  {
+  { 10,  5,  6, 11,  3,  2,  7,  0,  8,  0,  7,  1,  4,  1,  7,  1,  4,  9 },
+  { 11,  3,  2,  7,  4,  8,  9,  5,  0,  6,  0,  5,  0,  6,  1, 10,  1,  6 },
+  {  1,  0,  9,  7,  4,  8,  5,  2, 10,  2,  5,  3,  6,  3,  5,  3,  6, 11 },
+  { 10,  5,  6,  1,  0,  9, 11,  7,  2,  4,  2,  7,  2,  4,  3,  8,  3,  4 },
+  { 10,  5,  6,  7,  4,  8,  2, 11,  1,  9,  1, 11,  3,  9, 11,  9,  3,  0 },
+  { 11,  3,  2,  9,  1,  0,  4, 10,  5, 10,  4,  8, 10,  8,  6,  7,  6,  8 }
+},
+  {
+  {  6,  7, 11,  8,  0,  3,  4,  1,  9,  1,  4,  2,  5,  2,  4,  2,  5, 10 },
+  {  8,  0,  3,  4,  5,  9, 10,  6,  1,  7,  1,  6,  1,  7,  2, 11,  2,  7 },
+  {  2,  1, 10,  4,  5,  9,  6,  3, 11,  3,  6,  0,  7,  0,  6,  0,  7,  8 },
+  {  6,  7, 11,  2,  1, 10,  8,  4,  3,  5,  3,  4,  3,  5,  0,  9,  0,  5 },
+  {  6,  7, 11,  4,  5,  9,  3,  8,  2, 10,  2,  8,  0, 10,  8, 10,  0,  1 },
+  {  8,  0,  3, 10,  2,  1,  5, 11,  6, 11,  5,  9, 11,  9,  7,  4,  7,  9 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.2 inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1838" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1838" bodyend="1854"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1ad0f08679d75fdb563c8b111f155dbc95" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_3[2][12][30]</definition>
+        <argsstring>[2][12][30]</argsstring>
+        <name>tiling13_3</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_3</qualifiedname>
+        <initializer>= {
+  {
+  { 11,  7,  6, 12,  2, 10, 12, 10,  5, 12,  5,  4, 12,  4,  8, 12,  8,  3, 12,  3,  0, 12,  0,  9, 12,  9,  1, 12,  1,  2 },
+  {  1,  2, 10,  9,  5, 12,  0,  9, 12,  3,  0, 12, 11,  3, 12,  6, 11, 12,  7,  6, 12,  8,  7, 12,  4,  8, 12,  5,  4, 12 },
+  { 11,  7,  6, 12,  5,  4, 12,  4,  8, 12,  8,  3, 12,  3,  2, 12,  2, 10, 12, 10,  1, 12,  1,  0, 12,  0,  9, 12,  9,  5 },
+  {  1,  2, 10, 12,  3,  0, 12,  0,  9, 12,  9,  5, 12,  5,  6, 12,  6, 11, 12, 11,  7, 12,  7,  4, 12,  4,  8, 12,  8,  3 },
+  {  8,  3,  0, 11,  7, 12,  2, 11, 12,  1,  2, 12,  9,  1, 12,  4,  9, 12,  5,  4, 12, 10,  5, 12,  6, 10, 12,  7,  6, 12 },
+  { 11,  7,  6,  5,  4, 12, 10,  5, 12,  2, 10, 12,  3,  2, 12,  8,  3, 12,  0,  8, 12,  1,  0, 12,  9,  1, 12,  4,  9, 12 },
+  {  8,  3,  0,  1,  2, 12,  9,  1, 12,  4,  9, 12,  7,  4, 12, 11,  7, 12,  6, 11, 12,  5,  6, 12, 10,  5, 12,  2, 10, 12 },
+  {  9,  5,  4, 12,  0,  8, 12,  8,  7, 12,  7,  6, 12,  6, 10, 12, 10,  1, 12,  1,  2, 12,  2, 11, 12, 11,  3, 12,  3,  0 },
+  {  9,  5,  4, 12,  7,  6, 12,  6, 10, 12, 10,  1, 12,  1,  0, 12,  0,  8, 12,  8,  3, 12,  3,  2, 12,  2, 11, 12, 11,  7 },
+  {  8,  3,  0, 12,  1,  2, 12,  2, 11, 12, 11,  7, 12,  7,  4, 12,  4,  9, 12,  9,  5, 12,  5,  6, 12,  6, 10, 12, 10,  1 },
+  {  9,  5,  4,  7,  6, 12,  8,  7, 12,  0,  8, 12,  1,  0, 12, 10,  1, 12,  2, 10, 12,  3,  2, 12, 11,  3, 12,  6, 11, 12 },
+  {  1,  2, 10,  3,  0, 12, 11,  3, 12,  6, 11, 12,  5,  6, 12,  9,  5, 12,  4,  9, 12,  7,  4, 12,  8,  7, 12,  0,  8, 12 }
+},
+  {
+  {  8,  4,  7, 12,  3, 11, 12, 11,  6, 12,  6,  5, 12,  5,  9, 12,  9,  0, 12,  0,  1, 12,  1, 10, 12, 10,  2, 12,  2,  3 },
+  {  2,  3, 11, 10,  6, 12,  1, 10, 12,  0,  1, 12,  8,  0, 12,  7,  8, 12,  4,  7, 12,  9,  4, 12,  5,  9, 12,  6,  5, 12 },
+  {  8,  4,  7, 12,  6,  5, 12,  5,  9, 12,  9,  0, 12,  0,  3, 12,  3, 11, 12, 11,  2, 12,  2,  1, 12,  1, 10, 12, 10,  6 },
+  {  2,  3, 11, 12,  0,  1, 12,  1, 10, 12, 10,  6, 12,  6,  7, 12,  7,  8, 12,  8,  4, 12,  4,  5, 12,  5,  9, 12,  9,  0 },
+  {  0,  1,  9,  8,  4, 12,  3,  8, 12,  2,  3, 12, 10,  2, 12,  5, 10, 12,  6,  5, 12, 11,  6, 12,  7, 11, 12,  4,  7, 12 },
+  {  8,  4,  7,  6,  5, 12, 11,  6, 12,  3, 11, 12,  0,  3, 12,  9,  0, 12,  1,  9, 12,  2,  1, 12, 10,  2, 12,  5, 10, 12 },
+  {  9,  0,  1,  2,  3, 12, 10,  2, 12,  5, 10, 12,  4,  5, 12,  8,  4, 12,  7,  8, 12,  6,  7, 12, 11,  6, 12,  3, 11, 12 },
+  {  6,  5, 10, 12,  1,  9, 12,  9,  4, 12,  4,  7, 12,  7, 11, 12, 11,  2, 12,  2,  3, 12,  3,  8, 12,  8,  0, 12,  0,  1 },
+  {  6,  5, 10, 12,  4,  7, 12,  7, 11, 12, 11,  2, 12,  2,  1, 12,  1,  9, 12,  9,  0, 12,  0,  3, 12,  3,  8, 12,  8,  4 },
+  {  9,  0,  1, 12,  2,  3, 12,  3,  8, 12,  8,  4, 12,  4,  5, 12,  5, 10, 12, 10,  6, 12,  6,  7, 12,  7, 11, 12, 11,  2 },
+  {  6,  5, 10,  4,  7, 12,  9,  4, 12,  1,  9, 12,  2,  1, 12, 11,  2, 12,  3, 11, 12,  0,  3, 12,  8,  0, 12,  7,  8, 12 },
+  {  2,  3, 11,  0,  1, 12,  8,  0, 12,  7,  8, 12,  6,  7, 12, 10,  6, 12,  5, 10, 12,  4,  5, 12,  9,  4, 12,  1,  9, 12 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.3 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1868" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1868" bodyend="1896"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a39e3bfc9e308da4e2043ca3399e242b9" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_3_[2][12][30]</definition>
+        <argsstring>[2][12][30]</argsstring>
+        <name>tiling13_3_</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_3_</qualifiedname>
+        <initializer>= {
+  {
+  {  3,  2, 11,  8,  7, 12,  0,  8, 12,  1,  0, 12, 10,  1, 12,  6, 10, 12,  5,  6, 12,  9,  5, 12,  4,  9, 12,  7,  4, 12 },
+  {  5,  6, 10, 12,  2, 11, 12, 11,  7, 12,  7,  4, 12,  4,  9, 12,  9,  1, 12,  1,  0, 12,  0,  8, 12,  8,  3, 12,  3,  2 },
+  { 10,  5,  6, 12,  7,  4, 12,  4,  9, 12,  9,  1, 12,  1,  2, 12,  2, 11, 12, 11,  3, 12,  3,  0, 12,  0,  8, 12,  8,  7 },
+  { 11,  3,  2, 12,  1,  0, 12,  0,  8, 12,  8,  7, 12,  7,  6, 12,  6, 10, 12, 10,  5, 12,  5,  4, 12,  4,  9, 12,  9,  1 },
+  {  7,  4,  8, 11,  3, 12,  6, 11, 12,  5,  6, 12,  9,  5, 12,  0,  9, 12,  1,  0, 12, 10,  1, 12,  2, 10, 12,  3,  2, 12 },
+  {  7,  4,  8,  5,  6, 12,  9,  5, 12,  0,  9, 12,  3,  0, 12, 11,  3, 12,  2, 11, 12,  1,  2, 12, 10,  1, 12,  6, 10, 12 },
+  { 11,  3,  2,  1,  0, 12, 10,  1, 12,  6, 10, 12,  7,  6, 12,  8,  7, 12,  4,  8, 12,  5,  4, 12,  9,  5, 12,  0,  9, 12 },
+  {  1,  0,  9, 12,  4,  8, 12,  8,  3, 12,  3,  2, 12,  2, 10, 12, 10,  5, 12,  5,  6, 12,  6, 11, 12, 11,  7, 12,  7,  4 },
+  {  7,  4,  8, 12,  5,  6, 12,  6, 11, 12, 11,  3, 12,  3,  0, 12,  0,  9, 12,  9,  1, 12,  1,  2, 12,  2, 10, 12, 10,  5 },
+  {  1,  0,  9, 12,  3,  2, 12,  2, 10, 12, 10,  5, 12,  5,  4, 12,  4,  8, 12,  8,  7, 12,  7,  6, 12,  6, 11, 12, 11,  3 },
+  { 10,  5,  6,  7,  4, 12, 11,  7, 12,  2, 11, 12,  1,  2, 12,  9,  1, 12,  0,  9, 12,  3,  0, 12,  8,  3, 12,  4,  8, 12 },
+  {  9,  1,  0,  3,  2, 12,  8,  3, 12,  4,  8, 12,  5,  4, 12, 10,  5, 12,  6, 10, 12,  7,  6, 12, 11,  7, 12,  2, 11, 12 }
+},
+  {
+  {  0,  3,  8,  9,  4, 12,  1,  9, 12,  2,  1, 12, 11,  2, 12,  7, 11, 12,  6,  7, 12, 10,  6, 12,  5, 10, 12,  4,  5, 12 },
+  { 11,  6,  7, 12,  3,  8, 12,  8,  4, 12,  4,  5, 12,  5, 10, 12, 10,  2, 12,  2,  1, 12,  1,  9, 12,  9,  0, 12,  0,  3 },
+  {  6,  7, 11, 12,  4,  5, 12,  5, 10, 12, 10,  2, 12,  2,  3, 12,  3,  8, 12,  8,  0, 12,  0,  1, 12,  1,  9, 12,  9,  4 },
+  {  8,  0,  3, 12,  2,  1, 12,  1,  9, 12,  9,  4, 12,  4,  7, 12,  7, 11, 12, 11,  6, 12,  6,  5, 12,  5, 10, 12, 10,  2 },
+  {  4,  5,  9,  8,  0, 12,  7,  8, 12,  6,  7, 12, 10,  6, 12,  1, 10, 12,  2,  1, 12, 11,  2, 12,  3, 11, 12,  0,  3, 12 },
+  {  4,  5,  9,  6,  7, 12, 10,  6, 12,  1, 10, 12,  0,  1, 12,  8,  0, 12,  3,  8, 12,  2,  3, 12, 11,  2, 12,  7, 11, 12 },
+  {  8,  0,  3,  2,  1, 12, 11,  2, 12,  7, 11, 12,  4,  7, 12,  9,  4, 12,  5,  9, 12,  6,  5, 12, 10,  6, 12,  1, 10, 12 },
+  {  2,  1, 10, 12,  5,  9, 12,  9,  0, 12,  0,  3, 12,  3, 11, 12, 11,  6, 12,  6,  7, 12,  7,  8, 12,  8,  4, 12,  4,  5 },
+  {  4,  5,  9, 12,  6,  7, 12,  7,  8, 12,  8,  0, 12,  0,  1, 12,  1, 10, 12, 10,  2, 12,  2,  3, 12,  3, 11, 12, 11,  6 },
+  {  2,  1, 10, 12,  0,  3, 12,  3, 11, 12, 11,  6, 12,  6,  5, 12,  5,  9, 12,  9,  4, 12,  4,  7, 12,  7,  8, 12,  8,  0 },
+  {  6,  7, 11,  4,  5, 12,  8,  4, 12,  3,  8, 12,  2,  3, 12, 10,  2, 12,  1, 10, 12,  0,  1, 12,  9,  0, 12,  5,  9, 12 },
+  { 10,  2,  1,  0,  3, 12,  9,  0, 12,  5,  9, 12,  6,  5, 12, 11,  6, 12,  7, 11, 12,  4,  7, 12,  8,  4, 12,  3,  8, 12 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.3, inverted For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1910" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1910" bodyend="1938"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a50fb310133b937f4709d95e0779caaf1" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_4[2][4][36]</definition>
+        <argsstring>[2][4][36]</argsstring>
+        <name>tiling13_4</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_4</qualifiedname>
+        <initializer>= {
+  {
+  { 12,  2, 10, 12, 10,  5, 12,  5,  6, 12,  6, 11, 12, 11,  7, 12,  7,  4, 12,  4,  8, 12,  8,  3, 12,  3,  0, 12,  0,  9, 12,  9,  1, 12,  1,  2 },
+  { 11,  3, 12,  6, 11, 12,  7,  6, 12,  8,  7, 12,  4,  8, 12,  5,  4, 12,  9,  5, 12,  0,  9, 12,  1,  0, 12, 10,  1, 12,  2, 10, 12,  3,  2, 12 },
+  {  9,  1, 12,  4,  9, 12,  5,  4, 12, 10,  5, 12,  6, 10, 12,  7,  6, 12, 11,  7, 12,  2, 11, 12,  3,  2, 12,  8,  3, 12,  0,  8, 12,  1,  0, 12 },
+  { 12,  0,  8, 12,  8,  7, 12,  7,  4, 12,  4,  9, 12,  9,  5, 12,  5,  6, 12,  6, 10, 12, 10,  1, 12,  1,  2, 12,  2, 11, 12, 11,  3, 12,  3,  0 }
+},
+  {
+  { 12,  3, 11, 12, 11,  6, 12,  6,  7, 12,  7,  8, 12,  8,  4, 12,  4,  5, 12,  5,  9, 12,  9,  0, 12,  0,  1, 12,  1, 10, 12, 10,  2, 12,  2,  3 },
+  {  8,  0, 12,  7,  8, 12,  4,  7, 12,  9,  4, 12,  5,  9, 12,  6,  5, 12, 10,  6, 12,  1, 10, 12,  2,  1, 12, 11,  2, 12,  3, 11, 12,  0,  3, 12 },
+  { 10,  2, 12,  5, 10, 12,  6,  5, 12, 11,  6, 12,  7, 11, 12,  4,  7, 12,  8,  4, 12,  3,  8, 12,  0,  3, 12,  9,  0, 12,  1,  9, 12,  2,  1, 12 },
+  { 12,  1,  9, 12,  9,  4, 12,  4,  5, 12,  5, 10, 12, 10,  6, 12,  6,  7, 12,  7, 11, 12, 11,  2, 12,  2,  3, 12,  3,  8, 12,  8,  0, 12,  0,  1 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.4 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1952" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1952" bodyend="1964"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1acc5aeef04419b474d4c151588342dfdc" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_5_1[2][4][18]</definition>
+        <argsstring>[2][4][18]</argsstring>
+        <name>tiling13_5_1</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_5_1</qualifiedname>
+        <initializer>= {
+  {
+  {  7,  6, 11,  1,  0,  9, 10,  3,  2,  3, 10,  5,  3,  5,  8,  4,  8, 5 },
+  {  1,  2, 10,  7,  4,  8,  3,  0, 11,  6, 11,  0,  9,  6,  0,  6,  9, 5 },
+  {  3,  0,  8,  5,  6, 10,  1,  2,  9,  4,  9,  2, 11,  4,  2,  4, 11, 7 },
+  {  5,  4,  9,  3,  2, 11,  8,  1,  0,  1,  8,  7,  1,  7, 10,  6, 10, 7 }
+},
+  {
+  {  4,  7,  8,  2,  1, 10, 11,  0,  3,  0, 11,  6,  0,  6,  9,  5,  9, 6 },
+  {  2,  3, 11,  4,  5,  9,  0,  1,  8,  7,  8,  1, 10,  7,  1,  7, 10, 6 },
+  {  0,  1,  9,  6,  7, 11,  2,  3, 10,  5, 10,  3,  8,  5,  3,  5,  8, 4 },
+  {  6,  5, 10,  0,  3,  8,  9,  2,  1,  2,  9,  4,  2,  4, 11,  7, 11, 4 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.5.1 The support edge for the interior test is marked as the 1st column. For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="1979" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="1979" bodyend="1991"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a45cb0e3d5c7362202f36886516b04575" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling13_5_2[2][4][30]</definition>
+        <argsstring>[2][4][30]</argsstring>
+        <name>tiling13_5_2</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling13_5_2</qualifiedname>
+        <initializer>= {
+  {
+  { 1,  0,  9,  7,  4,  8,  7,  8,  3,  7,  3, 11,  2, 11,  3, 11,  2, 10, 11, 10,  6,  5,  6, 10,  6,  5,  7,  4,  7, 5 },
+  { 7,  4,  8, 11,  3,  2,  6, 11,  2, 10,  6,  2,  6, 10,  5,  9,  5, 10,  1,  9, 10,  9,  1,  0,  2,  0,  1,  0,  2, 3 },
+  { 5,  6, 10,  9,  1,  0,  4,  9,  0,  8,  4,  0,  4,  8,  7, 11,  7,  8,  3, 11,  8, 11,  3,  2,  0,  2,  3,  2,  0, 1 },
+  { 3,  2, 11,  5,  6, 10,  5, 10,  1,  5,  1,  9,  0,  9,  1,  9,  0,  8,  9,  8,  4,  4,  8,  7,  4,  7,  5,  6,  5, 7 }
+},
+  {
+  { 2,  1, 10,  4,  5,  9,  4,  9,  0,  4,  0,  8,  3,  8,  0,  8,  3, 11,  8, 11,  7,  6,  7, 11,  7,  6,  4,  5,  4, 6 },
+  { 4,  5,  9,  8,  0,  3,  7,  8,  3, 11,  7,  3,  7, 11,  6, 10,  6, 11,  2, 10, 11, 10,  2,  1,  3,  1,  2,  1,  3, 0 },
+  { 6,  7, 11, 10,  2,  1,  5, 10,  1,  9,  5,  1,  5,  9,  4,  8,  4,  9,  0,  8,  9,  8,  0,  3,  1,  3,  0,  3,  1, 2 },
+  { 0,  3,  8,  6,  7, 11,  6, 11,  2,  6,  2, 10,  1, 10,  2, 10,  1,  9, 10,  9,  5,  5,  9,  4,  5,  4,  6,  7,  6, 4 }
+} }</initializer>
+        <briefdescription>
+<para>tiling table for case 13.5.2 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="2005" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="2005" bodyend="2017"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1MC_1_1LookUpTable_1a6aebab2677dfbeb048aa4c7d61ae6157" prot="public" static="no" mutable="no">
+        <type>std::int8_t</type>
+        <definition>std::int8_t amrex::MC::LookUpTable::tiling14[12][12]</definition>
+        <argsstring>[12][12]</argsstring>
+        <name>tiling14</name>
+        <qualifiedname>amrex::MC::LookUpTable::tiling14</qualifiedname>
+        <initializer>= {
+  {  5,  9,  8,  5,  8,  2,  5,  2,  6,  3,  2,  8 },
+  {  2,  1,  5,  2,  5,  8,  2,  8, 11,  4,  8,  5 },
+  {  9,  4,  6,  9,  6,  3,  9,  3,  1, 11,  3,  6 },
+  {  1, 11, 10,  1,  4, 11,  1,  0,  4,  7, 11,  4 },
+  {  8,  2,  0,  8,  5,  2,  8,  7,  5, 10,  2,  5 },
+  {  0,  7,  3,  0, 10,  7,  0,  9, 10,  6,  7, 10 },
+  {  0,  3,  7,  0,  7, 10,  0, 10,  9,  6, 10,  7 },
+  {  8,  0,  2,  8,  2,  5,  8,  5,  7, 10,  5,  2 },
+  {  1, 10, 11,  1, 11,  4,  1,  4,  0,  7,  4, 11 },
+  {  9,  6,  4,  9,  3,  6,  9,  1,  3, 11,  6,  3 },
+  {  2,  5,  1,  2,  8,  5,  2, 11,  8,  4,  5,  8 },
+  {  5,  8,  9,  5,  2,  8,  5,  6,  2,  3,  8,  2 }
+}</initializer>
+        <briefdescription>
+<para>tiling table for case 14 For each of the case above, the specific triangulation of the edge intersection points is given. When a case is ambiguous, there is an auxiliary table that contains the face number to test and the tiling table contains the specific triangulations depending on the results A minus sign means to invert the result of the test. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="2033" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="2033" bodyend="2046"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" line="8" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_mc_jgt_table.H" bodystart="8" bodyend="2324"/>
+    <listofallmembers>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a30755f6e2d5a5262df66a9b417197834" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>cases</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a5332c858ae55775212b9b46e94576a7b" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>subconfig13</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ae7308d4cc5aadd36a77d41269d1274e3" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test10</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ab701314633151542aef1adda6bb13263" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test12</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ac58e0777ade432a75d7e61e3efcd7ad0" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test13</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aabf8c256833a7432d7a738ef8588d059" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test3</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a7332f7066152862bbb9f216d09c901a9" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test4</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a87414180a4ed7954f49846993e2cffce" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test6</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ae1e80c17a03d5edc45a01166f55c5394" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>test7</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a1e7a4fc82a7fd4f527a71e8bfb40e0e8" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a9528489b0ac87eb06923e05a0202d6d2" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling10_1_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ad85da51574baf14b7bca87c753d283ba" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling10_1_1_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aab74ef6ba9d5c1076448b0f487cf7c32" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling10_1_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ad7480cd059a4f251f8af260a100ac22c" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling10_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a5d3608c2a6dcdeff186440a585e7bbd0" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling10_2_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aa53dbd5f6234ba97230508791f21133e" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling11</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1abe8656d4358a15d33528978403d04074" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling12_1_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aac33b329c0eebff97256dcf35b0f9642" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling12_1_1_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a92df957a17102ddd966f7b18eb27695b" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling12_1_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a46ca7ed24233751b21b815297cd2addc" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling12_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ad92e00e8edc5bbbfc7f48bb5ef607d8f" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling12_2_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a16a45b9377259b8cabf7f6f889cc31e5" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1acc2018ebe84a79bf86a90c577d7582d8" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_1_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a1f337b1165dfcaa2ff0970f41e354ae2" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1af4c10d0b8f27eff23bf7684d5e391721" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_2_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ad0f08679d75fdb563c8b111f155dbc95" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_3</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a39e3bfc9e308da4e2043ca3399e242b9" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_3_</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a50fb310133b937f4709d95e0779caaf1" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_4</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1acc5aeef04419b474d4c151588342dfdc" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_5_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a45cb0e3d5c7362202f36886516b04575" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling13_5_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a6aebab2677dfbeb048aa4c7d61ae6157" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling14</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1afcc913f3174436f50cd4928ebb282c5c" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a81c0178d6cf5eccbddbb3bcb5e1a4d8b" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling3_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a7241efe5febbd3afb93bff4fcd0790f6" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling3_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aaefd07326b3628d868a90cbe06210c37" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling4_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a50afb09111a3c70ae3e73de4464f82b7" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling4_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a622e97d4f8b761c107994e922cd936fe" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling5</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a8bd3daf56e4921250a2952595d8bb0a1" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling6_1_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a580ceeb1b4784273a9470c6c5fc36bfd" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling6_1_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a0d91a42db76c59dda462f8daddf54b60" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling6_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1ad626d9f945583b7b23f7b46f0101835c" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling7_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a656c922e1a5da874c19e57eca6ef0ad0" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling7_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a614c93aa76cb67fa41e54315f57319b2" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling7_3</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a6509a12df9c626e495766d1462f738c9" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling7_4_1</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a1999cd9e61ed64542a64dcf966b5b06a" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling7_4_2</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1aa0d7097d81dec4fef966ac2f33787c95" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling8</name></member>
+      <member refid="structamrex_1_1MC_1_1LookUpTable_1a7da0577db2aefc7c80127bb3310409e3" prot="public" virt="non-virtual"><scope>amrex::MC::LookUpTable</scope><name>tiling9</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

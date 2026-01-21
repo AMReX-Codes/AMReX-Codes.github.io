@@ -1,5 +1,13 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__EB2__IF__Rotation_8H.html#ab4be176c56d2cfbc6db9099e1952c3bb":[4,0,0,4,23,2],
+"AMReX__EB2__IF__Rotation_8H_source.html":[4,0,0,4,23],
+"AMReX__EB2__IF__Scale_8H.html":[4,0,0,4,24],
+"AMReX__EB2__IF__Scale_8H.html#a9df657737496b52f73cbd1b5abc1f4e8":[4,0,0,4,24,2],
+"AMReX__EB2__IF__Scale_8H_source.html":[4,0,0,4,24],
+"AMReX__EB2__IF__Sphere_8H.html":[4,0,0,4,25],
+"AMReX__EB2__IF__Sphere_8H_source.html":[4,0,0,4,25],
+"AMReX__EB2__IF__Spline_8H.html":[4,0,0,4,26],
 "AMReX__EB2__IF__Spline_8H_source.html":[4,0,0,4,26],
 "AMReX__EB2__IF__Torus_8H.html":[4,0,0,4,27],
 "AMReX__EB2__IF__Torus_8H_source.html":[4,0,0,4,27],
@@ -241,13 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__Extrapolater_8H.html#a75142b5cf7161587ede4a7a67f308579":[4,0,0,0,10,2],
 "AMReX__Extrapolater_8H.html#a84bd1ce2743440bc77f2be80eea8bee4":[4,0,0,0,10,3],
 "AMReX__Extrapolater_8H.html#ad0a63d588f868c546dfbbc818dec9273":[4,0,0,0,10,0],
-"AMReX__Extrapolater_8H.html#aebff89225c72118eaf711ad96da1217a":[4,0,0,0,10,4],
-"AMReX__Extrapolater_8H.html#af161e1034e6eb3d4f30760fa5b5b1944":[4,0,0,0,10,1],
-"AMReX__Extrapolater_8H_source.html":[4,0,0,0,10],
-"AMReX__Extrapolater_8cpp.html":[4,0,0,0,9],
-"AMReX__Extrapolater_8cpp.html#ad0a63d588f868c546dfbbc818dec9273":[4,0,0,0,9,0],
-"AMReX__Extrapolater_8cpp.html#af161e1034e6eb3d4f30760fa5b5b1944":[4,0,0,0,9,1],
-"AMReX__FACopyDescriptor_8H.html":[4,0,0,2,72],
-"AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6":[4,0,0,2,72,4],
-"AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a3de07fb14bde47411225509d67e0bda1":[4,0,0,2,72,4,0]
+"AMReX__Extrapolater_8H.html#aebff89225c72118eaf711ad96da1217a":[4,0,0,0,10,4]
 };

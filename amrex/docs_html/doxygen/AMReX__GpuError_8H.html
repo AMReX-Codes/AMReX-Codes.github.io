@@ -131,6 +131,8 @@ Macros</h2></td></tr>
 <tr class="separator:a8c90423a7611564879b99a5c6b85b49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5930ea84dbfe31747a5bb25a291bfad9" id="r_a5930ea84dbfe31747a5bb25a291bfad9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#a5930ea84dbfe31747a5bb25a291bfad9">AMREX_CUFFT_SAFE_CALL</a>(call)</td></tr>
 <tr class="separator:a5930ea84dbfe31747a5bb25a291bfad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0753104458b2ab5a745238bf57309b9d" id="r_a0753104458b2ab5a745238bf57309b9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#a0753104458b2ab5a745238bf57309b9d">AMREX_CUSPARSE_SAFE_CALL</a>(call)</td></tr>
+<tr class="separator:a0753104458b2ab5a745238bf57309b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff2d29ad26ba217734430c3d36f42dd1" id="r_aff2d29ad26ba217734430c3d36f42dd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>()&#160;&#160;&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a8e72d3661b320758c41e4a548b80beec">amrex::Gpu::ErrorCheck</a>(__FILE__, __LINE__)</td></tr>
 <tr class="separator:aff2d29ad26ba217734430c3d36f42dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -228,6 +230,32 @@ Variables</h2></td></tr>
 <div class="line">        std::string errStr(std::string(<span class="stringliteral">&quot;CURAND error &quot;</span>) + std::to_string(amrex_i_err) \</div>
 <div class="line">                           + std::string(<span class="stringliteral">&quot; in file &quot;</span>) + __FILE__ \</div>
 <div class="line">                           + <span class="stringliteral">&quot; line &quot;</span> + std::to_string(__LINE__)); \</div>
+<div class="line">        amrex::Abort(errStr); \</div>
+<div class="line">    }}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0753104458b2ab5a745238bf57309b9d" name="a0753104458b2ab5a745238bf57309b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0753104458b2ab5a745238bf57309b9d">&#9670;&#160;</a></span>AMREX_CUSPARSE_SAFE_CALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_CUSPARSE_SAFE_CALL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">call</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    { \</div>
+<div class="line">    cusparseStatus_t amrex_i_err = call; \</div>
+<div class="line">    if (CUSPARSE_STATUS_SUCCESS != amrex_i_err) { \</div>
+<div class="line">        std::string errStr(std::string(<span class="stringliteral">&quot;CUSPARSER error &quot;</span>)+std::to_string(amrex_i_err) \</div>
+<div class="line">                           + std::string(<span class="stringliteral">&quot; in file &quot;</span>) + __FILE__        \</div>
+<div class="line">                           + <span class="stringliteral">&quot; line &quot;</span> + std::to_string(__LINE__));      \</div>
 <div class="line">        amrex::Abort(errStr); \</div>
 <div class="line">    }}</div>
 </div><!-- fragment -->

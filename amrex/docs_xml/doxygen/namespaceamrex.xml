@@ -88,6 +88,10 @@
     <innerclass refid="structamrex_1_1ConstSoAParticle" prot="public">amrex::ConstSoAParticle</innerclass>
     <innerclass refid="classamrex_1_1CoordSys" prot="public">amrex::CoordSys</innerclass>
     <innerclass refid="classamrex_1_1CpuBndryFuncFab" prot="public">amrex::CpuBndryFuncFab</innerclass>
+    <innerclass refid="structamrex_1_1CSR" prot="public">amrex::CSR</innerclass>
+    <innerclass refid="structamrex_1_1CsrSorted" prot="public">amrex::CsrSorted</innerclass>
+    <innerclass refid="structamrex_1_1CsrValid" prot="public">amrex::CsrValid</innerclass>
+    <innerclass refid="structamrex_1_1CsrView" prot="public">amrex::CsrView</innerclass>
     <innerclass refid="classamrex_1_1CutFab" prot="public">amrex::CutFab</innerclass>
     <innerclass refid="structamrex_1_1DataAllocator" prot="public">amrex::DataAllocator</innerclass>
     <innerclass refid="structamrex_1_1DataDeleter" prot="public">amrex::DataDeleter</innerclass>
@@ -315,6 +319,7 @@
     <innerclass refid="classamrex_1_1Orientation" prot="public">amrex::Orientation</innerclass>
     <innerclass refid="classamrex_1_1OrientationIter" prot="public">amrex::OrientationIter</innerclass>
     <innerclass refid="classamrex_1_1ParConstIter__impl" prot="public">amrex::ParConstIter_impl</innerclass>
+    <innerclass refid="structamrex_1_1ParCsr" prot="public">amrex::ParCsr</innerclass>
     <innerclass refid="classamrex_1_1PArena" prot="public">amrex::PArena</innerclass>
     <innerclass refid="classamrex_1_1ParGDB" prot="public">amrex::ParGDB</innerclass>
     <innerclass refid="classamrex_1_1ParGDBBase" prot="public">amrex::ParGDBBase</innerclass>
@@ -448,6 +453,7 @@
     <innernamespace refid="namespaceamrex_1_1LongParticleIds">amrex::LongParticleIds</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Machine">amrex::Machine</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Math">amrex::Math</innernamespace>
+    <innernamespace refid="namespaceamrex_1_1MC">amrex::MC</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Morton">amrex::Morton</innernamespace>
     <innernamespace refid="namespaceamrex_1_1mpidatatypes">amrex::mpidatatypes</innernamespace>
     <innernamespace refid="namespaceamrex_1_1MPMD">amrex::MPMD</innernamespace>
@@ -1128,7 +1134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="330" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="330" bodyend="336"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="332" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="332" bodyend="338"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1abd2e3d292645433cefc947725585f87a" prot="public" static="no" strong="yes">
         <type>int</type>
@@ -10070,7 +10076,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="995" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="995" bodyend="1005" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="353" declcolumn="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1001" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1001" bodyend="1011" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="355" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a78c3e0b7066802f4a1777e4384f004ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a242c1fdf859dbcbdecd2794373ea0d2c" kindref="member">FPExcept</ref></type>
@@ -10089,7 +10095,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1007" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1007" bodyend="1022" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="357" declcolumn="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1013" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1013" bodyend="1028" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="359" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeb028d29f68c1aea92c12903a8bfa262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a242c1fdf859dbcbdecd2794373ea0d2c" kindref="member">FPExcept</ref></type>
@@ -10113,7 +10119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1024" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1024" bodyend="1037" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="372" declcolumn="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1030" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1030" bodyend="1043" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="374" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aebfde21396d2ff792d29469193f4853e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a242c1fdf859dbcbdecd2794373ea0d2c" kindref="member">FPExcept</ref></type>
@@ -10137,7 +10143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1039" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1039" bodyend="1052" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="387" declcolumn="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1045" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1045" bodyend="1058" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="389" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afadc6162983c674e4597ea37fa732645" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -10155,7 +10161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1054" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1054" bodyend="1062" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="111" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1060" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1060" bodyend="1068" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="111" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5f0a2d36e3539b0feab77cb7670d5053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -10169,7 +10175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1064" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1064" bodyend="1073" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="124" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" line="1070" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp" bodystart="1070" bodyend="1079" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" declline="124" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad4158723bb78d3d5f19e396a20c0ce2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -10918,7 +10924,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="338" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="338" bodyend="338"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="340" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="340" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a61941cdb68b6ca2b6bd0ccef3831019b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a242c1fdf859dbcbdecd2794373ea0d2c" kindref="member">FPExcept</ref></type>
@@ -10940,7 +10946,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="340" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="340" bodyend="344"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="342" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="342" bodyend="346"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acaadf207d66c9ffa15b672effdca6eab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a242c1fdf859dbcbdecd2794373ea0d2c" kindref="member">FPExcept</ref></type>
@@ -10962,7 +10968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="346" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="346" bodyend="350"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" line="348" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX.H" bodystart="348" bodyend="352"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a66e2eab6a08dc06e8892a05efdc832c7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -44645,7 +44651,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="326" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="326" bodyend="334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="19" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a91b12bfdb96beb60d59572b786b862af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -44682,7 +44688,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="339" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="339" bodyend="349"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="32" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a52f56f29d4e64c6ff6c7352d0b48b251" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -44726,7 +44732,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="355" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="355" bodyend="367"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="48" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="48" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e3a6ad5ecd73e19c59329f925764439" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -44777,7 +44783,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="374" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="374" bodyend="388"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="67" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="67" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af23cb5eabe40eada89f26fcea5d45cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -44835,25 +44841,28 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="396" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="396" bodyend="412"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="89" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="89" bodyend="105"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aad71029d21b80e949017215cf30d0f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a1dcb08f05499fc97db5048542f59f4d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>typename Allocator</type>
+          </param>
         </templateparamlist>
         <type>T</type>
         <definition>T amrex::Dot</definition>
-        <argsstring>(AlgVector&lt; T &gt; const &amp;x, AlgVector&lt; T &gt; const &amp;y, bool local=false)</argsstring>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; const &amp;x, AlgVector&lt; T, Allocator &gt; const &amp;y, bool local=false)</argsstring>
         <name>Dot</name>
         <qualifiedname>amrex::Dot</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -44864,24 +44873,28 @@ Returns the index of the first element for which f is 0. </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Return dot product of two vectors. By default, this returns the global result over all MPI ranks. If <computeroutput>local</computeroutput> is true, it returns the result over the locally stored entries only. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="415" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="415" bodyend="429"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="111" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="111" bodyend="125"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a8d608f0e60e86a8a8e1c1f2feae1f653" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae2972dbaa0589e933c9a52ce4191008c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Allocator</type>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::Axpy</definition>
-        <argsstring>(AlgVector&lt; T &gt; &amp;y, T a, AlgVector&lt; T &gt; const &amp;x, bool async=false)</argsstring>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;x)</argsstring>
         <name>Axpy</name>
         <qualifiedname>amrex::Axpy</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; &amp;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -44889,35 +44902,34 @@ Returns the index of the first element for which f is 0. </para>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
           <declname>x</declname>
-        </param>
-        <param>
-          <type>bool</type>
-          <declname>async</declname>
-          <defval>false</defval>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>y = ax + y. For GPU guilds, this function is asynchronous with respect to the host. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="432" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="432" bodyend="436"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="130" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="130" bodyend="133"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad1a8a2c601af00a5189517163b863d05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af5289a85de87dbc4ba3e3201f8a93637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>typename Allocator</type>
+          </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::LinComb</definition>
-        <argsstring>(AlgVector&lt; T &gt; &amp;y, T a, AlgVector&lt; T &gt; const &amp;xa, T b, AlgVector&lt; T &gt; const &amp;xb, bool async=false)</argsstring>
-        <name>LinComb</name>
-        <qualifiedname>amrex::LinComb</qualifiedname>
+        <definition>void amrex::Xpay</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;x)</argsstring>
+        <name>Xpay</name>
+        <qualifiedname>amrex::Xpay</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; &amp;</type>
           <declname>y</declname>
         </param>
         <param>
@@ -44925,7 +44937,42 @@ Returns the index of the first element for which f is 0. </para>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>y = x + a*y. For GPU guilds, this function is asynchronous with respect to the host. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="138" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ac2a53aa6f507d3106dc3403b710232e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Allocator</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::LinComb</definition>
+        <argsstring>(AlgVector&lt; T, Allocator &gt; &amp;y, T a, AlgVector&lt; T, Allocator &gt; const &amp;xa, T b, AlgVector&lt; T, Allocator &gt; const &amp;xb)</argsstring>
+        <name>LinComb</name>
+        <qualifiedname>amrex::LinComb</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
           <declname>xa</declname>
         </param>
         <param>
@@ -44933,13 +44980,57 @@ Returns the index of the first element for which f is 0. </para>
           <declname>b</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, Allocator &gt; const &amp;</type>
           <declname>xb</declname>
         </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>y = a*xa + b*xb. For GPU guilds, this function is asynchronous with respect to the host. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" line="146" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVecUtil.H" bodystart="146" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a77f49a01806906728a13f177be83dc29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>AD</declname>
+            <defname>AD</defname>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>AS</declname>
+            <defname>AS</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; C, Gpu::HostToDevice &gt;||std::is_same_v&lt; C, Gpu::DeviceToHost &gt;||std::is_same_v&lt; C, Gpu::DeviceToDevice &gt;, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::duplicateCSR</definition>
+        <argsstring>(C c, CSR&lt; T, AD &gt; &amp;dst, CSR&lt; T, AS &gt; const &amp;src)</argsstring>
+        <name>duplicateCSR</name>
+        <qualifiedname>amrex::duplicateCSR</qualifiedname>
         <param>
-          <type>bool</type>
-          <declname>async</declname>
-          <defval>false</defval>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>&lt; T, AD &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>&lt; T, AS &gt; const &amp;</type>
+          <declname>src</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -44947,9 +45038,73 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" line="439" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_AlgVector.H" bodystart="439" bodyend="445"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" line="71" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_CSR.H" bodystart="71" bodyend="89"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a5497760fe0dddbe8b0ef6dc10521a843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a9c9de63773fd664ef9d182ef1cc5964e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>V</declname>
+            <defname>V</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>&lt; T, V &gt;</type>
+        <definition>CSR&lt; T, V &gt; amrex::transpose</definition>
+        <argsstring>(CSR&lt; T, V &gt; const &amp;csr, Long ncols)</argsstring>
+        <name>transpose</name>
+        <qualifiedname>amrex::transpose</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>&lt; T, V &gt; const &amp;</type>
+          <declname>csr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+          <declname>ncols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatUtil.H" line="10" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatUtil.H" bodystart="10" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a16bfd501a58a528c61e0ef1412e23912" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>Allocator</declname>
+            <defname>Allocator</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T, Allocator &gt;</type>
+        <definition>SpMatrix&lt; T, Allocator &gt; amrex::transpose</definition>
+        <argsstring>(SpMatrix&lt; T, Allocator &gt; const &amp;A, AlgPartition col_partition)</argsstring>
+        <name>transpose</name>
+        <qualifiedname>amrex::transpose</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T, Allocator &gt; const &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatUtil.H" line="26" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatUtil.H" bodystart="26" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ace0808388e851eff31416adb29d889a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -44957,19 +45112,66 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::SpMV</definition>
-        <argsstring>(AlgVector&lt; T &gt; &amp;y, SpMatrix&lt; T &gt; const &amp;A, AlgVector&lt; T &gt; const &amp;x)</argsstring>
+        <argsstring>(Long nrows, Long ncols, T *__restrict__ py, CsrView&lt; T const &gt; const &amp;A, T const *__restrict__ px)</argsstring>
         <name>SpMV</name>
         <qualifiedname>amrex::SpMV</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
-          <declname>y</declname>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+          <declname>nrows</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T &gt; const &amp;</type>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+          <declname>ncols</declname>
+        </param>
+        <param>
+          <type>T *__restrict__</type>
+          <declname>py</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CsrView" kindref="compound">CsrView</ref>&lt; T const &gt; const &amp;</type>
           <declname>A</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
+          <type>T const *__restrict__</type>
+          <declname>px</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" line="13" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" bodystart="13" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a287bbdc94930142a9cefe738a5b79002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>AllocM</declname>
+            <defname>AllocM</defname>
+          </param>
+          <param>
+            <type>typename AllocV</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::SpMV</definition>
+        <argsstring>(AlgVector&lt; T, AllocV &gt; &amp;y, SpMatrix&lt; T, AllocM &gt; const &amp;A, AlgVector&lt; T, AllocV &gt; const &amp;x)</argsstring>
+        <name>SpMV</name>
+        <qualifiedname>amrex::SpMV</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, AllocV &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T, AllocM &gt; const &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, AllocV &gt; const &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -44978,7 +45180,51 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" line="21" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" bodystart="21" bodyend="211"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" line="210" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" bodystart="210" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a886f6737dede1d359dcd80b55000f9a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>AllocM</declname>
+            <defname>AllocM</defname>
+          </param>
+          <param>
+            <type>typename AllocV</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::computeResidual</definition>
+        <argsstring>(AlgVector&lt; T, AllocV &gt; &amp;res, SpMatrix&lt; T, AllocM &gt; const &amp;A, AlgVector&lt; T, AllocV &gt; const &amp;x, AlgVector&lt; T, AllocV &gt; const &amp;b)</argsstring>
+        <name>computeResidual</name>
+        <qualifiedname>amrex::computeResidual</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, AllocV &gt; &amp;</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T, AllocM &gt; const &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, AllocV &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, AllocV &gt; const &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>res = b - A*x </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" line="226" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMV.H" bodystart="226" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a252c26c15fb6b8a071dae269722ff428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MLMGNormType_EnumTraits</type>

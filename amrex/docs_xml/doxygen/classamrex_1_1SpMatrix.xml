@@ -3,7 +3,8 @@
   <compounddef id="classamrex_1_1SpMatrix" kind="class" language="C++" prot="public">
     <compoundname>amrex::SpMatrix</compoundname>
     <includes refid="AMReX__SpMatrix_8H" local="no">AMReX_SpMatrix.H</includes>
-    <innerclass refid="structamrex_1_1SpMatrix_1_1CSR" prot="private">amrex::SpMatrix::CSR</innerclass>
+    <innerclass refid="structamrex_1_1SpMatrix_1_1CommMV" prot="public">amrex::SpMatrix::CommMV</innerclass>
+    <innerclass refid="structamrex_1_1SpMatrix_1_1CommTR" prot="public">amrex::SpMatrix::CommTR</innerclass>
     <templateparamlist>
       <param>
         <type>typename T</type>
@@ -28,28 +29,168 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="21" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="54" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="54" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-type">
-      <memberdef kind="typedef" id="classamrex_1_1SpMatrix_1a0760a3e0d254cc570afdd55eec47ca71" prot="private" static="no">
+      <memberdef kind="typedef" id="classamrex_1_1SpMatrix_1a6df34af39ea6b5b6e0cb92a54d228904" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>class U</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; U, Allocator&lt; U &gt; &gt;</type>
-        <definition>using amrex::SpMatrix&lt; T, Allocator &gt;::DVec =  PODVector&lt;U,Allocator&lt;U&gt; &gt;</definition>
+        <type>Allocator&lt; U &gt;</type>
+        <definition>using amrex::SpMatrix&lt; T, Allocator &gt;::allocator_type =  Allocator&lt;U&gt;</definition>
         <argsstring></argsstring>
-        <name>DVec</name>
-        <qualifiedname>amrex::SpMatrix::DVec</qualifiedname>
+        <name>allocator_type</name>
+        <qualifiedname>amrex::SpMatrix::allocator_type</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="87" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="87" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="55" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; U, Allocator&lt; U &gt; &gt;</type>
+        <definition>using amrex::SpMatrix&lt; T, Allocator &gt;::container_type =  PODVector&lt;U,Allocator&lt;U&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>container_type</name>
+        <qualifiedname>amrex::SpMatrix::container_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="56" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" prot="public" static="no">
+        <type><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" kindref="member">container_type</ref> &gt;</type>
+        <definition>using amrex::SpMatrix&lt; T, Allocator &gt;::csr_type =  CSR&lt;T,container_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>csr_type</name>
+        <qualifiedname>amrex::SpMatrix::csr_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="57" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" prot="public" static="no">
+        <type>Allocator&lt; T &gt;</type>
+        <definition>using amrex::SpMatrix&lt; T, Allocator &gt;::AllocT =  Allocator&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>AllocT</name>
+        <qualifiedname>amrex::SpMatrix::AllocT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="58" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1SpMatrix_1a39d05803320f1008d0f1abbbe049a58a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>class</type>
+        <definition>friend class AMG</definition>
+        <argsstring></argsstring>
+        <name>AMG</name>
+        <qualifiedname>amrex::SpMatrix::AMG</qualifiedname>
+        <param>
+          <type>AMG</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="268" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1SpMatrix_1af2f318a03ebd3b2a25ff1cbc98512d4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void SpMV</definition>
+        <argsstring>(AlgVector&lt; U, N &gt; &amp;y, SpMatrix&lt; U, M &gt; const &amp;A, AlgVector&lt; U, N &gt; const &amp;x)</argsstring>
+        <name>SpMV</name>
+        <qualifiedname>amrex::SpMatrix::SpMV</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; U, N &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; U, M &gt; const &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; U, N &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="263" column="10"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1SpMatrix_1a4dd66fb131710a5961a8a74a14914674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>M</declname>
+            <defname>M</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; U, M &gt;</type>
+        <definition>SpMatrix&lt; U, M &gt; transpose</definition>
+        <argsstring>(SpMatrix&lt; U, M &gt; const &amp;A, AlgPartition col_partition)</argsstring>
+        <name>transpose</name>
+        <qualifiedname>amrex::SpMatrix::transpose</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; U, M &gt; const &amp;</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="266" column="14"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -65,7 +206,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="97" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="97" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="288" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1aac4fd83f9c666f7b10fd5738d0230866" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+        <definition>AlgPartition amrex::SpMatrix&lt; T, Allocator &gt;::m_col_partition</definition>
+        <argsstring></argsstring>
+        <name>m_col_partition</name>
+        <qualifiedname>amrex::SpMatrix::m_col_partition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="289" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a8734156cf0b71081935338a06903a5be" prot="private" static="no" mutable="no">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -80,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="98" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="290" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="290" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a1fa463c0a5937605dee0bf5956994f53" prot="private" static="no" mutable="no">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -95,25 +250,73 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="99" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="99" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="291" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="291" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1aa2a0da5fac4331632a01d167e1106441" prot="private" static="no" mutable="no">
-        <type>CSR&lt; <ref refid="classamrex_1_1PODVector" kindref="compound">DVec</ref> &gt;</type>
-        <definition>CSR&lt;DVec&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_data</definition>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a57791d03eb34e7bffa0ac5450900a393" prot="private" static="no" mutable="no">
+        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::m_col_begin</definition>
         <argsstring></argsstring>
-        <name>m_data</name>
-        <qualifiedname>amrex::SpMatrix::m_data</qualifiedname>
+        <name>m_col_begin</name>
+        <qualifiedname>amrex::SpMatrix::m_col_begin</qualifiedname>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="100" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="100" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="292" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="292" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a021c1b6b2e8d8f3a176823cbd5d2213d" prot="private" static="no" mutable="yes">
-        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt;</type>
-        <definition>AlgVector&lt;T&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_diagonal</definition>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a9eec6c0fe4e0338767dc81819cc2616b" prot="private" static="no" mutable="no">
+        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::m_col_end</definition>
+        <argsstring></argsstring>
+        <name>m_col_end</name>
+        <qualifiedname>amrex::SpMatrix::m_col_end</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>for diagonal part of mat-vec &amp; mat-mat operations </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="293" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a12daa6b82fd549c5f664209bdf3ee393" prot="private" static="no" mutable="no">
+        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::m_nnz</definition>
+        <argsstring></argsstring>
+        <name>m_nnz</name>
+        <qualifiedname>amrex::SpMatrix::m_nnz</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>for diagonal part of mat-vec &amp; mat-mat operations </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="294" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1ac85224864fbd4c703eb54b258e14adb6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" kindref="member">csr_type</ref></type>
+        <definition>csr_type amrex::SpMatrix&lt; T, Allocator &gt;::m_csr</definition>
+        <argsstring></argsstring>
+        <name>m_csr</name>
+        <qualifiedname>amrex::SpMatrix::m_csr</qualifiedname>
+        <briefdescription>
+<para>total nnz including both diagonal and off-diagonal </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="295" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1ad8190b4a8fa208acc0d960a88b8109bb" prot="private" static="no" mutable="yes">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt;</type>
+        <definition>AlgVector&lt;T,AllocT&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_diagonal</definition>
         <argsstring></argsstring>
         <name>m_diagonal</name>
         <qualifiedname>amrex::SpMatrix::m_diagonal</qualifiedname>
@@ -123,214 +326,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="102" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="102" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="297" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="297" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a07aee43e3aaa0e2cfcbe765fc8b9ffcb" prot="private" static="no" mutable="no">
-        <type>CSR&lt; <ref refid="classamrex_1_1PODVector" kindref="compound">DVec</ref> &gt;</type>
-        <definition>CSR&lt;DVec&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_data_remote</definition>
-        <argsstring></argsstring>
-        <name>m_data_remote</name>
-        <qualifiedname>amrex::SpMatrix::m_data_remote</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="105" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="105" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a45904fbb7e0dbce904f519553f2a07f1" prot="private" static="no" mutable="no">
-        <type><ref refid="group__amrex__linear__containers_1ga6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
-        <definition>Gpu::PinnedVector&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_remote_cols</definition>
-        <argsstring></argsstring>
-        <name>m_remote_cols</name>
-        <qualifiedname>amrex::SpMatrix::m_remote_cols</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="108" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="108" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1af6b0d32af456857f800c542fb2901a83" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1PODVector" kindref="compound">DVec</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
-        <definition>DVec&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_rtol</definition>
-        <argsstring></argsstring>
-        <name>m_rtol</name>
-        <qualifiedname>amrex::SpMatrix::m_rtol</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="111" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="111" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1ada3bc6e12d7dacb1312f61d3bcbc8cd2" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
-        <definition>Vector&lt;int&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_send_to</definition>
-        <argsstring></argsstring>
-        <name>m_send_to</name>
-        <qualifiedname>amrex::SpMatrix::m_send_to</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="113" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="113" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1ade6a7f87e1b0ff7cd09debf8cdf1a9e1" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
-        <definition>Vector&lt;int&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_send_counts</definition>
-        <argsstring></argsstring>
-        <name>m_send_counts</name>
-        <qualifiedname>amrex::SpMatrix::m_send_counts</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="114" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="114" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a2d14c8ad33d2ce22837ce73d64e55d9f" prot="private" static="no" mutable="no">
-        <type><ref refid="group__amrex__linear__containers_1ga99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
-        <definition>Gpu::DeviceVector&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_send_indices</definition>
-        <argsstring></argsstring>
-        <name>m_send_indices</name>
-        <qualifiedname>amrex::SpMatrix::m_send_indices</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="115" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="115" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a7e41b591689658ba52d0ccca052559b9" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
-        <definition>Vector&lt;int&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_recv_from</definition>
-        <argsstring></argsstring>
-        <name>m_recv_from</name>
-        <qualifiedname>amrex::SpMatrix::m_recv_from</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="117" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="117" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a3b9e4d66314f4399ad4b6eccde1559e0" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
-        <definition>Vector&lt;int&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_recv_counts</definition>
-        <argsstring></argsstring>
-        <name>m_recv_counts</name>
-        <qualifiedname>amrex::SpMatrix::m_recv_counts</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="118" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="118" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a9cc79496de648f40cab419a7af16d9ff" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1_1mpidatatypes_1aa06d59ab6bca4110216e437d289ae929" kindref="member">MPI_Request</ref> &gt;</type>
-        <definition>Vector&lt;MPI_Request&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_send_reqs</definition>
-        <argsstring></argsstring>
-        <name>m_send_reqs</name>
-        <qualifiedname>amrex::SpMatrix::m_send_reqs</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="120" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="120" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1ac5f392ccb3a25dec4f6f3ed5c8b47e18" prot="private" static="no" mutable="no">
-        <type>T *</type>
-        <definition>T* amrex::SpMatrix&lt; T, Allocator &gt;::m_send_buffer</definition>
-        <argsstring></argsstring>
-        <name>m_send_buffer</name>
-        <qualifiedname>amrex::SpMatrix::m_send_buffer</qualifiedname>
-        <initializer>= nullptr</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="121" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="121" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a34849529796003874a1623ea782d68c2" prot="private" static="no" mutable="no">
-        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
-        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::m_total_counts_send</definition>
-        <argsstring></argsstring>
-        <name>m_total_counts_send</name>
-        <qualifiedname>amrex::SpMatrix::m_total_counts_send</qualifiedname>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="122" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="122" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1aa87ccb457beb528d4be8cba8b82236fc" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1_1mpidatatypes_1aa06d59ab6bca4110216e437d289ae929" kindref="member">MPI_Request</ref> &gt;</type>
-        <definition>Vector&lt;MPI_Request&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_recv_reqs</definition>
-        <argsstring></argsstring>
-        <name>m_recv_reqs</name>
-        <qualifiedname>amrex::SpMatrix::m_recv_reqs</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="124" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="124" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1aa5dad450eac06349da0259d1107edc77" prot="private" static="no" mutable="no">
-        <type>T *</type>
-        <definition>T* amrex::SpMatrix&lt; T, Allocator &gt;::m_recv_buffer</definition>
-        <argsstring></argsstring>
-        <name>m_recv_buffer</name>
-        <qualifiedname>amrex::SpMatrix::m_recv_buffer</qualifiedname>
-        <initializer>= nullptr</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="125" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="125" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a9904dd438abf77a9c3211039da165bb3" prot="private" static="no" mutable="no">
-        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
-        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::m_total_counts_recv</definition>
-        <argsstring></argsstring>
-        <name>m_total_counts_recv</name>
-        <qualifiedname>amrex::SpMatrix::m_total_counts_recv</qualifiedname>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="126" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="126" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a0686c2617e1e5a6058484335e43c0757" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a1606ff98d5a1b3f218e479303eb6af62" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::SpMatrix&lt; T, Allocator &gt;::m_comm_prepared</definition>
+        <definition>bool amrex::SpMatrix&lt; T, Allocator &gt;::m_split</definition>
         <argsstring></argsstring>
-        <name>m_comm_prepared</name>
-        <qualifiedname>amrex::SpMatrix::m_comm_prepared</qualifiedname>
+        <name>m_split</name>
+        <qualifiedname>amrex::SpMatrix::m_split</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
         </briefdescription>
@@ -338,22 +341,136 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="128" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="128" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="299" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="299" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a75f4ffc1d1a299053efbe86ef8ff4ba6" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool amrex::SpMatrix&lt; T, Allocator &gt;::m_shifted</definition>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a30de2ebab6e6f65e959f49c095ba06c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" kindref="member">csr_type</ref></type>
+        <definition>csr_type amrex::SpMatrix&lt; T, Allocator &gt;::m_csr_remote</definition>
         <argsstring></argsstring>
-        <name>m_shifted</name>
-        <qualifiedname>amrex::SpMatrix::m_shifted</qualifiedname>
-        <initializer>= false</initializer>
+        <name>m_csr_remote</name>
+        <qualifiedname>amrex::SpMatrix::m_csr_remote</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="131" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="131" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="302" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a92c0b5befa50a89e040d5b6f1c20f66c" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" kindref="member">container_type</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
+        <definition>container_type&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_ri_rtol</definition>
+        <argsstring></argsstring>
+        <name>m_ri_rtol</name>
+        <qualifiedname>amrex::SpMatrix::m_ri_rtol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="311" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a99d269f5391de8db9702edf5f1b0fbd4" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" kindref="member">container_type</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
+        <definition>container_type&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_ri_ltor</definition>
+        <argsstring></argsstring>
+        <name>m_ri_ltor</name>
+        <qualifiedname>amrex::SpMatrix::m_ri_ltor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="315" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a28467117bc848d74017f1ed250cc4935" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
+        <definition>Vector&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_remote_cols_v</definition>
+        <argsstring></argsstring>
+        <name>m_remote_cols_v</name>
+        <qualifiedname>amrex::SpMatrix::m_remote_cols_v</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="325" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a029053f68f85318672a2edc390e5ff4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" kindref="member">container_type</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt;</type>
+        <definition>container_type&lt;Long&gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_remote_cols_dv</definition>
+        <argsstring></argsstring>
+        <name>m_remote_cols_dv</name>
+        <qualifiedname>amrex::SpMatrix::m_remote_cols_dv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="327" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1aa7fc6b9558812fb9cc34df144b22a2d6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> &gt; &gt;</type>
+        <definition>Vector&lt;Vector&lt;Long&gt; &gt; amrex::SpMatrix&lt; T, Allocator &gt;::m_remote_cols_vv</definition>
+        <argsstring></argsstring>
+        <name>m_remote_cols_vv</name>
+        <qualifiedname>amrex::SpMatrix::m_remote_cols_vv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="330" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a746b819990d995b1df62ec20c1b7c21f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::SpMatrix&lt; T, Allocator &gt;::m_num_neighbors</definition>
+        <argsstring></argsstring>
+        <name>m_num_neighbors</name>
+        <qualifiedname>amrex::SpMatrix::m_num_neighbors</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="332" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="332" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1a7817a91aa8d5dedbba23e74252309ef7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structamrex_1_1SpMatrix_1_1CommMV" kindref="compound">amrex::SpMatrix::CommMV</ref></type>
+        <definition>struct amrex::SpMatrix::CommMV amrex::SpMatrix&lt; T, Allocator &gt;::m_comm_mv</definition>
+        <argsstring></argsstring>
+        <name>m_comm_mv</name>
+        <qualifiedname>amrex::SpMatrix::m_comm_mv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="353" column="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1SpMatrix_1adcf965b93de644398b57ebf6458d61c1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structamrex_1_1SpMatrix_1_1CommTR" kindref="compound">amrex::SpMatrix::CommTR</ref></type>
+        <definition>struct amrex::SpMatrix::CommTR amrex::SpMatrix&lt; T, Allocator &gt;::m_comm_tr</definition>
+        <argsstring></argsstring>
+        <name>m_comm_tr</name>
+        <qualifiedname>amrex::SpMatrix::m_comm_tr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="376" column="15"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -369,12 +486,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="23" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="60" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a7dbc78cd50e654f7777ba994a4317613" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1af41eef917f3698fc3755956941789c09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::SpMatrix&lt; T, Allocator &gt;::SpMatrix</definition>
-        <argsstring>(AlgPartition partition, int nnz)</argsstring>
+        <argsstring>(AlgPartition partition, int nnz_per_row)</argsstring>
         <name>SpMatrix</name>
         <qualifiedname>amrex::SpMatrix::SpMatrix</qualifiedname>
         <param>
@@ -383,15 +500,77 @@
         </param>
         <param>
           <type>int</type>
-          <declname>nnz</declname>
+          <declname>nnz_per_row</declname>
         </param>
         <briefdescription>
+<para>Construct a sparse matrix with a fixed number of nonzeros per row. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor allocates the required storage and initializes the row offsets. The matrix entries themselves are left uninitialized. Matrix values can be written through the pointer returned by <computeroutput><ref refid="classamrex_1_1SpMatrix_1a36e171c21efca4157d3715d884d88f53" kindref="member">data()</ref></computeroutput> and the corresponding column indices through the pointer returned by the <computeroutput><ref refid="classamrex_1_1SpMatrix_1ac30f6cc408abda37a6ab47dfb17119f2" kindref="member">columnIndex()</ref></computeroutput>. Alternatively, the matrix may be initialized using <computeroutput><ref refid="classamrex_1_1SpMatrix_1afe2b2519b8fcdd315d30806b205050d3" kindref="member">setVal()</ref></computeroutput>. In either case, the <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> data must not contain duplicated entries or invalid entries (i.e., negative column indices). If the matrix is set manually through pointers and the entries within each row are not sorted by column index, the user must call <computeroutput>sortCSR</computeroutput> after all data have been set.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>partition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parallel partition information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nnz_per_row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of nonzeros per row. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="25" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="135" bodyend="142"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="80" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="668" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aba2d591afc3e5d8e369e525fae4d9905" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::SpMatrix&lt; T, Allocator &gt;::SpMatrix</definition>
+        <argsstring>(AlgPartition partition, csr_type csr)</argsstring>
+        <name>SpMatrix</name>
+        <qualifiedname>amrex::SpMatrix::SpMatrix</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>partition</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" kindref="member">csr_type</ref></type>
+          <declname>csr</declname>
+        </param>
+        <briefdescription>
+<para>Construct a sparse matrix from a given Partition and <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> represents the portion of the matrix local to this process. It must be both sorted and valid. Moreover, it should not have duplicagted entries.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>partition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parallel partition information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>csr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> represents of the matrix local to this process. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="92" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="677" bodyend="683"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1aa0926203195aefdb192471916841f378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -408,7 +587,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="27" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="94" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a4da7b9a98a373f8fc51c22e8a6e0ffad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref> &amp;</type>
@@ -425,7 +604,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="28" column="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="95" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1aa978f7334d00bbf8fb564b391999aa93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -442,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="30" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="97" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1ad77b7d4979338962d2e7fd750c762e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref> &amp;</type>
@@ -459,7 +638,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="31" column="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="98" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a50000ca76ce5d7e0e9277fab9a2cc751" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -473,12 +652,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="33" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="100" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a2aadf47e5ee2adb0eb4bce51d3e40286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aff9b77125ea939d1fd1b54b72ebc95ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::define</definition>
-        <argsstring>(AlgPartition partition, int nnz)</argsstring>
+        <argsstring>(AlgPartition partition, int nnz_per_row)</argsstring>
         <name>define</name>
         <qualifiedname>amrex::SpMatrix::define</qualifiedname>
         <param>
@@ -487,20 +666,40 @@
         </param>
         <param>
           <type>int</type>
-          <declname>nnz</declname>
+          <declname>nnz_per_row</declname>
         </param>
         <briefdescription>
+<para>Allocate storage for a default-constructed matrix with a fixed number of nonzeros per row. </para>
         </briefdescription>
         <detaileddescription>
+<para>This allocates the required storage and initializes the row offsets. The matrix entries themselves are left uninitialized. Matrix values can be written through the pointer returned by <computeroutput><ref refid="classamrex_1_1SpMatrix_1a36e171c21efca4157d3715d884d88f53" kindref="member">data()</ref></computeroutput> and the corresponding column indices through the pointer returned by the <computeroutput><ref refid="classamrex_1_1SpMatrix_1ac30f6cc408abda37a6ab47dfb17119f2" kindref="member">columnIndex()</ref></computeroutput>. Alternatively, the matrix may be initialized using <computeroutput><ref refid="classamrex_1_1SpMatrix_1afe2b2519b8fcdd315d30806b205050d3" kindref="member">setVal()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>partition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parallel partition information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nnz_per_row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of nonzeros per row. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="35" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="145" bodyend="151"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="116" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="686" bodyend="692"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a9f2ed7ae22b0ddca998ffbed80ec2141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aca74c985f3c661327634b07322f8812f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::define</definition>
-        <argsstring>(AlgPartition partition, T const *mat, Long const *col_index, Long nnz, Long const *row_index)</argsstring>
+        <argsstring>(AlgPartition partition, T const *mat, Long const *col_index, Long nentries, Long const *row_offset, CsrSorted is_sorted, CsrValid is_valid)</argsstring>
         <name>define</name>
         <qualifiedname>amrex::SpMatrix::define</qualifiedname>
         <param>
@@ -517,20 +716,144 @@
         </param>
         <param>
           <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
-          <declname>nnz</declname>
+          <declname>nentries</declname>
         </param>
         <param>
           <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> const *</type>
-          <declname>row_index</declname>
+          <declname>row_offset</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CsrSorted" kindref="compound">CsrSorted</ref></type>
+          <declname>is_sorted</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CsrValid" kindref="compound">CsrValid</ref></type>
+          <declname>is_valid</declname>
         </param>
         <briefdescription>
+<para>Define a default-constructed matrix from given <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> arrays. </para>
         </briefdescription>
         <detaileddescription>
-<para>Define a matrix with CSR format data. Note that mat and col_index should contains nnz elements. The number of elements in row_index should be the number of local rows plus 1. The data can be freed after this function call. For GPU builds, the data are expected to be in GPU memory. </para>
+<para>The <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> arrays describe the portion of the matrix local to this process.</para>
+<para>If <computeroutput>is_valid</computeroutput> indicates that the input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> may contain invalid entries, this function will filter the input and omit such entries from the resulting matrix. An entry is considered invalid if its column index is negative. In addition, when <computeroutput>is_valid</computeroutput> is false, this function also removes entries whose values are zero. The input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> is not allowed to contain duplicated valid entries.</para>
+<para>It is not an error to specify <computeroutput>is_sorted</computeroutput> = false when the input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> is in fact sorted, nor to specify <computeroutput>is_valid</computeroutput> = false when the input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> contains no invalid entries. In these cases, the result is correct, but the function may perform unnecessary work and therefore result in a performance penalty. If the input properties are not known, it is safe to set both flags to false.</para>
+<para>The input data can be freed after this function call. For GPU builds, the data are expected to be in GPU memory.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>partition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parallel partition information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> values array (length <computeroutput>nentries</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>col_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> column indices array (length <computeroutput>nentries</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nentries</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of entries. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>row_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> row offsets array (length <computeroutput>num_local_rows + 1</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> entries are sorted (within each row). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_valid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> is guaranteed to be valid (i.e., contains no negative column indices). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="42" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="173" bodyend="191"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="150" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="730" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1ab19cae4c8c0ccc8e3f8ceb75cb05968d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::define</definition>
+        <argsstring>(AlgPartition partition, csr_type csr, CsrSorted is_sorted)</argsstring>
+        <name>define</name>
+        <qualifiedname>amrex::SpMatrix::define</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref></type>
+          <declname>partition</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" kindref="member">csr_type</ref></type>
+          <declname>csr</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CsrSorted" kindref="compound">CsrSorted</ref></type>
+          <declname>is_sorted</declname>
+        </param>
+        <briefdescription>
+<para>Define a default-constructed matrix from a given <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The input <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> represents the portion of the matrix local to this process. It must be valid. Moreover, it should not have duplicagted entries.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>partition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parallel partition information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>csr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> represents of the matrix local to this process. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> entries are sorted (within each row). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="165" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="695" bodyend="704"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1ab5d7ec6bbdeee94ca40a31e42cf73d4d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
@@ -544,7 +867,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="45" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="45" bodyend="45"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="167" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="167" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a93ed7d198dfccc2ce19279b907d203ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
+        <definition>AlgPartition const  &amp; amrex::SpMatrix&lt; T, Allocator &gt;::columnPartition</definition>
+        <argsstring>() const</argsstring>
+        <name>columnPartition</name>
+        <qualifiedname>amrex::SpMatrix::columnPartition</qualifiedname>
+        <briefdescription>
+<para>Return the column partition used for matrix-vector and matrix-matrix multiplications. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This partition corresponds to the row partition of the vector or matrix appearing on the right-hand side of a multiplication. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="176" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="176" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1aade080a49b8e66536c2c9756fc2e394e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -558,7 +897,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="47" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="47" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="178" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="178" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a3d0d45d8b9281cbff8b5b5d0af50c9ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -572,21 +911,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="48" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="48" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="179" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="179" bodyend="179"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1abda56fec08a151f1bcea7328e8e011a6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a7418e93a177244d566e05ff1ff83e2b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
-        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::numLocalNonZero</definition>
+        <definition>Long amrex::SpMatrix&lt; T, Allocator &gt;::numLocalNonZeros</definition>
         <argsstring>() const</argsstring>
-        <name>numLocalNonZero</name>
-        <qualifiedname>amrex::SpMatrix::numLocalNonZero</qualifiedname>
+        <name>numLocalNonZeros</name>
+        <qualifiedname>amrex::SpMatrix::numLocalNonZeros</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="49" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="49" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="180" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="180" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a12228a2f0f9a42b9067c419ad502153c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -601,7 +940,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="52" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="52" bodyend="52"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="183" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="183" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a71755e723080a68f133d0b49a97c3b6c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
@@ -616,21 +955,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="54" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="54" bodyend="54"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a62845ddfac08ad330daeb71e09f769fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>T const *</type>
-        <definition>T const  * amrex::SpMatrix&lt; T, Allocator &gt;::data</definition>
-        <argsstring>() const</argsstring>
-        <name>data</name>
-        <qualifiedname>amrex::SpMatrix::data</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="56" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="56" bodyend="56"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="185" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="185" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a36e171c21efca4157d3715d884d88f53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T *</type>
@@ -639,26 +964,13 @@
         <name>data</name>
         <qualifiedname>amrex::SpMatrix::data</qualifiedname>
         <briefdescription>
+<para>Don&apos;t use this beyond initial setup. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="57" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="57" bodyend="57"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a76f9be075d45fa6dc35435330443f05c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> const *</type>
-        <definition>Long const  * amrex::SpMatrix&lt; T, Allocator &gt;::columnIndex</definition>
-        <argsstring>() const</argsstring>
-        <name>columnIndex</name>
-        <qualifiedname>amrex::SpMatrix::columnIndex</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="58" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="58" bodyend="58"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="188" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="188" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1ac30f6cc408abda37a6ab47dfb17119f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> *</type>
@@ -667,26 +979,13 @@
         <name>columnIndex</name>
         <qualifiedname>amrex::SpMatrix::columnIndex</qualifiedname>
         <briefdescription>
+<para>Don&apos;t use this beyond initial setup. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="59" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="59" bodyend="59"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a245ce698d4abf49f277eb1d60853d2b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> const *</type>
-        <definition>Long const  * amrex::SpMatrix&lt; T, Allocator &gt;::rowOffset</definition>
-        <argsstring>() const</argsstring>
-        <name>rowOffset</name>
-        <qualifiedname>amrex::SpMatrix::rowOffset</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="60" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="60" bodyend="60"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="194" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="194" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a1be5532997c163eef690904b63b6ba41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> *</type>
@@ -695,12 +994,13 @@
         <name>rowOffset</name>
         <qualifiedname>amrex::SpMatrix::rowOffset</qualifiedname>
         <briefdescription>
+<para>Don&apos;t use this beyond initial setup. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="61" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="61" bodyend="61"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="200" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="200" bodyend="203"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SpMatrix_1a9766f02c7fc09300c0a62fb3bf4203be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -718,9 +1018,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="63" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="195" bodyend="225"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="221" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="824" bodyend="885"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a16ca8a2fecb5c53dba07ec3e2f8192a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1afe2b2519b8fcdd315d30806b205050d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
@@ -728,44 +1028,145 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::setVal</definition>
-        <argsstring>(F const &amp;f)</argsstring>
+        <argsstring>(F const &amp;f, CsrSorted is_sorted)</argsstring>
         <name>setVal</name>
         <qualifiedname>amrex::SpMatrix::setVal</qualifiedname>
         <param>
           <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> const &amp;</type>
           <declname>f</declname>
         </param>
+        <param>
+          <type><ref refid="structamrex_1_1CsrSorted" kindref="compound">CsrSorted</ref></type>
+          <declname>is_sorted</declname>
+        </param>
         <briefdescription>
+<para>Initialize matrix entries using a row-wise functor. </para>
         </briefdescription>
         <detaileddescription>
+<para>The functor must have the signature <programlisting filename=".cpp"><codeline><highlight class="normal">void(<ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>row,<sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref>*<sp/>col,<sp/>T*<sp/>val)</highlight></codeline>
+</programlisting></para>
+<para>and is responsible for setting the global column indices and values for the row specified by the global row index.</para>
+<para>This function is intended to be used after <ref refid="classamrex_1_1SpMatrix_1aff9b77125ea939d1fd1b54b72ebc95ec" kindref="member">define(AlgPartition,int)</ref>, when the storage has been allocated. It should only be used during initial matrix setup and not for modifying an already assembled matrix.</para>
+<para>The <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> data must not contain duplicated entries or invalid entries (i.e., negative column indices).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Functor <computeroutput>void(Long,Long*,T*)</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_sorted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> entries are sorted (within each row). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="66" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="229" bodyend="242"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="246" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="889" bodyend="906"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1adca4ae46a4f355c74288a283a60d6889" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
-        <definition>AlgVector&lt; T &gt; const  &amp; amrex::SpMatrix&lt; T, Allocator &gt;::diagonalVector</definition>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a1ec63faea0cd864e3e1903208f6887d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::sortCSR</definition>
+        <argsstring>()</argsstring>
+        <name>sortCSR</name>
+        <qualifiedname>amrex::SpMatrix::sortCSR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sort <ref refid="structamrex_1_1CSR" kindref="compound">CSR</ref> by column index withint each row. This is intended to be used after the user sets the matrix manually or with <computeroutput>setVal</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="250" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="776" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1abe85a4b17b88afe29d870fa2910191c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt; const &amp;</type>
+        <definition>AlgVector&lt; T, Allocator&lt; T &gt; &gt; const  &amp; amrex::SpMatrix&lt; T, Allocator &gt;::diagonalVector</definition>
         <argsstring>() const</argsstring>
         <name>diagonalVector</name>
         <qualifiedname>amrex::SpMatrix::diagonalVector</qualifiedname>
         <briefdescription>
+<para>Return diagonal elements in a square matrix. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="68" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="245" bodyend="268"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="253" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="909" bodyend="932"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1af1eac58242d09a806cb7acb361f8c979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a7e52eb4d6ba150d1b57b88f3906228bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt;</type>
+        <definition>AlgVector&lt; T, Allocator&lt; T &gt; &gt; amrex::SpMatrix&lt; T, Allocator &gt;::rowSum</definition>
+        <argsstring>() const</argsstring>
+        <name>rowSum</name>
+        <qualifiedname>amrex::SpMatrix::rowSum</qualifiedname>
+        <briefdescription>
+<para>Return row-sum vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="256" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="935" bodyend="956"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aa4c38dee4f8ed6eb7bfaf206acdce0e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParCsr" kindref="compound">ParCsr</ref>&lt; T &gt;</type>
+        <definition>ParCsr&lt; T &gt; amrex::SpMatrix&lt; T, Allocator &gt;::parcsr</definition>
+        <argsstring>()</argsstring>
+        <name>parcsr</name>
+        <qualifiedname>amrex::SpMatrix::parcsr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="258" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="959" bodyend="980"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aea7a391d509f61becff1318d41cd8886" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParCsr" kindref="compound">ParCsr</ref>&lt; T const &gt;</type>
+        <definition>ParCsr&lt; T const &gt; amrex::SpMatrix&lt; T, Allocator &gt;::parcsr</definition>
+        <argsstring>() const</argsstring>
+        <name>parcsr</name>
+        <qualifiedname>amrex::SpMatrix::parcsr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="259" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1008" bodyend="1011"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a981205bddbdc98138d5fe73ad74cd198" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParCsr" kindref="compound">ParCsr</ref>&lt; T const &gt;</type>
+        <definition>ParCsr&lt; T const &gt; amrex::SpMatrix&lt; T, Allocator &gt;::const_parcsr</definition>
+        <argsstring>() const</argsstring>
+        <name>const_parcsr</name>
+        <qualifiedname>amrex::SpMatrix::const_parcsr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="260" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="983" bodyend="1005"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a35d13284a266853384c62c6af85de1b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::define_doit</definition>
-        <argsstring>(int nnz)</argsstring>
+        <argsstring>(int nnz_per_row)</argsstring>
         <name>define_doit</name>
         <qualifiedname>amrex::SpMatrix::define_doit</qualifiedname>
         <param>
           <type>int</type>
-          <declname>nnz</declname>
+          <declname>nnz_per_row</declname>
         </param>
         <briefdescription>
 <para>Private function, but public for cuda. </para>
@@ -774,82 +1175,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="73" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="155" bodyend="169"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="271" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="708" bodyend="726"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a0c3d3dee5adc619c1fe493f62694590b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::prepare_comm</definition>
-        <argsstring>()</argsstring>
-        <name>prepare_comm</name>
-        <qualifiedname>amrex::SpMatrix::prepare_comm</qualifiedname>
-        <briefdescription>
-<para>Private function, but public for cuda. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="77" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="356" bodyend="637"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aff7e59959f717801f580e1be96726fba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::pack_buffer</definition>
-        <argsstring>(AlgVector&lt; T &gt; const &amp;v)</argsstring>
-        <name>pack_buffer</name>
-        <qualifiedname>amrex::SpMatrix::pack_buffer</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="640" bodyend="650"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a9c4a072949b3268201c4997b7ccad1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::unpack_buffer</definition>
-        <argsstring>(AlgVector&lt; T &gt; &amp;v)</argsstring>
-        <name>unpack_buffer</name>
-        <qualifiedname>amrex::SpMatrix::unpack_buffer</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="79" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="653" bodyend="676"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="friend">
-      <memberdef kind="friend" id="classamrex_1_1SpMatrix_1aaa80f8c734406537f80dd0787fb9df7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a150cbb11944dcbe666065e75250a7627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename U</type>
+            <type>typename I</type>
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void SpMV</definition>
-        <argsstring>(AlgVector&lt; U &gt; &amp;y, SpMatrix&lt; U &gt; const &amp;A, AlgVector&lt; U &gt; const &amp;x)</argsstring>
-        <name>SpMV</name>
-        <qualifiedname>amrex::SpMatrix::SpMV</qualifiedname>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::define_and_filter_doit</definition>
+        <argsstring>(T const *mat, Long const *col_index, Long nentries, Long const *row_offset)</argsstring>
+        <name>define_and_filter_doit</name>
+        <qualifiedname>amrex::SpMatrix::define_and_filter_doit</qualifiedname>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; U &gt; &amp;</type>
-          <declname>y</declname>
+          <type>T const *</type>
+          <declname>mat</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; U &gt; const &amp;</type>
-          <declname>A</declname>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> const *</type>
+          <declname>col_index</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; U &gt; const &amp;</type>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></type>
+          <declname>nentries</declname>
+        </param>
+        <param>
+          <type><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref> const *</type>
+          <declname>row_offset</declname>
+        </param>
+        <briefdescription>
+<para>Private function, but public for cuda. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="275" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="784" bodyend="820"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aebf110ef081b1bb0f839065bd181d6ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::startComm_mv</definition>
+        <argsstring>(AlgVector&lt; T, AllocT &gt; const &amp;x)</argsstring>
+        <name>startComm_mv</name>
+        <qualifiedname>amrex::SpMatrix::startComm_mv</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt; const &amp;</type>
           <declname>x</declname>
         </param>
         <briefdescription>
@@ -858,105 +1229,390 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="70" column="29"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="278" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1014" bodyend="1060"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1acb86105f8e1205543fe9c898d48ea1d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::finishComm_mv</definition>
+        <argsstring>(AlgVector&lt; T, AllocT &gt; &amp;y)</argsstring>
+        <name>finishComm_mv</name>
+        <qualifiedname>amrex::SpMatrix::finishComm_mv</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt; &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="279" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1063" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a32d2cdec02dae628fc4e7ae84087a584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::startComm_tr</definition>
+        <argsstring>(AlgPartition const &amp;col_partition)</argsstring>
+        <name>startComm_tr</name>
+        <qualifiedname>amrex::SpMatrix::startComm_tr</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="281" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1097" bodyend="1304"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a02280d102dd6d9ade782893375c3f2af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::finishComm_tr</definition>
+        <argsstring>(SpMatrix&lt; T, Allocator &gt; &amp;AT)</argsstring>
+        <name>finishComm_tr</name>
+        <qualifiedname>amrex::SpMatrix::finishComm_tr</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1SpMatrix" kindref="compound">SpMatrix</ref>&lt; T, Allocator &gt; &amp;</type>
+          <declname>AT</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="282" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1307" bodyend="1343"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a08b78104989b2861381f15ba4ddee119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::split_csr</definition>
+        <argsstring>(AlgPartition const &amp;col_partition)</argsstring>
+        <name>split_csr</name>
+        <qualifiedname>amrex::SpMatrix::split_csr</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="378" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1348" bodyend="1524"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a2d710a548583b3454e55b9b4cb6d1474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref></type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::update_remote_col_index</definition>
+        <argsstring>(C &amp;csrr, bool in_device_memory)</argsstring>
+        <name>update_remote_col_index</name>
+        <qualifiedname>amrex::SpMatrix::update_remote_col_index</qualifiedname>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257" kindref="member">C</ref> &amp;</type>
+          <declname>csrr</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>in_device_memory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="380" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1528" bodyend="1614"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1ae4dc8ca4710a168784566194a72d77f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::prepare_comm_mv</definition>
+        <argsstring>(AlgPartition const &amp;col_partition)</argsstring>
+        <name>prepare_comm_mv</name>
+        <qualifiedname>amrex::SpMatrix::prepare_comm_mv</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="381" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1637" bodyend="1704"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a222893bb8a2ea52113d18a1c23924ad9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::pack_buffer_mv</definition>
+        <argsstring>(AlgVector&lt; T, AllocT &gt; const &amp;v)</argsstring>
+        <name>pack_buffer_mv</name>
+        <qualifiedname>amrex::SpMatrix::pack_buffer_mv</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt; const &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="382" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1707" bodyend="1717"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a280ad0828d0f576b7456730a74be5c17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::unpack_buffer_mv</definition>
+        <argsstring>(AlgVector&lt; T, AllocT &gt; &amp;v)</argsstring>
+        <name>unpack_buffer_mv</name>
+        <qualifiedname>amrex::SpMatrix::unpack_buffer_mv</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T, <ref refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" kindref="member">AllocT</ref> &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="383" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1720" bodyend="1743"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1aef2f699cfdf92c270337b2d2484fb7ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::unpack_buffer_tr</definition>
+        <argsstring>(CommTR const &amp;ctr, AlgPartition const &amp;col_partition)</argsstring>
+        <name>unpack_buffer_tr</name>
+        <qualifiedname>amrex::SpMatrix::unpack_buffer_tr</qualifiedname>
+        <param>
+          <type><ref refid="structamrex_1_1SpMatrix_1_1CommTR" kindref="compound">CommTR</ref> const &amp;</type>
+          <declname>ctr</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1AlgPartition" kindref="compound">AlgPartition</ref> const &amp;</type>
+          <declname>col_partition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="384" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1746" bodyend="1854"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a2e7e2a30ded8faa2060a758daafbff86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a536f7d39f66f39612c86e92704e3b9e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::startComm</definition>
-        <argsstring>(AlgVector&lt; T &gt; const &amp;x)</argsstring>
-        <name>startComm</name>
-        <qualifiedname>amrex::SpMatrix::startComm</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; const &amp;</type>
-          <declname>x</declname>
-        </param>
+        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::set_num_neighbors</definition>
+        <argsstring>()</argsstring>
+        <name>set_num_neighbors</name>
+        <qualifiedname>amrex::SpMatrix::set_num_neighbors</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="84" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="271" bodyend="317"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1SpMatrix_1a8970740015b6a25988e1b85ba324e1bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::SpMatrix&lt; T, Allocator &gt;::finishComm</definition>
-        <argsstring>(AlgVector&lt; T &gt; &amp;y)</argsstring>
-        <name>finishComm</name>
-        <qualifiedname>amrex::SpMatrix::finishComm</qualifiedname>
-        <param>
-          <type><ref refid="classamrex_1_1AlgVector" kindref="compound">AlgVector</ref>&lt; T &gt; &amp;</type>
-          <declname>y</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="85" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="320" bodyend="351"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="286" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="1617" bodyend="1634"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="19" bodyend="132"/>
+    <collaborationgraph>
+      <node id="6">
+        <label>amrex::PODVector&lt; Long &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>T</label>
+      </node>
+      <node id="8">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::Vector&lt; std::array&lt; Long, 4 &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>amrex::Vector&lt; std::array&lt; int, 2 &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::SpMatrix&lt; T, Allocator &gt;::CommMV</label>
+        <link refid="structamrex_1_1SpMatrix_1_1CommMV"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>recv_counts</edgelabel>
+          <edgelabel>recv_from</edgelabel>
+          <edgelabel>send_counts</edgelabel>
+          <edgelabel>send_to</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>send_indices</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>recv_reqs</edgelabel>
+          <edgelabel>send_reqs</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>amrex::SpMatrix&lt; T, Allocator &gt;::CommTR</label>
+        <link refid="structamrex_1_1SpMatrix_1_1CommTR"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>recv_from</edgelabel>
+          <edgelabel>send_to</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>recv_counts</edgelabel>
+          <edgelabel>send_counts</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>recv_reqs</edgelabel>
+          <edgelabel>send_reqs</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>total_counts_recv</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>recv_buffer_offset</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::SpMatrix&lt; T, Allocator &gt;</label>
+        <link refid="classamrex_1_1SpMatrix"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_comm_mv</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_comm_tr</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::array&lt; Long, 2 &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" line="51" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_SpMatrix.H" bodystart="52" bodyend="387"/>
     <listofallmembers>
-      <member refid="classamrex_1_1SpMatrix_1a76f9be075d45fa6dc35435330443f05c" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>columnIndex</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a6df34af39ea6b5b6e0cb92a54d228904" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>allocator_type</name></member>
+      <member refid="classamrex_1_1SpMatrix_1ad81d80620e420da2e2939d3c2006b2e7" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>AllocT</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a39d05803320f1008d0f1abbbe049a58a" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>AMG</name></member>
       <member refid="classamrex_1_1SpMatrix_1ac30f6cc408abda37a6ab47dfb17119f2" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>columnIndex</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a62845ddfac08ad330daeb71e09f769fe" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>data</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a93ed7d198dfccc2ce19279b907d203ac" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>columnPartition</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a981205bddbdc98138d5fe73ad74cd198" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>const_parcsr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a9df4e61fe7d6fe954c0521c797a3765a" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>container_type</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a99d240b05d485779904b603b7c36f404" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>csr_type</name></member>
       <member refid="classamrex_1_1SpMatrix_1a36e171c21efca4157d3715d884d88f53" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>data</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a2aadf47e5ee2adb0eb4bce51d3e40286" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a9f2ed7ae22b0ddca998ffbed80ec2141" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define</name></member>
-      <member refid="classamrex_1_1SpMatrix_1af1eac58242d09a806cb7acb361f8c979" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define_doit</name></member>
-      <member refid="classamrex_1_1SpMatrix_1adca4ae46a4f355c74288a283a60d6889" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>diagonalVector</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a0760a3e0d254cc570afdd55eec47ca71" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>DVec</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a8970740015b6a25988e1b85ba324e1bb" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>finishComm</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aff9b77125ea939d1fd1b54b72ebc95ec" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aca74c985f3c661327634b07322f8812f" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define</name></member>
+      <member refid="classamrex_1_1SpMatrix_1ab19cae4c8c0ccc8e3f8ceb75cb05968d" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a150cbb11944dcbe666065e75250a7627" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define_and_filter_doit</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a35d13284a266853384c62c6af85de1b7" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>define_doit</name></member>
+      <member refid="classamrex_1_1SpMatrix_1abe85a4b17b88afe29d870fa2910191c9" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>diagonalVector</name></member>
+      <member refid="classamrex_1_1SpMatrix_1acb86105f8e1205543fe9c898d48ea1d2" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>finishComm_mv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a02280d102dd6d9ade782893375c3f2af" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>finishComm_tr</name></member>
       <member refid="classamrex_1_1SpMatrix_1a12228a2f0f9a42b9067c419ad502153c" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>globalRowBegin</name></member>
       <member refid="classamrex_1_1SpMatrix_1a71755e723080a68f133d0b49a97c3b6c" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>globalRowEnd</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a0686c2617e1e5a6058484335e43c0757" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_comm_prepared</name></member>
-      <member refid="classamrex_1_1SpMatrix_1aa2a0da5fac4331632a01d167e1106441" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_data</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a07aee43e3aaa0e2cfcbe765fc8b9ffcb" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_data_remote</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a021c1b6b2e8d8f3a176823cbd5d2213d" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_diagonal</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a57791d03eb34e7bffa0ac5450900a393" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_col_begin</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a9eec6c0fe4e0338767dc81819cc2616b" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_col_end</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aac4fd83f9c666f7b10fd5738d0230866" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_col_partition</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a7817a91aa8d5dedbba23e74252309ef7" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_comm_mv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1adcf965b93de644398b57ebf6458d61c1" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_comm_tr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1ac85224864fbd4c703eb54b258e14adb6" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_csr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a30de2ebab6e6f65e959f49c095ba06c6" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_csr_remote</name></member>
+      <member refid="classamrex_1_1SpMatrix_1ad8190b4a8fa208acc0d960a88b8109bb" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_diagonal</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a12daa6b82fd549c5f664209bdf3ee393" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_nnz</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a746b819990d995b1df62ec20c1b7c21f" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_num_neighbors</name></member>
       <member refid="classamrex_1_1SpMatrix_1aa8fb8116390668bd5d8f9df46e3e022e" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_partition</name></member>
-      <member refid="classamrex_1_1SpMatrix_1aa5dad450eac06349da0259d1107edc77" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_recv_buffer</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a3b9e4d66314f4399ad4b6eccde1559e0" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_recv_counts</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a7e41b591689658ba52d0ccca052559b9" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_recv_from</name></member>
-      <member refid="classamrex_1_1SpMatrix_1aa87ccb457beb528d4be8cba8b82236fc" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_recv_reqs</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a45904fbb7e0dbce904f519553f2a07f1" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_remote_cols</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a029053f68f85318672a2edc390e5ff4f" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_remote_cols_dv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a28467117bc848d74017f1ed250cc4935" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_remote_cols_v</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aa7fc6b9558812fb9cc34df144b22a2d6" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_remote_cols_vv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a99d269f5391de8db9702edf5f1b0fbd4" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_ri_ltor</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a92c0b5befa50a89e040d5b6f1c20f66c" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_ri_rtol</name></member>
       <member refid="classamrex_1_1SpMatrix_1a8734156cf0b71081935338a06903a5be" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_row_begin</name></member>
       <member refid="classamrex_1_1SpMatrix_1a1fa463c0a5937605dee0bf5956994f53" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_row_end</name></member>
-      <member refid="classamrex_1_1SpMatrix_1af6b0d32af456857f800c542fb2901a83" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_rtol</name></member>
-      <member refid="classamrex_1_1SpMatrix_1ac5f392ccb3a25dec4f6f3ed5c8b47e18" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_send_buffer</name></member>
-      <member refid="classamrex_1_1SpMatrix_1ade6a7f87e1b0ff7cd09debf8cdf1a9e1" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_send_counts</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a2d14c8ad33d2ce22837ce73d64e55d9f" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_send_indices</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a9cc79496de648f40cab419a7af16d9ff" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_send_reqs</name></member>
-      <member refid="classamrex_1_1SpMatrix_1ada3bc6e12d7dacb1312f61d3bcbc8cd2" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_send_to</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a75f4ffc1d1a299053efbe86ef8ff4ba6" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_shifted</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a9904dd438abf77a9c3211039da165bb3" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_total_counts_recv</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a34849529796003874a1623ea782d68c2" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_total_counts_send</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a1606ff98d5a1b3f218e479303eb6af62" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>m_split</name></member>
       <member refid="classamrex_1_1SpMatrix_1a3d0d45d8b9281cbff8b5b5d0af50c9ca" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>numGlobalRows</name></member>
-      <member refid="classamrex_1_1SpMatrix_1abda56fec08a151f1bcea7328e8e011a6" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>numLocalNonZero</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a7418e93a177244d566e05ff1ff83e2b0" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>numLocalNonZeros</name></member>
       <member refid="classamrex_1_1SpMatrix_1aade080a49b8e66536c2c9756fc2e394e" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>numLocalRows</name></member>
       <member refid="classamrex_1_1SpMatrix_1a4da7b9a98a373f8fc51c22e8a6e0ffad" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>operator=</name></member>
       <member refid="classamrex_1_1SpMatrix_1ad77b7d4979338962d2e7fd750c762e62" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1SpMatrix_1aff7e59959f717801f580e1be96726fba" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>pack_buffer</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a222893bb8a2ea52113d18a1c23924ad9" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>pack_buffer_mv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aa4c38dee4f8ed6eb7bfaf206acdce0e8" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>parcsr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aea7a391d509f61becff1318d41cd8886" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>parcsr</name></member>
       <member refid="classamrex_1_1SpMatrix_1ab5d7ec6bbdeee94ca40a31e42cf73d4d" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>partition</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a0c3d3dee5adc619c1fe493f62694590b" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>prepare_comm</name></member>
+      <member refid="classamrex_1_1SpMatrix_1ae4dc8ca4710a168784566194a72d77f8" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>prepare_comm_mv</name></member>
       <member refid="classamrex_1_1SpMatrix_1a9766f02c7fc09300c0a62fb3bf4203be" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>printToFile</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a245ce698d4abf49f277eb1d60853d2b1" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>rowOffset</name></member>
       <member refid="classamrex_1_1SpMatrix_1a1be5532997c163eef690904b63b6ba41" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>rowOffset</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a16ca8a2fecb5c53dba07ec3e2f8192a9" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a7e52eb4d6ba150d1b57b88f3906228bb" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>rowSum</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a536f7d39f66f39612c86e92704e3b9e8" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>set_num_neighbors</name></member>
+      <member refid="classamrex_1_1SpMatrix_1afe2b2519b8fcdd315d30806b205050d3" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a1ec63faea0cd864e3e1903208f6887d8" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>sortCSR</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a08b78104989b2861381f15ba4ddee119" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>split_csr</name></member>
       <member refid="classamrex_1_1SpMatrix_1a9e18c9a88b5cbb646f471233e4bcd764" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a7dbc78cd50e654f7777ba994a4317613" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
+      <member refid="classamrex_1_1SpMatrix_1af41eef917f3698fc3755956941789c09" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aba2d591afc3e5d8e369e525fae4d9905" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
       <member refid="classamrex_1_1SpMatrix_1aa0926203195aefdb192471916841f378" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
       <member refid="classamrex_1_1SpMatrix_1aa978f7334d00bbf8fb564b391999aa93" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMatrix</name></member>
-      <member refid="classamrex_1_1SpMatrix_1aaa80f8c734406537f80dd0787fb9df7f" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMV</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a2e7e2a30ded8faa2060a758daafbff86" prot="private" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>startComm</name></member>
-      <member refid="classamrex_1_1SpMatrix_1a9c4a072949b3268201c4997b7ccad1fa" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>unpack_buffer</name></member>
+      <member refid="classamrex_1_1SpMatrix_1af2f318a03ebd3b2a25ff1cbc98512d4d" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>SpMV</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aebf110ef081b1bb0f839065bd181d6ba" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>startComm_mv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a32d2cdec02dae628fc4e7ae84087a584" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>startComm_tr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a4dd66fb131710a5961a8a74a14914674" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>transpose</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a280ad0828d0f576b7456730a74be5c17" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>unpack_buffer_mv</name></member>
+      <member refid="classamrex_1_1SpMatrix_1aef2f699cfdf92c270337b2d2484fb7ce" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>unpack_buffer_tr</name></member>
+      <member refid="classamrex_1_1SpMatrix_1a2d710a548583b3454e55b9b4cb6d1474" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>update_remote_col_index</name></member>
       <member refid="classamrex_1_1SpMatrix_1a504664ae5a23f2b4e1902abde214be8d" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>value_type</name></member>
       <member refid="classamrex_1_1SpMatrix_1a50000ca76ce5d7e0e9277fab9a2cc751" prot="public" virt="non-virtual"><scope>amrex::SpMatrix</scope><name>~SpMatrix</name></member>
     </listofallmembers>

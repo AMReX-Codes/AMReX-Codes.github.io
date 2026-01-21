@@ -1,5 +1,14 @@
 var NAVTREEINDEX6 =
 {
+"AMReX__GpuLaunchFunctsC_8H.html#a58f6305adbac638674782f274ce8bb80":[4,0,0,2,109,25],
+"AMReX__GpuLaunchFunctsC_8H.html#a5b952ccbc50bc9049506897ea8050373":[4,0,0,2,109,6],
+"AMReX__GpuLaunchFunctsC_8H.html#a5f7177073e56ccdb161d727c3b355c86":[4,0,0,2,109,57],
+"AMReX__GpuLaunchFunctsC_8H.html#a63990001fd080e6f727c689437f5668e":[4,0,0,2,109,115],
+"AMReX__GpuLaunchFunctsC_8H.html#a64c77616437c6705f7880c08e0032062":[4,0,0,2,109,37],
+"AMReX__GpuLaunchFunctsC_8H.html#a66c7166d0d13ddd9eae467278ebea3d1":[4,0,0,2,109,97],
+"AMReX__GpuLaunchFunctsC_8H.html#a685ae8eab582f895ce964b6a99030ef2":[4,0,0,2,109,85],
+"AMReX__GpuLaunchFunctsC_8H.html#a6b53227a97323409b958730f49ebb17b":[4,0,0,2,109,47],
+"AMReX__GpuLaunchFunctsC_8H.html#a7011860ac4d3b9662c2e213cf74c2c7a":[4,0,0,2,109,64],
 "AMReX__GpuLaunchFunctsC_8H.html#a7272329c4c5b06cda2ee47e4ee3f46e2":[4,0,0,2,109,55],
 "AMReX__GpuLaunchFunctsC_8H.html#a7329f7a3e903d5a9abcd5f8603def1a1":[4,0,0,2,109,118],
 "AMReX__GpuLaunchFunctsC_8H.html#a75ed59606fb6aabb3e07828d1e4931bb":[4,0,0,2,109,75],
@@ -240,14 +249,5 @@ var NAVTREEINDEX6 =
 "AMReX__GpuMemory_8H_source.html":[4,0,0,2,116],
 "AMReX__GpuPrint_8H.html":[4,0,0,2,117],
 "AMReX__GpuPrint_8H.html#ac6c189884fc7e89c75eb6afe784026b4":[4,0,0,2,117,0],
-"AMReX__GpuPrint_8H_source.html":[4,0,0,2,117],
-"AMReX__GpuQualifiers_8H.html":[4,0,0,2,118],
-"AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5":[4,0,0,2,118,12],
-"AMReX__GpuQualifiers_8H.html#a23987d1e81da6d4c71acf5f460eed8ef":[4,0,0,2,118,19],
-"AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529":[4,0,0,2,118,8],
-"AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8":[4,0,0,2,118,13],
-"AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f":[4,0,0,2,118,6],
-"AMReX__GpuQualifiers_8H.html#a51ecb13e4b34c26bf0f9090d2b235e8a":[4,0,0,2,118,4],
-"AMReX__GpuQualifiers_8H.html#a54627b9496bb9e8251a1f5a2d7048039":[4,0,0,2,118,18],
-"AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af":[4,0,0,2,118,0]
+"AMReX__GpuPrint_8H_source.html":[4,0,0,2,117]
 };

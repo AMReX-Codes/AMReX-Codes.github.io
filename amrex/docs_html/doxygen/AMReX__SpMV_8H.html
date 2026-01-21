@@ -107,9 +107,9 @@ $(document).ready(function(){initNavTree('AMReX__SpMV_8H.html',''); initResizabl
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__AlgVector_8H_source.html">AMReX_AlgVector.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__AlgVecUtil_8H_source.html">AMReX_AlgVecUtil.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuComplex_8H_source.html">AMReX_GpuComplex.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__SpMatrix_8H_source.html">AMReX_SpMatrix.H</a>&gt;</code><br />
-<code>#include &lt;cusparse.h&gt;</code><br />
 </div>
 <p><a href="AMReX__SpMV_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -120,9 +120,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5497760fe0dddbe8b0ef6dc10521a843" id="r_a5497760fe0dddbe8b0ef6dc10521a843"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5497760fe0dddbe8b0ef6dc10521a843"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5497760fe0dddbe8b0ef6dc10521a843">amrex::SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
-<tr class="separator:a5497760fe0dddbe8b0ef6dc10521a843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0808388e851eff31416adb29d889a0" id="r_ace0808388e851eff31416adb29d889a0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ace0808388e851eff31416adb29d889a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ace0808388e851eff31416adb29d889a0">amrex::SpMV</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nrows, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> ncols, T *__restrict__ py, <a class="el" href="structamrex_1_1CsrView.html">CsrView</a>&lt; T const &gt; const &amp;A, T const *__restrict__ px)</td></tr>
+<tr class="separator:ace0808388e851eff31416adb29d889a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287bbdc94930142a9cefe738a5b79002" id="r_a287bbdc94930142a9cefe738a5b79002"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class AllocM, typename AllocV &gt; </td></tr>
+<tr class="memitem:a287bbdc94930142a9cefe738a5b79002"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a287bbdc94930142a9cefe738a5b79002">amrex::SpMV</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, AllocM &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
+<tr class="separator:a287bbdc94930142a9cefe738a5b79002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886f6737dede1d359dcd80b55000f9a2" id="r_a886f6737dede1d359dcd80b55000f9a2"><td class="memTemplParams" colspan="2">template&lt;typename T , template&lt; typename &gt; class AllocM, typename AllocV &gt; </td></tr>
+<tr class="memitem:a886f6737dede1d359dcd80b55000f9a2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a886f6737dede1d359dcd80b55000f9a2">amrex::computeResidual</a> (<a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; &amp;res, <a class="el" href="classamrex_1_1SpMatrix.html">SpMatrix</a>&lt; T, AllocM &gt; const &amp;A, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; const &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="classamrex_1_1AlgVector.html">AlgVector</a>&lt; T, AllocV &gt; const &amp;b)</td></tr>
+<tr class="memdesc:a886f6737dede1d359dcd80b55000f9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">res = b - A*x  <br /></td></tr>
+<tr class="separator:a886f6737dede1d359dcd80b55000f9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
