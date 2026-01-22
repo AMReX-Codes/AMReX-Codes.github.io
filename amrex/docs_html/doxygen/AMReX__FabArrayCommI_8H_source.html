@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -389,7 +388,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">if</span> (fbd-&gt;the_recv_data)</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        {</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(fbd-&gt;the_recv_data);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(fbd-&gt;the_recv_data);</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            fbd-&gt;the_recv_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        }</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
@@ -398,7 +397,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">if</span> (N_snds &gt; 0) {</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;MPI_Status&gt;</a> stats(fbd-&gt;send_reqs.size());</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(fbd-&gt;send_reqs, stats);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(fbd-&gt;the_send_data);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(fbd-&gt;the_send_data);</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        fbd-&gt;the_send_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
@@ -844,7 +843,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span> </div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        <span class="keywordflow">if</span> (pcd-&gt;the_recv_data)</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        {</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pcd-&gt;the_recv_data);</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pcd-&gt;the_recv_data);</div>
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>            pcd-&gt;the_recv_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        }</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    }</div>
@@ -854,7 +853,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;MPI_Status&gt;</a> stats(pcd-&gt;send_reqs.size());</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            <a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(pcd-&gt;send_reqs, stats);</div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        }</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pcd-&gt;the_send_data);</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pcd-&gt;the_send_data);</div>
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        pcd-&gt;the_send_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    }</div>
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
@@ -893,7 +892,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        T* pb = p0;</div>
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        <span class="keywordflow">if</span> (dest.arena()-&gt;isDevice()) {</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>            pb = (T*)<a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)*count);</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>            pb = (T*)<a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)*count);</div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(pb, p0, <span class="keyword">sizeof</span>(T)*count);</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>        }</div>
@@ -984,7 +983,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span> </div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    <span class="keywordflow">if</span> (total_volume &gt; 0)</div>
 <div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    {</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        the_send_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_volume));</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        the_send_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_volume));</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(send_size.size()); i &lt; N; ++i) {</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>            send_data[i] = the_send_data + <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i];</div>
 <div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        }</div>
@@ -1083,7 +1082,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>    }</div>
 <div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>    {</div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>        the_recv_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalRcvsVolume));</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>        the_recv_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalRcvsVolume));</div>
 <div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span> </div>
 <div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrecv; ++i)</div>
 <div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>        {</div>
@@ -1319,7 +1318,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>            recv_size.push_back(nbytes);</div>
 <div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>        }</div>
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span> </div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        the_recv_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalRcvsVolume));</div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        the_recv_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalRcvsVolume));</div>
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span> </div>
 <div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>        <span class="keywordtype">int</span> k = 0;</div>
 <div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrecv; ++i) {</div>
@@ -1392,7 +1391,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>            send_size.push_back(nbytes);</div>
 <div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>        }</div>
 <div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span> </div>
-<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>        the_send_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalSndsVolume));</div>
+<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>        the_send_data = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(TotalSndsVolume));</div>
 <div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>        <span class="keywordtype">int</span> k = 0;</div>
 <div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nsend; ++i) {</div>
 <div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>            send_data[i] = the_send_data + <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i];</div>
@@ -1428,13 +1427,13 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span> </div>
 <div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>        detail::fbv_copy(recv_tags);</div>
 <div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span> </div>
-<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>        <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(the_recv_data);</div>
+<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>        <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(the_recv_data);</div>
 <div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>    }</div>
 <div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span> </div>
 <div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>    <span class="keywordflow">if</span> (N_snds &gt; 0) {</div>
 <div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>        Vector&lt;MPI_Status&gt; stats(send_reqs.size());</div>
 <div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>        <a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(send_reqs, stats);</div>
-<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>        <a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(the_send_data);</div>
+<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>        <a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(the_send_data);</div>
 <div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>    }</div>
 <div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span> </div>
 <div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span><span class="preprocessor">#endif  </span><span class="comment">// #ifdef AMREX_USE_MPI</span></div>
@@ -1536,6 +1535,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:53</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gac0f0db5587c264e8397139733225a229"><div class="ttname"><a href="group__amrex__index__space.html#gac0f0db5587c264e8397139733225a229">amrex::grow</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; grow(const BoxND&lt; dim &gt; &amp;b, int i) noexcept</div><div class="ttdoc">Grow BoxND in all directions by given amount.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1280</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_ga867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:843</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:128</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaa191723b5d24ceaf64e9d49f542cfcc2"><div class="ttname"><a href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">amrex::ParallelDescriptor::NProcs</a></div><div class="ttdeci">int NProcs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:255</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a2fed08a89572d6c04add3c5587f647d8"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8">amrex::Gpu::inGraphRegion</a></div><div class="ttdeci">bool inGraphRegion()</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:121</div></div>
@@ -1566,14 +1567,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="anamespaceamrex_html_a3af1dbed7575d3877b5b64882a384f12"><div class="ttname"><a href="namespaceamrex.html#a3af1dbed7575d3877b5b64882a384f12">amrex::FillBoundary</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillBoundary(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayCommI.H:1050</div></div>
 <div class="ttc" id="anamespaceamrex_html_a449d5cd7d3d778be0440141f9272d6bd"><div class="ttname"><a href="namespaceamrex.html#a449d5cd7d3d778be0440141f9272d6bd">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; DFAB &gt; &amp;dst, FabArray&lt; SFAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:180</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6f975f843338c8eada684f0e8e2c0cb7"><div class="ttname"><a href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a></div><div class="ttdeci">double second() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Utility.cpp:940</div></div>
-<div class="ttc" id="anamespaceamrex_html_a867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:843</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
 <div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:241</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
-<div class="ttc" id="anamespaceamrex_html_ad7bef6630afa8a2109d2a242cc2d7591"><div class="ttname"><a href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a></div><div class="ttdeci">std::size_t aligned_size(std::size_t align_requirement, std::size_t size) noexcept</div><div class="ttdoc">Given a minimum required size of size bytes, this returns the next largest arena size that will align...</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:30</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad7bef6630afa8a2109d2a242cc2d7591"><div class="ttname"><a href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a></div><div class="ttdeci">std::size_t aligned_size(std::size_t align_requirement, std::size_t size) noexcept</div><div class="ttdoc">Given a minimum required size in bytes, this returns the smallest size greater or equal to size that ...</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_adadc145305be656128ae5ce4406166a0"><div class="ttname"><a href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">amrex::ParallelCopy</a></div><div class="ttdeci">void ParallelCopy(MF &amp;dst, MF const &amp;src, int scomp, int dcomp, int ncomp, IntVect const &amp;ng_src=IntVect(0), IntVect const &amp;ng_dst=IntVect(0), Periodicity const &amp;period=Periodicity::NonPeriodic())</div><div class="ttdoc">dst = src w/ MPI communication</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:2019</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc731523d4241d981e7279b29c5d7a6d"><div class="ttname"><a href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a></div><div class="ttdeci">void RemoveDuplicates(Vector&lt; T &gt; &amp;vec)</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:211</div></div>
 <div class="ttc" id="anamespaceamrex_html_af69fc0af80dbc4a91b1532451e9533c9"><div class="ttname"><a href="namespaceamrex.html#af69fc0af80dbc4a91b1532451e9533c9">amrex::boxArray</a></div><div class="ttdeci">BoxArray const &amp; boxArray(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2864</div></div>

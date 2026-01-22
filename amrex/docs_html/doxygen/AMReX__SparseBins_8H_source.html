@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -119,7 +118,7 @@ $(document).ready(function(){initNavTree('AMReX__SparseBins_8H_source.html','');
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structamrex_1_1SparseBinIteratorFactory.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1SparseBinIteratorFactory.html">SparseBinIteratorFactory</a></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structamrex_1_1SparseBinIteratorFactory.html#ae5dcffa68729e972f969d4813b61cc3f">   17</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SparseBinIteratorFactory.html#ae5dcffa68729e972f969d4813b61cc3f">index_type</a> = int;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structamrex_1_1SparseBinIteratorFactory.html#ae5dcffa68729e972f969d4813b61cc3f">   17</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SparseBinIteratorFactory.html#ae5dcffa68729e972f969d4813b61cc3f">index_type</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structamrex_1_1SparseBinIteratorFactory.html#a86334130cedc69862b6792c768c85de1">   19</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SparseBinIteratorFactory.html#a86334130cedc69862b6792c768c85de1">const_pointer_type</a> = std::conditional_t&lt;IsParticleTileData&lt;T&gt;(),</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        T,</div>
@@ -139,7 +138,7 @@ $(document).ready(function(){initNavTree('AMReX__SparseBins_8H_source.html','');
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        : <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#afa3d2fe979810d8c42a56913e808c53d">m_bins_ptr</a>(bins.dataPtr()),</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#ade6704bbc963e4c3734bd2348e79847b">m_offsets_ptr</a>(offsets.dataPtr()),</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>          <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#a3f84a41c582546501b263369e4d13ef1">m_permutation_ptr</a>(permutation.dataPtr()),</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>          <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#a0e425a63d9c75b2d31eb2f05e775e83c">m_items</a>(items), <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#a11aed40e2ac62cfff56202d86e98a1ec">m_num_bins</a>(int(bins.size()))</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>          <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#a0e425a63d9c75b2d31eb2f05e775e83c">m_items</a>(items), <a class="code hl_variable" href="structamrex_1_1SparseBinIteratorFactory.html#a11aed40e2ac62cfff56202d86e98a1ec">m_num_bins</a>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(bins.size()))</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {}</div>
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
@@ -194,7 +193,7 @@ $(document).ready(function(){initNavTree('AMReX__SparseBins_8H_source.html','');
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc">   98</a></span>    <span class="keyword">using </span><a class="code hl_struct" href="structamrex_1_1SparseBinIteratorFactory.html">BinIteratorFactory</a> = <a class="code hl_struct" href="structamrex_1_1SparseBinIteratorFactory.html">SparseBinIteratorFactory&lt;T&gt;</a>;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classamrex_1_1SparseBins.html#a3bea2b14d8950423ccd43ff1c81b8baf">   99</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classamrex_1_1IntVectND.html">bin_type</a> = <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classamrex_1_1SparseBins.html#aa7f90581f997c06bef83a50325c7d550">  100</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classamrex_1_1SparseBins.html#aa7f90581f997c06bef83a50325c7d550">index_type</a> = int;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classamrex_1_1SparseBins.html#aa7f90581f997c06bef83a50325c7d550">  100</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classamrex_1_1SparseBins.html#aa7f90581f997c06bef83a50325c7d550">index_type</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classamrex_1_1SparseBins.html#a2f7e4c5293f3d7c172cb3d2c5c2f610f">  102</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classamrex_1_1SparseBins.html#a2f7e4c5293f3d7c172cb3d2c5c2f610f">const_pointer_type</a> = std::conditional_t&lt;IsParticleTileData&lt;T&gt;(),</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        T,</div>
@@ -330,9 +329,10 @@ $(document).ready(function(){initNavTree('AMReX__SparseBins_8H_source.html','');
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a00ddc55986bb8cc48ba98491e5d5ba52"><div class="ttname"><a href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a></div><div class="ttdeci">__host__ __device__ Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1005</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
-<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
+<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:24</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_afad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:998</div></div>
 <div class="ttc" id="astructamrex_1_1BinIterator_html"><div class="ttname"><a href="structamrex_1_1BinIterator.html">amrex::BinIterator</a></div><div class="ttdef"><b>Definition</b> AMReX_BinIterator.H:24</div></div>
 <div class="ttc" id="astructamrex_1_1Dim3_html_a090510e5e79fd6c75d96c906cd9250e1"><div class="ttname"><a href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">amrex::Dim3::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> AMReX_Dim3.H:12</div></div>

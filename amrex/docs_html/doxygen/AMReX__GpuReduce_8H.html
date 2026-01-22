@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -140,14 +134,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a5e9bd542c0c9e7ea73a017de372712d6" id="r_a5e9bd542c0c9e7ea73a017de372712d6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5e9bd542c0c9e7ea73a017de372712d6"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a5e9bd542c0c9e7ea73a017de372712d6">amrex::Gpu::deviceReduceMax</a> (T *dest, T source, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;h) noexcept</td></tr>
 <tr class="separator:a5e9bd542c0c9e7ea73a017de372712d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dfc0047b812e0f99119ff36dda58bb7" id="r_a6dfc0047b812e0f99119ff36dda58bb7"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a6dfc0047b812e0f99119ff36dda58bb7">amrex::Gpu::deviceReduceLogicalAnd</a> (int *dest, int source, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;h) noexcept</td></tr>
+<tr class="memitem:a6dfc0047b812e0f99119ff36dda58bb7" id="r_a6dfc0047b812e0f99119ff36dda58bb7"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a6dfc0047b812e0f99119ff36dda58bb7">amrex::Gpu::deviceReduceLogicalAnd</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;h) noexcept</td></tr>
 <tr class="separator:a6dfc0047b812e0f99119ff36dda58bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b13e3dd450bafceb06a1f17c16eb56b" id="r_a8b13e3dd450bafceb06a1f17c16eb56b"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8b13e3dd450bafceb06a1f17c16eb56b">amrex::Gpu::deviceReduceLogicalOr</a> (int *dest, int source, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;h) noexcept</td></tr>
+<tr class="memitem:a8b13e3dd450bafceb06a1f17c16eb56b" id="r_a8b13e3dd450bafceb06a1f17c16eb56b"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8b13e3dd450bafceb06a1f17c16eb56b">amrex::Gpu::deviceReduceLogicalOr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;h) noexcept</td></tr>
 <tr class="separator:a8b13e3dd450bafceb06a1f17c16eb56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2efa52db2812020e4a2dca110f4d62a4" id="r_a2efa52db2812020e4a2dca110f4d62a4"><td class="memTemplParams" colspan="2">template&lt;int warpSize, typename T , typename WARPREDUCE &gt; </td></tr>
+<tr class="memitem:a2efa52db2812020e4a2dca110f4d62a4" id="r_a2efa52db2812020e4a2dca110f4d62a4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> warpSize, typename T , typename WARPREDUCE &gt; </td></tr>
 <tr class="memitem:a2efa52db2812020e4a2dca110f4d62a4"><td class="memTemplItemLeft" align="right" valign="top">__device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a2efa52db2812020e4a2dca110f4d62a4">amrex::Gpu::blockReduce</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, WARPREDUCE &amp;&amp;warp_reduce, T x0)</td></tr>
 <tr class="separator:a2efa52db2812020e4a2dca110f4d62a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34cbe61ca1607c0a4c216406d97a751c" id="r_a34cbe61ca1607c0a4c216406d97a751c"><td class="memTemplParams" colspan="2">template&lt;int warpSize, typename T , typename WARPREDUCE , typename ATOMICOP &gt; </td></tr>
+<tr class="memitem:a34cbe61ca1607c0a4c216406d97a751c" id="r_a34cbe61ca1607c0a4c216406d97a751c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> warpSize, typename T , typename WARPREDUCE , typename ATOMICOP &gt; </td></tr>
 <tr class="memitem:a34cbe61ca1607c0a4c216406d97a751c"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a34cbe61ca1607c0a4c216406d97a751c">amrex::Gpu::blockReduce_partial</a> (T *dest, T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, WARPREDUCE &amp;&amp;warp_reduce, ATOMICOP &amp;&amp;atomic_op, <a class="el" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> const &amp;handler)</td></tr>
 <tr class="separator:a34cbe61ca1607c0a4c216406d97a751c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8251b45e6f236ac283f3f5e5363f27" id="r_afb8251b45e6f236ac283f3f5e5363f27"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -156,10 +150,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aaca543c46a47848547c66514745569db" id="r_aaca543c46a47848547c66514745569db"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aaca543c46a47848547c66514745569db"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aaca543c46a47848547c66514745569db">amrex::Gpu::deviceReduceSum_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:aaca543c46a47848547c66514745569db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb619fda3e94a275e0a214533b95d0fe" id="r_aeb619fda3e94a275e0a214533b95d0fe"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:aeb619fda3e94a275e0a214533b95d0fe" id="r_aeb619fda3e94a275e0a214533b95d0fe"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:aeb619fda3e94a275e0a214533b95d0fe"><td class="memTemplItemLeft" align="right" valign="top">__device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aeb619fda3e94a275e0a214533b95d0fe">amrex::Gpu::blockReduceSum</a> (T source) noexcept</td></tr>
 <tr class="separator:aeb619fda3e94a275e0a214533b95d0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf189da09ec8860b8b3743e749e86547" id="r_adf189da09ec8860b8b3743e749e86547"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:adf189da09ec8860b8b3743e749e86547" id="r_adf189da09ec8860b8b3743e749e86547"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:adf189da09ec8860b8b3743e749e86547"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#adf189da09ec8860b8b3743e749e86547">amrex::Gpu::deviceReduceSum_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:adf189da09ec8860b8b3743e749e86547"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a589404293403cf894b2532d5b61df482" id="r_a589404293403cf894b2532d5b61df482"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -168,10 +162,10 @@ Functions</h2></td></tr>
 <tr class="memitem:abea9163d293b31e86bcce543d3e75896" id="r_abea9163d293b31e86bcce543d3e75896"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abea9163d293b31e86bcce543d3e75896"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#abea9163d293b31e86bcce543d3e75896">amrex::Gpu::deviceReduceMin_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:abea9163d293b31e86bcce543d3e75896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a395b74319a24844a731df0eb22ffa8ee" id="r_a395b74319a24844a731df0eb22ffa8ee"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:a395b74319a24844a731df0eb22ffa8ee" id="r_a395b74319a24844a731df0eb22ffa8ee"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:a395b74319a24844a731df0eb22ffa8ee"><td class="memTemplItemLeft" align="right" valign="top">__device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a395b74319a24844a731df0eb22ffa8ee">amrex::Gpu::blockReduceMin</a> (T source) noexcept</td></tr>
 <tr class="separator:a395b74319a24844a731df0eb22ffa8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9d231dcecbad167ab0c6c6aaac9c651" id="r_ac9d231dcecbad167ab0c6c6aaac9c651"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:ac9d231dcecbad167ab0c6c6aaac9c651" id="r_ac9d231dcecbad167ab0c6c6aaac9c651"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:ac9d231dcecbad167ab0c6c6aaac9c651"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ac9d231dcecbad167ab0c6c6aaac9c651">amrex::Gpu::deviceReduceMin_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:ac9d231dcecbad167ab0c6c6aaac9c651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f5839eee64bdce0a2880c67a704ab02" id="r_a4f5839eee64bdce0a2880c67a704ab02"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -180,31 +174,31 @@ Functions</h2></td></tr>
 <tr class="memitem:a5fe82b7247c5f8ada5de5d979a84514c" id="r_a5fe82b7247c5f8ada5de5d979a84514c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5fe82b7247c5f8ada5de5d979a84514c"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a5fe82b7247c5f8ada5de5d979a84514c">amrex::Gpu::deviceReduceMax_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:a5fe82b7247c5f8ada5de5d979a84514c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07a19c7e52caa0c033b7003a90d267a9" id="r_a07a19c7e52caa0c033b7003a90d267a9"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:a07a19c7e52caa0c033b7003a90d267a9" id="r_a07a19c7e52caa0c033b7003a90d267a9"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:a07a19c7e52caa0c033b7003a90d267a9"><td class="memTemplItemLeft" align="right" valign="top">__device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a07a19c7e52caa0c033b7003a90d267a9">amrex::Gpu::blockReduceMax</a> (T source) noexcept</td></tr>
 <tr class="separator:a07a19c7e52caa0c033b7003a90d267a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7cafbe7f4b2582d1401652a262a46de" id="r_aa7cafbe7f4b2582d1401652a262a46de"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX, typename T &gt; </td></tr>
+<tr class="memitem:aa7cafbe7f4b2582d1401652a262a46de" id="r_aa7cafbe7f4b2582d1401652a262a46de"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX, typename T &gt; </td></tr>
 <tr class="memitem:aa7cafbe7f4b2582d1401652a262a46de"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aa7cafbe7f4b2582d1401652a262a46de">amrex::Gpu::deviceReduceMax_full</a> (T *dest, T source) noexcept</td></tr>
 <tr class="separator:aa7cafbe7f4b2582d1401652a262a46de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e7acbf4ee0f4a06b5ec22bf20732555" id="r_a5e7acbf4ee0f4a06b5ec22bf20732555"><td class="memItemLeft" align="right" valign="top">__device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a5e7acbf4ee0f4a06b5ec22bf20732555">amrex::Gpu::blockReduceLogicalAnd</a> (int source) noexcept</td></tr>
+<tr class="memitem:a5e7acbf4ee0f4a06b5ec22bf20732555" id="r_a5e7acbf4ee0f4a06b5ec22bf20732555"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a5e7acbf4ee0f4a06b5ec22bf20732555">amrex::Gpu::blockReduceLogicalAnd</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a5e7acbf4ee0f4a06b5ec22bf20732555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a317f91536f2368d134464998a3b46266" id="r_a317f91536f2368d134464998a3b46266"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a317f91536f2368d134464998a3b46266">amrex::Gpu::deviceReduceLogicalAnd_full</a> (int *dest, int source) noexcept</td></tr>
+<tr class="memitem:a317f91536f2368d134464998a3b46266" id="r_a317f91536f2368d134464998a3b46266"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a317f91536f2368d134464998a3b46266">amrex::Gpu::deviceReduceLogicalAnd_full</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a317f91536f2368d134464998a3b46266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f22a83fcd1f601dafa2d372547be35" id="r_ac4f22a83fcd1f601dafa2d372547be35"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX&gt; </td></tr>
-<tr class="memitem:ac4f22a83fcd1f601dafa2d372547be35"><td class="memTemplItemLeft" align="right" valign="top">__device__ int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ac4f22a83fcd1f601dafa2d372547be35">amrex::Gpu::blockReduceLogicalAnd</a> (int source) noexcept</td></tr>
+<tr class="memitem:ac4f22a83fcd1f601dafa2d372547be35" id="r_ac4f22a83fcd1f601dafa2d372547be35"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX&gt; </td></tr>
+<tr class="memitem:ac4f22a83fcd1f601dafa2d372547be35"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ac4f22a83fcd1f601dafa2d372547be35">amrex::Gpu::blockReduceLogicalAnd</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:ac4f22a83fcd1f601dafa2d372547be35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78dcf9fb275e8d66186cb7ccf0098afe" id="r_a78dcf9fb275e8d66186cb7ccf0098afe"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX&gt; </td></tr>
-<tr class="memitem:a78dcf9fb275e8d66186cb7ccf0098afe"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a78dcf9fb275e8d66186cb7ccf0098afe">amrex::Gpu::deviceReduceLogicalAnd_full</a> (int *dest, int source) noexcept</td></tr>
+<tr class="memitem:a78dcf9fb275e8d66186cb7ccf0098afe" id="r_a78dcf9fb275e8d66186cb7ccf0098afe"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX&gt; </td></tr>
+<tr class="memitem:a78dcf9fb275e8d66186cb7ccf0098afe"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a78dcf9fb275e8d66186cb7ccf0098afe">amrex::Gpu::deviceReduceLogicalAnd_full</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a78dcf9fb275e8d66186cb7ccf0098afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ff25ac9402be7e41afd682c4534d5a" id="r_a40ff25ac9402be7e41afd682c4534d5a"><td class="memItemLeft" align="right" valign="top">__device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a40ff25ac9402be7e41afd682c4534d5a">amrex::Gpu::blockReduceLogicalOr</a> (int source) noexcept</td></tr>
+<tr class="memitem:a40ff25ac9402be7e41afd682c4534d5a" id="r_a40ff25ac9402be7e41afd682c4534d5a"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a40ff25ac9402be7e41afd682c4534d5a">amrex::Gpu::blockReduceLogicalOr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a40ff25ac9402be7e41afd682c4534d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accb04f43ace517ebfd660e3107f46a63" id="r_accb04f43ace517ebfd660e3107f46a63"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#accb04f43ace517ebfd660e3107f46a63">amrex::Gpu::deviceReduceLogicalOr_full</a> (int *dest, int source) noexcept</td></tr>
+<tr class="memitem:accb04f43ace517ebfd660e3107f46a63" id="r_accb04f43ace517ebfd660e3107f46a63"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#accb04f43ace517ebfd660e3107f46a63">amrex::Gpu::deviceReduceLogicalOr_full</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:accb04f43ace517ebfd660e3107f46a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a614733a47c1353af81e44eea2a926f38" id="r_a614733a47c1353af81e44eea2a926f38"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX&gt; </td></tr>
-<tr class="memitem:a614733a47c1353af81e44eea2a926f38"><td class="memTemplItemLeft" align="right" valign="top">__device__ int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a614733a47c1353af81e44eea2a926f38">amrex::Gpu::blockReduceLogicalOr</a> (int source) noexcept</td></tr>
+<tr class="memitem:a614733a47c1353af81e44eea2a926f38" id="r_a614733a47c1353af81e44eea2a926f38"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX&gt; </td></tr>
+<tr class="memitem:a614733a47c1353af81e44eea2a926f38"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a614733a47c1353af81e44eea2a926f38">amrex::Gpu::blockReduceLogicalOr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a614733a47c1353af81e44eea2a926f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b714e5b0f2617206575f60b3d2f79e" id="r_a23b714e5b0f2617206575f60b3d2f79e"><td class="memTemplParams" colspan="2">template&lt;int BLOCKDIMX&gt; </td></tr>
-<tr class="memitem:a23b714e5b0f2617206575f60b3d2f79e"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a23b714e5b0f2617206575f60b3d2f79e">amrex::Gpu::deviceReduceLogicalOr_full</a> (int *dest, int source) noexcept</td></tr>
+<tr class="memitem:a23b714e5b0f2617206575f60b3d2f79e" id="r_a23b714e5b0f2617206575f60b3d2f79e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> BLOCKDIMX&gt; </td></tr>
+<tr class="memitem:a23b714e5b0f2617206575f60b3d2f79e"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a23b714e5b0f2617206575f60b3d2f79e">amrex::Gpu::deviceReduceLogicalOr_full</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> source) noexcept</td></tr>
 <tr class="separator:a23b714e5b0f2617206575f60b3d2f79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

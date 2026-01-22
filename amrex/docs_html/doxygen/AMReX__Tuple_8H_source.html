@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -670,7 +669,7 @@ $(document).ready(function(){initNavTree('AMReX__Tuple_8H_source.html',''); init
 <div class="ttc" id="anamespaceamrex_html_aabd9e2f1b8b5cb8db6c0342fbf626eef"><div class="ttname"><a href="namespaceamrex.html#aabd9e2f1b8b5cb8db6c0342fbf626eef">amrex::tupleToArray</a></div><div class="ttdeci">__host__ __device__ constexpr auto tupleToArray(GpuTuple&lt; T &gt; const &amp;tup)</div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:489</div></div>
 <div class="ttc" id="anamespaceamrex_html_af4a251de1f235d3d25f0894e7fad63aa"><div class="ttname"><a href="namespaceamrex.html#af4a251de1f235d3d25f0894e7fad63aa">amrex::TupleCat</a></div><div class="ttdeci">__host__ __device__ constexpr auto TupleCat(TP &amp;&amp;a) -&gt; typename detail::tuple_cat_result&lt; detail::tuple_decay_t&lt; TP &gt; &gt;::type</div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:299</div></div>
 <div class="ttc" id="anamespaceamrex_html_afbad2005fb348eb3e7a873b731210d68"><div class="ttname"><a href="namespaceamrex.html#afbad2005fb348eb3e7a873b731210d68">amrex::get</a></div><div class="ttdeci">__host__ __device__ constexpr int get(IntVectND&lt; dim &gt; const &amp;iv) noexcept</div><div class="ttdoc">Get I'th element of IntVectND&lt;dim&gt;</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:1230</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4_html_aa7a55672d011b43d9986ba29665e298e"><div class="ttname"><a href="structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#aa7a55672d011b43d9986ba29665e298e">amrex::GpuTupleElement&lt; 0, GpuTuple&lt; Head, Tail... &gt; &gt;::type</a></div><div class="ttdeci">Head type</div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:141</div></div>
 <div class="ttc" id="astructamrex_1_1GpuTupleElement_html"><div class="ttname"><a href="structamrex_1_1GpuTupleElement.html">amrex::GpuTupleElement</a></div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:133</div></div>
 <div class="ttc" id="astructamrex_1_1GpuTupleSize_html"><div class="ttname"><a href="structamrex_1_1GpuTupleSize.html">amrex::GpuTupleSize</a></div><div class="ttdef"><b>Definition</b> AMReX_Tuple.H:125</div></div>

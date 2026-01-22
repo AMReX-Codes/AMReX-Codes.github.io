@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -177,7 +171,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a67b24cef9df62e8cced041445b239e86" id="r_a67b24cef9df62e8cced041445b239e86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a67b24cef9df62e8cced041445b239e86">amrex::BaseFab_Finalize</a> ()</td></tr>
 <tr class="separator:a67b24cef9df62e8cced041445b239e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a210f2e40437f79c38535ce7cf847642a" id="r_a210f2e40437f79c38535ce7cf847642a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a210f2e40437f79c38535ce7cf847642a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a> (T *p, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bx, int ncomp) noexcept</td></tr>
+<tr class="memitem:a210f2e40437f79c38535ce7cf847642a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f">Array4</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a210f2e40437f79c38535ce7cf847642a">amrex::makeArray4</a> (T *p, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp) noexcept</td></tr>
 <tr class="separator:a210f2e40437f79c38535ce7cf847642a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37e7fca457f1fa445077469fa8110443" id="r_a37e7fca457f1fa445077469fa8110443"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a37e7fca457f1fa445077469fa8110443"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_arithmetic_v&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a37e7fca457f1fa445077469fa8110443">amrex::placementNew</a> (T *const, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>)</td></tr>

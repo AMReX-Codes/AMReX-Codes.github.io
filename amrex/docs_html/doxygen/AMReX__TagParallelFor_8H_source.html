@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -392,8 +391,8 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        std::size_t sizeof_nwarps = (<a class="code hl_variable" href="structamrex_1_1TagVector.html#ad253e12a5290c844b64d2b5d733872f9">ntags</a>+1)*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>);</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        std::size_t total_buf_size = offset_nwarps + sizeof_nwarps;</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_buf_size);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#aaf744066f8a2dfc5a64a2d9e385c70a1">d_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_buf_size);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_buf_size);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#aaf744066f8a2dfc5a64a2d9e385c70a1">d_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(total_buf_size);</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        std::memcpy(<a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a>, tags.data(), sizeof_tags);</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        std::memcpy(<a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a>+offset_nwarps, nwarps.data(), sizeof_nwarps);</div>
@@ -411,7 +410,7 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(l_ntotwarps+nwarps_per_block-1 &lt; <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>(std::numeric_limits&lt;int&gt;::max()));</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        std::size_t sizeof_tags = <a class="code hl_variable" href="structamrex_1_1TagVector.html#ad253e12a5290c844b64d2b5d733872f9">ntags</a>*<span class="keyword">sizeof</span>(TagType);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(sizeof_tags);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a> = (<span class="keywordtype">char</span>*)<a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(sizeof_tags);</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        std::memcpy(<a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a>, tags.data(), sizeof_tags);</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
@@ -426,8 +425,8 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="structamrex_1_1TagVector.html#aec1614ffb611fd37cfa4f5b11027b764">  290</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structamrex_1_1TagVector.html#aec1614ffb611fd37cfa4f5b11027b764">undefine</a> () {</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="structamrex_1_1TagVector.html#a5ffca8fb6f3f39f520ed404c1d6e8c15">defined</a>) {</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(<a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a>);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(<a class="code hl_variable" href="structamrex_1_1TagVector.html#aaf744066f8a2dfc5a64a2d9e385c70a1">d_buffer</a>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(<a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a>);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            <a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(<a class="code hl_variable" href="structamrex_1_1TagVector.html#aaf744066f8a2dfc5a64a2d9e385c70a1">d_buffer</a>);</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            <a class="code hl_variable" href="structamrex_1_1TagVector.html#a1c9fbfab8dd3f9bf1b0a4ee38565f557">h_buffer</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <a class="code hl_variable" href="structamrex_1_1TagVector.html#aaf744066f8a2dfc5a64a2d9e385c70a1">d_buffer</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <a class="code hl_variable" href="structamrex_1_1TagVector.html#a48496a433dea988096c36113440def57">d_tags</a> = <span class="keyword">nullptr</span>;</div>
@@ -500,7 +499,7 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        <span class="keyword">auto</span> g_tid = std::size_t(blockDim.x)*blockIdx.x + threadIdx.x;</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keyword">auto</span> g_wid = int(g_tid / <a class="code hl_variable" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keyword">auto</span> g_wid = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(g_tid / <a class="code hl_variable" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>);</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        <span class="keywordflow">if</span> (g_wid &gt;= ntotwarps) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        <span class="keywordtype">int</span> tag_id = <a class="code hl_function" href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex::bisect</a>(d_nwarps, 0, ntags, g_wid);</div>
@@ -670,19 +669,20 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="ttc" id="aclassamrex_1_1Vector_html"><div class="ttname"><a href="classamrex_1_1Vector.html">amrex::Vector</a></div><div class="ttdoc">This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:28</div></div>
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:53</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:263</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aacefe17a39734cb2475a36199ab1370b"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">amrex::Gpu::htod_memcpy_async</a></div><div class="ttdeci">void htod_memcpy_async(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:301</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae1a0966ad8daf3a49564123b8dbdb3fa"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">amrex::Gpu::gpuStream</a></div><div class="ttdeci">gpuStream_t gpuStream() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:244</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
-<div class="ttc" id="anamespaceamrex_html_a00bdafca20ac708320d704d4da6976f0"><div class="ttname"><a href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex::bisect</a></div><div class="ttdeci">__host__ __device__ T bisect(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:105</div></div>
+<div class="ttc" id="anamespaceamrex_html_a00bdafca20ac708320d704d4da6976f0"><div class="ttname"><a href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex::bisect</a></div><div class="ttdeci">__host__ __device__ T bisect(T lo, T hi, F f, T tol=1e-12, int max_iter=100)</div><div class="ttdoc">Find a root of a scalar function on a bracketing interval using bisection.</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:145</div></div>
 <div class="ttc" id="anamespaceamrex_html_a00ddc55986bb8cc48ba98491e5d5ba52"><div class="ttname"><a href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">amrex::ubound</a></div><div class="ttdeci">__host__ __device__ Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1005</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0a525af3444a2814c6dbda9e71a965a5"><div class="ttname"><a href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a></div><div class="ttdeci">__host__ __device__ void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition</b> AMReX.H:138</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1f15630874d45aeb722ca649e6c4c3a9"><div class="ttname"><a href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt; ParallelFor(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_CTOParallelForImpl.H:193</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3078c8f88bd6a4f625b7057c7370f7cc"><div class="ttname"><a href="namespaceamrex.html#a3078c8f88bd6a4f625b7057c7370f7cc">amrex::length</a></div><div class="ttdeci">__host__ __device__ Dim3 length(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:1012</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_afad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:998</div></div>
 <div class="ttc" id="astructamrex_1_1Array4BoxOffsetTag_html"><div class="ttname"><a href="structamrex_1_1Array4BoxOffsetTag.html">amrex::Array4BoxOffsetTag</a></div><div class="ttdef"><b>Definition</b> AMReX_TagParallelFor.H:87</div></div>
 <div class="ttc" id="astructamrex_1_1Array4BoxOffsetTag_html_a2754c8e7cbd174d92c5d0ec4bd58583c"><div class="ttname"><a href="structamrex_1_1Array4BoxOffsetTag.html#a2754c8e7cbd174d92c5d0ec4bd58583c">amrex::Array4BoxOffsetTag::bx</a></div><div class="ttdeci">Box bx</div><div class="ttdef"><b>Definition</b> AMReX_TagParallelFor.H:89</div></div>

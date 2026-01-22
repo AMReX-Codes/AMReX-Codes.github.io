@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -140,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aecd5949e593c8357b06cd69b29b0bbeb" id="r_aecd5949e593c8357b06cd69b29b0bbeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aecd5949e593c8357b06cd69b29b0bbeb">BoxArray</a> (size_t n)</td></tr>
 <tr class="memdesc:aecd5949e593c8357b06cd69b29b0bbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> of the specified size.  <br /></td></tr>
 <tr class="separator:aecd5949e593c8357b06cd69b29b0bbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b713738c14f93de97c288200cb69cd6" id="r_a4b713738c14f93de97c288200cb69cd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a4b713738c14f93de97c288200cb69cd6">BoxArray</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> *bxvec, int nbox)</td></tr>
+<tr class="memitem:a4b713738c14f93de97c288200cb69cd6" id="r_a4b713738c14f93de97c288200cb69cd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a4b713738c14f93de97c288200cb69cd6">BoxArray</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> *bxvec, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbox)</td></tr>
 <tr class="memdesc:a4b713738c14f93de97c288200cb69cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> from an array of Boxes of size nbox.  <br /></td></tr>
 <tr class="separator:a4b713738c14f93de97c288200cb69cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9802183a182f70509c9b1f0dc5c4bf84" id="r_a9802183a182f70509c9b1f0dc5c4bf84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a9802183a182f70509c9b1f0dc5c4bf84">BoxArray</a> (const <a class="el" href="classamrex_1_1BoxList.html">BoxList</a> &amp;bl)</td></tr>
@@ -181,7 +175,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85a31cf2bd546e2292492cb6c288eb8d" id="r_a85a31cf2bd546e2292492cb6c288eb8d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a85a31cf2bd546e2292492cb6c288eb8d">d_numPts</a> () const noexcept</td></tr>
 <tr class="memdesc:a85a31cf2bd546e2292492cb6c288eb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of cells (in double type) contained in all boxes in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a85a31cf2bd546e2292492cb6c288eb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4df72bcadb7bdaa2c5db57212e48853a" id="r_a4df72bcadb7bdaa2c5db57212e48853a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a4df72bcadb7bdaa2c5db57212e48853a">readFrom</a> (std::istream &amp;is)</td></tr>
+<tr class="memitem:a4df72bcadb7bdaa2c5db57212e48853a" id="r_a4df72bcadb7bdaa2c5db57212e48853a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a4df72bcadb7bdaa2c5db57212e48853a">readFrom</a> (std::istream &amp;is)</td></tr>
 <tr class="memdesc:a4df72bcadb7bdaa2c5db57212e48853a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> from the supplied istream. It is an error if the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> has already been initialized. Note that the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> in the istream must have been written using <a class="el" href="classamrex_1_1BoxArray.html#a20e70e6b9fe276e04f66520bb2f56931" title="Output this BoxArray to a checkpoint file.">writeOn()</a>.  <br /></td></tr>
 <tr class="separator:a4df72bcadb7bdaa2c5db57212e48853a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e70e6b9fe276e04f66520bb2f56931" id="r_a20e70e6b9fe276e04f66520bb2f56931"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a20e70e6b9fe276e04f66520bb2f56931">writeOn</a> (std::ostream &amp;) const</td></tr>
@@ -200,62 +194,62 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acaed188c00aecea228d8c92c17a0c3fb" id="r_acaed188c00aecea228d8c92c17a0c3fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#acaed188c00aecea228d8c92c17a0c3fb">CellEqual</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;rhs) const noexcept</td></tr>
 <tr class="memdesc:acaed188c00aecea228d8c92c17a0c3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are the BoxArrays equal after conversion to cell-centered.  <br /></td></tr>
 <tr class="separator:acaed188c00aecea228d8c92c17a0c3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebefb23ed05e76ffc8ec0c3af718652e" id="r_aebefb23ed05e76ffc8ec0c3af718652e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aebefb23ed05e76ffc8ec0c3af718652e">maxSize</a> (int block_size)</td></tr>
+<tr class="memitem:aebefb23ed05e76ffc8ec0c3af718652e" id="r_aebefb23ed05e76ffc8ec0c3af718652e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aebefb23ed05e76ffc8ec0c3af718652e">maxSize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> block_size)</td></tr>
 <tr class="memdesc:aebefb23ed05e76ffc8ec0c3af718652e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces each Box in <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to have sides &lt;= block_size.  <br /></td></tr>
 <tr class="separator:aebefb23ed05e76ffc8ec0c3af718652e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59b44d438d01893bcae36064ec089cdc" id="r_a59b44d438d01893bcae36064ec089cdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a59b44d438d01893bcae36064ec089cdc">maxSize</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;block_size)</td></tr>
 <tr class="separator:a59b44d438d01893bcae36064ec089cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dda265eaf3fda5d6255cbe2cd91e09a" id="r_a6dda265eaf3fda5d6255cbe2cd91e09a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a6dda265eaf3fda5d6255cbe2cd91e09a">minmaxSize</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;min_size, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;max_size)</td></tr>
 <tr class="separator:a6dda265eaf3fda5d6255cbe2cd91e09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f3cb1eac256b7f40e4b6491aff29448" id="r_a6f3cb1eac256b7f40e4b6491aff29448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a6f3cb1eac256b7f40e4b6491aff29448">refine</a> (int refinement_ratio)</td></tr>
+<tr class="memitem:a6f3cb1eac256b7f40e4b6491aff29448" id="r_a6f3cb1eac256b7f40e4b6491aff29448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a6f3cb1eac256b7f40e4b6491aff29448">refine</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> refinement_ratio)</td></tr>
 <tr class="memdesc:a6f3cb1eac256b7f40e4b6491aff29448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refine each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to the specified ratio.  <br /></td></tr>
 <tr class="separator:a6f3cb1eac256b7f40e4b6491aff29448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1cf040542692a8255915fdb5f85421e" id="r_ae1cf040542692a8255915fdb5f85421e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ae1cf040542692a8255915fdb5f85421e">refine</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="memdesc:ae1cf040542692a8255915fdb5f85421e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refine each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to the specified ratio.  <br /></td></tr>
 <tr class="separator:ae1cf040542692a8255915fdb5f85421e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab905a7751a6378467cf96c78c1ac880d" id="r_ab905a7751a6378467cf96c78c1ac880d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ab905a7751a6378467cf96c78c1ac880d">coarsen</a> (int refinement_ratio)</td></tr>
+<tr class="memitem:ab905a7751a6378467cf96c78c1ac880d" id="r_ab905a7751a6378467cf96c78c1ac880d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ab905a7751a6378467cf96c78c1ac880d">coarsen</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> refinement_ratio)</td></tr>
 <tr class="memdesc:ab905a7751a6378467cf96c78c1ac880d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to the specified ratio.  <br /></td></tr>
 <tr class="separator:ab905a7751a6378467cf96c78c1ac880d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7398fc2b3ae449dfcec355e071bc16ce" id="r_a7398fc2b3ae449dfcec355e071bc16ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a7398fc2b3ae449dfcec355e071bc16ce">coarsenable</a> (int refinement_ratio, int min_width=1) const</td></tr>
+<tr class="memitem:a7398fc2b3ae449dfcec355e071bc16ce" id="r_a7398fc2b3ae449dfcec355e071bc16ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a7398fc2b3ae449dfcec355e071bc16ce">coarsenable</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> refinement_ratio, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> min_width=1) const</td></tr>
 <tr class="memdesc:a7398fc2b3ae449dfcec355e071bc16ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to the specified ratio.  <br /></td></tr>
 <tr class="separator:a7398fc2b3ae449dfcec355e071bc16ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f2342f51c3bc2de5e8a195d6955d9f" id="r_af7f2342f51c3bc2de5e8a195d6955d9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#af7f2342f51c3bc2de5e8a195d6955d9f">coarsenable</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;refinement_ratio, int min_width=1) const</td></tr>
+<tr class="memitem:af7f2342f51c3bc2de5e8a195d6955d9f" id="r_af7f2342f51c3bc2de5e8a195d6955d9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#af7f2342f51c3bc2de5e8a195d6955d9f">coarsenable</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;refinement_ratio, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> min_width=1) const</td></tr>
 <tr class="separator:af7f2342f51c3bc2de5e8a195d6955d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa502788789ab808e34a3a4b5b940a928" id="r_aa502788789ab808e34a3a4b5b940a928"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aa502788789ab808e34a3a4b5b940a928">coarsenable</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;refinement_ratio, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;min_width) const</td></tr>
 <tr class="separator:aa502788789ab808e34a3a4b5b940a928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f177129b5e8d3ce247991a139ecc8f3" id="r_a0f177129b5e8d3ce247991a139ecc8f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0f177129b5e8d3ce247991a139ecc8f3">coarsen</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="memdesc:a0f177129b5e8d3ce247991a139ecc8f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarsen each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to the specified ratio.  <br /></td></tr>
 <tr class="separator:a0f177129b5e8d3ce247991a139ecc8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad28652c559f9057fc343bd3c0beb0116" id="r_ad28652c559f9057fc343bd3c0beb0116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ad28652c559f9057fc343bd3c0beb0116">growcoarsen</a> (int n, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
+<tr class="memitem:ad28652c559f9057fc343bd3c0beb0116" id="r_ad28652c559f9057fc343bd3c0beb0116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ad28652c559f9057fc343bd3c0beb0116">growcoarsen</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="memdesc:ad28652c559f9057fc343bd3c0beb0116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow and then coarsen each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:ad28652c559f9057fc343bd3c0beb0116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaca5f33122df36bed145432e5b4f5c57" id="r_aaca5f33122df36bed145432e5b4f5c57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aaca5f33122df36bed145432e5b4f5c57">growcoarsen</a> (<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ngrow, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="separator:aaca5f33122df36bed145432e5b4f5c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a6842ecc48421374e69c0d40ba1542" id="r_a12a6842ecc48421374e69c0d40ba1542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a12a6842ecc48421374e69c0d40ba1542">grow</a> (int n)</td></tr>
+<tr class="memitem:a12a6842ecc48421374e69c0d40ba1542" id="r_a12a6842ecc48421374e69c0d40ba1542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a12a6842ecc48421374e69c0d40ba1542">grow</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</td></tr>
 <tr class="memdesc:a12a6842ecc48421374e69c0d40ba1542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> by the specified amount.  <br /></td></tr>
 <tr class="separator:a12a6842ecc48421374e69c0d40ba1542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac76ee31fa4b71fa56dad4635a650cfbe" id="r_ac76ee31fa4b71fa56dad4635a650cfbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac76ee31fa4b71fa56dad4635a650cfbe">grow</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="memdesc:ac76ee31fa4b71fa56dad4635a650cfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> by the specified amount.  <br /></td></tr>
 <tr class="separator:ac76ee31fa4b71fa56dad4635a650cfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a624b3513f2b285491050d17d8952c474" id="r_a624b3513f2b285491050d17d8952c474"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a624b3513f2b285491050d17d8952c474">grow</a> (int <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, int n_cell)</td></tr>
+<tr class="memitem:a624b3513f2b285491050d17d8952c474" id="r_a624b3513f2b285491050d17d8952c474"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a624b3513f2b285491050d17d8952c474">grow</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_cell)</td></tr>
 <tr class="memdesc:a624b3513f2b285491050d17d8952c474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> on the low and high ends by n_cell cells in the idir direction.  <br /></td></tr>
 <tr class="separator:a624b3513f2b285491050d17d8952c474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76695bda9b8e135e6d945c578557d78d" id="r_a76695bda9b8e135e6d945c578557d78d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a76695bda9b8e135e6d945c578557d78d">growLo</a> (int <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, int n_cell)</td></tr>
+<tr class="memitem:a76695bda9b8e135e6d945c578557d78d" id="r_a76695bda9b8e135e6d945c578557d78d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a76695bda9b8e135e6d945c578557d78d">growLo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_cell)</td></tr>
 <tr class="memdesc:a76695bda9b8e135e6d945c578557d78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> on the low end by n_cell cells in the idir direction.  <br /></td></tr>
 <tr class="separator:a76695bda9b8e135e6d945c578557d78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9848441ce9a5694f17e8617486e0b167" id="r_a9848441ce9a5694f17e8617486e0b167"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a9848441ce9a5694f17e8617486e0b167">growHi</a> (int <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, int n_cell)</td></tr>
+<tr class="memitem:a9848441ce9a5694f17e8617486e0b167" id="r_a9848441ce9a5694f17e8617486e0b167"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a9848441ce9a5694f17e8617486e0b167">growHi</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__HypreMLABecLap_8cpp.html#a6b7ca8dda4be247e0125ec73c01cde01">idir</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_cell)</td></tr>
 <tr class="memdesc:a9848441ce9a5694f17e8617486e0b167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grow each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> on the high end by n_cell cells in the idir direction.  <br /></td></tr>
 <tr class="separator:a9848441ce9a5694f17e8617486e0b167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf9bf4fe5d5ddb8ae3498893bc2253c8" id="r_abf9bf4fe5d5ddb8ae3498893bc2253c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#abf9bf4fe5d5ddb8ae3498893bc2253c8">surroundingNodes</a> ()</td></tr>
 <tr class="memdesc:abf9bf4fe5d5ddb8ae3498893bc2253c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply surroundingNodes(Box) to each Box in <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>. See the documentation of Box for details.  <br /></td></tr>
 <tr class="separator:abf9bf4fe5d5ddb8ae3498893bc2253c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3ca0eb36b4308574b2f0dfc1fdd3562" id="r_ae3ca0eb36b4308574b2f0dfc1fdd3562"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ae3ca0eb36b4308574b2f0dfc1fdd3562">surroundingNodes</a> (int dir)</td></tr>
+<tr class="memitem:ae3ca0eb36b4308574b2f0dfc1fdd3562" id="r_ae3ca0eb36b4308574b2f0dfc1fdd3562"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ae3ca0eb36b4308574b2f0dfc1fdd3562">surroundingNodes</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir)</td></tr>
 <tr class="memdesc:ae3ca0eb36b4308574b2f0dfc1fdd3562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply surroundingNodes(Box,int) to each Box in <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>. See the documentation of Box for details.  <br /></td></tr>
 <tr class="separator:ae3ca0eb36b4308574b2f0dfc1fdd3562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8199954b0860a879faa63867400b5435" id="r_a8199954b0860a879faa63867400b5435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a8199954b0860a879faa63867400b5435">enclosedCells</a> ()</td></tr>
 <tr class="memdesc:a8199954b0860a879faa63867400b5435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply <a class="el" href="classamrex_1_1BoxND.html#ac0333b5d5352b2a5b0eb75e668e64f3b" title="Convert to CELL type in all directions.">Box::enclosedCells()</a> to each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a8199954b0860a879faa63867400b5435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6147deef62aa311d8c7bbf681fc35ce" id="r_ac6147deef62aa311d8c7bbf681fc35ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac6147deef62aa311d8c7bbf681fc35ce">enclosedCells</a> (int dir)</td></tr>
+<tr class="memitem:ac6147deef62aa311d8c7bbf681fc35ce" id="r_ac6147deef62aa311d8c7bbf681fc35ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac6147deef62aa311d8c7bbf681fc35ce">enclosedCells</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir)</td></tr>
 <tr class="memdesc:ac6147deef62aa311d8c7bbf681fc35ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply <a class="el" href="classamrex_1_1BoxND.html#a3aa16f77dc78b935e0e3cb30ddf33b12" title="Convert to CELL type in given direction.">Box::enclosedCells(int)</a> to each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:ac6147deef62aa311d8c7bbf681fc35ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad830f3b87aaa26bf46f53cc54eed83ce" id="r_ad830f3b87aaa26bf46f53cc54eed83ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ad830f3b87aaa26bf46f53cc54eed83ce">convert</a> (<a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> typ)</td></tr>
@@ -266,25 +260,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c550a5e0396c503e3465da2c28f8db9" id="r_a7c550a5e0396c503e3465da2c28f8db9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a7c550a5e0396c503e3465da2c28f8db9">convert</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>(*fp)(const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;))</td></tr>
 <tr class="memdesc:a7c550a5e0396c503e3465da2c28f8db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply function (*fp)(Box) to each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a7c550a5e0396c503e3465da2c28f8db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb552183613f3c0861fb4e6755d942e" id="r_abbb552183613f3c0861fb4e6755d942e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#abbb552183613f3c0861fb4e6755d942e">shift</a> (int dir, int nzones)</td></tr>
+<tr class="memitem:abbb552183613f3c0861fb4e6755d942e" id="r_abbb552183613f3c0861fb4e6755d942e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#abbb552183613f3c0861fb4e6755d942e">shift</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nzones)</td></tr>
 <tr class="memdesc:abbb552183613f3c0861fb4e6755d942e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply <a class="el" href="classamrex_1_1BoxND.html#a727c4435a5b201da0db3eb322b01c944" title="Shift this BoxND nzones indexing positions in coordinate direction dir.">Box::shift(int,int)</a> to each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:abbb552183613f3c0861fb4e6755d942e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ae1e7b4aa2c6c0f78d777bbb6b9f290" id="r_a2ae1e7b4aa2c6c0f78d777bbb6b9f290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a2ae1e7b4aa2c6c0f78d777bbb6b9f290">shift</a> (const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;iv)</td></tr>
 <tr class="memdesc:a2ae1e7b4aa2c6c0f78d777bbb6b9f290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply Box::shift(const IntVect &amp;iv) to each Box in the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a2ae1e7b4aa2c6c0f78d777bbb6b9f290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accbf2c73a258ba522542ac1ad13f9ca8" id="r_accbf2c73a258ba522542ac1ad13f9ca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a> (int i, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;ibox)</td></tr>
+<tr class="memitem:accbf2c73a258ba522542ac1ad13f9ca8" id="r_accbf2c73a258ba522542ac1ad13f9ca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;ibox)</td></tr>
 <tr class="memdesc:accbf2c73a258ba522542ac1ad13f9ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set element i in this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> to Box ibox.  <br /></td></tr>
 <tr class="separator:accbf2c73a258ba522542ac1ad13f9ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0386a0ab9aa86bee7e8f499770f99ca5" id="r_a0386a0ab9aa86bee7e8f499770f99ca5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0386a0ab9aa86bee7e8f499770f99ca5">operator[]</a> (int index) const noexcept</td></tr>
+<tr class="memitem:a0386a0ab9aa86bee7e8f499770f99ca5" id="r_a0386a0ab9aa86bee7e8f499770f99ca5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0386a0ab9aa86bee7e8f499770f99ca5">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="memdesc:a0386a0ab9aa86bee7e8f499770f99ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return element index of this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a0386a0ab9aa86bee7e8f499770f99ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accfeb1e3facccbcdedc791ce6bbb67dc" id="r_accfeb1e3facccbcdedc791ce6bbb67dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#accfeb1e3facccbcdedc791ce6bbb67dc">operator[]</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi) const noexcept</td></tr>
 <tr class="memdesc:accfeb1e3facccbcdedc791ce6bbb67dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return element index of this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:accfeb1e3facccbcdedc791ce6bbb67dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e1bbf1c88985b380f9e9df11be7354" id="r_ac4e1bbf1c88985b380f9e9df11be7354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac4e1bbf1c88985b380f9e9df11be7354">get</a> (int index) const noexcept</td></tr>
+<tr class="memitem:ac4e1bbf1c88985b380f9e9df11be7354" id="r_ac4e1bbf1c88985b380f9e9df11be7354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac4e1bbf1c88985b380f9e9df11be7354">get</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="memdesc:ac4e1bbf1c88985b380f9e9df11be7354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return element index of this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:ac4e1bbf1c88985b380f9e9df11be7354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8366f694b15adc33374df70cdd56d0b5" id="r_a8366f694b15adc33374df70cdd56d0b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a8366f694b15adc33374df70cdd56d0b5">getCellCenteredBox</a> (int index) const noexcept</td></tr>
+<tr class="memitem:a8366f694b15adc33374df70cdd56d0b5" id="r_a8366f694b15adc33374df70cdd56d0b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a8366f694b15adc33374df70cdd56d0b5">getCellCenteredBox</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="memdesc:a8366f694b15adc33374df70cdd56d0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return cell-centered box at element index of this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a8366f694b15adc33374df70cdd56d0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adab47a68f8e82d7161ca4951db618a95" id="r_adab47a68f8e82d7161ca4951db618a95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#adab47a68f8e82d7161ca4951db618a95">ok</a> () const</td></tr>
@@ -313,26 +307,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6c5052b75daf4b8fad5f6bd0c65da9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc6fda292fafd7aa9e93227271842a56" id="r_adc6fda292fafd7aa9e93227271842a56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#adc6fda292fafd7aa9e93227271842a56">minimalBox</a> (<a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> &amp;npts_avg_box) const</td></tr>
 <tr class="separator:adc6fda292fafd7aa9e93227271842a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ec59f7f66dc947a4911ac0b88609ce7" id="r_a0ec59f7f66dc947a4911ac0b88609ce7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0ec59f7f66dc947a4911ac0b88609ce7">intersects</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b, int ng=0) const</td></tr>
+<tr class="memitem:a0ec59f7f66dc947a4911ac0b88609ce7" id="r_a0ec59f7f66dc947a4911ac0b88609ce7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0ec59f7f66dc947a4911ac0b88609ce7">intersects</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ng=0) const</td></tr>
 <tr class="memdesc:a0ec59f7f66dc947a4911ac0b88609ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the Box intersects with this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>(+ghostcells). The Box must have the same IndexType as those in this <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a0ec59f7f66dc947a4911ac0b88609ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15880d75956fdc7052c011f342f62e4c" id="r_a15880d75956fdc7052c011f342f62e4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a15880d75956fdc7052c011f342f62e4c">intersects</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ng) const</td></tr>
 <tr class="separator:a15880d75956fdc7052c011f342f62e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6bba7ce3f3a648d9c1fb8815f7a3af" id="r_a1a6bba7ce3f3a648d9c1fb8815f7a3af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx) const</td></tr>
+<tr class="memitem:a1a6bba7ce3f3a648d9c1fb8815f7a3af" id="r_a1a6bba7ce3f3a648d9c1fb8815f7a3af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx) const</td></tr>
 <tr class="memdesc:a1a6bba7ce3f3a648d9c1fb8815f7a3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return intersections of Box and <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a1a6bba7ce3f3a648d9c1fb8815f7a3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c73c4d67413a076f526d3209028285e" id="r_a0c73c4d67413a076f526d3209028285e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0c73c4d67413a076f526d3209028285e">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, bool first_only, int ng) const</td></tr>
+<tr class="memitem:a0c73c4d67413a076f526d3209028285e" id="r_a0c73c4d67413a076f526d3209028285e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a0c73c4d67413a076f526d3209028285e">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, bool first_only, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ng) const</td></tr>
 <tr class="memdesc:a0c73c4d67413a076f526d3209028285e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return intersections of Box and <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>(+ghostcells).  <br /></td></tr>
 <tr class="separator:a0c73c4d67413a076f526d3209028285e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9813523e16f907563f2c1d054dfaf4f" id="r_aa9813523e16f907563f2c1d054dfaf4f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aa9813523e16f907563f2c1d054dfaf4f">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, bool first_only, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ng) const</td></tr>
+<tr class="memitem:aa9813523e16f907563f2c1d054dfaf4f" id="r_aa9813523e16f907563f2c1d054dfaf4f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#aa9813523e16f907563f2c1d054dfaf4f">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, bool first_only, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ng) const</td></tr>
 <tr class="separator:aa9813523e16f907563f2c1d054dfaf4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80052e0d9dfb04e293a213fe3c62f053" id="r_a80052e0d9dfb04e293a213fe3c62f053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a80052e0d9dfb04e293a213fe3c62f053">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects) const</td></tr>
+<tr class="memitem:a80052e0d9dfb04e293a213fe3c62f053" id="r_a80052e0d9dfb04e293a213fe3c62f053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a80052e0d9dfb04e293a213fe3c62f053">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects) const</td></tr>
 <tr class="memdesc:a80052e0d9dfb04e293a213fe3c62f053"><td class="mdescLeft">&#160;</td><td class="mdescRight">intersect Box and <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>, then store the result in isects  <br /></td></tr>
 <tr class="separator:a80052e0d9dfb04e293a213fe3c62f053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cd5573bebca1fbbe29bd8bd328ce172" id="r_a7cd5573bebca1fbbe29bd8bd328ce172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a7cd5573bebca1fbbe29bd8bd328ce172">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects, bool first_only, int ng) const</td></tr>
+<tr class="memitem:a7cd5573bebca1fbbe29bd8bd328ce172" id="r_a7cd5573bebca1fbbe29bd8bd328ce172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a7cd5573bebca1fbbe29bd8bd328ce172">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects, bool first_only, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ng) const</td></tr>
 <tr class="memdesc:a7cd5573bebca1fbbe29bd8bd328ce172"><td class="mdescLeft">&#160;</td><td class="mdescRight">intersect Box and <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>(+ghostcells), then store the result in isects  <br /></td></tr>
 <tr class="separator:a7cd5573bebca1fbbe29bd8bd328ce172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac19b485ff74dd52d9bb8d8919184e0ce" id="r_ac19b485ff74dd52d9bb8d8919184e0ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac19b485ff74dd52d9bb8d8919184e0ce">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects, bool first_only, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ng) const</td></tr>
+<tr class="memitem:ac19b485ff74dd52d9bb8d8919184e0ce" id="r_ac19b485ff74dd52d9bb8d8919184e0ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#ac19b485ff74dd52d9bb8d8919184e0ce">intersections</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;bx, std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;isects, bool first_only, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ng) const</td></tr>
 <tr class="separator:ac19b485ff74dd52d9bb8d8919184e0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cfc3c2251e61eb1f1defb1e57badeb1" id="r_a9cfc3c2251e61eb1f1defb1e57badeb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BoxArray.html#a9cfc3c2251e61eb1f1defb1e57badeb1">complementIn</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b) const</td></tr>
 <tr class="memdesc:a9cfc3c2251e61eb1f1defb1e57badeb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return box - boxarray.  <br /></td></tr>
@@ -572,7 +566,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbox</em>&#160;</td>
         </tr>
         <tr>
@@ -839,7 +833,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::coarsen </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>refinement_ratio</em></td><td>)</td>
           <td></td>
         </tr>
@@ -893,7 +887,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>min_width</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
@@ -915,13 +909,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">bool amrex::BoxArray::coarsenable </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>refinement_ratio</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>min_width</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
@@ -1370,7 +1364,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::enclosedCells </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1418,7 +1412,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> amrex::BoxArray::get </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1446,7 +1440,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> amrex::BoxArray::getCellCenteredBox </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1569,13 +1563,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::grow </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>idir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_cell</em>&#160;</td>
         </tr>
         <tr>
@@ -1599,7 +1593,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::grow </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1619,7 +1613,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::growcoarsen </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
@@ -1677,13 +1671,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::growHi </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>idir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_cell</em>&#160;</td>
         </tr>
         <tr>
@@ -1707,13 +1701,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::growLo </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>idir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_cell</em>&#160;</td>
         </tr>
         <tr>
@@ -1760,7 +1754,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
+          <td class="memname">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td>
           <td class="paramname"><em>bx</em></td><td>)</td>
@@ -1780,7 +1774,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
+          <td class="memname">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
@@ -1814,7 +1808,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
+          <td class="memname">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; amrex::BoxArray::intersections </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
@@ -1828,7 +1822,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ng</em>&#160;</td>
         </tr>
         <tr>
@@ -1858,7 +1852,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>isects</em>&#160;</td>
         </tr>
         <tr>
@@ -1888,7 +1882,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>isects</em>, </td>
         </tr>
         <tr>
@@ -1928,7 +1922,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::pair&lt; int, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>isects</em>, </td>
         </tr>
         <tr>
@@ -1940,7 +1934,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ng</em>&#160;</td>
         </tr>
         <tr>
@@ -1998,7 +1992,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ng</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2086,7 +2080,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::maxSize </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>block_size</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2409,7 +2403,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> amrex::BoxArray::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -2432,7 +2426,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::BoxArray::readFrom </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::BoxArray::readFrom </td>
           <td>(</td>
           <td class="paramtype">std::istream &amp;&#160;</td>
           <td class="paramname"><em>is</em></td><td>)</td>
@@ -2474,7 +2468,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::refine </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>refinement_ratio</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2572,7 +2566,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void amrex::BoxArray::set </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -2622,13 +2616,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::shift </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nzones</em>&#160;</td>
         </tr>
         <tr>
@@ -2732,7 +2726,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::BoxArray::surroundingNodes </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>

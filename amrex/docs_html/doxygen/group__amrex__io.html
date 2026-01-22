@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -123,7 +117,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga1913d5ba8be07f02e9ae1f1b2c667a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8afe35c2818f661481ed2603ae036928" id="r_ga8afe35c2818f661481ed2603ae036928"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga8afe35c2818f661481ed2603ae036928">amrex::Amr::checkPoint</a> ()</td></tr>
 <tr class="separator:ga8afe35c2818f661481ed2603ae036928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga21e84284bac03ced14676297803deabe" id="r_ga21e84284bac03ced14676297803deabe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga21e84284bac03ced14676297803deabe">amrex::WriteMultiLevelPlotfile</a> (const std::string &amp;plotfilename, int nlevels, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;varnames, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;geom, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;level_steps, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, const std::string &amp;versionName=&quot;HyperCLaw-V1.1&quot;, const std::string &amp;levelPrefix=&quot;Level_&quot;, const std::string &amp;mfPrefix=&quot;Cell&quot;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;extra_dirs=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;())</td></tr>
+<tr class="memitem:ga21e84284bac03ced14676297803deabe" id="r_ga21e84284bac03ced14676297803deabe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga21e84284bac03ced14676297803deabe">amrex::WriteMultiLevelPlotfile</a> (const std::string &amp;plotfilename, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nlevels, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;varnames, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;geom, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;level_steps, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, const std::string &amp;versionName=&quot;HyperCLaw-V1.1&quot;, const std::string &amp;levelPrefix=&quot;Level_&quot;, const std::string &amp;mfPrefix=&quot;Cell&quot;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;extra_dirs=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;())</td></tr>
 <tr class="separator:ga21e84284bac03ced14676297803deabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga53896bd985c853c947a38f910c63af2e" id="r_ga53896bd985c853c947a38f910c63af2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga53896bd985c853c947a38f910c63af2e">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::Checkpoint</a> (const std::string &amp;dir, const std::string &amp;name, bool is_checkpoint, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;(), const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;()) const</td></tr>
 <tr class="memdesc:ga53896bd985c853c947a38f910c63af2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a particle checkpoint to file, suitable for restarting. This version allows the particle component names to be passed in. This overload exists for backwards compatibility. The is_checkpoint parameter is ignored.  <br /></td></tr>
@@ -137,10 +131,10 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf248577e6120966c6ed573fe1d8828b4" id="r_gaf248577e6120966c6ed573fe1d8828b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#gaf248577e6120966c6ed573fe1d8828b4">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names) const</td></tr>
 <tr class="memdesc:gaf248577e6120966c6ed573fe1d8828b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <br /></td></tr>
 <tr class="separator:gaf248577e6120966c6ed573fe1d8828b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54674ebf0207f608d21f7862c256ad99" id="r_ga54674ebf0207f608d21f7862c256ad99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga54674ebf0207f608d21f7862c256ad99">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp) const</td></tr>
+<tr class="memitem:ga54674ebf0207f608d21f7862c256ad99" id="r_ga54674ebf0207f608d21f7862c256ad99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga54674ebf0207f608d21f7862c256ad99">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp) const</td></tr>
 <tr class="memdesc:ga54674ebf0207f608d21f7862c256ad99"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components.  <br /></td></tr>
 <tr class="separator:ga54674ebf0207f608d21f7862c256ad99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga92576f2c69ef205393563dfc7efe5b4a" id="r_ga92576f2c69ef205393563dfc7efe5b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga92576f2c69ef205393563dfc7efe5b4a">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names) const</td></tr>
+<tr class="memitem:ga92576f2c69ef205393563dfc7efe5b4a" id="r_ga92576f2c69ef205393563dfc7efe5b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga92576f2c69ef205393563dfc7efe5b4a">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names) const</td></tr>
 <tr class="memdesc:ga92576f2c69ef205393563dfc7efe5b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not.  <br /></td></tr>
 <tr class="separator:ga92576f2c69ef205393563dfc7efe5b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac619ec4f2ce3efa064323b62a4abab23" id="r_gac619ec4f2ce3efa064323b62a4abab23"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt;!std::is_same_v&lt; std::decay_t&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &gt; &gt; *  = nullptr&gt; </td></tr>
@@ -156,11 +150,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga8f7940c8c21dec419a2c751a2e61c20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <br /></td></tr>
 <tr class="separator:ga8f7940c8c21dec419a2c751a2e61c20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga039fc5fda00bc515f0a1064af928cdc6" id="r_ga039fc5fda00bc515f0a1064af928cdc6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ga039fc5fda00bc515f0a1064af928cdc6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga039fc5fda00bc515f0a1064af928cdc6">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:ga039fc5fda00bc515f0a1064af928cdc6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#ga039fc5fda00bc515f0a1064af928cdc6">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) const</td></tr>
 <tr class="memdesc:ga039fc5fda00bc515f0a1064af928cdc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components.  <br /></td></tr>
 <tr class="separator:ga039fc5fda00bc515f0a1064af928cdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaff4d24c0425cd1106380405cc293eacc" id="r_gaff4d24c0425cd1106380405cc293eacc"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:gaff4d24c0425cd1106380405cc293eacc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#gaff4d24c0425cd1106380405cc293eacc">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:gaff4d24c0425cd1106380405cc293eacc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__io.html#gaff4d24c0425cd1106380405cc293eacc">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f) const</td></tr>
 <tr class="memdesc:gaff4d24c0425cd1106380405cc293eacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not.  <br /></td></tr>
 <tr class="separator:gaff4d24c0425cd1106380405cc293eacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -209,7 +203,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::Checkpoint </td>
@@ -268,7 +262,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nlevels</em>, </td>
         </tr>
         <tr>
@@ -298,7 +292,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>level_steps</em>, </td>
         </tr>
         <tr>
@@ -373,7 +367,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::WritePlotFile </td>
@@ -412,7 +406,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::WritePlotFile </td>
@@ -429,13 +423,13 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_real_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_int_comp</em>&#160;</td>
         </tr>
         <tr>
@@ -465,7 +459,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::WritePlotFile </td>
@@ -482,13 +476,13 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_real_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_int_comp</em>, </td>
         </tr>
         <tr>
@@ -532,7 +526,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </div>
       <table class="memname">
@@ -551,13 +545,13 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_real_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_int_comp</em>, </td>
         </tr>
         <tr>
@@ -615,7 +609,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </div>
       <table class="memname">
@@ -634,13 +628,13 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_real_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>write_int_comp</em>, </td>
         </tr>
         <tr>
@@ -684,7 +678,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::WritePlotFile </td>
@@ -730,7 +724,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a32623939f5453d39bcfc26fef34972a8">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3063446dc305120704ec3f1670f301c1">NArrayInt</a>, Allocator, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt;::WritePlotFile </td>
@@ -783,7 +777,7 @@ template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </div>
       <table class="memname">
@@ -852,7 +846,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt;!std::is_same_v&lt; std::decay_t&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &gt; &gt; * &gt; </div>
       <table class="memname">
@@ -914,7 +908,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
+template&lt;typename <a class="el" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt, template&lt; class &gt; class Allocator, class <a class="el" href="classamrex_1_1ParticleContainer__impl.html#a7b7b13085dd52256f182ec5cb5cb45a9">CellAssignor</a> &gt; </div>
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt;!std::is_same_v&lt; std::decay_t&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &gt; &gt; * &gt; </div>
       <table class="memname">

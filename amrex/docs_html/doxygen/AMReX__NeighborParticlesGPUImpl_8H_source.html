@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -370,8 +369,8 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesGPUImpl_8H_sou
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    clearNeighbors();</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">if</span> (this-&gt;use_comms_arena) {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        snd_buffer.setArena(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        rcv_buffer.setArena(<a class="code hl_function" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        snd_buffer.setArena(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        rcv_buffer.setArena(<a class="code hl_function" href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">The_Comms_Arena</a>());</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    }</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <a class="code hl_function" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">packBuffer</a>(*<span class="keyword">this</span>, neighbor_copy_op, neighbor_copy_plan, snd_buffer);</div>
@@ -468,6 +467,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesGPUImpl_8H_sou
 <div class="ttc" id="aclassamrex_1_1Periodicity_html"><div class="ttname"><a href="classamrex_1_1Periodicity.html">amrex::Periodicity</a></div><div class="ttdoc">This provides length of period for periodic domains. 0 means it is not periodic in that direction....</div><div class="ttdef"><b>Definition</b> AMReX_Periodicity.H:17</div></div>
 <div class="ttc" id="aclassamrex_1_1Periodicity_html_a3a1f48c918140f80aac690cc10d20cdb"><div class="ttname"><a href="classamrex_1_1Periodicity.html#a3a1f48c918140f80aac690cc10d20cdb">amrex::Periodicity::shiftIntVect</a></div><div class="ttdeci">std::vector&lt; IntVect &gt; shiftIntVect(IntVect const &amp;nghost=IntVect(0)) const</div><div class="ttdef"><b>Definition</b> AMReX_Periodicity.cpp:8</div></div>
 <div class="ttc" id="agroup__amrex__collectives_html_ga3f116832e254a3422729b3455b22f18c"><div class="ttname"><a href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a></div><div class="ttdeci">OutIter exclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1440</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_ga867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="group__amrex__memory.html#ga867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:843</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a39c6894dcdb993d9e4455d7d418947b9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">amrex::Gpu::copyAsync</a></div><div class="ttdeci">void copyAsync(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</div><div class="ttdoc">A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous st...</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:228</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4ffc2b3090d34803c0b78ee6f53d22a9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">amrex::Gpu::hostToDevice</a></div><div class="ttdeci">static constexpr HostToDevice hostToDevice</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:105</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:263</div></div>
@@ -482,7 +482,6 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesGPUImpl_8H_sou
 <div class="ttc" id="anamespaceamrex_html_a2930ae07976c9845d80d458c323eff2b"><div class="ttname"><a href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">amrex::unpackRemotes</a></div><div class="ttdeci">void unpackRemotes(PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, UnpackPolicy const &amp;policy)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleCommunication.H:600</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_a814322d519ae32014737504164a0516b"><div class="ttname"><a href="namespaceamrex.html#a814322d519ae32014737504164a0516b">amrex::communicateParticlesFinish</a></div><div class="ttdeci">void communicateParticlesFinish(const ParticleCopyPlan &amp;plan)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleCommunication.cpp:384</div></div>
-<div class="ttc" id="anamespaceamrex_html_a867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:843</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html_acad483c5f0e30f9cd471ad05e1920320"><div class="ttname"><a href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">amrex::numParticlesOutOfRange</a></div><div class="ttdeci">int numParticlesOutOfRange(Iterator const &amp;pti, int nGrow)</div><div class="ttdoc">Returns the number of particles that are more than nGrow cells from the box correspond to the input i...</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:34</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc731523d4241d981e7279b29c5d7a6d"><div class="ttname"><a href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a></div><div class="ttdeci">void RemoveDuplicates(Vector&lt; T &gt; &amp;vec)</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:211</div></div>

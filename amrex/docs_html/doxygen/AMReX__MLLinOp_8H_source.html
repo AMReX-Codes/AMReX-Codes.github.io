@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -1926,7 +1925,7 @@ $(document).ready(function(){initNavTree('AMReX__MLLinOp_8H_source.html',''); in
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_ga5af1ac4b7471ba90a59e111dd0dd2b22"><div class="ttname"><a href="group__amrex__index__space.html#ga5af1ac4b7471ba90a59e111dd0dd2b22">amrex::coarsen</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; coarsen(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Coarsen BoxND by given (positive) coarsening ratio.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1409</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a8e6abda3339e4295716d7e2ff78e9603"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">amrex::Gpu::notInLaunchRegion</a></div><div class="ttdeci">bool notInLaunchRegion() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:93</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_a3735bb2b55dab8f232227611c6d25bb8"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">amrex::ParallelContext::CommunicatorSub</a></div><div class="ttdeci">MPI_Comm CommunicatorSub() noexcept</div><div class="ttdoc">sub-communicator for current frame</div><div class="ttdef"><b>Definition</b> AMReX_ParallelContext.H:70</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_a766c71905985383fd282cace905237d4"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#a766c71905985383fd282cace905237d4">amrex::ParallelContext::local_to_global_rank</a></div><div class="ttdeci">int local_to_global_rank(int rank) noexcept</div><div class="ttdoc">translate between local rank and global rank</div><div class="ttdef"><b>Definition</b> AMReX_ParallelContext.H:95</div></div>
@@ -1967,7 +1966,7 @@ $(document).ready(function(){initNavTree('AMReX__MLLinOp_8H_source.html',''); in
 <div class="ttc" id="anamespaceamrex_html_afbad2005fb348eb3e7a873b731210d68"><div class="ttname"><a href="namespaceamrex.html#afbad2005fb348eb3e7a873b731210d68">amrex::get</a></div><div class="ttdeci">__host__ __device__ constexpr int get(IntVectND&lt; dim &gt; const &amp;iv) noexcept</div><div class="ttdoc">Get I'th element of IntVectND&lt;dim&gt;</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:1230</div></div>
 <div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:224</div></div>
 <div class="ttc" id="astructamrex_1_1FabDataType_html"><div class="ttname"><a href="structamrex_1_1FabDataType.html">amrex::FabDataType</a></div><div class="ttdef"><b>Definition</b> AMReX_FabDataType.H:9</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1IsFabArray_html"><div class="ttname"><a href="structamrex_1_1IsFabArray.html">amrex::IsFabArray</a></div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:29</div></div>
 <div class="ttc" id="astructamrex_1_1LPInfo_html"><div class="ttname"><a href="structamrex_1_1LPInfo.html">amrex::LPInfo</a></div><div class="ttdef"><b>Definition</b> AMReX_MLLinOp.H:36</div></div>
 <div class="ttc" id="astructamrex_1_1LPInfo_html_a009ea235360d1b03b022d4ec1f20065a"><div class="ttname"><a href="structamrex_1_1LPInfo.html#a009ea235360d1b03b022d4ec1f20065a">amrex::LPInfo::setConsolidationRatio</a></div><div class="ttdeci">LPInfo &amp; setConsolidationRatio(int x) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_MLLinOp.H:56</div></div>

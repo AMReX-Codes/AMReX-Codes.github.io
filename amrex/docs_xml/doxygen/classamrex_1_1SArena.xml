@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="35" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="5" bodyend="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="36" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="5" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="42" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="13" bodyend="17"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="43" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="13" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1aaa0854148c714974dce539a67e499e90" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -55,10 +55,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Check whether the memory is accessible on the device. Note that isDeviceAccessible and isHostAccessible can both be true. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="44" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="20" bodyend="23"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="45" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="20" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1adfc84281671869bfbefe478e79bba72b" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -70,10 +71,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Check whether the memory is accessible on the host. Note that isDeviceAccessible and isHostAccessible can both be true. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="45" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="26" bodyend="29"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="46" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1a713f870b4126336039e89e0773266c48" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -83,12 +85,14 @@
         <qualifiedname>amrex::SArena::isManaged</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a7119489f4464f902d907f6dfe9716909">isManaged</reimplements>
         <briefdescription>
+<para>Check whether it is managed GPU memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="47" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="32" bodyend="35"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="48" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1a2d9ae3373f2632620f535715ddbdecc1" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -98,12 +102,14 @@
         <qualifiedname>amrex::SArena::isDevice</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1aa45555e396ee74158b0c6f3331ce5536">isDevice</reimplements>
         <briefdescription>
+<para>Check whether it is non-managed GPU device memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="48" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="38" bodyend="41"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="49" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1a8b7b7aebf6d7b6db4017d483baccc467" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -113,12 +119,14 @@
         <qualifiedname>amrex::SArena::isPinned</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a336e271c5a07296e4c2866d194111784">isPinned</reimplements>
         <briefdescription>
+<para>Check whether it is pinned host memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="49" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="44" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="50" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.cpp" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1SArena_1a5be263ca54c9b151254035bec28d7214" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>bool</type>
@@ -134,14 +142,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="53" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" bodystart="53" bodyend="53"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="54" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" bodystart="54" bodyend="54"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>A STREAM-ordered memory arena. </para>
     </briefdescription>
     <detaileddescription>
-<para>This <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> is implemented as a wrapper around <ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena()</ref> where the <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> function calls <ref refid="namespaceamrex_1_1Gpu_1a2e573a00e2c0d0bff8097bd9f3dd422e" kindref="member">amrex::Gpu::freeAsync()</ref>. This allows memory to be used by GPU kernels that were launched before <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> was called but may execute afterward, without calling <ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">amrex::Gpu::streamSynchronize()</ref>. These kernels need to use the same GPU stream that is active when <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> is called, otherwise explicit synchronization is needed.</para>
+<para>This <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> is implemented as a wrapper around <ref refid="group__amrex__memory_1gae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena()</ref> where the <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> function calls <ref refid="namespaceamrex_1_1Gpu_1a2e573a00e2c0d0bff8097bd9f3dd422e" kindref="member">amrex::Gpu::freeAsync()</ref>. This allows memory to be used by GPU kernels that were launched before <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> was called but may execute afterward, without calling <ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">amrex::Gpu::streamSynchronize()</ref>. These kernels need to use the same GPU stream that is active when <ref refid="classamrex_1_1SArena_1abda3405739a036b7779e1bbeda674214" kindref="member">free()</ref> is called, otherwise explicit synchronization is needed.</para>
 <para>This is achieved by holding freed memory in a temporary buffer until the next time the GPU stream is synchronized. In case too much memory is held up in this buffer or if The_Arena needs more memory, the stream is automatically synchronized to clear the buffer. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -218,7 +226,7 @@
         <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" bodystart="27" bodyend="55"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_SArena.H" bodystart="28" bodyend="56"/>
     <listofallmembers>
       <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" prot="public" virt="non-virtual"><scope>amrex::SArena</scope><name>align</name></member>
       <member refid="classamrex_1_1Arena_1a4b2f3b31e81e52426aef615cb2aaa7b7" prot="public" virt="non-virtual"><scope>amrex::SArena</scope><name>align_size</name></member>

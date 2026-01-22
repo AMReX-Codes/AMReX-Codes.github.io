@@ -3719,11 +3719,11 @@
         <param><defname>FP_t</defname></param>
         <param><defname>sym</defname></param>
         <initializer>    [] () { \
-        auto* amrex_i_hp = (FP_t*) <ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;alloc(sizeof(FP_t)); \
+        auto* amrex_i_hp = (FP_t*) <ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;alloc(sizeof(FP_t)); \
         <ref refid="namespaceamrex_1aa785b3b07c24c864604e8de72a0bb919" kindref="member">amrex::single_task</ref>([=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () { *amrex_i_hp = sym; }); \
         <ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">amrex::Gpu::streamSynchronize</ref>(); \
         auto amrex_i_r = *amrex_i_hp; \
-        <ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;free(amrex_i_hp); \
+        <ref refid="group__amrex__memory_1gaba0258410952c3ccfe405a462ef2d887" kindref="member">amrex::The_Pinned_Arena</ref>()-&gt;free(amrex_i_hp); \
         return amrex_i_r; \
     } ()</initializer>
         <briefdescription>

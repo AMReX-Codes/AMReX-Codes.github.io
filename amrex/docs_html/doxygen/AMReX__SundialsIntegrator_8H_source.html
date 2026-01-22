@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -127,23 +126,23 @@ $(document).ready(function(){initNavTree('AMReX__SundialsIntegrator_8H_source.ht
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1SundialsUserData.html">SundialsUserData</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// ERK or DIRK right-hand side function</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// EX-MRI or IM-MRI slow right-hand side function</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0">   25</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0">f</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0">   25</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0">f</a>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// ImEx-RK right-hand side functions</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// ImEx-MRI slow right-hand side functions</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13">   29</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13">fi</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#ac6bd65791ecd3832597283141221f47e">   30</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#ac6bd65791ecd3832597283141221f47e">fe</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13">   29</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13">fi</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#ac6bd65791ecd3832597283141221f47e">   30</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#ac6bd65791ecd3832597283141221f47e">fe</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// MRI fast time scale right-hand side function</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930">   33</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930">ff</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930">   33</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930">ff</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Post stage and step actions</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b">   36</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b">post_stage</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb">   37</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb">post_step</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b">   36</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b">post_stage</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb">   37</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb">post_step</a>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Post fast stage and step actions</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa">   40</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa">post_fast_stage</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21">   41</a></span>    std::function&lt;int(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21">post_fast_step</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa">   40</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa">post_fast_stage</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21">   41</a></span>    std::function&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a>, N_Vector, <span class="keywordtype">void</span>*)&gt; <a class="code hl_variable" href="structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21">post_fast_step</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
@@ -1004,6 +1003,7 @@ $(document).ready(function(){initNavTree('AMReX__SundialsIntegrator_8H_source.ht
 <div class="ttc" id="anamespaceamrex_html_a21a1acd7c1fc44aa5ce27ab461aded41"><div class="ttname"><a href="namespaceamrex.html#a21a1acd7c1fc44aa5ce27ab461aded41">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2869</div></div>
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>
 <div class="ttc" id="anamespaceamrex_html_acafd26c0f64d958aed9ee56043c4f10e"><div class="ttname"><a href="namespaceamrex.html#acafd26c0f64d958aed9ee56043c4f10e">amrex::Verbose</a></div><div class="ttdeci">int Verbose() noexcept</div><div class="ttdef"><b>Definition</b> AMReX.cpp:169</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_af69fc0af80dbc4a91b1532451e9533c9"><div class="ttname"><a href="namespaceamrex.html#af69fc0af80dbc4a91b1532451e9533c9">amrex::boxArray</a></div><div class="ttdeci">BoxArray const &amp; boxArray(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2864</div></div>
 <div class="ttc" id="astructamrex_1_1SundialsUserData_html"><div class="ttname"><a href="structamrex_1_1SundialsUserData.html">amrex::SundialsUserData</a></div><div class="ttdef"><b>Definition</b> AMReX_SundialsIntegrator.H:22</div></div>
 <div class="ttc" id="astructamrex_1_1SundialsUserData_html_a040d572683a6b4367f39248d36e2cb13"><div class="ttname"><a href="structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13">amrex::SundialsUserData::fi</a></div><div class="ttdeci">std::function&lt; int(amrex::Real, N_Vector, N_Vector, void *)&gt; fi</div><div class="ttdef"><b>Definition</b> AMReX_SundialsIntegrator.H:29</div></div>

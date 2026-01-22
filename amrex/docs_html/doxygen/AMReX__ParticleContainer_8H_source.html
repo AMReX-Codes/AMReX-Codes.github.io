@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -961,7 +960,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainer_8H_source.htm
 <div class="ttc" id="aAMReX__VectorIO_8H_html"><div class="ttname"><a href="AMReX__VectorIO_8H.html">AMReX_VectorIO.H</a></div></div>
 <div class="ttc" id="aAMReX__Vector_8H_html"><div class="ttname"><a href="AMReX__Vector_8H.html">AMReX_Vector.H</a></div></div>
 <div class="ttc" id="aAMReX__VisMF_8H_html"><div class="ttname"><a href="AMReX__VisMF_8H.html">AMReX_VisMF.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:114</div></div>
+<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:115</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:567</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
 <div class="ttc" id="aclassamrex_1_1DenseBins_html"><div class="ttname"><a href="classamrex_1_1DenseBins.html">amrex::DenseBins</a></div><div class="ttdoc">A container for storing items in a set of bins.</div><div class="ttdef"><b>Definition</b> AMReX_DenseBins.H:77</div></div>
@@ -1138,10 +1137,10 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainer_8H_source.htm
 <div class="ttc" id="agroup__amrex__io_html_gae2a882c357b72c84b934c0126976c65b"><div class="ttname"><a href="group__amrex__io.html#gae2a882c357b72c84b934c0126976c65b">amrex::ParticleContainer_impl::WritePlotFile</a></div><div class="ttdeci">void WritePlotFile(const std::string &amp;dir, const std::string &amp;name) const</div><div class="ttdoc">This version of WritePlotFile writes all components and assigns component names.</div><div class="ttdef"><b>Definition</b> AMReX_ParticleIO.H:113</div></div>
 <div class="ttc" id="agroup__amrex__particles_html_ga7c419a2c3aef781f1415b7ebd1f138d0"><div class="ttname"><a href="group__amrex__particles.html#ga7c419a2c3aef781f1415b7ebd1f138d0">amrex::ParticleContainer</a></div><div class="ttdeci">ParticleContainer_impl&lt; Particle&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt; ParticleContainer</div><div class="ttdef"><b>Definition</b> AMReX_ParIter.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
-<div class="ttc" id="anamespaceamrex_html_a179fafc569924202b166896b608cd5c2"><div class="ttname"><a href="namespaceamrex.html#a179fafc569924202b166896b608cd5c2">amrex::DefaultAllocator</a></div><div class="ttdeci">amrex::ArenaAllocator&lt; T &gt; DefaultAllocator</div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:193</div></div>
+<div class="ttc" id="anamespaceamrex_html_a179fafc569924202b166896b608cd5c2"><div class="ttname"><a href="namespaceamrex.html#a179fafc569924202b166896b608cd5c2">amrex::DefaultAllocator</a></div><div class="ttdeci">amrex::ArenaAllocator&lt; T &gt; DefaultAllocator</div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:199</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="astructamrex_1_1DefaultAssignor_html"><div class="ttname"><a href="structamrex_1_1DefaultAssignor.html">amrex::DefaultAssignor</a></div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:394</div></div>
-<div class="ttc" id="astructamrex_1_1IsPolymorphicArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsPolymorphicArenaAllocator.html">amrex::IsPolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:172</div></div>
+<div class="ttc" id="astructamrex_1_1IsPolymorphicArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsPolymorphicArenaAllocator.html">amrex::IsPolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:178</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleCommData_html"><div class="ttname"><a href="structamrex_1_1ParticleCommData.html">amrex::ParticleCommData</a></div><div class="ttdoc">A struct used for communicating particle data across processes during multi-level operations.</div><div class="ttdef"><b>Definition</b> AMReX_ParticleContainer.H:80</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleCommData_html_a06a10b263e213213d0bbdd398267b9ed"><div class="ttname"><a href="structamrex_1_1ParticleCommData.html#a06a10b263e213213d0bbdd398267b9ed">amrex::ParticleCommData::m_data</a></div><div class="ttdeci">RealType m_data[1+3]</div><div class="ttdef"><b>Definition</b> AMReX_ParticleContainer.H:85</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleCommData_html_a0abfbcf524018c0ec719c5f4861823f5"><div class="ttname"><a href="structamrex_1_1ParticleCommData.html#a0abfbcf524018c0ec719c5f4861823f5">amrex::ParticleCommData::RealType</a></div><div class="ttdeci">ParticleReal RealType</div><div class="ttdef"><b>Definition</b> AMReX_ParticleContainer.H:81</div></div>

@@ -4,6 +4,7 @@ var topics =
     [ "Integer Index Space", "group__amrex__index__space.html", "group__amrex__index__space" ],
     [ "Real Space", "group__amrex__real__space.html", "group__amrex__real__space" ],
     [ "Domain Decomposition", "group__amrex__domain__decomposition.html", "group__amrex__domain__decomposition" ],
+    [ "Memory Arenas and Allocators", "group__amrex__memory.html", "group__amrex__memory" ],
     [ "Data Containers", "group__amrex__data__containers.html", "group__amrex__data__containers" ],
     [ "Execution and Kernel Launch", "group__amrex__execution.html", "group__amrex__execution" ],
     [ "Reductions and Scans", "group__amrex__collectives.html", "group__amrex__collectives" ],

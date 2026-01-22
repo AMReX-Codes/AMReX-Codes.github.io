@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -152,12 +151,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                 std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                    std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                                    int, <span class="keyword">typename</span> FAB::value_type&gt; &gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                                    <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB::value_type&gt; &gt;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>ReduceMF (FabArray&lt;FAB&gt; <span class="keyword">const</span>&amp; fa, IntVect <span class="keyword">const</span>&amp; nghost, F <span class="keyword">const</span>&amp; f)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">using </span>T = std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                 std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                 int, <span class="keyword">typename</span> FAB::value_type&gt;;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                 <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB::value_type&gt;;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">auto</span> typ = fa.ixType();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma = fa.const_arrays();</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex.html#a323ccd5565111870ca88d165b6f9f60b">ParReduce</a>(TypeList&lt;OP&gt;{}, TypeList&lt;T&gt;{}, fa, nghost,</div>
@@ -171,12 +170,12 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value &amp;&amp; IsBaseFab&lt;FAB2&gt;::value,</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                 std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                    std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                    int, <span class="keyword">typename</span> FAB1::value_type&gt; &gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                    <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB1::value_type&gt; &gt;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>ReduceMF (FabArray&lt;FAB1&gt; <span class="keyword">const</span>&amp; fa1, FabArray&lt;FAB2&gt; <span class="keyword">const</span>&amp; fa2, IntVect <span class="keyword">const</span>&amp; nghost, F <span class="keyword">const</span>&amp; f)</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">using </span>T = std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                 std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                 int, <span class="keyword">typename</span> FAB1::value_type&gt;;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                                 <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB1::value_type&gt;;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">auto</span> typ = fa1.ixType();</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma1 = fa1.const_arrays();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma2 = fa2.const_arrays();</div>
@@ -192,13 +191,13 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value &amp;&amp; IsBaseFab&lt;FAB2&gt;::value &amp;&amp; IsBaseFab&lt;FAB3&gt;::value,</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                 std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                    std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                    int, <span class="keyword">typename</span> FAB1::value_type&gt; &gt;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                    <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB1::value_type&gt; &gt;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>ReduceMF (FabArray&lt;FAB1&gt; <span class="keyword">const</span>&amp; fa1, FabArray&lt;FAB2&gt; <span class="keyword">const</span>&amp; fa2,</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          FabArray&lt;FAB3&gt; <span class="keyword">const</span>&amp; fa3, IntVect <span class="keyword">const</span>&amp; nghost, F <span class="keyword">const</span>&amp; f)</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">using </span>T = std::conditional_t&lt;std::is_same&lt;OP,ReduceOpLogicalAnd&gt;::value ||</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                 std::is_same&lt;OP,ReduceOpLogicalOr&gt;::value,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                 int, <span class="keyword">typename</span> FAB1::value_type&gt;;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                 <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <span class="keyword">typename</span> FAB1::value_type&gt;;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">auto</span> typ = fa1.ixType();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma1 = fa1.const_arrays();</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma2 = fa2.const_arrays();</div>
@@ -2413,8 +2412,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition</b> AMReX_SPACE.H:172</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition</b> AMReX_SPACE.H:171</div></div>
 <div class="ttc" id="aclassamrex_1_1AllPrint_html"><div class="ttname"><a href="classamrex_1_1AllPrint.html">amrex::AllPrint</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:117</div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html_a7119489f4464f902d907f6dfe9716909"><div class="ttname"><a href="classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909">amrex::Arena::isManaged</a></div><div class="ttdeci">virtual bool isManaged() const</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:88</div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html_aa45555e396ee74158b0c6f3331ce5536"><div class="ttname"><a href="classamrex_1_1Arena.html#aa45555e396ee74158b0c6f3331ce5536">amrex::Arena::isDevice</a></div><div class="ttdeci">virtual bool isDevice() const</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:100</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html_a7119489f4464f902d907f6dfe9716909"><div class="ttname"><a href="classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909">amrex::Arena::isManaged</a></div><div class="ttdeci">virtual bool isManaged() const</div><div class="ttdoc">Check whether it is managed GPU memory.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:88</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html_aa45555e396ee74158b0c6f3331ce5536"><div class="ttname"><a href="classamrex_1_1Arena.html#aa45555e396ee74158b0c6f3331ce5536">amrex::Arena::isDevice</a></div><div class="ttdeci">virtual bool isDevice() const</div><div class="ttdoc">Check whether it is non-managed GPU device memory.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:100</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:567</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_a1a6bba7ce3f3a648d9c1fb8815f7a3af"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">amrex::BoxArray::intersections</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; int, Box &gt; &gt; intersections(const Box &amp;bx) const</div><div class="ttdoc">Return intersections of Box and BoxArray.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.cpp:1186</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxND_html"><div class="ttname"><a href="classamrex_1_1BoxND.html">amrex::BoxND&lt; 3 &gt;</a></div></div>
@@ -2460,7 +2459,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="ttc" id="aclassamrex_1_1Print_html_a971e445f6ccdf429030e4659a20f8939"><div class="ttname"><a href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">amrex::Print::SetPrecision</a></div><div class="ttdeci">Print &amp; SetPrecision(int p)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:89</div></div>
 <div class="ttc" id="aclassamrex_1_1Vector_html"><div class="ttname"><a href="classamrex_1_1Vector.html">amrex::Vector</a></div><div class="ttdoc">This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:28</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gac0f0db5587c264e8397139733225a229"><div class="ttname"><a href="group__amrex__index__space.html#gac0f0db5587c264e8397139733225a229">amrex::grow</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; grow(const BoxND&lt; dim &gt; &amp;b, int i) noexcept</div><div class="ttdoc">Grow BoxND in all directions by given amount.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1280</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga8f0fba40aa737060c0ac09832c9bf877"><div class="ttname"><a href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:221</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gae1d56156af0262c668411501ef5f2592"><div class="ttname"><a href="group__amrex__mpi.html#gae1d56156af0262c668411501ef5f2592">amrex::ParallelAllReduce::Max</a></div><div class="ttdeci">void Max(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:133</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a036b6d508731d9a30a2c2c8ade0caa39"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a036b6d508731d9a30a2c2c8ade0caa39">amrex::Gpu::Atomic::Exch</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Exch(T *address, T val) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:487</div></div>
@@ -2476,7 +2475,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="ttc" id="anamespaceamrex_html_a0a525af3444a2814c6dbda9e71a965a5"><div class="ttname"><a href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a></div><div class="ttdeci">__host__ __device__ void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition</b> AMReX.H:138</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0cef8b304e3c55a8d985c2a8907da9e4"><div class="ttname"><a href="namespaceamrex.html#a0cef8b304e3c55a8d985c2a8907da9e4">amrex::nComp</a></div><div class="ttdeci">int nComp(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2854</div></div>
 <div class="ttc" id="anamespaceamrex_html_a157fdc4ac63d7f4d21a5df4b4151eb28"><div class="ttname"><a href="namespaceamrex.html#a157fdc4ac63d7f4d21a5df4b4151eb28">amrex::ReduceMax</a></div><div class="ttdeci">FAB::value_type ReduceMax(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:555</div></div>
-<div class="ttc" id="anamespaceamrex_html_a1c182abe7695240cd35e1ba3d4477758"><div class="ttname"><a href="namespaceamrex.html#a1c182abe7695240cd35e1ba3d4477758">amrex::Swap</a></div><div class="ttdeci">__host__ __device__ void Swap(T &amp;t1, T &amp;t2) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:75</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1c182abe7695240cd35e1ba3d4477758"><div class="ttname"><a href="namespaceamrex.html#a1c182abe7695240cd35e1ba3d4477758">amrex::Swap</a></div><div class="ttdeci">__host__ __device__ void Swap(T &amp;t1, T &amp;t2) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:93</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1f15630874d45aeb722ca649e6c4c3a9"><div class="ttname"><a href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt; ParallelFor(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_CTOParallelForImpl.H:193</div></div>
 <div class="ttc" id="anamespaceamrex_html_a21a1acd7c1fc44aa5ce27ab461aded41"><div class="ttname"><a href="namespaceamrex.html#a21a1acd7c1fc44aa5ce27ab461aded41">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2869</div></div>
@@ -2515,6 +2514,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition</b> AMReX_FabArray.H:241</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac8ac637100c5c3e84d9c8c9e6747a695"><div class="ttname"><a href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Loop.H:388</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad81d4975698feb7461d8ad18c21c7951"><div class="ttname"><a href="namespaceamrex.html#ad81d4975698feb7461d8ad18c21c7951">amrex::OverrideSync_finish</a></div><div class="ttdeci">void OverrideSync_finish(FabArray&lt; FAB &gt; &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:1501</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad99f216d6d06fb8bc99e3597173b7ef7"><div class="ttname"><a href="namespaceamrex.html#ad99f216d6d06fb8bc99e3597173b7ef7">amrex::Dot</a></div><div class="ttdeci">FAB::value_type Dot(FabArray&lt; FAB &gt; const &amp;x, int xcomp, FabArray&lt; FAB &gt; const &amp;y, int ycomp, int ncomp, IntVect const &amp;nghost, bool local=false)</div><div class="ttdoc">Compute dot products of two FabArrays.</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:1673</div></div>
 <div class="ttc" id="anamespaceamrex_html_adadc145305be656128ae5ce4406166a0"><div class="ttname"><a href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">amrex::ParallelCopy</a></div><div class="ttdeci">void ParallelCopy(MF &amp;dst, MF const &amp;src, int scomp, int dcomp, int ncomp, IntVect const &amp;ng_src=IntVect(0), IntVect const &amp;ng_dst=IntVect(0), Periodicity const &amp;period=Periodicity::NonPeriodic())</div><div class="ttdoc">dst = src w/ MPI communication</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:2019</div></div>

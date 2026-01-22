@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -423,7 +422,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleCPUWrapper.html#a0ffd27065f64c20822c354eb67b2600a">  294</a></span>    <span class="keyword">operator</span> int () const noexcept</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleCPUWrapper.html#a0ffd27065f64c20822c354eb67b2600a">  294</a></span>    <span class="keyword">operator</span> <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> () const noexcept</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    {</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1particle__impl.html#ad9c8e52f5a0f065e525b1b356fc2417c">particle_impl::unpack_cpu</a>(*<a class="code hl_variable" href="structamrex_1_1ParticleCPUWrapper.html#a9da7d4371d02e10cd184a772ecfaa82a">m_idata</a>);</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
@@ -475,7 +474,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00336" data-start="{" data-end="}">
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleCPUWrapper.html#a8bcd4e744e68803399932bc157a98302">  336</a></span>    <span class="keyword">operator</span> int () const noexcept {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleCPUWrapper.html#a8bcd4e744e68803399932bc157a98302">  336</a></span>    <span class="keyword">operator</span> <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> () const noexcept {</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex_1_1particle__impl.html#ad9c8e52f5a0f065e525b1b356fc2417c">particle_impl::unpack_cpu</a>(*<a class="code hl_variable" href="structamrex_1_1ConstParticleCPUWrapper.html#ac8985bd9a524c39d1ed80cacca044197">m_idata</a>);</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    }</div>
 </div>
@@ -556,7 +555,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c">  413</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c">NInt</a> = T_NInt;</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span> </div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26">  416</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26">RealType</a> = <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>;</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069">  417</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069">IntType</a> = int;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069">  417</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1Particle.html#a18f4133e3109299ffc775040d3638069">IntType</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#a46b64285f66ebd66e86258462b440c51">  419</a></span>    <span class="keyword">static</span> <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="code hl_variable" href="structamrex_1_1Particle.html#a46b64285f66ebd66e86258462b440c51">the_next_id</a>;</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
@@ -936,6 +935,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="ttc" id="anamespaceamrex_html_a9a66cb310efdbc12b9b4d5f170470726"><div class="ttname"><a href="namespaceamrex.html#a9a66cb310efdbc12b9b4d5f170470726">amrex::RealVect</a></div><div class="ttdeci">RealVectND&lt; 3 &gt; RealVect</div><div class="ttdef"><b>Definition</b> AMReX_ParmParse.H:35</div></div>
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae4eb9d3fef37595defb201fde203bae6"><div class="ttname"><a href="namespaceamrex.html#ae4eb9d3fef37595defb201fde203bae6">amrex::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</div><div class="ttdef"><b>Definition</b> AMReX_AmrMesh.cpp:1237</div></div>
 <div class="ttc" id="astructamrex_1_1ConstParticleCPUWrapper_html"><div class="ttname"><a href="structamrex_1_1ConstParticleCPUWrapper.html">amrex::ConstParticleCPUWrapper</a></div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:327</div></div>
 <div class="ttc" id="astructamrex_1_1ConstParticleCPUWrapper_html_a32f40e61bbe474916c62e6fdc11ccfdf"><div class="ttname"><a href="structamrex_1_1ConstParticleCPUWrapper.html#a32f40e61bbe474916c62e6fdc11ccfdf">amrex::ConstParticleCPUWrapper::ConstParticleCPUWrapper</a></div><div class="ttdeci">__host__ __device__ ConstParticleCPUWrapper(const uint64_t &amp;idata) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:331</div></div>

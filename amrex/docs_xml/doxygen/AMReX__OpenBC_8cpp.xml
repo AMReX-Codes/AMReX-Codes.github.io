@@ -214,20 +214,6 @@
         <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="204">
-        <label>AMReX_BLFort.H</label>
-        <link refid="AMReX__BLFort_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="53" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-      </node>
       <node id="80">
         <label>AMReX_BLProfiler.H</label>
         <link refid="AMReX__BLProfiler_8H"/>
@@ -2500,6 +2486,9 @@
         <childnode refid="34" relation="include">
         </childnode>
       </node>
+      <node id="204">
+        <label>AMReX_BLFort.H</label>
+      </node>
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
@@ -3490,7 +3479,7 @@
 <codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(face.coordDir()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>b<sp/>=<sp/><ref refid="group__amrex__index__space_1ga5af1ac4b7471ba90a59e111dd0dd2b22" kindref="member">amrex::coarsen</ref>(b2d,<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(crse_ratio,crse_ratio,1));</highlight></codeline>
 <codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(1,openbc::P).surroundingNodes(1);</highlight></codeline>
-<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="group__amrex__memory_1gad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tmp<sp/>=<sp/>tmpfab.array();</highlight></codeline>
 <codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp<sp/>=<sp/>tmpfab.const_array();</highlight></codeline>
 <codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">amrex::ParallelFor</ref>(b,</highlight></codeline>
@@ -3508,7 +3497,7 @@
 <codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(face.coordDir()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>b<sp/>=<sp/><ref refid="group__amrex__index__space_1ga5af1ac4b7471ba90a59e111dd0dd2b22" kindref="member">amrex::coarsen</ref>(b2d,<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(crse_ratio,crse_ratio,1));</highlight></codeline>
 <codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(0,openbc::P).surroundingNodes(0);</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="group__amrex__memory_1gad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
 <codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tmp<sp/>=<sp/>tmpfab.array();</highlight></codeline>
 <codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp<sp/>=<sp/>tmpfab.const_array();</highlight></codeline>
 <codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">amrex::ParallelFor</ref>(b,</highlight></codeline>
@@ -3526,7 +3515,7 @@
 <codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/>b<sp/>=<sp/><ref refid="group__amrex__index__space_1ga5af1ac4b7471ba90a59e111dd0dd2b22" kindref="member">amrex::coarsen</ref>(b2d,<ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref>(crse_ratio,1,crse_ratio));</highlight></codeline>
 <codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(0,openbc::P).surroundingNodes(0);</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox<sp/>tmpfab(b,1,<ref refid="group__amrex__memory_1gad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
 <codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tmp<sp/>=<sp/>tmpfab.array();</highlight></codeline>
 <codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ctmp<sp/>=<sp/>tmpfab.const_array();</highlight></codeline>
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1f15630874d45aeb722ca649e6c4c3a9" kindref="member">amrex::ParallelFor</ref>(b,</highlight></codeline>

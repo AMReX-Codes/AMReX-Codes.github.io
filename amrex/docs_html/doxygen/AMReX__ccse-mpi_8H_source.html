@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -151,11 +150,11 @@ $(document).ready(function(){initNavTree('AMReX__ccse-mpi_8H_source.html',''); i
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html">   48</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceamrex_1_1mpidatatypes.html">amrex::mpidatatypes</a> {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e">   50</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e">MPI_Op</a>       = int;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">   51</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a>     = int;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a48f3cd58b33269ced36a063682094d31">   52</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a48f3cd58b33269ced36a063682094d31">MPI_Group</a>    = int;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">   53</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">MPI_Datatype</a> = int;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929">   54</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929">MPI_Request</a>  = int;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e">   50</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a4d7b1bc886c283188dca76ff1200458e">MPI_Op</a>       = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">   51</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a>     = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a48f3cd58b33269ced36a063682094d31">   52</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a48f3cd58b33269ced36a063682094d31">MPI_Group</a>    = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">   53</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">MPI_Datatype</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929">   54</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#aa06d59ab6bca4110216e437d289ae929">MPI_Request</a>  = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structamrex_1_1mpidatatypes_1_1MPI__Status.html">   55</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1mpidatatypes_1_1MPI__Status.html">MPI_Status</a> {};</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#a0e817a92e4daa9b4509a8aa9c447969b">   56</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceamrex_1_1mpidatatypes.html#a0e817a92e4daa9b4509a8aa9c447969b">MPI_DATATYPE_NULL</a> = 0;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1mpidatatypes.html#aa91849416755201e0b9b4951a6b426de">   57</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceamrex_1_1mpidatatypes.html#aa91849416755201e0b9b4951a6b426de">MPI_REQUEST_NULL</a>  = 0;</div>
@@ -208,6 +207,7 @@ $(document).ready(function(){initNavTree('AMReX__ccse-mpi_8H_source.html',''); i
 <div class="ttc" id="anamespaceamrex_1_1mpidatatypes_html_ac230e5420cb456b06694f569b522c61b"><div class="ttname"><a href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">amrex::mpidatatypes::MPI_Datatype</a></div><div class="ttdeci">int MPI_Datatype</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:53</div></div>
 <div class="ttc" id="anamespaceamrex_1_1mpidatatypes_html_ae4ce0e3e08c56092c211a9eaae820c4f"><div class="ttname"><a href="namespaceamrex_1_1mpidatatypes.html#ae4ce0e3e08c56092c211a9eaae820c4f">amrex::mpidatatypes::MPI_MAX_PROCESSOR_NAME</a></div><div class="ttdeci">static constexpr int MPI_MAX_PROCESSOR_NAME</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:62</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="astructamrex_1_1ParallelDescriptor_1_1Mpi__typemap_html"><div class="ttname"><a href="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html">amrex::ParallelDescriptor::Mpi_typemap</a></div><div class="ttdoc">Communication datatype (note: this structure also works without MPI)</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:78</div></div>
 <div class="ttc" id="astructamrex_1_1ParallelDescriptor_1_1Mpi__typemap_html_a178254a5520c3ee1ea23f47987392468"><div class="ttname"><a href="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468">amrex::ParallelDescriptor::Mpi_typemap::type</a></div><div class="ttdeci">static MPI_Datatype type()</div></div>
 <div class="ttc" id="astructamrex_1_1mpidatatypes_1_1MPI__Status_html"><div class="ttname"><a href="structamrex_1_1mpidatatypes_1_1MPI__Status.html">amrex::mpidatatypes::MPI_Status</a></div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:55</div></div>

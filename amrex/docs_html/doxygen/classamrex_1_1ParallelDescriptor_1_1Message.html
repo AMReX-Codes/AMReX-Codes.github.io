@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -125,9 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a42d6517959dbf89018b970cb1c0cf66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934d6ed56619c14db1833d57662fd86b" id="r_a934d6ed56619c14db1833d57662fd86b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a934d6ed56619c14db1833d57662fd86b">count</a> () const</td></tr>
 <tr class="separator:a934d6ed56619c14db1833d57662fd86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099cb5eb1b61ff860ad6fbd1fe1b5d94" id="r_a099cb5eb1b61ff860ad6fbd1fe1b5d94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a099cb5eb1b61ff860ad6fbd1fe1b5d94">tag</a> () const</td></tr>
+<tr class="memitem:a099cb5eb1b61ff860ad6fbd1fe1b5d94" id="r_a099cb5eb1b61ff860ad6fbd1fe1b5d94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a099cb5eb1b61ff860ad6fbd1fe1b5d94">tag</a> () const</td></tr>
 <tr class="separator:a099cb5eb1b61ff860ad6fbd1fe1b5d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226101263b27282d94f687320e25177f" id="r_a226101263b27282d94f687320e25177f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a226101263b27282d94f687320e25177f">pid</a> () const</td></tr>
+<tr class="memitem:a226101263b27282d94f687320e25177f" id="r_a226101263b27282d94f687320e25177f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a226101263b27282d94f687320e25177f">pid</a> () const</td></tr>
 <tr class="separator:a226101263b27282d94f687320e25177f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20021c8fa972de865da57cfd5d14fb81" id="r_a20021c8fa972de865da57cfd5d14fb81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1mpidatatypes.html#ac230e5420cb456b06694f569b522c61b">MPI_Datatype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a20021c8fa972de865da57cfd5d14fb81">type</a> () const</td></tr>
 <tr class="separator:a20021c8fa972de865da57cfd5d14fb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,7 +255,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::ParallelDescriptor::Message::pid </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParallelDescriptor::Message::pid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -328,7 +322,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::ParallelDescriptor::Message::tag </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::ParallelDescriptor::Message::tag </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

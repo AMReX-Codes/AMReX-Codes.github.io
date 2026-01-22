@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -2149,7 +2148,7 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="foldopen" id="foldopen02209" data-start="{" data-end="}">
 <div class="line"><a id="l02209" name="l02209"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexerND_3_011_01_4.html#aa910c1c7b67362b9dfcbaf4bd42f4f6b"> 2209</a></span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;1&gt;</a> <a class="code hl_function" href="structamrex_1_1BoxIndexerND_3_011_01_4.html#aa910c1c7b67362b9dfcbaf4bd42f4f6b">intVect</a> (std::uint64_t icell)<span class="keyword"> const</span></div>
 <div class="line"><a id="l02210" name="l02210"></a><span class="lineno"> 2210</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l02211" name="l02211"></a><span class="lineno"> 2211</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;1&gt;</a>{int(icell)+lo};</div>
+<div class="line"><a id="l02211" name="l02211"></a><span class="lineno"> 2211</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVectND&lt;1&gt;</a>{<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo};</div>
 <div class="line"><a id="l02212" name="l02212"></a><span class="lineno"> 2212</span>    }</div>
 </div>
 <div class="line"><a id="l02213" name="l02213"></a><span class="lineno"> 2213</span> </div>
@@ -2157,7 +2156,7 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="foldopen" id="foldopen02215" data-start="{" data-end="}">
 <div class="line"><a id="l02215" name="l02215"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexerND_3_011_01_4.html#a1f4a39b6315fe42ff21722460fbe20c6"> 2215</a></span>    <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
 <div class="line"><a id="l02216" name="l02216"></a><span class="lineno"> 2216</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l02217" name="l02217"></a><span class="lineno"> 2217</span>        <span class="keywordflow">return</span> {int(icell)+lo, 0, 0};</div>
+<div class="line"><a id="l02217" name="l02217"></a><span class="lineno"> 2217</span>        <span class="keywordflow">return</span> {<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo, 0, 0};</div>
 <div class="line"><a id="l02218" name="l02218"></a><span class="lineno"> 2218</span>    }</div>
 </div>
 <div class="line"><a id="l02219" name="l02219"></a><span class="lineno"> 2219</span> </div>
@@ -2284,7 +2283,7 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="ttc" id="anamespaceamrex_html_a517d51846bba6df79106505faa2b5ac3"><div class="ttname"><a href="namespaceamrex.html#a517d51846bba6df79106505faa2b5ac3">amrex::makeSingleCellBox</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; makeSingleCellBox(int i, int j, int k, IndexTypeND&lt; dim &gt; typ=IndexTypeND&lt; dim &gt;::TheCellType())</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2134</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_a63f4219b3f3f3b188db1f0a36ac53ef9"><div class="ttname"><a href="namespaceamrex.html#a63f4219b3f3f3b188db1f0a36ac53ef9">amrex::BoxResize</a></div><div class="ttdeci">__host__ __device__ constexpr BoxND&lt; new_dim &gt; BoxResize(const BoxND&lt; old_dim &gt; &amp;bx) noexcept</div><div class="ttdoc">Return a new BoxND of size new_dim by either shrinking or expanding this BoxND.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1897</div></div>
-<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
+<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:24</div></div>
 <div class="ttc" id="anamespaceamrex_html_a689a69681821630d9a11f838e8b2bea2"><div class="ttname"><a href="namespaceamrex.html#a689a69681821630d9a11f838e8b2bea2">amrex::adjCell</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; adjCell(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</div><div class="ttdoc">Similar to adjCellLo and adjCellHi; operates on given face.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1757</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6f0d0bcf60c6a23dd7a821c20bdacc79"><div class="ttname"><a href="namespaceamrex.html#a6f0d0bcf60c6a23dd7a821c20bdacc79">amrex::begin_iv</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; begin_iv(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1923</div></div>
 <div class="ttc" id="anamespaceamrex_html_a76fbe1062cee2e63648f5a448ea82ea4"><div class="ttname"><a href="namespaceamrex.html#a76fbe1062cee2e63648f5a448ea82ea4">amrex::shift</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; shift(const BoxND&lt; dim &gt; &amp;b, int dir, int nzones) noexcept</div><div class="ttdoc">Return a BoxND with indices shifted by nzones in dir direction.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1495</div></div>
@@ -2294,11 +2293,12 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="ttc" id="anamespaceamrex_html_a8ba999ed1340d4d82439b69a49c563ee"><div class="ttname"><a href="namespaceamrex.html#a8ba999ed1340d4d82439b69a49c563ee">amrex::length_iv</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; length_iv(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1941</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69">amrex::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdef"><b>Definition</b> AMReX_Orientation.H:14</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9889c3e5147768e9b0e014a85d8fe5cd"><div class="ttname"><a href="namespaceamrex.html#a9889c3e5147768e9b0e014a85d8fe5cd">amrex::bdryNode</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; bdryNode(const BoxND&lt; dim &gt; &amp;b, Orientation face, int len=1) noexcept</div><div class="ttdoc">Similar to bdryLo and bdryHi except that it operates on the given face of box b.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1672</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9fcd46e832a59e17d0be031ff2da83fe"><div class="ttname"><a href="namespaceamrex.html#a9fcd46e832a59e17d0be031ff2da83fe">amrex::growLo</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; growLo(const BoxND&lt; dim &gt; &amp;b, int idir, int n_cell) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1354</div></div>
 <div class="ttc" id="anamespaceamrex_html_aa0b5ecef36390cfee654d209a6023589"><div class="ttname"><a href="namespaceamrex.html#aa0b5ecef36390cfee654d209a6023589">amrex::ubound_iv</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; ubound_iv(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1914</div></div>
 <div class="ttc" id="anamespaceamrex_html_acd0207594dab5726379edcd1397ce595"><div class="ttname"><a href="namespaceamrex.html#acd0207594dab5726379edcd1397ce595">amrex::BoxExpand</a></div><div class="ttdeci">__host__ __device__ constexpr BoxND&lt; new_dim &gt; BoxExpand(const BoxND&lt; old_dim &gt; &amp;bx) noexcept</div><div class="ttdoc">Return a new BoxND of size new_dim and assigns all values of this BoxND to it and (small=0,...</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1885</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad0dfb3671177716f07a0a3b6501d29ab"><div class="ttname"><a href="namespaceamrex.html#ad0dfb3671177716f07a0a3b6501d29ab">amrex::getCell</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; getCell(BoxND&lt; dim &gt; const *boxes, int nboxes, Long icell) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2103</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad433171e426d58e2414c5394bfe0303c"><div class="ttname"><a href="namespaceamrex.html#ad433171e426d58e2414c5394bfe0303c">amrex::AllGatherBoxes</a></div><div class="ttdeci">void AllGatherBoxes(Vector&lt; Box &gt; &amp;bxs, int n_extra_reserve)</div><div class="ttdef"><b>Definition</b> AMReX_Box.cpp:124</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc21609c555583eb7c24d38d85a6d3c4"><div class="ttname"><a href="namespaceamrex.html#adc21609c555583eb7c24d38d85a6d3c4">amrex::IntVectCat</a></div><div class="ttdeci">__host__ __device__ constexpr IntVectND&lt; detail::get_sum&lt; d, dims... &gt;()&gt; IntVectCat(const IntVectND&lt; d &gt; &amp;v, const IntVectND&lt; dims &gt; &amp;...vects) noexcept</div><div class="ttdoc">Returns a IntVectND obtained by concatenating the input IntVectNDs. The dimension of the return value...</div><div class="ttdef"><b>Definition</b> AMReX_IntVect.H:1168</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae41a3ef13a63737b46765a7fec52fe39"><div class="ttname"><a href="namespaceamrex.html#ae41a3ef13a63737b46765a7fec52fe39">amrex::bdryHi</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; bdryHi(const BoxND&lt; dim &gt; &amp;b, int dir, int len=1) noexcept</div><div class="ttdoc">Return the edge-centered BoxND (in direction dir) defining the high side of BoxND b.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1648</div></div>
@@ -2320,7 +2320,7 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="ttc" id="astructamrex_1_1CellIndexEnum_html_aceb83f25ce499aa265f5326d75e1a0a3"><div class="ttname"><a href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">amrex::CellIndexEnum::CellIndex</a></div><div class="ttdeci">CellIndex</div><div class="ttdoc">The cell index type: one of CELL or NODE.</div><div class="ttdef"><b>Definition</b> AMReX_IndexType.H:21</div></div>
 <div class="ttc" id="astructamrex_1_1CellIndexEnum_html_aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439"><div class="ttname"><a href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439">amrex::CellIndexEnum::CELL</a></div><div class="ttdeci">@ CELL</div><div class="ttdef"><b>Definition</b> AMReX_IndexType.H:21</div></div>
 <div class="ttc" id="astructamrex_1_1Dim3_html"><div class="ttname"><a href="structamrex_1_1Dim3.html">amrex::Dim3</a></div><div class="ttdef"><b>Definition</b> AMReX_Dim3.H:12</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html">amrex::Math::FastDivmodU64</a></div><div class="ttdef"><b>Definition</b> AMReX_Math.H:438</div></div>
 <div class="ttc" id="astructamrex_1_1ParallelDescriptor_1_1Mpi__typemap_html_a178254a5520c3ee1ea23f47987392468"><div class="ttname"><a href="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468">amrex::ParallelDescriptor::Mpi_typemap::type</a></div><div class="ttdeci">static MPI_Datatype type()</div></div>
 </div><!-- fragment --></div><!-- contents -->

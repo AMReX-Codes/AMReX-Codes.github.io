@@ -55,6 +55,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Check whether the memory is accessible on the device. Note that isDeviceAccessible and isHostAccessible can both be true. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -70,6 +71,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Check whether the memory is accessible on the host. Note that isDeviceAccessible and isHostAccessible can both be true. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -83,8 +85,10 @@
         <qualifiedname>amrex::BArena::isManaged</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a7119489f4464f902d907f6dfe9716909">isManaged</reimplements>
         <briefdescription>
+<para>Check whether it is managed GPU memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -98,8 +102,10 @@
         <qualifiedname>amrex::BArena::isDevice</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1aa45555e396ee74158b0c6f3331ce5536">isDevice</reimplements>
         <briefdescription>
+<para>Check whether it is non-managed GPU device memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -113,8 +119,10 @@
         <qualifiedname>amrex::BArena::isPinned</qualifiedname>
         <reimplements refid="classamrex_1_1Arena_1a336e271c5a07296e4c2866d194111784">isPinned</reimplements>
         <briefdescription>
+<para>Check whether it is pinned host memory. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

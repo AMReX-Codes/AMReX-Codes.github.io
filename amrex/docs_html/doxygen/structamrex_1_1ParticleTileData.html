@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -121,7 +115,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a3db02853f88b6daab07d024e148538d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635f2e6945e91bf61056728dc2c7679f" id="r_a635f2e6945e91bf61056728dc2c7679f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a635f2e6945e91bf61056728dc2c7679f">RealType</a> = <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a></td></tr>
 <tr class="separator:a635f2e6945e91bf61056728dc2c7679f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9443296b677d39e174350756d26a9145" id="r_a9443296b677d39e174350756d26a9145"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">IntType</a> = int</td></tr>
+<tr class="memitem:a9443296b677d39e174350756d26a9145" id="r_a9443296b677d39e174350756d26a9145"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">IntType</a> = <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td></tr>
 <tr class="separator:a9443296b677d39e174350756d26a9145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98449dc53e1e083e33c2c4c377dbdefd" id="r_a98449dc53e1e083e33c2c4c377dbdefd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> = <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; <a class="el" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">NStructReal</a>+<a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a>, <a class="el" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a>+<a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a> &gt;</td></tr>
 <tr class="separator:a98449dc53e1e083e33c2c4c377dbdefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,35 +124,35 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64897301c981a1cbeab1122b44fa64f1" id="r_a64897301c981a1cbeab1122b44fa64f1"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a64897301c981a1cbeab1122b44fa64f1">pos</a> (const int dir, const int index) const &amp;</td></tr>
+<tr class="memitem:a64897301c981a1cbeab1122b44fa64f1" id="r_a64897301c981a1cbeab1122b44fa64f1"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a64897301c981a1cbeab1122b44fa64f1">pos</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const &amp;</td></tr>
 <tr class="separator:a64897301c981a1cbeab1122b44fa64f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f01985216d9dc49471b1a600645af2d" id="r_a4f01985216d9dc49471b1a600645af2d"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4f01985216d9dc49471b1a600645af2d">id</a> (const int index) const &amp;</td></tr>
+<tr class="memitem:a4f01985216d9dc49471b1a600645af2d" id="r_a4f01985216d9dc49471b1a600645af2d"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4f01985216d9dc49471b1a600645af2d">id</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const &amp;</td></tr>
 <tr class="separator:a4f01985216d9dc49471b1a600645af2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e9941240c5a7f121c8c83cdeb5ddc2f" id="r_a1e9941240c5a7f121c8c83cdeb5ddc2f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1e9941240c5a7f121c8c83cdeb5ddc2f">cpu</a> (const int index) const &amp;</td></tr>
+<tr class="memitem:a1e9941240c5a7f121c8c83cdeb5ddc2f" id="r_a1e9941240c5a7f121c8c83cdeb5ddc2f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1e9941240c5a7f121c8c83cdeb5ddc2f">cpu</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const &amp;</td></tr>
 <tr class="separator:a1e9941240c5a7f121c8c83cdeb5ddc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4892c70a9480ca51f00d7744780aa008" id="r_a4892c70a9480ca51f00d7744780aa008"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4892c70a9480ca51f00d7744780aa008">idcpu</a> (const int index) const &amp;</td></tr>
+<tr class="memitem:a4892c70a9480ca51f00d7744780aa008" id="r_a4892c70a9480ca51f00d7744780aa008"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4892c70a9480ca51f00d7744780aa008">idcpu</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const &amp;</td></tr>
 <tr class="separator:a4892c70a9480ca51f00d7744780aa008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aa96729fb2719a0c1d8cdca25210d85" id="r_a4aa96729fb2719a0c1d8cdca25210d85"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4aa96729fb2719a0c1d8cdca25210d85">rdata</a> (const int attribute_index) const</td></tr>
+<tr class="memitem:a4aa96729fb2719a0c1d8cdca25210d85" id="r_a4aa96729fb2719a0c1d8cdca25210d85"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4aa96729fb2719a0c1d8cdca25210d85">rdata</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> attribute_index) const</td></tr>
 <tr class="separator:a4aa96729fb2719a0c1d8cdca25210d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81af7901e34f6995b98c96b1121d34f" id="r_ab81af7901e34f6995b98c96b1121d34f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#ab81af7901e34f6995b98c96b1121d34f">idata</a> (const int attribute_index) const</td></tr>
+<tr class="memitem:ab81af7901e34f6995b98c96b1121d34f" id="r_ab81af7901e34f6995b98c96b1121d34f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#ab81af7901e34f6995b98c96b1121d34f">idata</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> attribute_index) const</td></tr>
 <tr class="separator:ab81af7901e34f6995b98c96b1121d34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2d4a1e5c414e271debf3576b983f54" id="r_add2d4a1e5c414e271debf3576b983f54"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#add2d4a1e5c414e271debf3576b983f54">operator[]</a> (const int index) const</td></tr>
+<tr class="memitem:add2d4a1e5c414e271debf3576b983f54" id="r_add2d4a1e5c414e271debf3576b983f54"><td class="memItemLeft" align="right" valign="top">__host__ __device__ decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#add2d4a1e5c414e271debf3576b983f54">operator[]</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const</td></tr>
 <tr class="separator:add2d4a1e5c414e271debf3576b983f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f09626a298872e222c3efadfde85ebb" id="r_a4f09626a298872e222c3efadfde85ebb"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4f09626a298872e222c3efadfde85ebb">packParticleData</a> (char *buffer, int src_index, std::size_t dst_offset, const int *comm_real, const int *comm_int) const noexcept</td></tr>
+<tr class="memitem:a4f09626a298872e222c3efadfde85ebb" id="r_a4f09626a298872e222c3efadfde85ebb"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a4f09626a298872e222c3efadfde85ebb">packParticleData</a> (char *buffer, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_index, std::size_t dst_offset, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_real, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_int) const noexcept</td></tr>
 <tr class="separator:a4f09626a298872e222c3efadfde85ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a322413bce76635a86034e429711ba2b6" id="r_a322413bce76635a86034e429711ba2b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a322413bce76635a86034e429711ba2b6">unpackParticleData</a> (const char *buffer, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> src_offset, int dst_index, const int *comm_real, const int *comm_int) const noexcept</td></tr>
+<tr class="memitem:a322413bce76635a86034e429711ba2b6" id="r_a322413bce76635a86034e429711ba2b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a322413bce76635a86034e429711ba2b6">unpackParticleData</a> (const char *buffer, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> src_offset, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dst_index, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_real, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_int) const noexcept</td></tr>
 <tr class="separator:a322413bce76635a86034e429711ba2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7" id="r_a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1185dd143361b0f65903118ccf7d78e7">getSuperParticle</a> (int index) const noexcept</td></tr>
+<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7" id="r_a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1185dd143361b0f65903118ccf7d78e7">getSuperParticle</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:a1185dd143361b0f65903118ccf7d78e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7" id="r_a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1185dd143361b0f65903118ccf7d78e7">getSuperParticle</a> (int index) const noexcept</td></tr>
+<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7" id="r_a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1185dd143361b0f65903118ccf7d78e7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a1185dd143361b0f65903118ccf7d78e7">getSuperParticle</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:a1185dd143361b0f65903118ccf7d78e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366" id="r_aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aee7217bf358264f1a6f903aa69c7e366">setSuperParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> &amp;sp, int index) const noexcept</td></tr>
+<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366" id="r_aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aee7217bf358264f1a6f903aa69c7e366">setSuperParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> &amp;sp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:aee7217bf358264f1a6f903aa69c7e366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366" id="r_aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aee7217bf358264f1a6f903aa69c7e366">setSuperParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> &amp;sp, int index) const noexcept</td></tr>
+<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366" id="r_aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aee7217bf358264f1a6f903aa69c7e366"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aee7217bf358264f1a6f903aa69c7e366">setSuperParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> &amp;sp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:aee7217bf358264f1a6f903aa69c7e366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -171,26 +165,26 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a1f4aec471e58edd6d4c3bcbff0ff8182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249e437162c17a56356c37d2d1a90306" id="r_a249e437162c17a56356c37d2d1a90306"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> *, <a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a249e437162c17a56356c37d2d1a90306">m_rdata</a></td></tr>
 <tr class="separator:a249e437162c17a56356c37d2d1a90306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52de30978d928054ae27a5a62cbf7eab" id="r_a52de30978d928054ae27a5a62cbf7eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; int *, <a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a52de30978d928054ae27a5a62cbf7eab">m_idata</a></td></tr>
+<tr class="memitem:a52de30978d928054ae27a5a62cbf7eab" id="r_a52de30978d928054ae27a5a62cbf7eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, <a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a52de30978d928054ae27a5a62cbf7eab">m_idata</a></td></tr>
 <tr class="separator:a52de30978d928054ae27a5a62cbf7eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaf158195e20f27b6f71e4f8c3cecdde" id="r_aaaf158195e20f27b6f71e4f8c3cecdde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aaaf158195e20f27b6f71e4f8c3cecdde">m_num_runtime_real</a></td></tr>
+<tr class="memitem:aaaf158195e20f27b6f71e4f8c3cecdde" id="r_aaaf158195e20f27b6f71e4f8c3cecdde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aaaf158195e20f27b6f71e4f8c3cecdde">m_num_runtime_real</a></td></tr>
 <tr class="separator:aaaf158195e20f27b6f71e4f8c3cecdde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84c4da34c34c28aeeeaad3424ea4d95a" id="r_a84c4da34c34c28aeeeaad3424ea4d95a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a84c4da34c34c28aeeeaad3424ea4d95a">m_num_runtime_int</a></td></tr>
+<tr class="memitem:a84c4da34c34c28aeeeaad3424ea4d95a" id="r_a84c4da34c34c28aeeeaad3424ea4d95a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a84c4da34c34c28aeeeaad3424ea4d95a">m_num_runtime_int</a></td></tr>
 <tr class="separator:a84c4da34c34c28aeeeaad3424ea4d95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8a653783a195d3412b26b9785645220" id="r_aa8a653783a195d3412b26b9785645220"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> *__restrict__ *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#aa8a653783a195d3412b26b9785645220">m_runtime_rdata</a></td></tr>
 <tr class="separator:aa8a653783a195d3412b26b9785645220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3cec743b9aa673b03afb8f7ddda1e5a" id="r_ae3cec743b9aa673b03afb8f7ddda1e5a"><td class="memItemLeft" align="right" valign="top">int *__restrict__ *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#ae3cec743b9aa673b03afb8f7ddda1e5a">m_runtime_idata</a></td></tr>
+<tr class="memitem:ae3cec743b9aa673b03afb8f7ddda1e5a" id="r_ae3cec743b9aa673b03afb8f7ddda1e5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *__restrict__ *__restrict__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#ae3cec743b9aa673b03afb8f7ddda1e5a">m_runtime_idata</a></td></tr>
 <tr class="separator:ae3cec743b9aa673b03afb8f7ddda1e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a9338e60dfce599b67883d4fdc4ec69fa" id="r_a9338e60dfce599b67883d4fdc4ec69fa"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a> = NArrayReal</td></tr>
+<tr class="memitem:a9338e60dfce599b67883d4fdc4ec69fa" id="r_a9338e60dfce599b67883d4fdc4ec69fa"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a> = NArrayReal</td></tr>
 <tr class="separator:a9338e60dfce599b67883d4fdc4ec69fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfec304d600c86d3dc5fda841cd2aaff" id="r_adfec304d600c86d3dc5fda841cd2aaff"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a> = NArrayInt</td></tr>
+<tr class="memitem:adfec304d600c86d3dc5fda841cd2aaff" id="r_adfec304d600c86d3dc5fda841cd2aaff"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a> = NArrayInt</td></tr>
 <tr class="separator:adfec304d600c86d3dc5fda841cd2aaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af53dd2bb7ca0f780d4fbd86cbab4bee9" id="r_af53dd2bb7ca0f780d4fbd86cbab4bee9"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">NStructReal</a> = ParticleType::NReal</td></tr>
+<tr class="memitem:af53dd2bb7ca0f780d4fbd86cbab4bee9" id="r_af53dd2bb7ca0f780d4fbd86cbab4bee9"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">NStructReal</a> = ParticleType::NReal</td></tr>
 <tr class="separator:af53dd2bb7ca0f780d4fbd86cbab4bee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509d7d346b709b39d1261144b7f1de26" id="r_a509d7d346b709b39d1261144b7f1de26"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a> = ParticleType::NInt</td></tr>
+<tr class="memitem:a509d7d346b709b39d1261144b7f1de26" id="r_a509d7d346b709b39d1261144b7f1de26"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a> = ParticleType::NInt</td></tr>
 <tr class="separator:a509d7d346b709b39d1261144b7f1de26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0b2ff729f671bc4b555c4ede47e595d" id="r_ab0b2ff729f671bc4b555c4ede47e595d"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTileData.html#ab0b2ff729f671bc4b555c4ede47e595d">is_particle_tile_data</a> = true</td></tr>
 <tr class="separator:ab0b2ff729f671bc4b555c4ede47e595d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,7 +196,7 @@ Static Public Attributes</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::AOS_PTR =  std::conditional_t&lt;T_ParticleType::is_soa_particle, void * __restrict__ , <a class="el" href="structamrex_1_1ParticleTileData.html#a6732de69363d6c0c39ae2d462b1cc57e">ParticleType</a> * __restrict__ &gt;</td>
@@ -218,10 +212,10 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::IntType =  int</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::IntType =  <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -234,7 +228,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::ParticleRefType =  T_ParticleType&amp;</td>
@@ -250,7 +244,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::ParticleType =  T_ParticleType</td>
@@ -266,7 +260,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::RealType =  <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a></td>
@@ -282,7 +276,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::Self =  <a class="el" href="structamrex_1_1ParticleTileData.html">ParticleTileData</a>&lt;<a class="el" href="structamrex_1_1ParticleTileData.html#a6732de69363d6c0c39ae2d462b1cc57e">ParticleType</a>, <a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a>, <a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a>&gt;</td>
@@ -298,7 +292,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::SuperParticleType =  <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt;<a class="el" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">NStructReal</a>+<a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a>, <a class="el" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a>+<a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a>&gt;</td>
@@ -315,7 +309,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -323,7 +317,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ decltype(auto) <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::cpu </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const &amp;</td>
         </tr>
@@ -343,9 +337,9 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -353,7 +347,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle,
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::getSuperParticle </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -373,9 +367,9 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -383,7 +377,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle,
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="structamrex_1_1ParticleTileData.html#a98449dc53e1e083e33c2c4c377dbdefd">SuperParticleType</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::getSuperParticle </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -403,7 +397,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -411,7 +405,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ decltype(auto) <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::id </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const &amp;</td>
         </tr>
@@ -431,15 +425,15 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ int * <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::idata </td>
+          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> * <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::idata </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>attribute_index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -459,7 +453,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -467,7 +461,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ decltype(auto) <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::idcpu </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const &amp;</td>
         </tr>
@@ -487,7 +481,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -495,7 +489,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ decltype(auto) <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -515,7 +509,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -529,7 +523,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_index</em>, </td>
         </tr>
         <tr>
@@ -541,13 +535,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td>
           <td class="paramname"><em>comm_real</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td>
           <td class="paramname"><em>comm_int</em>&#160;</td>
         </tr>
         <tr>
@@ -571,7 +565,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -579,13 +573,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ decltype(auto) <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::pos </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -609,7 +603,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -617,7 +611,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a> * <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::rdata </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>attribute_index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -637,9 +631,9 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -653,7 +647,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle,
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -677,9 +671,9 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -693,7 +687,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle,
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -717,7 +711,7 @@ template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle,
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -737,19 +731,19 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dst_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td>
           <td class="paramname"><em>comm_real</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td>
           <td class="paramname"><em>comm_int</em>&#160;</td>
         </tr>
         <tr>
@@ -774,7 +768,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -798,7 +792,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structamrex_1_1ParticleTileData.html#a804776036d9b9728c58c31db18a66b27">AOS_PTR</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_aos</td>
@@ -814,10 +808,10 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;int*, <a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a>&gt; <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_idata</td>
+          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>*, <a class="el" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a>&gt; <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_idata</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -830,7 +824,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">uint64_t* <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_idcpu</td>
@@ -846,10 +840,10 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_num_runtime_int</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_num_runtime_int</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -862,10 +856,10 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_num_runtime_real</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_num_runtime_real</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -878,7 +872,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>*, <a class="el" href="structamrex_1_1ParticleTileData.html#a9338e60dfce599b67883d4fdc4ec69fa">NAR</a>&gt; <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_rdata</td>
@@ -894,10 +888,10 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int* __restrict__* __restrict__ <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_runtime_idata</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>* __restrict__* __restrict__ <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_runtime_idata</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -910,7 +904,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>* __restrict__* __restrict__ <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_runtime_rdata</td>
@@ -926,7 +920,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::m_size</td>
@@ -942,13 +936,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NAI = NArrayInt</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NAI = NArrayInt</td>
         </tr>
       </table>
   </td>
@@ -966,13 +960,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NAR = NArrayReal</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NAR = NArrayReal</td>
         </tr>
       </table>
   </td>
@@ -990,13 +984,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NStructInt = ParticleType::NInt</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NStructInt = ParticleType::NInt</td>
         </tr>
       </table>
   </td>
@@ -1014,13 +1008,13 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
+template&lt;typename T_ParticleType , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NStructReal = ParticleType::NReal</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a>&lt; T_ParticleType, NArrayReal, NArrayInt &gt;::NStructReal = ParticleType::NReal</td>
         </tr>
       </table>
   </td>

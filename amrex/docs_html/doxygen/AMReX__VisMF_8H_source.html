@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -443,7 +442,7 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H_source.html',''); init
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>            std::unique_ptr&lt;FAB&gt; hostfab;</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>            <span class="keywordflow">if</span> (fab.arena()-&gt;isManaged() || fab.arena()-&gt;isDevice()) {</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                hostfab = std::make_unique&lt;FAB&gt;(fab.box(), fab.nComp(), <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>());</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>                hostfab = std::make_unique&lt;FAB&gt;(fab.box(), fab.nComp(), <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>());</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(hostfab-&gt;dataPtr(), fab.dataPtr(),</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                                       fab.size()*<span class="keyword">sizeof</span>(<span class="keyword">typename</span> FAB::value_type));</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
@@ -863,6 +862,7 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H_source.html',''); init
 <div class="ttc" id="aclassamrex_1_1VisMF_html_af7f852d2d1e0656e85e58dcf5ba364b1"><div class="ttname"><a href="classamrex_1_1VisMF.html#af7f852d2d1e0656e85e58dcf5ba364b1">amrex::VisMF::NoFabHeader</a></div><div class="ttdeci">static bool NoFabHeader(const VisMF::Header &amp;hdr)</div><div class="ttdef"><b>Definition</b> AMReX_VisMF.cpp:2236</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:128</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaa123b1406423d74e38759f1412955db8"><div class="ttname"><a href="group__amrex__mpi.html#gaa123b1406423d74e38759f1412955db8">amrex::ParallelDescriptor::ReadAndBcastFile</a></div><div class="ttdeci">void ReadAndBcastFile(const std::string &amp;filename, Vector&lt; char &gt; &amp;charBuf, bool bExitOnError, const MPI_Comm &amp;comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.cpp:1495</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaa191723b5d24ceaf64e9d49f542cfcc2"><div class="ttname"><a href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">amrex::ParallelDescriptor::NProcs</a></div><div class="ttdeci">int NProcs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:255</div></div>
@@ -881,7 +881,6 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H_source.html',''); init
 <div class="ttc" id="anamespaceamrex_html_a89eb9459b4109c4f9a9b3225abae29f8"><div class="ttname"><a href="namespaceamrex.html#a89eb9459b4109c4f9a9b3225abae29f8">amrex::match</a></div><div class="ttdeci">bool match(const BoxArray &amp;x, const BoxArray &amp;y)</div><div class="ttdoc">Note that two BoxArrays that match are not necessarily equal.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.cpp:1934</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="anamespaceamrex_html_abd0af45ba1623e2da1dc0f0832c4071b"><div class="ttname"><a href="namespaceamrex.html#abd0af45ba1623e2da1dc0f0832c4071b">amrex::Read</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_same_v&lt; FAB, IArrayBox &gt; &gt; Read(FabArray&lt; FAB &gt; &amp;fa, const std::string &amp;name)</div><div class="ttdoc">Read iMultiFab/FabArray&lt;IArrayBox&gt;</div><div class="ttdef"><b>Definition</b> AMReX_VisMF.H:571</div></div>
 <div class="ttc" id="anamespaceamrex_html_adb7fdc4e49a1cc9001bbee2b985c56f1"><div class="ttname"><a href="namespaceamrex.html#adb7fdc4e49a1cc9001bbee2b985c56f1">amrex::operator&gt;&gt;</a></div><div class="ttdeci">std::istream &amp; operator&gt;&gt;(std::istream &amp;is, BoxND&lt; dim &gt; &amp;bx)</div><div class="ttdoc">Read from istream.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1825</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>

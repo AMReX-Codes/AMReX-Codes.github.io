@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -662,7 +656,7 @@ $(document).ready(function(){initNavTree('namespaces.html',''); initResizable();
 <tr id="row_0_359_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1OrientationIter.html" target="_self">OrientationIter</a></td><td class="desc">An Iterator over the <a class="el" href="classamrex_1_1Orientation.html" title="Encapsulation of the Orientation of the Faces of a Box.">Orientation</a> of Faces of a Box </td></tr>
 <tr id="row_0_360_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1ParConstIter__impl.html" target="_self">ParConstIter_impl</a></td><td class="desc"></td></tr>
 <tr id="row_0_361_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structamrex_1_1ParCsr.html" target="_self">ParCsr</a></td><td class="desc">GPU-ready non-owning <a class="el" href="structamrex_1_1CSR.html">CSR</a> data container </td></tr>
-<tr id="row_0_362_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1PArena.html" target="_self">PArena</a></td><td class="desc">This arena uses CUDA stream-ordered memory allocator if available. If not, use <a class="el" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a> </td></tr>
+<tr id="row_0_362_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1PArena.html" target="_self">PArena</a></td><td class="desc">This arena uses CUDA stream-ordered memory allocator if available. If not, use <a class="el" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena()</a> </td></tr>
 <tr id="row_0_363_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1ParGDB.html" target="_self">ParGDB</a></td><td class="desc">We use this for non-Amr particle code </td></tr>
 <tr id="row_0_364_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1ParGDBBase.html" target="_self">ParGDBBase</a></td><td class="desc"></td></tr>
 <tr id="row_0_365_" class="odd" style="display:none;"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classamrex_1_1ParIter__impl.html" target="_self">ParIter_impl</a></td><td class="desc"></td></tr>

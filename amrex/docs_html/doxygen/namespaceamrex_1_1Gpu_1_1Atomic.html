@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -115,7 +109,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ab8aadbde6a1a136b84a5b69cf01da607" id="r_ab8aadbde6a1a136b84a5b69cf01da607"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ab8aadbde6a1a136b84a5b69cf01da607"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">Add</a> (T *sum, T value) noexcept</td></tr>
 <tr class="separator:ab8aadbde6a1a136b84a5b69cf01da607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fadb2b30805417ff8e2dfb0ec569945" id="r_a1fadb2b30805417ff8e2dfb0ec569945"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned int), int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a1fadb2b30805417ff8e2dfb0ec569945" id="r_a1fadb2b30805417ff8e2dfb0ec569945"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a1fadb2b30805417ff8e2dfb0ec569945"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a1fadb2b30805417ff8e2dfb0ec569945">If_device</a> (T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
 <tr class="separator:a1fadb2b30805417ff8e2dfb0ec569945"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54472d6cb90e23b6479dc667f7e02669" id="r_a54472d6cb90e23b6479dc667f7e02669"><td class="memTemplParams" colspan="2">template&lt;class T , class Op , class Cond &gt; </td></tr>
@@ -149,9 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adb909da17c74d800eb3e15ca85d5efeb" id="r_adb909da17c74d800eb3e15ca85d5efeb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:adb909da17c74d800eb3e15ca85d5efeb"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb">Max</a> (T *const m, T const value) noexcept</td></tr>
 <tr class="separator:adb909da17c74d800eb3e15ca85d5efeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a473df6809f21486d8c6fe79606fbb82e" id="r_a473df6809f21486d8c6fe79606fbb82e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a473df6809f21486d8c6fe79606fbb82e">LogicalOr</a> (int *const m, int const value) noexcept</td></tr>
+<tr class="memitem:a473df6809f21486d8c6fe79606fbb82e" id="r_a473df6809f21486d8c6fe79606fbb82e"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a473df6809f21486d8c6fe79606fbb82e">LogicalOr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *const m, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const value) noexcept</td></tr>
 <tr class="separator:a473df6809f21486d8c6fe79606fbb82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38348c8bda2f16dccc6de7fc8b659b2b" id="r_a38348c8bda2f16dccc6de7fc8b659b2b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a38348c8bda2f16dccc6de7fc8b659b2b">LogicalAnd</a> (int *const m, int const value) noexcept</td></tr>
+<tr class="memitem:a38348c8bda2f16dccc6de7fc8b659b2b" id="r_a38348c8bda2f16dccc6de7fc8b659b2b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a38348c8bda2f16dccc6de7fc8b659b2b">LogicalAnd</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *const m, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const value) noexcept</td></tr>
 <tr class="separator:a38348c8bda2f16dccc6de7fc8b659b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a036b6d508731d9a30a2c2c8ade0caa39" id="r_a036b6d508731d9a30a2c2c8ade0caa39"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a036b6d508731d9a30a2c2c8ade0caa39"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a036b6d508731d9a30a2c2c8ade0caa39">Exch</a> (T *address, T val) noexcept</td></tr>
@@ -159,13 +153,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a3ce888fd227e6f79d3e3fd829b218207" id="r_a3ce888fd227e6f79d3e3fd829b218207"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3ce888fd227e6f79d3e3fd829b218207"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3ce888fd227e6f79d3e3fd829b218207">CAS</a> (T *const address, T compare, T const val) noexcept</td></tr>
 <tr class="separator:a3ce888fd227e6f79d3e3fd829b218207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff71b0678874e55f6485c8983b9572c" id="r_a4ff71b0678874e55f6485c8983b9572c"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a4ff71b0678874e55f6485c8983b9572c" id="r_a4ff71b0678874e55f6485c8983b9572c"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a4ff71b0678874e55f6485c8983b9572c"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4ff71b0678874e55f6485c8983b9572c">Multiply_device</a> (T *const prod, T const value) noexcept</td></tr>
 <tr class="separator:a4ff71b0678874e55f6485c8983b9572c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3f6fdf85315bc77bcb05a3705bf3bb" id="r_a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3d3f6fdf85315bc77bcb05a3705bf3bb">Multiply</a> (T *const prod, T const value) noexcept</td></tr>
 <tr class="separator:a3d3f6fdf85315bc77bcb05a3705bf3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c0f72bc179319a7b7f23a61eff19ccd" id="r_a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2c0f72bc179319a7b7f23a61eff19ccd" id="r_a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a2c0f72bc179319a7b7f23a61eff19ccd">Divide_device</a> (T *const quot, T const value) noexcept</td></tr>
 <tr class="separator:a2c0f72bc179319a7b7f23a61eff19ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdca16aa5ab3f498bbe2e219862d9b1f" id="r_afdca16aa5ab3f498bbe2e219862d9b1f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
@@ -411,7 +405,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </div>
+template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -557,7 +551,7 @@ template&lt;class T , class Op , class Cond &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned int), int &gt; foo = 0&gt; </div>
+template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -611,15 +605,15 @@ template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; size
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> int amrex::Gpu::Atomic::LogicalAnd </td>
+          <td class="memname">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Gpu::Atomic::LogicalAnd </td>
           <td>(</td>
-          <td class="paramtype">int *const&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *const&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int const&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -647,15 +641,15 @@ template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; size
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> int amrex::Gpu::Atomic::LogicalOr </td>
+          <td class="memname">__host__ __device__ <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::Gpu::Atomic::LogicalOr </td>
           <td>(</td>
-          <td class="paramtype">int *const&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *const&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int const&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -1085,7 +1079,7 @@ template&lt;class T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </div>
+template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

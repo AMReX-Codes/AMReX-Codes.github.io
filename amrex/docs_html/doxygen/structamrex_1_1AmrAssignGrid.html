@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -114,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c5745e3fb6016f3be7777b00c7a458f" id="r_a3c5745e3fb6016f3be7777b00c7a458f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f">AmrAssignGrid</a> (const <a class="el" href="structamrex_1_1AssignGrid.html">AssignGrid</a>&lt; BinIteratorFactory &gt; *a_funcs, std::size_t a_size)</td></tr>
 <tr class="separator:a3c5745e3fb6016f3be7777b00c7a458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad61cd244ffce6b9b9043b775835540" id="r_acad61cd244ffce6b9b9043b775835540"><td class="memTemplParams" colspan="2">template&lt;typename P , typename Assignor  = DefaultAssignor&gt; </td></tr>
-<tr class="memitem:acad61cd244ffce6b9b9043b775835540"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; int, int &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrAssignGrid.html#acad61cd244ffce6b9b9043b775835540">operator()</a> (const P &amp;p, int lev_min=-1, int lev_max=-1, int nGrow=0, Assignor const &amp;assignor={}) const noexcept</td></tr>
+<tr class="memitem:acad61cd244ffce6b9b9043b775835540"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrAssignGrid.html#acad61cd244ffce6b9b9043b775835540">operator()</a> (const P &amp;p, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, Assignor const &amp;assignor={}) const noexcept</td></tr>
 <tr class="separator:acad61cd244ffce6b9b9043b775835540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -178,7 +172,7 @@ template&lt;typename P , typename Assignor  = DefaultAssignor&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; int, int &gt; <a class="el" href="structamrex_1_1AmrAssignGrid.html">amrex::AmrAssignGrid</a>&lt; BinIteratorFactory &gt;::operator() </td>
+          <td class="memname">__host__ __device__ <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; <a class="el" href="structamrex_1_1AmrAssignGrid.html">amrex::AmrAssignGrid</a>&lt; BinIteratorFactory &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">const P &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -186,19 +180,19 @@ template&lt;typename P , typename Assignor  = DefaultAssignor&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>lev_min</em> = <code>-1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>lev_max</em> = <code>-1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nGrow</em> = <code>0</code>, </td>
         </tr>
         <tr>

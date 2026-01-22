@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -164,9 +163,9 @@ $(document).ready(function(){initNavTree('AMReX__TypeTraits_8H_source.html','');
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> Enable = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd.html">   56</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a> : std::false_type {};</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01int_01_4.html">   57</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;int&gt; : std::true_type {};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01int_01_4.html">   57</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; : std::true_type {};</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01long_01_4.html">   58</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;long&gt; : std::true_type {};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html">   59</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;unsigned int&gt; : std::true_type {};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html">   59</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;unsigned <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; : std::true_type {};</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html">   60</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;unsigned long long&gt; : std::true_type {};</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01float_01_4.html">   61</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;float&gt; : std::true_type {};</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structamrex_1_1HasAtomicAdd_3_01double_01_4.html">   62</a></span>    <span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1HasAtomicAdd.html">HasAtomicAdd</a>&lt;double&gt; : std::true_type {};</div>
@@ -426,6 +425,7 @@ $(document).ready(function(){initNavTree('AMReX__TypeTraits_8H_source.html','');
 <div class="ttc" id="anamespaceamrex_html_a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67">amrex::BottomSolver::Default</a></div><div class="ttdeci">@ Default</div></div>
 <div class="ttc" id="anamespaceamrex_html_aa264b7308102fabb2a7356eea1800644"><div class="ttname"><a href="namespaceamrex.html#aa264b7308102fabb2a7356eea1800644">amrex::IsBaseFab_v</a></div><div class="ttdeci">constexpr bool IsBaseFab_v</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:27</div></div>
 <div class="ttc" id="anamespaceamrex_html_abe72f840d81a1ce49a3811fe8295b222"><div class="ttname"><a href="namespaceamrex.html#abe72f840d81a1ce49a3811fe8295b222">amrex::DetectedOr</a></div><div class="ttdeci">typename detail::Detector&lt; Default, void, Op, Args... &gt;::type DetectedOr</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:188</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae456dccc30b99d38aeeecd21adc7acfe"><div class="ttname"><a href="namespaceamrex.html#ae456dccc30b99d38aeeecd21adc7acfe">amrex::EnableIf_t</a></div><div class="ttdeci">std::enable_if_t&lt; B, T &gt; EnableIf_t</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:53</div></div>
 <div class="ttc" id="anamespaceamrex_html_af199566bf00a390cb47c2a0140b3fc67"><div class="ttname"><a href="namespaceamrex.html#af199566bf00a390cb47c2a0140b3fc67">amrex::IsDetected</a></div><div class="ttdeci">typename detail::Detector&lt; detail::Nonesuch, void, Op, Args... &gt;::value_t IsDetected</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:182</div></div>
 <div class="ttc" id="anamespaceamrex_html_afcea7cdc6e03361f56c401b56d66a870"><div class="ttname"><a href="namespaceamrex.html#afcea7cdc6e03361f56c401b56d66a870">amrex::IsDetectedExact</a></div><div class="ttdeci">std::is_same&lt; Expected, Detected_t&lt; Op, Args... &gt; &gt; IsDetectedExact</div><div class="ttdef"><b>Definition</b> AMReX_TypeTraits.H:191</div></div>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -144,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae68306a3a401327a691cd1125441e56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc5e3e9b92660532ad6885f98707c87" id="r_a0cc5e3e9b92660532ad6885f98707c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a0cc5e3e9b92660532ad6885f98707c87">set_adaptive_fast_step</a> ()</td></tr>
 <tr class="separator:a0cc5e3e9b92660532ad6885f98707c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a164596b94edd3d913502235850b14a75" id="r_a164596b94edd3d913502235850b14a75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a164596b94edd3d913502235850b14a75">set_max_steps</a> (int steps)</td></tr>
+<tr class="memitem:a164596b94edd3d913502235850b14a75" id="r_a164596b94edd3d913502235850b14a75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a164596b94edd3d913502235850b14a75">set_max_steps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> steps)</td></tr>
 <tr class="separator:a164596b94edd3d913502235850b14a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d73596da85ccd3dbc7b5046533dc3f2" id="r_a3d73596da85ccd3dbc7b5046533dc3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a3d73596da85ccd3dbc7b5046533dc3f2">set_tolerances</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> rtol, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> atol)</td></tr>
 <tr class="separator:a3d73596da85ccd3dbc7b5046533dc3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1ba45d94e1a50ca73a6d9d43b36a87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcb9287cd56e0febfcdf00b3725aee7" id="r_a2dcb9287cd56e0febfcdf00b3725aee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a2dcb9287cd56e0febfcdf00b3725aee7">evolve</a> (T &amp;S_out, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time_out)</td></tr>
 <tr class="separator:a2dcb9287cd56e0febfcdf00b3725aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eae9b06298e069eab80098118fe239d" id="r_a0eae9b06298e069eab80098118fe239d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a0eae9b06298e069eab80098118fe239d">integrate</a> (T &amp;S_old, T &amp;S_new, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> start_time, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> start_timestep, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> end_time, const int start_step, const int max_steps)</td></tr>
+<tr class="memitem:a0eae9b06298e069eab80098118fe239d" id="r_a0eae9b06298e069eab80098118fe239d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a0eae9b06298e069eab80098118fe239d">integrate</a> (T &amp;S_old, T &amp;S_new, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> start_time, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> start_timestep, const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> end_time, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> start_step, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_steps)</td></tr>
 <tr class="separator:a0eae9b06298e069eab80098118fe239d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cae24606fd9c92a44f4ae163bab5a3b" id="r_a7cae24606fd9c92a44f4ae163bab5a3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b">time_interpolate</a> (const T &amp;S_new, const T &amp;S_old, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> timestep_fraction, T &amp;data)</td></tr>
 <tr class="separator:a7cae24606fd9c92a44f4ae163bab5a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -502,13 +496,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>start_step</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>max_steps</em>&#160;</td>
         </tr>
         <tr>
@@ -754,7 +748,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1TimeIntegrator.html">amrex::TimeIntegrator</a>&lt; T &gt;::set_max_steps </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>steps</em></td><td>)</td>
           <td></td>
         </tr>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -152,12 +146,12 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad50999ff4045032bb705d04f7195b33c" id="r_ad50999ff4045032bb705d04f7195b33c"><td class="memTemplParams" colspan="2">template&lt;class TagType , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ad50999ff4045032bb705d04f7195b33c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; decltype(std::declval&lt; TagType &gt;().box())&gt;, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad50999ff4045032bb705d04f7195b33c">amrex::ParallelFor</a> (<a class="el" href="structamrex_1_1TagVector.html">TagVector</a>&lt; TagType &gt; const &amp;tv, int ncomp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memitem:ad50999ff4045032bb705d04f7195b33c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; decltype(std::declval&lt; TagType &gt;().box())&gt;, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad50999ff4045032bb705d04f7195b33c">amrex::ParallelFor</a> (<a class="el" href="structamrex_1_1TagVector.html">TagVector</a>&lt; TagType &gt; const &amp;tv, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="separator:ad50999ff4045032bb705d04f7195b33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38eb255b13ee7ed203faecd6e21b7a79" id="r_a38eb255b13ee7ed203faecd6e21b7a79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a38eb255b13ee7ed203faecd6e21b7a79">amrex::ParallelFor</a> (<a class="el" href="structamrex_1_1TagVector.html">TagVector</a>&lt; TagType &gt; const &amp;tv, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="separator:a38eb255b13ee7ed203faecd6e21b7a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45d9629bed7f5dd24034bd8345c128f2" id="r_a45d9629bed7f5dd24034bd8345c128f2"><td class="memTemplParams" colspan="2">template&lt;class TagType , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:a45d9629bed7f5dd24034bd8345c128f2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; decltype(std::declval&lt; TagType &gt;().box())&gt;, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a45d9629bed7f5dd24034bd8345c128f2">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; TagType &gt; const &amp;tags, int ncomp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
+<tr class="memitem:a45d9629bed7f5dd24034bd8345c128f2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; decltype(std::declval&lt; TagType &gt;().box())&gt;, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a45d9629bed7f5dd24034bd8345c128f2">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; TagType &gt; const &amp;tags, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="separator:a45d9629bed7f5dd24034bd8345c128f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8743466d78a7e4458271e4a297723573" id="r_a8743466d78a7e4458271e4a297723573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8743466d78a7e4458271e4a297723573">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; TagType &gt; const &amp;tags, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="separator:a8743466d78a7e4458271e4a297723573"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -5,7 +5,7 @@
     <includes refid="AMReX_8H" local="no">AMReX.H</includes>
     <includes refid="AMReX__Utility_8H" local="no">AMReX_Utility.H</includes>
     <includes refid="AMReX__BLProfiler_8H" local="no">AMReX_BLProfiler.H</includes>
-    <includes refid="AMReX__BLFort_8H" local="no">AMReX_BLFort.H</includes>
+    <includes local="no">AMReX_BLFort.H</includes>
     <includes refid="AMReX__ParallelDescriptor_8H" local="no">AMReX_ParallelDescriptor.H</includes>
     <includes refid="AMReX__Print_8H" local="no">AMReX_Print.H</includes>
     <includes refid="AMReX__RealVect_8H" local="no">AMReX_RealVect.H</includes>
@@ -185,20 +185,6 @@
         <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
-        </childnode>
-      </node>
-      <node id="88">
-        <label>AMReX_BLFort.H</label>
-        <link refid="AMReX__BLFort_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="47" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
         </childnode>
       </node>
       <node id="71">
@@ -1125,6 +1111,9 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
+      <node id="88">
+        <label>AMReX_BLFort.H</label>
+      </node>
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
@@ -1370,7 +1359,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX_8H" kindref="compound">AMReX.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Utility_8H" kindref="compound">AMReX_Utility.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLProfiler_8H" kindref="compound">AMReX_BLProfiler.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLFort_8H" kindref="compound">AMReX_BLFort.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_BLFort.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParallelDescriptor_8H" kindref="compound">AMReX_ParallelDescriptor.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Print_8H" kindref="compound">AMReX_Print.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__RealVect_8H" kindref="compound">AMReX_RealVect.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -2686,65 +2675,65 @@
 <codeline lineno="1321"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1322"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BL_NO_FORT</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1323"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1324"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_BARRIER,bl_pd_barrier)()</highlight></codeline>
+<codeline lineno="1324"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_BARRIER,bl_pd_barrier)()</highlight></codeline>
 <codeline lineno="1325"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__mpi_1ga732a4be5017987f2d6edc0fcd2329301" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
 <codeline lineno="1327"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1328"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1329"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_COMMUNICATOR,bl_pd_communicator)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vcomm)</highlight></codeline>
+<codeline lineno="1329"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_COMMUNICATOR,bl_pd_communicator)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vcomm)</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>comm<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceamrex_1_1mpidatatypes_1a30fa228956d7a68a0c604ae5f2163db9" kindref="member">MPI_Comm</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vcomm);</highlight></codeline>
 <codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/>*comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>();</highlight></codeline>
 <codeline lineno="1333"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1334"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1335"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_MYPROC,bl_pd_myproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>myproc)</highlight></codeline>
+<codeline lineno="1335"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_MYPROC,bl_pd_myproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>myproc)</highlight></codeline>
 <codeline lineno="1336"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/>*myproc<sp/>=<sp/><ref refid="group__amrex__mpi_1ga33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="1338"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1339"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1340"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_NPROCS,bl_pd_nprocs)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nprocs)</highlight></codeline>
+<codeline lineno="1340"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_NPROCS,bl_pd_nprocs)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nprocs)</highlight></codeline>
 <codeline lineno="1341"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/>*nprocs<sp/>=<sp/><ref refid="group__amrex__mpi_1gaa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
 <codeline lineno="1343"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1344"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1345"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_IOPROC,bl_pd_ioproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ioproc)</highlight></codeline>
+<codeline lineno="1345"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_IOPROC,bl_pd_ioproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ioproc)</highlight></codeline>
 <codeline lineno="1346"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1347"><highlight class="normal"><sp/><sp/><sp/><sp/>*ioproc<sp/>=<sp/><ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>();</highlight></codeline>
 <codeline lineno="1348"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1349"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1350"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_IS_IOPROC,bl_pd_is_ioproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ioproc)</highlight></codeline>
+<codeline lineno="1350"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_IS_IOPROC,bl_pd_is_ioproc)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ioproc)</highlight></codeline>
 <codeline lineno="1351"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>*ioproc<sp/>=<sp/><ref refid="group__amrex__mpi_1gac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>()?1:0;</highlight></codeline>
 <codeline lineno="1353"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1354"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1355"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_SECOND,bl_pd_second)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
+<codeline lineno="1355"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_SECOND,bl_pd_second)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
 <codeline lineno="1356"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1357"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac5028f0e53837bb92fcf49d087aeee88" kindref="member">ParallelDescriptor::second</ref>();</highlight></codeline>
 <codeline lineno="1358"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1359"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1360"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_FLOAT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1361"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_MAX_TO_IOPROC,bl_pd_reduce_real_max_to_ioproc)(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
+<codeline lineno="1361"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_MAX_TO_IOPROC,bl_pd_reduce_real_max_to_ioproc)(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
 <codeline lineno="1362"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aff6bc74ed06d830d1db5d24040838e14" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(*r,<ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1364"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1365"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1366"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_SUM_TO_IOPROC,bl_pd_reduce_real_sum_to_ioproc)(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
+<codeline lineno="1366"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_SUM_TO_IOPROC,bl_pd_reduce_real_sum_to_ioproc)(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
 <codeline lineno="1367"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a39256068b3bc99d6219b39739053461d" kindref="member">ParallelDescriptor::ReduceRealSum</ref>(*r,<ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1369"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1370"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1371"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_MAX_TO_IOPROC,bl_pd_reduce_real_max_to_ioproc)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
+<codeline lineno="1371"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_MAX_TO_IOPROC,bl_pd_reduce_real_max_to_ioproc)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
 <codeline lineno="1372"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1373"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aff6bc74ed06d830d1db5d24040838e14" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(*r,<ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1374"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1375"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1376"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_SUM_TO_IOPROC,bl_pd_reduce_real_sum_to_ioproc)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
+<codeline lineno="1376"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_REDUCE_REAL_SUM_TO_IOPROC,bl_pd_reduce_real_sum_to_ioproc)(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>r)</highlight></codeline>
 <codeline lineno="1377"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1378"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a39256068b3bc99d6219b39739053461d" kindref="member">ParallelDescriptor::ReduceRealSum</ref>(*r,<ref refid="group__amrex__mpi_1gab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1379"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1380"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1381"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1382"><highlight class="normal"><ref refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_ABORT,bl_pd_abort)()</highlight></codeline>
+<codeline lineno="1382"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1aaa5dec01b84a2e49488e12992593591c" kindref="member">BL_FORT_PROC_DECL</ref>(BL_PD_ABORT,bl_pd_abort)()</highlight></codeline>
 <codeline lineno="1383"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ae6927a6804e22fedb86c1fe19d6567fc" kindref="member">ParallelDescriptor::Abort</ref>();</highlight></codeline>
 <codeline lineno="1385"><highlight class="normal">}</highlight></codeline>

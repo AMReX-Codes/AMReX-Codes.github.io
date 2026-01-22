@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -460,7 +459,7 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticles_8H_source.html',''
 <div class="ttc" id="aclassamrex_1_1AmrTracerParticleContainer_html_a30b6824ae45ee1b770f5a4d74dd1c084"><div class="ttname"><a href="classamrex_1_1AmrTracerParticleContainer.html#a30b6824ae45ee1b770f5a4d74dd1c084">amrex::AmrTracerParticleContainer::~AmrTracerParticleContainer</a></div><div class="ttdeci">~AmrTracerParticleContainer() override=default</div></div>
 <div class="ttc" id="aclassamrex_1_1AmrTracerParticleContainer_html_a758508e41568ce23b98b4238119002da"><div class="ttname"><a href="classamrex_1_1AmrTracerParticleContainer.html#a758508e41568ce23b98b4238119002da">amrex::AmrTracerParticleContainer::AmrTracerParticleContainer</a></div><div class="ttdeci">AmrTracerParticleContainer(const AmrTracerParticleContainer &amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1AmrTracerParticleContainer_html_ad044827a807fc8f0f55d4b21fe9451ce"><div class="ttname"><a href="classamrex_1_1AmrTracerParticleContainer.html#ad044827a807fc8f0f55d4b21fe9451ce">amrex::AmrTracerParticleContainer::AmrTracerParticleContainer</a></div><div class="ttdeci">AmrTracerParticleContainer(AmrCore *amr_core)</div><div class="ttdef"><b>Definition</b> AMReX_AmrParticles.H:302</div></div>
-<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:114</div></div>
+<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:115</div></div>
 <div class="ttc" id="aclassamrex_1_1BCRec_html"><div class="ttname"><a href="classamrex_1_1BCRec.html">amrex::BCRec</a></div><div class="ttdoc">Boundary Condition Records. Necessary information and functions for computing boundary conditions.</div><div class="ttdef"><b>Definition</b> AMReX_BCRec.H:17</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:567</div></div>
 <div class="ttc" id="aclassamrex_1_1DistributionMapping_html"><div class="ttname"><a href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a></div><div class="ttdoc">Calculates the distribution of FABs to MPI processes.</div><div class="ttdef"><b>Definition</b> AMReX_DistributionMapping.H:43</div></div>
@@ -477,13 +476,13 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticles_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_1_1BCType_html_a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f"><div class="ttname"><a href="namespaceamrex_1_1BCType.html#a2842d1189d57039c0e3551676c9910e6ab45d9785e118b1d0d2e4f05fbad47f4f">amrex::BCType::int_dir</a></div><div class="ttdeci">@ int_dir</div><div class="ttdef"><b>Definition</b> AMReX_BC_TYPES.H:70</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0cef8b304e3c55a8d985c2a8907da9e4"><div class="ttname"><a href="namespaceamrex.html#a0cef8b304e3c55a8d985c2a8907da9e4">amrex::nComp</a></div><div class="ttdeci">int nComp(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2854</div></div>
-<div class="ttc" id="anamespaceamrex_html_a179fafc569924202b166896b608cd5c2"><div class="ttname"><a href="namespaceamrex.html#a179fafc569924202b166896b608cd5c2">amrex::DefaultAllocator</a></div><div class="ttdeci">amrex::ArenaAllocator&lt; T &gt; DefaultAllocator</div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:193</div></div>
+<div class="ttc" id="anamespaceamrex_html_a179fafc569924202b166896b608cd5c2"><div class="ttname"><a href="namespaceamrex.html#a179fafc569924202b166896b608cd5c2">amrex::DefaultAllocator</a></div><div class="ttdeci">amrex::ArenaAllocator&lt; T &gt; DefaultAllocator</div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:199</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a21e594569f8a9ba321155a5ecd7ce4ce"><div class="ttname"><a href="namespaceamrex.html#a21e594569f8a9ba321155a5ecd7ce4ce">amrex::average_down</a></div><div class="ttdeci">void average_down(const MultiFab &amp;S_fine, MultiFab &amp;S_crse, const Geometry &amp;fgeom, const Geometry &amp;cgeom, int scomp, int ncomp, int rr)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:336</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6fa430e1648835f9dea38b7568d79506"><div class="ttname"><a href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">amrex::InterpFromCoarseLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; InterpFromCoarseLevel(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdoc">Fill with interpolation of coarse level data.</div><div class="ttdef"><b>Definition</b> AMReX_FillPatchUtil_I.H:988</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9610a39b43057d1e9e78c4d5156965ef"><div class="ttname"><a href="namespaceamrex.html#a9610a39b43057d1e9e78c4d5156965ef">amrex::ParticleToMesh</a></div><div class="ttdeci">void ParticleToMesh(PC const &amp;pc, const Vector&lt; MultiFab * &gt; &amp;mf, int lev_min, int lev_max, F &amp;&amp;f, bool zero_out_input=true, bool vol_weight=true)</div><div class="ttdef"><b>Definition</b> AMReX_AmrParticles.H:156</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
 <div class="ttc" id="anamespaceamrex_html_ab67331acff75bf2840f409750b1ada66"><div class="ttname"><a href="namespaceamrex.html#ab67331acff75bf2840f409750b1ada66">amrex::sum_fine_to_coarse</a></div><div class="ttdeci">void sum_fine_to_coarse(const MultiFab &amp;S_fine, MultiFab &amp;S_crse, int scomp, int ncomp, const IntVect &amp;ratio, const Geometry &amp;cgeom, const Geometry &amp;)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:415</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
 <div class="ttc" id="astructamrex_1_1DefaultAssignor_html"><div class="ttname"><a href="structamrex_1_1DefaultAssignor.html">amrex::DefaultAssignor</a></div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:394</div></div>

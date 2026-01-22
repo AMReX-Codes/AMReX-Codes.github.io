@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -127,33 +121,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a34d563a23b3567200219039bed2afb89" id="r_a34d563a23b3567200219039bed2afb89"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a34d563a23b3567200219039bed2afb89">SmallMatrix</a> ()=default</td></tr>
 <tr class="memdesc:a34d563a23b3567200219039bed2afb89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:a34d563a23b3567200219039bed2afb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f0758c96388a0bb1b2cfb389c1444f" id="r_ae8f0758c96388a0bb1b2cfb389c1444f"><td class="memTemplParams" colspan="2">template&lt;typename... Ts, int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==1||NN==1, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae8f0758c96388a0bb1b2cfb389c1444f" id="r_ae8f0758c96388a0bb1b2cfb389c1444f"><td class="memTemplParams" colspan="2">template&lt;typename... Ts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==1||NN==1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ae8f0758c96388a0bb1b2cfb389c1444f"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ae8f0758c96388a0bb1b2cfb389c1444f">SmallMatrix</a> (Ts... vs)</td></tr>
 <tr class="memdesc:ae8f0758c96388a0bb1b2cfb389c1444f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs column- or row-vector.  <br /></td></tr>
 <tr class="separator:ae8f0758c96388a0bb1b2cfb389c1444f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84eda12573c4539f33c4f0dc15df35b1" id="r_a84eda12573c4539f33c4f0dc15df35b1"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a84eda12573c4539f33c4f0dc15df35b1">SmallMatrix</a> (std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; const &amp;init)</td></tr>
 <tr class="memdesc:a84eda12573c4539f33c4f0dc15df35b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="structamrex_1_1SmallMatrix.html" title="Matrix class with compile-time size.">SmallMatrix</a> with nested std::initializer_list.  <br /></td></tr>
 <tr class="separator:a84eda12573c4539f33c4f0dc15df35b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46e9bfe0af34a5d28fe66069f2bcd4b6" id="r_a46e9bfe0af34a5d28fe66069f2bcd4b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a46e9bfe0af34a5d28fe66069f2bcd4b6">operator()</a> (int i, int j) const noexcept</td></tr>
+<tr class="memitem:a46e9bfe0af34a5d28fe66069f2bcd4b6" id="r_a46e9bfe0af34a5d28fe66069f2bcd4b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a46e9bfe0af34a5d28fe66069f2bcd4b6">operator()</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j) const noexcept</td></tr>
 <tr class="memdesc:a46e9bfe0af34a5d28fe66069f2bcd4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the element at row i and column j.  <br /></td></tr>
 <tr class="separator:a46e9bfe0af34a5d28fe66069f2bcd4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace190f3e6fc72450fed3d30bf186c4c3" id="r_ace190f3e6fc72450fed3d30bf186c4c3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ace190f3e6fc72450fed3d30bf186c4c3">operator()</a> (int i, int j) noexcept</td></tr>
+<tr class="memitem:ace190f3e6fc72450fed3d30bf186c4c3" id="r_ace190f3e6fc72450fed3d30bf186c4c3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ace190f3e6fc72450fed3d30bf186c4c3">operator()</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j) noexcept</td></tr>
 <tr class="memdesc:ace190f3e6fc72450fed3d30bf186c4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at row i and column j.  <br /></td></tr>
 <tr class="separator:ace190f3e6fc72450fed3d30bf186c4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087f14af55ca0a7f41d538344fb1fb2e" id="r_a087f14af55ca0a7f41d538344fb1fb2e"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a087f14af55ca0a7f41d538344fb1fb2e"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a087f14af55ca0a7f41d538344fb1fb2e">operator()</a> (int i) const noexcept</td></tr>
+<tr class="memitem:a087f14af55ca0a7f41d538344fb1fb2e" id="r_a087f14af55ca0a7f41d538344fb1fb2e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a087f14af55ca0a7f41d538344fb1fb2e"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a087f14af55ca0a7f41d538344fb1fb2e">operator()</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
 <tr class="memdesc:a087f14af55ca0a7f41d538344fb1fb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to element i of a vector.  <br /></td></tr>
 <tr class="separator:a087f14af55ca0a7f41d538344fb1fb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02bb5f342e3c38cdbab0b462f65a0b2b" id="r_a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a02bb5f342e3c38cdbab0b462f65a0b2b">operator()</a> (int i) noexcept</td></tr>
+<tr class="memitem:a02bb5f342e3c38cdbab0b462f65a0b2b" id="r_a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a02bb5f342e3c38cdbab0b462f65a0b2b">operator()</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) noexcept</td></tr>
 <tr class="memdesc:a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to element i of a vector.  <br /></td></tr>
 <tr class="separator:a02bb5f342e3c38cdbab0b462f65a0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e7ae4638428051d116ea0a9d1c8e60" id="r_ad9e7ae4638428051d116ea0a9d1c8e60"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:ad9e7ae4638428051d116ea0a9d1c8e60"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ad9e7ae4638428051d116ea0a9d1c8e60">operator[]</a> (int i) const noexcept</td></tr>
+<tr class="memitem:ad9e7ae4638428051d116ea0a9d1c8e60" id="r_ad9e7ae4638428051d116ea0a9d1c8e60"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ad9e7ae4638428051d116ea0a9d1c8e60"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ad9e7ae4638428051d116ea0a9d1c8e60">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
 <tr class="memdesc:ad9e7ae4638428051d116ea0a9d1c8e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to element i of a vector.  <br /></td></tr>
 <tr class="separator:ad9e7ae4638428051d116ea0a9d1c8e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab1da13035682f8fb41ffddca830c01" id="r_a1ab1da13035682f8fb41ffddca830c01"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:a1ab1da13035682f8fb41ffddca830c01"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a1ab1da13035682f8fb41ffddca830c01">operator[]</a> (int i) noexcept</td></tr>
+<tr class="memitem:a1ab1da13035682f8fb41ffddca830c01" id="r_a1ab1da13035682f8fb41ffddca830c01"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1ab1da13035682f8fb41ffddca830c01"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a1ab1da13035682f8fb41ffddca830c01">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) noexcept</td></tr>
 <tr class="memdesc:a1ab1da13035682f8fb41ffddca830c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to element i of a vector.  <br /></td></tr>
 <tr class="separator:a1ab1da13035682f8fb41ffddca830c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae38230944df9f142ad8f9944c1cc6529" id="r_ae38230944df9f142ad8f9944c1cc6529"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ae38230944df9f142ad8f9944c1cc6529">begin</a> () const noexcept</td></tr>
@@ -170,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2bb6b2a2877664a689394e5f38fcd8a" id="r_af2bb6b2a2877664a689394e5f38fcd8a"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NCols, NRows, ORDER, StartIndex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#af2bb6b2a2877664a689394e5f38fcd8a">transpose</a> () const</td></tr>
 <tr class="memdesc:af2bb6b2a2877664a689394e5f38fcd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns transposed matrix.  <br /></td></tr>
 <tr class="separator:af2bb6b2a2877664a689394e5f38fcd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea23bea08425e0b9547e6ba07c7c4ece" id="r_aea23bea08425e0b9547e6ba07c7c4ece"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aea23bea08425e0b9547e6ba07c7c4ece" id="r_aea23bea08425e0b9547e6ba07c7c4ece"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aea23bea08425e0b9547e6ba07c7c4ece"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#aea23bea08425e0b9547e6ba07c7c4ece">transposeInPlace</a> ()</td></tr>
 <tr class="memdesc:aea23bea08425e0b9547e6ba07c7c4ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transposes a square matrix in-place.  <br /></td></tr>
 <tr class="separator:aea23bea08425e0b9547e6ba07c7c4ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,7 +174,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aefb49e6e02e8f4bb0df7838e68234cf9" id="r_aefb49e6e02e8f4bb0df7838e68234cf9"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#aefb49e6e02e8f4bb0df7838e68234cf9">sum</a> () const</td></tr>
 <tr class="memdesc:aefb49e6e02e8f4bb0df7838e68234cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of all elements in the matrix.  <br /></td></tr>
 <tr class="separator:aefb49e6e02e8f4bb0df7838e68234cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9322fe4816b3831489f605466449c1b2" id="r_a9322fe4816b3831489f605466449c1b2"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a9322fe4816b3831489f605466449c1b2" id="r_a9322fe4816b3831489f605466449c1b2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a9322fe4816b3831489f605466449c1b2"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a9322fe4816b3831489f605466449c1b2">trace</a> () const</td></tr>
 <tr class="memdesc:a9322fe4816b3831489f605466449c1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the trace of a square matrix.  <br /></td></tr>
 <tr class="separator:a9322fe4816b3831489f605466449c1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,16 +193,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada3eaa4aab88dde733f24b73954dfae1" id="r_ada3eaa4aab88dde733f24b73954dfae1"><td class="memItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ada3eaa4aab88dde733f24b73954dfae1">dot</a> (<a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt; const &amp;rhs) const</td></tr>
 <tr class="memdesc:ada3eaa4aab88dde733f24b73954dfae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dot product of two vectors.  <br /></td></tr>
 <tr class="separator:ada3eaa4aab88dde733f24b73954dfae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a997feb74890732d6cd717bfddfc554cf" id="r_a997feb74890732d6cd717bfddfc554cf"><td class="memTemplParams" colspan="2">template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a997feb74890732d6cd717bfddfc554cf" id="r_a997feb74890732d6cd717bfddfc554cf"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, std::enable_if_t&lt;(N&lt; NRows *NCols), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a997feb74890732d6cd717bfddfc554cf"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a997feb74890732d6cd717bfddfc554cf">get</a> () const</td></tr>
 <tr class="separator:a997feb74890732d6cd717bfddfc554cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b190ed6ee5791bcaa8fc244c1f95fda" id="r_a1b190ed6ee5791bcaa8fc244c1f95fda"><td class="memTemplParams" colspan="2">template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1b190ed6ee5791bcaa8fc244c1f95fda" id="r_a1b190ed6ee5791bcaa8fc244c1f95fda"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, std::enable_if_t&lt;(N&lt; NRows *NCols), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a1b190ed6ee5791bcaa8fc244c1f95fda"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a1b190ed6ee5791bcaa8fc244c1f95fda">get</a> ()</td></tr>
 <tr class="separator:a1b190ed6ee5791bcaa8fc244c1f95fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a81b984b88b86c8fb73373ca9ade02aee" id="r_a81b984b88b86c8fb73373ca9ade02aee"><td class="memTemplParams" colspan="2">template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a81b984b88b86c8fb73373ca9ade02aee" id="r_a81b984b88b86c8fb73373ca9ade02aee"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a81b984b88b86c8fb73373ca9ade02aee"><td class="memTemplItemLeft" align="right" valign="top">static constexpr __host__ __device__ <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a81b984b88b86c8fb73373ca9ade02aee">Identity</a> () noexcept</td></tr>
 <tr class="memdesc:a81b984b88b86c8fb73373ca9ade02aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an identity matrix.  <br /></td></tr>
 <tr class="separator:a81b984b88b86c8fb73373ca9ade02aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,13 +212,13 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a16884af63d24ace53c32c2b304f28cb1" id="r_a16884af63d24ace53c32c2b304f28cb1"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a16884af63d24ace53c32c2b304f28cb1">row_size</a> = NRows</td></tr>
+<tr class="memitem:a16884af63d24ace53c32c2b304f28cb1" id="r_a16884af63d24ace53c32c2b304f28cb1"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a16884af63d24ace53c32c2b304f28cb1">row_size</a> = NRows</td></tr>
 <tr class="separator:a16884af63d24ace53c32c2b304f28cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27953e4ba231ae72eee1d04bfcbad71" id="r_ad27953e4ba231ae72eee1d04bfcbad71"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ad27953e4ba231ae72eee1d04bfcbad71">column_size</a> = NCols</td></tr>
+<tr class="memitem:ad27953e4ba231ae72eee1d04bfcbad71" id="r_ad27953e4ba231ae72eee1d04bfcbad71"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#ad27953e4ba231ae72eee1d04bfcbad71">column_size</a> = NCols</td></tr>
 <tr class="separator:ad27953e4ba231ae72eee1d04bfcbad71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a52e4625ed98c93b816e56a376e283a" id="r_a3a52e4625ed98c93b816e56a376e283a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a3a52e4625ed98c93b816e56a376e283a">ordering</a> = ORDER</td></tr>
 <tr class="separator:a3a52e4625ed98c93b816e56a376e283a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c3d4215f2fdfccfcd326386572f1f2" id="r_a54c3d4215f2fdfccfcd326386572f1f2"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a54c3d4215f2fdfccfcd326386572f1f2">starting_index</a> = StartIndex</td></tr>
+<tr class="memitem:a54c3d4215f2fdfccfcd326386572f1f2" id="r_a54c3d4215f2fdfccfcd326386572f1f2"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a54c3d4215f2fdfccfcd326386572f1f2">starting_index</a> = StartIndex</td></tr>
 <tr class="separator:a54c3d4215f2fdfccfcd326386572f1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -241,13 +235,13 @@ Friends</h2></td></tr>
 <tr class="memitem:a9ffe7215b8c4f470f8baa3111ab12369" id="r_a9ffe7215b8c4f470f8baa3111ab12369"><td class="memItemLeft" align="right" valign="top">__host__ __device__ friend <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a9ffe7215b8c4f470f8baa3111ab12369">operator*</a> (T a, <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt; m)</td></tr>
 <tr class="memdesc:a9ffe7215b8c4f470f8baa3111ab12369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a scalar and a matrix.  <br /></td></tr>
 <tr class="separator:a9ffe7215b8c4f470f8baa3111ab12369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ff11d7db8679060cf879748039c0a6a" id="r_a9ff11d7db8679060cf879748039c0a6a"><td class="memTemplParams" colspan="2">template&lt;class U , class V , int N1, int N2, int N3, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> Ord, int SI&gt; </td></tr>
+<tr class="memitem:a9ff11d7db8679060cf879748039c0a6a" id="r_a9ff11d7db8679060cf879748039c0a6a"><td class="memTemplParams" colspan="2">template&lt;class U , class V , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N2, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N3, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> Ord, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SI&gt; </td></tr>
 <tr class="memitem:a9ff11d7db8679060cf879748039c0a6a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ friend decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1SmallMatrix.html#a9ff11d7db8679060cf879748039c0a6a">operator*</a> (<a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; U, N1, N2, Ord, SI &gt; const &amp;lhs, <a class="el" href="structamrex_1_1SmallMatrix.html">SmallMatrix</a>&lt; V, N2, N3, Ord, SI &gt; const &amp;rhs)</td></tr>
 <tr class="memdesc:a9ff11d7db8679060cf879748039c0a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns matrix product of two matrices.  <br /></td></tr>
 <tr class="separator:a9ff11d7db8679060cf879748039c0a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class T, int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt;<br />
 struct amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt;</div><p>Matrix class with compile-time size. </p>
 <p>Note that column vectors and row vectors are special cases of a Matrix.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -267,7 +261,7 @@ struct amrex::SmallMatrix&lt; T, NRows, NCols, ORDER, StartIndex &gt;</div><p>Ma
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::reference_type =  T&amp;</td>
@@ -283,7 +277,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::value_type =  T</td>
@@ -300,7 +294,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -330,9 +324,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;typename... Ts, int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==1||NN==1, int &gt;  = 0&gt; </div>
+template&lt;typename... Ts, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==1||NN==1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -363,7 +357,7 @@ template&lt;typename... Ts, int MM = NRows, int NN = NCols, std::enable_if_t&lt;
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -397,7 +391,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -425,7 +419,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -453,7 +447,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -483,7 +477,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -511,7 +505,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -539,9 +533,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, std::enable_if_t&lt;(N&lt; NRows *NCols), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -568,9 +562,9 @@ template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, std::enable_if_t&lt;(N&lt; NRows *NCols), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -597,9 +591,9 @@ template&lt;int N, std::enable_if_t&lt;(N&lt; NRows *NCols), int &gt;  = 0&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -628,9 +622,9 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -638,7 +632,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
         <tr>
           <td class="memname">__host__ __device__ const T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -660,9 +654,9 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -670,7 +664,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
         <tr>
           <td class="memname">__host__ __device__ T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
@@ -692,7 +686,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -700,13 +694,13 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
         <tr>
           <td class="memname">__host__ __device__ const T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -732,7 +726,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -740,13 +734,13 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
         <tr>
           <td class="memname">__host__ __device__ T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -772,7 +766,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -802,7 +796,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -832,7 +826,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -861,7 +855,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -891,9 +885,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -901,7 +895,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
         <tr>
           <td class="memname">__host__ __device__ const T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -923,9 +917,9 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -933,7 +927,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
         <tr>
           <td class="memname">__host__ __device__ T &amp; <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
@@ -955,7 +949,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt;(MM==1||NN==1), 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -984,7 +978,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1014,7 +1008,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1043,9 +1037,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1074,7 +1068,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1103,9 +1097,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt;  = 0&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MM = NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NN = NCols, std::enable_if_t&lt; MM==NN, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1134,7 +1128,7 @@ template&lt;int MM = NRows, int NN = NCols, std::enable_if_t&lt; MM==NN, int &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1164,7 +1158,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1204,9 +1198,9 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <div class="memtemplate">
-template&lt;class U , class V , int N1, int N2, int N3, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> Ord, int SI&gt; </div>
+template&lt;class U , class V , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N2, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N3, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> Ord, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SI&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1246,7 +1240,7 @@ template&lt;class U , class V , int N1, int N2, int N3, <a class="el" href="name
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1286,7 +1280,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1326,7 +1320,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1367,13 +1361,13 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::column_size = NCols</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::column_size = NCols</td>
         </tr>
       </table>
   </td>
@@ -1391,7 +1385,7 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1415,13 +1409,13 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::row_size = NRows</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::row_size = NRows</td>
         </tr>
       </table>
   </td>
@@ -1439,13 +1433,13 @@ template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int NRows, int NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, int StartIndex = 0&gt; </div>
+template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NRows, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NCols, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">Order</a> ORDER = Order::F, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> StartIndex = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::starting_index = StartIndex</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1SmallMatrix.html">amrex::SmallMatrix</a>&lt; T, NRows, NCols, ORDER, StartIndex &gt;::starting_index = StartIndex</td>
         </tr>
       </table>
   </td>

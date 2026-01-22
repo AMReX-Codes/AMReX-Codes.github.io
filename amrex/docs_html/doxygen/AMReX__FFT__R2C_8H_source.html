@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -871,7 +870,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__R2C_8H_source.html',''); i
 <div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>            <a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a> = (T_FAB*)p;</div>
 <div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>            sz = <span class="keyword">sizeof</span>(T_FAB) * box.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>() * ncomp;</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>            <a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a> = (T_FAB*) <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(sz);</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>            <a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a> = (T_FAB*) <a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(sz);</div>
 <div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>        }</div>
 <div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>        fa.setFab(K, FAB(box,ncomp,<a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>));</div>
 <div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>    }</div>
@@ -880,7 +879,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__R2C_8H_source.html',''); i
 <div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>        <span class="keywordflow">return</span> std::make_pair(std::unique_ptr&lt;char,DataDeleter&gt;{},std::size_t(0));</div>
 <div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>        <span class="keywordflow">return</span> std::make_pair(std::unique_ptr&lt;char,DataDeleter&gt;</div>
-<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>                              {(<span class="keywordtype">char</span>*)<a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>,DataDeleter{<a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()}}, sz);</div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>                              {(<span class="keywordtype">char</span>*)<a class="code hl_variable" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>,DataDeleter{<a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()}}, sz);</div>
 <div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>    }</div>
 <div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>}</div>
 <div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span> </div>
@@ -1453,6 +1452,7 @@ $(document).ready(function(){initNavTree('AMReX__FFT__R2C_8H_source.html',''); i
 <div class="ttc" id="aclassamrex_1_1Vector_html"><div class="ttname"><a href="classamrex_1_1Vector.html">amrex::Vector</a></div><div class="ttdoc">This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:28</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 <div class="ttc" id="agroup__amrex__execution_html_ga04c5802123f70da48b28edc03aaa7a00"><div class="ttname"><a href="group__amrex__execution.html#ga04c5802123f70da48b28edc03aaa7a00">amrex::ParallelForOMP</a></div><div class="ttdeci">void ParallelForOMP(T n, L const &amp;f) noexcept</div><div class="ttdoc">Performance-portable kernel launch function with optional OpenMP threading.</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunch.H:243</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:128</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_gaa191723b5d24ceaf64e9d49f542cfcc2"><div class="ttname"><a href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">amrex::ParallelDescriptor::NProcs</a></div><div class="ttdeci">int NProcs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:255</div></div>
 <div class="ttc" id="anamespaceamrex_1_1FFT_html"><div class="ttname"><a href="namespaceamrex_1_1FFT.html">amrex::FFT</a></div><div class="ttdef"><b>Definition</b> AMReX_FFT_Helper.H:46</div></div>
@@ -1472,13 +1472,12 @@ $(document).ready(function(){initNavTree('AMReX__FFT__R2C_8H_source.html',''); i
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e"><div class="ttname"><a href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e">amrex::GrowthStrategy::Poisson</a></div><div class="ttdeci">@ Poisson</div></div>
-<div class="ttc" id="anamespaceamrex_html_a73309828f34cc814833092699bdbc241"><div class="ttname"><a href="namespaceamrex.html#a73309828f34cc814833092699bdbc241">amrex::is_aligned</a></div><div class="ttdeci">bool is_aligned(const void *p, std::size_t alignment) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a73309828f34cc814833092699bdbc241"><div class="ttname"><a href="namespaceamrex.html#a73309828f34cc814833092699bdbc241">amrex::is_aligned</a></div><div class="ttdeci">bool is_aligned(const void *p, std::size_t alignment) noexcept</div><div class="ttdoc">Return whether the address p is aligned to alignment bytes.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:36</div></div>
 <div class="ttc" id="anamespaceamrex_html_a86a6591ebde4320c6b7a835c701f1830"><div class="ttname"><a href="namespaceamrex.html#a86a6591ebde4320c6b7a835c701f1830">amrex::decompose</a></div><div class="ttdeci">BoxArray decompose(Box const &amp;domain, int nboxes, Array&lt; bool, 3 &gt; const &amp;decomp, bool no_overlap)</div><div class="ttdoc">Decompose domain box into BoxArray.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.cpp:1947</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
 <div class="ttc" id="anamespaceamrex_html_adadc145305be656128ae5ce4406166a0"><div class="ttname"><a href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">amrex::ParallelCopy</a></div><div class="ttdeci">void ParallelCopy(MF &amp;dst, MF const &amp;src, int scomp, int dcomp, int ncomp, IntVect const &amp;ng_src=IntVect(0), IntVect const &amp;ng_dst=IntVect(0), Periodicity const &amp;period=Periodicity::NonPeriodic())</div><div class="ttdoc">dst = src w/ MPI communication</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayUtility.H:2019</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
-<div class="ttc" id="anamespaceamrex_html_af4ef71de20b680abfb05fddbe1e4ace7"><div class="ttname"><a href="namespaceamrex.html#af4ef71de20b680abfb05fddbe1e4ace7">amrex::elemwiseMin</a></div><div class="ttdeci">__host__ __device__ constexpr T elemwiseMin(T const &amp;a, T const &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:49</div></div>
+<div class="ttc" id="anamespaceamrex_html_af4ef71de20b680abfb05fddbe1e4ace7"><div class="ttname"><a href="namespaceamrex.html#af4ef71de20b680abfb05fddbe1e4ace7">amrex::elemwiseMin</a></div><div class="ttdeci">__host__ __device__ constexpr T elemwiseMin(T const &amp;a, T const &amp;b) noexcept</div><div class="ttdoc">Return the element-wise minimum of the given values for types like XDim3.</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:62</div></div>
 <div class="ttc" id="astructamrex_1_1FFT_1_1Info_html"><div class="ttname"><a href="structamrex_1_1FFT_1_1Info.html">amrex::FFT::Info</a></div><div class="ttdef"><b>Definition</b> AMReX_FFT_Helper.H:58</div></div>
 <div class="ttc" id="astructamrex_1_1FFT_1_1Info_html_a21e4123f8628883a90c04ca33bdcafd1"><div class="ttname"><a href="structamrex_1_1FFT_1_1Info.html#a21e4123f8628883a90c04ca33bdcafd1">amrex::FFT::Info::twod_mode</a></div><div class="ttdeci">bool twod_mode</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Helper.H:69</div></div>
 <div class="ttc" id="astructamrex_1_1FFT_1_1Info_html_a5075e9ba48797e43975e20c2be3ef334"><div class="ttname"><a href="structamrex_1_1FFT_1_1Info.html#a5075e9ba48797e43975e20c2be3ef334">amrex::FFT::Info::oned_mode</a></div><div class="ttdeci">bool oned_mode</div><div class="ttdoc">We might have a special twod_mode: nx or ny == 1 &amp;&amp; nz &gt; 1.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Helper.H:72</div></div>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -446,7 +445,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a34cbe61ca1607c0a4c216406d97a751c">  335</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a34cbe61ca1607c0a4c216406d97a751c">blockReduce_partial</a> (T* dest, T <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, WARPREDUCE &amp;&amp; warp_reduce, ATOMICOP &amp;&amp; atomic_op,</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                          <a class="code hl_struct" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; handler)</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>{</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keywordtype">int</span> warp = (int)threadIdx.x / warpSize;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keywordtype">int</span> warp = (<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>)threadIdx.x / warpSize;</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keywordflow">if</span> ((warp+1)*warpSize &lt;= handler.<a class="code hl_variable" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>) {</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(<a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>); <span class="comment">// full warp</span></div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keywordflow">if</span> (threadIdx.x % warpSize == 0) { atomic_op(dest, <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>); }</div>
@@ -979,6 +978,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">amrex::Direction::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html">amrex::Gpu::AtomicAdd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:634</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalAnd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalAnd.html">amrex::Gpu::AtomicLogicalAnd</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:658</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicLogicalOr_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicLogicalOr.html">amrex::Gpu::AtomicLogicalOr</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:666</div></div>

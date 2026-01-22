@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -122,15 +116,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaf0cfb9300117e9ffda0bd23a9768aebd">amrex::ParallelForOMP</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;box, T ncomp, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with optional <a class="el" href="namespaceamrex_1_1OpenMP.html">OpenMP</a> threading.  <br /></td></tr>
 <tr class="separator:gaf0cfb9300117e9ffda0bd23a9768aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7a4f23cc16489ffdc9bbde645e72fce9" id="r_ga7a4f23cc16489ffdc9bbde645e72fce9"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga7a4f23cc16489ffdc9bbde645e72fce9" id="r_ga7a4f23cc16489ffdc9bbde645e72fce9"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga7a4f23cc16489ffdc9bbde645e72fce9"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga7a4f23cc16489ffdc9bbde645e72fce9">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, T n, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:ga7a4f23cc16489ffdc9bbde645e72fce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga7a4f23cc16489ffdc9bbde645e72fce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac687b01ac371abacd573e07248573c96" id="r_gac687b01ac371abacd573e07248573c96"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L , int dim&gt; </td></tr>
+<tr class="memitem:gac687b01ac371abacd573e07248573c96" id="r_gac687b01ac371abacd573e07248573c96"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:gac687b01ac371abacd573e07248573c96"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gac687b01ac371abacd573e07248573c96">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:gac687b01ac371abacd573e07248573c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:gac687b01ac371abacd573e07248573c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7f4c17203131669131e08c31388a132f" id="r_ga7f4c17203131669131e08c31388a132f"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga7f4c17203131669131e08c31388a132f" id="r_ga7f4c17203131669131e08c31388a132f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga7f4c17203131669131e08c31388a132f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga7f4c17203131669131e08c31388a132f">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, T ncomp, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:ga7f4c17203131669131e08c31388a132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga7f4c17203131669131e08c31388a132f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,27 +132,27 @@ Functions</h2></td></tr>
 <tr class="memitem:gad9476499ddef9f1ecbcb1b8716df4c14"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gad9476499ddef9f1ecbcb1b8716df4c14">amrex::ParallelForRNG</a> (T n, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:gad9476499ddef9f1ecbcb1b8716df4c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with random number generation support.  <br /></td></tr>
 <tr class="separator:gad9476499ddef9f1ecbcb1b8716df4c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5af25315f4422ff8092cd79af21f186b" id="r_ga5af25315f4422ff8092cd79af21f186b"><td class="memTemplParams" colspan="2">template&lt;typename L , int dim&gt; </td></tr>
+<tr class="memitem:ga5af25315f4422ff8092cd79af21f186b" id="r_ga5af25315f4422ff8092cd79af21f186b"><td class="memTemplParams" colspan="2">template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga5af25315f4422ff8092cd79af21f186b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga5af25315f4422ff8092cd79af21f186b">amrex::ParallelForRNG</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:ga5af25315f4422ff8092cd79af21f186b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with random number generation support.  <br /></td></tr>
 <tr class="separator:ga5af25315f4422ff8092cd79af21f186b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac5c300849a3bbe31f22e6b94e25113ef" id="r_gac5c300849a3bbe31f22e6b94e25113ef"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:gac5c300849a3bbe31f22e6b94e25113ef" id="r_gac5c300849a3bbe31f22e6b94e25113ef"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:gac5c300849a3bbe31f22e6b94e25113ef"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gac5c300849a3bbe31f22e6b94e25113ef">amrex::ParallelForRNG</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, T ncomp, L const &amp;f) noexcept</td></tr>
 <tr class="memdesc:gac5c300849a3bbe31f22e6b94e25113ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function with random number generation support.  <br /></td></tr>
 <tr class="separator:gac5c300849a3bbe31f22e6b94e25113ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2999ea165bfa82788ef9b729391e5223" id="r_ga2999ea165bfa82788ef9b729391e5223"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L1 , typename L2 , int dim&gt; </td></tr>
+<tr class="memitem:ga2999ea165bfa82788ef9b729391e5223" id="r_ga2999ea165bfa82788ef9b729391e5223"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga2999ea165bfa82788ef9b729391e5223"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga2999ea165bfa82788ef9b729391e5223">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga2999ea165bfa82788ef9b729391e5223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga2999ea165bfa82788ef9b729391e5223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga785daad8d78a29b6a452555cc874072c" id="r_ga785daad8d78a29b6a452555cc874072c"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </td></tr>
+<tr class="memitem:ga785daad8d78a29b6a452555cc874072c" id="r_ga785daad8d78a29b6a452555cc874072c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga785daad8d78a29b6a452555cc874072c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L3 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga785daad8d78a29b6a452555cc874072c">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga785daad8d78a29b6a452555cc874072c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga785daad8d78a29b6a452555cc874072c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4cdc8c22b8a396026cb159ecb54778a3" id="r_ga4cdc8c22b8a396026cb159ecb54778a3"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga4cdc8c22b8a396026cb159ecb54778a3" id="r_ga4cdc8c22b8a396026cb159ecb54778a3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga4cdc8c22b8a396026cb159ecb54778a3"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga4cdc8c22b8a396026cb159ecb54778a3">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga4cdc8c22b8a396026cb159ecb54778a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga4cdc8c22b8a396026cb159ecb54778a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64441e4f8352310ca63b7ca1772a3365" id="r_ga64441e4f8352310ca63b7ca1772a3365"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga64441e4f8352310ca63b7ca1772a3365" id="r_ga64441e4f8352310ca63b7ca1772a3365"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga64441e4f8352310ca63b7ca1772a3365"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L3 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga64441e4f8352310ca63b7ca1772a3365">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga64441e4f8352310ca63b7ca1772a3365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga64441e4f8352310ca63b7ca1772a3365"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,27 +160,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5213be0d4e9269a26c30628042ba96ec"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga5213be0d4e9269a26c30628042ba96ec">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, T n, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga5213be0d4e9269a26c30628042ba96ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga5213be0d4e9269a26c30628042ba96ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2d48bfbb8ec6d1cda3e8936caf51d791" id="r_ga2d48bfbb8ec6d1cda3e8936caf51d791"><td class="memTemplParams" colspan="2">template&lt;typename L , int dim&gt; </td></tr>
+<tr class="memitem:ga2d48bfbb8ec6d1cda3e8936caf51d791" id="r_ga2d48bfbb8ec6d1cda3e8936caf51d791"><td class="memTemplParams" colspan="2">template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga2d48bfbb8ec6d1cda3e8936caf51d791"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga2d48bfbb8ec6d1cda3e8936caf51d791">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga2d48bfbb8ec6d1cda3e8936caf51d791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga2d48bfbb8ec6d1cda3e8936caf51d791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a35b6c7aa3b27a1b45e38424982a2be" id="r_ga1a35b6c7aa3b27a1b45e38424982a2be"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga1a35b6c7aa3b27a1b45e38424982a2be" id="r_ga1a35b6c7aa3b27a1b45e38424982a2be"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga1a35b6c7aa3b27a1b45e38424982a2be"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga1a35b6c7aa3b27a1b45e38424982a2be">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, T ncomp, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga1a35b6c7aa3b27a1b45e38424982a2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga1a35b6c7aa3b27a1b45e38424982a2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e207b794feb8ec5a45c9bdeecfe6e7e" id="r_ga8e207b794feb8ec5a45c9bdeecfe6e7e"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , int dim&gt; </td></tr>
+<tr class="memitem:ga8e207b794feb8ec5a45c9bdeecfe6e7e" id="r_ga8e207b794feb8ec5a45c9bdeecfe6e7e"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga8e207b794feb8ec5a45c9bdeecfe6e7e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga8e207b794feb8ec5a45c9bdeecfe6e7e">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga8e207b794feb8ec5a45c9bdeecfe6e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga8e207b794feb8ec5a45c9bdeecfe6e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64a88b871bda19b096d4d875e441e93d" id="r_ga64a88b871bda19b096d4d875e441e93d"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </td></tr>
+<tr class="memitem:ga64a88b871bda19b096d4d875e441e93d" id="r_ga64a88b871bda19b096d4d875e441e93d"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga64a88b871bda19b096d4d875e441e93d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L3 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga64a88b871bda19b096d4d875e441e93d">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga64a88b871bda19b096d4d875e441e93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga64a88b871bda19b096d4d875e441e93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d63f819b9792e308d9f45e82379fa63" id="r_ga4d63f819b9792e308d9f45e82379fa63"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga4d63f819b9792e308d9f45e82379fa63" id="r_ga4d63f819b9792e308d9f45e82379fa63"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga4d63f819b9792e308d9f45e82379fa63"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga4d63f819b9792e308d9f45e82379fa63">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga4d63f819b9792e308d9f45e82379fa63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga4d63f819b9792e308d9f45e82379fa63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaedc2c324b6f7f21927374bef21968d55" id="r_gaedc2c324b6f7f21927374bef21968d55"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
+<tr class="memitem:gaedc2c324b6f7f21927374bef21968d55" id="r_gaedc2c324b6f7f21927374bef21968d55"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
 <tr class="memitem:gaedc2c324b6f7f21927374bef21968d55"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L3 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaedc2c324b6f7f21927374bef21968d55">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:gaedc2c324b6f7f21927374bef21968d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:gaedc2c324b6f7f21927374bef21968d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,55 +188,55 @@ Functions</h2></td></tr>
 <tr class="memitem:gaff9b2ebd167a621c7784769618bda4c6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaff9b2ebd167a621c7784769618bda4c6">amrex::ParallelFor</a> (T n, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:gaff9b2ebd167a621c7784769618bda4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:gaff9b2ebd167a621c7784769618bda4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga072608d6bf753001563975d5a8fe4fbd" id="r_ga072608d6bf753001563975d5a8fe4fbd"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga072608d6bf753001563975d5a8fe4fbd" id="r_ga072608d6bf753001563975d5a8fe4fbd"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga072608d6bf753001563975d5a8fe4fbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga072608d6bf753001563975d5a8fe4fbd">amrex::ParallelFor</a> (T n, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga072608d6bf753001563975d5a8fe4fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga072608d6bf753001563975d5a8fe4fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga028e20eac95c13e9663226246e72f7bf" id="r_ga028e20eac95c13e9663226246e72f7bf"><td class="memTemplParams" colspan="2">template&lt;typename L , int dim&gt; </td></tr>
+<tr class="memitem:ga028e20eac95c13e9663226246e72f7bf" id="r_ga028e20eac95c13e9663226246e72f7bf"><td class="memTemplParams" colspan="2">template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga028e20eac95c13e9663226246e72f7bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga028e20eac95c13e9663226246e72f7bf">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga028e20eac95c13e9663226246e72f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga028e20eac95c13e9663226246e72f7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga48c30f3939e6a0577acf93eca7ee74e8" id="r_ga48c30f3939e6a0577acf93eca7ee74e8"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L , int dim&gt; </td></tr>
+<tr class="memitem:ga48c30f3939e6a0577acf93eca7ee74e8" id="r_ga48c30f3939e6a0577acf93eca7ee74e8"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga48c30f3939e6a0577acf93eca7ee74e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga48c30f3939e6a0577acf93eca7ee74e8">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga48c30f3939e6a0577acf93eca7ee74e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga48c30f3939e6a0577acf93eca7ee74e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1338030001b43e68961d1da354429df8" id="r_ga1338030001b43e68961d1da354429df8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga1338030001b43e68961d1da354429df8" id="r_ga1338030001b43e68961d1da354429df8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga1338030001b43e68961d1da354429df8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga1338030001b43e68961d1da354429df8">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const &amp;box, T ncomp, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ga1338030001b43e68961d1da354429df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga1338030001b43e68961d1da354429df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeb25c11f900fd632e0fbf0bfceb1e941" id="r_gaeb25c11f900fd632e0fbf0bfceb1e941"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
+<tr class="memitem:gaeb25c11f900fd632e0fbf0bfceb1e941" id="r_gaeb25c11f900fd632e0fbf0bfceb1e941"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:gaeb25c11f900fd632e0fbf0bfceb1e941"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gaeb25c11f900fd632e0fbf0bfceb1e941">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box, T ncomp, L &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:gaeb25c11f900fd632e0fbf0bfceb1e941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:gaeb25c11f900fd632e0fbf0bfceb1e941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4285c8b85f60e60e3a39da94f10244d3" id="r_ga4285c8b85f60e60e3a39da94f10244d3"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , int dim&gt; </td></tr>
+<tr class="memitem:ga4285c8b85f60e60e3a39da94f10244d3" id="r_ga4285c8b85f60e60e3a39da94f10244d3"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga4285c8b85f60e60e3a39da94f10244d3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga4285c8b85f60e60e3a39da94f10244d3">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga4285c8b85f60e60e3a39da94f10244d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga4285c8b85f60e60e3a39da94f10244d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65be6ab5286c866d56e425a66cb14620" id="r_ga65be6ab5286c866d56e425a66cb14620"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L1 , typename L2 , int dim&gt; </td></tr>
+<tr class="memitem:ga65be6ab5286c866d56e425a66cb14620" id="r_ga65be6ab5286c866d56e425a66cb14620"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga65be6ab5286c866d56e425a66cb14620"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga65be6ab5286c866d56e425a66cb14620">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga65be6ab5286c866d56e425a66cb14620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga65be6ab5286c866d56e425a66cb14620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga345d853c34161b740da9bfed2cf9980b" id="r_ga345d853c34161b740da9bfed2cf9980b"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </td></tr>
+<tr class="memitem:ga345d853c34161b740da9bfed2cf9980b" id="r_ga345d853c34161b740da9bfed2cf9980b"><td class="memTemplParams" colspan="2">template&lt;typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ga345d853c34161b740da9bfed2cf9980b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga345d853c34161b740da9bfed2cf9980b">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga345d853c34161b740da9bfed2cf9980b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga345d853c34161b740da9bfed2cf9980b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad586d7b2eed6de95b9e92d9cf69c762c" id="r_gad586d7b2eed6de95b9e92d9cf69c762c"><td class="memTemplParams" colspan="2">template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </td></tr>
+<tr class="memitem:gad586d7b2eed6de95b9e92d9cf69c762c" id="r_gad586d7b2eed6de95b9e92d9cf69c762c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:gad586d7b2eed6de95b9e92d9cf69c762c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#gad586d7b2eed6de95b9e92d9cf69c762c">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:gad586d7b2eed6de95b9e92d9cf69c762c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:gad586d7b2eed6de95b9e92d9cf69c762c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45b9da75fb97b1e7917f940d42061d55" id="r_ga45b9da75fb97b1e7917f940d42061d55"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga45b9da75fb97b1e7917f940d42061d55" id="r_ga45b9da75fb97b1e7917f940d42061d55"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga45b9da75fb97b1e7917f940d42061d55"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga45b9da75fb97b1e7917f940d42061d55">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga45b9da75fb97b1e7917f940d42061d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga45b9da75fb97b1e7917f940d42061d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76aa378c8e16e19e82db9b3b0d660bfe" id="r_ga76aa378c8e16e19e82db9b3b0d660bfe"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga76aa378c8e16e19e82db9b3b0d660bfe" id="r_ga76aa378c8e16e19e82db9b3b0d660bfe"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga76aa378c8e16e19e82db9b3b0d660bfe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga76aa378c8e16e19e82db9b3b0d660bfe">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</td></tr>
 <tr class="memdesc:ga76aa378c8e16e19e82db9b3b0d660bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga76aa378c8e16e19e82db9b3b0d660bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99029a09e703f51860ddab84f8e1c490" id="r_ga99029a09e703f51860ddab84f8e1c490"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga99029a09e703f51860ddab84f8e1c490" id="r_ga99029a09e703f51860ddab84f8e1c490"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga99029a09e703f51860ddab84f8e1c490"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga99029a09e703f51860ddab84f8e1c490">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga99029a09e703f51860ddab84f8e1c490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga99029a09e703f51860ddab84f8e1c490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7569e8a1b6793f4203adfbe3c32e90e5" id="r_ga7569e8a1b6793f4203adfbe3c32e90e5"><td class="memTemplParams" colspan="2">template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga7569e8a1b6793f4203adfbe3c32e90e5" id="r_ga7569e8a1b6793f4203adfbe3c32e90e5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga7569e8a1b6793f4203adfbe3c32e90e5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__amrex__execution.html#ga7569e8a1b6793f4203adfbe3c32e90e5">amrex::ParallelFor</a> (<a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1BoxND.html">BoxND</a>&lt; dim &gt; const  &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="memdesc:ga7569e8a1b6793f4203adfbe3c32e90e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performance-portable kernel launch function.  <br /></td></tr>
 <tr class="separator:ga7569e8a1b6793f4203adfbe3c32e90e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,7 +256,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -302,7 +296,7 @@ template&lt;int MT, typename L , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -348,7 +342,7 @@ template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </div>
+template&lt;typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -412,7 +406,7 @@ template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -476,7 +470,7 @@ template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L1 , typename L2 , int dim&gt; </div>
+template&lt;typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -528,7 +522,7 @@ template&lt;typename L1 , typename L2 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L1 , typename L2 , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -580,7 +574,7 @@ template&lt;int MT, typename L1 , typename L2 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
+template&lt;typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -644,7 +638,7 @@ template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typ
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -708,7 +702,7 @@ template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
+template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -790,7 +784,7 @@ template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -872,7 +866,7 @@ template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , type
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L , int dim&gt; </div>
+template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -912,7 +906,7 @@ template&lt;typename L , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -958,7 +952,7 @@ template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1004,7 +998,7 @@ template&lt;int MT, typename L , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1056,7 +1050,7 @@ template&lt;int MT, typename T , typename L , int dim, typename M  = std::enable
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1126,7 +1120,7 @@ template&lt;int MT, typename L1 , typename L2 , typename L3 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename L1 , typename L2 , int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1184,7 +1178,7 @@ template&lt;int MT, typename L1 , typename L2 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1254,7 +1248,7 @@ template&lt;int MT, typename T1 , typename T2 , typename L1 , typename L2 , int 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1342,7 +1336,7 @@ template&lt;int MT, typename T1 , typename T2 , typename T3 , typename L1 , type
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1388,7 +1382,7 @@ template&lt;int MT, typename T , typename L , typename M  = std::enable_if_t&lt;
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L , int dim&gt; </div>
+template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1434,7 +1428,7 @@ template&lt;typename L , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1486,7 +1480,7 @@ template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </div>
+template&lt;typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1556,7 +1550,7 @@ template&lt;typename L1 , typename L2 , typename L3 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L1 , typename L2 , int dim&gt; </div>
+template&lt;typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1614,7 +1608,7 @@ template&lt;typename L1 , typename L2 , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
+template&lt;typename T1 , typename T2 , typename L1 , typename L2 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1684,7 +1678,7 @@ template&lt;typename T1 , typename T2 , typename L1 , typename L2 , int dim, typ
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , int dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
+template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M1  = std::enable_if_t&lt;std::is_integral_v&lt;T1&gt;&gt;, typename M2  = std::enable_if_t&lt;std::is_integral_v&lt;T2&gt;&gt;, typename M3  = std::enable_if_t&lt;std::is_integral_v&lt;T3&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1818,7 +1812,7 @@ template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> MT, typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2027,7 +2021,7 @@ template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename L , int dim&gt; </div>
+template&lt;typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2067,7 +2061,7 @@ template&lt;typename L , int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename L , int dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
+template&lt;typename T , typename L , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim, typename M  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

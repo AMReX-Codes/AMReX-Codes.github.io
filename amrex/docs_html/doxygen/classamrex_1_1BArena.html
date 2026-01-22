@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -133,10 +127,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84fc546372485495fe7eca80c08764e6" id="r_a84fc546372485495fe7eca80c08764e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BArena.html#a84fc546372485495fe7eca80c08764e6">isHostAccessible</a> () const final</td></tr>
 <tr class="separator:a84fc546372485495fe7eca80c08764e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56c8b6538282b4a56466b9053065b3e0" id="r_a56c8b6538282b4a56466b9053065b3e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BArena.html#a56c8b6538282b4a56466b9053065b3e0">isManaged</a> () const final</td></tr>
+<tr class="memdesc:a56c8b6538282b4a56466b9053065b3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether it is managed GPU memory.  <br /></td></tr>
 <tr class="separator:a56c8b6538282b4a56466b9053065b3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf63d084f8e220d01d53b543f7f93bc6" id="r_abf63d084f8e220d01d53b543f7f93bc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BArena.html#abf63d084f8e220d01d53b543f7f93bc6">isDevice</a> () const final</td></tr>
+<tr class="memdesc:abf63d084f8e220d01d53b543f7f93bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether it is non-managed GPU device memory.  <br /></td></tr>
 <tr class="separator:abf63d084f8e220d01d53b543f7f93bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4089e5008457c5f04ee4acfc430b3f37" id="r_a4089e5008457c5f04ee4acfc430b3f37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BArena.html#a4089e5008457c5f04ee4acfc430b3f37">isPinned</a> () const final</td></tr>
+<tr class="memdesc:a4089e5008457c5f04ee4acfc430b3f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether it is pinned host memory.  <br /></td></tr>
 <tr class="separator:a4089e5008457c5f04ee4acfc430b3f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:a327e7541e6291ce735c03392b21931b6 inherit pub_methods_classamrex_1_1Arena" id="r_a327e7541e6291ce735c03392b21931b6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6">~Arena</a> ()=default</td></tr>
@@ -152,8 +149,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a23c2b2614dcafe7437bdba8ac8cbe163 inherit pub_methods_classamrex_1_1Arena" id="r_a23c2b2614dcafe7437bdba8ac8cbe163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a23c2b2614dcafe7437bdba8ac8cbe163">operator=</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:a23c2b2614dcafe7437bdba8ac8cbe163 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a872ba01b7389ba36beb402641df3f2b9 inherit pub_methods_classamrex_1_1Arena" id="r_a872ba01b7389ba36beb402641df3f2b9"><td class="memItemLeft" align="right" valign="top">virtual std::pair&lt; void *, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a872ba01b7389ba36beb402641df3f2b9">alloc_in_place</a> (void *, std::size_t, std::size_t szmax)</td></tr>
+<tr class="memdesc:a872ba01b7389ba36beb402641df3f2b9 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory in-place if possible.  <br /></td></tr>
 <tr class="separator:a872ba01b7389ba36beb402641df3f2b9 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceacbbe5395a8671cc571063d51ee7e2 inherit pub_methods_classamrex_1_1Arena" id="r_aceacbbe5395a8671cc571063d51ee7e2"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#aceacbbe5395a8671cc571063d51ee7e2">shrink_in_place</a> (void *, std::size_t sz)</td></tr>
+<tr class="memdesc:aceacbbe5395a8671cc571063d51ee7e2 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink allocation size in-place.  <br /></td></tr>
 <tr class="separator:aceacbbe5395a8671cc571063d51ee7e2 inherit pub_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae58dbb9ab6bb4e8d980b384b0d8804e5 inherit pub_methods_classamrex_1_1Arena" id="r_ae58dbb9ab6bb4e8d980b384b0d8804e5"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ae58dbb9ab6bb4e8d980b384b0d8804e5">freeUnused</a> ()</td></tr>
 <tr class="memdesc:ae58dbb9ab6bb4e8d980b384b0d8804e5 inherit pub_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free unused memory back to the system. Return value is the amount memory freed.  <br /></td></tr>
@@ -183,17 +182,23 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a minimum required arena size of sz bytes, this returns the next largest arena size that will align to align_size bytes.  <br /></td></tr>
 <tr class="separator:a253c417e0bd2863509c75d6250468a4e inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena" id="r_ad3c30247b7f738cc4e292f781a503ce9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ad3c30247b7f738cc4e292f781a503ce9">Initialize</a> (bool minimal)</td></tr>
+<tr class="memdesc:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally by amrex.  <br /></td></tr>
 <tr class="separator:ad3c30247b7f738cc4e292f781a503ce9 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena" id="r_ada0c93d4aa3a9adce127ba381c652ac6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ada0c93d4aa3a9adce127ba381c652ac6">PrintUsage</a> (bool print_max_usage=false)</td></tr>
+<tr class="memdesc:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas.  <br /></td></tr>
 <tr class="separator:ada0c93d4aa3a9adce127ba381c652ac6 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8dfd674efa1da179629083236d2ad50 inherit pub_static_methods_classamrex_1_1Arena" id="r_af8dfd674efa1da179629083236d2ad50"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#af8dfd674efa1da179629083236d2ad50">PrintUsageToStream</a> (std::ostream &amp;os, std::string const &amp;space)</td></tr>
+<tr class="memdesc:af8dfd674efa1da179629083236d2ad50 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas to a given output stream.  <br /></td></tr>
 <tr class="separator:af8dfd674efa1da179629083236d2ad50 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1cfbcfa1c41ac7e45bf469e93db7402 inherit pub_static_methods_classamrex_1_1Arena" id="r_aa1cfbcfa1c41ac7e45bf469e93db7402"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402">PrintUsageToFiles</a> (std::string const &amp;filename, std::string const &amp;message)</td></tr>
+<tr class="memdesc:aa1cfbcfa1c41ac7e45bf469e93db7402 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Print.html" title="This class provides the user with a few print options.">Print</a> memory usage information of all arenas to given file.  <br /></td></tr>
 <tr class="separator:aa1cfbcfa1c41ac7e45bf469e93db7402 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena" id="r_a06dd6197d2081d7dd4c1bed308edd387"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a06dd6197d2081d7dd4c1bed308edd387">Finalize</a> ()</td></tr>
+<tr class="memdesc:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally by amrex.  <br /></td></tr>
 <tr class="separator:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:a4b2f3b31e81e52426aef615cb2aaa7b7 inherit pub_static_attribs_classamrex_1_1Arena" id="r_a4b2f3b31e81e52426aef615cb2aaa7b7"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7">align_size</a> = 16</td></tr>
+<tr class="memdesc:a4b2f3b31e81e52426aef615cb2aaa7b7 inherit pub_static_attribs_classamrex_1_1Arena"><td class="mdescLeft">&#160;</td><td class="mdescRight">The alignment of allocated memory.  <br /></td></tr>
 <tr class="separator:a4b2f3b31e81e52426aef615cb2aaa7b7 inherit pub_static_attribs_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
 <tr class="memitem:a881f97d5676c4784f52d6f4c702da696 inherit pro_methods_classamrex_1_1Arena" id="r_a881f97d5676c4784f52d6f4c702da696"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a881f97d5676c4784f52d6f4c702da696">freeUnused_protected</a> ()</td></tr>
@@ -297,6 +302,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Check whether it is non-managed GPU device memory. </p>
+<p>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </p>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#aa45555e396ee74158b0c6f3331ce5536">amrex::Arena</a>.</p>
 
 </div>
@@ -323,6 +331,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Check whether the memory is accessible on the device. Note that isDeviceAccessible and isHostAccessible can both be true. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#afa7c9e223346f671eb055b3ce8580e56">amrex::Arena</a>.</p>
 
@@ -350,6 +359,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Check whether the memory is accessible on the host. Note that isDeviceAccessible and isHostAccessible can both be true. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a40d897685d407918d2d6143b5301a525">amrex::Arena</a>.</p>
 
@@ -378,6 +388,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Check whether it is managed GPU memory. </p>
+<p>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </p>
+
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909">amrex::Arena</a>.</p>
 
 </div>
@@ -404,6 +417,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Check whether it is pinned host memory. </p>
+<p>Note that isManaged, isDevice and isPinned are mutually exclusive. For memory allocated by cudaMalloc* etc. in GPU builds, one of them returns true. For CPU builds, they are always false. </p>
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784">amrex::Arena</a>.</p>
 

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -119,7 +113,7 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMREX_ASSERT&#160;:&#160;<a class="el" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMReX_BLassert.H</a></li>
 <li>AMREX_ASSERT_WITH_MESSAGE&#160;:&#160;<a class="el" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMReX_BLassert.H</a></li>
 <li>AMREX_ASSUME&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a3b797bf3e928ddc913e2121bee17aef5">AMReX_Extension.H</a></li>
-<li>amrex_asyncarray_delete()&#160;:&#160;<a class="el" href="AMReX__GpuAsyncArray_8H.html#ac595290cdba7bcb8b7a61deda2d8633f">AMReX_GpuAsyncArray.H</a>, <a class="el" href="AMReX__GpuAsyncArray_8cpp.html#ac595290cdba7bcb8b7a61deda2d8633f">AMReX_GpuAsyncArray.cpp</a></li>
+<li>amrex_asyncarray_delete()&#160;:&#160;<a class="el" href="AMReX__GpuAsyncArray_8cpp.html#ac595290cdba7bcb8b7a61deda2d8633f">AMReX_GpuAsyncArray.cpp</a>, <a class="el" href="AMReX__GpuAsyncArray_8H.html#ac595290cdba7bcb8b7a61deda2d8633f">AMReX_GpuAsyncArray.H</a></li>
 <li>AMREX_ATTRIBUTE_FLATTEN_FOR&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a959c30675fdc4974adca486be8de3c6e">AMReX_Extension.H</a></li>
 <li>AMREX_ATTRIBUTE_WEAK&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#aca0e371f8327722548a19e84acabea8e">AMReX_Extension.H</a></li>
 <li>AMREX_BCREC_3D&#160;:&#160;<a class="el" href="AMReX__ArrayLim_8H.html#a4e29c72fcbe1828377b6d0faebedfefe">AMReX_ArrayLim.H</a></li>
@@ -133,7 +127,6 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMREX_D_PICK&#160;:&#160;<a class="el" href="AMReX__SPACE_8H.html#abcf04d652fe7dbc2835a996ab2d71325">AMReX_SPACE.H</a></li>
 <li>AMREX_D_TERM&#160;:&#160;<a class="el" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMReX_SPACE.H</a></li>
 <li>AMREX_DEFAULT_RUNON&#160;:&#160;<a class="el" href="AMReX__GpuControl_8H.html#a3366977083f4788e5548edd103efaa0b">AMReX_GpuControl.H</a></li>
-<li>amrex_delete_parmparse()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a03286b25639077c73a045730dc364d64">AMReX_parmparse_fi.cpp</a></li>
 <li>AMREX_DEVICE_ASSERT&#160;:&#160;<a class="el" href="AMReX__GpuAssert_8H.html#ad2fc1939c7344c73cae30833f9ea0d6f">AMReX_GpuAssert.H</a></li>
 <li>AMREX_DEVICE_COMPILE&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af">AMReX_GpuQualifiers.H</a></li>
 <li>AMREX_DEVICE_GLOBAL_VARIABLE&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#a65d5fa378e06a40d708386f6b3e8deb6">AMReX_GpuQualifiers.H</a></li>
@@ -147,20 +140,17 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMREX_EXPORT&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#ac05fa35b3db13c4599d7ad5fc51bef47">AMReX_Extension.H</a></li>
 <li>amrex_fab_filcc()&#160;:&#160;<a class="el" href="AMReX__filcc__f_8H.html#aeeab9b8d24295c7bf964ee6e98f59776">AMReX_filcc_f.H</a></li>
 <li>AMREX_FALLTHROUGH&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a8c2a4f7808c3093eb46278654b309fe3">AMReX_Extension.H</a></li>
-<li>amrex_fi_abort()&#160;:&#160;<a class="el" href="AMReX__error__fi_8cpp.html#a9d3857c8f5b52583630237702397ab28">AMReX_error_fi.cpp</a></li>
-<li>amrex_fi_error()&#160;:&#160;<a class="el" href="AMReX__error__fi_8cpp.html#a2af202aacb485ea97d8c32194c265436">AMReX_error_fi.cpp</a></li>
 <li>amrex_fi_pd_bcast_r()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#a9cf180d32bbb6668330bddd3b1107677">AMReX_ParallelDescriptor.cpp</a></li>
 <li>amrex_fi_pd_ioprocessor()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#aa97739560ad64ab5eed1b64b4555fcc8">AMReX_ParallelDescriptor.cpp</a></li>
 <li>amrex_fi_pd_ioprocessor_number()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#ab02f0af6eb415481f6c0a471115cda53">AMReX_ParallelDescriptor.cpp</a></li>
 <li>amrex_fi_pd_myproc()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#a55bd78406d8e49195e537d01b019be81">AMReX_ParallelDescriptor.cpp</a></li>
 <li>amrex_fi_pd_nprocs()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#a7d5660f9a749bc7d07bfef333264e851">AMReX_ParallelDescriptor.cpp</a></li>
 <li>amrex_fi_pd_wtime()&#160;:&#160;<a class="el" href="AMReX__ParallelDescriptor_8cpp.html#a246b36fd3c5ded8a2fef5aabac2d46c3">AMReX_ParallelDescriptor.cpp</a></li>
-<li>amrex_fi_warning()&#160;:&#160;<a class="el" href="AMReX__error__fi_8cpp.html#ad4e46a2c8abc70064d346fa942f02b4c">AMReX_error_fi.cpp</a></li>
 <li>amrex_finalize_namelist()&#160;:&#160;<a class="el" href="AMReX__ParmParse_8cpp.html#ae84f275b5d19a9eee652a6226b944b3f">AMReX_ParmParse.cpp</a></li>
 <li>AMREX_FLATTEN&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a6d0418dbdcef666ad598b1a564571eaf">AMReX_Extension.H</a></li>
-<li>AMREX_FOR_1D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a4bc6bdc050ca31a20d4f264e30d5a17e">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
+<li>AMREX_FOR_1D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a4bc6bdc050ca31a20d4f264e30d5a17e">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_FOR_1D_IMPL&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a9c5012c7be1083b4a59998e713d217d2">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
-<li>AMREX_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#aaa3eddc4e46667f1ab532fcff0f1a9fe">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a1a2a3f6095bcdeb590ee81b4329c350d">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
+<li>AMREX_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a1a2a3f6095bcdeb590ee81b4329c350d">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#aaa3eddc4e46667f1ab532fcff0f1a9fe">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_FOR_3D_IMPL&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a1c5483b1ed4d9e0368f2ed588d23187d">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
 <li>AMREX_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#ac9a8d7b0c7a78713e4fdd55ee2e4fb83">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a90cc2b457c96511ac391e3284f94c50e">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_FOR_4D_IMPL&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#adfbd3503e6d17682738b06831fad0e3e">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
@@ -177,7 +167,7 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMREX_GPU_GLOBAL&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">AMReX_GpuQualifiers.H</a></li>
 <li>AMREX_GPU_HOST&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">AMReX_GpuQualifiers.H</a></li>
 <li>AMREX_GPU_HOST_DEVICE&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMReX_GpuQualifiers.H</a></li>
-<li>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a5a37adc8398e48fbcb6db85b72b06793">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a475e84abbd9698afb9147ac67a49bdaa">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
+<li>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a475e84abbd9698afb9147ac67a49bdaa">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a5a37adc8398e48fbcb6db85b72b06793">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
 <li>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a4639cdef27e47fdf3e607cb4d57920fe">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a289cd6699548aba71d287d94299ae098">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#aa3c3a61eea0e24f7656e735fd6967539">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#ab8f5b7c92c1194b0f0482c84ce1fe5b3">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#ae57c0c24e324c7f036e03631ac52ccef">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#ae57c0c24e324c7f036e03631ac52ccef">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
@@ -195,15 +185,15 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>amrex_hoextraptocc()&#160;:&#160;<a class="el" href="AMReX__filcc__f_8H.html#adb59d7e0c3c19758a9df2a9719aa5e98">AMReX_filcc_f.H</a></li>
 <li>AMREX_HOST_DEVICE_FOR_1D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a5ddf08b6bcdbc8243335b9eaa82f01d8">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_FOR_1D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#afd9e772ffd425c7e87ff315cab8afa6c">AMReX_GpuLaunch.nolint.H</a></li>
-<li>AMREX_HOST_DEVICE_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a2c5cdb5798fd1ec3244e3944d922d486">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
+<li>AMREX_HOST_DEVICE_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a2c5cdb5798fd1ec3244e3944d922d486">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_FOR_3D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#a03a46605877c43aba1dcc4924bd6f67f">AMReX_GpuLaunch.nolint.H</a></li>
-<li>AMREX_HOST_DEVICE_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#af44071ada5d6349748d7ee4bd8fcd8d9">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a544d8118ae575cdae69565368686d72f">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
+<li>AMREX_HOST_DEVICE_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a544d8118ae575cdae69565368686d72f">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#af44071ada5d6349748d7ee4bd8fcd8d9">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_FOR_4D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#ab05b06e3d1342d83c6650cda73849536">AMReX_GpuLaunch.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_PARALLEL_FOR_1D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a3611c23eea6919c2351f474c872c1038">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#a9d1df89a84b6c77345a3409e93d1d5d9">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#a1bb4109b1b472fbcfb59fc4111460564">AMReX_GpuLaunch.nolint.H</a></li>
-<li>AMREX_HOST_DEVICE_PARALLEL_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#addc80d7306fb23d63987e86144405a7a">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
+<li>AMREX_HOST_DEVICE_PARALLEL_FOR_3D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#addc80d7306fb23d63987e86144405a7a">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#afef0aea2a8ff04d4d7a6c06d92b48fbd">AMReX_GpuLaunch.nolint.H</a></li>
-<li>AMREX_HOST_DEVICE_PARALLEL_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#af50fc8d91e2af7489b381250b4e3b321">AMReX_GpuLaunchMacrosG.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
+<li>AMREX_HOST_DEVICE_PARALLEL_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#af50fc8d91e2af7489b381250b4e3b321">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG&#160;:&#160;<a class="el" href="AMReX__GpuLaunch_8nolint_8H.html#ab10b9f44fb4000025c4d7a025abac805">AMReX_GpuLaunch.nolint.H</a></li>
 <li>AMREX_IF_CONSTEXPR&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#aa0f4a2c9f3e72f1f692913e93372d318">AMReX_Extension.H</a></li>
 <li>AMREX_IF_ON_DEVICE&#160;:&#160;<a class="el" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMReX_GpuQualifiers.H</a></li>
@@ -246,7 +236,7 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>amrex_long&#160;:&#160;<a class="el" href="AMReX__INT_8H.html#afc0dcbacae578299941a81017a1b4fe7">AMReX_INT.H</a></li>
 <li>AMREX_LOOP_3D&#160;:&#160;<a class="el" href="AMReX__Loop_8nolint_8H.html#a03b436b41a98f86757c053a372a7947f">AMReX_Loop.nolint.H</a></li>
 <li>AMREX_LOOP_4D&#160;:&#160;<a class="el" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMReX_Loop.nolint.H</a></li>
-<li>amrex_malloc()&#160;:&#160;<a class="el" href="AMReX__Utility_8cpp.html#a69f575b0cb23e6374f9ab68b4b5903cf">AMReX_Utility.cpp</a>, <a class="el" href="AMReX__Utility_8H.html#a69f575b0cb23e6374f9ab68b4b5903cf">AMReX_Utility.H</a></li>
+<li>amrex_malloc()&#160;:&#160;<a class="el" href="AMReX__Utility_8H.html#a69f575b0cb23e6374f9ab68b4b5903cf">AMReX_Utility.H</a>, <a class="el" href="AMReX__Utility_8cpp.html#a69f575b0cb23e6374f9ab68b4b5903cf">AMReX_Utility.cpp</a></li>
 <li>amrex_mempool_alloc()&#160;:&#160;<a class="el" href="AMReX__MemPool_8cpp.html#a3163b25d4c6c7268da7e78b5ff5c5045">AMReX_MemPool.cpp</a>, <a class="el" href="AMReX__MemPool_8H.html#ab9afd5a8ad85fd3a7d89e16e7daee808">AMReX_MemPool.H</a></li>
 <li>amrex_mempool_finalize()&#160;:&#160;<a class="el" href="AMReX__MemPool_8cpp.html#a4dd49892147e767c1b44ffb5be366739">AMReX_MemPool.cpp</a>, <a class="el" href="AMReX__MemPool_8H.html#a4dd49892147e767c1b44ffb5be366739">AMReX_MemPool.H</a></li>
 <li>amrex_mempool_free()&#160;:&#160;<a class="el" href="AMReX__MemPool_8cpp.html#a02550f5d3498f47d6ef88f13340bb20b">AMReX_MemPool.cpp</a>, <a class="el" href="AMReX__MemPool_8H.html#a02550f5d3498f47d6ef88f13340bb20b">AMReX_MemPool.H</a></li>
@@ -254,7 +244,6 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>amrex_mempool_init()&#160;:&#160;<a class="el" href="AMReX__MemPool_8cpp.html#a0c81aff9a077e415a6dba72b2b8b8e6a">AMReX_MemPool.cpp</a>, <a class="el" href="AMReX__MemPool_8H.html#a0c81aff9a077e415a6dba72b2b8b8e6a">AMReX_MemPool.H</a></li>
 <li>amrex_mllinop_apply_bc()&#160;:&#160;<a class="el" href="AMReX__MLLinOp__F_8H.html#aee1a32f3c17ec8fe4984660f4cd29d7e">AMReX_MLLinOp_F.H</a></li>
 <li>AMREX_MUNLOCK&#160;:&#160;<a class="el" href="AMReX__Arena_8cpp.html#a4644bf9393b86dedc4b141d3a0083478">AMReX_Arena.cpp</a></li>
-<li>amrex_new_parmparse()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a1d6fc43a4d487f75e36f2f1fab425d25">AMReX_parmparse_fi.cpp</a></li>
 <li>AMREX_NO_INLINE&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a5fddc549617b82ce5fc2b33aa9b6aa6f">AMReX_Extension.H</a></li>
 <li>AMREX_NO_UNIQUE_ADDRESS&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a4239dc930ea8f47a20ebf1aca31dc602">AMReX_Extension.H</a></li>
 <li>AMREX_NODISCARD&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">AMReX_Extension.H</a></li>
@@ -264,26 +253,6 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <li>AMREX_PARALLEL_FOR_3D_IMPL&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#ad2335a9815fe332fac7deb972bafc825">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
 <li>AMREX_PARALLEL_FOR_4D&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#a47b94de342e3db50339d953446f1b469">AMReX_GpuLaunchMacrosC.nolint.H</a>, <a class="el" href="AMReX__GpuLaunchMacrosG_8nolint_8H.html#ac606ebe9545cc0ddb552beaafd03597a">AMReX_GpuLaunchMacrosG.nolint.H</a></li>
 <li>AMREX_PARALLEL_FOR_4D_IMPL&#160;:&#160;<a class="el" href="AMReX__GpuLaunchMacrosC_8nolint_8H.html#ad071834acbf32e4e3275c92b05f976fd">AMReX_GpuLaunchMacrosC.nolint.H</a></li>
-<li>amrex_parmparse_add_bool()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#aed6edbec3197c33eb366b072e8a0fda3">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_int()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a1f08ca59454dd6d07c91b8902a2231e3">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_intarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a6eb0be7c4660c79070721ddc32aa11e4">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_real()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a2e54abaf0efc6afa15b00e805cdda701">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_realarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#ab81148f285ec4bdd2586cf66077ff34e">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_string()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#afa8246483ab8c777d88fb8603d3f4a96">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_add_stringarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a8f3018431606cb83862edff8c75be86d">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_delete_cp_char()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#ad97e291a4928e5576fdba224610bee1c">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_bool()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a92ec31caec3866b5b1ae97c629051c9e">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_counts()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a2782e04273b87daa680dc605b2ed07c2">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_int()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a058050ce64222b08b2d2ad92add09876">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_intarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#afc0a4b89b85545036a7a2f69be7d832f">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_real()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a8e422f987eadc02120bc10eb8dd63ecf">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_realarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#aa1f35637a9bbff607365e8087dd63052">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_string()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a78ee350073ec9be9c0939e35df045495">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_get_stringarr()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a769222d114fde3ca240bdf899fded050">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_query_bool()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a179cd5db20084cda63c1950524f41254">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_query_int()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a0443448295e069d522ebf267e54b29a2">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_query_real()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#ac35391a012f0a82a935d40dba14361b8">AMReX_parmparse_fi.cpp</a></li>
-<li>amrex_parmparse_query_string()&#160;:&#160;<a class="el" href="AMReX__parmparse__fi_8cpp.html#a6a0c46fca953eadfae278a68536e02c1">AMReX_parmparse_fi.cpp</a></li>
 <li>amrex_particle_real&#160;:&#160;<a class="el" href="AMReX__REAL_8H.html#acb6d48305132f6aa2ad69f1aaa78e4c6">AMReX_REAL.H</a></li>
 <li>AMREX_PRAGMA_SIMD&#160;:&#160;<a class="el" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMReX_Extension.H</a></li>
 <li>amrex_probinit()&#160;:&#160;<a class="el" href="AMReX__PROB__AMR__F_8H.html#affc9d7c67e1baf6109dba7722fbe2a5d">AMReX_PROB_AMR_F.H</a></li>

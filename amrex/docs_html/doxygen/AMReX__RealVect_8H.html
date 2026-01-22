@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -139,75 +133,75 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a709ef39322d8b0d31ab1e58022109335" id="r_a709ef39322d8b0d31ab1e58022109335"><td class="memTemplParams" colspan="2">template&lt;class... Args, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, Args... &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a709ef39322d8b0d31ab1e58022109335" id="r_a709ef39322d8b0d31ab1e58022109335"><td class="memTemplParams" colspan="2">template&lt;class... Args, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, Args... &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a709ef39322d8b0d31ab1e58022109335"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a709ef39322d8b0d31ab1e58022109335">amrex::RealVectND</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, Args...) -&gt; <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; sizeof...(Args)+2 &gt;</td></tr>
 <tr class="separator:a709ef39322d8b0d31ab1e58022109335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0523d865efae22d3cdca72c35798a4a" id="r_ae0523d865efae22d3cdca72c35798a4a"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:ae0523d865efae22d3cdca72c35798a4a" id="r_ae0523d865efae22d3cdca72c35798a4a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ae0523d865efae22d3cdca72c35798a4a"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae0523d865efae22d3cdca72c35798a4a">amrex::RealVectND</a> (const <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; &amp;) -&gt; <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;</td></tr>
 <tr class="separator:ae0523d865efae22d3cdca72c35798a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9524db1799cdcd7a1ef97f21c7813aa6" id="r_a9524db1799cdcd7a1ef97f21c7813aa6"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a9524db1799cdcd7a1ef97f21c7813aa6" id="r_a9524db1799cdcd7a1ef97f21c7813aa6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a9524db1799cdcd7a1ef97f21c7813aa6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9524db1799cdcd7a1ef97f21c7813aa6">amrex::RealVectND</a> (const <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>, dim &gt; &amp;) -&gt; <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;</td></tr>
 <tr class="separator:a9524db1799cdcd7a1ef97f21c7813aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa6b51a44ebd61bb50280f5664492d3" id="r_a5aa6b51a44ebd61bb50280f5664492d3"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a5aa6b51a44ebd61bb50280f5664492d3" id="r_a5aa6b51a44ebd61bb50280f5664492d3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a5aa6b51a44ebd61bb50280f5664492d3"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5aa6b51a44ebd61bb50280f5664492d3">amrex::min</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p1, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p2) noexcept</td></tr>
 <tr class="separator:a5aa6b51a44ebd61bb50280f5664492d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a782e94e89c797a500f569289c9e49658" id="r_a782e94e89c797a500f569289c9e49658"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a782e94e89c797a500f569289c9e49658" id="r_a782e94e89c797a500f569289c9e49658"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a782e94e89c797a500f569289c9e49658"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a782e94e89c797a500f569289c9e49658">amrex::max</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p1, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p2) noexcept</td></tr>
 <tr class="separator:a782e94e89c797a500f569289c9e49658"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd2e4543d49f17274e278e5da8e07dd" id="r_a5dd2e4543d49f17274e278e5da8e07dd"><td class="memTemplParams" colspan="2">template&lt;int dim = 3&gt; </td></tr>
-<tr class="memitem:a5dd2e4543d49f17274e278e5da8e07dd"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5dd2e4543d49f17274e278e5da8e07dd">amrex::BASISREALV</a> (int dir) noexcept</td></tr>
+<tr class="memitem:a5dd2e4543d49f17274e278e5da8e07dd" id="r_a5dd2e4543d49f17274e278e5da8e07dd"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim = 3&gt; </td></tr>
+<tr class="memitem:a5dd2e4543d49f17274e278e5da8e07dd"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5dd2e4543d49f17274e278e5da8e07dd">amrex::BASISREALV</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) noexcept</td></tr>
 <tr class="separator:a5dd2e4543d49f17274e278e5da8e07dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Arithmetic functions</div></td></tr>
-<tr class="memitem:afceb776acb796d299ba7597ba55560dc" id="r_afceb776acb796d299ba7597ba55560dc"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:afceb776acb796d299ba7597ba55560dc" id="r_afceb776acb796d299ba7597ba55560dc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:afceb776acb796d299ba7597ba55560dc"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afceb776acb796d299ba7597ba55560dc">amrex::operator/</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:afceb776acb796d299ba7597ba55560dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a972e4551b06a16d8dc398565c6b85f1c" id="r_a972e4551b06a16d8dc398565c6b85f1c"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a972e4551b06a16d8dc398565c6b85f1c" id="r_a972e4551b06a16d8dc398565c6b85f1c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a972e4551b06a16d8dc398565c6b85f1c"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a972e4551b06a16d8dc398565c6b85f1c">amrex::operator+</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:a972e4551b06a16d8dc398565c6b85f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9c1f941f70d6f8a024f24a0b6467733" id="r_ad9c1f941f70d6f8a024f24a0b6467733"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:ad9c1f941f70d6f8a024f24a0b6467733" id="r_ad9c1f941f70d6f8a024f24a0b6467733"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ad9c1f941f70d6f8a024f24a0b6467733"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad9c1f941f70d6f8a024f24a0b6467733">amrex::operator-</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:ad9c1f941f70d6f8a024f24a0b6467733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19a3806e4a2010a7faf23a93095312ee" id="r_a19a3806e4a2010a7faf23a93095312ee"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a19a3806e4a2010a7faf23a93095312ee" id="r_a19a3806e4a2010a7faf23a93095312ee"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a19a3806e4a2010a7faf23a93095312ee"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a19a3806e4a2010a7faf23a93095312ee">amrex::operator*</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:a19a3806e4a2010a7faf23a93095312ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5f4ef74ef823a578443fc28fe0c9ab6" id="r_ae5f4ef74ef823a578443fc28fe0c9ab6"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:ae5f4ef74ef823a578443fc28fe0c9ab6" id="r_ae5f4ef74ef823a578443fc28fe0c9ab6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:ae5f4ef74ef823a578443fc28fe0c9ab6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae5f4ef74ef823a578443fc28fe0c9ab6">amrex::operator/</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:ae5f4ef74ef823a578443fc28fe0c9ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cdceeecf5ea37e754e60705d00e1e16" id="r_a7cdceeecf5ea37e754e60705d00e1e16"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a7cdceeecf5ea37e754e60705d00e1e16" id="r_a7cdceeecf5ea37e754e60705d00e1e16"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a7cdceeecf5ea37e754e60705d00e1e16"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7cdceeecf5ea37e754e60705d00e1e16">amrex::operator+</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:a7cdceeecf5ea37e754e60705d00e1e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcbc9509415108a20ed902f523428ea4" id="r_abcbc9509415108a20ed902f523428ea4"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:abcbc9509415108a20ed902f523428ea4" id="r_abcbc9509415108a20ed902f523428ea4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:abcbc9509415108a20ed902f523428ea4"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abcbc9509415108a20ed902f523428ea4">amrex::operator-</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:abcbc9509415108a20ed902f523428ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a539a9142a422899ea4cbfcfb5f61c8ce" id="r_a539a9142a422899ea4cbfcfb5f61c8ce"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a539a9142a422899ea4cbfcfb5f61c8ce" id="r_a539a9142a422899ea4cbfcfb5f61c8ce"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a539a9142a422899ea4cbfcfb5f61c8ce"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a539a9142a422899ea4cbfcfb5f61c8ce">amrex::operator*</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;s, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p) noexcept</td></tr>
 <tr class="separator:a539a9142a422899ea4cbfcfb5f61c8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca11dc3d307957eadf8d380ebf5cc38b" id="r_aca11dc3d307957eadf8d380ebf5cc38b"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:aca11dc3d307957eadf8d380ebf5cc38b" id="r_aca11dc3d307957eadf8d380ebf5cc38b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:aca11dc3d307957eadf8d380ebf5cc38b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aca11dc3d307957eadf8d380ebf5cc38b">amrex::scale</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> s) noexcept</td></tr>
 <tr class="separator:aca11dc3d307957eadf8d380ebf5cc38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d825ed0dc6e2e83cdab3fa3c14edbe2" id="r_a1d825ed0dc6e2e83cdab3fa3c14edbe2"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:a1d825ed0dc6e2e83cdab3fa3c14edbe2" id="r_a1d825ed0dc6e2e83cdab3fa3c14edbe2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:a1d825ed0dc6e2e83cdab3fa3c14edbe2"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1d825ed0dc6e2e83cdab3fa3c14edbe2">amrex::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p)</td></tr>
 <tr class="separator:a1d825ed0dc6e2e83cdab3fa3c14edbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae45b8b99e4750cebf23c2ba9266aec5" id="r_aae45b8b99e4750cebf23c2ba9266aec5"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:aae45b8b99e4750cebf23c2ba9266aec5" id="r_aae45b8b99e4750cebf23c2ba9266aec5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </td></tr>
 <tr class="memitem:aae45b8b99e4750cebf23c2ba9266aec5"><td class="memTemplItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aae45b8b99e4750cebf23c2ba9266aec5">amrex::operator&gt;&gt;</a> (std::istream &amp;is, <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dim &gt; &amp;p)</td></tr>
 <tr class="separator:aae45b8b99e4750cebf23c2ba9266aec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa67a8238696a99cff35b79626ce1bf14" id="r_aa67a8238696a99cff35b79626ce1bf14"><td class="memTemplParams" colspan="2">template&lt;int d, int... dims&gt; </td></tr>
+<tr class="memitem:aa67a8238696a99cff35b79626ce1bf14" id="r_aa67a8238696a99cff35b79626ce1bf14"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> d, int... dims&gt; </td></tr>
 <tr class="memitem:aa67a8238696a99cff35b79626ce1bf14"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; detail::get_sum&lt; d, dims... &gt;()&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa67a8238696a99cff35b79626ce1bf14">amrex::RealVectCat</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; d &gt; &amp;v, const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dims &gt; &amp;...vects) noexcept</td></tr>
 <tr class="memdesc:aa67a8238696a99cff35b79626ce1bf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> obtained by concatenating the input RealVectNDs. The dimension of the return value equals the sum of the dimensions of the inputted RealVectNDs.  <br /></td></tr>
 <tr class="separator:aa67a8238696a99cff35b79626ce1bf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa586c12919f1f3eed7413fd302e16d40" id="r_aa586c12919f1f3eed7413fd302e16d40"><td class="memTemplParams" colspan="2">template&lt;int d, int... dims&gt; </td></tr>
+<tr class="memitem:aa586c12919f1f3eed7413fd302e16d40" id="r_aa586c12919f1f3eed7413fd302e16d40"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> d, int... dims&gt; </td></tr>
 <tr class="memitem:aa586c12919f1f3eed7413fd302e16d40"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; d &gt;, <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; dims &gt;... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa586c12919f1f3eed7413fd302e16d40">amrex::RealVectSplit</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; detail::get_sum&lt; d, dims... &gt;()&gt; &amp;v) noexcept</td></tr>
 <tr class="memdesc:aa586c12919f1f3eed7413fd302e16d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a tuple of <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> obtained by splitting the input <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> according to the dimensions specified by the template arguments.  <br /></td></tr>
 <tr class="separator:aa586c12919f1f3eed7413fd302e16d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f05984af2dc312573e7caef773610d" id="r_ae6f05984af2dc312573e7caef773610d"><td class="memTemplParams" colspan="2">template&lt;int new_dim, int old_dim&gt; </td></tr>
+<tr class="memitem:ae6f05984af2dc312573e7caef773610d" id="r_ae6f05984af2dc312573e7caef773610d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> old_dim&gt; </td></tr>
 <tr class="memitem:ae6f05984af2dc312573e7caef773610d"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae6f05984af2dc312573e7caef773610d">amrex::RealVectShrink</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; old_dim &gt; &amp;iv) noexcept</td></tr>
 <tr class="memdesc:ae6f05984af2dc312573e7caef773610d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> of size new_dim and assigns the first new_dim values of iv to it.  <br /></td></tr>
 <tr class="separator:ae6f05984af2dc312573e7caef773610d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03347a48d7cb04abafb29ef9dd6e5490" id="r_a03347a48d7cb04abafb29ef9dd6e5490"><td class="memTemplParams" colspan="2">template&lt;int new_dim, int old_dim&gt; </td></tr>
+<tr class="memitem:a03347a48d7cb04abafb29ef9dd6e5490" id="r_a03347a48d7cb04abafb29ef9dd6e5490"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> old_dim&gt; </td></tr>
 <tr class="memitem:a03347a48d7cb04abafb29ef9dd6e5490"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a03347a48d7cb04abafb29ef9dd6e5490">amrex::RealVectExpand</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; old_dim &gt; &amp;iv, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> fill_extra=0) noexcept</td></tr>
 <tr class="memdesc:a03347a48d7cb04abafb29ef9dd6e5490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> of size new_dim and assigns all values of iv to it and fill_extra to the remaining elements.  <br /></td></tr>
 <tr class="separator:a03347a48d7cb04abafb29ef9dd6e5490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7815aa57d20ba7d7e4ce77467895a20" id="r_aa7815aa57d20ba7d7e4ce77467895a20"><td class="memTemplParams" colspan="2">template&lt;int new_dim, int old_dim&gt; </td></tr>
+<tr class="memitem:aa7815aa57d20ba7d7e4ce77467895a20" id="r_aa7815aa57d20ba7d7e4ce77467895a20"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> old_dim&gt; </td></tr>
 <tr class="memitem:aa7815aa57d20ba7d7e4ce77467895a20"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa7815aa57d20ba7d7e4ce77467895a20">amrex::RealVectResize</a> (const <a class="el" href="classamrex_1_1RealVectND.html">RealVectND</a>&lt; old_dim &gt; &amp;iv, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> fill_extra=0) noexcept</td></tr>
 <tr class="memdesc:aa7815aa57d20ba7d7e4ce77467895a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1RealVectND.html" title="A Real vector in dim-dimensional space.">RealVectND</a> of size new_dim by either shrinking or expanding iv.  <br /></td></tr>
 <tr class="separator:aa7815aa57d20ba7d7e4ce77467895a20"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -121,9 +115,9 @@ Inheritance diagram for amrex::AmrInfo:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae0c6a5189c216220bf4aab567206c362" id="r_ae0c6a5189c216220bf4aab567206c362"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#ae0c6a5189c216220bf4aab567206c362">verbose</a> = 0</td></tr>
+<tr class="memitem:ae0c6a5189c216220bf4aab567206c362" id="r_ae0c6a5189c216220bf4aab567206c362"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#ae0c6a5189c216220bf4aab567206c362">verbose</a> = 0</td></tr>
 <tr class="separator:ae0c6a5189c216220bf4aab567206c362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb6f6baf4e1ecd3d143d7d8cb6a2a93" id="r_abcb6f6baf4e1ecd3d143d7d8cb6a2a93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93">max_level</a> = 0</td></tr>
+<tr class="memitem:abcb6f6baf4e1ecd3d143d7d8cb6a2a93" id="r_abcb6f6baf4e1ecd3d143d7d8cb6a2a93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93">max_level</a> = 0</td></tr>
 <tr class="memdesc:abcb6f6baf4e1ecd3d143d7d8cb6a2a93"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> allowed level.  <br /></td></tr>
 <tr class="separator:abcb6f6baf4e1ecd3d143d7d8cb6a2a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73a3b38cadf1943503cf77622ea6a3ae" id="r_a73a3b38cadf1943503cf77622ea6a3ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a73a3b38cadf1943503cf77622ea6a3ae">ref_ratio</a> {{<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(2)}}</td></tr>
@@ -141,10 +135,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8932f2846ed22b769126d4783f76107a" id="r_a8932f2846ed22b769126d4783f76107a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a8932f2846ed22b769126d4783f76107a">grid_eff</a> = static_cast&lt;<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&gt;(0.7)</td></tr>
 <tr class="memdesc:a8932f2846ed22b769126d4783f76107a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grid efficiency.  <br /></td></tr>
 <tr class="separator:a8932f2846ed22b769126d4783f76107a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36e0332bccfe906856f622730eeafbcf" id="r_a36e0332bccfe906856f622730eeafbcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf">n_proper</a> = 1</td></tr>
+<tr class="memitem:a36e0332bccfe906856f622730eeafbcf" id="r_a36e0332bccfe906856f622730eeafbcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf">n_proper</a> = 1</td></tr>
 <tr class="memdesc:a36e0332bccfe906856f622730eeafbcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cells required for proper nesting.  <br /></td></tr>
 <tr class="separator:a36e0332bccfe906856f622730eeafbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9000321def17faf06f9fef5ea304163" id="r_ad9000321def17faf06f9fef5ea304163"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163">use_fixed_upto_level</a> = 0</td></tr>
+<tr class="memitem:ad9000321def17faf06f9fef5ea304163" id="r_ad9000321def17faf06f9fef5ea304163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163">use_fixed_upto_level</a> = 0</td></tr>
 <tr class="separator:ad9000321def17faf06f9fef5ea304163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a665ee4c81c3b28e36775d7e94ab261" id="r_a6a665ee4c81c3b28e36775d7e94ab261"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a6a665ee4c81c3b28e36775d7e94ab261">use_fixed_coarse_grids</a> = false</td></tr>
 <tr class="separator:a6a665ee4c81c3b28e36775d7e94ab261"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,7 +152,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a7caf591556b0da33b2a44a7726706395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a937e0b9dc3689884b262936e6c3c0b7d" id="r_a937e0b9dc3689884b262936e6c3c0b7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a937e0b9dc3689884b262936e6c3c0b7d">iterate_on_new_grids</a> = true</td></tr>
 <tr class="separator:a937e0b9dc3689884b262936e6c3c0b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e993ee86502703a957372d9bb8c6025" id="r_a9e993ee86502703a957372d9bb8c6025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025">max_grid_iterations</a> = 4</td></tr>
+<tr class="memitem:a9e993ee86502703a957372d9bb8c6025" id="r_a9e993ee86502703a957372d9bb8c6025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1AmrInfo.html#a9e993ee86502703a957372d9bb8c6025">max_grid_iterations</a> = 4</td></tr>
 <tr class="separator:a9e993ee86502703a957372d9bb8c6025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -229,7 +223,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrInfo::max_grid_iterations = 4</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrInfo::max_grid_iterations = 4</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -259,7 +253,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrInfo::max_level = 0</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrInfo::max_level = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -291,7 +285,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrInfo::n_proper = 1</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrInfo::n_proper = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,7 +361,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrInfo::use_fixed_upto_level = 0</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrInfo::use_fixed_upto_level = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -395,7 +389,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrInfo::verbose = 0</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrInfo::verbose = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

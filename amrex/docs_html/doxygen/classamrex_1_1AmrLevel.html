@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -182,19 +176,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a05899e47b34be116fa7a9a40ecaa74ca" id="r_a05899e47b34be116fa7a9a40ecaa74ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a05899e47b34be116fa7a9a40ecaa74ca">restart</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;papa, std::istream &amp;is, bool bReadSpecial=false)</td></tr>
 <tr class="memdesc:a05899e47b34be116fa7a9a40ecaa74ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from a checkpoint file.  <br /></td></tr>
 <tr class="separator:a05899e47b34be116fa7a9a40ecaa74ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6560cdb555b4af1f6d5b525e1b25e4eb" id="r_a6560cdb555b4af1f6d5b525e1b25e4eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6560cdb555b4af1f6d5b525e1b25e4eb">set_state_in_checkpoint</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;state_in_checkpoint)</td></tr>
+<tr class="memitem:a6560cdb555b4af1f6d5b525e1b25e4eb" id="r_a6560cdb555b4af1f6d5b525e1b25e4eb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6560cdb555b4af1f6d5b525e1b25e4eb">set_state_in_checkpoint</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;state_in_checkpoint)</td></tr>
 <tr class="memdesc:a6560cdb555b4af1f6d5b525e1b25e4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old checkpoint may have different number of states than the new source code.  <br /></td></tr>
 <tr class="separator:a6560cdb555b4af1f6d5b525e1b25e4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252f7123d2f0a98351bc7b39c32b3152" id="r_a252f7123d2f0a98351bc7b39c32b3152"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a252f7123d2f0a98351bc7b39c32b3152">computeInitialDt</a> (int finest_level, int sub_cycle, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;n_cycle, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_level, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)=0</td></tr>
+<tr class="memitem:a252f7123d2f0a98351bc7b39c32b3152" id="r_a252f7123d2f0a98351bc7b39c32b3152"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a252f7123d2f0a98351bc7b39c32b3152">computeInitialDt</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> finest_level, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> sub_cycle, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;n_cycle, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_level, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)=0</td></tr>
 <tr class="memdesc:a252f7123d2f0a98351bc7b39c32b3152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the initial time step. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a252f7123d2f0a98351bc7b39c32b3152"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca2263f59a50956ec37ce72a4a02767" id="r_a2ca2263f59a50956ec37ce72a4a02767"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2ca2263f59a50956ec37ce72a4a02767">computeNewDt</a> (int finest_level, int sub_cycle, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;n_cycle, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_min, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_level, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time, int post_regrid_flag)=0</td></tr>
+<tr class="memitem:a2ca2263f59a50956ec37ce72a4a02767" id="r_a2ca2263f59a50956ec37ce72a4a02767"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2ca2263f59a50956ec37ce72a4a02767">computeNewDt</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> finest_level, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> sub_cycle, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;n_cycle, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;ref_ratio, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_min, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> &gt; &amp;dt_level, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> post_regrid_flag)=0</td></tr>
 <tr class="memdesc:a2ca2263f59a50956ec37ce72a4a02767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the next time step. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a2ca2263f59a50956ec37ce72a4a02767"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96b6f33d22c9341b1cff894f17555f47" id="r_a96b6f33d22c9341b1cff894f17555f47"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a96b6f33d22c9341b1cff894f17555f47">advance</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, int iteration, int ncycle)=0</td></tr>
+<tr class="memitem:a96b6f33d22c9341b1cff894f17555f47" id="r_a96b6f33d22c9341b1cff894f17555f47"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a96b6f33d22c9341b1cff894f17555f47">advance</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle)=0</td></tr>
 <tr class="memdesc:a96b6f33d22c9341b1cff894f17555f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do an integration step on this level. Returns maximum safe time step. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a96b6f33d22c9341b1cff894f17555f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc31baa80c3f278350ad20a64577155" id="r_a6dc31baa80c3f278350ad20a64577155"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6dc31baa80c3f278350ad20a64577155">post_timestep</a> (int iteration)</td></tr>
+<tr class="memitem:a6dc31baa80c3f278350ad20a64577155" id="r_a6dc31baa80c3f278350ad20a64577155"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6dc31baa80c3f278350ad20a64577155">post_timestep</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration)</td></tr>
 <tr class="memdesc:a6dc31baa80c3f278350ad20a64577155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains operations to be done after a timestep. If this function is overridden, don't forget to reset <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a>.  <br /></td></tr>
 <tr class="separator:a6dc31baa80c3f278350ad20a64577155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c4e273ed6a867d2da0dbf8ae325c82a" id="r_a6c4e273ed6a867d2da0dbf8ae325c82a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6c4e273ed6a867d2da0dbf8ae325c82a">postCoarseTimeStep</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)</td></tr>
@@ -203,16 +197,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc4f639ee0e05fd9a827db22694941a0" id="r_afc4f639ee0e05fd9a827db22694941a0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#afc4f639ee0e05fd9a827db22694941a0">post_restart</a> ()</td></tr>
 <tr class="memdesc:afc4f639ee0e05fd9a827db22694941a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operations to be done after restart.  <br /></td></tr>
 <tr class="separator:afc4f639ee0e05fd9a827db22694941a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0289a6cdc3349c2c0b778cc25901e364" id="r_a0289a6cdc3349c2c0b778cc25901e364"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a0289a6cdc3349c2c0b778cc25901e364">post_regrid</a> (int lbase, int new_finest)=0</td></tr>
+<tr class="memitem:a0289a6cdc3349c2c0b778cc25901e364" id="r_a0289a6cdc3349c2c0b778cc25901e364"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a0289a6cdc3349c2c0b778cc25901e364">post_regrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lbase, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_finest)=0</td></tr>
 <tr class="memdesc:a0289a6cdc3349c2c0b778cc25901e364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operations to be done after regridding This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a0289a6cdc3349c2c0b778cc25901e364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f38ed4057c3c789e73567e1f455ccb" id="r_ac7f38ed4057c3c789e73567e1f455ccb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac7f38ed4057c3c789e73567e1f455ccb">post_init</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> stop_time)=0</td></tr>
 <tr class="memdesc:ac7f38ed4057c3c789e73567e1f455ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operations to be done after initialization. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:ac7f38ed4057c3c789e73567e1f455ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d15ca0da28ca003355c6f45b5cb1cdd" id="r_a5d15ca0da28ca003355c6f45b5cb1cdd"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5d15ca0da28ca003355c6f45b5cb1cdd">okToContinue</a> ()</td></tr>
+<tr class="memitem:a5d15ca0da28ca003355c6f45b5cb1cdd" id="r_a5d15ca0da28ca003355c6f45b5cb1cdd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5d15ca0da28ca003355c6f45b5cb1cdd">okToContinue</a> ()</td></tr>
 <tr class="memdesc:a5d15ca0da28ca003355c6f45b5cb1cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it ok to continue the calculation?  <br /></td></tr>
 <tr class="separator:a5d15ca0da28ca003355c6f45b5cb1cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1a00039cf415f21002bec0bc15342ac" id="r_aa1a00039cf415f21002bec0bc15342ac"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa1a00039cf415f21002bec0bc15342ac">okToRegrid</a> ()</td></tr>
+<tr class="memitem:aa1a00039cf415f21002bec0bc15342ac" id="r_aa1a00039cf415f21002bec0bc15342ac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa1a00039cf415f21002bec0bc15342ac">okToRegrid</a> ()</td></tr>
 <tr class="memdesc:aa1a00039cf415f21002bec0bc15342ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should I regrid with this level as base level? This test is only evaluated if regrid_int &gt; 0 and level_count &gt;= regrid_int as well. Defaults to true.  <br /></td></tr>
 <tr class="separator:aa1a00039cf415f21002bec0bc15342ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a862d5c3479aee494a516f53ea70fea0b" id="r_a862d5c3479aee494a516f53ea70fea0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a862d5c3479aee494a516f53ea70fea0b">initData</a> ()=0</td></tr>
@@ -235,13 +229,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0aa73b17e9be18d811a21128c8c2f5f9" id="r_a0aa73b17e9be18d811a21128c8c2f5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a0aa73b17e9be18d811a21128c8c2f5f9">reset</a> ()</td></tr>
 <tr class="memdesc:a0aa73b17e9be18d811a21128c8c2f5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset data to initial time by swapping new and old time data.  <br /></td></tr>
 <tr class="separator:a0aa73b17e9be18d811a21128c8c2f5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18159b17b5d40999e3f38474e53f23ff" id="r_a18159b17b5d40999e3f38474e53f23ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a18159b17b5d40999e3f38474e53f23ff">Level</a> () const noexcept</td></tr>
+<tr class="memitem:a18159b17b5d40999e3f38474e53f23ff" id="r_a18159b17b5d40999e3f38474e53f23ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a18159b17b5d40999e3f38474e53f23ff">Level</a> () const noexcept</td></tr>
 <tr class="memdesc:a18159b17b5d40999e3f38474e53f23ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns this <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a>.  <br /></td></tr>
 <tr class="separator:a18159b17b5d40999e3f38474e53f23ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e5195db636cd719645d0d51228b4c7f" id="r_a2e5195db636cd719645d0d51228b4c7f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2e5195db636cd719645d0d51228b4c7f">boxArray</a> () const noexcept</td></tr>
 <tr class="memdesc:a2e5195db636cd719645d0d51228b4c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of grids at this level.  <br /></td></tr>
 <tr class="separator:a2e5195db636cd719645d0d51228b4c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3cf13198c2fc19f4d692b5282b1ddc5" id="r_ad3cf13198c2fc19f4d692b5282b1ddc5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ad3cf13198c2fc19f4d692b5282b1ddc5">getEdgeBoxArray</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:ad3cf13198c2fc19f4d692b5282b1ddc5" id="r_ad3cf13198c2fc19f4d692b5282b1ddc5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ad3cf13198c2fc19f4d692b5282b1ddc5">getEdgeBoxArray</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="separator:ad3cf13198c2fc19f4d692b5282b1ddc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f0a9f5d2c0e0733ad3cbbda47912480" id="r_a5f0a9f5d2c0e0733ad3cbbda47912480"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5f0a9f5d2c0e0733ad3cbbda47912480">getNodalBoxArray</a> () const noexcept</td></tr>
 <tr class="separator:a5f0a9f5d2c0e0733ad3cbbda47912480"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,16 +245,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4c093377c3b774a542342a040b27afe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fb7716c8d6101887bb7f77a6fee16c9" id="r_a5fb7716c8d6101887bb7f77a6fee16c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5fb7716c8d6101887bb7f77a6fee16c9">EBFactory</a> () const noexcept</td></tr>
 <tr class="separator:a5fb7716c8d6101887bb7f77a6fee16c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae93e34dd07b1784fc7fe902331d232b2" id="r_ae93e34dd07b1784fc7fe902331d232b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ae93e34dd07b1784fc7fe902331d232b2">numGrids</a> () const noexcept</td></tr>
+<tr class="memitem:ae93e34dd07b1784fc7fe902331d232b2" id="r_ae93e34dd07b1784fc7fe902331d232b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ae93e34dd07b1784fc7fe902331d232b2">numGrids</a> () const noexcept</td></tr>
 <tr class="memdesc:ae93e34dd07b1784fc7fe902331d232b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of grids at this level.  <br /></td></tr>
 <tr class="separator:ae93e34dd07b1784fc7fe902331d232b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9666a2babd9d59a595a2c3695f38f00" id="r_aa9666a2babd9d59a595a2c3695f38f00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa9666a2babd9d59a595a2c3695f38f00">numStates</a> () const noexcept</td></tr>
+<tr class="memitem:aa9666a2babd9d59a595a2c3695f38f00" id="r_aa9666a2babd9d59a595a2c3695f38f00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa9666a2babd9d59a595a2c3695f38f00">numStates</a> () const noexcept</td></tr>
 <tr class="memdesc:aa9666a2babd9d59a595a2c3695f38f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of states at this level.  <br /></td></tr>
 <tr class="separator:aa9666a2babd9d59a595a2c3695f38f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e8711584978e650966877a53becf391" id="r_a6e8711584978e650966877a53becf391"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6e8711584978e650966877a53becf391">Domain</a> () const noexcept</td></tr>
 <tr class="memdesc:a6e8711584978e650966877a53becf391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the indices defining physical domain.  <br /></td></tr>
 <tr class="separator:a6e8711584978e650966877a53becf391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac66753a2ff2df956a5df08dd6cb9f81a" id="r_ac66753a2ff2df956a5df08dd6cb9f81a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac66753a2ff2df956a5df08dd6cb9f81a">nStep</a> () const noexcept</td></tr>
+<tr class="memitem:ac66753a2ff2df956a5df08dd6cb9f81a" id="r_ac66753a2ff2df956a5df08dd6cb9f81a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac66753a2ff2df956a5df08dd6cb9f81a">nStep</a> () const noexcept</td></tr>
 <tr class="memdesc:ac66753a2ff2df956a5df08dd6cb9f81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestep n at this level.  <br /></td></tr>
 <tr class="separator:ac66753a2ff2df956a5df08dd6cb9f81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d1ec64be93cec74c015299438c7a7a" id="r_a22d1ec64be93cec74c015299438c7a7a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a22d1ec64be93cec74c015299438c7a7a">Geom</a> () const noexcept</td></tr>
@@ -284,52 +278,52 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aca274822a300bceaaa023cc330d441ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4f83f6e16dfb5c60f985370541062fa" id="r_af4f83f6e16dfb5c60f985370541062fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#af4f83f6e16dfb5c60f985370541062fa">resetFillPatcher</a> ()</td></tr>
 <tr class="separator:af4f83f6e16dfb5c60f985370541062fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75c6f30a5526b2d5dbbb24646f71dc8b" id="r_a75c6f30a5526b2d5dbbb24646f71dc8b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a75c6f30a5526b2d5dbbb24646f71dc8b">errorEst</a> (<a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tb, int clearval, int tagval, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int n_error_buf=0, int ngrow=0)=0</td></tr>
+<tr class="memitem:a75c6f30a5526b2d5dbbb24646f71dc8b" id="r_a75c6f30a5526b2d5dbbb24646f71dc8b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a75c6f30a5526b2d5dbbb24646f71dc8b">errorEst</a> (<a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tb, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> clearval, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> tagval, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_error_buf=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow=0)=0</td></tr>
 <tr class="memdesc:a75c6f30a5526b2d5dbbb24646f71dc8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error estimation for regridding. This is a pure virtual function and hence MUST be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a75c6f30a5526b2d5dbbb24646f71dc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ebdb49d2d66ac577de280ed9ed0fd28" id="r_a9ebdb49d2d66ac577de280ed9ed0fd28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a9ebdb49d2d66ac577de280ed9ed0fd28">FillCoarsePatch</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, int dcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int state_idx, int scomp, int ncomp, int nghost=0)</td></tr>
+<tr class="memitem:a9ebdb49d2d66ac577de280ed9ed0fd28" id="r_a9ebdb49d2d66ac577de280ed9ed0fd28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a9ebdb49d2d66ac577de280ed9ed0fd28">FillCoarsePatch</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_idx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0)</td></tr>
 <tr class="memdesc:a9ebdb49d2d66ac577de280ed9ed0fd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate from coarse level to the valid area in mf.  <br /></td></tr>
 <tr class="separator:a9ebdb49d2d66ac577de280ed9ed0fd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f324e3977de1beef5d204c04be51f4a" id="r_a2f324e3977de1beef5d204c04be51f4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2f324e3977de1beef5d204c04be51f4a">setPhysBoundaryValues</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, int state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int dest_comp, int src_comp, int num_comp)</td></tr>
+<tr class="memitem:a2f324e3977de1beef5d204c04be51f4a" id="r_a2f324e3977de1beef5d204c04be51f4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2f324e3977de1beef5d204c04be51f4a">setPhysBoundaryValues</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp)</td></tr>
 <tr class="memdesc:a2f324e3977de1beef5d204c04be51f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set physical boundary conditions.  <br /></td></tr>
 <tr class="separator:a2f324e3977de1beef5d204c04be51f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d67ff78f28ebc3850bda9ca476b7f9c" id="r_a2d67ff78f28ebc3850bda9ca476b7f9c"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int ngrow)</td></tr>
+<tr class="memitem:a2d67ff78f28ebc3850bda9ca476b7f9c" id="r_a2d67ff78f28ebc3850bda9ca476b7f9c"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow)</td></tr>
 <tr class="memdesc:a2d67ff78f28ebc3850bda9ca476b7f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> containing the derived data for this level. The user is responsible for deleting this pointer when done with it. If ngrow&gt;0 the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> is built on the appropriately grown <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a2d67ff78f28ebc3850bda9ca476b7f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa57cb16059880124adbd17cba52c843d" id="r_aa57cb16059880124adbd17cba52c843d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa57cb16059880124adbd17cba52c843d">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, int dcomp)</td></tr>
+<tr class="memitem:aa57cb16059880124adbd17cba52c843d" id="r_aa57cb16059880124adbd17cba52c843d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa57cb16059880124adbd17cba52c843d">derive</a> (const std::string &amp;name, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp)</td></tr>
 <tr class="memdesc:aa57cb16059880124adbd17cba52c843d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of <a class="el" href="classamrex_1_1AmrLevel.html#a2d67ff78f28ebc3850bda9ca476b7f9c" title="Returns a MultiFab containing the derived data for this level. The user is responsible for deleting t...">derive()</a> fills the dcomp'th component of mf with the derived quantity.  <br /></td></tr>
 <tr class="separator:aa57cb16059880124adbd17cba52c843d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f18e43274c0087dc14e92966e44ddfd" id="r_a5f18e43274c0087dc14e92966e44ddfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5f18e43274c0087dc14e92966e44ddfd">get_state_data</a> (int state_indx) noexcept</td></tr>
+<tr class="memitem:a5f18e43274c0087dc14e92966e44ddfd" id="r_a5f18e43274c0087dc14e92966e44ddfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5f18e43274c0087dc14e92966e44ddfd">get_state_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx) noexcept</td></tr>
 <tr class="memdesc:a5f18e43274c0087dc14e92966e44ddfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">State data object.  <br /></td></tr>
 <tr class="separator:a5f18e43274c0087dc14e92966e44ddfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee268fcdbee61d28239fbc1c3ceabdd8" id="r_aee268fcdbee61d28239fbc1c3ceabdd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aee268fcdbee61d28239fbc1c3ceabdd8">get_old_data</a> (int state_indx) noexcept</td></tr>
+<tr class="memitem:aee268fcdbee61d28239fbc1c3ceabdd8" id="r_aee268fcdbee61d28239fbc1c3ceabdd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aee268fcdbee61d28239fbc1c3ceabdd8">get_old_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx) noexcept</td></tr>
 <tr class="memdesc:aee268fcdbee61d28239fbc1c3ceabdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">State data at old time.  <br /></td></tr>
 <tr class="separator:aee268fcdbee61d28239fbc1c3ceabdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcaec76700e17cb5d6e4c8ad21a0f8f" id="r_a2fcaec76700e17cb5d6e4c8ad21a0f8f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2fcaec76700e17cb5d6e4c8ad21a0f8f">get_old_data</a> (int state_indx) const noexcept</td></tr>
+<tr class="memitem:a2fcaec76700e17cb5d6e4c8ad21a0f8f" id="r_a2fcaec76700e17cb5d6e4c8ad21a0f8f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2fcaec76700e17cb5d6e4c8ad21a0f8f">get_old_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx) const noexcept</td></tr>
 <tr class="memdesc:a2fcaec76700e17cb5d6e4c8ad21a0f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">State data at old time.  <br /></td></tr>
 <tr class="separator:a2fcaec76700e17cb5d6e4c8ad21a0f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec6f43bc6e1a2b0fd9532d07a965bbc0" id="r_aec6f43bc6e1a2b0fd9532d07a965bbc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aec6f43bc6e1a2b0fd9532d07a965bbc0">get_new_data</a> (int state_indx) noexcept</td></tr>
+<tr class="memitem:aec6f43bc6e1a2b0fd9532d07a965bbc0" id="r_aec6f43bc6e1a2b0fd9532d07a965bbc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aec6f43bc6e1a2b0fd9532d07a965bbc0">get_new_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx) noexcept</td></tr>
 <tr class="memdesc:aec6f43bc6e1a2b0fd9532d07a965bbc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">State data at new time.  <br /></td></tr>
 <tr class="separator:aec6f43bc6e1a2b0fd9532d07a965bbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f2f12e361cd752f1813ae537584d89" id="r_ac2f2f12e361cd752f1813ae537584d89"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac2f2f12e361cd752f1813ae537584d89">get_new_data</a> (int state_indx) const noexcept</td></tr>
+<tr class="memitem:ac2f2f12e361cd752f1813ae537584d89" id="r_ac2f2f12e361cd752f1813ae537584d89"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac2f2f12e361cd752f1813ae537584d89">get_new_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx) const noexcept</td></tr>
 <tr class="memdesc:ac2f2f12e361cd752f1813ae537584d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">State data at new time.  <br /></td></tr>
 <tr class="separator:ac2f2f12e361cd752f1813ae537584d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5ca0552f0073d959717f3dc4a375478" id="r_ae5ca0552f0073d959717f3dc4a375478"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ae5ca0552f0073d959717f3dc4a375478">postStepRegrid</a> () const noexcept</td></tr>
+<tr class="memitem:ae5ca0552f0073d959717f3dc4a375478" id="r_ae5ca0552f0073d959717f3dc4a375478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ae5ca0552f0073d959717f3dc4a375478">postStepRegrid</a> () const noexcept</td></tr>
 <tr class="memdesc:ae5ca0552f0073d959717f3dc4a375478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether or not we want a post-timestep regrid.  <br /></td></tr>
 <tr class="separator:ae5ca0552f0073d959717f3dc4a375478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3740e0877382738d1cd8d382909ef855" id="r_a3740e0877382738d1cd8d382909ef855"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a3740e0877382738d1cd8d382909ef855">setPostStepRegrid</a> (int new_val) noexcept</td></tr>
+<tr class="memitem:a3740e0877382738d1cd8d382909ef855" id="r_a3740e0877382738d1cd8d382909ef855"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a3740e0877382738d1cd8d382909ef855">setPostStepRegrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_val) noexcept</td></tr>
 <tr class="memdesc:a3740e0877382738d1cd8d382909ef855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new value for the post-timestep regrid trigger.  <br /></td></tr>
 <tr class="separator:a3740e0877382738d1cd8d382909ef855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69fdf4e347142373696281d9269c6799" id="r_a69fdf4e347142373696281d9269c6799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a69fdf4e347142373696281d9269c6799">UpdateDistributionMaps</a> (<a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;<a class="el" href="classamrex_1_1AmrLevel.html#ab0ab7555be82910d8100d7bc3aa55d1d">dmap</a>)</td></tr>
 <tr class="memdesc:a69fdf4e347142373696281d9269c6799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the distribution maps in <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> based on the size of the map.  <br /></td></tr>
 <tr class="separator:a69fdf4e347142373696281d9269c6799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb1f80ca05ed54727d81042c79e880b" id="r_a4bb1f80ca05ed54727d81042c79e880b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a4bb1f80ca05ed54727d81042c79e880b">getBCArray</a> (int State_Type, int gridno, int strt_comp, int ncomp)</td></tr>
+<tr class="memitem:a4bb1f80ca05ed54727d81042c79e880b" id="r_a4bb1f80ca05ed54727d81042c79e880b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a4bb1f80ca05ed54727d81042c79e880b">getBCArray</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> State_Type, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> gridno, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> strt_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
 <tr class="memdesc:a4bb1f80ca05ed54727d81042c79e880b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary condition access function.  <br /></td></tr>
 <tr class="separator:a4bb1f80ca05ed54727d81042c79e880b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f84c93c82667982bbec8f9215b630af" id="r_a5f84c93c82667982bbec8f9215b630af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5f84c93c82667982bbec8f9215b630af">get_data</a> (int state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) noexcept</td></tr>
+<tr class="memitem:a5f84c93c82667982bbec8f9215b630af" id="r_a5f84c93c82667982bbec8f9215b630af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a5f84c93c82667982bbec8f9215b630af">get_data</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) noexcept</td></tr>
 <tr class="memdesc:a5f84c93c82667982bbec8f9215b630af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get state data at specified index and time.  <br /></td></tr>
 <tr class="separator:a5f84c93c82667982bbec8f9215b630af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea5b76b420f0a2ccd2852d66301d376" id="r_adea5b76b420f0a2ccd2852d66301d376"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#adea5b76b420f0a2ccd2852d66301d376">set_preferred_boundary_values</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;S, int state_index, int scomp, int dcomp, int ncomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) const</td></tr>
+<tr class="memitem:adea5b76b420f0a2ccd2852d66301d376" id="r_adea5b76b420f0a2ccd2852d66301d376"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#adea5b76b420f0a2ccd2852d66301d376">set_preferred_boundary_values</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;S, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) const</td></tr>
 <tr class="memdesc:adea5b76b420f0a2ccd2852d66301d376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hack to allow override of (non-fine-fine) fillpatched boundary data.  <br /></td></tr>
 <tr class="separator:adea5b76b420f0a2ccd2852d66301d376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e78f3a4398272855b0a9ac3becaefd7" id="r_a2e78f3a4398272855b0a9ac3becaefd7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2e78f3a4398272855b0a9ac3becaefd7">manual_tags_placement</a> (<a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tags, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt; &amp;bf_lev)</td></tr>
@@ -344,10 +338,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03b21d394e621b009b473c427b4769d0" id="r_a03b21d394e621b009b473c427b4769d0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a03b21d394e621b009b473c427b4769d0">estimateWork</a> ()</td></tr>
 <tr class="memdesc:a03b21d394e621b009b473c427b4769d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the amount of work required to advance Just this level based on the number of cells. This estimate can be overwritten with different methods.  <br /></td></tr>
 <tr class="separator:a03b21d394e621b009b473c427b4769d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c91cb169c86fd95b76b5742687ad949" id="r_a1c91cb169c86fd95b76b5742687ad949"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a1c91cb169c86fd95b76b5742687ad949">WorkEstType</a> ()</td></tr>
+<tr class="memitem:a1c91cb169c86fd95b76b5742687ad949" id="r_a1c91cb169c86fd95b76b5742687ad949"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a1c91cb169c86fd95b76b5742687ad949">WorkEstType</a> ()</td></tr>
 <tr class="memdesc:a1c91cb169c86fd95b76b5742687ad949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which state data type is for work estimates? -1 means none.  <br /></td></tr>
 <tr class="separator:a1c91cb169c86fd95b76b5742687ad949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58f60bcd444acf5b3acfe94db3981969" id="r_a58f60bcd444acf5b3acfe94db3981969"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33a">TimeLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a58f60bcd444acf5b3acfe94db3981969">which_time</a> (int state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) const noexcept</td></tr>
+<tr class="memitem:a58f60bcd444acf5b3acfe94db3981969" id="r_a58f60bcd444acf5b3acfe94db3981969"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33a">TimeLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a58f60bcd444acf5b3acfe94db3981969">which_time</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_indx, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time) const noexcept</td></tr>
 <tr class="memdesc:a58f60bcd444acf5b3acfe94db3981969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one the TimeLevel enums. Asserts that time is between AmrOldTime and AmrNewTime.  <br /></td></tr>
 <tr class="separator:a58f60bcd444acf5b3acfe94db3981969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8371221489ef4bb1ffca6089bbb9df3d" id="r_a8371221489ef4bb1ffca6089bbb9df3d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a8371221489ef4bb1ffca6089bbb9df3d">checkPointNow</a> ()</td></tr>
@@ -358,20 +352,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2972b42fa723220283b8275fcd7a8be8" id="r_a2972b42fa723220283b8275fcd7a8be8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2972b42fa723220283b8275fcd7a8be8">writeSmallPlotNow</a> ()</td></tr>
 <tr class="memdesc:a2972b42fa723220283b8275fcd7a8be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> want <a class="el" href="classamrex_1_1Amr.html" title="Manage hierarchy of levels for time-dependent AMR computations.">Amr</a> to write a small plotfile now?  <br /></td></tr>
 <tr class="separator:a2972b42fa723220283b8275fcd7a8be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbf0bb12fee47bc79a010de142ea9eb5" id="r_abbf0bb12fee47bc79a010de142ea9eb5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#abbf0bb12fee47bc79a010de142ea9eb5">particle_redistribute</a> (int=0, bool=false)</td></tr>
+<tr class="memitem:abbf0bb12fee47bc79a010de142ea9eb5" id="r_abbf0bb12fee47bc79a010de142ea9eb5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#abbf0bb12fee47bc79a010de142ea9eb5">particle_redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>=0, bool=false)</td></tr>
 <tr class="memdesc:abbf0bb12fee47bc79a010de142ea9eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function can be called from the parent.  <br /></td></tr>
 <tr class="separator:abbf0bb12fee47bc79a010de142ea9eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7dbabf3cd9767f5e38dc96157986618" id="r_af7dbabf3cd9767f5e38dc96157986618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618">FillPatcherFill</a> (<a class="el" href="classamrex_1_1MultiFab.html">amrex::MultiFab</a> &amp;mf, int dcomp, int ncomp, int nghost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time, int state_index, int scomp)</td></tr>
+<tr class="memitem:af7dbabf3cd9767f5e38dc96157986618" id="r_af7dbabf3cd9767f5e38dc96157986618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618">FillPatcherFill</a> (<a class="el" href="classamrex_1_1MultiFab.html">amrex::MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp)</td></tr>
 <tr class="memdesc:af7dbabf3cd9767f5e38dc96157986618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill with <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> on level &gt; 0 and <a class="el" href="classamrex_1_1AmrLevel.html#a55c1a2d0040ba28bf022fb293113a5f2">AmrLevel::FillPatch</a> on level 0.  <br /></td></tr>
 <tr class="separator:af7dbabf3cd9767f5e38dc96157986618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95aea02fe7abbf3d1e5cd58ee5ff7d41" id="r_a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename P  = RungeKutta::PostStageNoOp&gt; </td></tr>
-<tr class="memitem:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41">RK</a> (int order, int state_type, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, int iteration, int ncycle, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, P &amp;&amp;p=<a class="el" href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html">RungeKutta::PostStageNoOp</a>())</td></tr>
+<tr class="memitem:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41">RK</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> order, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_type, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> dt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, P &amp;&amp;p=<a class="el" href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html">RungeKutta::PostStageNoOp</a>())</td></tr>
 <tr class="memdesc:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve one step with Runge-Kutta (2, 3, or 4)  <br /></td></tr>
 <tr class="separator:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acaf1b5936e81691794578618126d813d" id="r_acaf1b5936e81691794578618126d813d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#acaf1b5936e81691794578618126d813d">isStateVariable</a> (const std::string &amp;name, int &amp;state_indx, int &amp;ncomp)</td></tr>
+<tr class="memitem:acaf1b5936e81691794578618126d813d" id="r_acaf1b5936e81691794578618126d813d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#acaf1b5936e81691794578618126d813d">isStateVariable</a> (const std::string &amp;name, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;state_indx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;ncomp)</td></tr>
 <tr class="memdesc:acaf1b5936e81691794578618126d813d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is name a state variable?  <br /></td></tr>
 <tr class="separator:acaf1b5936e81691794578618126d813d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96bd5573c5f63e798aa682a7d5756ae" id="r_ac96bd5573c5f63e798aa682a7d5756ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ac96bd5573c5f63e798aa682a7d5756ae">FlushFPICache</a> ()</td></tr>
@@ -382,25 +376,25 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ef50123ae8e520914847e15973b104a" id="r_a7ef50123ae8e520914847e15973b104a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DeriveList.html">DeriveList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a7ef50123ae8e520914847e15973b104a">get_derive_lst</a> () noexcept</td></tr>
 <tr class="memdesc:a7ef50123ae8e520914847e15973b104a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns list of derived variables.  <br /></td></tr>
 <tr class="separator:a7ef50123ae8e520914847e15973b104a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c1a2d0040ba28bf022fb293113a5f2" id="r_a55c1a2d0040ba28bf022fb293113a5f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a55c1a2d0040ba28bf022fb293113a5f2">FillPatch</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &amp;amrlevel, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;leveldata, int boxGrow, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int index, int scomp, int ncomp, int dcomp=0)</td></tr>
+<tr class="memitem:a55c1a2d0040ba28bf022fb293113a5f2" id="r_a55c1a2d0040ba28bf022fb293113a5f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a55c1a2d0040ba28bf022fb293113a5f2">FillPatch</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &amp;amrlevel, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;leveldata, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxGrow, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp=0)</td></tr>
 <tr class="separator:a55c1a2d0040ba28bf022fb293113a5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa72cce79d9f341c7f9a11addfcaec95f" id="r_aa72cce79d9f341c7f9a11addfcaec95f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa72cce79d9f341c7f9a11addfcaec95f">FillPatchAdd</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &amp;amrlevel, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;leveldata, int boxGrow, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, int index, int scomp, int ncomp, int dcomp=0)</td></tr>
+<tr class="memitem:aa72cce79d9f341c7f9a11addfcaec95f" id="r_aa72cce79d9f341c7f9a11addfcaec95f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa72cce79d9f341c7f9a11addfcaec95f">FillPatchAdd</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> &amp;amrlevel, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;leveldata, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxGrow, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp=0)</td></tr>
 <tr class="separator:aa72cce79d9f341c7f9a11addfcaec95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986dff5fcc2d57eb3c35c585f079af4e" id="r_a986dff5fcc2d57eb3c35c585f079af4e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a986dff5fcc2d57eb3c35c585f079af4e">SetEBMaxGrowCells</a> (int nbasic, int nvolume, int nfull) noexcept</td></tr>
+<tr class="memitem:a986dff5fcc2d57eb3c35c585f079af4e" id="r_a986dff5fcc2d57eb3c35c585f079af4e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a986dff5fcc2d57eb3c35c585f079af4e">SetEBMaxGrowCells</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbasic, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nvolume, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nfull) noexcept</td></tr>
 <tr class="separator:a986dff5fcc2d57eb3c35c585f079af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d62ce75d469ccfa75a70159b4c3c3e2" id="r_a7d62ce75d469ccfa75a70159b4c3c3e2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a7d62ce75d469ccfa75a70159b4c3c3e2">SetEBSupportLevel</a> (<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc">EBSupport</a> ebs)</td></tr>
 <tr class="separator:a7d62ce75d469ccfa75a70159b4c3c3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2447047c1010b47ee4f3b0de3d5811ee" id="r_a2447047c1010b47ee4f3b0de3d5811ee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2447047c1010b47ee4f3b0de3d5811ee">ProperBlockingFactor</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> const &amp;amr_level, int boxGrow, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const &amp;boxType, <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> const &amp;desc, int SComp)</td></tr>
+<tr class="memitem:a2447047c1010b47ee4f3b0de3d5811ee" id="r_a2447047c1010b47ee4f3b0de3d5811ee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a2447047c1010b47ee4f3b0de3d5811ee">ProperBlockingFactor</a> (<a class="el" href="classamrex_1_1AmrLevel.html">AmrLevel</a> const &amp;amr_level, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxGrow, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const &amp;boxType, <a class="el" href="classamrex_1_1StateDescriptor.html">StateDescriptor</a> const &amp;desc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SComp)</td></tr>
 <tr class="memdesc:a2447047c1010b47ee4f3b0de3d5811ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recommendation of a proper blocking factor.  <br /></td></tr>
 <tr class="separator:a2447047c1010b47ee4f3b0de3d5811ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab646fbe1d364139707bdd3870bda30e3" id="r_ab646fbe1d364139707bdd3870bda30e3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ab646fbe1d364139707bdd3870bda30e3">m_eb_basic_grow_cells</a> = 5</td></tr>
+<tr class="memitem:ab646fbe1d364139707bdd3870bda30e3" id="r_ab646fbe1d364139707bdd3870bda30e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ab646fbe1d364139707bdd3870bda30e3">m_eb_basic_grow_cells</a> = 5</td></tr>
 <tr class="separator:ab646fbe1d364139707bdd3870bda30e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c8b78590eae07e4562367b1ca47a2f" id="r_a20c8b78590eae07e4562367b1ca47a2f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a20c8b78590eae07e4562367b1ca47a2f">m_eb_volume_grow_cells</a> = 4</td></tr>
+<tr class="memitem:a20c8b78590eae07e4562367b1ca47a2f" id="r_a20c8b78590eae07e4562367b1ca47a2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a20c8b78590eae07e4562367b1ca47a2f">m_eb_volume_grow_cells</a> = 4</td></tr>
 <tr class="separator:a20c8b78590eae07e4562367b1ca47a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6680132e2b51a5a949d1563db9000d70" id="r_a6680132e2b51a5a949d1563db9000d70"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6680132e2b51a5a949d1563db9000d70">m_eb_full_grow_cells</a> = 2</td></tr>
+<tr class="memitem:a6680132e2b51a5a949d1563db9000d70" id="r_a6680132e2b51a5a949d1563db9000d70"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6680132e2b51a5a949d1563db9000d70">m_eb_full_grow_cells</a> = 2</td></tr>
 <tr class="separator:a6680132e2b51a5a949d1563db9000d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0460e3eca4709453369c9e65aa572c2" id="r_aa0460e3eca4709453369c9e65aa572c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebc">EBSupport</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#aa0460e3eca4709453369c9e65aa572c2">m_eb_support_level</a> = <a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">EBSupport::volume</a></td></tr>
 <tr class="separator:aa0460e3eca4709453369c9e65aa572c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -410,7 +404,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ae244321a30ba83806ce8204b7c437480" id="r_ae244321a30ba83806ce8204b7c437480"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ae244321a30ba83806ce8204b7c437480">AmrLevel</a> () noexcept</td></tr>
 <tr class="memdesc:ae244321a30ba83806ce8204b7c437480"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructors &ndash; for derived classes.  <br /></td></tr>
 <tr class="separator:ae244321a30ba83806ce8204b7c437480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abff2e9f744631b186366976b2004a39f" id="r_abff2e9f744631b186366976b2004a39f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#abff2e9f744631b186366976b2004a39f">AmrLevel</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;papa, int lev, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;level_geom, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)</td></tr>
+<tr class="memitem:abff2e9f744631b186366976b2004a39f" id="r_abff2e9f744631b186366976b2004a39f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#abff2e9f744631b186366976b2004a39f">AmrLevel</a> (<a class="el" href="classamrex_1_1Amr.html">Amr</a> &amp;papa, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;level_geom, const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> time)</td></tr>
 <tr class="separator:abff2e9f744631b186366976b2004a39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a954293930715e389153026f726dbd960" id="r_a954293930715e389153026f726dbd960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a954293930715e389153026f726dbd960">finishConstructor</a> ()</td></tr>
 <tr class="memdesc:a954293930715e389153026f726dbd960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common code used by all constructors.  <br /></td></tr>
@@ -418,7 +412,7 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a15535c7cc1f73df2cc3b0b720d8ab5a4" id="r_a15535c7cc1f73df2cc3b0b720d8ab5a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4">level</a> {-1}</td></tr>
+<tr class="memitem:a15535c7cc1f73df2cc3b0b720d8ab5a4" id="r_a15535c7cc1f73df2cc3b0b720d8ab5a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4">level</a> {-1}</td></tr>
 <tr class="separator:a15535c7cc1f73df2cc3b0b720d8ab5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a571b97b176d8618fba71f56c8b44a7c8" id="r_a571b97b176d8618fba71f56c8b44a7c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a571b97b176d8618fba71f56c8b44a7c8">geom</a></td></tr>
 <tr class="separator:a571b97b176d8618fba71f56c8b44a7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -438,7 +432,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aa11acf69e2d0372e204cfea5934658f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a512443a06a9bee5a9c911326c65e1370" id="r_a512443a06a9bee5a9c911326c65e1370"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a512443a06a9bee5a9c911326c65e1370">m_AreaToTag</a></td></tr>
 <tr class="separator:a512443a06a9bee5a9c911326c65e1370"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ef7971fd5d7dd152886c202feb7d806" id="r_a9ef7971fd5d7dd152886c202feb7d806"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a9ef7971fd5d7dd152886c202feb7d806">post_step_regrid</a> {0}</td></tr>
+<tr class="memitem:a9ef7971fd5d7dd152886c202feb7d806" id="r_a9ef7971fd5d7dd152886c202feb7d806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a9ef7971fd5d7dd152886c202feb7d806">post_step_regrid</a> {0}</td></tr>
 <tr class="separator:a9ef7971fd5d7dd152886c202feb7d806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a90e201ef6ef11f2c42fc9a0de76939" id="r_a7a90e201ef6ef11f2c42fc9a0de76939"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a7a90e201ef6ef11f2c42fc9a0de76939">levelDirectoryCreated</a> {false}</td></tr>
 <tr class="separator:a7a90e201ef6ef11f2c42fc9a0de76939"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -615,7 +609,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>lev</em>, </td>
         </tr>
         <tr>
@@ -682,13 +676,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>iteration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncycle</em>&#160;</td>
         </tr>
         <tr>
@@ -925,19 +919,19 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">virtual void amrex::AmrLevel::computeInitialDt </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>finest_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>sub_cycle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>n_cycle</em>, </td>
         </tr>
         <tr>
@@ -987,19 +981,19 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">virtual void amrex::AmrLevel::computeNewDt </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>finest_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>sub_cycle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>n_cycle</em>, </td>
         </tr>
         <tr>
@@ -1029,7 +1023,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>post_regrid_flag</em>&#160;</td>
         </tr>
         <tr>
@@ -1147,7 +1141,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ngrow</em>&#160;</td>
         </tr>
         <tr>
@@ -1197,7 +1191,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>&#160;</td>
         </tr>
         <tr>
@@ -1312,13 +1306,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>clearval</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>tagval</em>, </td>
         </tr>
         <tr>
@@ -1330,13 +1324,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_error_buf</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ngrow</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1423,7 +1417,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
@@ -1435,25 +1429,25 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_idx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nghost</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1492,7 +1486,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxGrow</em>, </td>
         </tr>
         <tr>
@@ -1504,25 +1498,25 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1564,7 +1558,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxGrow</em>, </td>
         </tr>
         <tr>
@@ -1576,25 +1570,25 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1627,19 +1621,19 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nghost</em>, </td>
         </tr>
         <tr>
@@ -1651,13 +1645,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>&#160;</td>
         </tr>
         <tr>
@@ -1800,7 +1794,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp; amrex::AmrLevel::get_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em>, </td>
         </tr>
         <tr>
@@ -1892,7 +1886,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp; amrex::AmrLevel::get_new_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1920,7 +1914,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp; amrex::AmrLevel::get_new_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1948,7 +1942,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp; amrex::AmrLevel::get_old_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1976,7 +1970,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp; amrex::AmrLevel::get_old_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2004,7 +1998,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1StateData.html">StateData</a> &amp; amrex::AmrLevel::get_state_data </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2079,27 +2073,27 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; amrex::AmrLevel::getBCArray </td>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; amrex::AmrLevel::getBCArray </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>State_Type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>gridno</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>strt_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>&#160;</td>
         </tr>
         <tr>
@@ -2126,7 +2120,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp; amrex::AmrLevel::getEdgeBoxArray </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -2264,13 +2258,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;&#160;</td>
           <td class="paramname"><em>state_indx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;&#160;</td>
           <td class="paramname"><em>ncomp</em>&#160;</td>
         </tr>
         <tr>
@@ -2300,7 +2294,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::Level </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::Level </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2401,7 +2395,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::nStep </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::nStep </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2428,7 +2422,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::numGrids </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::numGrids </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2455,7 +2449,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::numStates </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::numStates </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2482,7 +2476,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual int amrex::AmrLevel::okToContinue </td>
+          <td class="memname">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::okToContinue </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2509,7 +2503,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::okToRegrid </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::okToRegrid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2590,7 +2584,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">virtual void amrex::AmrLevel::particle_redistribute </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"> = <code>0</code>, </td>
         </tr>
         <tr>
@@ -2656,13 +2650,13 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">virtual void amrex::AmrLevel::post_regrid </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>lbase</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>new_finest</em>&#160;</td>
         </tr>
         <tr>
@@ -2721,7 +2715,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void amrex::AmrLevel::post_timestep </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>iteration</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2775,7 +2769,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::postStepRegrid </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::postStepRegrid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2810,7 +2804,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxGrow</em>, </td>
         </tr>
         <tr>
@@ -2828,7 +2822,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>SComp</em>&#160;</td>
         </tr>
         <tr>
@@ -2966,13 +2960,13 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="memname">void amrex::AmrLevel::RK </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>order</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_type</em>, </td>
         </tr>
         <tr>
@@ -2990,13 +2984,13 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>iteration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncycle</em>, </td>
         </tr>
         <tr>
@@ -3055,25 +3049,25 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
@@ -3111,7 +3105,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="memname">void amrex::AmrLevel::set_state_in_checkpoint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>state_in_checkpoint</em></td><td>)</td>
           <td></td>
         </tr>
@@ -3167,19 +3161,19 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="memname">static void amrex::AmrLevel::SetEBMaxGrowCells </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbasic</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nvolume</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nfull</em>&#160;</td>
         </tr>
         <tr>
@@ -3269,7 +3263,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em>, </td>
         </tr>
         <tr>
@@ -3281,19 +3275,19 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dest_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>num_comp</em>&#160;</td>
         </tr>
         <tr>
@@ -3352,7 +3346,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="memname">void amrex::AmrLevel::setPostStepRegrid </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>new_val</em></td><td>)</td>
           <td></td>
         </tr>
@@ -3498,7 +3492,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33a">AmrLevel::TimeLevel</a> amrex::AmrLevel::which_time </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>state_indx</em>, </td>
         </tr>
         <tr>
@@ -3534,7 +3528,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual int amrex::AmrLevel::WorkEstType </td>
+          <td class="memname">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::WorkEstType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -4001,7 +3995,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::level {-1}</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::level {-1}</td>
         </tr>
       </table>
   </td>
@@ -4089,7 +4083,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::m_eb_basic_grow_cells = 5</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::m_eb_basic_grow_cells = 5</td>
         </tr>
       </table>
   </td>
@@ -4111,7 +4105,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::m_eb_full_grow_cells = 2</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::m_eb_full_grow_cells = 2</td>
         </tr>
       </table>
   </td>
@@ -4155,7 +4149,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::m_eb_volume_grow_cells = 4</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::m_eb_volume_grow_cells = 4</td>
         </tr>
       </table>
   </td>
@@ -4243,7 +4237,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AmrLevel::post_step_regrid {0}</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AmrLevel::post_step_regrid {0}</td>
         </tr>
       </table>
   </td>

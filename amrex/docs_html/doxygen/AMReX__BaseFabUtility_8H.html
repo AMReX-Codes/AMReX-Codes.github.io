@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -121,14 +115,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a238562144a9a4a23191bdb450d4b5c5b" id="r_a238562144a9a4a23191bdb450d4b5c5b"><td class="memTemplParams" colspan="2">template&lt;class Tto , class Tfrom &gt; </td></tr>
 <tr class="memitem:a238562144a9a4a23191bdb450d4b5c5b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a238562144a9a4a23191bdb450d4b5c5b">amrex::cast</a> (<a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; Tto &gt; &amp;tofab, <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; Tfrom &gt; const &amp;fromfab, <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;bx, <a class="el" href="structamrex_1_1SrcComp.html">SrcComp</a> scomp, <a class="el" href="structamrex_1_1DestComp.html">DestComp</a> dcomp, <a class="el" href="structamrex_1_1NumComps.html">NumComps</a> ncomp) noexcept</td></tr>
 <tr class="separator:a238562144a9a4a23191bdb450d4b5c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b3c5a372f37d8bb9aa21a76a5129a95" id="r_a7b3c5a372f37d8bb9aa21a76a5129a95"><td class="memTemplParams" colspan="2">template&lt;typename STRUCT , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt;(sizeof(STRUCT)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; STRUCT &gt; &amp;&amp;std::is_trivially_destructible_v&lt; STRUCT &gt;, int &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:a7b3c5a372f37d8bb9aa21a76a5129a95" id="r_a7b3c5a372f37d8bb9aa21a76a5129a95"><td class="memTemplParams" colspan="2">template&lt;typename STRUCT , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt;(sizeof(STRUCT)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; STRUCT &gt; &amp;&amp;std::is_trivially_destructible_v&lt; STRUCT &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO = 0&gt; </td></tr>
 <tr class="memitem:a7b3c5a372f37d8bb9aa21a76a5129a95"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7b3c5a372f37d8bb9aa21a76a5129a95">amrex::fill</a> (<a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; STRUCT &gt; &amp;aos_fab, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="separator:a7b3c5a372f37d8bb9aa21a76a5129a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a145b9fc071ef1dcce318e0652c226e02" id="r_a145b9fc071ef1dcce318e0652c226e02"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a145b9fc071ef1dcce318e0652c226e02"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a145b9fc071ef1dcce318e0652c226e02">amrex::transposeCtoF</a> (T const *pi, T *po, int nx, int ny, int nz)</td></tr>
+<tr class="memitem:a145b9fc071ef1dcce318e0652c226e02"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a145b9fc071ef1dcce318e0652c226e02">amrex::transposeCtoF</a> (T const *pi, T *po, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ny, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nz)</td></tr>
 <tr class="separator:a145b9fc071ef1dcce318e0652c226e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66180cb7652c231d66901a5ff7dcb804" id="r_a66180cb7652c231d66901a5ff7dcb804"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a66180cb7652c231d66901a5ff7dcb804"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a66180cb7652c231d66901a5ff7dcb804">amrex::transposeCtoF</a> (T const *pi, T *po, int nx, int ny)</td></tr>
+<tr class="memitem:a66180cb7652c231d66901a5ff7dcb804"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a66180cb7652c231d66901a5ff7dcb804">amrex::transposeCtoF</a> (T const *pi, T *po, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ny)</td></tr>
 <tr class="separator:a66180cb7652c231d66901a5ff7dcb804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

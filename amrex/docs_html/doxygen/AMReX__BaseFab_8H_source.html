@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -4206,7 +4205,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition</b> AMReX_SPACE.H:171</div></div>
 <div class="ttc" id="aAMReX__Scan_8H_html"><div class="ttname"><a href="AMReX__Scan_8H.html">AMReX_Scan.H</a></div></div>
 <div class="ttc" id="aAMReX__Utility_8H_html"><div class="ttname"><a href="AMReX__Utility_8H.html">AMReX_Utility.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html"><div class="ttname"><a href="classamrex_1_1BaseFab.html">amrex::BaseFab</a></div><div class="ttdoc">A FortranArrayBox(FAB)-like object.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:189</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a02d3c8e98d8d4b237eabc0ce1756fc33"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a02d3c8e98d8d4b237eabc0ce1756fc33">amrex::BaseFab::maskGE</a></div><div class="ttdeci">int maskGE(BaseFab&lt; int &gt; &amp;mask, T const &amp;val, int comp=0) const noexcept</div><div class="ttdoc">Same as above except mark cells with value greater than or equal to val.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:2438</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a051da6643de6a48ee66ec046d560033a"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a051da6643de6a48ee66ec046d560033a">amrex::BaseFab::saxpy</a></div><div class="ttdeci">BaseFab&lt; T &gt; &amp; saxpy(T a, const BaseFab&lt; T &gt; &amp;x, const Box &amp;srcbox, const Box &amp;destbox, int srccomp, int destcomp, int numcomp=1) noexcept</div><div class="ttdoc">FAB SAXPY (y[i] &lt;- y[i] + a * x[i]), in place.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.H:2494</div></div>
@@ -4361,7 +4360,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="aclassamrex_1_1ReduceOps_html_a76c9c4a303db128f0e416889bc54aef6"><div class="ttname"><a href="classamrex_1_1ReduceOps.html#a76c9c4a303db128f0e416889bc54aef6">amrex::ReduceOps::eval</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; eval(MF const &amp;mf, IntVect const &amp;nghost, D &amp;reduce_data, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:458</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a036b6d508731d9a30a2c2c8ade0caa39"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a036b6d508731d9a30a2c2c8ade0caa39">amrex::Gpu::Atomic::Exch</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Exch(T *address, T val) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:487</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a67a618504ee5fb94bd65a5d393e344b4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">amrex::Gpu::streamSynchronize</a></div><div class="ttdeci">void streamSynchronize() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:263</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a6cb0d90b937d4749b2219ad0e9fa8277"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">amrex::Gpu::dtoh_memcpy_async</a></div><div class="ttdeci">void dtoh_memcpy_async(void *p_h, const void *p_d, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:315</div></div>
@@ -4387,17 +4386,17 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="anamespaceamrex_html_a48ee24ac226396b92932d8d533d68af1"><div class="ttname"><a href="namespaceamrex.html#a48ee24ac226396b92932d8d533d68af1">amrex::InitSNaN</a></div><div class="ttdeci">bool InitSNaN() noexcept</div><div class="ttdef"><b>Definition</b> AMReX.cpp:173</div></div>
 <div class="ttc" id="anamespaceamrex_html_a587a3cb57cff4b7fa72c7c1d4d98900b"><div class="ttname"><a href="namespaceamrex.html#a587a3cb57cff4b7fa72c7c1d4d98900b">amrex::TotalBytesAllocatedInFabs</a></div><div class="ttdeci">Long TotalBytesAllocatedInFabs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:66</div></div>
 <div class="ttc" id="anamespaceamrex_html_a652bd22fb8cfcdfeaa4ac62e81a41fe6"><div class="ttname"><a href="namespaceamrex.html#a652bd22fb8cfcdfeaa4ac62e81a41fe6">amrex::BaseFab_Initialize</a></div><div class="ttdeci">void BaseFab_Initialize()</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:30</div></div>
-<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
+<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:24</div></div>
 <div class="ttc" id="anamespaceamrex_html_a67b24cef9df62e8cced041445b239e86"><div class="ttname"><a href="namespaceamrex.html#a67b24cef9df62e8cced041445b239e86">amrex::BaseFab_Finalize</a></div><div class="ttdeci">void BaseFab_Finalize()</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:59</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6a67d23bf90db71610ec5144cbae8f7c"><div class="ttname"><a href="namespaceamrex.html#a6a67d23bf90db71610ec5144cbae8f7c">amrex::begin</a></div><div class="ttdeci">__host__ __device__ Dim3 begin(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2006</div></div>
 <div class="ttc" id="anamespaceamrex_html_a765c5cc6e670eb707740d51c99e7b35e"><div class="ttname"><a href="namespaceamrex.html#a765c5cc6e670eb707740d51c99e7b35e">amrex::ResetTotalBytesAllocatedInFabsHWM</a></div><div class="ttdeci">void ResetTotalBytesAllocatedInFabsHWM() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:134</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7cb1edb123daa9e2146ae0db8e2ed910"><div class="ttname"><a href="namespaceamrex.html#a7cb1edb123daa9e2146ae0db8e2ed910">amrex::boxDiff</a></div><div class="ttdeci">BoxList boxDiff(const Box &amp;b1in, const Box &amp;b2)</div><div class="ttdoc">Returns BoxList defining the compliment of b2 in b1in.</div><div class="ttdef"><b>Definition</b> AMReX_BoxList.cpp:599</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">amrex::Direction::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="anamespaceamrex_html_a8defcf36ddf219cae1fed871e05e78e3"><div class="ttname"><a href="namespaceamrex.html#a8defcf36ddf219cae1fed871e05e78e3">amrex::almostEqual</a></div><div class="ttdeci">__host__ __device__ std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, bool &gt; almostEqual(T x, T y, int ulp=2)</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:93</div></div>
+<div class="ttc" id="anamespaceamrex_html_a8defcf36ddf219cae1fed871e05e78e3"><div class="ttname"><a href="namespaceamrex.html#a8defcf36ddf219cae1fed871e05e78e3">amrex::almostEqual</a></div><div class="ttdeci">__host__ __device__ std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, bool &gt; almostEqual(T x, T y, int ulp=2)</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:116</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95a2c5251b0bc8cc9f28f6384738404a"><div class="ttname"><a href="namespaceamrex.html#a95a2c5251b0bc8cc9f28f6384738404a">amrex::TotalBytesAllocatedInFabsHWM</a></div><div class="ttdeci">Long TotalBytesAllocatedInFabsHWM() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:83</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
 <div class="ttc" id="anamespaceamrex_html_aa85143ea71ce835e3a64ce8551b726b4"><div class="ttname"><a href="namespaceamrex.html#aa85143ea71ce835e3a64ce8551b726b4">amrex::TotalCellsAllocatedInFabsHWM</a></div><div class="ttdeci">Long TotalCellsAllocatedInFabsHWM() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:117</div></div>
 <div class="ttc" id="anamespaceamrex_html_aa9ed510cedd140658efd18542d9479c7"><div class="ttname"><a href="namespaceamrex.html#aa9ed510cedd140658efd18542d9479c7">amrex::TotalCellsAllocatedInFabs</a></div><div class="ttdeci">Long TotalCellsAllocatedInFabs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFab.cpp:100</div></div>
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>

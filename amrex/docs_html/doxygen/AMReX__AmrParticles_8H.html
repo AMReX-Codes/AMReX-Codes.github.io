@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -130,14 +124,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a419832e55be898fd5de9051fdf08cb05" id="r_a419832e55be898fd5de9051fdf08cb05"><td class="memTemplParams" colspan="2">template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator, class CellAssignor  = DefaultAssignor&gt; </td></tr>
+<tr class="memitem:a419832e55be898fd5de9051fdf08cb05" id="r_a419832e55be898fd5de9051fdf08cb05"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NStructReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NStructInt = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal = 0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator, class CellAssignor  = DefaultAssignor&gt; </td></tr>
 <tr class="memitem:a419832e55be898fd5de9051fdf08cb05"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a419832e55be898fd5de9051fdf08cb05">amrex::AmrParticleContainer</a> = <a class="el" href="classamrex_1_1AmrParticleContainer__impl.html">AmrParticleContainer_impl</a>&lt; <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</td></tr>
 <tr class="separator:a419832e55be898fd5de9051fdf08cb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef" id="r_a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplParams" colspan="2">template&lt;class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9610a39b43057d1e9e78c4d5156965ef">amrex::ParticleToMesh</a> (PC const &amp;pc, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, int lev_min, int lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, bool zero_out_input=true, bool vol_weight=true)</td></tr>
+<tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef" id="r_a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplParams" colspan="2">template&lt;class PC , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a9610a39b43057d1e9e78c4d5156965ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9610a39b43057d1e9e78c4d5156965ef">amrex::ParticleToMesh</a> (PC const &amp;pc, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f, bool zero_out_input=true, bool vol_weight=true)</td></tr>
 <tr class="separator:a9610a39b43057d1e9e78c4d5156965ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

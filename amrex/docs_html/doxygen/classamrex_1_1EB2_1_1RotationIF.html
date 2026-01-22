@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,11 +105,11 @@ $(document).ready(function(){initNavTree('classamrex_1_1EB2_1_1RotationIF.html',
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afe9fbf2bc166e3cb4921b307144b9eff" id="r_afe9fbf2bc166e3cb4921b307144b9eff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#afe9fbf2bc166e3cb4921b307144b9eff">RotationIF</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> a_f, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> angle, int dir)</td></tr>
+<tr class="memitem:afe9fbf2bc166e3cb4921b307144b9eff" id="r_afe9fbf2bc166e3cb4921b307144b9eff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#afe9fbf2bc166e3cb4921b307144b9eff">RotationIF</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> a_f, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> angle, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir)</td></tr>
 <tr class="separator:afe9fbf2bc166e3cb4921b307144b9eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16396f5bbe7fdd5524e031d31017ea7a" id="r_a16396f5bbe7fdd5524e031d31017ea7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a16396f5bbe7fdd5524e031d31017ea7a">operator()</a> (const <a class="el" href="namespaceamrex.html#aeb06fab72f85728954130adbe25c5397">RealArray</a> &amp;p) const noexcept</td></tr>
 <tr class="separator:a16396f5bbe7fdd5524e031d31017ea7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c4900c005defc9aef13b96b4c74aa75" id="r_a1c4900c005defc9aef13b96b4c74aa75"><td class="memTemplParams" colspan="2">template&lt;class U  = F, std::enable_if_t&lt; <a class="el" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a>&lt; U &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a1c4900c005defc9aef13b96b4c74aa75" id="r_a1c4900c005defc9aef13b96b4c74aa75"><td class="memTemplParams" colspan="2">template&lt;class U  = F, std::enable_if_t&lt; <a class="el" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a>&lt; U &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a1c4900c005defc9aef13b96b4c74aa75"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a1c4900c005defc9aef13b96b4c74aa75">operator()</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69afbade9e36a3f36d3d676c1b808451dd7">z</a>) const noexcept</td></tr>
 <tr class="separator:a1c4900c005defc9aef13b96b4c74aa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -127,7 +121,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ab51c69319d7d35dc43124c3692af67ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a985a4f063595d3fa4506d2b014dff877" id="r_a985a4f063595d3fa4506d2b014dff877"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">m_sin_angle</a></td></tr>
 <tr class="separator:a985a4f063595d3fa4506d2b014dff877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e57f52a7f9f0b9b64c98c2c0cb48fed" id="r_a2e57f52a7f9f0b9b64c98c2c0cb48fed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed">m_dir</a></td></tr>
+<tr class="memitem:a2e57f52a7f9f0b9b64c98c2c0cb48fed" id="r_a2e57f52a7f9f0b9b64c98c2c0cb48fed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed">m_dir</a></td></tr>
 <tr class="separator:a2e57f52a7f9f0b9b64c98c2c0cb48fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -157,7 +151,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>&#160;</td>
         </tr>
         <tr>
@@ -212,7 +206,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
 <div class="memtemplate">
 template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </div>
 <div class="memtemplate">
-template&lt;class U  = F, std::enable_if_t&lt; <a class="el" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a>&lt; U &gt;::value, int &gt;  = 0&gt; </div>
+template&lt;class U  = F, std::enable_if_t&lt; <a class="el" href="structamrex_1_1EB2_1_1IsGPUable.html">IsGPUable</a>&lt; U &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -287,7 +281,7 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classamrex_1_1EB2_1_1RotationIF.html">amrex::EB2::RotationIF</a>&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;::m_dir</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1EB2_1_1RotationIF.html">amrex::EB2::RotationIF</a>&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;::m_dir</td>
         </tr>
       </table>
   </td>

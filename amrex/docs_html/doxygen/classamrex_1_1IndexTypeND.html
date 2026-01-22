@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -141,17 +135,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa05abfdf14ffb8ff26a43d6c78c67826" id="r_aa05abfdf14ffb8ff26a43d6c78c67826"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#aa05abfdf14ffb8ff26a43d6c78c67826">IndexTypeND</a> (const <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt; &amp;iv) noexcept</td></tr>
 <tr class="memdesc:aa05abfdf14ffb8ff26a43d6c78c67826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> identical to an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a>.  <br /></td></tr>
 <tr class="separator:aa05abfdf14ffb8ff26a43d6c78c67826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb674e0581d033d51dbf58523fb9774" id="r_abbb674e0581d033d51dbf58523fb9774"><td class="memTemplParams" colspan="2">template&lt;class... Args, std::enable_if_t&lt;(sizeof...(Args)+1==dim) &amp;&amp;<a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>, Args... &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:abbb674e0581d033d51dbf58523fb9774" id="r_abbb674e0581d033d51dbf58523fb9774"><td class="memTemplParams" colspan="2">template&lt;class... Args, std::enable_if_t&lt;(sizeof...(Args)+1==dim) &amp;&amp;<a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>, Args... &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:abbb674e0581d033d51dbf58523fb9774"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#abbb674e0581d033d51dbf58523fb9774">IndexTypeND</a> (<a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> i, Args...js) noexcept</td></tr>
 <tr class="memdesc:abbb674e0581d033d51dbf58523fb9774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> given an explicit CellIndex for each direction. The inputs for this constructor are N CellIndex, where N is equal to the number of dimensions of the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a>.  <br /></td></tr>
 <tr class="separator:abbb674e0581d033d51dbf58523fb9774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaf7093b88615125bb947b8d2610ff6b" id="r_aaaf7093b88615125bb947b8d2610ff6b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#aaaf7093b88615125bb947b8d2610ff6b">set</a> (int dir) noexcept</td></tr>
+<tr class="memitem:aaaf7093b88615125bb947b8d2610ff6b" id="r_aaaf7093b88615125bb947b8d2610ff6b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#aaaf7093b88615125bb947b8d2610ff6b">set</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) noexcept</td></tr>
 <tr class="memdesc:aaaf7093b88615125bb947b8d2610ff6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> to be NODE based in direction dir.  <br /></td></tr>
 <tr class="separator:aaaf7093b88615125bb947b8d2610ff6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0406597e3ebda44283adc3f4e9e69ff" id="r_af0406597e3ebda44283adc3f4e9e69ff"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff">unset</a> (int dir) noexcept</td></tr>
+<tr class="memitem:af0406597e3ebda44283adc3f4e9e69ff" id="r_af0406597e3ebda44283adc3f4e9e69ff"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#af0406597e3ebda44283adc3f4e9e69ff">unset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) noexcept</td></tr>
 <tr class="memdesc:af0406597e3ebda44283adc3f4e9e69ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> to be CELL based in direction dir.  <br /></td></tr>
 <tr class="separator:af0406597e3ebda44283adc3f4e9e69ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d58549e0f7297273cf3320c685bde9" id="r_a08d58549e0f7297273cf3320c685bde9"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a08d58549e0f7297273cf3320c685bde9">test</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a08d58549e0f7297273cf3320c685bde9" id="r_a08d58549e0f7297273cf3320c685bde9"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a08d58549e0f7297273cf3320c685bde9">test</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:a08d58549e0f7297273cf3320c685bde9"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is NODE based in direction dir.  <br /></td></tr>
 <tr class="separator:a08d58549e0f7297273cf3320c685bde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5282873135890b3edfe6ca66a9e1404c" id="r_a5282873135890b3edfe6ca66a9e1404c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a5282873135890b3edfe6ca66a9e1404c">setall</a> () noexcept</td></tr>
@@ -166,7 +160,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b6d62bcd56a95845e2261499a5edaf2" id="r_a6b6d62bcd56a95845e2261499a5edaf2"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a6b6d62bcd56a95845e2261499a5edaf2">ok</a> () const noexcept</td></tr>
 <tr class="memdesc:a6b6d62bcd56a95845e2261499a5edaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is valid.  <br /></td></tr>
 <tr class="separator:a6b6d62bcd56a95845e2261499a5edaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2400e858297204ae781152604742ce80" id="r_a2400e858297204ae781152604742ce80"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a2400e858297204ae781152604742ce80">flip</a> (int i) noexcept</td></tr>
+<tr class="memitem:a2400e858297204ae781152604742ce80" id="r_a2400e858297204ae781152604742ce80"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a2400e858297204ae781152604742ce80">flip</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) noexcept</td></tr>
 <tr class="memdesc:a2400e858297204ae781152604742ce80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change from CELL to NODE or NODE to CELL in direction dir.  <br /></td></tr>
 <tr class="separator:a2400e858297204ae781152604742ce80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0513be1f47d4c2340c47213356e281df" id="r_a0513be1f47d4c2340c47213356e281df"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a0513be1f47d4c2340c47213356e281df">operator==</a> (const <a class="el" href="classamrex_1_1IndexTypeND.html">IndexTypeND</a> &amp;t) const noexcept</td></tr>
@@ -180,22 +174,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1230fcc247da6ba2f6fc05fa619c4b39" id="r_a1230fcc247da6ba2f6fc05fa619c4b39"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a1230fcc247da6ba2f6fc05fa619c4b39">cellCentered</a> () const noexcept</td></tr>
 <tr class="memdesc:a1230fcc247da6ba2f6fc05fa619c4b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is CELL based in all directions.  <br /></td></tr>
 <tr class="separator:a1230fcc247da6ba2f6fc05fa619c4b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a875cbf88aaf3733bc1376b5210258b1b" id="r_a875cbf88aaf3733bc1376b5210258b1b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a875cbf88aaf3733bc1376b5210258b1b">cellCentered</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a875cbf88aaf3733bc1376b5210258b1b" id="r_a875cbf88aaf3733bc1376b5210258b1b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a875cbf88aaf3733bc1376b5210258b1b">cellCentered</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:a875cbf88aaf3733bc1376b5210258b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is CELL based in dir-direction.  <br /></td></tr>
 <tr class="separator:a875cbf88aaf3733bc1376b5210258b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac276520f6660091f86aacac95fdd3608" id="r_ac276520f6660091f86aacac95fdd3608"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#ac276520f6660091f86aacac95fdd3608">nodeCentered</a> () const noexcept</td></tr>
 <tr class="memdesc:ac276520f6660091f86aacac95fdd3608"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is NODE based in all directions.  <br /></td></tr>
 <tr class="separator:ac276520f6660091f86aacac95fdd3608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8adc691480875c2c93d0cac085224d51" id="r_a8adc691480875c2c93d0cac085224d51"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a8adc691480875c2c93d0cac085224d51">nodeCentered</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a8adc691480875c2c93d0cac085224d51" id="r_a8adc691480875c2c93d0cac085224d51"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a8adc691480875c2c93d0cac085224d51">nodeCentered</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:a8adc691480875c2c93d0cac085224d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> is NODE based in dir-direction.  <br /></td></tr>
 <tr class="separator:a8adc691480875c2c93d0cac085224d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d512af0bdf56b5126afe50a7c9a96e4" id="r_a4d512af0bdf56b5126afe50a7c9a96e4"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a4d512af0bdf56b5126afe50a7c9a96e4">setType</a> (int dir, <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> t) noexcept</td></tr>
+<tr class="memitem:a4d512af0bdf56b5126afe50a7c9a96e4" id="r_a4d512af0bdf56b5126afe50a7c9a96e4"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a4d512af0bdf56b5126afe50a7c9a96e4">setType</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> t) noexcept</td></tr>
 <tr class="memdesc:a4d512af0bdf56b5126afe50a7c9a96e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> to CellIndex type t in direction dir.  <br /></td></tr>
 <tr class="separator:a4d512af0bdf56b5126afe50a7c9a96e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a042a6d6988a3f2ce079d145a086e0515" id="r_a042a6d6988a3f2ce079d145a086e0515"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a042a6d6988a3f2ce079d145a086e0515">ixType</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a042a6d6988a3f2ce079d145a086e0515" id="r_a042a6d6988a3f2ce079d145a086e0515"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a042a6d6988a3f2ce079d145a086e0515">ixType</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:a042a6d6988a3f2ce079d145a086e0515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the CellIndex in direction dir.  <br /></td></tr>
 <tr class="separator:a042a6d6988a3f2ce079d145a086e0515"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab75aec6a654b732fdadb303b0406555f" id="r_ab75aec6a654b732fdadb303b0406555f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#ab75aec6a654b732fdadb303b0406555f">operator[]</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:ab75aec6a654b732fdadb303b0406555f" id="r_ab75aec6a654b732fdadb303b0406555f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#ab75aec6a654b732fdadb303b0406555f">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="memdesc:ab75aec6a654b732fdadb303b0406555f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an integer representing the <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> in direction dir.  <br /></td></tr>
 <tr class="separator:ab75aec6a654b732fdadb303b0406555f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c96c4f33ce67de6ba0744e4f675ebe8" id="r_a3c96c4f33ce67de6ba0744e4f675ebe8"><td class="memTemplParams" colspan="2">template&lt;std::size_t i&gt; </td></tr>
@@ -208,22 +202,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2739aa7f265285cb7101f431f13d9e47" id="r_a2739aa7f265285cb7101f431f13d9e47"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1IntVectND.html">IntVectND</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a2739aa7f265285cb7101f431f13d9e47">toIntVect</a> () const noexcept</td></tr>
 <tr class="memdesc:a2739aa7f265285cb7101f431f13d9e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an <a class="el" href="classamrex_1_1IntVectND.html" title="An Integer Vector in dim-Dimensional Space.">IntVectND</a> of size dim with IndexTypeNDs.  <br /></td></tr>
 <tr class="separator:a2739aa7f265285cb7101f431f13d9e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87d405fd8a0bfb65400513770cee8278" id="r_a87d405fd8a0bfb65400513770cee8278"><td class="memTemplParams" colspan="2">template&lt;int new_dim&gt; </td></tr>
+<tr class="memitem:a87d405fd8a0bfb65400513770cee8278" id="r_a87d405fd8a0bfb65400513770cee8278"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </td></tr>
 <tr class="memitem:a87d405fd8a0bfb65400513770cee8278"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1IndexTypeND.html">IndexTypeND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a87d405fd8a0bfb65400513770cee8278">shrink</a> () const noexcept</td></tr>
 <tr class="memdesc:a87d405fd8a0bfb65400513770cee8278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> of size new_dim and assigns the first new_dim values of this <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> to it.  <br /></td></tr>
 <tr class="separator:a87d405fd8a0bfb65400513770cee8278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ead01bf8b616317de8b718eb73f5645" id="r_a1ead01bf8b616317de8b718eb73f5645"><td class="memTemplParams" colspan="2">template&lt;int new_dim&gt; </td></tr>
+<tr class="memitem:a1ead01bf8b616317de8b718eb73f5645" id="r_a1ead01bf8b616317de8b718eb73f5645"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </td></tr>
 <tr class="memitem:a1ead01bf8b616317de8b718eb73f5645"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1IndexTypeND.html">IndexTypeND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a1ead01bf8b616317de8b718eb73f5645">expand</a> (<a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> fill_extra=<a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439">CellIndex::CELL</a>) const noexcept</td></tr>
 <tr class="memdesc:a1ead01bf8b616317de8b718eb73f5645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> of size new_dim and assigns all values of this <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> to it and fill_extra to the remaining elements.  <br /></td></tr>
 <tr class="separator:a1ead01bf8b616317de8b718eb73f5645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac804337b8634eceeee08c1230820265c" id="r_ac804337b8634eceeee08c1230820265c"><td class="memTemplParams" colspan="2">template&lt;int new_dim&gt; </td></tr>
+<tr class="memitem:ac804337b8634eceeee08c1230820265c" id="r_ac804337b8634eceeee08c1230820265c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </td></tr>
 <tr class="memitem:ac804337b8634eceeee08c1230820265c"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classamrex_1_1IndexTypeND.html">IndexTypeND</a>&lt; new_dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#ac804337b8634eceeee08c1230820265c">resize</a> (<a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> fill_extra=<a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3a1f9d32418f4279a931e3f65f092f9439">CellIndex::CELL</a>) const noexcept</td></tr>
 <tr class="memdesc:ac804337b8634eceeee08c1230820265c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> of size new_dim by either shrinking or expanding this <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a>.  <br /></td></tr>
 <tr class="separator:ac804337b8634eceeee08c1230820265c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e64a0733fa97b1884a9a028634a6751" id="r_a5e64a0733fa97b1884a9a028634a6751"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a5e64a0733fa97b1884a9a028634a6751">getBits</a> () noexcept</td></tr>
+<tr class="memitem:a5e64a0733fa97b1884a9a028634a6751" id="r_a5e64a0733fa97b1884a9a028634a6751"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a5e64a0733fa97b1884a9a028634a6751">getBits</a> () noexcept</td></tr>
 <tr class="memdesc:a5e64a0733fa97b1884a9a028634a6751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the bit field representing the underlying data.  <br /></td></tr>
 <tr class="separator:a5e64a0733fa97b1884a9a028634a6751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a482fe9ea5034985b6f50485803bd21ef" id="r_a482fe9ea5034985b6f50485803bd21ef"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr const unsigned int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a482fe9ea5034985b6f50485803bd21ef">getBits</a> () const noexcept</td></tr>
+<tr class="memitem:a482fe9ea5034985b6f50485803bd21ef" id="r_a482fe9ea5034985b6f50485803bd21ef"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr const unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a482fe9ea5034985b6f50485803bd21ef">getBits</a> () const noexcept</td></tr>
 <tr class="memdesc:a482fe9ea5034985b6f50485803bd21ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the bit field representing the underlying data.  <br /></td></tr>
 <tr class="separator:a482fe9ea5034985b6f50485803bd21ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -238,12 +232,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a266ee0ab102b295c27c95cc40e1d3aa4" id="r_a266ee0ab102b295c27c95cc40e1d3aa4"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a266ee0ab102b295c27c95cc40e1d3aa4">size</a> () noexcept</td></tr>
 <tr class="memdesc:a266ee0ab102b295c27c95cc40e1d3aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size of this IndexTypeND.  <br /></td></tr>
 <tr class="separator:a266ee0ab102b295c27c95cc40e1d3aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4de688a23c7da001daf388fe39b512" id="r_a2a4de688a23c7da001daf388fe39b512"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a2a4de688a23c7da001daf388fe39b512">isize</a> () noexcept</td></tr>
+<tr class="memitem:a2a4de688a23c7da001daf388fe39b512" id="r_a2a4de688a23c7da001daf388fe39b512"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IndexTypeND.html#a2a4de688a23c7da001daf388fe39b512">isize</a> () noexcept</td></tr>
 <tr class="memdesc:a2a4de688a23c7da001daf388fe39b512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size of this IndexTypeND.  <br /></td></tr>
 <tr class="separator:a2a4de688a23c7da001daf388fe39b512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;int dim&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt;<br />
 class amrex::IndexTypeND&lt; dim &gt;</div><p>Cell-Based or Node-Based Indices. </p>
 <p>The class <a class="el" href="classamrex_1_1IndexTypeND.html" title="Cell-Based or Node-Based Indices.">IndexTypeND</a> defines an index as being cell based or node (edge) based in each of the dim directions. This class defines an enumerated type CellIndex to be either CELL or NODE; i.e. each of the dim dimensions must be either CELL or NODE. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -253,7 +247,7 @@ class amrex::IndexTypeND&lt; dim &gt;</div><p>Cell-Based or Node-Based Indices. 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::value_type =  <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a></td>
@@ -270,7 +264,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -299,7 +293,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -329,9 +323,9 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <div class="memtemplate">
-template&lt;class... Args, std::enable_if_t&lt;(sizeof...(Args)+1==dim) &amp;&amp;<a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>, Args... &gt;, int &gt;  = 0&gt; </div>
+template&lt;class... Args, std::enable_if_t&lt;(sizeof...(Args)+1==dim) &amp;&amp;<a class="el" href="namespaceamrex.html#a6c0ad9de6dc5e0ca9324f19210bd62b9">IsConvertible_v</a>&lt; <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a>, Args... &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -372,7 +366,7 @@ template&lt;class... Args, std::enable_if_t&lt;(sizeof...(Args)+1==dim) &amp;&am
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -401,7 +395,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -430,7 +424,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -438,7 +432,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ bool <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::cellCentered </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -460,7 +454,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -489,9 +483,9 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <div class="memtemplate">
-template&lt;int new_dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -521,7 +515,7 @@ template&lt;int new_dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -529,7 +523,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ void <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::flip </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
@@ -551,7 +545,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <div class="memtemplate">
 template&lt;std::size_t i&gt; </div>
 <table class="mlabels">
@@ -582,13 +576,13 @@ template&lt;std::size_t i&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr const unsigned int &amp; <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::getBits </td>
+          <td class="memname">__host__ __device__ constexpr const unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp; <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::getBits </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -611,13 +605,13 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ constexpr unsigned int &amp; <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::getBits </td>
+          <td class="memname">__host__ __device__ constexpr unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &amp; <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::getBits </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -640,13 +634,13 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ static __device__ constexpr int <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::isize </td>
+          <td class="memname">__host__ static __device__ constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::isize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -669,7 +663,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -698,7 +692,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -706,7 +700,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ constexpr <a class="el" href="structamrex_1_1CellIndexEnum.html#aceb83f25ce499aa265f5326d75e1a0a3">CellIndex</a> <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::ixType </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -728,7 +722,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -757,7 +751,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -765,7 +759,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ bool <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::nodeCentered </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -787,7 +781,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -816,7 +810,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -846,7 +840,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -874,7 +868,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -904,15 +898,15 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ int <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::operator[] </td>
+          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -934,9 +928,9 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <div class="memtemplate">
-template&lt;int new_dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -966,7 +960,7 @@ template&lt;int new_dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -974,7 +968,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ void <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -996,7 +990,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1025,7 +1019,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1033,7 +1027,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ void <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::setType </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -1065,9 +1059,9 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <div class="memtemplate">
-template&lt;int new_dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1096,7 +1090,7 @@ template&lt;int new_dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1125,7 +1119,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1133,7 +1127,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ bool <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::test </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1155,7 +1149,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1184,7 +1178,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1213,7 +1207,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1242,7 +1236,7 @@ template&lt;int dim&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1250,7 +1244,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ void <a class="el" href="classamrex_1_1IndexTypeND.html">amrex::IndexTypeND</a>&lt; dim &gt;::unset </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>

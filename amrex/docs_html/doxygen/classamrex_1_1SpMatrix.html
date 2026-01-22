@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -138,7 +132,7 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e18c9a88b5cbb646f471233e4bcd764" id="r_a9e18c9a88b5cbb646f471233e4bcd764"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a9e18c9a88b5cbb646f471233e4bcd764">SpMatrix</a> ()=default</td></tr>
 <tr class="separator:a9e18c9a88b5cbb646f471233e4bcd764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41eef917f3698fc3755956941789c09" id="r_af41eef917f3698fc3755956941789c09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#af41eef917f3698fc3755956941789c09">SpMatrix</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, int nnz_per_row)</td></tr>
+<tr class="memitem:af41eef917f3698fc3755956941789c09" id="r_af41eef917f3698fc3755956941789c09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#af41eef917f3698fc3755956941789c09">SpMatrix</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nnz_per_row)</td></tr>
 <tr class="memdesc:af41eef917f3698fc3755956941789c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sparse matrix with a fixed number of nonzeros per row.  <br /></td></tr>
 <tr class="separator:af41eef917f3698fc3755956941789c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2d591afc3e5d8e369e525fae4d9905" id="r_aba2d591afc3e5d8e369e525fae4d9905"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aba2d591afc3e5d8e369e525fae4d9905">SpMatrix</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="classamrex_1_1SpMatrix.html#a99d240b05d485779904b603b7c36f404">csr_type</a> csr)</td></tr>
@@ -154,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad77b7d4979338962d2e7fd750c762e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50000ca76ce5d7e0e9277fab9a2cc751" id="r_a50000ca76ce5d7e0e9277fab9a2cc751"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a50000ca76ce5d7e0e9277fab9a2cc751">~SpMatrix</a> ()=default</td></tr>
 <tr class="separator:a50000ca76ce5d7e0e9277fab9a2cc751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff9b77125ea939d1fd1b54b72ebc95ec" id="r_aff9b77125ea939d1fd1b54b72ebc95ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aff9b77125ea939d1fd1b54b72ebc95ec">define</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, int nnz_per_row)</td></tr>
+<tr class="memitem:aff9b77125ea939d1fd1b54b72ebc95ec" id="r_aff9b77125ea939d1fd1b54b72ebc95ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aff9b77125ea939d1fd1b54b72ebc95ec">define</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nnz_per_row)</td></tr>
 <tr class="memdesc:aff9b77125ea939d1fd1b54b72ebc95ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate storage for a default-constructed matrix with a fixed number of nonzeros per row.  <br /></td></tr>
 <tr class="separator:aff9b77125ea939d1fd1b54b72ebc95ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca74c985f3c661327634b07322f8812f" id="r_aca74c985f3c661327634b07322f8812f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#aca74c985f3c661327634b07322f8812f">define</a> (<a class="el" href="classamrex_1_1AlgPartition.html">AlgPartition</a> <a class="el" href="classamrex_1_1SpMatrix.html#ab5d7ec6bbdeee94ca40a31e42cf73d4d">partition</a>, T const *mat, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *col_index, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> nentries, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> const *row_offset, <a class="el" href="structamrex_1_1CsrSorted.html">CsrSorted</a> is_sorted, <a class="el" href="structamrex_1_1CsrValid.html">CsrValid</a> is_valid)</td></tr>
@@ -209,7 +203,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aea7a391d509f61becff1318d41cd8886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981205bddbdc98138d5fe73ad74cd198" id="r_a981205bddbdc98138d5fe73ad74cd198"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParCsr.html">ParCsr</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a981205bddbdc98138d5fe73ad74cd198">const_parcsr</a> () const</td></tr>
 <tr class="separator:a981205bddbdc98138d5fe73ad74cd198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35d13284a266853384c62c6af85de1b7" id="r_a35d13284a266853384c62c6af85de1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a35d13284a266853384c62c6af85de1b7">define_doit</a> (int nnz_per_row)</td></tr>
+<tr class="memitem:a35d13284a266853384c62c6af85de1b7" id="r_a35d13284a266853384c62c6af85de1b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1SpMatrix.html#a35d13284a266853384c62c6af85de1b7">define_doit</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nnz_per_row)</td></tr>
 <tr class="memdesc:a35d13284a266853384c62c6af85de1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function, but public for cuda.  <br /></td></tr>
 <tr class="separator:a35d13284a266853384c62c6af85de1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150cbb11944dcbe666065e75250a7627" id="r_a150cbb11944dcbe666065e75250a7627"><td class="memTemplParams" colspan="2">template&lt;typename I &gt; </td></tr>
@@ -387,7 +381,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nnz_per_row</em>&#160;</td>
         </tr>
         <tr>
@@ -705,7 +699,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nnz_per_row</em>&#160;</td>
         </tr>
         <tr>
@@ -863,7 +857,7 @@ template&lt;typename T , template&lt; typename &gt; class Allocator&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1SpMatrix.html">amrex::SpMatrix</a>&lt; T, Allocator &gt;::define_doit </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nnz_per_row</em></td><td>)</td>
           <td></td>
         </tr>

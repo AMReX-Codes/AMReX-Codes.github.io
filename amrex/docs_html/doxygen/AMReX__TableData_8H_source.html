@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -778,8 +777,8 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a2240a2bbfffe9904f04e11e37d5d3cc5"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a></div><div class="ttdeci">#define AMREX_IF_ON_DEVICE(CODE)</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:56</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a3db6d2559ac1bb79c7f2a6dfe25917c8"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a></div><div class="ttdeci">#define AMREX_IF_ON_HOST(CODE)</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:58</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:20</div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html_a7119489f4464f902d907f6dfe9716909"><div class="ttname"><a href="classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909">amrex::Arena::isManaged</a></div><div class="ttdeci">virtual bool isManaged() const</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:88</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html_a7119489f4464f902d907f6dfe9716909"><div class="ttname"><a href="classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909">amrex::Arena::isManaged</a></div><div class="ttdeci">virtual bool isManaged() const</div><div class="ttdoc">Check whether it is managed GPU memory.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:88</div></div>
 <div class="ttc" id="aclassamrex_1_1TableData_html"><div class="ttname"><a href="classamrex_1_1TableData.html">amrex::TableData</a></div><div class="ttdoc">Multi-dimensional array class.</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:415</div></div>
 <div class="ttc" id="aclassamrex_1_1TableData_html_a222e815d3c06ca047ebae80835044dc4"><div class="ttname"><a href="classamrex_1_1TableData.html#a222e815d3c06ca047ebae80835044dc4">amrex::TableData::table_type</a></div><div class="ttdeci">std::conditional_t&lt; N==1, Table1D&lt; T &gt;, std::conditional_t&lt; N==2, Table2D&lt; T, ORDER &gt;, std::conditional_t&lt; N==3, Table3D&lt; T, ORDER &gt;, Table4D&lt; T, ORDER &gt; &gt; &gt; &gt; table_type</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:423</div></div>
 <div class="ttc" id="aclassamrex_1_1TableData_html_a4239d08dc7ad7096ca5def06693b4558"><div class="ttname"><a href="classamrex_1_1TableData.html#a4239d08dc7ad7096ca5def06693b4558">amrex::TableData::TableData</a></div><div class="ttdeci">TableData() noexcept=default</div></div>
@@ -787,7 +786,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="ttc" id="aclassamrex_1_1TableData_html_a929878dbf8cc2587f3cd18ba3e5c1e85"><div class="ttname"><a href="classamrex_1_1TableData.html#a929878dbf8cc2587f3cd18ba3e5c1e85">amrex::TableData::const_table_type</a></div><div class="ttdeci">std::conditional_t&lt; N==1, Table1D&lt; T const  &gt;, std::conditional_t&lt; N==2, Table2D&lt; T const, ORDER &gt;, std::conditional_t&lt; N==3, Table3D&lt; T const, ORDER &gt;, Table4D&lt; T const, ORDER &gt; &gt; &gt; &gt; const_table_type</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:427</div></div>
 <div class="ttc" id="aclassamrex_1_1TableData_html_ad82ea827b5b1999cc86a3b075c7a3659"><div class="ttname"><a href="classamrex_1_1TableData.html#ad82ea827b5b1999cc86a3b075c7a3659">amrex::TableData::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:419</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20">amrex::Order</a></div><div class="ttdeci">Order</div><div class="ttdef"><b>Definition</b> AMReX_Order.H:7</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
@@ -796,7 +795,7 @@ $(document).ready(function(){initNavTree('AMReX__TableData_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>
 <div class="ttc" id="astructamrex_1_1DataAllocator_html"><div class="ttname"><a href="structamrex_1_1DataAllocator.html">amrex::DataAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_DataAllocator.H:9</div></div>
 <div class="ttc" id="astructamrex_1_1DataAllocator_html_a55d255b149754a9123fc10eb1d79c88a"><div class="ttname"><a href="structamrex_1_1DataAllocator.html#a55d255b149754a9123fc10eb1d79c88a">amrex::DataAllocator::arena</a></div><div class="ttdeci">Arena * arena() const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_DataAllocator.H:24</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1Table1D_html"><div class="ttname"><a href="structamrex_1_1Table1D.html">amrex::Table1D</a></div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:20</div></div>
 <div class="ttc" id="astructamrex_1_1Table1D_html_a06af5cf12031ffd738020537760de9c9"><div class="ttname"><a href="structamrex_1_1Table1D.html#a06af5cf12031ffd738020537760de9c9">amrex::Table1D::begin</a></div><div class="ttdeci">IDX begin</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:22</div></div>
 <div class="ttc" id="astructamrex_1_1Table1D_html_a5012187f5853ef71ab9808da9d048d85"><div class="ttname"><a href="structamrex_1_1Table1D.html#a5012187f5853ef71ab9808da9d048d85">amrex::Table1D::p</a></div><div class="ttdeci">T *__restrict__ p</div><div class="ttdef"><b>Definition</b> AMReX_TableData.H:21</div></div>

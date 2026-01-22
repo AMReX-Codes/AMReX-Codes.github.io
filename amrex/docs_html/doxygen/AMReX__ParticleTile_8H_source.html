@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -142,7 +141,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a11bccd3938ed5beb19a29798dfc543cb">   38</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ParticleTileData.html#a11bccd3938ed5beb19a29798dfc543cb">ParticleRefType</a> = T_ParticleType&amp;;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a3db02853f88b6daab07d024e148538d3">   39</a></span>    <span class="keyword">using </span><a class="code hl_struct" href="structamrex_1_1ParticleTileData.html">Self</a> = <a class="code hl_struct" href="structamrex_1_1ParticleTileData.html">ParticleTileData&lt;ParticleType, NAR, NAI&gt;</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a635f2e6945e91bf61056728dc2c7679f">   40</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ParticleTileData.html#a635f2e6945e91bf61056728dc2c7679f">RealType</a> = <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">   41</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">IntType</a> = int;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">   41</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ParticleTileData.html#a9443296b677d39e174350756d26a9145">IntType</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">   43</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#af53dd2bb7ca0f780d4fbd86cbab4bee9">NStructReal</a> = ParticleType::NReal;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">   44</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a> = ParticleType::NInt;</div>
@@ -283,7 +282,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span> (comm_int[array_start_index + i])</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            {</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                memcpy(dst, <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#a52de30978d928054ae27a5a62cbf7eab">m_idata</a>[i] + src_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            }</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        runtime_start_index  = 2 + <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#a509d7d346b709b39d1261144b7f1de26">NStructInt</a> + <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#adfec304d600c86d3dc5fda841cd2aaff">NAI</a>;</div>
@@ -292,7 +291,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">if</span> (comm_int[runtime_start_index + i])</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            {</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                memcpy(dst, <a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#ae3cec743b9aa673b03afb8f7ddda1e5a">m_runtime_idata</a>[i] + src_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            }</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        }</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
@@ -342,7 +341,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keywordflow">if</span> (comm_int[array_start_index + i])</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                {</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    memcpy(<a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#a52de30978d928054ae27a5a62cbf7eab">m_idata</a>[i] + dst_index, src, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                }</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            }</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
@@ -352,7 +351,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="keywordflow">if</span> (comm_int[runtime_start_index + i])</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            {</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                memcpy(<a class="code hl_variable" href="structamrex_1_1ParticleTileData.html#ae3cec743b9aa673b03afb8f7ddda1e5a">m_runtime_idata</a>[i] + dst_index, src, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
@@ -464,12 +463,12 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstSoAParticle.html#aaf21bca4c9343441d6769e0caf0e3162">  332</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="structamrex_1_1ConstSoAParticle.html#aaf21bca4c9343441d6769e0caf0e3162">is_constsoa_particle</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstSoAParticle.html#a33d784228a75ccebaa059c49a15e0b3c">  334</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstSoAParticle.html#a33d784228a75ccebaa059c49a15e0b3c">RealType</a> = <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>;</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916">  335</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916">IntType</a> = int;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916">  335</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916">IntType</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00338" data-start="{" data-end="}">
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstSoAParticle.html#a3f57535795939b487225d7069b485376">  338</a></span>    <a class="code hl_function" href="structamrex_1_1ConstSoAParticle.html#a3f57535795939b487225d7069b485376">ConstSoAParticle</a> (<a class="code hl_class" href="structamrex_1_1ConstParticleTileData.html">ConstPTD</a> <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">long</span> i) : <span class="comment">// Note: should this be int instead?</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        m_constparticle_tile_data(ptd), m_index(int(i))</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        m_constparticle_tile_data(ptd), m_index(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(i))</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    {</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    }</div>
 </div>
@@ -526,12 +525,12 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno"><a class="line" href="structamrex_1_1SoAParticle.html#afafac166b36eeebe0df3e79cd3b7660c">  397</a></span>    <span class="keyword">using </span><a class="code hl_struct" href="structamrex_1_1ConstSoAParticle.html">ConstType</a> = <a class="code hl_struct" href="structamrex_1_1ConstSoAParticle.html">ConstSoAParticle&lt;T_NArrayReal, T_NArrayInt&gt;</a>;</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">  398</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> = <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">  399</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">IntType</a> = int;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno"><a class="line" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">  399</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">IntType</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="foldopen" id="foldopen00402" data-start="{" data-end="}">
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno"><a class="line" href="structamrex_1_1SoAParticle.html#abde8fe1ce0c2dee170e065a9d3f0117b">  402</a></span>    <a class="code hl_function" href="structamrex_1_1SoAParticle.html#abde8fe1ce0c2dee170e065a9d3f0117b">SoAParticle</a> (<a class="code hl_class" href="structamrex_1_1ParticleTileData.html">PTD</a> <span class="keyword">const</span>&amp; ptd, <span class="keywordtype">long</span> i) : <span class="comment">// Note: should this be int instead?</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        m_particle_tile_data(ptd), m_index(int(i))</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        m_particle_tile_data(ptd), m_index(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(i))</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    {</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    }</div>
 </div>
@@ -653,7 +652,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a49bf1484da915d1cbf5eb4e5eef61efe">  517</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstParticleTileData.html#a49bf1484da915d1cbf5eb4e5eef61efe">ParticleType</a> = T_ParticleType;</div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a9df3ed969c2de287106d9a3634bd7c6c">  518</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstParticleTileData.html#a9df3ed969c2de287106d9a3634bd7c6c">ParticleRefType</a> = T_ParticleType <span class="keyword">const</span>&amp;;</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a81b6fa176bf324e124bae1f4f416c76e">  519</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstParticleTileData.html#a81b6fa176bf324e124bae1f4f416c76e">RealType</a> = <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a>;</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a077a594e3946ac7dd308027dee56f996">  520</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstParticleTileData.html#a077a594e3946ac7dd308027dee56f996">IntType</a> = int;</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a077a594e3946ac7dd308027dee56f996">  520</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structamrex_1_1ConstParticleTileData.html#a077a594e3946ac7dd308027dee56f996">IntType</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>;</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
 <div class="line"><a id="l00522" name="l00522"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a52823e648da48d1b8f45cd9de8e4a82f">  522</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structamrex_1_1ConstParticleTileData.html#a52823e648da48d1b8f45cd9de8e4a82f">NStructReal</a> = ParticleType::NReal;</div>
 <div class="line"><a id="l00523" name="l00523"></a><span class="lineno"><a class="line" href="structamrex_1_1ConstParticleTileData.html#a7ef19db67a548484a9f341f986156534">  523</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structamrex_1_1ConstParticleTileData.html#a7ef19db67a548484a9f341f986156534">NStructInt</a> = ParticleType::NInt;</div>
@@ -797,7 +796,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>                <span class="keywordflow">if</span> (comm_int[array_start_index + i])</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>                {</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>                    memcpy(dst, <a class="code hl_variable" href="structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1">m_idata</a>[i] + src_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                    dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                    dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>                }</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>            }</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        }</div>
@@ -807,7 +806,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>            <span class="keywordflow">if</span> (comm_int[runtime_start_index + i])</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>            {</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>                memcpy(dst, <a class="code hl_variable" href="structamrex_1_1ConstParticleTileData.html#a805752e042294f7e7555271807320922">m_runtime_idata</a>[i] + src_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>                dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>                dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>            }</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        }</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    }</div>
@@ -1322,7 +1321,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_function" href="structamrex_1_1ParticleTile.html#a036135b388b4a68fc8fdac9e6c5572f5">NumIntComps</a>(); ++j)</div>
 <div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        {</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>            <span class="keyword">auto</span>&amp; idata = <a class="code hl_function" href="structamrex_1_1ParticleTile.html#ad126fbdb6fedc31647863a399b3f75b3">GetStructOfArrays</a>().GetIntData(j);</div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>            nbytes += idata.capacity()*<span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>            nbytes += idata.capacity()*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>        }</div>
 <div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        <span class="keywordflow">return</span> nbytes;</div>
 <div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>    }</div>
@@ -1578,10 +1577,10 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>            <span class="comment">// Handle big vectcors first</span></div>
 <div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>            {</div>
 <div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>                <span class="keywordtype">int</span> i_pvs = 0, i_ids = 0, i_rvs = 0, i_ivs = 0;</div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>                <span class="keyword">auto</span> n_pvs = int(pvs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>                <span class="keyword">auto</span> n_ids = int(ids.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>                <span class="keyword">auto</span> n_rvs = int(rvs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>                <span class="keyword">auto</span> n_ivs = int(ivs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>                <span class="keyword">auto</span> n_pvs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(pvs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>                <span class="keyword">auto</span> n_ids = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(ids.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>                <span class="keyword">auto</span> n_rvs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(rvs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>                <span class="keyword">auto</span> n_ivs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(ivs.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
 <div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>                <span class="keywordflow">while</span> ((i_pvs &lt; n_pvs) || (i_ids &lt; n_ids) || (i_rvs &lt; n_rvs) ||</div>
 <div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>                       (i_ivs &lt; n_ivs)) {</div>
 <div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>                    std::size_t nbytes = 0;</div>
@@ -1674,8 +1673,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition</b> AMReX_SPACE.H:171</div></div>
 <div class="ttc" id="aAMReX__StructOfArrays_8H_html"><div class="ttname"><a href="AMReX__StructOfArrays_8H.html">AMReX_StructOfArrays.H</a></div></div>
 <div class="ttc" id="aAMReX__Vector_8H_html"><div class="ttname"><a href="AMReX__Vector_8H.html">AMReX_Vector.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:114</div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
+<div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:115</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
 <div class="ttc" id="aclassamrex_1_1ArrayOfStructs_html"><div class="ttname"><a href="classamrex_1_1ArrayOfStructs.html">amrex::ArrayOfStructs</a></div><div class="ttdef"><b>Definition</b> AMReX_ArrayOfStructs.H:13</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html"><div class="ttname"><a href="classamrex_1_1PODVector.html">amrex::PODVector</a></div><div class="ttdoc">Dynamically allocated vector for trivially copyable data.</div><div class="ttdef"><b>Definition</b> AMReX_PODVector.H:308</div></div>
 <div class="ttc" id="aclassamrex_1_1RealVectND_html"><div class="ttname"><a href="classamrex_1_1RealVectND.html">amrex::RealVectND&lt; 3 &gt;</a></div></div>
@@ -1692,6 +1691,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e"><div class="ttname"><a href="namespaceamrex.html#a65ab2bb30531f06fffb874d874125a5aadff200b0bb8d3c69fbd54cb43664cd7e">amrex::GrowthStrategy::Poisson</a></div><div class="ttdeci">@ Poisson</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9a66cb310efdbc12b9b4d5f170470726"><div class="ttname"><a href="namespaceamrex.html#a9a66cb310efdbc12b9b4d5f170470726">amrex::RealVect</a></div><div class="ttdeci">RealVectND&lt; 3 &gt; RealVect</div><div class="ttdef"><b>Definition</b> AMReX_ParmParse.H:35</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>
 <div class="ttc" id="astructamrex_1_1ConstParticleCPUWrapper_html"><div class="ttname"><a href="structamrex_1_1ConstParticleCPUWrapper.html">amrex::ConstParticleCPUWrapper</a></div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:327</div></div>
 <div class="ttc" id="astructamrex_1_1ConstParticleIDWrapper_html"><div class="ttname"><a href="structamrex_1_1ConstParticleIDWrapper.html">amrex::ConstParticleIDWrapper</a></div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:301</div></div>
@@ -1736,9 +1736,9 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTile_8H_source.html',''
 <div class="ttc" id="astructamrex_1_1ConstSoAParticle_html_ae7a036cac6b6f74057f3e3bfcf30c3e1"><div class="ttname"><a href="structamrex_1_1ConstSoAParticle.html#ae7a036cac6b6f74057f3e3bfcf30c3e1">amrex::ConstSoAParticle::pos</a></div><div class="ttdeci">__host__ __device__ RealVect pos() const &amp;</div><div class="ttdef"><b>Definition</b> AMReX_ParticleTile.H:356</div></div>
 <div class="ttc" id="astructamrex_1_1ConstSoAParticle_html_af6f3ac9479db22829edea83d70b882bf"><div class="ttname"><a href="structamrex_1_1ConstSoAParticle.html#af6f3ac9479db22829edea83d70b882bf">amrex::ConstSoAParticle::cpu</a></div><div class="ttdeci">__host__ __device__ ConstParticleCPUWrapper cpu() const</div><div class="ttdef"><b>Definition</b> AMReX_ParticleTile.H:348</div></div>
 <div class="ttc" id="astructamrex_1_1ConstSoAParticle_html_afe0cb0e181845c107c0889f9ae560916"><div class="ttname"><a href="structamrex_1_1ConstSoAParticle.html#afe0cb0e181845c107c0889f9ae560916">amrex::ConstSoAParticle::IntType</a></div><div class="ttdeci">int IntType</div><div class="ttdef"><b>Definition</b> AMReX_ParticleTile.H:335</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
-<div class="ttc" id="astructamrex_1_1IsArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsArenaAllocator.html">amrex::IsArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:161</div></div>
-<div class="ttc" id="astructamrex_1_1IsPolymorphicArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsPolymorphicArenaAllocator.html">amrex::IsPolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:172</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
+<div class="ttc" id="astructamrex_1_1IsArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsArenaAllocator.html">amrex::IsArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:167</div></div>
+<div class="ttc" id="astructamrex_1_1IsPolymorphicArenaAllocator_html"><div class="ttname"><a href="structamrex_1_1IsPolymorphicArenaAllocator.html">amrex::IsPolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:178</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleBase_html_a4b5338d7a319166690ec546dd547869e"><div class="ttname"><a href="structamrex_1_1ParticleBase.html#a4b5338d7a319166690ec546dd547869e">amrex::ParticleBase::m_idcpu</a></div><div class="ttdeci">uint64_t m_idcpu</div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:359</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleCPUWrapper_html"><div class="ttname"><a href="structamrex_1_1ParticleCPUWrapper.html">amrex::ParticleCPUWrapper</a></div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:259</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleIDWrapper_html"><div class="ttname"><a href="structamrex_1_1ParticleIDWrapper.html">amrex::ParticleIDWrapper</a></div><div class="ttdef"><b>Definition</b> AMReX_Particle.H:154</div></div>

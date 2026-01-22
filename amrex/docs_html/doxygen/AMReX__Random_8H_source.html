@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -338,8 +337,8 @@ $(document).ready(function(){initNavTree('AMReX__Random_8H_source.html',''); ini
 <div class="ttc" id="agroup__amrex__mpi_html_gaa191723b5d24ceaf64e9d49f542cfcc2"><div class="ttname"><a href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">amrex::ParallelDescriptor::NProcs</a></div><div class="ttdeci">int NProcs() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:255</div></div>
 <div class="ttc" id="agroup__amrex__utilities_html_ga1b2c12e9a133d26ba2bd4b978a95df44"><div class="ttname"><a href="group__amrex__utilities.html#ga1b2c12e9a133d26ba2bd4b978a95df44">amrex::InitRandom</a></div><div class="ttdeci">void InitRandom(ULong cpu_seed, int nprocs, ULong gpu_seed)</div><div class="ttdoc">Set the seed of the random number generator.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:89</div></div>
 <div class="ttc" id="agroup__amrex__utilities_html_ga20796a80df81ee204983811cc8a1b705"><div class="ttname"><a href="group__amrex__utilities.html#ga20796a80df81ee204983811cc8a1b705">amrex::Random_int</a></div><div class="ttdeci">unsigned int Random_int(unsigned int n)</div><div class="ttdoc">Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for ea...</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:144</div></div>
-<div class="ttc" id="agroup__amrex__utilities_html_ga384bf7a8791d85fe1ae4153eee61d71e"><div class="ttname"><a href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e">amrex::Random</a></div><div class="ttdeci">Real Random()</div><div class="ttdoc">Generate a psuedo-random double from uniform distribution.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:123</div></div>
-<div class="ttc" id="agroup__amrex__utilities_html_ga6a4ed5dc1eeb3e5b409eb8975c9e829b"><div class="ttname"><a href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b">amrex::RandomNormal</a></div><div class="ttdeci">Real RandomNormal(Real mean, Real stddev)</div><div class="ttdoc">Generate a psuedo-random double from a normal distribution.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:116</div></div>
+<div class="ttc" id="agroup__amrex__utilities_html_ga384bf7a8791d85fe1ae4153eee61d71e"><div class="ttname"><a href="group__amrex__utilities.html#ga384bf7a8791d85fe1ae4153eee61d71e">amrex::Random</a></div><div class="ttdeci">Real Random()</div><div class="ttdoc">Generate a psuedo-random real from uniform distribution.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:123</div></div>
+<div class="ttc" id="agroup__amrex__utilities_html_ga6a4ed5dc1eeb3e5b409eb8975c9e829b"><div class="ttname"><a href="group__amrex__utilities.html#ga6a4ed5dc1eeb3e5b409eb8975c9e829b">amrex::RandomNormal</a></div><div class="ttdeci">Real RandomNormal(Real mean, Real stddev)</div><div class="ttdoc">Generate a psuedo-random real from a normal distribution.</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:116</div></div>
 <div class="ttc" id="agroup__amrex__utilities_html_ga83b723afb07da54500bc1dc47a43f636"><div class="ttname"><a href="group__amrex__utilities.html#ga83b723afb07da54500bc1dc47a43f636">amrex::Random_long</a></div><div class="ttdeci">ULong Random_long(ULong n)</div><div class="ttdoc">Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each ...</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:151</div></div>
 <div class="ttc" id="agroup__amrex__utilities_html_ga9c394bace9eaa26498dcec51122b8237"><div class="ttname"><a href="group__amrex__utilities.html#ga9c394bace9eaa26498dcec51122b8237">amrex::ResetRandomSeed</a></div><div class="ttdeci">void ResetRandomSeed(ULong cpu_seed, ULong gpu_seed)</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:212</div></div>
 <div class="ttc" id="agroup__amrex__utilities_html_gaa2c1209819cd8dd79499c2b9f088120e"><div class="ttname"><a href="group__amrex__utilities.html#gaa2c1209819cd8dd79499c2b9f088120e">amrex::UniqueRandomSubset</a></div><div class="ttdeci">void UniqueRandomSubset(Vector&lt; int &gt; &amp;uSet, int setSize, int poolSize, bool printSet)</div><div class="ttdoc">Create a unique subset of random numbers from a pool of integers in the range [0, poolSize - 1] the s...</div><div class="ttdef"><b>Definition</b> AMReX_Random.cpp:190</div></div>

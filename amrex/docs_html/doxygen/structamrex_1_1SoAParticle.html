@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -130,7 +124,7 @@ Public Types</h2></td></tr>
 <tr class="separator:afafac166b36eeebe0df3e79cd3b7660c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600cf748b1767ee5cc0e838718d300a0" id="r_a600cf748b1767ee5cc0e838718d300a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> = <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a></td></tr>
 <tr class="separator:a600cf748b1767ee5cc0e838718d300a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b7c64138205dd648050e46060f6d97" id="r_ab7b7c64138205dd648050e46060f6d97"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">IntType</a> = int</td></tr>
+<tr class="memitem:ab7b7c64138205dd648050e46060f6d97" id="r_ab7b7c64138205dd648050e46060f6d97"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#ab7b7c64138205dd648050e46060f6d97">IntType</a> = <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td></tr>
 <tr class="separator:ab7b7c64138205dd648050e46060f6d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -151,9 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a469172fc5150bde5935cb581d40446ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d3d9f1761e6b6528cbc9a8686e7eff8" id="r_a4d3d9f1761e6b6528cbc9a8686e7eff8"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#a9a66cb310efdbc12b9b4d5f170470726">RealVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a4d3d9f1761e6b6528cbc9a8686e7eff8">pos</a> () const &amp;</td></tr>
 <tr class="separator:a4d3d9f1761e6b6528cbc9a8686e7eff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cc087680b393038cbca122e56c80857" id="r_a8cc087680b393038cbca122e56c80857"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a8cc087680b393038cbca122e56c80857">pos</a> (int position_index) &amp;</td></tr>
+<tr class="memitem:a8cc087680b393038cbca122e56c80857" id="r_a8cc087680b393038cbca122e56c80857"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a8cc087680b393038cbca122e56c80857">pos</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> position_index) &amp;</td></tr>
 <tr class="separator:a8cc087680b393038cbca122e56c80857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe55ed0f3b50d8726ad8dbb9350ad912" id="r_afe55ed0f3b50d8726ad8dbb9350ad912"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#afe55ed0f3b50d8726ad8dbb9350ad912">pos</a> (int position_index) const &amp;</td></tr>
+<tr class="memitem:afe55ed0f3b50d8726ad8dbb9350ad912" id="r_afe55ed0f3b50d8726ad8dbb9350ad912"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#afe55ed0f3b50d8726ad8dbb9350ad912">pos</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> position_index) const &amp;</td></tr>
 <tr class="separator:afe55ed0f3b50d8726ad8dbb9350ad912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -169,9 +163,9 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a138782f7bd0e6e4cb04a451b013d5ca7" id="r_a138782f7bd0e6e4cb04a451b013d5ca7"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a138782f7bd0e6e4cb04a451b013d5ca7">NArrayReal</a> = T_NArrayReal</td></tr>
+<tr class="memitem:a138782f7bd0e6e4cb04a451b013d5ca7" id="r_a138782f7bd0e6e4cb04a451b013d5ca7"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a138782f7bd0e6e4cb04a451b013d5ca7">NArrayReal</a> = T_NArrayReal</td></tr>
 <tr class="separator:a138782f7bd0e6e4cb04a451b013d5ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a434aff759965a8d6427692220e95b093" id="r_a434aff759965a8d6427692220e95b093"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a434aff759965a8d6427692220e95b093">NArrayInt</a> = T_NArrayInt</td></tr>
+<tr class="memitem:a434aff759965a8d6427692220e95b093" id="r_a434aff759965a8d6427692220e95b093"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a434aff759965a8d6427692220e95b093">NArrayInt</a> = T_NArrayInt</td></tr>
 <tr class="separator:a434aff759965a8d6427692220e95b093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aa22d84c051ea2a2638c7d119438ddd" id="r_a7aa22d84c051ea2a2638c7d119438ddd"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a7aa22d84c051ea2a2638c7d119438ddd">is_soa_particle</a> = true</td></tr>
 <tr class="separator:a7aa22d84c051ea2a2638c7d119438ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,9 +174,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a3f85e00a49d46ad2446cc39e7c921742" id="r_a3f85e00a49d46ad2446cc39e7c921742"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticle.html#a3f85e00a49d46ad2446cc39e7c921742">the_next_id</a> = 1</td></tr>
 <tr class="separator:a3f85e00a49d46ad2446cc39e7c921742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_structamrex_1_1SoAParticleBase"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_structamrex_1_1SoAParticleBase')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="structamrex_1_1SoAParticleBase.html">amrex::SoAParticleBase</a></td></tr>
-<tr class="memitem:ac17dffaf26b21aaec1ca753ac781f04b inherit pub_static_attribs_structamrex_1_1SoAParticleBase" id="r_ac17dffaf26b21aaec1ca753ac781f04b"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticleBase.html#ac17dffaf26b21aaec1ca753ac781f04b">NReal</a> =0</td></tr>
+<tr class="memitem:ac17dffaf26b21aaec1ca753ac781f04b inherit pub_static_attribs_structamrex_1_1SoAParticleBase" id="r_ac17dffaf26b21aaec1ca753ac781f04b"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticleBase.html#ac17dffaf26b21aaec1ca753ac781f04b">NReal</a> =0</td></tr>
 <tr class="separator:ac17dffaf26b21aaec1ca753ac781f04b inherit pub_static_attribs_structamrex_1_1SoAParticleBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a24fc0bdbf037d74e8f1c3d9ce59b6 inherit pub_static_attribs_structamrex_1_1SoAParticleBase" id="r_ab4a24fc0bdbf037d74e8f1c3d9ce59b6"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticleBase.html#ab4a24fc0bdbf037d74e8f1c3d9ce59b6">NInt</a> =0</td></tr>
+<tr class="memitem:ab4a24fc0bdbf037d74e8f1c3d9ce59b6 inherit pub_static_attribs_structamrex_1_1SoAParticleBase" id="r_ab4a24fc0bdbf037d74e8f1c3d9ce59b6"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticleBase.html#ab4a24fc0bdbf037d74e8f1c3d9ce59b6">NInt</a> =0</td></tr>
 <tr class="separator:ab4a24fc0bdbf037d74e8f1c3d9ce59b6 inherit pub_static_attribs_structamrex_1_1SoAParticleBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405b358b98c1d3018c1ff25e268fdc3d inherit pub_static_attribs_structamrex_1_1SoAParticleBase" id="r_a405b358b98c1d3018c1ff25e268fdc3d"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1SoAParticleBase.html#a405b358b98c1d3018c1ff25e268fdc3d">is_soa_particle</a> = true</td></tr>
 <tr class="separator:a405b358b98c1d3018c1ff25e268fdc3d inherit pub_static_attribs_structamrex_1_1SoAParticleBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +188,7 @@ Static Public Attributes</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::ConstType =  <a class="el" href="structamrex_1_1ConstSoAParticle.html">ConstSoAParticle</a>&lt;T_NArrayReal, T_NArrayInt&gt;</td>
@@ -210,10 +204,10 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::IntType =  int</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::IntType =  <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -226,7 +220,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::PTD =  <a class="el" href="structamrex_1_1ParticleTileData.html">ParticleTileData</a>&lt;<a class="el" href="structamrex_1_1SoAParticleBase.html">SoAParticleBase</a>, <a class="el" href="structamrex_1_1SoAParticle.html#a138782f7bd0e6e4cb04a451b013d5ca7">NArrayReal</a>, <a class="el" href="structamrex_1_1SoAParticle.html#a434aff759965a8d6427692220e95b093">NArrayInt</a>&gt;</td>
@@ -242,7 +236,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::RealType =  <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">ParticleReal</a></td>
@@ -258,7 +252,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::StorageParticleType =  <a class="el" href="structamrex_1_1SoAParticleBase.html">SoAParticleBase</a></td>
@@ -275,7 +269,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -314,7 +308,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -341,7 +335,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -368,7 +362,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -395,7 +389,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -422,7 +416,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -449,7 +443,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -476,7 +470,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NArrayReal, int NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -503,7 +497,7 @@ template&lt;int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NArrayReal, int NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -539,7 +533,7 @@ template&lt;int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -566,7 +560,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -574,7 +568,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> &amp; <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::pos </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>position_index</em></td><td>)</td>
           <td> &amp;</td>
         </tr>
@@ -594,7 +588,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -602,7 +596,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0">RealType</a> <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::pos </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>position_index</em></td><td>)</td>
           <td> const &amp;</td>
         </tr>
@@ -622,7 +616,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NArrayReal, int NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -652,7 +646,7 @@ template&lt;int NArrayReal, int NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -676,7 +670,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -700,13 +694,13 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::NArrayInt = T_NArrayInt</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::NArrayInt = T_NArrayInt</td>
         </tr>
       </table>
   </td>
@@ -724,13 +718,13 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> T_NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::NArrayReal = T_NArrayReal</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1SoAParticle.html">amrex::SoAParticle</a>&lt; T_NArrayReal, T_NArrayInt &gt;::NArrayReal = T_NArrayReal</td>
         </tr>
       </table>
   </td>
@@ -748,7 +742,7 @@ template&lt;int T_NArrayReal, int T_NArrayInt&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NArrayReal, int NArrayInt&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayReal, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> NArrayInt&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

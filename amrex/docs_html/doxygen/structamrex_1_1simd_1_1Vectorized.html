@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -116,12 +110,12 @@ Inheritance diagram for amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a0e893dff355298214666ddcada09e8c5" id="r_a0e893dff355298214666ddcada09e8c5"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5">simd_width</a> = SIMD_WIDTH</td></tr>
+<tr class="memitem:a0e893dff355298214666ddcada09e8c5" id="r_a0e893dff355298214666ddcada09e8c5"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5">simd_width</a> = SIMD_WIDTH</td></tr>
 <tr class="memdesc:a0e893dff355298214666ddcada09e8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SIMD width in elements.  <br /></td></tr>
 <tr class="separator:a0e893dff355298214666ddcada09e8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;int SIMD_WIDTH = native_simd_size_real&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SIMD_WIDTH = native_simd_size_real&gt;<br />
 struct amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</div><p>Mixin Helper Class</p>
 <p>Use this class as a mixin (base) class to simplify writing functors that support/do not support ParallelForSIMD.</p>
 <p>Example: </p><div class="fragment"><div class="line"><span class="keyword">struct </span>Compute : <span class="keyword">public</span> <a class="code hl_struct" href="structamrex_1_1simd_1_1Vectorized.html">Vectorized</a>&lt;&gt;</div>
@@ -154,13 +148,13 @@ struct amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</div><p>Mixin Helper Class</p
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int SIMD_WIDTH = native_simd_size_real&gt; </div>
+template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SIMD_WIDTH = native_simd_size_real&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a>&lt; SIMD_WIDTH &gt;::simd_width = SIMD_WIDTH</td>
+          <td class="memname">constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a>&lt; SIMD_WIDTH &gt;::simd_width = SIMD_WIDTH</td>
         </tr>
       </table>
   </td>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -182,13 +181,13 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    <span class="keyword">auto</span>&amp; sdata = isend_data[dst_proc];</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    <span class="keyword">auto</span> old_size = sdata.size();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keyword">auto</span> new_size = old_size + real_num_comp*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>) + int_num_comp*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) + 4*<span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keyword">auto</span> new_size = old_size + real_num_comp*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>) + int_num_comp*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) + 4*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    sdata.resize(new_size);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    <span class="keywordtype">char</span>* dst = &amp;sdata[old_size];</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    std::memcpy(dst, &amp;dst_grid, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    std::memcpy(dst, &amp;dst_tile, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    std::memcpy(dst, &amp;dst_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    std::memcpy(dst, &amp;dst_level, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    std::memcpy(dst, &amp;dst_grid, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    std::memcpy(dst, &amp;dst_tile, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    std::memcpy(dst, &amp;dst_index, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    std::memcpy(dst, &amp;dst_level, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = real_start_comp; comp &lt; real_start_comp + real_num_comp; ++comp)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                        <a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> data = neighb.rdata(comp);</div>
@@ -199,7 +198,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    {</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                        <span class="keywordtype">int</span> data = neighb.idata(comp);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                        std::memcpy(dst, &amp;data, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                        dst += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                        dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    }</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            }</div>
@@ -285,7 +284,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nrcvs = int(RcvProc.size());</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nrcvs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(RcvProc.size());</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    Vector&lt;MPI_Status&gt;  stats(nrcvs);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    Vector&lt;MPI_Request&gt; rreqs(nrcvs);</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
@@ -326,7 +325,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    {</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(rreqs, stats);</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size = real_num_comp*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>) + int_num_comp*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) + 4 * <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size = real_num_comp*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>) + int_num_comp*<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) + 4 * <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">if</span> (recvdata.size() % data_size != 0) {</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <a class="code hl_class" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; recvdata.size() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; data_size &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
@@ -337,16 +336,16 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <a class="code hl_function" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;NeighborParticles::sumNeighbors: How did this happen?&quot;</span>);</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keyword">auto</span> npart = int(recvdata.size() / data_size);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keyword">auto</span> npart = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(recvdata.size() / data_size);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordtype">char</span>* buffer = recvdata.data();</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; npart; ++j)</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        {</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordtype">int</span> grid, tile, index, lev;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            std::memcpy(&amp;grid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            std::memcpy(&amp;tile,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            std::memcpy(&amp;index,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            std::memcpy(&amp;lev, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            std::memcpy(&amp;grid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            std::memcpy(&amp;tile,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            std::memcpy(&amp;index,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            std::memcpy(&amp;lev, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keyword">auto</span> pair = std::make_pair(grid, tile);</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keyword">auto</span>&amp; ptile = this-&gt;GetParticles(lev)[pair];</div>
@@ -366,7 +365,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                <span class="keywordtype">int</span> data;</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                std::memcpy(&amp;data, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                p.idata(comp) += data;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                buffer += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            }</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
@@ -464,24 +463,24 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2 + NStructInt; ++ii) {</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                            <span class="keywordflow">if</span> (ghost_int_comp[ii]) {</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                                std::memcpy(dst_ptr, src_ptr, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                                dst_ptr += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                                dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                            }</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                            src_ptr += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                            src_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                        }</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; this-&gt;NumIntComps(); ++ii) {</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                            <span class="keywordflow">if</span> (ghost_int_comp[ii+2+NStructInt])</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                            {</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                                std::memcpy(dst_ptr, &amp;(soa.GetIntData(ii)[tag.src_index]),</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                                            <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                                dst_ptr += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                                dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                            }</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                        }</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                        <span class="keywordflow">if</span> ( enableInverse() )</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                        {</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                            std::memcpy(dst_ptr,&amp;(src_index.first),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                            std::memcpy(dst_ptr,&amp;(src_index.second),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                            std::memcpy(dst_ptr,&amp;(tag.src_index),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                            std::memcpy(dst_ptr,&amp;(lev),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                            std::memcpy(dst_ptr,&amp;(src_index.first),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                            std::memcpy(dst_ptr,&amp;(src_index.second),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                            std::memcpy(dst_ptr,&amp;(tag.src_index),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                            std::memcpy(dst_ptr,&amp;(lev),<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst_ptr += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                        }</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                    }</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                }</div>
@@ -634,7 +633,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>        }</div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    }</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span> </div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nrcvs = int(RcvProc.size());</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nrcvs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(RcvProc.size());</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    Vector&lt;MPI_Status&gt;  stats(nrcvs);</div>
 <div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    Vector&lt;MPI_Request&gt; rreqs(nrcvs);</div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
@@ -673,15 +672,15 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keywordflow">if</span> (nrcvs &gt; 0) {</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        <a class="code hl_function" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(rreqs, stats);</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrcvs; ++i) {</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = int(rOffset[i]);</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(rOffset[i]);</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>            <span class="keywordtype">char</span>* buffer = &amp;recvdata[<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>];</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>            <span class="keywordtype">int</span> num_tiles, lev, gid, tid, size, np;</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>            std::memcpy(&amp;num_tiles, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>            std::memcpy(&amp;num_tiles, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_tiles; ++j) {</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>                std::memcpy(&amp;lev,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>                std::memcpy(&amp;gid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>                std::memcpy(&amp;tid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>                std::memcpy(&amp;size, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>                std::memcpy(&amp;lev,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>                std::memcpy(&amp;gid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>                std::memcpy(&amp;tid,  buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>                std::memcpy(&amp;size, buffer, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); buffer += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>                <span class="keywordflow">if</span> (size == 0) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
@@ -722,16 +721,16 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2 + NStructInt; ++ii) {</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>                        <span class="keywordflow">if</span> (ghost_int_comp[ii]) {</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>                            std::memcpy(dst_aos, src, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>                            src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>                            src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>                        }</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>                        dst_aos += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>                        dst_aos += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>                    }</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; this-&gt;NumIntComps(); ++ii) {</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>                        <span class="keywordflow">if</span> (ghost_int_comp[ii+2+NStructInt])</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>                        {</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>                            std::memcpy(&amp;(dst_soa.GetIntData(ii)[old_size+n]),</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>                                        src, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>                            src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>                            src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>                        }</div>
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>                    }</div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
@@ -739,16 +738,16 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>                    {</div>
 <div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>                        <span class="keyword">auto</span>&amp; tag = inverse_tags[lev][dst_index][old_size+n];</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>                        std::memcpy(&amp;(tag.src_grid),src,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>                        src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>                        src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span> </div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>                        std::memcpy(&amp;(tag.src_tile),src,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>                        src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>                        src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>                        std::memcpy(&amp;(tag.src_index),src,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>                        src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>                        src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>                        std::memcpy(&amp;(tag.src_level),src,<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>                        src += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>                        src += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                    }</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>                }</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>                buffer += size;</div>
@@ -795,6 +794,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesCPUImpl_8H_sou
 <div class="ttc" id="anamespaceamrex_html_a216c6e10305fbc5d67ea5f3b926a7785"><div class="ttname"><a href="namespaceamrex.html#a216c6e10305fbc5d67ea5f3b926a7785">amrex::copyParticle</a></div><div class="ttdeci">__host__ __device__ void copyParticle(const ParticleTileData&lt; T_ParticleType, NAR, NAI &gt; &amp;dst, const ConstParticleTileData&lt; T_ParticleType, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</div><div class="ttdoc">A general single particle copying routine that can run on the GPU.</div><div class="ttdef"><b>Definition</b> AMReX_ParticleTransformation.H:31</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2c694692aaba3c4e23ab3067eab1ba44"><div class="ttname"><a href="namespaceamrex.html#a2c694692aaba3c4e23ab3067eab1ba44">amrex::copyParticles</a></div><div class="ttdeci">void copyParticles(DstTile &amp;dst, const SrcTile &amp;src) noexcept</div><div class="ttdoc">Copy particles from src to dst. This version copies all the particles, writing them to the beginning ...</div><div class="ttdef"><b>Definition</b> AMReX_ParticleTransformation.H:161</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

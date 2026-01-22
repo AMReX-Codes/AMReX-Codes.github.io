@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -252,7 +251,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleInterpolators_8H_source
 <div class="ttc" id="anamespaceamrex_1_1ParticleInterpolator_html"><div class="ttname"><a href="namespaceamrex_1_1ParticleInterpolator.html">amrex::ParticleInterpolator</a></div><div class="ttdef"><b>Definition</b> AMReX_ParticleInterpolators.H:10</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">amrex::Order::F</a></div><div class="ttdeci">@ F</div></div>
 <div class="ttc" id="astructamrex_1_1ArrayND_html"><div class="ttname"><a href="structamrex_1_1ArrayND.html">amrex::ArrayND</a></div><div class="ttdoc">A multidimensional array accessor.</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:224</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleInterpolator_1_1Base_html"><div class="ttname"><a href="structamrex_1_1ParticleInterpolator_1_1Base.html">amrex::ParticleInterpolator::Base</a></div><div class="ttdoc">A base class for doing general particle/mesh interpolation operations.</div><div class="ttdef"><b>Definition</b> AMReX_ParticleInterpolators.H:19</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleInterpolator_1_1Base_html_a501e319cda102b2fb5b9673852231db6"><div class="ttname"><a href="structamrex_1_1ParticleInterpolator_1_1Base.html#a501e319cda102b2fb5b9673852231db6">amrex::ParticleInterpolator::Base::ParticleToMesh</a></div><div class="ttdeci">__device__ void ParticleToMesh(const P &amp;p, amrex::Array4&lt; V &gt; const &amp;arr, int src_comp, int dst_comp, int num_comps, F const &amp;f)</div><div class="ttdoc">A general function for doing particle-to-mesh interpolation for one particle.</div><div class="ttdef"><b>Definition</b> AMReX_ParticleInterpolators.H:64</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleInterpolator_1_1Base_html_a5e658795689d17cacf75bdb7c46675ac"><div class="ttname"><a href="structamrex_1_1ParticleInterpolator_1_1Base.html#a5e658795689d17cacf75bdb7c46675ac">amrex::ParticleInterpolator::Base::w</a></div><div class="ttdeci">WeightType * w</div><div class="ttdef"><b>Definition</b> AMReX_ParticleInterpolators.H:21</div></div>

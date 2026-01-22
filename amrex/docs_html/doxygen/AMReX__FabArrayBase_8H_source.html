@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -741,7 +740,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayBase_8H_source.html',''
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
 <div class="foldopen" id="foldopen00659" data-start="{" data-end="}">
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno"><a class="line" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a73c9f2f437247724d585d4a91552171b">  659</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a73c9f2f437247724d585d4a91552171b">getNBlocksPerBox</a> (<span class="keywordtype">int</span> nthreads)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>            <span class="keywordflow">return</span> int((<a class="code hl_variable" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a08c9988013dff591a539a0305d609ae7">m_ncellsmax</a>+nthreads-1)/nthreads);</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>((<a class="code hl_variable" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a08c9988013dff591a539a0305d609ae7">m_ncellsmax</a>+nthreads-1)/nthreads);</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        }</div>
 </div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno"><a class="line" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a4043b1ce61e674459ec7bd38c573dc4d">  662</a></span>        <a class="code hl_struct" href="structamrex_1_1BoxIndexerND.html">BoxIndexer</a> <span class="keyword">const</span>* <a class="code hl_function" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#a4043b1ce61e674459ec7bd38c573dc4d">getBoxes</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#afc603c5935ba128b01935f5ab94491ad">m_boxes</a>; }</div>
@@ -896,7 +895,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayBase_8H_source.html',''
 <div class="ttc" id="aAMReX__ParallelReduce_8H_html"><div class="ttname"><a href="AMReX__ParallelReduce_8H.html">AMReX_ParallelReduce.H</a></div></div>
 <div class="ttc" id="aAMReX__Periodicity_8H_html"><div class="ttname"><a href="AMReX__Periodicity_8H.html">AMReX_Periodicity.H</a></div></div>
 <div class="ttc" id="aAMReX__Print_8H_html"><div class="ttname"><a href="AMReX__Print_8H.html">AMReX_Print.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdoc">A collection of Boxes stored in an Array.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:567</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_a0005742d49b95bea045b6f46edb75714"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a0005742d49b95bea045b6f46edb75714">amrex::BoxArray::ixType</a></div><div class="ttdeci">IndexType ixType() const noexcept</div><div class="ttdoc">Return index type of this BoxArray.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:857</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_a0c8df27bfc6981d3e50784b64026a249"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a0c8df27bfc6981d3e50784b64026a249">amrex::BoxArray::getRefID</a></div><div class="ttdeci">RefID getRefID() const noexcept</div><div class="ttdoc">Return a unique ID of the reference.</div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:854</div></div>
@@ -1047,6 +1046,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayBase_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_a21a1acd7c1fc44aa5ce27ab461aded41"><div class="ttname"><a href="namespaceamrex.html#a21a1acd7c1fc44aa5ce27ab461aded41">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2869</div></div>
 <div class="ttc" id="anamespaceamrex_html_a28fbc0acd8368951bb043d23d5c0727e"><div class="ttname"><a href="namespaceamrex.html#a28fbc0acd8368951bb043d23d5c0727e">amrex::nGrowVect</a></div><div class="ttdeci">IntVect nGrowVect(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2859</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae4eb9d3fef37595defb201fde203bae6"><div class="ttname"><a href="namespaceamrex.html#ae4eb9d3fef37595defb201fde203bae6">amrex::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</div><div class="ttdef"><b>Definition</b> AMReX_AmrMesh.cpp:1237</div></div>
 <div class="ttc" id="anamespaceamrex_html_af69fc0af80dbc4a91b1532451e9533c9"><div class="ttname"><a href="namespaceamrex.html#af69fc0af80dbc4a91b1532451e9533c9">amrex::boxArray</a></div><div class="ttdeci">BoxArray const &amp; boxArray(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2864</div></div>
 <div class="ttc" id="astructamrex_1_1BoxArray_1_1RefID_html"><div class="ttname"><a href="structamrex_1_1BoxArray_1_1RefID.html">amrex::BoxArray::RefID</a></div><div class="ttdef"><b>Definition</b> AMReX_BoxArray.H:842</div></div>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -148,7 +147,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">constexpr</span> <span class="keywordtype">int</span> nthreads_per_block = (STRUCTSIZE &lt;= 8) ? 256 : 128;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::uint64_t nblocks_long = (ntotcells+nthreads_per_block-1)/nthreads_per_block;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(nblocks_long &lt;= std::uint64_t(std::numeric_limits&lt;int&gt;::max()));</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">auto</span> nblocks = int(nblocks_long);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">auto</span> nblocks = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(nblocks_long);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        std::size_t shared_mem_bytes = nthreads_per_block * <span class="keyword">sizeof</span>(STRUCT);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        T* p = (T*)aos_fab.<a class="code hl_function" href="classamrex_1_1BaseFab.html#aced044b5543db1946bfebcae101c4074">dataPtr</a>();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
@@ -387,6 +386,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="ttc" id="anamespaceamrex_html_a238562144a9a4a23191bdb450d4b5c5b"><div class="ttname"><a href="namespaceamrex.html#a238562144a9a4a23191bdb450d4b5c5b">amrex::cast</a></div><div class="ttdeci">__host__ __device__ void cast(BaseFab&lt; Tto &gt; &amp;tofab, BaseFab&lt; Tfrom &gt; const &amp;fromfab, Box const &amp;bx, SrcComp scomp, DestComp dcomp, NumComps ncomp) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_BaseFabUtility.H:13</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7b3c5a372f37d8bb9aa21a76a5129a95"><div class="ttname"><a href="namespaceamrex.html#a7b3c5a372f37d8bb9aa21a76a5129a95">amrex::fill</a></div><div class="ttdeci">void fill(BaseFab&lt; STRUCT &gt; &amp;aos_fab, F const &amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_BaseFabUtility.H:29</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_adcfb36df4559fd8ffb462f4b4b4cebaa"><div class="ttname"><a href="namespaceamrex.html#adcfb36df4559fd8ffb462f4b4b4cebaa">amrex::LoopOnCpu</a></div><div class="ttdeci">void LoopOnCpu(Dim3 lo, Dim3 hi, F const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Loop.H:365</div></div>
 <div class="ttc" id="anamespaceamrex_html_af75f7f92a46da88ba3d755902df89413"><div class="ttname"><a href="namespaceamrex.html#af75f7f92a46da88ba3d755902df89413">amrex::LoopConcurrent</a></div><div class="ttdeci">__host__ __device__ void LoopConcurrent(Dim3 lo, Dim3 hi, F const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Loop.H:152</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html">amrex::BoxIndexerND</a></div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2152</div></div>

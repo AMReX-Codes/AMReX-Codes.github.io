@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -121,13 +115,13 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab2ee62c0a1b082b5f9438f56b0146c9d" id="r_ab2ee62c0a1b082b5f9438f56b0146c9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">amrex::sundials::Initialize</a> (int nthreads)</td></tr>
+<tr class="memitem:ab2ee62c0a1b082b5f9438f56b0146c9d" id="r_ab2ee62c0a1b082b5f9438f56b0146c9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">amrex::sundials::Initialize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nthreads)</td></tr>
 <tr class="memdesc:ab2ee62c0a1b082b5f9438f56b0146c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the AMReX-SUNDIALS interface.  <br /></td></tr>
 <tr class="separator:ab2ee62c0a1b082b5f9438f56b0146c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf6b47f72923c8ef9f360c6a93289a18" id="r_abf6b47f72923c8ef9f360c6a93289a18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18">amrex::sundials::Finalize</a> ()</td></tr>
 <tr class="memdesc:abf6b47f72923c8ef9f360c6a93289a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup everything allocated for the AMReX-SUNDIALS interface.  <br /></td></tr>
 <tr class="separator:abf6b47f72923c8ef9f360c6a93289a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9073bde66b70bda0c4d46655775c684d" id="r_a9073bde66b70bda0c4d46655775c684d"><td class="memItemLeft" align="right" valign="top">::sundials::Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">amrex::sundials::The_Sundials_Context</a> (int i=<a class="el" href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a>())</td></tr>
+<tr class="memitem:a9073bde66b70bda0c4d46655775c684d" id="r_a9073bde66b70bda0c4d46655775c684d"><td class="memItemLeft" align="right" valign="top">::sundials::Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">amrex::sundials::The_Sundials_Context</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i=<a class="el" href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a>())</td></tr>
 <tr class="memdesc:a9073bde66b70bda0c4d46655775c684d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the i-th SUNDIALS context instance.  <br /></td></tr>
 <tr class="separator:a9073bde66b70bda0c4d46655775c684d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

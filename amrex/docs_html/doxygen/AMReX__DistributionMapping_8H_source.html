@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -333,7 +332,7 @@ $(document).ready(function(){initNavTree('AMReX__DistributionMapping_8H_source.h
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> LeastUsedCPUs (<span class="keywordtype">int</span> nprocs, Vector&lt;int&gt;&amp; result);</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> LeastUsedTeams (Vector&lt;int&gt;&amp; rteam, Vector&lt;Vector&lt;int&gt; &gt;&amp; rworker, <span class="keywordtype">int</span> nteams, <span class="keywordtype">int</span> nworkers);</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keyword">using </span>PVMF = void (<a class="code hl_function" href="classamrex_1_1DistributionMapping.html#a5b29dfab26c50e7623e9ac1933f4fe27">DistributionMapping</a>::*)(const BoxArray &amp;, int);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keyword">using </span>PVMF = void (<a class="code hl_function" href="classamrex_1_1DistributionMapping.html#a5b29dfab26c50e7623e9ac1933f4fe27">DistributionMapping</a>::*)(const BoxArray &amp;, <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keyword">static</span> <a class="code hl_enumeration" href="classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8">Strategy</a> m_Strategy;</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    <span class="keyword">static</span> PVMF m_BuildMap;</div>
@@ -380,7 +379,7 @@ $(document).ready(function(){initNavTree('AMReX__DistributionMapping_8H_source.h
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> nprocs = <a class="code hl_function" href="group__amrex__mpi.html#gaa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>();</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;T&gt;</a> wgts(nprocs, T(0));</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nboxes = int(dm.<a class="code hl_function" href="classamrex_1_1DistributionMapping.html#a0eebc2b29efd96d23accd706ab5f6930">size</a>());</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    <span class="keyword">const</span> <span class="keyword">auto</span> nboxes = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(dm.<a class="code hl_function" href="classamrex_1_1DistributionMapping.html#a0eebc2b29efd96d23accd706ab5f6930">size</a>());</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ibox = 0; ibox &lt; nboxes; ++ibox) {</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        wgts[dm[ibox]] += cost[ibox];</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    }</div>
@@ -457,6 +456,7 @@ $(document).ready(function(){initNavTree('AMReX__DistributionMapping_8H_source.h
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_aa7f481a6be5e8f2eefbe9448135a3843"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">amrex::ParallelContext::NProcsSub</a></div><div class="ttdeci">int NProcsSub() noexcept</div><div class="ttdoc">number of ranks in current frame</div><div class="ttdef"><b>Definition</b> AMReX_ParallelContext.H:74</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_aca8ca3ed7e01a5c954d6c70cae7b94a0"><div class="ttname"><a href="namespaceamrex.html#aca8ca3ed7e01a5c954d6c70cae7b94a0">amrex::MakeSimilarDM</a></div><div class="ttdeci">DistributionMapping MakeSimilarDM(const BoxArray &amp;ba, const MultiFab &amp;mf, const IntVect &amp;ng)</div><div class="ttdoc">Function that creates a DistributionMapping &quot;similar&quot; to that of a MultiFab.</div><div class="ttdef"><b>Definition</b> AMReX_DistributionMapping.cpp:2007</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae4eb9d3fef37595defb201fde203bae6"><div class="ttname"><a href="namespaceamrex.html#ae4eb9d3fef37595defb201fde203bae6">amrex::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</div><div class="ttdef"><b>Definition</b> AMReX_AmrMesh.cpp:1237</div></div>
 <div class="ttc" id="astructamrex_1_1DistributionMapping_1_1RefID_html"><div class="ttname"><a href="structamrex_1_1DistributionMapping_1_1RefID.html">amrex::DistributionMapping::RefID</a></div><div class="ttdef"><b>Definition</b> AMReX_DistributionMapping.H:371</div></div>
 <div class="ttc" id="astructamrex_1_1DistributionMapping_1_1RefID_html_a00f58999a2331cc59b9cf916b76cbc4d"><div class="ttname"><a href="structamrex_1_1DistributionMapping_1_1RefID.html#a00f58999a2331cc59b9cf916b76cbc4d">amrex::DistributionMapping::RefID::RefID</a></div><div class="ttdeci">constexpr RefID() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_DistributionMapping.H:372</div></div>

@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['j_0',['j',['../structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html#ab372b7b522321fc1945703f182df8e33',1,'amrex::NonLocalBC::SwapComponents&lt; I, -1 &gt;::J'],['../structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html#a370d78d6eb6099b588674027f5da6c10',1,'amrex::NonLocalBC::SwapComponents&lt;-1, -1 &gt;::J']]],
-  ['jacobismoother_1',['jacobismoother',['../classamrex_1_1JacobiSmoother.html',1,'amrex::JacobiSmoother&lt; T &gt;'],['../classamrex_1_1JacobiSmoother.html#a0106b038d92dce4a6f2d15467d4ab103',1,'amrex::JacobiSmoother::JacobiSmoother()']]],
-  ['join_2',['join',['../classamrex_1_1BoxList.html#af1451e74b2d7de70b58b9979e21aeb49',1,'amrex::BoxList::join(const BoxList &amp;blist)'],['../classamrex_1_1BoxList.html#ae86c1cb2471cb633d0abf4657d080a73',1,'amrex::BoxList::join(const Vector&lt; Box &gt; &amp;barr)'],['../namespaceamrex.html#a08767170498c8b365b7bd3513eb8aa77',1,'amrex::join(std::vector&lt; std::string &gt; const  &amp;sv, char sep)'],['../namespaceamrex.html#a6e0cbbd3fb4987dd09b925b6941edcee',1,'amrex::join(std::vector&lt; std::string &gt; const  &amp;sv)']]]
+  ['keepvalidfilter_0',['KeepValidFilter',['../structamrex_1_1KeepValidFilter.html',1,'amrex']]],
+  ['kernel_20launch_1',['Execution and Kernel Launch',['../group__amrex__execution.html',1,'']]],
+  ['kernelinfo_2',['KernelInfo',['../classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]],
+  ['keyvaluepair_3',['KeyValuePair',['../namespaceamrex.html#a7dd6d3577db87cc950337b856e57f1f9',1,'amrex']]],
+  ['kind_4',['kind',['../structamrex_1_1FFT_1_1Plan.html#a894dbb501149b21ecebeabf30aa68f23',1,'amrex::FFT::Plan::kind'],['../namespaceamrex_1_1FFT.html#aab68145bf2931040e7ebba7ac2b15f70',1,'amrex::FFT::Kind']]],
+  ['knapsack_5',['KNAPSACK',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6f5ec418bb5db591c4b5780f00cce82e',1,'amrex::DistributionMapping']]],
+  ['knapsackprocessormap_6',['knapsackprocessormap',['../classamrex_1_1DistributionMapping.html#a81213361ea03e78e411076a30ed683da',1,'amrex::DistributionMapping::KnapSackProcessorMap(const std::vector&lt; Long &gt; &amp;wgts, int nprocs, Real *efficiency=nullptr, bool do_full_knapsack=true, int nmax=std::numeric_limits&lt; int &gt;::max(), bool sort=true)'],['../classamrex_1_1DistributionMapping.html#adb7cc64952dda946670088e88945ddf7',1,'amrex::DistributionMapping::KnapSackProcessorMap(const DistributionMapping &amp;olddm, const std::vector&lt; Long &gt; &amp;wgts, Real keep_ratio, Real &amp;old_efficiency, Real &amp;new_efficiency, int nmax=std::numeric_limits&lt; int &gt;::max())']]]
 ];

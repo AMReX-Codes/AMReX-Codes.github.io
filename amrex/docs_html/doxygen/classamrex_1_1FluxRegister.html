@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -137,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a935b4c43c77115935fcf76b3e4a6e009" id="r_a935b4c43c77115935fcf76b3e4a6e009"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a935b4c43c77115935fcf76b3e4a6e009">FluxRegister</a> ()</td></tr>
 <tr class="memdesc:a935b4c43c77115935fcf76b3e4a6e009"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor.  <br /></td></tr>
 <tr class="separator:a935b4c43c77115935fcf76b3e4a6e009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea5e30aea810dbb261555f307106d406" id="r_aea5e30aea810dbb261555f307106d406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aea5e30aea810dbb261555f307106d406">FluxRegister</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;fine_boxes, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ref_ratio, int fine_lev, int nvar)</td></tr>
+<tr class="memitem:aea5e30aea810dbb261555f307106d406" id="r_aea5e30aea810dbb261555f307106d406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aea5e30aea810dbb261555f307106d406">FluxRegister</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;fine_boxes, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ref_ratio, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fine_lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nvar)</td></tr>
 <tr class="memdesc:aea5e30aea810dbb261555f307106d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor. This version allows setting the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
 <tr class="separator:aea5e30aea810dbb261555f307106d406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d8b5cbd5285fbddccbbb415cba051c" id="r_a02d8b5cbd5285fbddccbbb415cba051c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a02d8b5cbd5285fbddccbbb415cba051c">~FluxRegister</a> ()=default</td></tr>
@@ -151,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aea124d0e9ba907c464bcb5d56553f713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b27aa4b6d63b6f7e7e5fe525f4b49e0" id="r_a3b27aa4b6d63b6f7e7e5fe525f4b49e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FluxRegister.html">FluxRegister</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a3b27aa4b6d63b6f7e7e5fe525f4b49e0">operator=</a> (<a class="el" href="classamrex_1_1FluxRegister.html">FluxRegister</a> &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:a3b27aa4b6d63b6f7e7e5fe525f4b49e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f19ac94fa685e649d56cbdec3eebca" id="r_ae0f19ac94fa685e649d56cbdec3eebca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ae0f19ac94fa685e649d56cbdec3eebca">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;fine_boxes, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ref_ratio, int fine_lev, int nvar)</td></tr>
+<tr class="memitem:ae0f19ac94fa685e649d56cbdec3eebca" id="r_ae0f19ac94fa685e649d56cbdec3eebca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ae0f19ac94fa685e649d56cbdec3eebca">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;fine_boxes, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ref_ratio, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fine_lev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nvar)</td></tr>
 <tr class="memdesc:ae0f19ac94fa685e649d56cbdec3eebca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize after using default constructor. This version allows setting the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
 <tr class="separator:ae0f19ac94fa685e649d56cbdec3eebca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453233dd69feba7dad7ae904a24d7aa2" id="r_a453233dd69feba7dad7ae904a24d7aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a453233dd69feba7dad7ae904a24d7aa2">clear</a> ()</td></tr>
@@ -159,59 +153,59 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acee4de5e4f610fb4bc86bdae1ac7fd49" id="r_acee4de5e4f610fb4bc86bdae1ac7fd49"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#acee4de5e4f610fb4bc86bdae1ac7fd49">refRatio</a> () const noexcept</td></tr>
 <tr class="memdesc:acee4de5e4f610fb4bc86bdae1ac7fd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the refinement ratio.  <br /></td></tr>
 <tr class="separator:acee4de5e4f610fb4bc86bdae1ac7fd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aa00b34c175fadfdb6bae33c68bf5d1" id="r_a7aa00b34c175fadfdb6bae33c68bf5d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a7aa00b34c175fadfdb6bae33c68bf5d1">fineLevel</a> () const noexcept</td></tr>
+<tr class="memitem:a7aa00b34c175fadfdb6bae33c68bf5d1" id="r_a7aa00b34c175fadfdb6bae33c68bf5d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a7aa00b34c175fadfdb6bae33c68bf5d1">fineLevel</a> () const noexcept</td></tr>
 <tr class="memdesc:a7aa00b34c175fadfdb6bae33c68bf5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the level number of the fine level.  <br /></td></tr>
 <tr class="separator:a7aa00b34c175fadfdb6bae33c68bf5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef5f291512ba1c3e9208ff5c8216f3ab" id="r_aef5f291512ba1c3e9208ff5c8216f3ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aef5f291512ba1c3e9208ff5c8216f3ab">crseLevel</a> () const noexcept</td></tr>
+<tr class="memitem:aef5f291512ba1c3e9208ff5c8216f3ab" id="r_aef5f291512ba1c3e9208ff5c8216f3ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aef5f291512ba1c3e9208ff5c8216f3ab">crseLevel</a> () const noexcept</td></tr>
 <tr class="memdesc:aef5f291512ba1c3e9208ff5c8216f3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the level number of the coarse level (<a class="el" href="classamrex_1_1FluxRegister.html#a7aa00b34c175fadfdb6bae33c68bf5d1" title="Returns the level number of the fine level.">fineLevel()</a>-1).  <br /></td></tr>
 <tr class="separator:aef5f291512ba1c3e9208ff5c8216f3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c25dc77c81cfd2e133f1ed79fe0032" id="r_af8c25dc77c81cfd2e133f1ed79fe0032"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#af8c25dc77c81cfd2e133f1ed79fe0032">nComp</a> () const noexcept</td></tr>
+<tr class="memitem:af8c25dc77c81cfd2e133f1ed79fe0032" id="r_af8c25dc77c81cfd2e133f1ed79fe0032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#af8c25dc77c81cfd2e133f1ed79fe0032">nComp</a> () const noexcept</td></tr>
 <tr class="memdesc:af8c25dc77c81cfd2e133f1ed79fe0032"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of components.  <br /></td></tr>
 <tr class="separator:af8c25dc77c81cfd2e133f1ed79fe0032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93804af47daca2ba0d18983401fe5f00" id="r_a93804af47daca2ba0d18983401fe5f00"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a93804af47daca2ba0d18983401fe5f00">coarsenedBoxes</a> () const noexcept</td></tr>
 <tr class="memdesc:a93804af47daca2ba0d18983401fe5f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The coarsened boxes.  <br /></td></tr>
 <tr class="separator:a93804af47daca2ba0d18983401fe5f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb3103253e2e3aba75f6d67574243f1" id="r_a8eb3103253e2e3aba75f6d67574243f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a8eb3103253e2e3aba75f6d67574243f1">SumReg</a> (int comp) const</td></tr>
+<tr class="memitem:a8eb3103253e2e3aba75f6d67574243f1" id="r_a8eb3103253e2e3aba75f6d67574243f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a8eb3103253e2e3aba75f6d67574243f1">SumReg</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp) const</td></tr>
 <tr class="memdesc:a8eb3103253e2e3aba75f6d67574243f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of the registers.  <br /></td></tr>
 <tr class="separator:a8eb3103253e2e3aba75f6d67574243f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac930be53c9ed97f2b650d00d9922d375" id="r_ac930be53c9ed97f2b650d00d9922d375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac930be53c9ed97f2b650d00d9922d375">CrseInit</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult=-1.0, <a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7">FrOp</a> op=<a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613">FluxRegister::COPY</a>)</td></tr>
+<tr class="memitem:ac930be53c9ed97f2b650d00d9922d375" id="r_ac930be53c9ed97f2b650d00d9922d375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac930be53c9ed97f2b650d00d9922d375">CrseInit</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult=-1.0, <a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7">FrOp</a> op=<a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613">FluxRegister::COPY</a>)</td></tr>
 <tr class="memdesc:ac930be53c9ed97f2b650d00d9922d375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize flux correction with coarse data.  <br /></td></tr>
 <tr class="separator:ac930be53c9ed97f2b650d00d9922d375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec1bb41bffa8b078895f0f75149cdae1" id="r_aec1bb41bffa8b078895f0f75149cdae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aec1bb41bffa8b078895f0f75149cdae1">CrseInit</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult=-1.0, <a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7">FrOp</a> op=<a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613">FluxRegister::COPY</a>)</td></tr>
+<tr class="memitem:aec1bb41bffa8b078895f0f75149cdae1" id="r_aec1bb41bffa8b078895f0f75149cdae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aec1bb41bffa8b078895f0f75149cdae1">CrseInit</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult=-1.0, <a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7">FrOp</a> op=<a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613">FluxRegister::COPY</a>)</td></tr>
 <tr class="memdesc:aec1bb41bffa8b078895f0f75149cdae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize flux correction with coarse data.  <br /></td></tr>
 <tr class="separator:aec1bb41bffa8b078895f0f75149cdae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f11b763bb868b4245b5135f02da8217" id="r_a4f11b763bb868b4245b5135f02da8217"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a4f11b763bb868b4245b5135f02da8217">CrseAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memitem:a4f11b763bb868b4245b5135f02da8217" id="r_a4f11b763bb868b4245b5135f02da8217"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a4f11b763bb868b4245b5135f02da8217">CrseAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="memdesc:a4f11b763bb868b4245b5135f02da8217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add coarse fluxes to the flux register. This is different from CrseInit with <a class="el" href="classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7a6ddca7001a16a7ff26dc0c2c3910ae3a">FluxRegister::ADD</a>. This is used for cases in which the grids covered by fine do not have fluxes computed (e.g., FLASH).  <br /></td></tr>
 <tr class="separator:a4f11b763bb868b4245b5135f02da8217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac01db2619376c784ccb95918f39d483e" id="r_ac01db2619376c784ccb95918f39d483e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac01db2619376c784ccb95918f39d483e">CrseAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memitem:ac01db2619376c784ccb95918f39d483e" id="r_ac01db2619376c784ccb95918f39d483e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac01db2619376c784ccb95918f39d483e">CrseAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="memdesc:ac01db2619376c784ccb95918f39d483e"><td class="mdescLeft">&#160;</td><td class="mdescRight">/in this version the area is assumed to multiplied into the flux (if not, use scale to fix)  <br /></td></tr>
 <tr class="separator:ac01db2619376c784ccb95918f39d483e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab43d78762f0ea9fe8a2146dab58b9cf3" id="r_ab43d78762f0ea9fe8a2146dab58b9cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ab43d78762f0ea9fe8a2146dab58b9cf3">FineAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult)</td></tr>
+<tr class="memitem:ab43d78762f0ea9fe8a2146dab58b9cf3" id="r_ab43d78762f0ea9fe8a2146dab58b9cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ab43d78762f0ea9fe8a2146dab58b9cf3">FineAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult)</td></tr>
 <tr class="memdesc:ab43d78762f0ea9fe8a2146dab58b9cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment flux correction with fine data.  <br /></td></tr>
 <tr class="separator:ab43d78762f0ea9fe8a2146dab58b9cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d4c8d650762923da71c09c414b2258" id="r_a95d4c8d650762923da71c09c414b2258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a95d4c8d650762923da71c09c414b2258">FineAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, int dir, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult)</td></tr>
+<tr class="memitem:a95d4c8d650762923da71c09c414b2258" id="r_a95d4c8d650762923da71c09c414b2258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a95d4c8d650762923da71c09c414b2258">FineAdd</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mflx, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;area, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult)</td></tr>
 <tr class="memdesc:a95d4c8d650762923da71c09c414b2258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment flux correction with fine data.  <br /></td></tr>
 <tr class="separator:a95d4c8d650762923da71c09c414b2258"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1632f69b9bb40407c6622d6841c48938" id="r_a1632f69b9bb40407c6622d6841c48938"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a1632f69b9bb40407c6622d6841c48938">FineAdd</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;flux, int dir, int boxno, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
+<tr class="memitem:a1632f69b9bb40407c6622d6841c48938" id="r_a1632f69b9bb40407c6622d6841c48938"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a1632f69b9bb40407c6622d6841c48938">FineAdd</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;flux, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxno, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
 <tr class="memdesc:a1632f69b9bb40407c6622d6841c48938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment flux correction with fine data.  <br /></td></tr>
 <tr class="separator:a1632f69b9bb40407c6622d6841c48938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e3874c3557a701913061d4a9ef49c4d" id="r_a4e3874c3557a701913061d4a9ef49c4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a4e3874c3557a701913061d4a9ef49c4d">FineAdd</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;flux, const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;area, int dir, int boxno, int srccomp, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
+<tr class="memitem:a4e3874c3557a701913061d4a9ef49c4d" id="r_a4e3874c3557a701913061d4a9ef49c4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a4e3874c3557a701913061d4a9ef49c4d">FineAdd</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;flux, const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;area, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxno, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> mult, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
 <tr class="memdesc:a4e3874c3557a701913061d4a9ef49c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment flux correction with fine data.  <br /></td></tr>
 <tr class="separator:a4e3874c3557a701913061d4a9ef49c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6295b79fe12737051efd360468bfe344" id="r_a6295b79fe12737051efd360468bfe344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6295b79fe12737051efd360468bfe344">FineSetVal</a> (int dir, int boxno, int destcomp, int numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> val, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
+<tr class="memitem:a6295b79fe12737051efd360468bfe344" id="r_a6295b79fe12737051efd360468bfe344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6295b79fe12737051efd360468bfe344">FineSetVal</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> boxno, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> val, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</td></tr>
 <tr class="memdesc:a6295b79fe12737051efd360468bfe344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set flux correction data for a fine box (given by boxno) to a given value. This routine used by FLASH does NOT run on gpu for safety.  <br /></td></tr>
 <tr class="separator:a6295b79fe12737051efd360468bfe344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fdafda5f1518b4eabb95c307ca5635e" id="r_a1fdafda5f1518b4eabb95c307ca5635e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a1fdafda5f1518b4eabb95c307ca5635e">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int scomp, int dcomp, int nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memitem:a1fdafda5f1518b4eabb95c307ca5635e" id="r_a1fdafda5f1518b4eabb95c307ca5635e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a1fdafda5f1518b4eabb95c307ca5635e">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="memdesc:a1fdafda5f1518b4eabb95c307ca5635e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply flux correction. Note that this takes the coarse <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>.  <br /></td></tr>
 <tr class="separator:a1fdafda5f1518b4eabb95c307ca5635e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9162f5722e388cdd747d0abeb4b2ba4" id="r_ac9162f5722e388cdd747d0abeb4b2ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac9162f5722e388cdd747d0abeb4b2ba4">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, int dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int scomp, int dcomp, int nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memitem:ac9162f5722e388cdd747d0abeb4b2ba4" id="r_ac9162f5722e388cdd747d0abeb4b2ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ac9162f5722e388cdd747d0abeb4b2ba4">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="separator:ac9162f5722e388cdd747d0abeb4b2ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeebc09565fcf23f6050ad9b55275c1b1" id="r_aeebc09565fcf23f6050ad9b55275c1b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aeebc09565fcf23f6050ad9b55275c1b1">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int scomp, int dcomp, int nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memitem:aeebc09565fcf23f6050ad9b55275c1b1" id="r_aeebc09565fcf23f6050ad9b55275c1b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#aeebc09565fcf23f6050ad9b55275c1b1">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="memdesc:aeebc09565fcf23f6050ad9b55275c1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant volume version of <a class="el" href="classamrex_1_1FluxRegister.html#a1fdafda5f1518b4eabb95c307ca5635e" title="Apply flux correction. Note that this takes the coarse Geometry.">Reflux()</a>. Note that this takes the coarse <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a>.  <br /></td></tr>
 <tr class="separator:aeebc09565fcf23f6050ad9b55275c1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77d84b98f56e41c5736e58f9c5772a2" id="r_ad77d84b98f56e41c5736e58f9c5772a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ad77d84b98f56e41c5736e58f9c5772a2">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, int dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int scomp, int dcomp, int nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memitem:ad77d84b98f56e41c5736e58f9c5772a2" id="r_ad77d84b98f56e41c5736e58f9c5772a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ad77d84b98f56e41c5736e58f9c5772a2">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="separator:ad77d84b98f56e41c5736e58f9c5772a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6819592381055b1835c29fd336447771" id="r_a6819592381055b1835c29fd336447771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6819592381055b1835c29fd336447771">OverwriteFlux</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;crse_fluxes, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int srccomp, int destcomp, int numcomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memitem:a6819592381055b1835c29fd336447771" id="r_a6819592381055b1835c29fd336447771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6819592381055b1835c29fd336447771">OverwriteFlux</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; const &amp;crse_fluxes, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="memdesc:a6819592381055b1835c29fd336447771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite the coarse flux at the coarse/fine interface (and the interface only) with the fine flux stored in the <a class="el" href="classamrex_1_1FluxRegister.html" title="Flux Register.">FluxRegister</a>.  <br /></td></tr>
 <tr class="separator:a6819592381055b1835c29fd336447771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a936eb5769156da6cb7d2dac23b4d3" id="r_ab1a936eb5769156da6cb7d2dac23b4d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ab1a936eb5769156da6cb7d2dac23b4d3">ClearInternalBorders</a> (const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
@@ -223,13 +217,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a13861fcb5290d2ce4fe7e6510d3fee34" id="r_a13861fcb5290d2ce4fe7e6510d3fee34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a13861fcb5290d2ce4fe7e6510d3fee34">read</a> (const std::string &amp;name, std::istream &amp;is)</td></tr>
 <tr class="memdesc:a13861fcb5290d2ce4fe7e6510d3fee34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read (used for reading from checkpoint)  <br /></td></tr>
 <tr class="separator:a13861fcb5290d2ce4fe7e6510d3fee34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc89bc8c2613160d25e7fd2bd0afb97" id="r_a6bc89bc8c2613160d25e7fd2bd0afb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6bc89bc8c2613160d25e7fd2bd0afb97">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, <a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, int scomp, int dcomp, int nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memitem:a6bc89bc8c2613160d25e7fd2bd0afb97" id="r_a6bc89bc8c2613160d25e7fd2bd0afb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a6bc89bc8c2613160d25e7fd2bd0afb97">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c">volume</a>, <a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> <a class="el" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="separator:a6bc89bc8c2613160d25e7fd2bd0afb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1BndryRegisterT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1BndryRegisterT')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1BndryRegisterT.html">amrex::BndryRegisterT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:af6ca1d67538728588356d5b07ef6742d inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_af6ca1d67538728588356d5b07ef6742d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#af6ca1d67538728588356d5b07ef6742d">BndryRegisterT</a> () noexcept=default</td></tr>
 <tr class="memdesc:af6ca1d67538728588356d5b07ef6742d inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor.  <br /></td></tr>
 <tr class="separator:af6ca1d67538728588356d5b07ef6742d inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a669440b13ff12d665b4a732a77aa6658 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a669440b13ff12d665b4a732a77aa6658"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a669440b13ff12d665b4a732a77aa6658">BndryRegisterT</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, int in_rad, int out_rad, int extent_rad, int ncomp)</td></tr>
+<tr class="memitem:a669440b13ff12d665b4a732a77aa6658 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a669440b13ff12d665b4a732a77aa6658"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a669440b13ff12d665b4a732a77aa6658">BndryRegisterT</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> in_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> out_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> extent_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
 <tr class="memdesc:a669440b13ff12d665b4a732a77aa6658 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor, given number of cells in/out, extent and number of components (assumes cell-centered boxes, and allocates cell-centered FABs)  <br /></td></tr>
 <tr class="separator:a669440b13ff12d665b4a732a77aa6658 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d267bc0d735366bae8c6843d4cc79e3 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a2d267bc0d735366bae8c6843d4cc79e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a2d267bc0d735366bae8c6843d4cc79e3">~BndryRegisterT</a> ()=default</td></tr>
@@ -243,9 +237,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7efdacff6fd618550d5a3e15c0764871 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa188d45d82ca39e004cccfca57393095 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aa188d45d82ca39e004cccfca57393095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aa188d45d82ca39e004cccfca57393095">operator=</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:aa188d45d82ca39e004cccfca57393095 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a9f157b615e14c68633617c6e2031d027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, int in_rad, int out_rad, int extent_rad, int ncomp)</td></tr>
+<tr class="memitem:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a9f157b615e14c68633617c6e2031d027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> in_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> out_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> extent_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
 <tr class="separator:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aac2ef4b2b53e50f002404a507fa667c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aac2ef4b2b53e50f002404a507fa667c6">define</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> typ, int in_rad, int out_rad, int extent_rad, int ncomp, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm)</td></tr>
+<tr class="memitem:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aac2ef4b2b53e50f002404a507fa667c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aac2ef4b2b53e50f002404a507fa667c6">define</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> typ, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> in_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> out_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> extent_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm)</td></tr>
 <tr class="memdesc:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build FABs along given face, specifying the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
 <tr class="separator:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a691927d0b6e40f9923bacd565c590a91 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a691927d0b6e40f9923bacd565c590a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a691927d0b6e40f9923bacd565c590a91">clear</a> ()</td></tr>
@@ -253,7 +247,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aedfa13c401a3f3825bca5297f1e1e2be inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aedfa13c401a3f3825bca5297f1e1e2be"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aedfa13c401a3f3825bca5297f1e1e2be">boxes</a> () const noexcept</td></tr>
 <tr class="memdesc:aedfa13c401a3f3825bca5297f1e1e2be inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get box domain (as an array of boxes).  <br /></td></tr>
 <tr class="separator:aedfa13c401a3f3825bca5297f1e1e2be inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a132f07148e07fdae3f891ab726e467fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a132f07148e07fdae3f891ab726e467fb">size</a> () const noexcept</td></tr>
+<tr class="memitem:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a132f07148e07fdae3f891ab726e467fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a132f07148e07fdae3f891ab726e467fb">size</a> () const noexcept</td></tr>
 <tr class="memdesc:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of grids in this domain.  <br /></td></tr>
 <tr class="separator:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71e6c7b2ca9302f8ac309ea49b8dbfb5 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a71e6c7b2ca9302f8ac309ea49b8dbfb5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5">operator[]</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) const noexcept</td></tr>
@@ -270,13 +264,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a305048fb353b663f23b3562bc793d4d9 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5176cafd217bf9069ed83feba52d71c2 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a5176cafd217bf9069ed83feba52d71c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a5176cafd217bf9069ed83feba52d71c2">plus</a> (const <a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;rhs)</td></tr>
 <tr class="separator:a5176cafd217bf9069ed83feba52d71c2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a1c8fdfc61237f7b6a8d6c040d8daadf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a1c8fdfc61237f7b6a8d6c040d8daadf2">copyFrom</a> (const MF &amp;src, int nghost, int src_comp, int dest_comp, int num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
+<tr class="memitem:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a1c8fdfc61237f7b6a8d6c040d8daadf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a1c8fdfc61237f7b6a8d6c040d8daadf2">copyFrom</a> (const MF &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
 <tr class="memdesc:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the boundary FABs on intersection with given MF.  <br /></td></tr>
 <tr class="separator:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a58d2309f0eb636417e763b5a1e74599c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a58d2309f0eb636417e763b5a1e74599c">plusFrom</a> (const MF &amp;src, int nghost, int src_comp, int dest_comp, int num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
+<tr class="memitem:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a58d2309f0eb636417e763b5a1e74599c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a58d2309f0eb636417e763b5a1e74599c">plusFrom</a> (const MF &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
 <tr class="memdesc:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the boundary FABs on intersect with given MF.  <br /></td></tr>
 <tr class="separator:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_ae8f5e1195457dc7f2204abbcaf2fe148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#ae8f5e1195457dc7f2204abbcaf2fe148">linComb</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> a, const MF &amp;mfa, int a_comp, <a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> b, const MF &amp;mfb, int b_comp, int dest_comp, int num_comp, int n_ghost=0)</td></tr>
+<tr class="memitem:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_ae8f5e1195457dc7f2204abbcaf2fe148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#ae8f5e1195457dc7f2204abbcaf2fe148">linComb</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> a, const MF &amp;mfa, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_comp, <a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> b, const MF &amp;mfb, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> b_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_ghost=0)</td></tr>
 <tr class="memdesc:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear combination: this := a*mfa + b*mfb on intersection of MFs with the boundary FABs.  <br /></td></tr>
 <tr class="separator:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31f3e491669d858c7c73e04d2ad6cb00 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a31f3e491669d858c7c73e04d2ad6cb00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a31f3e491669d858c7c73e04d2ad6cb00">setBoxes</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;<a class="el" href="classamrex_1_1BndryRegisterT.html#a3661eefa8a7bc8f810c39fdc6f8fb350">grids</a>)</td></tr>
@@ -376,13 +370,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>fine_lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nvar</em>&#160;</td>
         </tr>
         <tr>
@@ -578,25 +572,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -651,25 +645,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -729,25 +723,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -802,25 +796,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -869,7 +863,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::FluxRegister::crseLevel </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::FluxRegister::crseLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -913,13 +907,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>fine_lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nvar</em>&#160;</td>
         </tr>
         <tr>
@@ -968,31 +962,31 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxno</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1056,31 +1050,31 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxno</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1147,25 +1141,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1213,25 +1207,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1274,7 +1268,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::FluxRegister::fineLevel </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::FluxRegister::fineLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1303,25 +1297,25 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void amrex::FluxRegister::FineSetVal </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>boxno</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1374,7 +1368,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::FluxRegister::nComp </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::FluxRegister::nComp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1464,19 +1458,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>srccomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>destcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>numcomp</em>, </td>
         </tr>
         <tr>
@@ -1566,7 +1560,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -1578,19 +1572,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
@@ -1642,19 +1636,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
@@ -1700,19 +1694,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
@@ -1760,7 +1754,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -1772,19 +1766,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
@@ -1824,19 +1818,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>scomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dcomp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
@@ -1904,7 +1898,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::FluxRegister::SumReg </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>comp</em></td><td>)</td>
           <td> const</td>
         </tr>

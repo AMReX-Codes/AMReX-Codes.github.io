@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -379,8 +378,8 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="classamrex_1_1ReduceData.html#a71bbfd3ca387af546ab718418a3d8521">  262</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1ReduceData.html#a71bbfd3ca387af546ab718418a3d8521">ReduceData</a> (<a class="code hl_class" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;Ps...&gt;</a>&amp; reduce_op)</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        : m_max_blocks(<a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">Gpu</a>::<a class="code hl_enumvalue" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737">Device</a>::maxBlocksPerLaunch()),</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>          m_host_tuple((<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>*)(<a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;alloc(sizeof(<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>)))),</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          m_device_tuple((<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>*)(<a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;alloc((<a class="code hl_define" href="AMReX__GpuDevice_8H.html#a81556578d460ebcebf8baf3163a36949">AMREX_GPU_MAX_STREAMS</a>)</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>          m_host_tuple((<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>*)(<a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;alloc(sizeof(<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>)))),</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          m_device_tuple((<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>*)(<a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;alloc((<a class="code hl_define" href="AMReX__GpuDevice_8H.html#a81556578d460ebcebf8baf3163a36949">AMREX_GPU_MAX_STREAMS</a>)</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                                                    * m_max_blocks * sizeof(<a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a>)))),</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>          m_fn_value([&amp;reduce_op,this] () -&gt; <a class="code hl_class" href="classamrex_1_1GpuTuple.html">Type</a> { return this-&gt;<a class="code hl_function" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op); })</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    {</div>
@@ -397,8 +396,8 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
 <div class="foldopen" id="foldopen00279" data-start="{" data-end="}">
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962">  279</a></span>    <a class="code hl_function" href="classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962">~ReduceData</a> () {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(m_host_tuple);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(m_device_tuple);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(m_host_tuple);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(m_device_tuple);</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    }</div>
 </div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
@@ -1025,7 +1024,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span> </div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> num_ints = std::max(Gpu::Device::warp_size, <span class="keywordtype">int</span>(ec.numThreads.x)/Gpu::Device::warp_size) + 1;</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="keyword">const</span> std::size_t shared_mem_bytes = num_ints*<span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="keyword">const</span> std::size_t shared_mem_bytes = num_ints*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    amrex::launch&lt;AMREX_GPU_MAX_THREADS&gt;(ec.numBlocks.x, shared_mem_bytes, Gpu::gpuStream(),</div>
 <div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_struct" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>        <span class="keywordtype">int</span>* has_any = &amp;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(gh.sharedMemory())[num_ints-1]);</div>
@@ -1084,7 +1083,7 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span> </div>
 <div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span><span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> num_ints = std::max(Gpu::Device::warp_size, <span class="keywordtype">int</span>(ec.numThreads.x)/Gpu::Device::warp_size) + 1;</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>    <span class="keyword">const</span> std::size_t shared_mem_bytes = num_ints*<span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>    <span class="keyword">const</span> std::size_t shared_mem_bytes = num_ints*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>    amrex::launch&lt;AMREX_GPU_MAX_THREADS&gt;(ec.numBlocks.x, shared_mem_bytes, Gpu::gpuStream(),</div>
 <div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>    [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code hl_struct" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>        <span class="keywordtype">int</span>* has_any = &amp;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(gh.sharedMemory())[num_ints-1]);</div>
@@ -1590,6 +1589,8 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="agroup__amrex__collectives_html_gadae163b6d167d018ba6ec7cf821b97a8"><div class="ttname"><a href="group__amrex__collectives.html#gadae163b6d167d018ba6ec7cf821b97a8">amrex::Reduce::MinMax</a></div><div class="ttdeci">std::pair&lt; T, T &gt; MinMax(N n, T const *v)</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:838</div></div>
 <div class="ttc" id="agroup__amrex__collectives_html_gaf362eac7caa17fd8a2f7ee3831236367"><div class="ttname"><a href="group__amrex__collectives.html#gaf362eac7caa17fd8a2f7ee3831236367">amrex::Reduce::AnyOf</a></div><div class="ttdeci">bool AnyOf(N n, T const *v, P const &amp;pred)</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:868</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gac0f0db5587c264e8397139733225a229"><div class="ttname"><a href="group__amrex__index__space.html#gac0f0db5587c264e8397139733225a229">amrex::grow</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; grow(const BoxND&lt; dim &gt; &amp;b, int i) noexcept</div><div class="ttdoc">Grow BoxND in all directions by given amount.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1280</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga8f0fba40aa737060c0ac09832c9bf877"><div class="ttname"><a href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:221</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_adb909da17c74d800eb3e15ca85d5efeb"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#adb909da17c74d800eb3e15ca85d5efeb">amrex::Gpu::Atomic::Max</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Max(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:419</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ae84b6f5f4e912474ddea2e6957e7eff5"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ae84b6f5f4e912474ddea2e6957e7eff5">amrex::Gpu::Atomic::Min</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Min(T *const m, T const value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:356</div></div>
@@ -1606,16 +1607,15 @@ $(document).ready(function(){initNavTree('AMReX__Reduce_8H_source.html',''); ini
 <div class="ttc" id="anamespaceamrex_html_a3e08759747455ff96c8f68e8673c2b19"><div class="ttname"><a href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">amrex::gpuStream_t</a></div><div class="ttdeci">cudaStream_t gpuStream_t</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:83</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4a88cd9eeb3fb0f6a9a8e4a95fb1c82c"><div class="ttname"><a href="namespaceamrex.html#a4a88cd9eeb3fb0f6a9a8e4a95fb1c82c">amrex::IdentityTuple</a></div><div class="ttdeci">__host__ __device__ constexpr GpuTuple&lt; Ts... &gt; IdentityTuple(GpuTuple&lt; Ts... &gt;, ReduceOps&lt; Ps... &gt;) noexcept</div><div class="ttdoc">Return a GpuTuple containing the identity element for each operation in ReduceOps....</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:1324</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
-<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
+<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:24</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_adb038d495d77c299406ea33380d0f548"><div class="ttname"><a href="namespaceamrex.html#adb038d495d77c299406ea33380d0f548">amrex::For</a></div><div class="ttdeci">AMREX_ATTRIBUTE_FLATTEN_FOR void For(T n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:154</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
 <div class="ttc" id="anamespaceamrex_html_afad6a65d8f99b00c14e8de32e2806fd7"><div class="ttname"><a href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">amrex::lbound</a></div><div class="ttdeci">__host__ __device__ Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Array4.H:998</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html">amrex::BoxIndexerND</a></div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2152</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html_a2d02d3bf63ef6be14c58f21430cb5201"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html#a2d02d3bf63ef6be14c58f21430cb5201">amrex::BoxIndexerND::intVect</a></div><div class="ttdeci">__host__ __device__ IntVectND&lt; dim &gt; intVect(std::uint64_t icell) const</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2169</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexerND_html_a73113db142ec55b3822b1594c2ca831e"><div class="ttname"><a href="structamrex_1_1BoxIndexerND.html#a73113db142ec55b3822b1594c2ca831e">amrex::BoxIndexerND::numPts</a></div><div class="ttdeci">__host__ __device__ std::uint64_t numPts() const</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2193</div></div>
-<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:40</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdoc">Fixed-size array that can be used on GPU.</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:41</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1DeviceScalar_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1DeviceScalar.html">amrex::Gpu::DeviceScalar</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:56</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1DeviceScalar_html_a14f5716ceb831c094aabcf9cf8cba989"><div class="ttname"><a href="structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989">amrex::Gpu::DeviceScalar::dataValue</a></div><div class="ttdeci">T dataValue() const</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:92</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1DeviceScalar_html_ae19f0d07c17ff5a62f78057e5cc124ee"><div class="ttname"><a href="structamrex_1_1Gpu_1_1DeviceScalar.html#ae19f0d07c17ff5a62f78057e5cc124ee">amrex::Gpu::DeviceScalar::dataPtr</a></div><div class="ttdeci">T * dataPtr()</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:90</div></div>

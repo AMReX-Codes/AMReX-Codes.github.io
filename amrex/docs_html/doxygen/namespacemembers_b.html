@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -116,10 +110,11 @@ $(document).ready(function(){initNavTree('namespacemembers_b.html',''); initResi
 <li>begin()&#160;:&#160;<a class="el" href="namespaceamrex.html#a6a67d23bf90db71610ec5144cbae8f7c">amrex</a></li>
 <li>begin_iv()&#160;:&#160;<a class="el" href="namespaceamrex.html#a6f0d0bcf60c6a23dd7a821c20bdacc79">amrex</a></li>
 <li>bisect()&#160;:&#160;<a class="el" href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex</a></li>
+<li>BL_FORT_PROC_DECL()&#160;:&#160;<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#a6b00ecb0ae5350278a633a75443d947e">amrex::ParallelDescriptor</a></li>
 <li>Black&#160;:&#160;<a class="el" href="namespaceamrex_1_1BGColor.html#ae412efe15f82f962408e557b3cee52e4">amrex::BGColor</a>, <a class="el" href="namespaceamrex_1_1FGColor.html#afca8013d5b489e37aa5c257ad3073aab">amrex::FGColor</a></li>
 <li>blockReduce()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a2efa52db2812020e4a2dca110f4d62a4">amrex::Gpu</a></li>
 <li>blockReduce_partial()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a34cbe61ca1607c0a4c216406d97a751c">amrex::Gpu</a></li>
-<li>blockReduceLogicalAnd()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#ac4f22a83fcd1f601dafa2d372547be35">amrex::Gpu</a></li>
+<li>blockReduceLogicalAnd()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a5e7acbf4ee0f4a06b5ec22bf20732555">amrex::Gpu</a></li>
 <li>blockReduceLogicalOr()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a40ff25ac9402be7e41afd682c4534d5a">amrex::Gpu</a></li>
 <li>blockReduceMax()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a4f5839eee64bdce0a2880c67a704ab02">amrex::Gpu</a></li>
 <li>blockReduceMin()&#160;:&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a589404293403cf894b2532d5b61df482">amrex::Gpu</a></li>

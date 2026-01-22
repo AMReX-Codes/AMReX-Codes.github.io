@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -114,25 +108,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b36dc205b48f04d66ec8ff3c75548a3" id="r_a5b36dc205b48f04d66ec8ff3c75548a3"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a5b36dc205b48f04d66ec8ff3c75548a3">CellSize</a> () const noexcept</td></tr>
 <tr class="memdesc:a5b36dc205b48f04d66ec8ff3c75548a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cellsize for each coordinate direction.  <br /></td></tr>
 <tr class="separator:a5b36dc205b48f04d66ec8ff3c75548a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fc94e10698add54313be7ab8c437408" id="r_a1fc94e10698add54313be7ab8c437408"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a1fc94e10698add54313be7ab8c437408">CellSize</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a1fc94e10698add54313be7ab8c437408" id="r_a1fc94e10698add54313be7ab8c437408"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a1fc94e10698add54313be7ab8c437408">CellSize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="separator:a1fc94e10698add54313be7ab8c437408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9884e61f2b35a6bc7f65361151ff1b" id="r_a9f9884e61f2b35a6bc7f65361151ff1b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a9f9884e61f2b35a6bc7f65361151ff1b">ProbLo</a> () const noexcept</td></tr>
 <tr class="memdesc:a9f9884e61f2b35a6bc7f65361151ff1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the lo end of the problem domain in each dimension.  <br /></td></tr>
 <tr class="separator:a9f9884e61f2b35a6bc7f65361151ff1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a114285a2667fb15f21cb7287175888b4" id="r_a114285a2667fb15f21cb7287175888b4"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a114285a2667fb15f21cb7287175888b4">ProbLo</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a114285a2667fb15f21cb7287175888b4" id="r_a114285a2667fb15f21cb7287175888b4"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a114285a2667fb15f21cb7287175888b4">ProbLo</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="separator:a114285a2667fb15f21cb7287175888b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af81e8689f6c2f995bc4284f669ee9215" id="r_af81e8689f6c2f995bc4284f669ee9215"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#af81e8689f6c2f995bc4284f669ee9215">ProbHi</a> () const noexcept</td></tr>
 <tr class="memdesc:af81e8689f6c2f995bc4284f669ee9215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the hi end of the problem domain in each dimension.  <br /></td></tr>
 <tr class="separator:af81e8689f6c2f995bc4284f669ee9215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b3e97b93916045580c1a703abe3dd93" id="r_a4b3e97b93916045580c1a703abe3dd93"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a4b3e97b93916045580c1a703abe3dd93">ProbHi</a> (int dir) const noexcept</td></tr>
+<tr class="memitem:a4b3e97b93916045580c1a703abe3dd93" id="r_a4b3e97b93916045580c1a703abe3dd93"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a4b3e97b93916045580c1a703abe3dd93">ProbHi</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir) const noexcept</td></tr>
 <tr class="separator:a4b3e97b93916045580c1a703abe3dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28db4ef294c4a093cb38bd401e3fa1ca" id="r_a28db4ef294c4a093cb38bd401e3fa1ca"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a28db4ef294c4a093cb38bd401e3fa1ca">Domain</a> () const noexcept</td></tr>
 <tr class="memdesc:a28db4ef294c4a093cb38bd401e3fa1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns our rectangular domain.  <br /></td></tr>
 <tr class="separator:a28db4ef294c4a093cb38bd401e3fa1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82eef893a0c5ddc0c2734786a19f21aa" id="r_a82eef893a0c5ddc0c2734786a19f21aa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a82eef893a0c5ddc0c2734786a19f21aa">isPeriodic</a> (const int i) const noexcept</td></tr>
+<tr class="memitem:a82eef893a0c5ddc0c2734786a19f21aa" id="r_a82eef893a0c5ddc0c2734786a19f21aa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a82eef893a0c5ddc0c2734786a19f21aa">isPeriodic</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i) const noexcept</td></tr>
 <tr class="memdesc:a82eef893a0c5ddc0c2734786a19f21aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the domain is periodic in the given direction.  <br /></td></tr>
 <tr class="separator:a82eef893a0c5ddc0c2734786a19f21aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23cf91b02699df579e69466c385bfc96" id="r_a23cf91b02699df579e69466c385bfc96"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a23cf91b02699df579e69466c385bfc96">Coord</a> () const noexcept</td></tr>
+<tr class="memitem:a23cf91b02699df579e69466c385bfc96" id="r_a23cf91b02699df579e69466c385bfc96"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a23cf91b02699df579e69466c385bfc96">Coord</a> () const noexcept</td></tr>
 <tr class="memdesc:a23cf91b02699df579e69466c385bfc96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinates type.  <br /></td></tr>
 <tr class="separator:a23cf91b02699df579e69466c385bfc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,9 +138,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a092f48607ca49b3796425e78b96a3b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a292951327bd08f8c0f357087ebdabb19" id="r_a292951327bd08f8c0f357087ebdabb19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a292951327bd08f8c0f357087ebdabb19">dx</a> [3]</td></tr>
 <tr class="separator:a292951327bd08f8c0f357087ebdabb19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89564d1f9f4b2c8edca003f584b6d8b7" id="r_a89564d1f9f4b2c8edca003f584b6d8b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a89564d1f9f4b2c8edca003f584b6d8b7">is_periodic</a> [3]</td></tr>
+<tr class="memitem:a89564d1f9f4b2c8edca003f584b6d8b7" id="r_a89564d1f9f4b2c8edca003f584b6d8b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a89564d1f9f4b2c8edca003f584b6d8b7">is_periodic</a> [3]</td></tr>
 <tr class="separator:a89564d1f9f4b2c8edca003f584b6d8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d36ab01dbd0848e0f3e43ef59b74cb" id="r_a68d36ab01dbd0848e0f3e43ef59b74cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb">coord</a></td></tr>
+<tr class="memitem:a68d36ab01dbd0848e0f3e43ef59b74cb" id="r_a68d36ab01dbd0848e0f3e43ef59b74cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb">coord</a></td></tr>
 <tr class="separator:a68d36ab01dbd0848e0f3e43ef59b74cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -189,7 +183,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::GeometryData::CellSize </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -213,7 +207,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ int amrex::GeometryData::Coord </td>
+          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::GeometryData::Coord </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -267,9 +261,9 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ int amrex::GeometryData::isPeriodic </td>
+          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::GeometryData::isPeriodic </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -324,7 +318,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::GeometryData::ProbHi </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -377,7 +371,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> amrex::GeometryData::ProbLo </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -399,7 +393,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::GeometryData::coord</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::GeometryData::coord</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -441,7 +435,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::GeometryData::is_periodic[3]</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::GeometryData::is_periodic[3]</td>
         </tr>
       </table>
 </div><div class="memdoc">

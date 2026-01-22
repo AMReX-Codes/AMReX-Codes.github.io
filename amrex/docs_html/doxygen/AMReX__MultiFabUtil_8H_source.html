@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -331,7 +330,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>              std::enable_if_t&lt;IsMultiFabLike_v&lt;FA&gt;</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="preprocessor">#ifndef AMREX_USE_CUDA</span></div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                               &amp;&amp; IsCallableR&lt;<span class="keyword">typename</span> FA::value_type,</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                                              <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,int,int,int,<span class="keywordtype">int</span>&gt;::value</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                                              <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<span class="keywordtype">int</span>&gt;::value</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                               , <span class="keywordtype">int</span>&gt; FOO = 0&gt;</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    FA <a class="code hl_function" href="namespaceamrex.html#a40c2c0500c3c5f5b536616ca66a968da">ReduceToPlaneMF</a> (<span class="keywordtype">int</span> direction, <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> <span class="keyword">const</span>&amp; domain, FA <span class="keyword">const</span>&amp; mf, <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> <span class="keyword">const</span>&amp; f);</div>
@@ -340,7 +339,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>              std::enable_if_t&lt;IsMultiFabLike_v&lt;FA&gt;</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span><span class="preprocessor">#ifndef AMREX_USE_CUDA</span></div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>                               &amp;&amp; IsCallableR&lt;<span class="keyword">typename</span> FA::value_type,</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                                              <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,int,int,int,<span class="keywordtype">int</span>&gt;::value</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                                              <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<span class="keywordtype">int</span>&gt;::value</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>                               , <span class="keywordtype">int</span>&gt; FOO = 0&gt;</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    std::pair&lt;FA,FA&gt;</div>
@@ -1205,7 +1204,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>          std::enable_if_t&lt;IsMultiFabLike_v&lt;FA&gt;</div>
 <div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span><span class="preprocessor">#ifndef AMREX_USE_CUDA</span></div>
 <div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>                           &amp;&amp; IsCallableR&lt;<span class="keyword">typename</span> FA::value_type,</div>
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>                                          <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,int,int,int,<span class="keywordtype">int</span>&gt;::value</div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>                                          <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<span class="keywordtype">int</span>&gt;::value</div>
 <div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>                           , <span class="keywordtype">int</span>&gt; FOO&gt;</div>
 <div class="foldopen" id="foldopen01367" data-start="{" data-end="}">
@@ -1221,7 +1220,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>          std::enable_if_t&lt;IsMultiFabLike_v&lt;FA&gt;</div>
 <div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span><span class="preprocessor">#ifndef AMREX_USE_CUDA</span></div>
 <div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>                           &amp;&amp; IsCallableR&lt;<span class="keyword">typename</span> FA::value_type,</div>
-<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>                                          <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,int,int,int,<span class="keywordtype">int</span>&gt;::value</div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>                                          <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<span class="keywordtype">int</span>&gt;::value</div>
 <div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>                           , <span class="keywordtype">int</span>&gt; FOO&gt;</div>
 <div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>std::pair&lt;FA,FA&gt;</div>
@@ -1345,7 +1344,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_ga5af1ac4b7471ba90a59e111dd0dd2b22"><div class="ttname"><a href="group__amrex__index__space.html#ga5af1ac4b7471ba90a59e111dd0dd2b22">amrex::coarsen</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; coarsen(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Coarsen BoxND by given (positive) coarsening ratio.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1409</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga8f0fba40aa737060c0ac09832c9bf877"><div class="ttname"><a href="group__amrex__mpi.html#ga8f0fba40aa737060c0ac09832c9bf877">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelReduce.H:221</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a2c1110b22670288daa9e2a01cbb70fbb"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">amrex::Gpu::copy</a></div><div class="ttdeci">void copy(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</div><div class="ttdoc">A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous st...</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:128</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4cb810463e0c04bdea932a011e77b548"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">amrex::Gpu::deviceToHost</a></div><div class="ttdeci">static constexpr DeviceToHost deviceToHost</div><div class="ttdef"><b>Definition</b> AMReX_GpuContainers.H:106</div></div>
@@ -1391,6 +1390,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_ab67331acff75bf2840f409750b1ada66"><div class="ttname"><a href="namespaceamrex.html#ab67331acff75bf2840f409750b1ada66">amrex::sum_fine_to_coarse</a></div><div class="ttdeci">void sum_fine_to_coarse(const MultiFab &amp;S_fine, MultiFab &amp;S_crse, int scomp, int ncomp, const IntVect &amp;ratio, const Geometry &amp;cgeom, const Geometry &amp;)</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:415</div></div>
 <div class="ttc" id="anamespaceamrex_html_ab843405531b26d824c1133128452afcb"><div class="ttname"><a href="namespaceamrex.html#ab843405531b26d824c1133128452afcb">amrex::average_cellcenter_to_face</a></div><div class="ttdeci">void average_cellcenter_to_face(const Vector&lt; MultiFab * &gt; &amp;fc, const MultiFab &amp;cc, const Geometry &amp;geom, int ncomp, bool use_harmonic_averaging)</div><div class="ttdoc">Average cell-centered MultiFab onto face-based MultiFab with geometric weighting.</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:240</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad64dcd62b16d9022d914f067d30d7918"><div class="ttname"><a href="namespaceamrex.html#ad64dcd62b16d9022d914f067d30d7918">amrex::average_node_to_cellcenter</a></div><div class="ttdeci">void average_node_to_cellcenter(MultiFab &amp;cc, int dcomp, const MultiFab &amp;nd, int scomp, int ncomp, int ngrow)</div><div class="ttdoc">Average nodal-based MultiFab onto cell-centered MultiFab.</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:62</div></div>
 <div class="ttc" id="anamespaceamrex_html_adde5cec8cf83a5e5970cf61cd12e6bb7"><div class="ttname"><a href="namespaceamrex.html#adde5cec8cf83a5e5970cf61cd12e6bb7">amrex::FourthOrderInterpFromFineToCoarse</a></div><div class="ttdeci">void FourthOrderInterpFromFineToCoarse(MultiFab &amp;cmf, int scomp, int ncomp, MultiFab const &amp;fmf, IntVect const &amp;ratio)</div><div class="ttdoc">Fourth-order interpolation from fine to coarse level.</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:1134</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae062fb7f904c1f39327797d8c3fea414"><div class="ttname"><a href="namespaceamrex.html#ae062fb7f904c1f39327797d8c3fea414">amrex::ToLongMultiFab</a></div><div class="ttdeci">FabArray&lt; BaseFab&lt; Long &gt; &gt; ToLongMultiFab(const iMultiFab &amp;imf)</div><div class="ttdoc">Convert iMultiFab to Long.</div><div class="ttdef"><b>Definition</b> AMReX_MultiFabUtil.cpp:569</div></div>

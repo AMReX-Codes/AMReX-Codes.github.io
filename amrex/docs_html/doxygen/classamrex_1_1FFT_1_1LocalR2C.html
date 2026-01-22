@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -128,13 +122,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a25e2f5cf1cbe6135a5e986b9bf8ad6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf45f153c0746b64717f9c4883e4ee2" id="r_accf45f153c0746b64717f9c4883e4ee2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">LocalR2C</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html#accf45f153c0746b64717f9c4883e4ee2">operator=</a> (<a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">LocalR2C</a> const &amp;)=delete</td></tr>
 <tr class="separator:accf45f153c0746b64717f9c4883e4ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eb323fa485c2db44e72bbfc8807175b" id="r_a2eb323fa485c2db44e72bbfc8807175b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR = D, std::enable_if_t&lt; DIR==Direction::forward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a2eb323fa485c2db44e72bbfc8807175b" id="r_a2eb323fa485c2db44e72bbfc8807175b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR = D, std::enable_if_t&lt; DIR==Direction::forward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a2eb323fa485c2db44e72bbfc8807175b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html#a2eb323fa485c2db44e72bbfc8807175b">forward</a> (T const *indata, <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt; *outdata)</td></tr>
 <tr class="memdesc:a2eb323fa485c2db44e72bbfc8807175b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward transform.  <br /></td></tr>
 <tr class="separator:a2eb323fa485c2db44e72bbfc8807175b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3edc75d2958b9d4daccffef78bfab311" id="r_a3edc75d2958b9d4daccffef78bfab311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html#a3edc75d2958b9d4daccffef78bfab311">clear</a> ()</td></tr>
 <tr class="separator:a3edc75d2958b9d4daccffef78bfab311"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01169a532e1d8592745d29c0ebbd5b11" id="r_a01169a532e1d8592745d29c0ebbd5b11"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR = D, std::enable_if_t&lt; DIR==Direction::backward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a01169a532e1d8592745d29c0ebbd5b11" id="r_a01169a532e1d8592745d29c0ebbd5b11"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR = D, std::enable_if_t&lt; DIR==Direction::backward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a01169a532e1d8592745d29c0ebbd5b11"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html#a01169a532e1d8592745d29c0ebbd5b11">backward</a> (<a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt; const *indata, T *outdata)</td></tr>
 <tr class="memdesc:a01169a532e1d8592745d29c0ebbd5b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward transform.  <br /></td></tr>
 <tr class="separator:a01169a532e1d8592745d29c0ebbd5b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +139,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afe70f4a8216901f28d94885873b18c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, int M = 3&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = 3&gt;<br />
 class amrex::FFT::LocalR2C&lt; T, D, M &gt;</div><p>Local Discrete Fourier Transform. </p>
 <p>This class supports Fourier transforms between real and complex data. The name <a class="el" href="classamrex_1_1FFT_1_1R2C.html" title="Parallel Discrete Fourier Transform.">R2C</a> indicates that the forward transform converts real data to complex data, while the backward transform converts complex data to real data. It should be noted that both directions of transformation are supported, not just from real to complex. The scaling follows the FFTW convention, where applying the forward transform followed by the backward transform scales the original data by the size of the input array.</p>
 <p>For more details, we refer the users to <a href="https://amrex-codes.github.io/amrex/docs_html/FFT_Chapter.html">https://amrex-codes.github.io/amrex/docs_html/FFT_Chapter.html</a>. </p>
@@ -156,7 +150,7 @@ class amrex::FFT::LocalR2C&lt; T, D, M &gt;</div><p>Local Discrete Fourier Trans
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -220,7 +214,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">amrex::FFT::LocalR2C</a>&lt; T, D, M &gt;::~<a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">LocalR2C</a> </td>
@@ -239,7 +233,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, int M = 3&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = 3&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -266,7 +260,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -294,7 +288,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, int M = 3&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = 3&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -323,9 +317,9 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR, std::enable_if_t&lt; DIR==Direction::backward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, int &gt; &gt; </div>
+template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR, std::enable_if_t&lt; DIR==Direction::backward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">amrex::FFT::LocalR2C</a>&lt; T, D, M &gt;::backward </td>
@@ -365,7 +359,7 @@ template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">amrex::FFT::LocalR2C</a>&lt; T, D, M &gt;::clear </td>
@@ -384,9 +378,9 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR, std::enable_if_t&lt; DIR==Direction::forward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, int &gt; &gt; </div>
+template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR, std::enable_if_t&lt; DIR==Direction::forward||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">amrex::FFT::LocalR2C</a>&lt; T, D, M &gt;::forward </td>
@@ -426,7 +420,7 @@ template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -454,7 +448,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, int M = 3&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = 3&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -482,7 +476,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, int M&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">T <a class="el" href="classamrex_1_1FFT_1_1LocalR2C.html">amrex::FFT::LocalR2C</a>&lt; T, D, M &gt;::scalingFactor </td>
@@ -502,7 +496,7 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, int M = 3&gt; </div>
+template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">FFT::Direction</a> D = FFT::Direction::both, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> M = 3&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -132,13 +131,13 @@ $(document).ready(function(){initNavTree('AMReX__BArena_8H_source.html',''); ini
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
 <div class="ttc" id="aclassamrex_1_1BArena_html"><div class="ttname"><a href="classamrex_1_1BArena.html">amrex::BArena</a></div><div class="ttdoc">A Concrete Class for Dynamic Memory Management This is the simplest dynamic memory management class d...</div><div class="ttdef"><b>Definition</b> AMReX_BArena.H:17</div></div>
-<div class="ttc" id="aclassamrex_1_1BArena_html_a4089e5008457c5f04ee4acfc430b3f37"><div class="ttname"><a href="classamrex_1_1BArena.html#a4089e5008457c5f04ee4acfc430b3f37">amrex::BArena::isPinned</a></div><div class="ttdeci">bool isPinned() const final</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:43</div></div>
+<div class="ttc" id="aclassamrex_1_1BArena_html_a4089e5008457c5f04ee4acfc430b3f37"><div class="ttname"><a href="classamrex_1_1BArena.html#a4089e5008457c5f04ee4acfc430b3f37">amrex::BArena::isPinned</a></div><div class="ttdeci">bool isPinned() const final</div><div class="ttdoc">Check whether it is pinned host memory.</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:43</div></div>
 <div class="ttc" id="aclassamrex_1_1BArena_html_a423a57e61bf30c0dd08c5b03042306ff"><div class="ttname"><a href="classamrex_1_1BArena.html#a423a57e61bf30c0dd08c5b03042306ff">amrex::BArena::free</a></div><div class="ttdeci">void free(void *pt) final</div><div class="ttdoc">Deletes the arena pointed to by pt.</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:12</div></div>
-<div class="ttc" id="aclassamrex_1_1BArena_html_a56c8b6538282b4a56466b9053065b3e0"><div class="ttname"><a href="classamrex_1_1BArena.html#a56c8b6538282b4a56466b9053065b3e0">amrex::BArena::isManaged</a></div><div class="ttdeci">bool isManaged() const final</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:31</div></div>
+<div class="ttc" id="aclassamrex_1_1BArena_html_a56c8b6538282b4a56466b9053065b3e0"><div class="ttname"><a href="classamrex_1_1BArena.html#a56c8b6538282b4a56466b9053065b3e0">amrex::BArena::isManaged</a></div><div class="ttdeci">bool isManaged() const final</div><div class="ttdoc">Check whether it is managed GPU memory.</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:31</div></div>
 <div class="ttc" id="aclassamrex_1_1BArena_html_a84fc546372485495fe7eca80c08764e6"><div class="ttname"><a href="classamrex_1_1BArena.html#a84fc546372485495fe7eca80c08764e6">amrex::BArena::isHostAccessible</a></div><div class="ttdeci">bool isHostAccessible() const final</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:25</div></div>
-<div class="ttc" id="aclassamrex_1_1BArena_html_abf63d084f8e220d01d53b543f7f93bc6"><div class="ttname"><a href="classamrex_1_1BArena.html#abf63d084f8e220d01d53b543f7f93bc6">amrex::BArena::isDevice</a></div><div class="ttdeci">bool isDevice() const final</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:37</div></div>
+<div class="ttc" id="aclassamrex_1_1BArena_html_abf63d084f8e220d01d53b543f7f93bc6"><div class="ttname"><a href="classamrex_1_1BArena.html#abf63d084f8e220d01d53b543f7f93bc6">amrex::BArena::isDevice</a></div><div class="ttdeci">bool isDevice() const final</div><div class="ttdoc">Check whether it is non-managed GPU device memory.</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:37</div></div>
 <div class="ttc" id="aclassamrex_1_1BArena_html_ac5b992935b798555e12f3ed280420c5b"><div class="ttname"><a href="classamrex_1_1BArena.html#ac5b992935b798555e12f3ed280420c5b">amrex::BArena::alloc</a></div><div class="ttdeci">void * alloc(std::size_t sz) final</div><div class="ttdoc">Allocates a dynamic memory arena of size sz. Returns a pointer to this memory.</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:4</div></div>
 <div class="ttc" id="aclassamrex_1_1BArena_html_ad0656effeaa29bac32c44198b8922f0f"><div class="ttname"><a href="classamrex_1_1BArena.html#ad0656effeaa29bac32c44198b8922f0f">amrex::BArena::isDeviceAccessible</a></div><div class="ttdeci">bool isDeviceAccessible() const final</div><div class="ttdef"><b>Definition</b> AMReX_BArena.cpp:19</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -1327,7 +1326,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span> </div>
 <div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        <span class="comment">/* particle_box_arrays[lev].readFrom(phdr_file); */</span></div>
 <div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>        particle_box_arrays[lev] = ParticleBoxArray(lev);</div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)ngrid; i++) {</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>)ngrid; i++) {</div>
 <div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>            <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> tmp (<a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>{<a class="code hl_define" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM], boxes[i*AMREX_SPACEDIM+1], boxes[i*AMREX_SPACEDIM+2])},</div>
 <div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>                     <a class="code hl_typedef" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>{<a class="code hl_define" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM*2], boxes[i*AMREX_SPACEDIM*2+1], boxes[i*AMREX_SPACEDIM*2+2])});</div>
 <div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>            particle_box_arrays[lev][i] = tmp;</div>
@@ -1684,6 +1683,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac99e8f8a8b8cd43c848fd5766134e3f2"><div class="ttname"><a href="namespaceamrex.html#ac99e8f8a8b8cd43c848fd5766134e3f2">amrex::SetHDF5fapl</a></div><div class="ttdeci">static void SetHDF5fapl(hid_t fapl, MPI_Comm comm)</div><div class="ttdef"><b>Definition</b> AMReX_PlotFileUtilHDF5.cpp:111</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ada4db7db2d7be0a87a6aea2f35d62ede"><div class="ttname"><a href="namespaceamrex.html#ada4db7db2d7be0a87a6aea2f35d62ede">amrex::WriteHDF5ParticleDataSync</a></div><div class="ttdeci">void WriteHDF5ParticleDataSync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, const std::string &amp;compression, F &amp;&amp;f, bool is_checkpoint)</div><div class="ttdef"><b>Definition</b> AMReX_WriteBinaryParticleDataHDF5.H:117</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae48f3f41e4279c59d54289d0eacdd081"><div class="ttname"><a href="namespaceamrex.html#ae48f3f41e4279c59d54289d0eacdd081">amrex::ReadHDF5Attr</a></div><div class="ttdeci">static int ReadHDF5Attr(hid_t loc, const char *name, void *data, hid_t dtype)</div><div class="ttdef"><b>Definition</b> AMReX_WriteBinaryParticleDataHDF5.H:61</div></div>

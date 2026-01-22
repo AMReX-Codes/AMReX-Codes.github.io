@@ -2427,7 +2427,7 @@
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>buffersize<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_plan_get_work_buffer_size(plan,<sp/>&amp;buffersize));</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>buffer<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0fa2cdc35eb9da4a03fedf53f6484c86" kindref="member">alloc</ref>(buffersize);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>buffer<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="group__amrex__memory_1gae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0fa2cdc35eb9da4a03fedf53f6484c86" kindref="member">alloc</ref>(buffersize);</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_execution_info_set_work_buffer(execinfo,<sp/>buffer,<sp/>buffersize));</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_execution_info_set_stream(execinfo,<sp/><ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>()));</highlight></codeline>
@@ -2435,7 +2435,7 @@
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_execute(plan,<sp/>in,<sp/>out,<sp/>execinfo));</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">amrex::Gpu::streamSynchronize</ref>();</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(buffer);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__amrex__memory_1gae3d1414946b992f39ca41f135f12a0d1" kindref="member">amrex::The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(buffer);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_execution_info_destroy(execinfo));</highlight></codeline>
 <codeline lineno="125"><highlight class="normal">}</highlight></codeline>

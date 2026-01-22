@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -116,7 +110,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1DenseBins.html',''); ini
 Public Types</h2></td></tr>
 <tr class="memitem:ae914634726f075979b5e855a5fda0924" id="r_ae914634726f075979b5e855a5fda0924"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924">BinIteratorFactory</a> = <a class="el" href="structamrex_1_1DenseBinIteratorFactory.html">DenseBinIteratorFactory</a>&lt; T &gt;</td></tr>
 <tr class="separator:ae914634726f075979b5e855a5fda0924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab51eb84697fee235dac2dfe29ecfa3b" id="r_aab51eb84697fee235dac2dfe29ecfa3b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#aab51eb84697fee235dac2dfe29ecfa3b">index_type</a> = int</td></tr>
+<tr class="memitem:aab51eb84697fee235dac2dfe29ecfa3b" id="r_aab51eb84697fee235dac2dfe29ecfa3b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#aab51eb84697fee235dac2dfe29ecfa3b">index_type</a> = <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td></tr>
 <tr class="separator:aab51eb84697fee235dac2dfe29ecfa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f8a0b96ddd821e95305346715cc7f0" id="r_a00f8a0b96ddd821e95305346715cc7f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#a00f8a0b96ddd821e95305346715cc7f0">const_pointer_type</a> = std::conditional_t&lt; <a class="el" href="namespaceamrex.html#a29b0aae252a7a287f7975fa1995b0298">IsParticleTileData</a>&lt; T &gt;(), T, const T * &gt;</td></tr>
 <tr class="separator:a00f8a0b96ddd821e95305346715cc7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a97b2a646e5d6e068f0aef8827724c083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:a97b2a646e5d6e068f0aef8827724c083"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7b31f16c880c16927e8a3e2e75c6481" id="r_ac7b31f16c880c16927e8a3e2e75c6481"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ac7b31f16c880c16927e8a3e2e75c6481"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ac7b31f16c880c16927e8a3e2e75c6481">build</a> (N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, int nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
+<tr class="memitem:ac7b31f16c880c16927e8a3e2e75c6481"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ac7b31f16c880c16927e8a3e2e75c6481">build</a> (N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &amp;&amp;f)</td></tr>
 <tr class="memdesc:ac7b31f16c880c16927e8a3e2e75c6481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:ac7b31f16c880c16927e8a3e2e75c6481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b3c81f2ea39413114f239f9331f4ea" id="r_a96b3c81f2ea39413114f239f9331f4ea"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
@@ -138,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a96b3c81f2ea39413114f239f9331f4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:a96b3c81f2ea39413114f239f9331f4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64c9c267216ee519cc5ed2a8819f93b" id="r_ab64c9c267216ee519cc5ed2a8819f93b"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ab64c9c267216ee519cc5ed2a8819f93b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ab64c9c267216ee519cc5ed2a8819f93b">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1GPUBinPolicy.html">BinPolicy::GPUBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, int nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memitem:ab64c9c267216ee519cc5ed2a8819f93b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ab64c9c267216ee519cc5ed2a8819f93b">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1GPUBinPolicy.html">BinPolicy::GPUBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="memdesc:ab64c9c267216ee519cc5ed2a8819f93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:ab64c9c267216ee519cc5ed2a8819f93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73afea206e7cab0e88cdf438e9158cca" id="r_a73afea206e7cab0e88cdf438e9158cca"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
@@ -146,7 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73afea206e7cab0e88cdf438e9158cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:a73afea206e7cab0e88cdf438e9158cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3eb561a788bafe7e3e2be49d7e6327f" id="r_ac3eb561a788bafe7e3e2be49d7e6327f"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ac3eb561a788bafe7e3e2be49d7e6327f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ac3eb561a788bafe7e3e2be49d7e6327f">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html">BinPolicy::OpenMPBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, int nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memitem:ac3eb561a788bafe7e3e2be49d7e6327f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ac3eb561a788bafe7e3e2be49d7e6327f">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html">BinPolicy::OpenMPBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="memdesc:ac3eb561a788bafe7e3e2be49d7e6327f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:ac3eb561a788bafe7e3e2be49d7e6327f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad8c281e39e21d3bc66aed7f19e27640" id="r_aad8c281e39e21d3bc66aed7f19e27640"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
@@ -154,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aad8c281e39e21d3bc66aed7f19e27640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:aad8c281e39e21d3bc66aed7f19e27640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae473c8e815b04d40ff93bff59c3513d5" id="r_ae473c8e815b04d40ff93bff59c3513d5"><td class="memTemplParams" colspan="2">template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
-<tr class="memitem:ae473c8e815b04d40ff93bff59c3513d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1SerialBinPolicy.html">BinPolicy::SerialBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, int nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
+<tr class="memitem:ae473c8e815b04d40ff93bff59c3513d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ae473c8e815b04d40ff93bff59c3513d5">build</a> (<a class="el" href="structamrex_1_1BinPolicy_1_1SerialBinPolicy.html">BinPolicy::SerialBinPolicy</a>, N nitems, <a class="el" href="classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e">const_pointer_input_type</a> v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
 <tr class="memdesc:ae473c8e815b04d40ff93bff59c3513d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <br /></td></tr>
 <tr class="separator:ae473c8e815b04d40ff93bff59c3513d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad79436d29055a095ee8a8ffab36475d3" id="r_ad79436d29055a095ee8a8ffab36475d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3">numItems</a> () const noexcept</td></tr>
@@ -254,7 +248,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1DenseBins.html">amrex::DenseBins</a>&lt; T &gt;::index_type =  int</td>
+          <td class="memname">using <a class="el" href="classamrex_1_1DenseBins.html">amrex::DenseBins</a>&lt; T &gt;::index_type =  <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -433,7 +427,7 @@ template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbins</em>, </td>
         </tr>
         <tr>
@@ -591,7 +585,7 @@ template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbins</em>, </td>
         </tr>
         <tr>
@@ -749,7 +743,7 @@ template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbins</em>, </td>
         </tr>
         <tr>
@@ -895,7 +889,7 @@ template&lt;typename N , typename <a class="el" href="namespaceamrex.html#a1e470
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>nbins</em>, </td>
         </tr>
         <tr>

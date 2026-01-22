@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -203,14 +202,14 @@ $(document).ready(function(){initNavTree('AMReX__SIMD_8H_source.html',''); initR
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="comment">// same for functors (const/non-const ::operator() members)</span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1simd.html#aecb850f4517c5fdfadf86c06506366d8">  147</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">is_nth_arg_non_const</a> (R(<a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>::*)(Args...), int n)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1simd.html#aecb850f4517c5fdfadf86c06506366d8">  147</a></span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">is_nth_arg_non_const</a> (R(<a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>::*)(Args...), <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> val_arr[<span class="keyword">sizeof</span>...(Args)] {!std::is_const_v&lt;std::remove_reference_t&lt;Args&gt;&gt;...};</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> val_arr[n];</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
 </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">is_nth_arg_non_const</a> (R(<a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>::*)(Args...) const, int n)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">is_nth_arg_non_const</a> (R(<a class="code hl_enumvalue" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a>::*)(Args...) const, <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    {</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> val_arr[<span class="keyword">sizeof</span>...(Args)] {!std::is_const_v&lt;std::remove_reference_t&lt;Args&gt;&gt;...};</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> val_arr[n];</div>
@@ -235,6 +234,7 @@ $(document).ready(function(){initNavTree('AMReX__SIMD_8H_source.html',''); initR
 <div class="ttc" id="anamespaceamrex_1_1simd_html_acbc41b506c60eca5132aafb04cfbf19f"><div class="ttname"><a href="namespaceamrex_1_1simd.html#acbc41b506c60eca5132aafb04cfbf19f">amrex::simd::native_simd_size_particlereal</a></div><div class="ttdeci">constexpr auto native_simd_size_particlereal</div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:59</div></div>
 <div class="ttc" id="anamespaceamrex_1_1simd_html_add6621fecc25847a2732965c42392d93"><div class="ttname"><a href="namespaceamrex_1_1simd.html#add6621fecc25847a2732965c42392d93">amrex::simd::SIMDReal</a></div><div class="ttdeci">amrex::Real SIMDReal</div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:62</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257"><div class="ttname"><a href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">amrex::Order::C</a></div><div class="ttdeci">@ C</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="astructamrex_1_1simd_1_1Vectorized_html"><div class="ttname"><a href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a></div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:107</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

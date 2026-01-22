@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -123,14 +122,14 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Managed.html#ab8108f21fca908aa114dc2022b77b399">   18</a></span>    [[nodiscard]] <span class="keywordtype">void</span> *<span class="keyword">operator</span> <span class="keyword">new</span> (std::size_t len)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex.html#a76cc74eb7c42bf4d111ac5cae5db8420">The_Managed_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(len);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420">The_Managed_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(len);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Managed.html#ad7d60ecb610a604829583ba6bed29731">   23</a></span>    <span class="keywordtype">void</span> <span class="keyword">operator</span> <span class="keyword">delete</span> (<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (ptr) { <a class="code hl_function" href="namespaceamrex.html#a76cc74eb7c42bf4d111ac5cae5db8420">The_Managed_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(ptr); }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (ptr) { <a class="code hl_function" href="group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420">The_Managed_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(ptr); }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -146,14 +145,14 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Pinned.html#acc17a476f5c93802e46293605d5fdef3">   35</a></span>    [[nodiscard]] <span class="keywordtype">void</span> *<span class="keyword">operator</span> <span class="keyword">new</span> (std::size_t len)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(len);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(len);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Pinned.html#a041c98e27235d44f5c26d3654b588946">   40</a></span>    <span class="keywordtype">void</span> <span class="keyword">operator</span> <span class="keyword">delete</span> (<span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (ptr) { <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(ptr); }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (ptr) { <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(ptr); }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
@@ -183,7 +182,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a041e21c03012c74793a6baf0d916e587">   64</a></span>    <a class="code hl_function" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a041e21c03012c74793a6baf0d916e587">DeviceScalar</a> () {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            dp = (T*)(<a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            dp = (T*)(<a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            dp = (T*)(std::malloc(<span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
@@ -193,7 +192,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb">   72</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb">DeviceScalar</a> (T init_val) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            dp = (T*)(<a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            dp = (T*)(<a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4">Gpu::htod_memcpy</a>(dp, &amp;init_val, <span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            dp = (T*)(std::malloc(<span class="keyword">sizeof</span>(T)));</div>
@@ -205,7 +204,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c">   82</a></span>    <a class="code hl_function" href="structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c">~DeviceScalar</a> () {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_function" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(dp);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(dp);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            std::free(dp);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
@@ -322,7 +321,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">template</span> &lt;&gt;</div>
 <div class="foldopen" id="foldopen00176" data-start="{" data-end="};">
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html">  176</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1SharedMemory.html">SharedMemory</a>&lt;int&gt;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html">  176</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1SharedMemory.html">SharedMemory</a>&lt;<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
 <div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html#aac6662ec9a3cc279e1975e73d86fa440">  178</a></span>    [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">int</span>* <a class="code hl_function" href="structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html#aac6662ec9a3cc279e1975e73d86fa440">dataPtr</a> () noexcept {</div>
@@ -392,7 +391,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">template</span> &lt;&gt;</div>
 <div class="foldopen" id="foldopen00226" data-start="{" data-end="};">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html">  226</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1SharedMemory.html">SharedMemory</a>&lt;unsigned int&gt;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html">  226</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structamrex_1_1Gpu_1_1SharedMemory.html">SharedMemory</a>&lt;unsigned <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt;</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>{</div>
 <div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html#a2e790f2ebf35a4a52aaa91c448a3430b">  228</a></span>    [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* <a class="code hl_function" href="structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html#a2e790f2ebf35a4a52aaa91c448a3430b">dataPtr</a> () noexcept {</div>
@@ -461,16 +460,17 @@ $(document).ready(function(){initNavTree('AMReX__GpuMemory_8H_source.html',''); 
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:18</div></div>
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
-<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:105</div></div>
+<div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition</b> AMReX_Arena.H:124</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0c7e0730574c98febb6ddca2712cb515"><div class="ttname"><a href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">amrex::Arena::free</a></div><div class="ttdeci">virtual void free(void *pt)=0</div><div class="ttdoc">A pure virtual function for deleting the arena pointed to by pt.</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0fa2cdc35eb9da4a03fedf53f6484c86"><div class="ttname"><a href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_ga76cc74eb7c42bf4d111ac5cae5db8420"><div class="ttname"><a href="group__amrex__memory.html#ga76cc74eb7c42bf4d111ac5cae5db8420">amrex::The_Managed_Arena</a></div><div class="ttdeci">Arena * The_Managed_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:813</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html">amrex::Gpu</a></div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:55</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a7a05369cacb826ba5546b4dd507c49dd"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">amrex::Gpu::inLaunchRegion</a></div><div class="ttdeci">bool inLaunchRegion() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuControl.H:92</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aa443a27f05e81db793b131d3fc0b101c"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aa443a27f05e81db793b131d3fc0b101c">amrex::Gpu::dtoh_memcpy</a></div><div class="ttdeci">void dtoh_memcpy(void *p_h, const void *p_d, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:376</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aa720ba8e7b622f0897659c64d23d5db4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4">amrex::Gpu::htod_memcpy</a></div><div class="ttdeci">void htod_memcpy(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:368</div></div>
-<div class="ttc" id="anamespaceamrex_html_a76cc74eb7c42bf4d111ac5cae5db8420"><div class="ttname"><a href="namespaceamrex.html#a76cc74eb7c42bf4d111ac5cae5db8420">amrex::The_Managed_Arena</a></div><div class="ttdeci">Arena * The_Managed_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:813</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae3d1414946b992f39ca41f135f12a0d1"><div class="ttname"><a href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">amrex::The_Arena</a></div><div class="ttdeci">Arena * The_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:783</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Deleter_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Deleter.html">amrex::Gpu::Deleter</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:48</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Deleter_html_a14473dbba9ee1812b7e99149ab261b7e"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Deleter.html#a14473dbba9ee1812b7e99149ab261b7e">amrex::Gpu::Deleter::Deleter</a></div><div class="ttdeci">Deleter(Arena *ar) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:50</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Deleter_html_ac4f3ac6493013249d257776e80cd2c18"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Deleter.html#ac4f3ac6493013249d257776e80cd2c18">amrex::Gpu::Deleter::operator()</a></div><div class="ttdeci">void operator()(void *pt) const noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuMemory.H:51</div></div>

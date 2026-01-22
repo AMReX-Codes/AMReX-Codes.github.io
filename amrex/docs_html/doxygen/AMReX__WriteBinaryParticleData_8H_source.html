@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -697,7 +696,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        HdrFile &lt;&lt; num_output_real &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        <span class="comment">// Real component names</span></div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int) real_comp_names.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>(); ++i ) {</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) real_comp_names.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>(); ++i ) {</div>
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>            <span class="keywordflow">if</span> (write_real_comp[i]) { HdrFile &lt;&lt; real_comp_names[i] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>; }</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>        }</div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
@@ -1034,7 +1033,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>                <span class="keyword">const</span> <span class="keyword">auto</span> runtime_int_comps = ptile.NumRuntimeIntComps();</div>
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span> </div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>                new_ptile.define(runtime_real_comps, runtime_int_comps,</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>                    <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <a class="code hl_function" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>());</div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>                    <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <a class="code hl_function" href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>());</div>
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span> </div>
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>                new_ptile.resize(np);</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span> </div>
@@ -1053,7 +1052,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>    }</div>
 <div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
 <div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>    <span class="keywordtype">int</span> nic = pc.NumIntComps();</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>    <span class="keywordtype">int</span> rnames_size = (int) real_comp_names.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>    <span class="keywordtype">int</span> rnames_size = (<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) real_comp_names.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
 <div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span> </div>
 <div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>    <span class="keyword">auto</span> RD = pc.ParticleRealDescriptor;</div>
 <div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span> </div>
@@ -1284,7 +1283,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="aclassamrex_1_1ParIter__impl_html"><div class="ttname"><a href="classamrex_1_1ParIter__impl.html">amrex::ParIter_impl</a></div><div class="ttdef"><b>Definition</b> AMReX_ParIter.H:115</div></div>
 <div class="ttc" id="aclassamrex_1_1ParmParse_html"><div class="ttname"><a href="classamrex_1_1ParmParse.html">amrex::ParmParse</a></div><div class="ttdoc">Parse Parameters From Command Line and Input Files.</div><div class="ttdef"><b>Definition</b> AMReX_ParmParse.H:346</div></div>
 <div class="ttc" id="aclassamrex_1_1ParmParse_html_aa4f131652756eb9e07f7791b740f753d"><div class="ttname"><a href="classamrex_1_1ParmParse.html#aa4f131652756eb9e07f7791b740f753d">amrex::ParmParse::queryAdd</a></div><div class="ttdeci">int queryAdd(std::string_view name, T &amp;ref)</div><div class="ttdoc">If name is found, the value in the ParmParse database will be stored in the ref argument....</div><div class="ttdef"><b>Definition</b> AMReX_ParmParse.H:1040</div></div>
-<div class="ttc" id="aclassamrex_1_1PolymorphicArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1PolymorphicArenaAllocator.html">amrex::PolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:144</div></div>
+<div class="ttc" id="aclassamrex_1_1PolymorphicArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1PolymorphicArenaAllocator.html">amrex::PolymorphicArenaAllocator</a></div><div class="ttdef"><b>Definition</b> AMReX_GpuAllocators.H:150</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceData_html"><div class="ttname"><a href="classamrex_1_1ReduceData.html">amrex::ReduceData</a></div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:257</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceData_html_a2d7733b7adfa9401fdc90202486d2b54"><div class="ttname"><a href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">amrex::ReduceData::value</a></div><div class="ttdeci">Type value()</div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:289</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceOps_html"><div class="ttname"><a href="classamrex_1_1ReduceOps.html">amrex::ReduceOps</a></div><div class="ttdef"><b>Definition</b> AMReX_Reduce.H:389</div></div>
@@ -1295,6 +1294,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="aclassamrex_1_1VisMF_html_abd5a104c0daa34c33ee6c0d2d8519ed5"><div class="ttname"><a href="classamrex_1_1VisMF.html#abd5a104c0daa34c33ee6c0d2d8519ed5">amrex::VisMF::GetBarrierAfterLevel</a></div><div class="ttdeci">static bool GetBarrierAfterLevel()</div><div class="ttdef"><b>Definition</b> AMReX_VisMF.H:286</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga1bb8e83c724a2a399a0129c904b4f7bd"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a></div><div class="ttdeci">amrex_particle_real ParticleReal</div><div class="ttdoc">Floating Point Type for Particles.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:90</div></div>
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_gace9d72971c815f54ed3af5df4e615781"><div class="ttname"><a href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a></div><div class="ttdeci">amrex_long Long</div><div class="ttdef"><b>Definition</b> AMReX_INT.H:30</div></div>
+<div class="ttc" id="agroup__amrex__memory_html_gaba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="group__amrex__memory.html#gaba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:128</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga732a4be5017987f2d6edc0fcd2329301"><div class="ttname"><a href="group__amrex__mpi.html#ga732a4be5017987f2d6edc0fcd2329301">amrex::ParallelDescriptor::Barrier</a></div><div class="ttdeci">void Barrier(const std::string &amp;)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.cpp:1215</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga74104958b4151a9150e8ba537ad49bf9"><div class="ttname"><a href="group__amrex__mpi.html#ga74104958b4151a9150e8ba537ad49bf9">amrex::ParallelDescriptor::ReduceIntSum</a></div><div class="ttdeci">void ReduceIntSum(int &amp;)</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.cpp:1265</div></div>
@@ -1325,8 +1325,8 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceamrex_html_a8d9232e6959ebc50c37cb0224a4dfe1e"><div class="ttname"><a href="namespaceamrex.html#a8d9232e6959ebc50c37cb0224a4dfe1e">amrex::getInvalidRandomEngine</a></div><div class="ttdeci">RandomEngine getInvalidRandomEngine()</div><div class="ttdef"><b>Definition</b> AMReX_RandomEngine.H:86</div></div>
 <div class="ttc" id="anamespaceamrex_html_a913fd7ccf7cab45bc7d8e2a09ddd2824"><div class="ttname"><a href="namespaceamrex.html#a913fd7ccf7cab45bc7d8e2a09ddd2824">amrex::UtilCreateDirectory</a></div><div class="ttdeci">bool UtilCreateDirectory(const std::string &amp;path, mode_t mode, bool verbose=false)</div><div class="ttdoc">Creates the specified directories. path may be either a full pathname or a relative pathname....</div><div class="ttdef"><b>Definition</b> AMReX_Utility.cpp:116</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9cb2d187853bfabaaf7d74de8c950c25"><div class="ttname"><a href="namespaceamrex.html#a9cb2d187853bfabaaf7d74de8c950c25">amrex::writeDoubleData</a></div><div class="ttdeci">void writeDoubleData(const double *data, std::size_t size, std::ostream &amp;os, const RealDescriptor &amp;rd=FPC::Native64RealDescriptor())</div><div class="ttdef"><b>Definition</b> AMReX_VectorIO.cpp:126</div></div>
-<div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition</b> AMReX_Arena.cpp:823</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_adfa45855b612cc6482e004b045247bbd"><div class="ttname"><a href="namespaceamrex.html#adfa45855b612cc6482e004b045247bbd">amrex::WriteBinaryParticleDataAsync</a></div><div class="ttdeci">void WriteBinaryParticleDataAsync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, bool is_checkpoint)</div><div class="ttdef"><b>Definition</b> AMReX_WriteBinaryParticleData.H:765</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae3514c3f8c4b2a78c2ddc9b49d8cca6c"><div class="ttname"><a href="namespaceamrex.html#ae3514c3f8c4b2a78c2ddc9b49d8cca6c">amrex::ParallelForRNG</a></div><div class="ttdeci">AMREX_ATTRIBUTE_FLATTEN_FOR void ParallelForRNG(T n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:1274</div></div>

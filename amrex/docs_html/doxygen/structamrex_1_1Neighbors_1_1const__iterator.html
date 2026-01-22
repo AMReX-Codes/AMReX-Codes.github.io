@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -110,7 +104,7 @@ $(document).ready(function(){initNavTree('structamrex_1_1Neighbors_1_1const__ite
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7d63b247943c6c4debf941b3c0000e2" id="r_ac7d63b247943c6c4debf941b3c0000e2"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#ac7d63b247943c6c4debf941b3c0000e2">const_iterator</a> (int start, int stop, const unsigned int *nbor_list_ptr, const ParticleType *pstruct)</td></tr>
+<tr class="memitem:ac7d63b247943c6c4debf941b3c0000e2" id="r_ac7d63b247943c6c4debf941b3c0000e2"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#ac7d63b247943c6c4debf941b3c0000e2">const_iterator</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> start, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> stop, const unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *nbor_list_ptr, const ParticleType *pstruct)</td></tr>
 <tr class="separator:ac7d63b247943c6c4debf941b3c0000e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4255fc524a774ae4f1a2c1e0a6b111f" id="r_ab4255fc524a774ae4f1a2c1e0a6b111f"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#ab4255fc524a774ae4f1a2c1e0a6b111f">operator++</a> ()</td></tr>
 <tr class="separator:ab4255fc524a774ae4f1a2c1e0a6b111f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae524f25012949959e9a0503d6d2c6e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a14dff0a186d844cf9eecb5ad879514" id="r_a8a14dff0a186d844cf9eecb5ad879514"><td class="memItemLeft" align="right" valign="top">__host__ __device__ const ParticleType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#a8a14dff0a186d844cf9eecb5ad879514">operator*</a> () const</td></tr>
 <tr class="separator:a8a14dff0a186d844cf9eecb5ad879514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20dcb82126718dfc641038e24e2296b6" id="r_a20dcb82126718dfc641038e24e2296b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#a20dcb82126718dfc641038e24e2296b6">index</a> () const</td></tr>
+<tr class="memitem:a20dcb82126718dfc641038e24e2296b6" id="r_a20dcb82126718dfc641038e24e2296b6"><td class="memItemLeft" align="right" valign="top">__host__ __device__ unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Neighbors_1_1const__iterator.html#a20dcb82126718dfc641038e24e2296b6">index</a> () const</td></tr>
 <tr class="separator:a20dcb82126718dfc641038e24e2296b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -136,19 +130,19 @@ template&lt;class ParticleType &gt; </div>
         <tr>
           <td class="memname">__host__ __device__ <a class="el" href="structamrex_1_1Neighbors.html">amrex::Neighbors</a>&lt; ParticleType &gt;::const_iterator::const_iterator </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>stop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned int *&#160;</td>
+          <td class="paramtype">const unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *&#160;</td>
           <td class="paramname"><em>nbor_list_ptr</em>, </td>
         </tr>
         <tr>
@@ -185,7 +179,7 @@ template&lt;class ParticleType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ unsigned int <a class="el" href="structamrex_1_1Neighbors.html">amrex::Neighbors</a>&lt; ParticleType &gt;::const_iterator::index </td>
+          <td class="memname">__host__ __device__ unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1Neighbors.html">amrex::Neighbors</a>&lt; ParticleType &gt;::const_iterator::index </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -199,10 +198,10 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2 + NStructInt + this-&gt;NumIntComps(); ++ii) {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (ghost_int_comp[ii]) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            comm_size += <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            comm_size += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> ( enableInverse() ) { comm_size += 4*<span class="keyword">sizeof</span>(int); }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> ( enableInverse() ) { comm_size += 4*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>); }</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    cdata_size = comm_size;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
@@ -636,14 +635,14 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        <span class="keywordtype">int</span> data_size = np * cdata_size;</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;char&gt;</a>&amp; buffer = send_data[kv.first.proc_id];</div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        <span class="keywordtype">size_t</span> old_size = buffer.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        <span class="keywordtype">size_t</span> new_size = buffer.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>() + 4*<span class="keyword">sizeof</span>(int) + data_size;</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        <span class="keywordtype">size_t</span> new_size = buffer.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>() + 4*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) + data_size;</div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>        buffer.resize(new_size);</div>
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        <span class="keywordtype">char</span>* dst = &amp;buffer[old_size];</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>        std::memcpy(dst, &amp;(kv.first.level_id), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        std::memcpy(dst, &amp;(kv.first.grid_id ), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        std::memcpy(dst, &amp;(kv.first.tile_id ), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        std::memcpy(dst, &amp;data_size,           <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        <span class="keywordtype">size_t</span> buffer_offset = old_size + 4*<span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>        std::memcpy(dst, &amp;(kv.first.level_id), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        std::memcpy(dst, &amp;(kv.first.grid_id ), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        std::memcpy(dst, &amp;(kv.first.tile_id ), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        std::memcpy(dst, &amp;data_size,           <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>)); dst += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        <span class="keywordtype">size_t</span> buffer_offset = old_size + 4*<span class="keyword">sizeof</span>(<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span><span class="preprocessor">#pragma omp parallel for</span></div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="preprocessor">#endif</span></div>
@@ -1082,7 +1081,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>                lbx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a146940a2fab021d83f1c8d59be0f947a">grow</a>(NGhost);</div>
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span> </div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>                <span class="comment">// Store for memcpy</span></div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>                <span class="keyword">auto</span> nbins = int(lbx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>());</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>                <span class="keyword">auto</span> nbins = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(lbx.<a class="code hl_function" href="classamrex_1_1BoxND.html#a5a7273bc39d5a40bd004396852893761">numPts</a>());</div>
 <div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>                <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> lo = <a class="code hl_function" href="namespaceamrex.html#afad6a65d8f99b00c14e8de32e2806fd7">lbound</a>( lbx );</div>
 <div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>                <a class="code hl_struct" href="structamrex_1_1Dim3.html">Dim3</a> hi = <a class="code hl_function" href="namespaceamrex.html#a00ddc55986bb8cc48ba98491e5d5ba52">ubound</a>( lbx );</div>
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span> </div>
@@ -1357,7 +1356,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="ttc" id="agroup__amrex__arithmetic__types_html_ga00d9113947d2ea92bbdbfe7db24d81f2"><div class="ttname"><a href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">amrex::Real</a></div><div class="ttdeci">amrex_real Real</div><div class="ttdoc">Floating Point Type for Fields.</div><div class="ttdef"><b>Definition</b> AMReX_REAL.H:79</div></div>
 <div class="ttc" id="agroup__amrex__collectives_html_ga3f116832e254a3422729b3455b22f18c"><div class="ttname"><a href="group__amrex__collectives.html#ga3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a></div><div class="ttdeci">OutIter exclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition</b> AMReX_Scan.H:1440</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gac0f0db5587c264e8397139733225a229"><div class="ttname"><a href="group__amrex__index__space.html#gac0f0db5587c264e8397139733225a229">amrex::grow</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; grow(const BoxND&lt; dim &gt; &amp;b, int i) noexcept</div><div class="ttdoc">Grow BoxND in all directions by given amount.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1280</div></div>
-<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:25</div></div>
+<div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_ab8aadbde6a1a136b84a5b69cf01da607"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ab8aadbde6a1a136b84a5b69cf01da607">amrex::Gpu::Atomic::Add</a></div><div class="ttdeci">__host__ __device__ AMREX_FORCE_INLINE T Add(T *sum, T value) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuAtomic.H:200</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aacefe17a39734cb2475a36199ab1370b"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">amrex::Gpu::htod_memcpy_async</a></div><div class="ttdeci">void htod_memcpy_async(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuDevice.H:301</div></div>
 <div class="ttc" id="anamespaceamrex_1_1OpenMP_html_a27ed6354b68b2bd8721658a8779af032"><div class="ttname"><a href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a></div><div class="ttdeci">constexpr int get_thread_num()</div><div class="ttdef"><b>Definition</b> AMReX_OpenMP.H:37</div></div>
@@ -1371,14 +1370,15 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="ttc" id="anamespaceamrex_html_a21a1acd7c1fc44aa5ce27ab461aded41"><div class="ttname"><a href="namespaceamrex.html#a21a1acd7c1fc44aa5ce27ab461aded41">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const &amp; DistributionMap(FabArrayBase const &amp;fa)</div><div class="ttdef"><b>Definition</b> AMReX_FabArrayBase.cpp:2869</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2a6f51f01e9f0350a8b447ee451d0efb"><div class="ttname"><a href="namespaceamrex.html#a2a6f51f01e9f0350a8b447ee451d0efb">amrex::EnsureThreadSafeTiles</a></div><div class="ttdeci">void EnsureThreadSafeTiles(PC &amp;pc)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:734</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5e922fb76ff2eb645844783ad65d1490"><div class="ttname"><a href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">amrex::Box</a></div><div class="ttdeci">BoxND&lt; 3 &gt; Box</div><div class="ttdoc">Box is an alias for amrex::BoxND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:30</div></div>
-<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:21</div></div>
+<div class="ttc" id="anamespaceamrex_html_a66e2eab6a08dc06e8892a05efdc832c7"><div class="ttname"><a href="namespaceamrex.html#a66e2eab6a08dc06e8892a05efdc832c7">amrex::min</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:24</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6a67d23bf90db71610ec5144cbae8f7c"><div class="ttname"><a href="namespaceamrex.html#a6a67d23bf90db71610ec5144cbae8f7c">amrex::begin</a></div><div class="ttdeci">__host__ __device__ Dim3 begin(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2006</div></div>
 <div class="ttc" id="anamespaceamrex_html_a76fbe1062cee2e63648f5a448ea82ea4"><div class="ttname"><a href="namespaceamrex.html#a76fbe1062cee2e63648f5a448ea82ea4">amrex::shift</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; shift(const BoxND&lt; dim &gt; &amp;b, int dir, int nzones) noexcept</div><div class="ttdoc">Return a BoxND with indices shifted by nzones in dir direction.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1495</div></div>
 <div class="ttc" id="anamespaceamrex_html_a95101764f5ec64cd1dd6e55614702cdb"><div class="ttname"><a href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; 3 &gt; IntVect</div><div class="ttdoc">IntVect is an alias for amrex::IntVectND instantiated with AMREX_SPACEDIM.</div><div class="ttdef"><b>Definition</b> AMReX_BaseFwd.H:33</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_html_a9d99cb1523b9f336dad742f6a15bdf59"><div class="ttname"><a href="namespaceamrex.html#a9d99cb1523b9f336dad742f6a15bdf59">amrex::max</a></div><div class="ttdeci">__host__ __device__ constexpr const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Algorithm.H:44</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac8512b687a529806d0f382cf7c9eee97"><div class="ttname"><a href="namespaceamrex.html#ac8512b687a529806d0f382cf7c9eee97">amrex::SameIteratorsOK</a></div><div class="ttdeci">bool SameIteratorsOK(const PC1 &amp;pc1, const PC2 &amp;pc2)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:722</div></div>
 <div class="ttc" id="anamespaceamrex_html_acad483c5f0e30f9cd471ad05e1920320"><div class="ttname"><a href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">amrex::numParticlesOutOfRange</a></div><div class="ttdeci">int numParticlesOutOfRange(Iterator const &amp;pti, int nGrow)</div><div class="ttdoc">Returns the number of particles that are more than nGrow cells from the box correspond to the input i...</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.H:34</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e9cbb8f28bbbba7378ec7bf4654b89"><div class="ttname"><a href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">amrex::computeRefFac</a></div><div class="ttdeci">IntVect computeRefFac(const ParGDBBase *a_gdb, int src_lev, int lev)</div><div class="ttdef"><b>Definition</b> AMReX_ParticleUtil.cpp:6</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc731523d4241d981e7279b29c5d7a6d"><div class="ttname"><a href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a></div><div class="ttdeci">void RemoveDuplicates(Vector&lt; T &gt; &amp;vec)</div><div class="ttdef"><b>Definition</b> AMReX_Vector.H:211</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae25fd282035e5bd6ae581c49f7bd0111"><div class="ttname"><a href="namespaceamrex.html#ae25fd282035e5bd6ae581c49f7bd0111">amrex::end</a></div><div class="ttdeci">__host__ __device__ Dim3 end(BoxND&lt; dim &gt; const &amp;box) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:2015</div></div>

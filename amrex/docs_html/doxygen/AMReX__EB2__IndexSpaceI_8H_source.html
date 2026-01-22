@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,6 +41,22 @@
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -180,7 +179,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IndexSpaceI_8H_source.html
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      m_num_coarsen_opt(num_coarsen_opt)</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> nlevels = int(geom.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> nlevels = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(geom.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    m_gslevel.reserve(nlevels);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; nlevels; ++ilev)</div>
@@ -254,7 +253,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IndexSpaceI_8H_source.html
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span> (num_new_coarse_levels &lt;= 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">auto</span> nlevs_old = int(m_gslevel.size());</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">auto</span> nlevs_old = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(m_gslevel.size());</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">int</span> nlevs_new = nlevs_old + num_new_coarse_levels;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;GShopLevel&lt;G&gt;</a>&gt; new_gslevel;</div>
@@ -300,7 +299,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IndexSpaceI_8H_source.html
 <div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classamrex_1_1EB2_1_1IndexSpaceImp.html#ae4467aff16a7f41a2e985fd833d36130">  184</a></span><a class="code hl_function" href="classamrex_1_1EB2_1_1IndexSpaceImp.html#ae4467aff16a7f41a2e985fd833d36130">IndexSpaceImp&lt;G&gt;::setShift</a> (<span class="keywordtype">int</span> direction, <span class="keywordtype">int</span> ncells)</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">auto</span> nlevs = int(m_gslevel.size());</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">auto</span> nlevs = <a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(m_gslevel.size());</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = nlevs-1; ilev &gt;= 0; --ilev) {</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        m_gslevel[ilev].setShift(direction, ncells);</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        ncells *= 2;</div>
@@ -325,6 +324,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IndexSpaceI_8H_source.html
 <div class="ttc" id="agroup__amrex__index__space_html_ga5af1ac4b7471ba90a59e111dd0dd2b22"><div class="ttname"><a href="group__amrex__index__space.html#ga5af1ac4b7471ba90a59e111dd0dd2b22">amrex::coarsen</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; coarsen(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Coarsen BoxND by given (positive) coarsening ratio.</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1409</div></div>
 <div class="ttc" id="agroup__amrex__index__space_html_gae102526cec1dc978897cc1d9a4ebae65"><div class="ttname"><a href="group__amrex__index__space.html#gae102526cec1dc978897cc1d9a4ebae65">amrex::refine</a></div><div class="ttdeci">__host__ __device__ BoxND&lt; dim &gt; refine(const BoxND&lt; dim &gt; &amp;b, int ref_ratio) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_Box.H:1459</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:230</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.cpp:1664</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

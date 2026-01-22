@@ -3011,7 +3011,7 @@
 <codeline lineno="733"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="734"><highlight class="normal">STLtools::build_bvh<sp/>(Triangle*<sp/><ref refid="namespaceamrex_1a6a67d23bf90db71610ec5144cbae8f7c" kindref="member">begin</ref>,<sp/>Triangle*<sp/><ref refid="namespaceamrex_1ae25fd282035e5bd6ae581c49f7bd0111" kindref="member">end</ref>,<sp/>Gpu::PinnedVector&lt;Node&gt;&amp;<sp/>bvh_nodes)</highlight></codeline>
 <codeline lineno="735"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ntri<sp/>=<sp/>int(<ref refid="namespaceamrex_1ae25fd282035e5bd6ae581c49f7bd0111" kindref="member">end</ref><sp/>-<sp/><ref refid="namespaceamrex_1a6a67d23bf90db71610ec5144cbae8f7c" kindref="member">begin</ref>);</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ntri<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(<ref refid="namespaceamrex_1ae25fd282035e5bd6ae581c49f7bd0111" kindref="member">end</ref><sp/>-<sp/><ref refid="namespaceamrex_1a6a67d23bf90db71610ec5144cbae8f7c" kindref="member">begin</ref>);</highlight></codeline>
 <codeline lineno="737"><highlight class="normal"></highlight></codeline>
 <codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ntri<sp/>&lt;=<sp/><ref refid="classamrex_1_1STLtools_1a2e7418a1e57f61cf7154c966f5ced655" kindref="member">m_bvh_max_size</ref>)<sp/>{</highlight></codeline>
 <codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>leaf<sp/>node</highlight><highlight class="normal"></highlight></codeline>
@@ -3041,7 +3041,7 @@
 <codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bbox.setLo(idim,bbox.lo(idim)-sml);</highlight></codeline>
 <codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bbox.setHi(idim,bbox.hi(idim)+sml);</highlight></codeline>
 <codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.ntriangles<sp/>=<sp/>int(ntri);<sp/></highlight><highlight class="comment">//<sp/>NOLINT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.ntriangles<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(ntri);<sp/></highlight><highlight class="comment">//<sp/>NOLINT</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"></highlight></codeline>
@@ -3073,7 +3073,7 @@
 <codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tbegin<sp/>=<sp/>isplit<sp/>*<sp/>tsize<sp/>+<sp/>nleft;</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tend<sp/>=<sp/>tbegin<sp/>+<sp/>tsize;</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvh_nodes[this_node].children[isplit]<sp/>=<sp/>int(bvh_nodes.size());</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvh_nodes[this_node].children[isplit]<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(bvh_nodes.size());</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>build_bvh(<ref refid="namespaceamrex_1a6a67d23bf90db71610ec5144cbae8f7c" kindref="member">begin</ref>+tbegin,<sp/><ref refid="namespaceamrex_1a6a67d23bf90db71610ec5144cbae8f7c" kindref="member">begin</ref>+tend,<sp/>bvh_nodes);</highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"></highlight></codeline>

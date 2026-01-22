@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -139,18 +133,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c" id="r_af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value &amp;&amp;std::is_base_of_v&lt; <a class="el" href="classamrex_1_1PolymorphicArenaAllocator.html">PolymorphicArenaAllocator</a>&lt; typename Buffer::value_type &gt;, Buffer &gt;, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c" id="r_af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value &amp;&amp;std::is_base_of_v&lt; <a class="el" href="classamrex_1_1PolymorphicArenaAllocator.html">PolymorphicArenaAllocator</a>&lt; typename Buffer::value_type &gt;, Buffer &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">amrex::packBuffer</a> (const PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyOp.html">ParticleCopyOp</a> &amp;op, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;snd_buffer)</td></tr>
 <tr class="separator:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af15f18636fe4b15834eac2c9b303fcbd" id="r_af15f18636fe4b15834eac2c9b303fcbd"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af15f18636fe4b15834eac2c9b303fcbd" id="r_af15f18636fe4b15834eac2c9b303fcbd"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:af15f18636fe4b15834eac2c9b303fcbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af15f18636fe4b15834eac2c9b303fcbd">amrex::unpackBuffer</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const Buffer &amp;snd_buffer, UnpackPolicy const &amp;policy)</td></tr>
 <tr class="separator:af15f18636fe4b15834eac2c9b303fcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1798b9b2e1585609dcc68430ad8502e5" id="r_a1798b9b2e1585609dcc68430ad8502e5"><td class="memTemplParams" colspan="2">template&lt;class PC , class SndBuffer , class RcvBuffer , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a1798b9b2e1585609dcc68430ad8502e5" id="r_a1798b9b2e1585609dcc68430ad8502e5"><td class="memTemplParams" colspan="2">template&lt;class PC , class SndBuffer , class RcvBuffer , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a1798b9b2e1585609dcc68430ad8502e5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5">amrex::communicateParticlesStart</a> (const PC &amp;pc, <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const SndBuffer &amp;snd_buffer, RcvBuffer &amp;rcv_buffer)</td></tr>
 <tr class="separator:a1798b9b2e1585609dcc68430ad8502e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814322d519ae32014737504164a0516b" id="r_a814322d519ae32014737504164a0516b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">amrex::communicateParticlesFinish</a> (const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan)</td></tr>
 <tr class="separator:a814322d519ae32014737504164a0516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2930ae07976c9845d80d458c323eff2b" id="r_a2930ae07976c9845d80d458c323eff2b"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a2930ae07976c9845d80d458c323eff2b" id="r_a2930ae07976c9845d80d458c323eff2b"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsParticleContainer.html">IsParticleContainer</a>&lt; PC &gt;::value, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a2930ae07976c9845d80d458c323eff2b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2930ae07976c9845d80d458c323eff2b">amrex::unpackRemotes</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;rcv_buffer, UnpackPolicy const &amp;policy)</td></tr>
 <tr class="separator:a2930ae07976c9845d80d458c323eff2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

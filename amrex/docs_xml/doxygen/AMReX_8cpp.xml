@@ -8,7 +8,7 @@
     <includes refid="AMReX__BaseFab_8H" local="no">AMReX_BaseFab.H</includes>
     <includes refid="AMReX__Box_8H" local="no">AMReX_Box.H</includes>
     <includes refid="AMReX__BLProfiler_8H" local="no">AMReX_BLProfiler.H</includes>
-    <includes refid="AMReX__BLFort_8H" local="no">AMReX_BLFort.H</includes>
+    <includes local="no">AMReX_BLFort.H</includes>
     <includes refid="AMReX__Utility_8H" local="no">AMReX_Utility.H</includes>
     <includes refid="AMReX__Random_8H" local="no">AMReX_Random.H</includes>
     <includes refid="AMReX__Print_8H" local="no">AMReX_Print.H</includes>
@@ -296,20 +296,6 @@
         <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="42" relation="include">
-        </childnode>
-      </node>
-      <node id="139">
-        <label>AMReX_BLFort.H</label>
-        <link refid="AMReX__BLFort_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="56" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
         </childnode>
       </node>
       <node id="52">
@@ -2544,6 +2530,9 @@
         <childnode refid="171" relation="include">
         </childnode>
       </node>
+      <node id="139">
+        <label>AMReX_BLFort.H</label>
+      </node>
       <node id="3">
         <label>AMReX_Config.H</label>
       </node>
@@ -2729,7 +2718,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BaseFab_8H" kindref="compound">AMReX_BaseFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Box_8H" kindref="compound">AMReX_Box.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLProfiler_8H" kindref="compound">AMReX_BLProfiler.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLFort_8H" kindref="compound">AMReX_BLFort.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_BLFort.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Utility_8H" kindref="compound">AMReX_Utility.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Random_8H" kindref="compound">AMReX_Random.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Print_8H" kindref="compound">AMReX_Print.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -2864,7 +2853,7 @@
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::streamsize<sp/><sp/>prev_out_precision;</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>std::streamsize<sp/><sp/>prev_err_precision;</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::new_handler<sp/>prev_new_handler;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SignalHandler<sp/>=<sp/>void<sp/>(*)(int);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">SignalHandler<sp/>=<sp/>void<sp/>(*)(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>SignalHandler<sp/>prev_handler_sigsegv<sp/>=<sp/>SIG_ERR;<sp/></highlight><highlight class="comment">//<sp/>NOLINT(performance-no-int-to-ptr)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>SignalHandler<sp/>prev_handler_sigterm<sp/>=<sp/>SIG_ERR;<sp/></highlight><highlight class="comment">//<sp/>NOLINT(performance-no-int-to-ptr)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>SignalHandler<sp/>prev_handler_sigint<sp/><sp/>=<sp/>SIG_ERR;<sp/></highlight><highlight class="comment">//<sp/>NOLINT(performance-no-int-to-ptr)</highlight><highlight class="normal"></highlight></codeline>
@@ -3248,7 +3237,7 @@
 <codeline lineno="523"><highlight class="normal"></highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>warn<sp/>if<sp/>over-subscription<sp/>is<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(system::verbose<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ncores<sp/>=<sp/>int(std::thread::hardware_concurrency());</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ncores<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(std::thread::hardware_concurrency());</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ncores<sp/>!=<sp/>0<sp/>&amp;&amp;<sp/></highlight><highlight class="comment">//<sp/>It<sp/>might<sp/>be<sp/>zero<sp/>according<sp/>to<sp/>the<sp/>C++<sp/>standard.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncores<sp/>&lt;<sp/>omp_get_max_threads()<sp/>*<sp/>ParallelDescriptor::NProcsPerNode())</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>

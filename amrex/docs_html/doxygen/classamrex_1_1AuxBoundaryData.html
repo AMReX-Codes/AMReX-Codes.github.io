@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -112,7 +106,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1AuxBoundaryData.html',''
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b5415ca169dd90533b657a02f92a9f8" id="r_a8b5415ca169dd90533b657a02f92a9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a8b5415ca169dd90533b657a02f92a9f8">AuxBoundaryData</a> () noexcept=default</td></tr>
 <tr class="separator:a8b5415ca169dd90533b657a02f92a9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7b3f6a0fdcc3134eaf1f7e391dade2c" id="r_aa7b3f6a0fdcc3134eaf1f7e391dade2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#aa7b3f6a0fdcc3134eaf1f7e391dade2c">AuxBoundaryData</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, int n_grow, int n_comp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memitem:aa7b3f6a0fdcc3134eaf1f7e391dade2c" id="r_aa7b3f6a0fdcc3134eaf1f7e391dade2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#aa7b3f6a0fdcc3134eaf1f7e391dade2c">AuxBoundaryData</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_grow, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_comp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="separator:aa7b3f6a0fdcc3134eaf1f7e391dade2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a51a0574a3267e4f1aa0b22bf715704" id="r_a6a51a0574a3267e4f1aa0b22bf715704"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a6a51a0574a3267e4f1aa0b22bf715704">~AuxBoundaryData</a> ()=default</td></tr>
 <tr class="separator:a6a51a0574a3267e4f1aa0b22bf715704"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,15 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a65c5b732c8e03ddfff38b490272e0de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac83ef8e0307e3ad5ca7092f1df1c2e6a" id="r_ac83ef8e0307e3ad5ca7092f1df1c2e6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1AuxBoundaryData.html">AuxBoundaryData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#ac83ef8e0307e3ad5ca7092f1df1c2e6a">operator=</a> (const <a class="el" href="classamrex_1_1AuxBoundaryData.html">AuxBoundaryData</a> &amp;rhs)=delete</td></tr>
 <tr class="separator:ac83ef8e0307e3ad5ca7092f1df1c2e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac289f6ec7b3848f94720ffba4cd39a76" id="r_ac289f6ec7b3848f94720ffba4cd39a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#ac289f6ec7b3848f94720ffba4cd39a76">copyTo</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;destmf, int src_comp, int dst_comp, int num_comp) const</td></tr>
+<tr class="memitem:ac289f6ec7b3848f94720ffba4cd39a76" id="r_ac289f6ec7b3848f94720ffba4cd39a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#ac289f6ec7b3848f94720ffba4cd39a76">copyTo</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;destmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dst_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp) const</td></tr>
 <tr class="separator:ac289f6ec7b3848f94720ffba4cd39a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba4934644585eb4489fc3447b7e4929" id="r_abba4934644585eb4489fc3447b7e4929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#abba4934644585eb4489fc3447b7e4929">copyFrom</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;srcmf, int src_comp, int dst_comp, int num_comp, int src_ng=0)</td></tr>
+<tr class="memitem:abba4934644585eb4489fc3447b7e4929" id="r_abba4934644585eb4489fc3447b7e4929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#abba4934644585eb4489fc3447b7e4929">copyFrom</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;srcmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dst_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_ng=0)</td></tr>
 <tr class="separator:abba4934644585eb4489fc3447b7e4929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a519b6701a280d495aeca13774cf2eaff" id="r_a519b6701a280d495aeca13774cf2eaff"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a519b6701a280d495aeca13774cf2eaff">size</a> () const noexcept</td></tr>
 <tr class="separator:a519b6701a280d495aeca13774cf2eaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd51101e9b6211f1206fa31aaff6be5c" id="r_afd51101e9b6211f1206fa31aaff6be5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#afd51101e9b6211f1206fa31aaff6be5c">copy</a> (const <a class="el" href="classamrex_1_1AuxBoundaryData.html">AuxBoundaryData</a> &amp;src, int src_comp, int dst_comp, int num_comp)</td></tr>
+<tr class="memitem:afd51101e9b6211f1206fa31aaff6be5c" id="r_afd51101e9b6211f1206fa31aaff6be5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#afd51101e9b6211f1206fa31aaff6be5c">copy</a> (const <a class="el" href="classamrex_1_1AuxBoundaryData.html">AuxBoundaryData</a> &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dst_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp)</td></tr>
 <tr class="separator:afd51101e9b6211f1206fa31aaff6be5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad17a298eb14ef7246d67207d5bf185d6" id="r_ad17a298eb14ef7246d67207d5bf185d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#ad17a298eb14ef7246d67207d5bf185d6">initialize</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, int n_grow, int n_comp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
+<tr class="memitem:ad17a298eb14ef7246d67207d5bf185d6" id="r_ad17a298eb14ef7246d67207d5bf185d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#ad17a298eb14ef7246d67207d5bf185d6">initialize</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;ba, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_grow, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_comp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="separator:ad17a298eb14ef7246d67207d5bf185d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a277e845e58cb7440c31a78c329af581b" id="r_a277e845e58cb7440c31a78c329af581b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a277e845e58cb7440c31a78c329af581b">equivBoxArray</a> () const noexcept</td></tr>
 <tr class="separator:a277e845e58cb7440c31a78c329af581b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,9 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abcaf5c33fa9fe28997ac2c942c252aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43aa03eb7d3b1f2cd992bcfb74af4516" id="r_a43aa03eb7d3b1f2cd992bcfb74af4516"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a43aa03eb7d3b1f2cd992bcfb74af4516">operator[]</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi) const noexcept</td></tr>
 <tr class="separator:a43aa03eb7d3b1f2cd992bcfb74af4516"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa575e613f17587f4fb2be665cd56d223" id="r_aa575e613f17587f4fb2be665cd56d223"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#aa575e613f17587f4fb2be665cd56d223">nGrow</a> () const noexcept</td></tr>
+<tr class="memitem:aa575e613f17587f4fb2be665cd56d223" id="r_aa575e613f17587f4fb2be665cd56d223"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#aa575e613f17587f4fb2be665cd56d223">nGrow</a> () const noexcept</td></tr>
 <tr class="separator:aa575e613f17587f4fb2be665cd56d223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c8a9f3dc2f7f55bcb0d82f15896937a" id="r_a1c8a9f3dc2f7f55bcb0d82f15896937a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a1c8a9f3dc2f7f55bcb0d82f15896937a">nComp</a> () const noexcept</td></tr>
+<tr class="memitem:a1c8a9f3dc2f7f55bcb0d82f15896937a" id="r_a1c8a9f3dc2f7f55bcb0d82f15896937a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a1c8a9f3dc2f7f55bcb0d82f15896937a">nComp</a> () const noexcept</td></tr>
 <tr class="separator:a1c8a9f3dc2f7f55bcb0d82f15896937a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a415110b766cde3c64f3f61d8a54787b6" id="r_a415110b766cde3c64f3f61d8a54787b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AuxBoundaryData.html#a415110b766cde3c64f3f61d8a54787b6">isEmpty</a> () const noexcept</td></tr>
 <tr class="separator:a415110b766cde3c64f3f61d8a54787b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,13 +186,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_grow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_comp</em>, </td>
         </tr>
         <tr>
@@ -302,19 +296,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dst_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>num_comp</em>&#160;</td>
         </tr>
         <tr>
@@ -342,25 +336,25 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dst_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_ng</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -388,19 +382,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>src_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>dst_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>num_comp</em>&#160;</td>
         </tr>
         <tr>
@@ -478,13 +472,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_grow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n_comp</em>, </td>
         </tr>
         <tr>
@@ -538,7 +532,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AuxBoundaryData::nComp </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AuxBoundaryData::nComp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -563,7 +557,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::AuxBoundaryData::nGrow </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::AuxBoundaryData::nGrow </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

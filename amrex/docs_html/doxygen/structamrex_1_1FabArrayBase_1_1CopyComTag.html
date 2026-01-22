@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -117,14 +111,14 @@ $(document).ready(function(){initNavTree('structamrex_1_1FabArrayBase_1_1CopyCom
 Public Types</h2></td></tr>
 <tr class="memitem:a6dba1d21f107ff1f8815e368aa1fb091" id="r_a6dba1d21f107ff1f8815e368aa1fb091"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091">CopyComTagsContainer</a> = std::vector&lt; <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html">CopyComTag</a> &gt;</td></tr>
 <tr class="separator:a6dba1d21f107ff1f8815e368aa1fb091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6a08f61ef40bcb043383a5000ea028e" id="r_ae6a08f61ef40bcb043383a5000ea028e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e">MapOfCopyComTagContainers</a> = std::map&lt; int, <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091">CopyComTagsContainer</a> &gt;</td></tr>
+<tr class="memitem:ae6a08f61ef40bcb043383a5000ea028e" id="r_ae6a08f61ef40bcb043383a5000ea028e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e">MapOfCopyComTagContainers</a> = std::map&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091">CopyComTagsContainer</a> &gt;</td></tr>
 <tr class="separator:ae6a08f61ef40bcb043383a5000ea028e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dae3d0ab480401c6bca671a7b33aeb0" id="r_a1dae3d0ab480401c6bca671a7b33aeb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1dae3d0ab480401c6bca671a7b33aeb0">CopyComTag</a> () noexcept=default</td></tr>
 <tr class="separator:a1dae3d0ab480401c6bca671a7b33aeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae121ffe428388c574820f65530cdd113" id="r_ae121ffe428388c574820f65530cdd113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae121ffe428388c574820f65530cdd113">CopyComTag</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;db, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;sb, int didx, int sidx) noexcept</td></tr>
+<tr class="memitem:ae121ffe428388c574820f65530cdd113" id="r_ae121ffe428388c574820f65530cdd113"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae121ffe428388c574820f65530cdd113">CopyComTag</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;db, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;sb, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> didx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> sidx) noexcept</td></tr>
 <tr class="separator:ae121ffe428388c574820f65530cdd113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b3953bf7e65f41e79d25acef114bde7" id="r_a8b3953bf7e65f41e79d25acef114bde7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a8b3953bf7e65f41e79d25acef114bde7">operator&lt;</a> (const <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html">CopyComTag</a> &amp;rhs) const noexcept</td></tr>
 <tr class="separator:a8b3953bf7e65f41e79d25acef114bde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,9 +129,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa4ad873f80c114d0041fd4c30d9fbe94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8df51daf5ac3a9d20522cfdb6ab004" id="r_a1c8df51daf5ac3a9d20522cfdb6ab004"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004">sbox</a></td></tr>
 <tr class="separator:a1c8df51daf5ac3a9d20522cfdb6ab004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc0d662cdc63c3e99f4c114dc3ac266f" id="r_abc0d662cdc63c3e99f4c114dc3ac266f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#abc0d662cdc63c3e99f4c114dc3ac266f">dstIndex</a></td></tr>
+<tr class="memitem:abc0d662cdc63c3e99f4c114dc3ac266f" id="r_abc0d662cdc63c3e99f4c114dc3ac266f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#abc0d662cdc63c3e99f4c114dc3ac266f">dstIndex</a></td></tr>
 <tr class="separator:abc0d662cdc63c3e99f4c114dc3ac266f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03667cd08814ea67d8fc2170a93a07c" id="r_aa03667cd08814ea67d8fc2170a93a07c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c">srcIndex</a></td></tr>
+<tr class="memitem:aa03667cd08814ea67d8fc2170a93a07c" id="r_aa03667cd08814ea67d8fc2170a93a07c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c">srcIndex</a></td></tr>
 <tr class="separator:aa03667cd08814ea67d8fc2170a93a07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -164,7 +158,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e">amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers</a> =  std::map&lt;int,<a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091">CopyComTagsContainer</a>&gt;</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae6a08f61ef40bcb043383a5000ea028e">amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers</a> =  std::map&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>,<a class="el" href="structamrex_1_1FabArrayBase_1_1CopyComTag.html#a6dba1d21f107ff1f8815e368aa1fb091">CopyComTagsContainer</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,13 +215,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>didx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>sidx</em>&#160;</td>
         </tr>
         <tr>
@@ -294,7 +288,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::FabArrayBase::CopyComTag::dstIndex</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::FabArrayBase::CopyComTag::dstIndex</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -322,7 +316,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int amrex::FabArrayBase::CopyComTag::srcIndex</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::FabArrayBase::CopyComTag::srcIndex</td>
         </tr>
       </table>
 </div><div class="memdoc">

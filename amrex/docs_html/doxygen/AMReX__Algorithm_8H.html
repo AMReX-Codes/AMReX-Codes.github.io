@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -140,15 +134,19 @@ Functions</h2></td></tr>
 <tr class="separator:aefa062243bd4a4215308cd1b27aea98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ef71de20b680abfb05fddbe1e4ace7" id="r_af4ef71de20b680abfb05fddbe1e4ace7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:af4ef71de20b680abfb05fddbe1e4ace7"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af4ef71de20b680abfb05fddbe1e4ace7">amrex::elemwiseMin</a> (T const &amp;a, T const &amp;b) noexcept</td></tr>
+<tr class="memdesc:af4ef71de20b680abfb05fddbe1e4ace7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element-wise minimum of the given values for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>.  <br /></td></tr>
 <tr class="separator:af4ef71de20b680abfb05fddbe1e4ace7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8055ba6e4c232b9dcfa2a759ef4b7787" id="r_a8055ba6e4c232b9dcfa2a759ef4b7787"><td class="memTemplParams" colspan="2">template&lt;class T , class ... Ts&gt; </td></tr>
 <tr class="memitem:a8055ba6e4c232b9dcfa2a759ef4b7787"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8055ba6e4c232b9dcfa2a759ef4b7787">amrex::elemwiseMin</a> (const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</td></tr>
+<tr class="memdesc:a8055ba6e4c232b9dcfa2a759ef4b7787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element-wise minimum of the given values for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>.  <br /></td></tr>
 <tr class="separator:a8055ba6e4c232b9dcfa2a759ef4b7787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d850a6aec956259d9fbc1ef06e9722" id="r_a55d850a6aec956259d9fbc1ef06e9722"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a55d850a6aec956259d9fbc1ef06e9722"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a55d850a6aec956259d9fbc1ef06e9722">amrex::elemwiseMax</a> (T const &amp;a, T const &amp;b) noexcept</td></tr>
+<tr class="memdesc:a55d850a6aec956259d9fbc1ef06e9722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element-wise maximum of the given values for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>.  <br /></td></tr>
 <tr class="separator:a55d850a6aec956259d9fbc1ef06e9722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae38a1a3fcd8702295c3f64d87cd056b8" id="r_ae38a1a3fcd8702295c3f64d87cd056b8"><td class="memTemplParams" colspan="2">template&lt;class T , class ... Ts&gt; </td></tr>
 <tr class="memitem:ae38a1a3fcd8702295c3f64d87cd056b8"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae38a1a3fcd8702295c3f64d87cd056b8">amrex::elemwiseMax</a> (const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</td></tr>
+<tr class="memdesc:ae38a1a3fcd8702295c3f64d87cd056b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element-wise maximum of the given values for types like <a class="el" href="structamrex_1_1XDim3.html">XDim3</a>.  <br /></td></tr>
 <tr class="separator:ae38a1a3fcd8702295c3f64d87cd056b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c182abe7695240cd35e1ba3d4477758" id="r_a1c182abe7695240cd35e1ba3d4477758"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1c182abe7695240cd35e1ba3d4477758"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1c182abe7695240cd35e1ba3d4477758">amrex::Swap</a> (T &amp;t1, T &amp;t2) noexcept</td></tr>
@@ -157,28 +155,35 @@ Functions</h2></td></tr>
 <tr class="memitem:a61fd7da0bbaba8c15a54fab7356ef1db"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a61fd7da0bbaba8c15a54fab7356ef1db">amrex::Clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
 <tr class="separator:a61fd7da0bbaba8c15a54fab7356ef1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8defcf36ddf219cae1fed871e05e78e3" id="r_a8defcf36ddf219cae1fed871e05e78e3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a8defcf36ddf219cae1fed871e05e78e3"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8defcf36ddf219cae1fed871e05e78e3">amrex::almostEqual</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, int ulp=2)</td></tr>
+<tr class="memitem:a8defcf36ddf219cae1fed871e05e78e3"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8defcf36ddf219cae1fed871e05e78e3">amrex::almostEqual</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">y</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ulp=2)</td></tr>
 <tr class="separator:a8defcf36ddf219cae1fed871e05e78e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00bdafca20ac708320d704d4da6976f0" id="r_a00bdafca20ac708320d704d4da6976f0"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, int &gt; FOO = 0&gt; </td></tr>
-<tr class="memitem:a00bdafca20ac708320d704d4da6976f0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex::bisect</a> (T lo, T hi, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> f, T tol=1e-12, int max_iter=100)</td></tr>
+<tr class="memitem:a00bdafca20ac708320d704d4da6976f0" id="r_a00bdafca20ac708320d704d4da6976f0"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:a00bdafca20ac708320d704d4da6976f0"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00bdafca20ac708320d704d4da6976f0">amrex::bisect</a> (T lo, T hi, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> f, T tol=1e-12, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter=100)</td></tr>
+<tr class="memdesc:a00bdafca20ac708320d704d4da6976f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a root of a scalar function on a bracketing interval using bisection.  <br /></td></tr>
 <tr class="separator:a00bdafca20ac708320d704d4da6976f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d59f8eb44002bb99f5b72dc715f9e96" id="r_a7d59f8eb44002bb99f5b72dc715f9e96"><td class="memTemplParams" colspan="2">template&lt;typename T , typename I , std::enable_if_t&lt; std::is_integral_v&lt; I &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a7d59f8eb44002bb99f5b72dc715f9e96" id="r_a7d59f8eb44002bb99f5b72dc715f9e96"><td class="memTemplParams" colspan="2">template&lt;typename T , typename I , std::enable_if_t&lt; std::is_integral_v&lt; I &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a7d59f8eb44002bb99f5b72dc715f9e96"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ I&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7d59f8eb44002bb99f5b72dc715f9e96">amrex::bisect</a> (T const *d, I lo, I hi, T const &amp;v)</td></tr>
+<tr class="memdesc:a7d59f8eb44002bb99f5b72dc715f9e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the index of the interval containing a value in a sorted array.  <br /></td></tr>
 <tr class="separator:a7d59f8eb44002bb99f5b72dc715f9e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a1ab0a65a603d33befa6ab7ab2f6ee1" id="r_a0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType &gt; </td></tr>
 <tr class="memitem:a0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ ItType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0a1ab0a65a603d33befa6ab7ab2f6ee1">amrex::upper_bound</a> (ItType first, ItType last, const ValType &amp;val)</td></tr>
+<tr class="memdesc:a0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first element greater than a given value.  <br /></td></tr>
 <tr class="separator:a0a1ab0a65a603d33befa6ab7ab2f6ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d70f9830e9b3e4debf25ae90e125f14" id="r_a6d70f9830e9b3e4debf25ae90e125f14"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType &gt; </td></tr>
 <tr class="memitem:a6d70f9830e9b3e4debf25ae90e125f14"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ ItType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6d70f9830e9b3e4debf25ae90e125f14">amrex::lower_bound</a> (ItType first, ItType last, const ValType &amp;val)</td></tr>
+<tr class="memdesc:a6d70f9830e9b3e4debf25ae90e125f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first element not less than a given value.  <br /></td></tr>
 <tr class="separator:a6d70f9830e9b3e4debf25ae90e125f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae14af77635298b20192e1a355acf43b2" id="r_ae14af77635298b20192e1a355acf43b2"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType , std::enable_if_t&lt; std::is_floating_point_v&lt; typename std::iterator_traits&lt; ItType &gt;::value_type &gt; &amp;&amp;std::is_floating_point_v&lt; ValType &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ae14af77635298b20192e1a355acf43b2" id="r_ae14af77635298b20192e1a355acf43b2"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType , std::enable_if_t&lt; std::is_floating_point_v&lt; typename std::iterator_traits&lt; ItType &gt;::value_type &gt; &amp;&amp;std::is_floating_point_v&lt; ValType &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ae14af77635298b20192e1a355acf43b2"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae14af77635298b20192e1a355acf43b2">amrex::linspace</a> (ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop)</td></tr>
+<tr class="memdesc:ae14af77635298b20192e1a355acf43b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a range with linearly spaced values over a closed interval.  <br /></td></tr>
 <tr class="separator:ae14af77635298b20192e1a355acf43b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4094518716f4e3a78ead5bb32b682b6" id="r_ac4094518716f4e3a78ead5bb32b682b6"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType , std::enable_if_t&lt; std::is_floating_point_v&lt; typename std::iterator_traits&lt; ItType &gt;::value_type &gt; &amp;&amp;std::is_floating_point_v&lt; ValType &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ac4094518716f4e3a78ead5bb32b682b6" id="r_ac4094518716f4e3a78ead5bb32b682b6"><td class="memTemplParams" colspan="2">template&lt;typename ItType , typename ValType , std::enable_if_t&lt; std::is_floating_point_v&lt; typename std::iterator_traits&lt; ItType &gt;::value_type &gt; &amp;&amp;std::is_floating_point_v&lt; ValType &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ac4094518716f4e3a78ead5bb32b682b6"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac4094518716f4e3a78ead5bb32b682b6">amrex::logspace</a> (ItType first, const ItType &amp;last, const ValType &amp;start, const ValType &amp;stop, const ValType &amp;base)</td></tr>
+<tr class="memdesc:ac4094518716f4e3a78ead5bb32b682b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a range with logarithmically spaced values over a closed interval.  <br /></td></tr>
 <tr class="separator:ac4094518716f4e3a78ead5bb32b682b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb40d9124d428dcc8daf5f69933d3908" id="r_aeb40d9124d428dcc8daf5f69933d3908"><td class="memTemplParams" colspan="2">template&lt;class T , std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint8_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint16_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint32_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint64_t &gt;, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:aeb40d9124d428dcc8daf5f69933d3908"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aeb40d9124d428dcc8daf5f69933d3908">amrex::clz</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) noexcept</td></tr>
+<tr class="memitem:aeb40d9124d428dcc8daf5f69933d3908" id="r_aeb40d9124d428dcc8daf5f69933d3908"><td class="memTemplParams" colspan="2">template&lt;class T , std::enable_if_t&lt; std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint8_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint16_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint32_t &gt;||std::is_same_v&lt; std::decay_t&lt; T &gt;, std::uint64_t &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:aeb40d9124d428dcc8daf5f69933d3908"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aeb40d9124d428dcc8daf5f69933d3908">amrex::clz</a> (T <a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) noexcept</td></tr>
+<tr class="memdesc:aeb40d9124d428dcc8daf5f69933d3908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of leading zeros of the given integer.  <br /></td></tr>
 <tr class="separator:aeb40d9124d428dcc8daf5f69933d3908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

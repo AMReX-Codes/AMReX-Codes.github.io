@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,17 +105,17 @@ $(document).ready(function(){initNavTree('structamrex_1_1CellData.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a195fc196486e4d32c7441be56351312b" id="r_a195fc196486e4d32c7441be56351312b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a195fc196486e4d32c7441be56351312b">CellData</a> (T *a_p, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> a_stride, int a_ncomp)</td></tr>
+<tr class="memitem:a195fc196486e4d32c7441be56351312b" id="r_a195fc196486e4d32c7441be56351312b"><td class="memItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a195fc196486e4d32c7441be56351312b">CellData</a> (T *a_p, <a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a> a_stride, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_ncomp)</td></tr>
 <tr class="separator:a195fc196486e4d32c7441be56351312b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e63a9332c50216e9af8062780be931" id="r_a35e63a9332c50216e9af8062780be931"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a35e63a9332c50216e9af8062780be931" id="r_a35e63a9332c50216e9af8062780be931"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a35e63a9332c50216e9af8062780be931"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a35e63a9332c50216e9af8062780be931">CellData</a> (<a class="el" href="structamrex_1_1CellData.html">CellData</a>&lt; std::remove_const_t&lt; T &gt; &gt; const &amp;rhs) noexcept</td></tr>
 <tr class="separator:a35e63a9332c50216e9af8062780be931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff74abc170f16dd98b4782371297c4e5" id="r_aff74abc170f16dd98b4782371297c4e5"><td class="memItemLeft" align="right" valign="top">__host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#aff74abc170f16dd98b4782371297c4e5">operator bool</a> () const noexcept</td></tr>
 <tr class="separator:aff74abc170f16dd98b4782371297c4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a3432cf809ab23f7255acdf2268573" id="r_ac5a3432cf809ab23f7255acdf2268573"><td class="memItemLeft" align="right" valign="top">__host__ __device__ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573">nComp</a> () const noexcept</td></tr>
+<tr class="memitem:ac5a3432cf809ab23f7255acdf2268573" id="r_ac5a3432cf809ab23f7255acdf2268573"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac5a3432cf809ab23f7255acdf2268573">nComp</a> () const noexcept</td></tr>
 <tr class="separator:ac5a3432cf809ab23f7255acdf2268573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac03c31c20c85fdcd25b44ea075ff6ad5" id="r_ac03c31c20c85fdcd25b44ea075ff6ad5"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;  = 0&gt; </td></tr>
-<tr class="memitem:ac03c31c20c85fdcd25b44ea075ff6ad5"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac03c31c20c85fdcd25b44ea075ff6ad5">operator[]</a> (int n) const noexcept</td></tr>
+<tr class="memitem:ac03c31c20c85fdcd25b44ea075ff6ad5" id="r_ac03c31c20c85fdcd25b44ea075ff6ad5"><td class="memTemplParams" colspan="2">template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
+<tr class="memitem:ac03c31c20c85fdcd25b44ea075ff6ad5"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ U &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#ac03c31c20c85fdcd25b44ea075ff6ad5">operator[]</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) const noexcept</td></tr>
 <tr class="separator:ac03c31c20c85fdcd25b44ea075ff6ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -130,7 +124,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aed05f6d9c75f7f135602071a20630fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b1a4e88127b9fe9ec9c37c5623d5ed" id="r_a43b1a4e88127b9fe9ec9c37c5623d5ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a43b1a4e88127b9fe9ec9c37c5623d5ed">stride</a> = 0</td></tr>
 <tr class="separator:a43b1a4e88127b9fe9ec9c37c5623d5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327facaefaef9c16772d8b9f5647848e" id="r_a327facaefaef9c16772d8b9f5647848e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a327facaefaef9c16772d8b9f5647848e">ncomp</a> = 0</td></tr>
+<tr class="memitem:a327facaefaef9c16772d8b9f5647848e" id="r_a327facaefaef9c16772d8b9f5647848e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1CellData.html#a327facaefaef9c16772d8b9f5647848e">ncomp</a> = 0</td></tr>
 <tr class="separator:a327facaefaef9c16772d8b9f5647848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -160,7 +154,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>a_ncomp</em>&#160;</td>
         </tr>
         <tr>
@@ -186,7 +180,7 @@ template&lt;typename T &gt; </div>
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -221,7 +215,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ int <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::nComp </td>
+          <td class="memname">__host__ __device__ <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::nComp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -271,7 +265,7 @@ template&lt;typename T &gt; </div>
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <div class="memtemplate">
-template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &gt;  = 0&gt; </div>
+template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -279,7 +273,7 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &g
         <tr>
           <td class="memname">__host__ __device__ U &amp; <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -303,7 +297,7 @@ template&lt;class U  = T, std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, int &g
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::ncomp = 0</td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1CellData.html">amrex::CellData</a>&lt; T &gt;::ncomp = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

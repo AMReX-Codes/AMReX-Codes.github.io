@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -209,7 +203,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a0dace3a79fc48a8b02686c10363b70a9" id="r_a0dace3a79fc48a8b02686c10363b70a9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9">amrex::InvNormDistBest</a> (double p)</td></tr>
 <tr class="memdesc:a0dace3a79fc48a8b02686c10363b70a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns an approximation of the inverse cumulative standard normal distribution function. I.e., given P, it returns an approximation to the X satisfying P = Pr{Z &lt;= X} where Z is a random variable from the standard normal distribution.  <br /></td></tr>
 <tr class="separator:a0dace3a79fc48a8b02686c10363b70a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ea4e09dbb2ff1919ec42ea7702d5aa" id="r_a15ea4e09dbb2ff1919ec42ea7702d5aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a15ea4e09dbb2ff1919ec42ea7702d5aa">amrex::CRRBetweenLevels</a> (int fromlevel, int tolevel, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;refratios)</td></tr>
+<tr class="memitem:a15ea4e09dbb2ff1919ec42ea7702d5aa" id="r_a15ea4e09dbb2ff1919ec42ea7702d5aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a15ea4e09dbb2ff1919ec42ea7702d5aa">amrex::CRRBetweenLevels</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fromlevel, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> tolevel, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;refratios)</td></tr>
 <tr class="separator:a15ea4e09dbb2ff1919ec42ea7702d5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff6b4420435f9951710a37eda411db8f" id="r_aff6b4420435f9951710a37eda411db8f"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aff6b4420435f9951710a37eda411db8f">amrex::operator&gt;&gt;</a> (std::istream &amp;, const <a class="el" href="classamrex_1_1expect.html">expect</a> &amp;<a class="el" href="namespaceamrex.html#aae8cf126d10650f57ee30d33f675b77c">exp</a>)</td></tr>
 <tr class="separator:aff6b4420435f9951710a37eda411db8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,14 +219,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a466107d6d3e3769fa633f982daed1256" id="r_a466107d6d3e3769fa633f982daed1256"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , class Compare &gt; </td></tr>
 <tr class="memitem:a466107d6d3e3769fa633f982daed1256"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">amrex::Long</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a466107d6d3e3769fa633f982daed1256">amrex::bytesOf</a> (const std::map&lt; Key, T, Compare &gt; &amp;m)</td></tr>
 <tr class="separator:a466107d6d3e3769fa633f982daed1256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0fd43716fb89a13154ed4c037ebe6e6" id="r_af0fd43716fb89a13154ed4c037ebe6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af0fd43716fb89a13154ed4c037ebe6e6">amrex::BroadcastBool</a> (bool &amp;bBool, int myLocalId, int rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
+<tr class="memitem:af0fd43716fb89a13154ed4c037ebe6e6" id="r_af0fd43716fb89a13154ed4c037ebe6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af0fd43716fb89a13154ed4c037ebe6e6">amrex::BroadcastBool</a> (bool &amp;bBool, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> myLocalId, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
 <tr class="separator:af0fd43716fb89a13154ed4c037ebe6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa60205e03d594df934b5b3afd723c764" id="r_aa60205e03d594df934b5b3afd723c764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa60205e03d594df934b5b3afd723c764">amrex::BroadcastString</a> (std::string &amp;bStr, int myLocalId, int rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
+<tr class="memitem:aa60205e03d594df934b5b3afd723c764" id="r_aa60205e03d594df934b5b3afd723c764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa60205e03d594df934b5b3afd723c764">amrex::BroadcastString</a> (std::string &amp;bStr, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> myLocalId, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
 <tr class="separator:aa60205e03d594df934b5b3afd723c764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bfd620fc96f18d04313d70ccca85bfb" id="r_a1bfd620fc96f18d04313d70ccca85bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1bfd620fc96f18d04313d70ccca85bfb">amrex::BroadcastStringArray</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;bSA, int myLocalId, int rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
+<tr class="memitem:a1bfd620fc96f18d04313d70ccca85bfb" id="r_a1bfd620fc96f18d04313d70ccca85bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1bfd620fc96f18d04313d70ccca85bfb">amrex::BroadcastStringArray</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;bSA, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> myLocalId, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
 <tr class="separator:a1bfd620fc96f18d04313d70ccca85bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cf9dce7670dcc62897405af53fafcff" id="r_a8cf9dce7670dcc62897405af53fafcff"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a8cf9dce7670dcc62897405af53fafcff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8cf9dce7670dcc62897405af53fafcff">amrex::BroadcastArray</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;aT, int myLocalId, int rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
+<tr class="memitem:a8cf9dce7670dcc62897405af53fafcff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8cf9dce7670dcc62897405af53fafcff">amrex::BroadcastArray</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;aT, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> myLocalId, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rootId, const <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> &amp;localComm)</td></tr>
 <tr class="separator:a8cf9dce7670dcc62897405af53fafcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0cfc6441bbe3f6e424e8a3fdd99bfe8" id="r_ae0cfc6441bbe3f6e424e8a3fdd99bfe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae0cfc6441bbe3f6e424e8a3fdd99bfe8">amrex::Sleep</a> (double sleepsec)</td></tr>
 <tr class="separator:ae0cfc6441bbe3f6e424e8a3fdd99bfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,10 +239,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a72ebcf044c2dabd659e4ed5831cadc5e">amrex::hash_vector</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;vec, uint64_t seed=0xDEADBEEFDEADBEEF) noexcept</td></tr>
 <tr class="separator:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a002a7544dd6307ca1e4e08afddb91f9d" id="r_a002a7544dd6307ca1e4e08afddb91f9d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a002a7544dd6307ca1e4e08afddb91f9d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a002a7544dd6307ca1e4e08afddb91f9d">amrex::ToString</a> (std::ostream &amp;os, const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, int limit=100)</td></tr>
+<tr class="memitem:a002a7544dd6307ca1e4e08afddb91f9d"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a002a7544dd6307ca1e4e08afddb91f9d">amrex::ToString</a> (std::ostream &amp;os, const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> limit=100)</td></tr>
 <tr class="separator:a002a7544dd6307ca1e4e08afddb91f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e0252604bf691ec2a7f8bafa5564ed" id="r_a22e0252604bf691ec2a7f8bafa5564ed"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a22e0252604bf691ec2a7f8bafa5564ed"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a22e0252604bf691ec2a7f8bafa5564ed">amrex::ToString</a> (const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, int limit=100, std::ostringstream ss=std::ostringstream{})</td></tr>
+<tr class="memitem:a22e0252604bf691ec2a7f8bafa5564ed"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a22e0252604bf691ec2a7f8bafa5564ed">amrex::ToString</a> (const T &amp;t, const char *symbol_begin=&quot;[&quot;, const char *symbol_delim=&quot;, &quot;, const char *symbol_end=&quot;]&quot;, const char *symbol_str=&quot;\&quot;&quot;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> limit=100, std::ostringstream ss=std::ostringstream{})</td></tr>
 <tr class="separator:a22e0252604bf691ec2a7f8bafa5564ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3693a1b83f9e772f2dc72e9c18cd0ee" id="r_aa3693a1b83f9e772f2dc72e9c18cd0ee"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> , typename... T&gt; </td></tr>
 <tr class="memitem:aa3693a1b83f9e772f2dc72e9c18cd0ee"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa3693a1b83f9e772f2dc72e9c18cd0ee">amrex::callNoinline</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f, T &amp;&amp;... <a class="el" href="namespaceamrex.html#a1d4a9589e4112856cf8735a07e02dc05">arg</a>) -&gt; decltype(std::declval&lt; <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt;()(std::declval&lt; T &gt;()...))</td></tr>

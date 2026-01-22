@@ -18,11 +18,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,18 +32,6 @@
    </div>
    <!--div id="projectbrief">Block-Structured AMR Software Framework</div-->
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -60,6 +43,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -123,23 +117,23 @@ Inheritance diagram for amrex::CellConservativeQuartic:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c64516c8697291cf190a795a24b3a6e" id="r_a8c64516c8697291cf190a795a24b3a6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CellConservativeQuartic.html#a8c64516c8697291cf190a795a24b3a6e">CoarseBox</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, int ratio) override</td></tr>
+<tr class="memitem:a8c64516c8697291cf190a795a24b3a6e" id="r_a8c64516c8697291cf190a795a24b3a6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CellConservativeQuartic.html#a8c64516c8697291cf190a795a24b3a6e">CoarseBox</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ratio) override</td></tr>
 <tr class="memdesc:a8c64516c8697291cf190a795a24b3a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coarsened box given fine box and refinement ratio.  <br /></td></tr>
 <tr class="separator:a8c64516c8697291cf190a795a24b3a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b4f260bbcc5484ce23d59bd94d2dfe8" id="r_a2b4f260bbcc5484ce23d59bd94d2dfe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CellConservativeQuartic.html#a2b4f260bbcc5484ce23d59bd94d2dfe8">CoarseBox</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio) override</td></tr>
 <tr class="memdesc:a2b4f260bbcc5484ce23d59bd94d2dfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coarsened box given fine box and refinement ratio.  <br /></td></tr>
 <tr class="separator:a2b4f260bbcc5484ce23d59bd94d2dfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac45b4cc9c8b00425d71cf683ce9f4673" id="r_ac45b4cc9c8b00425d71cf683ce9f4673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673">interp</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, int crse_comp, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, int fine_comp, int ncomp, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;fine_region, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fine_geom, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcr, int actual_comp, int actual_state, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) override</td></tr>
+<tr class="memitem:ac45b4cc9c8b00425d71cf683ce9f4673" id="r_ac45b4cc9c8b00425d71cf683ce9f4673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CellConservativeQuartic.html#ac45b4cc9c8b00425d71cf683ce9f4673">interp</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_comp, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fine_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;fine_region, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;ratio, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fine_geom, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcr, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> actual_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> actual_state, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) override</td></tr>
 <tr class="memdesc:ac45b4cc9c8b00425d71cf683ce9f4673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarse to fine interpolation in space.  <br /></td></tr>
 <tr class="separator:ac45b4cc9c8b00425d71cf683ce9f4673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1Interpolater"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1Interpolater')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1Interpolater.html">amrex::Interpolater</a></td></tr>
-<tr class="memitem:aee5ce439fa4bbc2dd6f8d40708715485 inherit pub_methods_classamrex_1_1Interpolater" id="r_aee5ce439fa4bbc2dd6f8d40708715485"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#aee5ce439fa4bbc2dd6f8d40708715485">interp_face</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, const int, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, const int, const int, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, const <a class="el" href="classamrex_1_1IArrayBox.html">IArrayBox</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;, const int, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
+<tr class="memitem:aee5ce439fa4bbc2dd6f8d40708715485 inherit pub_methods_classamrex_1_1Interpolater" id="r_aee5ce439fa4bbc2dd6f8d40708715485"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#aee5ce439fa4bbc2dd6f8d40708715485">interp_face</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, const <a class="el" href="classamrex_1_1IArrayBox.html">IArrayBox</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
 <tr class="memdesc:aee5ce439fa4bbc2dd6f8d40708715485 inherit pub_methods_classamrex_1_1Interpolater"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarse to fine interpolation in space for face-based data.  <br /></td></tr>
 <tr class="separator:aee5ce439fa4bbc2dd6f8d40708715485 inherit pub_methods_classamrex_1_1Interpolater"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78550a1ab625c31eb7d5172bc7ff006a inherit pub_methods_classamrex_1_1Interpolater" id="r_a78550a1ab625c31eb7d5172bc7ff006a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#a78550a1ab625c31eb7d5172bc7ff006a">interp_arr</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *, 3 &gt; const &amp;, const int, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *, 3 &gt; const &amp;, const int, const int, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1IArrayBox.html">IArrayBox</a> *, 3 &gt; const &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a>, 3 &gt; &gt; const &amp;, const int, const int, const <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
+<tr class="memitem:a78550a1ab625c31eb7d5172bc7ff006a inherit pub_methods_classamrex_1_1Interpolater" id="r_a78550a1ab625c31eb7d5172bc7ff006a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#a78550a1ab625c31eb7d5172bc7ff006a">interp_arr</a> (<a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *, 3 &gt; const &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *, 3 &gt; const &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1IArrayBox.html">IArrayBox</a> *, 3 &gt; const &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a>, 3 &gt; &gt; const &amp;, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
 <tr class="memdesc:a78550a1ab625c31eb7d5172bc7ff006a inherit pub_methods_classamrex_1_1Interpolater"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarse to fine interpolation in space. Takes an Array of FArrayBox*s.  <br /></td></tr>
 <tr class="separator:a78550a1ab625c31eb7d5172bc7ff006a inherit pub_methods_classamrex_1_1Interpolater"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6fb8b99ca4282e5f9e9122b9b37cf1 inherit pub_methods_classamrex_1_1Interpolater" id="r_aee6fb8b99ca4282e5f9e9122b9b37cf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#aee6fb8b99ca4282e5f9e9122b9b37cf1">protect</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, int, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, int, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, int, int, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
+<tr class="memitem:aee6fb8b99ca4282e5f9e9122b9b37cf1 inherit pub_methods_classamrex_1_1Interpolater" id="r_aee6fb8b99ca4282e5f9e9122b9b37cf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Interpolater.html#aee6fb8b99ca4282e5f9e9122b9b37cf1">protect</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;, const <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>)</td></tr>
 <tr class="memdesc:aee6fb8b99ca4282e5f9e9122b9b37cf1 inherit pub_methods_classamrex_1_1Interpolater"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-visit the interpolation to protect against under- or overshoots.  <br /></td></tr>
 <tr class="separator:aee6fb8b99ca4282e5f9e9122b9b37cf1 inherit pub_methods_classamrex_1_1Interpolater"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1InterpBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1InterpBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1InterpBase.html">amrex::InterpBase</a></td></tr>
@@ -161,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classamrex_1_1InterpBase"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classamrex_1_1InterpBase')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classamrex_1_1InterpBase.html">amrex::InterpBase</a></td></tr>
-<tr class="memitem:ad9523dae9903f59fc43bb7df17e2250e inherit pub_static_methods_classamrex_1_1InterpBase" id="r_ad9523dae9903f59fc43bb7df17e2250e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#ad9523dae9903f59fc43bb7df17e2250e">GetBCArray</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcr)</td></tr>
+<tr class="memitem:ad9523dae9903f59fc43bb7df17e2250e inherit pub_static_methods_classamrex_1_1InterpBase" id="r_ad9523dae9903f59fc43bb7df17e2250e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1InterpBase.html#ad9523dae9903f59fc43bb7df17e2250e">GetBCArray</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcr)</td></tr>
 <tr class="separator:ad9523dae9903f59fc43bb7df17e2250e inherit pub_static_methods_classamrex_1_1InterpBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -233,7 +227,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ratio</em>&#160;</td>
         </tr>
         <tr>
@@ -280,7 +274,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>crse_comp</em>, </td>
         </tr>
         <tr>
@@ -292,13 +286,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>fine_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
         <tr>
@@ -334,13 +328,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>actual_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>actual_state</em>, </td>
         </tr>
         <tr>
