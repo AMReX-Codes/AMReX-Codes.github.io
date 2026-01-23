@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parameter Sensitivity via Polynomial Chaos &mdash; amrex 26.02-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7e297ec4"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AMReX-MPMD" href="MPMD_Tutorials.html" />
+    <link rel="prev" title="UQ with PyTUQ" href="HeatEquation_UQ.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Tutorial.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="HeatEquation_UQ.html">UQ with PyTUQ</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="HeatEquation_UQ.html#overview">Overview</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Parameter Sensitivity via Polynomial Chaos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-heat-equation">The Heat Equation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quantities-of-interest-outputs">Quantities of Interest (Outputs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pytuq-workflow">PyTUQ Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="HeatEquation_UQ.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeatEquation_UQ.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeatEquation_UQ.html#understanding-gnu-parallel-workflow-pattern">Understanding GNU Parallel Workflow Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeatEquation_UQ.html#understanding-the-output">Understanding the Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeatEquation_UQ.html#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MPMD_Tutorials.html">AMReX-MPMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Tutorial.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="HeatEquation_UQ.html">UQ with PyTUQ</a></li>
+      <li class="breadcrumb-item active">Parameter Sensitivity via Polynomial Chaos</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/HeatEquation_UQ_MathematicalDetails.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parameter-sensitivity-via-polynomial-chaos">
+<span id="pytuq-mathematical-details"></span><h1>Parameter Sensitivity via Polynomial Chaos<a class="headerlink" href="#parameter-sensitivity-via-polynomial-chaos" title="Link to this heading"></a></h1>
+<p>In this example, PyTUQ constructs polynomial chaos expansions to analyze how uncertain physical parameters affect simulation outputs in a heat diffusion problem.</p>
+<section id="the-heat-equation">
+<h2>The Heat Equation<a class="headerlink" href="#the-heat-equation" title="Link to this heading"></a></h2>
+<p>The governing equation for this tutorial is the heat diffusion equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = D\nabla^2 \phi,\]</div>
+<p>with initial condition</p>
+<div class="math notranslate nohighlight">
+\[\phi_0 = 1 + A e^{-r^2 / (2V)},\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">r</span></code> is the distance from the center of the domain, and with uncertain parameters <code class="docutils literal notranslate"><span class="pre">diffusion_coeff</span></code> (<span class="math notranslate nohighlight">\(D\)</span>), <code class="docutils literal notranslate"><span class="pre">init_amplitude</span></code> (<span class="math notranslate nohighlight">\(A\)</span>), and <code class="docutils literal notranslate"><span class="pre">init_variance</span></code> (<span class="math notranslate nohighlight">\(V\)</span>).</p>
+</section>
+<section id="quantities-of-interest-outputs">
+<h2>Quantities of Interest (Outputs)<a class="headerlink" href="#quantities-of-interest-outputs" title="Link to this heading"></a></h2>
+<p>The simulation extracts four statistical quantities at the final timestep:</p>
+<ol class="arabic simple">
+<li><p><strong>max_temp</strong>: Maximum temperature in the domain</p></li>
+<li><p><strong>mean_temp</strong>: Average temperature across all cells</p></li>
+<li><p><strong>std_temp</strong>: Standard deviation of temperature</p></li>
+<li><p><strong>cell_temp</strong>: Temperature in a particular cell, in this case, cell (9,9,9)</p></li>
+</ol>
+<p>These outputs are computed in <a href="#id1"><span class="problematic" id="id2">``</span></a>main.cpp``and written to the datalog file.</p>
+</section>
+<section id="pytuq-workflow">
+<h2>PyTUQ Workflow<a class="headerlink" href="#pytuq-workflow" title="Link to this heading"></a></h2>
+<p>PyTUQ uses polynomial chaos expansion to construct a surrogate model:</p>
+<ol class="arabic simple">
+<li><p><strong>Parameter sampling</strong>: Generate sample points in the 3D parameter space based on the specified distributions</p></li>
+<li><p><strong>Forward simulations</strong>: Run the AMReX heat equation solver for each parameter set</p></li>
+<li><p><strong>Surrogate construction</strong>: Fit polynomial chaos coefficients to map inputs → outputs</p></li>
+<li><p><strong>Sensitivity analysis</strong>: Compute Sobol indices to identify which parameters most influence each output</p></li>
+</ol>
+<p>The connection is:</p>
+<ul class="simple">
+<li><p><strong>Inputs</strong>: ParmParse parameters (<code class="docutils literal notranslate"><span class="pre">diffusion_coeff</span></code>, <code class="docutils literal notranslate"><span class="pre">init_amplitude</span></code>, <code class="docutils literal notranslate"><span class="pre">init_variance</span></code>) specified in <code class="docutils literal notranslate"><span class="pre">inputs</span></code> file or command line</p></li>
+<li><p><strong>Outputs</strong>: Quantities of interest extracted from datalog files</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HeatEquation_UQ.html" class="btn btn-neutral float-left" title="UQ with PyTUQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MPMD_Tutorials.html" class="btn btn-neutral float-right" title="AMReX-MPMD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

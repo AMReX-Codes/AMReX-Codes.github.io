@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UQ with PyTUQ &mdash; amrex 26.02-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7e297ec4"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=6dbb43f8"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parameter Sensitivity via Polynomial Chaos" href="HeatEquation_UQ_MathematicalDetails.html" />
+    <link rel="prev" title="ML/PYTORCH" href="ML_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFT_Tutorial.html">FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UQ with PyTUQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="HeatEquation_UQ_MathematicalDetails.html">Parameter Sensitivity via Polynomial Chaos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#c-amrex-pytuq-bash-driven">C++ AMReX + PyTUQ (BASH driven)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-gnu-parallel-workflow-pattern">Understanding GNU Parallel Workflow Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-output">Understanding the Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MPMD_Tutorials.html">AMReX-MPMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Tutorial.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">UQ with PyTUQ</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/HeatEquation_UQ.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uq-with-pytuq">
+<span id="pytuq-quickstart"></span><span id="guided-pytuq-integration"></span><span id="tutorials-uq"></span><h1>UQ with PyTUQ<a class="headerlink" href="#uq-with-pytuq" title="Link to this heading"></a></h1>
+<div class="note admonition">
+<p class="admonition-title"><strong>Time to Complete</strong>: 30-60 minutes</p>
+<dl class="simple">
+<dt><strong>What you will learn</strong>:</dt><dd><ul class="simple">
+<li><p>Install PyTUQ</p></li>
+<li><p>Run an AMReX+PyTUQ to perform sensitivity analysis</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>AMReX simulations deliver high-fidelity, accurate results for complex physics problems, but the effect on simulation results due to uncertain inputs can require hundreds or thousands of simulations, making comprehensive analysis computationally prohibitive.</p>
+<p>This tutorial demonstrates how to improve efficiency without sacrificing accuracy by using polynomial chaos expansions to build fast surrogate models that identify which input parameters truly matter.</p>
+<p>PyTUQ (Python interface to the UQ Toolkit) provides specialized tools for surrogate construction and global sensitivity analysis, enabling rapid parameter space exploration and dimensionality reduction for scientific applications.</p>
+<p>We demonstrate how to integrate PyTUQ with your AMReX application through a practical workflow; the AMReX-based heat equation tutorial is equipped to perform sensitivity analysis.</p>
+<p>In these examples we model the heat equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = D\nabla^2 \phi,\]</div>
+<p>with initial condition</p>
+<div class="math notranslate nohighlight">
+\[\phi_0 = 1 + A e^{-r^2 / (2V)},\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">r</span></code> is the distance from the center of the domain, and with uncertain parameters <code class="docutils literal notranslate"><span class="pre">diffusion_coeff</span></code> (<span class="math notranslate nohighlight">\(D\)</span>), <code class="docutils literal notranslate"><span class="pre">init_amplitude</span></code> (<span class="math notranslate nohighlight">\(A\)</span>), and <code class="docutils literal notranslate"><span class="pre">init_variance</span></code> (<span class="math notranslate nohighlight">\(V\)</span>).
+The outputs of interest are the maximum temperature, mean temperature, standard deviation of temperature, and the temperature at a specified point.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HeatEquation_UQ_MathematicalDetails.html">Parameter Sensitivity via Polynomial Chaos</a></li>
+</ul>
+</div>
+<p>Located in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/UQ/HeatEquation</span></code>, this example illustrates a complete forward UQ workflow from parameter sampling randomized input parameters to perform sensitivity analysis.
+By understanding this example, you will have a basis for understanding how to adapt this workflow to your own AMReX application.</p>
+<p>More specifically, you can directly compare/diff <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/UQ/HeatEquation/main.cpp</span></code> against the original heat equation tutorial <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/GuidedTutorials/HeatEquation_Simple/main.cpp</span></code> to see exactly what source code changes are made to the AMReX application in this example.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>We now describe the installation and workflow process on a local workstation.
+First, install pytuq using this script (based on information provided in <a class="reference external" href="https://github.com/sandialabs/pytuq/blob/main/README.md">pytuq/README.md</a>):</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Pytuq installation script</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># 1. Clone repositories</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sandialabs/pytuq.git
+
+<span class="c1"># 2. Create a conda environment with python (optional, you can add to an existing env)</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>pytuq
+conda<span class="w"> </span>activate<span class="w"> </span>pytuq
+conda<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+
+<span class="c1"># 3. Install PyTUQ and requirements</span>
+<span class="nb">cd</span><span class="w"> </span>pytuq
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>.
+conda<span class="w"> </span>install<span class="w"> </span>dill
+
+<span class="c1"># 4. Verify installation</span>
+conda<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>pytuq<span class="w">    </span><span class="c1"># Should show pytuq 1.0.0</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<section id="c-amrex-pytuq-bash-driven">
+<h3>C++ AMReX + PyTUQ (BASH driven)<a class="headerlink" href="#c-amrex-pytuq-bash-driven" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p><strong>Prerequisites</strong>:</p>
+<ul class="simple">
+<li><p>AMReX and pytuq cloned at the same directory level as amrex-tutorials</p></li>
+<li><p>pytuq installation described above</p></li>
+<li><p>GNU Parallel for task management: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">parallel</span></code> (mpiexec option also exists in script)</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Build AMReX appplication</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/amrex-tutorials/ExampleCodes/UQ/HeatEquation/
+make<span class="w"> </span>-j4
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">Run sensitivity analysis with bash script</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./workflow_uqpc.x
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="understanding-gnu-parallel-workflow-pattern">
+<h2>Understanding GNU Parallel Workflow Pattern<a class="headerlink" href="#understanding-gnu-parallel-workflow-pattern" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">workflow_uqpc.x</span></code> bash script relies on the user augmenting their codes to write outputs of interest to ASCII text files.
+In this case, the <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> was modified from the <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/GuidedTutorials/HeatEquation_Simple/main.cpp</span></code> in the following ways:</p>
+<p>First, support for parsing <code class="docutils literal notranslate"><span class="pre">diffusion_coeff</span></code>, <code class="docutils literal notranslate"><span class="pre">init_amplitude</span></code>, and <code class="docutils literal notranslate"><span class="pre">init_variance</span></code> from the input file and command line were added.</p>
+<p>Second, support for writing outputs of interest to ASCII text files is added.  The <code class="docutils literal notranslate"><span class="pre">datalog_filename</span></code> input parameter is generated by the bash
+script to give each simulation output a unique identifier.
+The <code class="docutils literal notranslate"><span class="pre">datalog_int</span></code> parameter gives the user the option to write the outputs of interest at a given time step interval, but in this example,
+the outputs of interest after the final step are those that matter, and are extracted by the bash script to create a master output file
+containing a separate set of simulation outputs of interest in each row.</p>
+<p>The bash script calls PyTUQ scripts that generate an input parameter files for training and testing (<code class="docutils literal notranslate"><span class="pre">ptrain.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">ptest.txt</span></code>)
+based on polynomial chaos settings, and then uses GNU Parallel to run multiple simulations
+efficiently and collect outputs into results files (<code class="docutils literal notranslate"><span class="pre">ytrain.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">ytest.txt</span></code>) that PyTUQ can use for surrogate model fitting.</p>
+</div></blockquote>
+</section>
+<section id="understanding-the-output">
+<h2>Understanding the Output<a class="headerlink" href="#understanding-the-output" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><cite>pnames.txt</cite>, <cite>outnames.txt</cite></div>
+<div class="line">-names of input and output parameters</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>param_margpc.txt</cite></div>
+<div class="line">-Each row contains the mean and standard deviation for an uncertain input parameter</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>qtrain.txt</cite>, <cite>qtest.txt</cite></div>
+<div class="line">-each row is a separate set of normal random variables used to generate uncertain inputs</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>ptrain.txt</cite>, <cite>ptest.txt</cite>, <cite>pall.txt</cite></div>
+<div class="line">-each row is a separate set of input parameters for each simulation</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>stdoutlog_train##.txt</cite>, <cite>stdoutlog_test##.txt</cite></div>
+<div class="line">-All standard output from AMReX simulations for training and testing data.  The numbers refer to separate simulations.</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>datalog_train##.txt</cite>, <cite>datalog_test##.txt</cite></div>
+<div class="line">-Specifically-chosen output from AMReX simulations for training and testing data.  In this example it reports the outputs (max, mean, standard deviation, and specific cell temperature) at user-specified intervals.</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>ytrain.txt</cite>, <cite>ytest.txt</cite>, <cite>yall.txt</cite></div>
+<div class="line">-agglomeration of outputs of interest from all simulations</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>results.pk</cite></div>
+<div class="line">-Python pickle file encapsulating the results</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>labels.txt</cite></div>
+<div class="line">-list of labels of simulation types (training or testing) for diagnostic/plot generation purposes</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>xx_&lt;INVAR1&gt;_&lt;INVAR2&gt;.png</cite></div>
+<div class="line">-scatter plot of 2 inputs for training and testing</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>pcoord_1.png</cite>, <cite>pcoord_1_lab_Testing.png</cite>, <cite>pcoord_1_lab_Training.png</cite></div>
+<div class="line">-graphical representation of how inputs correlate to outputs for each individual simulation</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>yx_&lt;OUTVAR&gt;.png</cite>, <cite>yx_&lt;OUTVAR&gt;_log.png</cite></div>
+<div class="line">-scatter plots of output as a function of each input</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>yxx_#.png</cite></div>
+<div class="line">-scatter plots of output a function of multiple inputs</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>pdf_tri_inputs.png</cite>, <cite>pdf_tri_output.png</cite></div>
+<div class="line">-PDFs of inputs and outputs</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>ensemble.png</cite></div>
+<div class="line">-graphical display of all output values</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>idm_#_training.png</cite>, <cite>idm_#_testing.png</cite></div>
+<div class="line">-graphical display of output values</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>dm_#.png</cite></div>
+<div class="line">-”data vs model” parity plots for each output; compares the predicted values from a surrogate model or approximation against the true or actual values from the full computational model</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>fit_s#_training.png</cite>, <cite>fit_s#_testing.png</cite></div>
+<div class="line">-Shows model vs PC approximation for a single simulation.</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>pdf_output_#.png</cite>, <cite>pdf_joyplot.png</cite></div>
+<div class="line">-PDF of output variables</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>allsens_main.txt</cite>, <cite>sens_main.png</cite></div>
+<div class="line">-raw data and plot for parameter sensitivities</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>jsens_#.png</cite>, <cite>Jsens_ave.png</cite></div>
+<div class="line">-joint sensitivities of output with respect to inputs</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>sensmat_main.png</cite></div>
+<div class="line">-sensitivity matrix</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>pcslices_o#.png</cite></div>
+<div class="line">-polynomial chaos fits</div>
+</div>
+<div class="line-block">
+<div class="line"><cite>pccont_o#_d#_d#.png</cite></div>
+<div class="line">-polynomial chaos fits of output variables with respect to two input variables</div>
+</div>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading"></a></h2>
+<p><strong>PyTUQ Resources:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sandialabs.github.io/pytuq">PyTUQ Documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sandialabs/pytuq/tree/main/examples">PyTUQ Examples directory</a></p></li>
+<li><p>eebaill, ksargsyan, &amp; Bert Debusschere. (2025). sandialabs/pytuq: v1.0.0z (v1.0.0z). Zenodo. <a class="reference external" href="https://doi.org/10.5281/zenodo.17110054">https://doi.org/10.5281/zenodo.17110054</a></p></li>
+</ul>
+<p><strong>AMReX Resources:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/">AMReX Documentation</a></p></li>
+</ul>
+<p><strong>Uncertainty Quantification Theory:</strong></p>
+<ul class="simple">
+<li><p>Ghanem, Roger, David Higdon, and Houman Owhadi, eds. <em>Handbook of Uncertainty Quantification</em>. Vol. 6. New York: Springer, 2017. (For workflow, plotting, and analysis specifics)</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ML_Tutorial.html" class="btn btn-neutral float-left" title="ML/PYTORCH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="HeatEquation_UQ_MathematicalDetails.html" class="btn btn-neutral float-right" title="Parameter Sensitivity via Polynomial Chaos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

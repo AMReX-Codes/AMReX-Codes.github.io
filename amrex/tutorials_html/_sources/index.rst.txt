@@ -50,6 +50,7 @@ sorted by the following categories:
 - :ref:`GPU<tutorials_gpu>`  -- Offload work to the GPUs using AMReX tools.
 - :ref:`Linear Solvers<tutorials_linearsolvers>`  -- Examples of several linear solvers.
 - :ref:`ML/PYTORCH<tutorials_ml>`  -- Use of pytorch models to replace point-wise computational kernels.
+- :ref:`UQ with pytuq<tutorials_uq>`  -- Use of pytuq methods to perform generalized sensitivity analysis.
 - :ref:`MPMD<tutorials_mpmd>` -- Usage of AMReX-MPMD (Multiple Program Multiple Data) framework.
 - :ref:`MUI<tutorials_mui>`  -- Incorporates the MxUI/MUI (Multiscale Universal interface) frame into AMReX.
 - :ref:`Particles<tutorials_particles>`  -- Basic usage of AMReX's particle data structures.
@@ -72,6 +73,7 @@ sorted by the following categories:
    GPU_Tutorial
    LinearSolvers_Tutorial
    ML_Tutorial
+   HeatEquation_UQ
    MPMD_Tutorials
    MUI_Tutorial
    Particles_Tutorial
@@ -96,6 +98,8 @@ sorted by the following categories:
 .. _`GPU`:  GPU_Tutorial.html
 
 .. _`Linear Solvers`:  LinearSolvers_Tutorial.html
+
+.. _`UQ`:  UQ_Tutorial.html
 
 .. _`MPMD`:  MPMD_Tutorials.html
 
