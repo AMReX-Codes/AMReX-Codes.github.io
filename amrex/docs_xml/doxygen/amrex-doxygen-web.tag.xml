@@ -6326,6 +6326,7 @@
     <includes id="AMReX__EBCellFlag_8H" name="AMReX_EBCellFlag.H" local="no" import="no" module="no" objc="no">AMReX_EBCellFlag.H</includes>
     <includes id="AMReX__Random_8H" name="AMReX_Random.H" local="no" import="no" module="no" objc="no">AMReX_Random.H</includes>
     <class kind="struct">amrex::EBData</class>
+    <class kind="struct">amrex::EBDataArrays</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -25707,6 +25708,13 @@
       <arglist>(int i, int j, int k) const noexcept</arglist>
     </member>
     <member kind="function">
+      <type>__host__ __device__ const auto &amp;</type>
+      <name>get</name>
+      <anchorfile>structamrex_1_1EBData.html</anchorfile>
+      <anchor>a1b6345a379c0f01a67e9c8be7426feba</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>__host__ __device__ auto</type>
       <name>get</name>
       <anchorfile>structamrex_1_1EBData.html</anchorfile>
@@ -25739,6 +25747,52 @@
       <name>real_data_size</name>
       <anchorfile>structamrex_1_1EBData.html</anchorfile>
       <anchor>aa9983fdf5d6a7a2b4383eb011a564bb1</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::EBDataArrays</name>
+    <filename>structamrex_1_1EBDataArrays.html</filename>
+    <member kind="function">
+      <type>__host__ __device__ auto</type>
+      <name>get</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>ab14275e7e12f59523779be3ffd2484fa</anchor>
+      <arglist>(int box_no, int i, int j, int k) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ auto</type>
+      <name>get</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>a1a1f6638bf2bec5bf6f4b0c9a02bfd2e</anchor>
+      <arglist>(int box_no, int i, int j, int k, int n) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ EBData</type>
+      <name>get</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>ac3190807c89a54999b1ac9309ff4ee8f</anchor>
+      <arglist>(int box_no) const noexcept</arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; EBCellFlag const  &gt; const  *__restrict__</type>
+      <name>m_cell_flag</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>a2518f5a53b50663551f96e3e4caa263c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Array4&lt; Real const  &gt; const  *__restrict__</type>
+      <name>m_real_data</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>a120570eadab26ae4baa606cea2f7f6f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>real_data_size</name>
+      <anchorfile>structamrex_1_1EBDataArrays.html</anchorfile>
+      <anchor>a233ac9251f3f8091fc1482121702efe7</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -26237,6 +26291,13 @@
       <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
       <anchor>a73baf6d203d9a2f7ebc09adcb0073cf3</anchor>
       <arglist>(MFIter const &amp;mfi) const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>EBDataArrays</type>
+      <name>getEBDataArrays</name>
+      <anchorfile>classamrex_1_1EBFArrayBoxFactory.html</anchorfile>
+      <anchor>af5e9953972064a3d90384c8d513bd3fd</anchor>
+      <arglist>() const noexcept</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -69081,6 +69142,7 @@
     <class kind="class">amrex::EBCellFlag</class>
     <class kind="class">amrex::EBCellFlagFab</class>
     <class kind="struct">amrex::EBData</class>
+    <class kind="struct">amrex::EBDataArrays</class>
     <class kind="class">amrex::EBDataCollection</class>
     <class kind="class">amrex::EBFArrayBox</class>
     <class kind="class">amrex::EBFArrayBoxFactory</class>

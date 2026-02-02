@@ -284,6 +284,7 @@ var hierarchy =
     [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", null ],
     [ "amrex::EBCellFlag", "classamrex_1_1EBCellFlag.html", null ],
     [ "amrex::EBData", "structamrex_1_1EBData.html", null ],
+    [ "amrex::EBDataArrays", "structamrex_1_1EBDataArrays.html", null ],
     [ "amrex::EBDataCollection", "classamrex_1_1EBDataCollection.html", null ],
     [ "amrex::EBToPVD", "classamrex_1_1EBToPVD.html", null ],
     [ "amrex::EB2::Edge", "structamrex_1_1EB2_1_1Edge.html", null ],

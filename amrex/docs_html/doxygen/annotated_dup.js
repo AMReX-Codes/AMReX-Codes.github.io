@@ -308,6 +308,7 @@ var annotated_dup =
       [ "EBCellFlag", "classamrex_1_1EBCellFlag.html", "classamrex_1_1EBCellFlag" ],
       [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html", "classamrex_1_1EBCellFlagFab" ],
       [ "EBData", "structamrex_1_1EBData.html", "structamrex_1_1EBData" ],
+      [ "EBDataArrays", "structamrex_1_1EBDataArrays.html", "structamrex_1_1EBDataArrays" ],
       [ "EBDataCollection", "classamrex_1_1EBDataCollection.html", "classamrex_1_1EBDataCollection" ],
       [ "EBFArrayBox", "classamrex_1_1EBFArrayBox.html", "classamrex_1_1EBFArrayBox" ],
       [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html", "classamrex_1_1EBFArrayBoxFactory" ],

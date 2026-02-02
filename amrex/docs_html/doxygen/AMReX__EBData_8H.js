@@ -1,6 +1,7 @@
 var AMReX__EBData_8H =
 [
     [ "amrex::EBData", "structamrex_1_1EBData.html", "structamrex_1_1EBData" ],
+    [ "amrex::EBDataArrays", "structamrex_1_1EBDataArrays.html", "structamrex_1_1EBDataArrays" ],
     [ "EBData_t", "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7", [
       [ "levelset", "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a0aca025084bb6b6cfc5574bee664851e", null ],
       [ "volfrac", "AMReX__EBData_8H.html#aea45874f350ec5ab95a6918255ecdba7a11d0adae08a2e6c695a438fb7f060c2d", null ],

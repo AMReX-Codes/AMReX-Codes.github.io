@@ -19,6 +19,7 @@ var classamrex_1_1EBFArrayBoxFactory =
     [ "getCentroid", "classamrex_1_1EBFArrayBoxFactory.html#aa41c723ef24703072627f1188c2bb130", null ],
     [ "getCutCellMask", "classamrex_1_1EBFArrayBoxFactory.html#a79c98ba6c468c68db61ae1d35e492d8d", null ],
     [ "getEBData", "classamrex_1_1EBFArrayBoxFactory.html#a73baf6d203d9a2f7ebc09adcb0073cf3", null ],
+    [ "getEBDataArrays", "classamrex_1_1EBFArrayBoxFactory.html#af5e9953972064a3d90384c8d513bd3fd", null ],
     [ "getEBIndexSpace", "classamrex_1_1EBFArrayBoxFactory.html#a472fdfab42254b79cfc0680c1d55627c", null ],
     [ "getEBLevel", "classamrex_1_1EBFArrayBoxFactory.html#a4ca100e0d11c4ee65ccb0fb42733025b", null ],
     [ "getEdgeCent", "classamrex_1_1EBFArrayBoxFactory.html#aa52a89ecc86517328635ced7230747ea", null ],
