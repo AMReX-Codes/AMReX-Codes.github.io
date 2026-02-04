@@ -3,15 +3,209 @@
   <compounddef id="group__amrex__fab__containers" kind="group">
     <compoundname>amrex_fab_containers</compoundname>
     <title>Fab Data</title>
+    <innerclass refid="structamrex_1_1CellData" prot="public">amrex::CellData</innerclass>
+    <innerclass refid="structamrex_1_1ArrayND" prot="public">amrex::ArrayND</innerclass>
     <innerclass refid="classamrex_1_1BaseFab" prot="public">amrex::BaseFab</innerclass>
     <innerclass refid="classamrex_1_1FArrayBox" prot="public">amrex::FArrayBox</innerclass>
     <innerclass refid="classamrex_1_1IArrayBox" prot="public">amrex::IArrayBox</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__amrex__fab__containers_1ga8c21d74d3472963108631a36d5dbef0f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>ArrayND&lt; T, 4, true &gt;</type>
+        <definition>using amrex::Array4 = typedef ArrayND&lt;T,4, true&gt;</definition>
+        <argsstring></argsstring>
+        <name>Array4</name>
+        <qualifiedname>amrex::Array4</qualifiedname>
+        <briefdescription>
+<para>Convenient alias for a 4D <computeroutput><ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</ref></computeroutput> with three spatial dimensions plus a component dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="1306" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="1306" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__amrex__fab__containers_1gafad6a65d8f99b00c14e8de32e2806fd7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ Dim3</type>
+        <definition>__host__ __device__ Dim3 amrex::lbound</definition>
+        <argsstring>(Array4&lt; T &gt; const &amp;a) noexcept</argsstring>
+        <name>lbound</name>
+        <qualifiedname>amrex::lbound</qualifiedname>
+        <param>
+          <type>Array4&lt; T &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Return the inclusive lower bounds of an Array4 in <computeroutput><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></computeroutput> form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array4 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Inclusive lower bounds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="1317" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="1317" bodyend="1320"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fab__containers_1ga00ddc55986bb8cc48ba98491e5d5ba52" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ Dim3</type>
+        <definition>__host__ __device__ Dim3 amrex::ubound</definition>
+        <argsstring>(Array4&lt; T &gt; const &amp;a) noexcept</argsstring>
+        <name>ubound</name>
+        <qualifiedname>amrex::ubound</qualifiedname>
+        <param>
+          <type>Array4&lt; T &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Return the inclusive upper bounds of an Array4 in <computeroutput><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></computeroutput> form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array4 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Inclusive upper bounds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="1331" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="1331" bodyend="1334"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fab__containers_1ga3078c8f88bd6a4f625b7057c7370f7cc" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>__host__ __device__ Dim3</type>
+        <definition>__host__ __device__ Dim3 amrex::length</definition>
+        <argsstring>(Array4&lt; T &gt; const &amp;a) noexcept</argsstring>
+        <name>length</name>
+        <qualifiedname>amrex::length</qualifiedname>
+        <param>
+          <type>Array4&lt; T &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Return the spatial extents of an Array4 in <computeroutput><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></computeroutput> form. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array4 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Lengths </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="1345" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="1345" bodyend="1348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__amrex__fab__containers_1ga41c0202f94cace534ac4555aff7c841d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+          <param>
+            <type>bool</type>
+            <declname>C</declname>
+            <defname>C</defname>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>amrex::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const ArrayND&lt; T, N, C &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Stream an <ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</ref> as its index bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Prints a compact representation of the index bounds, e.g. <computeroutput></computeroutput>((lo...), (hi...)) with <computeroutput>hi</computeroutput> reported as inclusive (i.e., <computeroutput>end-1</computeroutput>).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1ArrayND" kindref="compound">ArrayND</ref> to print. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>os</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="1362" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="1362" bodyend="1365"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
 <para>Box-based data containers representing values on a single <ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">amrex::Box</ref>. </para>
     </briefdescription>
     <detaileddescription>
 <para>Central types include:<itemizedlist>
-<listitem><para><ref refid="classamrex_1_1BaseFab" kindref="compound">amrex::BaseFab</ref></para>
+<listitem><para><ref refid="group__amrex__fab__containers_1ga8c21d74d3472963108631a36d5dbef0f" kindref="member">amrex::Array4</ref> and <ref refid="structamrex_1_1ArrayND" kindref="compound">amrex::ArrayND</ref></para>
+</listitem><listitem><para><ref refid="classamrex_1_1BaseFab" kindref="compound">amrex::BaseFab</ref></para>
 </listitem><listitem><para><ref refid="classamrex_1_1FArrayBox" kindref="compound">amrex::FArrayBox</ref></para>
 </listitem><listitem><para><ref refid="classamrex_1_1IArrayBox" kindref="compound">amrex::IArrayBox</ref> </para>
 </listitem></itemizedlist>

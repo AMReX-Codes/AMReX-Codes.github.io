@@ -14,7 +14,7 @@ var searchData=
   ['aos_5fptr_11',['aos_ptr',['../structamrex_1_1ParticleTileData.html#a804776036d9b9728c58c31db18a66b27',1,'amrex::ParticleTileData::AOS_PTR'],['../structamrex_1_1ConstParticleTileData.html#a95d03c7e7e65783c67fe284a325bbbaf',1,'amrex::ConstParticleTileData::AOS_PTR']]],
   ['arena_5fwrapper_5ftype_12',['arena_wrapper_type',['../structamrex_1_1ArenaAllocatorBase.html#a3013f3e6be3447fa80b47378bb289421',1,'amrex::ArenaAllocatorBase']]],
   ['array_13',['Array',['../group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007',1,'amrex']]],
-  ['array4_14',['Array4',['../namespaceamrex.html#a8c21d74d3472963108631a36d5dbef0f',1,'amrex']]],
+  ['array4_14',['Array4',['../group__amrex__fab__containers.html#ga8c21d74d3472963108631a36d5dbef0f',1,'amrex']]],
   ['asyncvector_15',['AsyncVector',['../group__amrex__linear__containers.html#gaf0ed55b80609bd8e66da4d0c435894d0',1,'amrex::Gpu']]],
   ['atomicint_16',['AtomicInt',['../classamrex_1_1HypreNodeLap.html#a011b59863c3356d7d808e56f47386d4c',1,'amrex::HypreNodeLap']]]
 ];

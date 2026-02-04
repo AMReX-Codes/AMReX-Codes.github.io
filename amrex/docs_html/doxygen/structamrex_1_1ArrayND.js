@@ -46,6 +46,5 @@ var structamrex_1_1ArrayND =
     [ "end", "structamrex_1_1ArrayND.html#a7b0a4f6ee8a14026bd83ec59e95c342d", null ],
     [ "IsArray4_v", "structamrex_1_1ArrayND.html#a0dd63ff1da243a2942d3157ab0e71600", null ],
     [ "IsLastDimComponent_v", "structamrex_1_1ArrayND.html#a561d0a0b8fc3dca5a2b077c0a1336036", null ],
-    [ "p", "structamrex_1_1ArrayND.html#a3f266fa8a00a2828fd5fd72583b1531f", null ],
-    [ "stride", "structamrex_1_1ArrayND.html#a5cfd0761a06af4aa82a69a566b699666", null ]
+    [ "p", "structamrex_1_1ArrayND.html#a3f266fa8a00a2828fd5fd72583b1531f", null ]
 ];

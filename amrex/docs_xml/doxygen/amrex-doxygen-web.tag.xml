@@ -743,8 +743,8 @@
     <includes id="AMReX__IntVect_8H" name="AMReX_IntVect.H" local="no" import="no" module="no" objc="no">AMReX_IntVect.H</includes>
     <includes id="AMReX__GpuPrint_8H" name="AMReX_GpuPrint.H" local="no" import="no" module="no" objc="no">AMReX_GpuPrint.H</includes>
     <includes id="AMReX__ConstexprFor_8H" name="AMReX_ConstexprFor.H" local="no" import="no" module="no" objc="no">AMReX_ConstexprFor.H</includes>
-    <class kind="struct">amrex::CellData</class>
-    <class kind="struct">amrex::ArrayND</class>
+    <class kind="class">amrex::CellData</class>
+    <class kind="class">amrex::ArrayND</class>
     <class kind="struct">amrex::HasMultiComp</class>
     <class kind="struct">amrex::HasMultiComp&lt; B, std::enable_if_t&lt; B().size() &gt;=1 &gt;</class>
     <class kind="struct">amrex::PolymorphicArray4</class>
@@ -13980,7 +13980,7 @@
       <arglist></arglist>
     </member>
   </compound>
-  <compound kind="struct">
+  <compound kind="class">
     <name>amrex::ArrayND</name>
     <filename>structamrex_1_1ArrayND.html</filename>
     <templarg>typename T</templarg>
@@ -14285,13 +14285,6 @@
       <name>p</name>
       <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
       <anchor>a3f266fa8a00a2828fd5fd72583b1531f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>detail::Stride&lt; N-1 &gt;</type>
-      <name>stride</name>
-      <anchorfile>structamrex_1_1ArrayND.html</anchorfile>
-      <anchor>a5cfd0761a06af4aa82a69a566b699666</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -20720,7 +20713,7 @@
       <arglist>(const FArrayBox &amp;crse, int crse_comp, FArrayBox &amp;fine, int fine_comp, int ncomp, const Box &amp;fine_region, const IntVect &amp;ratio, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, Vector&lt; BCRec &gt; const &amp;bcr, int actual_comp, int actual_state, RunOn runon) override</arglist>
     </member>
   </compound>
-  <compound kind="struct">
+  <compound kind="class">
     <name>amrex::CellData</name>
     <filename>structamrex_1_1CellData.html</filename>
     <templarg>typename T</templarg>
@@ -20758,27 +20751,6 @@
       <anchorfile>structamrex_1_1CellData.html</anchorfile>
       <anchor>ac03c31c20c85fdcd25b44ea075ff6ad5</anchor>
       <arglist>(int n) const noexcept</arglist>
-    </member>
-    <member kind="variable">
-      <type>T *__restrict__</type>
-      <name>p</name>
-      <anchorfile>structamrex_1_1CellData.html</anchorfile>
-      <anchor>aed05f6d9c75f7f135602071a20630fe6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Long</type>
-      <name>stride</name>
-      <anchorfile>structamrex_1_1CellData.html</anchorfile>
-      <anchor>a43b1a4e88127b9fe9ec9c37c5623d5ed</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>int</type>
-      <name>ncomp</name>
-      <anchorfile>structamrex_1_1CellData.html</anchorfile>
-      <anchor>a327facaefaef9c16772d8b9f5647848e</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -69164,7 +69136,7 @@
     <class kind="struct">amrex::Array4MaskCopyTag</class>
     <class kind="struct">amrex::Array4PairTag</class>
     <class kind="struct">amrex::Array4Tag</class>
-    <class kind="struct">amrex::ArrayND</class>
+    <class kind="class">amrex::ArrayND</class>
     <class kind="class">amrex::ArrayOfStructs</class>
     <class kind="struct">amrex::AssignGrid</class>
     <class kind="struct">amrex::AssignGridFilter</class>
@@ -69198,7 +69170,7 @@
     <class kind="class">amrex::CellConservativeLinear</class>
     <class kind="class">amrex::CellConservativeProtected</class>
     <class kind="class">amrex::CellConservativeQuartic</class>
-    <class kind="struct">amrex::CellData</class>
+    <class kind="class">amrex::CellData</class>
     <class kind="struct">amrex::CellIndexEnum</class>
     <class kind="class">amrex::CellQuadratic</class>
     <class kind="class">amrex::CellQuartic</class>
@@ -69669,8 +69641,8 @@
     <member kind="typedef">
       <type>ArrayND&lt; T, 4, true &gt;</type>
       <name>Array4</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a8c21d74d3472963108631a36d5dbef0f</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga8c21d74d3472963108631a36d5dbef0f</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -71177,29 +71149,29 @@
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>lbound</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>afad6a65d8f99b00c14e8de32e2806fd7</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>gafad6a65d8f99b00c14e8de32e2806fd7</anchor>
       <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>ubound</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a00ddc55986bb8cc48ba98491e5d5ba52</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga00ddc55986bb8cc48ba98491e5d5ba52</anchor>
       <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__host__ __device__ Dim3</type>
       <name>length</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a3078c8f88bd6a4f625b7057c7370f7cc</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga3078c8f88bd6a4f625b7057c7370f7cc</anchor>
       <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a41c0202f94cace534ac4555aff7c841d</anchor>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga41c0202f94cace534ac4555aff7c841d</anchor>
       <arglist>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</arglist>
     </member>
     <member kind="function">
@@ -83987,9 +83959,46 @@
     <name>amrex_fab_containers</name>
     <title>Fab Data</title>
     <filename>group__amrex__fab__containers.html</filename>
+    <class kind="class">amrex::CellData</class>
+    <class kind="class">amrex::ArrayND</class>
     <class kind="class">amrex::BaseFab</class>
     <class kind="class">amrex::FArrayBox</class>
     <class kind="class">amrex::IArrayBox</class>
+    <member kind="typedef">
+      <type>ArrayND&lt; T, 4, true &gt;</type>
+      <name>amrex::Array4</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga8c21d74d3472963108631a36d5dbef0f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ Dim3</type>
+      <name>amrex::lbound</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>gafad6a65d8f99b00c14e8de32e2806fd7</anchor>
+      <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ Dim3</type>
+      <name>amrex::ubound</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga00ddc55986bb8cc48ba98491e5d5ba52</anchor>
+      <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>__host__ __device__ Dim3</type>
+      <name>amrex::length</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga3078c8f88bd6a4f625b7057c7370f7cc</anchor>
+      <arglist>(Array4&lt; T &gt; const &amp;a) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>std::ostream &amp;</type>
+      <name>amrex::operator&lt;&lt;</name>
+      <anchorfile>group__amrex__fab__containers.html</anchorfile>
+      <anchor>ga41c0202f94cace534ac4555aff7c841d</anchor>
+      <arglist>(std::ostream &amp;os, const ArrayND&lt; T, N, C &gt; &amp;a)</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>amrex_multifab_containers</name>
