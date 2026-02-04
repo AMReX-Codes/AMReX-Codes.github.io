@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tabledata_0',['TableData',['../classamrex_1_1TableData.html#a629989dacadbcb7af5a95b3c5e4aa23a',1,'amrex::TableData']]],
-  ['transpose_1',['transpose',['../classamrex_1_1SpMatrix.html#a4dd66fb131710a5961a8a74a14914674',1,'amrex::SpMatrix']]]
+  ['spmv_0',['SpMV',['../classamrex_1_1SpMatrix.html#af2f318a03ebd3b2a25ff1cbc98512d4d',1,'amrex::SpMatrix']]],
+  ['statedataphysbcfunct_1',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
 ];

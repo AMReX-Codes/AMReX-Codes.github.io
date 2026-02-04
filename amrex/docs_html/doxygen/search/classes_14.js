@@ -93,7 +93,7 @@ var searchData=
   ['vector_3c_20fab_20_2a_20_3e_90',['Vector&lt; FAB * &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20gfab_20_3e_91',['Vector&lt; GFab &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20hypre_5fint_20_3e_92',['Vector&lt; HYPRE_Int &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20int_20_3e_93',['vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;']]],
+  ['vector_3c_20int_20_3e_93',['vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;']]],
   ['vector_3c_20inversecopytag_20_3e_94',['Vector&lt; InverseCopyTag &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20long_20_3e_95',['Vector&lt; Long &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20mf_20_3e_96',['Vector&lt; MF &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],

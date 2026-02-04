@@ -74,5 +74,7 @@ var searchData=
   ['ispolymorphicarenaallocator_3c_20polymorphicarenaallocator_3c_20t_20_3e_20_3e_71',['IsPolymorphicArenaAllocator&lt; PolymorphicArenaAllocator&lt; T &gt; &gt;',['../structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html',1,'amrex']]],
   ['isstoreatomic_72',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e_73',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
-  ['iterator_74',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator&lt; T &gt;::iterator'],['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors&lt; ParticleType &gt;::iterator']]]
+  ['istypelist_74',['IsTypeList',['../structamrex_1_1IsTypeList.html',1,'amrex']]],
+  ['istypelist_3c_20typelist_3c_20ts_2e_2e_2e_20_3e_20_3e_75',['IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;',['../structamrex_1_1IsTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html',1,'amrex']]],
+  ['iterator_76',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator&lt; T &gt;::iterator'],['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors&lt; ParticleType &gt;::iterator']]]
 ];

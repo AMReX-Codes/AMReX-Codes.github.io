@@ -4893,6 +4893,7 @@
     <includes id="AMReX__Arena_8H" name="AMReX_Arena.H" local="no" import="no" module="no" objc="no">AMReX_Arena.H</includes>
     <includes id="AMReX__OpenMP_8H" name="AMReX_OpenMP.H" local="no" import="no" module="no" objc="no">AMReX_OpenMP.H</includes>
     <includes id="AMReX__MFIter_8H" name="AMReX_MFIter.H" local="no" import="no" module="no" objc="no">AMReX_MFIter.H</includes>
+    <includes id="AMReX__TypeList_8H" name="AMReX_TypeList.H" local="no" import="no" module="no" objc="no">AMReX_TypeList.H</includes>
     <includes id="AMReX__ValLocPair_8H" name="AMReX_ValLocPair.H" local="no" import="no" module="no" objc="no">AMReX_ValLocPair.H</includes>
     <class kind="struct">amrex::ReduceOpSum</class>
     <class kind="struct">amrex::ReduceOpMin</class>
@@ -4901,6 +4902,7 @@
     <class kind="struct">amrex::ReduceOpLogicalOr</class>
     <class kind="class">amrex::ReduceData</class>
     <class kind="class">amrex::ReduceOps</class>
+    <class kind="class">amrex::Reducer</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Reduce</namespace>
   </compound>
@@ -5189,6 +5191,10 @@
     <filename>AMReX__TypeList_8H.html</filename>
     <class kind="struct">amrex::TypeList</class>
     <class kind="struct">amrex::TypeArray</class>
+    <class kind="struct">amrex::ToTypeList</class>
+    <class kind="struct">amrex::ToTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
+    <class kind="struct">amrex::IsTypeList</class>
+    <class kind="struct">amrex::IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -39055,6 +39061,16 @@
     <filename>structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html</filename>
   </compound>
   <compound kind="struct">
+    <name>amrex::IsTypeList</name>
+    <filename>structamrex_1_1IsTypeList.html</filename>
+    <templarg>typename T</templarg>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;</name>
+    <filename>structamrex_1_1IsTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html</filename>
+    <templarg>typename... Ts</templarg>
+  </compound>
+  <compound kind="struct">
     <name>amrex::BinIterator::iterator</name>
     <filename>structamrex_1_1BinIterator_1_1iterator.html</filename>
     <member kind="function">
@@ -62141,13 +62157,6 @@
     <filename>classamrex_1_1ReduceOps.html</filename>
     <templarg>typename... Ps</templarg>
     <member kind="function">
-      <type>void</type>
-      <name>eval_mf</name>
-      <anchorfile>classamrex_1_1ReduceOps.html</anchorfile>
-      <anchor>a6ee0df1c765e4839d3e453159681baf8</anchor>
-      <arglist>(I, MF const &amp;mf, IntVect const &amp;nghost, int ncomp, D &amp;reduce_data, F const &amp;f)</arglist>
-    </member>
-    <member kind="function">
       <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
       <name>eval</name>
       <anchorfile>classamrex_1_1ReduceOps.html</anchorfile>
@@ -62189,12 +62198,12 @@
       <anchor>a05d9d8beb406be38812442c318e5d434</anchor>
       <arglist>(D &amp;reduce_data)</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
-      <name>resetResultReadiness</name>
+    <member kind="friend" protection="private">
+      <type>friend class</type>
+      <name>ReduceData</name>
       <anchorfile>classamrex_1_1ReduceOps.html</anchorfile>
-      <anchor>aa9f7ed138e607372624eb46fb43e9c85</anchor>
-      <arglist>()</arglist>
+      <anchor>a905959f2432b94d6e744abe01e3ba107</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -62220,6 +62229,82 @@
       <anchorfile>structamrex_1_1ReduceOpSum.html</anchorfile>
       <anchor>af18e050e03babd636f9b492f8776a4df</anchor>
       <arglist>(T &amp;t) const noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>amrex::Reducer</name>
+    <filename>classamrex_1_1Reducer.html</filename>
+    <templarg>typename Ops</templarg>
+    <templarg>typename Ts</templarg>
+    <member kind="typedef">
+      <type>typename Base::Result_t</type>
+      <name>Result_t</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a7520cbd41126649adcb8554dcc9d362e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Reducer</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a4cf4e3e51909d31209dc9791a424506b</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~Reducer</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a8514624ef28396c4ddc9184a22ffa831</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>std::enable_if_t&lt; IsCallable&lt; F, int, int, int &gt;::value||IsCallable&lt; F, IntVectND&lt; dim &gt; &gt;::value &gt;</type>
+      <name>eval</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a3595e96f7f9e8f7dcf960c1c69028c03</anchor>
+      <arglist>(BoxND&lt; dim &gt; const &amp;box, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::enable_if_t&lt; IsCallable&lt; F, int, int, int, int &gt;::value||IsCallable&lt; F, IntVectND&lt; dim &gt;, int &gt;::value &gt;</type>
+      <name>eval</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>aedba46377f52de2be3f4d46a256d7512</anchor>
+      <arglist>(BoxND&lt; dim &gt; const &amp;box, int ncomp, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;IsCallable&lt; F, int, int, int, int &gt;::value &gt;</type>
+      <name>eval</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>aa041cc0eb934c793790179bc761e4960</anchor>
+      <arglist>(MF const &amp;mf, IntVect const &amp;nghost, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;IsCallable&lt; F, int, int, int, int, int &gt;::value &gt;</type>
+      <name>eval</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a3d07518db5f325fbd14546675d5b6129</anchor>
+      <arglist>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::enable_if_t&lt; IsCallable&lt; F, N &gt;::value &gt;</type>
+      <name>eval</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a69a383e0a021e610faa1de2e4608f60b</anchor>
+      <arglist>(N n, F &amp;&amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type>Result_t</type>
+      <name>getResult</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a69c6e5e3d846d4070a3a16efcaa748a7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>size</name>
+      <anchorfile>classamrex_1_1Reducer.html</anchorfile>
+      <anchor>a298ac595a14c21097886ae89c4aa10c8</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -67357,6 +67442,30 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>amrex::ToTypeList</name>
+    <filename>structamrex_1_1ToTypeList.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="typedef">
+      <type>TypeList&lt; T &gt;</type>
+      <name>type</name>
+      <anchorfile>structamrex_1_1ToTypeList.html</anchorfile>
+      <anchor>ac8c56088af3165dd61647f444a607839</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>amrex::ToTypeList&lt; TypeList&lt; Ts... &gt; &gt;</name>
+    <filename>structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html</filename>
+    <templarg>typename... Ts</templarg>
+    <member kind="typedef">
+      <type>TypeList&lt; Ts... &gt;</type>
+      <name>type</name>
+      <anchorfile>structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html</anchorfile>
+      <anchor>a269fbf8fac51d3d9acd3dfc4d69a6886</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>amrex::TracerParticleContainer</name>
     <filename>classamrex_1_1TracerParticleContainer.html</filename>
@@ -69267,6 +69376,8 @@
     <class kind="struct">amrex::IsPolymorphicArenaAllocator&lt; PolymorphicArenaAllocator&lt; T &gt; &gt;</class>
     <class kind="struct">amrex::IsStoreAtomic</class>
     <class kind="struct">amrex::IsStoreAtomic&lt; EBCellFlag &gt;</class>
+    <class kind="struct">amrex::IsTypeList</class>
+    <class kind="struct">amrex::IsTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
     <class kind="class">amrex::JacobiSmoother</class>
     <class kind="struct">amrex::KeepValidFilter</class>
     <class kind="class">amrex::LayoutData</class>
@@ -69398,6 +69509,7 @@
     <class kind="struct">amrex::ReduceOpMin</class>
     <class kind="class">amrex::ReduceOps</class>
     <class kind="struct">amrex::ReduceOpSum</class>
+    <class kind="class">amrex::Reducer</class>
     <class kind="class">amrex::ref_wrapper</class>
     <class kind="class">amrex::RKIntegrator</class>
     <class kind="struct">amrex::RunOnGpu</class>
@@ -69441,6 +69553,8 @@
     <class kind="class">amrex::TimeIntegrator</class>
     <class kind="class">amrex::TinyProfiler</class>
     <class kind="class">amrex::TinyProfileRegion</class>
+    <class kind="struct">amrex::ToTypeList</class>
+    <class kind="struct">amrex::ToTypeList&lt; TypeList&lt; Ts... &gt; &gt;</class>
     <class kind="class">amrex::TracerParticleContainer</class>
     <class kind="struct">amrex::TransformerGhost</class>
     <class kind="struct">amrex::TransformerVirt</class>
@@ -69781,6 +69895,13 @@
       <name>TypeMultiplier</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>ad9a6d3e0ecd435bde5a280d288b185dc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ToTypeList&lt; T &gt;::type</type>
+      <name>ToTypeList_t</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a605519ff71704de7a2a44e22f7970529</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -78062,6 +78183,13 @@
     </member>
     <member kind="variable">
       <type>constexpr bool</type>
+      <name>IsTypeList_v</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a6e4d7a6aa31b978f6dec1d376fb7486e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr bool</type>
       <name>IsBaseFab_v</name>
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>aa264b7308102fabb2a7356eea1800644</anchor>
@@ -82916,41 +83044,6 @@
       <anchor>ga1f8f5e42f31c1af5afd5655bf9e92fe5</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;box, P const &amp;pred)</arglist>
     </member>
-    <member kind="function">
-      <type>T</type>
-      <name>Sum</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gaa27e01b8606eb821affe5972c09eaf2d</anchor>
-      <arglist>(N n, T *v, T init_val=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>T</type>
-      <name>Min</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>ga97d25722c44d8a7b3f8413e0d6833aae</anchor>
-      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::max())</arglist>
-    </member>
-    <member kind="function">
-      <type>T</type>
-      <name>Max</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gadd66f730ffc2ebb9d6653bd56e625e9b</anchor>
-      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::lowest())</arglist>
-    </member>
-    <member kind="function">
-      <type>std::pair&lt; T, T &gt;</type>
-      <name>MinMax</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gae2dd405fee3ce46eb11db8e67fc1557c</anchor>
-      <arglist>(N n, T *v)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>AnyOf</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>ga7b2d7fdfac3b2baa56c47284058cf7a9</anchor>
-      <arglist>(N n, T *v, P const &amp;pred)</arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>amrex::RungeKutta</name>
@@ -84412,6 +84505,7 @@
     <class kind="struct">amrex::ReduceOpLogicalOr</class>
     <class kind="class">amrex::ReduceData</class>
     <class kind="class">amrex::ReduceOps</class>
+    <class kind="class">amrex::Reducer</class>
     <member kind="function">
       <type>T</type>
       <name>amrex::Reduce::Sum</name>
@@ -84481,41 +84575,6 @@
       <anchorfile>group__amrex__collectives.html</anchorfile>
       <anchor>ga1f8f5e42f31c1af5afd5655bf9e92fe5</anchor>
       <arglist>(BoxND&lt; dim &gt; const &amp;box, P const &amp;pred)</arglist>
-    </member>
-    <member kind="function">
-      <type>T</type>
-      <name>amrex::Reduce::Sum</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gaa27e01b8606eb821affe5972c09eaf2d</anchor>
-      <arglist>(N n, T *v, T init_val=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>T</type>
-      <name>amrex::Reduce::Min</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>ga97d25722c44d8a7b3f8413e0d6833aae</anchor>
-      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::max())</arglist>
-    </member>
-    <member kind="function">
-      <type>T</type>
-      <name>amrex::Reduce::Max</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gadd66f730ffc2ebb9d6653bd56e625e9b</anchor>
-      <arglist>(N n, T *v, T init_val=std::numeric_limits&lt; T &gt;::lowest())</arglist>
-    </member>
-    <member kind="function">
-      <type>std::pair&lt; T, T &gt;</type>
-      <name>amrex::Reduce::MinMax</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>gae2dd405fee3ce46eb11db8e67fc1557c</anchor>
-      <arglist>(N n, T *v)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>amrex::Reduce::AnyOf</name>
-      <anchorfile>group__amrex__collectives.html</anchorfile>
-      <anchor>ga7b2d7fdfac3b2baa56c47284058cf7a9</anchor>
-      <arglist>(N n, T *v, P const &amp;pred)</arglist>
     </member>
     <member kind="function">
       <type>T</type>

@@ -400,6 +400,7 @@ var hierarchy =
       [ "amrex::IsMultiFabLike< M, Enable >", "structamrex_1_1IsMultiFabLike.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
+      [ "amrex::IsTypeList< T >", "structamrex_1_1IsTypeList.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ]
     ] ],
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
@@ -794,6 +795,9 @@ var hierarchy =
     [ "amrex::ReduceOpMin", "structamrex_1_1ReduceOpMin.html", null ],
     [ "amrex::ReduceOps< Ps >", "classamrex_1_1ReduceOps.html", null ],
     [ "amrex::ReduceOpSum", "structamrex_1_1ReduceOpSum.html", null ],
+    [ "ReducerImpl", null, [
+      [ "amrex::Reducer< Ops, Ts >", "classamrex_1_1Reducer.html", null ]
+    ] ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
     [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
@@ -870,6 +874,8 @@ var hierarchy =
     [ "amrex::TimeIntegrator< T >", "classamrex_1_1TimeIntegrator.html", null ],
     [ "amrex::TinyProfiler", "classamrex_1_1TinyProfiler.html", null ],
     [ "amrex::TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", null ],
+    [ "amrex::ToTypeList< T >", "structamrex_1_1ToTypeList.html", null ],
+    [ "amrex::ToTypeList< TypeList< Ts... > >", "structamrex_1_1ToTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "amrex::TransformerGhost", "structamrex_1_1TransformerGhost.html", null ],
     [ "amrex::TransformerVirt", "structamrex_1_1TransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
@@ -910,6 +916,7 @@ var hierarchy =
       [ "amrex::IsMultiFabLike< M, std::enable_if_t< IsFabArray_v< M > &&IsBaseFab_v< typename M::fab_type > > >", "structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::IsStoreAtomic< EBCellFlag >", "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html", null ],
+      [ "amrex::IsTypeList< TypeList< Ts... > >", "structamrex_1_1IsTypeList_3_01TypeList_3_01Ts_8_8_8_01_4_01_4.html", null ],
       [ "amrex::MaybeDeviceRunnable< T, Enable >", "structamrex_1_1MaybeDeviceRunnable.html", null ],
       [ "amrex::MaybeHostDeviceRunnable< T, Enable >", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
       [ "amrex::RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],

@@ -1,0 +1,595 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classamrex_1_1Reducer" kind="class" language="C++" prot="public">
+    <compoundname>amrex::Reducer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ReducerImpl&lt; ToTypeList_t&lt; Ops &gt;, ToTypeList_t&lt; Ts &gt; &gt;</basecompoundref>
+    <includes refid="AMReX__Reduce_8H" local="no">AMReX_Reduce.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Ops</type>
+      </param>
+      <param>
+        <type>typename Ts</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classamrex_1_1Reducer_1a80748eeaa4398491d3220bcd4219fceb" prot="private" static="no">
+        <type>ReducerImpl&lt; <ref refid="namespaceamrex_1a605519ff71704de7a2a44e22f7970529" kindref="member">ToTypeList_t</ref>&lt; Ops &gt;, <ref refid="namespaceamrex_1a605519ff71704de7a2a44e22f7970529" kindref="member">ToTypeList_t</ref>&lt; Ts &gt; &gt;</type>
+        <definition>using amrex::Reducer&lt; Ops, Ts &gt;::Base =  ReducerImpl&lt;ToTypeList_t&lt;Ops&gt;, ToTypeList_t&lt;Ts&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>Base</name>
+        <qualifiedname>amrex::Reducer::Base</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1609" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1609" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" prot="public" static="no">
+        <type>typename Base::Result_t</type>
+        <definition>using amrex::Reducer&lt; Ops, Ts &gt;::Result_t =  typename Base::Result_t</definition>
+        <argsstring></argsstring>
+        <name>Result_t</name>
+        <qualifiedname>amrex::Reducer::Result_t</qualifiedname>
+        <briefdescription>
+<para>Reduction result type, <computeroutput>GpuTuple&lt;U...&gt;</computeroutput>, where <computeroutput>U</computeroutput>... are the types in <computeroutput>Ts</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1612" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1612" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Reducer_1a298ac595a14c21097886ae89c4aa10c8" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::Reducer&lt; Ops, Ts &gt;::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>amrex::Reducer::size</qualifiedname>
+        <initializer>= <ref refid="structamrex_1_1GpuTupleSize" kindref="compound">GpuTupleSize</ref>&lt;<ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t</ref>&gt;::value</initializer>
+        <briefdescription>
+<para>Number of reduction operators. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1613" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1613" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a4cf4e3e51909d31209dc9791a424506b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Reducer&lt; Ops, Ts &gt;::Reducer</definition>
+        <argsstring>()=default</argsstring>
+        <name>Reducer</name>
+        <qualifiedname>amrex::Reducer::Reducer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1615" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a8514624ef28396c4ddc9184a22ffa831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Reducer&lt; Ops, Ts &gt;::~Reducer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Reducer</name>
+        <qualifiedname>amrex::Reducer::~Reducer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1616" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a3595e96f7f9e8f7dcf960c1c69028c03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+          </param>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::value||<ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsCallable&lt; F, int, int, int &gt;::value|| IsCallable&lt; F, IntVectND&lt; dim &gt; &gt;::value &gt; amrex::Reducer&lt; Ops, Ts &gt;::eval</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, F &amp;&amp;f)</argsstring>
+        <name>eval</name>
+        <qualifiedname>amrex::Reducer::eval</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Reduction over a Box. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This loops over all integer indices in <computeroutput>box</computeroutput>, i.e., a <computeroutput>dim-dimenstional</computeroutput> iteration space.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dimension of the Box.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable object returning <computeroutput>Result_t</computeroutput> for reduction. Its signature is either <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(int,int,int)</ref></computeroutput> or <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(IntVectND&lt;dim&gt;)</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1641" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1641" bodyend="1644"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1aedba46377f52de2be3f4d46a256d7512" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+          </param>
+          <param>
+            <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::value||<ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsCallable&lt; F, int, int, int, int &gt;::value|| IsCallable&lt; F, IntVectND&lt; dim &gt;, int &gt;::value &gt; amrex::Reducer&lt; Ops, Ts &gt;::eval</definition>
+        <argsstring>(BoxND&lt; dim &gt; const &amp;box, int ncomp, F &amp;&amp;f)</argsstring>
+        <name>eval</name>
+        <qualifiedname>amrex::Reducer::eval</qualifiedname>
+        <param>
+          <type><ref refid="classamrex_1_1BoxND" kindref="compound">BoxND</ref>&lt; dim &gt; const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Reduction over a Box plus component index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This loops over all integer indices in <computeroutput>box</computeroutput> and over components <computeroutput>n</computeroutput> in <computeroutput></computeroutput>[0,ncomp), i.e., a <computeroutput></computeroutput>(dim+1)-dimenstional iteration space.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dimension of the Box.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Box </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable object returning <computeroutput>Result_t</computeroutput> for reduction. Its signature is either <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(int,int,int,int)</ref></computeroutput> or <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(IntVectND&lt;dim&gt;,int)</ref></computeroutput>, with the last argument the component index in both versions. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1664" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1664" bodyend="1667"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1aa041cc0eb934c793790179bc761e4960" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename MF</type>
+          </param>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp; IsCallable&lt; F, int, int, int, int &gt;::value &gt; amrex::Reducer&lt; Ops, Ts &gt;::eval</definition>
+        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, F &amp;&amp;f)</argsstring>
+        <name>eval</name>
+        <qualifiedname>amrex::Reducer::eval</qualifiedname>
+        <param>
+          <type>MF const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Reduction over a MultiFab-like object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This loops over the valid region of a MultiFab-like object plus <computeroutput>nghost</computeroutput> layers of ghost cells.</para>
+<para>The MultiFab-like object <computeroutput>mf</computeroutput> is used only to define the iteration space. The values participating in the reduction are provided by the user-supplied callable <computeroutput>f</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>MF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab-like type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab-like object for providing the iteration space. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost-cell layers included in the iteration space. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable object returning <computeroutput>Result_t</computeroutput> for reduction. Its signature is <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(int,int,int,int)</ref></computeroutput>, where the arguments correspond to the local box index in <computeroutput>mf</computeroutput> and the <formula id="0">$(i,j,k)$</formula> cell indices. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1691" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1691" bodyend="1694"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a3d07518db5f325fbd14546675d5b6129" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename MF</type>
+          </param>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp; IsCallable&lt; F, int, int, int, int, int &gt;::value &gt; amrex::Reducer&lt; Ops, Ts &gt;::eval</definition>
+        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, F &amp;&amp;f)</argsstring>
+        <name>eval</name>
+        <qualifiedname>amrex::Reducer::eval</qualifiedname>
+        <param>
+          <type>MF const &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a95101764f5ec64cd1dd6e55614702cdb" kindref="member">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Reduction over a MultiFab-like object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This loops over the valid region of a MultiFab-like object plus <computeroutput>nghost</computeroutput> layers of ghost cells and over components, i.e., a <computeroutput></computeroutput>(AMREX_SPACEDIM+1)-dimensional iteration space.</para>
+<para>The MultiFab-like object <computeroutput>mf</computeroutput> is used only to define the iteration space. The values participating in the reduction are provided by the user-supplied callable <computeroutput>f</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>MF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab-like type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab-like object for providing the iteration space. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost-cell layers included in the iteration space. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable object returning <computeroutput>Result_t</computeroutput> for reduction. Its signature is <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(int,int,int,int,int)</ref></computeroutput>, where the arguments correspond to the local box index in <computeroutput>mf</computeroutput>, the <formula id="0">$(i,j,k)$</formula> cell indices, and the component index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1721" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1721" bodyend="1724"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a69a383e0a021e610faa1de2e4608f60b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type>typename <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref></type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref>&lt; <ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref>, N &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsCallable&lt; F, N &gt;::value &gt; amrex::Reducer&lt; Ops, Ts &gt;::eval</definition>
+        <argsstring>(N n, F &amp;&amp;f)</argsstring>
+        <name>eval</name>
+        <qualifiedname>amrex::Reducer::eval</qualifiedname>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Reduction over a 1D index range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This loops over <computeroutput></computeroutput>[0,n).</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integral index type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>exclusive upper bound of the 1d loop. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable object returning <computeroutput>Result_t</computeroutput> for reduction. It must be invocable as <computeroutput><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t(N)</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1740" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1740" bodyend="1743"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Reducer_1a69c6e5e3d846d4070a3a16efcaa748a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t</ref></type>
+        <definition>Result_t amrex::Reducer&lt; Ops, Ts &gt;::getResult</definition>
+        <argsstring>()</argsstring>
+        <name>getResult</name>
+        <qualifiedname>amrex::Reducer::getResult</qualifiedname>
+        <briefdescription>
+<para>Get the final reduction result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The return data type is <computeroutput>Result_t</computeroutput> (i.e., <ref refid="classamrex_1_1GpuTuple" kindref="compound">amrex::GpuTuple</ref>). Individual elements can be accessed using <computeroutput><ref refid="namespaceamrex_1afbad2005fb348eb3e7a873b731210d68" kindref="member">amrex::get&lt;I&gt;()</ref></computeroutput>. If all underlying value types are the same, the result can also be converted to an <computeroutput><ref refid="structamrex_1_1GpuArray" kindref="compound">amrex::GpuArray</ref></computeroutput> via <computeroutput><ref refid="namespaceamrex_1aabd9e2f1b8b5cb8db6c0342fbf626eef" kindref="member">amrex::tupleToArray()</ref></computeroutput> and then accessed using <computeroutput>operator</computeroutput>[].</para>
+<para><simplesect kind="return"><para>reduction result as <computeroutput>Result_t</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1755" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1755" bodyend="1758"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for local reductions (e.g., sum, min and max). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class wraps <computeroutput><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref></computeroutput> and <computeroutput><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData</ref></computeroutput> to provide support for local reductions. A typical usage is: <programlisting filename=".cpp"><codeline><highlight class="normal"><sp/><sp/>Reducer&lt;TypeList&lt;ReduceOpMin,<sp/>ReduceOpMax,<sp/>ReduceOpMax,<sp/>ReduceOpSum&gt;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeList&lt;int,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&gt;&gt;<sp/>reducer{};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t</ref><sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal">(reducer)<ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">::Result_t</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>the<sp/>code<sp/>below,<sp/>mf<sp/>is<sp/>a<sp/>MulitFab<sp/>and<sp/>imf<sp/>is<sp/>an<sp/>iMultiFab.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf,TilingIfNotGpu());<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5e922fb76ff2eb645844783ad65d1490" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box<sp/>=<sp/>mfi.tilebox();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ar<sp/>=<sp/><sp/>mf.const_array(mfi);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;int<sp/><sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ai<sp/>=<sp/>imf.const_array(mfi);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reducer.eval(box,<sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/><ref refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" kindref="member">Result_t</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vr<sp/>=<sp/>ar(i,j,k);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vi<sp/>=<sp/>ai(i,j,k);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{vi,vr,std::abs(vr),vr*vr};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>reducer.getResult();</highlight></codeline>
+</programlisting> The code above performs a sum reduction on an <computeroutput><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref></computeroutput>, and on a <computeroutput><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></computeroutput>, it computes the maximum, the maximum of the absolute value, and the sum of squares. The data type of <computeroutput>result</computeroutput> is <computeroutput>GpuTuple&lt;int,Real,Real,Real&gt;</computeroutput>.</para>
+<para>If the type list is long, <computeroutput><ref refid="namespaceamrex_1ad9a6d3e0ecd435bde5a280d288b185dc" kindref="member">amrex::TypeMultiplier</ref></computeroutput> can be used to reduce verbosity. For example, the equvalient definition of <computeroutput><ref refid="classamrex_1_1Reducer" kindref="compound">Reducer</ref></computeroutput> above is <programlisting filename=".cpp"><codeline><highlight class="normal">Reducer&lt;TypeMultiplier&lt;TypeList,RedcueOpMin,ReduceOpMax[2],ReduceOpSum&gt;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TypeMultiplier&lt;TypeList,int,Real[3]&gt;&gt;<sp/>reducer{};</highlight></codeline>
+</programlisting></para>
+<para>If there is only a single reduction operator, the use of <computeroutput><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref></computeroutput> may be omitted. For example, <programlisting filename=".cpp"><codeline><highlight class="normal">Reducer&lt;ReduceOpSum,<sp/>amrex::Long&gt;<sp/>reducer{};</highlight></codeline>
+</programlisting></para>
+<para>Multiple variants of the <computeroutput>eval</computeroutput> function are provided for looping over <computeroutput>Box</computeroutput>, <computeroutput>Box</computeroutput> plus component, 1D index ranges, and fused loops over <computeroutput><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></computeroutput> like objects.</para>
+<para>User defined types are supported as long as they provide the operations required by the reduction operators. <computeroutput><ref refid="structamrex_1_1ValLocPair" kindref="compound">amrex::ValLocPair</ref></computeroutput> is such an example of a custom type that supports <computeroutput><ref refid="structamrex_1_1ReduceOpMin" kindref="compound">ReduceOpMin</ref></computeroutput> and <computeroutput><ref refid="structamrex_1_1ReduceOpMax" kindref="compound">ReduceOpMax</ref></computeroutput>.</para>
+<para><simplesect kind="note"><para>This is a local reduction and does not involve MPI communication. For a global reduction across ranks, reduce the local result with MPI.</para>
+</simplesect>
+<simplesect kind="note"><para>A <computeroutput><ref refid="classamrex_1_1Reducer" kindref="compound">Reducer</ref></computeroutput> instance is intended to be used as an ephemeral object. Create a new instance for a new reduction rather than reusing one across unrelated loops.</para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reduction operator type(s). May be a single operator (e.g., <computeroutput><ref refid="structamrex_1_1ReduceOpSum" kindref="compound">ReduceOpSum</ref></computeroutput>) or a <computeroutput><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref></computeroutput> of operators. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value type(s) corresponding to <computeroutput>Ops</computeroutput>. May be a single type or a <computeroutput><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref></computeroutput> of types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ReducerImpl&lt; ToTypeList_t&lt; Ops &gt;, ToTypeList_t&lt; Ts &gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::Reducer&lt; Ops, Ts &gt;</label>
+        <link refid="classamrex_1_1Reducer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ReducerImpl&lt; ToTypeList_t&lt; Ops &gt;, ToTypeList_t&lt; Ts &gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::Reducer&lt; Ops, Ts &gt;</label>
+        <link refid="classamrex_1_1Reducer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1606" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1608" bodyend="1759"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Reducer_1a80748eeaa4398491d3220bcd4219fceb" prot="private" virt="non-virtual"><scope>amrex::Reducer</scope><name>Base</name></member>
+      <member refid="classamrex_1_1Reducer_1a3595e96f7f9e8f7dcf960c1c69028c03" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>eval</name></member>
+      <member refid="classamrex_1_1Reducer_1aedba46377f52de2be3f4d46a256d7512" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>eval</name></member>
+      <member refid="classamrex_1_1Reducer_1aa041cc0eb934c793790179bc761e4960" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>eval</name></member>
+      <member refid="classamrex_1_1Reducer_1a3d07518db5f325fbd14546675d5b6129" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>eval</name></member>
+      <member refid="classamrex_1_1Reducer_1a69a383e0a021e610faa1de2e4608f60b" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>eval</name></member>
+      <member refid="classamrex_1_1Reducer_1a69c6e5e3d846d4070a3a16efcaa748a7" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>getResult</name></member>
+      <member refid="classamrex_1_1Reducer_1a4cf4e3e51909d31209dc9791a424506b" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>Reducer</name></member>
+      <member refid="classamrex_1_1Reducer_1a7520cbd41126649adcb8554dcc9d362e" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>Result_t</name></member>
+      <member refid="classamrex_1_1Reducer_1a298ac595a14c21097886ae89c4aa10c8" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>size</name></member>
+      <member refid="classamrex_1_1Reducer_1a8514624ef28396c4ddc9184a22ffa831" prot="public" virt="non-virtual"><scope>amrex::Reducer</scope><name>~Reducer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,25 @@
 var NAVTREEINDEX80 =
 {
-"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[3,0,0,66,0,2]
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,1,3],
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a36a3da6780ccd990b74e1e1ceb07f606":[3,0,1,3,0],
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html":[3,0,1,4],
+"structstd_1_1tuple__element_3_01s_00_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html#a9a3f199aa294fcafae8a347c22d8e12d":[3,0,1,4,0],
+"structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html":[3,0,1,5],
+"structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html#a8790d0767460f18c8331769ade550c3d":[3,0,1,5,0],
+"structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,1,6],
+"structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#a5d5a37198c314fd454c6d5a11303f8dc":[3,0,1,6,0],
+"structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html":[3,0,1,7],
+"structstd_1_1tuple__size_3_01amrex_1_1IndexTypeND_3_01dim_01_4_01_4.html#af43ffa90c029ee19a4d2cdd5e4d1bbdb":[3,0,1,7,0],
+"structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html":[3,0,1,8],
+"structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html#a02352e50126403c1dcf04e5850ffdd4d":[3,0,1,8,0],
+"structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html":[3,0,1,9],
+"structstd_1_1tuple__size_3_01amrex_1_1RealVectND_3_01dim_01_4_01_4.html#a015437ba071e87dad7e534830a018eb6":[3,0,1,9,0],
+"structstd_1_1tuple__size_3_01amrex_1_1SmallMatrix_3_01T_00_01NRows_00_01NCols_00_01ORDER_00_01StartIndex_01_4_01_4.html":[3,0,1,10],
+"topics.html":[1],
+"unionamrex_1_1BlockMutex_1_1state__t.html":[3,0,0,66,0],
+"unionamrex_1_1BlockMutex_1_1state__t.html":[2,0,0,93,0],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[3,0,0,66,0,1],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[2,0,0,93,0,1],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[3,0,0,66,0,2],
+"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[2,0,0,93,0,2]
 };

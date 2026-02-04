@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sbox_0',['sbox',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004',1,'amrex::FabArrayBase::CopyComTag']]],
-  ['sc_1',['sc',['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC'],['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc']]],
+  ['sc_1',['sc',['../structamrex_1_1DeriveRec_1_1StateRange.html#ae011fd687383f2ecfa3e40ad6fdf7501',1,'amrex::DeriveRec::StateRange::sc'],['../structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5',1,'amrex::PCData::SC']]],
   ['scalar_5fa_2',['scalar_a',['../classamrex_1_1Hypre.html#a5cc787cbd77e527e4c58e58904305531',1,'amrex::Hypre']]],
   ['scalar_5fb_3',['scalar_b',['../classamrex_1_1Hypre.html#a8cb2fde2e6ce7be52d40bc7ee19f7ae3',1,'amrex::Hypre']]],
   ['scomp_4',['scomp',['../structamrex_1_1FBData.html#a869352ea49403f3d983d945d75b914a8',1,'amrex::FBData']]],
@@ -14,7 +14,7 @@ var searchData=
   ['send_5freqs_11',['send_reqs',['../structamrex_1_1FBData.html#ac37fd86847fa215e7b422a70cb40d62d',1,'amrex::FBData::send_reqs'],['../structamrex_1_1PCData.html#a3bdae5df3d248131a52ab1d0f65603fb',1,'amrex::PCData::send_reqs'],['../structamrex_1_1SpMatrix_1_1CommMV.html#ae193292df62abdd2d5d750c79906b834',1,'amrex::SpMatrix::CommMV::send_reqs'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a1cb2aa67730793f432c170a57bc2ae65',1,'amrex::SpMatrix::CommTR::send_reqs']]],
   ['send_5fto_12',['send_to',['../structamrex_1_1SpMatrix_1_1CommMV.html#ac8360652eecf499a540827ac87647be0',1,'amrex::SpMatrix::CommMV::send_to'],['../structamrex_1_1SpMatrix_1_1CommTR.html#a4b0bb1b4aa697b34363e749140c2195a',1,'amrex::SpMatrix::CommTR::send_to']]],
   ['serial_13',['Serial',['../namespaceamrex_1_1BinPolicy.html#a78f596e766995fe79e9feefa86af852b',1,'amrex::BinPolicy']]],
-  ['sfab_14',['sfab',['../structamrex_1_1Array4CopyTag.html#a2090663b968b8d0d0fa2f210d59deb99',1,'amrex::Array4CopyTag::sfab'],['../structamrex_1_1FabCopyTag.html#ae4438cd3a8ba5ca18b57112f8748e29e',1,'amrex::FabCopyTag::sfab'],['../structamrex_1_1Array4PairTag.html#ae6df6358ea8d160540ea882aeb87f3d7',1,'amrex::Array4PairTag::sfab'],['../structamrex_1_1CommSendBufTag.html#ab78035befaf1ec0b9decb752bf97dc6e',1,'amrex::CommSendBufTag::sfab'],['../structamrex_1_1Array4MaskCopyTag.html#af951da5bee9c280eac072aaf7f9339af',1,'amrex::Array4MaskCopyTag::sfab']]],
+  ['sfab_14',['sfab',['../structamrex_1_1Array4CopyTag.html#a2090663b968b8d0d0fa2f210d59deb99',1,'amrex::Array4CopyTag::sfab'],['../structamrex_1_1Array4MaskCopyTag.html#af951da5bee9c280eac072aaf7f9339af',1,'amrex::Array4MaskCopyTag::sfab'],['../structamrex_1_1CommSendBufTag.html#ab78035befaf1ec0b9decb752bf97dc6e',1,'amrex::CommSendBufTag::sfab'],['../structamrex_1_1Array4PairTag.html#ae6df6358ea8d160540ea882aeb87f3d7',1,'amrex::Array4PairTag::sfab'],['../structamrex_1_1FabCopyTag.html#ae4438cd3a8ba5ca18b57112f8748e29e',1,'amrex::FabCopyTag::sfab']]],
   ['shared_15',['shared',['../structamrex_1_1FabInfo.html#aad9bb4d1cfbd53be67289b734bf5042c',1,'amrex::FabInfo']]],
   ['shared_5fmemory_16',['shared_memory',['../classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834',1,'amrex::BaseFab']]],
   ['sharedmem_17',['sharedMem',['../structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a',1,'amrex::Gpu::ExecutionConfig']]],
@@ -22,7 +22,7 @@ var searchData=
   ['sign_19',['sign',['../structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b',1,'amrex::NonLocalBC::MultiBlockIndexMapping']]],
   ['signal_5fhandling_20',['signal_handling',['../namespaceamrex_1_1system.html#a5f30c6cb910e5706c7abf41675793e1b',1,'amrex::system']]],
   ['simd_5fwidth_21',['simd_width',['../structamrex_1_1simd_1_1Vectorized.html#a0e893dff355298214666ddcada09e8c5',1,'amrex::simd::Vectorized']]],
-  ['size_22',['size',['../structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b',1,'amrex::NonLocalBC::CommData']]],
+  ['size_22',['size',['../structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b',1,'amrex::NonLocalBC::CommData::size'],['../classamrex_1_1Reducer.html#a298ac595a14c21097886ae89c4aa10c8',1,'amrex::Reducer::size']]],
   ['sizeinreal_23',['SizeInReal',['../classamrex_1_1ArrayOfStructs.html#a566da28aaf6d6cb87b9dc2b2fbf1c889',1,'amrex::ArrayOfStructs']]],
   ['slope_24',['slope',['../AMReX__InterpFaceRegister_8cpp.html#a88afcd348f99c86370fb0bae46f7d73f',1,'AMReX_InterpFaceRegister.cpp']]],
   ['slowblink_25',['SlowBlink',['../namespaceamrex_1_1Font.html#a0a6af2cfc3d3c8e71bd2d45f6e3362fa',1,'amrex::Font']]],
