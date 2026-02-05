@@ -2733,6 +2733,7 @@
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <includes id="AMReX__GpuLaunchMacrosG_8H" name="AMReX_GpuLaunchMacrosG.H" local="no" import="no" module="no" objc="no">AMReX_GpuLaunchMacrosG.H</includes>
     <includes id="AMReX__GpuLaunchFunctsG_8H" name="AMReX_GpuLaunchFunctsG.H" local="no" import="no" module="no" objc="no">AMReX_GpuLaunchFunctsG.H</includes>
+    <includes id="AMReX__GpuLaunchFunctsSIMD_8H" name="AMReX_GpuLaunchFunctsSIMD.H" local="no" import="no" module="no" objc="no">AMReX_GpuLaunchFunctsSIMD.H</includes>
     <includes id="AMReX__GpuLaunch_8nolint_8H" name="AMReX_GpuLaunch.nolint.H" local="no" import="no" module="no" objc="no">AMReX_GpuLaunch.nolint.H</includes>
     <includes id="AMReX__CTOParallelForImpl_8H" name="AMReX_CTOParallelForImpl.H" local="no" import="no" module="no" objc="no">AMReX_CTOParallelForImpl.H</includes>
     <class kind="struct">amrex::Gpu::ExecutionConfig</class>
@@ -2896,13 +2897,21 @@
     <name>AMReX_GpuLaunchFunctsC.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__GpuLaunchFunctsC_8H.html</filename>
-    <class kind="struct">amrex::SIMDindex</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
     <name>AMReX_GpuLaunchFunctsG.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__GpuLaunchFunctsG_8H.html</filename>
+    <namespace>amrex</namespace>
+  </compound>
+  <compound kind="file">
+    <name>AMReX_GpuLaunchFunctsSIMD.H</name>
+    <path>/home/runner/work/amrex/amrex/Src/Base/</path>
+    <filename>AMReX__GpuLaunchFunctsSIMD_8H.html</filename>
+    <includes id="AMReX__Extension_8H" name="AMReX_Extension.H" local="no" import="no" module="no" objc="no">AMReX_Extension.H</includes>
+    <includes id="AMReX__SIMD_8H" name="AMReX_SIMD.H" local="no" import="no" module="no" objc="no">AMReX_SIMD.H</includes>
+    <class kind="struct">amrex::SIMDindex</class>
     <namespace>amrex</namespace>
   </compound>
   <compound kind="file">
@@ -4960,6 +4969,7 @@
     <name>AMReX_SIMD.H</name>
     <path>/home/runner/work/amrex/amrex/Src/Base/</path>
     <filename>AMReX__SIMD_8H.html</filename>
+    <includes id="AMReX_8H" name="AMReX.H" local="no" import="no" module="no" objc="no">AMReX.H</includes>
     <includes id="AMReX__REAL_8H" name="AMReX_REAL.H" local="no" import="no" module="no" objc="no">AMReX_REAL.H</includes>
     <class kind="struct">amrex::simd::Vectorized</class>
     <namespace>amrex</namespace>
@@ -73254,13 +73264,6 @@
       <arglist>(T n, L &amp;&amp;f) noexcept</arglist>
     </member>
     <member kind="function">
-      <type>AMREX_ATTRIBUTE_FLATTEN_FOR void</type>
-      <name>ParallelForSIMD</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a7329f7a3e903d5a9abcd5f8603def1a1</anchor>
-      <arglist>(N n, L const &amp;f) noexcept</arglist>
-    </member>
-    <member kind="function">
       <type>void</type>
       <name>ParallelFor</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -74344,6 +74347,20 @@
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a86a8f5618b206e6ca19a6a4db65f07f7</anchor>
       <arglist>(Gpu::KernelInfo const &amp;info, BoxND&lt; dim &gt; const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, BoxND&lt; dim &gt; const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, BoxND&lt; dim &gt; const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelForSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a4ec5f0c353aec0e3aeefd2628e2d44ff</anchor>
+      <arglist>(N n, L const &amp;f) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ParallelForSIMD</name>
+      <anchorfile>namespaceamrex.html</anchorfile>
+      <anchor>a0e4145cd9e6089289b7bf7b0b85517a3</anchor>
+      <arglist>(N n, L &amp;&amp;f) noexcept</arglist>
     </member>
     <member kind="function">
       <type>__global__ void</type>
@@ -83124,6 +83141,13 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>int</type>
+      <name>SIMDInt</name>
+      <anchorfile>namespaceamrex_1_1simd.html</anchorfile>
+      <anchor>a465ffeeba40e27acff62a2b58078a530</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>std::uint64_t</type>
       <name>SIMDIdCpu</name>
       <anchorfile>namespaceamrex_1_1simd.html</anchorfile>
@@ -83143,6 +83167,20 @@
       <anchorfile>namespaceamrex_1_1simd.html</anchorfile>
       <anchor>aecb850f4517c5fdfadf86c06506366d8</anchor>
       <arglist>(R(C::*)(Args...), int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>__device__ decltype(auto)</type>
+      <name>load_1d</name>
+      <anchorfile>namespaceamrex_1_1simd.html</anchorfile>
+      <anchor>a1dc97776d95d21ac742fa368d1bb56c1</anchor>
+      <arglist>(T *ptr, IndexType const i)</arglist>
+    </member>
+    <member kind="function">
+      <type>__device__ void</type>
+      <name>store_1d</name>
+      <anchorfile>namespaceamrex_1_1simd.html</anchorfile>
+      <anchor>afbefaa17fce807c324a438ada0b98ae4</anchor>
+      <arglist>(ValType const &amp;__restrict__ val, T *const __restrict__ ptr, IndexType const i)</arglist>
     </member>
     <member kind="variable">
       <type>constexpr auto</type>
@@ -83170,10 +83208,10 @@
     <name>amrex::simd::stdx</name>
     <filename>namespaceamrex_1_1simd_1_1stdx.html</filename>
     <member kind="function">
-      <type>AMREX_GPU_HOST_DEVICE bool</type>
+      <type>__host__ __device__ bool</type>
       <name>any_of</name>
       <anchorfile>namespaceamrex_1_1simd_1_1stdx.html</anchorfile>
-      <anchor>a9382bd831a3c3e7bae4dbe9a50cd4fc2</anchor>
+      <anchor>a78322f30bffed99d5c75f1314b294b02</anchor>
       <arglist>(bool const v)</arglist>
     </member>
   </compound>

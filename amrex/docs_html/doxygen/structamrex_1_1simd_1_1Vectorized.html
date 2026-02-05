@@ -130,7 +130,7 @@ struct amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</div><p>Mixin Helper Class</p
 <div class="line">    Compute c;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (amrex::simd::is_vectorized&lt;Compute&gt;) {</div>
-<div class="line">        <a class="code hl_function" href="namespaceamrex.html#a7329f7a3e903d5a9abcd5f8603def1a1">ParallelForSIMD</a>&lt;...&gt;(np, c).</div>
+<div class="line">        <a class="code hl_function" href="namespaceamrex.html#a4ec5f0c353aec0e3aeefd2628e2d44ff">ParallelForSIMD</a>&lt;...&gt;(np, c).</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">        <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">ParallelFor</a>(np, c);</div>
 <div class="line">    }</div>
@@ -139,8 +139,8 @@ struct amrex::simd::Vectorized&lt; SIMD_WIDTH &gt;</div><p>Mixin Helper Class</p
 <div class="ttc" id="aAMReX__Extension_8H_html_a97eafbdde3320b2e8981a1d1d3936f58"><div class="ttname"><a href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a></div><div class="ttdeci">#define AMREX_RESTRICT</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:32</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition</b> AMReX_GpuQualifiers.H:20</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1f15630874d45aeb722ca649e6c4c3a9"><div class="ttname"><a href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt; ParallelFor(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition</b> AMReX_CTOParallelForImpl.H:193</div></div>
-<div class="ttc" id="anamespaceamrex_html_a7329f7a3e903d5a9abcd5f8603def1a1"><div class="ttname"><a href="namespaceamrex.html#a7329f7a3e903d5a9abcd5f8603def1a1">amrex::ParallelForSIMD</a></div><div class="ttdeci">AMREX_ATTRIBUTE_FLATTEN_FOR void ParallelForSIMD(N n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsC.H:208</div></div>
-<div class="ttc" id="astructamrex_1_1simd_1_1Vectorized_html"><div class="ttname"><a href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a></div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:107</div></div>
+<div class="ttc" id="anamespaceamrex_html_a4ec5f0c353aec0e3aeefd2628e2d44ff"><div class="ttname"><a href="namespaceamrex.html#a4ec5f0c353aec0e3aeefd2628e2d44ff">amrex::ParallelForSIMD</a></div><div class="ttdeci">void ParallelForSIMD(N n, L const &amp;f) noexcept</div><div class="ttdef"><b>Definition</b> AMReX_GpuLaunchFunctsSIMD.H:42</div></div>
+<div class="ttc" id="astructamrex_1_1simd_1_1Vectorized_html"><div class="ttname"><a href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a></div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:116</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a0e893dff355298214666ddcada09e8c5" name="a0e893dff355298214666ddcada09e8c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e893dff355298214666ddcada09e8c5">&#9670;&#160;</a></span>simd_width</h2>

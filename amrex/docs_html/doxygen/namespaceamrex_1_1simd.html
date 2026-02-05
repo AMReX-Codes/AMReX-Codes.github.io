@@ -121,6 +121,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a945cac56e2e229159839e79047422383" id="r_a945cac56e2e229159839e79047422383"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> SIMD_WIDTH = native_simd_size_particlereal&gt; </td></tr>
 <tr class="memitem:a945cac56e2e229159839e79047422383"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#a945cac56e2e229159839e79047422383">SIMDParticleReal</a> = <a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd">amrex::ParticleReal</a></td></tr>
 <tr class="separator:a945cac56e2e229159839e79047422383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465ffeeba40e27acff62a2b58078a530" id="r_a465ffeeba40e27acff62a2b58078a530"><td class="memTemplParams" colspan="2">template&lt;typename T_ParticleReal  = SIMDParticleReal&lt;&gt;&gt; </td></tr>
+<tr class="memitem:a465ffeeba40e27acff62a2b58078a530"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#a465ffeeba40e27acff62a2b58078a530">SIMDInt</a> = <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td></tr>
+<tr class="separator:a465ffeeba40e27acff62a2b58078a530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13bc9efaf58e1af807347f918fff24a9" id="r_a13bc9efaf58e1af807347f918fff24a9"><td class="memTemplParams" colspan="2">template&lt;typename T_ParticleReal  = SIMDParticleReal&lt;&gt;&gt; </td></tr>
 <tr class="memitem:a13bc9efaf58e1af807347f918fff24a9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#a13bc9efaf58e1af807347f918fff24a9">SIMDIdCpu</a> = std::uint64_t</td></tr>
 <tr class="separator:a13bc9efaf58e1af807347f918fff24a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +136,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aecb850f4517c5fdfadf86c06506366d8" id="r_aecb850f4517c5fdfadf86c06506366d8"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> , typename R , typename... Args&gt; </td></tr>
 <tr class="memitem:aecb850f4517c5fdfadf86c06506366d8"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#aecb850f4517c5fdfadf86c06506366d8">is_nth_arg_non_const</a> (R(C::*)(Args...), <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n)</td></tr>
 <tr class="separator:aecb850f4517c5fdfadf86c06506366d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc97776d95d21ac742fa368d1bb56c1" id="r_a1dc97776d95d21ac742fa368d1bb56c1"><td class="memTemplParams" colspan="2">template&lt;typename T , typename <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> &gt; </td></tr>
+<tr class="memitem:a1dc97776d95d21ac742fa368d1bb56c1"><td class="memTemplItemLeft" align="right" valign="top">__device__ decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#a1dc97776d95d21ac742fa368d1bb56c1">load_1d</a> (T *ptr, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const i)</td></tr>
+<tr class="separator:a1dc97776d95d21ac742fa368d1bb56c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbefaa17fce807c324a438ada0b98ae4" id="r_afbefaa17fce807c324a438ada0b98ae4"><td class="memTemplParams" colspan="2">template&lt;auto P_Method, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, typename T , typename <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> , typename ValType &gt; </td></tr>
+<tr class="memitem:afbefaa17fce807c324a438ada0b98ae4"><td class="memTemplItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1simd.html#afbefaa17fce807c324a438ada0b98ae4">store_1d</a> (ValType const &amp;__restrict__ val, T *const __restrict__ ptr, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const i)</td></tr>
+<tr class="separator:afbefaa17fce807c324a438ada0b98ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -155,6 +164,22 @@ template&lt;typename T_ParticleReal  = SIMDParticleReal&lt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceamrex_1_1simd.html#a13bc9efaf58e1af807347f918fff24a9">amrex::simd::SIMDIdCpu</a> = typedef std::uint64_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a465ffeeba40e27acff62a2b58078a530" name="a465ffeeba40e27acff62a2b58078a530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465ffeeba40e27acff62a2b58078a530">&#9670;&#160;</a></span>SIMDInt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_ParticleReal  = SIMDParticleReal&lt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceamrex_1_1simd.html#a465ffeeba40e27acff62a2b58078a530">amrex::simd::SIMDInt</a> = typedef <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -245,7 +270,7 @@ template&lt;typename R , typename... Args&gt; </div>
 <div class="line"><span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_function" href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">is_nth_arg_non_const</a>(compute&lt;double&gt;, 1))</div>
 <div class="line">    part_y.copy_to(&amp;m_part_y[i], stdx::element_aligned);</div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a97eafbdde3320b2e8981a1d1d3936f58"><div class="ttname"><a href="AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58">AMREX_RESTRICT</a></div><div class="ttdeci">#define AMREX_RESTRICT</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:32</div></div>
-<div class="ttc" id="anamespaceamrex_1_1simd_html_a83c898c768cfae013bfd34c9ec548517"><div class="ttname"><a href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">amrex::simd::is_nth_arg_non_const</a></div><div class="ttdeci">constexpr bool is_nth_arg_non_const(R(*)(Args...), int n)</div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:140</div></div>
+<div class="ttc" id="anamespaceamrex_1_1simd_html_a83c898c768cfae013bfd34c9ec548517"><div class="ttname"><a href="namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517">amrex::simd::is_nth_arg_non_const</a></div><div class="ttdeci">constexpr bool is_nth_arg_non_const(R(*)(Args...), int n)</div><div class="ttdef"><b>Definition</b> AMReX_SIMD.H:149</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a415290769594460e2e485922904f345d">amrex::Direction::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
 </div><!-- fragment --> 
@@ -289,6 +314,127 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
 
 </div>
 </div>
+<a id="a1dc97776d95d21ac742fa368d1bb56c1" name="a1dc97776d95d21ac742fa368d1bb56c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc97776d95d21ac742fa368d1bb56c1">&#9670;&#160;</a></span>load_1d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ decltype(auto) amrex::simd::load_1d </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Load 1D contiguous data from array pointers</p>
+<p>On GPU and CPU w/o SIMD, this dereferences a 1D array element at the index position i. On CPU with SIMD, this loads a SIMD register at the IndexType::width SIMD-wide index position i.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>data type (<a class="el" href="group__amrex__arithmetic__types.html#ga1bb8e83c724a2a399a0129c904b4f7bd" title="Floating Point Type for Particles.">amrex::ParticleReal</a> or int or uint64_t) </td></tr>
+    <tr><td class="paramname">IndexType</td><td>int or amrex::SIMDindex&lt;SIMD_WIDTH, int&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>pointer to the array data </td></tr>
+    <tr><td class="paramname">i</td><td>index or SIMD index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a reference to the (scalar) data OR a new SIMD variable (register) loaded with data </dd></dl>
+
+</div>
+</div>
+<a id="afbefaa17fce807c324a438ada0b98ae4" name="afbefaa17fce807c324a438ada0b98ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbefaa17fce807c324a438ada0b98ae4">&#9670;&#160;</a></span>store_1d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;auto P_Method, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> N, typename T , typename <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> , typename ValType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ void amrex::simd::store_1d </td>
+          <td>(</td>
+          <td class="paramtype">ValType const &amp;__restrict__&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *const __restrict__&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> const&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Store SIMD register data back to a 1D contiguous array in RAM</p>
+<p>On GPU and CPU without SIMD, this does nothing because we already modified the (global) RAM directly via pointer.</p>
+<p>On CPU with SIMD, this performs a conditional writeback of a SIMD register to RAM (index in pointer array), but only if the argument was not passed as const and thus was likely changed.</p>
+<p>Good optimizing compilers can eliminate writebacks of unchanged values themselves, but we better help a little for robustness. Background: <a href="https://github.com/AMReX-Codes/amrex/pull/4520#issuecomment-3064064215">https://github.com/AMReX-Codes/amrex/pull/4520#issuecomment-3064064215</a></p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">P_Method</td><td>pointer to the method that used the data (for is_nth_arg_non_const) </td></tr>
+    <tr><td class="paramname">N</td><td>the argument index (for is_nth_arg_non_const) </td></tr>
+    <tr><td class="paramname">T</td><td>data type </td></tr>
+    <tr><td class="paramname">IndexType</td><td>int or SIMD index </td></tr>
+    <tr><td class="paramname">ValType</td><td>the type of the value to store </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>the value to store </td></tr>
+    <tr><td class="paramname">ptr</td><td>pointer to contiguous 1D array data </td></tr>
+    <tr><td class="paramname">i</td><td>index or SIMD index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a54138e232b90d8b36128b4dfd4f90923" name="a54138e232b90d8b36128b4dfd4f90923"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54138e232b90d8b36128b4dfd4f90923">&#9670;&#160;</a></span>is_vectorized</h2>
@@ -311,7 +457,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Check if a Functor Class works with <a class="el" href="namespaceamrex.html#a7329f7a3e903d5a9abcd5f8603def1a1">amrex::ParallelForSIMD</a></p>
+<p>Check if a Functor Class works with <a class="el" href="namespaceamrex.html#a4ec5f0c353aec0e3aeefd2628e2d44ff">amrex::ParallelForSIMD</a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structamrex_1_1simd_1_1Vectorized.html">amrex::simd::Vectorized</a> </dd></dl>
 
 </div>

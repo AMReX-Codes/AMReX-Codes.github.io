@@ -109,6 +109,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuLaunch.nolint.H", "AMReX__GpuLaunch_8nolint_8H.html", "AMReX__GpuLaunch_8nolint_8H" ],
     [ "AMReX_GpuLaunchFunctsC.H", "AMReX__GpuLaunchFunctsC_8H.html", "AMReX__GpuLaunchFunctsC_8H" ],
     [ "AMReX_GpuLaunchFunctsG.H", "AMReX__GpuLaunchFunctsG_8H.html", "AMReX__GpuLaunchFunctsG_8H" ],
+    [ "AMReX_GpuLaunchFunctsSIMD.H", "AMReX__GpuLaunchFunctsSIMD_8H.html", "AMReX__GpuLaunchFunctsSIMD_8H" ],
     [ "AMReX_GpuLaunchGlobal.H", "AMReX__GpuLaunchGlobal_8H.html", "AMReX__GpuLaunchGlobal_8H" ],
     [ "AMReX_GpuLaunchMacrosC.H", "AMReX__GpuLaunchMacrosC_8H.html", null ],
     [ "AMReX_GpuLaunchMacrosC.nolint.H", "AMReX__GpuLaunchMacrosC_8nolint_8H.html", "AMReX__GpuLaunchMacrosC_8nolint_8H" ],
