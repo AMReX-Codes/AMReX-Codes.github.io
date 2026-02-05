@@ -12039,12 +12039,18 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Create an array of pointers from an array of objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This utility returns a <computeroutput>std::array&lt;T*,AMREX_SPACEDIM&gt;</computeroutput> whose elements point to the objects stored in the input array <computeroutput>a</computeroutput>.</para>
+<para>This pattern is commonly used in AMReX because many APIs accept <computeroutput>std::array&lt;T*,AMREX_SPACEDIM&gt;</computeroutput> to indicate that the ownership of the referenced objects remains with the caller, while still allowing the callee to modify their contents. Using pointer arrays also makes the APIs usable in more situations, since the caller may not store their objects in a <computeroutput>std::array&lt;T,AMREX_SPACEDIM&gt;</computeroutput>. By constructing a temporary pointer array, caller-owned objects from other container types or layouts can still be passed to these APIs.</para>
+<para><simplesect kind="see"><para><ref refid="namespaceamrex_1a9f6600475654838eaad331bff6121d0b" kindref="member">amrex::GetVecOfPtrs</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1005" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1005" bodyend="1008"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1001" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1001" bodyend="1004"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af3ee66042454b6246d2e887a5710435d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -12062,12 +12068,18 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Create an array of pointers from an array of std::unique_ptr objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This utility returns a <computeroutput>std::array&lt;T*,AMREX_SPACEDIM&gt;</computeroutput> whose elements point to the objects stored in the input array <computeroutput>a</computeroutput>.</para>
+<para>This pattern is commonly used in AMReX because many APIs accept <computeroutput>std::array&lt;T*,AMREX_SPACEDIM&gt;</computeroutput> to indicate that the ownership of the referenced objects remains with the caller, while still allowing the callee to modify their contents. Using pointer arrays also makes the APIs usable in more situations, since the caller may not store their objects in a <computeroutput>std::array&lt;T,AMREX_SPACEDIM&gt;</computeroutput>. By constructing a temporary pointer array, caller-owned objects from other container types or layouts can still be passed to these APIs.</para>
+<para><simplesect kind="see"><para><ref refid="namespaceamrex_1a9f6600475654838eaad331bff6121d0b" kindref="member">amrex::GetVecOfPtrs</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1011" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1011" bodyend="1014"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1024" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1024" bodyend="1027"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a11874f0ad8ce6fca0dc5764a2ad64df1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -12085,12 +12097,18 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Create an array of const-qualified pointers from an array of objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This utility returns a <computeroutput>std::array&lt;T const*,AMREX_SPACEDIM&gt;</computeroutput> whose elements point to the objects stored in the input array <computeroutput>a</computeroutput>.</para>
+<para>This pattern is commonly used in AMReX because many APIs accept <computeroutput>std::array&lt;T const*,AMREX_SPACEDIM&gt;</computeroutput> to indicate that the ownership of the referenced objects remains with the caller and the objects will not be modified. Using pointer arrays also makes the APIs usable in more situations, since the caller may not store their objects in a <computeroutput>std::array&lt;T,AMREX_SPACEDIM&gt;</computeroutput>. By constructing a temporary pointer array, caller-owned objects from other container types or layouts can still be passed to these APIs.</para>
+<para><simplesect kind="see"><para><ref refid="namespaceamrex_1a51100fabe18e8030b106160d35ee8480" kindref="member">amrex::GetVecOfConstPtrs</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1017" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1017" bodyend="1020"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1047" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1047" bodyend="1050"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9f2beefbc321474791906031b2466227" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -12108,12 +12126,16 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Create an array of const-qualified pointers from an array of non-const-qualified pointers. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="namespaceamrex_1a51100fabe18e8030b106160d35ee8480" kindref="member">amrex::GetVecOfConstPtrs</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1023" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1023" bodyend="1026"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1059" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1059" bodyend="1062"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a32bb77f8057351a9182c03ea9ec6cda4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -12131,12 +12153,18 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Create an array of const-qualified pointers from an array of std::unique_ptr objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This utility returns a <computeroutput>std::array&lt;T const*,AMREX_SPACEDIM&gt;</computeroutput> whose elements point to the objects stored in the input array <computeroutput>a</computeroutput>.</para>
+<para>This pattern is commonly used in AMReX because many APIs accept <computeroutput>std::array&lt;T const*,AMREX_SPACEDIM&gt;</computeroutput> to indicate that the ownership of the referenced objects remains with the caller and the objects will not be modified. Using pointer arrays also makes the APIs usable in more situations, since the caller may not store their objects in a <computeroutput>std::array&lt;T,AMREX_SPACEDIM&gt;</computeroutput>. By constructing a temporary pointer array, caller-owned objects from other container types or layouts can still be passed to these APIs.</para>
+<para><simplesect kind="see"><para><ref refid="namespaceamrex_1a51100fabe18e8030b106160d35ee8480" kindref="member">amrex::GetVecOfConstPtrs</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1029" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1029" bodyend="1032"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1083" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1083" bodyend="1086"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2fb02d7c62025643663f5a9f154a6547" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref></type>
@@ -12154,7 +12182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1038" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1038" bodyend="1047"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="1092" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="1092" bodyend="1101"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4eb610e50ec9d0311a2a0b0531484ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

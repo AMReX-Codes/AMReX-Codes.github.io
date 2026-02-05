@@ -11,6 +11,5 @@ var structamrex_1_1Array1D =
     [ "operator()", "structamrex_1_1Array1D.html#a480f799896bdc0c62b42b3506cae58bd", null ],
     [ "product", "structamrex_1_1Array1D.html#aadc41ec98392178a669d3e1c6caa723a", null ],
     [ "size", "structamrex_1_1Array1D.html#a20e4f777e67fe25eb0a46ab5c2755344", null ],
-    [ "sum", "structamrex_1_1Array1D.html#aa8b332b4f7ae0286f067d5e6af416bf5", null ],
-    [ "arr", "structamrex_1_1Array1D.html#a3fbb7068c4f65f7830c903a57e3df5a7", null ]
+    [ "sum", "structamrex_1_1Array1D.html#aa8b332b4f7ae0286f067d5e6af416bf5", null ]
 ];

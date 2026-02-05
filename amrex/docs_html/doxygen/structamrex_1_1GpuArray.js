@@ -14,6 +14,5 @@ var structamrex_1_1GpuArray =
     [ "operator[]", "structamrex_1_1GpuArray.html#ad78667c1cb8624dd038f4631739608a7", null ],
     [ "product", "structamrex_1_1GpuArray.html#abf5a8109f5cb554fc66f122d6d55f4ab", null ],
     [ "size", "structamrex_1_1GpuArray.html#add05bf3652e95bd7e0be382be6ba8f44", null ],
-    [ "sum", "structamrex_1_1GpuArray.html#a5018ec30e2f0198f49541e35b8d211b0", null ],
-    [ "arr", "structamrex_1_1GpuArray.html#ab2d250b3a7efdbbf597bd50a771f3e3c", null ]
+    [ "sum", "structamrex_1_1GpuArray.html#a5018ec30e2f0198f49541e35b8d211b0", null ]
 ];

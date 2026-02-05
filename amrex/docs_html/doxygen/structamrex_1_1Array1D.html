@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::Array1D&lt; T, XLO, XHI &gt; Struct Template Reference</title-->
+<!--title>AMReX: amrex::Array1D&lt; T, XLO, XHI &gt; Class Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -96,11 +96,13 @@ $(document).ready(function(){initNavTree('structamrex_1_1Array1D.html',''); init
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structamrex_1_1Array1D-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::Array1D&lt; T, XLO, XHI &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::Array1D&lt; T, XLO, XHI &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__amrex__data__containers.html">Data Containers</a> &raquo; <a class="el" href="group__amrex__linear__containers.html">Linear Containers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A GPU-compatible one-dimensional array.  
+ <a href="structamrex_1_1Array1D.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__Array_8H_source.html">AMReX_Array.H</a>&gt;</code></p>
 <table class="memberdecls">
@@ -133,19 +135,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a2723addee6a579345942ffa730c57090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701b3935716b40539c5daa2b71eb0784" id="r_a701b3935716b40539c5daa2b71eb0784"><td class="memItemLeft" align="right" valign="top">__host__ static __device__ constexpr unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Array1D.html#a701b3935716b40539c5daa2b71eb0784">len</a> () noexcept</td></tr>
 <tr class="separator:a701b3935716b40539c5daa2b71eb0784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3fbb7068c4f65f7830c903a57e3df5a7" id="r_a3fbb7068c4f65f7830c903a57e3df5a7"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Array1D.html#a3fbb7068c4f65f7830c903a57e3df5a7">arr</a> [(XHI-XLO+1)]</td></tr>
-<tr class="separator:a3fbb7068c4f65f7830c903a57e3df5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> XLO, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> XHI&gt;<br />
-struct amrex::Array1D&lt; T, XLO, XHI &gt;</div><p><a class="el" href="structamrex_1_1Array2D.html">Array2D</a> and <a class="el" href="structamrex_1_1Array3D.html">Array3D</a> objects can be indexed according to Fortran column-major order (first index moving fastest) or C/C++ row-major order (last index moving fastest). If not specified, Fortran order is assumed. A GPU-compatible one-dimensional array.</p>
+class amrex::Array1D&lt; T, XLO, XHI &gt;</div><p>A GPU-compatible one-dimensional array. </p>
+<p><a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> is a C-style array wrapper in a struct. It has no user-declared constructors. It's a trivial aggregate with a standard layout.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">XLO</td><td>Index for lower bound. Can be other than 0. </td></tr>
-    <tr><td class="paramname">XHI</td><td>Index for upper bound. </td></tr>
+    <tr><td class="paramname">T</td><td>Value data type </td></tr>
+    <tr><td class="paramname">XLO</td><td>Index for inclusive lower bound. Can be non-zero or negative. </td></tr>
+    <tr><td class="paramname">XHI</td><td>Index for inclusive upper bound. </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,7 +173,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a <code>const</code> pointer address to the first element of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns a <code>const</code> pointer address to the first element of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -202,7 +201,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a pointer address to the first element of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns a pointer address to the first element of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -230,7 +229,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a <code>const</code> pointer address right after the last element of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns a <code>const</code> pointer address right after the last element of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -258,7 +257,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a pointer address right after the last element of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns a pointer address right after the last element of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -286,7 +285,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the index of the upper bound of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns the index of the upper bound of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -314,7 +313,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the number of elements in the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object as an unsigned integer. </p>
+<p>Returns the number of elements in the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object as an unsigned integer. </p>
 
 </div>
 </div>
@@ -342,7 +341,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the index of the lower bound of the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. Can be other than 0. </p>
+<p>Returns the index of the lower bound of the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. Can be other than 0. </p>
 
 </div>
 </div>
@@ -371,7 +370,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The elements of an <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object are accessed using parentheses, e.g. <code>array(i)</code>, instead of using square brackets. </p>
+<p>The elements of an <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object are accessed using parentheses, e.g. <code>array(i)</code>, instead of using square brackets. </p>
 
 </div>
 </div>
@@ -400,7 +399,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The elements of an <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object are accessed using parentheses, e.g. array(i), instead of using square brackets. </p>
+<p>The elements of an <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object are accessed using parentheses, e.g. array(i), instead of using square brackets. </p>
 
 </div>
 </div>
@@ -428,7 +427,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the product of all elements in the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns the product of all elements in the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
@@ -456,7 +455,7 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the number of elements in the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object as an unsigned integer. </p>
+<p>Returns the number of elements in the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object as an unsigned integer. </p>
 
 </div>
 </div>
@@ -484,29 +483,11 @@ template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0eb
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the sum of all elements in the <a class="el" href="structamrex_1_1Array1D.html">Array1D</a> object. </p>
+<p>Returns the sum of all elements in the <a class="el" href="structamrex_1_1Array1D.html" title="A GPU-compatible one-dimensional array.">Array1D</a> object. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3fbb7068c4f65f7830c903a57e3df5a7" name="a3fbb7068c4f65f7830c903a57e3df5a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fbb7068c4f65f7830c903a57e3df5a7">&#9670;&#160;</a></span>arr</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> XLO, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> XHI&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T <a class="el" href="structamrex_1_1Array1D.html">amrex::Array1D</a>&lt; T, XLO, XHI &gt;::arr[(XHI-XLO+1)]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="structamrex_1_1Array1D.html">Array1D</a> is implemented as a fixed-size array. Hence, no constructor or destructor is given. </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/amrex/amrex/Src/Base/<a class="el" href="AMReX__Array_8H_source.html">AMReX_Array.H</a></li>
 </ul>
 </div><!-- contents -->

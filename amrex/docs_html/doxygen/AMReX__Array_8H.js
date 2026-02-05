@@ -1,8 +1,5 @@
 var AMReX__Array_8H =
 [
-    [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", "structamrex_1_1Array1D" ],
-    [ "amrex::Array2D< T, XLO, XHI, YLO, YHI, ORDER >", "structamrex_1_1Array2D.html", "structamrex_1_1Array2D" ],
-    [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", "structamrex_1_1Array3D" ],
     [ "Array", "AMReX__Array_8H.html#gafe930d74045516fece8591f173e57007", null ],
     [ "IntArray", "AMReX__Array_8H.html#a09e5ad26a3e07988dc74fece187da7b0", null ],
     [ "RealArray", "AMReX__Array_8H.html#aeb06fab72f85728954130adbe25c5397", null ],

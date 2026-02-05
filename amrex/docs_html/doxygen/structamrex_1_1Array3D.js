@@ -4,10 +4,8 @@ var structamrex_1_1Array3D =
     [ "begin", "structamrex_1_1Array3D.html#aa9975fea286fe238ef0ebf7beeb93648", null ],
     [ "end", "structamrex_1_1Array3D.html#af5a12f14408ab5b38b945de6e4f1cc68", null ],
     [ "end", "structamrex_1_1Array3D.html#a613b6ce6d43bceb04b5ff8519c7ca197", null ],
-    [ "operator()", "structamrex_1_1Array3D.html#a6f9df7151532e4a2020670bc05c091db", null ],
-    [ "operator()", "structamrex_1_1Array3D.html#a6f9df7151532e4a2020670bc05c091db", null ],
-    [ "operator()", "structamrex_1_1Array3D.html#afc21a8194267033b416be6e0005e952e", null ],
-    [ "operator()", "structamrex_1_1Array3D.html#afc21a8194267033b416be6e0005e952e", null ],
+    [ "operator()", "structamrex_1_1Array3D.html#a48cb66ed67a95f6ffe0e3949d283418e", null ],
+    [ "operator()", "structamrex_1_1Array3D.html#a132c5bca26d4f08fed7520ad693383dd", null ],
     [ "product", "structamrex_1_1Array3D.html#ab4bf11b287b96c04ddc82dbaccf53bc4", null ],
     [ "product", "structamrex_1_1Array3D.html#a32b74d80233945db270c430e0d92b134", null ],
     [ "size", "structamrex_1_1Array3D.html#ad3d96bc2cbb5ea42245d0a884016e325", null ],
@@ -21,6 +19,5 @@ var structamrex_1_1Array3D =
     [ "ylo", "structamrex_1_1Array3D.html#afaed6c8fe2f209a8c99c5609c7d4b9b1", null ],
     [ "zhi", "structamrex_1_1Array3D.html#a2b4a6bcc252308d07bd5959e118fe2f7", null ],
     [ "zlen", "structamrex_1_1Array3D.html#afe1ff40dfe2348bf8b3da36f99e3674b", null ],
-    [ "zlo", "structamrex_1_1Array3D.html#aed54a5a1eed853d656d0659203ebc3c1", null ],
-    [ "arr", "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0", null ]
+    [ "zlo", "structamrex_1_1Array3D.html#aed54a5a1eed853d656d0659203ebc3c1", null ]
 ];
