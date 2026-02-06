@@ -330,6 +330,8 @@
         </childnode>
         <childnode refid="65" relation="include">
         </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
         <childnode refid="66" relation="include">
         </childnode>
         <childnode refid="24" relation="include">
@@ -2380,8 +2382,8 @@
 <codeline lineno="153" refid="structamrex_1_1ParticleIDWrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref></highlight></codeline>
 <codeline lineno="154"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/>static_assert(std::is_same&lt;T,<sp/>uint64_t&gt;::value<sp/>||</highlight></codeline>
-<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::is_same&lt;T,<sp/>simd::SIMDIdCpu&lt;&gt;&gt;::value,<sp/><sp/>//<sp/>note:<sp/>this<sp/>one<sp/>will<sp/>not<sp/>work<sp/>because<sp/>users<sp/>can<sp/>change<sp/>the<sp/>SIMDIdCpu<sp/>width</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/>static_assert(std::is_same_v&lt;T,<sp/>uint64_t&gt;<sp/>||</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::is_same_v&lt;T,<sp/>simd::SIMDIdCpu&lt;&gt;&gt;,<sp/><sp/>//<sp/>note:<sp/>this<sp/>one<sp/>will<sp/>not<sp/>work<sp/>because<sp/>users<sp/>can<sp/>change<sp/>the<sp/>SIMDIdCpu<sp/>width</highlight></codeline>
 <codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;ParticleIDWrapper<sp/>only<sp/>supports<sp/>uint64_t<sp/>or<sp/>SIMD<sp/>thereof&quot;</highlight></codeline>
 <codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/><sp/>);</highlight></codeline>
 <codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>

@@ -154,12 +154,12 @@ $(document).ready(function(){initNavTree('AMReX__CudaGraph_8H_source.html',''); 
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    CudaGraph()</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        : m_parms(0)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">static_assert</span>(std::is_trivially_copyable&lt;T&gt;::value, <span class="stringliteral">&quot;CudaGraph&#39;s T must be trivially copyable&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">static_assert</span>(std::is_trivially_copyable_v&lt;T&gt;, <span class="stringliteral">&quot;CudaGraph&#39;s T must be trivially copyable&quot;</span>);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    CudaGraph(<span class="keywordtype">int</span> num)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        : m_parms(num)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">static_assert</span>(std::is_trivially_copyable&lt;T&gt;::value, <span class="stringliteral">&quot;CudaGraph&#39;s T must be trivially copyable&quot;</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">static_assert</span>(std::is_trivially_copyable_v&lt;T&gt;, <span class="stringliteral">&quot;CudaGraph&#39;s T must be trivially copyable&quot;</span>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        m_parms_d = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>( <a class="code hl_function" href="group__amrex__memory.html#gae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code hl_function" href="classamrex_1_1Arena.html#a0fa2cdc35eb9da4a03fedf53f6484c86">alloc</a>(<span class="keyword">sizeof</span>(T)*m_parms.size()) );</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    ~CudaGraph() {</div>
