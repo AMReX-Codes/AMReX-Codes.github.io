@@ -10,8 +10,8 @@ var namespaceamrex_1_1simd =
     [ "SIMDReal", "namespaceamrex_1_1simd.html#add6621fecc25847a2732965c42392d93", null ],
     [ "is_nth_arg_non_const", "namespaceamrex_1_1simd.html#a83c898c768cfae013bfd34c9ec548517", null ],
     [ "is_nth_arg_non_const", "namespaceamrex_1_1simd.html#aecb850f4517c5fdfadf86c06506366d8", null ],
-    [ "load_1d", "namespaceamrex_1_1simd.html#a1dc97776d95d21ac742fa368d1bb56c1", null ],
-    [ "store_1d", "namespaceamrex_1_1simd.html#afbefaa17fce807c324a438ada0b98ae4", null ],
+    [ "load_1d", "namespaceamrex_1_1simd.html#aa7fecc0588ed4b49a849a7ca8919ad61", null ],
+    [ "store_1d", "namespaceamrex_1_1simd.html#a1ca22aa27b5f9017e8a674e648a7b2d8", null ],
     [ "is_vectorized", "namespaceamrex_1_1simd.html#a54138e232b90d8b36128b4dfd4f90923", null ],
     [ "native_simd_size_particlereal", "namespaceamrex_1_1simd.html#acbc41b506c60eca5132aafb04cfbf19f", null ],
     [ "native_simd_size_real", "namespaceamrex_1_1simd.html#a3eedc46ea269765dc7010c48bd8a39d8", null ]

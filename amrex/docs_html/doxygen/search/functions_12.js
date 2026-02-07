@@ -408,7 +408,7 @@ var searchData=
   ['stllevel_405',['stllevel',['../classamrex_1_1EB2_1_1STLLevel.html#a2c8f60e6045903c262446da9d98ffac9',1,'amrex::EB2::STLLevel::STLLevel(IndexSpace const *is, int ilev, int max_grid_size, int ngrow, const Geometry &amp;geom, STLLevel &amp;fineLevel)'],['../classamrex_1_1EB2_1_1STLLevel.html#a8c2cebcfdbfefecc466c849e28b9fcd5',1,'amrex::EB2::STLLevel::STLLevel(IndexSpace const *is, STLtools const &amp;stl_tools, const Geometry &amp;geom, int max_grid_size, int ngrow, bool extend_domain_face, int num_crse_opt, bool support_mvmc)']]],
   ['stop_406',['stop',['../classamrex_1_1BLProfiler.html#ae2bd1e84672c71dd183ee1eb026da327',1,'amrex::BLProfiler::stop()'],['../classamrex_1_1TinyProfiler.html#a84199c5f792b3e60b33f6e7ea0fc5568',1,'amrex::TinyProfiler::stop() noexcept']]],
   ['stopregion_407',['StopRegion',['../classamrex_1_1TinyProfiler.html#ac96b507c36165550f9a2bf115aedc5fb',1,'amrex::TinyProfiler']]],
-  ['store_5f1d_408',['store_1d',['../namespaceamrex_1_1simd.html#afbefaa17fce807c324a438ada0b98ae4',1,'amrex::simd']]],
+  ['store_5f1d_408',['store_1d',['../namespaceamrex_1_1simd.html#a1ca22aa27b5f9017e8a674e648a7b2d8',1,'amrex::simd']]],
   ['store_5fin_5fcheckpoint_409',['store_in_checkpoint',['../classamrex_1_1StateDescriptor.html#a66cfbf90a5c1eab91499e5f4d2e080a1',1,'amrex::StateDescriptor']]],
   ['storerkcoarsedata_410',['storeRKCoarseData',['../classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca',1,'amrex::FillPatcher']]],
   ['strategy_411',['strategy',['../classamrex_1_1DistributionMapping.html#add9f7493d35af3e2ad724ce9e55322ba',1,'amrex::DistributionMapping::strategy(Strategy how)'],['../classamrex_1_1DistributionMapping.html#ac41e6c0536cc22b8c0d71c0450e58df2',1,'amrex::DistributionMapping::strategy()']]],
