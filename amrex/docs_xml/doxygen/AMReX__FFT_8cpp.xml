@@ -2361,7 +2361,7 @@
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_FFT)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_ROCFFT_SAFE_CALL(rocfft_setup());</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>!defined(AMREX_USE_GPU)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_OMP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_FFT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>!defined(AMREX_USE_GPU)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_MULTI_THREADED_FFTW)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fftw_init_threads();</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fftwf_init_threads();</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fftw_plan_with_nthreads(<ref refid="namespaceamrex_1_1OpenMP_1ade36032ab5920b203a693a1cc44bd82a" kindref="member">amrex::OpenMP::get_max_threads</ref>());</highlight></codeline>
