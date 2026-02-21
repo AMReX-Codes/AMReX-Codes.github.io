@@ -67600,10 +67600,10 @@
     <templarg>typename T</templarg>
     <templarg>typename... Ts</templarg>
     <member kind="typedef">
-      <type>typename std::tuple_element&lt; s-1, amrex::GpuTuple&lt; Ts... &gt; &gt;::type</type>
+      <type>typename std::tuple_element_t&lt; s-1, amrex::GpuTuple&lt; Ts... &gt; &gt;</type>
       <name>type</name>
       <anchorfile>structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html</anchorfile>
-      <anchor>aa81b6bfc580e14436f13d70e9a5d5f15</anchor>
+      <anchor>aa39d9bc0df1126b47e15d839cd8f5998</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -68587,12 +68587,6 @@
   <compound kind="class">
     <name>amrex::VisMFBuffer</name>
     <filename>classamrex_1_1VisMFBuffer.html</filename>
-    <member kind="enumvalue">
-      <name>IO_Buffer_Size</name>
-      <anchorfile>classamrex_1_1VisMFBuffer.html</anchorfile>
-      <anchor>a950522a5cdc10ea0ee5b3ee127612f33a2c8bdbac4eb5f5b7b66bb2b48e4672c8</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="typedef">
       <type>char</type>
       <name>Setbuf_Char_Type</name>
@@ -68605,12 +68599,6 @@
       <name>IO_Buffer</name>
       <anchorfile>classamrex_1_1VisMFBuffer.html</anchorfile>
       <anchor>a1b2038a46c20c406d77023b6cdc956c0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>IO_Buffer_Size</name>
-      <anchorfile>classamrex_1_1VisMFBuffer.html</anchorfile>
-      <anchor>a950522a5cdc10ea0ee5b3ee127612f33a2c8bdbac4eb5f5b7b66bb2b48e4672c8</anchor>
       <arglist></arglist>
     </member>
     <member kind="function" static="yes">
@@ -68633,6 +68621,13 @@
       <anchorfile>classamrex_1_1VisMFBuffer.html</anchorfile>
       <anchor>a6c234740f9ed2f0a3c3fc3cea35f7f2f</anchor>
       <arglist>(IO_Buffer &amp;buf)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr int</type>
+      <name>IO_Buffer_Size</name>
+      <anchorfile>classamrex_1_1VisMFBuffer.html</anchorfile>
+      <anchor>aa79a29157d62bcc584d50b85a0dc5461</anchor>
+      <arglist></arglist>
     </member>
     <member kind="variable" protection="protected" static="yes">
       <type>static Long</type>
@@ -75099,13 +75094,6 @@
       <arglist>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const BoxArray &amp;fba, const IntVect &amp;ratio, int crse_value, int fine_value)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>makeFineMask_doit</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>a549567bbb4fc6d2e53d5a0c03fe62a81</anchor>
-      <arglist>(FabArray&lt; FAB &gt; &amp;mask, const BoxArray &amp;fba, const IntVect &amp;ratio, Periodicity const &amp;period, typename FAB::value_type crse_value, typename FAB::value_type fine_value)</arglist>
-    </member>
-    <member kind="function">
       <type>iMultiFab</type>
       <name>makeFineMask</name>
       <anchorfile>namespaceamrex.html</anchorfile>
@@ -76602,13 +76590,6 @@
       <anchorfile>namespaceamrex.html</anchorfile>
       <anchor>a343494dfc1c9121c4d236ed0f774e39a</anchor>
       <arglist>(const Box &amp;bx, Array4&lt; Real &gt; const &amp;div, Array4&lt; Real const &gt; const &amp;divc, Array4&lt; Real const &gt; const &amp;wt, int icomp, int ncomp, Array4&lt; EBCellFlag const &gt; const &amp;flag_arr, Array4&lt; Real const &gt; const &amp;vfrac, const Geometry &amp;geom, bool use_wts_in_divnc)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>apply_eb_redistribution</name>
-      <anchorfile>namespaceamrex.html</anchorfile>
-      <anchor>aecd68c74730a0886f68632b4a343682c</anchor>
-      <arglist>(const Box &amp;bx, MultiFab &amp;div_mf, MultiFab &amp;divc_mf, const MultiFab &amp;weights, MFIter *mfi, int icomp, int ncomp, const EBCellFlagFab &amp;flags_fab, const MultiFab *volfrac, Box &amp;, const Geometry &amp;geom, bool use_wts_in_divnc)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

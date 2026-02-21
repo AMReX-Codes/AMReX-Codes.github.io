@@ -447,7 +447,7 @@ $(document).ready(function(){initNavTree('AMReX__Utility_8H_source.html',''); in
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    <span class="comment">// Determine if type has a specialization for std::tuple_size</span></div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keyword">constexpr</span> <span class="keyword">decltype</span>((std::tuple_size&lt;T&gt;::value, <span class="keyword">true</span>)) HasTupleSize() {</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keyword">constexpr</span> <span class="keyword">decltype</span>((std::tuple_size&lt;T&gt;::value, <span class="keyword">true</span>)) HasTupleSize() { <span class="comment">// NOLINT(modernize-type-traits)</span></div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    }</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    <span class="keyword">template</span> &lt;<span class="keyword">class </span>T, <span class="keyword">class</span>... Args&gt;</div>

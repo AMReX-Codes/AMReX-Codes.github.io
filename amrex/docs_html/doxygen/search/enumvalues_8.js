@@ -12,6 +12,5 @@ var searchData=
   ['interpb_9',['InterpB',['../namespaceamrex.html#a2f30e076962c1c148d279b63851d80dfa9d55599aaee42c677bcd175e50bebbca',1,'amrex']]],
   ['interpe_10',['InterpE',['../namespaceamrex.html#a2f30e076962c1c148d279b63851d80dfaea241117e55edc2764d31a18a4740ff3',1,'amrex']]],
   ['interval_11',['Interval',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434a0135564ab7966e377f4b9fff395b6eb6',1,'amrex::StateDescriptor']]],
-  ['invalid_12',['invalid',['../namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cafedb2d84cafe20862cb4399751a8a7e3',1,'amrex']]],
-  ['io_5fbuffer_5fsize_13',['IO_Buffer_Size',['../classamrex_1_1VisMFBuffer.html#a950522a5cdc10ea0ee5b3ee127612f33a2c8bdbac4eb5f5b7b66bb2b48e4672c8',1,'amrex::VisMFBuffer']]]
+  ['invalid_12',['invalid',['../namespaceamrex.html#a242c1fdf859dbcbdecd2794373ea0d2cafedb2d84cafe20862cb4399751a8a7e3',1,'amrex']]]
 ];

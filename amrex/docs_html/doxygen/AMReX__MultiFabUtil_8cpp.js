@@ -25,7 +25,6 @@ var AMReX__MultiFabUtil_8cpp =
     [ "makeFineMask", "AMReX__MultiFabUtil_8cpp.html#af97d55742a96cb9e934e06c45ec22f03", null ],
     [ "makeFineMask", "AMReX__MultiFabUtil_8cpp.html#ac54193c21e9f609ad488d3cb074dfeef", null ],
     [ "makeFineMask", "AMReX__MultiFabUtil_8cpp.html#abe90237191ad363f7f9dd34c2ac0ebcb", null ],
-    [ "makeFineMask_doit", "AMReX__MultiFabUtil_8cpp.html#a549567bbb4fc6d2e53d5a0c03fe62a81", null ],
     [ "periodicShift", "AMReX__MultiFabUtil_8cpp.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
     [ "print_state", "AMReX__MultiFabUtil_8cpp.html#aac09e7e5e074f207deb9fae3b4e9148f", null ],
     [ "sum_fine_to_coarse", "AMReX__MultiFabUtil_8cpp.html#ab67331acff75bf2840f409750b1ada66", null ],

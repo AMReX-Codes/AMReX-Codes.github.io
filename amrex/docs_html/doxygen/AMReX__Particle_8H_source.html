@@ -620,7 +620,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#ac76245538f27b71c6261b64aa8606126">  472</a></span>    <a class="code hl_typedef" href="structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26">RealType</a>&amp; <a class="code hl_function" href="structamrex_1_1Particle.html#ac76245538f27b71c6261b64aa8606126">rdata</a> (<span class="keywordtype">int</span> index) &amp;</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    {</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(index &lt; <a class="code hl_variable" href="structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7">NReal</a>);</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a366f10b761dd77036582e32b7bdb2c77">m_rdata</a>[index];</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a366f10b761dd77036582e32b7bdb2c77">m_rdata</a>[index]; <span class="comment">// NOLINT(clang-analyzer-security.ArrayBound)</span></div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    }</div>
 </div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span> </div>
@@ -640,7 +640,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#acd2a7c92aa8aeef0fb6dee5812cb2b91">  488</a></span>    <span class="keyword">const</span> <a class="code hl_typedef" href="structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26">RealType</a>&amp; <a class="code hl_function" href="structamrex_1_1Particle.html#acd2a7c92aa8aeef0fb6dee5812cb2b91">rdata</a> (<span class="keywordtype">int</span> index) <span class="keyword">const</span> &amp;</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    {</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(index &lt; <a class="code hl_variable" href="structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7">NReal</a>);</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a366f10b761dd77036582e32b7bdb2c77">m_rdata</a>[index];</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a366f10b761dd77036582e32b7bdb2c77">m_rdata</a>[index]; <span class="comment">// NOLINT(clang-analyzer-security.ArrayBound)</span></div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    }</div>
 </div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span> </div>
@@ -707,7 +707,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00543" name="l00543"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#a212e1b228fa4c411064d4037c9728fc5">  543</a></span>    <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="structamrex_1_1Particle.html#a212e1b228fa4c411064d4037c9728fc5">idata</a> (<span class="keywordtype">int</span> index) &amp;</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    {</div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(index &lt; <a class="code hl_variable" href="structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c">NInt</a>);</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a5f5d3842528f32c5c7551b84d0b14374">m_idata</a>[index];</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a5f5d3842528f32c5c7551b84d0b14374">m_idata</a>[index]; <span class="comment">// NOLINT(clang-analyzer-security.ArrayBound)</span></div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    }</div>
 </div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
@@ -727,7 +727,7 @@ $(document).ready(function(){initNavTree('AMReX__Particle_8H_source.html',''); i
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno"><a class="line" href="structamrex_1_1Particle.html#af246bb0fc1ebe3ca45511a4ff109b29c">  559</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="structamrex_1_1Particle.html#af246bb0fc1ebe3ca45511a4ff109b29c">idata</a> (<span class="keywordtype">int</span> index) <span class="keyword">const</span> &amp;</div>
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    {</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(index &lt; <a class="code hl_variable" href="structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c">NInt</a>);</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a5f5d3842528f32c5c7551b84d0b14374">m_idata</a>[index];</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="structamrex_1_1ParticleBase.html#a5f5d3842528f32c5c7551b84d0b14374">m_idata</a>[index]; <span class="comment">// NOLINT(clang-analyzer-security.ArrayBound)</span></div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    }</div>
 </div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>

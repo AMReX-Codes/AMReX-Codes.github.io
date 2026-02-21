@@ -2419,7 +2419,7 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="group__amrex__mpi_1gac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>HeaderFileName(m_restart_file<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/Header&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMFBuffer_1a1b2038a46c20c406d77023b6cdc956c0" kindref="member">VisMF::IO_Buffer</ref><sp/>io_buffer(<ref refid="classamrex_1_1VisMFBuffer_1a950522a5cdc10ea0ee5b3ee127612f33a2c8bdbac4eb5f5b7b66bb2b48e4672c8" kindref="member">VisMF::IO_Buffer_Size</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMFBuffer_1a1b2038a46c20c406d77023b6cdc956c0" kindref="member">VisMF::IO_Buffer</ref><sp/>io_buffer(<ref refid="classamrex_1_1VisMFBuffer_1aa79a29157d62bcc584d50b85a0dc5461" kindref="member">VisMF::IO_Buffer_Size</ref>);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ofstream<sp/>HeaderFile;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HeaderFile.rdbuf()-&gt;pubsetbuf(io_buffer.dataPtr(),<sp/>io_buffer.size());</highlight></codeline>
@@ -2533,9 +2533,9 @@
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(lis<sp/>&gt;&gt;<sp/>word)<sp/>{</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_FLOAT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_lo[i++]<sp/>=<sp/>std::stof(word);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_lo[i++]<sp/>=<sp/>std::stof(word);<sp/></highlight><highlight class="comment">//<sp/>NOLINT(clang-analyzer-security.ArrayBound)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_lo[i++]<sp/>=<sp/>std::stod(word);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_lo[i++]<sp/>=<sp/>std::stod(word);<sp/></highlight><highlight class="comment">//<sp/>NOLINT(clang-analyzer-security.ArrayBound)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2546,9 +2546,9 @@
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(lis<sp/>&gt;&gt;<sp/>word)<sp/>{</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_FLOAT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_hi[i++]<sp/>=<sp/>std::stof(word);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_hi[i++]<sp/>=<sp/>std::stof(word);<sp/></highlight><highlight class="comment">//<sp/>NOLINT(clang-analyzer-security.ArrayBound)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_hi[i++]<sp/>=<sp/>std::stod(word);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prob_hi[i++]<sp/>=<sp/>std::stod(word);<sp/></highlight><highlight class="comment">//<sp/>NOLINT(clang-analyzer-security.ArrayBound)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

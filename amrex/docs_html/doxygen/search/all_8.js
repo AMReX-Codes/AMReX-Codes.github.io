@@ -184,7 +184,7 @@ var searchData=
   ['invnormdist_181',['InvNormDist',['../namespaceamrex.html#aeb571560dc9f12004d96e105ab1137e9',1,'amrex']]],
   ['invnormdistbest_182',['InvNormDistBest',['../namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9',1,'amrex']]],
   ['io_5fbuffer_183',['IO_Buffer',['../classamrex_1_1VisMFBuffer.html#a1b2038a46c20c406d77023b6cdc956c0',1,'amrex::VisMFBuffer']]],
-  ['io_5fbuffer_5fsize_184',['IO_Buffer_Size',['../classamrex_1_1VisMFBuffer.html#a950522a5cdc10ea0ee5b3ee127612f33a2c8bdbac4eb5f5b7b66bb2b48e4672c8',1,'amrex::VisMFBuffer']]],
+  ['io_5fbuffer_5fsize_184',['IO_Buffer_Size',['../classamrex_1_1VisMFBuffer.html#aa79a29157d62bcc584d50b85a0dc5461',1,'amrex::VisMFBuffer']]],
   ['iobuffer_185',['ioBuffer',['../structamrex_1_1VisMF_1_1PersistentIFStream.html#a1e023351bf031aee0da7cc17272716ae',1,'amrex::VisMF::PersistentIFStream']]],
   ['iobuffersize_186',['ioBufferSize',['../classamrex_1_1VisMFBuffer.html#ab8b3e050b7f01e4270b0185d0d0e0497',1,'amrex::VisMFBuffer']]],
   ['ioformatsaver_187',['ioformatsaver',['../classamrex_1_1IOFormatSaver.html#a71aa87d8c353de2c17fa4281422dc0fb',1,'amrex::IOFormatSaver::IOFormatSaver(BasicIos &amp;ios)'],['../classamrex_1_1IOFormatSaver.html#a85f1c64c1f0097b5e5900148ae4f1d3f',1,'amrex::IOFormatSaver::IOFormatSaver(IOFormatSaver const &amp;)=delete'],['../classamrex_1_1IOFormatSaver.html#af6e784ede2112c392acd2dc0547725b3',1,'amrex::IOFormatSaver::IOFormatSaver(IOFormatSaver &amp;&amp;) noexcept=delete'],['../classamrex_1_1IOFormatSaver.html',1,'amrex::IOFormatSaver&lt; CharT, Traits &gt;']]],
