@@ -487,9 +487,9 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        });</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        Gpu::copyAsync(Gpu::deviceToHost, idata_d.begin(), idata_d.end(),</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                       idata.begin() + <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a><span class="keyword">&gt;</span>(poffset));</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                       idata.begin() + <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a><span class="keyword">&gt;</span>(poffset + iChunkSize));</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        Gpu::copyAsync(Gpu::deviceToHost, rdata_d.begin(), rdata_d.end(),</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                       rdata.begin() + <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a><span class="keyword">&gt;</span>(poffset));</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                       rdata.begin() + <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__amrex__arithmetic__types.html#gace9d72971c815f54ed3af5df4e615781">Long</a><span class="keyword">&gt;</span>(poffset + rChunkSize));</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        Gpu::Device::streamSynchronize();</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        poffset += num_copies;</div>
