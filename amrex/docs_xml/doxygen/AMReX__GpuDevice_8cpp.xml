@@ -2251,443 +2251,455 @@
 <codeline lineno="766"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="767"><highlight class="normal"></highlight></codeline>
 <codeline lineno="768"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="769"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a95bff02196b80d848b89b92166e704b9" kindref="member">Device::streamSynchronizeAll</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a42c8a431cffd1cf47729a2407edf5e38" kindref="member">Device::streamSynchronizeActive</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="770"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="771"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>s<sp/>:<sp/>gpu_stream_pool)<sp/>{</highlight></codeline>
-<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.sync();</highlight></codeline>
-<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="775"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="776"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="777"><highlight class="normal"></highlight></codeline>
-<codeline lineno="778"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="779"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a1e74751d797e87cfc0fd9800829d1718" kindref="member">Device::freeAsync</ref><sp/>(Arena*<sp/>arena,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>mem)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="780"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="781"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/>gpu_stream_pool[gpu_stream_index[<ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>()]].free_async(arena,<sp/>mem);</highlight></codeline>
-<codeline lineno="783"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/>arena-&gt;free(mem);</highlight></codeline>
-<codeline lineno="785"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="786"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="787"><highlight class="normal"></highlight></codeline>
-<codeline lineno="788"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="789"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ad0fb6a93a46d877f555cc72e95d61da4" kindref="member">Device::clearFreeAsyncBuffer</ref><sp/>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="790"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="791"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>freed_memory<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>s<sp/>:<sp/>gpu_stream_pool)<sp/>{</highlight></codeline>
-<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.wait_list_size()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.sync();</highlight></codeline>
-<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freed_memory<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>freed_memory;</highlight></codeline>
-<codeline lineno="800"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="802"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="803"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="804"><highlight class="normal"></highlight></codeline>
-<codeline lineno="805"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="806"><highlight class="normal"></highlight></codeline>
-<codeline lineno="807"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="808"><highlight class="normal">Device::startGraphRecording(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_iter,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>h_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>d_ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sz)</highlight></codeline>
-<codeline lineno="809"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((first_iter)<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
-<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Uses<sp/>passed<sp/>information<sp/>to<sp/>do<sp/>initial<sp/>async<sp/>memcpy<sp/>in<sp/>graph<sp/>and</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>links<sp/>dependency<sp/>to<sp/>all<sp/>streams<sp/>using<sp/>cudaEvents.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="814"><highlight class="normal"></highlight></codeline>
-<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
-<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>();</highlight></codeline>
-<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>memcpy_event<sp/>=<sp/>{0};</highlight></codeline>
-<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;memcpy_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
-<codeline lineno="819"><highlight class="normal"></highlight></codeline>
-<codeline lineno="820"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__CUDACC_VER_MAJOR__<sp/>==<sp/>10)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MINOR__<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream));</highlight></codeline>
-<codeline lineno="822"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream,<sp/>cudaStreamCaptureModeGlobal));</highlight></codeline>
-<codeline lineno="824"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="825"><highlight class="normal"></highlight></codeline>
-<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaMemcpyAsync(d_ptr,<sp/>h_ptr,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>graph_stream));</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaEventRecord(memcpy_event,<sp/>graph_stream));</highlight></codeline>
-<codeline lineno="828"><highlight class="normal"></highlight></codeline>
-<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;<ref refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kindref="member">numGpuStreams</ref>();<sp/>++i)</highlight></codeline>
-<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(i);</highlight></codeline>
-<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamWaitEvent(<ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>(),<sp/>memcpy_event,<sp/>0));</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7b9b6dc13dd85b3eeac69203a56e39c0" kindref="member">Gpu::inSingleStreamRegion</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" kindref="member">Gpu::streamSynchronizeAll</ref>();</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="778"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"></highlight></codeline>
+<codeline lineno="780"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="781"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a95bff02196b80d848b89b92166e704b9" kindref="member">Device::streamSynchronizeAll</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="782"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>s<sp/>:<sp/>gpu_stream_pool)<sp/>{</highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.sync();</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="788"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"></highlight></codeline>
+<codeline lineno="790"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="791"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a1e74751d797e87cfc0fd9800829d1718" kindref="member">Device::freeAsync</ref><sp/>(Arena*<sp/>arena,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>mem)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="792"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/>gpu_stream_pool[gpu_stream_index[<ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>()]].free_async(arena,<sp/>mem);</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/>arena-&gt;free(mem);</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="798"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"></highlight></codeline>
+<codeline lineno="800"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ad0fb6a93a46d877f555cc72e95d61da4" kindref="member">Device::clearFreeAsyncBuffer</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="802"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>freed_memory<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>s<sp/>:<sp/>gpu_stream_pool)<sp/>{</highlight></codeline>
+<codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.wait_list_size()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.sync();</highlight></codeline>
+<codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freed_memory<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>freed_memory;</highlight></codeline>
+<codeline lineno="812"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="814"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="815"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"></highlight></codeline>
+<codeline lineno="817"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="818"><highlight class="normal"></highlight></codeline>
+<codeline lineno="819"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="820"><highlight class="normal">Device::startGraphRecording(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_iter,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>h_ptr,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>d_ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sz)</highlight></codeline>
+<codeline lineno="821"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((first_iter)<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Uses<sp/>passed<sp/>information<sp/>to<sp/>do<sp/>initial<sp/>async<sp/>memcpy<sp/>in<sp/>graph<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>links<sp/>dependency<sp/>to<sp/>all<sp/>streams<sp/>using<sp/>cudaEvents.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="826"><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>();</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>memcpy_event<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;memcpy_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"></highlight></codeline>
+<codeline lineno="832"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__CUDACC_VER_MAJOR__<sp/>==<sp/>10)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MINOR__<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream));</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream,<sp/>cudaStreamCaptureModeGlobal));</highlight></codeline>
+<codeline lineno="836"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="837"><highlight class="normal"></highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventDestroy(memcpy_event)<sp/>);</highlight></codeline>
-<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="840"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="841"><highlight class="normal"></highlight></codeline>
-<codeline lineno="842"><highlight class="normal">cudaGraphExec_t</highlight></codeline>
-<codeline lineno="843"><highlight class="normal">Device::stopGraphRecording(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>last_iter)</highlight></codeline>
-<codeline lineno="844"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphExec_t<sp/>graphExec{};</highlight></codeline>
-<codeline lineno="846"><highlight class="normal"></highlight></codeline>
-<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(last_iter<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Uses<sp/>cudaEvents<sp/>to<sp/>rejoin<sp/>the<sp/>streams,<sp/>making<sp/>a<sp/>single<sp/>graph.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
-<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>();</highlight></codeline>
-<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>rejoin_event<sp/>=<sp/>{0};</highlight></codeline>
-<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;rejoin_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
-<codeline lineno="854"><highlight class="normal"></highlight></codeline>
-<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;<ref refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kindref="member">Gpu::Device::numGpuStreams</ref>();<sp/>++i)</highlight></codeline>
-<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">Gpu::Device::setStreamIndex</ref>(i);</highlight></codeline>
-<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEventRecord(rejoin_event,<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>());</highlight></codeline>
-<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStreamWaitEvent(graph_stream,<sp/>rejoin_event,<sp/>0);</highlight></codeline>
-<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">Gpu::Device::setStreamIndex</ref>(0);</highlight></codeline>
-<codeline lineno="864"><highlight class="normal"></highlight></codeline>
-<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaGraph_t<sp/>graph;</highlight></codeline>
-<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamEndCapture(graph_stream,<sp/>&amp;graph));</highlight></codeline>
-<codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>graphExec<sp/>=<sp/>instantiateGraph(graph);</highlight></codeline>
-<codeline lineno="868"><highlight class="normal"></highlight></codeline>
-<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaGraphDestroy(graph);<sp/>);</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventDestroy(rejoin_event)<sp/>);</highlight></codeline>
-<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="872"><highlight class="normal"></highlight></codeline>
-<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>graphExec;</highlight></codeline>
-<codeline lineno="874"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="875"><highlight class="normal"></highlight></codeline>
-<codeline lineno="876"><highlight class="normal">cudaGraphExec_t</highlight></codeline>
-<codeline lineno="877"><highlight class="normal">Device::instantiateGraph(cudaGraph_t<sp/>graph)</highlight></codeline>
-<codeline lineno="878"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphExec_t<sp/>graphExec;</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaMemcpyAsync(d_ptr,<sp/>h_ptr,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>graph_stream));</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaEventRecord(memcpy_event,<sp/>graph_stream));</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"></highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;<ref refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kindref="member">numGpuStreams</ref>();<sp/>++i)</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(i);</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamWaitEvent(<ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>(),<sp/>memcpy_event,<sp/>0));</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"></highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventDestroy(memcpy_event)<sp/>);</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="852"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight></codeline>
+<codeline lineno="854"><highlight class="normal">cudaGraphExec_t</highlight></codeline>
+<codeline lineno="855"><highlight class="normal">Device::stopGraphRecording(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>last_iter)</highlight></codeline>
+<codeline lineno="856"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphExec_t<sp/>graphExec{};</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"></highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(last_iter<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Uses<sp/>cudaEvents<sp/>to<sp/>rejoin<sp/>the<sp/>streams,<sp/>making<sp/>a<sp/>single<sp/>graph.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>();</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>rejoin_event<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;rejoin_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"></highlight></codeline>
+<codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;<ref refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kindref="member">Gpu::Device::numGpuStreams</ref>();<sp/>++i)</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">Gpu::Device::setStreamIndex</ref>(i);</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEventRecord(rejoin_event,<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kindref="member">gpuStream</ref>());</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStreamWaitEvent(graph_stream,<sp/>rejoin_event,<sp/>0);</highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">Gpu::Device::setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"></highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaGraph_t<sp/>graph;</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamEndCapture(graph_stream,<sp/>&amp;graph));</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>graphExec<sp/>=<sp/>instantiateGraph(graph);</highlight></codeline>
 <codeline lineno="880"><highlight class="normal"></highlight></codeline>
-<codeline lineno="881"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEBUG</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="882"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Implements<sp/>cudaGraphInstantiate<sp/>error<sp/>logging<sp/>feature.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="883"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Upon<sp/>error,<sp/>delays<sp/>abort<sp/>until<sp/>message<sp/>is<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>log_size<sp/>=<sp/>1028;</highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>graph_log[log_size];</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/>graph_log[0]=</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaGraphDestroy(graph);<sp/>);</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(<sp/>cudaEventDestroy(rejoin_event)<sp/>);</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"></highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>graphExec;</highlight></codeline>
+<codeline lineno="886"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="887"><highlight class="normal"></highlight></codeline>
-<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>&amp;(graph_log[0]),<sp/>log_size);</highlight></codeline>
-<codeline lineno="889"><highlight class="normal"></highlight></codeline>
-<codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(graph_log[0]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/>graph_log<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
-<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="895"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="896"><highlight class="normal"></highlight></codeline>
-<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>NULL,<sp/>0));</highlight></codeline>
-<codeline lineno="898"><highlight class="normal"></highlight></codeline>
-<codeline lineno="899"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="900"><highlight class="normal"></highlight></codeline>
-<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>graphExec;</highlight></codeline>
-<codeline lineno="902"><highlight class="normal"></highlight></codeline>
-<codeline lineno="903"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="904"><highlight class="normal"></highlight></codeline>
-<codeline lineno="905"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="906"><highlight class="normal">Device::executeGraph(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cudaGraphExec_t<sp/>&amp;graphExec,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synch)</highlight></codeline>
-<codeline lineno="907"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
-<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
-<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaGraphLaunch(graphExec,<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a659a046032f304e13547b3b633e7c10a" kindref="member">cudaStream</ref>()));</highlight></codeline>
-<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synch)<sp/>{</highlight></codeline>
-<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kindref="member">synchronize</ref>();</highlight></codeline>
-<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" kindref="member">resetStreamIndex</ref>();</highlight></codeline>
-<codeline lineno="916"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="917"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="918"><highlight class="normal"></highlight></codeline>
-<codeline lineno="919"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="920"><highlight class="normal"></highlight></codeline>
-<codeline lineno="921"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="922"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a607313a3ee1bfc5baff8da183edd4b46" kindref="member">Device::mem_advise_set_preferred</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p,<sp/>std::size_t<sp/>sz,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device)</highlight></codeline>
-<codeline lineno="923"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(p,sz,device);</highlight></codeline>
-<codeline lineno="925"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="928"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="929"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemLocation<sp/>location<sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.type<sp/>=<sp/>cudaMemLocationTypeDevice;</highlight></codeline>
-<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.id<sp/>=<sp/>device;</highlight></codeline>
-<codeline lineno="933"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>location<sp/>=<sp/>device;</highlight></codeline>
-<codeline lineno="935"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="936"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref></highlight></codeline>
-<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL(</highlight></codeline>
-<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemAdvise(p,<sp/>sz,<sp/>hipMemAdviseSetPreferredLocation,<sp/>device)),</highlight></codeline>
-<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(</highlight></codeline>
-<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemAdvise(p,<sp/>sz,<sp/>cudaMemAdviseSetPreferredLocation,<sp/>location)));</highlight></codeline>
-<codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="943"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>mem_advise</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="947"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>auto&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="948"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>q.mem_advise(p,<sp/>sz,<sp/>PI_MEM_ADVICE_SET_PREFERRED_LOCATION);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="949"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="950"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="951"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="952"><highlight class="normal"></highlight></codeline>
-<codeline lineno="953"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="954"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a246378e3da5672c3a23a3dadc117edee" kindref="member">Device::mem_advise_set_readonly</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p,<sp/>std::size_t<sp/>sz)</highlight></codeline>
-<codeline lineno="955"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(p,sz);</highlight></codeline>
-<codeline lineno="957"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="960"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="961"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="962"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemLocation<sp/>location<sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.type<sp/>=<sp/>cudaMemLocationTypeDevice;</highlight></codeline>
-<codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.id<sp/>=<sp/>cudaCpuDeviceId;</highlight></codeline>
-<codeline lineno="965"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>location<sp/>=<sp/>cudaCpuDeviceId;</highlight></codeline>
-<codeline lineno="967"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="968"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref></highlight></codeline>
-<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL(</highlight></codeline>
-<codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemAdvise(p,<sp/>sz,<sp/>hipMemAdviseSetReadMostly,<sp/>hipCpuDeviceId)),</highlight></codeline>
-<codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(</highlight></codeline>
-<codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemAdvise(p,<sp/>sz,<sp/>cudaMemAdviseSetReadMostly,<sp/>location)));</highlight></codeline>
-<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="975"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>mem_advise</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>auto&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>q.mem_advise(p,<sp/>sz,<sp/>PI_MEM_ADVICE_SET_READ_MOSTLY);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="982"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="983"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="984"><highlight class="normal"></highlight></codeline>
-<codeline lineno="985"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="986"><highlight class="normal"></highlight></codeline>
-<codeline lineno="987"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="988"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" kindref="member">Device::setNumThreadsMin</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ny,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nz)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="989"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.x<sp/>=<sp/>nx;</highlight></codeline>
-<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.y<sp/>=<sp/>ny;</highlight></codeline>
-<codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.z<sp/>=<sp/>nz;</highlight></codeline>
-<codeline lineno="993"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="994"><highlight class="normal"></highlight></codeline>
-<codeline lineno="995"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="996"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a7a6b8811fb0e015cf250057bb00e6bcd" kindref="member">Device::n_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>N,<sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="997"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads<sp/>=<sp/>AMREX_GPU_MAX_THREADS;</highlight></codeline>
-<codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks<sp/>=<sp/>std::max((N<sp/>+<sp/>AMREX_GPU_MAX_THREADS<sp/>-<sp/>1)<sp/>/<sp/>AMREX_GPU_MAX_THREADS,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(1));<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>N<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1000"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1001"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1002"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1003"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ad50ffc68d86b60f6c4abea01215ecd80" kindref="member">Device::c_comps_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comps,</highlight></codeline>
-<codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1005"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/>c_threads_and_blocks(lo,<sp/>hi,<sp/>numBlocks,<sp/>numThreads);</highlight></codeline>
-<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>*=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(comps);</highlight></codeline>
-<codeline lineno="1008"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1009"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1010"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1011"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a287c97156ce50cfda229da5b2d9a00a8" kindref="member">Device::c_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1012"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Our<sp/>threading<sp/>strategy<sp/>will<sp/>be<sp/>to<sp/>allocate<sp/>thread<sp/>blocks</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//preferring<sp/>the<sp/>x<sp/>direction<sp/>first<sp/>to<sp/>guarantee<sp/>coalesced<sp/>accesses.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tile_size[]<sp/>=<sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(hi[0]-lo[0]+1,hi[1]-lo[1]+1,hi[2]-lo[2]+1)};</highlight></codeline>
-<codeline lineno="1016"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1017"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1018"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(tile_size[0],<sp/>AMREX_GPU_MAX_THREADS);</highlight></codeline>
-<codeline lineno="1020"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
-<codeline lineno="1021"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1022"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1023"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>(tile_size[0]<sp/>+<sp/>numThreads.x<sp/>-<sp/>1)<sp/>/<sp/>numThreads.x;</highlight></codeline>
-<codeline lineno="1025"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1027"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1028"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1029"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1030"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
-<codeline lineno="1031"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreads.x<sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="1032"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="1033"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="888"><highlight class="normal">cudaGraphExec_t</highlight></codeline>
+<codeline lineno="889"><highlight class="normal">Device::instantiateGraph(cudaGraph_t<sp/>graph)</highlight></codeline>
+<codeline lineno="890"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphExec_t<sp/>graphExec;</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="894"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Implements<sp/>cudaGraphInstantiate<sp/>error<sp/>logging<sp/>feature.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="895"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Upon<sp/>error,<sp/>delays<sp/>abort<sp/>until<sp/>message<sp/>is<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>log_size<sp/>=<sp/>1028;</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>graph_log[log_size];</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/>graph_log[0]=</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"></highlight></codeline>
+<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>&amp;(graph_log[0]),<sp/>log_size);</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"></highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(graph_log[0]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/>graph_log<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="905"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="908"><highlight class="normal"></highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>NULL,<sp/>0));</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"></highlight></codeline>
+<codeline lineno="911"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="912"><highlight class="normal"></highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>graphExec;</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"></highlight></codeline>
+<codeline lineno="915"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"></highlight></codeline>
+<codeline lineno="917"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="918"><highlight class="normal">Device::executeGraph(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cudaGraphExec_t<sp/>&amp;graphExec,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>synch)</highlight></codeline>
+<codeline lineno="919"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" kindref="member">inGraphRegion</ref>())</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a32697ec1849354e2ed52dbdb67e4cc55" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaGraphLaunch(graphExec,<sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a659a046032f304e13547b3b633e7c10a" kindref="member">cudaStream</ref>()));</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synch)<sp/>{</highlight></codeline>
+<codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kindref="member">synchronize</ref>();</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" kindref="member">resetStreamIndex</ref>();</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="929"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="930"><highlight class="normal"></highlight></codeline>
+<codeline lineno="931"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="932"><highlight class="normal"></highlight></codeline>
+<codeline lineno="933"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a607313a3ee1bfc5baff8da183edd4b46" kindref="member">Device::mem_advise_set_preferred</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p,<sp/>std::size_t<sp/>sz,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device)</highlight></codeline>
+<codeline lineno="935"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(p,sz,device);</highlight></codeline>
+<codeline lineno="937"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="941"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemLocation<sp/>location<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.type<sp/>=<sp/>cudaMemLocationTypeDevice;</highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.id<sp/>=<sp/>device;</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>location<sp/>=<sp/>device;</highlight></codeline>
+<codeline lineno="947"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="948"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="949"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref></highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL(</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemAdvise(p,<sp/>sz,<sp/>hipMemAdviseSetPreferredLocation,<sp/>device)),</highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemAdvise(p,<sp/>sz,<sp/>cudaMemAdviseSetPreferredLocation,<sp/>location)));</highlight></codeline>
+<codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="955"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>mem_advise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>auto&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="960"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>q.mem_advise(p,<sp/>sz,<sp/>PI_MEM_ADVICE_SET_PREFERRED_LOCATION);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="961"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="962"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="963"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="964"><highlight class="normal"></highlight></codeline>
+<codeline lineno="965"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="966"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a246378e3da5672c3a23a3dadc117edee" kindref="member">Device::mem_advise_set_readonly</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p,<sp/>std::size_t<sp/>sz)</highlight></codeline>
+<codeline lineno="967"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a0a525af3444a2814c6dbda9e71a965a5" kindref="member">amrex::ignore_unused</ref>(p,sz);</highlight></codeline>
+<codeline lineno="969"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="972"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="973"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>13)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemLocation<sp/>location<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.type<sp/>=<sp/>cudaMemLocationTypeDevice;</highlight></codeline>
+<codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>location.id<sp/>=<sp/>cudaCpuDeviceId;</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>location<sp/>=<sp/>cudaCpuDeviceId;</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="980"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref></highlight></codeline>
+<codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL(</highlight></codeline>
+<codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipMemAdvise(p,<sp/>sz,<sp/>hipMemAdviseSetReadMostly,<sp/>hipCpuDeviceId)),</highlight></codeline>
+<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(</highlight></codeline>
+<codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemAdvise(p,<sp/>sz,<sp/>cudaMemAdviseSetReadMostly,<sp/>location)));</highlight></codeline>
+<codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="987"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>mem_advise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>(device_prop.managedMemory<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>device_prop.concurrentManagedAccess<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>auto&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>q.mem_advise(p,<sp/>sz,<sp/>PI_MEM_ADVICE_SET_READ_MOSTLY);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="994"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="995"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="996"><highlight class="normal"></highlight></codeline>
+<codeline lineno="997"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="998"><highlight class="normal"></highlight></codeline>
+<codeline lineno="999"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1000"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" kindref="member">Device::setNumThreadsMin</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ny,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nz)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1001"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.x<sp/>=<sp/>nx;</highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.y<sp/>=<sp/>ny;</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreadsMin.z<sp/>=<sp/>nz;</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1008"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a7a6b8811fb0e015cf250057bb00e6bcd" kindref="member">Device::n_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref><sp/>N,<sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1009"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads<sp/>=<sp/>AMREX_GPU_MAX_THREADS;</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks<sp/>=<sp/>std::max((N<sp/>+<sp/>AMREX_GPU_MAX_THREADS<sp/>-<sp/>1)<sp/>/<sp/>AMREX_GPU_MAX_THREADS,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__amrex__arithmetic__types_1gace9d72971c815f54ed3af5df4e615781" kindref="member">Long</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(1));<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>N<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1012"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1014"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1015"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ad50ffc68d86b60f6c4abea01215ecd80" kindref="member">Device::c_comps_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comps,</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1017"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1018"><highlight class="normal"><sp/><sp/><sp/><sp/>c_threads_and_blocks(lo,<sp/>hi,<sp/>numBlocks,<sp/>numThreads);</highlight></codeline>
+<codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>*=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(comps);</highlight></codeline>
+<codeline lineno="1020"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1021"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1022"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1023"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a287c97156ce50cfda229da5b2d9a00a8" kindref="member">Device::c_threads_and_blocks</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/>dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1024"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1025"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Our<sp/>threading<sp/>strategy<sp/>will<sp/>be<sp/>to<sp/>allocate<sp/>thread<sp/>blocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//preferring<sp/>the<sp/>x<sp/>direction<sp/>first<sp/>to<sp/>guarantee<sp/>coalesced<sp/>accesses.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1027"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tile_size[]<sp/>=<sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(hi[0]-lo[0]+1,hi[1]-lo[1]+1,hi[2]-lo[2]+1)};</highlight></codeline>
+<codeline lineno="1028"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1029"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1030"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1031"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(tile_size[0],<sp/>AMREX_GPU_MAX_THREADS);</highlight></codeline>
+<codeline lineno="1032"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
+<codeline lineno="1033"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1034"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1035"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1036"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>(tile_size[0]<sp/>+<sp/>numThreads.x<sp/>-<sp/>1)<sp/>/<sp/>numThreads.x;</highlight></codeline>
-<codeline lineno="1037"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>(tile_size[1]<sp/>+<sp/>numThreads.y<sp/>-<sp/>1)<sp/>/<sp/>numThreads.y;</highlight></codeline>
+<codeline lineno="1037"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1038"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1039"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1040"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1040"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1041"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1042"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="1043"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="1044"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
-<codeline lineno="1045"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[0]),<sp/>numThreads.x));</highlight></codeline>
-<codeline lineno="1047"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[1]),<sp/>numThreads.y));</highlight></codeline>
-<codeline lineno="1048"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::max(numThreadsMin.z,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[2]),<sp/>numThreads.z));</highlight></codeline>
-<codeline lineno="1049"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1050"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>(tile_size[0]<sp/>+<sp/>numThreads.x<sp/>-<sp/>1)<sp/>/<sp/>numThreads.x;</highlight></codeline>
-<codeline lineno="1051"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>(tile_size[1]<sp/>+<sp/>numThreads.y<sp/>-<sp/>1)<sp/>/<sp/>numThreads.y;</highlight></codeline>
-<codeline lineno="1052"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>(tile_size[2]<sp/>+<sp/>numThreads.z<sp/>-<sp/>1)<sp/>/<sp/>numThreads.z;</highlight></codeline>
+<codeline lineno="1042"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
+<codeline lineno="1043"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreads.x<sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="1044"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="1045"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="1046"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1047"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1048"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>(tile_size[0]<sp/>+<sp/>numThreads.x<sp/>-<sp/>1)<sp/>/<sp/>numThreads.x;</highlight></codeline>
+<codeline lineno="1049"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>(tile_size[1]<sp/>+<sp/>numThreads.y<sp/>-<sp/>1)<sp/>/<sp/>numThreads.y;</highlight></codeline>
+<codeline lineno="1050"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1051"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1052"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1053"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1054"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1055"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]));</highlight></codeline>
-<codeline lineno="1057"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.y<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]));</highlight></codeline>
-<codeline lineno="1058"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.z<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]));</highlight></codeline>
-<codeline lineno="1059"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x*numThreads.y*numThreads.z<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsPerBlock));</highlight></codeline>
-<codeline lineno="1060"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1061"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.y<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1062"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.z<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1063"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.x<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1064"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.y<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1065"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.z<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1066"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1054"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="1055"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="1056"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="1057"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1058"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[0]),<sp/>numThreads.x));</highlight></codeline>
+<codeline lineno="1059"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[1]),<sp/>numThreads.y));</highlight></codeline>
+<codeline lineno="1060"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::max(numThreadsMin.z,<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tile_size[2]),<sp/>numThreads.z));</highlight></codeline>
+<codeline lineno="1061"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>(tile_size[0]<sp/>+<sp/>numThreads.x<sp/>-<sp/>1)<sp/>/<sp/>numThreads.x;</highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>(tile_size[1]<sp/>+<sp/>numThreads.y<sp/>-<sp/>1)<sp/>/<sp/>numThreads.y;</highlight></codeline>
+<codeline lineno="1064"><highlight class="normal"><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>(tile_size[2]<sp/>+<sp/>numThreads.z<sp/>-<sp/>1)<sp/>/<sp/>numThreads.z;</highlight></codeline>
+<codeline lineno="1065"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1066"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1067"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1068"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1069"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ae53661945fe0e36f109401055a3d87cf" kindref="member">Device::grid_stride_threads_and_blocks</ref><sp/>(dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1070"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1071"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_SMs<sp/>=<sp/>device_prop.multiProcessorCount;</highlight></codeline>
-<codeline lineno="1072"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1073"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SM_mult_factor<sp/>=<sp/>32;</highlight></codeline>
-<codeline lineno="1074"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1075"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_SMs<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1076"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>to<sp/>only<sp/>an<sp/>x<sp/>loop<sp/>in<sp/>most<sp/>cases.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1078"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsMin.y<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>numThreadsMin.z<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="1068"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]));</highlight></codeline>
+<codeline lineno="1069"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.y<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]));</highlight></codeline>
+<codeline lineno="1070"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.z<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]));</highlight></codeline>
+<codeline lineno="1071"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x*numThreads.y*numThreads.z<sp/>&lt;=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsPerBlock));</highlight></codeline>
+<codeline lineno="1072"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.x<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1073"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.y<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1074"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numThreads.z<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1075"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.x<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1076"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.y<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(numBlocks.z<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1079"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1080"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>SM_mult_factor<sp/>*<sp/>num_SMs;</highlight></codeline>
-<codeline lineno="1081"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1083"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1085"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1086"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1087"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>SM_mult_factor;</highlight></codeline>
-<codeline lineno="1088"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>num_SMs;</highlight></codeline>
-<codeline lineno="1089"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1090"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1080"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1081"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1ae53661945fe0e36f109401055a3d87cf" kindref="member">Device::grid_stride_threads_and_blocks</ref><sp/>(dim3&amp;<sp/>numBlocks,<sp/>dim3&amp;<sp/>numThreads)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1082"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_SMs<sp/>=<sp/>device_prop.multiProcessorCount;</highlight></codeline>
+<codeline lineno="1084"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SM_mult_factor<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1087"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_SMs<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1088"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1089"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>to<sp/>only<sp/>an<sp/>x<sp/>loop<sp/>in<sp/>most<sp/>cases.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1090"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsMin.y<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>numThreadsMin.z<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="1091"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1092"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1093"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arbitrarily<sp/>set<sp/>this<sp/>to<sp/>a<sp/>somewhat<sp/>large<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1092"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>SM_mult_factor<sp/>*<sp/>num_SMs;</highlight></codeline>
+<codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1095"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1096"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1000;</highlight></codeline>
-<codeline lineno="1097"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1098"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1099"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1096"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1097"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1098"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>SM_mult_factor;</highlight></codeline>
+<codeline lineno="1100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>num_SMs;</highlight></codeline>
 <codeline lineno="1101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1102"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1104"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(device_prop.maxThreadsDim[0],<sp/>AMREX_GPU_MAX_THREADS);</highlight></codeline>
-<codeline lineno="1105"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
-<codeline lineno="1106"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1107"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1109"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1111"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
-<codeline lineno="1112"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="1113"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="1114"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
-<codeline lineno="1115"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="1116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1117"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1119"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="1120"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="1121"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="1104"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arbitrarily<sp/>set<sp/>this<sp/>to<sp/>a<sp/>somewhat<sp/>large<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="1109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1114"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1116"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(device_prop.maxThreadsDim[0],<sp/>AMREX_GPU_MAX_THREADS);</highlight></codeline>
+<codeline lineno="1117"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
+<codeline lineno="1118"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1119"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="1120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1121"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1123"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="1124"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
-<codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::max(numThreadsMin.z,<sp/>numThreads.z);</highlight></codeline>
-<codeline lineno="1126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1123"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
+<codeline lineno="1124"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="1128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>the<sp/>user<sp/>to<sp/>override<sp/>these<sp/>at<sp/>runtime.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1129"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>numBlocksOverride.x;</highlight></codeline>
-<codeline lineno="1133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>numBlocksOverride.y;</highlight></codeline>
-<codeline lineno="1135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>numBlocksOverride.z;</highlight></codeline>
-<codeline lineno="1137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>numThreadsOverride.x;</highlight></codeline>
-<codeline lineno="1140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>numThreadsOverride.y;</highlight></codeline>
-<codeline lineno="1142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>numThreadsOverride.z;</highlight></codeline>
-<codeline lineno="1144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1145"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1149"><highlight class="normal">std::size_t</highlight></codeline>
-<codeline lineno="1150"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" kindref="member">Device::freeMemAvailable</ref><sp/>()</highlight></codeline>
-<codeline lineno="1151"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1152"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>f;</highlight></codeline>
-<codeline lineno="1154"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>t;</highlight></codeline>
-<codeline lineno="1156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0389b15d0c54d5b472c13de940c4c5d4" kindref="member">AMREX_HIP_OR_CUDA_OR_SYCL</ref>(<sp/>AMREX_HIP_SAFE_CALL(hipMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
-<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
-<codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>device_prop.totalGlobalMem;<sp/>);</highlight></codeline>
-<codeline lineno="1160"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(AMREX_USE_SYCL)<sp/>&amp;&amp;<sp/>defined(__INTEL_LLVM_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sycl_device-&gt;has(sycl::aspect::ext_intel_free_memory))<sp/>{</highlight></codeline>
-<codeline lineno="1162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>sycl_device-&gt;get_info&lt;sycl::ext::intel::info::device::free_memory&gt;();</highlight></codeline>
-<codeline lineno="1163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f;</highlight></codeline>
-<codeline lineno="1166"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="1131"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[0]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="1132"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[1]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="1133"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::min(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(device_prop.maxThreadsDim[2]),<sp/>AMREX_GPU_MAX_THREADS<sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="1134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1135"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>std::max(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="1136"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>std::max(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="1137"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>std::max(numThreadsMin.z,<sp/>numThreads.z);</highlight></codeline>
+<codeline lineno="1138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>the<sp/>user<sp/>to<sp/>override<sp/>these<sp/>at<sp/>runtime.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>numBlocksOverride.x;</highlight></codeline>
+<codeline lineno="1145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>numBlocksOverride.y;</highlight></codeline>
+<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>numBlocksOverride.z;</highlight></codeline>
+<codeline lineno="1149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>numThreadsOverride.x;</highlight></codeline>
+<codeline lineno="1152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>numThreadsOverride.y;</highlight></codeline>
+<codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>numThreadsOverride.z;</highlight></codeline>
+<codeline lineno="1156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1159"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1161"><highlight class="normal">std::size_t</highlight></codeline>
+<codeline lineno="1162"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" kindref="member">Device::freeMemAvailable</ref><sp/>()</highlight></codeline>
+<codeline lineno="1163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1164"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1165"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>f;</highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1167"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>t;</highlight></codeline>
 <codeline lineno="1168"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1169"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1171"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1172"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a9b8a6a9f47a037559294546980502da1" kindref="member">Device::profilerStart</ref><sp/>()</highlight></codeline>
-<codeline lineno="1173"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStart());</highlight></codeline>
-<codeline lineno="1176"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_ROCTX))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/>roctxProfilerResume(0);</highlight></codeline>
-<codeline lineno="1178"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1180"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1183"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a7961d112520b04459e1eb566e2c6ee71" kindref="member">Device::profilerStop</ref><sp/>()</highlight></codeline>
-<codeline lineno="1184"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1185"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStop());</highlight></codeline>
-<codeline lineno="1187"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_ROCTX))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/>roctxProfilerPause(0);</highlight></codeline>
-<codeline lineno="1189"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0389b15d0c54d5b472c13de940c4c5d4" kindref="member">AMREX_HIP_OR_CUDA_OR_SYCL</ref>(<sp/>AMREX_HIP_SAFE_CALL(hipMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
+<codeline lineno="1170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
+<codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>device_prop.totalGlobalMem;<sp/>);</highlight></codeline>
+<codeline lineno="1172"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(AMREX_USE_SYCL)<sp/>&amp;&amp;<sp/>defined(__INTEL_LLVM_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sycl_device-&gt;has(sycl::aspect::ext_intel_free_memory))<sp/>{</highlight></codeline>
+<codeline lineno="1174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>sycl_device-&gt;get_info&lt;sycl::ext::intel::info::device::free_memory&gt;();</highlight></codeline>
+<codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f;</highlight></codeline>
+<codeline lineno="1178"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="1180"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1183"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1184"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a9b8a6a9f47a037559294546980502da1" kindref="member">Device::profilerStart</ref><sp/>()</highlight></codeline>
+<codeline lineno="1185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1186"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStart());</highlight></codeline>
+<codeline lineno="1188"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_ROCTX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1189"><highlight class="normal"><sp/><sp/><sp/><sp/>roctxProfilerResume(0);</highlight></codeline>
+<codeline lineno="1190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1192"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HYPRE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1193"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hypreSynchronize<sp/>()</highlight></codeline>
-<codeline lineno="1194"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1195"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1196"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(HYPRE_RELEASE_NUMBER<sp/>&gt;<sp/>23200)<sp/>||<sp/>(HYPRE_RELEASE_NUMBER<sp/>==<sp/>23200<sp/>&amp;&amp;<sp/>HYPRE_DEVELOP_NUMBER<sp/>&gt;=<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncComputeStream();</highlight></codeline>
-<codeline lineno="1198"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncCudaDevice(hypre_handle());<sp/></highlight><highlight class="comment">//<sp/>works<sp/>for<sp/>non-cuda<sp/>device<sp/>too</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a7961d112520b04459e1eb566e2c6ee71" kindref="member">Device::profilerStop</ref><sp/>()</highlight></codeline>
+<codeline lineno="1196"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1197"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStop());</highlight></codeline>
+<codeline lineno="1199"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_ROCTX))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/>roctxProfilerPause(0);</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1202"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1203"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1204"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HYPRE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1205"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hypreSynchronize<sp/>()</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1207"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(HYPRE_RELEASE_NUMBER<sp/>&gt;<sp/>23200)<sp/>||<sp/>(HYPRE_RELEASE_NUMBER<sp/>==<sp/>23200<sp/>&amp;&amp;<sp/>HYPRE_DEVELOP_NUMBER<sp/>&gt;=<sp/>4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncComputeStream();</highlight></codeline>
+<codeline lineno="1210"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_SyncCudaDevice(hypre_handle());<sp/></highlight><highlight class="comment">//<sp/>works<sp/>for<sp/>non-cuda<sp/>device<sp/>too</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1212"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1213"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1217"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp"/>
   </compounddef>

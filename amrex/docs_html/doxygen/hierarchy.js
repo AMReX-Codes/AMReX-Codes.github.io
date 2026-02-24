@@ -674,7 +674,9 @@ var hierarchy =
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
-    [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", null ],
+    [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", [
+      [ "amrex::Gpu::SyncAtExitOnly", "structamrex_1_1Gpu_1_1SyncAtExitOnly.html", null ]
+    ] ],
     [ "amrex::NullInterpHook< MFFAB >", "structamrex_1_1NullInterpHook.html", null ],
     [ "amrex::EBCellFlagFab::NumCells", "structamrex_1_1EBCellFlagFab_1_1NumCells.html", null ],
     [ "amrex::NumComps", "structamrex_1_1NumComps.html", null ],

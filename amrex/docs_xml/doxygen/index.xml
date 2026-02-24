@@ -2609,6 +2609,7 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1a075aaf3af23ffd79ae8025ab4fa19f62" kind="function"><name>numDevicePartners</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kind="function"><name>synchronize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a67c55a7d25eb5f5fdec62ffcc9c0dccf" kind="function"><name>streamSynchronize</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a42c8a431cffd1cf47729a2407edf5e38" kind="function"><name>streamSynchronizeActive</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a95bff02196b80d848b89b92166e704b9" kind="function"><name>streamSynchronizeAll</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a1e74751d797e87cfc0fd9800829d1718" kind="function"><name>freeAsync</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1ad0fb6a93a46d877f555cc72e95d61da4" kind="function"><name>clearFreeAsyncBuffer</name></member>
@@ -7601,6 +7602,7 @@
     <member refid="structamrex_1_1Gpu_1_1NoSyncRegion_1ab3c2ef6e1ce41acc4328659e78732084" kind="variable"><name>m_prev_flag</name></member>
     <member refid="structamrex_1_1Gpu_1_1NoSyncRegion_1a145be1ff4432aa6033daa6e1bed33e89" kind="function"><name>NoSyncRegion</name></member>
     <member refid="structamrex_1_1Gpu_1_1NoSyncRegion_1aea2fd359c6a46de880e023c2fec1d480" kind="function"><name>~NoSyncRegion</name></member>
+    <member refid="structamrex_1_1Gpu_1_1NoSyncRegion_1a83a8016a0b2845cabbabccb871f81cc5" kind="function"><name>inNoSyncRegionPreviously</name></member>
   </compound>
   <compound refid="structamrex_1_1NullInterpHook" kind="struct"><name>amrex::NullInterpHook</name>
     <member refid="structamrex_1_1NullInterpHook_1a9633b75eb2bd1251d7406b5ba1bee0db" kind="function"><name>operator()</name></member>
@@ -10355,6 +10357,9 @@
     <member refid="structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4_1af0de73dc01cde0d016257305cd549250" kind="variable"><name>I</name></member>
     <member refid="structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4_1aa952c0160cc709f5bf2dc7183c9b25b5" kind="function"><name>operator()</name></member>
   </compound>
+  <compound refid="structamrex_1_1Gpu_1_1SyncAtExitOnly" kind="struct"><name>amrex::Gpu::SyncAtExitOnly</name>
+    <member refid="structamrex_1_1Gpu_1_1SyncAtExitOnly_1a7e595bce0f473280b55f22af555f5506" kind="function"><name>~SyncAtExitOnly</name></member>
+  </compound>
   <compound refid="structamrex_1_1Table1D" kind="struct"><name>amrex::Table1D</name>
     <member refid="structamrex_1_1Table1D_1a5012187f5853ef71ab9808da9d048d85" kind="variable"><name>p</name></member>
     <member refid="structamrex_1_1Table1D_1a06af5cf12031ffd738020537760de9c9" kind="variable"><name>begin</name></member>
@@ -10927,7 +10932,7 @@
   </compound>
   <compound refid="namespace_0d103" kind="namespace"><name>@103</name>
   </compound>
-  <compound refid="namespace_0d128" kind="namespace"><name>@128</name>
+  <compound refid="namespace_0d127" kind="namespace"><name>@127</name>
   </compound>
   <compound refid="namespace_0d191" kind="namespace"><name>@191</name>
   </compound>
@@ -10937,7 +10942,7 @@
   </compound>
   <compound refid="namespace_0d275" kind="namespace"><name>@275</name>
   </compound>
-  <compound refid="namespace_0d347" kind="namespace"><name>@347</name>
+  <compound refid="namespace_0d348" kind="namespace"><name>@348</name>
   </compound>
   <compound refid="namespace_0d47" kind="namespace"><name>@47</name>
   </compound>
@@ -12557,6 +12562,7 @@
     <member refid="namespaceamrex_1_1Gpu_1a920dd19f186b2276d9bbdb14d117565c" kind="function"><name>numGpuStreams</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kind="function"><name>synchronize</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kind="function"><name>streamSynchronize</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a149141305f7f2a0277f3b6009b9189ff" kind="function"><name>streamSynchronizeActive</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" kind="function"><name>streamSynchronizeAll</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a2e573a00e2c0d0bff8097bd9f3dd422e" kind="function"><name>freeAsync</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a1bf19fc1b716c9c9ceb66bf61067e8c1" kind="function"><name>clearFreeAsyncBuffer</name></member>
@@ -12739,7 +12745,7 @@
     <member refid="namespaceamrex_1_1MPMD_1ac54d81a4bc3dba2c0a8c6a0ddd05451b" kind="function"><name>AppNum</name></member>
     <member refid="namespaceamrex_1_1MPMD_1a94159263c06dba87d4f0a07c513df59b" kind="function"><name>MyProgId</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1MPMD_1_1_0d205" kind="namespace"><name>amrex::MPMD::@205</name>
+  <compound refid="namespaceamrex_1_1MPMD_1_1_0d204" kind="namespace"><name>amrex::MPMD::@204</name>
   </compound>
   <compound refid="namespaceamrex_1_1NonLocalBC" kind="namespace"><name>amrex::NonLocalBC</name>
     <member refid="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" kind="typedef"><name>Inverse_t</name></member>

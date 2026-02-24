@@ -38,6 +38,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "sharedMemPerBlock", "classamrex_1_1Gpu_1_1Device.html#a919512587c63820d178daacc381ccde1", null ],
     [ "streamIndex", "classamrex_1_1Gpu_1_1Device.html#a049b80f650443158297dbc0fb19c304e", null ],
     [ "streamSynchronize", "classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf", null ],
+    [ "streamSynchronizeActive", "classamrex_1_1Gpu_1_1Device.html#a42c8a431cffd1cf47729a2407edf5e38", null ],
     [ "streamSynchronizeAll", "classamrex_1_1Gpu_1_1Device.html#a95bff02196b80d848b89b92166e704b9", null ],
     [ "synchronize", "classamrex_1_1Gpu_1_1Device.html#a5ccf8e9a40fdaa00878353c79867bd04", null ],
     [ "totalGlobalMem", "classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a", null ],

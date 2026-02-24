@@ -135,6 +135,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a5ccf8e9a40fdaa00878353c79867bd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67c55a7d25eb5f5fdec62ffcc9c0dccf" id="r_a67c55a7d25eb5f5fdec62ffcc9c0dccf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf">streamSynchronize</a> () noexcept</td></tr>
 <tr class="separator:a67c55a7d25eb5f5fdec62ffcc9c0dccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c8a431cffd1cf47729a2407edf5e38" id="r_a42c8a431cffd1cf47729a2407edf5e38"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a42c8a431cffd1cf47729a2407edf5e38">streamSynchronizeActive</a> () noexcept</td></tr>
+<tr class="separator:a42c8a431cffd1cf47729a2407edf5e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95bff02196b80d848b89b92166e704b9" id="r_a95bff02196b80d848b89b92166e704b9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a95bff02196b80d848b89b92166e704b9">streamSynchronizeAll</a> () noexcept</td></tr>
 <tr class="separator:a95bff02196b80d848b89b92166e704b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e74751d797e87cfc0fd9800829d1718" id="r_a1e74751d797e87cfc0fd9800829d1718"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html#a1e74751d797e87cfc0fd9800829d1718">freeAsync</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *arena, void *mem) noexcept</td></tr>
@@ -1295,6 +1297,32 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Halt execution of code until the current <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> GPU stream has finished processing all previously requested tasks. </p>
+
+</div>
+</div>
+<a id="a42c8a431cffd1cf47729a2407edf5e38" name="a42c8a431cffd1cf47729a2407edf5e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c8a431cffd1cf47729a2407edf5e38">&#9670;&#160;</a></span>streamSynchronizeActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::Device::streamSynchronizeActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Halt execution of code until all active <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> GPU streams have finished processing all previously requested tasks. If we are in single stream region, only stream 0 is considered active. Otherwise all streams are active. </p>
 
 </div>
 </div>

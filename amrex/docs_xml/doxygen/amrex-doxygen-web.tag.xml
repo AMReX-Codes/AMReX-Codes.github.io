@@ -2620,6 +2620,7 @@
     <includes id="AMReX__Vector_8H" name="AMReX_Vector.H" local="no" import="no" module="no" objc="no">AMReX_Vector.H</includes>
     <class kind="class">amrex::Gpu::StreamManager</class>
     <class kind="class">amrex::Gpu::Device</class>
+    <class kind="struct">amrex::Gpu::SyncAtExitOnly</class>
     <namespace>amrex</namespace>
     <namespace>amrex::Gpu</namespace>
     <member kind="define">
@@ -24245,6 +24246,13 @@
       <name>streamSynchronize</name>
       <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
       <anchor>a67c55a7d25eb5f5fdec62ffcc9c0dccf</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>streamSynchronizeActive</name>
+      <anchorfile>classamrex_1_1Gpu_1_1Device.html</anchorfile>
+      <anchor>a42c8a431cffd1cf47729a2407edf5e38</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function" static="yes">
@@ -51101,6 +51109,20 @@
       <anchor>aea2fd359c6a46de880e023c2fec1d480</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>inNoSyncRegionPreviously</name>
+      <anchorfile>structamrex_1_1Gpu_1_1NoSyncRegion.html</anchorfile>
+      <anchor>a83a8016a0b2845cabbabccb871f81cc5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>m_prev_flag</name>
+      <anchorfile>structamrex_1_1Gpu_1_1NoSyncRegion.html</anchorfile>
+      <anchor>ab3c2ef6e1ce41acc4328659e78732084</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>amrex::NullInterpHook</name>
@@ -65919,6 +65941,18 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>amrex::Gpu::SyncAtExitOnly</name>
+    <filename>structamrex_1_1Gpu_1_1SyncAtExitOnly.html</filename>
+    <base>amrex::Gpu::NoSyncRegion</base>
+    <member kind="function">
+      <type></type>
+      <name>~SyncAtExitOnly</name>
+      <anchorfile>structamrex_1_1Gpu_1_1SyncAtExitOnly.html</anchorfile>
+      <anchor>a7e595bce0f473280b55f22af555f5506</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>amrex::Table1D</name>
     <filename>structamrex_1_1Table1D.html</filename>
     <templarg>typename T</templarg>
@@ -79375,6 +79409,7 @@
     <class kind="class">amrex::Gpu::StreamIter</class>
     <class kind="struct">amrex::Gpu::StreamItInfo</class>
     <class kind="class">amrex::Gpu::StreamManager</class>
+    <class kind="struct">amrex::Gpu::SyncAtExitOnly</class>
     <class kind="struct">amrex::Gpu::warpReduce</class>
     <member kind="typedef">
       <type>PODVector&lt; T, ArenaAllocator&lt; T &gt; &gt;</type>
@@ -79584,6 +79619,13 @@
       <name>streamSynchronize</name>
       <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
       <anchor>a67a618504ee5fb94bd65a5d393e344b4</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>streamSynchronizeActive</name>
+      <anchorfile>namespaceamrex_1_1Gpu.html</anchorfile>
+      <anchor>a149141305f7f2a0277f3b6009b9189ff</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
