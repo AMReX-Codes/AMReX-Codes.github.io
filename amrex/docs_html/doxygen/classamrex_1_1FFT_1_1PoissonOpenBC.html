@@ -109,10 +109,13 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1PoissonOpenBC.htm
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa908c36f2fc70a17d170e738138b0985" id="r_aa908c36f2fc70a17d170e738138b0985"><td class="memTemplParams" colspan="2">template&lt;typename FA  = MF, std::enable_if_t&lt; <a class="el" href="namespaceamrex.html#a36e5941ad0614ee76ddb49b9bcc2c515">IsFabArray_v</a>&lt; FA &gt;, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aa908c36f2fc70a17d170e738138b0985"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#aa908c36f2fc70a17d170e738138b0985">PoissonOpenBC</a> (<a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> ixtype=<a class="el" href="classamrex_1_1IndexTypeND.html#abf223fe9abd76b2f43575bd0e6858686">IndexType::TheCellType</a>(), <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> const &amp;ngrow=<a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a>(0))</td></tr>
+<tr class="memdesc:aa908c36f2fc70a17d170e738138b0985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an open-boundary <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> solver over the grown domain.  <br /></td></tr>
 <tr class="separator:aa908c36f2fc70a17d170e738138b0985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65199cc3d25b69c0a78a9bb6c234565e" id="r_a65199cc3d25b69c0a78a9bb6c234565e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#a65199cc3d25b69c0a78a9bb6c234565e">solve</a> (MF &amp;soln, MF const &amp;rhs)</td></tr>
+<tr class="memdesc:a65199cc3d25b69c0a78a9bb6c234565e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the open-boundary <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> problem.  <br /></td></tr>
 <tr class="separator:a65199cc3d25b69c0a78a9bb6c234565e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99b7ef0d1b0304fd49dcbf48fb16202a" id="r_a99b7ef0d1b0304fd49dcbf48fb16202a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1PoissonOpenBC.html#a99b7ef0d1b0304fd49dcbf48fb16202a">define_doit</a> ()</td></tr>
+<tr class="memdesc:a99b7ef0d1b0304fd49dcbf48fb16202a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the discretized Green's function cache (public for CUDA kernels).  <br /></td></tr>
 <tr class="separator:a99b7ef0d1b0304fd49dcbf48fb16202a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -163,6 +166,16 @@ template&lt;typename FA , std::enable_if_t&lt; <a class="el" href="namespaceamre
 </table>
 </div><div class="memdoc">
 
+<p>Build an open-boundary <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> solver over the grown domain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the problem domain. </td></tr>
+    <tr><td class="paramname">ixtype</td><td>Index type (cell vs. node) for the working arrays. </td></tr>
+    <tr><td class="paramname">ngrow</td><td>Number of grow cells applied prior to solving. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -182,6 +195,8 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the discretized Green's function cache (public for CUDA kernels). </p>
 
 </div>
 </div>
@@ -212,6 +227,15 @@ template&lt;typename MF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Solve the open-boundary <a class="el" href="classamrex_1_1FFT_1_1Poisson.html" title="Poisson solver for periodic, Dirichlet &amp; Neumann boundaries using FFT.">Poisson</a> problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soln</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (cell- or node-centered to match constructor). </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand-side <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

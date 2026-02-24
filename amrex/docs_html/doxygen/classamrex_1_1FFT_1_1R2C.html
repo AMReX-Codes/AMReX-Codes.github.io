@@ -173,6 +173,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af1e94ef998b45e50e2e4e83b141e2ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward transform.  <br /></td></tr>
 <tr class="separator:af1e94ef998b45e50e2e4e83b141e2ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a837e3afdc0aacbf658df5685dccd8e5a" id="r_a837e3afdc0aacbf658df5685dccd8e5a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a837e3afdc0aacbf658df5685dccd8e5a">scalingFactor</a> () const</td></tr>
+<tr class="memdesc:a837e3afdc0aacbf658df5685dccd8e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling factor. If the data goes through forward and then backward, the result multiplied by the scaling factor is equal to the original data.  <br /></td></tr>
 <tr class="separator:a837e3afdc0aacbf658df5685dccd8e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f115305c4ffabe4e876a9114e5be32" id="r_ad9f115305c4ffabe4e876a9114e5be32"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR = D, std::enable_if_t&lt; DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ad9f115305c4ffabe4e876a9114e5be32"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classamrex_1_1FFT_1_1R2C.html#ae7d1731672767514ef3909438c19ad24">cMF</a> *, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#ad9f115305c4ffabe4e876a9114e5be32">getSpectralData</a> () const</td></tr>
@@ -183,9 +184,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad0b77ce345115cbc6ffca2ca73f98241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc9c3d04bec4a578ed7ae1fd529e808" id="r_a8fc9c3d04bec4a578ed7ae1fd529e808"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:a8fc9c3d04bec4a578ed7ae1fd529e808"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a8fc9c3d04bec4a578ed7ae1fd529e808">post_forward_doit_0</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;post_forward)</td></tr>
+<tr class="memdesc:a8fc9c3d04bec4a578ed7ae1fd529e808"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA-visible hook that walks internal spectral data and applies <code>post_forward</code>.  <br /></td></tr>
 <tr class="separator:a8fc9c3d04bec4a578ed7ae1fd529e808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f49bf61ee718c334d9e2656058df55a" id="r_a6f49bf61ee718c334d9e2656058df55a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:a6f49bf61ee718c334d9e2656058df55a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a6f49bf61ee718c334d9e2656058df55a">post_forward_doit_1</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;post_forward)</td></tr>
+<tr class="memdesc:a6f49bf61ee718c334d9e2656058df55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA-visible helper that redistributes and applies <code>post_forward</code> for the batched layout.  <br /></td></tr>
 <tr class="separator:a6f49bf61ee718c334d9e2656058df55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2060e664330fdfcc3866ea75051da540" id="r_a2060e664330fdfcc3866ea75051da540"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0">Direction</a> DIR, std::enable_if_t&lt; DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0a965dbaac085fc891bfbbd4f9d145bbc8">Direction::forward</a>||DIR==<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f83d98b45375c0af6cb3e816496528d4187db53bc66567f">Direction::both</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; </td></tr>
 <tr class="memitem:a2060e664330fdfcc3866ea75051da540"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; typename <a class="el" href="classamrex_1_1FFT_1_1R2C.html">R2C</a>&lt; T, D, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a0d61f8370cad1d412f80b84d143e1257">C</a> &gt;<a class="el" href="classamrex_1_1FFT_1_1R2C.html#ae7d1731672767514ef3909438c19ad24">::cMF</a> *, <a class="el" href="namespaceamrex.html#a95101764f5ec64cd1dd6e55614702cdb">IntVect</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1R2C.html#a2060e664330fdfcc3866ea75051da540">getSpectralData</a> () const</td></tr>
@@ -501,7 +504,14 @@ template&lt;typename CT , typename RT , <a class="el" href="namespaceamrex_1_1FF
 </div><div class="memdoc">
 
 <p>Backward transform. </p>
-<p>This raw pointer version of backward requires setLocalDomain/getLocalDomain and setLocalSpectralDomain/getLocalSpectralDomain have been called already. Note that one is allowed to call this function multiple times after the set/get domain functions are called only once unless the domain decomposition changes. In fact, that is the preferred way because it has better performance. All processes need to call this function even if their local size is zero. If the local size is zero, one can pass nullptrs. </p>
+<p>This raw pointer version of backward requires setLocalDomain/getLocalDomain and setLocalSpectralDomain/getLocalSpectralDomain have been called already. Note that one is allowed to call this function multiple times after the set/get domain functions are called only once unless the domain decomposition changes. In fact, that is the preferred way because it has better performance. All processes need to call this function even if their local size is zero. If the local size is zero, one can pass nullptrs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Complex-domain data. </td></tr>
+    <tr><td class="paramname">out</td><td>Real-domain buffer that receives the transformed data. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -676,7 +686,14 @@ template&lt;typename RT , typename CT , <a class="el" href="namespaceamrex_1_1FF
 </div><div class="memdoc">
 
 <p>Forward transform. </p>
-<p>This raw pointer version of forward requires setLocalDomain/getLocalDomain and setLocalSpectralDomain/getLocalSpectralDomain have been called already. Note that one is allowed to call this function multiple times after the set/get domain functions are called only once, unless the domain decomposition changes. In fact, that is the preferred way because it has better performance. All processes need to call this function even if their local size is zero. If the local size is zero, one can pass nullptrs. </p>
+<p>This raw pointer version of forward requires setLocalDomain/getLocalDomain and setLocalSpectralDomain/getLocalSpectralDomain have been called already. Note that one is allowed to call this function multiple times after the set/get domain functions are called only once, unless the domain decomposition changes. In fact, that is the preferred way because it has better performance. All processes need to call this function even if their local size is zero. If the local size is zero, one can pass nullptrs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>Real-domain input data laid out as specified by setLocalDomain. </td></tr>
+    <tr><td class="paramname">out</td><td>Complex-domain buffer that receives the Hermitian half-spectrum. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -742,7 +759,7 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
   <table class="params">
     <tr><td class="paramname">inmf</td><td>input data in <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> or FabArray&lt;BaseFab&lt;float&gt;&gt; </td></tr>
     <tr><td class="paramname">outmf</td><td>output data in <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> or FabArray&lt;BaseFab&lt;float&gt;&gt; </td></tr>
-    <tr><td class="paramname">post_forward</td><td>a callable object for processing the post-forward data before the backward transform. Its interface is <code>(int,int,int,<a class="el" href="structamrex_1_1GpuComplex.html" title="A host / device complex number type, because std::complex doesn&#39;t work in device code with Cuda yet.">GpuComplex</a>&lt;T&gt;&amp;)</code>, where the integers are indices in the spectral space, and the reference to the complex number allows for the modification of the spectral data at that location. </td></tr>
+    <tr><td class="paramname">post_forward</td><td>a callable object for processing the post-forward data before the backward transform. Its interface is <code>void(int,int,int,<a class="el" href="structamrex_1_1GpuComplex.html" title="A host / device complex number type, because std::complex doesn&#39;t work in device code with Cuda yet.">GpuComplex</a>&lt;T&gt;&amp;)</code>, where the integers are indices in the spectral space, and the reference to the complex number allows for the modification of the spectral data at that location. </td></tr>
     <tr><td class="paramname">incomp</td><td>component index of input data </td></tr>
     <tr><td class="paramname">outcomp</td><td>component index of output data </td></tr>
   </table>
@@ -770,7 +787,8 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 
 <p>Get local domain. </p>
 <p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html">AMReX</a>. The first part of the pair is the local starting indices, and the second part is the local domain size.</p>
-<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalDomain and getLocalDomain, should be called. </p>
+<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalDomain and getLocalDomain, should be called.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pair of (local start indices, local extents). </dd></dl>
 
 </div>
 </div>
@@ -793,7 +811,8 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 
 <p>Get local spectral domain. </p>
 <p>This function returns the domain decomposition chosen by <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> for the complex data spectral domain. The returned pair contains the local starting indices and the local domain size.</p>
-<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with setLocalDomain. That is the user is allowed to choose their own real domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose the spectral data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz. </p>
+<p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with setLocalDomain. That is the user is allowed to choose their own real domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose the spectral data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pair of (local start indices, local extents). </dd></dl>
 
 </div>
 </div>
@@ -817,7 +836,8 @@ template&lt;<a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0ce41c89d0d14f8
 </div><div class="memdoc">
 
 <p>Get the internal spectral data. </p>
-<p>This function is not available when this class template is instantiated for backward-only transform. For performance reasons, the returned data array does not have the usual ordering of <code>(x,y,z)</code>. The order is specified in the second part of the return value. </p>
+<p>This function is not available when this class template is instantiated for backward-only transform. For performance reasons, the returned data array does not have the usual ordering of <code>(x,y,z)</code>. The order is specified in the second part of the return value.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pair of (spectral <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> pointer, permutation describing storage order). </dd></dl>
 
 </div>
 </div>
@@ -860,7 +880,8 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 </div><div class="memdoc">
 
 <p>Get <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> for spectral data. </p>
-<p>The returned <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> can be used to build <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;BaseFab&lt;GpuComplex&lt;T&gt;&gt;&gt;</a> for spectral data. The returned <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> has the usual order of <code>(x,y,z)</code>. </p>
+<p>The returned <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> can be used to build <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;BaseFab&lt;GpuComplex&lt;T&gt;&gt;&gt;</a> for spectral data. The returned <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> has the usual order of <code>(x,y,z)</code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Layout describing the complex-space tiling and distribution. </dd></dl>
 
 </div>
 </div>
@@ -940,6 +961,14 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
       </table>
 </div><div class="memdoc">
 
+<p>CUDA-visible hook that walks internal spectral data and applies <code>post_forward</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_forward</td><td>Functor invoked on each spectral coefficient (<code>void(int,int,int,<a class="el" href="structamrex_1_1GpuComplex.html" title="A host / device complex number type, because std::complex doesn&#39;t work in device code with Cuda yet.">GpuComplex</a>&lt;T&gt;&amp;)</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6f49bf61ee718c334d9e2656058df55a" name="a6f49bf61ee718c334d9e2656058df55a"></a>
@@ -962,6 +991,14 @@ template&lt;typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e8
       </table>
 </div><div class="memdoc">
 
+<p>CUDA-visible helper that redistributes and applies <code>post_forward</code> for the batched layout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">post_forward</td><td>Functor invoked on each spectral coefficient (<code>void(int,int,int,<a class="el" href="structamrex_1_1GpuComplex.html" title="A host / device complex number type, because std::complex doesn&#39;t work in device code with Cuda yet.">GpuComplex</a>&lt;T&gt;&amp;)</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a837e3afdc0aacbf658df5685dccd8e5a" name="a837e3afdc0aacbf658df5685dccd8e5a"></a>
@@ -980,7 +1017,9 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Scaling factor. If the data goes through forward and then backward, the result multiplied by the scaling factor is equal to the original data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Normalization factor (1 divided by the logical domain size). </dd></dl>
 
 </div>
 </div>
@@ -1016,7 +1055,13 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> the domain decomposition chosen by the user for the forward domain (i.e., real data domain). There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose for you by calling getLocalDomain. The latter could potentially reduce data communication.</p>
 <p>Again, this is needed, only if one uses the raw pointer interfaces. Only one of the functions, setLocalDomain and getLocalDomain, should be called.</p>
 <p>This should only be called once unless the domain decomposition changes.</p>
-<p>local_start starting indices of the local domain local_size size of the local domain </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_start</td><td>Starting indices of the local domain in each direction. </td></tr>
+    <tr><td class="paramname">local_size</td><td>Extent of the local domain handled by this rank. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1052,7 +1097,13 @@ template&lt;typename T , <a class="el" href="namespaceamrex_1_1FFT.html#a28c4d0c
 <p>This is needed, only if one uses the raw pointer interfaces, not the amrex::MulitFab interfaces. This may contain collective MPI calls. So all processes even if their local size is zero should call. This function informs <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> the domain decomposition chosen by the user for the complex data domain. There is no constraint on the domain decomposition strategy. One can do 1D, 2D or 3D domain decomposition. Alternatively, one could also let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose for you by calling getLocalSpectralDomain. The latter could potentially reduce data communication.</p>
 <p>Again, this is needed, only if one uses the raw pointer interfaces. Only one of the functions, setLocalSpectralDomain and getLocalSpectralDomain, should be called. Note that one could use this function together with getLocalDomain. That is the user is allowed to choose their own spectral domain decomposition, while let <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> choose the real data domain decomposition. Also note that the entire spectral domain has the size of (nx+1)/2 * ny * nz, if the real domain is nx * ny * nz.</p>
 <p>This should only be called once unless the domain decomposition changes.</p>
-<p>local_start starting indices of the local domain local_size size of the local domain </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">local_start</td><td>Starting indices of the local spectral sub-domain. </td></tr>
+    <tr><td class="paramname">local_size</td><td>Extent of the spectral data handled by this rank. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

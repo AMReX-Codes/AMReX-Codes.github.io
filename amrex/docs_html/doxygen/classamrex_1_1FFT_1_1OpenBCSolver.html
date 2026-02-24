@@ -97,9 +97,12 @@ $(document).ready(function(){initNavTree('classamrex_1_1FFT_1_1OpenBCSolver.html
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamrex_1_1FFT_1_1OpenBCSolver-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">amrex::FFT::OpenBCSolver&lt; T &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">amrex::FFT::OpenBCSolver&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__amrex__fft.html">Fast Fourier Transform (FFT)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Convolution-based solver for open boundary conditions using Green's functions.  
+ <a href="classamrex_1_1FFT_1_1OpenBCSolver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__FFT__OpenBCSolver_8H_source.html">AMReX_FFT_OpenBCSolver.H</a>&gt;</code></p>
 <table class="memberdecls">
@@ -113,16 +116,24 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2103845433bc9ebfa7dd6ab40a48fad" id="r_ab2103845433bc9ebfa7dd6ab40a48fad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#ab2103845433bc9ebfa7dd6ab40a48fad">OpenBCSolver</a> (<a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;domain, <a class="el" href="structamrex_1_1FFT_1_1Info.html">Info</a> const &amp;info=<a class="el" href="structamrex_1_1FFT_1_1Info.html">Info</a>{})</td></tr>
+<tr class="memdesc:ab2103845433bc9ebfa7dd6ab40a48fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a solver over <code>domain</code> using the <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> <a class="el" href="structamrex_1_1FFT_1_1Info.html">Info</a> settings in <code>info</code>.  <br /></td></tr>
 <tr class="separator:ab2103845433bc9ebfa7dd6ab40a48fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4473041097a7c465260bf1c28950457b" id="r_a4473041097a7c465260bf1c28950457b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:a4473041097a7c465260bf1c28950457b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a4473041097a7c465260bf1c28950457b">setGreensFunction</a> (<a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;greens_function)</td></tr>
+<tr class="memdesc:a4473041097a7c465260bf1c28950457b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the spectral Green's function used by subsequent solves.  <br /></td></tr>
 <tr class="separator:a4473041097a7c465260bf1c28950457b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c7e99165d9c0407123ed74b333a3568" id="r_a2c7e99165d9c0407123ed74b333a3568"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a2c7e99165d9c0407123ed74b333a3568">solve</a> (<a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a> &amp;phi, <a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a198bbf163fe0dc2eea190a0892e14e94">MF</a> const &amp;rho)</td></tr>
+<tr class="memdesc:a2c7e99165d9c0407123ed74b333a3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve for <code>phi</code> given right-hand side <code>rho</code>.  <br /></td></tr>
 <tr class="separator:a2c7e99165d9c0407123ed74b333a3568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b521c9a9a081f79d8f029be6f79bd9d" id="r_a0b521c9a9a081f79d8f029be6f79bd9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FFT_1_1OpenBCSolver.html#a0b521c9a9a081f79d8f029be6f79bd9d">Domain</a> () const</td></tr>
+<tr class="memdesc:a0b521c9a9a081f79d8f029be6f79bd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the physical domain this solver was built for.  <br /></td></tr>
 <tr class="separator:a0b521c9a9a081f79d8f029be6f79bd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = Real&gt;<br />
+class amrex::FFT::OpenBCSolver&lt; T &gt;</div><p>Convolution-based solver for open boundary conditions using Green's functions. </p>
+<p>The class wraps an internal <code><a class="el" href="classamrex_1_1FFT_1_1R2C.html" title="Parallel Discrete Fourier Transform.">R2C</a></code> plan and multiplies spectral data by a user-provided Green's function to solve Laplace/Poisson problems on a rectangular domain. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8d98406d48ab4df7be623d138af4fb05" name="a8d98406d48ab4df7be623d138af4fb05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d98406d48ab4df7be623d138af4fb05">&#9670;&#160;</a></span>cMF</h2>
 
@@ -192,6 +203,15 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Build a solver over <code>domain</code> using the <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> <a class="el" href="structamrex_1_1FFT_1_1Info.html">Info</a> settings in <code>info</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">domain</td><td>Physical domain (cell or nodal indexing). </td></tr>
+    <tr><td class="paramname">info</td><td>Optional <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> configuration (domain strategy, batching, etc.). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -220,6 +240,9 @@ template&lt;typename T  = Real&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Access the physical domain this solver was built for. </p>
+<dl class="section return"><dt>Returns</dt><dd>Original (un-extended) problem domain. </dd></dl>
+
 </div>
 </div>
 <a id="a4473041097a7c465260bf1c28950457b" name="a4473041097a7c465260bf1c28950457b"></a>
@@ -241,6 +264,20 @@ template&lt;class <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887e
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Populate the spectral Green's function used by subsequent solves. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Callable type satisfying <code>T(int i, int j, int k)</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">greens_function</td><td>Functor that evaluates the physical-space Green's function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -271,6 +308,15 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Solve for <code>phi</code> given right-hand side <code>rho</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">phi</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (overwritten in place). </td></tr>
+    <tr><td class="paramname">rho</td><td>Right-hand-side <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -44693,14 +44693,24 @@ Returns the index of the first element for which f is 0. </para>
           <declname>comm</declname>
         </param>
         <briefdescription>
-<para>Initialize <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref>. </para>
+<para>Initialize <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref> helpers without invoking the full <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> runtime. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is needed only when the user wants to use <ref refid="namespaceamrex_1_1FFT" kindref="compound">amrex::FFT</ref>, but does not want to call <ref refid="namespaceamrex_1a50b9b83c886549ba070ec27eb45df025" kindref="member">amrex::Initialize</ref> to initialize the full version of <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref>. Note that one usually only needs to call Init_FFT and Finalize_FFT once in the entire program. </para>
+<para>This is needed only when the user wants to use <ref refid="namespaceamrex_1_1FFT" kindref="compound">amrex::FFT</ref>, but does not want to call <ref refid="namespaceamrex_1a50b9b83c886549ba070ec27eb45df025" kindref="member">amrex::Initialize</ref> to initialize the full version of <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref>. Note that one usually only needs to call Init_FFT and Finalize_FFT once in the entire program.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MPI communicator passed to <ref refid="namespaceamrex_1afadc6162983c674e4597ea37fa732645" kindref="member">amrex::Init_minimal</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" line="22" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" bodystart="22" bodyend="22"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" line="30" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a86dd685e0ef82d7a3b6a25097fe08318" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -44709,13 +44719,13 @@ Returns the index of the first element for which f is 0. </para>
         <name>Finalize_FFT</name>
         <qualifiedname>amrex::Finalize_FFT</qualifiedname>
         <briefdescription>
+<para>Tear down the minimal <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref> runtime previously started via <ref refid="namespaceamrex_1a3eea92efd3c682f5f23770f47af7c14b" kindref="member">Init_FFT()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>If Init_FFT is called, this should be called after all the <ref refid="namespaceamrex_1_1FFT" kindref="compound">FFT</ref> works are done. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" line="29" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" bodystart="29" bodyend="29"/>
+        <location file="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" line="44" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/FFT/AMReX_FFT.H" bodystart="44" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8ece6e86f96a95c27c5d2e07443fdeb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

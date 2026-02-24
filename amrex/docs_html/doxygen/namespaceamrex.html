@@ -4435,9 +4435,10 @@ Functions</h2></td></tr>
 <tr class="memitem:abbd0e7692c28626659b75637c2c63528" id="r_abbd0e7692c28626659b75637c2c63528"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1PETScABecLap.html">PETScABecLap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abbd0e7692c28626659b75637c2c63528">makePetsc</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</td></tr>
 <tr class="separator:abbd0e7692c28626659b75637c2c63528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eea92efd3c682f5f23770f47af7c14b" id="r_a3eea92efd3c682f5f23770f47af7c14b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3eea92efd3c682f5f23770f47af7c14b">Init_FFT</a> (<a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm)</td></tr>
-<tr class="memdesc:a3eea92efd3c682f5f23770f47af7c14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a>.  <br /></td></tr>
+<tr class="memdesc:a3eea92efd3c682f5f23770f47af7c14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> helpers without invoking the full <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> runtime.  <br /></td></tr>
 <tr class="separator:a3eea92efd3c682f5f23770f47af7c14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86dd685e0ef82d7a3b6a25097fe08318" id="r_a86dd685e0ef82d7a3b6a25097fe08318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a86dd685e0ef82d7a3b6a25097fe08318">Finalize_FFT</a> ()</td></tr>
+<tr class="memdesc:a86dd685e0ef82d7a3b6a25097fe08318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tear down the minimal <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> runtime previously started via <a class="el" href="namespaceamrex.html#a3eea92efd3c682f5f23770f47af7c14b" title="Initialize FFT helpers without invoking the full AMReX runtime.">Init_FFT()</a>.  <br /></td></tr>
 <tr class="separator:a86dd685e0ef82d7a3b6a25097fe08318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ece6e86f96a95c27c5d2e07443fdeb3" id="r_a8ece6e86f96a95c27c5d2e07443fdeb3"><td class="memTemplParams" colspan="2">template&lt;typename V1 , typename <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> &gt; </td></tr>
 <tr class="memitem:a8ece6e86f96a95c27c5d2e07443fdeb3"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsAlgVector.html">IsAlgVector</a>&lt; std::decay_t&lt; V1 &gt; &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8ece6e86f96a95c27c5d2e07443fdeb3">ForEach</a> (V1 &amp;<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="el" href="namespaceamrex.html#a1e470da9cdaa55f3e887edb813385d20a800618943025315f869e4e1f09471012">F</a> const &amp;f)</td></tr>
@@ -19772,7 +19773,8 @@ template&lt;typename DstTile , typename SrcTile , typename Pred , typename Index
   </tr>
 </table>
 </div><div class="memdoc">
-<p>If Init_FFT is called, this should be called after all the <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> works are done. </p>
+
+<p>Tear down the minimal <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> runtime previously started via <a class="el" href="namespaceamrex.html#a3eea92efd3c682f5f23770f47af7c14b" title="Initialize FFT helpers without invoking the full AMReX runtime.">Init_FFT()</a>. </p>
 
 </div>
 </div>
@@ -28330,8 +28332,14 @@ template&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c65
 </table>
 </div><div class="memdoc">
 
-<p>Initialize <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a>. </p>
-<p>This is needed only when the user wants to use <a class="el" href="namespaceamrex_1_1FFT.html">amrex::FFT</a>, but does not want to call <a class="el" href="namespaceamrex.html#a50b9b83c886549ba070ec27eb45df025">amrex::Initialize</a> to initialize the full version of <a class="el" href="classamrex_1_1AMReX.html">AMReX</a>. Note that one usually only needs to call Init_FFT and Finalize_FFT once in the entire program. </p>
+<p>Initialize <a class="el" href="namespaceamrex_1_1FFT.html">FFT</a> helpers without invoking the full <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> runtime. </p>
+<p>This is needed only when the user wants to use <a class="el" href="namespaceamrex_1_1FFT.html">amrex::FFT</a>, but does not want to call <a class="el" href="namespaceamrex.html#a50b9b83c886549ba070ec27eb45df025">amrex::Initialize</a> to initialize the full version of <a class="el" href="classamrex_1_1AMReX.html">AMReX</a>. Note that one usually only needs to call Init_FFT and Finalize_FFT once in the entire program.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comm</td><td>MPI communicator passed to <a class="el" href="namespaceamrex.html#afadc6162983c674e4597ea37fa732645">amrex::Init_minimal</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

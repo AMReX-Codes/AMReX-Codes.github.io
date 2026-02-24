@@ -12,7 +12,7 @@ var structamrex_1_1FFT_1_1Plan =
     [ "get_r2r_kind", "structamrex_1_1FFT_1_1Plan.html#a7a5c175b18e78fc83a2d368e2c26ec4a", null ],
     [ "init_c2c", "structamrex_1_1FFT_1_1Plan.html#a8c64b0f08eb79211679f77405ba4ea11", null ],
     [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#abe19d02c67eb2b462364cbc41c067295", null ],
-    [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#af5601c75dcde3f349cfcda5db4d6be3d", null ],
+    [ "init_r2c", "structamrex_1_1FFT_1_1Plan.html#a3e5ee373951867d1c01eec205e445b02", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#ae52ff37c3e0c286e399ccba42f9d0af0", null ],
     [ "init_r2r", "structamrex_1_1FFT_1_1Plan.html#a5bd556d4b6acd1ea75a0bd83c58fa18e", null ],
     [ "pack_r2r_buffer", "structamrex_1_1FFT_1_1Plan.html#a6290c31392b5e57ad4487d10ba742a2a", null ],
