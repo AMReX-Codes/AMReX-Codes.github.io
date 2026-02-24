@@ -584,13 +584,34 @@ run with:</p>
 <section id="setting-default-via-environment-variable">
 <h2>Setting Default Via Environment Variable<a class="headerlink" href="#setting-default-via-environment-variable" title="Permalink to this heading"></a></h2>
 <p>You can specify default parameter values using the environment variable
-<cite>AMREX_DEFAULT_INIT</cite>. This method has lower precedence than settings
-provided in the inputs file or via command-line arguments. Here is an
-example of how to use it.</p>
+<code class="docutils literal notranslate"><span class="pre">AMREX_DEFAULT_INIT</span></code>. This is useful for setting site-wide or
+machine-specific defaults in HPC job scripts without modifying
+application input files or command-line arguments.</p>
+<p>The parameter value precedence, from highest to lowest, is:</p>
+<ol class="arabic simple">
+<li><p>Function pointer passed to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code> (see
+<a class="reference internal" href="#sec-basics-parmparse-functions"><span class="std std-ref">Setting Parameter Values Inside Functions</span></a> below)</p></li>
+<li><p>Command-line arguments</p></li>
+<li><p>Input file settings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AMREX_DEFAULT_INIT</span></code> environment variable</p></li>
+</ol>
+<p>The function pointer is called after all other sources have been parsed,
+so values it sets with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">add</span></code> take effect unconditionally.
+However, the function can use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">queryAdd</span></code> or check
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">contains</span></code> before calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="o">::</span><span class="n">add</span></code>,
+effectively lowering its own precedence for that parameter.</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">AMREX_DEFAULT_INIT</span></code> has the lowest precedence, it provides
+defaults that can always be overridden by any of the other sources.</p>
+<p>For example, on a machine where GPU-aware MPI is available, you can
+add the following to your job script:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export AMREX_DEFAULT_INIT=&quot;amrex.use_gpu_aware_mpi=1&quot;</span>
+</pre></div>
+</div>
+<p>Multiple parameters can be set in a single value:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export AMREX_DEFAULT_INIT=&quot;amrex.envfoo=0 amrex.envbar=1 amrex.envabc=1 2 3 amrex.envstr=\&quot;a b c\&quot;&quot;</span>
 </pre></div>
 </div>
-<p>This is equivalent to setting the following in the inputs file.</p>
+<p>The above is equivalent to setting the following in the inputs file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">.</span><span class="n">envfoo</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">amrex</span><span class="o">.</span><span class="n">envbar</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">amrex</span><span class="o">.</span><span class="n">envabc</span> <span class="o">=</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
@@ -599,14 +620,14 @@ example of how to use it.</p>
 </div>
 </section>
 <section id="setting-parameter-values-inside-functions">
-<h2>Setting Parameter Values Inside Functions<a class="headerlink" href="#setting-parameter-values-inside-functions" title="Permalink to this heading"></a></h2>
+<span id="sec-basics-parmparse-functions"></span><h2>Setting Parameter Values Inside Functions<a class="headerlink" href="#setting-parameter-values-inside-functions" title="Permalink to this heading"></a></h2>
 <p>An application code may want to set values or defaults that differ from the
 those in AMReX in a function. This is accomplished in two steps:</p>
 <ul class="simple">
 <li><p>First, define a function that sets the variable(s).</p></li>
 <li><p>Second, pass the name of that function to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span></code>.</p></li>
 </ul>
-<p>The example function below sets variable values using two different
+<p>The example function below sets variable values using different
 approaches to highlight subtle differences in implementation:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">add_par</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">ParmParse</span><span class="w"> </span><span class="n">pp</span><span class="p">(</span><span class="s">&quot;eb2&quot;</span><span class="p">);</span>
@@ -615,6 +636,10 @@ approaches to highlight subtle differences in implementation:</p>
 <span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="k">not</span><span class="w"> </span><span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
 <span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">// Equivalent shorthand for the above: query first, add the default only if not found.</span>
+<span class="w">   </span><span class="kt">bool</span><span class="w"> </span><span class="n">variable_one_v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">   </span><span class="n">pp</span><span class="p">.</span><span class="n">queryAdd</span><span class="p">(</span><span class="s">&quot;variable_one_v2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">variable_one_v2</span><span class="p">);</span>
 
 <span class="w">   </span><span class="c1">// The inputs file or command line arguments for `variable_two` are ignored.</span>
 <span class="w">   </span><span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_two&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
@@ -626,6 +651,9 @@ used to set variables. In the next section of code, we check if the value for
 <code class="docutils literal notranslate"><span class="pre">variable_one</span></code> has already been set elsewhere before writing to it. This
 approach prevents the function
 from overriding a value set in the inputs file or at the command line.
+The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">queryAdd</span></code> call for <code class="docutils literal notranslate"><span class="pre">variable_one_v2</span></code> does the same thing more
+concisely: it queries the database and, only if the parameter is not found,
+adds the value of its <code class="docutils literal notranslate"><span class="pre">ref</span></code> argument as a default.
 In the next section, we write a value to <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> without a conditional
 statement. In this case, we will ignore values for <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> set in the
 inputs file or as a command line argument —effectively overriding them with
