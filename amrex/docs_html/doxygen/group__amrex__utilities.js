@@ -12,6 +12,7 @@ var group__amrex__utilities =
       [ "ParmParse", "classamrex_1_1ParmParse.html#aedc024f9fcd3a2e180a860412c3ad745", null ],
       [ "add", "classamrex_1_1ParmParse.html#accf1b553a99c0c28b33f80ff4197bfd2", null ],
       [ "add", "classamrex_1_1ParmParse.html#ae9d18e04be03cc0b1040a3ec7afe30ca", null ],
+      [ "add", "classamrex_1_1ParmParse.html#a8aca9f4e3be775812ae1b1a6f9e0acd7", null ],
       [ "add", "classamrex_1_1ParmParse.html#a80ffd9abf64c20038cb94c45fd7728b7", null ],
       [ "add", "classamrex_1_1ParmParse.html#ad651a6c836f3eb3a87e835b436715bbf", null ],
       [ "add", "classamrex_1_1ParmParse.html#a22bab90c2879c4cd53c41b0a0a93d75e", null ],
