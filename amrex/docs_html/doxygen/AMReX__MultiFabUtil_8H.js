@@ -51,6 +51,7 @@ var AMReX__MultiFabUtil_8H =
     [ "ReduceToPlane", "AMReX__MultiFabUtil_8H.html#a364dfb9be3b959cfdb2509f4680ecd6f", null ],
     [ "ReduceToPlaneMF", "AMReX__MultiFabUtil_8H.html#a40c2c0500c3c5f5b536616ca66a968da", null ],
     [ "ReduceToPlaneMF2", "AMReX__MultiFabUtil_8H.html#a372b4c6fd8af2bdf17bb3d790e03f64d", null ],
+    [ "ReduceToPlaneMF2Patchy", "AMReX__MultiFabUtil_8H.html#a41467b789a4fca7b2a1009825210624e", null ],
     [ "sum_fine_to_coarse", "AMReX__MultiFabUtil_8H.html#ab67331acff75bf2840f409750b1ada66", null ],
     [ "sumToLine", "AMReX__MultiFabUtil_8H.html#a882a700cf7fab66ee3ce8de37de3ef73", null ],
     [ "ToLongMultiFab", "AMReX__MultiFabUtil_8H.html#ae062fb7f904c1f39327797d8c3fea414", null ],

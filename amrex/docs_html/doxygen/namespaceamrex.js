@@ -1825,6 +1825,7 @@ var namespaceamrex =
     [ "ReduceToPlane", "namespaceamrex.html#a364dfb9be3b959cfdb2509f4680ecd6f", null ],
     [ "ReduceToPlaneMF", "namespaceamrex.html#a40c2c0500c3c5f5b536616ca66a968da", null ],
     [ "ReduceToPlaneMF2", "namespaceamrex.html#a372b4c6fd8af2bdf17bb3d790e03f64d", null ],
+    [ "ReduceToPlaneMF2Patchy", "namespaceamrex.html#a41467b789a4fca7b2a1009825210624e", null ],
     [ "refine", "namespaceamrex.html#af32b91948787281bd9c0c691f3f355dd", null ],
     [ "refine", "namespaceamrex.html#a85187c36418a08cc244643e6fc869f4c", null ],
     [ "refine", "namespaceamrex.html#ae4c03c73102c83c74769b7773fb82483", null ],

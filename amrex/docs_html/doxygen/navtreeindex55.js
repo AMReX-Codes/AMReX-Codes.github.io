@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"globals_defs_g.html":[4,1,4,2],
 "globals_defs_p.html":[4,1,4,3],
 "globals_defs_s.html":[4,1,4,4],
 "globals_f.html":[4,1,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "group__amrex__mpi.html#gab1c54207db7e0179f2a7bdeba6821831":[1,8,64],
 "group__amrex__mpi.html#gab295f18b74675ea0f559d2563eace87d":[1,8,28],
 "group__amrex__mpi.html#gab631aeff542a91e7c4512ff49b3e96df":[1,8,43],
-"group__amrex__mpi.html#gab64818fa577fd40c8e2f906de4f2d4b3":[1,8,55],
-"group__amrex__mpi.html#gab734a5d614e753d28d03865ee6e4039a":[1,8,11]
+"group__amrex__mpi.html#gab64818fa577fd40c8e2f906de4f2d4b3":[1,8,55]
 };
