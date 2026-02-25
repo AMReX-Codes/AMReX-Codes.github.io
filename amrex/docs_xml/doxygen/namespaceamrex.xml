@@ -1805,7 +1805,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="18" bodyend="20"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="25" bodyend="27"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a9303c93b47b7839de8ce552cb7cb21c4" prot="public" static="no" strong="yes">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -44724,10 +44724,10 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" line="117" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" bodystart="117" bodyend="479"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af5a050719637ed453c73af4d4ca48c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa3422210ea43b4ecba29cd4258cd2136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1Hypre" kindref="compound">Hypre</ref> &gt;</type>
         <definition>std::unique_ptr&lt; Hypre &gt; amrex::makeHypre</definition>
-        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_, Hypre::Interface interface, const iMultiFab *overset_mask)</argsstring>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_, Hypre::Interface interface, const iMultiFab *overset_mask=nullptr)</argsstring>
         <name>makeHypre</name>
         <qualifiedname>amrex::makeHypre</qualifiedname>
         <param>
@@ -44753,14 +44753,68 @@ Returns the index of the first element for which f is 0. </para>
         <param>
           <type>const <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> *</type>
           <declname>overset_mask</declname>
+          <defval>nullptr</defval>
         </param>
         <briefdescription>
+<para>Factory that instantiates the requested HYPRE interface. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>grids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid layout for the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distribution map for <computeroutput>grids</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> describing the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comm_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MPI communicator used by HYPRE. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface flavor (Struct/SStruct/IJ). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>overset_mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional overset mask used by IJ solvers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Owning pointer to the chosen HYPRE implementation. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="12" bodyend="25" declfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" declline="108" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="12" bodyend="25" declfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" declline="178" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abbd0e7692c28626659b75637c2c63528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1PETScABecLap" kindref="compound">PETScABecLap</ref> &gt;</type>

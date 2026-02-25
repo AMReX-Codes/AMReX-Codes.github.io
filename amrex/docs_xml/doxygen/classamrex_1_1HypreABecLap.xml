@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="37" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="37" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="65" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1HypreABecLap_1ad3c53ab64813b12ce11cfa8419d452c3" prot="private" static="no" mutable="no">
         <type>HYPRE_StructMatrix</type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="38" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="38" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="66" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1HypreABecLap_1af4c046c804e0bdd16f1f88e4adf5a221" prot="private" static="no" mutable="no">
         <type>HYPRE_StructVector</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="39" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="39" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="67" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1HypreABecLap_1a5e14d7ce5233de0925fb504796d4e71e" prot="private" static="no" mutable="no">
         <type>HYPRE_StructVector</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="40" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="40" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="68" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1HypreABecLap_1a41e38522e51d31b8db271795fb039304" prot="private" static="no" mutable="no">
         <type>HYPRE_StructSolver</type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="41" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="41" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="69" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="69" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -105,12 +105,47 @@
           <declname>comm_</declname>
         </param>
         <briefdescription>
+<para>Bind the solver to a single AMR level described by <computeroutput>grids/<computeroutput>dmap</computeroutput>.</computeroutput> </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>grids</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid layout for the level. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> for <computeroutput>grids</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> describing the level. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comm_</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MPI communicator handed to HYPRE. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="23" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="12" bodyend="16"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="40" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="12" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1abcc7cb6a68b984c4a78c514d56b75513" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -124,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="25" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="18" bodyend="30"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="42" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="18" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a6c2513b7adba0b3c0e73ca29fd10acbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -141,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="27" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="44" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a0fd52ae6876da336d947107d12dff297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -158,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="28" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="45" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a2ccf5ad80139639b217b8ec888f33b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1HypreABecLap" kindref="compound">HypreABecLap</ref> &amp;</type>
@@ -175,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="29" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="46" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1afdd4676c2b938b5225d064570ef9e056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1HypreABecLap" kindref="compound">HypreABecLap</ref> &amp;</type>
@@ -192,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="30" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="47" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a95644483c25527e50d0431547e0fe666" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -230,12 +265,71 @@
           <declname>max_bndry_order</declname>
         </param>
         <briefdescription>
+<para>Solve the struct-interface linear system with the configured coefficients. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>soln</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Solution <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> (filled on return). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right-hand side <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reltol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relative tolerance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>abstol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Absolute tolerance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1Maximum" kindref="compound">Maximum</ref> number of iterations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bndry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boundary data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_bndry_order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1Maximum" kindref="compound">Maximum</ref> order at the boundary. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="32" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="33" bodyend="99"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="60" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="33" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a61436da82fa418df4ddfab4881c137e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -244,12 +338,13 @@
         <name>prepareSolver</name>
         <qualifiedname>amrex::HypreABecLap::prepareSolver</qualifiedname>
         <briefdescription>
+<para>Build the HYPRE structures and apply runtime parameters. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="46" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="126" bodyend="252"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="75" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="126" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1HypreABecLap_1a4778eb6c291a39971617eb0bf69dff3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -266,12 +361,13 @@
           <declname>rhs</declname>
         </param>
         <briefdescription>
+<para>Copy <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> solution guess <computeroutput>soln</computeroutput> and RHS <computeroutput>rhs</computeroutput> into HYPRE vectors prior to a solve. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="256" bodyend="303"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="77" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="256" bodyend="303"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -291,10 +387,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="43" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="102" bodyend="123"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="71" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp" bodystart="102" bodyend="123"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Struct-interface HYPRE solver for <computeroutput>(a - b div beta grad) phi = rhs</computeroutput>. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -971,7 +1068,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="20" bodyend="48"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.H" bodystart="29" bodyend="78"/>
     <listofallmembers>
       <member refid="classamrex_1_1HypreABecLap_1ad3c53ab64813b12ce11cfa8419d452c3" prot="private" virt="non-virtual"><scope>amrex::HypreABecLap</scope><name>A</name></member>
       <member refid="classamrex_1_1Hypre_1a1ab65d249a3254eb6540bedcc9ebf285" prot="protected" virt="non-virtual"><scope>amrex::HypreABecLap</scope><name>acoefs</name></member>

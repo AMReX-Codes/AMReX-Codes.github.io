@@ -1466,7 +1466,7 @@ var namespaceamrex =
     [ "makeFineMask", "namespaceamrex.html#a78142d53611f8627f6d68afd0779ef54", null ],
     [ "makeFineMask", "namespaceamrex.html#a478148eaeebd74ddc7956806c55fa2cb", null ],
     [ "makeFineMask", "namespaceamrex.html#af559f21584872566541db61cbacf7470", null ],
-    [ "makeHypre", "namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d", null ],
+    [ "makeHypre", "namespaceamrex.html#aa3422210ea43b4ecba29cd4258cd2136", null ],
     [ "MakeITracker", "namespaceamrex.html#adf782b114ef7fc3ea3dd5e42009836ba", null ],
     [ "MakeITracker", "namespaceamrex.html#a3f219b1b6441230fabcba77af291dfcf", null ],
     [ "makePetsc", "namespaceamrex.html#abbd0e7692c28626659b75637c2c63528", null ],

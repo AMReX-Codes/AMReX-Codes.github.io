@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1Hypre.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>Lightweight base class shared by HYPRE-backed linear solvers, <a class="el" href="classamrex_1_1HypreABecLap.html" title="Struct-interface HYPRE solver for (a - b div beta grad) phi = rhs.">HypreABecLap</a>, <a class="el" href="classamrex_1_1HypreABecLap2.html" title="Semi-structured ABecLaplacian operator built on HYPRE&#39;s SStruct API.">HypreABecLap2</a>, and <a class="el" href="classamrex_1_1HypreABecLap3.html" title="HYPRE IJ solver for ABecLaplacian (optionally with overset masks).">HypreABecLap3</a>.  
+ <a href="classamrex_1_1Hypre.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__Hypre_8H_source.html">AMReX_Hypre.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for amrex::Hypre:</div>
@@ -111,9 +114,9 @@ Inheritance diagram for amrex::Hypre:</div>
  <div class="center">
   <img src="classamrex_1_1Hypre.png" usemap="#amrex::Hypre_map" alt=""/>
   <map id="amrex::Hypre_map" name="amrex::Hypre_map">
-<area href="classamrex_1_1HypreABecLap.html" alt="amrex::HypreABecLap" shape="rect" coords="0,56,146,80"/>
-<area href="classamrex_1_1HypreABecLap2.html" alt="amrex::HypreABecLap2" shape="rect" coords="156,56,302,80"/>
-<area href="classamrex_1_1HypreABecLap3.html" alt="amrex::HypreABecLap3" shape="rect" coords="312,56,458,80"/>
+<area href="classamrex_1_1HypreABecLap.html" title="Struct-interface HYPRE solver for (a - b div beta grad) phi = rhs." alt="amrex::HypreABecLap" shape="rect" coords="0,56,146,80"/>
+<area href="classamrex_1_1HypreABecLap2.html" title="Semi-structured ABecLaplacian operator built on HYPRE&#39;s SStruct API." alt="amrex::HypreABecLap2" shape="rect" coords="156,56,302,80"/>
+<area href="classamrex_1_1HypreABecLap3.html" title="HYPRE IJ solver for ABecLaplacian (optionally with overset masks)." alt="amrex::HypreABecLap3" shape="rect" coords="312,56,458,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -123,11 +126,13 @@ Public Types</h2></td></tr>
 , <a class="el" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13faf9c3193ceb5f05f22b939a6ddbf628c5">semi_structed</a>
 , <a class="el" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88">ij</a>
  }</td></tr>
+<tr class="memdesc:af08fbb42b4509a32e7f20a6101dfd13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">HYPRE interface modes supported.  <a href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">More...</a><br /></td></tr>
 <tr class="separator:af08fbb42b4509a32e7f20a6101dfd13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afd2d6c32022a99d96f73485d03272ec9" id="r_afd2d6c32022a99d96f73485d03272ec9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9">Hypre</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;<a class="el" href="classamrex_1_1Hypre.html#a97c4612c2a7f58b47c36ec710cb1b0f6">geom</a>, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</td></tr>
+<tr class="memdesc:afd2d6c32022a99d96f73485d03272ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a HYPRE wrapper bound to the supplied grids.  <br /></td></tr>
 <tr class="separator:afd2d6c32022a99d96f73485d03272ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b05a1271484c6bd34ebd3fbbfc85ef" id="r_af5b05a1271484c6bd34ebd3fbbfc85ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#af5b05a1271484c6bd34ebd3fbbfc85ef">~Hypre</a> ()</td></tr>
 <tr class="separator:af5b05a1271484c6bd34ebd3fbbfc85ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,44 +145,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60262e7d5c400163944cef707e63663a" id="r_a60262e7d5c400163944cef707e63663a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Hypre.html">Hypre</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a60262e7d5c400163944cef707e63663a">operator=</a> (<a class="el" href="classamrex_1_1Hypre.html">Hypre</a> const &amp;)=delete</td></tr>
 <tr class="separator:a60262e7d5c400163944cef707e63663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac497cc99508dff6311d584d7e0636ce8" id="r_ac497cc99508dff6311d584d7e0636ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ac497cc99508dff6311d584d7e0636ce8">setScalars</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> sa, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> sb)</td></tr>
+<tr class="memdesc:ac497cc99508dff6311d584d7e0636ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store constant scalars applied to the <code>a</code> (diagonal) and <code>b</code> (Laplacian) terms.  <br /></td></tr>
 <tr class="separator:ac497cc99508dff6311d584d7e0636ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade6e731e7392a70b13f66c6656631cdf" id="r_ade6e731e7392a70b13f66c6656631cdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ade6e731e7392a70b13f66c6656631cdf">setACoeffs</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;alpha)</td></tr>
+<tr class="memdesc:ade6e731e7392a70b13f66c6656631cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install per-cell <code>a</code> coefficients.  <br /></td></tr>
 <tr class="separator:ade6e731e7392a70b13f66c6656631cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12895e4a022dab7b6f4e2146ba0c5bc1" id="r_a12895e4a022dab7b6f4e2146ba0c5bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a12895e4a022dab7b6f4e2146ba0c5bc1">setBCoeffs</a> (const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &amp;beta)</td></tr>
+<tr class="memdesc:a12895e4a022dab7b6f4e2146ba0c5bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install per-face <code>b</code> coefficients for each spatial direction.  <br /></td></tr>
 <tr class="separator:a12895e4a022dab7b6f4e2146ba0c5bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa001ef00cb82f298c761cbf61de2e1" id="r_a1aa001ef00cb82f298c761cbf61de2e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a1aa001ef00cb82f298c761cbf61de2e1">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> _verbose)</td></tr>
+<tr class="memdesc:a1aa001ef00cb82f298c761cbf61de2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set HYPRE verbosity level (<code>_verbose</code>).  <br /></td></tr>
 <tr class="separator:a1aa001ef00cb82f298c761cbf61de2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace6b42d6b4d28b5aeb6d0ae4ced033f1" id="r_ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ace6b42d6b4d28b5aeb6d0ae4ced033f1">setIsMatrixSingular</a> (bool flag)</td></tr>
+<tr class="memdesc:ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag a singular operator (enables null-space handling in derived classes).  <br /></td></tr>
 <tr class="separator:ace6b42d6b4d28b5aeb6d0ae4ced033f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accd025c6669f7d68aa001f5c4d1582ad" id="r_accd025c6669f7d68aa001f5c4d1582ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#accd025c6669f7d68aa001f5c4d1582ad">solve</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> rel_tol, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter, const <a class="el" href="namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32">BndryData</a> &amp;bndry, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_bndry_order)=0</td></tr>
+<tr class="memdesc:accd025c6669f7d68aa001f5c4d1582ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system using the concrete interface implementation.  <br /></td></tr>
 <tr class="separator:accd025c6669f7d68aa001f5c4d1582ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69bd65a7f09331727ec3606700f744b7" id="r_a69bd65a7f09331727ec3606700f744b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a69bd65a7f09331727ec3606700f744b7">setHypreOptionsNamespace</a> (const std::string &amp;ns) noexcept</td></tr>
+<tr class="memdesc:a69bd65a7f09331727ec3606700f744b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace consulted for HYPRE runtime options (<code>ns</code>).  <br /></td></tr>
 <tr class="separator:a69bd65a7f09331727ec3606700f744b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176164a0be65a008953835f054ed05bb" id="r_a176164a0be65a008953835f054ed05bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a176164a0be65a008953835f054ed05bb">setHypreOldDefault</a> (bool l) noexcept</td></tr>
+<tr class="memdesc:a176164a0be65a008953835f054ed05bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle HYPRE's "old default" AMG setup (Falgout + modified classical interpolation) via <code>l</code>.  <br /></td></tr>
 <tr class="separator:a176164a0be65a008953835f054ed05bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405012151d7a1605c76dc277321f8413" id="r_a405012151d7a1605c76dc277321f8413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a405012151d7a1605c76dc277321f8413">setHypreRelaxType</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memdesc:a405012151d7a1605c76dc277321f8413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose the relaxation type handed to HYPRE (see HYPRE docs for valid codes) via <code>n</code>.  <br /></td></tr>
 <tr class="separator:a405012151d7a1605c76dc277321f8413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6d9ce8d191fe74154cb322a83647c65" id="r_ae6d9ce8d191fe74154cb322a83647c65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#ae6d9ce8d191fe74154cb322a83647c65">setHypreRelaxOrder</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memdesc:ae6d9ce8d191fe74154cb322a83647c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose the relaxation ordering (C/F, lexicographic, etc.) via <code>n</code>.  <br /></td></tr>
 <tr class="separator:ae6d9ce8d191fe74154cb322a83647c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e3c7cdd1399a6569ead6da002cefcc" id="r_aa3e3c7cdd1399a6569ead6da002cefcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa3e3c7cdd1399a6569ead6da002cefcc">setHypreNumSweeps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n) noexcept</td></tr>
+<tr class="memdesc:aa3e3c7cdd1399a6569ead6da002cefcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of pre/post smoothing sweeps HYPRE executes on each level via <code>n</code>.  <br /></td></tr>
 <tr class="separator:aa3e3c7cdd1399a6569ead6da002cefcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3709ca6588e8a170458aca0425335169" id="r_a3709ca6588e8a170458aca0425335169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a3709ca6588e8a170458aca0425335169">setHypreStrongThreshold</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> t) noexcept</td></tr>
+<tr class="memdesc:a3709ca6588e8a170458aca0425335169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust HYPRE's AMG strong-connection threshold used during coarsening via <code>t</code>.  <br /></td></tr>
 <tr class="separator:a3709ca6588e8a170458aca0425335169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4120c58bf9c835d8345257e836e276b5" id="r_a4120c58bf9c835d8345257e836e276b5"><td class="memItemLeft" align="right" valign="top">static HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a4120c58bf9c835d8345257e836e276b5">ispow2</a> (HYPRE_Int i)</td></tr>
+<tr class="memdesc:a4120c58bf9c835d8345257e836e276b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return 1 if <code>i</code> is a power of two, otherwise 0.  <br /></td></tr>
 <tr class="separator:a4120c58bf9c835d8345257e836e276b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa676d5396d5e8dce5f4864d074ebd412" id="r_aa676d5396d5e8dce5f4864d074ebd412"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; HYPRE_Int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aa676d5396d5e8dce5f4864d074ebd412">loV</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b)</td></tr>
+<tr class="memdesc:aa676d5396d5e8dce5f4864d074ebd412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience helper that casts a box's low corner to HYPRE_Int.  <br /></td></tr>
 <tr class="separator:aa676d5396d5e8dce5f4864d074ebd412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0033300a11c97c146ef60d2aba2f2bfd" id="r_a0033300a11c97c146ef60d2aba2f2bfd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; HYPRE_Int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a0033300a11c97c146ef60d2aba2f2bfd">hiV</a> (const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;b)</td></tr>
+<tr class="memdesc:a0033300a11c97c146ef60d2aba2f2bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience helper that casts a box's high corner to HYPRE_Int.  <br /></td></tr>
 <tr class="separator:a0033300a11c97c146ef60d2aba2f2bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:abff4c8fa7e9790d9408099ffa9c57934" id="r_abff4c8fa7e9790d9408099ffa9c57934"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934">regular_stencil_size</a> = 2*3 + 1</td></tr>
+<tr class="memdesc:abff4c8fa7e9790d9408099ffa9c57934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stencil size used on regular cells.  <br /></td></tr>
 <tr class="separator:abff4c8fa7e9790d9408099ffa9c57934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49181827cb7d3a5b52f02540d7e82121" id="r_a49181827cb7d3a5b52f02540d7e82121"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a49181827cb7d3a5b52f02540d7e82121">eb_stencil_size</a> = 3 *3 *3</td></tr>
+<tr class="memdesc:a49181827cb7d3a5b52f02540d7e82121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stencil size used on EB cells (3^D).  <br /></td></tr>
 <tr class="separator:a49181827cb7d3a5b52f02540d7e82121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -219,7 +241,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0a7daa97b3caa6216418e78ddf2835ec" id="r_a0a7daa97b3caa6216418e78ddf2835ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a0a7daa97b3caa6216418e78ddf2835ec">is_matrix_singular</a> { false }</td></tr>
 <tr class="separator:a0a7daa97b3caa6216418e78ddf2835ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lightweight base class shared by HYPRE-backed linear solvers, <a class="el" href="classamrex_1_1HypreABecLap.html" title="Struct-interface HYPRE solver for (a - b div beta grad) phi = rhs.">HypreABecLap</a>, <a class="el" href="classamrex_1_1HypreABecLap2.html" title="Semi-structured ABecLaplacian operator built on HYPRE&#39;s SStruct API.">HypreABecLap2</a>, and <a class="el" href="classamrex_1_1HypreABecLap3.html" title="HYPRE IJ solver for ABecLaplacian (optionally with overset masks).">HypreABecLap3</a>. </p>
+<p>Stores geometry, coefficients, and solver-wide options that concrete implementations (Struct, SStruct, IJ) consume in their respective <code><a class="el" href="classamrex_1_1Hypre.html#accd025c6669f7d68aa001f5c4d1582ad" title="Solve the linear system using the concrete interface implementation.">solve()</a></code> routines. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="af08fbb42b4509a32e7f20a6101dfd13f" name="af08fbb42b4509a32e7f20a6101dfd13f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af08fbb42b4509a32e7f20a6101dfd13f">&#9670;&#160;</a></span>Interface</h2>
 
@@ -239,6 +264,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>HYPRE interface modes supported. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6" name="af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6"></a>structed&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af08fbb42b4509a32e7f20a6101dfd13faf9c3193ceb5f05f22b939a6ddbf628c5" name="af08fbb42b4509a32e7f20a6101dfd13faf9c3193ceb5f05f22b939a6ddbf628c5"></a>semi_structed&#160;</td><td class="fielddoc"></td></tr>
@@ -285,6 +312,17 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a HYPRE wrapper bound to the supplied grids. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grids</td><td>Grid layout on the AMR level being solved. </td></tr>
+    <tr><td class="paramname">dmap</td><td>Distribution map for <code>grids</code>. </td></tr>
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the domain. </td></tr>
+    <tr><td class="paramname">comm_</td><td>MPI communicator handed to HYPRE. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -390,6 +428,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Convenience helper that casts a box's high corner to HYPRE_Int. </p>
+
 </div>
 </div>
 <a id="a4120c58bf9c835d8345257e836e276b5" name="a4120c58bf9c835d8345257e836e276b5"></a>
@@ -416,6 +456,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Return 1 if <code>i</code> is a power of two, otherwise 0. </p>
+
 </div>
 </div>
 <a id="aa676d5396d5e8dce5f4864d074ebd412" name="aa676d5396d5e8dce5f4864d074ebd412"></a>
@@ -441,6 +483,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convenience helper that casts a box's low corner to HYPRE_Int. </p>
 
 </div>
 </div>
@@ -512,6 +556,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Install per-cell <code>a</code> coefficients. </p>
+
 </div>
 </div>
 <a id="a12895e4a022dab7b6f4e2146ba0c5bc1" name="a12895e4a022dab7b6f4e2146ba0c5bc1"></a>
@@ -529,6 +575,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Install per-face <code>b</code> coefficients for each spatial direction. </p>
 
 </div>
 </div>
@@ -556,6 +604,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the number of pre/post smoothing sweeps HYPRE executes on each level via <code>n</code>. </p>
+
 </div>
 </div>
 <a id="a176164a0be65a008953835f054ed05bb" name="a176164a0be65a008953835f054ed05bb"></a>
@@ -581,6 +631,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Toggle HYPRE's "old default" AMG setup (Falgout + modified classical interpolation) via <code>l</code>. </p>
 
 </div>
 </div>
@@ -608,6 +660,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Override the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace consulted for HYPRE runtime options (<code>ns</code>). </p>
+
 </div>
 </div>
 <a id="ae6d9ce8d191fe74154cb322a83647c65" name="ae6d9ce8d191fe74154cb322a83647c65"></a>
@@ -633,6 +687,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Choose the relaxation ordering (C/F, lexicographic, etc.) via <code>n</code>. </p>
 
 </div>
 </div>
@@ -660,6 +716,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Choose the relaxation type handed to HYPRE (see HYPRE docs for valid codes) via <code>n</code>. </p>
+
 </div>
 </div>
 <a id="a3709ca6588e8a170458aca0425335169" name="a3709ca6588e8a170458aca0425335169"></a>
@@ -686,6 +744,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Adjust HYPRE's AMG strong-connection threshold used during coarsening via <code>t</code>. </p>
+
 </div>
 </div>
 <a id="ace6b42d6b4d28b5aeb6d0ae4ced033f1" name="ace6b42d6b4d28b5aeb6d0ae4ced033f1"></a>
@@ -711,6 +771,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Flag a singular operator (enables null-space handling in derived classes). </p>
 
 </div>
 </div>
@@ -740,6 +802,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Store constant scalars applied to the <code>a</code> (diagonal) and <code>b</code> (Laplacian) terms. </p>
+
 </div>
 </div>
 <a id="a1aa001ef00cb82f298c761cbf61de2e1" name="a1aa001ef00cb82f298c761cbf61de2e1"></a>
@@ -757,6 +821,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set HYPRE verbosity level (<code>_verbose</code>). </p>
 
 </div>
 </div>
@@ -823,6 +889,20 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Solve the linear system using the concrete interface implementation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soln</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> updated in place. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">rel_tol</td><td>Relative convergence tolerance. </td></tr>
+    <tr><td class="paramname">abs_tol</td><td>Absolute convergence tolerance. </td></tr>
+    <tr><td class="paramname">max_iter</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> iterations allowed. </td></tr>
+    <tr><td class="paramname">bndry</td><td>Boundary condition data. </td></tr>
+    <tr><td class="paramname">max_bndry_order</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> order at the boundary. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="classamrex_1_1HypreABecLap3.html#a8aab0e1b05eed8423e2b70979ff703d8">amrex::HypreABecLap3</a>, <a class="el" href="classamrex_1_1HypreABecLap.html#a95644483c25527e50d0431547e0fe666">amrex::HypreABecLap</a>, and <a class="el" href="classamrex_1_1HypreABecLap2.html#a5d2e1e80ccc5910d5b18be89b43ac98c">amrex::HypreABecLap2</a>.</p>
 
@@ -936,6 +1016,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stencil size used on EB cells (3^D). </p>
 
 </div>
 </div>
@@ -1134,6 +1216,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stencil size used on regular cells. </p>
 
 </div>
 </div>

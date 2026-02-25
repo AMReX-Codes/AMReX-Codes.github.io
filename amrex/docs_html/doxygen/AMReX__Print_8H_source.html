@@ -146,243 +146,237 @@ $(document).ready(function(){initNavTree('AMReX__Print_8H_source.html',''); init
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a11f1c04c6e1559c094d72df8baf5e2b7">   44</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1Print.html#a11f1c04c6e1559c094d72df8baf5e2b7">Print</a> (std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            : rank(ParallelContext::IOProcessorNumberSub())</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            , comm(ParallelContext::CommunicatorSub())</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            , os(os_)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            { ss.precision(os.precision()); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            : to_print(ParallelContext::IOProcessorSub())</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            , os(os_)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            { ss.precision(os.precision()); }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">   54</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">Print</a> (<span class="keywordtype">int</span> rank_, std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            : rank(rank_)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            , comm(ParallelContext::CommunicatorSub())</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            , os(os_)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            { ss.precision(os.precision()); }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">   53</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">Print</a> (<span class="keywordtype">int</span> rank_, std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            : to_print(rank_ == <a class="code hl_variable" href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">AllProcs</a> || rank_ == ParallelContext::MyProcSub())</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            , os(os_)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            { ss.precision(os.precision()); }</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">   64</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">Print</a> (<span class="keywordtype">int</span> rank_, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_, std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            : rank(rank_)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            , comm(comm_)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            , os(os_)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            { ss.precision(os.precision()); }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">   62</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">Print</a> (<span class="keywordtype">int</span> rank_, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_, std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            : to_print((rank_ == <a class="code hl_variable" href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">AllProcs</a>) || (</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>#ifdef AMREX_USE_MPI</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                        comm_ != <a class="code hl_variable" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a> &amp;&amp;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>#endif</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                        rank_ == ParallelDescriptor::MyProc(comm_)))</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            , os(os_)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            ss.precision(os.precision());</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">   70</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">~Print</a> () {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">if</span> (rank == <a class="code hl_variable" href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">AllProcs</a> || rank == <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>()) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                std::ostream * my_os = <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#aa04fd8de43ceca29bfec858be234572d">ParallelContext::OFSPtrSub</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">if</span> (my_os) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    my_os-&gt;flush();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    (*my_os) &lt;&lt; ss.str();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    my_os-&gt;flush();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                os.flush();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                os &lt;&lt; ss.str();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                os.flush();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">   73</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">~Print</a> () {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span> (to_print) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                os.flush();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                os &lt;&lt; ss.str();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                os.flush();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
 </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a1bb1f415c2393c08d8fd115bbc848638">   84</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a1bb1f415c2393c08d8fd115bbc848638">Print</a> (<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a181bc6a4ba323484f28415b80ee1b6b6">   85</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a181bc6a4ba323484f28415b80ee1b6b6">Print</a> (<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">   86</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">operator= </a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a68cfd83b965ea2d55601193ccaa5b70b">   87</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">operator= </a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">   89</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">SetPrecision</a>(<span class="keywordtype">int</span> p) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            ss.precision(p);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a1bb1f415c2393c08d8fd115bbc848638">   81</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a1bb1f415c2393c08d8fd115bbc848638">Print</a> (<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a181bc6a4ba323484f28415b80ee1b6b6">   82</a></span>        <a class="code hl_function" href="classamrex_1_1Print.html#a181bc6a4ba323484f28415b80ee1b6b6">Print</a> (<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">   83</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">operator= </a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a68cfd83b965ea2d55601193ccaa5b70b">   84</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">operator= </a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">   86</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">SetPrecision</a>(<span class="keywordtype">int</span> p) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            ss.precision(p);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">   95</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">operator&lt;&lt; </a>(<span class="keyword">const</span> T&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            ss &lt;&lt; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">   92</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">operator&lt;&lt; </a>(<span class="keyword">const</span> T&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            ss &lt;&lt; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#ab6c3ed9ddf0267bfb5e5643c29e964dc">  100</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">operator&lt;&lt; </a>(        std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                           (*func)(std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;))</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            ss &lt;&lt; func;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classamrex_1_1Print.html#ab6c3ed9ddf0267bfb5e5643c29e964dc">   97</a></span>        <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>&amp; <a class="code hl_function" href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">operator&lt;&lt; </a>(        std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                           (*func)(std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;))</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            ss &lt;&lt; func;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordtype">int</span> rank;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        std::ostream &amp;os;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::ostringstream ss;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    };</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordtype">bool</span> to_print;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        std::ostream &amp;os;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        std::ostringstream ss;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    };</div>
 </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="foldopen" id="foldopen00115" data-start="{" data-end="};">
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrint.html">  115</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1AllPrint.html">AllPrint</a></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        : <span class="keyword">public</span> <a class="code hl_class" href="classamrex_1_1Print.html">Print</a></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">  120</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">AllPrint</a> (std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            : <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a>::<a class="code hl_variable" href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">AllProcs</a>, os_)</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            {}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="};">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrint.html">  111</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1AllPrint.html">AllPrint</a></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        : <span class="keyword">public</span> <a class="code hl_class" href="classamrex_1_1Print.html">Print</a></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">  116</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">AllPrint</a> (std::ostream&amp; os_ = <a class="code hl_function" href="namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df">amrex::OutStream</a>())</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            : <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>(<a class="code hl_class" href="classamrex_1_1Print.html">Print</a>::<a class="code hl_variable" href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">AllProcs</a>, os_)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            {}</div>
 </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    };</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    };</div>
 </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="foldopen" id="foldopen00127" data-start="{" data-end="};">
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html">  127</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">  131</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a> = -1;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">  133</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">PrintToFile</a> (std::string file_name_)</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            : file_name(std::move(file_name_))</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            , rank(ParallelContext::IOProcessorNumberSub())</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            , comm(ParallelContext::CommunicatorSub())</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html">  123</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">  127</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a> = -1;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">  129</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">PrintToFile</a> (std::string file_name_)</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            : file_name(std::move(file_name_))</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            , to_print(ParallelContext::IOProcessorSub())</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        { Initialize(); }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">  134</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">PrintToFile</a> (std::string file_name_, <span class="keywordtype">int</span> rank_ )</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            : file_name(std::move(file_name_))</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            , to_print(rank_ == <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a> || rank_ == ParallelContext::MyProcSub())</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        { Initialize(); }</div>
 </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">  139</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">PrintToFile</a> (std::string file_name_, <span class="keywordtype">int</span> rank_ )</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">  139</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">PrintToFile</a> (std::string file_name_, <span class="keywordtype">int</span> rank_, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            : file_name(std::move(file_name_))</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            , rank(rank_)</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            , comm(ParallelContext::CommunicatorSub())</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        { Initialize(); }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            , to_print((rank_ == <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a>) || (</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>#ifdef AMREX_USE_MPI</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                        comm_ != <a class="code hl_variable" href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">MPI_COMM_NULL</a> &amp;&amp;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>#endif</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                        rank_ == ParallelDescriptor::MyProc(comm_)))</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        { Initialize(); }</div>
 </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">  145</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">PrintToFile</a> (std::string file_name_, <span class="keywordtype">int</span> rank_, <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            : file_name(std::move(file_name_))</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            , rank(rank_)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            , comm(comm_)</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        { Initialize(); }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">  148</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">~PrintToFile</a> () {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">if</span> (to_print) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                ofs.flush();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                ofs &lt;&lt; ss.str();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                ofs.flush();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
 </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">  151</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">~PrintToFile</a> () {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keywordflow">if</span> (rank == <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a> || rank == <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>()) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                ofs.flush();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                ofs &lt;&lt; ss.str();</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                ofs.flush();</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a840a4f6901205237e9bd7e7b0b879753">  156</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a840a4f6901205237e9bd7e7b0b879753">PrintToFile</a> (<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#aa2fb6b50feec44f081108ae3f8cb30ef">  157</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2fb6b50feec44f081108ae3f8cb30ef">PrintToFile</a> (<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">  158</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">operator= </a>(<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ac404fab3b5567e20c716baa8dc225333">  159</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">operator= </a>(<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">  161</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">SetPrecision</a>(<span class="keywordtype">int</span> p) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            ss.precision(p);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
 </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a840a4f6901205237e9bd7e7b0b879753">  159</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a840a4f6901205237e9bd7e7b0b879753">PrintToFile</a> (<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#aa2fb6b50feec44f081108ae3f8cb30ef">  160</a></span>        <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2fb6b50feec44f081108ae3f8cb30ef">PrintToFile</a> (<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">  161</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">operator= </a>(<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ac404fab3b5567e20c716baa8dc225333">  162</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">operator= </a>(<a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">  164</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">SetPrecision</a>(<span class="keywordtype">int</span> p) {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            ss.precision(p);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">  167</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">operator&lt;&lt; </a>(<span class="keyword">const</span> T&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            ss &lt;&lt; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">  170</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">operator&lt;&lt; </a>(<span class="keyword">const</span> T&amp; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>) {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            ss &lt;&lt; <a class="code hl_enumvalue" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a5313f616f537e3e856b36f21c1ebc79c">  172</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">operator&lt;&lt; </a>(        std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                                 (*func)(std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;))</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            ss &lt;&lt; func;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
 </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classamrex_1_1PrintToFile.html#a5313f616f537e3e856b36f21c1ebc79c">  175</a></span>        <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>&amp; <a class="code hl_function" href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">operator&lt;&lt; </a>(        std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                                 (*func)(std::basic_ostream&lt;<span class="keywordtype">char</span>, std::char_traits&lt;char&gt; &gt;&amp;))</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            ss &lt;&lt; func;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordtype">void</span> Initialize() {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">if</span> (to_print) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordtype">int</span> my_proc_global = <a class="code hl_function" href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                std::string proc_file_name = file_name + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(my_proc_global);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                proc_file_name += <span class="stringliteral">&quot;.&quot;</span> + std::to_string(omp_get_thread_num());</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                ofs.open(proc_file_name, std::ios_base::app);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordflow">if</span> (!ofs.is_open()) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                    <a class="code hl_function" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Could not open file for appending in amrex::Print()&quot;</span>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                ss.precision(ofs.precision());</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        std::string file_name;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordtype">bool</span> to_print;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        std::ofstream ofs;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        std::ostringstream ss;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    };</div>
 </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordtype">void</span> Initialize() {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordtype">int</span> my_proc = <a class="code hl_function" href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">ParallelContext::MyProcSub</a>();</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">if</span> (rank == <a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a> || rank == my_proc) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                <span class="keywordtype">int</span> my_proc_global = <a class="code hl_function" href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>();</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                std::string proc_file_name = file_name + <span class="stringliteral">&quot;.&quot;</span> + std::to_string(my_proc_global);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                proc_file_name += <span class="stringliteral">&quot;.&quot;</span> + std::to_string(omp_get_thread_num());</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                ofs.open(proc_file_name, std::ios_base::app);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                <span class="keywordflow">if</span> (!ofs.is_open()) {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                    <a class="code hl_function" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Could not open file for appending in amrex::Print()&quot;</span>);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                }</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                ss.precision(ofs.precision());</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            }</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        std::string file_name;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordtype">int</span> rank;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_typedef" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        std::ofstream ofs;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        std::ostringstream ss;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    };</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="};">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrintToFile.html">  203</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1AllPrintToFile.html">AllPrintToFile</a></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        : <span class="keyword">public</span> <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">  208</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">AllPrintToFile</a> (std::string file_name_)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            : <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>(std::move(file_name_), <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>::<a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a>)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            {}</div>
 </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="foldopen" id="foldopen00208" data-start="{" data-end="};">
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrintToFile.html">  208</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classamrex_1_1AllPrintToFile.html">AllPrintToFile</a></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        : <span class="keyword">public</span> <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">  213</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">AllPrintToFile</a> (std::string file_name_)</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            : <a class="code hl_class" href="classamrex_1_1PrintToFile.html">PrintToFile</a>(std::move(file_name_), <a class="code hl_class" href="classamrex_1_1Print.html">Print</a>::<a class="code hl_variable" href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">AllProcs</a>)</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            {}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    };</div>
 </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    };</div>
-</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>}</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__ANSIEscCode_8H_html"><div class="ttname"><a href="AMReX__ANSIEscCode_8H.html">AMReX_ANSIEscCode.H</a></div></div>
 <div class="ttc" id="aAMReX__ParallelContext_8H_html"><div class="ttname"><a href="AMReX__ParallelContext_8H.html">AMReX_ParallelContext.H</a></div></div>
 <div class="ttc" id="aAMReX__ParallelDescriptor_8H_html"><div class="ttname"><a href="AMReX__ParallelDescriptor_8H.html">AMReX_ParallelDescriptor.H</a></div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition</b> AMReX_SPACE.H:172</div></div>
-<div class="ttc" id="aclassamrex_1_1AllPrintToFile_html"><div class="ttname"><a href="classamrex_1_1AllPrintToFile.html">amrex::AllPrintToFile</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:210</div></div>
-<div class="ttc" id="aclassamrex_1_1AllPrintToFile_html_a458d380fa6223f8ecbc5eecef4080728"><div class="ttname"><a href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">amrex::AllPrintToFile::AllPrintToFile</a></div><div class="ttdeci">AllPrintToFile(std::string file_name_)</div><div class="ttdoc">Example: AllPrint() &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:213</div></div>
-<div class="ttc" id="aclassamrex_1_1AllPrint_html"><div class="ttname"><a href="classamrex_1_1AllPrint.html">amrex::AllPrint</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:117</div></div>
-<div class="ttc" id="aclassamrex_1_1AllPrint_html_aea174ee088ce5e27479e1c0a7445d75a"><div class="ttname"><a href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">amrex::AllPrint::AllPrint</a></div><div class="ttdeci">AllPrint(std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Example: AllPrint() &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:120</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html"><div class="ttname"><a href="classamrex_1_1PrintToFile.html">amrex::PrintToFile</a></div><div class="ttdoc">This class prints to a file with a given base name.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:128</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a0067feaedbdfba6996f079b3b44162cc"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">amrex::PrintToFile::AllProcs</a></div><div class="ttdeci">static constexpr int AllProcs</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:131</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a0893d5f29d082f561090f7d93cce8759"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_, int rank_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:139</div></div>
+<div class="ttc" id="aclassamrex_1_1AllPrintToFile_html"><div class="ttname"><a href="classamrex_1_1AllPrintToFile.html">amrex::AllPrintToFile</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:205</div></div>
+<div class="ttc" id="aclassamrex_1_1AllPrintToFile_html_a458d380fa6223f8ecbc5eecef4080728"><div class="ttname"><a href="classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728">amrex::AllPrintToFile::AllPrintToFile</a></div><div class="ttdeci">AllPrintToFile(std::string file_name_)</div><div class="ttdoc">Example: AllPrint() &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:208</div></div>
+<div class="ttc" id="aclassamrex_1_1AllPrint_html"><div class="ttname"><a href="classamrex_1_1AllPrint.html">amrex::AllPrint</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:113</div></div>
+<div class="ttc" id="aclassamrex_1_1AllPrint_html_aea174ee088ce5e27479e1c0a7445d75a"><div class="ttname"><a href="classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a">amrex::AllPrint::AllPrint</a></div><div class="ttdeci">AllPrint(std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Example: AllPrint() &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:116</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html"><div class="ttname"><a href="classamrex_1_1PrintToFile.html">amrex::PrintToFile</a></div><div class="ttdoc">This class prints to a file with a given base name.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:124</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a0067feaedbdfba6996f079b3b44162cc"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc">amrex::PrintToFile::AllProcs</a></div><div class="ttdeci">static constexpr int AllProcs</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:127</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a0893d5f29d082f561090f7d93cce8759"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a0893d5f29d082f561090f7d93cce8759">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_, int rank_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:134</div></div>
 <div class="ttc" id="aclassamrex_1_1PrintToFile_html_a1c996dd91c54f732cc4da7f4668a0f30"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a1c996dd91c54f732cc4da7f4668a0f30">amrex::PrintToFile::operator=</a></div><div class="ttdeci">PrintToFile &amp; operator=(PrintToFile const &amp;)=delete</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a6104fd13b117f3b559fc3287744db7c1"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_, int rank_, MPI_Comm comm_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:145</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a65e2ca6508a0d6387c5f138c43a2998f"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:133</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a6104fd13b117f3b559fc3287744db7c1"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a6104fd13b117f3b559fc3287744db7c1">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_, int rank_, MPI_Comm comm_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:139</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_a65e2ca6508a0d6387c5f138c43a2998f"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a65e2ca6508a0d6387c5f138c43a2998f">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(std::string file_name_)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:129</div></div>
 <div class="ttc" id="aclassamrex_1_1PrintToFile_html_a840a4f6901205237e9bd7e7b0b879753"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#a840a4f6901205237e9bd7e7b0b879753">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(PrintToFile const &amp;)=delete</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_aa2ec9d4cad6b21044236b8bf79697132"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">amrex::PrintToFile::operator&lt;&lt;</a></div><div class="ttdeci">PrintToFile &amp; operator&lt;&lt;(const T &amp;x)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:170</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_aa2ec9d4cad6b21044236b8bf79697132"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#aa2ec9d4cad6b21044236b8bf79697132">amrex::PrintToFile::operator&lt;&lt;</a></div><div class="ttdeci">PrintToFile &amp; operator&lt;&lt;(const T &amp;x)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:167</div></div>
 <div class="ttc" id="aclassamrex_1_1PrintToFile_html_aa2fb6b50feec44f081108ae3f8cb30ef"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#aa2fb6b50feec44f081108ae3f8cb30ef">amrex::PrintToFile::PrintToFile</a></div><div class="ttdeci">PrintToFile(PrintToFile &amp;&amp;)=delete</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_ab0074866efd97004b924c7bfbf67a569"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">amrex::PrintToFile::~PrintToFile</a></div><div class="ttdeci">~PrintToFile()</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:151</div></div>
-<div class="ttc" id="aclassamrex_1_1PrintToFile_html_ab1dfa4327f78a9fda1fa7a049ddf5610"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">amrex::PrintToFile::SetPrecision</a></div><div class="ttdeci">PrintToFile &amp; SetPrecision(int p)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:164</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_ab0074866efd97004b924c7bfbf67a569"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#ab0074866efd97004b924c7bfbf67a569">amrex::PrintToFile::~PrintToFile</a></div><div class="ttdeci">~PrintToFile()</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:148</div></div>
+<div class="ttc" id="aclassamrex_1_1PrintToFile_html_ab1dfa4327f78a9fda1fa7a049ddf5610"><div class="ttname"><a href="classamrex_1_1PrintToFile.html#ab1dfa4327f78a9fda1fa7a049ddf5610">amrex::PrintToFile::SetPrecision</a></div><div class="ttdeci">PrintToFile &amp; SetPrecision(int p)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:161</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html"><div class="ttname"><a href="classamrex_1_1Print.html">amrex::Print</a></div><div class="ttdoc">This class provides the user with a few print options.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:35</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html_a11f1c04c6e1559c094d72df8baf5e2b7"><div class="ttname"><a href="classamrex_1_1Print.html#a11f1c04c6e1559c094d72df8baf5e2b7">amrex::Print::Print</a></div><div class="ttdeci">Print(std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Print on I/O Processor of the default communicator Example: Print() &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:44</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html_a14fb4a0a6c86ed5209d9b898b87a0ebb"><div class="ttname"><a href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">amrex::Print::operator&lt;&lt;</a></div><div class="ttdeci">Print &amp; operator&lt;&lt;(const T &amp;x)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:95</div></div>
+<div class="ttc" id="aclassamrex_1_1Print_html_a14fb4a0a6c86ed5209d9b898b87a0ebb"><div class="ttname"><a href="classamrex_1_1Print.html#a14fb4a0a6c86ed5209d9b898b87a0ebb">amrex::Print::operator&lt;&lt;</a></div><div class="ttdeci">Print &amp; operator&lt;&lt;(const T &amp;x)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:92</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html_a162e4b6f361a29d606b1ed82a26d3eaf"><div class="ttname"><a href="classamrex_1_1Print.html#a162e4b6f361a29d606b1ed82a26d3eaf">amrex::Print::operator=</a></div><div class="ttdeci">Print &amp; operator=(Print const &amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html_a181bc6a4ba323484f28415b80ee1b6b6"><div class="ttname"><a href="classamrex_1_1Print.html#a181bc6a4ba323484f28415b80ee1b6b6">amrex::Print::Print</a></div><div class="ttdeci">Print(Print &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html_a1bb1f415c2393c08d8fd115bbc848638"><div class="ttname"><a href="classamrex_1_1Print.html#a1bb1f415c2393c08d8fd115bbc848638">amrex::Print::Print</a></div><div class="ttdeci">Print(Print const &amp;)=delete</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html_a3f708f9025b6a26a4e955258b8738a59"><div class="ttname"><a href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">amrex::Print::~Print</a></div><div class="ttdeci">~Print()</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:70</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html_a612024a8e9a5ad7bfcd98707fcdcb787"><div class="ttname"><a href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">amrex::Print::Print</a></div><div class="ttdeci">Print(int rank_, MPI_Comm comm_, std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Print on process rank_ of communicator comm_ Example: Print(rank_, comm_) &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:64</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html_a971e445f6ccdf429030e4659a20f8939"><div class="ttname"><a href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">amrex::Print::SetPrecision</a></div><div class="ttdeci">Print &amp; SetPrecision(int p)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:89</div></div>
+<div class="ttc" id="aclassamrex_1_1Print_html_a3f708f9025b6a26a4e955258b8738a59"><div class="ttname"><a href="classamrex_1_1Print.html#a3f708f9025b6a26a4e955258b8738a59">amrex::Print::~Print</a></div><div class="ttdeci">~Print()</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:73</div></div>
+<div class="ttc" id="aclassamrex_1_1Print_html_a612024a8e9a5ad7bfcd98707fcdcb787"><div class="ttname"><a href="classamrex_1_1Print.html#a612024a8e9a5ad7bfcd98707fcdcb787">amrex::Print::Print</a></div><div class="ttdeci">Print(int rank_, MPI_Comm comm_, std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Print on process rank_ of communicator comm_ Example: Print(rank_, comm_) &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' ';.</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:62</div></div>
+<div class="ttc" id="aclassamrex_1_1Print_html_a971e445f6ccdf429030e4659a20f8939"><div class="ttname"><a href="classamrex_1_1Print.html#a971e445f6ccdf429030e4659a20f8939">amrex::Print::SetPrecision</a></div><div class="ttdeci">Print &amp; SetPrecision(int p)</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:86</div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html_ac54860bd8ad68a5551e588ff8e01aa3b"><div class="ttname"><a href="classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b">amrex::Print::AllProcs</a></div><div class="ttdeci">static constexpr int AllProcs</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:38</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html_aebc81b9845c635f74ca8765c698ca059"><div class="ttname"><a href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">amrex::Print::Print</a></div><div class="ttdeci">Print(int rank_, std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Print on given rank of the default communicator Example: Print(2) &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' '; // Print on...</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:54</div></div>
+<div class="ttc" id="aclassamrex_1_1Print_html_aebc81b9845c635f74ca8765c698ca059"><div class="ttname"><a href="classamrex_1_1Print.html#aebc81b9845c635f74ca8765c698ca059">amrex::Print::Print</a></div><div class="ttdeci">Print(int rank_, std::ostream &amp;os_=amrex::OutStream())</div><div class="ttdoc">Print on given rank of the default communicator Example: Print(2) &lt;&lt; &quot; x = &quot; &lt;&lt; x &lt;&lt; ' '; // Print on...</div><div class="ttdef"><b>Definition</b> AMReX_Print.H:53</div></div>
 <div class="ttc" id="agroup__amrex__linear__containers_html_gafe930d74045516fece8591f173e57007"><div class="ttname"><a href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition</b> AMReX_Array.H:26</div></div>
 <div class="ttc" id="agroup__amrex__mpi_html_ga33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="group__amrex__mpi.html#ga33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdef"><b>Definition</b> AMReX_ParallelDescriptor.H:128</div></div>
-<div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_a5f6737315bff6905419103b17acf3d06"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">amrex::ParallelContext::MyProcSub</a></div><div class="ttdeci">int MyProcSub() noexcept</div><div class="ttdoc">my sub-rank in current frame</div><div class="ttdef"><b>Definition</b> AMReX_ParallelContext.H:76</div></div>
-<div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_aa04fd8de43ceca29bfec858be234572d"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#aa04fd8de43ceca29bfec858be234572d">amrex::ParallelContext::OFSPtrSub</a></div><div class="ttdeci">std::ofstream * OFSPtrSub() noexcept</div><div class="ttdoc">Pointer to ofstream.</div><div class="ttdef"><b>Definition</b> AMReX_ParallelContext.H:82</div></div>
 <div class="ttc" id="anamespaceamrex_1_1mpidatatypes_html_a30fa228956d7a68a0c604ae5f2163db9"><div class="ttname"><a href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">amrex::mpidatatypes::MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:51</div></div>
+<div class="ttc" id="anamespaceamrex_1_1mpidatatypes_html_aa2364a3fe51b2fa0064be83fa2994608"><div class="ttname"><a href="namespaceamrex_1_1mpidatatypes.html#aa2364a3fe51b2fa0064be83fa2994608">amrex::mpidatatypes::MPI_COMM_NULL</a></div><div class="ttdeci">static constexpr int MPI_COMM_NULL</div><div class="ttdef"><b>Definition</b> AMReX_ccse-mpi.H:59</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a9dd4e461268c8034f5c8564e155c67a6">amrex::Direction::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_aaa5d048f7bf7386b6976b10001a5f8b4"><div class="ttname"><a href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a></div><div class="ttdeci">void Error(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via amrex::Abort().</div><div class="ttdef"><b>Definition</b> AMReX.cpp:224</div></div>

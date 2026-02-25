@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1HypreNodeLap.html',''); 
 </div><!--header-->
 <div class="contents">
 
+<p>IJ-based nodal Laplacian that mirrors <a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a>'s discretization.  
+ <a href="classamrex_1_1HypreNodeLap.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__HypreNodeLap_8H_source.html">AMReX_HypreNodeLap.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -114,6 +117,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a032e1f18d32c22aaff8355cf9f0110" id="r_a4a032e1f18d32c22aaff8355cf9f0110"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a4a032e1f18d32c22aaff8355cf9f0110">HypreNodeLap</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap_, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_, const <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;factory_, const <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &amp;owner_mask_, const <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &amp;dirichlet_mask_, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_, <a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a> const *linop_, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> verbose_, std::string options_namespace_)</td></tr>
+<tr class="memdesc:a4a032e1f18d32c22aaff8355cf9f0110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an IJ-based nodal Laplacian mirroring <a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a>.  <br /></td></tr>
 <tr class="separator:a4a032e1f18d32c22aaff8355cf9f0110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4fd7635fb3f2ef04617ec9a1e17f0ac" id="r_ac4fd7635fb3f2ef04617ec9a1e17f0ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#ac4fd7635fb3f2ef04617ec9a1e17f0ac">~HypreNodeLap</a> ()</td></tr>
 <tr class="separator:ac4fd7635fb3f2ef04617ec9a1e17f0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,28 +130,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc21f61d801329beabf566219eedefed" id="r_adc21f61d801329beabf566219eedefed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1HypreNodeLap.html">HypreNodeLap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#adc21f61d801329beabf566219eedefed">operator=</a> (<a class="el" href="classamrex_1_1HypreNodeLap.html">HypreNodeLap</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:adc21f61d801329beabf566219eedefed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ab7840824ff1afad30c2adc35584bd3" id="r_a8ab7840824ff1afad30c2adc35584bd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a8ab7840824ff1afad30c2adc35584bd3">solve</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> rel_tol, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter)</td></tr>
+<tr class="memdesc:a8ab7840824ff1afad30c2adc35584bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the nodal Laplacian using HYPRE's IJ interface.  <br /></td></tr>
 <tr class="separator:a8ab7840824ff1afad30c2adc35584bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f80d1c81a4fc95cd42b3741dbccbacd" id="r_a9f80d1c81a4fc95cd42b3741dbccbacd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a9f80d1c81a4fc95cd42b3741dbccbacd">setHypreOptionsNamespace</a> (const std::string &amp;ns)</td></tr>
+<tr class="memdesc:a9f80d1c81a4fc95cd42b3741dbccbacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace used when configuring HYPRE (<code>ns</code>).  <br /></td></tr>
 <tr class="separator:a9f80d1c81a4fc95cd42b3741dbccbacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0359a94cef0d652dfc7dae61ef3d1ac7" id="r_a0359a94cef0d652dfc7dae61ef3d1ac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a0359a94cef0d652dfc7dae61ef3d1ac7">fill_local_node_id</a> ()</td></tr>
+<tr class="memdesc:a0359a94cef0d652dfc7dae61ef3d1ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign local ids to each owned node.  <br /></td></tr>
 <tr class="separator:a0359a94cef0d652dfc7dae61ef3d1ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad970086d1f98c702bcb5528a2299e1c" id="r_aad970086d1f98c702bcb5528a2299e1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#aad970086d1f98c702bcb5528a2299e1c">fill_local_node_id_gpu</a> ()</td></tr>
+<tr class="memdesc:aad970086d1f98c702bcb5528a2299e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPU-specific local-id fill routine; returns the owned-node count.  <br /></td></tr>
 <tr class="separator:aad970086d1f98c702bcb5528a2299e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd726a8a74759ab3f68d1849d0cdf6d" id="r_a4dd726a8a74759ab3f68d1849d0cdf6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a4dd726a8a74759ab3f68d1849d0cdf6d">fill_local_node_id_cpu</a> ()</td></tr>
+<tr class="memdesc:a4dd726a8a74759ab3f68d1849d0cdf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU fallback local-id fill routine; returns the owned-node count.  <br /></td></tr>
 <tr class="separator:a4dd726a8a74759ab3f68d1849d0cdf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2510963c0a789333e3eb1cba036cc7ea" id="r_a2510963c0a789333e3eb1cba036cc7ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a2510963c0a789333e3eb1cba036cc7ea">fill_global_node_id</a> ()</td></tr>
+<tr class="memdesc:a2510963c0a789333e3eb1cba036cc7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert local ids to globally unique ids recognized by HYPRE.  <br /></td></tr>
 <tr class="separator:a2510963c0a789333e3eb1cba036cc7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4132962fea0f9ec7e1566e1aa6254e" id="r_a9a4132962fea0f9ec7e1566e1aa6254e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a9a4132962fea0f9ec7e1566e1aa6254e">loadVectors</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a9a4132962fea0f9ec7e1566e1aa6254e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> solution guess <code>soln</code> and RHS <code>rhs</code> into HYPRE's IJ vectors prior to solving.  <br /></td></tr>
 <tr class="separator:a9a4132962fea0f9ec7e1566e1aa6254e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58381f405245d3ca27aed91c4197bee6" id="r_a58381f405245d3ca27aed91c4197bee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#a58381f405245d3ca27aed91c4197bee6">getSolution</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln)</td></tr>
+<tr class="memdesc:a58381f405245d3ca27aed91c4197bee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the solved data <code>soln</code> out of HYPRE and back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage.  <br /></td></tr>
 <tr class="separator:a58381f405245d3ca27aed91c4197bee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af11e3c7489ef57cc0b55dd79d2a355ea" id="r_af11e3c7489ef57cc0b55dd79d2a355ea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreNodeLap.html#af11e3c7489ef57cc0b55dd79d2a355ea">adjust_singular_matrix</a> (<a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a> const *ncols, <a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a> const *cols, <a class="el" href="classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d">Int</a> const *rows, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> *mat)</td></tr>
+<tr class="memdesc:af11e3c7489ef57cc0b55dd79d2a355ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the fix-up HYPRE expects for singular matrices (Dirichlet pinning).  <br /></td></tr>
 <tr class="separator:af11e3c7489ef57cc0b55dd79d2a355ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>IJ-based nodal Laplacian that mirrors <a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a>'s discretization. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a011b59863c3356d7d808e56f47386d4c" name="a011b59863c3356d7d808e56f47386d4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a011b59863c3356d7d808e56f47386d4c">&#9670;&#160;</a></span>AtomicInt</h2>
 
@@ -250,6 +265,23 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct an IJ-based nodal Laplacian mirroring <a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grids_</td><td>Cell-centered grids that define the nodal mesh. </td></tr>
+    <tr><td class="paramname">dmap_</td><td>Distribution mapping for <code>grids_</code>. </td></tr>
+    <tr><td class="paramname">geom_</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the level. </td></tr>
+    <tr><td class="paramname">factory_</td><td>Fab factory referenced when creating workspace. </td></tr>
+    <tr><td class="paramname">owner_mask_</td><td>Ownership mask used to deduplicate shared nodes. </td></tr>
+    <tr><td class="paramname">dirichlet_mask_</td><td><a class="el" href="classamrex_1_1Mask.html">Mask</a> describing Dirichlet nodes. </td></tr>
+    <tr><td class="paramname">comm_</td><td>MPI communicator supplied to HYPRE. </td></tr>
+    <tr><td class="paramname">linop_</td><td><a class="el" href="classamrex_1_1MLNodeLinOp.html">MLNodeLinOp</a> used as the reference discretization. </td></tr>
+    <tr><td class="paramname">verbose_</td><td>Verbosity forwarded to HYPRE. </td></tr>
+    <tr><td class="paramname">options_namespace_</td><td><a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace for runtime options. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -377,6 +409,17 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Apply the fix-up HYPRE expects for singular matrices (Dirichlet pinning). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ncols</td><td>Number of columns in each <a class="el" href="structamrex_1_1CSR.html">CSR</a> row. </td></tr>
+    <tr><td class="paramname">cols</td><td>Column indices. </td></tr>
+    <tr><td class="paramname">rows</td><td>Row indices. </td></tr>
+    <tr><td class="paramname">mat</td><td>Matrix entries updated in place. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2510963c0a789333e3eb1cba036cc7ea" name="a2510963c0a789333e3eb1cba036cc7ea"></a>
@@ -393,6 +436,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Convert local ids to globally unique ids recognized by HYPRE. </p>
 
 </div>
 </div>
@@ -411,6 +456,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Assign local ids to each owned node. </p>
+<dl class="section return"><dt>Returns</dt><dd>Total owned-node count on this rank. </dd></dl>
+
 </div>
 </div>
 <a id="a4dd726a8a74759ab3f68d1849d0cdf6d" name="a4dd726a8a74759ab3f68d1849d0cdf6d"></a>
@@ -427,6 +475,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>CPU fallback local-id fill routine; returns the owned-node count. </p>
 
 </div>
 </div>
@@ -445,6 +495,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>GPU-specific local-id fill routine; returns the owned-node count. </p>
+
 </div>
 </div>
 <a id="a58381f405245d3ca27aed91c4197bee6" name="a58381f405245d3ca27aed91c4197bee6"></a>
@@ -462,6 +514,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy the solved data <code>soln</code> out of HYPRE and back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage. </p>
 
 </div>
 </div>
@@ -490,6 +544,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> solution guess <code>soln</code> and RHS <code>rhs</code> into HYPRE's IJ vectors prior to solving. </p>
 
 </div>
 </div>
@@ -569,6 +625,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Override the <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> namespace used when configuring HYPRE (<code>ns</code>). </p>
+
 </div>
 </div>
 <a id="a8ab7840824ff1afad30c2adc35584bd3" name="a8ab7840824ff1afad30c2adc35584bd3"></a>
@@ -614,6 +672,18 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Solve the nodal Laplacian using HYPRE's IJ interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soln</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (nodal) updated on return. </td></tr>
+    <tr><td class="paramname">rhs</td><td>RHS <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (nodal). </td></tr>
+    <tr><td class="paramname">rel_tol</td><td>Relative tolerance. </td></tr>
+    <tr><td class="paramname">abs_tol</td><td>Absolute tolerance. </td></tr>
+    <tr><td class="paramname">max_iter</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> allowed iterations. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
