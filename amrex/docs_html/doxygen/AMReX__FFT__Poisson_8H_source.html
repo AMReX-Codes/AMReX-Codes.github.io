@@ -572,382 +572,390 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Poisson_8H_source.html',''
 <div class="foldopen" id="foldopen00562" data-start="{" data-end="}">
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a8cc527d14f63df793f99183d7ed11b3c">  562</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">PoissonHybrid&lt;MF&gt;::solve</a> (MF&amp; soln, MF <span class="keyword">const</span>&amp; rhs, <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> <span class="keyword">const</span>&amp; dz)</div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>{</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#ab650eae79d3b25f557a71c7b03d40aaf">dataPtr</a>();</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    solve(soln, rhs,</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>          fft_poisson_detail::TriA&lt;T&gt;{pdz},</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>          fft_poisson_detail::TriC&lt;T&gt;{pdz,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347">size</a>())});</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>}</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        <span class="keywordtype">int</span>(dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347">size</a>()) == m_geom.Domain().length(2),</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        <span class="stringliteral">&quot;FFT::PoissonHybrid: dz.size() must equal domain length in z&quot;</span>);</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#ab650eae79d3b25f557a71c7b03d40aaf">dataPtr</a>();</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    solve(soln, rhs,</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>          fft_poisson_detail::TriA&lt;T&gt;{pdz},</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>          fft_poisson_detail::TriC&lt;T&gt;{pdz,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347">size</a>())});</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>}</div>
 </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span> </div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="foldopen" id="foldopen00571" data-start="{" data-end="}">
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a54c5afb3d3cfb477c4e1a4af9f617d94">  571</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">PoissonHybrid&lt;MF&gt;::solve</a> (MF&amp; soln, MF <span class="keyword">const</span>&amp; rhs, <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;T&gt;</a> <span class="keyword">const</span>&amp; dz)</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>{</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(soln.is_cell_centered() &amp;&amp; rhs.is_cell_centered());</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span> </div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> d_dz(dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(d_dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#aefdf260a10caa6d910cb07a6fb5d448d">data</a>(), dz.data(), dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>));</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = d_dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#aefdf260a10caa6d910cb07a6fb5d448d">data</a>();</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = dz.data();</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    solve(soln, rhs,</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>          fft_poisson_detail::TriA&lt;T&gt;{pdz},</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>          fft_poisson_detail::TriC&lt;T&gt;{pdz,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>())});</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>}</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="foldopen" id="foldopen00575" data-start="{" data-end="}">
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a54c5afb3d3cfb477c4e1a4af9f617d94">  575</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">PoissonHybrid&lt;MF&gt;::solve</a> (MF&amp; soln, MF <span class="keyword">const</span>&amp; rhs, <a class="code hl_class" href="classamrex_1_1Vector.html">Vector&lt;T&gt;</a> <span class="keyword">const</span>&amp; dz)</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>{</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(soln.is_cell_centered() &amp;&amp; rhs.is_cell_centered());</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        <span class="keywordtype">int</span>(dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()) == m_geom.Domain().length(2),</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        <span class="stringliteral">&quot;FFT::PoissonHybrid: dz.size() must equal domain length in z&quot;</span>);</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> d_dz(dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">Gpu::htod_memcpy_async</a>(d_dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#aefdf260a10caa6d910cb07a6fb5d448d">data</a>(), dz.data(), dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()*<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>));</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = d_dz.<a class="code hl_function" href="classamrex_1_1PODVector.html#aefdf260a10caa6d910cb07a6fb5d448d">data</a>();</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keyword">auto</span> <span class="keyword">const</span>* pdz = dz.data();</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    solve(soln, rhs,</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>          fft_poisson_detail::TriA&lt;T&gt;{pdz},</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>          fft_poisson_detail::TriC&lt;T&gt;{pdz,<a class="code hl_variable" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(dz.<a class="code hl_function" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>())});</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
 </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="foldopen" id="foldopen00588" data-start="{" data-end="}">
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">  588</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">PoissonHybrid&lt;MF&gt;::solve_2d</a> (MF&amp; soln, MF <span class="keyword">const</span>&amp; rhs)</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>{</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    solve(soln, rhs, fft_poisson_detail::Tri_Zero&lt;T&gt;{}, fft_poisson_detail::Tri_Zero&lt;T&gt;{});</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>}</div>
-</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span> </div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TRIA, <span class="keyword">typename</span> TRIC&gt;</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
 <div class="foldopen" id="foldopen00595" data-start="{" data-end="}">
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#aed550d2fc784644c200f02f11c667207">  595</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">PoissonHybrid&lt;MF&gt;::solve</a> (MF&amp; a_soln, MF <span class="keyword">const</span>&amp; a_rhs, TRIA <span class="keyword">const</span>&amp; tria,</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>                               TRIC <span class="keyword">const</span>&amp; tric)</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>{</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FFT::PoissonHybrid::solve&quot;</span>);</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">  595</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">PoissonHybrid&lt;MF&gt;::solve_2d</a> (MF&amp; soln, MF <span class="keyword">const</span>&amp; rhs)</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>{</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    solve(soln, rhs, fft_poisson_detail::Tri_Zero&lt;T&gt;{}, fft_poisson_detail::Tri_Zero&lt;T&gt;{});</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>}</div>
+</div>
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(a_soln.is_cell_centered() &amp;&amp; a_rhs.is_cell_centered());</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span><span class="preprocessor">#if (AMREX_SPACEDIM &lt; 3)</span></div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(a_soln, a_rhs, tria, tric);</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    MF* soln = &amp;a_soln;</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    MF <span class="keyword">const</span>* rhs = &amp;a_rhs;</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    MF solntmp, rhstmp;</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keywordflow">if</span> (m_domain_lo != 0) {</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        detail::shift_mfs(m_domain_lo, a_soln, a_rhs, solntmp, rhstmp);</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        soln = &amp;solntmp;</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>        rhs = &amp;rhstmp;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    }</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; ng = <a class="code hl_function" href="namespaceamrex.html#af4ef71de20b680abfb05fddbe1e4ace7">amrex::elemwiseMin</a>(soln-&gt;nGrowVect(), <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>(1));</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordflow">if</span> (m_r2c)</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    {</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        m_r2c-&gt;forward(*rhs, m_spmf_c);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        solve_z(m_spmf_c, tria, tric);</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        m_r2c-&gt;backward_doit(m_spmf_c, *soln, ng, m_geom.periodicity());</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    }</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    {</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>        <span class="keywordflow">if</span> (m_r2x-&gt;m_cy.empty()) { <span class="comment">// spectral data is real</span></div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>            m_r2x-&gt;forward(*rhs, m_spmf_r);</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>            solve_z(m_spmf_r, tria, tric);</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            m_r2x-&gt;backward(m_spmf_r, *soln, ng, m_geom.periodicity());</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        } <span class="keywordflow">else</span> { <span class="comment">// spectral data is complex.</span></div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>            m_r2x-&gt;forward(*rhs, m_spmf_c);</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>            solve_z(m_spmf_c, tria, tric);</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>            m_r2x-&gt;backward(m_spmf_c, *soln, ng, m_geom.periodicity());</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        }</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    }</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    detail::fill_physbc(*soln, m_geom, m_bc);</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>}</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TRIA, <span class="keyword">typename</span> TRIC&gt;</div>
+<div class="foldopen" id="foldopen00602" data-start="{" data-end="}">
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#aed550d2fc784644c200f02f11c667207">  602</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">PoissonHybrid&lt;MF&gt;::solve</a> (MF&amp; a_soln, MF <span class="keyword">const</span>&amp; a_rhs, TRIA <span class="keyword">const</span>&amp; tria,</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>                               TRIC <span class="keyword">const</span>&amp; tric)</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>{</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FFT::PoissonHybrid::solve&quot;</span>);</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    <a class="code hl_define" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(a_soln.is_cell_centered() &amp;&amp; a_rhs.is_cell_centered());</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="preprocessor">#if (AMREX_SPACEDIM &lt; 3)</span></div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(a_soln, a_rhs, tria, tric);</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    MF* soln = &amp;a_soln;</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    MF <span class="keyword">const</span>* rhs = &amp;a_rhs;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    MF solntmp, rhstmp;</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="keywordflow">if</span> (m_domain_lo != 0) {</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>        detail::shift_mfs(m_domain_lo, a_soln, a_rhs, solntmp, rhstmp);</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        soln = &amp;solntmp;</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        rhs = &amp;rhstmp;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    }</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span> </div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a> <span class="keyword">const</span>&amp; ng = <a class="code hl_function" href="namespaceamrex.html#af4ef71de20b680abfb05fddbe1e4ace7">amrex::elemwiseMin</a>(soln-&gt;nGrowVect(), <a class="code hl_class" href="classamrex_1_1IntVectND.html">IntVect</a>(1));</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keywordflow">if</span> (m_r2c)</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    {</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        m_r2c-&gt;forward(*rhs, m_spmf_c);</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        solve_z(m_spmf_c, tria, tric);</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        m_r2c-&gt;backward_doit(m_spmf_c, *soln, ng, m_geom.periodicity());</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    }</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    {</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        <span class="keywordflow">if</span> (m_r2x-&gt;m_cy.empty()) { <span class="comment">// spectral data is real</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>            m_r2x-&gt;forward(*rhs, m_spmf_r);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>            solve_z(m_spmf_r, tria, tric);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>            m_r2x-&gt;backward(m_spmf_r, *soln, ng, m_geom.periodicity());</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        } <span class="keywordflow">else</span> { <span class="comment">// spectral data is complex.</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>            m_r2x-&gt;forward(*rhs, m_spmf_c);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>            solve_z(m_spmf_c, tria, tric);</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>            m_r2x-&gt;backward(m_spmf_c, *soln, ng, m_geom.periodicity());</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        }</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    }</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span> </div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    detail::fill_physbc(*soln, m_geom, m_bc);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>}</div>
 </div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA, <span class="keyword">typename</span> TRIA, <span class="keyword">typename</span> TRIC&gt;</div>
-<div class="foldopen" id="foldopen00642" data-start="{" data-end="}">
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">  642</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">PoissonHybrid&lt;MF&gt;::solve_z</a> (FA&amp; spmf, TRIA <span class="keyword">const</span>&amp; tria, TRIC <span class="keyword">const</span>&amp; tric)</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>{</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;PoissonHybrid::solve_z&quot;</span>);</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="preprocessor">#if (AMREX_SPACEDIM &lt; 3)</span></div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(spmf, tria, tric);</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keyword">auto</span> facx = Math::pi&lt;T&gt;()/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.Domain().length(0));</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    <span class="keyword">auto</span> facy = Math::pi&lt;T&gt;()/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.Domain().length(1));</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordflow">if</span> (m_bc[0].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee">Boundary::periodic</a>) { facx *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2); }</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordflow">if</span> (m_bc[1].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee">Boundary::periodic</a>) { facy *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2); }</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    <span class="keyword">auto</span> dxfac = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2)/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.CellSize(0)*m_geom.CellSize(0));</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keyword">auto</span> dyfac = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2)/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.CellSize(1)*m_geom.CellSize(1));</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a> = (m_r2x) ? m_r2x-&gt;scalingFactor() : m_r2c-&gt;scalingFactor();</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    <span class="keywordflow">if</span> (m_geom.Domain().length(0) == 1) { dxfac = 0; }</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keywordflow">if</span> (m_geom.Domain().length(1) == 1) { dyfac = 0; }</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span> </div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>,AMREX_SPACEDIM-1&gt; <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>{<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0),<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)};</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM-1; ++idim) {</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>        <span class="keywordflow">if</span> (m_geom.Domain().length(idim) &gt; 1) {</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>            <span class="keywordflow">if</span> (m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a> &amp;&amp;</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>                m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a>)</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>            {</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[idim] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1);</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>            }</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a> &amp;&amp;</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>                      m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>) ||</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>                     (m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a> &amp;&amp;</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>                      m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a>))</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> FA, <span class="keyword">typename</span> TRIA, <span class="keyword">typename</span> TRIC&gt;</div>
+<div class="foldopen" id="foldopen00649" data-start="{" data-end="}">
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno"><a class="line" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">  649</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">PoissonHybrid&lt;MF&gt;::solve_z</a> (FA&amp; spmf, TRIA <span class="keyword">const</span>&amp; tria, TRIC <span class="keyword">const</span>&amp; tric)</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>{</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <a class="code hl_define" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;PoissonHybrid::solve_z&quot;</span>);</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span> </div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="preprocessor">#if (AMREX_SPACEDIM &lt; 3)</span></div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(spmf, tria, tric);</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    <span class="keyword">auto</span> facx = Math::pi&lt;T&gt;()/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.Domain().length(0));</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    <span class="keyword">auto</span> facy = Math::pi&lt;T&gt;()/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.Domain().length(1));</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keywordflow">if</span> (m_bc[0].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee">Boundary::periodic</a>) { facx *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2); }</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <span class="keywordflow">if</span> (m_bc[1].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964ae6ffdec5e14fce371eb7ae99edebbbee">Boundary::periodic</a>) { facy *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2); }</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    <span class="keyword">auto</span> dxfac = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2)/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.CellSize(0)*m_geom.CellSize(0));</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="keyword">auto</span> dyfac = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2)/<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(m_geom.CellSize(1)*m_geom.CellSize(1));</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a> = (m_r2x) ? m_r2x-&gt;scalingFactor() : m_r2c-&gt;scalingFactor();</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <span class="keywordflow">if</span> (m_geom.Domain().length(0) == 1) { dxfac = 0; }</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    <span class="keywordflow">if</span> (m_geom.Domain().length(1) == 1) { dyfac = 0; }</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    <a class="code hl_class" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>,AMREX_SPACEDIM-1&gt; <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>{<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0),<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)};</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM-1; ++idim) {</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        <span class="keywordflow">if</span> (m_geom.Domain().length(idim) &gt; 1) {</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>            <span class="keywordflow">if</span> (m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a> &amp;&amp;</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>                m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a>)</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>            {</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[idim] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.5);</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[idim] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1);</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>            }</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        }</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    }</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    <span class="keywordflow">if</span></div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    <span class="keyword">constexpr</span></div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        (std::is_same_v&lt;TRIA,fft_poisson_detail::Tri_Zero&lt;T&gt;&gt; &amp;&amp;</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>         std::is_same_v&lt;TRIC,fft_poisson_detail::Tri_Zero&lt;T&gt;&gt;) {</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(tria,tric);</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="preprocessor">#pragma omp parallel</span></div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(spmf,<a class="code hl_function" href="namespaceamrex.html#ab482b500359e03b77389d42f968c46fe">TilingIfNotGPU</a>()); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        {</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; spectral = spmf.array(mfi);</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.validbox();</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>            <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>            {</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                <span class="keywordflow">if</span> (k2 != <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)) {</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>                    spectral(i,j,k) /= k2;</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>                }</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>            });</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        }</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        <span class="keywordtype">bool</span> zlo_neumann = m_bc[2].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>;</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        <span class="keywordtype">bool</span> zhi_neumann = m_bc[2].second == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        <span class="keywordtype">bool</span> is_singular = (<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] == <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)) &amp;&amp; (<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1] == <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0))</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            &amp;&amp; zlo_neumann &amp;&amp; zhi_neumann;</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span> </div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        <span class="keyword">auto</span> nz = m_geom.Domain().length(2);</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span> </div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span><span class="preprocessor">#pragma omp parallel</span></div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(spmf); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        {</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; spectral = spmf.array(mfi);</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.validbox();</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; xybox = <a class="code hl_function" href="namespaceamrex.html#a16870720c21d5db7fb7ba7d922ec1275">amrex::makeSlab</a>(box, 2, 0);</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span> </div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            <span class="comment">// xxxxx TODO: We need to explore how to optimize this</span></div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>            <span class="comment">// function. Maybe we can use cusparse. Maybe we should make</span></div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>            <span class="comment">// z-direction to be the unit stride direction.</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>            <a class="code hl_class" href="classamrex_1_1FArrayBox.html">FArrayBox</a> tridiag_workspace(box,4);</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ald = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(0);</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; bd = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(1);</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cud = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(2);</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; scratch = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(3);</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(xybox, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            {</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a> &amp;&amp;</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>                      m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>) ||</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>                     (m_bc[idim].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a> &amp;&amp;</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>                      m_bc[idim].<a class="code hl_function" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">second</a> == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964aa2b6f2a6066ed8700d83335fc50a2b8e">Boundary::odd</a>))</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>            {</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>                <a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[idim] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.5);</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>            }</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        }</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    }</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    <span class="keywordflow">if</span></div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>    <span class="keyword">constexpr</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        (std::is_same_v&lt;TRIA,fft_poisson_detail::Tri_Zero&lt;T&gt;&gt; &amp;&amp;</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>         std::is_same_v&lt;TRIC,fft_poisson_detail::Tri_Zero&lt;T&gt;&gt;) {</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>        <a class="code hl_function" href="namespaceamrex.html#a0a525af3444a2814c6dbda9e71a965a5">amrex::ignore_unused</a>(tria,tric);</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(spmf,<a class="code hl_function" href="namespaceamrex.html#ab482b500359e03b77389d42f968c46fe">TilingIfNotGPU</a>()); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; spectral = spmf.array(mfi);</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.validbox();</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(box, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            {</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                <span class="keywordflow">if</span> (k2 != <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)) {</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                    spectral(i,j,k) /= k2;</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                }</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>            });</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        }</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="keywordtype">bool</span> zlo_neumann = m_bc[2].first == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>;</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        <span class="keywordtype">bool</span> zhi_neumann = m_bc[2].second == <a class="code hl_enumvalue" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964acc935c5faf4c8f7a0468d7552a9b8138">Boundary::even</a>;</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="keywordtype">bool</span> is_singular = (<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] == <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0)) &amp;&amp; (<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1] == <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0))</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            &amp;&amp; zlo_neumann &amp;&amp; zhi_neumann;</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span> </div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        <span class="keyword">auto</span> nz = m_geom.Domain().length(2);</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; !defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        <span class="keywordflow">for</span> (<a class="code hl_class" href="classamrex_1_1MFIter.html">MFIter</a> mfi(spmf); mfi.<a class="code hl_function" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        {</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; spectral = spmf.array(mfi);</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.validbox();</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; xybox = <a class="code hl_function" href="namespaceamrex.html#a16870720c21d5db7fb7ba7d922ec1275">amrex::makeSlab</a>(box, 2, 0);</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            <span class="comment">// xxxxx TODO: We need to explore how to optimize this</span></div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            <span class="comment">// function. Maybe we can use cusparse. Maybe we should make</span></div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>            <span class="comment">// z-direction to be the unit stride direction.</span></div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span> </div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            <a class="code hl_class" href="classamrex_1_1FArrayBox.html">FArrayBox</a> tridiag_workspace(box,4);</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ald = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(0);</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; bd = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(1);</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cud = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(2);</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; scratch = tridiag_workspace.<a class="code hl_function" href="classamrex_1_1BaseFab.html#a718bcfa41729cc02fc8fa61ace0fce96">array</a>(3);</div>
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span> </div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>                <span class="comment">// Tridiagonal solve</span></div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k &lt; nz; k++) {</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>                    <span class="keywordflow">if</span>(k==0) {</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>                        ald(i,j,k) = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>                        cud(i,j,k) = tric(i,j,k);</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>                        <span class="keywordflow">if</span> (zlo_neumann) {</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>                            bd(i,j,k) = k2 - cud(i,j,k);</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>                            bd(i,j,k) = k2 - cud(i,j,k) - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tria(i,j,k);</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>                        }</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == nz-1) {</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>                        ald(i,j,k) = tria(i,j,k);</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>                        cud(i,j,k) = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>                        <span class="keywordflow">if</span> (zhi_neumann) {</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>                            bd(i,j,k) = k2 - ald(i,j,k);</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>                            <span class="keywordflow">if</span> (i == 0 &amp;&amp; j == 0 &amp;&amp; is_singular) {</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>                                bd(i,j,k) *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0);</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>                            }</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                            bd(i,j,k) = k2 - ald(i,j,k) - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tric(i,j,k);</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>                        }</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>                        ald(i,j,k) = tria(i,j,k);</div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>                        cud(i,j,k) = tric(i,j,k);</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>                        bd(i,j,k) = k2 -ald(i,j,k)-cud(i,j,k);</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>                    }</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>                }</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>                scratch(i,j,0) = cud(i,j,0)/bd(i,j,0);</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>                spectral(i,j,0) = spectral(i,j,0)/bd(i,j,0);</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span> </div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++) {</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>                    <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>                        scratch(i,j,k) = cud(i,j,k) / (bd(i,j,k) - ald(i,j,k) * scratch(i,j,k-1));</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>                    }</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>                    spectral(i,j,k) = (spectral(i,j,k) - ald(i,j,k) * spectral(i,j,k - 1))</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>                        / (bd(i,j,k) - ald(i,j,k) * scratch(i,j,k-1));</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>                }</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span> </div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = nz - 2; k &gt;= 0; k--) {</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>                    spectral(i,j,k) -= scratch(i,j,k) * spectral(i,j,k + 1);</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>                }</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span> </div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; ++k) {</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>                    spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>                }</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>            });</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span> </div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> ald(nz);</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> bd(nz);</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> cud(nz);</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> scratch(nz);</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>            <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(xybox, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>            {</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span> </div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>                <span class="comment">// Tridiagonal solve</span></div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k &lt; nz; k++) {</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>                    <span class="keywordflow">if</span>(k==0) {</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                        ald(i,j,k) = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>                        cud(i,j,k) = tric(i,j,k);</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>                        <span class="keywordflow">if</span> (zlo_neumann) {</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>                            bd(i,j,k) = k2 - cud(i,j,k);</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>                            bd(i,j,k) = k2 - cud(i,j,k) - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tria(i,j,k);</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>                        }</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == nz-1) {</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>                        ald(i,j,k) = tria(i,j,k);</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                        cud(i,j,k) = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>                        <span class="keywordflow">if</span> (zhi_neumann) {</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>                            bd(i,j,k) = k2 - ald(i,j,k);</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>                            <span class="keywordflow">if</span> (i == 0 &amp;&amp; j == 0 &amp;&amp; is_singular) {</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>                                bd(i,j,k) *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0);</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>                            }</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>                            bd(i,j,k) = k2 - ald(i,j,k) - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tric(i,j,k);</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>                        }</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>                        ald(i,j,k) = tria(i,j,k);</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>                        cud(i,j,k) = tric(i,j,k);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>                        bd(i,j,k) = k2 -ald(i,j,k)-cud(i,j,k);</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>                    }</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>                }</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>                scratch(i,j,0) = cud(i,j,0)/bd(i,j,0);</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>                spectral(i,j,0) = spectral(i,j,0)/bd(i,j,0);</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span> </div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++) {</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>                    <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>                        scratch(i,j,k) = cud(i,j,k) / (bd(i,j,k) - ald(i,j,k) * scratch(i,j,k-1));</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>                    }</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>                    spectral(i,j,k) = (spectral(i,j,k) - ald(i,j,k) * spectral(i,j,k - 1))</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>                        / (bd(i,j,k) - ald(i,j,k) * scratch(i,j,k-1));</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>                }</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span> </div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = nz - 2; k &gt;= 0; k--) {</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>                    spectral(i,j,k) -= scratch(i,j,k) * spectral(i,j,k + 1);</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>                }</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span> </div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; ++k) {</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>                    spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>                }</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>            });</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>            <a class="code hl_function" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>            <a class="code hl_function" href="namespaceamrex.html#adcfb36df4559fd8ffb462f4b4b4cebaa">amrex::LoopOnCpu</a>(xybox, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>            {</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span> </div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> ald(nz);</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> bd(nz);</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> cud(nz);</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>            <a class="code hl_class" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;T&gt;</a> scratch(nz);</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span> </div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                <span class="comment">// Tridiagonal solve</span></div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k &lt; nz; k++) {</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>                    <span class="keywordflow">if</span>(k==0) {</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>                        ald[k] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                        cud[k] = tric(i,j,k);</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                        <span class="keywordflow">if</span> (zlo_neumann) {</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>                            bd[k] = k2 - cud[k];</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>                            bd[k] = k2 - cud[k] - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tria(i,j,k);</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>                        }</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == nz-1) {</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>                        ald[k] = tria(i,j,k);</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>                        cud[k] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>                        <span class="keywordflow">if</span> (zhi_neumann) {</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>                            bd[k] = k2 - ald[k];</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>                            <span class="keywordflow">if</span> (i == 0 &amp;&amp; j == 0 &amp;&amp; is_singular) {</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                                bd[k] *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0);</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                            }</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                            bd[k] = k2 - ald[k] - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tric(i,j,k);</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                        }</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                        ald[k] = tria(i,j,k);</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                        cud[k] = tric(i,j,k);</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                        bd[k] = k2 -ald[k]-cud[k];</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                    }</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                }</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span> </div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                scratch[0] = cud[0]/bd[0];</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                spectral(i,j,0) = spectral(i,j,0)/bd[0];</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++) {</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>                    <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>                        scratch[k] = cud[k] / (bd[k] - ald[k] * scratch[k-1]);</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>                    }</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>                    spectral(i,j,k) = (spectral(i,j,k) - ald[k] * spectral(i,j,k - 1))</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>                        / (bd[k] - ald[k] * scratch[k-1]);</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>                }</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = nz - 2; k &gt;= 0; k--) {</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                    spectral(i,j,k) -= scratch[k] * spectral(i,j,k + 1);</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>                }</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span> </div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; ++k) {</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>                    spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>                }</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            });</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>        }</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    }</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>}</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>            <a class="code hl_function" href="namespaceamrex.html#adcfb36df4559fd8ffb462f4b4b4cebaa">amrex::LoopOnCpu</a>(xybox, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>            {</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> a = facx*(i+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0]);</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> b = facy*(j+<a class="code hl_variable" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[1]);</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a> k2 = dxfac * (std::cos(a)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1))</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                    +  dyfac * (std::cos(b)-<a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(1));</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span> </div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>                <span class="comment">// Tridiagonal solve</span></div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k &lt; nz; k++) {</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>                    <span class="keywordflow">if</span>(k==0) {</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>                        ald[k] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>                        cud[k] = tric(i,j,k);</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>                        <span class="keywordflow">if</span> (zlo_neumann) {</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>                            bd[k] = k2 - cud[k];</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>                            bd[k] = k2 - cud[k] - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tria(i,j,k);</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                        }</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == nz-1) {</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                        ald[k] = tria(i,j,k);</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                        cud[k] = <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(0.);</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                        <span class="keywordflow">if</span> (zhi_neumann) {</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                            bd[k] = k2 - ald[k];</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                            <span class="keywordflow">if</span> (i == 0 &amp;&amp; j == 0 &amp;&amp; is_singular) {</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                                bd[k] *= <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0);</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                            }</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                            bd[k] = k2 - ald[k] - <a class="code hl_typedef" href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">T</a>(2.0)*tric(i,j,k);</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                        }</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                        ald[k] = tria(i,j,k);</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                        cud[k] = tric(i,j,k);</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                        bd[k] = k2 -ald[k]-cud[k];</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>                    }</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>                }</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span> </div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>                scratch[0] = cud[0]/bd[0];</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>                spectral(i,j,0) = spectral(i,j,0)/bd[0];</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span> </div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++) {</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                    <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                        scratch[k] = cud[k] / (bd[k] - ald[k] * scratch[k-1]);</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>                    }</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>                    spectral(i,j,k) = (spectral(i,j,k) - ald[k] * spectral(i,j,k - 1))</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>                        / (bd[k] - ald[k] * scratch[k-1]);</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>                }</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span> </div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = nz - 2; k &gt;= 0; k--) {</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>                    spectral(i,j,k) -= scratch[k] * spectral(i,j,k + 1);</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>                }</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; ++k) {</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>                    spectral(i,j,k) *= <a class="code hl_function" href="namespaceamrex.html#a9b213248c90c51d8f42566c96a74b1f0">scale</a>;</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>                }</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>            });</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        }</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    }</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>}</div>
 </div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span> </div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span><span class="keyword">namespace </span>detail {</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span><span class="keyword">struct </span>FFTPhysBCTag {</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>    <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a>   dfab;</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>    <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>         dbox;</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <a class="code hl_enumeration" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a>    bc;</div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    <a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face;</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span><span class="keyword">namespace </span>detail {</div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span> </div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box () const noexcept { <span class="keywordflow">return</span> dbox; }</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>};</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span> </div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span><span class="keywordtype">void</span> fill_physbc (MF&amp; mf, Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>                  Array&lt;std::pair&lt;Boundary,Boundary&gt;,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bc)</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>{</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    <span class="keyword">using </span>T = <span class="keyword">typename</span> MF::value_type;</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <span class="keyword">using </span>Tag = FFTPhysBCTag&lt;T&gt;;</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    Vector&lt;Tag&gt; tags;</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span> </div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="keywordflow">for</span> (MFIter mfi(mf, MFItInfo{}.DisableDeviceSync()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    {</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.fabbox();</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; arr = mf.array(mfi);</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>        <span class="keywordflow">for</span> (OrientationIter oit; oit; ++oit) {</div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>            Orientation face = oit();</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>            <span class="keywordtype">int</span> idim = face.coordDir();</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>            <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> b = geom.Domain();</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>            <a class="code hl_enumeration" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a> fbc;</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>            <span class="keywordflow">if</span> (face.isLow()) {</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>                b.setRange(idim,geom.Domain().smallEnd(idim)-1);</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>                fbc = bc[idim].first;</div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>                b.setRange(idim,geom.Domain().bigEnd(idim)+1);</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>                fbc = bc[idim].second;</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>            }</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>            b &amp;= box;</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>            <span class="keywordflow">if</span> (b.ok() &amp;&amp; fbc != Boundary::periodic) {</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>                tags.push_back({arr, b, fbc, face});</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>            }</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>        }</div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>    }</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span> </div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(tags, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>                                                   Tag <span class="keyword">const</span>&amp; tag) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>#<span class="keywordflow">else</span></div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>    <span class="keyword">auto</span> ntags = <span class="keywordtype">int</span>(tags.size());</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span><span class="preprocessor">#pragma omp parallel for</span></div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itag = 0; itag &lt; ntags; ++itag) {</div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>        Tag <span class="keyword">const</span>&amp; tag = tags[itag];</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>        <a class="code hl_function" href="namespaceamrex.html#adcfb36df4559fd8ffb462f4b4b4cebaa">amrex::LoopOnCpu</a>(tag.dbox, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>#endif</div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>        {</div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>            int sgn = tag.face.isLow() ? 1 : -1;</div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>            IntVect siv = IntVect(AMREX_D_DECL(i,j,k))</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>                +  sgn * IntVect::TheDimensionVector(tag.face.coordDir());</div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>            if (tag.bc == Boundary::odd) {</div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>                tag.dfab(i,j,k) = -tag.dfab(siv);</div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>            } <span class="keywordflow">else</span> { <span class="comment">// even</span></div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>                tag.dfab(i,j,k) = tag.dfab(siv);</div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>            }</div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>        });</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span><span class="preprocessor">#if !defined(AMREX_USE_GPU)</span></div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>    }</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>}</div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>}</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span> </div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>}</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span> </div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span><span class="keyword">struct </span>FFTPhysBCTag {</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    <a class="code hl_class" href="structamrex_1_1ArrayND.html">Array4&lt;T&gt;</a>   dfab;</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a>         dbox;</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    <a class="code hl_enumeration" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a>    bc;</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    <a class="code hl_class" href="classamrex_1_1Orientation.html">Orientation</a> face;</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span> </div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    [[nodiscard]] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code hl_define" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    <a class="code hl_class" href="classamrex_1_1BoxND.html">Box</a> <span class="keyword">const</span>&amp; box () const noexcept { <span class="keywordflow">return</span> dbox; }</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>};</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span> </div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span><span class="keywordtype">void</span> fill_physbc (MF&amp; mf, Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>                  Array&lt;std::pair&lt;Boundary,Boundary&gt;,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bc)</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>{</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    <span class="keyword">using </span>T = <span class="keyword">typename</span> MF::value_type;</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>    <span class="keyword">using </span>Tag = FFTPhysBCTag&lt;T&gt;;</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    Vector&lt;Tag&gt; tags;</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span> </div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    <span class="keywordflow">for</span> (MFIter mfi(mf, MFItInfo{}.DisableDeviceSync()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    {</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; box = mfi.fabbox();</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; arr = mf.array(mfi);</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>        <span class="keywordflow">for</span> (OrientationIter oit; oit; ++oit) {</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>            Orientation face = oit();</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>            <span class="keywordtype">int</span> idim = face.coordDir();</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>            <a class="code hl_typedef" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> b = geom.Domain();</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>            <a class="code hl_enumeration" href="namespaceamrex_1_1FFT.html#a2a5b9696bd31b9e62eb1fda9e2bb9964">Boundary</a> fbc;</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>            <span class="keywordflow">if</span> (face.isLow()) {</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>                b.setRange(idim,geom.Domain().smallEnd(idim)-1);</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>                fbc = bc[idim].first;</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>                b.setRange(idim,geom.Domain().bigEnd(idim)+1);</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>                fbc = bc[idim].second;</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>            }</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>            b &amp;= box;</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>            <span class="keywordflow">if</span> (b.ok() &amp;&amp; fbc != Boundary::periodic) {</div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>                tags.push_back({arr, b, fbc, face});</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>            }</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>        }</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>    }</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span> </div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span><span class="preprocessor">#if defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>    <a class="code hl_function" href="namespaceamrex.html#a1f15630874d45aeb722ca649e6c4c3a9">amrex::ParallelFor</a>(tags, [=] <a class="code hl_define" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>                                                   Tag <span class="keyword">const</span>&amp; tag) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>#<span class="keywordflow">else</span></div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>    <span class="keyword">auto</span> ntags = <span class="keywordtype">int</span>(tags.size());</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span><span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="preprocessor">#pragma omp parallel for</span></div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itag = 0; itag &lt; ntags; ++itag) {</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>        Tag <span class="keyword">const</span>&amp; tag = tags[itag];</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>        <a class="code hl_function" href="namespaceamrex.html#adcfb36df4559fd8ffb462f4b4b4cebaa">amrex::LoopOnCpu</a>(tag.dbox, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>#endif</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>        {</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>            int sgn = tag.face.isLow() ? 1 : -1;</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>            IntVect siv = IntVect(AMREX_D_DECL(i,j,k))</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>                +  sgn * IntVect::TheDimensionVector(tag.face.coordDir());</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>            if (tag.bc == Boundary::odd) {</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>                tag.dfab(i,j,k) = -tag.dfab(siv);</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>            } <span class="keywordflow">else</span> { <span class="comment">// even</span></div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>                tag.dfab(i,j,k) = tag.dfab(siv);</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>            }</div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>        });</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span><span class="preprocessor">#if !defined(AMREX_USE_GPU)</span></div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>    }</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>}</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>}</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span> </div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>}</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span> </div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition</b> AMReX_BLProfiler.H:551</div></div>
+<div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition</b> AMReX_Extension.H:119</div></div>
@@ -967,10 +975,10 @@ $(document).ready(function(){initNavTree('AMReX__FFT__Poisson_8H_source.html',''
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html">amrex::FFT::PoissonHybrid</a></div><div class="ttdoc">3D Poisson solver for periodic, Dirichlet &amp; Neumann boundaries in the first two dimensions,...</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:187</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_a0ad120ac18bd4b1cbf654104a98f7bf3"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#a0ad120ac18bd4b1cbf654104a98f7bf3">amrex::FFT::PoissonHybrid::solve</a></div><div class="ttdeci">void solve(MF &amp;soln, MF const &amp;rhs)</div><div class="ttdoc">Solve del dot grad soln = rhs for uniform spacing in all directions.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:553</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_a1c72e7324b595ececc540e36ca612e22"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#a1c72e7324b595ececc540e36ca612e22">amrex::FFT::PoissonHybrid::T</a></div><div class="ttdeci">typename MF::value_type T</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:189</div></div>
-<div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_a59789376a5d13f7c3622d6c2a55aeeb3"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">amrex::FFT::PoissonHybrid::solve_z</a></div><div class="ttdeci">void solve_z(FA &amp;spmf, TRIA const &amp;tria, TRIC const &amp;tric)</div><div class="ttdoc">CUDA helper that applies the supplied tridiagonal operator along z.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:642</div></div>
+<div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_a59789376a5d13f7c3622d6c2a55aeeb3"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#a59789376a5d13f7c3622d6c2a55aeeb3">amrex::FFT::PoissonHybrid::solve_z</a></div><div class="ttdeci">void solve_z(FA &amp;spmf, TRIA const &amp;tria, TRIC const &amp;tric)</div><div class="ttdoc">CUDA helper that applies the supplied tridiagonal operator along z.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:649</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_a865df2638340d6b169e6258600cfc8b2"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#a865df2638340d6b169e6258600cfc8b2">amrex::FFT::PoissonHybrid::PoissonHybrid</a></div><div class="ttdeci">PoissonHybrid(Geometry const &amp;geom, Array&lt; std::pair&lt; Boundary, Boundary &gt;, 3 &gt; const &amp;bc)</div><div class="ttdoc">Construct the hybrid Poisson solver (mixed BCs in z with optional nonuniform spacing).</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:198</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_aa19276c7ba2708349c81a5660ffdbcc5"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#aa19276c7ba2708349c81a5660ffdbcc5">amrex::FFT::PoissonHybrid::getSpectralDataLayout</a></div><div class="ttdeci">std::pair&lt; BoxArray, DistributionMapping &gt; getSpectralDataLayout() const</div><div class="ttdoc">Layout information for spectral storage used by the hybrid solver.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:493</div></div>
-<div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_adf220dc1c22878b1aa41ac6fdd4039b9"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">amrex::FFT::PoissonHybrid::solve_2d</a></div><div class="ttdeci">void solve_2d(MF &amp;a_soln, MF const &amp;a_rhs)</div><div class="ttdoc">Solve an independent 2-D Poisson problem on every z-plane.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:588</div></div>
+<div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonHybrid_html_adf220dc1c22878b1aa41ac6fdd4039b9"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonHybrid.html#adf220dc1c22878b1aa41ac6fdd4039b9">amrex::FFT::PoissonHybrid::solve_2d</a></div><div class="ttdeci">void solve_2d(MF &amp;a_soln, MF const &amp;a_rhs)</div><div class="ttdoc">Solve an independent 2-D Poisson problem on every z-plane.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:595</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonOpenBC_html"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonOpenBC.html">amrex::FFT::PoissonOpenBC</a></div><div class="ttdoc">Poisson solve for Open BC using FFT.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:143</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonOpenBC_html_a65199cc3d25b69c0a78a9bb6c234565e"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonOpenBC.html#a65199cc3d25b69c0a78a9bb6c234565e">amrex::FFT::PoissonOpenBC::solve</a></div><div class="ttdeci">void solve(MF &amp;soln, MF const &amp;rhs)</div><div class="ttdoc">Solve the open-boundary Poisson problem.</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:438</div></div>
 <div class="ttc" id="aclassamrex_1_1FFT_1_1PoissonOpenBC_html_a99b7ef0d1b0304fd49dcbf48fb16202a"><div class="ttname"><a href="classamrex_1_1FFT_1_1PoissonOpenBC.html#a99b7ef0d1b0304fd49dcbf48fb16202a">amrex::FFT::PoissonOpenBC::define_doit</a></div><div class="ttdeci">void define_doit()</div><div class="ttdoc">Initialize the discretized Green's function cache (public for CUDA kernels).</div><div class="ttdef"><b>Definition</b> AMReX_FFT_Poisson.H:409</div></div>
