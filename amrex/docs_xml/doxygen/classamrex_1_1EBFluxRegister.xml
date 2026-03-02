@@ -582,12 +582,55 @@
           <declname>runon</declname>
         </param>
         <briefdescription>
+<para>Add coarse-level fluxes for the tile indicated by <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mfi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator describing the coarse tile. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of per-direction flux FABs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cell spacing array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coarse timestep (with sign). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>runon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution context (host/device). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="73" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="349" bodyend="358"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="73" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="421" bodyend="430"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a9617d37434f1e3904625b3f86aacaf90" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -628,12 +671,79 @@
           <declname>runon</declname>
         </param>
         <briefdescription>
+<para>Add coarse-level fluxes with component slicing. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mfi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator describing the coarse tile. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of per-direction flux FABs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cell spacing array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coarse timestep. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component in the fluxes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination component in the register. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>runon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution context (host/device). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="73" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="362" bodyend="403"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="73" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="434" bodyend="475"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a45dd819a0573baa1ebb00275f8872d0f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -662,12 +772,55 @@
           <declname>runon</declname>
         </param>
         <briefdescription>
+<para>Add fine-level fluxes for the tile identified by <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mfi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator describing the fine tile. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of per-direction flux FABs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fine cell spacing array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fine timestep (per substep). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>runon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution context (host/device). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="87" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="407" bodyend="416"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="87" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="479" bodyend="488"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1adf5b2d64602318eab4001fea57f4198d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -708,12 +861,79 @@
           <declname>runon</declname>
         </param>
         <briefdescription>
+<para>Add fine-level fluxes with component slicing. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mfi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Iterator describing the fine tile. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_flux</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of per-direction flux FABs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fine cell spacing array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fine timestep. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting component in the fluxes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination component in the register. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>runon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution context (host/device). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="87" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="420" bodyend="510"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="87" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="492" bodyend="582"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -12,12 +12,13 @@
         <name>Mask</name>
         <qualifiedname>amrex::Mask::Mask</qualifiedname>
         <briefdescription>
+<para>Construct an empty mask with no allocation. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="31" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="37" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a1bbe56597e75e9487f95ea8a720ee5e7" prot="public" static="no" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -30,12 +31,13 @@
           <declname>ar</declname>
         </param>
         <briefdescription>
+<para>Construct a mask that allocates from <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> <computeroutput>ar</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="33" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="8" bodyend="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="40" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="8" bodyend="9"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ae6d52518e33c58ca5c4ea5e118fcec5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -56,12 +58,13 @@
           <declname>ar</declname>
         </param>
         <briefdescription>
+<para>Construct a mask over Box <computeroutput>bx</computeroutput> with <computeroutput>nc</computeroutput> components using <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> <computeroutput>ar</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="35" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="11" bodyend="12"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="43" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="11" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a230355fcd3e68a68f02f4ebd6ad2ce17" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -94,12 +97,55 @@
           <defval>nullptr</defval>
         </param>
         <briefdescription>
+<para>Construct a mask with fine-grained control over allocation. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region covered by the mask. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components (default 1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alloc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to allocate storage immediately. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shared</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether storage is shared by reference. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> used for allocations (or default if nullptr). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="37" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="14" bodyend="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="54" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="14" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a6b295b191764969c7033a967abd45d97" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -112,13 +158,13 @@
           <declname>is</declname>
         </param>
         <briefdescription>
-<para>construct from input stream </para>
+<para>Construct from an input stream <computeroutput>is</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="46" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="21" bodyend="24"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="61" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="21" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a2e99ed3b0c4632c5e758c88928b97202" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -131,12 +177,13 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Wrap an existing Array4 <computeroutput>a</computeroutput> without taking ownership. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="48" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="48" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="64" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="64" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a9018e9168017880e0243ad751f931cac" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -153,12 +200,13 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Wrap an existing Array4 <computeroutput>a</computeroutput> with IndexType <computeroutput>t</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="50" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="50" bodyend="50"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="67" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="67" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a95db54d25c0f6cf6bdb4d3833045cb58" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -171,12 +219,13 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Wrap a const Array4 <computeroutput>a</computeroutput> without taking ownership. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="52" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="52" bodyend="52"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="70" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="70" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a1fa2d5c56c30c372187e9e7954c7c393" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -193,12 +242,13 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Wrap a const Array4 <computeroutput>a</computeroutput> with IndexType <computeroutput>t</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="54" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="54" bodyend="54"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="73" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="73" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a8cffce317097bc776ffc940f0e32ac37" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -212,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="56" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="75" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1aa1437a1b1611cb70a4d8c6a581c7a5bf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -230,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="58" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="77" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a42404772901ea5f0d3a72d98fc48497d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -255,12 +305,13 @@
           <declname>ncomp</declname>
         </param>
         <briefdescription>
+<para>Construct by copying <computeroutput>ncomp</computeroutput> components starting at <computeroutput>scomp</computeroutput> from <computeroutput>rhs</computeroutput> using <computeroutput>make_type</computeroutput> semantics. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="60" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="17" bodyend="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="80" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="17" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ab3bc08bd2f3deea5af111c3720a02b9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -277,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="62" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="82" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a2f7abe86a6eab2e67d37b47e7ca22459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
@@ -294,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="63" column="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="83" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1aeab1dcf87fad8dfa67b5844e0215a32c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
@@ -311,45 +362,65 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="64" column="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="84" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Mask_1aa99a533ca8b84883dd44bf870fb7c5b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Mask_1a1fc5cd9b4f52ea7f171d6d5dbb7aeeeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::Mask::readFrom</definition>
-        <argsstring>(std::istream &amp;)</argsstring>
+        <argsstring>(std::istream &amp;is)</argsstring>
         <name>readFrom</name>
         <qualifiedname>amrex::Mask::readFrom</qualifiedname>
         <param>
           <type>std::istream &amp;</type>
-          <defname>is</defname>
+          <declname>is</declname>
         </param>
         <briefdescription>
-<para>initialize from stream, FAB-style </para>
+<para>Initialize from stream, FAB-style. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="77" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="88" bodyend="101"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="101" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="88" bodyend="101"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Mask_1a924617bc66416c85d920ec7dcbdae3a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Mask_1a4d5b29b51c5ef954b7e488e87d58b049" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::Mask::writeOn</definition>
-        <argsstring>(std::ostream &amp;) const</argsstring>
+        <argsstring>(std::ostream &amp;os) const</argsstring>
         <name>writeOn</name>
         <qualifiedname>amrex::Mask::writeOn</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
-          <defname>os</defname>
+          <declname>os</declname>
         </param>
         <briefdescription>
-<para>output to stream, FAB-style </para>
+<para>Output to stream in FAB binary format. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="89" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="78" bodyend="85"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="116" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="78" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ab49d27d3676a98ad8a2cc2c45a73be45" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -369,13 +440,13 @@
           <declname>src</declname>
         </param>
         <briefdescription>
-<para>in-place And operator </para>
+<para>In-place logical AND with mask <computeroutput>src</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="93" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="93" bodyend="93"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="120" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="120" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a187ebef1089afa8f5b0c251fc84974da" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -395,7 +466,7 @@
           <declname>src</declname>
         </param>
         <briefdescription>
-<para>in-place And </para>
+<para>In-place logical AND over every component. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -403,7 +474,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask supplying the AND operand. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -411,7 +482,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="101" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="212" bodyend="215"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="128" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="237" bodyend="240"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a96f1c0a3f48e6f4ed9b6509b55bfe86c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -444,7 +515,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>as above, but specify source/destination/number of components </para>
+<para>As above, but specify source/destination component ranges. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -452,7 +523,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -460,7 +531,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -468,7 +539,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -476,7 +547,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components to combine. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -484,7 +555,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="112" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="219" bodyend="225"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="139" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="244" bodyend="250"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ac79eca6126b2c2707ca883dca7545ef5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -521,7 +592,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>as above, and specify subregion </para>
+<para>As above, but restrict operation to a subbox. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -529,7 +600,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -537,7 +608,7 @@
 <parametername>subbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Region where the operation is performed. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -545,7 +616,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -553,7 +624,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -561,7 +632,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -569,7 +640,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="126" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="229" bodyend="236"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="153" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="254" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a00fc670ea311d38034fcb05f6cfdeca7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -610,7 +681,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>in-pace And, over source components to destination components, and on intersection of source and destination boxes </para>
+<para>In-place AND on potentially different source/destination boxes. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -618,7 +689,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -626,7 +697,7 @@
 <parametername>srcbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source region. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -634,7 +705,7 @@
 <parametername>destbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Destination region. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -642,7 +713,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -650,7 +721,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -658,7 +729,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -666,7 +737,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="143" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="240" bodyend="257"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="169" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="265" bodyend="282"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1af0bcd1adb0d67fb867d3b9e9019fb33a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -686,13 +757,13 @@
           <declname>src</declname>
         </param>
         <briefdescription>
-<para>in-place Or operator </para>
+<para>In-place logical OR with mask <computeroutput>src</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="152" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="152" bodyend="152"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="178" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="178" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a16aac9b4caf7d3aa715c35e1473a4254" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -712,7 +783,7 @@
           <declname>src</declname>
         </param>
         <briefdescription>
-<para>in-place Or </para>
+<para>In-place logical OR over every component. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -720,7 +791,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask supplying the OR operand. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -728,7 +799,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="160" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="261" bodyend="264"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="186" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="286" bodyend="289"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ad5797578c04b5614ce848331711d3fe5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -761,7 +832,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>as above, but specify source/destination/number of components </para>
+<para>As above, but specify source/destination component ranges. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -769,7 +840,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -777,7 +848,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -785,7 +856,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -793,7 +864,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -801,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="171" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="268" bodyend="274"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="197" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="293" bodyend="299"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1a8fcf8e088c4ea7f800d327c9842b0986" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -838,7 +909,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>as above, and specify subregion </para>
+<para>As above, and specify a subregion. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -846,7 +917,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -854,7 +925,7 @@
 <parametername>subbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Region where to apply the OR. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -862,7 +933,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -870,7 +941,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -878,7 +949,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -886,7 +957,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="185" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="278" bodyend="285"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="211" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="303" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Mask_1ada0a58519cfd7ec1ab414bf65365c72c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -927,7 +998,7 @@
           <defval>1</defval>
         </param>
         <briefdescription>
-<para>in-pace Or, over source components to destination components, and on intersection of source and destination boxes </para>
+<para>In-place OR allowing separate source and destination boxes. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -935,7 +1006,7 @@
 <parametername>src</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -943,7 +1014,7 @@
 <parametername>srcbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Source region. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -951,7 +1022,7 @@
 <parametername>destbox</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Destination region. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -959,7 +1030,7 @@
 <parametername>srccomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in <computeroutput>src</computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -967,7 +1038,7 @@
 <parametername>destcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Starting component in this mask. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -975,7 +1046,7 @@
 <parametername>numcomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Number of components. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -983,55 +1054,93 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="202" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="289" bodyend="306"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="227" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="314" bodyend="331"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="friend">
-      <memberdef kind="friend" id="classamrex_1_1Mask_1ade804ca46ee59dc069cf3643346d8ff4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="friend" id="classamrex_1_1Mask_1a0d6269be54d20693bc7c568b6b585a1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
         <definition>std::istream &amp; operator&gt;&gt;</definition>
-        <argsstring>(std::istream &amp;, Mask &amp;)</argsstring>
+        <argsstring>(std::istream &amp;is, Mask &amp;m)</argsstring>
         <name>operator&gt;&gt;</name>
         <qualifiedname>amrex::Mask::operator&gt;&gt;</qualifiedname>
         <param>
           <type>std::istream &amp;</type>
-          <defname>is</defname>
+          <declname>is</declname>
         </param>
         <param>
           <type><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
-          <defname>m</defname>
+          <declname>m</declname>
         </param>
         <briefdescription>
-<para>Initialize from stream. </para>
+<para>Initialize from stream in ASCII FAB format. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> populated from <computeroutput>is</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The input stream for chaining. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="71" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="52" bodyend="75"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="94" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="52" bodyend="75"/>
       </memberdef>
-      <memberdef kind="friend" id="classamrex_1_1Mask_1a4b60dc6bedd825ee18f215b624385b4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="friend" id="classamrex_1_1Mask_1a4aa5f23b80e36fccdfcd15d5bbe76604" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
         <definition>std::ostream &amp; operator&lt;&lt;</definition>
-        <argsstring>(std::ostream &amp;, const Mask &amp;)</argsstring>
+        <argsstring>(std::ostream &amp;os, const Mask &amp;m)</argsstring>
         <name>operator&lt;&lt;</name>
         <qualifiedname>amrex::Mask::operator&lt;&lt;</qualifiedname>
         <param>
           <type>std::ostream &amp;</type>
-          <defname>os</defname>
+          <declname>os</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
-          <defname>m</defname>
+          <declname>m</declname>
         </param>
         <briefdescription>
-<para>output to stream </para>
+<para>Output to stream in ASCII format. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream receiving the data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> whose contents will be written. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="83" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="27" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="109" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="27" bodyend="49"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -1141,7 +1250,7 @@
         <label>std::unordered_map&lt; void *, std::pair&lt; amrex::MemStat *, std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="28" bodyend="208"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.H" bodystart="33" bodyend="233"/>
     <listofallmembers>
       <member refid="classamrex_1_1BaseFab_1af827e9a5df2baf21d45239e49567f4c6" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>abs</name></member>
       <member refid="classamrex_1_1BaseFab_1ae730734f6c370cc53bdfb51efe618033" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>abs</name></member>
@@ -1312,14 +1421,14 @@
       <member refid="classamrex_1_1BaseFab_1a7bf50c91d4dc7df9c983947f84da3dfb" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator-=</name></member>
       <member refid="classamrex_1_1BaseFab_1aaa2bf19636336c318059fd497e35c023" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator/=</name></member>
       <member refid="classamrex_1_1BaseFab_1ae2402a734250fad951d41376d469365a" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator/=</name></member>
-      <member refid="classamrex_1_1Mask_1a4b60dc6bedd825ee18f215b624385b4b" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1Mask_1a4aa5f23b80e36fccdfcd15d5bbe76604" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator&lt;&lt;</name></member>
       <member refid="classamrex_1_1Mask_1a2f7abe86a6eab2e67d37b47e7ca22459" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator=</name></member>
       <member refid="classamrex_1_1Mask_1aeab1dcf87fad8dfa67b5844e0215a32c" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator=</name></member>
       <member refid="classamrex_1_1BaseFab_1ac0cfdcc46f8928087e0563fff28f7e74" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; int &gt;::"><scope>amrex::Mask</scope><name>operator=</name></member>
       <member refid="classamrex_1_1BaseFab_1a730800b56af324f6616cdb9ef570cdcc" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; int &gt;::"><scope>amrex::Mask</scope><name>operator=</name></member>
       <member refid="classamrex_1_1BaseFab_1a3ca086d742aeb419ce2f0cf8848bbb4f" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; int &gt;::"><scope>amrex::Mask</scope><name>operator=</name></member>
       <member refid="classamrex_1_1BaseFab_1a975986106265799946259c307d7c6386" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; int &gt;::"><scope>amrex::Mask</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1Mask_1ade804ca46ee59dc069cf3643346d8ff4" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator&gt;&gt;</name></member>
+      <member refid="classamrex_1_1Mask_1a0d6269be54d20693bc7c568b6b585a1c" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator&gt;&gt;</name></member>
       <member refid="classamrex_1_1Mask_1af0bcd1adb0d67fb867d3b9e9019fb33a" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>operator|=</name></member>
       <member refid="classamrex_1_1Mask_1a16aac9b4caf7d3aa715c35e1473a4254" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>Or</name></member>
       <member refid="classamrex_1_1Mask_1ad5797578c04b5614ce848331711d3fe5" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>Or</name></member>
@@ -1341,7 +1450,7 @@
       <member refid="classamrex_1_1BaseFab_1a9b6d8b5d08a022612232194b8c3f098d" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>protected_divide</name></member>
       <member refid="classamrex_1_1BaseFab_1ab2918e0d3ea4dae441569909e73a8db7" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>protected_divide</name></member>
       <member refid="classamrex_1_1BaseFab_1acf3b50d012730dd3521fb2be517573b9" prot="protected" virt="non-virtual"><scope>amrex::Mask</scope><name>ptr_owner</name></member>
-      <member refid="classamrex_1_1Mask_1aa99a533ca8b84883dd44bf870fb7c5b3" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>readFrom</name></member>
+      <member refid="classamrex_1_1Mask_1a1fc5cd9b4f52ea7f171d6d5dbb7aeeeb" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>readFrom</name></member>
       <member refid="classamrex_1_1BaseFab_1a4390286fe2327bd5f0561a75ee14499b" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>release</name></member>
       <member refid="classamrex_1_1BaseFab_1a39e58886603710880541bc7030d1d9c6" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>resize</name></member>
       <member refid="classamrex_1_1BaseFab_1a051da6643de6a48ee66ec046d560033a" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>saxpy</name></member>
@@ -1372,7 +1481,7 @@
       <member refid="classamrex_1_1BaseFab_1a768eeb824dfd37e3b53c00d79155b36b" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>sum</name></member>
       <member refid="classamrex_1_1BaseFab_1a86d1b4b6478205b0fcec165260df5772" prot="protected" virt="non-virtual"><scope>amrex::Mask</scope><name>truesize</name></member>
       <member refid="classamrex_1_1BaseFab_1a6ffc31b194f5484eef777a47862ddfac" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>value_type</name></member>
-      <member refid="classamrex_1_1Mask_1a924617bc66416c85d920ec7dcbdae3a4" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>writeOn</name></member>
+      <member refid="classamrex_1_1Mask_1a4d5b29b51c5ef954b7e488e87d58b049" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>writeOn</name></member>
       <member refid="classamrex_1_1BaseFab_1a588b01925c451678d621fe58797a5bd7" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>xpay</name></member>
       <member refid="classamrex_1_1BaseFab_1acf7c1ac49465810a70b9ae1757263f30" prot="public" virt="virtual"><scope>amrex::Mask</scope><name>~BaseFab</name></member>
       <member refid="classamrex_1_1Mask_1a8cffce317097bc776ffc940f0e32ac37" prot="public" virt="non-virtual"><scope>amrex::Mask</scope><name>~Mask</name></member>

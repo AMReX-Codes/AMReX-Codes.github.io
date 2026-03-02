@@ -100,11 +100,15 @@ $(document).ready(function(){initNavTree('classamrex_1_1PETScABecLap.html',''); 
 </div><!--header-->
 <div class="contents">
 
+<p>PETSc wrapper that assembles/solves <code>(a alpha - b div beta grad) phi = rhs</code>.  
+ <a href="classamrex_1_1PETScABecLap.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__PETSc_8H_source.html">AMReX_PETSc.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2a0a84e3b1491619ab3ed49306ffdeb" id="r_ab2a0a84e3b1491619ab3ed49306ffdeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#ab2a0a84e3b1491619ab3ed49306ffdeb">PETScABecLap</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_, <a class="el" href="namespaceamrex_1_1mpidatatypes.html#a30fa228956d7a68a0c604ae5f2163db9">MPI_Comm</a> comm_)</td></tr>
+<tr class="memdesc:ab2a0a84e3b1491619ab3ed49306ffdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a PETSc solver bound to the supplied AMR level.  <br /></td></tr>
 <tr class="separator:ab2a0a84e3b1491619ab3ed49306ffdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d8873af4b7e4fc30dceb416fb300cc" id="r_a91d8873af4b7e4fc30dceb416fb300cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a91d8873af4b7e4fc30dceb416fb300cc">~PETScABecLap</a> ()</td></tr>
 <tr class="separator:a91d8873af4b7e4fc30dceb416fb300cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,25 +121,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5fbdb187ea24b39befe5fb65d410131f" id="r_a5fbdb187ea24b39befe5fb65d410131f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1PETScABecLap.html">PETScABecLap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a5fbdb187ea24b39befe5fb65d410131f">operator=</a> (<a class="el" href="classamrex_1_1PETScABecLap.html">PETScABecLap</a> &amp;&amp;) noexcept=delete</td></tr>
 <tr class="separator:a5fbdb187ea24b39befe5fb65d410131f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea6aef5fab439e43995892519fee28b6" id="r_aea6aef5fab439e43995892519fee28b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#aea6aef5fab439e43995892519fee28b6">setScalars</a> (<a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> sa, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> sb)</td></tr>
+<tr class="memdesc:aea6aef5fab439e43995892519fee28b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store constant scalars for the diagonal and diffusive terms.  <br /></td></tr>
 <tr class="separator:aea6aef5fab439e43995892519fee28b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec0887e36eeb2fb1f1ba62f3877c8ef5" id="r_aec0887e36eeb2fb1f1ba62f3877c8ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#aec0887e36eeb2fb1f1ba62f3877c8ef5">setACoeffs</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;alpha)</td></tr>
+<tr class="memdesc:aec0887e36eeb2fb1f1ba62f3877c8ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install cell-centered <code>a</code> coefficients (copied as needed).  <br /></td></tr>
 <tr class="separator:aec0887e36eeb2fb1f1ba62f3877c8ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc47c08cb022836191478f2b8c9b41fe" id="r_acc47c08cb022836191478f2b8c9b41fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#acc47c08cb022836191478f2b8c9b41fe">setBCoeffs</a> (const <a class="el" href="group__amrex__linear__containers.html#gafe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, 3 &gt; &amp;beta)</td></tr>
+<tr class="memdesc:acc47c08cb022836191478f2b8c9b41fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install per-direction face-centered <code>b</code> coefficients.  <br /></td></tr>
 <tr class="separator:acc47c08cb022836191478f2b8c9b41fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a580b216cdd0cc4085925ba398137c59a" id="r_a580b216cdd0cc4085925ba398137c59a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a580b216cdd0cc4085925ba398137c59a">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> _verbose)</td></tr>
+<tr class="memdesc:a580b216cdd0cc4085925ba398137c59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set PETSc verbosity level forwarded to KSP monitors (<code>_verbose</code>).  <br /></td></tr>
 <tr class="separator:a580b216cdd0cc4085925ba398137c59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dfb08dc31961b6f255925c4879a382d" id="r_a3dfb08dc31961b6f255925c4879a382d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a3dfb08dc31961b6f255925c4879a382d">solve</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> rel_tol, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter, const <a class="el" href="namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32">BndryData</a> &amp;bndry, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_bndry_order)</td></tr>
+<tr class="memdesc:a3dfb08dc31961b6f255925c4879a382d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the assembled ABec system using PETSc/KSP.  <br /></td></tr>
 <tr class="separator:a3dfb08dc31961b6f255925c4879a382d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2647deb921416504cb7798fa9155ea" id="r_a1c2647deb921416504cb7798fa9155ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a1c2647deb921416504cb7798fa9155ea">setEBDirichlet</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *beb)</td></tr>
+<tr class="memdesc:a1c2647deb921416504cb7798fa9155ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide <code>b</code> coefficients stored in <code>beb</code> for embedded-boundary faces.  <br /></td></tr>
 <tr class="separator:a1c2647deb921416504cb7798fa9155ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1eb894ae4a104ea04c6be69d08b4e1f" id="r_ad1eb894ae4a104ea04c6be69d08b4e1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#ad1eb894ae4a104ea04c6be69d08b4e1f">prepareSolver</a> ()</td></tr>
+<tr class="memdesc:ad1eb894ae4a104ea04c6be69d08b4e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build PETSc matrices/vectors and apply runtime parameters.  <br /></td></tr>
 <tr class="separator:ad1eb894ae4a104ea04c6be69d08b4e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12f8c2e606928f4ba9bf4cc909e830ae" id="r_a12f8c2e606928f4ba9bf4cc909e830ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a12f8c2e606928f4ba9bf4cc909e830ae">loadVectors</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a12f8c2e606928f4ba9bf4cc909e830ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> solution guess <code>soln</code> and RHS <code>rhs</code> into PETSc vectors.  <br /></td></tr>
 <tr class="separator:a12f8c2e606928f4ba9bf4cc909e830ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c773ff5410f84e04566b1ed48c38bc" id="r_a29c773ff5410f84e04566b1ed48c38bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PETScABecLap.html#a29c773ff5410f84e04566b1ed48c38bc">getSolution</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln)</td></tr>
+<tr class="memdesc:a29c773ff5410f84e04566b1ed48c38bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy PETSc's solved solution back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage <code>soln</code>.  <br /></td></tr>
 <tr class="separator:a29c773ff5410f84e04566b1ed48c38bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PETSc wrapper that assembles/solves <code>(a alpha - b div beta grad) phi = rhs</code>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab2a0a84e3b1491619ab3ed49306ffdeb" name="ab2a0a84e3b1491619ab3ed49306ffdeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2a0a84e3b1491619ab3ed49306ffdeb">&#9670;&#160;</a></span>PETScABecLap() <span class="overload">[1/3]</span></h2>
 
@@ -173,6 +188,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a PETSc solver bound to the supplied AMR level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grids</td><td>Grid layout for the level. </td></tr>
+    <tr><td class="paramname">dmap</td><td>Distribution map associated with <code>grids</code>. </td></tr>
+    <tr><td class="paramname">geom_</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the domain. </td></tr>
+    <tr><td class="paramname">comm_</td><td>MPI communicator passed to PETSc. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -262,6 +288,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Copy PETSc's solved solution back into <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> storage <code>soln</code>. </p>
+
 </div>
 </div>
 <a id="a12f8c2e606928f4ba9bf4cc909e830ae" name="a12f8c2e606928f4ba9bf4cc909e830ae"></a>
@@ -289,6 +317,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Copy <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> solution guess <code>soln</code> and RHS <code>rhs</code> into PETSc vectors. </p>
 
 </div>
 </div>
@@ -359,6 +389,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Build PETSc matrices/vectors and apply runtime parameters. </p>
+
 </div>
 </div>
 <a id="aec0887e36eeb2fb1f1ba62f3877c8ef5" name="aec0887e36eeb2fb1f1ba62f3877c8ef5"></a>
@@ -377,6 +409,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Install cell-centered <code>a</code> coefficients (copied as needed). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> containing the <code>a</code> coefficients. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acc47c08cb022836191478f2b8c9b41fe" name="acc47c08cb022836191478f2b8c9b41fe"></a>
@@ -394,6 +434,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Install per-direction face-centered <code>b</code> coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">beta</td><td>Array of per-direction coefficient MultiFabs. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -420,6 +468,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provide <code>b</code> coefficients stored in <code>beb</code> for embedded-boundary faces. </p>
 
 </div>
 </div>
@@ -449,6 +499,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Store constant scalars for the diagonal and diffusive terms. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sa</td><td>Scalar applied to the <code>a</code> term. </td></tr>
+    <tr><td class="paramname">sb</td><td>Scalar applied to the <code>b</code> term. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a580b216cdd0cc4085925ba398137c59a" name="a580b216cdd0cc4085925ba398137c59a"></a>
@@ -466,6 +525,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set PETSc verbosity level forwarded to KSP monitors (<code>_verbose</code>). </p>
 
 </div>
 </div>
@@ -524,6 +585,20 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Solve the assembled ABec system using PETSc/KSP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soln</td><td>Solution <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> (updated in place). </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right-hand side. </td></tr>
+    <tr><td class="paramname">rel_tol</td><td>Relative tolerance. </td></tr>
+    <tr><td class="paramname">abs_tol</td><td>Absolute tolerance. </td></tr>
+    <tr><td class="paramname">max_iter</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> allowed iterations. </td></tr>
+    <tr><td class="paramname">bndry</td><td>Boundary data. </td></tr>
+    <tr><td class="paramname">max_bndry_order</td><td><a class="el" href="structamrex_1_1Maximum.html">Maximum</a> order at the boundary. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="58" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="58" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="105" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="105" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="62" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="62" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="109" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="109" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -46,12 +46,13 @@
         <name>MultiMask</name>
         <qualifiedname>amrex::MultiMask::MultiMask</qualifiedname>
         <briefdescription>
+<para>Construct an empty <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref>; call <ref refid="classamrex_1_1MultiMask_1af6ad58f6413f1a7c247f26e74dd7aca3" kindref="member">define()</ref> before use. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="20" bodyend="20"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="26" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="26" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a82389d75715d6277535cb793627c135e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -72,12 +73,13 @@
           <declname>ncomp</declname>
         </param>
         <briefdescription>
+<para>Construct masks over <computeroutput>ba</computeroutput> with mapping <computeroutput>dm</computeroutput> and <computeroutput>ncomp</computeroutput> components. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="21" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="7" bodyend="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="29" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="7" bodyend="9"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1aa6cb4358410dd413ca35d1ecdcc3fb0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -122,12 +124,87 @@
           <declname>initval</declname>
         </param>
         <briefdescription>
+<para>Construct masks surrounding coarse/fine interfaces. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>regba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Regular <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> to cover. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distribution mapping. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> describing the physical domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>face</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref> for which to build masks. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>in_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of inward cells. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of outward cells. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extent_rad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tangential extent. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to initialize mask values immediately. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="22" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="11" bodyend="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="44" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="11" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a600deffa74aedae8cd4a0dc4d40bb31e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -141,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="25" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="47" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1aa1a1571e1a1ec3db4787a6a05e38403c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -159,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="27" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="49" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a17295aabe1cef5654de77c7133bea544" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -177,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="29" column="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="51" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a9f3788caf0aa28c8369a06cf2e1dc477" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref> &amp;</type>
@@ -195,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="30" column="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="52" column="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a1b462cb533ad39dadb12898be4f1bc35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref> &amp;</type>
@@ -213,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="31" column="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="53" column="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1af6ad58f6413f1a7c247f26e74dd7aca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -234,12 +311,13 @@
           <declname>ncomp</declname>
         </param>
         <briefdescription>
+<para>Define masks over <computeroutput>ba</computeroutput> with mapping <computeroutput>dm</computeroutput> and <computeroutput>ncomp</computeroutput> components. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="33" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="18" bodyend="22"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="56" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="18" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a04dd68813ccdcb5e822955b2ec14e077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -284,12 +362,13 @@
           <declname>initval</declname>
         </param>
         <briefdescription>
+<para>Define masks for a coarse/fine interface region described by <computeroutput>regba</computeroutput>, <computeroutput>dm</computeroutput>, <computeroutput>geom</computeroutput>, <computeroutput>face</computeroutput>, and stencil widths <computeroutput>in_rad/<computeroutput>out_rad/<computeroutput>extent_rad</computeroutput>.</computeroutput> </computeroutput> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="34" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="25" bodyend="71"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="25" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1aad68ce2cef0cc99bf89395d8687cfd3a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
@@ -302,12 +381,13 @@
           <declname>mfi</declname>
         </param>
         <briefdescription>
+<para>Mutable access to the mask referenced by iterator <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="37" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="37" bodyend="37"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="63" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="63" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a0bdf7a2c48cb1e59047b3c2e330891ac" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> &amp;</type>
@@ -320,12 +400,13 @@
           <declname>mfi</declname>
         </param>
         <briefdescription>
+<para>Const access to the mask referenced by iterator <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="38" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="38" bodyend="38"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="66" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a921d4a44f378266b9e8561be5195103a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="group__amrex__fab__containers_1ga8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const &gt;</type>
@@ -338,12 +419,13 @@
           <declname>mfi</declname>
         </param>
         <briefdescription>
+<para>Return an Array4 view (const) for iterator <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="40" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="40" bodyend="40"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="69" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="69" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a2b1840f4e0a66b5c3d31612383ffb315" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="group__amrex__fab__containers_1ga8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -356,12 +438,13 @@
           <declname>mfi</declname>
         </param>
         <briefdescription>
+<para>Return an Array4 view (mutable) for iterator <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="41" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="41" bodyend="41"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="72" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="72" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a1c3d13834319f746af0708470b282771" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="group__amrex__fab__containers_1ga8c21d74d3472963108631a36d5dbef0f" kindref="member">Array4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const &gt;</type>
@@ -374,12 +457,13 @@
           <declname>mfi</declname>
         </param>
         <briefdescription>
+<para>Return a const Array4 view for iterator <computeroutput>mfi</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="42" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="42" bodyend="44"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="75" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="75" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1ad0facf441ce50365d12b16047bd589cd" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const &gt;</type>
@@ -388,12 +472,13 @@
         <name>arrays</name>
         <qualifiedname>amrex::MultiMask::arrays</qualifiedname>
         <briefdescription>
+<para>Return const multi-array views of every mask. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="46" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="46" bodyend="46"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="80" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="80" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a6d3bbd585b4f7821109ddcf6041aaeea" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -402,12 +487,13 @@
         <name>arrays</name>
         <qualifiedname>amrex::MultiMask::arrays</qualifiedname>
         <briefdescription>
+<para>Return mutable multi-array views of every mask. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="47" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="47" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="83" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="83" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a43e52ccf9347d1fa110e088fddd828f1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const &gt;</type>
@@ -416,12 +502,13 @@
         <name>const_arrays</name>
         <qualifiedname>amrex::MultiMask::const_arrays</qualifiedname>
         <briefdescription>
+<para>Return const multi-array views (alias of <ref refid="classamrex_1_1MultiMask_1a6d3bbd585b4f7821109ddcf6041aaeea" kindref="member">arrays()</ref>). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="48" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="48" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="86" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="86" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a36d695b32af9b38493af2d60083ff6ba" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -430,12 +517,13 @@
         <name>nComp</name>
         <qualifiedname>amrex::MultiMask::nComp</qualifiedname>
         <briefdescription>
+<para>Number of components stored in each mask. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="50" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="50" bodyend="50"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="89" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="89" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1aeb8383c2994a57191235b8e591dbb05d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
@@ -444,12 +532,13 @@
         <name>boxArray</name>
         <qualifiedname>amrex::MultiMask::boxArray</qualifiedname>
         <briefdescription>
+<para><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> used to build this <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="52" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="52" bodyend="52"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="92" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="92" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiMask_1a79eaaaab1540f679763d5993865cfa06" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
@@ -458,12 +547,13 @@
         <name>DistributionMap</name>
         <qualifiedname>amrex::MultiMask::DistributionMap</qualifiedname>
         <briefdescription>
+<para><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> describing mask ownership. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="54" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="54" bodyend="54"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="95" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="95" bodyend="95"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -482,19 +572,38 @@
           <declname>src</declname>
         </param>
         <briefdescription>
+<para>Copy multi-mask data from <computeroutput>src</computeroutput> into <computeroutput>dst</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="56" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="74" bodyend="92"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="103" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.cpp" bodystart="74" bodyend="92"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="18" bodyend="63"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_MultiMask.H" bodystart="23" bodyend="110"/>
     <listofallmembers>
       <member refid="classamrex_1_1MultiMask_1a921d4a44f378266b9e8561be5195103a" prot="public" virt="non-virtual"><scope>amrex::MultiMask</scope><name>array</name></member>
       <member refid="classamrex_1_1MultiMask_1a2b1840f4e0a66b5c3d31612383ffb315" prot="public" virt="non-virtual"><scope>amrex::MultiMask</scope><name>array</name></member>

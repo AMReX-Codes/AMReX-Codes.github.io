@@ -125,7 +125,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077">outside_domain</a> = 2
 , <a class="el" href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7">NumMaskVals</a> = 3
  }</td></tr>
-<tr class="memdesc:ac96be78c84438c0c74a235d969972846"><td class="mdescLeft">&#160;</td><td class="mdescRight">mask values enumeration  <a href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846">More...</a><br /></td></tr>
+<tr class="memdesc:ac96be78c84438c0c74a235d969972846"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Mask.html">Mask</a> classification used for each boundary cell.  <a href="classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846">More...</a><br /></td></tr>
 <tr class="separator:ac96be78c84438c0c74a235d969972846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcdaf55bfa67d5d815bf0f02b11b4755" id="r_abcdaf55bfa67d5d815bf0f02b11b4755"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#abcdaf55bfa67d5d815bf0f02b11b4755">value_type</a> = typename MF::value_type</td></tr>
 <tr class="separator:abcdaf55bfa67d5d815bf0f02b11b4755"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,50 +156,55 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f9264ac8620d6fd40267e5669f82874" id="r_a9f9264ac8620d6fd40267e5669f82874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryDataT.html">BndryDataT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a9f9264ac8620d6fd40267e5669f82874">operator=</a> (<a class="el" href="classamrex_1_1BndryDataT.html">BndryDataT</a>&lt; MF &gt; &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:a9f9264ac8620d6fd40267e5669f82874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90495c408f01aebfc13f916272d48c5c" id="r_a90495c408f01aebfc13f916272d48c5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a90495c408f01aebfc13f916272d48c5c">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;<a class="el" href="classamrex_1_1BndryRegisterT.html#a3661eefa8a7bc8f810c39fdc6f8fb350">grids</a>, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;<a class="el" href="classamrex_1_1BndryDataT.html#ae4436ce0d60dc60cd15ff3ab3c2ed7a7">geom</a>)</td></tr>
-<tr class="memdesc:a90495c408f01aebfc13f916272d48c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocate bndry fabs along given face  <br /></td></tr>
+<tr class="memdesc:a90495c408f01aebfc13f916272d48c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate masks and boundary registers for the supplied grids.  <br /></td></tr>
 <tr class="separator:a90495c408f01aebfc13f916272d48c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e588de5156b9b8ef5a2e39d80f0c597" id="r_a8e588de5156b9b8ef5a2e39d80f0c597"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MultiMask.html">MultiMask</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a8e588de5156b9b8ef5a2e39d80f0c597">bndryMasks</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) const noexcept</td></tr>
+<tr class="memdesc:a8e588de5156b9b8ef5a2e39d80f0c597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the per-face mask built during <a class="el" href="classamrex_1_1BndryDataT.html#a90495c408f01aebfc13f916272d48c5c" title="Allocate masks and boundary registers for the supplied grids.">define()</a> for orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:a8e588de5156b9b8ef5a2e39d80f0c597"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36cc9b78cac505283d1bc72183c98eb9" id="r_a36cc9b78cac505283d1bc72183c98eb9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a36cc9b78cac505283d1bc72183c98eb9">bndryValues</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) const noexcept</td></tr>
-<tr class="memdesc:a36cc9b78cac505283d1bc72183c98eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return FabSet on given face.  <br /></td></tr>
+<tr class="memdesc:a36cc9b78cac505283d1bc72183c98eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the boundary values stored on orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:a36cc9b78cac505283d1bc72183c98eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af48fcbe60dd847da0a52181bf10ef7aa" id="r_af48fcbe60dd847da0a52181bf10ef7aa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BndryDataT.html#ad374546dd93b34c0cb7b6f4032bcfb35">RealTuple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#af48fcbe60dd847da0a52181bf10ef7aa">bndryLocs</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> igrid) const noexcept</td></tr>
-<tr class="memdesc:af48fcbe60dd847da0a52181bf10ef7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return boundary location on given face for grids we own. It's an error if we don't own that grid. RealTuple is indexed with <a class="el" href="classamrex_1_1Orientation.html" title="Encapsulation of the Orientation of the Faces of a Box.">Orientation</a>.  <br /></td></tr>
+<tr class="memdesc:af48fcbe60dd847da0a52181bf10ef7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return physical boundary locations for all faces owned by a grid.  <br /></td></tr>
 <tr class="separator:af48fcbe60dd847da0a52181bf10ef7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a311921844eeca8b18621c7199a86729b" id="r_a311921844eeca8b18621c7199a86729b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BndryDataT.html#ad374546dd93b34c0cb7b6f4032bcfb35">RealTuple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a311921844eeca8b18621c7199a86729b">bndryLocs</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi) const noexcept</td></tr>
+<tr class="memdesc:a311921844eeca8b18621c7199a86729b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as bndryLocs(int) but uses iterator <code>mfi</code> to reference the grid.  <br /></td></tr>
 <tr class="separator:a311921844eeca8b18621c7199a86729b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3a893425723763871fed2b8f6727abf" id="r_ae3a893425723763871fed2b8f6727abf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#ae3a893425723763871fed2b8f6727abf">bndryConds</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> igrid) const noexcept</td></tr>
-<tr class="memdesc:ae3a893425723763871fed2b8f6727abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return boundary type specifier on given face for grids we own. It's an error if we don't own that grid.  <br /></td></tr>
+<tr class="memdesc:ae3a893425723763871fed2b8f6727abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return boundary type specifiers stored for a grid.  <br /></td></tr>
 <tr class="separator:ae3a893425723763871fed2b8f6727abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06c546aa81b72020efdddf748a5d0164" id="r_a06c546aa81b72020efdddf748a5d0164"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a06c546aa81b72020efdddf748a5d0164">bndryConds</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi) const noexcept</td></tr>
+<tr class="memdesc:a06c546aa81b72020efdddf748a5d0164"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as bndryConds(int) but locates the grid via iterator <code>mfi</code>.  <br /></td></tr>
 <tr class="separator:a06c546aa81b72020efdddf748a5d0164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1052f19a1566840110263a9ebe9c3587" id="r_a1052f19a1566840110263a9ebe9c3587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a1052f19a1566840110263a9ebe9c3587">nComp</a> () const noexcept</td></tr>
-<tr class="memdesc:a1052f19a1566840110263a9ebe9c3587"><td class="mdescLeft">&#160;</td><td class="mdescRight">return number of components for which this object is intended  <br /></td></tr>
+<tr class="memdesc:a1052f19a1566840110263a9ebe9c3587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of components this boundary data manages.  <br /></td></tr>
 <tr class="separator:a1052f19a1566840110263a9ebe9c3587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92151fcf8699dd91fea3d37556ad0f10" id="r_a92151fcf8699dd91fea3d37556ad0f10"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceamrex.html#a5e922fb76ff2eb645844783ad65d1490">Box</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a92151fcf8699dd91fea3d37556ad0f10">getDomain</a> () const noexcept</td></tr>
-<tr class="memdesc:a92151fcf8699dd91fea3d37556ad0f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">return domain used to define masks  <br /></td></tr>
+<tr class="memdesc:a92151fcf8699dd91fea3d37556ad0f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return domain used to define masks.  <br /></td></tr>
 <tr class="separator:a92151fcf8699dd91fea3d37556ad0f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7404546670c7ff0157337715f9d25ba0" id="r_a7404546670c7ff0157337715f9d25ba0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a7404546670c7ff0157337715f9d25ba0">getGeom</a> () const noexcept</td></tr>
-<tr class="memdesc:a7404546670c7ff0157337715f9d25ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">return geometry used to define masks  <br /></td></tr>
+<tr class="memdesc:a7404546670c7ff0157337715f9d25ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return geometry used to define masks.  <br /></td></tr>
 <tr class="separator:a7404546670c7ff0157337715f9d25ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8b7ee0ecbe4e7a753b470251c106d0" id="r_acf8b7ee0ecbe4e7a753b470251c106d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#acf8b7ee0ecbe4e7a753b470251c106d0">setValue</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="group__amrex__arithmetic__types.html#ga00d9113947d2ea92bbdbfe7db24d81f2">Real</a> val) noexcept</td></tr>
-<tr class="memdesc:acf8b7ee0ecbe4e7a753b470251c106d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">set values of boundary Fab for given orientation on nth grid  <br /></td></tr>
+<tr class="memdesc:acf8b7ee0ecbe4e7a753b470251c106d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all components on boundary face <code>face</code> of grid <code>n</code> to scalar value <code>val</code>.  <br /></td></tr>
 <tr class="separator:acf8b7ee0ecbe4e7a753b470251c106d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8cb046e06f3de6cb1db4be12ec87010" id="r_aa8cb046e06f3de6cb1db4be12ec87010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#aa8cb046e06f3de6cb1db4be12ec87010">setBoundCond</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, const <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a> &amp;bcn) noexcept</td></tr>
-<tr class="memdesc:aa8cb046e06f3de6cb1db4be12ec87010"><td class="mdescLeft">&#160;</td><td class="mdescRight">set boundary type specifier for given orientation on nth grid  <br /></td></tr>
+<tr class="memdesc:aa8cb046e06f3de6cb1db4be12ec87010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set boundary type at grid index <code>n</code>, component <code>comp</code>, and face <code>face</code> to <code>bcn</code>.  <br /></td></tr>
 <tr class="separator:aa8cb046e06f3de6cb1db4be12ec87010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd3fdc202fd316dff91863242679263f" id="r_afd3fdc202fd316dff91863242679263f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#afd3fdc202fd316dff91863242679263f">setBoundCond</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, const <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a> &amp;bcn) noexcept</td></tr>
+<tr class="memdesc:afd3fdc202fd316dff91863242679263f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set boundary type using <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> <code>mfi</code> to identify the grid, component <code>comp</code>, and identifier <code>bcn</code>.  <br /></td></tr>
 <tr class="separator:afd3fdc202fd316dff91863242679263f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac308c460f9c083f2fd2326ca62cd1811" id="r_ac308c460f9c083f2fd2326ca62cd1811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#ac308c460f9c083f2fd2326ca62cd1811">setBoundLoc</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="classamrex_1_1BndryDataT.html#abcdaf55bfa67d5d815bf0f02b11b4755">value_type</a> val) noexcept</td></tr>
-<tr class="memdesc:ac308c460f9c083f2fd2326ca62cd1811"><td class="mdescLeft">&#160;</td><td class="mdescRight">set boundary location for given orientation on nth grid  <br /></td></tr>
+<tr class="memdesc:ac308c460f9c083f2fd2326ca62cd1811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the physical boundary location <code>val</code> for grid index <code>n</code> and face <code>face</code>.  <br /></td></tr>
 <tr class="separator:ac308c460f9c083f2fd2326ca62cd1811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f08d239e69b27930ba8ba4e4c163c1" id="r_a85f08d239e69b27930ba8ba4e4c163c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#a85f08d239e69b27930ba8ba4e4c163c1">setBoundLoc</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, <a class="el" href="classamrex_1_1BndryDataT.html#abcdaf55bfa67d5d815bf0f02b11b4755">value_type</a> val) noexcept</td></tr>
+<tr class="memdesc:a85f08d239e69b27930ba8ba4e4c163c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the boundary location value <code>val</code> by <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> <code>mfi</code> on face <code>face</code>.  <br /></td></tr>
 <tr class="separator:a85f08d239e69b27930ba8ba4e4c163c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa55ddaaa31a917a23d490a8d08d7e18" id="r_afa55ddaaa31a917a23d490a8d08d7e18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#afa55ddaaa31a917a23d490a8d08d7e18">operator[]</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) const noexcept</td></tr>
-<tr class="memdesc:afa55ddaaa31a917a23d490a8d08d7e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement public access to const <a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5" title="Return const set of FABs bounding the domain grid boxes on a given orientation.">BndryRegister::operator[]</a>  <br /></td></tr>
+<tr class="memdesc:afa55ddaaa31a917a23d490a8d08d7e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide access to boundary registers for orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:afa55ddaaa31a917a23d490a8d08d7e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7419c85a4844bf1f351f7ecedb7e22a" id="r_af7419c85a4844bf1f351f7ecedb7e22a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryDataT.html#af7419c85a4844bf1f351f7ecedb7e22a">operator[]</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) noexcept</td></tr>
-<tr class="memdesc:af7419c85a4844bf1f351f7ecedb7e22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement public access to <a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5" title="Return const set of FABs bounding the domain grid boxes on a given orientation.">BndryRegister::operator[]</a>  <br /></td></tr>
+<tr class="memdesc:af7419c85a4844bf1f351f7ecedb7e22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide mutable access to boundary registers for orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:af7419c85a4844bf1f351f7ecedb7e22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1BndryRegisterT"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1BndryRegisterT')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1BndryRegisterT.html">amrex::BndryRegisterT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:af6ca1d67538728588356d5b07ef6742d inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_af6ca1d67538728588356d5b07ef6742d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#af6ca1d67538728588356d5b07ef6742d">BndryRegisterT</a> () noexcept=default</td></tr>
@@ -220,11 +225,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa188d45d82ca39e004cccfca57393095 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aa188d45d82ca39e004cccfca57393095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aa188d45d82ca39e004cccfca57393095">operator=</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&amp;rhs)=delete</td></tr>
 <tr class="separator:aa188d45d82ca39e004cccfca57393095 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a9f157b615e14c68633617c6e2031d027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027">define</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;grids_, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> in_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> out_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> extent_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp)</td></tr>
+<tr class="memdesc:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate boundary FabSets for all faces.  <br /></td></tr>
 <tr class="separator:a9f157b615e14c68633617c6e2031d027 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aac2ef4b2b53e50f002404a507fa667c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aac2ef4b2b53e50f002404a507fa667c6">define</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face, <a class="el" href="namespaceamrex.html#a7e095993c9b3f5a4c2abddd839d800e2">IndexType</a> typ, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> in_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> out_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> extent_rad, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm)</td></tr>
-<tr class="memdesc:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build FABs along given face, specifying the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
+<tr class="memdesc:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build FABs along a particular face orientation.  <br /></td></tr>
 <tr class="separator:aac2ef4b2b53e50f002404a507fa667c6 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a691927d0b6e40f9923bacd565c590a91 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a691927d0b6e40f9923bacd565c590a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a691927d0b6e40f9923bacd565c590a91">clear</a> ()</td></tr>
+<tr class="memdesc:a691927d0b6e40f9923bacd565c590a91 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release all FABs and clear the associated <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>.  <br /></td></tr>
 <tr class="separator:a691927d0b6e40f9923bacd565c590a91 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfa13c401a3f3825bca5297f1e1e2be inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_aedfa13c401a3f3825bca5297f1e1e2be"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#aedfa13c401a3f3825bca5297f1e1e2be">boxes</a> () const noexcept</td></tr>
 <tr class="memdesc:aedfa13c401a3f3825bca5297f1e1e2be inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get box domain (as an array of boxes).  <br /></td></tr>
@@ -233,39 +240,40 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of grids in this domain.  <br /></td></tr>
 <tr class="separator:a132f07148e07fdae3f891ab726e467fb inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71e6c7b2ca9302f8ac309ea49b8dbfb5 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a71e6c7b2ca9302f8ac309ea49b8dbfb5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5">operator[]</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) const noexcept</td></tr>
-<tr class="memdesc:a71e6c7b2ca9302f8ac309ea49b8dbfb5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return const set of FABs bounding the domain grid boxes on a given orientation.  <br /></td></tr>
+<tr class="memdesc:a71e6c7b2ca9302f8ac309ea49b8dbfb5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return const set of FABs bounding the domain grid boxes on orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:a71e6c7b2ca9302f8ac309ea49b8dbfb5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8882f7c1bc9de396771742ec5dc3db5 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_ad8882f7c1bc9de396771742ec5dc3db5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FabSetT.html">FabSetT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#ad8882f7c1bc9de396771742ec5dc3db5">operator[]</a> (<a class="el" href="classamrex_1_1Orientation.html">Orientation</a> face) noexcept</td></tr>
-<tr class="memdesc:ad8882f7c1bc9de396771742ec5dc3db5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return set of FABs bounding the domain grid boxes on a given orientation.  <br /></td></tr>
+<tr class="memdesc:ad8882f7c1bc9de396771742ec5dc3db5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return set of FABs bounding the domain grid boxes on orientation <code>face</code>.  <br /></td></tr>
 <tr class="separator:ad8882f7c1bc9de396771742ec5dc3db5 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a005714dcfffa4635a7261f525892ac37 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a005714dcfffa4635a7261f525892ac37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a005714dcfffa4635a7261f525892ac37">setVal</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> v)</td></tr>
-<tr class="memdesc:a005714dcfffa4635a7261f525892ac37 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all boundary FABs to given value.  <br /></td></tr>
+<tr class="memdesc:a005714dcfffa4635a7261f525892ac37 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all boundary FABs to the scalar value <code>v</code> across every component.  <br /></td></tr>
 <tr class="separator:a005714dcfffa4635a7261f525892ac37 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a305048fb353b663f23b3562bc793d4d9 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a305048fb353b663f23b3562bc793d4d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a305048fb353b663f23b3562bc793d4d9">operator+=</a> (const <a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;rhs)</td></tr>
-<tr class="memdesc:a305048fb353b663f23b3562bc793d4d9 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">register += rhs  <br /></td></tr>
+<tr class="memdesc:a305048fb353b663f23b3562bc793d4d9 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accumulate another register with identical layout into this one.  <br /></td></tr>
 <tr class="separator:a305048fb353b663f23b3562bc793d4d9 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5176cafd217bf9069ed83feba52d71c2 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a5176cafd217bf9069ed83feba52d71c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a5176cafd217bf9069ed83feba52d71c2">plus</a> (const <a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a5176cafd217bf9069ed83feba52d71c2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience alias for operator+=.  <br /></td></tr>
 <tr class="separator:a5176cafd217bf9069ed83feba52d71c2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a1c8fdfc61237f7b6a8d6c040d8daadf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a1c8fdfc61237f7b6a8d6c040d8daadf2">copyFrom</a> (const MF &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
-<tr class="memdesc:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the boundary FABs on intersection with given MF.  <br /></td></tr>
+<tr class="memdesc:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill boundary FABs with <code>num_comp</code> components copied from <code>src</code> (component <code>src_comp</code>) into <code>dest_comp</code>, sampling <code>nghost</code> layers and honoring <code>period</code>.  <br /></td></tr>
 <tr class="separator:a1c8fdfc61237f7b6a8d6c040d8daadf2 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a58d2309f0eb636417e763b5a1e74599c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a58d2309f0eb636417e763b5a1e74599c">plusFrom</a> (const MF &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
-<tr class="memdesc:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the boundary FABs on intersect with given MF.  <br /></td></tr>
+<tr class="memdesc:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment boundary FABs with <code>num_comp</code> components from <code>src</code>, using the same arguments as <a class="el" href="classamrex_1_1BndryRegisterT.html#a1c8fdfc61237f7b6a8d6c040d8daadf2" title="Fill boundary FABs with num_comp components copied from src (component src_comp) into dest_comp,...">copyFrom()</a>.  <br /></td></tr>
 <tr class="separator:a58d2309f0eb636417e763b5a1e74599c inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_ae8f5e1195457dc7f2204abbcaf2fe148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#ae8f5e1195457dc7f2204abbcaf2fe148">linComb</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> a, const MF &amp;mfa, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_comp, <a class="el" href="classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92">value_type</a> b, const MF &amp;mfb, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> b_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dest_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n_ghost=0)</td></tr>
-<tr class="memdesc:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear combination: this := a*mfa + b*mfb on intersection of MFs with the boundary FABs.  <br /></td></tr>
+<tr class="memdesc:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear combination: this := <code>a</code> * <code>mfa</code> + <code>b</code> * <code>mfb</code> on the boundary, using components <code>a_comp</code>/<code>b_comp</code> and writing to <code>dest_comp</code> for <code>num_comp</code> entries with <code>n_ghost</code> layers.  <br /></td></tr>
 <tr class="separator:ae8f5e1195457dc7f2204abbcaf2fe148 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31f3e491669d858c7c73e04d2ad6cb00 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a31f3e491669d858c7c73e04d2ad6cb00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a31f3e491669d858c7c73e04d2ad6cb00">setBoxes</a> (const <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;<a class="el" href="classamrex_1_1BndryRegisterT.html#a3661eefa8a7bc8f810c39fdc6f8fb350">grids</a>)</td></tr>
-<tr class="memdesc:a31f3e491669d858c7c73e04d2ad6cb00 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set box domain, if not set previously.  <br /></td></tr>
+<tr class="memdesc:a31f3e491669d858c7c73e04d2ad6cb00 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> domain to <code>grids</code> once prior to calling <a class="el" href="classamrex_1_1BndryRegisterT.html#a9f157b615e14c68633617c6e2031d027" title="Allocate boundary FabSets for all faces.">define()</a>.  <br /></td></tr>
 <tr class="separator:a31f3e491669d858c7c73e04d2ad6cb00 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5edc3e7632c3ce5994b8e464213ac5ba inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a5edc3e7632c3ce5994b8e464213ac5ba"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a5edc3e7632c3ce5994b8e464213ac5ba">DistributionMap</a> () const noexcept</td></tr>
-<tr class="memdesc:a5edc3e7632c3ce5994b8e464213ac5ba inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns constant reference to associated <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.  <br /></td></tr>
+<tr class="memdesc:a5edc3e7632c3ce5994b8e464213ac5ba inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> describing which MPI ranks own each boundary FAB.  <br /></td></tr>
 <tr class="separator:a5edc3e7632c3ce5994b8e464213ac5ba inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18c2a8b193ac63488ae4d1ef4acad7b8 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_a18c2a8b193ac63488ae4d1ef4acad7b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a18c2a8b193ac63488ae4d1ef4acad7b8">write</a> (const std::string &amp;name, std::ostream &amp;os) const</td></tr>
-<tr class="memdesc:a18c2a8b193ac63488ae4d1ef4acad7b8 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write (used for writing to checkpoint)  <br /></td></tr>
+<tr class="memdesc:a18c2a8b193ac63488ae4d1ef4acad7b8 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write all FabSets to disk (used for checkpoint data).  <br /></td></tr>
 <tr class="separator:a18c2a8b193ac63488ae4d1ef4acad7b8 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad918f23e64a2d59ba453b09617e5ac15 inherit pub_methods_classamrex_1_1BndryRegisterT" id="r_ad918f23e64a2d59ba453b09617e5ac15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#ad918f23e64a2d59ba453b09617e5ac15">read</a> (const std::string &amp;name, std::istream &amp;is)</td></tr>
-<tr class="memdesc:ad918f23e64a2d59ba453b09617e5ac15 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read (used for reading from checkpoint)  <br /></td></tr>
+<tr class="memdesc:ad918f23e64a2d59ba453b09617e5ac15 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all FabSets from disk (used for checkpoint data).  <br /></td></tr>
 <tr class="separator:ad918f23e64a2d59ba453b09617e5ac15 inherit pub_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -296,7 +304,7 @@ Protected Attributes</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classamrex_1_1BndryRegisterT"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classamrex_1_1BndryRegisterT')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classamrex_1_1BndryRegisterT.html">amrex::BndryRegisterT&lt; MF &gt;</a></td></tr>
 <tr class="memitem:a859e565c8590d0c8dbe88bede09a35d6 inherit pub_static_methods_classamrex_1_1BndryRegisterT" id="r_a859e565c8590d0c8dbe88bede09a35d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BndryRegisterT.html#a859e565c8590d0c8dbe88bede09a35d6">Copy</a> (<a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;dst, const <a class="el" href="classamrex_1_1BndryRegisterT.html">BndryRegisterT</a>&lt; MF &gt; &amp;src)</td></tr>
-<tr class="memdesc:a859e565c8590d0c8dbe88bede09a35d6 inherit pub_static_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local copy function.  <br /></td></tr>
+<tr class="memdesc:a859e565c8590d0c8dbe88bede09a35d6 inherit pub_static_methods_classamrex_1_1BndryRegisterT"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local copy function for duplicating boundary registers.  <br /></td></tr>
 <tr class="separator:a859e565c8590d0c8dbe88bede09a35d6 inherit pub_static_methods_classamrex_1_1BndryRegisterT"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -354,11 +362,14 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>mask values enumeration </p>
+<p><a class="el" href="classamrex_1_1Mask.html">Mask</a> classification used for each boundary cell. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3" name="ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3"></a>covered&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288" name="ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288"></a>not_covered&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077" name="ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077"></a>outside_domain&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3" name="ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3"></a>covered&#160;</td><td class="fielddoc"><p>Location coincides with a valid grid point at the same AMR level. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288" name="ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288"></a>not_covered&#160;</td><td class="fielddoc"><p>Location is inside the domain but does not coincide with any valid grid points. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077" name="ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077"></a>outside_domain&#160;</td><td class="fielddoc"><p>Location lies outside the physical domain. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7" name="ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7"></a>NumMaskVals&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -550,6 +561,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> as bndryConds(int) but locates the grid via iterator <code>mfi</code>. </p>
+
 </div>
 </div>
 <a id="ae3a893425723763871fed2b8f6727abf" name="ae3a893425723763871fed2b8f6727abf"></a>
@@ -578,7 +591,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return boundary type specifier on given face for grids we own. It's an error if we don't own that grid. </p>
+<p>Return boundary type specifiers stored for a grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">igrid</td><td>Index into the level's <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> (global grid id owned by this rank). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> per face, containing per-component <a class="el" href="classamrex_1_1BoundCond.html" title="Maintain an identifier for boundary condition types.">BoundCond</a> identifiers. </dd></dl>
 
 </div>
 </div>
@@ -608,6 +628,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> as bndryLocs(int) but uses iterator <code>mfi</code> to reference the grid. </p>
+
 </div>
 </div>
 <a id="af48fcbe60dd847da0a52181bf10ef7aa" name="af48fcbe60dd847da0a52181bf10ef7aa"></a>
@@ -636,7 +658,14 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return boundary location on given face for grids we own. It's an error if we don't own that grid. RealTuple is indexed with <a class="el" href="classamrex_1_1Orientation.html" title="Encapsulation of the Orientation of the Faces of a Box.">Orientation</a>. </p>
+<p>Return physical boundary locations for all faces owned by a grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">igrid</td><td>Index into the level's <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> (global grid id owned by this rank). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array indexed by <a class="el" href="classamrex_1_1Orientation.html" title="Encapsulation of the Orientation of the Faces of a Box.">Orientation</a> giving the face locations. </dd></dl>
 
 </div>
 </div>
@@ -666,6 +695,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Return the per-face mask built during <a class="el" href="classamrex_1_1BndryDataT.html#a90495c408f01aebfc13f916272d48c5c" title="Allocate masks and boundary registers for the supplied grids.">define()</a> for orientation <code>face</code>. </p>
+
 </div>
 </div>
 <a id="a36cc9b78cac505283d1bc72183c98eb9" name="a36cc9b78cac505283d1bc72183c98eb9"></a>
@@ -694,7 +725,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return FabSet on given face. </p>
+<p>Access the boundary values stored on orientation <code>face</code>. </p>
 
 </div>
 </div>
@@ -738,7 +769,16 @@ template&lt;typename MF &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>allocate bndry fabs along given face </p>
+<p>Allocate masks and boundary registers for the supplied grids. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grids</td><td>Grid layout at the current AMR level. </td></tr>
+    <tr><td class="paramname">dmap</td><td>Distribution mapping for the grids. </td></tr>
+    <tr><td class="paramname">ncomp</td><td>Number of boundary components. </td></tr>
+    <tr><td class="paramname">geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> describing the physical domain. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -767,7 +807,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>return domain used to define masks </p>
+<p>Return domain used to define masks. </p>
 
 </div>
 </div>
@@ -796,7 +836,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>return geometry used to define masks </p>
+<p>Return geometry used to define masks. </p>
 
 </div>
 </div>
@@ -825,7 +865,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>return number of components for which this object is intended </p>
+<p>Return number of components this boundary data manages. </p>
 
 </div>
 </div>
@@ -911,7 +951,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>implement public access to const <a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5" title="Return const set of FABs bounding the domain grid boxes on a given orientation.">BndryRegister::operator[]</a> </p>
+<p>Provide access to boundary registers for orientation <code>face</code>. </p>
 
 </div>
 </div>
@@ -941,7 +981,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>implement public access to <a class="el" href="classamrex_1_1BndryRegisterT.html#a71e6c7b2ca9302f8ac309ea49b8dbfb5" title="Return const set of FABs bounding the domain grid boxes on a given orientation.">BndryRegister::operator[]</a> </p>
+<p>Provide mutable access to boundary registers for orientation <code>face</code>. </p>
 
 </div>
 </div>
@@ -993,6 +1033,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Set boundary type using <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> <code>mfi</code> to identify the grid, component <code>comp</code>, and identifier <code>bcn</code>. </p>
+
 </div>
 </div>
 <a id="aa8cb046e06f3de6cb1db4be12ec87010" name="aa8cb046e06f3de6cb1db4be12ec87010"></a>
@@ -1043,7 +1085,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>set boundary type specifier for given orientation on nth grid </p>
+<p>Set boundary type at grid index <code>n</code>, component <code>comp</code>, and face <code>face</code> to <code>bcn</code>. </p>
 
 </div>
 </div>
@@ -1089,6 +1131,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Set the boundary location value <code>val</code> by <a class="el" href="classamrex_1_1MFIter.html" title="Iterator for looping ever tiles and boxes of amrex::FabArray based containers.">MFIter</a> <code>mfi</code> on face <code>face</code>. </p>
+
 </div>
 </div>
 <a id="ac308c460f9c083f2fd2326ca62cd1811" name="ac308c460f9c083f2fd2326ca62cd1811"></a>
@@ -1133,7 +1177,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>set boundary location for given orientation on nth grid </p>
+<p>Set the physical boundary location <code>val</code> for grid index <code>n</code> and face <code>face</code>. </p>
 
 </div>
 </div>
@@ -1179,7 +1223,7 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>set values of boundary Fab for given orientation on nth grid </p>
+<p>Set all components on boundary face <code>face</code> of grid <code>n</code> to scalar value <code>val</code>. </p>
 
 </div>
 </div>
